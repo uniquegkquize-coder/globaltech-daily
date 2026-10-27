@@ -4,6 +4,8 @@ Falls back to build.py's original illustrations when image generation is unavail
 from pathlib import Path
 import os, json, io, time, re
 import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin, urlparse
 from PIL import Image, ImageOps
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -17,6 +19,45 @@ QUOTA_BLOCKED=set()
 MAX_NEW=max(0,min(30,int(os.getenv('MAX_NEW_IMAGES','30'))))
 
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
+
+def licensed_source_image(p):
+    """Use the publisher's actual image only with explicit Creative Commons reuse metadata."""
+    source=str(p.get('source') or '')
+    if not source.startswith('https://'):return False
+    ident=slug(p)
+    try:
+        page=requests.get(source,timeout=(5,12),headers={'User-Agent':'GlobalTechDaily/1.0 (editorial image licensing check)'},allow_redirects=True)
+        if not page.ok or 'html' not in page.headers.get('content-type','').lower():return False
+        soup=BeautifulSoup(page.text[:650000],'html.parser')
+        def meta(*keys):
+            for key in keys:
+                tag=soup.find('meta',attrs={'property':key}) or soup.find('meta',attrs={'name':key})
+                if tag and tag.get('content'):return str(tag['content']).strip()
+            return ''
+        image=meta('og:image','twitter:image')
+        license_url=meta('license','dc.rights','dcterms.license','cc:license')
+        # A site-wide copyright notice, a vague "free" label, or image URL alone is not permission.
+        if not image or not re.match(r'^https://creativecommons.org/licenses/(by|by-sa)/[234]\.0/?',license_url,re.I):
+            return False
+        # Non-commercial / no-derivatives licenses are not appropriate for commercial cropped covers.
+        if '/by/' not in license_url.lower() and '/by-sa/' not in license_url.lower():return False
+        image=urljoin(page.url,image)
+        if urlparse(image).scheme!='https':return False
+        res=requests.get(image,timeout=(5,20),headers={'User-Agent':'GlobalTechDaily/1.0'},stream=True)
+        if not res.ok or not res.headers.get('content-type','').lower().startswith('image/'):return False
+        raw=bytearray()
+        for chunk in res.iter_content(65536):
+            raw.extend(chunk)
+            if len(raw)>12000000:return False
+        with Image.open(io.BytesIO(raw)) as im:
+            if im.width<600 or im.height<320:return False
+            im=ImageOps.fit(im.convert('RGB'),(1280,720),method=Image.Resampling.LANCZOS)
+            im.save(IMAGES/(ident+'.jpg'),'JPEG',quality=86,optimize=True)
+        (IMAGES/(ident+'.json')).write_text(json.dumps({'kind':'licensed_source','source_image':image,'license':license_url,'attribution':meta('dc.creator','author') or urlparse(page.url).hostname,'source':page.url}),encoding='utf-8')
+        print('Licensed original publisher image',ident,flush=True)
+        return True
+    except (requests.RequestException,ValueError,OSError):
+        return False
 
 def create(p):
     ident=slug(p)
@@ -67,9 +108,6 @@ def create(p):
     return False
 
 def main():
-    if not KEY:
-        print('GEMINI_API_KEY missing: no image generation',flush=True)
-        return
     posts=[]
     for f in POSTS.glob('*.json'):
         try:
@@ -79,9 +117,10 @@ def main():
     posts.sort(key=lambda p:p.get('date',''),reverse=True)
     count=0
     for p in posts:
-        if count>=MAX_NEW or len(QUOTA_BLOCKED)>=len(MODELS):break
+        if count>=MAX_NEW:break
         if (IMAGES/(slug(p)+'.jpg')).exists():continue
         count+=1
-        create(p)
-    print('Image generation attempts:',count,flush=True)
+        if licensed_source_image(p):continue
+        if KEY and len(QUOTA_BLOCKED)<len(MODELS):create(p)
+    print('Image backfill attempts:',count,flush=True)
 if __name__=='__main__':main()
