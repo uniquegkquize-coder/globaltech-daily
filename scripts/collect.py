@@ -176,7 +176,16 @@ def article_prompt(lang,title,source,source_material,cat):
 def candidates():
  seen=set()
  # Resume verified drafts first instead of spending calls on new headlines.
- for path in sorted(PENDING.glob('*.json')):
+ # Finish the most complete bilingual drafts before starting any new story.
+ def pending_priority(path):
+  try:
+   record=json.loads(path.read_text(encoding='utf-8'))
+   complete=sum(words(record.get(lang+'_body',''))>=MIN_WORDS for lang in ('en','hi'))
+   progress=sum(min(words(record.get(lang+'_body','')),MIN_WORDS) for lang in ('en','hi'))
+   blocked=record.get('blocked_until','')>dt.datetime.now(UTC).isoformat()
+   return (blocked,-complete,-progress,path.name)
+  except (OSError,ValueError,TypeError):return (True,0,0,path.name)
+ for path in sorted(PENDING.glob('*.json'),key=pending_priority):
   try:
    record=json.loads(path.read_text(encoding='utf-8'))
    url=record.get('source',''); title=record.get('source_title','')
@@ -232,17 +241,23 @@ def main():
   try:state=json.loads(pending.read_text()) if pending.exists() else {}
   except ValueError:state={}
   # Avoid retrying the same insufficient or failed source repeatedly within a day.
-  if state.get('blocked_until','')>dt.datetime.now(UTC).isoformat():continue
+  if state.get('blocked_until','')>dt.datetime.now(UTC).isoformat():
+   print('Pending draft cooling down:',post_id,flush=True)
+   continue
+  if any(words(state.get(lang+'_body',''))>=MIN_WORDS for lang in ('en','hi')):
+   print('Resuming saved draft:',post_id,'English',words(state.get('en_body','')),'Hindi',words(state.get('hi_body','')),flush=True)
   inspected+=1
   text=source_text(url,domain)
   if words(text)<MIN_SOURCE_WORDS:
-   save_state(pending,{'source':url,'status':'insufficient_source','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(hours=24)).isoformat(),'source_words':words(text)})
+   # Preserve completed language drafts even if the publisher temporarily blocks scraping.
+   state.update({'source':url,'source_title':title,'category':cat,'status':'source_unavailable','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat(),'source_words':words(text)})
+   save_state(pending,state)
    print('Skipping source before AI:',title[:65],'words',words(text),flush=True)
    continue
   state.update({'source':url,'source_title':title,'category':cat,'status':'draft','updated_at':dt.datetime.now(UTC).isoformat()})
   for lang in ('en','hi'):
-   if CALLS>=MAX_CALLS:break
    if words(state.get(lang+'_body',''))>=MIN_WORDS:continue
+   if CALLS>=MAX_CALLS:break
    prior=state.get(lang+'_body','')
    prompt=article_prompt(lang,title,url,text,cat)
    if prior and words(prior)>=400:
@@ -260,6 +275,7 @@ def main():
    # One failed request does not lead to a provider/model retry this run.
    save_state(pending,state)
    if not data or words(state.get(lang+'_body','')) < MIN_WORDS:
+    # Cool down only this failing story; do not retry the same provider immediately.
     state['blocked_until']=(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat()
     break
    save_state(pending,state)
