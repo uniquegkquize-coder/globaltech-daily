@@ -33,8 +33,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           AUTO_POST: ${{ vars.AUTO_POST }}
           SITE_URL: https://globaltech-daily.pages.dev
-        run: python scripts/auto_news.py
-
+        run: python scripts/collect.py
+        
       - name: Build website
         run: python scripts/build.py
 
