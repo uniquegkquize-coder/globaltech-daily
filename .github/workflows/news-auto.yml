@@ -2,7 +2,7 @@ name: GlobalTech Daily Auto News
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3,9,15,21 * * *'
+    - cron: '7 * * * *'
 permissions:
   contents: write
 concurrency:
@@ -33,9 +33,9 @@ jobs:
           AUTO_POST: ${{ vars.AUTO_POST }}
           SITE_URL: https://globaltech-daily.pages.dev
           PYTHONUNBUFFERED: '1'
-          POSTS_PER_RUN: '15'
+          POSTS_PER_RUN: '30'
           MAX_MODELS_PER_ARTICLE: '1'
-          MAX_AI_CALLS_PER_RUN: '60'
+          MAX_AI_CALLS_PER_RUN: '100'
           MIN_SOURCE_WORDS: '0'
           MIN_ARTICLE_WORDS: '0'
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
@@ -51,7 +51,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_IMAGE_MODEL: gemini-2.5-flash-image
-          MAX_NEW_IMAGES: '14'
+          MAX_NEW_IMAGES: '30'
         run: python -u scripts/generate_images.py
       - name: Build website
         env:
