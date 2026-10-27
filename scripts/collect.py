@@ -118,7 +118,7 @@ def source_text(url,domain):
   if not allowed(r.url,domain) or 'html' not in r.headers.get('content-type','').lower(): return ''
   soup=BeautifulSoup(r.text[:1800000],'html.parser')
   for t in soup(['script','style','nav','footer','aside','form','header']): t.decompose()
-  main=soup.find('article') or soup.find('main') or soup
+  main=(soup.select_one('[itemprop="articleBody"]') or soup.select_one('[class*="article-body"]') or soup.select_one('[class*="story-body"]') or soup.find('article') or soup.find('main') or soup)
   return '\n'.join(clean(p.get_text(' ',strip=True)) for p in main.find_all(['h2','h3','p','li']) if len(clean(p.get_text(' ',strip=True)))>40)[:24000]
  except (requests.RequestException,ValueError): return ''
 
