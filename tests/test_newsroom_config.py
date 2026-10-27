@@ -48,7 +48,7 @@ class NewsroomConfigTests(unittest.TestCase):
     def test_workflow_targets(self):
         workflow = WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("POSTS_PER_RUN: '30'", workflow)
-        self.assertIn("MAX_AI_CALLS_PER_RUN: '60'", workflow)
+        self.assertIn("MAX_AI_CALLS_PER_RUN: '100'", workflow)
         self.assertIn("AI_PROVIDER_ORDER: gemini,groq,openrouter", workflow)
         self.assertIn("python -u scripts/build.py", workflow)
 
