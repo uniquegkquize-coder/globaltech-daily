@@ -17,7 +17,7 @@ for feed in feeds:
   if len(summary)<150:continue
   prompt='Summarize this technology vendor announcement cautiously using ONLY given metadata. Do not invent claims. JSON keys en_title, hi_title, en_body, hi_body. Write original English and Hindi paragraphs and attribute claims to the source. Return {} if insufficient. TITLE: '+e.get('title','')+' SUMMARY: '+summary[:1600]
   try:
-   res=requests.post('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',params={'key':os.environ['GEMINI_API_KEY']},json={'contents':[{'parts':[{'text':prompt}]}],'generationConfig':{'responseMimeType':'application/json'}},timeout=40);res.raise_for_status()
+   res=requests.post('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',params={'key':os.environ['GEMINI_API_KEY']},json={'contents':[{'parts':[{'text':prompt}]}],'generationConfig':{'responseMimeType':'application/json'}},timeout=40);res.raise_for_status()
    x=json.loads(res.json()['candidates'][0]['content']['parts'][0]['text'])
    if not all(len(x.get(k,''))>50 for k in ['en_title','hi_title','en_body','hi_body']):continue
    x.update(id=key,source=link,date=str(datetime.datetime.now(datetime.timezone.utc)));f.write_text(json.dumps(x,ensure_ascii=False));n+=1;time.sleep(2)
