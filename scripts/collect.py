@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 POSTS = ROOT / 'content' / 'posts'
 POSTS.mkdir(parents=True, exist_ok=True)
+PENDING = ROOT / 'content' / 'pending'
+PENDING.mkdir(parents=True, exist_ok=True)
 # Curated public/official feeds; a feed is only a discovery mechanism, not proof.
 FEED_SOURCES = [
  ('https://blog.google/rss/', 'technology'),
@@ -88,6 +90,17 @@ def valid_article(data):
             and all(isinstance(data.get(k), str) and len(data[k].split()) >= MIN_WORDS for k in ('en_body', 'hi_body'))
             and all(isinstance(data.get(k), str) and len(data[k].strip()) >= 30 for k in ('en_title', 'hi_title')))
 
+def save_pending(data, prompt, provider):
+    """Retain partial AI output for manual review; never publish it as verified news."""
+    if not isinstance(data, dict) or not any(isinstance(data.get(k), str) and data[k].strip() for k in ('en_body', 'hi_body')):
+        return
+    key = hashlib.sha256(prompt.encode('utf-8')).hexdigest()[:16]
+    dest = PENDING / (key + '.json')
+    record = {'status': 'needs_review', 'provider': provider,
+              'created_at': dt.datetime.now(UTC).isoformat(), 'draft': data}
+    dest.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding='utf-8')
+    print('Draft saved for review:', dest.name, flush=True)
+
 def alternate_provider(prompt):
     """Optional fallback. Free model availability and quotas are provider-controlled."""
     global AI_CALLS
@@ -98,7 +111,7 @@ def alternate_provider(prompt):
     if groq_key:
         providers.append(('Groq', 'https://api.groq.com/openai/v1/chat/completions',
                           {'Authorization': 'Bearer ' + groq_key},
-                          os.getenv('GROQ_MODEL', 'llama-3.3-70b-versatile')))
+                          os.getenv('GROQ_MODEL', 'openai/gpt-oss-120b')))
     if router_key:
         providers.append(('OpenRouter', 'https://openrouter.ai/api/v1/chat/completions',
                           {'Authorization': 'Bearer ' + router_key},
@@ -115,7 +128,7 @@ def alternate_provider(prompt):
         try:
             response = requests.post(endpoint, headers=headers,
                 json={'model': model, 'messages': [{'role': 'user', 'content': prompt}],
-                      'response_format': {'type': 'json_object'}, 'max_tokens': 8500},
+                      'response_format': {'type': 'json_object'}, 'max_tokens': 10000},
                 timeout=(10, 100))
             if not response.ok:
                 print(name, 'HTTP', response.status_code, response.text[:120], flush=True)
@@ -123,6 +136,8 @@ def alternate_provider(prompt):
                 continue
             content = response.json()['choices'][0]['message']['content']
             data = json.loads(content)
+            if isinstance(data, dict) and data:
+                save_pending(data, prompt, name)
             if valid_article(data):
                 print(name, 'model succeeded:', model, flush=True)
                 return data
@@ -159,6 +174,8 @@ Return ONLY JSON fields en_title, hi_title, en_body, hi_body, en_meta, hi_meta, 
                 continue
             raw = resp.json()['candidates'][0]['content']['parts'][0]['text']
             data = json.loads(raw)
+            if isinstance(data, dict) and data:
+                save_pending(data, prompt, 'Gemini')
             required = ('en_title', 'hi_title', 'en_body', 'hi_body')
             if not isinstance(data, dict) or any(not isinstance(data.get(k), str) or len(data[k].strip().split()) < MIN_WORDS for k in required if k.endswith('_body')) or any(not isinstance(data.get(k), str) or len(data[k].strip()) < 30 for k in ('en_title','hi_title')):
                 print(f'Under {MIN_WORDS} words in one or both languages; not publishing', flush=True)
@@ -232,6 +249,8 @@ def main():
         if created >= remaining or AI_CALLS >= MAX_AI_CALLS_PER_RUN or candidates >= MAX_SOURCE_CANDIDATES: break
     print('AI requests used this run:', AI_CALLS, 'of', MAX_AI_CALLS_PER_RUN, flush=True)
     print('Published', created, flush=True)
+    if created == 0:
+        print('No new posts: check pending drafts, source quality and provider limits.', flush=True)
     return 0
 
 if __name__ == '__main__':
