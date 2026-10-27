@@ -28,6 +28,25 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Check Gemini API
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python - <<'PY'
+          import os, requests
+          r = requests.get(
+              "https://generativelanguage.googleapis.com/v1beta/models",
+              headers={"x-goog-api-key": os.environ["GEMINI_API_KEY"]},
+              timeout=30
+          )
+          print("Status:", r.status_code)
+          for model in r.json().get("models", []):
+              if "generateContent" in model.get("supportedGenerationMethods", []):
+                  print(model["name"])
+          if not r.ok:
+              print("API Error:", r.text[:500])
+          PY
+          
       - name: Generate news
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
