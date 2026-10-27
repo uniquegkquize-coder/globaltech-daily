@@ -46,7 +46,7 @@ def discover_models(api_key):
         MODEL_CACHE = []
     return MODEL_CACHE
 
-LIMIT = int(os.getenv('DAILY_LIMIT', '10'))
+LIMIT = int(os.getenv('DAILY_LIMIT', '11'))
 UTC = dt.timezone.utc
 
 def clean(value):
