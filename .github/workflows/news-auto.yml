@@ -33,7 +33,7 @@ jobs:
           PYTHONUNBUFFERED: '1'
           DAILY_LIMIT: '12'
           MAX_MODELS_PER_ARTICLE: '1'
-          MAX_AI_CALLS_PER_RUN: '2'
+          MAX_AI_CALLS_PER_RUN: '28'
           MIN_SOURCE_WORDS: '450'
           MIN_ARTICLE_WORDS: '800'
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
@@ -43,6 +43,8 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
         run: python -u scripts/collect.py
+      - name: Repair MacBook topic image (preserves backup)
+        run: python -u scripts/repair_macbook_image.py
       - name: Generate original article featured images (best effort)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

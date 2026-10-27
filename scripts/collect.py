@@ -9,7 +9,7 @@ POSTS=ROOT/'content/posts'; PENDING=ROOT/'content/pending'
 POSTS.mkdir(parents=True,exist_ok=True); PENDING.mkdir(parents=True,exist_ok=True)
 UTC=dt.timezone.utc
 MIN_WORDS=int(os.getenv('MIN_ARTICLE_WORDS','800'))
-MAX_CALLS=min(2,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','2'))))
+MAX_CALLS=min(28,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','28'))))
 DAILY_LIMIT=int(os.getenv('DAILY_LIMIT','12'))
 MIN_SOURCE_WORDS=int(os.getenv('MIN_SOURCE_WORDS','450'))
 CALLS=0
@@ -173,8 +173,22 @@ def article_prompt(lang,title,source,source_material,cat):
  language='English' if lang=='en' else 'Hindi (Devanagari)'
  return f'''You are a careful editor for a public-information news site. Write ONE original article in {language}. Return ONLY a JSON object with fields title, body, meta, keywords. The body should have at least {MIN_WORDS} meaningful words IF and ONLY IF the source supports that length; never invent or pad. Use Markdown ## subheadings. Explain confirmed facts, background, user impact, uncertainties, and what readers can verify, with a clear link to the official source. Do not fabricate quotes, eligibility, deadlines, salaries, recruitment numbers, prices, application steps, or citations. No copied paragraphs. If source is insufficient for a detailed factual article, return {{"title":"","body":"","meta":"","keywords":""}}. Category: {cat}. Source title: {title}. Verified official/source URL: {source}. SOURCE TEXT:\n{source_material[:22000]}'''
 
+def published_categories():
+ """Count only published posts, never drafts, toward category coverage."""
+ counts={cat:0 for _,cat,_ in FEEDS}
+ for path in POSTS.glob('*.json'):
+  try:
+   item=json.loads(path.read_text(encoding='utf-8'))
+   cat=item.get('category')
+   if cat in counts: counts[cat]+=1
+  except (OSError,ValueError,TypeError):pass
+ return counts
+
 def candidates():
  seen=set()
+ counts=published_categories()
+ missing={cat for cat,n in counts.items() if n==0}
+ print('Categories without a published article:',', '.join(sorted(missing)) or 'none',flush=True)
  # Resume verified drafts first instead of spending calls on new headlines.
  # Finish the most complete bilingual drafts before starting any new story.
  def pending_priority(path):
@@ -183,7 +197,7 @@ def candidates():
    complete=sum(words(record.get(lang+'_body',''))>=MIN_WORDS for lang in ('en','hi'))
    progress=sum(min(words(record.get(lang+'_body','')),MIN_WORDS) for lang in ('en','hi'))
    blocked=record.get('blocked_until','')>dt.datetime.now(UTC).isoformat()
-   return (blocked,-complete,-progress,path.name)
+   return (blocked,record.get('category') not in missing,-complete,-progress,path.name)
   except (OSError,ValueError,TypeError):return (True,0,0,path.name)
  for path in sorted(PENDING.glob('*.json'),key=pending_priority):
   try:
@@ -222,7 +236,7 @@ def candidates():
  for cat in groups:
   groups[cat].sort(key=lambda item: (-int(any(k in item[1].lower() for k in ('ai ', 'openai', 'google', 'apple', 'microsoft', 'nvidia', 'launch', 'breaking', 'trailer', 'box office', 'netflix', 'bollywood', 'hollywood', 'release', 'recruitment', 'scheme', 'योजना', 'भर्ती'))),item[1]))
  for i in range(max(map(len,groups.values()),default=0)):
-  for cat in ('movies-entertainment','world-news','technology','business','sports','automobiles','health-science','government-schemes','sarkari-naukri','gaming','environment','travel','education','lifestyle'):
+  for cat in sorted(groups, key=lambda c:(c not in missing, counts.get(c,0),c)):
    if i<len(groups[cat]): yield groups[cat][i]
 
 def main():
@@ -248,7 +262,7 @@ def main():
    print('Resuming saved draft:',post_id,'English',words(state.get('en_body','')),'Hindi',words(state.get('hi_body','')),flush=True)
   inspected+=1
   text=source_text(url,domain)
-  if words(text)<MIN_SOURCE_WORDS:
+  if words(text)<MIN_SOURCE_WORDS and not all(words(state.get(lang+'_body',''))>=MIN_WORDS for lang in ('en','hi')):
    # Preserve completed language drafts even if the publisher temporarily blocks scraping.
    state.update({'source':url,'source_title':title,'category':cat,'status':'source_unavailable','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat(),'source_words':words(text)})
    save_state(pending,state)
