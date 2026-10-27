@@ -21,7 +21,7 @@ MAX_NEW=max(0,int(os.getenv('MAX_NEW_IMAGES','0')))  # 0 means scan all posts
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
 
 def licensed_source_image(p):
-    """Use the publisher's actual image only with explicit Creative Commons reuse metadata."""
+    """Fetch the original publisher image and retain provenance; rights are unverified."""
     source=str(p.get('source') or '')
     if not source.startswith('https://'):return False
     ident=slug(p)
@@ -36,11 +36,7 @@ def licensed_source_image(p):
             return ''
         image=meta('og:image','twitter:image')
         license_url=meta('license','dc.rights','dcterms.license','cc:license')
-        # A site-wide copyright notice, a vague "free" label, or image URL alone is not permission.
-        if not image or not re.match(r'^https://creativecommons.org/licenses/(by|by-sa)/[234]\.0/?',license_url,re.I):
-            return False
-        # Non-commercial / no-derivatives licenses are not appropriate for commercial cropped covers.
-        if '/by/' not in license_url.lower() and '/by-sa/' not in license_url.lower():return False
+        if not image:return False
         image=urljoin(page.url,image)
         if urlparse(image).scheme!='https':return False
         res=requests.get(image,timeout=(5,20),headers={'User-Agent':'GlobalTechDaily/1.0'},stream=True)
@@ -53,8 +49,8 @@ def licensed_source_image(p):
             if im.width<600 or im.height<320:return False
             im=ImageOps.fit(im.convert('RGB'),(1280,720),method=Image.Resampling.LANCZOS)
             im.save(IMAGES/(ident+'.jpg'),'JPEG',quality=86,optimize=True)
-        (IMAGES/(ident+'.json')).write_text(json.dumps({'kind':'licensed_source','source_image':image,'license':license_url,'attribution':meta('dc.creator','author') or urlparse(page.url).hostname,'source':page.url}),encoding='utf-8')
-        print('Licensed original publisher image',ident,flush=True)
+        (IMAGES/(ident+'.json')).write_text(json.dumps({'kind':'publisher_source','source_image':image,'license':license_url,'attribution':meta('dc.creator','author') or urlparse(page.url).hostname,'source':page.url,'rights_status':'unverified'}),encoding='utf-8')
+        print('Original publisher image',ident,flush=True)
         return True
     except (requests.RequestException,ValueError,OSError):
         return False
