@@ -116,15 +116,36 @@ def allowed(url,domain):
  return url.startswith('https://') and (h==domain or h.endswith('.'+domain))
 def source_text(url,domain):
  try:
-  if not allowed(url,domain): return ''
-  r=requests.get(url,timeout=(8,18),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobalTechDaily/1.0)'})
+  if not allowed(url,domain):return ''
+  r=requests.get(url,timeout=(8,18),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobalTechDaily/1.0)','Accept':'text/html,application/xhtml+xml'})
   r.raise_for_status()
-  if not allowed(r.url,domain) or 'html' not in r.headers.get('content-type','').lower(): return ''
+  if not allowed(r.url,domain) or 'html' not in r.headers.get('content-type','').lower():return ''
   soup=BeautifulSoup(r.text[:1800000],'html.parser')
-  for t in soup(['script','style','nav','footer','aside','form','header']): t.decompose()
-  main=(soup.select_one('[itemprop="articleBody"]') or soup.select_one('[class*="article-body"]') or soup.select_one('[class*="story-body"]') or soup.find('article') or soup.find('main') or soup)
-  return '\n'.join(clean(p.get_text(' ',strip=True)) for p in main.find_all(['h2','h3','p','li']) if len(clean(p.get_text(' ',strip=True)))>40)[:24000]
- except (requests.RequestException,ValueError): return ''
+  candidates=[]
+  # JSON-LD articleBody is often present even when the visible article is JS-rendered.
+  for script in soup.select('script[type="application/ld+json"]'):
+   try:
+    data=json.loads(script.string or script.get_text() or '{}')
+    def visit(obj):
+     if isinstance(obj,list):
+      for value in obj:visit(value)
+     elif isinstance(obj,dict):
+      body=obj.get('articleBody')
+      if isinstance(body,str) and len(body)>100:candidates.append(clean(body))
+      for key in ('@graph','mainEntity','itemListElement'):
+       if key in obj:visit(obj[key])
+    visit(data)
+   except (ValueError,TypeError,RecursionError):pass
+  for tag in soup(['script','style','nav','footer','aside','form','header','noscript']):tag.decompose()
+  selectors=('[itemprop="articleBody"]','[class*="article-body"]','[class*="articleBody"]','[class*="story-body"]','[data-testid*="article"]','article','main')
+  for selector in selectors:
+   for node in soup.select(selector)[:4]:
+    paras=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['h2','h3','p','li'])]
+    paras=[p for p in paras if len(p)>40]
+    if paras:candidates.append('\\n'.join(paras))
+  # Reject short navigation snippets rather than manufacture 300 words.
+  return max(candidates,key=words,default='')[:24000]
+ except (requests.RequestException,ValueError,TypeError):return ''
 
 def day_count():
  today=dt.datetime.now(UTC).date().isoformat()
