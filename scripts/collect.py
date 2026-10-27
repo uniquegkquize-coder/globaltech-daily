@@ -148,36 +148,37 @@ def provider_order():
 PROVIDER_COOLDOWNS=set()
 def call_provider(prompt):
  global CALLS
- if CALLS>=MAX_CALLS: return None,None
  last=None
  for provider in provider_order():
   if CALLS>=MAX_CALLS:break
   if provider in PROVIDER_COOLDOWNS:continue
   key=os.getenv({'groq':'GROQ_API_KEY','gemini':'GEMINI_API_KEY','openrouter':'OPENROUTER_API_KEY'}[provider],'').strip()
   if not key:continue
-  CALLS+=1
-  last=provider
-  try:
-   if provider=='gemini':
-    model=os.getenv('GEMINI_MODEL','gemini-2.5-flash')
-    r=requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',headers={'x-goog-api-key':key},json={'contents':[{'parts':[{'text':prompt}]}],'generationConfig':{'responseMimeType':'application/json','maxOutputTokens':6500}},timeout=(10,100))
-    raw=''.join(p.get('text','') for p in r.json()['candidates'][0]['content']['parts']) if r.ok else ''
-   else:
-    model=os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else os.getenv('OPENROUTER_MODEL','openrouter/free')
-    url='https://api.groq.com/openai/v1/chat/completions' if provider=='groq' else 'https://openrouter.ai/api/v1/chat/completions'
-    r=requests.post(url,headers={'Authorization':'Bearer '+key},json={'model':model,'messages':[{'role':'user','content':prompt}],'max_tokens':6500,'temperature':0.3},timeout=(10,110))
-    raw=r.json()['choices'][0]['message']['content'] if r.ok else ''
-   if not r.ok:
-    print('Provider',provider,'HTTP',r.status_code,'switching provider if available',flush=True)
-    if r.status_code in (401,402,403,404,429):PROVIDER_COOLDOWNS.add(provider)
-    continue
-   data=json_object(raw)
-   if isinstance(data,dict) and data.get('body'):
-    print('Provider success:',provider,flush=True)
-    return data,provider
-   print('Provider',provider,'returned unusable JSON; switching if available',flush=True)
-  except (requests.RequestException,ValueError,KeyError,IndexError,TypeError) as exc:
-   print('Provider',provider,'error',type(exc).__name__,'switching if available',flush=True)
+  models=([x.strip() for x in os.getenv('GEMINI_MODELS',os.getenv('GEMINI_MODEL','gemini-2.5-flash')+',gemini-2.5-flash-lite').split(',') if x.strip()] if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else os.getenv('OPENROUTER_MODEL','openrouter/free')])
+  for model in dict.fromkeys(models):
+   if CALLS>=MAX_CALLS:break
+   CALLS+=1
+   last=provider
+   try:
+    if provider=='gemini':
+     r=requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',headers={'x-goog-api-key':key},json={'contents':[{'parts':[{'text':prompt}]}],'generationConfig':{'responseMimeType':'application/json','maxOutputTokens':8192}},timeout=(10,100))
+     raw=''.join(p.get('text','') for p in r.json()['candidates'][0]['content']['parts']) if r.ok else ''
+    else:
+     url='https://api.groq.com/openai/v1/chat/completions' if provider=='groq' else 'https://openrouter.ai/api/v1/chat/completions'
+     r=requests.post(url,headers={'Authorization':'Bearer '+key},json={'model':model,'messages':[{'role':'user','content':prompt}],'max_tokens':8192,'temperature':0.2},timeout=(10,110))
+     raw=r.json()['choices'][0]['message']['content'] if r.ok else ''
+    if not r.ok:
+     print('Provider',provider,'model',model,'HTTP',r.status_code,flush=True)
+     if r.status_code in (401,402,403,429):PROVIDER_COOLDOWNS.add(provider);break
+     if r.status_code==404:continue
+     continue
+    data=json_object(raw)
+    if isinstance(data,dict) and data.get('body'):
+     print('Provider success:',provider,'model',model,flush=True)
+     return data,provider
+    print('Provider',provider,'returned unusable JSON; trying next option',flush=True)
+   except (requests.RequestException,ValueError,KeyError,IndexError,TypeError) as exc:
+    print('Provider',provider,'error',type(exc).__name__,flush=True)
  return None,last
 
 def article_prompt(lang,title,source,source_material,cat):
