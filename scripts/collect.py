@@ -21,5 +21,7 @@ for feed in feeds:
    x=json.loads(res.json()['candidates'][0]['content']['parts'][0]['text'])
    if not all(len(x.get(k,''))>50 for k in ['en_title','hi_title','en_body','hi_body']):continue
    x.update(id=key,source=link,date=str(datetime.datetime.now(datetime.timezone.utc)));f.write_text(json.dumps(x,ensure_ascii=False));n+=1;time.sleep(2)
-  except Exception as ex:print('Skipped:',str(ex)[:120])
+  
+  except Exception as ex:print('Skipped:',type(ex).__name__,str(ex)[:500], 'API response:',res.text[:1000] if 'res' in locals() else 'No response')
+  
 print('Published',n)
