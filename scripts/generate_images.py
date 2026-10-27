@@ -12,6 +12,8 @@ IMAGES=ROOT/'content/featured'
 IMAGES.mkdir(parents=True,exist_ok=True)
 KEY=os.getenv('GEMINI_API_KEY','').strip()
 MODEL=os.getenv('GEMINI_IMAGE_MODEL','gemini-2.5-flash-image').strip()
+MODELS=list(dict.fromkeys([m.strip() for m in (MODEL+','+os.getenv('GEMINI_IMAGE_FALLBACK_MODELS','gemini-3-pro-image-preview')).split(',') if m.strip()]))
+QUOTA_BLOCKED=set()
 MAX_NEW=max(0,min(30,int(os.getenv('MAX_NEW_IMAGES','30'))))
 
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
@@ -32,37 +34,41 @@ def create(p):
       'Do not portray this as a documentary photograph. Leave safe margins for cropping. '
       'Landscape 16:9, premium professional news publication cover art. For government schemes use public-service visual metaphors; for recruitment use exam and careers imagery; for technology use topic-specific tech imagery; for movies depict a cinema environment, camera, projector, or generic film set without recreating copyrighted posters or real actors; for sports use sport-specific equipment; for world news use an accurate non-misleading conceptual scene.'
     )
-    url=f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent'
-    try:
+    for model in MODELS:
+      if model in QUOTA_BLOCKED:continue
+      url=f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent'
+      try:
         response=requests.post(url,headers={'x-goog-api-key':KEY},json={
           'contents':[{'parts':[{'text':prompt}]}],
           'generationConfig':{'responseModalities':['IMAGE','TEXT']}
         },timeout=(10,95))
         if not response.ok:
-            print('Image API unavailable',response.status_code,response.text[:160],flush=True)
-            return False
+            print('Image API unavailable',model,response.status_code,response.text[:160],flush=True)
+            if response.status_code in (429,403):
+                QUOTA_BLOCKED.add(model)
+            continue
         parts=response.json().get('candidates',[{}])[0].get('content',{}).get('parts',[])
         for part in parts:
             data=part.get('inlineData') or part.get('inline_data') or {}
             if data.get('data') and str(data.get('mimeType','image/')).startswith('image/'):
                 import base64
                 raw=base64.b64decode(data['data'],validate=True)
-                if len(raw)>18_000_000: return False
+                if len(raw)>18_000_000:continue
                 with Image.open(io.BytesIO(raw)) as img:
-                    if img.width<400 or img.height<250:return False
+                    if img.width<400 or img.height<250:continue
                     img=ImageOps.fit(img.convert('RGB'),(1280,720),method=Image.Resampling.LANCZOS,centering=(.5,.5))
                     img.save(dest,'JPEG',quality=88,optimize=True)
-                (IMAGES/(ident+'.json')).write_text(json.dumps({'kind':'ai_generated','model':MODEL,'caption':'AI-generated conceptual illustration; not an event photograph.'}),encoding='utf-8')
-                print('Generated featured image',ident,flush=True)
+                (IMAGES/(ident+'.json')).write_text(json.dumps({'kind':'ai_generated','model':model,'caption':'AI-generated conceptual illustration; not an event photograph.'}),encoding='utf-8')
+                print('Generated featured image',ident,model,flush=True)
                 return True
-        print('Image API returned no image for',ident,flush=True)
-    except (requests.RequestException,ValueError,OSError,KeyError,IndexError) as exc:
-        print('Image generation failed',type(exc).__name__,str(exc)[:130],flush=True)
+        print('Image API returned no image for',ident,model,flush=True)
+      except (requests.RequestException,ValueError,OSError,KeyError,IndexError) as exc:
+        print('Image generation failed',model,type(exc).__name__,str(exc)[:130],flush=True)
     return False
 
 def main():
     if not KEY:
-        print('GEMINI_API_KEY missing: original illustrations will be used',flush=True)
+        print('GEMINI_API_KEY missing: no image generation',flush=True)
         return
     posts=[]
     for f in POSTS.glob('*.json'):
@@ -73,7 +79,7 @@ def main():
     posts.sort(key=lambda p:p.get('date',''),reverse=True)
     count=0
     for p in posts:
-        if count>=MAX_NEW:break
+        if count>=MAX_NEW or len(QUOTA_BLOCKED)>=len(MODELS):break
         if (IMAGES/(slug(p)+'.jpg')).exists():continue
         count+=1
         create(p)
