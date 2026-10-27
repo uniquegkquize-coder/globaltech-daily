@@ -5,6 +5,7 @@ import os, html, json, shutil, re, datetime as dt, math, textwrap, hashlib
 from PIL import Image, ImageDraw, ImageFont
 R=Path(__file__).resolve().parents[1]; OUT=R/'dist'; SITE=os.getenv('SITE_URL','https://globaltech-daily.pages.dev').rstrip('/'); CONTACT='info@sellercalc.net'
 shutil.rmtree(OUT,ignore_errors=True);OUT.mkdir(parents=True)
+(OUT/'googled7fc3627b4add656.html').write_text('google-site-verification: googled7fc3627b4add656.html\n',encoding='utf-8')
 def e(x):return html.escape(str(x or ''),quote=True)
 def write(p,s):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s,encoding='utf-8')
 def title(p,lang):return p.get(lang+'_title') or p.get('en_title') or 'Technology news'
