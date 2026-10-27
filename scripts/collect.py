@@ -320,6 +320,32 @@ GOOGLE_QUERIES={
  'sarkari-naukri':'India government recruitment official notification',
  'private-vacancy':'private sector job openings hiring application',
  'travel':'travel tourism','lifestyle':'lifestyle wellness'}
+def resolve_google_news(link):
+ """Resolve Google's opaque RSS ID to its original publisher URL."""
+ from urllib.parse import urlencode
+ if (urlparse(link).hostname or '')!='news.google.com':return link
+ try:
+  page=requests.get(link,timeout=(4,9),headers={'User-Agent':'Mozilla/5.0','Cookie':'CONSENT=YES+cb; SOCS=CAI'})
+  if page.url!=link and (urlparse(page.url).hostname or '')!='news.google.com':return page.url
+  match=re.search(r'data-n-a-id="([^"]+)"[^>]*data-n-a-ts="([^"]+)"[^>]*data-n-a-sg="([^"]+)"',page.text)
+  if match:gid,ts,sg=match.groups()
+  else:
+   gid=urlparse(link).path.rstrip('/').split('/')[-1]
+   ts_match=re.search(r'data-n-a-ts="([^"]+)"',page.text)
+   sg_match=re.search(r'data-n-a-sg="([^"]+)"',page.text)
+   if not ts_match or not sg_match:return ''
+   ts,sg=ts_match.group(1),sg_match.group(1)
+  inner=json.dumps(['garturlreq',[['X','X',['X','X'],None,None,1,1,'US:en',None,1,None,None,None,None,None,0,1],'X','X',1,[1,1,1],1,1,None,0,0,None,0],gid,int(ts),sg],separators=(',',':'))
+  payload={'f.req':json.dumps([[['Fbv4je',inner,None,'generic']]],separators=(',',':'))}
+  response=requests.post('https://news.google.com/_/DotsSplashUi/data/batchexecute?rpcids=Fbv4je',data=payload,headers={'User-Agent':'Mozilla/5.0','Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},timeout=(4,9))
+  response.raise_for_status()
+  match=re.search(r'\\[\\["wrb.fr","Fbv4je",("(?:\\\\.|[^"\\\\])*"|null)',response.text)
+  if not match or match.group(1)=='null':return ''
+  decoded=json.loads(json.loads(match.group(1)))
+  target=decoded[1]
+  return target if isinstance(target,str) and target.startswith('https://') else ''
+ except (requests.RequestException,ValueError,TypeError,IndexError):return ''
+
 def google_news_stories(cat):
  from urllib.parse import quote
  query=GOOGLE_QUERIES.get(cat,cat.replace('-',' '))+' when:7d'
@@ -333,14 +359,11 @@ def google_news_stories(cat):
    # Resolve the Google News article link; never use the Google URL as evidence.
    link=entry.get('link','')
    if not link.startswith('https://'):continue
-   try:
-    resolved=requests.get(link,timeout=(4,7),headers={'User-Agent':'Mozilla/5.0'},allow_redirects=True)
-    target=resolved.url
-    host=(urlparse(target).hostname or '').lower()
-    if host.endswith('google.com') or host.endswith('googleusercontent.com'):continue
-    if not any(allowed(target,d) for _,_,d in FEEDS):continue
-    stories.append((target,clean(entry.get('title','')),cat,host))
-   except requests.RequestException:continue
+   target=resolve_google_news(link)
+   host=(urlparse(target).hostname or '').lower()
+   if not target or host.endswith('google.com') or host.endswith('googleusercontent.com'):continue
+   if not any(allowed(target,d) for _,_,d in FEEDS):continue
+   stories.append((target,clean(entry.get('title','')),cat,host))
   print('Google News',cat,'publisher stories',len(stories),flush=True)
   return stories
  except (requests.RequestException,ValueError):return []
