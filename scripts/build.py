@@ -65,11 +65,16 @@ def card(p,lang):
  picture=f'<img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="AI-generated conceptual illustration for {e(t)}">' if has_featured(p) else ''
  return f'<article class="card"><a href="/{lang}/news/{s}/">{picture}<div class="inner"><span class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=="en" else 1])}</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])} · {e(urlparse(p.get("source","")).hostname or "Source")}</div></div></a></article>'
 
+def limit_article_words(raw,limit=150):
+ parts=re.findall(r'\\S+',str(raw or ''))
+ if len(parts)<=limit:return str(raw or '')
+ return ' '.join(parts[:limit]).rstrip(' ,;:')+'…'
+
 for p in POSTS:image_for(p)
 for p in POSTS:
  s=slug(p)
  for lang in ('en','hi'):
-  t=title(p,lang);raw=p.get(lang+'_body') or p.get('en_body','');url=f'{SITE}/{lang}/news/{s}/';desc=p.get(lang+'_meta') or re.sub(r'[#\n]+',' ',raw)[:155]
+  t=title(p,lang);raw=limit_article_words(p.get(lang+'_body') or p.get('en_body',''));url=f'{SITE}/{lang}/news/{s}/';desc=p.get(lang+'_meta') or re.sub(r'[#\n]+',' ',raw)[:155]
   related=[q for q in POSTS if slug(q)!=s][:4];related_html=''.join(f'<a href="/{lang}/news/{slug(q)}/">{e(title(q,lang))}</a>' for q in related)
   schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg'] if has_featured(p) else []),'author':{'@type':'Organization','name':'GlobalTech Daily Editorial Desk'},'publisher':{'@type':'Organization','name':'GlobalTech Daily','url':SITE},'isBasedOn':p['source']}
   schema_json=json.dumps(schema,ensure_ascii=False).replace('<',chr(92)+'u003c')
