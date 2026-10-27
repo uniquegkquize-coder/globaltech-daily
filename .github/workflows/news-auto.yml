@@ -35,7 +35,7 @@ jobs:
           MAX_MODELS_PER_ARTICLE: '1'
           MAX_AI_CALLS_PER_RUN: '2'
           MIN_SOURCE_WORDS: '450'
-          MIN_ARTICLE_WORDS: '1200'
+          MIN_ARTICLE_WORDS: '800'
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: openai/gpt-oss-120b
           AI_PROVIDER_ORDER: groq,gemini,openrouter

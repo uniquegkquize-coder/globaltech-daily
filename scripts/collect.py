@@ -8,7 +8,7 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 POSTS=ROOT/'content/posts'; PENDING=ROOT/'content/pending'
 POSTS.mkdir(parents=True,exist_ok=True); PENDING.mkdir(parents=True,exist_ok=True)
 UTC=dt.timezone.utc
-MIN_WORDS=int(os.getenv('MIN_ARTICLE_WORDS','1200'))
+MIN_WORDS=int(os.getenv('MIN_ARTICLE_WORDS','800'))
 MAX_CALLS=min(2,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','2'))))
 DAILY_LIMIT=int(os.getenv('DAILY_LIMIT','12'))
 MIN_SOURCE_WORDS=int(os.getenv('MIN_SOURCE_WORDS','450'))
