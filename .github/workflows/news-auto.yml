@@ -1,6 +1,12 @@
 name: GlobalTech Daily Auto News
 on:
   workflow_dispatch:
+    inputs:
+      reset_posts_for_test:
+        description: "Delete all old generated posts and reset today count (irreversible)"
+        type: boolean
+        required: false
+        default: false
   schedule:
     - cron: '0 3,9,15,21 * * *'
 permissions:
@@ -25,6 +31,9 @@ jobs:
         run: pip install -r requirements.txt
       - name: Compile all Python files
         run: python -m compileall -q scripts
+      - name: Reset old posts for one-time manual test
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.reset_posts_for_test == true }}
+        run: python -u scripts/reset_posts_for_test.py
       - name: Generate source-based news
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
