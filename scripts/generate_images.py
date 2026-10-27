@@ -2,7 +2,7 @@
 Falls back to build.py's original illustrations when image generation is unavailable.
 """
 from pathlib import Path
-import os, json, io, time, re
+import os, json, io, time, re, datetime
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
@@ -115,6 +115,14 @@ def main():
             if slug(p):posts.append(p)
         except (OSError,ValueError):pass
     posts.sort(key=lambda p:p.get('date',''),reverse=True)
+    # Rotate the backfill window each run; otherwise the same newest 30 missing-image posts
+    # consume every run and older stories never get examined.
+    if posts:
+        window=max(1,MAX_NEW)
+        slot=int(datetime.datetime.now(datetime.timezone.utc).timestamp()//3600)
+        offset=(slot*window)%len(posts)
+        posts=posts[offset:]+posts[:offset]
+        print('Image backfill rotation',offset,'of',len(posts),flush=True)
     count=0
     for p in posts:
         if count>=MAX_NEW:break
