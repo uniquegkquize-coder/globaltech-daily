@@ -1,0 +1,9 @@
+{
+  "en_title": "Cloudflare Details GLM-5.3 Workers AI KV Cache Exposure",
+  "hi_title": "क्लाउडफ्लेयर ने GLM-5.3 वर्कर्स AI KV कैश एक्सपोजर का विवरण दिया",
+  "en_body": "According to Cloudflare, a configuration mismatch in the GLM 5.3 model on Workers AI triggered an SGLang bug that caused the exposure of KV cache pages across different requests. Cloudflare reported on its official blog how it addressed and remediated the issue following the incident. The publisher outlined the technical factors involved in the cross-request exposure, detailing the specific interaction between the model configuration and the SGLang bug. Readers should consult the official Cloudflare blog post for the complete account and technical breakdown of the remediation steps taken by the team.",
+  "hi_body": "क्लाउडफ्लेयर के अनुसार, वर्कर्स AI पर GLM 5.3 मॉडल में एक कॉन्फ़िगरेशन बेमेल ने एक SGLang बग को ट्रिगर किया, जिसके कारण विभिन्न अनुरोधों में KV कैश पेजों का एक्सपोजर हुआ। क्लाउडफ्लेयर ने अपने आधिकारिक ब्लॉग पर बताया कि घटना के बाद उन्होंने इस मुद्दे को कैसे संबोधित किया और इसका समाधान किया। प्रकाशक ने क्रॉस-अनुरोध एक्सपोजर में शामिल तकनीकी कारकों को रेखांकित किया, जिसमें मॉडल कॉन्फ़िगरेशन और SGLang बग के बीच विशिष्ट बातचीत का विवरण दिया गया है। पाठकों को टीम द्वारा उठाए गए सुधार कदमों के पूर्ण विवरण और तकनीकी विश्लेषण के लिए आधिकारिक क्लाउडफ्लेयर ब्लॉग पोस्ट देखना चाहिए।",
+  "id": "e77549dba84a",
+  "source": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
+  "date": "2026-10-27T06:08:27.569580+00:00"
+}
