@@ -19,7 +19,8 @@ class NewsroomConfigTests(unittest.TestCase):
                      if isinstance(node, ast.Assign)
                      and any(isinstance(t, ast.Name) and t.id == "FEEDS" for t in node.targets))
         categories = {row[1] for row in feeds}
-        self.assertEqual(len(categories), 14)
+        self.assertEqual(len(categories), 15)
+        self.assertIn('private-vacancy', categories)
         self.assertIn("gaming", categories)
         self.assertTrue(any("ign.com" in row[0] for row in feeds))
 
