@@ -214,7 +214,7 @@ def candidates():
    record=json.loads(path.read_text(encoding='utf-8'))
    url=record.get('source',''); title=record.get('source_title','')
    domain=urlparse(url).hostname or ''
-   if title and any(allowed(url,d) for _,_,d in FEEDS) and url not in seen:
+   if title and record.get('category') in {c for _,c,_ in FEEDS} and any(allowed(url,d) for _,_,d in FEEDS) and url not in seen:
     seen.add(url)
     yield url,title,record.get('category','technology'),domain
   except (OSError,ValueError):pass
@@ -261,6 +261,7 @@ def main():
  for url,title,cat,domain in candidates():
   if CALLS>=MAX_CALLS or published>=remaining or inspected>=120:break
   if cat in completed_categories:continue
+  if cat not in {c for _,c,_ in FEEDS}:continue
   post_id=hashlib.sha256(url.encode()).hexdigest()[:12]
   if (POSTS/(post_id+'.json')).exists():continue
   pending=PENDING/(post_id+'.json')
