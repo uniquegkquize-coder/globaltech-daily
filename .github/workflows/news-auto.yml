@@ -25,6 +25,30 @@ jobs:
         run: pip install -r requirements.txt
       - name: Compile all Python files
         run: python -m compileall -q scripts
+      - name: Check available Groq models
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          python - <<'CHECK'
+          import os, json, urllib.request
+          key = os.getenv("GROQ_API_KEY")
+          if not key:
+              print("Groq secret missing")
+          else:
+              req = urllib.request.Request(
+                  "https://api.groq.com/openai/v1/models",
+                  headers={"Authorization": "Bearer " + key}
+              )
+              try:
+                  with urllib.request.urlopen(req, timeout=15) as r:
+                      data = json.load(r)
+                  print("Available Groq models:")
+                  for m in data.get("data", []):
+                      print(m["id"])
+              except Exception as e:
+                  print("Groq model discovery failed:", e)
+          CHECK
+
       - name: Generate source-based news
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
