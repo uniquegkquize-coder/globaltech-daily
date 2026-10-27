@@ -143,7 +143,7 @@ def json_object(raw):
 def provider_order():
  # One generation attempt per language; no repeated model probing.
  order=os.getenv('AI_PROVIDER_ORDER','gemini,groq,openrouter').lower().split(',')
- return [p.strip() for p in order if p.strip() in ('groq','gemini','openrouter')]
+ return [p.strip() for p in order if p.strip() in ('groq','gemini','openrouter','openai')]
 # Disable a rate-limited provider for the remainder of this run.
 PROVIDER_COOLDOWNS=set()
 UNAVAILABLE_MODELS=set()
@@ -153,9 +153,9 @@ def call_provider(prompt):
  for provider in provider_order():
   if CALLS>=MAX_CALLS:break
   if provider in PROVIDER_COOLDOWNS:continue
-  key=os.getenv({'groq':'GROQ_API_KEY','gemini':'GEMINI_API_KEY','openrouter':'OPENROUTER_API_KEY'}[provider],'').strip()
+  key=os.getenv({'groq':'GROQ_API_KEY','gemini':'GEMINI_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}[provider],'').strip()
   if not key:continue
-  models=([x.strip() for x in os.getenv('GEMINI_MODELS',os.getenv('GEMINI_MODEL','gemini-2.5-flash')+',gemini-2.5-flash-lite').split(',') if x.strip()] if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else os.getenv('OPENROUTER_MODEL','openrouter/free')])
+  models=([x.strip() for x in os.getenv('GEMINI_MODELS',os.getenv('GEMINI_MODEL','gemini-2.5-flash')+',gemini-2.5-flash-lite').split(',') if x.strip()] if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else (os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free'))])
   for model in dict.fromkeys(models):
    if (provider,model) in UNAVAILABLE_MODELS:continue
    if CALLS>=MAX_CALLS:break
@@ -166,7 +166,7 @@ def call_provider(prompt):
      r=requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',headers={'x-goog-api-key':key},json={'contents':[{'parts':[{'text':prompt}]}],'generationConfig':{'responseMimeType':'application/json','maxOutputTokens':8192}},timeout=(10,100))
      raw=''.join(p.get('text','') for p in r.json()['candidates'][0]['content']['parts']) if r.ok else ''
     else:
-     url='https://api.groq.com/openai/v1/chat/completions' if provider=='groq' else 'https://openrouter.ai/api/v1/chat/completions'
+     url=('https://api.groq.com/openai/v1/chat/completions' if provider=='groq' else ('https://api.openai.com/v1/chat/completions' if provider=='openai' else 'https://openrouter.ai/api/v1/chat/completions'))
      r=requests.post(url,headers={'Authorization':'Bearer '+key},json={'model':model,'messages':[{'role':'user','content':prompt}],'max_tokens':8192,'temperature':0.2},timeout=(10,110))
      raw=r.json()['choices'][0]['message']['content'] if r.ok else ''
     if not r.ok:
@@ -261,7 +261,7 @@ def main():
  remaining=POSTS_PER_RUN
  print('Target posts this run:',remaining,flush=True)
  if not remaining:return 0
- if not any(os.getenv(k) for k in ('GROQ_API_KEY','GEMINI_API_KEY','OPENROUTER_API_KEY')):
+ if not any(os.getenv(k) for k in ('GROQ_API_KEY','GEMINI_API_KEY','OPENROUTER_API_KEY','OPENAI_API_KEY')):
   print('No AI provider configured');return 0
  published=0; inspected=0; completed_categories=set()
  for url,title,cat,domain in candidates():
