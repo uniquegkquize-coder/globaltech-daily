@@ -14,7 +14,7 @@ MIN_HINDI_CHARS=int(os.getenv('MIN_HINDI_CHARS','0'))
 def complete_body(body,lang):
  return bool(body and body.strip() and len(body.strip())>=MIN_HINDI_CHARS and len(re.findall(r'[.!?।]',body))>=2 and len(body.strip())>=120)
 MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
-POSTS_PER_RUN=max(1,min(15,int(os.getenv('POSTS_PER_RUN','15'))))
+POSTS_PER_RUN=max(1,min(30,int(os.getenv('POSTS_PER_RUN','30'))))
 MIN_SOURCE_WORDS=0
 OFFICIAL_JOB_DOMAINS=('upsc.gov.in','ssc.gov.in','rrbcdg.gov.in','indianrailways.gov.in','employmentnews.gov.in','nta.ac.in','gov.in','nic.in')
 CALLS=0
