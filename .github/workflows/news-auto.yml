@@ -1,12 +1,6 @@
 name: GlobalTech Daily Auto News
 on:
   workflow_dispatch:
-    inputs:
-      reset_posts_for_test:
-        description: "Delete all old generated posts and reset today count (irreversible)"
-        type: boolean
-        required: false
-        default: false
   schedule:
     - cron: '0 3,9,15,21 * * *'
 permissions:
@@ -31,9 +25,6 @@ jobs:
         run: pip install -r requirements.txt
       - name: Compile all Python files
         run: python -m compileall -q scripts
-      - name: Reset old posts for one-time manual test
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.reset_posts_for_test == true }}
-        run: python -u scripts/reset_posts_for_test.py
       - name: Generate source-based news
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -41,13 +32,20 @@ jobs:
           SITE_URL: https://globaltech-daily.pages.dev
           PYTHONUNBUFFERED: '1'
           DAILY_LIMIT: '12'
-          MAX_MODELS_PER_ARTICLE: '100'
+          MAX_MODELS_PER_ARTICLE: '1'
+          MAX_AI_CALLS_PER_RUN: '2'
+          MAX_SOURCE_CANDIDATES: '6'
+          MIN_ARTICLE_WORDS: '1200'
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: llama-3.3-70b-versatile
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
         run: python -u scripts/collect.py
       - name: Generate original article featured images (best effort)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_IMAGE_MODEL: gemini-2.5-flash-image
-          MAX_NEW_IMAGES: '8'
+          MAX_NEW_IMAGES: '1'
         run: python -u scripts/generate_images.py
       - name: Build website
         env:

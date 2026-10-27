@@ -10,10 +10,6 @@ FEED_SOURCES = [
  ('https://blog.cloudflare.com/rss/', 'technology'),
  ('https://www.cisa.gov/cybersecurity-advisories/all.xml', 'technology'),
  ('https://www.nasa.gov/feed/', 'technology'),
- ('https://www.isro.gov.in/ISRO_EN/rss.xml', 'technology'),
- ('https://www.pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3', 'government-schemes'),
- ('https://www.pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=1', 'government-schemes'),
- ('https://www.employmentnews.gov.in/NewsRss.aspx', 'sarkari-naukri'),
 ]
 FEEDS = FEED_SOURCES
 SCHEME_WORDS = ('scheme','yojana','subsidy','beneficiary','welfare','pension','pm-kisan','scholarship','आवास','योजना','सब्सिडी','पेंशन')
@@ -25,7 +21,11 @@ def categorize(headline, default):
     return default
 
 PREFERRED_MODELS = [m.strip() for m in os.getenv('GEMINI_MODELS', 'gemini-3.5-flash-lite,gemini-3.1-flash-lite,gemini-3.5-flash,gemini-3.6-flash,gemini-3.8-flash').split(',') if m.strip()]
-MAX_MODELS_PER_ARTICLE = max(1, min(200, int(os.getenv('MAX_MODELS_PER_ARTICLE', '100'))))
+MAX_MODELS_PER_ARTICLE = max(0, min(2, int(os.getenv('MAX_MODELS_PER_ARTICLE', '1'))))
+MAX_AI_CALLS_PER_RUN = max(0, min(8, int(os.getenv('MAX_AI_CALLS_PER_RUN', '2'))))
+AI_CALLS = 0
+QUOTA_EXHAUSTED = set()
+MAX_SOURCE_CANDIDATES = max(1, min(30, int(os.getenv('MAX_SOURCE_CANDIDATES', '8'))))
 MODEL_CACHE = None
 
 def discover_models(api_key):
@@ -65,6 +65,7 @@ def discover_models(api_key):
         MODEL_CACHE = []
     return MODEL_CACHE
 
+MIN_WORDS = max(300, int(os.getenv('MIN_ARTICLE_WORDS', '1200')))
 LIMIT = int(os.getenv('DAILY_LIMIT', '10'))
 UTC = dt.timezone.utc
 
@@ -82,15 +83,66 @@ def today_count():
             pass
     return total
 
+def valid_article(data):
+    return (isinstance(data, dict)
+            and all(isinstance(data.get(k), str) and len(data[k].split()) >= MIN_WORDS for k in ('en_body', 'hi_body'))
+            and all(isinstance(data.get(k), str) and len(data[k].strip()) >= 30 for k in ('en_title', 'hi_title')))
+
+def alternate_provider(prompt):
+    """Optional fallback. Free model availability and quotas are provider-controlled."""
+    global AI_CALLS
+    router_key = os.getenv('OPENROUTER_API_KEY', '').strip()
+    groq_key = os.getenv('GROQ_API_KEY', '').strip()
+    poll_key = os.getenv('POLLINATIONS_API_KEY', '').strip()
+    providers = []
+    if groq_key:
+        providers.append(('Groq', 'https://api.groq.com/openai/v1/chat/completions',
+                          {'Authorization': 'Bearer ' + groq_key},
+                          os.getenv('GROQ_MODEL', 'llama-3.3-70b-versatile')))
+    if router_key:
+        providers.append(('OpenRouter', 'https://openrouter.ai/api/v1/chat/completions',
+                          {'Authorization': 'Bearer ' + router_key},
+                          os.getenv('OPENROUTER_MODEL', 'openrouter/free')))
+    # Pollinations text API can require a key; do not pretend anonymous access is guaranteed.
+    if poll_key:
+        providers.append(('Pollinations', 'https://gen.pollinations.ai/v1/chat/completions',
+                          {'Authorization': 'Bearer ' + poll_key},
+                          os.getenv('POLLINATIONS_MODEL', 'openai')))
+    for name, endpoint, headers, model in providers:
+        if AI_CALLS >= MAX_AI_CALLS_PER_RUN: break
+        if name in QUOTA_EXHAUSTED: continue
+        AI_CALLS += 1
+        try:
+            response = requests.post(endpoint, headers=headers,
+                json={'model': model, 'messages': [{'role': 'user', 'content': prompt}],
+                      'response_format': {'type': 'json_object'}, 'max_tokens': 8500},
+                timeout=(10, 100))
+            if not response.ok:
+                print(name, 'HTTP', response.status_code, response.text[:120], flush=True)
+                if response.status_code in (401, 402, 403, 429): QUOTA_EXHAUSTED.add(name)
+                continue
+            content = response.json()['choices'][0]['message']['content']
+            data = json.loads(content)
+            if valid_article(data):
+                print(name, 'model succeeded:', model, flush=True)
+                return data
+            print(name, 'response below minimum or invalid', flush=True)
+        except (requests.RequestException, ValueError, KeyError, IndexError, TypeError) as exc:
+            print(name, 'failed:', type(exc).__name__, str(exc)[:140], flush=True)
+    return None
+
 def generate(api_key, title, excerpt, source, category):
     prompt = f'''You are an experienced bilingual editor. Produce an original, carefully attributed, helpful, detailed public-information article based ONLY on the verified supplied source text. Category: {category}. Source URL: {source}. Headline: {title}. Source material: {excerpt[:24000]}.
-Return ONLY JSON fields en_title, hi_title, en_body, hi_body, en_meta, hi_meta, en_keywords, hi_keywords. Write in English and Hindi, independently natural, with ## section headings and actionable but accurate explanations. Each language article MUST contain at least 3000 words of distinct, source-supported information. Never invent dates, eligibility, salaries, deadlines, vacancy counts, links, quotes, tests, prices, application procedures, or results. Do not repeat or pad to reach length. If the source lacks enough verified detail for 3000 substantive words in BOTH languages, return {{}} instead of publishing. Explicitly distinguish confirmed facts from unknowns; link to original source. For government jobs, avoid implying an official notice exists unless the source provides one; never invent application links. No plagiarized passages.'''
-    payload = {'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'responseMimeType': 'application/json', 'maxOutputTokens': 32768}}
-    models = discover_models(api_key)
+Return ONLY JSON fields en_title, hi_title, en_body, hi_body, en_meta, hi_meta, en_keywords, hi_keywords. Write in English and Hindi, independently natural, with ## section headings and actionable but accurate explanations. Each language article MUST contain at least {MIN_WORDS} words of distinct, source-supported information. Never invent dates, eligibility, salaries, deadlines, vacancy counts, links, quotes, tests, prices, application procedures, or results. Do not repeat or pad to reach length. If the source lacks enough verified detail for {MIN_WORDS} substantive words in BOTH languages, return {{}} instead of publishing. Explicitly distinguish confirmed facts from unknowns; link to original source. For government jobs, avoid implying an official notice exists unless the source provides one; never invent application links. No plagiarized passages.'''
+    global AI_CALLS
+    payload = {'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'responseMimeType': 'application/json', 'maxOutputTokens': 9000}}
+    models = discover_models(api_key) if api_key and 'Gemini' not in QUOTA_EXHAUSTED and MAX_MODELS_PER_ARTICLE else []
     if not models:
-        print('No compatible models discovered; check API key/project.', flush=True)
-        return None
+        print('No Gemini models available; trying configured alternatives.', flush=True)
+        return alternate_provider(prompt)
     for model in models[:MAX_MODELS_PER_ARTICLE]:
+        if AI_CALLS >= MAX_AI_CALLS_PER_RUN: break
+        AI_CALLS += 1
         print('Trying Gemini model:', model, flush=True)
         try:
             resp = requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent', headers={'x-goog-api-key': api_key}, json=payload, timeout=(10, 65))
@@ -98,22 +150,24 @@ Return ONLY JSON fields en_title, hi_title, en_body, hi_body, en_meta, hi_meta, 
                 print('Model HTTP', resp.status_code, resp.text[:200], flush=True)
                 if resp.status_code == 429 and 'quota' in resp.text.lower():
                     print('Quota limit reached; stopping this article to avoid waste', flush=True)
-                    return None
+                    QUOTA_EXHAUSTED.add('Gemini')
+                    return alternate_provider(prompt)
                 if resp.status_code in (401, 403):
                     print('Authentication/billing restriction; stopping attempts', flush=True)
-                    return None
+                    QUOTA_EXHAUSTED.add('Gemini')
+                    return alternate_provider(prompt)
                 continue
             raw = resp.json()['candidates'][0]['content']['parts'][0]['text']
             data = json.loads(raw)
             required = ('en_title', 'hi_title', 'en_body', 'hi_body')
-            if not isinstance(data, dict) or any(not isinstance(data.get(k), str) or len(data[k].strip().split()) < 3000 for k in required if k.endswith('_body')) or any(not isinstance(data.get(k), str) or len(data[k].strip()) < 30 for k in ('en_title','hi_title')):
-                print('Under 3000 words in one or both languages; not publishing', flush=True)
+            if not isinstance(data, dict) or any(not isinstance(data.get(k), str) or len(data[k].strip().split()) < MIN_WORDS for k in required if k.endswith('_body')) or any(not isinstance(data.get(k), str) or len(data[k].strip()) < 30 for k in ('en_title','hi_title')):
+                print(f'Under {MIN_WORDS} words in one or both languages; not publishing', flush=True)
                 continue
             print('Gemini model succeeded:', model, flush=True)
             return data
         except (requests.RequestException, ValueError, KeyError, IndexError, TypeError) as exc:
             print('Model failed:', type(exc).__name__, str(exc)[:150], flush=True)
-    return None
+    return alternate_provider(prompt)
 
 def fetch_source(url):
     """Extract official article text; external images are not reused without license."""
@@ -135,12 +189,13 @@ def main():
     if os.getenv('AUTO_POST', 'false').lower() != 'true':
         print('AUTO_POST disabled'); return 0
     api_key = os.getenv('GEMINI_API_KEY', '').strip()
-    if not api_key:
-        print('GEMINI_API_KEY missing'); return 1
+    if not any(os.getenv(k, '').strip() for k in ('GEMINI_API_KEY', 'GROQ_API_KEY', 'OPENROUTER_API_KEY', 'POLLINATIONS_API_KEY')):
+        print('No provider API key configured'); return 1
     remaining = max(0, LIMIT - today_count())
     print('Remaining daily allowance:', remaining, flush=True)
     if remaining == 0: return 0
     created = 0
+    candidates = 0
     for feed, default_category in FEEDS:
         try:
             response = requests.get(feed, timeout=25, headers={'User-Agent': 'GlobalTechDailyBot/1.0'})
@@ -150,7 +205,7 @@ def main():
         except requests.RequestException as exc:
             print('RSS unavailable:', str(exc)[:160]); continue
         for entry in entries[:30]:
-            if created >= remaining: break
+            if created >= remaining or AI_CALLS >= MAX_AI_CALLS_PER_RUN or candidates >= MAX_SOURCE_CANDIDATES: break
             url = entry.get('link', '').strip()
             if not url.startswith('https://'): continue
             post_id = hashlib.sha256(url.encode()).hexdigest()[:12]
@@ -164,6 +219,7 @@ def main():
             article_text, image_url = fetch_source(url)
             if len(article_text) > len(excerpt): excerpt = article_text
             if len(excerpt) < 160: continue
+            candidates += 1
             print('Processing:', clean(entry.get('title'))[:90], flush=True)
             category = categorize(clean(entry.get('title')), default_category)
             article = generate(api_key, clean(entry.get('title')), excerpt, url, category)
@@ -173,7 +229,8 @@ def main():
             created += 1
             print('Saved article', created, post_id, flush=True)
             time.sleep(2)
-        if created >= remaining: break
+        if created >= remaining or AI_CALLS >= MAX_AI_CALLS_PER_RUN or candidates >= MAX_SOURCE_CANDIDATES: break
+    print('AI requests used this run:', AI_CALLS, 'of', MAX_AI_CALLS_PER_RUN, flush=True)
     print('Published', created, flush=True)
     return 0
 
