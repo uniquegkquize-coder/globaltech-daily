@@ -99,6 +99,7 @@ SCHEME=('scheme','yojana','subsidy','welfare','pension','scholarship','beneficia
 JOB=('recruitment','vacancy','notification','admit card','exam','upsc','ssc','भर्ती','रिक्ति','नौकरी')
 def category(title, default):
  t=title.lower()
+ if default not in ('sarkari-naukri','government-schemes'): return default
  if any(x in t for x in JOB): return 'sarkari-naukri'
  if any(x in t for x in SCHEME): return 'government-schemes'
  return default
@@ -241,7 +242,8 @@ def candidates():
    try: age=(dt.datetime.now(UTC).date()-dt.date(*published[:3])).days
    except (TypeError,ValueError): continue
    if age<0 or age>3:continue
-   groups[cat].append((url,title,category(title,cat),domain))
+   actual_cat=category(title,cat)
+   groups[actual_cat].append((url,title,actual_cat,domain))
  for cat in groups:
   groups[cat].sort(key=lambda item: (-int(any(k in item[1].lower() for k in ('ai ', 'openai', 'google', 'apple', 'microsoft', 'nvidia', 'launch', 'breaking', 'trailer', 'box office', 'netflix', 'bollywood', 'hollywood', 'release', 'recruitment', 'scheme', 'योजना', 'भर्ती'))),item[1]))
  for i in range(max(map(len,groups.values()),default=0)):
