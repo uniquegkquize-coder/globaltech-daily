@@ -42,7 +42,7 @@ class NewsroomConfigTests(unittest.TestCase):
         self.assertIn("if not data or not complete_body(state.get(lang+'_body',''),lang):", code)
         self.assertIn("blocked_until", code)
         self.assertIn("for url,title,cat,domain in candidates():", code)
-        self.assertIn("if CALLS>=MAX_CALLS or published>=remaining or inspected>=120:break", code)
+        self.assertIn("if CALLS>=MAX_CALLS or published>=remaining:break", code)
 
     def test_workflow_targets(self):
         workflow = WORKFLOW.read_text(encoding="utf-8")
