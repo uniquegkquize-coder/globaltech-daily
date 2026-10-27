@@ -12,6 +12,7 @@ MIN_WORDS=int(os.getenv('MIN_ARTICLE_WORDS','800'))
 MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
 POSTS_PER_RUN=max(1,min(14,int(os.getenv('POSTS_PER_RUN','14'))))
 MIN_SOURCE_WORDS=int(os.getenv('MIN_SOURCE_WORDS','450'))
+OFFICIAL_JOB_DOMAINS=('upsc.gov.in','ssc.gov.in','rrbcdg.gov.in','indianrailways.gov.in','employmentnews.gov.in','nta.ac.in','gov.in','nic.in')
 CALLS=0
 # News discovery sources. Official-domain verification occurs BEFORE any AI request.
 # Curated global discovery. Publisher RSS is for finding stories; the linked article is
@@ -274,6 +275,9 @@ def main():
   if any(words(state.get(lang+'_body',''))>=MIN_WORDS for lang in ('en','hi')):
    print('Resuming saved draft:',post_id,'English',words(state.get('en_body','')),'Hindi',words(state.get('hi_body','')),flush=True)
   inspected+=1
+  if cat=='sarkari-naukri' and not any(allowed(url,d) for d in OFFICIAL_JOB_DOMAINS):
+   print('Skipping recruitment story without an official government source:',url,flush=True)
+   continue
   text=source_text(url,domain)
   if words(text)<MIN_SOURCE_WORDS and not all(words(state.get(lang+'_body',''))>=MIN_WORDS for lang in ('en','hi')):
    # Preserve completed language drafts even if the publisher temporarily blocks scraping.
