@@ -1,4 +1,7 @@
-
+import sys
+import os
+import json
+import hashlib
 def generate(title, summary, source):
     prompt = (
         'You are writing an attributed short technology announcement digest, not independent reporting. '
