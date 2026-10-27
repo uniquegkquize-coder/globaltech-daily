@@ -145,6 +145,11 @@ def source_text(url,domain):
     paras=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['h2','h3','p','li'])]
     paras=[p for p in paras if len(p)>40]
     if paras:candidates.append('\\n'.join(paras))
+  # Prefer article content; never treat navigation or paywall previews as full reporting.
+  for node in soup.select('[data-component="text-block"], [data-testid="paragraph"], .article__content, .entry-content, .post-content, .story-content')[:6]:
+   paragraphs=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['p','h2','h3'])]
+   paragraphs=[p for p in paragraphs if len(p)>40]
+   if paragraphs:candidates.append(' '.join(paragraphs))
   # Reject short navigation snippets rather than manufacture 300 words.
   return max(candidates,key=words,default='')[:24000]
  except (requests.RequestException,ValueError,TypeError):return ''
