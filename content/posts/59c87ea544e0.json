@@ -1,0 +1,14 @@
+{
+  "en_title": "Cloudflare Introduces Full Transaction Detection for WAF",
+  "hi_title": "क्लाउडफ्लेयर ने डब्ल्यूएएफ के लिए फुल ट्रांजैक्शन डिटेक्शन पेश किया",
+  "en_body": "According to Cloudflare, their web application firewall (WAF) can now correlate an HTTP request with its corresponding response. This new capability is known as full transaction detection.\n\nCloudflare states that full transaction detection helps every customer find successful exploits, data exposure, and risky misconfigurations. The official source notes that these are issues that request-only inspection can miss.",
+  "hi_body": "क्लाउडफ्लेयर के अनुसार, उनका वेब एप्लिकेशन फायरवॉल (WAF) अब एक HTTP अनुरोध को उसकी प्रतिक्रिया के साथ सहसंबद्ध कर सकता है। इस नई क्षमता को फुल ट्रांजैक्शन डिटेक्शन के रूप में जाना जाता है।\n\nक्लाउडफ्लेयर का कहना है कि फुल ट्रांजैक्शन डिटेक्शन प्रत्येक ग्राहक को सफल शोषण, डेटा एक्सपोजर और जोखिम भरे गलत कॉन्फ़िगरेशन का पता लगाने में मदद करता है। आधिकारिक स्रोत के अनुसार, ये ऐसी समस्याएं हैं जिन्हें केवल-अनुरोध निरीक्षण (request-only inspection) द्वारा छोड़ा जा सकता है।",
+  "en_meta": "Cloudflare updates its web application firewall with full transaction detection, correlating HTTP requests and responses to find exploits and data exposure.",
+  "hi_meta": "क्लाउडफ्लेयर ने अपने वेब एप्लिकेशन फायरवॉल को फुल ट्रांजैक्शन डिटेक्शन के साथ अपडेट किया, जिससे शोषण और डेटा एक्सपोजर का पता लगाने में मदद मिलती है।",
+  "en_keywords": "Cloudflare, WAF, full transaction detection, HTTP request, response, security, data exposure",
+  "hi_keywords": "क्लाउडफ्लेयर, WAF, फुल ट्रांजैक्शन डिटेक्शन, HTTP अनुरोध, प्रतिक्रिया, सुरक्षा, डेटा एक्सपोजर",
+  "id": "59c87ea544e0",
+  "source": "https://blog.cloudflare.com/full-transaction-waf/",
+  "date": "2026-10-27T06:28:28.865167+00:00",
+  "source_title": "Introducing full transaction detection for Cloudflare WAF"
+}

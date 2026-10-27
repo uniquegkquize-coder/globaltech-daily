@@ -1,0 +1,14 @@
+{
+  "en_title": "Cloudflare Rebuilds Cache Architecture in Pingora for Origin Range Requests",
+  "hi_title": "क्लाउडफ्लेयर ने ओरिजिन रेंज अनुरोधों के लिए पिंगोरा में कैश आर्किटेक्चर को फिर से बनाया",
+  "en_body": "According to Cloudflare, naive byte-range caching can waste gigabytes of origin bandwidth on small requests. To address this issue, Cloudflare rebuilt its cache architecture in Pingora to coordinate partial fetches automatically.\n\nCloudflare reports that this architectural update cut R2 p99 latency in half. The improvements allow for serving large files without requiring range-request tuning, optimizing bandwidth usage and performance based on the official source.",
+  "hi_body": "क्लाउडफ्लेयर के अनुसार, सामान्य बाइट-रेंज कैशिंग छोटे अनुरोधों पर ओरिजिन बैंडविड्थ के गीगाबाइट बर्बाद कर सकती है। इस समस्या को हल करने के लिए, क्लाउडफ्लेयर ने आंशिक फेच को स्वचालित रूप से समन्वयित करने के लिए पिंगोरा में अपने कैश आर्किटेक्चर को फिर से बनाया है।\n\nक्लाउडफ्लेयर की रिपोर्ट है कि इस आर्किटेक्चरल अपडेट ने R2 p99 विलंबता (latency) को आधा कर दिया है। आधिकारिक स्रोत के आधार पर, ये सुधार रेंज-रेंज ट्यूनिंग की आवश्यकता के बिना बड़ी फाइलों की सेवा देने की अनुमति देते हैं, जिससे बैंडविड्थ उपयोग और प्रदर्शन अनुकूलित होता है।",
+  "en_meta": "Cloudflare rebuilt its cache architecture in Pingora to coordinate partial fetches automatically, cutting R2 p99 latency in half for large files.",
+  "hi_meta": "क्लाउडफ्लेयर ने बड़ी फाइलों के लिए R2 p99 विलंबता को आधा करते हुए, आंशिक फेच को समन्वयित करने के लिए पिंगोरा में कैश आर्किटेक्चर को फिर से बनाया।",
+  "en_keywords": "Cloudflare, Pingora, cache architecture, origin range requests, R2 latency",
+  "hi_keywords": "क्लाउडफ्लेयर, पिंगोरा, कैश आर्किटेक्चर, ओरिजिन रेंज अनुरोध, R2 विलंबता",
+  "id": "60f970e1df3b",
+  "source": "https://blog.cloudflare.com/origin-range-requests/",
+  "date": "2026-10-27T06:28:17.784588+00:00",
+  "source_title": "Origin Range Requests: Serving large files without range-request tuning"
+}
