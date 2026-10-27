@@ -344,7 +344,7 @@ def resolve_google_news(link):
   payload={'f.req':json.dumps([[['Fbv4je',inner,None,'generic']]],separators=(',',':'))}
   response=requests.post('https://news.google.com/_/DotsSplashUi/data/batchexecute?rpcids=Fbv4je',data=payload,headers={'User-Agent':'Mozilla/5.0','Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},timeout=(4,9))
   response.raise_for_status()
-  match=re.search(r'\\[\\["wrb.fr","Fbv4je",("(?:\\\\.|[^"\\\\])*"|null)',response.text)
+  match=re.search(r'Fbv4je.*?(https?[^\\s"\\\\]+)',response.text)
   if not match or match.group(1)=='null':return ''
   decoded=json.loads(json.loads(match.group(1)))
   target=decoded[1]
