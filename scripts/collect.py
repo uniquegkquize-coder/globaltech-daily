@@ -215,6 +215,32 @@ def story_priority(item):
  popular=any(term in t for term in POPULAR_TERMS)
  return (not major,not popular,title.lower())
 
+# Website-first discovery: visit publisher home/category pages before RSS fallback.
+# Each website is attempted once per category, with bounded concurrency and timeouts.
+WEBSITE_PATHS={'world-news':'/world','technology':'/technology','business':'/business','sports':'/sport','movies-entertainment':'/entertainment','automobiles':'/auto','health-science':'/science','government-schemes':'/','sarkari-naukri':'/','gaming':'/gaming','environment':'/environment','travel':'/travel','education':'/education','lifestyle':'/lifeandstyle'}
+def website_stories(item):
+ feed,cat,domain=item
+ path=WEBSITE_PATHS.get(cat,'/')
+ # Keep all configured publishers; their sites are the primary discovery surface.
+ base='https://'+domain+path
+ try:
+  response=requests.get(base,timeout=(5,10),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobalTechDaily/1.0)'})
+  response.raise_for_status()
+  if not allowed(response.url,domain) or 'html' not in response.headers.get('content-type','').lower():return item,[]
+  soup=BeautifulSoup(response.text[:900000],'html.parser')
+  stories=[]; seen_urls=set()
+  for a in soup.select('article a[href], h2 a[href], h3 a[href], main a[href]'):
+   from urllib.parse import urljoin
+   url=urljoin(response.url,a.get('href','')).split('#')[0].split('?')[0]
+   title=clean(a.get_text(' ',strip=True) or a.get('aria-label',''))
+   if not allowed(url,domain) or url in seen_urls or len(title)<35 or len(title)>210:continue
+   if url.rstrip('/')==base.rstrip('/') or any(z in url.lower() for z in ('/tag/','/author/','/category/','/topics/','/video/','/live/','/search/')):continue
+   if len(urlparse(url).path.strip('/').split('/'))<2:continue
+   seen_urls.add(url);stories.append((url,title,cat,domain))
+   if len(stories)>=15:break
+  return item,stories
+ except (requests.RequestException,ValueError):return item,[]
+
 def candidates():
  seen=set()
  counts=published_categories()
@@ -239,7 +265,20 @@ def candidates():
     seen.add(url)
     yield url,title,record.get('category','technology'),domain
   except (OSError,ValueError):pass
- # Interleave categories so one technology blog cannot consume the whole quota.
+ # First search major publisher websites across every category.
+ groups={cat:[] for _,cat,_ in FEEDS}
+ with ThreadPoolExecutor(max_workers=10) as pool:
+  website_results=list(pool.map(website_stories,FEEDS))
+ for (feed,cat,domain),stories in website_results:
+  print('Website',domain,'category',cat,'candidates',len(stories),flush=True)
+  for story in stories:
+   if story[0] not in seen:
+    seen.add(story[0]);groups[cat].append(story)
+ for cat in groups:groups[cat].sort(key=story_priority)
+ for i in range(max(map(len,groups.values()),default=0)):
+  for cat in sorted(groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
+   if i<len(groups[cat]):yield groups[cat][i]
+ # Only after publisher websites, use RSS feeds as fallback discovery.
  groups={cat:[] for _,cat,_ in FEEDS}
  def read_feed(item):
   feed,cat,domain=item
