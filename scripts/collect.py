@@ -352,7 +352,7 @@ def candidates():
   for story in stories:
    if story[0] not in seen:
     seen.add(story[0]);google_groups[cat].append(story)
- for i in range(max(map(len,google_groups.values()),default=0))):
+ for i in range(max(map(len,google_groups.values()),default=0)):
   for cat in sorted(google_groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
    if i<len(google_groups[cat]):yield google_groups[cat][i]
  # First search major publisher websites across every category.
