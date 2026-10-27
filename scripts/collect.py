@@ -8,9 +8,9 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 POSTS=ROOT/'content/posts'; PENDING=ROOT/'content/pending'
 POSTS.mkdir(parents=True,exist_ok=True); PENDING.mkdir(parents=True,exist_ok=True)
 UTC=dt.timezone.utc
-MIN_WORDS=int(os.getenv('MIN_ARTICLE_WORDS','800'))
-MIN_HINDI_WORDS=int(os.getenv('MIN_HINDI_WORDS','450'))
-MIN_HINDI_CHARS=int(os.getenv('MIN_HINDI_CHARS','2500'))
+MIN_WORDS=int(os.getenv('MIN_ARTICLE_WORDS','300'))
+MIN_HINDI_WORDS=int(os.getenv('MIN_HINDI_WORDS','300'))
+MIN_HINDI_CHARS=int(os.getenv('MIN_HINDI_CHARS','0'))
 def complete_body(body,lang):
  return (words(body)>=MIN_WORDS if lang=='en' else words(body)>=MIN_HINDI_WORDS and len(body.strip())>=MIN_HINDI_CHARS)
 MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
@@ -368,7 +368,7 @@ def main():
    if CALLS>=MAX_CALLS:break
    prior=state.get(lang+'_body','')
    prompt=article_prompt(lang,title,url,text,cat)
-   if prior and words(prior)>=400:
+   if prior and words(prior)>=200:
     prompt += ('\nEXISTING ORIGINAL DRAFT (preserve its accurate material; return a COMPLETE revised body, not only an addendum):\n'+prior[:24000]+'\nImprove with additional SOURCE-SUPPORTED context until minimum length is met. Never fabricate details.')
    data,provider=call_provider(prompt)
    if isinstance(data,dict):
