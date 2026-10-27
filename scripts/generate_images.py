@@ -16,7 +16,7 @@ KEY=os.getenv('GEMINI_API_KEY','').strip()
 MODEL=os.getenv('GEMINI_IMAGE_MODEL','gemini-2.5-flash-image').strip()
 MODELS=list(dict.fromkeys([m.strip() for m in (MODEL+','+os.getenv('GEMINI_IMAGE_FALLBACK_MODELS','gemini-3-pro-image-preview')).split(',') if m.strip()]))
 QUOTA_BLOCKED=set()
-MAX_NEW=max(0,min(30,int(os.getenv('MAX_NEW_IMAGES','30'))))
+MAX_NEW=max(0,int(os.getenv('MAX_NEW_IMAGES','0')))  # 0 means scan all posts
 
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
 
@@ -118,17 +118,17 @@ def main():
     # Rotate the backfill window each run; otherwise the same newest 30 missing-image posts
     # consume every run and older stories never get examined.
     if posts:
-        window=max(1,MAX_NEW)
+        window=max(1,MAX_NEW or len(posts))
         slot=int(datetime.datetime.now(datetime.timezone.utc).timestamp()//3600)
         offset=(slot*window)%len(posts)
         posts=posts[offset:]+posts[:offset]
         print('Image backfill rotation',offset,'of',len(posts),flush=True)
     count=0
     for p in posts:
-        if count>=MAX_NEW:break
+        if MAX_NEW and count>=MAX_NEW:break
         if (IMAGES/(slug(p)+'.jpg')).exists():continue
         count+=1
         if licensed_source_image(p):continue
         if KEY and len(QUOTA_BLOCKED)<len(MODELS):create(p)
-    print('Image backfill attempts:',count,flush=True)
+    print('Image backfill attempts:',count,'of',len(posts),'posts',flush=True)
 if __name__=='__main__':main()
