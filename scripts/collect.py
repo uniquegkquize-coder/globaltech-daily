@@ -9,8 +9,8 @@ POSTS=ROOT/'content/posts'; PENDING=ROOT/'content/pending'
 POSTS.mkdir(parents=True,exist_ok=True); PENDING.mkdir(parents=True,exist_ok=True)
 UTC=dt.timezone.utc
 MIN_WORDS=int(os.getenv('MIN_ARTICLE_WORDS','800'))
-MAX_CALLS=min(28,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','28'))))
-DAILY_LIMIT=int(os.getenv('DAILY_LIMIT','28'))
+MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
+POSTS_PER_RUN=max(1,min(14,int(os.getenv('POSTS_PER_RUN','14'))))
 MIN_SOURCE_WORDS=int(os.getenv('MIN_SOURCE_WORDS','450'))
 CALLS=0
 # News discovery sources. Official-domain verification occurs BEFORE any AI request.
@@ -140,7 +140,7 @@ def json_object(raw):
 
 def provider_order():
  # One generation attempt per language; no repeated model probing.
- order=os.getenv('AI_PROVIDER_ORDER','groq,gemini,openrouter').lower().split(',')
+ order=os.getenv('AI_PROVIDER_ORDER','gemini,groq,openrouter').lower().split(',')
  return [p.strip() for p in order if p.strip() in ('groq','gemini','openrouter')]
 # Disable a rate-limited provider for the remainder of this run.
 PROVIDER_COOLDOWNS=set()
@@ -250,14 +250,15 @@ def candidates():
 
 def main():
  if os.getenv('AUTO_POST','false').lower()!='true':print('AUTO_POST disabled');return 0
- remaining=max(0,DAILY_LIMIT-day_count())
- print('Remaining daily allowance:',remaining,flush=True)
+ remaining=POSTS_PER_RUN
+ print('Target posts this run:',remaining,flush=True)
  if not remaining:return 0
  if not any(os.getenv(k) for k in ('GROQ_API_KEY','GEMINI_API_KEY','OPENROUTER_API_KEY')):
   print('No AI provider configured');return 0
- published=0; inspected=0
+ published=0; inspected=0; completed_categories=set()
  for url,title,cat,domain in candidates():
-  if CALLS>=MAX_CALLS or published>=remaining or inspected>=24:break
+  if CALLS>=MAX_CALLS or published>=remaining or inspected>=120:break
+  if cat in completed_categories:continue
   post_id=hashlib.sha256(url.encode()).hexdigest()[:12]
   if (POSTS/(post_id+'.json')).exists():continue
   pending=PENDING/(post_id+'.json')
@@ -308,9 +309,12 @@ def main():
    save_state(POSTS/(post_id+'.json'),article)
    pending.unlink(missing_ok=True)
    published+=1
+   completed_categories.add(cat)
    print('Published',post_id,cat,flush=True)
   else:save_state(pending,state)
  print('AI requests used this run:',CALLS,'of',MAX_CALLS,flush=True)
- print('Published',published,flush=True)
+ print('Published',published,'of',remaining,'target categories',flush=True)
+ print('Categories completed:',', '.join(sorted(completed_categories)),flush=True)
+ print('Categories still missing:',', '.join(sorted(set(c for _,c,_ in FEEDS)-completed_categories)),flush=True)
  return 0
 if __name__=='__main__':sys.exit(main())
