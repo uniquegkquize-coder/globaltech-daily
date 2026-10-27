@@ -28,19 +28,14 @@ def shell(lang,t,desc,url,body,extra=''):
  nav=[('Home','होम',''),('AI Tools','AI टूल्स','tools/'),('Schemes','सरकारी योजनाएँ','government-schemes/'),('Jobs','सरकारी नौकरी','sarkari-naukri/'),('Private Jobs','प्राइवेट नौकरी','private-vacancy/'),('Movies','फिल्में','movies-entertainment/'),('World','दुनिया','world-news/'),('Business','बिज़नेस','business/'),('Sports','खेल','sports/'),('Gaming','गेमिंग','gaming/'),('Environment','पर्यावरण','environment/'),('Travel','यात्रा','travel/'),('Education','शिक्षा','education/'),('Lifestyle','लाइफस्टाइल','lifestyle/'),('About','हमारे बारे में','about/'),('Editorial','संपादकीय नीति','editorial/'),('Contact','संपर्क','contact/')]
  links=''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in nav)
  return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a1429"><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="stylesheet" href="/style.css">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobalTech <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="/{'hi' if lang=='en' else 'en'}/">{'हिन्दी' if lang=='en' else 'English'}</a></nav></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobalTech Daily</strong><p>Independent AI-assisted technology explainers with source attribution.</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{s.title()}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js"></script></body></html>'''
+def has_featured(p):
+ return (R/'content'/'featured'/f'{slug(p)}.jpg').is_file()
+
 def image_for(p):
- """Use a verified generated article-specific image, otherwise a neutral non-photographic placeholder."""
+ """Only publish genuine article-specific featured images; never generate empty placeholders."""
+ if not has_featured(p):return
  s=slug(p);dest=OUT/'images'/f'{s}.jpg';dest.parent.mkdir(parents=True,exist_ok=True)
- existing=R/'content'/'featured'/f'{s}.jpg'
- if existing.is_file():
-  shutil.copy2(existing,dest)
-  return
- # Do not fabricate an event image or reuse an unrelated category illustration.
- im=Image.new('RGB',(1280,720),'#15233b')
- draw=ImageDraw.Draw(im)
- draw.rounded_rectangle((100,120,1180,600),radius=36,outline='#42617e',width=5)
- draw.line((145,510,1135,510),fill='#42617e',width=3)
- im.save(dest,'JPEG',quality=82,optimize=True)
+ shutil.copy2(R/'content'/'featured'/f'{s}.jpg',dest)
 def body_html(raw):
  parts=[];buf=[]
  def flush():
@@ -59,19 +54,24 @@ def image_caption(p,lang):
   return 'AI-generated conceptual illustration — not an event photograph.' if lang=='en' else 'AI से बनाई गई सांकेतिक तस्वीर — वास्तविक घटना की फोटो नहीं।'
  return 'Neutral placeholder — no verified article image available.' if lang=='en' else 'सांकेतिक स्थानापन्न चित्र — सत्यापित समाचार तस्वीर उपलब्ध नहीं।'
 def card(p,lang):
- s=slug(p);t=title(p,lang);return f'<article class="card"><a href="/{lang}/news/{s}/"><img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="Conceptual illustration for {e(t)}"><div class="inner"><span class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])} · {e(urlparse(p.get("source","")).hostname or "Source")}</div></div></a></article>'
+ s=slug(p);t=title(p,lang)
+ picture=f'<img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="AI-generated conceptual illustration for {e(t)}">' if has_featured(p) else ''
+ return f'<article class="card"><a href="/{lang}/news/{s}/">{picture}<div class="inner"><span class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=="en" else 1])}</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])} · {e(urlparse(p.get("source","")).hostname or "Source")}</div></div></a></article>'
+
 for p in POSTS:image_for(p)
 for p in POSTS:
  s=slug(p)
  for lang in ('en','hi'):
   t=title(p,lang);raw=p.get(lang+'_body') or p.get('en_body','');url=f'{SITE}/{lang}/news/{s}/';desc=p.get(lang+'_meta') or re.sub(r'[#\n]+',' ',raw)[:155]
   related=[q for q in POSTS if slug(q)!=s][:4];related_html=''.join(f'<a href="/{lang}/news/{slug(q)}/">{e(title(q,lang))}</a>' for q in related)
-  schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':[f'{SITE}/images/{s}.jpg'],'author':{'@type':'Organization','name':'GlobalTech Daily Editorial Desk'},'publisher':{'@type':'Organization','name':'GlobalTech Daily','url':SITE},'isBasedOn':p['source']}
+  schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg'] if has_featured(p) else []),'author':{'@type':'Organization','name':'GlobalTech Daily Editorial Desk'},'publisher':{'@type':'Organization','name':'GlobalTech Daily','url':SITE},'isBasedOn':p['source']}
   schema_json=json.dumps(schema,ensure_ascii=False).replace('<',chr(92)+'u003c')
-  extra=f'<meta property="og:type" content="article"><meta property="og:title" content="{e(t)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="{SITE}/images/{s}.jpg"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{schema_json}</script>'
+  og_image=f'<meta property="og:image" content="{SITE}/images/{s}.jpg">' if has_featured(p) else ''
+  extra=f'<meta property="og:type" content="article"><meta property="og:title" content="{e(t)}"><meta property="og:description" content="{e(desc)}">{og_image}<meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{schema_json}</script>'
   sourcehost=urlparse(p['source']).hostname or 'original source'
   summary=e(p.get(lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
-  content=f'''<div class="wrap"><article class="article"><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1><p class="date">{e(p.get('date','')[:10])} · GlobalTech Daily Editorial Desk · Source: {e(sourcehost)}</p><img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="Conceptual illustration for {e(t)}"><p class="notice" style="margin-top:-12px">{e(image_caption(p,lang))}</p><div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div><div class="story">{body_html(raw)}</div><div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div></article></div>'''
+  featured_html=(f'<img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="AI-generated conceptual illustration for {e(t)}"><p class="notice">{e(image_caption(p,lang))}</p>' if has_featured(p) else '')
+  content=f'''<div class="wrap"><article class="article"><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1><p class="date">{e(p.get('date','')[:10])} · GlobalTech Daily Editorial Desk · Source: {e(sourcehost)}</p>{featured_html}<div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div><div class="story">{body_html(raw)}</div><div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div></article></div>'''
   write(OUT/lang/'news'/s/'index.html',shell(lang,t,desc,url,content,extra))
 for lang in ('en','hi'):
  h='Worldwide news, movies and technology explained' if lang=='en' else 'टेक्नोलॉजी की ताज़ा खबरें, आसान भाषा में'
