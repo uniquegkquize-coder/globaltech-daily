@@ -54,10 +54,10 @@ def image_caption(p,lang):
  if metadata.is_file():
   try:
    info=json.loads(metadata.read_text(encoding='utf-8'))
-   if info.get('kind')=='licensed_source':
+   if info.get('kind') in ('licensed_source','publisher_source'):
     credit=str(info.get('attribution') or 'Original publisher')
     license_name=str(info.get('license') or 'Creative Commons')
-    return (f'Publisher image: {credit} — {license_name}' if lang=='en' else f'प्रकाशक की तस्वीर: {credit} — {license_name}')
+    return (f'Image source: {credit} — rights not verified' if info.get('kind')=='publisher_source' and lang=='en' else f'चित्र स्रोत: {credit} — अधिकार सत्यापित नहीं' if info.get('kind')=='publisher_source' else f'Publisher image: {credit} — {license_name}' if lang=='en' else f'प्रकाशक की तस्वीर: {credit} — {license_name}')
   except (OSError,ValueError):pass
  return 'AI-generated conceptual illustration — not an event photograph.' if lang=='en' else 'AI से बनाई गई सांकेतिक तस्वीर — वास्तविक घटना की फोटो नहीं।'
 def card(p,lang):
