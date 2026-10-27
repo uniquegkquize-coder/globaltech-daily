@@ -50,9 +50,16 @@ def body_html(raw):
  flush();return ''.join(parts)
 def image_caption(p,lang):
  s=slug(p)
- if (R/'content'/'featured'/f'{s}.jpg').is_file():
-  return 'AI-generated conceptual illustration — not an event photograph.' if lang=='en' else 'AI से बनाई गई सांकेतिक तस्वीर — वास्तविक घटना की फोटो नहीं।'
- return 'Neutral placeholder — no verified article image available.' if lang=='en' else 'सांकेतिक स्थानापन्न चित्र — सत्यापित समाचार तस्वीर उपलब्ध नहीं।'
+ metadata=R/'content'/'featured'/f'{s}.json'
+ if metadata.is_file():
+  try:
+   info=json.loads(metadata.read_text(encoding='utf-8'))
+   if info.get('kind')=='licensed_source':
+    credit=str(info.get('attribution') or 'Original publisher')
+    license_name=str(info.get('license') or 'Creative Commons')
+    return (f'Publisher image: {credit} — {license_name}' if lang=='en' else f'प्रकाशक की तस्वीर: {credit} — {license_name}')
+  except (OSError,ValueError):pass
+ return 'AI-generated conceptual illustration — not an event photograph.' if lang=='en' else 'AI से बनाई गई सांकेतिक तस्वीर — वास्तविक घटना की फोटो नहीं।'
 def card(p,lang):
  s=slug(p);t=title(p,lang)
  picture=f'<img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="AI-generated conceptual illustration for {e(t)}">' if has_featured(p) else ''
