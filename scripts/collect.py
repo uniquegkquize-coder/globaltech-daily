@@ -204,6 +204,17 @@ def published_categories():
   except (OSError,ValueError,TypeError):pass
  return counts
 
+# Prioritize major editorial publishers and current popular headlines. RSS is only a
+# discovery transport, never a reason to rank an independent blog above major news.
+MAJOR_PUBLISHERS=('bbc.co.uk','theguardian.com','npr.org','aljazeera.com','dw.com','france24.com','skynews.com','cbc.ca','abc.net.au','nbcnews.com','nytimes.com','bloomberg.com','wsj.com','espn.com','variety.com','deadline.com','hollywoodreporter.com','technologyreview.com','nasa.gov','pib.gov.in','upsc.gov.in','ssc.gov.in')
+POPULAR_TERMS=('breaking','live','major','record','world cup','election','launch','release','trailer','box office','ai','google','apple','microsoft','nvidia','openai','recruitment','scheme','योजना','भर्ती')
+def story_priority(item):
+ url,title,cat,domain=item
+ t=title.lower()
+ major=any(domain==d or domain.endswith('.'+d) for d in MAJOR_PUBLISHERS)
+ popular=any(term in t for term in POPULAR_TERMS)
+ return (not major,not popular,title.lower())
+
 def candidates():
  seen=set()
  counts=published_categories()
@@ -255,7 +266,7 @@ def candidates():
    actual_cat=category(title,cat)
    groups[actual_cat].append((url,title,actual_cat,domain))
  for cat in groups:
-  groups[cat].sort(key=lambda item: (-int(any(k in item[1].lower() for k in ('ai ', 'openai', 'google', 'apple', 'microsoft', 'nvidia', 'launch', 'breaking', 'trailer', 'box office', 'netflix', 'bollywood', 'hollywood', 'release', 'recruitment', 'scheme', 'योजना', 'भर्ती'))),item[1]))
+  groups[cat].sort(key=story_priority)
  for i in range(max(map(len,groups.values()),default=0)):
   for cat in sorted(groups, key=lambda c:(c not in missing, counts.get(c,0),c)):
    if i<len(groups[cat]): yield groups[cat][i]
