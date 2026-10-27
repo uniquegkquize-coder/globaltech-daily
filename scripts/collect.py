@@ -191,7 +191,7 @@ def call_provider(prompt):
 
 def article_prompt(lang,title,source,source_material,cat):
  language='English' if lang=='en' else 'Hindi (Devanagari)'
- return f'''You are a careful editor for a public-information news site. Write ONE original article in {language}. Return ONLY a JSON object with fields title, body, meta, keywords. The body should have at least {MIN_WORDS} meaningful words IF and ONLY IF the source supports that length; never invent or pad. Use Markdown ## subheadings. Explain confirmed facts, background, user impact, uncertainties, and what readers can verify, with a clear link to the official source. Do not fabricate quotes, eligibility, deadlines, salaries, recruitment numbers, prices, application steps, or citations. No copied paragraphs. If source is insufficient for a detailed factual article, return {{"title":"","body":"","meta":"","keywords":""}}. Category: {cat}. Source title: {title}. Verified official/source URL: {source}. SOURCE TEXT:\n{source_material[:22000]}'''
+ return f'''You are a careful editor for a public-information news site. Write ONE original article in {language}. Return ONLY a JSON object with fields title, body, meta, keywords. The body should have at least {MIN_WORDS} meaningful words IF and ONLY IF the source supports that length; never invent or pad. Use Markdown ## subheadings. Explain confirmed facts, background, user impact, uncertainties, and what readers can verify, with a clear link to the official source. Write a compelling, curiosity-driven but strictly accurate headline that clearly reflects the verified story. Never use misleading clickbait, fake urgency, unsupported superlatives or invented claims. Do not fabricate quotes, eligibility, deadlines, salaries, recruitment numbers, prices, application steps, or citations. No copied paragraphs. If source is insufficient for a detailed factual article, return {{"title":"","body":"","meta":"","keywords":""}}. Category: {cat}. Source title: {title}. Verified official/source URL: {source}. SOURCE TEXT:\n{source_material[:22000]}'''
 
 def published_categories():
  """Count only published posts, never drafts, toward category coverage."""
@@ -246,7 +246,7 @@ def candidates():
   try:
    r=requests.get(feed,timeout=(5,10),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobalTechDaily/1.0)'})
    r.raise_for_status()
-   return item,feedparser.parse(r.content).entries[:12]
+   return item,feedparser.parse(r.content).entries[:30]
   except (requests.RequestException,ValueError):
    return item,[]
  # Cap workers: dozens of global sources without making Actions run for hours.
@@ -262,7 +262,7 @@ def candidates():
    if not published: continue
    try: age=(dt.datetime.now(UTC).date()-dt.date(*published[:3])).days
    except (TypeError,ValueError): continue
-   if age<0 or age>3:continue
+   if age<0 or age>7:continue
    actual_cat=category(title,cat)
    groups[actual_cat].append((url,title,actual_cat,domain))
  for cat in groups:
@@ -280,7 +280,7 @@ def main():
   print('No AI provider configured');return 0
  published=0; inspected=0; completed_categories=set()
  for url,title,cat,domain in candidates():
-  if CALLS>=MAX_CALLS or published>=remaining or inspected>=120:break
+  if CALLS>=MAX_CALLS or published>=remaining:break
   if cat in completed_categories:continue
   if cat not in {c for _,c,_ in FEEDS}:continue
   post_id=hashlib.sha256(url.encode()).hexdigest()[:12]
