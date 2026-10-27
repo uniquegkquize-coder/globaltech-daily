@@ -12,7 +12,7 @@ IMAGES=ROOT/'content/featured'
 IMAGES.mkdir(parents=True,exist_ok=True)
 KEY=os.getenv('GEMINI_API_KEY','').strip()
 MODEL=os.getenv('GEMINI_IMAGE_MODEL','gemini-2.5-flash-image').strip()
-MAX_NEW=max(0,min(14,int(os.getenv('MAX_NEW_IMAGES','14'))))
+MAX_NEW=max(0,min(30,int(os.getenv('MAX_NEW_IMAGES','30'))))
 
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
 
@@ -23,10 +23,11 @@ def create(p):
     if dest.exists():return False
     title=str(p.get('en_title') or p.get('source_title') or 'technology update')[:220]
     source=str(p.get('source_title') or '')[:180]
+    detail=re.sub(r'\s+',' ',str(p.get('en_body') or ''))[:1400]
     prompt=(
-      'Create one high-quality original 16:9 editorial conceptual illustration for a news explainer. '
-      'Category: '+str(p.get('category','technology'))+'. Topic: '+title+'. Source headline: '+source+'. '
-      'Depict tangible, clearly relevant objects and an engaging, sophisticated scene, with realistic lighting, depth, composition and visual storytelling. '
+      'Create one high-quality ORIGINAL 16:9 editorial conceptual illustration uniquely about the exact news event described below, not a generic category thumbnail. '
+      'Category: '+str(p.get('category','technology'))+'. Topic: '+title+'. Source headline: '+source+'. Verified article context: '+detail+'. '
+      'Show the most distinctive verifiable subject, product, setting, or action mentioned in this story. Avoid generic category icons, globes, film reels, stock-style placeholders, and unrelated technology objects. If the exact real-world scene cannot be faithfully depicted, use an unmistakably illustrative editorial interpretation grounded in the article. '
       'Absolutely NO text, letters, watermarks, fake screenshots, news logos, fake photographs of real people, or misleading depictions of specific events. '
       'Do not portray this as a documentary photograph. Leave safe margins for cropping. '
       'Landscape 16:9, premium professional news publication cover art. For government schemes use public-service visual metaphors; for recruitment use exam and careers imagery; for technology use topic-specific tech imagery; for movies depict a cinema environment, camera, projector, or generic film set without recreating copyrighted posters or real actors; for sports use sport-specific equipment; for world news use an accurate non-misleading conceptual scene.'
