@@ -144,7 +144,9 @@ def json_object(raw):
    return json.loads(raw[a:b])
   except (ValueError,AttributeError): return {}
 
+GEMINI_MODEL_CACHE={}
 def gemini_models(key):
+ if key in GEMINI_MODEL_CACHE:return GEMINI_MODEL_CACHE[key]
  # Discover every model this API key can actually use for text generation.
  fallback=[x.strip() for x in os.getenv('GEMINI_MODELS','gemini-2.5-flash,gemini-2.5-flash-lite').split(',') if x.strip()]
  try:
@@ -163,8 +165,10 @@ def gemini_models(key):
    # Prefer Flash/free-friendly variants, avoid probing paid-only models unnecessarily.
    names=sorted(set(names),key=lambda n:(not ('flash-lite' in n),not ('flash' in n),n))
    print('Gemini generateContent models available:',len(names),flush=True)
+   GEMINI_MODEL_CACHE[key]=names
    return names
  except (requests.RequestException,ValueError,TypeError):pass
+ GEMINI_MODEL_CACHE[key]=fallback
  return fallback
 
 def provider_order():
