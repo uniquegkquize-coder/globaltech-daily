@@ -1,0 +1,1 @@
+zip -r globaltech-current.zip .github scripts content requirements.txt README.md -x "*/__pycache__/*" "*.pyc"
