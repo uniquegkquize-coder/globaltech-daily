@@ -2,6 +2,7 @@
 import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time
 from urllib.parse import urlparse
 import requests, feedparser
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from bs4 import BeautifulSoup
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 POSTS=ROOT/'content/posts'; PENDING=ROOT/'content/pending'
@@ -10,20 +11,90 @@ UTC=dt.timezone.utc
 MIN_WORDS=int(os.getenv('MIN_ARTICLE_WORDS','1200'))
 MAX_CALLS=min(2,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','2'))))
 DAILY_LIMIT=int(os.getenv('DAILY_LIMIT','12'))
-MIN_SOURCE_WORDS=int(os.getenv('MIN_SOURCE_WORDS','650'))
+MIN_SOURCE_WORDS=int(os.getenv('MIN_SOURCE_WORDS','450'))
 CALLS=0
 # News discovery sources. Official-domain verification occurs BEFORE any AI request.
+# Curated global discovery. Publisher RSS is for finding stories; the linked article is
+# the factual source. Never treat a Google News redirect as an original source.
+
+# Worldwide source registry: discovery only. Publisher articles must be original,
+# independently summarized, attributed and sufficiently substantiated.
 FEEDS=[
- ('https://www.nasa.gov/feed/','technology','nasa.gov'),
- ('https://www.cisa.gov/cybersecurity-advisories/all.xml','technology','cisa.gov'),
- ('https://blog.google/rss/','technology','blog.google'),
- ('https://blog.cloudflare.com/rss/','technology','blog.cloudflare.com'),
- ('https://news.google.com/rss/search?q=site%3Apib.gov.in%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','government-schemes','pib.gov.in'),
- ('https://news.google.com/rss/search?q=site%3Apmindia.gov.in%20scheme%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','government-schemes','pmindia.gov.in'),
- ('https://news.google.com/rss/search?q=site%3Aupsc.gov.in%20recruitment%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','sarkari-naukri','upsc.gov.in'),
- ('https://news.google.com/rss/search?q=site%3Assc.gov.in%20notice%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','sarkari-naukri','ssc.gov.in'),
- ('https://news.google.com/rss/search?q=site%3Aemploymentnews.gov.in%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','sarkari-naukri','employmentnews.gov.in'),
+ ('https://feeds.bbci.co.uk/news/world/rss.xml', 'world-news', 'bbc.co.uk'),
+ ('https://www.theguardian.com/world/rss', 'world-news', 'theguardian.com'),
+ ('https://feeds.npr.org/1004/rss.xml', 'world-news', 'npr.org'),
+ ('https://www.aljazeera.com/xml/rss/all.xml', 'world-news', 'aljazeera.com'),
+ ('https://rss.dw.com/rdf/rss-en-top', 'world-news', 'dw.com'),
+ ('https://www.france24.com/en/rss', 'world-news', 'france24.com'),
+ ('https://feeds.skynews.com/feeds/rss/world.xml', 'world-news', 'skynews.com'),
+ ('https://www.cbc.ca/webfeed/rss/rss-world', 'world-news', 'cbc.ca'),
+ ('https://www.abc.net.au/news/feed/51120/rss.xml', 'world-news', 'abc.net.au'),
+ ('https://timesofindia.indiatimes.com/rssfeedstopstories.cms', 'world-news', 'timesofindia.indiatimes.com'),
+ ('https://feeds.nbcnews.com/nbcnews/public/world', 'world-news', 'nbcnews.com'),
+ ('https://rss.nytimes.com/services/xml/rss/nyt/World.xml', 'world-news', 'nytimes.com'),
+ ('https://techcrunch.com/feed/', 'technology', 'techcrunch.com'),
+ ('https://techcrunch.com/category/artificial-intelligence/feed/', 'technology', 'techcrunch.com'),
+ ('https://www.theverge.com/rss/index.xml', 'technology', 'theverge.com'),
+ ('https://feeds.arstechnica.com/arstechnica/index', 'technology', 'arstechnica.com'),
+ ('https://www.wired.com/feed/rss', 'technology', 'wired.com'),
+ ('https://www.wired.com/feed/tag/ai/latest/rss', 'technology', 'wired.com'),
+ ('https://www.engadget.com/rss.xml', 'technology', 'engadget.com'),
+ ('https://blog.google/rss/', 'technology', 'blog.google'),
+ ('https://www.nasa.gov/feed/', 'technology', 'nasa.gov'),
+ ('https://www.technologyreview.com/feed/', 'technology', 'technologyreview.com'),
+ ('https://www.bleepingcomputer.com/feed/', 'technology', 'bleepingcomputer.com'),
+ ('https://www.cnet.com/rss/news/', 'technology', 'cnet.com'),
+ ('https://www.techradar.com/feeds.xml', 'technology', 'techradar.com'),
+ ('https://feeds.npr.org/1019/rss.xml', 'technology', 'npr.org'),
+ ('https://variety.com/feed/', 'movies-entertainment', 'variety.com'),
+ ('https://variety.com/v/film/feed/', 'movies-entertainment', 'variety.com'),
+ ('https://deadline.com/feed/', 'movies-entertainment', 'deadline.com'),
+ ('https://www.hollywoodreporter.com/feed/', 'movies-entertainment', 'hollywoodreporter.com'),
+ ('https://www.theguardian.com/film/rss', 'movies-entertainment', 'theguardian.com'),
+ ('https://www.theguardian.com/culture/rss', 'movies-entertainment', 'theguardian.com'),
+ ('https://feeds.npr.org/1045/rss.xml', 'movies-entertainment', 'npr.org'),
+ ('https://ew.com/feed/', 'movies-entertainment', 'ew.com'),
+ ('https://www.rollingstone.com/feed/', 'movies-entertainment', 'rollingstone.com'),
+ ('https://news.abplive.com/entertainment/movies/feed', 'movies-entertainment', 'news.abplive.com'),
+ ('https://news.abplive.com/entertainment/television/feed', 'movies-entertainment', 'news.abplive.com'),
+ ('https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms', 'movies-entertainment', 'timesofindia.indiatimes.com'),
+ ('https://www.theguardian.com/business/rss', 'business', 'theguardian.com'),
+ ('https://feeds.bbci.co.uk/news/business/rss.xml', 'business', 'bbc.co.uk'),
+ ('https://feeds.bloomberg.com/markets/news.rss', 'business', 'bloomberg.com'),
+ ('https://feeds.bloomberg.com/economics/news.rss', 'business', 'bloomberg.com'),
+ ('https://feeds.content.dowjones.io/public/rss/RSSMarketsMain', 'business', 'wsj.com'),
+ ('https://feeds.npr.org/1006/rss.xml', 'business', 'npr.org'),
+ ('https://news.abplive.com/business/feed', 'business', 'news.abplive.com'),
+ ('https://www.espn.com/espn/rss/news', 'sports', 'espn.com'),
+ ('https://www.espn.com/espn/rss/soccer/news', 'sports', 'espn.com'),
+ ('https://www.espn.com/espn/rss/nba/news', 'sports', 'espn.com'),
+ ('https://feeds.bbci.co.uk/sport/rss.xml', 'sports', 'bbc.co.uk'),
+ ('https://www.theguardian.com/sport/rss', 'sports', 'theguardian.com'),
+ ('https://www.france24.com/en/sport/rss', 'sports', 'france24.com'),
+ ('https://news.abplive.com/sports/feed', 'sports', 'news.abplive.com'),
+ ('https://news.abplive.com/auto/feed', 'automobiles', 'news.abplive.com'),
+ ('https://www.engadget.com/rss.xml', 'automobiles', 'engadget.com'),
+ ('https://www.nasa.gov/feed/', 'health-science', 'nasa.gov'),
+ ('https://www.wired.com/feed/category/science/latest/rss', 'health-science', 'wired.com'),
+ ('https://feeds.arstechnica.com/arstechnica/science', 'health-science', 'arstechnica.com'),
+ ('https://news.abplive.com/health/feed', 'health-science', 'news.abplive.com'),
+ ('https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=22', 'government-schemes', 'pib.gov.in'),
+ ('https://news.google.com/rss/search?q=site%3Apib.gov.in%20scheme%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen', 'government-schemes', 'pib.gov.in'),
+ ('https://news.google.com/rss/search?q=site%3Aupsc.gov.in%20recruitment%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen', 'sarkari-naukri', 'upsc.gov.in'),
+ ('https://news.google.com/rss/search?q=site%3Assc.gov.in%20notice%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen', 'sarkari-naukri', 'ssc.gov.in'),
+ ('https://news.google.com/rss/search?q=site%3Arrbcdg.gov.in%20notification%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen', 'sarkari-naukri', 'rrbcdg.gov.in'),
+ ('https://www.ign.com/rss/articles/feed', 'gaming', 'ign.com'),
+ ('https://www.gamespot.com/feeds/mashup/', 'gaming', 'gamespot.com'),
+ ('https://www.theguardian.com/environment/rss', 'environment', 'theguardian.com'),
+ ('https://www.nasa.gov/feed/', 'environment', 'nasa.gov'),
+ ('https://www.theguardian.com/travel/rss', 'travel', 'theguardian.com'),
+ ('https://www.theguardian.com/education/rss', 'education', 'theguardian.com'),
+ ('https://www.theguardian.com/lifeandstyle/rss', 'lifestyle', 'theguardian.com'),
 ]
+
+
+# No automatic republication of syndicated or paywalled text; independent articles only.
+
 SCHEME=('scheme','yojana','subsidy','welfare','pension','scholarship','beneficiary','योजना','सब्सिडी','पेंशन')
 JOB=('recruitment','vacancy','notification','admit card','exam','upsc','ssc','भर्ती','रिक्ति','नौकरी')
 def category(title, default):
@@ -115,26 +186,34 @@ def candidates():
     yield url,title,record.get('category','technology'),domain
   except (OSError,ValueError):pass
  # Interleave categories so one technology blog cannot consume the whole quota.
- groups={'technology':[],'government-schemes':[],'sarkari-naukri':[]}
- for feed,cat,domain in FEEDS:
+ groups={cat:[] for _,cat,_ in FEEDS}
+ def read_feed(item):
+  feed,cat,domain=item
   try:
-   r=requests.get(feed,timeout=(7,15),headers={'User-Agent':'Mozilla/5.0'});r.raise_for_status()
-   entries=feedparser.parse(r.content).entries[:12]
-   print('Feed',domain,'entries',len(entries),flush=True)
-  except requests.RequestException:
-   print('Feed unavailable',domain,flush=True);continue
+   r=requests.get(feed,timeout=(5,10),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobalTechDaily/1.0)'})
+   r.raise_for_status()
+   return item,feedparser.parse(r.content).entries[:12]
+  except (requests.RequestException,ValueError):
+   return item,[]
+ # Cap workers: dozens of global sources without making Actions run for hours.
+ with ThreadPoolExecutor(max_workers=10) as pool:
+  results=list(pool.map(read_feed,FEEDS))
+ for (feed,cat,domain),entries in results:
+  print('Feed',domain,'entries',len(entries),flush=True)
   for e in entries:
    url=e.get('link','').strip(); title=clean(e.get('title',''))
-   # Google News redirect URLs are NOT treated as verified official sources.
    if not allowed(url,domain) or not title or url in seen: continue
    seen.add(url)
    published=e.get('published_parsed') or e.get('updated_parsed')
    if not published: continue
-   age=(dt.datetime.now(UTC).date()-dt.date(*published[:3])).days
-   if age<0 or age>7:continue
+   try: age=(dt.datetime.now(UTC).date()-dt.date(*published[:3])).days
+   except (TypeError,ValueError): continue
+   if age<0 or age>3:continue
    groups[cat].append((url,title,category(title,cat),domain))
+ for cat in groups:
+  groups[cat].sort(key=lambda item: (-int(any(k in item[1].lower() for k in ('ai ', 'openai', 'google', 'apple', 'microsoft', 'nvidia', 'launch', 'breaking', 'trailer', 'box office', 'netflix', 'bollywood', 'hollywood', 'release', 'recruitment', 'scheme', 'योजना', 'भर्ती'))),item[1]))
  for i in range(max(map(len,groups.values()),default=0)):
-  for cat in ('government-schemes','sarkari-naukri','technology'):
+  for cat in ('movies-entertainment','world-news','technology','business','sports','automobiles','health-science','government-schemes','sarkari-naukri','gaming','environment','travel','education','lifestyle'):
    if i<len(groups[cat]): yield groups[cat][i]
 
 def main():
@@ -146,7 +225,7 @@ def main():
   print('No AI provider configured');return 0
  published=0; inspected=0
  for url,title,cat,domain in candidates():
-  if CALLS>=MAX_CALLS or published>=remaining or inspected>=12:break
+  if CALLS>=MAX_CALLS or published>=remaining or inspected>=24:break
   post_id=hashlib.sha256(url.encode()).hexdigest()[:12]
   if (POSTS/(post_id+'.json')).exists():continue
   pending=PENDING/(post_id+'.json')
@@ -164,18 +243,24 @@ def main():
   for lang in ('en','hi'):
    if CALLS>=MAX_CALLS:break
    if words(state.get(lang+'_body',''))>=MIN_WORDS:continue
-   data,provider=call_provider(article_prompt(lang,title,url,text,cat))
+   prior=state.get(lang+'_body','')
+   prompt=article_prompt(lang,title,url,text,cat)
+   if prior and words(prior)>=400:
+    prompt += ('\nEXISTING ORIGINAL DRAFT (preserve its accurate material; return a COMPLETE revised body, not only an addendum):\n'+prior[:24000]+'\nImprove with additional SOURCE-SUPPORTED context until minimum length is met. Never fabricate details.')
+   data,provider=call_provider(prompt)
    if isinstance(data,dict):
     body=str(data.get('body') or '')
-    if words(body)>=MIN_WORDS and len(str(data.get('title') or ''))>=20:
+    if words(body)>=max(300,words(state.get(lang+'_body',''))) and len(str(data.get('title') or ''))>=20:
      state[lang+'_body']=body;state[lang+'_title']=str(data['title'])
      state[lang+'_meta']=str(data.get('meta') or '')
      state[lang+'_keywords']=str(data.get('keywords') or '')
      print('Draft ready:',lang,'words',words(body),'via',provider,flush=True)
-    else: print('Draft below minimum:',lang,'words',words(body),'via',provider,flush=True)
+    else: print('Draft unusable:',lang,'words',words(body),'via',provider,flush=True)
+    if words(state.get(lang+'_body',''))<MIN_WORDS: print('Partial draft saved:',lang,'words',words(state.get(lang+'_body','')),'via',provider,flush=True)
    # One failed request does not lead to a provider/model retry this run.
-   if not data or words(str(data.get('body',''))) < MIN_WORDS:
-    state['blocked_until']=(dt.datetime.now(UTC)+dt.timedelta(hours=24)).isoformat()
+   save_state(pending,state)
+   if not data or words(state.get(lang+'_body','')) < MIN_WORDS:
+    state['blocked_until']=(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat()
     break
    save_state(pending,state)
   if all(words(state.get(lang+'_body',''))>=MIN_WORDS for lang in ('en','hi')):

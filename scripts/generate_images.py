@@ -24,12 +24,12 @@ def create(p):
     title=str(p.get('en_title') or p.get('source_title') or 'technology update')[:220]
     source=str(p.get('source_title') or '')[:180]
     prompt=(
-      'Create one high-quality original 16:9 editorial conceptual illustration for a technology news article. '
-      'Topic: '+title+'. Source headline: '+source+'. '
+      'Create one high-quality original 16:9 editorial conceptual illustration for a news explainer. '
+      'Category: '+str(p.get('category','technology'))+'. Topic: '+title+'. Source headline: '+source+'. '
       'Depict tangible, clearly relevant objects and an engaging, sophisticated scene, with realistic lighting, depth, composition and visual storytelling. '
       'Absolutely NO text, letters, watermarks, fake screenshots, news logos, fake photographs of real people, or misleading depictions of specific events. '
       'Do not portray this as a documentary photograph. Leave safe margins for cropping. '
-      'Landscape 16:9, premium professional technology publication cover art.'
+      'Landscape 16:9, premium professional news publication cover art. For government schemes use public-service visual metaphors; for recruitment use exam and careers imagery; for technology use topic-specific tech imagery; for movies depict a cinema environment, camera, projector, or generic film set without recreating copyrighted posters or real actors; for sports use sport-specific equipment; for world news use an accurate non-misleading conceptual scene.'
     )
     url=f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent'
     try:
