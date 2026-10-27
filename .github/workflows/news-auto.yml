@@ -1,0 +1,49 @@
+
+name: GlobalTech Daily Auto News
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3,9,15,21 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: globaltech-news
+  cancel-in-progress: false
+
+jobs:
+  publish-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate news
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          AUTO_POST: ${{ vars.AUTO_POST }}
+          SITE_URL: https://globaltech-daily.pages.dev
+        run: python scripts/auto_news.py
+
+      - name: Build website
+        run: python scripts/build.py
+
+      - name: Commit new articles
+        run: |
+          git config user.name "GlobalTech News Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto publish news"
+            git push
+  
