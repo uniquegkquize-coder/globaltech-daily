@@ -25,6 +25,8 @@ CALLS=0
 # Worldwide source registry: discovery only. Publisher articles must be original,
 # independently summarized, attributed and sufficiently substantiated.
 FEEDS=[
+ ('https://news.google.com/rss/search?q=site%3Aamazon.jobs%20hiring&hl=en-IN&gl=IN&ceid=IN%3Aen','private-vacancy','amazon.jobs'),
+ ('https://news.google.com/rss/search?q=site%3Acareers.microsoft.com%20jobs&hl=en-IN&gl=IN&ceid=IN%3Aen','private-vacancy','careers.microsoft.com'),
  ('https://feeds.bbci.co.uk/news/world/rss.xml', 'world-news', 'bbc.co.uk'),
  ('https://www.theguardian.com/world/rss', 'world-news', 'theguardian.com'),
  ('https://feeds.npr.org/1004/rss.xml', 'world-news', 'npr.org'),
@@ -238,6 +240,8 @@ def call_provider(prompt):
  return None,last
 
 def article_prompt(lang,title,source,source_material,cat):
+ if cat=='private-vacancy':
+  source_material += '\nRequired coverage: employer, role, eligibility, location, salary, deadline, selection process, application steps and official application link. Mark missing details as not specified; never invent them.'
  language='English' if lang=='en' else 'Hindi (Devanagari)'
  return f'''You are a careful editor for a public-information news site. Write ONE original article in {language}. Return ONLY a JSON object with fields title, body, meta, keywords. The body should have at least {MIN_WORDS} meaningful words IF and ONLY IF the source supports that length; never invent or pad. Use Markdown ## subheadings. Explain confirmed facts, background, user impact, uncertainties, and what readers can verify, with a clear link to the official source. Write a compelling, curiosity-driven but strictly accurate headline that clearly reflects the verified story. Never use misleading clickbait, fake urgency, unsupported superlatives or invented claims. Do not fabricate quotes, eligibility, deadlines, salaries, recruitment numbers, prices, application steps, or citations. No copied paragraphs. If source is insufficient for a detailed factual article, return {{"title":"","body":"","meta":"","keywords":""}}. Category: {cat}. Source title: {title}. Verified official/source URL: {source}. SOURCE TEXT:\n{source_material[:22000]}'''
 
@@ -265,7 +269,7 @@ def story_priority(item):
 
 # Website-first discovery: visit publisher home/category pages before RSS fallback.
 # Each website is attempted once per category, with bounded concurrency and timeouts.
-WEBSITE_PATHS={'world-news':'/world','technology':'/technology','business':'/business','sports':'/sport','movies-entertainment':'/entertainment','automobiles':'/auto','health-science':'/science','government-schemes':'/','sarkari-naukri':'/','gaming':'/gaming','environment':'/environment','travel':'/travel','education':'/education','lifestyle':'/lifeandstyle'}
+WEBSITE_PATHS={'world-news':'/world','technology':'/technology','business':'/business','sports':'/sport','movies-entertainment':'/entertainment','automobiles':'/auto','health-science':'/science','government-schemes':'/','sarkari-naukri':'/','private-vacancy':'/','gaming':'/gaming','environment':'/environment','travel':'/travel','education':'/education','lifestyle':'/lifeandstyle'}
 def website_stories(item):
  feed,cat,domain=item
  path=WEBSITE_PATHS.get(cat,'/')
@@ -314,6 +318,7 @@ GOOGLE_QUERIES={
  'automobiles':'automobile electric vehicles','education':'education universities',
  'environment':'climate environment','government-schemes':'India government schemes',
  'sarkari-naukri':'India government recruitment official notification',
+ 'private-vacancy':'private sector job openings hiring application',
  'travel':'travel tourism','lifestyle':'lifestyle wellness'}
 def google_news_stories(cat):
  from urllib.parse import quote
@@ -445,6 +450,8 @@ def main():
   if any(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    print('Resuming saved draft:',post_id,'English',words(state.get('en_body','')),'Hindi',words(state.get('hi_body','')),flush=True)
   inspected+=1
+  if cat=='private-vacancy' and not any(allowed(url,d) for _,c,d in FEEDS if c=='private-vacancy'):
+   continue
   if cat=='sarkari-naukri' and not any(allowed(url,d) for d in OFFICIAL_JOB_DOMAINS):
    print('Skipping recruitment story without an official government source:',url,flush=True)
    continue
