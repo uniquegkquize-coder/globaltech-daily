@@ -186,7 +186,7 @@ def call_provider(prompt):
   if provider in PROVIDER_COOLDOWNS:continue
   key=os.getenv({'groq':'GROQ_API_KEY','gemini':'GEMINI_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}[provider],'').strip()
   if not key:continue
-  models=(gemini_models(key) if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else (os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free'))])
+  models=gemini_models(key) if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else (os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free'))]
   for model in dict.fromkeys(models):
    if (provider,model) in UNAVAILABLE_MODELS:continue
    if CALLS>=MAX_CALLS:break
