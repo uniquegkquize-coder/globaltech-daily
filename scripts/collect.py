@@ -10,7 +10,7 @@ POSTS.mkdir(parents=True,exist_ok=True); PENDING.mkdir(parents=True,exist_ok=Tru
 UTC=dt.timezone.utc
 MIN_WORDS=int(os.getenv('MIN_ARTICLE_WORDS','800'))
 MAX_CALLS=min(28,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','28'))))
-DAILY_LIMIT=int(os.getenv('DAILY_LIMIT','12'))
+DAILY_LIMIT=int(os.getenv('DAILY_LIMIT','28'))
 MIN_SOURCE_WORDS=int(os.getenv('MIN_SOURCE_WORDS','450'))
 CALLS=0
 # News discovery sources. Official-domain verification occurs BEFORE any AI request.
@@ -142,14 +142,19 @@ def provider_order():
  # One generation attempt per language; no repeated model probing.
  order=os.getenv('AI_PROVIDER_ORDER','groq,gemini,openrouter').lower().split(',')
  return [p.strip() for p in order if p.strip() in ('groq','gemini','openrouter')]
+# Disable a rate-limited provider for the remainder of this run.
+PROVIDER_COOLDOWNS=set()
 def call_provider(prompt):
  global CALLS
  if CALLS>=MAX_CALLS: return None,None
+ last=None
  for provider in provider_order():
+  if CALLS>=MAX_CALLS:break
+  if provider in PROVIDER_COOLDOWNS:continue
   key=os.getenv({'groq':'GROQ_API_KEY','gemini':'GEMINI_API_KEY','openrouter':'OPENROUTER_API_KEY'}[provider],'').strip()
-  if not key: continue
-  # Each request is counted even if the provider returns an error.
+  if not key:continue
   CALLS+=1
+  last=provider
   try:
    if provider=='gemini':
     model=os.getenv('GEMINI_MODEL','gemini-2.5-flash')
@@ -161,13 +166,17 @@ def call_provider(prompt):
     r=requests.post(url,headers={'Authorization':'Bearer '+key},json={'model':model,'messages':[{'role':'user','content':prompt}],'max_tokens':6500,'temperature':0.3},timeout=(10,110))
     raw=r.json()['choices'][0]['message']['content'] if r.ok else ''
    if not r.ok:
-    print('Provider',provider,'HTTP',r.status_code,'(no retry)',flush=True)
-    return None,provider
-   return json_object(raw),provider
+    print('Provider',provider,'HTTP',r.status_code,'switching provider if available',flush=True)
+    if r.status_code in (401,402,403,404,429):PROVIDER_COOLDOWNS.add(provider)
+    continue
+   data=json_object(raw)
+   if isinstance(data,dict) and data.get('body'):
+    print('Provider success:',provider,flush=True)
+    return data,provider
+   print('Provider',provider,'returned unusable JSON; switching if available',flush=True)
   except (requests.RequestException,ValueError,KeyError,IndexError,TypeError) as exc:
-   print('Provider',provider,'error',type(exc).__name__,'(no retry)',flush=True)
-   return None,provider
- return None,None
+   print('Provider',provider,'error',type(exc).__name__,'switching if available',flush=True)
+ return None,last
 
 def article_prompt(lang,title,source,source_material,cat):
  language='English' if lang=='en' else 'Hindi (Devanagari)'

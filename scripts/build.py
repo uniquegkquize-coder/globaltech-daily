@@ -39,18 +39,22 @@ def image_for(p):
  topics=[
   ('SECURITY','CYBERSECURITY',('security','vulnerability','waf','certificate','cryptograph','attack','exposure','breach','phishing','zero-day','compliance','isms','php','encryption')),
   ('CHIP','SEMICONDUCTORS',('chip','semiconductor','gpu','processor','nvidia','silicon','cpu')),
-  ('DEVICE','DEVICES',('phone','iphone','pixel','android','smartphone','laptop','macbook','device','wearable')),
+  ('LAPTOP','LAPTOP COMPUTERS',('macbook','laptop','notebook computer','chromebook')),
+  ('DEVICE','DEVICES',('phone','iphone','pixel','android','smartphone','device','wearable')),
   ('ROBOT','ROBOTICS',('robot','automation','humanoid','drone')),
   ('CLOUD','CLOUD & WEB',('cloud infrastructure','cloud service','server','hosting','web','network','typescript','rust','cache','api','kv','edge','storefront')),
   ('SCIENCE','RESEARCH',('research','university','stanford','science','brain','learning','education','study')),
   ('AI','ARTIFICIAL INTELLIGENCE',('ai','gemini','chatgpt','openai','llm','model','machine learning','agent')),
   ('COMMERCE','DIGITAL BUSINESS',('commerce','marketing','retail','shopping','payment','advertising'))]
- # Priority uses article-specific signals; general company words do not override precise topics.
- cat,label='TECH','TECHNOLOGY'
+ # Category-first fallbacks ensure a movie/sports/government article never gets a generic tech phone.
+ category_defaults={'movies-entertainment':('MOVIE','CINEMA'),'sports':('SPORT','SPORTS'),'government-schemes':('GOV','PUBLIC SERVICES'),'sarkari-naukri':('JOB','CAREERS'),'automobiles':('AUTO','AUTOMOBILES'),'world-news':('WORLD','WORLD NEWS'),'business':('COMMERCE','BUSINESS'),'gaming':('GAME','GAMING'),'environment':('NATURE','ENVIRONMENT'),'travel':('TRAVEL','TRAVEL'),'education':('STUDY','EDUCATION'),'lifestyle':('LIFE','LIFESTYLE'),'health-science':('SCIENCE','HEALTH & SCIENCE')}
+ cat,label=category_defaults.get(category(p),('TECH','TECHNOLOGY'))
  for name,tag,words in topics:
-  if any(w in topic for w in words):cat,label=name,tag;break
+  if category(p)=='technology' and any(w in topic for w in words):cat,label=name,tag;break
  seed=int(hashlib.sha256((p.get('source_title','')+s).encode()).hexdigest()[:8],16)
  palettes={'SECURITY':('#071e33','#0c465b','#4ef3ce'),'CHIP':('#101733','#293b8a','#b5a4ff'),'DEVICE':('#11263d','#2463a0','#ffbd77'),'ROBOT':('#172036','#36678b','#ffd06c'),'CLOUD':('#092c37','#155f7b','#70d5ff'),'SCIENCE':('#132640','#425d8b','#b1e879'),'AI':('#201a40','#6249a3','#a9f4fc'),'COMMERCE':('#24213b','#75549a','#ffb77c'),'TECH':('#15233b','#255b81','#82e8d4')}
+ palettes['LAPTOP']=('#11253b','#235b87','#88d5f6')
+ palettes.update({'MOVIE':('#21172e','#51315e','#ffcc72'),'SPORT':('#102b34','#207d77','#f7de72'),'GOV':('#1c2b45','#416e8b','#ffd38c'),'JOB':('#1b2c43','#365c8c','#b8e9ff'),'AUTO':('#182339','#3b567a','#ffbd77'),'WORLD':('#17253c','#2e6b88','#a6ebff'),'GAME':('#221a42','#623e99','#ff9bdf'),'NATURE':('#14362d','#39785c','#b3ec92'),'TRAVEL':('#16334b','#267c9a','#ffdb8e'),'STUDY':('#26314d','#5674a1','#e5d7a0'),'LIFE':('#34243b','#805475','#ffc5b8')})
  bg,mid,accent=palettes[cat]; im=Image.new('RGB',(1280,720),bg);d=ImageDraw.Draw(im)
  # Atmospheric layered background, kept away from headline-free art.
  d.ellipse((650,-380,1450,420),fill=mid)
@@ -59,7 +63,40 @@ def image_for(p):
   x=65+i*160;d.line((x,570,x+260,705),fill=mid,width=2)
  # Large illustrative focal element on the right.
  cx,cy=880,325
- if cat=='SECURITY':
+ if cat in ('MOVIE','SPORT','GOV','JOB','AUTO','WORLD','GAME','NATURE','TRAVEL','STUDY','LIFE'):
+  # Distinct recognisable symbols for every non-tech category.
+  if cat=='MOVIE':
+   d.rounded_rectangle((cx-220,cy-110,cx+220,cy+160),radius=22,fill='#21152e',outline=accent,width=12)
+   d.polygon([(cx-55,cy-70),(cx-55,cy+100),(cx+100,cy+15)],fill=accent)
+   for x in range(cx-190,cx+200,90):d.rectangle((x,cy-160,x+48,cy-123),fill='#fff0c7')
+  elif cat=='SPORT':
+   d.ellipse((cx-190,cy-190,cx+190,cy+190),fill='#f3f3eb',outline=accent,width=12)
+   d.arc((cx-155,cy-155,cx+155,cy+155),30,210,fill='#16333c',width=13)
+   d.arc((cx-155,cy-155,cx+155,cy+155),210,390,fill='#16333c',width=13)
+  elif cat=='AUTO':
+   d.rounded_rectangle((cx-260,cy-30,cx+260,cy+120),radius=35,fill=accent)
+   d.polygon([(cx-160,cy-30),(cx-90,cy-130),(cx+130,cy-130),(cx+200,cy-30)],fill='#c0eaff')
+   for x in (cx-165,cx+165):d.ellipse((x-48,cy+72,x+48,cy+168),fill='#101c2d',outline='#ffffff',width=9)
+  elif cat in ('GOV','JOB','STUDY'):
+   d.rounded_rectangle((cx-200,cy-190,cx+200,cy+200),radius=12,fill='#f4f4e9',outline=accent,width=10)
+   for yy in (-90,-25,40,105):d.line((cx-140,cy+yy,cx+145,cy+yy),fill='#51778f',width=10)
+   d.ellipse((cx+115,cy+85,cx+185,cy+155),fill=accent)
+  elif cat=='WORLD':
+   d.ellipse((cx-200,cy-200,cx+200,cy+200),fill='#245d7a',outline=accent,width=12)
+   for rx in (65,145):d.ellipse((cx-rx,cy-195,cx+rx,cy+195),outline='#b6f0fa',width=5)
+   d.line((cx-195,cy,cx+195,cy),fill='#b6f0fa',width=6)
+  elif cat=='NATURE':
+   d.ellipse((cx-150,cy-195,cx+150,cy+165),fill='#83cb8e')
+   d.line((cx,cy-110,cx,cy+230),fill='#f1f5d7',width=14)
+  elif cat=='TRAVEL':
+   d.polygon([(cx-250,cy+50),(cx+250,cy-100),(cx+110,cy+70),(cx+75,cy+220),(cx-30,cy+80)],fill=accent)
+  elif cat=='GAME':
+   d.rounded_rectangle((cx-230,cy-100,cx+230,cy+140),radius=90,fill=accent)
+   d.line((cx-130,cy-10,cx-130,cy+90),fill=bg,width=20);d.line((cx-180,cy+40,cx-80,cy+40),fill=bg,width=20)
+   for x,y in ((cx+95,cy+10),(cx+155,cy+70)):d.ellipse((x-18,y-18,x+18,y+18),fill=bg)
+  else:
+   for r in (75,140,205):d.ellipse((cx-r,cy-r,cx+r,cy+r),outline=accent,width=7)
+ elif cat=='SECURITY':
   d.polygon([(cx,cy-205),(cx+172,cy-135),(cx+152,cy+95),(cx,cy+215),(cx-152,cy+95),(cx-172,cy-135)],fill='#16495b',outline=accent,width=12)
   d.arc((cx-70,cy-75,cx+70,cy+65),185,355,fill='#ffffff',width=16)
   d.rounded_rectangle((cx-86,cy-15,cx+86,cy+105),radius=18,fill=accent)
@@ -70,6 +107,13 @@ def image_for(p):
   for off in range(-130,131,65):
    d.line((cx+off,cy-175,cx+off,cy-220),fill=accent,width=9);d.line((cx+off,cy+175,cx+off,cy+220),fill=accent,width=9)
    d.line((cx-175,cy+off,cx-220,cy+off),fill=accent,width=9);d.line((cx+175,cy+off,cx+220,cy+off),fill=accent,width=9)
+ elif cat=='LAPTOP':
+  # A recognisable open laptop, not a smartphone, for MacBook/laptop stories.
+  d.rounded_rectangle((cx-245,cy-165,cx+245,cy+130),radius=18,fill='#0b1528',outline=accent,width=12)
+  d.rounded_rectangle((cx-223,cy-143,cx+223,cy+107),radius=6,fill='#2877a3')
+  d.ellipse((cx-120,cy-115,cx+115,cy+115),outline='#b6e9ff',width=7)
+  d.polygon([(cx-280,cy+130),(cx+280,cy+130),(cx+345,cy+183),(cx-345,cy+183)],fill='#a6b6c6',outline='#ffffff')
+  d.line((cx-125,cy+161,cx+125,cy+161),fill='#41556b',width=8)
  elif cat=='DEVICE':
   d.rounded_rectangle((cx-128,cy-230,cx+128,cy+230),radius=38,fill='#06182c',outline=accent,width=12)
   d.rounded_rectangle((cx-104,cy-194,cx+104,cy+180),radius=16,fill='#255e91')
