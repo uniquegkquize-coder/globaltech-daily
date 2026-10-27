@@ -36,6 +36,12 @@ jobs:
           DAILY_LIMIT: '6'
           MAX_MODELS_PER_ARTICLE: '3'
         run: python -u scripts/collect.py
+      - name: Generate original article featured images (best effort)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_IMAGE_MODEL: gemini-2.5-flash-image
+          MAX_NEW_IMAGES: '3'
+        run: python -u scripts/generate_images.py
       - name: Build website
         env:
           SITE_URL: https://globaltech-daily.pages.dev

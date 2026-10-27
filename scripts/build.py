@@ -29,6 +29,10 @@ def shell(lang,t,desc,url,body,extra=''):
 def image_for(p):
  """Create distinctive topic-led editorial art; never imply it is an event photograph."""
  s=slug(p); dest=OUT/'images'/f'{s}.jpg'; dest.parent.mkdir(parents=True,exist_ok=True)
+ existing=R/'content'/'featured'/f'{s}.jpg'
+ if existing.is_file():
+  shutil.copy2(existing,dest)
+  return
  topic=' '.join(str(p.get(k,'')) for k in ('en_title','en_keywords','source_title')).lower()
  topics=[
   ('SECURITY','CYBERSECURITY',('security','vulnerability','waf','certificate','cryptograph','attack','exposure','breach','phishing','zero-day','compliance','isms','php','encryption')),
@@ -111,8 +115,13 @@ def body_html(raw):
   elif line.startswith('- '):flush();parts.append('<p>• '+e(line[2:])+'</p>')
   else:buf.append(line)
  flush();return ''.join(parts)
+def image_caption(p,lang):
+ s=slug(p)
+ if (R/'content'/'featured'/f'{s}.jpg').is_file():
+  return 'AI-generated conceptual illustration — not an event photograph.' if lang=='en' else 'AI से बनाई गई सांकेतिक तस्वीर — वास्तविक घटना की फोटो नहीं।'
+ return 'Original conceptual editorial illustration.' if lang=='en' else 'मौलिक सांकेतिक चित्र।'
 def card(p,lang):
- s=slug(p);t=title(p,lang);return f'<article class="card"><a href="/{lang}/news/{s}/"><img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="Original editorial illustration for {e(t)}"><div class="inner"><span class="eyebrow">TECH NEWS</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])} · {e(urlparse(p.get("source","")).hostname or "Source")}</div></div></a></article>'
+ s=slug(p);t=title(p,lang);return f'<article class="card"><a href="/{lang}/news/{s}/"><img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="Conceptual illustration for {e(t)}"><div class="inner"><span class="eyebrow">TECH NEWS</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])} · {e(urlparse(p.get("source","")).hostname or "Source")}</div></div></a></article>'
 for p in POSTS:image_for(p)
 for p in POSTS:
  s=slug(p)
@@ -124,7 +133,7 @@ for p in POSTS:
   extra=f'<meta property="og:type" content="article"><meta property="og:title" content="{e(t)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="{SITE}/images/{s}.jpg"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{schema_json}</script>'
   sourcehost=urlparse(p['source']).hostname or 'original source'
   summary=e(p.get(lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
-  content=f'''<div class="wrap"><article class="article"><div class="eyebrow">TECHNOLOGY / EXPLAINED</div><h1>{e(t)}</h1><p class="date">{e(p.get('date','')[:10])} · GlobalTech Daily Editorial Desk · Source: {e(sourcehost)}</p><img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="Original editorial illustration for {e(t)}"><div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div><div class="story">{body_html(raw)}</div><div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div></article></div>'''
+  content=f'''<div class="wrap"><article class="article"><div class="eyebrow">TECHNOLOGY / EXPLAINED</div><h1>{e(t)}</h1><p class="date">{e(p.get('date','')[:10])} · GlobalTech Daily Editorial Desk · Source: {e(sourcehost)}</p><img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="Conceptual illustration for {e(t)}"><p class="notice" style="margin-top:-12px">{e(image_caption(p,lang))}</p><div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div><div class="story">{body_html(raw)}</div><div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div></article></div>'''
   write(OUT/lang/'news'/s/'index.html',shell(lang,t,desc,url,content,extra))
 for lang in ('en','hi'):
  h='Latest technology news, explained' if lang=='en' else 'टेक्नोलॉजी की ताज़ा खबरें, आसान भाषा में'
