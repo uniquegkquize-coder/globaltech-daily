@@ -29,126 +29,18 @@ def shell(lang,t,desc,url,body,extra=''):
  links=''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in nav)
  return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a1429"><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="stylesheet" href="/style.css">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobalTech <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="/{'hi' if lang=='en' else 'en'}/">{'हिन्दी' if lang=='en' else 'English'}</a></nav></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobalTech Daily</strong><p>Independent AI-assisted technology explainers with source attribution.</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{s.title()}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js"></script></body></html>'''
 def image_for(p):
- """Create distinctive topic-led editorial art; never imply it is an event photograph."""
- s=slug(p); dest=OUT/'images'/f'{s}.jpg'; dest.parent.mkdir(parents=True,exist_ok=True)
+ """Use a verified generated article-specific image, otherwise a neutral non-photographic placeholder."""
+ s=slug(p);dest=OUT/'images'/f'{s}.jpg';dest.parent.mkdir(parents=True,exist_ok=True)
  existing=R/'content'/'featured'/f'{s}.jpg'
  if existing.is_file():
   shutil.copy2(existing,dest)
   return
- topic=' '.join(str(p.get(k,'')) for k in ('en_title','en_keywords','source_title')).lower()
- topics=[
-  ('SECURITY','CYBERSECURITY',('security','vulnerability','waf','certificate','cryptograph','attack','exposure','breach','phishing','zero-day','compliance','isms','php','encryption')),
-  ('CHIP','SEMICONDUCTORS',('chip','semiconductor','gpu','processor','nvidia','silicon','cpu')),
-  ('LAPTOP','LAPTOP COMPUTERS',('macbook','laptop','notebook computer','chromebook')),
-  ('DEVICE','DEVICES',('phone','iphone','pixel','android','smartphone','device','wearable')),
-  ('ROBOT','ROBOTICS',('robot','automation','humanoid','drone')),
-  ('CLOUD','CLOUD & WEB',('cloud infrastructure','cloud service','server','hosting','web','network','typescript','rust','cache','api','kv','edge','storefront')),
-  ('SCIENCE','RESEARCH',('research','university','stanford','science','brain','learning','education','study')),
-  ('AI','ARTIFICIAL INTELLIGENCE',('ai','gemini','chatgpt','openai','llm','model','machine learning','agent')),
-  ('COMMERCE','DIGITAL BUSINESS',('commerce','marketing','retail','shopping','payment','advertising'))]
- # Category-first fallbacks ensure a movie/sports/government article never gets a generic tech phone.
- category_defaults={'movies-entertainment':('MOVIE','CINEMA'),'sports':('SPORT','SPORTS'),'government-schemes':('GOV','PUBLIC SERVICES'),'sarkari-naukri':('JOB','CAREERS'),'private-vacancy':('JOBS','PRIVATE CAREERS'),'automobiles':('AUTO','AUTOMOBILES'),'world-news':('WORLD','WORLD NEWS'),'business':('COMMERCE','BUSINESS'),'gaming':('GAME','GAMING'),'environment':('NATURE','ENVIRONMENT'),'travel':('TRAVEL','TRAVEL'),'education':('STUDY','EDUCATION'),'lifestyle':('LIFE','LIFESTYLE'),'health-science':('SCIENCE','HEALTH & SCIENCE')}
- cat,label=category_defaults.get(category(p),('TECH','TECHNOLOGY'))
- for name,tag,words in topics:
-  if category(p)=='technology' and any(w in topic for w in words):cat,label=name,tag;break
- seed=int(hashlib.sha256((p.get('source_title','')+s).encode()).hexdigest()[:8],16)
- palettes={'SECURITY':('#071e33','#0c465b','#4ef3ce'),'CHIP':('#101733','#293b8a','#b5a4ff'),'DEVICE':('#11263d','#2463a0','#ffbd77'),'ROBOT':('#172036','#36678b','#ffd06c'),'CLOUD':('#092c37','#155f7b','#70d5ff'),'SCIENCE':('#132640','#425d8b','#b1e879'),'AI':('#201a40','#6249a3','#a9f4fc'),'COMMERCE':('#24213b','#75549a','#ffb77c'),'TECH':('#15233b','#255b81','#82e8d4')}
- palettes['LAPTOP']=('#11253b','#235b87','#88d5f6')
- palettes.update({'MOVIE':('#21172e','#51315e','#ffcc72'),'SPORT':('#102b34','#207d77','#f7de72'),'GOV':('#1c2b45','#416e8b','#ffd38c'),'JOB':('#1b2c43','#365c8c','#b8e9ff'),'AUTO':('#182339','#3b567a','#ffbd77'),'WORLD':('#17253c','#2e6b88','#a6ebff'),'GAME':('#221a42','#623e99','#ff9bdf'),'NATURE':('#14362d','#39785c','#b3ec92'),'TRAVEL':('#16334b','#267c9a','#ffdb8e'),'STUDY':('#26314d','#5674a1','#e5d7a0'),'LIFE':('#34243b','#805475','#ffc5b8')})
- bg,mid,accent=palettes[cat]; im=Image.new('RGB',(1280,720),bg);d=ImageDraw.Draw(im)
- # Atmospheric layered background, kept away from headline-free art.
- d.ellipse((650,-380,1450,420),fill=mid)
- d.ellipse((835,-210,1470,430),outline=accent,width=3)
- for i in range(8):
-  x=65+i*160;d.line((x,570,x+260,705),fill=mid,width=2)
- # Large illustrative focal element on the right.
- cx,cy=880,325
- if cat in ('MOVIE','SPORT','GOV','JOB','AUTO','WORLD','GAME','NATURE','TRAVEL','STUDY','LIFE'):
-  # Distinct recognisable symbols for every non-tech category.
-  if cat=='MOVIE':
-   d.rounded_rectangle((cx-220,cy-110,cx+220,cy+160),radius=22,fill='#21152e',outline=accent,width=12)
-   d.polygon([(cx-55,cy-70),(cx-55,cy+100),(cx+100,cy+15)],fill=accent)
-   for x in range(cx-190,cx+200,90):d.rectangle((x,cy-160,x+48,cy-123),fill='#fff0c7')
-  elif cat=='SPORT':
-   d.ellipse((cx-190,cy-190,cx+190,cy+190),fill='#f3f3eb',outline=accent,width=12)
-   d.arc((cx-155,cy-155,cx+155,cy+155),30,210,fill='#16333c',width=13)
-   d.arc((cx-155,cy-155,cx+155,cy+155),210,390,fill='#16333c',width=13)
-  elif cat=='AUTO':
-   d.rounded_rectangle((cx-260,cy-30,cx+260,cy+120),radius=35,fill=accent)
-   d.polygon([(cx-160,cy-30),(cx-90,cy-130),(cx+130,cy-130),(cx+200,cy-30)],fill='#c0eaff')
-   for x in (cx-165,cx+165):d.ellipse((x-48,cy+72,x+48,cy+168),fill='#101c2d',outline='#ffffff',width=9)
-  elif cat in ('GOV','JOB','STUDY'):
-   d.rounded_rectangle((cx-200,cy-190,cx+200,cy+200),radius=12,fill='#f4f4e9',outline=accent,width=10)
-   for yy in (-90,-25,40,105):d.line((cx-140,cy+yy,cx+145,cy+yy),fill='#51778f',width=10)
-   d.ellipse((cx+115,cy+85,cx+185,cy+155),fill=accent)
-  elif cat=='WORLD':
-   d.ellipse((cx-200,cy-200,cx+200,cy+200),fill='#245d7a',outline=accent,width=12)
-   for rx in (65,145):d.ellipse((cx-rx,cy-195,cx+rx,cy+195),outline='#b6f0fa',width=5)
-   d.line((cx-195,cy,cx+195,cy),fill='#b6f0fa',width=6)
-  elif cat=='NATURE':
-   d.ellipse((cx-150,cy-195,cx+150,cy+165),fill='#83cb8e')
-   d.line((cx,cy-110,cx,cy+230),fill='#f1f5d7',width=14)
-  elif cat=='TRAVEL':
-   d.polygon([(cx-250,cy+50),(cx+250,cy-100),(cx+110,cy+70),(cx+75,cy+220),(cx-30,cy+80)],fill=accent)
-  elif cat=='GAME':
-   d.rounded_rectangle((cx-230,cy-100,cx+230,cy+140),radius=90,fill=accent)
-   d.line((cx-130,cy-10,cx-130,cy+90),fill=bg,width=20);d.line((cx-180,cy+40,cx-80,cy+40),fill=bg,width=20)
-   for x,y in ((cx+95,cy+10),(cx+155,cy+70)):d.ellipse((x-18,y-18,x+18,y+18),fill=bg)
-  else:
-   for r in (75,140,205):d.ellipse((cx-r,cy-r,cx+r,cy+r),outline=accent,width=7)
- elif cat=='SECURITY':
-  d.polygon([(cx,cy-205),(cx+172,cy-135),(cx+152,cy+95),(cx,cy+215),(cx-152,cy+95),(cx-172,cy-135)],fill='#16495b',outline=accent,width=12)
-  d.arc((cx-70,cy-75,cx+70,cy+65),185,355,fill='#ffffff',width=16)
-  d.rounded_rectangle((cx-86,cy-15,cx+86,cy+105),radius=18,fill=accent)
-  d.ellipse((cx-12,cy+28,cx+12,cy+52),fill=bg);d.rectangle((cx-5,cy+49,cx+5,cy+79),fill=bg)
- elif cat=='CHIP':
-  d.rounded_rectangle((cx-175,cy-175,cx+175,cy+175),radius=35,fill='#27386b',outline=accent,width=10)
-  d.rounded_rectangle((cx-100,cy-100,cx+100,cy+100),radius=20,outline='#ffffff',width=7)
-  for off in range(-130,131,65):
-   d.line((cx+off,cy-175,cx+off,cy-220),fill=accent,width=9);d.line((cx+off,cy+175,cx+off,cy+220),fill=accent,width=9)
-   d.line((cx-175,cy+off,cx-220,cy+off),fill=accent,width=9);d.line((cx+175,cy+off,cx+220,cy+off),fill=accent,width=9)
- elif cat=='LAPTOP':
-  # A recognisable open laptop, not a smartphone, for MacBook/laptop stories.
-  d.rounded_rectangle((cx-245,cy-165,cx+245,cy+130),radius=18,fill='#0b1528',outline=accent,width=12)
-  d.rounded_rectangle((cx-223,cy-143,cx+223,cy+107),radius=6,fill='#2877a3')
-  d.ellipse((cx-120,cy-115,cx+115,cy+115),outline='#b6e9ff',width=7)
-  d.polygon([(cx-280,cy+130),(cx+280,cy+130),(cx+345,cy+183),(cx-345,cy+183)],fill='#a6b6c6',outline='#ffffff')
-  d.line((cx-125,cy+161,cx+125,cy+161),fill='#41556b',width=8)
- elif cat=='DEVICE':
-  d.rounded_rectangle((cx-128,cy-230,cx+128,cy+230),radius=38,fill='#06182c',outline=accent,width=12)
-  d.rounded_rectangle((cx-104,cy-194,cx+104,cy+180),radius=16,fill='#255e91')
-  d.ellipse((cx-75,cy-125,cx+75,cy+25),outline='#ffffff',width=10)
-  d.line((cx-60,cy+92,cx+60,cy+92),fill=accent,width=10)
- elif cat=='ROBOT':
-  d.rounded_rectangle((cx-175,cy-145,cx+175,cy+165),radius=75,fill='#34526b',outline=accent,width=12)
-  d.ellipse((cx-112,cy-32,cx-45,cy+35),fill=accent);d.ellipse((cx+45,cy-32,cx+112,cy+35),fill=accent)
-  d.arc((cx-90,cy-5,cx+90,cy+100),15,165,fill='#ffffff',width=10)
-  d.line((cx,cy-145,cx,cy-205),fill=accent,width=12);d.ellipse((cx-20,cy-225,cx+20,cy-185),fill=accent)
- elif cat=='CLOUD':
-  d.ellipse((cx-160,cy-65,cx+15,cy+110),fill=accent)
-  d.ellipse((cx-45,cy-160,cx+180,cy+95),fill=accent)
-  d.rounded_rectangle((cx-190,cy-30,cx+210,cy+125),radius=60,fill=accent)
-  for k in range(3):
-   yy=cy+180+k*45;d.line((cx-150,yy,cx+145,yy),fill='#d9f8ff',width=9)
- elif cat=='SCIENCE':
-  for r in (80,140,205):d.ellipse((cx-r,cy-r,cx+r,cy+r),outline=accent,width=5)
-  for dx,dy in ((-185,0),(185,0),(0,-185),(0,185),(120,120),(-120,-120)):
-   d.line((cx,cy,cx+dx,cy+dy),fill='#c6e4f0',width=6);d.ellipse((cx+dx-16,cy+dy-16,cx+dx+16,cy+dy+16),fill=accent)
-  d.ellipse((cx-35,cy-35,cx+35,cy+35),fill='#ffffff')
- elif cat=='AI':
-  for x,y in ((-145,-110),(0,-190),(145,-110),(-145,110),(0,190),(145,110)):
-   d.line((cx,cy,cx+x,cy+y),fill=accent,width=10);d.ellipse((cx+x-24,cy+y-24,cx+x+24,cy+y+24),fill='#ffffff')
-  d.rounded_rectangle((cx-110,cy-110,cx+110,cy+110),radius=50,fill='#423e8c',outline=accent,width=12)
-  d.ellipse((cx-42,cy-42,cx+42,cy+42),fill=accent)
- else:
-  for i,h in enumerate((130,210,160,285)):
-   x=cx-170+i*110;d.rounded_rectangle((x,cy+160-h,x+70,cy+160),radius=10,fill=accent if i%2 else '#e6f8ff')
-  d.line((cx-220,cy+175,cx+245,cy+175),fill='#ffffff',width=8)
- # Text-free artwork prevents cropped labels and illegible lettering on mobile cards.
- # The headline is always accessible as real HTML text beneath the image.
- d.rounded_rectangle((75,82,230,95),radius=6,fill=accent)
- d.rounded_rectangle((75,570,345,580),radius=5,fill=accent)
- im.save(dest,'JPEG',quality=87,optimize=True)
+ # Do not fabricate an event image or reuse an unrelated category illustration.
+ im=Image.new('RGB',(1280,720),'#15233b')
+ draw=ImageDraw.Draw(im)
+ draw.rounded_rectangle((100,120,1180,600),radius=36,outline='#42617e',width=5)
+ draw.line((145,510,1135,510),fill='#42617e',width=3)
+ im.save(dest,'JPEG',quality=82,optimize=True)
 def body_html(raw):
  parts=[];buf=[]
  def flush():
@@ -165,7 +57,7 @@ def image_caption(p,lang):
  s=slug(p)
  if (R/'content'/'featured'/f'{s}.jpg').is_file():
   return 'AI-generated conceptual illustration — not an event photograph.' if lang=='en' else 'AI से बनाई गई सांकेतिक तस्वीर — वास्तविक घटना की फोटो नहीं।'
- return 'Original conceptual editorial illustration.' if lang=='en' else 'मौलिक सांकेतिक चित्र।'
+ return 'Neutral placeholder — no verified article image available.' if lang=='en' else 'सांकेतिक स्थानापन्न चित्र — सत्यापित समाचार तस्वीर उपलब्ध नहीं।'
 def card(p,lang):
  s=slug(p);t=title(p,lang);return f'<article class="card"><a href="/{lang}/news/{s}/"><img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="Conceptual illustration for {e(t)}"><div class="inner"><span class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])} · {e(urlparse(p.get("source","")).hostname or "Source")}</div></div></a></article>'
 for p in POSTS:image_for(p)
