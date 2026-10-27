@@ -146,6 +146,7 @@ def provider_order():
  return [p.strip() for p in order if p.strip() in ('groq','gemini','openrouter')]
 # Disable a rate-limited provider for the remainder of this run.
 PROVIDER_COOLDOWNS=set()
+UNAVAILABLE_MODELS=set()
 def call_provider(prompt):
  global CALLS
  last=None
@@ -156,6 +157,7 @@ def call_provider(prompt):
   if not key:continue
   models=([x.strip() for x in os.getenv('GEMINI_MODELS',os.getenv('GEMINI_MODEL','gemini-2.5-flash')+',gemini-2.5-flash-lite').split(',') if x.strip()] if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else os.getenv('OPENROUTER_MODEL','openrouter/free')])
   for model in dict.fromkeys(models):
+   if (provider,model) in UNAVAILABLE_MODELS:continue
    if CALLS>=MAX_CALLS:break
    CALLS+=1
    last=provider
@@ -170,7 +172,9 @@ def call_provider(prompt):
     if not r.ok:
      print('Provider',provider,'model',model,'HTTP',r.status_code,flush=True)
      if r.status_code in (401,402,403,429):PROVIDER_COOLDOWNS.add(provider);break
-     if r.status_code==404:continue
+     if r.status_code==404:
+      UNAVAILABLE_MODELS.add((provider,model))
+      continue
      continue
     data=json_object(raw)
     if isinstance(data,dict) and data.get('body'):
