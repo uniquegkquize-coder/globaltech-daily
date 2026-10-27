@@ -89,6 +89,19 @@ for lang in ('en','hi'):
  tools_home=f'<section class="featured-tools" aria-labelledby="featured-tools-heading"><div class="sectiontitle"><h2 id="featured-tools-heading">{"Explore AI Tools" if lang=="en" else "AI टूल्स खोजें"}</h2><a href="/{lang}/tools/">{"View all AI tools" if lang=="en" else "सभी AI टूल्स देखें"} →</a></div><p class="muted">{"Explore trusted official links for writing, research, coding and design." if lang=="en" else "लेखन, रिसर्च, कोडिंग और डिजाइन के लिए आधिकारिक AI टूल्स।"}</p><div class="tools featured-grid">{featured}</div></section>'
  home=f'<div class="wrap"><section class="lead"><div class="eyebrow">WORLDWIDE NEWS & EXPLAINERS</div><h1>{h}</h1><p class="muted">{desc}</p></section><div class="sectiontitle"><h2>{"Latest stories" if lang=="en" else "नई खबरें"}</h2><a href="/{lang}/tools/">AI Tools →</a></div><div class="layout"><div class="cards">{latest}</div>{sidebar}</div>{tools_home}</div>'
  write(OUT/lang/'index.html',shell(lang,h+' | GlobalTech Daily',desc,f'{SITE}/{lang}/',home))
+ page_size=24
+ total_pages=max(1,(len(POSTS)+page_size-1)//page_size)
+ def page_nav(page):
+  prev=(f'<a href="/{lang}/" rel="prev">← {"Previous" if lang=="en" else "पिछला"}</a>' if page==2 else f'<a href="/{lang}/page/{page-1}/" rel="prev">← {"Previous" if lang=="en" else "पिछला"}</a>') if page>1 else ''
+  nxt=f'<a href="/{lang}/page/{page+1}/" rel="next">{"Next" if lang=="en" else "अगला"} →</a>' if page<total_pages else ''
+  return f'<nav aria-label="Article pages" style="display:flex;justify-content:space-between;align-items:center;gap:16px;margin:28px 0 42px;font-size:1.1rem"><span>{prev}</span><span>{page} / {total_pages}</span><span>{nxt}</span></nav>'
+ home=home.replace(f'<div class="cards">{latest}</div>',f'<div><div class="cards">{latest}</div>{page_nav(1)}</div>')
+ write(OUT/lang/'index.html',shell(lang,h+' | GlobalTech Daily',desc,f'{SITE}/{lang}/',home))
+ for page in range(2,total_pages+1):
+  batch=''.join(card(p,lang) for p in POSTS[(page-1)*page_size:page*page_size])
+  paged=f'<div class="wrap"><div class="sectiontitle"><h1>{"Latest stories" if lang=="en" else "नई खबरें"} — {page}</h1></div><div class="layout"><div><div class="cards">{batch}</div>{page_nav(page)}</div>{sidebar}</div></div>'
+  write(OUT/lang/'page'/str(page)/'index.html',shell(lang,f'News page {page} | GlobalTech Daily',desc,f'{SITE}/{lang}/page/{page}/',paged))
+
  for cat,(en_label,hi_label) in CATEGORIES.items():
   selected=[p for p in POSTS if category(p)==cat]
   heading=en_label if lang=='en' else hi_label
