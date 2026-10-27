@@ -1,108 +1,60 @@
-
 name: GlobalTech Daily Auto News
-
 on:
   workflow_dispatch:
   schedule:
     - cron: '0 3,9,15,21 * * *'
-
 permissions:
   contents: write
-
 concurrency:
   group: globaltech-news
   cancel-in-progress: false
-
 jobs:
   publish-news:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 55
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+        with:
+          persist-credentials: true
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Install dependencies
         run: pip install -r requirements.txt
-
-      - name: Check Gemini API
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          python - <<'PY'
-          import os
-          import requests
-
-          key = os.environ.get("GEMINI_API_KEY", "")
-          if not key:
-              raise SystemExit("GEMINI_API_KEY missing")
-
-          response = requests.get(
-              "https://generativelanguage.googleapis.com/v1beta/models",
-              headers={"x-goog-api-key": key},
-              timeout=30
-          )
-          print("API Status:", response.status_code)
-          response.raise_for_status()
-
-          models = response.json().get("models", [])
-          for model in models:
-              if "generateContent" in model.get("supportedGenerationMethods", []):
-                  print(model["name"])
-          PY
-
-      - name: Diagnose and generate news
+      - name: Compile all Python files
+        run: python -m compileall -q scripts
+      - name: Archive old posts only once
+        run: python -u scripts/reset_old_posts.py
+      - name: Generate source-based news
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           AUTO_POST: ${{ vars.AUTO_POST }}
           SITE_URL: https://globaltech-daily.pages.dev
           PYTHONUNBUFFERED: '1'
-        run: |
-          echo "=== FILE INFORMATION ==="
-          pwd
-          wc -l scripts/collect.py
-
-          echo "=== LAST 15 LINES ==="
-          tail -n 15 scripts/collect.py
-
-          echo "=== PYTHON SYNTAX CHECK ==="
-          python -m py_compile scripts/collect.py
-
-          echo "=== SETTINGS ==="
-          echo "AUTO_POST=$AUTO_POST"
-
-          echo "=== START NEWS GENERATION ==="
-          python -u scripts/collect.py
-
-          echo "=== NEWS GENERATION FINISHED ==="
-
-          echo "=== ARTICLE FILE COUNT ==="
-          if [ -d content/posts ]; then
-            find content/posts -maxdepth 1 -type f -name '*.json' | wc -l
-          else
-            echo "No posts directory found"
-          fi
-
+          DAILY_LIMIT: '10'
+          MAX_MODELS_PER_ARTICLE: '100'
+        run: python -u scripts/collect.py
       - name: Build website
+        env:
+          SITE_URL: https://globaltech-daily.pages.dev
         run: |
           python -u scripts/build.py
-          echo "Website build finished"
-
-      - name: Commit new articles
+          test -f dist/en/index.html
+          test -f dist/hi/index.html
+          test -f dist/sitemap.xml
+          echo 'Website build finished'
+      - name: Commit generated site and articles
         shell: bash
         run: |
-          git config user.name "GlobalTech News Bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
+          git config user.name 'GlobalTech News Bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-
           if ! git diff --cached --quiet; then
-            git commit -m "Auto publish news"
+            git commit -m 'Publish source-backed tech news and rebuild website'
+            git pull --rebase origin main
             git push origin HEAD:main
           else
-            echo "No new articles to publish"
+            echo 'No changes to commit'
           fi

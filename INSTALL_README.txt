@@ -1,0 +1,1 @@
+GlobalTech Daily repository-root upgrade. Extract into the ROOT of your existing GitHub repository (not a nested folder). Existing content/posts and dist are not included. Back up before install. See chat instructions.

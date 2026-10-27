@@ -1,10 +1,51 @@
 import os, sys, json, hashlib, datetime as dt, pathlib, re, time, html
 import requests, feedparser
+from bs4 import BeautifulSoup
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 POSTS = ROOT / 'content' / 'posts'
 POSTS.mkdir(parents=True, exist_ok=True)
 FEEDS = ['https://blog.cloudflare.com/rss/', 'https://blog.google/rss/']
-MODELS = [m.strip() for m in os.getenv('GEMINI_MODELS', 'gemini-3.5-flash-lite,gemini-3.5-flash,gemini-3.8-flash,gemini-2.5-flash-lite').split(',') if m.strip()]
+PREFERRED_MODELS = [m.strip() for m in os.getenv('GEMINI_MODELS', 'gemini-3.5-flash-lite,gemini-3.1-flash-lite,gemini-3.5-flash,gemini-3.6-flash,gemini-3.8-flash').split(',') if m.strip()]
+MAX_MODELS_PER_ARTICLE = max(1, min(200, int(os.getenv('MAX_MODELS_PER_ARTICLE', '100'))))
+MODEL_CACHE = None
+
+def discover_models(api_key):
+    global MODEL_CACHE
+    if MODEL_CACHE is not None:
+        return MODEL_CACHE
+    discovered = []
+    url = 'https://generativelanguage.googleapis.com/v1beta/models?pageSize=1000'
+    try:
+        for _ in range(5):
+            response = requests.get(url, headers={'x-goog-api-key': api_key}, timeout=(10, 25))
+            response.raise_for_status()
+            result = response.json()
+            for item in result.get('models', []):
+                name = item.get('name', '').removeprefix('models/')
+                methods = item.get('supportedGenerationMethods', [])
+                # Only text-oriented Gemini generation models. No image, audio, TTS, embedding, or experimental tools.
+                if ('generateContent' in methods and name.startswith('gemini-')
+                        and not any(x in name.lower() for x in ('image', 'tts', 'audio', 'embedding', 'robotics', 'computer-use', 'live', 'native', 'transcribe', 'translate', 'video', 'omni'))):
+                    discovered.append(name)
+            token = result.get('nextPageToken')
+            if not token:
+                break
+            url = 'https://generativelanguage.googleapis.com/v1beta/models?pageSize=1000&pageToken=' + requests.utils.quote(token)
+        # Prefer lower-cost Flash/Lite families, then other compatible models.
+        def priority(name):
+            return (0 if 'flash-lite' in name else 1 if 'flash' in name else 2, name)
+        ordered = [m for m in PREFERRED_MODELS if m in discovered]
+        ordered.extend(m for m in sorted(set(discovered), key=priority) if m not in ordered )
+        # All compatible text models are discoverable. A free-tier project may reject some.
+        # No request is made to a model unless earlier models fail.
+        MODEL_CACHE = ordered
+        print('Discovered compatible models:', len(ordered), flush=True)
+    except (requests.RequestException, ValueError) as exc:
+        print('Model discovery failed:', type(exc).__name__, str(exc)[:180], flush=True)
+        # Do not blindly probe models when discovery or authentication fails.
+        MODEL_CACHE = []
+    return MODEL_CACHE
+
 LIMIT = int(os.getenv('DAILY_LIMIT', '10'))
 UTC = dt.timezone.utc
 
@@ -23,15 +64,23 @@ def today_count():
     return total
 
 def generate(api_key, title, excerpt, source):
-    prompt = f'''You are a careful bilingual technology news editor. Use ONLY facts in the supplied official source excerpt. No speculation, invented facts, fabricated quotations or unsourced claims. Attribute source claims clearly. If the excerpt does not contain enough verifiable information for an informative article, return {{}}. Do NOT pad length. Return JSON with these string fields: en_title, hi_title, en_body, hi_body, en_meta, hi_meta, en_keywords, hi_keywords. Bodies must be plain text with paragraphs separated by blank lines, factual and detailed when supported; aim for 350-650 words in English if source permits, otherwise shorter. Hindi should communicate equivalent facts. Titles should be clear and descriptive, not clickbait. Meta descriptions 120-160 characters when feasible. Keywords should be comma-separated relevant phrases, not spam. Never say you independently fact-checked. SOURCE URL: {source}\nSOURCE TITLE: {title}\nSOURCE EXCERPT: {excerpt[:6000]}'''
-    payload = {'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'responseMimeType': 'application/json', 'maxOutputTokens': 5000}}
-    for model in MODELS[:4]:
+    prompt = f'''You are a careful bilingual technology news editor. Use ONLY facts in the supplied official source article. Explain context and implications only when supported. Structure each language body with 3-5 informative sections using headings on separate lines prefixed ##. Include a useful factual opening and key takeaways. Never fabricate quotes, dates, availability, prices, or benchmarks. No speculation, invented facts, fabricated quotations or unsourced claims. Attribute source claims clearly. If the excerpt does not contain enough verifiable information for an informative article, return {{}}. Do NOT pad length. Return JSON with these string fields: en_title, hi_title, en_body, hi_body, en_meta, hi_meta, en_keywords, hi_keywords. Bodies must be plain text with paragraphs separated by blank lines, factual and detailed when supported; aim for up to 10000 English words ONLY if the source contains enough distinct verified facts; do not repeat, invent, or pad. If facts are limited, write a shorter accurate article. Hindi should communicate equivalent facts. Titles should be clear and descriptive, not clickbait. Meta descriptions 120-160 characters when feasible. Keywords should be comma-separated relevant phrases, not spam. Never say you independently fact-checked. SOURCE URL: {source}\nSOURCE TITLE: {title}\nSOURCE ARTICLE TEXT: {excerpt[:16000]}'''
+    payload = {'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'responseMimeType': 'application/json', 'maxOutputTokens': 8192}}
+    models = discover_models(api_key)
+    if not models:
+        print('No compatible models discovered; check API key/project.', flush=True)
+        return None
+    for model in models[:MAX_MODELS_PER_ARTICLE]:
         print('Trying Gemini model:', model, flush=True)
         try:
             resp = requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent', headers={'x-goog-api-key': api_key}, json=payload, timeout=(10, 65))
             if not resp.ok:
                 print('Model HTTP', resp.status_code, resp.text[:200], flush=True)
-                if resp.status_code in (400, 401, 403):
+                if resp.status_code == 429 and 'quota' in resp.text.lower():
+                    print('Quota limit reached; stopping this article to avoid waste', flush=True)
+                    return None
+                if resp.status_code in (401, 403):
+                    print('Authentication/billing restriction; stopping attempts', flush=True)
                     return None
                 continue
             raw = resp.json()['candidates'][0]['content']['parts'][0]['text']
@@ -45,6 +94,22 @@ def generate(api_key, title, excerpt, source):
         except (requests.RequestException, ValueError, KeyError, IndexError, TypeError) as exc:
             print('Model failed:', type(exc).__name__, str(exc)[:150], flush=True)
     return None
+
+def fetch_source(url):
+    """Extract official article text; external images are not reused without license."""
+    try:
+        response = requests.get(url, timeout=(8, 22), headers={'User-Agent': 'Mozilla/5.0 (compatible; GlobalTechDaily/1.0)'})
+        response.raise_for_status()
+        if 'html' not in response.headers.get('Content-Type', 'text/html'): return '', ''
+        soup = BeautifulSoup(response.text[:1500000], 'html.parser')
+        for tag in soup(['script', 'style', 'nav', 'footer', 'aside', 'form']): tag.decompose()
+        main = soup.find('article') or soup.find('main') or soup
+        chunks = [clean(t.get_text(' ', strip=True)) for t in main.find_all(['h2', 'h3', 'p', 'li'])]
+        text = '\n'.join(t for t in chunks if len(t) > 35)
+        return text[:18000], ''
+    except (requests.RequestException, ValueError) as exc:
+        print('Source extraction unavailable:', type(exc).__name__, flush=True)
+        return '', ''
 
 def main():
     if os.getenv('AUTO_POST', 'false').lower() != 'true':
@@ -76,11 +141,13 @@ def main():
             age = (dt.datetime.now(UTC).date() - dt.date(*pub[:3])).days
             if not 0 <= age <= 7: continue
             excerpt = clean(entry.get('summary', '') or entry.get('description', ''))
+            article_text, image_url = fetch_source(url)
+            if len(article_text) > len(excerpt): excerpt = article_text
             if len(excerpt) < 160: continue
             print('Processing:', clean(entry.get('title'))[:90], flush=True)
             article = generate(api_key, clean(entry.get('title')), excerpt, url)
             if not article: continue
-            article.update(id=post_id, source=url, date=dt.datetime.now(UTC).isoformat(), source_title=clean(entry.get('title')))
+            article.update(id=post_id, source=url, date=dt.datetime.now(UTC).isoformat(), source_title=clean(entry.get('title')), source_image=image_url)
             path.write_text(json.dumps(article, ensure_ascii=False, indent=2), encoding='utf-8')
             created += 1
             print('Saved article', created, post_id, flush=True)
