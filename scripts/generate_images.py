@@ -12,7 +12,7 @@ IMAGES=ROOT/'content/featured'
 IMAGES.mkdir(parents=True,exist_ok=True)
 KEY=os.getenv('GEMINI_API_KEY','').strip()
 MODEL=os.getenv('GEMINI_IMAGE_MODEL','gemini-2.5-flash-image').strip()
-MAX_NEW=max(0,min(8,int(os.getenv('MAX_NEW_IMAGES','3'))))
+MAX_NEW=max(0,min(14,int(os.getenv('MAX_NEW_IMAGES','14'))))
 
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
 
