@@ -1,104 +1,115 @@
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
-import os, html, json, shutil, re
+from urllib.parse import urlparse
+import os, html, json, shutil, re, datetime as dt, math, textwrap, hashlib
 from PIL import Image, ImageDraw, ImageFont
-CONTACT = 'info@sellercalc.net'
-R = Path(__file__).resolve().parents[1]
-OUT = R / 'dist'
-shutil.rmtree(OUT, ignore_errors=True)
-OUT.mkdir(parents=True)
-SITE = os.getenv('SITE_URL', 'https://globaltech-daily.pages.dev').rstrip('/')
-POSTS = []
-for f in (R / 'content' / 'posts').glob('*.json'):
-    try:
-        p = json.loads(f.read_text(encoding='utf-8'))
-        if p.get('id') and p.get('source'):
-            POSTS.append(p)
-    except (ValueError, OSError):
-        pass
-POSTS.sort(key=lambda p: p.get('date', ''), reverse=True)
-
-def e(s): return html.escape(str(s or ''), quote=True)
-def write(path, content):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(content, encoding='utf-8')
-def cover(title):
-    # Self-created decorative SVG; not a licensed photo or a 1200px raster Discover image.
-    safe = e(re.sub(r'[^\w\s\-.,]', '', title)[:75])
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675"><rect width="1200" height="675" fill="#0b1730"/><circle cx="1050" cy="100" r="260" fill="#1761ab" opacity=".35"/><rect x="65" y="80" width="420" height="12" fill="#4ec6e8"/><text x="65" y="155" fill="#4ec6e8" font-family="Arial,sans-serif" font-size="45" font-weight="bold">GLOBALTECH DAILY</text><foreignObject x="65" y="210" width="1060" height="340"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Arial,sans-serif;font-size:65px;line-height:1.2;font-weight:700;color:white;overflow-wrap:break-word">{safe}</div></foreignObject><text x="65" y="620" fill="#a7c9e6" font-family="Arial,sans-serif" font-size="30">TECHNOLOGY NEWS • SOURCE-ATTRIBUTED</text></svg>'''
-
-def raster_cover(slug, title):
-    image = Image.new('RGB', (1280, 720), '#0b1730')
-    draw = ImageDraw.Draw(image)
-    draw.ellipse((870,-230,1520,420), fill='#173a72')
-    draw.rounded_rectangle((68,70,310,124), radius=14, fill='#18b8d4')
-    fonts = ['/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', '/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf']
-    font_path = next((f for f in fonts if Path(f).exists()), None)
-    big = ImageFont.truetype(font_path, 55) if font_path else ImageFont.load_default()
-    small = ImageFont.truetype(font_path, 26) if font_path else ImageFont.load_default()
-    draw.text((85,82), 'TECH NEWS', fill='#06162a', font=small)
-    words = title.split(); lines=[]; current=''
-    for word in words:
-        test=(current+' '+word).strip()
-        if draw.textbbox((0,0),test,font=big)[2] > 1110 and current:
-            lines.append(current);current=word
-        else: current=test
-    if current: lines.append(current)
-    for i,line in enumerate(lines[:5]): draw.text((72,175+i*83),line,fill='#ffffff',font=big)
-    draw.text((72,635),'GLOBALTECH DAILY  •  TECHNOLOGY EXPLAINED',fill='#93dce9',font=small)
-    dest=OUT/'images'/f'{slug}.jpg';dest.parent.mkdir(parents=True,exist_ok=True)
-    image.save(dest, 'JPEG', quality=88, optimize=True)
-
-def paragraphs_html(body):
-    chunks=re.split(r'\n\s*\n|(?=^## )', body.strip(), flags=re.M)
-    result=[]
-    for chunk in chunks:
-        chunk=chunk.strip()
-        if not chunk: continue
-        if chunk.startswith('## '):
-            lines=chunk.splitlines();result.append('<h2>'+e(lines[0][3:])+'</h2>')
-            if len(lines)>1: result.append('<p>'+e(' '.join(lines[1:]))+'</p>')
-        else: result.append('<p>'+e(chunk)+'</p>')
-    return ''.join(result)
-
-def shell(lang, title, description, canonical, body, extra=''):
-    return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)}</title><meta name="description" content="{e(description)}"><link rel="canonical" href="{e(canonical)}"><link rel="stylesheet" href="/style.css">{extra}</head><body><header><a class="brand" href="/{lang}/">GlobalTech Daily</a><nav><a href="/en/">English</a> · <a href="/hi/">हिन्दी</a> · <a href="/{lang}/about/">About</a> · <a href="/{lang}/privacy/">Privacy</a> · <a href="/{lang}/contact/">Contact</a> · <a href="/{lang}/editorial/">Editorial</a></nav></header><main>{body}</main><footer>AI-assisted reporting based on attributed source announcements. <a href="/{lang}/affiliate/">Affiliate disclosure</a> · <a href="mailto:{CONTACT}">{CONTACT}</a></footer></body></html>'''
-
+R=Path(__file__).resolve().parents[1]; OUT=R/'dist'; SITE=os.getenv('SITE_URL','https://globaltech-daily.pages.dev').rstrip('/'); CONTACT='info@sellercalc.net'
+shutil.rmtree(OUT,ignore_errors=True);OUT.mkdir(parents=True)
+def e(x):return html.escape(str(x or ''),quote=True)
+def write(p,s):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s,encoding='utf-8')
+def title(p,lang):return p.get(lang+'_title') or p.get('en_title') or 'Technology news'
+def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
+POSTS=[]
+for f in sorted((R/'content/posts').glob('*.json')):
+ try:
+  p=json.loads(f.read_text(encoding='utf-8'))
+  if slug(p) and str(p.get('source','')).startswith('https://') and len(p.get('en_body',''))>=150:POSTS.append(p)
+ except (OSError,ValueError,TypeError):pass
+POSTS.sort(key=lambda x:x.get('date',''),reverse=True)
+TOOLS=[('ChatGPT','Writing, reasoning and coding','https://chatgpt.com/','Assistant'),('Gemini','Multimodal AI assistant','https://gemini.google.com/','Assistant'),('Claude','Writing and analysis','https://claude.ai/','Assistant'),('Perplexity','Research with linked sources','https://www.perplexity.ai/','Research'),('NotebookLM','Research from your own sources','https://notebooklm.google.com/','Research'),('Google AI Studio','Experiment with Gemini models','https://aistudio.google.com/','Developer'),('Hugging Face','Explore models and datasets','https://huggingface.co/','Developer'),('Canva','Visual content design','https://www.canva.com/','Design'),('GitHub Copilot','AI-assisted programming','https://github.com/features/copilot','Developer'),('Adobe Firefly','Creative generative AI','https://firefly.adobe.com/','Design')]
+CSS='''*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f6f8fc;color:#15213a;font:16px/1.7 system-ui,-apple-system,Segoe UI,sans-serif}a{color:#0a6ab7}a:hover{text-decoration:underline}img{max-width:100%}.wrap{max-width:1200px;margin:auto;padding:0 24px}.top{background:#0a1429;color:#fff}.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px;flex-wrap:wrap}.logo{font-size:25px;font-weight:900;letter-spacing:-.9px;color:white;text-decoration:none}.logo span{color:#5ce0dc}nav{display:flex;gap:17px;flex-wrap:wrap}nav a{color:#d9e6fb;text-decoration:none;font-size:14px;font-weight:650}.lead{padding:44px 0 28px}.eyebrow{color:#0b8a93;font-size:12px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(32px,4.4vw,58px);line-height:1.12;letter-spacing:-.04em;margin:12px 0 20px}h2{line-height:1.25;letter-spacing:-.02em}p{margin:0 0 1.15em}.muted{color:#5b6c83}.layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:34px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.card,.panel,.article{background:#fff;border:1px solid #e0e8f1;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(13,35,72,.04)}.card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}.card .inner{padding:20px}.card h2{font-size:21px;margin:6px 0 12px}.card a{text-decoration:none;color:inherit}.card a:hover{color:#006db1}.date{color:#60718b;font-size:13px}.panel{padding:22px;margin-bottom:20px}.panel h2{font-size:18px;margin-top:0}.panel a{display:block;padding:10px 0;border-bottom:1px solid #e8edf5;text-decoration:none}.panel a:last-child{border:0}.article{padding:clamp(18px,4vw,54px);max-width:850px;margin:34px auto}.article h1{font-size:clamp(30px,4vw,48px)}.article .hero{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin:12px 0 26px}.story{font-size:18px;line-height:1.85}.story h2{font-size:27px;margin:36px 0 12px}.story h3{font-size:22px;margin:28px 0 10px}.story ul{padding-left:26px}.story p{margin:0 0 1.25em}.summary{background:#eef8fa;border-left:4px solid #079aa3;padding:18px 22px;border-radius:8px;margin:22px 0}.summary strong{display:block;margin-bottom:8px}.source{border-top:1px solid #dfe8f0;margin-top:32px;padding-top:20px}.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.tool{background:white;border:1px solid #e0e8f1;border-radius:16px;padding:22px}.tool h2{font-size:21px;margin:5px 0}.pill{display:inline-block;padding:3px 10px;border-radius:20px;background:#e2f7f7;color:#006a71;font-size:12px;font-weight:700}.tool a{font-weight:750}.footer{margin-top:65px;background:#0a1429;color:#c9d5e7;padding:36px 0}.footer a{color:#b5e8fa}.footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footerlinks{display:flex;gap:14px;flex-wrap:wrap}.reading{position:fixed;top:0;left:0;height:3px;background:#06aeb8;width:0;z-index:9}.related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.related a{display:block;background:#f2f7fc;padding:15px;border-radius:10px;text-decoration:none;font-weight:650}.langswitch{font-size:14px}.notice{font-size:13px;color:#62718b}.sectiontitle{display:flex;justify-content:space-between;align-items:center;margin:24px 0 20px}@media(max-width:900px){.layout{grid-template-columns:1fr}.tools{grid-template-columns:repeat(2,minmax(0,1fr))}.side{display:none}}@media(max-width:600px){.wrap{padding:0 16px}.top .wrap{padding-top:15px;padding-bottom:15px}.logo{font-size:22px}nav{gap:12px}nav a{font-size:13px}.lead{padding-top:25px}.cards,.tools,.related{grid-template-columns:1fr}.article{border-radius:0;margin:12px auto;padding:20px 16px}.story{font-size:17px}.story h2{font-size:23px}.card .inner{padding:16px}}'''
+CSS += '''.featured-tools{margin:54px 0 10px;padding:30px;border-radius:24px;background:linear-gradient(145deg,#e8f6fb,#f5f8ff);border:1px solid #d5e7f2}.featured-tools .sectiontitle{margin-top:0}.featured-tools .tool{box-shadow:0 6px 18px rgba(10,30,60,.05)}.featured-tools .tool h3{font-size:19px;margin:8px 0}.featured-grid{grid-template-columns:repeat(4,minmax(0,1fr))}@media(max-width:950px){.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.featured-tools{margin:32px 0;padding:18px}.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.featured-grid .tool{padding:13px}.featured-grid .tool h3{font-size:16px}.featured-grid .tool p{font-size:13px}.featured-grid .tool a{font-size:12px}}''';write(OUT/'style.css',CSS)
+JS='''addEventListener('scroll',()=>{let d=document.documentElement;let m=d.scrollHeight-d.clientHeight;let b=document.querySelector('.reading');if(b)b.style.width=(m>0?100*d.scrollTop/m:0)+'%';},{passive:true});'''
+write(OUT/'site.js',JS)
+def shell(lang,t,desc,url,body,extra=''):
+ nav=[('Home','होम',''),('AI Tools','AI टूल्स','tools/'),('About','हमारे बारे में','about/'),('Editorial','संपादकीय नीति','editorial/'),('Contact','संपर्क','contact/')]
+ links=''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in nav)
+ return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a1429"><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="stylesheet" href="/style.css">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobalTech <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="/{'hi' if lang=='en' else 'en'}/">{'हिन्दी' if lang=='en' else 'English'}</a></nav></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobalTech Daily</strong><p>Independent AI-assisted technology explainers with source attribution.</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{s.title()}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js"></script></body></html>'''
+def image_for(p):
+ s=slug(p); dest=OUT/'images'/f'{s}.jpg';dest.parent.mkdir(parents=True,exist_ok=True)
+ seed=int(hashlib.sha256((p.get('source_title','')+s).encode()).hexdigest()[:8],16)
+ palettes=[('#071b34','#167eae','#21e0ce'),('#181339','#734bc0','#51dcf5'),('#0b2530','#147a74','#a8e34e'),('#22152b','#a3469c','#ffbd70')]
+ bg,mid,accent=palettes[seed%len(palettes)];im=Image.new('RGB',(1280,720),bg);d=ImageDraw.Draw(im)
+ for i in range(14):
+  x=(seed*(i+7)*13)%1400-70;y=(seed*(i+3)*19)%850-60;r=35+(seed//(i+1))%170
+  d.ellipse((x-r,y-r,x+r,y+r),outline=mid,width=3)
+ for i in range(8):
+  x=690+i*68;d.line((x,110,x+100,590),fill=mid,width=2)
+ for i in range(6):
+  x=730+i*65;y=175+(i%3)*110;d.rounded_rectangle((x,y,x+135,y+75),radius=15,outline=accent,width=4)
+  d.line((x+20,y+37,x+115,y+37),fill=accent,width=3)
+ d.rounded_rectangle((80,95,360,149),radius=14,fill=accent)
+ font='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf';font2='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+ if Path(font).exists():
+  f=ImageFont.truetype(font,25);big=ImageFont.truetype(font,52);small=ImageFont.truetype(font2,25)
+ else:f=big=small=ImageFont.load_default()
+ d.text((99,107),'TECH INSIGHT',font=f,fill=bg)
+ category='AI & TECHNOLOGY'
+ d.text((80,235),category,font=big,fill='#ffffff')
+ d.text((80,310),'WHAT CHANGED',font=big,fill='#ffffff')
+ d.rounded_rectangle((80,410,580,420),radius=4,fill=accent)
+ d.text((80,460),'GlobalTech Daily',font=f,fill='#ffffff')
+ d.text((80,510),'Original editorial illustration',font=small,fill='#b9d1e8')
+ im.save(dest,'JPEG',quality=86,optimize=True)
+def body_html(raw):
+ parts=[];buf=[]
+ def flush():
+  if buf:parts.append('<p>'+e(' '.join(buf))+'</p>');buf.clear()
+ for line in str(raw).splitlines():
+  line=line.strip()
+  if not line:flush();continue
+  if line.startswith('### '):flush();parts.append('<h3>'+e(line[4:])+'</h3>')
+  elif line.startswith('## '):flush();parts.append('<h2>'+e(line[3:])+'</h2>')
+  elif line.startswith('- '):flush();parts.append('<p>• '+e(line[2:])+'</p>')
+  else:buf.append(line)
+ flush();return ''.join(parts)
+def card(p,lang):
+ s=slug(p);t=title(p,lang);return f'<article class="card"><a href="/{lang}/news/{s}/"><img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="Original editorial illustration for {e(t)}"><div class="inner"><span class="eyebrow">TECH NEWS</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])} · {e(urlparse(p.get("source","")).hostname or "Source")}</div></div></a></article>'
+for p in POSTS:image_for(p)
 for p in POSTS:
-    slug = re.sub('[^a-f0-9]', '', str(p['id']))[:32]
-    if not slug: continue
-    title_for_cover = p.get('en_title', p.get('source_title', 'Technology News'))
-    raster_cover(slug, title_for_cover)
-    for lang in ('en', 'hi'):
-        title = p.get(lang + '_title') or p.get('en_title') or 'Technology News'
-        body = p.get(lang + '_body') or p.get('en_body') or ''
-        meta = p.get(lang + '_meta') or (str(body)[:155])
-        keywords = p.get(lang + '_keywords', '')
-        canonical = f'{SITE}/{lang}/news/{slug}/'
-        alternate = 'hi' if lang == 'en' else 'en'
-        date = p.get('date', '')
-        paragraphs = paragraphs_html(body)
-        if not paragraphs: paragraphs = '<p>Details are being updated.</p>'
-        schema = {'@context': 'https://schema.org', '@type': 'NewsArticle', 'headline': title, 'datePublished': date, 'dateModified': date, 'inLanguage': lang, 'mainEntityOfPage': canonical, 'image': [f'{SITE}/images/{slug}.jpg'], 'publisher': {'@type': 'Organization', 'name': 'GlobalTech Daily'}, 'isBasedOn': p['source']}
-        schema_json = json.dumps(schema, ensure_ascii=False).replace("<", "\\u003c")
-        extra = f'<meta name="keywords" content="{e(keywords)}"><meta property="og:type" content="article"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(meta)}"><meta property="og:image" content="{SITE}/images/{slug}.jpg"><meta name="robots" content="max-image-preview:large"><link rel="alternate" hreflang="{alternate}" href="{SITE}/{alternate}/news/{slug}/"><script type="application/ld+json">{schema_json}</script>'
-        content = f'<article><div class="tag">TECHNOLOGY</div><h1>{e(title)}</h1><p class="date">{e(date[:10])} · AI-assisted, source-attributed report</p><img class="hero" src="/images/{slug}.jpg" width="1200" height="675" alt="GlobalTech Daily illustration for {e(title)}"><div class="story">{paragraphs}</div><p class="source">Original source: <a href="{e(p["source"])}" rel="noopener noreferrer">{e(p.get("source_title") or "Official announcement")}</a></p><p class="notice">This article summarizes a publisher announcement. It has not been independently fact-checked.</p></article>'
-        write(OUT / lang / 'news' / slug / 'index.html', shell(lang, title, meta, canonical, content, extra))
-for lang in ('en', 'hi'):
-    links = []
-    for p in POSTS:
-        slug = re.sub('[^a-f0-9]', '', str(p['id']))[:32]
-        if not slug: continue
-        title = p.get(lang + '_title') or p.get('en_title') or 'Technology News'
-        links.append(f'<a class="item" href="/{lang}/news/{slug}/"><img src="/images/{slug}.jpg" loading="lazy" alt="" width="240" height="135"><div><h2>{e(title)}</h2><small>{e(p.get("date", "")[:10])}</small></div></a>')
-    heading = 'Latest Technology News' if lang == 'en' else 'ताज़ा टेक्नोलॉजी समाचार'
-    content = f'<h1>{heading}</h1><p>AI-assisted summaries with links to original publisher announcements.</p>' + (''.join(links) if links else '<p>No articles published yet.</p>')
-    write(OUT / lang / 'index.html', shell(lang, heading + ' | GlobalTech Daily', heading, f'{SITE}/{lang}/', content))
-    for slug, heading, text in [('about', 'About GlobalTech Daily', 'GlobalTech Daily is an independent technology news summary website. We publish bilingual, AI-assisted explainers based on attributed public announcements. We do not claim independent verification of publisher statements. For corrections email info@sellercalc.net.'), ('privacy', 'Privacy Policy', 'We publish static pages. Hosting and external links may involve technical logs or third-party data processing. We do not currently claim to operate an email newsletter or account system. For privacy enquiries email info@sellercalc.net. Update this policy before enabling analytics, advertising, cookies or contact forms.'), ('affiliate', 'Affiliate Disclosure', 'If we add affiliate links, we will label them clearly and may earn a commission at no extra cost to you. Editorial coverage is not paid placement unless specifically disclosed.'), ('contact', 'Contact and Corrections', 'For corrections, copyright requests, privacy enquiries or editorial feedback email info@sellercalc.net. Do not submit sensitive personal information.'), ('editorial', 'Editorial Policy', 'Articles are AI-assisted summaries of publicly available publisher announcements. Sources are linked. We aim for accuracy and do not invent quotes or claim independent verification. Corrections should be made promptly after review. Contact info@sellercalc.net.'), ('tools', 'Technology Tools', 'Technology guides and tools will be added after editorial review.')]:
-        write(OUT / lang / slug / 'index.html', shell(lang, heading, text, f'{SITE}/{lang}/{slug}/', f'<h1>{heading}</h1><p>{text}</p>'))
-write(OUT / 'index.html', '<!doctype html><html><head><meta http-equiv="refresh" content="0;url=/en/"></head><body><a href="/en/">English</a></body></html>')
-write(OUT / 'style.css', 'body{font:18px/1.7 system-ui,sans-serif;background:#0c1628;color:#eaf1ff;max-width:960px;margin:auto;padding:20px}a{color:#8dd9ff}header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:18px 0;border-bottom:1px solid #35415c}.brand{font-size:25px;font-weight:800;text-decoration:none}main{min-height:65vh}h1{line-height:1.2;font-size:clamp(30px,5vw,46px)}h2{font-size:22px;line-height:1.3;margin:0}.item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid #35415c;text-decoration:none}.item img{width:180px;height:auto;object-fit:cover;border-radius:10px}.hero{width:100%;height:auto;border-radius:14px}.story{font-size:19px;line-height:1.85}.story p{margin:1.2em 0}.tag{color:#6cdbff;font-weight:bold}.date,.notice,small,footer{color:#b4bfd2}.source,.notice{border-top:1px solid #35415c;padding-top:18px}footer{margin-top:50px;border-top:1px solid #35415c;padding:22px 0}@media(max-width:550px){.item img{width:115px}.item{gap:12px}}')
-write(OUT / 'robots.txt', f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
-urls = ['/en/', '/hi/'] + [f'/{lang}/news/{p["id"]}/' for p in POSTS for lang in ('en', 'hi')]
-write(OUT / 'sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join('<url><loc>' + xml_escape(SITE + u) + '</loc></url>' for u in urls) + '</urlset>')
-print('Built', len(POSTS), 'posts')
+ s=slug(p)
+ for lang in ('en','hi'):
+  t=title(p,lang);raw=p.get(lang+'_body') or p.get('en_body','');url=f'{SITE}/{lang}/news/{s}/';desc=p.get(lang+'_meta') or re.sub(r'[#\n]+',' ',raw)[:155]
+  related=[q for q in POSTS if slug(q)!=s][:4];related_html=''.join(f'<a href="/{lang}/news/{slug(q)}/">{e(title(q,lang))}</a>' for q in related)
+  schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'datePublished':p.get('date'),'dateModified':p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':[f'{SITE}/images/{s}.jpg'],'author':{'@type':'Organization','name':'GlobalTech Daily Editorial Desk'},'publisher':{'@type':'Organization','name':'GlobalTech Daily'},'isBasedOn':p['source']}
+  extra=f'<meta property="og:type" content="article"><meta property="og:title" content="{e(t)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="{SITE}/images/{s}.jpg"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False).replace("<","\\u003c")}</script>'
+  sourcehost=urlparse(p['source']).hostname or 'original source'
+  summary=e(p.get(lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
+  content=f'''<div class="wrap"><article class="article"><div class="eyebrow">TECHNOLOGY / EXPLAINED</div><h1>{e(t)}</h1><p class="date">{e(p.get('date','')[:10])} · GlobalTech Daily Editorial Desk · Source: {e(sourcehost)}</p><img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="Original editorial illustration for {e(t)}"><div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div><div class="story">{body_html(raw)}</div><div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div></article></div>'''
+  write(OUT/lang/'news'/s/'index.html',shell(lang,t,desc,url,content,extra))
+for lang in ('en','hi'):
+ h='Latest technology news, explained' if lang=='en' else 'टेक्नोलॉजी की ताज़ा खबरें, आसान भाषा में'
+ desc='Source-attributed technology news, practical AI tools and useful explainers.'
+ latest=''.join(card(p,lang) for p in POSTS[:24]) or '<p>No articles yet. New verified-source explainers are being prepared.</p>'
+ sidebar='<aside class="side"><div class="panel"><h2>Explore AI tools</h2>'+''.join(f'<a href="/{lang}/tools/">{e(x[0])} · {e(x[3])}</a>' for x in TOOLS[:6])+'</div><div class="panel"><h2>Our approach</h2><p>Read original sources. Check dates. Explain what matters. Corrections welcome.</p></div></aside>'
+ featured=''.join(f'<article class="tool"><span class="pill">{e(cat)}</span><h3>{e(n)}</h3><p>{e(d)}</p><a href="{e(u)}" target="_blank" rel="noopener noreferrer">{ "Official website" if lang=="en" else "आधिकारिक वेबसाइट"} ↗</a></article>' for n,d,u,cat in TOOLS[:8])
+ tools_home=f'<section class="featured-tools" aria-labelledby="featured-tools-heading"><div class="sectiontitle"><h2 id="featured-tools-heading">{"Explore AI Tools" if lang=="en" else "AI टूल्स खोजें"}</h2><a href="/{lang}/tools/">{"View all AI tools" if lang=="en" else "सभी AI टूल्स देखें"} →</a></div><p class="muted">{"Explore trusted official links for writing, research, coding and design." if lang=="en" else "लेखन, रिसर्च, कोडिंग और डिजाइन के लिए आधिकारिक AI टूल्स।"}</p><div class="tools featured-grid">{featured}</div></section>'
+ home=f'<div class="wrap"><section class="lead"><div class="eyebrow">INDEPENDENT TECH EXPLAINERS</div><h1>{h}</h1><p class="muted">{desc}</p></section><div class="sectiontitle"><h2>{"Latest stories" if lang=="en" else "नई खबरें"}</h2><a href="/{lang}/tools/">AI Tools →</a></div><div class="layout"><div class="cards">{latest}</div>{sidebar}</div>{tools_home}</div>'
+ write(OUT/lang/'index.html',shell(lang,h+' | GlobalTech Daily',desc,f'{SITE}/{lang}/',home))
+ toolcards=''.join(f'<article class="tool"><span class="pill">{e(cat)}</span><h2>{e(n)}</h2><p>{e(d)}</p><a href="{e(u)}" target="_blank" rel="noopener noreferrer">Official website ↗</a></article>' for n,d,u,cat in TOOLS)
+ tools=f'<div class="wrap"><section class="lead"><div class="eyebrow">AI TOOLS DIRECTORY</div><h1>{"Explore useful AI tools" if lang=="en" else "काम के AI टूल्स खोजें"}</h1><p class="muted">Official links, brief descriptions and categories. Availability and pricing can change; verify on provider websites.</p></section><div class="tools">{toolcards}</div></div>'
+ write(OUT/lang/'tools/index.html',shell(lang,'AI Tools Directory | GlobalTech Daily','Explore popular AI assistants, research, coding and design tools.',f'{SITE}/{lang}/tools/',tools))
+ pages={
+ 'about':('About GlobalTech Daily','GlobalTech Daily is an independent bilingual technology publication focused on useful explainers and news. We use AI-assisted drafting, link to source materials, and welcome corrections. We do not claim to independently verify every publisher statement.'),
+ 'editorial':('Editorial Policy','Our articles are based on attributed source material. We prioritize official announcements, documentation and credible reporting. AI may assist drafting and translation. We prohibit fabricated quotes, unsupported claims, misleading headlines, and unattributed copying. When a claim cannot be confirmed, we label uncertainty or do not publish it. Readers can request corrections.'),
+ 'corrections':('Corrections Policy','Report factual errors, misleading headlines, inaccurate translations, or rights concerns to info@sellercalc.net with the article URL and supporting evidence. Substantive corrections should be reflected in the article with an updated date.'),
+ 'privacy':('Privacy Policy','This website serves static pages. Hosting providers may process technical logs and IP addresses. External websites have their own privacy policies. We do not operate user accounts or a newsletter. If analytics, advertising, or cookies are added, this notice must be updated before deployment. Privacy enquiries: info@sellercalc.net.'),
+ 'contact':('Contact GlobalTech Daily','For news tips, corrections, image rights requests, privacy matters or editorial feedback, email info@sellercalc.net. Do not include sensitive personal information.'),
+ 'affiliate':('Affiliate Disclosure','Our AI Tools directory currently contains informational links. If affiliate partnerships or paid placements are introduced, they will be clearly identified. We do not claim that editorial recommendations are paid placements.')}
+ for s,(t,d) in pages.items():
+  content=f'<div class="wrap"><article class="article"><div class="eyebrow">GLOBALTECH DAILY</div><h1>{e(t)}</h1><div class="story"><p>{e(d)}</p></div><p>Contact: <a href="mailto:{CONTACT}">{CONTACT}</a></p></article></div>'
+  write(OUT/lang/s/'index.html',shell(lang,t,d,f'{SITE}/{lang}/{s}/',content))
+write(OUT/'index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="'+SITE+'/en/"></head><body><a href="/en/">English</a></body></html>')
+write(OUT/'robots.txt',f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\nSitemap: {SITE}/news-sitemap.xml\n')
+urls=[f'/{lang}/{path}' for lang in ('en','hi') for path in ('','tools/','about/','editorial/','corrections/','privacy/','contact/','affiliate/')]+[f'/{lang}/news/{slug(p)}/' for p in POSTS for lang in ('en','hi')]
+write(OUT/'sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+xml_escape(SITE+u)+'</loc></url>' for u in urls)+'</urlset>')
+recent=[]
+for p in POSTS:
+ try:
+  if (dt.datetime.now(dt.timezone.utc)-dt.datetime.fromisoformat(p['date'].replace('Z','+00:00'))).total_seconds()>172800:continue
+ except (ValueError,KeyError,TypeError):continue
+ for lang in ('en','hi'):
+  recent.append('<url><loc>'+xml_escape(f'{SITE}/{lang}/news/{slug(p)}/')+'</loc><news:news><news:publication><news:name>GlobalTech Daily</news:name><news:language>'+lang+'</news:language></news:publication><news:publication_date>'+e(p['date'])+'</news:publication_date><news:title>'+xml_escape(title(p,lang))+'</news:title></news:news></url>')
+write(OUT/'news-sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">'+''.join(recent)+'</urlset>')
+write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/style.css\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n')
+print('Built',len(POSTS),'posts; AI Tools, bilingual pages, news sitemap and responsive layout')
