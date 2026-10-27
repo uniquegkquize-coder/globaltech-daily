@@ -144,6 +144,29 @@ def json_object(raw):
    return json.loads(raw[a:b])
   except (ValueError,AttributeError): return {}
 
+def gemini_models(key):
+ # Discover every model this API key can actually use for text generation.
+ fallback=[x.strip() for x in os.getenv('GEMINI_MODELS','gemini-2.5-flash,gemini-2.5-flash-lite').split(',') if x.strip()]
+ try:
+  names=[];page=''
+  for _ in range(5):
+   resp=requests.get('https://generativelanguage.googleapis.com/v1beta/models',headers={'x-goog-api-key':key},params={'pageSize':100,**({'pageToken':page} if page else {})},timeout=(5,12))
+   if not resp.ok:break
+   payload=resp.json()
+   for m in payload.get('models',[]):
+    name=m.get('name','').removeprefix('models/')
+    if 'generateContent' in m.get('supportedGenerationMethods',[]) and name.startswith('gemini-') and not any(x in name for x in ('embedding','image','tts','live','robotics')):
+     names.append(name)
+   page=payload.get('nextPageToken','')
+   if not page:break
+  if names:
+   # Prefer Flash/free-friendly variants, avoid probing paid-only models unnecessarily.
+   names=sorted(set(names),key=lambda n:(not ('flash-lite' in n),not ('flash' in n),n))
+   print('Gemini generateContent models available:',len(names),flush=True)
+   return names
+ except (requests.RequestException,ValueError,TypeError):pass
+ return fallback
+
 def provider_order():
  # One generation attempt per language; no repeated model probing.
  order=os.getenv('AI_PROVIDER_ORDER','gemini,groq,openrouter').lower().split(',')
@@ -159,7 +182,7 @@ def call_provider(prompt):
   if provider in PROVIDER_COOLDOWNS:continue
   key=os.getenv({'groq':'GROQ_API_KEY','gemini':'GEMINI_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}[provider],'').strip()
   if not key:continue
-  models=([x.strip() for x in os.getenv('GEMINI_MODELS',os.getenv('GEMINI_MODEL','gemini-2.5-flash')+',gemini-2.5-flash-lite').split(',') if x.strip()] if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else (os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free'))])
+  models=(gemini_models(key) if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else (os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free'))])
   for model in dict.fromkeys(models):
    if (provider,model) in UNAVAILABLE_MODELS:continue
    if CALLS>=MAX_CALLS:break
@@ -258,6 +281,40 @@ def google_trending_terms():
  print('Google Trends discovered terms:',len(terms),flush=True)
  return terms
 
+# Google News is the first discovery layer; publisher pages remain the factual source.
+GOOGLE_QUERIES={
+ 'world-news':'world breaking news','technology':'technology AI','business':'business economy',
+ 'sports':'sports cricket football','health-science':'health science research',
+ 'movies-entertainment':'movies entertainment','gaming':'video games',
+ 'automobiles':'automobile electric vehicles','education':'education universities',
+ 'environment':'climate environment','government-schemes':'India government schemes',
+ 'sarkari-naukri':'India government recruitment official notification',
+ 'travel':'travel tourism','lifestyle':'lifestyle wellness'}
+def google_news_stories(cat):
+ from urllib.parse import quote
+ query=GOOGLE_QUERIES.get(cat,cat.replace('-',' '))+' when:7d'
+ url='https://news.google.com/rss/search?q='+quote(query)+'&hl=en-IN&gl=IN&ceid=IN:en'
+ try:
+  resp=requests.get(url,timeout=(5,12),headers={'User-Agent':'Mozilla/5.0'})
+  resp.raise_for_status()
+  entries=feedparser.parse(resp.content).entries[:18]
+  stories=[]
+  for entry in entries:
+   # Resolve the Google News article link; never use the Google URL as evidence.
+   link=entry.get('link','')
+   if not link.startswith('https://'):continue
+   try:
+    resolved=requests.get(link,timeout=(4,7),headers={'User-Agent':'Mozilla/5.0'},allow_redirects=True)
+    target=resolved.url
+    host=(urlparse(target).hostname or '').lower()
+    if host.endswith('google.com') or host.endswith('googleusercontent.com'):continue
+    if not any(allowed(target,d) for _,_,d in FEEDS):continue
+    stories.append((target,clean(entry.get('title','')),cat,host))
+   except requests.RequestException:continue
+  print('Google News',cat,'publisher stories',len(stories),flush=True)
+  return stories
+ except (requests.RequestException,ValueError):return []
+
 def candidates():
  seen=set()
  counts=published_categories()
@@ -283,6 +340,17 @@ def candidates():
     seen.add(url)
     yield url,title,record.get('category','technology'),domain
   except (OSError,ValueError):pass
+ # Google News category search is the first fresh-news discovery source.
+ google_groups={cat:[] for cat in GOOGLE_QUERIES}
+ with ThreadPoolExecutor(max_workers=7) as pool:
+  google_results=list(pool.map(google_news_stories,google_groups))
+ for cat,stories in zip(google_groups,google_results):
+  for story in stories:
+   if story[0] not in seen:
+    seen.add(story[0]);google_groups[cat].append(story)
+ for i in range(max(map(len,google_groups.values()),default=0))):
+  for cat in sorted(google_groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
+   if i<len(google_groups[cat]):yield google_groups[cat][i]
  # First search major publisher websites across every category.
  groups={cat:[] for _,cat,_ in FEEDS}
  with ThreadPoolExecutor(max_workers=10) as pool:
