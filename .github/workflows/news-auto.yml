@@ -34,10 +34,12 @@ jobs:
           DAILY_LIMIT: '12'
           MAX_MODELS_PER_ARTICLE: '1'
           MAX_AI_CALLS_PER_RUN: '2'
-          MAX_SOURCE_CANDIDATES: '6'
+          MIN_SOURCE_WORDS: '650'
           MIN_ARTICLE_WORDS: '1200'
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: openai/gpt-oss-120b
+          AI_PROVIDER_ORDER: groq,gemini,openrouter
+          GEMINI_MODEL: gemini-2.5-flash
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
         run: python -u scripts/collect.py
