@@ -38,7 +38,7 @@ class NewsroomConfigTests(unittest.TestCase):
         code = COLLECT.read_text(encoding="utf-8")
         self.assertIn("GEMINI_MODELS", code)
         self.assertIn("gemini-2.5-flash-lite", code)
-        self.assertIn("if r.status_code==404:continue", code)
+        self.assertIn("UNAVAILABLE_MODELS.add((provider,model))", code)
         self.assertIn("if not data or words(state.get(lang+'_body','')) < MIN_WORDS:", code)
         self.assertIn("blocked_until", code)
         self.assertIn("for url,title,cat,domain in candidates():", code)
