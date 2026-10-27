@@ -26,31 +26,89 @@ def shell(lang,t,desc,url,body,extra=''):
  links=''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in nav)
  return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a1429"><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="stylesheet" href="/style.css">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobalTech <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="/{'hi' if lang=='en' else 'en'}/">{'हिन्दी' if lang=='en' else 'English'}</a></nav></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobalTech Daily</strong><p>Independent AI-assisted technology explainers with source attribution.</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{s.title()}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js"></script></body></html>'''
 def image_for(p):
- s=slug(p); dest=OUT/'images'/f'{s}.jpg';dest.parent.mkdir(parents=True,exist_ok=True)
+ """Create distinctive topic-led editorial art; never imply it is an event photograph."""
+ s=slug(p); dest=OUT/'images'/f'{s}.jpg'; dest.parent.mkdir(parents=True,exist_ok=True)
+ topic=' '.join(str(p.get(k,'')) for k in ('en_title','en_keywords','source_title')).lower()
+ topics=[
+  ('SECURITY','CYBERSECURITY',('security','vulnerability','waf','certificate','cryptograph','attack','exposure','breach','phishing','zero-day','compliance','isms','php','encryption')),
+  ('CHIP','SEMICONDUCTORS',('chip','semiconductor','gpu','processor','nvidia','silicon','cpu')),
+  ('DEVICE','DEVICES',('phone','iphone','pixel','android','smartphone','laptop','macbook','device','wearable')),
+  ('ROBOT','ROBOTICS',('robot','automation','humanoid','drone')),
+  ('CLOUD','CLOUD & WEB',('cloud infrastructure','cloud service','server','hosting','web','network','typescript','rust','cache','api','kv','edge','storefront')),
+  ('SCIENCE','RESEARCH',('research','university','stanford','science','brain','learning','education','study')),
+  ('AI','ARTIFICIAL INTELLIGENCE',('ai','gemini','chatgpt','openai','llm','model','machine learning','agent')),
+  ('COMMERCE','DIGITAL BUSINESS',('commerce','marketing','retail','shopping','payment','advertising'))]
+ # Priority uses article-specific signals; general company words do not override precise topics.
+ cat,label='TECH','TECHNOLOGY'
+ for name,tag,words in topics:
+  if any(w in topic for w in words):cat,label=name,tag;break
  seed=int(hashlib.sha256((p.get('source_title','')+s).encode()).hexdigest()[:8],16)
- palettes=[('#071b34','#167eae','#21e0ce'),('#181339','#734bc0','#51dcf5'),('#0b2530','#147a74','#a8e34e'),('#22152b','#a3469c','#ffbd70')]
- bg,mid,accent=palettes[seed%len(palettes)];im=Image.new('RGB',(1280,720),bg);d=ImageDraw.Draw(im)
- for i in range(14):
-  x=(seed*(i+7)*13)%1400-70;y=(seed*(i+3)*19)%850-60;r=35+(seed//(i+1))%170
-  d.ellipse((x-r,y-r,x+r,y+r),outline=mid,width=3)
+ palettes={'SECURITY':('#071e33','#0c465b','#4ef3ce'),'CHIP':('#101733','#293b8a','#b5a4ff'),'DEVICE':('#11263d','#2463a0','#ffbd77'),'ROBOT':('#172036','#36678b','#ffd06c'),'CLOUD':('#092c37','#155f7b','#70d5ff'),'SCIENCE':('#132640','#425d8b','#b1e879'),'AI':('#201a40','#6249a3','#a9f4fc'),'COMMERCE':('#24213b','#75549a','#ffb77c'),'TECH':('#15233b','#255b81','#82e8d4')}
+ bg,mid,accent=palettes[cat]; im=Image.new('RGB',(1280,720),bg);d=ImageDraw.Draw(im)
+ # Atmospheric layered background, kept away from headline-free art.
+ d.ellipse((650,-380,1450,420),fill=mid)
+ d.ellipse((835,-210,1470,430),outline=accent,width=3)
  for i in range(8):
-  x=690+i*68;d.line((x,110,x+100,590),fill=mid,width=2)
- for i in range(6):
-  x=730+i*65;y=175+(i%3)*110;d.rounded_rectangle((x,y,x+135,y+75),radius=15,outline=accent,width=4)
-  d.line((x+20,y+37,x+115,y+37),fill=accent,width=3)
- d.rounded_rectangle((80,95,360,149),radius=14,fill=accent)
- font='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf';font2='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
- if Path(font).exists():
-  f=ImageFont.truetype(font,25);big=ImageFont.truetype(font,52);small=ImageFont.truetype(font2,25)
- else:f=big=small=ImageFont.load_default()
- d.text((99,107),'TECH INSIGHT',font=f,fill=bg)
- category='AI & TECHNOLOGY'
- d.text((80,235),category,font=big,fill='#ffffff')
- d.text((80,310),'WHAT CHANGED',font=big,fill='#ffffff')
- d.rounded_rectangle((80,410,580,420),radius=4,fill=accent)
- d.text((80,460),'GlobalTech Daily',font=f,fill='#ffffff')
- d.text((80,510),'Original editorial illustration',font=small,fill='#b9d1e8')
- im.save(dest,'JPEG',quality=86,optimize=True)
+  x=65+i*160;d.line((x,570,x+260,705),fill=mid,width=2)
+ # Large illustrative focal element on the right.
+ cx,cy=880,325
+ if cat=='SECURITY':
+  d.polygon([(cx,cy-205),(cx+172,cy-135),(cx+152,cy+95),(cx,cy+215),(cx-152,cy+95),(cx-172,cy-135)],fill='#16495b',outline=accent,width=12)
+  d.arc((cx-70,cy-75,cx+70,cy+65),185,355,fill='#ffffff',width=16)
+  d.rounded_rectangle((cx-86,cy-15,cx+86,cy+105),radius=18,fill=accent)
+  d.ellipse((cx-12,cy+28,cx+12,cy+52),fill=bg);d.rectangle((cx-5,cy+49,cx+5,cy+79),fill=bg)
+ elif cat=='CHIP':
+  d.rounded_rectangle((cx-175,cy-175,cx+175,cy+175),radius=35,fill='#27386b',outline=accent,width=10)
+  d.rounded_rectangle((cx-100,cy-100,cx+100,cy+100),radius=20,outline='#ffffff',width=7)
+  for off in range(-130,131,65):
+   d.line((cx+off,cy-175,cx+off,cy-220),fill=accent,width=9);d.line((cx+off,cy+175,cx+off,cy+220),fill=accent,width=9)
+   d.line((cx-175,cy+off,cx-220,cy+off),fill=accent,width=9);d.line((cx+175,cy+off,cx+220,cy+off),fill=accent,width=9)
+ elif cat=='DEVICE':
+  d.rounded_rectangle((cx-128,cy-230,cx+128,cy+230),radius=38,fill='#06182c',outline=accent,width=12)
+  d.rounded_rectangle((cx-104,cy-194,cx+104,cy+180),radius=16,fill='#255e91')
+  d.ellipse((cx-75,cy-125,cx+75,cy+25),outline='#ffffff',width=10)
+  d.line((cx-60,cy+92,cx+60,cy+92),fill=accent,width=10)
+ elif cat=='ROBOT':
+  d.rounded_rectangle((cx-175,cy-145,cx+175,cy+165),radius=75,fill='#34526b',outline=accent,width=12)
+  d.ellipse((cx-112,cy-32,cx-45,cy+35),fill=accent);d.ellipse((cx+45,cy-32,cx+112,cy+35),fill=accent)
+  d.arc((cx-90,cy-5,cx+90,cy+100),15,165,fill='#ffffff',width=10)
+  d.line((cx,cy-145,cx,cy-205),fill=accent,width=12);d.ellipse((cx-20,cy-225,cx+20,cy-185),fill=accent)
+ elif cat=='CLOUD':
+  d.ellipse((cx-160,cy-65,cx+15,cy+110),fill=accent)
+  d.ellipse((cx-45,cy-160,cx+180,cy+95),fill=accent)
+  d.rounded_rectangle((cx-190,cy-30,cx+210,cy+125),radius=60,fill=accent)
+  for k in range(3):
+   yy=cy+180+k*45;d.line((cx-150,yy,cx+145,yy),fill='#d9f8ff',width=9)
+ elif cat=='SCIENCE':
+  for r in (80,140,205):d.ellipse((cx-r,cy-r,cx+r,cy+r),outline=accent,width=5)
+  for dx,dy in ((-185,0),(185,0),(0,-185),(0,185),(120,120),(-120,-120)):
+   d.line((cx,cy,cx+dx,cy+dy),fill='#c6e4f0',width=6);d.ellipse((cx+dx-16,cy+dy-16,cx+dx+16,cy+dy+16),fill=accent)
+  d.ellipse((cx-35,cy-35,cx+35,cy+35),fill='#ffffff')
+ elif cat=='AI':
+  for x,y in ((-145,-110),(0,-190),(145,-110),(-145,110),(0,190),(145,110)):
+   d.line((cx,cy,cx+x,cy+y),fill=accent,width=10);d.ellipse((cx+x-24,cy+y-24,cx+x+24,cy+y+24),fill='#ffffff')
+  d.rounded_rectangle((cx-110,cy-110,cx+110,cy+110),radius=50,fill='#423e8c',outline=accent,width=12)
+  d.ellipse((cx-42,cy-42,cx+42,cy+42),fill=accent)
+ else:
+  for i,h in enumerate((130,210,160,285)):
+   x=cx-170+i*110;d.rounded_rectangle((x,cy+160-h,x+70,cy+160),radius=10,fill=accent if i%2 else '#e6f8ff')
+  d.line((cx-220,cy+175,cx+245,cy+175),fill='#ffffff',width=8)
+ font='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf';normal='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+ if Path(font).exists(): f=ImageFont.truetype(font,58);small=ImageFont.truetype(normal,25);tagfont=ImageFont.truetype(font,24)
+ else:f=small=tagfont=ImageFont.load_default()
+ d.rounded_rectangle((70,85,360,141),radius=14,fill=accent)
+ d.text((92,100),'GLOBALTECH DAILY',font=tagfont,fill=bg)
+ # Short, readable category label, not a duplicate of the full headline.
+ words=label.split();lines=[];line=''
+ for word in words:
+  candidate=(line+' '+word).strip()
+  if d.textbbox((0,0),candidate,font=f)[2]>525 and line:lines.append(line);line=word
+  else:line=candidate
+ if line:lines.append(line)
+ for i,line in enumerate(lines[:3]):d.text((75,250+i*79),line,font=f,fill='#ffffff')
+ d.line((75,565,550,565),fill=accent,width=9)
+ d.text((75,590),'Original editorial illustration',font=small,fill='#cbd9eb')
+ im.save(dest,'JPEG',quality=87,optimize=True)
 def body_html(raw):
  parts=[];buf=[]
  def flush():
