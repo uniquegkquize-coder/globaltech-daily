@@ -15,7 +15,7 @@ def complete_body(body,lang):
  return (words(body)>=MIN_WORDS if lang=='en' else words(body)>=MIN_HINDI_WORDS and len(body.strip())>=MIN_HINDI_CHARS)
 MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
 POSTS_PER_RUN=max(1,min(14,int(os.getenv('POSTS_PER_RUN','14'))))
-MIN_SOURCE_WORDS=int(os.getenv('MIN_SOURCE_WORDS','450'))
+MIN_SOURCE_WORDS=int(os.getenv('MIN_SOURCE_WORDS','300'))
 OFFICIAL_JOB_DOMAINS=('upsc.gov.in','ssc.gov.in','rrbcdg.gov.in','indianrailways.gov.in','employmentnews.gov.in','nta.ac.in','gov.in','nic.in')
 CALLS=0
 # News discovery sources. Official-domain verification occurs BEFORE any AI request.
