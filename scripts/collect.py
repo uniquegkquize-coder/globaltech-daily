@@ -283,7 +283,7 @@ def main():
    # Preserve completed language drafts even if the publisher temporarily blocks scraping.
    state.update({'source':url,'source_title':title,'category':cat,'status':'source_unavailable','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat(),'source_words':words(text)})
    if pending.exists(): save_state(pending,state)
-   print('Skipping source before AI:,title[:65],'words',words(text),flush=True)
+   print('Skipping source before AI:',title[:65],'words',words(text),flush=True)
    continue
   state.update({'source':url,'source_title':title,'category':cat,'status':'draft','updated_at':dt.datetime.now(UTC).isoformat()})
   for lang in ('en','hi'):
