@@ -8,14 +8,14 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 POSTS=ROOT/'content/posts'; PENDING=ROOT/'content/pending'
 POSTS.mkdir(parents=True,exist_ok=True); PENDING.mkdir(parents=True,exist_ok=True)
 UTC=dt.timezone.utc
-MIN_WORDS=int(os.getenv('MIN_ARTICLE_WORDS','300'))
-MIN_HINDI_WORDS=int(os.getenv('MIN_HINDI_WORDS','300'))
+MIN_WORDS=0
+MIN_HINDI_WORDS=0
 MIN_HINDI_CHARS=int(os.getenv('MIN_HINDI_CHARS','0'))
 def complete_body(body,lang):
- return (words(body)>=MIN_WORDS if lang=='en' else words(body)>=MIN_HINDI_WORDS and len(body.strip())>=MIN_HINDI_CHARS)
+ return bool(body and body.strip() and len(body.strip())>=MIN_HINDI_CHARS and len(re.findall(r'[.!?।]',body))>=2 and len(body.strip())>=120)
 MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
-POSTS_PER_RUN=max(1,min(14,int(os.getenv('POSTS_PER_RUN','14'))))
-MIN_SOURCE_WORDS=int(os.getenv('MIN_SOURCE_WORDS','300'))
+POSTS_PER_RUN=max(1,min(15,int(os.getenv('POSTS_PER_RUN','15'))))
+MIN_SOURCE_WORDS=0
 OFFICIAL_JOB_DOMAINS=('upsc.gov.in','ssc.gov.in','rrbcdg.gov.in','indianrailways.gov.in','employmentnews.gov.in','nta.ac.in','gov.in','nic.in')
 CALLS=0
 # News discovery sources. Official-domain verification occurs BEFORE any AI request.
@@ -248,7 +248,7 @@ def article_prompt(lang,title,source,source_material,cat):
  if cat=='private-vacancy':
   source_material += '\nRequired coverage: employer, role, eligibility, location, salary, deadline, selection process, application steps and official application link. Mark missing details as not specified; never invent them.'
  language='English' if lang=='en' else 'Hindi (Devanagari)'
- return f'''You are a careful editor for a public-information news site. Write ONE original article in {language}. Return ONLY a JSON object with fields title, body, meta, keywords. The body should have at least {MIN_WORDS} meaningful words IF and ONLY IF the source supports that length; never invent or pad. Use Markdown ## subheadings. Explain confirmed facts, background, user impact, uncertainties, and what readers can verify, with a clear link to the official source. Write a compelling, curiosity-driven but strictly accurate headline that clearly reflects the verified story. Never use misleading clickbait, fake urgency, unsupported superlatives or invented claims. Do not fabricate quotes, eligibility, deadlines, salaries, recruitment numbers, prices, application steps, or citations. No copied paragraphs. If source is insufficient for a detailed factual article, return {{"title":"","body":"","meta":"","keywords":""}}. Category: {cat}. Source title: {title}. Verified official/source URL: {source}. SOURCE TEXT:\n{source_material[:22000]}'''
+ return f'''You are a careful editor for a public-information news site. Write ONE original article in {language}. Return ONLY a JSON object with fields title, body, meta, keywords. Write a complete, professionally edited news report of natural length appropriate to the available verified facts. No fixed word count; never invent, repeat, or pad. Use Markdown ## subheadings. Explain confirmed facts, background, user impact, uncertainties, and what readers can verify, with a clear link to the official source. Write a compelling, curiosity-driven but strictly accurate headline that clearly reflects the verified story. Never use misleading clickbait, fake urgency, unsupported superlatives or invented claims. Do not fabricate quotes, eligibility, deadlines, salaries, recruitment numbers, prices, application steps, or citations. No copied paragraphs. If source is insufficient for a detailed factual article, return {{"title":"","body":"","meta":"","keywords":""}}. Category: {cat}. Source title: {title}. Verified official/source URL: {source}. SOURCE TEXT:\n{source_material[:22000]}'''
 
 def published_categories():
  """Count only published posts, never drafts, toward category coverage."""
@@ -490,7 +490,7 @@ def main():
    print('Skipping recruitment story without an official government source:',url,flush=True)
    continue
   text=source_text(url,domain)
-  if words(text)<MIN_SOURCE_WORDS and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
+  if (not text.strip() or len(text.strip())<120) and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    # Preserve completed language drafts even if the publisher temporarily blocks scraping.
    state.update({'source':url,'source_title':title,'category':cat,'status':'source_unavailable','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat(),'source_words':words(text)})
    if pending.exists(): save_state(pending,state)
@@ -502,12 +502,12 @@ def main():
    if CALLS>=MAX_CALLS:break
    prior=state.get(lang+'_body','')
    prompt=article_prompt(lang,title,url,text,cat)
-   if prior and words(prior)>=200:
-    prompt += ('\nEXISTING ORIGINAL DRAFT (preserve its accurate material; return a COMPLETE revised body, not only an addendum):\n'+prior[:24000]+'\nImprove with additional SOURCE-SUPPORTED context until minimum length is met. Never fabricate details.')
+   if prior and not complete_body(prior,lang):
+    prompt += ('\nEXISTING ORIGINAL DRAFT (preserve its accurate material; return a COMPLETE revised body, not only an addendum):\n'+prior[:24000]+'\nImprove clarity and completeness using only SOURCE-SUPPORTED context. Never fabricate details.')
    data,provider=call_provider(prompt)
    if isinstance(data,dict):
     body=str(data.get('body') or '')
-    if words(body)>=max(300,words(state.get(lang+'_body',''))) and len(str(data.get('title') or ''))>=20:
+    if complete_body(body,lang) and len(str(data.get('title') or ''))>=20:
      state[lang+'_body']=body;state[lang+'_title']=str(data['title'])
      state[lang+'_meta']=str(data.get('meta') or '')
      state[lang+'_keywords']=str(data.get('keywords') or '')
