@@ -33,8 +33,8 @@ jobs:
           AUTO_POST: ${{ vars.AUTO_POST }}
           SITE_URL: https://globaltech-daily.pages.dev
           PYTHONUNBUFFERED: '1'
-          DAILY_LIMIT: '20'
-          MAX_MODELS_PER_ARTICLE: '100'
+          DAILY_LIMIT: '6'
+          MAX_MODELS_PER_ARTICLE: '3'
         run: python -u scripts/collect.py
       - name: Build website
         env:
