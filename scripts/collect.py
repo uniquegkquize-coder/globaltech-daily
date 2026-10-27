@@ -9,6 +9,10 @@ POSTS=ROOT/'content/posts'; PENDING=ROOT/'content/pending'
 POSTS.mkdir(parents=True,exist_ok=True); PENDING.mkdir(parents=True,exist_ok=True)
 UTC=dt.timezone.utc
 MIN_WORDS=int(os.getenv('MIN_ARTICLE_WORDS','800'))
+MIN_HINDI_WORDS=int(os.getenv('MIN_HINDI_WORDS','450'))
+MIN_HINDI_CHARS=int(os.getenv('MIN_HINDI_CHARS','2500'))
+def complete_body(body,lang):
+ return (words(body)>=MIN_WORDS if lang=='en' else words(body)>=MIN_HINDI_WORDS and len(body.strip())>=MIN_HINDI_CHARS)
 MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
 POSTS_PER_RUN=max(1,min(14,int(os.getenv('POSTS_PER_RUN','14'))))
 MIN_SOURCE_WORDS=int(os.getenv('MIN_SOURCE_WORDS','450'))
@@ -210,7 +214,7 @@ def candidates():
  def pending_priority(path):
   try:
    record=json.loads(path.read_text(encoding='utf-8'))
-   complete=sum(words(record.get(lang+'_body',''))>=MIN_WORDS for lang in ('en','hi'))
+   complete=sum(complete_body(record.get(lang+'_body',''),lang) for lang in ('en','hi'))
    progress=sum(min(words(record.get(lang+'_body','')),MIN_WORDS) for lang in ('en','hi'))
    blocked=record.get('blocked_until','')>dt.datetime.now(UTC).isoformat()
    return (blocked,record.get('category') not in missing,-complete,-progress,path.name)
@@ -277,14 +281,14 @@ def main():
   if state.get('blocked_until','')>dt.datetime.now(UTC).isoformat():
    print('Pending draft cooling down:',post_id,flush=True)
    continue
-  if any(words(state.get(lang+'_body',''))>=MIN_WORDS for lang in ('en','hi')):
+  if any(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    print('Resuming saved draft:',post_id,'English',words(state.get('en_body','')),'Hindi',words(state.get('hi_body','')),flush=True)
   inspected+=1
   if cat=='sarkari-naukri' and not any(allowed(url,d) for d in OFFICIAL_JOB_DOMAINS):
    print('Skipping recruitment story without an official government source:',url,flush=True)
    continue
   text=source_text(url,domain)
-  if words(text)<MIN_SOURCE_WORDS and not all(words(state.get(lang+'_body',''))>=MIN_WORDS for lang in ('en','hi')):
+  if words(text)<MIN_SOURCE_WORDS and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    # Preserve completed language drafts even if the publisher temporarily blocks scraping.
    state.update({'source':url,'source_title':title,'category':cat,'status':'source_unavailable','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat(),'source_words':words(text)})
    if pending.exists(): save_state(pending,state)
@@ -292,7 +296,7 @@ def main():
    continue
   state.update({'source':url,'source_title':title,'category':cat,'status':'draft','updated_at':dt.datetime.now(UTC).isoformat()})
   for lang in ('en','hi'):
-   if words(state.get(lang+'_body',''))>=MIN_WORDS:continue
+   if complete_body(state.get(lang+'_body',''),lang):continue
    if CALLS>=MAX_CALLS:break
    prior=state.get(lang+'_body','')
    prompt=article_prompt(lang,title,url,text,cat)
@@ -307,15 +311,15 @@ def main():
      state[lang+'_keywords']=str(data.get('keywords') or '')
      print('Draft ready:',lang,'words',words(body),'via',provider,flush=True)
     else: print('Draft unusable:',lang,'words',words(body),'via',provider,flush=True)
-    if words(state.get(lang+'_body',''))<MIN_WORDS: print('Partial draft saved:',lang,'words',words(state.get(lang+'_body','')),'via',provider,flush=True)
+    if not complete_body(state.get(lang+'_body',''),lang): print('Partial draft saved:',lang,'words',words(state.get(lang+'_body','')),'via',provider,flush=True)
    # One failed request does not lead to a provider/model retry this run.
    save_state(pending,state)
-   if not data or words(state.get(lang+'_body','')) < MIN_WORDS:
+   if not data or not complete_body(state.get(lang+'_body',''),lang):
     # Cool down only this failing story; do not retry the same provider immediately.
     state['blocked_until']=(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat()
     break
    save_state(pending,state)
-  if all(words(state.get(lang+'_body',''))>=MIN_WORDS for lang in ('en','hi')):
+  if all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    article={k:state.get(k,'') for k in ('en_title','hi_title','en_body','hi_body','en_meta','hi_meta','en_keywords','hi_keywords')}
    article.update(id=post_id,source=url,date=dt.datetime.now(UTC).isoformat(),source_title=title,category=cat,image_kind='conceptual')
    save_state(POSTS/(post_id+'.json'),article)
