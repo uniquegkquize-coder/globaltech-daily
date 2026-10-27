@@ -25,6 +25,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Compile all Python files
         run: python -m compileall -q scripts
+      - name: Validate newsroom configuration
+        run: python -m unittest discover -s tests -p 'test_newsroom_config.py' -v
       - name: Generate source-based news
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
