@@ -39,14 +39,17 @@ jobs:
         run: python scripts/build.py
 
       
+      
       - name: Commit new articles
         shell: bash
         run: |
           git config user.name "GlobalTech News Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content/posts dist
+          git add -A
           if ! git diff --cached --quiet; then
             git commit -m "Auto publish news"
             git push origin HEAD:main
+          else
+            echo "No new articles to publish"
           fi
   
