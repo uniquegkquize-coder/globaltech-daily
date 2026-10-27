@@ -8,6 +8,8 @@ shutil.rmtree(OUT,ignore_errors=True);OUT.mkdir(parents=True)
 def e(x):return html.escape(str(x or ''),quote=True)
 def write(p,s):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s,encoding='utf-8')
 def title(p,lang):return p.get(lang+'_title') or p.get('en_title') or 'Technology news'
+CATEGORIES={'technology':('Technology','टेक्नोलॉजी'),'government-schemes':('Government Schemes','सरकारी योजनाएँ'),'sarkari-naukri':('Sarkari Naukri','सरकारी नौकरी')}
+def category(p):return p.get('category') if p.get('category') in CATEGORIES else 'technology'
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
 POSTS=[]
 for f in sorted((R/'content/posts').glob('*.json')):
@@ -23,7 +25,7 @@ CSS += '''.featured-tools{margin:54px 0 10px;padding:30px;border-radius:24px;bac
 JS='''addEventListener('scroll',()=>{let d=document.documentElement;let m=d.scrollHeight-d.clientHeight;let b=document.querySelector('.reading');if(b)b.style.width=(m>0?100*d.scrollTop/m:0)+'%';},{passive:true});'''
 write(OUT/'site.js',JS)
 def shell(lang,t,desc,url,body,extra=''):
- nav=[('Home','होम',''),('AI Tools','AI टूल्स','tools/'),('About','हमारे बारे में','about/'),('Editorial','संपादकीय नीति','editorial/'),('Contact','संपर्क','contact/')]
+ nav=[('Home','होम',''),('AI Tools','AI टूल्स','tools/'),('Schemes','सरकारी योजनाएँ','government-schemes/'),('Jobs','सरकारी नौकरी','sarkari-naukri/'),('About','हमारे बारे में','about/'),('Editorial','संपादकीय नीति','editorial/'),('Contact','संपर्क','contact/')]
  links=''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in nav)
  return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a1429"><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="stylesheet" href="/style.css">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobalTech <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="/{'hi' if lang=='en' else 'en'}/">{'हिन्दी' if lang=='en' else 'English'}</a></nav></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobalTech Daily</strong><p>Independent AI-assisted technology explainers with source attribution.</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{s.title()}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js"></script></body></html>'''
 def image_for(p):
@@ -121,19 +123,19 @@ def image_caption(p,lang):
   return 'AI-generated conceptual illustration — not an event photograph.' if lang=='en' else 'AI से बनाई गई सांकेतिक तस्वीर — वास्तविक घटना की फोटो नहीं।'
  return 'Original conceptual editorial illustration.' if lang=='en' else 'मौलिक सांकेतिक चित्र।'
 def card(p,lang):
- s=slug(p);t=title(p,lang);return f'<article class="card"><a href="/{lang}/news/{s}/"><img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="Conceptual illustration for {e(t)}"><div class="inner"><span class="eyebrow">TECH NEWS</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])} · {e(urlparse(p.get("source","")).hostname or "Source")}</div></div></a></article>'
+ s=slug(p);t=title(p,lang);return f'<article class="card"><a href="/{lang}/news/{s}/"><img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="Conceptual illustration for {e(t)}"><div class="inner"><span class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])} · {e(urlparse(p.get("source","")).hostname or "Source")}</div></div></a></article>'
 for p in POSTS:image_for(p)
 for p in POSTS:
  s=slug(p)
  for lang in ('en','hi'):
   t=title(p,lang);raw=p.get(lang+'_body') or p.get('en_body','');url=f'{SITE}/{lang}/news/{s}/';desc=p.get(lang+'_meta') or re.sub(r'[#\n]+',' ',raw)[:155]
   related=[q for q in POSTS if slug(q)!=s][:4];related_html=''.join(f'<a href="/{lang}/news/{slug(q)}/">{e(title(q,lang))}</a>' for q in related)
-  schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'datePublished':p.get('date'),'dateModified':p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':[f'{SITE}/images/{s}.jpg'],'author':{'@type':'Organization','name':'GlobalTech Daily Editorial Desk'},'publisher':{'@type':'Organization','name':'GlobalTech Daily'},'isBasedOn':p['source']}
+  schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':[f'{SITE}/images/{s}.jpg'],'author':{'@type':'Organization','name':'GlobalTech Daily Editorial Desk'},'publisher':{'@type':'Organization','name':'GlobalTech Daily','url':SITE},'isBasedOn':p['source']}
   schema_json=json.dumps(schema,ensure_ascii=False).replace('<',chr(92)+'u003c')
   extra=f'<meta property="og:type" content="article"><meta property="og:title" content="{e(t)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="{SITE}/images/{s}.jpg"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{schema_json}</script>'
   sourcehost=urlparse(p['source']).hostname or 'original source'
   summary=e(p.get(lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
-  content=f'''<div class="wrap"><article class="article"><div class="eyebrow">TECHNOLOGY / EXPLAINED</div><h1>{e(t)}</h1><p class="date">{e(p.get('date','')[:10])} · GlobalTech Daily Editorial Desk · Source: {e(sourcehost)}</p><img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="Conceptual illustration for {e(t)}"><p class="notice" style="margin-top:-12px">{e(image_caption(p,lang))}</p><div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div><div class="story">{body_html(raw)}</div><div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div></article></div>'''
+  content=f'''<div class="wrap"><article class="article"><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1><p class="date">{e(p.get('date','')[:10])} · GlobalTech Daily Editorial Desk · Source: {e(sourcehost)}</p><img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="Conceptual illustration for {e(t)}"><p class="notice" style="margin-top:-12px">{e(image_caption(p,lang))}</p><div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div><div class="story">{body_html(raw)}</div><div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div></article></div>'''
   write(OUT/lang/'news'/s/'index.html',shell(lang,t,desc,url,content,extra))
 for lang in ('en','hi'):
  h='Latest technology news, explained' if lang=='en' else 'टेक्नोलॉजी की ताज़ा खबरें, आसान भाषा में'
@@ -144,6 +146,14 @@ for lang in ('en','hi'):
  tools_home=f'<section class="featured-tools" aria-labelledby="featured-tools-heading"><div class="sectiontitle"><h2 id="featured-tools-heading">{"Explore AI Tools" if lang=="en" else "AI टूल्स खोजें"}</h2><a href="/{lang}/tools/">{"View all AI tools" if lang=="en" else "सभी AI टूल्स देखें"} →</a></div><p class="muted">{"Explore trusted official links for writing, research, coding and design." if lang=="en" else "लेखन, रिसर्च, कोडिंग और डिजाइन के लिए आधिकारिक AI टूल्स।"}</p><div class="tools featured-grid">{featured}</div></section>'
  home=f'<div class="wrap"><section class="lead"><div class="eyebrow">INDEPENDENT TECH EXPLAINERS</div><h1>{h}</h1><p class="muted">{desc}</p></section><div class="sectiontitle"><h2>{"Latest stories" if lang=="en" else "नई खबरें"}</h2><a href="/{lang}/tools/">AI Tools →</a></div><div class="layout"><div class="cards">{latest}</div>{sidebar}</div>{tools_home}</div>'
  write(OUT/lang/'index.html',shell(lang,h+' | GlobalTech Daily',desc,f'{SITE}/{lang}/',home))
+ for cat,(en_label,hi_label) in CATEGORIES.items():
+  selected=[p for p in POSTS if category(p)==cat]
+  heading=en_label if lang=='en' else hi_label
+  intro=('Source-linked reports and explainers. Verify official notices, dates and eligibility with the issuing authority.' if lang=='en' else 'स्रोत सहित समाचार और जानकारी। आधिकारिक नोटिस, तारीख और पात्रता संबंधित विभाग से जरूर जाँचें।')
+  listing=''.join(card(p,lang) for p in selected[:100]) or ('<p>No published articles in this category yet.</p>' if lang=='en' else '<p>इस श्रेणी में अभी कोई प्रकाशित लेख नहीं है।</p>')
+  catbody=f'<div class="wrap"><section class="lead"><h1>{e(heading)}</h1><p class="muted">{e(intro)}</p></section><div class="cards">{listing}</div></div>'
+  write(OUT/lang/cat/'index.html',shell(lang,heading+' | GlobalTech Daily',intro,f'{SITE}/{lang}/{cat}/',catbody))
+
  toolcards=''.join(f'<article class="tool"><span class="pill">{e(cat)}</span><h2>{e(n)}</h2><p>{e(d)}</p><a href="{e(u)}" target="_blank" rel="noopener noreferrer">Official website ↗</a></article>' for n,d,u,cat in TOOLS)
  tools=f'<div class="wrap"><section class="lead"><div class="eyebrow">AI TOOLS DIRECTORY</div><h1>{"Explore useful AI tools" if lang=="en" else "काम के AI टूल्स खोजें"}</h1><p class="muted">Official links, brief descriptions and categories. Availability and pricing can change; verify on provider websites.</p></section><div class="tools">{toolcards}</div></div>'
  write(OUT/lang/'tools/index.html',shell(lang,'AI Tools Directory | GlobalTech Daily','Explore popular AI assistants, research, coding and design tools.',f'{SITE}/{lang}/tools/',tools))
@@ -159,7 +169,7 @@ for lang in ('en','hi'):
   write(OUT/lang/s/'index.html',shell(lang,t,d,f'{SITE}/{lang}/{s}/',content))
 write(OUT/'index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="'+SITE+'/en/"></head><body><a href="/en/">English</a></body></html>')
 write(OUT/'robots.txt',f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\nSitemap: {SITE}/news-sitemap.xml\n')
-urls=[f'/{lang}/{path}' for lang in ('en','hi') for path in ('','tools/','about/','editorial/','corrections/','privacy/','contact/','affiliate/')]+[f'/{lang}/news/{slug(p)}/' for p in POSTS for lang in ('en','hi')]
+urls=[f'/{lang}/{path}' for lang in ('en','hi') for path in ('','tools/','government-schemes/','sarkari-naukri/','technology/','about/','editorial/','corrections/','privacy/','contact/','affiliate/')]+[f'/{lang}/news/{slug(p)}/' for p in POSTS for lang in ('en','hi')]
 write(OUT/'sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+xml_escape(SITE+u)+'</loc></url>' for u in urls)+'</urlset>')
 recent=[]
 for p in POSTS:

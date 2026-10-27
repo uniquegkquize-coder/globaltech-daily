@@ -4,7 +4,26 @@ from bs4 import BeautifulSoup
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 POSTS = ROOT / 'content' / 'posts'
 POSTS.mkdir(parents=True, exist_ok=True)
-FEEDS = ['https://blog.cloudflare.com/rss/', 'https://blog.google/rss/']
+# Curated public/official feeds; a feed is only a discovery mechanism, not proof.
+FEED_SOURCES = [
+ ('https://blog.google/rss/', 'technology'),
+ ('https://blog.cloudflare.com/rss/', 'technology'),
+ ('https://www.cisa.gov/cybersecurity-advisories/all.xml', 'technology'),
+ ('https://www.nasa.gov/feed/', 'technology'),
+ ('https://www.isro.gov.in/ISRO_EN/rss.xml', 'technology'),
+ ('https://www.pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3', 'government-schemes'),
+ ('https://www.pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=1', 'government-schemes'),
+ ('https://www.employmentnews.gov.in/NewsRss.aspx', 'sarkari-naukri'),
+]
+FEEDS = FEED_SOURCES
+SCHEME_WORDS = ('scheme','yojana','subsidy','beneficiary','welfare','pension','pm-kisan','scholarship','आवास','योजना','सब्सिडी','पेंशन')
+JOB_WORDS = ('recruitment','vacancy','notification','application','exam','admit card','results','upsc','ssc','rrb','भर्ती','रिक्ति','परीक्षा','नौकरी')
+def categorize(headline, default):
+    t = headline.lower()
+    if any(w in t for w in JOB_WORDS): return 'sarkari-naukri'
+    if any(w in t for w in SCHEME_WORDS): return 'government-schemes'
+    return default
+
 PREFERRED_MODELS = [m.strip() for m in os.getenv('GEMINI_MODELS', 'gemini-3.5-flash-lite,gemini-3.1-flash-lite,gemini-3.5-flash,gemini-3.6-flash,gemini-3.8-flash').split(',') if m.strip()]
 MAX_MODELS_PER_ARTICLE = max(1, min(200, int(os.getenv('MAX_MODELS_PER_ARTICLE', '100'))))
 MODEL_CACHE = None
@@ -46,7 +65,7 @@ def discover_models(api_key):
         MODEL_CACHE = []
     return MODEL_CACHE
 
-LIMIT = int(os.getenv('DAILY_LIMIT', '11'))
+LIMIT = int(os.getenv('DAILY_LIMIT', '10'))
 UTC = dt.timezone.utc
 
 def clean(value):
@@ -63,9 +82,10 @@ def today_count():
             pass
     return total
 
-def generate(api_key, title, excerpt, source):
-    prompt = f'''You are a careful bilingual technology news editor. Use ONLY facts in the supplied official source article. Explain context and implications only when supported. Structure each language body with 4-6 informative sections using headings on separate lines prefixed ##. Include what happened, key details, why it matters, availability or limitations if sourced, and practical implications if supported. Include a useful factual opening and key takeaways. Never fabricate quotes, dates, availability, prices, or benchmarks. No speculation, invented facts, fabricated quotations or unsourced claims. Attribute source claims clearly. If the excerpt does not contain enough verifiable information for an informative article, return {{}}. Do NOT pad length. Return JSON with these string fields: en_title, hi_title, en_body, hi_body, en_meta, hi_meta, en_keywords, hi_keywords. Bodies must be plain text with paragraphs separated by blank lines, factual and detailed when supported; prefer a substantive 500-900 word English explanation when the source contains enough distinct verified facts; do not repeat, invent, or pad. If facts are limited, write a shorter accurate article. Hindi should communicate equivalent facts. Titles should be clear and descriptive, not clickbait. Meta descriptions 120-160 characters when feasible. Keywords should be comma-separated relevant phrases, not spam. Never say you independently fact-checked. SOURCE URL: {source}\nSOURCE TITLE: {title}\nSOURCE ARTICLE TEXT: {excerpt[:16000]}'''
-    payload = {'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'responseMimeType': 'application/json', 'maxOutputTokens': 8192}}
+def generate(api_key, title, excerpt, source, category):
+    prompt = f'''You are an experienced bilingual editor. Produce an original, carefully attributed, helpful, detailed public-information article based ONLY on the verified supplied source text. Category: {category}. Source URL: {source}. Headline: {title}. Source material: {excerpt[:24000]}.
+Return ONLY JSON fields en_title, hi_title, en_body, hi_body, en_meta, hi_meta, en_keywords, hi_keywords. Write in English and Hindi, independently natural, with ## section headings and actionable but accurate explanations. Each language article MUST contain at least 3000 words of distinct, source-supported information. Never invent dates, eligibility, salaries, deadlines, vacancy counts, links, quotes, tests, prices, application procedures, or results. Do not repeat or pad to reach length. If the source lacks enough verified detail for 3000 substantive words in BOTH languages, return {{}} instead of publishing. Explicitly distinguish confirmed facts from unknowns; link to original source. For government jobs, avoid implying an official notice exists unless the source provides one; never invent application links. No plagiarized passages.'''
+    payload = {'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'responseMimeType': 'application/json', 'maxOutputTokens': 32768}}
     models = discover_models(api_key)
     if not models:
         print('No compatible models discovered; check API key/project.', flush=True)
@@ -86,8 +106,8 @@ def generate(api_key, title, excerpt, source):
             raw = resp.json()['candidates'][0]['content']['parts'][0]['text']
             data = json.loads(raw)
             required = ('en_title', 'hi_title', 'en_body', 'hi_body')
-            if not isinstance(data, dict) or any(not isinstance(data.get(k), str) or len(data[k].strip()) < 30 for k in required):
-                print('Incomplete article; skipping', flush=True)
+            if not isinstance(data, dict) or any(not isinstance(data.get(k), str) or len(data[k].strip().split()) < 3000 for k in required if k.endswith('_body')) or any(not isinstance(data.get(k), str) or len(data[k].strip()) < 30 for k in ('en_title','hi_title')):
+                print('Under 3000 words in one or both languages; not publishing', flush=True)
                 continue
             print('Gemini model succeeded:', model, flush=True)
             return data
@@ -121,7 +141,7 @@ def main():
     print('Remaining daily allowance:', remaining, flush=True)
     if remaining == 0: return 0
     created = 0
-    for feed in FEEDS:
+    for feed, default_category in FEEDS:
         try:
             response = requests.get(feed, timeout=25, headers={'User-Agent': 'GlobalTechDailyBot/1.0'})
             response.raise_for_status()
@@ -145,9 +165,10 @@ def main():
             if len(article_text) > len(excerpt): excerpt = article_text
             if len(excerpt) < 160: continue
             print('Processing:', clean(entry.get('title'))[:90], flush=True)
-            article = generate(api_key, clean(entry.get('title')), excerpt, url)
+            category = categorize(clean(entry.get('title')), default_category)
+            article = generate(api_key, clean(entry.get('title')), excerpt, url, category)
             if not article: continue
-            article.update(id=post_id, source=url, date=dt.datetime.now(UTC).isoformat(), source_title=clean(entry.get('title')), source_image=image_url)
+            article.update(id=post_id, source=url, date=dt.datetime.now(UTC).isoformat(), source_title=clean(entry.get('title')), source_image=image_url, category=category, image_kind='conceptual')
             path.write_text(json.dumps(article, ensure_ascii=False, indent=2), encoding='utf-8')
             created += 1
             print('Saved article', created, post_id, flush=True)
