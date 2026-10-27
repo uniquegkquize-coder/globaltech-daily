@@ -241,9 +241,27 @@ def website_stories(item):
   return item,stories
  except (requests.RequestException,ValueError):return item,[]
 
+# Google Trends is a discovery signal only; articles always come from publishers.
+def google_trending_terms():
+ terms=set()
+ for region in ('IN','US'):
+  try:
+   url='https://trends.google.com/trending?geo='+region
+   r=requests.get(url,timeout=(5,10),headers={'User-Agent':'Mozilla/5.0'})
+   if not r.ok:continue
+   soup=BeautifulSoup(r.text[:700000],'html.parser')
+   for a in soup.select('a[href*="explore?q="],a[href*="search?q="]'):
+    from urllib.parse import parse_qs
+    q=parse_qs(urlparse(a.get('href','')).query).get('q',[''])[0].strip().lower()
+    if 3<=len(q)<=70:terms.add(q)
+  except (requests.RequestException,ValueError):pass
+ print('Google Trends discovered terms:',len(terms),flush=True)
+ return terms
+
 def candidates():
  seen=set()
  counts=published_categories()
+ trending_terms=google_trending_terms()
  missing={cat for cat,n in counts.items() if n==0}
  print('Categories without a published article:',', '.join(sorted(missing)) or 'none',flush=True)
  # Resume verified drafts first instead of spending calls on new headlines.
@@ -274,7 +292,7 @@ def candidates():
   for story in stories:
    if story[0] not in seen:
     seen.add(story[0]);groups[cat].append(story)
- for cat in groups:groups[cat].sort(key=story_priority)
+ for cat in groups:groups[cat].sort(key=lambda item:(not any(t in item[1].lower() for t in trending_terms),*story_priority(item)))
  for i in range(max(map(len,groups.values()),default=0)):
   for cat in sorted(groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
    if i<len(groups[cat]):yield groups[cat][i]
@@ -305,7 +323,7 @@ def candidates():
    actual_cat=category(title,cat)
    groups[actual_cat].append((url,title,actual_cat,domain))
  for cat in groups:
-  groups[cat].sort(key=story_priority)
+  groups[cat].sort(key=lambda item:(not any(t in item[1].lower() for t in trending_terms),*story_priority(item)))
  for i in range(max(map(len,groups.values()),default=0)):
   for cat in sorted(groups, key=lambda c:(c not in missing, counts.get(c,0),c)):
    if i<len(groups[cat]): yield groups[cat][i]
