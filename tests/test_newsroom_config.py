@@ -23,6 +23,17 @@ class NewsroomConfigTests(unittest.TestCase):
         self.assertIn("gaming", categories)
         self.assertTrue(any("ign.com" in row[0] for row in feeds))
 
+    def test_recruitment_source_guard(self):
+        code = COLLECT.read_text(encoding='utf-8')
+        self.assertIn('OFFICIAL_JOB_DOMAINS', code)
+        self.assertIn("if cat=='sarkari-naukri'", code)
+        self.assertIn('Skipping recruitment story without an official government source', code)
+
+    def test_category_routing(self):
+        code = COLLECT.read_text(encoding='utf-8')
+        self.assertIn("if default not in ('sarkari-naukri','government-schemes'): return default", code)
+        self.assertIn('groups[actual_cat].append((url,title,actual_cat,domain))', code)
+
     def test_workflow_targets(self):
         workflow = WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("POSTS_PER_RUN: '14'", workflow)
