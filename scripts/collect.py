@@ -185,6 +185,34 @@ def rotating_local_feeds():
 for domain in LOCAL_PUBLISHERS+LOCAL_PRIMARY_DOMAINS:
  FEEDS.append(local_news_feed('site:'+domain+' India latest',domain))
 
+# Social-platform news leads without scraping, login bypass or paid APIs.
+# Discover publisher reports referring to public X/Facebook announcements and
+# Public App local leads; articles must resolve to an existing approved publisher.
+# Social posts themselves are NOT auto-published or treated as verified reporting.
+SOCIAL_DISCOVERY_TERMS=(
+ ('"posted on X" official announcement','world-news'),
+ ('"shared on X" government announcement','world-news'),
+ ('"Facebook post" district administration news','world-news'),
+ ('"Facebook page" police official announcement','world-news'),
+ ('"Public App" local news district','world-news'),
+ ('"Public app" city incident local news','world-news'),
+)
+SOCIAL_DISCOVERY_DOMAINS=(
+ 'indiatoday.in','indianexpress.com','timesofindia.indiatimes.com',
+ 'news18.com','jagran.com','amarujala.com','livehindustan.com',
+)
+# One query per topic per publisher would be excessive: rotate a small,
+# bounded set on each run and keep every existing feed intact.
+def rotating_social_feeds():
+ day=dt.datetime.now(UTC).date().toordinal()
+ items=[]
+ for term,cat in SOCIAL_DISCOVERY_TERMS:
+  for domain in SOCIAL_DISCOVERY_DOMAINS:
+   items.append(local_news_feed('site:'+domain+' '+term,domain,cat))
+ count=max(1,min(8,int(os.getenv('SOCIAL_LEAD_FEEDS_PER_RUN','4'))))
+ start=(day*7)%len(items)
+ return [items[(start+i)%len(items)] for i in range(count)]
+
 # No automatic republication of syndicated or paywalled text; independent articles only.
 
 SCHEME=('scheme','yojana','subsidy','welfare','pension','scholarship','beneficiary','योजना','सब्सिडी','पेंशन')
@@ -525,7 +553,7 @@ def candidates():
    return item,[]
  # Cap workers: dozens of global sources without making Actions run for hours.
  with ThreadPoolExecutor(max_workers=10) as pool:
-  results=list(pool.map(read_feed,FEEDS+rotating_local_feeds()))
+  results=list(pool.map(read_feed,FEEDS+rotating_local_feeds()+rotating_social_feeds()))
  for (feed,cat,domain),entries in results:
   print('Feed',domain,'entries',len(entries),flush=True)
   for e in entries:
