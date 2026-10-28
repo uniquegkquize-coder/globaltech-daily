@@ -515,7 +515,7 @@ def google_news_stories(cat):
 
 # Regional discovery uses established job and scheme aggregators as leads.
 # Source URLs are attributed; do not infer application deadlines from search snippets.
-INDIA_REGIONS=('Uttar Pradesh','Bihar','Rajasthan','Madhya Pradesh','Maharashtra','West Bengal','Tamil Nadu','Karnataka','Gujarat','Odisha','Jharkhand','Chhattisgarh','Haryana','Punjab','Assam','Kerala','Telangana','Andhra Pradesh','Uttarakhand','Himachal Pradesh','Delhi')
+INDIA_REGIONS=('Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh','Goa','Gujarat','Haryana','Himachal Pradesh','Jharkhand','Karnataka','Kerala','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttar Pradesh','Uttarakhand','West Bengal','Andaman and Nicobar Islands','Chandigarh','Dadra and Nagar Haveli and Daman and Diu','Delhi','Jammu and Kashmir','Ladakh','Lakshadweep','Puducherry')
 REGIONAL_PORTALS={
  'sarkari-naukri':('freejobalert.com','sarkariresult.com','mysarkarinaukri.com','jagranjosh.com','sarkaripaper.in','niyuktipost.com'),
  'government-schemes':('myscheme.gov.in','india.gov.in','jagranjosh.com','mzonews.com'),
