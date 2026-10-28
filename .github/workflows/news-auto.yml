@@ -71,7 +71,24 @@ jobs:
           git add content/posts content/pending content/featured dist
           if ! git diff --cached --quiet; then
             git commit -m 'Publish source-backed tech news and rebuild website'
-            git push origin HEAD:${{ github.ref_name }}
+            # Other updates may reach main during a long news run.
+            # Rebase generated posts on the newest main rather than losing them.
+            for attempt in 1 2 3 4 5; do
+              git fetch origin "${{ github.ref_name }}"
+              if ! git rebase -X theirs "origin/${{ github.ref_name }}"; then
+                echo "::error::News commit conflicts with newer repository changes; keeping existing remote content intact."
+                git rebase --abort || true
+                exit 1
+              fi
+              if git push origin "HEAD:${{ github.ref_name }}"; then
+                echo "Published generated articles after sync (attempt $attempt)"
+                exit 0
+              fi
+              echo "Remote branch updated during push; retrying sync ($attempt/5)"
+              sleep 3
+            done
+            echo "::error::Unable to publish after five safe sync attempts."
+            exit 1
           else
             echo 'No changes to commit'
           fi
