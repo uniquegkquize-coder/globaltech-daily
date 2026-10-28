@@ -581,6 +581,33 @@ def candidates():
   for cat in sorted(groups, key=lambda c:(c not in missing, counts.get(c,0),c)):
    if i<len(groups[cat]): yield groups[cat][i]
 
+# Detect the same news event syndicated under different publisher URLs.
+# Keep all existing articles; block only near-identical NEW stories.
+DUPLICATE_STOPWORDS={'the','and','for','with','from','this','that','after','over','into','says','said','news','latest','update','updates','today','india','indian','a','an','of','to','in','on','at','is','are','as','by','has','have'}
+def story_tokens(value):
+ normalized=re.sub(r'[^a-z0-9\\s]',' ',str(value or '').casefold())
+ return {w for w in normalized.split() if len(w)>2 and w not in DUPLICATE_STOPWORDS}
+def same_story(a,b):
+ x,y=story_tokens(a),story_tokens(b)
+ if len(x)<4 or len(y)<4:return False
+ common=len(x & y)
+ return common>=4 and (common/min(len(x),len(y))>=0.86 or common/len(x | y)>=0.72)
+def published_story_index():
+ index=[]
+ for path in POSTS.glob('*.json'):
+  try:
+   p=json.loads(path.read_text(encoding='utf-8'))
+   if isinstance(p,dict):
+    index.append((str(p.get('source','')).rstrip('/'),str(p.get('source_title') or p.get('en_title') or ''),str(p.get('category') or '')))
+  except (OSError,ValueError,TypeError):continue
+ return index
+def duplicate_story(url,title,cat,index):
+ target=str(url or '').rstrip('/')
+ for old_url,old_title,old_cat in index:
+  if target and target==old_url:return True
+  if cat==old_cat and same_story(title,old_title):return True
+ return False
+
 def main():
  if os.getenv('AUTO_POST','false').lower()!='true':print('AUTO_POST disabled');return 0
  remaining=POSTS_PER_RUN
@@ -589,12 +616,16 @@ def main():
  if not any(os.getenv(k) for k in ('GROQ_API_KEY','GEMINI_API_KEY','OPENROUTER_API_KEY','OPENAI_API_KEY')):
   print('No AI provider configured');return 0
  published=0; inspected=0; completed_categories=set()
+ published_index=published_story_index()
  for url,title,cat,domain in candidates():
   if CALLS>=MAX_CALLS or published>=remaining:break
   if cat in completed_categories:continue
   if cat not in {c for _,c,_ in FEEDS}:continue
   post_id=hashlib.sha256(url.encode()).hexdigest()[:12]
   if (POSTS/(post_id+'.json')).exists():continue
+  if duplicate_story(url,title,cat,published_index):
+   print('Skipping duplicate news event:',title[:85],flush=True)
+   continue
   pending=PENDING/(post_id+'.json')
   try:state=json.loads(pending.read_text()) if pending.exists() else {}
   except ValueError:state={}
@@ -647,6 +678,7 @@ def main():
    article.update(id=post_id,source=url,date=dt.datetime.now(UTC).isoformat(),source_title=title,category=cat,image_kind='conceptual')
    save_state(POSTS/(post_id+'.json'),article)
    pending.unlink(missing_ok=True)
+   published_index.append((url.rstrip('/'),title,cat))
    published+=1
    completed_categories.add(cat)
    print('Published',post_id,cat,flush=True)
