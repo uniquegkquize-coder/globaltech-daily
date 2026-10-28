@@ -513,6 +513,32 @@ def google_news_stories(cat):
   return stories
  except (requests.RequestException,ValueError):return []
 
+def bing_search_stories(cat):
+ """Discover publisher URLs through Bing's public RSS search, with no API key.
+ Search results are leads only: source_text() must verify the original page.
+ """
+ from urllib.parse import quote
+ base=GOOGLE_QUERIES.get(cat,cat.replace('-',' '))
+ variants=(base+' latest news',cat.replace('-',' ')+' announcement',base+' official update')
+ query=variants[dt.datetime.now(UTC).hour%len(variants)]
+ url='https://www.bing.com/search?format=rss&q='+quote(query)
+ try:
+  response=requests.get(url,timeout=(5,12),headers={'User-Agent':'Mozilla/5.0'})
+  response.raise_for_status()
+  stories=[]
+  for entry in feedparser.parse(response.content).entries[:30]:
+   target=entry.get('link','').strip()
+   host=(urlparse(target).hostname or '').lower()
+   title=clean(entry.get('title',''))
+   if not target.startswith('https://') or len(title)<25:continue
+   if not any(allowed(target,d) for _,_,d in FEEDS):continue
+   if host.endswith('bing.com') or host.endswith('microsoft.com'):continue
+   stories.append((target,title,cat,host))
+  print('Bing search',cat,'publisher stories',len(stories),flush=True)
+  return stories
+ except (requests.RequestException,ValueError):
+  return []
+
 def candidates():
  seen=set()
  counts=published_categories()
@@ -550,6 +576,18 @@ def candidates():
  for i in range(max(map(len,google_groups.values()),default=0)):
   for cat in sorted(google_groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
    if i<len(google_groups[cat]):yield google_groups[cat][i]
+ # Independent keyword search discovery complements Google News and RSS.
+ # Only approved original publisher URLs proceed to factual extraction.
+ bing_groups={cat:[] for cat in GOOGLE_QUERIES}
+ with ThreadPoolExecutor(max_workers=7) as pool:
+  bing_results=list(pool.map(bing_search_stories,bing_groups))
+ for cat,stories in zip(bing_groups,bing_results):
+  for story in stories:
+   if story[0] not in seen:
+    seen.add(story[0]);bing_groups[cat].append(story)
+ for i in range(max(map(len,bing_groups.values()),default=0)):
+  for cat in sorted(bing_groups,key=lambda x:(x not in missing,counts.get(x,0),x)):
+   if i<len(bing_groups[cat]):yield bing_groups[cat][i]
  # First search major publisher websites across every category.
  groups={cat:[] for _,cat,_ in FEEDS}
  with ThreadPoolExecutor(max_workers=10) as pool:
