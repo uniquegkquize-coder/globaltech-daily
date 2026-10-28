@@ -530,7 +530,9 @@ def candidates():
   print('Feed',domain,'entries',len(entries),flush=True)
   for e in entries:
    url=e.get('link','').strip(); title=clean(e.get('title',''))
-   if 'news.google.com' in (urlparse(url).hostname or ''):\n    url=resolve_google_news(url)\n   if not allowed(url,domain) or not title or url in seen: continue
+   if 'news.google.com' in (urlparse(url).hostname or ''):
+    url=resolve_google_news(url)
+   if not allowed(url,domain) or not title or url in seen: continue
    seen.add(url)
    published=e.get('published_parsed') or e.get('updated_parsed')
    if not published: continue
