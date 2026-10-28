@@ -124,6 +124,32 @@ FEEDS.extend([
 ])
 
 
+# Hyperlocal India discovery: district notices and regional publisher city desks.
+# Google News RSS here is discovery only; the resolved original domain is used for facts.
+LOCAL_DISTRICTS={
+ 'gorakhpur':'gorakhpur.nic.in',
+ 'lucknow':'lucknow.nic.in',
+ 'kanpur-nagar':'kanpurnagar.nic.in',
+ 'varanasi':'varanasi.nic.in',
+ 'prayagraj':'prayagraj.nic.in',
+ 'ayodhya':'ayodhya.nic.in',
+ 'deoria':'deoria.nic.in',
+ 'kushinagar':'kushinagar.nic.in',
+ 'maharajganj':'maharajganj.nic.in',
+ 'basti':'basti.nic.in',
+}
+from urllib.parse import quote as quote_query
+def local_news_feed(query,domain,cat='world-news'):
+ return ('https://news.google.com/rss/search?q='+quote_query(query+' when:7d')+'&hl=hi&gl=IN&ceid=IN:hi',cat,domain)
+for district,domain in LOCAL_DISTRICTS.items():
+ FEEDS.append(local_news_feed('site:'+domain+' notice OR press release OR आदेश',domain,'government-schemes'))
+for district in ('gorakhpur','lucknow','kanpur','varanasi','prayagraj','ayodhya','deoria','kushinagar','maharajganj','basti'):
+ for publisher in ('jagran.com','amarujala.com','livehindustan.com','bhaskar.com'):
+  FEEDS.append(local_news_feed('site:'+publisher+' '+district,publisher))
+for domain in ('up.gov.in','information.up.gov.in','uppolice.gov.in','mausam.imd.gov.in'):
+ FEEDS.append(local_news_feed('site:'+domain+' Uttar Pradesh alert OR advisory OR press release',domain,'government-schemes'))
+
+
 # No automatic republication of syndicated or paywalled text; independent articles only.
 
 SCHEME=('scheme','yojana','subsidy','welfare','pension','scholarship','beneficiary','योजना','सब्सिडी','पेंशन')
