@@ -8,11 +8,17 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 POSTS=ROOT/'content/posts'; PENDING=ROOT/'content/pending'
 POSTS.mkdir(parents=True,exist_ok=True); PENDING.mkdir(parents=True,exist_ok=True)
 UTC=dt.timezone.utc
-MIN_WORDS=0
-MIN_HINDI_WORDS=0
-MIN_HINDI_CHARS=int(os.getenv('MIN_HINDI_CHARS','0'))
+# Moderate, configurable quality floors for NEW drafts; existing posts are untouched.
+MIN_WORDS=max(0,int(os.getenv('MIN_ARTICLE_WORDS_EN','140')))
+MIN_HINDI_WORDS=max(0,int(os.getenv('MIN_ARTICLE_WORDS_HI','90')))
+MIN_HINDI_CHARS=max(0,int(os.getenv('MIN_HINDI_CHARS','0')))
 def complete_body(body,lang):
- return bool(body and body.strip() and len(body.strip())>=MIN_HINDI_CHARS and len(re.findall(r'[.!?।]',body))>=2 and len(body.strip())>=120)
+ if not body or not body.strip():return False
+ text=body.strip()
+ minimum=MIN_HINDI_WORDS if lang=='hi' else MIN_WORDS
+ return bool(len(text)>=max(120,MIN_HINDI_CHARS if lang=='hi' else 0)
+             and len(re.findall(r'\\S+',text))>=minimum
+             and len(re.findall(r'[.!?।]',text))>=2)
 MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
 POSTS_PER_RUN=max(1,min(30,int(os.getenv('POSTS_PER_RUN','30'))))
 MIN_SOURCE_WORDS=0
