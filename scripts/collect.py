@@ -493,7 +493,7 @@ def google_news_stories(cat):
  # Rotate related searches each hour, without accepting unverified sources.
  variants=(base,cat.replace('-',' ')+' latest',base+' breaking',base+' announcements')
  hour=dt.datetime.now(UTC).hour
- query=variants[hour%len(variants)]+' when:7d'
+ query=' OR '.join('('+variants[(hour+offset)%len(variants)]+')' for offset in range(3))+' when:7d'
  url='https://news.google.com/rss/search?q='+quote(query)+'&hl=en-IN&gl=IN&ceid=IN:en'
  try:
   resp=requests.get(url,timeout=(5,12),headers={'User-Agent':'Mozilla/5.0'})
