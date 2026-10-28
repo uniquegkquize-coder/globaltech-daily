@@ -168,16 +168,19 @@ for state,cities in INDIA_REGIONS.items():
 # Daily deterministic rotation: no state is permanently excluded.
 LOCAL_DAILY_LIMIT=max(12,min(100,int(os.getenv('LOCAL_FEEDS_PER_RUN','48'))))
 def rotating_local_feeds():
+ # Sample across every state/UT on every run, then rotate city sources daily.
  day=dt.datetime.now(UTC).date().toordinal()
- state_feeds=[]
- city_feeds=[]
- for item in LOCAL_DISCOVERY:
-  query=item[0]
-  (city_feeds if '%22' in query and 'news' in query else state_feeds).append(item)
- # A stride coprime to the source count rotates the selection across days.
- ordered=LOCAL_DISCOVERY
- start=(day*LOCAL_DAILY_LIMIT)%len(ordered)
- return [ordered[(start+i)%len(ordered)] for i in range(LOCAL_DAILY_LIMIT)]
+ selected=[]
+ for state in INDIA_REGIONS:
+  options=[item for item in LOCAL_DISCOVERY if quote_query('"'+state+'"') in item[0]]
+  if options:
+   selected.append(options[day%len(options)])
+ remaining=max(0,LOCAL_DAILY_LIMIT-len(selected))
+ cities=[item for item in LOCAL_DISCOVERY if item not in selected]
+ if cities and remaining:
+  start=(day*remaining)%len(cities)
+  selected.extend(cities[(start+i)%len(cities)] for i in range(remaining))
+ return selected
 # Keep direct primary and regional media domains eligible for original-link verification.
 for domain in LOCAL_PUBLISHERS+LOCAL_PRIMARY_DOMAINS:
  FEEDS.append(local_news_feed('site:'+domain+' India latest',domain))
