@@ -515,7 +515,7 @@ def google_news_stories(cat):
 
 # Regional discovery uses established job and scheme aggregators as leads.
 # Source URLs are attributed; do not infer application deadlines from search snippets.
-INDIA_REGIONS=('Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh','Goa','Gujarat','Haryana','Himachal Pradesh','Jharkhand','Karnataka','Kerala','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttar Pradesh','Uttarakhand','West Bengal','Andaman and Nicobar Islands','Chandigarh','Dadra and Nagar Haveli and Daman and Diu','Delhi','Jammu and Kashmir','Ladakh','Lakshadweep','Puducherry')
+REGIONAL_STATE_NAMES=tuple(INDIA_REGIONS)
 REGIONAL_PORTALS={
  'sarkari-naukri':('freejobalert.com','sarkariresult.com','mysarkarinaukri.com','jagranjosh.com','sarkaripaper.in','niyuktipost.com'),
  'government-schemes':('myscheme.gov.in','india.gov.in','jagranjosh.com','mzonews.com'),
@@ -526,7 +526,7 @@ def regional_search_stories(cat):
  if cat not in REGIONAL_PORTALS:return []
  hour=dt.datetime.now(UTC).hour
  # Spread regional coverage across runs instead of querying every state each hour.
- states=[INDIA_REGIONS[(hour*3+i)%len(INDIA_REGIONS)] for i in range(3)]
+ states=[REGIONAL_STATE_NAMES[(hour*3+i)%len(REGIONAL_STATE_NAMES)] for i in range(3)]
  portals=REGIONAL_PORTALS[cat]
  queries=[]
  for state in states:
