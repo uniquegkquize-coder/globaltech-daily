@@ -640,7 +640,9 @@ def main():
   if cat not in {c for _,c,_ in FEEDS}:return None
   post_id=hashlib.sha256(url.encode()).hexdigest()[:12]
   if (POSTS/(post_id+'.json')).exists():return None
-  if duplicate_story(url,title,cat,published_index):
+  with publication_lock:
+   is_duplicate=duplicate_story(url,title,cat,published_index)
+  if is_duplicate:
    print('Skipping duplicate news event:',title[:85],flush=True)
    return None
   pending=PENDING/(post_id+'.json')
