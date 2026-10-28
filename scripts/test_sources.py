@@ -11,7 +11,8 @@ assert len(set(regions))==36
 assert sum(map(len,regions.values()))>=100
 # Guard against regressions in the minimum-length quality gate.
 assert "def duplicate_story(url,title,cat,index):" in source
-assert "if duplicate_story(url,title,cat,published_index):" in source
+assert "is_duplicate=duplicate_story(url,title,cat,published_index)" in source
+assert "with publication_lock:" in source
 assert "published_index.append((url.rstrip('/'),title,cat))" in source
 assert "MIN_ARTICLE_WORDS_EN" in source
 assert "MIN_ARTICLE_WORDS_HI" in source
