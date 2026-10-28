@@ -631,74 +631,104 @@ def main():
  deadline=time.monotonic()+14*60  # Leave time for site build and Git publishing.
  print('Minimum target per category:',MIN_POSTS_PER_CATEGORY,flush=True)
  published_index=published_story_index()
- for url,title,cat,domain in candidates():
-  if time.monotonic()>=deadline:
-   print('News generation time budget reached; saving completed articles for publishing',flush=True)
-   break
-  if CALLS>=MAX_CALLS or published>=remaining:break
-  if cat not in {c for _,c,_ in FEEDS}:continue
-  post_id=hashlib.sha256(url.encode()).hexdigest()[:12]
-  if (POSTS/(post_id+'.json')).exists():continue
-  if duplicate_story(url,title,cat,published_index):
-   print('Skipping duplicate news event:',title[:85],flush=True)
-   continue
-  pending=PENDING/(post_id+'.json')
-  try:state=json.loads(pending.read_text()) if pending.exists() else {}
-  except ValueError:state={}
-  # Avoid retrying the same insufficient or failed source repeatedly within a day.
-  if state.get('blocked_until','')>dt.datetime.now(UTC).isoformat():
-   print('Pending draft cooling down:',post_id,flush=True)
-   continue
-  if any(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
-   print('Resuming saved draft:',post_id,'English',words(state.get('en_body','')),'Hindi',words(state.get('hi_body','')),flush=True)
-  inspected+=1
-  if cat=='private-vacancy' and not any(allowed(url,d) for _,c,d in FEEDS if c=='private-vacancy'):
-   continue
-  if cat=='sarkari-naukri' and not any(allowed(url,d) for d in OFFICIAL_JOB_DOMAINS):
-   print('Skipping recruitment story without an official government source:',url,flush=True)
-   continue
-  text=source_text(url,domain)
-  if (not text.strip() or len(text.strip())<120) and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
-   # Preserve completed language drafts even if the publisher temporarily blocks scraping.
-   state.update({'source':url,'source_title':title,'category':cat,'status':'source_unavailable','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat(),'source_words':words(text)})
-   if pending.exists(): save_state(pending,state)
-   print('Skipping source before AI:',title[:65],'words',words(text),flush=True)
-   continue
-  state.update({'source':url,'source_title':title,'category':cat,'status':'draft','updated_at':dt.datetime.now(UTC).isoformat()})
-  # Generate the two languages concurrently; save draft updates under a per-story lock.
-  def generate_language(lang):
-   if time.monotonic()>=deadline or CALLS>=MAX_CALLS:return lang,None,None
-   prior=state.get(lang+'_body','')
-   prompt=article_prompt(lang,title,url,text,cat)
-   if prior and not complete_body(prior,lang):
-    prompt += ('\\nEXISTING ORIGINAL DRAFT (preserve its accurate material; return a COMPLETE revised body, not only an addendum):\\n'+prior[:24000]+'\\nImprove clarity and completeness using only SOURCE-SUPPORTED context. Never fabricate details.')
-   data,provider=call_provider(prompt)
-   return lang,data,provider
-  languages=[lang for lang in ('en','hi') if not complete_body(state.get(lang+'_body',''),lang)]
-  with ThreadPoolExecutor(max_workers=2) as language_pool:
-   results=list(language_pool.map(generate_language,languages))
-  for lang,data,provider in results:
-   if isinstance(data,dict):
-    body=str(data.get('body') or '')
-    if complete_body(body,lang) and len(str(data.get('title') or ''))>=20:
-     state[lang+'_body']=body;state[lang+'_title']=str(data['title'])
-     state[lang+'_meta']=str(data.get('meta') or '')
-     state[lang+'_keywords']=str(data.get('keywords') or '')
-     print('Draft ready:',lang,'words',words(body),'via',provider,flush=True)
-    else:print('Draft unusable:',lang,'words',words(body),'via',provider,flush=True)
-   if not complete_body(state.get(lang+'_body',''),lang):
-    state['blocked_until']=(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat()
-   save_state(pending,state)
-  if all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
-   article={k:state.get(k,'') for k in ('en_title','hi_title','en_body','hi_body','en_meta','hi_meta','en_keywords','hi_keywords')}
-   article.update(id=post_id,source=url,date=dt.datetime.now(UTC).isoformat(),source_title=title,category=cat,image_kind='conceptual')
-   save_state(POSTS/(post_id+'.json'),article)
-   pending.unlink(missing_ok=True)
-   published_index.append((url.rstrip('/'),title,cat))
-   published+=1
-   category_published[cat]=category_published.get(cat,0)+1
-   print('Published',post_id,cat,flush=True)
-  else:save_state(pending,state)
+ publication_lock=threading.RLock()
+ def process_story(story):
+  url,title,cat,domain=story
+  if time.monotonic()>=deadline:return None
+  if cat not in {c for _,c,_ in FEEDS}:return None
+   post_id=hashlib.sha256(url.encode()).hexdigest()[:12]
+   if (POSTS/(post_id+'.json')).exists():continue
+   if duplicate_story(url,title,cat,published_index):
+    print('Skipping duplicate news event:',title[:85],flush=True)
+    return None
+   pending=PENDING/(post_id+'.json')
+   try:state=json.loads(pending.read_text()) if pending.exists() else {}
+   except ValueError:state={}
+   # Avoid retrying the same insufficient or failed source repeatedly within a day.
+   if state.get('blocked_until','')>dt.datetime.now(UTC).isoformat():
+    print('Pending draft cooling down:',post_id,flush=True)
+    return None
+   if any(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
+    print('Resuming saved draft:',post_id,'English',words(state.get('en_body','')),'Hindi',words(state.get('hi_body','')),flush=True)
+   inspected+=1
+   if cat=='private-vacancy' and not any(allowed(url,d) for _,c,d in FEEDS if c=='private-vacancy'):
+    return None
+   if cat=='sarkari-naukri' and not any(allowed(url,d) for d in OFFICIAL_JOB_DOMAINS):
+    print('Skipping recruitment story without an official government source:',url,flush=True)
+    return None
+   text=source_text(url,domain)
+   if (not text.strip() or len(text.strip())<120) and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
+    # Preserve completed language drafts even if the publisher temporarily blocks scraping.
+    state.update({'source':url,'source_title':title,'category':cat,'status':'source_unavailable','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat(),'source_words':words(text)})
+    if pending.exists(): save_state(pending,state)
+    print('Skipping source before AI:',title[:65],'words',words(text),flush=True)
+    return None
+   state.update({'source':url,'source_title':title,'category':cat,'status':'draft','updated_at':dt.datetime.now(UTC).isoformat()})
+   # Generate the two languages concurrently; save draft updates under a per-story lock.
+   def generate_language(lang):
+    if time.monotonic()>=deadline or CALLS>=MAX_CALLS:return lang,None,None
+    prior=state.get(lang+'_body','')
+    prompt=article_prompt(lang,title,url,text,cat)
+    if prior and not complete_body(prior,lang):
+     prompt += ('\\nEXISTING ORIGINAL DRAFT (preserve its accurate material; return a COMPLETE revised body, not only an addendum):\\n'+prior[:24000]+'\\nImprove clarity and completeness using only SOURCE-SUPPORTED context. Never fabricate details.')
+    data,provider=call_provider(prompt)
+    return lang,data,provider
+   languages=[lang for lang in ('en','hi') if not complete_body(state.get(lang+'_body',''),lang)]
+   with ThreadPoolExecutor(max_workers=2) as language_pool:
+    results=list(language_pool.map(generate_language,languages))
+   for lang,data,provider in results:
+    if isinstance(data,dict):
+     body=str(data.get('body') or '')
+     if complete_body(body,lang) and len(str(data.get('title') or ''))>=20:
+      state[lang+'_body']=body;state[lang+'_title']=str(data['title'])
+      state[lang+'_meta']=str(data.get('meta') or '')
+      state[lang+'_keywords']=str(data.get('keywords') or '')
+      print('Draft ready:',lang,'words',words(body),'via',provider,flush=True)
+     else:print('Draft unusable:',lang,'words',words(body),'via',provider,flush=True)
+    if not complete_body(state.get(lang+'_body',''),lang):
+     state['blocked_until']=(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat()
+    save_state(pending,state)
+   if all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
+    article={k:state.get(k,'') for k in ('en_title','hi_title','en_body','hi_body','en_meta','hi_meta','en_keywords','hi_keywords')}
+    article.update(id=post_id,source=url,date=dt.datetime.now(UTC).isoformat(),source_title=title,category=cat,image_kind='conceptual')
+    save_state(POSTS/(post_id+'.json'),article)
+    pending.unlink(missing_ok=True)
+    with publication_lock:
+     published_index.append((url.rstrip('/'),title,cat))
+    print('Published',post_id,cat,flush=True)
+   else:save_state(pending,state)
+   return cat if (POSTS/(post_id+'.json')).exists() else None
+
+ stories=[]
+ for story in candidates():
+  if time.monotonic()>=deadline:break
+  if len(stories)>=min(POSTS_PER_RUN*5,240):break
+  stories.append(story)
+ # Prioritize under-served categories; allow extra posts after all minimums.
+ grouped={}
+ for story in stories:grouped.setdefault(story[2],[]).append(story)
+ ordered=[]
+ while any(grouped.values()):
+  for cat in sorted(grouped,key=lambda k:(category_published.get(k,0),k)):
+   if grouped[cat]:ordered.append(grouped[cat].pop(0))
+ with ThreadPoolExecutor(max_workers=4) as article_pool:
+  futures={}
+  next_story=iter(ordered)
+  while time.monotonic()<deadline and published<remaining and CALLS<MAX_CALLS:
+   while len(futures)<4:
+    try:story=next(next_story)
+    except StopIteration:break
+    futures[article_pool.submit(process_story,story)]=story
+   if not futures:break
+   done=next(as_completed(futures))
+   story=futures.pop(done)
+   try:cat=done.result()
+   except Exception as exc:
+    print('Article worker failed:',type(exc).__name__,str(exc)[:180],flush=True)
+    continue
+   if cat:
+    published+=1
+    category_published[cat]=category_published.get(cat,0)+1
  print('AI requests used this run:',CALLS,'of',MAX_CALLS,flush=True)
  print('Published',published,'of',remaining,'target categories',flush=True)
  print('Per-category published counts:',dict(sorted(category_published.items())),flush=True)
