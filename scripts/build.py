@@ -99,8 +99,8 @@ def body_html(raw):
  # Render the small, supported Markdown subset without exposing formatting tokens.
  def inline(value):
   safe=e(value)
-  safe=re.sub(r'\\*\\*(.+?)\\*\\*',r'<strong>\\1</strong>',safe)
-  safe=re.sub(r'(^|[^*])\\*([^*\\n]+)\\*(?!\\*)',r'\\1<em>\\2</em>',safe)
+  safe=re.sub(r'\*\*(.+?)\*\*',r'<strong>\1</strong>',safe)
+  safe=re.sub(r'(^|[^*])\*([^*\n]+)\*(?!\*)',r'\1<em>\2</em>',safe)
   return safe
  parts=[];buf=[];items=[]
  def flush():
@@ -114,8 +114,8 @@ def body_html(raw):
    flush();flush_items();parts.append('<h3>'+inline(line[4:])+'</h3>')
   elif line.startswith('## '):
    flush();flush_items();parts.append('<h2>'+inline(line[3:])+'</h2>')
-  elif re.match(r'^(?:[-*] |\\d+\\. )',line):
-   flush();items.append(re.sub(r'^(?:[-*] |\\d+\\. )','',line))
+  elif re.match(r'^(?:[-*] |\d+\. )',line):
+   flush();items.append(re.sub(r'^(?:[-*] |\d+\. )','',line))
   else:flush_items();buf.append(line)
  flush();flush_items();return ''.join(parts)
 def image_caption(p,lang):
