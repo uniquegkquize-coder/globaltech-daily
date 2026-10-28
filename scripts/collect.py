@@ -342,11 +342,11 @@ def call_provider(prompt):
    last=provider
    try:
     if provider=='gemini':
-     r=requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',headers={'x-goog-api-key':key},json={'contents':[{'parts':[{'text':prompt}]}],'generationConfig':{'responseMimeType':'application/json','maxOutputTokens':8192}},timeout=(10,100))
+     r=requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',headers={'x-goog-api-key':key},json={'contents':[{'parts':[{'text':prompt}]}],'generationConfig':{'responseMimeType':'application/json','maxOutputTokens':8192}},timeout=(7,55))
      raw=''.join(p.get('text','') for p in r.json()['candidates'][0]['content']['parts']) if r.ok else ''
     else:
      url=('https://api.groq.com/openai/v1/chat/completions' if provider=='groq' else ('https://api.openai.com/v1/chat/completions' if provider=='openai' else 'https://openrouter.ai/api/v1/chat/completions'))
-     r=requests.post(url,headers={'Authorization':'Bearer '+key},json={'model':model,'messages':[{'role':'user','content':prompt}],'max_tokens':8192,'temperature':0.2},timeout=(10,110))
+     r=requests.post(url,headers={'Authorization':'Bearer '+key},json={'model':model,'messages':[{'role':'user','content':prompt}],'max_tokens':8192,'temperature':0.2},timeout=(7,55))
      raw=r.json()['choices'][0]['message']['content'] if r.ok else ''
     if not r.ok:
      print('Provider',provider,'model',model,'HTTP',r.status_code,flush=True)
