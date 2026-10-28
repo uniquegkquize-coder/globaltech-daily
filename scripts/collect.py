@@ -124,31 +124,63 @@ FEEDS.extend([
 ])
 
 
-# Hyperlocal India discovery: district notices and regional publisher city desks.
-# Google News RSS here is discovery only; the resolved original domain is used for facts.
-LOCAL_DISTRICTS={
- 'gorakhpur':'gorakhpur.nic.in',
- 'lucknow':'lucknow.nic.in',
- 'kanpur-nagar':'kanpurnagar.nic.in',
- 'varanasi':'varanasi.nic.in',
- 'prayagraj':'prayagraj.nic.in',
- 'ayodhya':'ayodhya.nic.in',
- 'deoria':'deoria.nic.in',
- 'kushinagar':'kushinagar.nic.in',
- 'maharajganj':'maharajganj.nic.in',
- 'basti':'basti.nic.in',
-}
+# Nationwide India discovery: all states/UTs, major cities and regional publishers.
+# Rotating local feeds keeps scheduled runs bounded while gradually covering India.
 from urllib.parse import quote as quote_query
+INDIA_REGIONS={
+ 'Andhra Pradesh':['Visakhapatnam','Vijayawada','Guntur','Tirupati'],
+ 'Arunachal Pradesh':['Itanagar','Tawang'],'Assam':['Guwahati','Dibrugarh','Silchar'],
+ 'Bihar':['Patna','Gaya','Muzaffarpur','Bhagalpur'],'Chhattisgarh':['Raipur','Bilaspur','Durg'],
+ 'Goa':['Panaji','Margao'],'Gujarat':['Ahmedabad','Surat','Vadodara','Rajkot'],
+ 'Haryana':['Gurugram','Faridabad','Hisar','Karnal'],'Himachal Pradesh':['Shimla','Mandi','Dharamshala'],
+ 'Jharkhand':['Ranchi','Jamshedpur','Dhanbad'],'Karnataka':['Bengaluru','Mysuru','Mangaluru','Hubballi'],
+ 'Kerala':['Kochi','Thiruvananthapuram','Kozhikode','Thrissur'],
+ 'Madhya Pradesh':['Bhopal','Indore','Gwalior','Jabalpur'],
+ 'Maharashtra':['Mumbai','Pune','Nagpur','Nashik','Thane','Aurangabad'],
+ 'Manipur':['Imphal'],'Meghalaya':['Shillong'],'Mizoram':['Aizawl'],
+ 'Nagaland':['Kohima','Dimapur'],'Odisha':['Bhubaneswar','Cuttack','Rourkela','Puri'],
+ 'Punjab':['Ludhiana','Amritsar','Jalandhar','Patiala'],
+ 'Rajasthan':['Jaipur','Jodhpur','Udaipur','Kota','Ajmer'],
+ 'Sikkim':['Gangtok'],'Tamil Nadu':['Chennai','Coimbatore','Madurai','Salem','Tiruchirappalli'],
+ 'Telangana':['Hyderabad','Warangal','Nizamabad'],
+ 'Tripura':['Agartala'],'Uttar Pradesh':['Lucknow','Kanpur','Varanasi','Prayagraj','Gorakhpur','Agra','Meerut','Noida','Ayodhya','Deoria','Kushinagar','Maharajganj','Basti'],
+ 'Uttarakhand':['Dehradun','Haridwar','Haldwani'],
+ 'West Bengal':['Kolkata','Howrah','Siliguri','Durgapur'],
+ 'Andaman and Nicobar Islands':['Port Blair'],'Chandigarh':['Chandigarh'],
+ 'Dadra and Nagar Haveli and Daman and Diu':['Daman','Silvassa'],
+ 'Delhi':['New Delhi','Delhi'],'Jammu and Kashmir':['Srinagar','Jammu'],
+ 'Ladakh':['Leh','Kargil'],'Lakshadweep':['Kavaratti'],'Puducherry':['Puducherry','Karaikal']
+}
+LOCAL_PUBLISHERS=('jagran.com','amarujala.com','livehindustan.com','bhaskar.com','indiatoday.in','timesofindia.indiatimes.com','thehindu.com','indianexpress.com','news18.com')
+LOCAL_PRIMARY_DOMAINS=('pib.gov.in','mausam.imd.gov.in')
 def local_news_feed(query,domain,cat='world-news'):
- return ('https://news.google.com/rss/search?q='+quote_query(query+' when:7d')+'&hl=hi&gl=IN&ceid=IN:hi',cat,domain)
-for district,domain in LOCAL_DISTRICTS.items():
- FEEDS.append(local_news_feed('site:'+domain+' notice OR press release OR आदेश',domain,'government-schemes'))
-for district in ('gorakhpur','lucknow','kanpur','varanasi','prayagraj','ayodhya','deoria','kushinagar','maharajganj','basti'):
- for publisher in ('jagran.com','amarujala.com','livehindustan.com','bhaskar.com'):
-  FEEDS.append(local_news_feed('site:'+publisher+' '+district,publisher))
-for domain in ('up.gov.in','information.up.gov.in','uppolice.gov.in','mausam.imd.gov.in'):
- FEEDS.append(local_news_feed('site:'+domain+' Uttar Pradesh alert OR advisory OR press release',domain,'government-schemes'))
-
+ return ('https://news.google.com/rss/search?q='+quote_query(query+' when:7d')+'&hl=en-IN&gl=IN&ceid=IN:en',cat,domain)
+# Persist only lightweight source definitions; actual local feeds are sampled each run.
+LOCAL_DISCOVERY=[]
+for state,cities in INDIA_REGIONS.items():
+ for domain in LOCAL_PUBLISHERS:
+  LOCAL_DISCOVERY.append(local_news_feed('site:'+domain+' "'+state+'" latest news',domain))
+ for city in cities:
+  for domain in LOCAL_PUBLISHERS[:4]:
+   LOCAL_DISCOVERY.append(local_news_feed('site:'+domain+' "'+city+'" news',domain))
+ for domain in LOCAL_PRIMARY_DOMAINS:
+  LOCAL_DISCOVERY.append(local_news_feed('site:'+domain+' "'+state+'" advisory OR notice',domain,'government-schemes'))
+# Daily deterministic rotation: no state is permanently excluded.
+LOCAL_DAILY_LIMIT=max(12,min(100,int(os.getenv('LOCAL_FEEDS_PER_RUN','48'))))
+def rotating_local_feeds():
+ day=dt.datetime.now(UTC).date().toordinal()
+ state_feeds=[]
+ city_feeds=[]
+ for item in LOCAL_DISCOVERY:
+  query=item[0]
+  (city_feeds if '%22' in query and 'news' in query else state_feeds).append(item)
+ # A stride coprime to the source count rotates the selection across days.
+ ordered=LOCAL_DISCOVERY
+ start=(day*LOCAL_DAILY_LIMIT)%len(ordered)
+ return [ordered[(start+i)%len(ordered)] for i in range(LOCAL_DAILY_LIMIT)]
+# Keep direct primary and regional media domains eligible for original-link verification.
+for domain in LOCAL_PUBLISHERS+LOCAL_PRIMARY_DOMAINS:
+ FEEDS.append(local_news_feed('site:'+domain+' India latest',domain))
 
 # No automatic republication of syndicated or paywalled text; independent articles only.
 
@@ -468,7 +500,7 @@ def candidates():
  # First search major publisher websites across every category.
  groups={cat:[] for _,cat,_ in FEEDS}
  with ThreadPoolExecutor(max_workers=10) as pool:
-  website_results=list(pool.map(website_stories,FEEDS))
+  website_results=list(pool.map(website_stories,[item for item in FEEDS if 'news.google.com/rss/search' not in item[0] and 'reddit.com' not in item[2]]))
  for (feed,cat,domain),stories in website_results:
   print('Website',domain,'category',cat,'candidates',len(stories),flush=True)
   for story in stories:
@@ -490,12 +522,12 @@ def candidates():
    return item,[]
  # Cap workers: dozens of global sources without making Actions run for hours.
  with ThreadPoolExecutor(max_workers=10) as pool:
-  results=list(pool.map(read_feed,FEEDS))
+  results=list(pool.map(read_feed,FEEDS+rotating_local_feeds()))
  for (feed,cat,domain),entries in results:
   print('Feed',domain,'entries',len(entries),flush=True)
   for e in entries:
    url=e.get('link','').strip(); title=clean(e.get('title',''))
-   if not allowed(url,domain) or not title or url in seen: continue
+   if 'news.google.com' in (urlparse(url).hostname or ''):\n    url=resolve_google_news(url)\n   if not allowed(url,domain) or not title or url in seen: continue
    seen.add(url)
    published=e.get('published_parsed') or e.get('updated_parsed')
    if not published: continue
