@@ -86,9 +86,11 @@ for p in POSTS:
   related=[q for q in POSTS if slug(q)!=s][:4];related_html=''.join(f'<a href="{article_path(q,lang)}">{e(title(q,lang))}</a>' for q in related)
   schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg'] if has_featured(p) else []),'author':{'@type':'Organization','name':'GlobalTech Daily Editorial Desk'},'publisher':{'@type':'Organization','name':'GlobalTech Daily','url':SITE},'isBasedOn':p['source']}
   if not has_featured(p):schema.pop('image',None)
+  schema['description']=desc[:160]
+  schema['url']=url
   schema_json=json.dumps(schema,ensure_ascii=False).replace('<',chr(92)+'u003c')
   og_image=f'<meta property="og:image" content="{SITE}/images/{s}.jpg">' if has_featured(p) else ''
-  extra=f'<meta property="og:type" content="article"><meta property="og:title" content="{e(t)}"><meta property="og:description" content="{e(desc)}">{og_image}<meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{schema_json}</script>'
+  extra=f'<meta property="og:type" content="article"><meta property="og:url" content="{e(url)}"><meta property="og:site_name" content="GlobalTech Daily"><meta property="og:locale" content="{"en_US" if lang=="en" else "hi_IN"}"><meta property="og:title" content="{e(t)}"><meta property="og:description" content="{e(desc[:160])}"><meta property="article:published_time" content="{e(p.get("date",""))}"><meta property="article:section" content="{e(CATEGORIES[category(p)][0])}">{og_image}<meta name="twitter:card" content="{"summary_large_image" if has_featured(p) else "summary"}"><meta name="twitter:title" content="{e(t)}"><meta name="twitter:description" content="{e(desc[:160])}"><script type="application/ld+json">{schema_json}</script>'
   sourcehost=urlparse(p['source']).hostname or 'original source'
   summary=e(p.get(lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
   featured_html=(f'<img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="AI-generated conceptual illustration for {e(t)}"><p class="notice">{e(image_caption(p,lang))}</p>' if has_featured(p) else '')
