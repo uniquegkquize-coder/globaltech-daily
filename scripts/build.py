@@ -139,7 +139,7 @@ for p in POSTS:
     f'<a target="_blank" rel="noopener noreferrer" href="https://t.me/share/url?url={quote(url,safe="")}&text={quote(t)}">Telegram</a>'
     f'<button type="button" class="copy-share" data-share-url="{e(url)}">{copy_text}</button></div></div>')
   related=[q for q in POSTS if slug(q)!=s and category(q)==category(p)][:4]
-  if len(related)<4:related.extend(q for q in POSTS if slug(q)!=s and slug(q) not in {slug(x) for x in related} and category(q)!=category(p)][:4-len(related)]
+  if len(related)<4:related.extend([q for q in POSTS if slug(q)!=s and slug(q) not in {slug(x) for x in related} and category(q)!=category(p)][:4-len(related)])
   related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder" aria-hidden="true">GlobalTech Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
   trending=[q for q in POSTS if slug(q)!=s][:5]
