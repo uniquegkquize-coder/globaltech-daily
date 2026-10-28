@@ -4,6 +4,7 @@ on:
     paths:
       - 'scripts/collect.py'
       - 'scripts/test_sources.py'
+      - 'scripts/build.py'
       - '.github/workflows/news-source-check.yml'
   workflow_dispatch:
 jobs:
@@ -19,3 +20,16 @@ jobs:
         run: python -m py_compile scripts/collect.py scripts/build.py scripts/test_sources.py
       - name: Check state and city source coverage
         run: python scripts/test_sources.py
+      - name: Install static-site build dependencies
+        run: python -m pip install Pillow
+      - name: Verify SEO sitemap and news sitemap generation
+        run: |
+          python scripts/build.py
+          test -s dist/index.html
+          test -s dist/robots.txt
+          test -s dist/sitemap.xml
+          test -s dist/news-sitemap.xml
+          test -s dist/_headers
+          grep -q 'Sitemap: https://globewiredaily.org/sitemap.xml' dist/robots.txt
+          grep -q 'urlset' dist/sitemap.xml
+          grep -q 'news:news' dist/news-sitemap.xml || echo 'No news younger than 48 hours; empty news sitemap is permitted'
