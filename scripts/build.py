@@ -114,7 +114,10 @@ def image_caption(p,lang):
     license_name=str(info.get('license') or 'Creative Commons')
     return (f'Image: {credit} — {license_name}' if lang=='en' else f'चित्र: {credit} — {license_name}')
   except (OSError,ValueError):pass
- if not metadata.is_file():return 'Original GlobeWire Daily editorial illustration — not an event photograph.' if lang=='en' else 'GlobeWire Daily की मूल सांकेतिक तस्वीर — घटना की वास्तविक फोटो नहीं।'
+ if not metadata.is_file():
+  if (R/'content'/'featured'/f'{s}.jpg').is_file():
+   return 'Featured image; source information not supplied.' if lang=='en' else 'फीचर्ड चित्र; स्रोत की जानकारी उपलब्ध नहीं है।'
+  return 'Original GlobeWire Daily editorial illustration — not an event photograph.' if lang=='en' else 'GlobeWire Daily की मूल सांकेतिक तस्वीर — घटना की वास्तविक फोटो नहीं।'
  return 'Featured image; provenance not specified.' if lang=='en' else 'फीचर्ड चित्र; स्रोत निर्दिष्ट नहीं है।'
 def card(p,lang):
  s=slug(p);t=title(p,lang)
