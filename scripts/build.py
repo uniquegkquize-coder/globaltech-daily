@@ -100,7 +100,7 @@ def body_html(raw):
  def inline(value):
   safe=e(value)
   safe=re.sub(r'\\*\\*(.+?)\\*\\*',r'<strong>\\1</strong>',safe)
-  safe=re.sub(r'(?<!\\*)\\*([^*\\n]+)\\*(?!\\*)',r'<em>\\1</em>',safe)
+  safe=re.sub(r'(^|[^*])\\*([^*\\n]+)\\*(?!\\*)',r'\\1<em>\\2</em>',safe)
   return safe
  parts=[];buf=[];items=[]
  def flush():
