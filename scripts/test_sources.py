@@ -15,6 +15,6 @@ assert "MIN_ARTICLE_WORDS_HI" in source
 assert "def complete_body(body,lang):" in source
 assert "rotating_local_feeds()" in source
 assert "resolve_google_news(url)" in source
-assert "results=list(pool.map(read_feed,FEEDS+rotating_local_feeds()))" in source
+assert "results=list(pool.map(read_feed,FEEDS+rotating_local_feeds()+rotating_social_feeds()))" in source
 assert "if not allowed(url,domain) or not title or url in seen: continue" in source
 print(f"Source validation OK: {len(regions)} states/UTs, {sum(map(len,regions.values()))} cities")
