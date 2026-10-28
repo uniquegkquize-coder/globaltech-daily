@@ -114,13 +114,10 @@ for p in POSTS:
   t=title(p,lang);raw=limit_article_words(p.get(lang+'_body') or p.get('en_body',''));url=f'{SITE}{article_path(p,lang)}';desc=p.get(lang+'_meta') or re.sub(r'[#\n]+',' ',raw)[:155]
   related=[q for q in POSTS if slug(q)!=s and category(q)==category(p)][:4]
   if len(related)<4:related += [q for q in POSTS if slug(q)!=s and q not in related][:4-len(related)]
-  def mini_card(q):
-   photo=f'<img loading="lazy" src="/images/{slug(q)}.jpg" width="320" height="180" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder" aria-hidden="true">GlobalTech Daily</span>'
-   return f'<a class="related-card" href="{article_path(q,lang)}">{photo}<span>{e(title(q,lang))}</span></a>'
-  related_html=''.join(mini_card(q) for q in related)
-  trending=[q for q in POSTS if slug(q)!=s][:6]
-  trending_html=''.join(mini_card(q) for q in trending)
-  keywords_html='<div class="article-tags"><strong>'+('Topics:' if lang=='en' else 'विषय:')+'</strong> '+''.join('<span class="topic-tag">'+e(k)+'</span>' for k in article_keywords(p,lang)[:7])+'</div>'
+  related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder">GlobalTech Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
+  keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
+  trending=[q for q in POSTS if slug(q)!=s][:5]
+  trending_html='<section class="trending-news"><h2>'+('Latest news' if lang=='en' else 'ताज़ा खबरें')+'</h2><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg" alt="">' if has_featured(q) else '')+'<span>'+e(title(q,lang))+'</span></a>' for q in trending)+'</div></section>'
   schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg'] if has_featured(p) else []),'author':{'@type':'Organization','name':author_name(p),'url':f'{SITE}/{lang}/author/{author_handle(p)}/'},'publisher':{'@type':'Organization','name':'GlobalTech Daily','url':SITE},'isBasedOn':p['source']}
   if not has_featured(p):schema.pop('image',None)
   schema['breadcrumb']={'@type':'BreadcrumbList','itemListElement':[
