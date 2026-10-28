@@ -1,5 +1,5 @@
 """Quota-capped, source-first bilingual publishing. No external AI calls on import."""
-import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time
+import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time, threading
 from urllib.parse import urlparse
 import requests, feedparser
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -324,21 +324,25 @@ def provider_order():
  order=os.getenv('AI_PROVIDER_ORDER','gemini,groq,openrouter').lower().split(',')
  return [p.strip() for p in order if p.strip() in ('groq','gemini','openrouter','openai')]
 # Disable a rate-limited provider for the remainder of this run.
+PROVIDER_LOCK=threading.RLock()
 PROVIDER_COOLDOWNS=set()
 UNAVAILABLE_MODELS=set()
 def call_provider(prompt):
  global CALLS
  last=None
  for provider in provider_order():
-  if CALLS>=MAX_CALLS:break
-  if provider in PROVIDER_COOLDOWNS:continue
+  with PROVIDER_LOCK:
+   if CALLS>=MAX_CALLS:break
+   if provider in PROVIDER_COOLDOWNS:continue
   key=os.getenv({'groq':'GROQ_API_KEY','gemini':'GEMINI_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}[provider],'').strip()
   if not key:continue
   models=gemini_models(key) if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else (os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free'))]
   for model in dict.fromkeys(models):
    if (provider,model) in UNAVAILABLE_MODELS:continue
    if CALLS>=MAX_CALLS:break
-   CALLS+=1
+   with PROVIDER_LOCK:
+    if CALLS>=MAX_CALLS:break
+    CALLS+=1
    last=provider
    try:
     if provider=='gemini':
@@ -350,9 +354,11 @@ def call_provider(prompt):
      raw=r.json()['choices'][0]['message']['content'] if r.ok else ''
     if not r.ok:
      print('Provider',provider,'model',model,'HTTP',r.status_code,flush=True)
-     if r.status_code in (401,402,403,429):PROVIDER_COOLDOWNS.add(provider);break
+     if r.status_code in (401,402,403,429):
+      with PROVIDER_LOCK:PROVIDER_COOLDOWNS.add(provider)
+      break
      if r.status_code==404:
-      UNAVAILABLE_MODELS.add((provider,model))
+      with PROVIDER_LOCK:UNAVAILABLE_MODELS.add((provider,model))
       continue
      continue
     data=json_object(raw)
@@ -658,15 +664,19 @@ def main():
    print('Skipping source before AI:',title[:65],'words',words(text),flush=True)
    continue
   state.update({'source':url,'source_title':title,'category':cat,'status':'draft','updated_at':dt.datetime.now(UTC).isoformat()})
-  for lang in ('en','hi'):
-   if time.monotonic()>=deadline:break
-   if complete_body(state.get(lang+'_body',''),lang):continue
-   if CALLS>=MAX_CALLS:break
+  # Generate the two languages concurrently; write shared draft state only on main thread.
+  def generate_language(lang):
+   if time.monotonic()>=deadline or CALLS>=MAX_CALLS:return lang,None,None
    prior=state.get(lang+'_body','')
    prompt=article_prompt(lang,title,url,text,cat)
    if prior and not complete_body(prior,lang):
-    prompt += ('\nEXISTING ORIGINAL DRAFT (preserve its accurate material; return a COMPLETE revised body, not only an addendum):\n'+prior[:24000]+'\nImprove clarity and completeness using only SOURCE-SUPPORTED context. Never fabricate details.')
+    prompt += ('\\nEXISTING ORIGINAL DRAFT (preserve its accurate material; return a COMPLETE revised body, not only an addendum):\\n'+prior[:24000]+'\\nImprove clarity and completeness using only SOURCE-SUPPORTED context. Never fabricate details.')
    data,provider=call_provider(prompt)
+   return lang,data,provider
+  languages=[lang for lang in ('en','hi') if not complete_body(state.get(lang+'_body',''),lang)]
+  with ThreadPoolExecutor(max_workers=2) as language_pool:
+   results=list(language_pool.map(generate_language,languages))
+  for lang,data,provider in results:
    if isinstance(data,dict):
     body=str(data.get('body') or '')
     if complete_body(body,lang) and len(str(data.get('title') or ''))>=20:
@@ -674,14 +684,9 @@ def main():
      state[lang+'_meta']=str(data.get('meta') or '')
      state[lang+'_keywords']=str(data.get('keywords') or '')
      print('Draft ready:',lang,'words',words(body),'via',provider,flush=True)
-    else: print('Draft unusable:',lang,'words',words(body),'via',provider,flush=True)
-    if not complete_body(state.get(lang+'_body',''),lang): print('Partial draft saved:',lang,'words',words(state.get(lang+'_body','')),'via',provider,flush=True)
-   # One failed request does not lead to a provider/model retry this run.
-   save_state(pending,state)
-   if not data or not complete_body(state.get(lang+'_body',''),lang):
-    # Cool down only this failing story; do not retry the same provider immediately.
+    else:print('Draft unusable:',lang,'words',words(body),'via',provider,flush=True)
+   if not complete_body(state.get(lang+'_body',''),lang):
     state['blocked_until']=(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat()
-    break
    save_state(pending,state)
   if all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    article={k:state.get(k,'') for k in ('en_title','hi_title','en_body','hi_body','en_meta','hi_meta','en_keywords','hi_keywords')}
