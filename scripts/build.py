@@ -4,10 +4,14 @@ from urllib.parse import urlparse, quote
 import os, html, json, shutil, re, datetime as dt, math, textwrap, hashlib
 from PIL import Image, ImageDraw, ImageFont
 R=Path(__file__).resolve().parents[1]; OUT=R/'dist'; SITE='https://globewiredaily.org'.rstrip('/'); CONTACT='contact@globewiredaily.org'
-shutil.rmtree(OUT,ignore_errors=True);OUT.mkdir(parents=True)
+OUT.mkdir(parents=True,exist_ok=True)
 (OUT/'googled7fc3627b4add656.html').write_text('google-site-verification: googled7fc3627b4add656.html\n',encoding='utf-8')
 def e(x):return html.escape(str(x or ''),quote=True)
-def write(p,s):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s,encoding='utf-8')
+def write(p,s):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ data=s.encode('utf-8')
+ if p.is_file() and p.read_bytes()==data:return
+ p.write_bytes(data)
 def title(p,lang):return p.get(lang+'_title') or p.get('en_title') or 'Technology news'
 CATEGORIES={'technology':('Technology','टेक्नोलॉजी'),'government-schemes':('Government Schemes','सरकारी योजनाएँ'),'sarkari-naukri':('Sarkari Naukri','सरकारी नौकरी'),'private-vacancy':('Private Vacancies','प्राइवेट नौकरी'),'movies-entertainment':('Movies & Entertainment','फिल्में और मनोरंजन'),'world-news':('World News','विश्व समाचार'),'business':('Business','बिज़नेस'),'sports':('Sports','खेल'),'automobiles':('Automobiles','ऑटोमोबाइल'),'health-science':('Health & Science','स्वास्थ्य और विज्ञान'),'gaming':('Gaming','गेमिंग'),'environment':('Environment','पर्यावरण'),'travel':('Travel','यात्रा'),'education':('Education','शिक्षा'),'lifestyle':('Lifestyle','लाइफस्टाइल')}
 def category(p):return p.get('category') if p.get('category') in CATEGORIES else 'technology'
