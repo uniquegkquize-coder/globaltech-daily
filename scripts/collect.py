@@ -313,7 +313,7 @@ def gemini_models(key):
    if not page:break
   if names:
    # Prefer Flash/free-friendly variants, avoid probing paid-only models unnecessarily.
-   names=sorted(set(names),key=lambda n:(not ('flash-lite' in n),not ('flash' in n),n))
+   names=sorted(set(names),key=lambda n:(not ('flash-lite' in n),not ('flash' in n), tuple(-int(v) for v in re.findall(r'\d+',n)[:3]),n))
    print('Gemini generateContent models available:',len(names),flush=True)
    GEMINI_MODEL_CACHE[key]=names
    return names
@@ -360,7 +360,8 @@ def call_provider(prompt):
      if r.status_code in (401,402,403,429):
       with PROVIDER_LOCK:PROVIDER_COOLDOWNS.add(provider)
       break
-     if r.status_code==404:
+     if r.status_code in (404,503):
+      # Avoid repeatedly spending requests on unavailable or overloaded models.
       with PROVIDER_LOCK:UNAVAILABLE_MODELS.add((provider,model))
       continue
      continue
