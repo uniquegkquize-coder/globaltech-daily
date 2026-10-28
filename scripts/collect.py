@@ -534,6 +534,7 @@ def candidates():
    record=json.loads(path.read_text(encoding='utf-8'))
    url=record.get('source',''); title=record.get('source_title','')
    domain=urlparse(url).hostname or ''
+   if record.get('blocked_until','')>dt.datetime.now(UTC).isoformat():continue
    if title and record.get('category') in {c for _,c,_ in FEEDS} and any(allowed(url,d) for _,_,d in FEEDS) and url not in seen:
     seen.add(url)
     yield url,title,record.get('category','technology'),domain
@@ -706,7 +707,7 @@ def main():
  stories=[]
  for story in candidates():
   if time.monotonic()>=deadline:break
-  if len(stories)>=min(POSTS_PER_RUN*5,240):break
+  if len(stories)>=min(POSTS_PER_RUN*10,600):break
   stories.append(story)
  # Prioritize two verified articles per category before filling additional slots.
  grouped={}
