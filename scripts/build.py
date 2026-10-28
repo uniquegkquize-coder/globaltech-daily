@@ -147,7 +147,7 @@ for p in POSTS:
   extra=extra_keywords+extra
   sourcehost=urlparse(p['source']).hostname or 'original source'
   summary=e(p.get(lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
-  featured_html=(f'<img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="AI-generated conceptual illustration for {e(t)}"><p class="notice">{e(image_caption(p,lang))}</p>' if has_featured(p) else '')
+  featured_html=(f'<img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="{e(t)} — featured illustration or credited source image"><p class="notice">{e(image_caption(p,lang))}</p>' if has_featured(p) else '')
   share_text=('Share this article' if lang=='en' else 'यह खबर शेयर करें')
   copy_text=('Copy link' if lang=='en' else 'लिंक कॉपी करें')
   share_html=(f'<div class="article-share"><strong>{share_text}</strong><div class="share-actions">'
