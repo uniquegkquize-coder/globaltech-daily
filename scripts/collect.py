@@ -513,6 +513,41 @@ def google_news_stories(cat):
   return stories
  except (requests.RequestException,ValueError):return []
 
+# Regional discovery uses established job and scheme aggregators as leads.
+# Source URLs are attributed; do not infer application deadlines from search snippets.
+INDIA_REGIONS=('Uttar Pradesh','Bihar','Rajasthan','Madhya Pradesh','Maharashtra','West Bengal','Tamil Nadu','Karnataka','Gujarat','Odisha','Jharkhand','Chhattisgarh','Haryana','Punjab','Assam','Kerala','Telangana','Andhra Pradesh','Uttarakhand','Himachal Pradesh','Delhi')
+REGIONAL_PORTALS={
+ 'sarkari-naukri':('freejobalert.com','sarkariresult.com','mysarkarinaukri.com','jagranjosh.com','sarkaripaper.in','niyuktipost.com'),
+ 'government-schemes':('myscheme.gov.in','india.gov.in','jagranjosh.com','mzonews.com'),
+ 'private-vacancy':('freejobalert.com','mysarkarinaukri.com','jagranjosh.com')
+}
+def regional_search_stories(cat):
+ from urllib.parse import quote
+ if cat not in REGIONAL_PORTALS:return []
+ hour=dt.datetime.now(UTC).hour
+ # Spread regional coverage across runs instead of querying every state each hour.
+ states=[INDIA_REGIONS[(hour*3+i)%len(INDIA_REGIONS)] for i in range(3)]
+ portals=REGIONAL_PORTALS[cat]
+ queries=[]
+ for state in states:
+  keyword='government scheme yojana benefits' if cat=='government-schemes' else ('private jobs hiring' if cat=='private-vacancy' else 'sarkari naukri recruitment vacancy')
+  queries.append(state+' '+keyword+' latest 2026')
+ results=[]
+ for query in queries:
+  try:
+   response=requests.get('https://www.bing.com/search?format=rss&q='+quote(query),timeout=(5,12),headers={'User-Agent':'Mozilla/5.0'})
+   response.raise_for_status()
+   for entry in feedparser.parse(response.content).entries[:20]:
+    target=entry.get('link','').strip()
+    host=(urlparse(target).hostname or '').lower()
+    title=clean(entry.get('title',''))
+    if not target.startswith('https://') or len(title)<25:continue
+    if not any(host==domain or host.endswith('.'+domain) for domain in portals):continue
+    results.append((target,title,cat,host))
+  except (requests.RequestException,ValueError):continue
+ print('Regional discovery',cat,'publisher stories',len(results),flush=True)
+ return results
+
 def bing_search_stories(cat):
  """Discover publisher URLs through Bing's public RSS search, with no API key.
  Search results are leads only: source_text() must verify the original page.
@@ -588,6 +623,13 @@ def candidates():
  for i in range(max(map(len,bing_groups.values()),default=0)):
   for cat in sorted(bing_groups,key=lambda x:(x not in missing,counts.get(x,0),x)):
    if i<len(bing_groups[cat]):yield bing_groups[cat][i]
+ # Region-wise aggregators surface state job and scheme updates.
+ with ThreadPoolExecutor(max_workers=3) as pool:
+  regional_results=list(pool.map(regional_search_stories,REGIONAL_PORTALS))
+ for cat,stories in zip(REGIONAL_PORTALS,regional_results):
+  for story in stories:
+   if story[0] not in seen:
+    seen.add(story[0]);yield story
  # First search major publisher websites across every category.
  groups={cat:[] for _,cat,_ in FEEDS}
  with ThreadPoolExecutor(max_workers=10) as pool:
