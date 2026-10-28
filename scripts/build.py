@@ -118,11 +118,14 @@ for p in POSTS:
    {'@type':'ListItem','position':1,'name':'Home' if lang=='en' else 'होम','item':f'{SITE}/{lang}/'},
    {'@type':'ListItem','position':2,'name':CATEGORIES[category(p)][0 if lang=='en' else 1],'item':f'{SITE}/{lang}/{category(p)}/'},
    {'@type':'ListItem','position':3,'name':t,'item':url}]}
+  schema['keywords']=article_keywords(p,lang)
   schema['description']=desc[:160]
   schema['url']=url
   schema_json=json.dumps(schema,ensure_ascii=False).replace('<',chr(92)+'u003c')
+  extra_keywords='<meta name="keywords" content="'+e(', '.join(article_keywords(p,lang)))+'">'
   og_image=f'<meta property="og:image" content="{SITE}/images/{s}.jpg">' if has_featured(p) else ''
   extra=f'<meta property="og:type" content="article"><meta property="og:url" content="{e(url)}"><meta property="og:site_name" content="GlobalTech Daily"><meta property="og:locale" content="{"en_US" if lang=="en" else "hi_IN"}"><meta property="og:title" content="{e(t)}"><meta property="og:description" content="{e(desc[:160])}"><meta property="article:published_time" content="{e(p.get("date",""))}"><meta property="article:section" content="{e(CATEGORIES[category(p)][0])}">{og_image}<meta name="twitter:card" content="{"summary_large_image" if has_featured(p) else "summary"}"><meta name="twitter:title" content="{e(t)}"><meta name="twitter:description" content="{e(desc[:160])}"><script type="application/ld+json">{schema_json}</script>'
+  extra=extra_keywords+extra
   sourcehost=urlparse(p['source']).hostname or 'original source'
   summary=e(p.get(lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
   featured_html=(f'<img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="AI-generated conceptual illustration for {e(t)}"><p class="notice">{e(image_caption(p,lang))}</p>' if has_featured(p) else '')
