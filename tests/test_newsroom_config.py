@@ -28,7 +28,8 @@ class NewsroomConfigTests(unittest.TestCase):
         code = COLLECT.read_text(encoding='utf-8')
         self.assertIn('OFFICIAL_JOB_DOMAINS', code)
         self.assertIn("if cat=='sarkari-naukri'", code)
-        self.assertIn('Skipping recruitment story without an official government source', code)
+        self.assertIn('Skipping recruitment story from unapproved source', code)
+        self.assertIn("REGIONAL_PORTALS['sarkari-naukri']", code)
 
     def test_category_routing(self):
         code = COLLECT.read_text(encoding='utf-8')
