@@ -100,6 +100,30 @@ FEEDS=[
 ]
 
 
+# Additional public discovery feeds. These are leads, not permission to republish text or images.
+# Social/community feeds are treated as tips; verify claims with primary reporting.
+FEEDS.extend([
+ ('https://www.reddit.com/r/worldnews/.rss','world-news','reddit.com'),
+ ('https://www.reddit.com/r/news/.rss','world-news','reddit.com'),
+ ('https://www.reddit.com/r/technology/.rss','technology','reddit.com'),
+ ('https://www.reddit.com/r/gadgets/.rss','technology','reddit.com'),
+ ('https://www.reddit.com/r/cars/.rss','automobiles','reddit.com'),
+ ('https://www.reddit.com/r/IndiaNews/.rss','world-news','reddit.com'),
+ ('https://www.apple.com/newsroom/rss-feed.rss','technology','apple.com'),
+ ('https://news.samsung.com/global/feed','technology','news.samsung.com'),
+ ('https://www.microsoft.com/en-us/research/feed/','technology','microsoft.com'),
+ ('https://www.prnewswire.com/rss/news-releases-list.rss','business','prnewswire.com'),
+ ('https://www.businesswire.com/portal/site/home/news/','business','businesswire.com'),
+ ('https://www.reutersagency.com/feed/','world-news','reutersagency.com'),
+ ('https://news.google.com/rss/search?q=site%3Ahyundai.com%20press%20release%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','automobiles','hyundai.com'),
+ ('https://news.google.com/rss/search?q=site%3Atesla.com%20news%20when%3A7d&hl=en-US&gl=US&ceid=US%3Aen','automobiles','tesla.com'),
+ ('https://news.google.com/rss/search?q=site%3Aapple.com%2Fnewsroom%20when%3A7d&hl=en-US&gl=US&ceid=US%3Aen','technology','apple.com'),
+ ('https://news.google.com/rss/search?q=site%3Anews.samsung.com%20when%3A7d&hl=en-US&gl=US&ceid=US%3Aen','technology','news.samsung.com'),
+ ('https://news.google.com/rss/search?q=site%3Abusinesswire.com%20when%3A7d&hl=en-US&gl=US&ceid=US%3Aen','business','businesswire.com'),
+ ('https://news.google.com/rss/search?q=site%3Aprnewswire.com%20when%3A7d&hl=en-US&gl=US&ceid=US%3Aen','business','prnewswire.com'),
+])
+
+
 # No automatic republication of syndicated or paywalled text; independent articles only.
 
 SCHEME=('scheme','yojana','subsidy','welfare','pension','scholarship','beneficiary','योजना','सब्सिडी','पेंशन')
