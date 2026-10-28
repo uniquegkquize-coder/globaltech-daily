@@ -712,7 +712,12 @@ def main():
  grouped={}
  for story in stories:grouped.setdefault(story[2],[]).append(story)
  ordered=[]
- categories=sorted(grouped)
+ # Give categories with the fewest existing published stories first access to
+ # limited AI calls; retain all other categories as eligible afterward.
+ historical_counts=published_categories()
+ categories=sorted(grouped,key=lambda cat:(historical_counts.get(cat,0),cat))
+ print('Verified candidate queue per category:',{cat:len(grouped[cat]) for cat in categories},flush=True)
+ print('Category processing priority:',', '.join(categories),flush=True)
  for round_number in range(MIN_POSTS_PER_CATEGORY):
   for cat in categories:
    if grouped[cat]:ordered.append(grouped[cat].pop(0))
