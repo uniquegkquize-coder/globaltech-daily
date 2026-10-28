@@ -109,6 +109,32 @@ def article_keywords(p,lang):
   if key not in seen and len(term)<=100:
    seen.add(key);result.append(term)
  return result[:12]
+def trending_posts(exclude=None,limit=6):
+ """Editorial trending proxy: recent articles with topical keyword overlap.
+ No fabricated traffic, view counts or real-time search popularity."""
+ now=dt.datetime.now(dt.timezone.utc)
+ pool=[]
+ for p in POSTS:
+  if exclude is not None and slug(p)==slug(exclude):continue
+  try:
+   published=dt.datetime.fromisoformat(str(p.get('date','')).replace('Z','+00:00'))
+   if published.tzinfo is None:published=published.replace(tzinfo=dt.timezone.utc)
+   age=max(0,(now-published).total_seconds()/3600)
+  except (ValueError,TypeError):age=9999
+  terms=set(re.findall(r'[a-z]{4,}',str(p.get('en_title','')).lower()))
+  overlaps=sum(bool(terms & set(re.findall(r'[a-z]{4,}',str(q.get('en_title','')).lower()))) for q in POSTS[:50] if slug(q)!=slug(p))
+  score=(max(0,168-age)/24)+min(overlaps,5)*0.7
+  pool.append((score,p))
+ pool.sort(key=lambda x:x[0],reverse=True)
+ return [p for _,p in pool[:limit]]
+
+def trending_section(lang,exclude=None):
+ selected=trending_posts(exclude,6)
+ if not selected:return ''
+ heading='Trending on GlobeWire Daily' if lang=='en' else 'GlobeWire Daily पर चर्चित खबरें'
+ note='Selected from recent coverage and related topics; not live search rankings.' if lang=='en' else 'हालिया खबरों और संबंधित विषयों पर आधारित चयन; लाइव सर्च रैंकिंग नहीं।'
+ return '<section class="trending-news trending-feature"><h2>'+heading+'</h2><p class="muted">'+note+'</p><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg" alt="">' if has_featured(q) else '<span class="related-placeholder">News</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in selected)+'</div></section>'
+
 def display_date(value):
  try:
   stamp=dt.datetime.fromisoformat(str(value).replace('Z','+00:00'))
@@ -161,8 +187,7 @@ for p in POSTS:
   if len(related)<4:related.extend([q for q in POSTS if slug(q)!=s and slug(q) not in {slug(x) for x in related} and category(q)!=category(p)][:4-len(related)])
   related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder" aria-hidden="true">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
-  trending=[q for q in POSTS if slug(q)!=s and has_featured(q)][:5]
-  trending_html='<section class="trending-news"><h2>'+('Latest stories' if lang=='en' else 'नई खबरें')+'</h2><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg" alt="">' if has_featured(q) else '')+'<span>'+e(title(q,lang))+'</span></a>' for q in trending)+'</div></section>'
+  trending_html=trending_section(lang,p)
   content=f'''<div class="wrap"><article class="article"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/{lang}/">{'Home' if lang=='en' else 'होम'}</a> › <a href="/{lang}/{category(p)}/">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</a> › <span>{e(t)}</span></nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1><p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> · Source: {e(sourcehost)}</p>{featured_html}{share_html}<div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div><div class="story">{body_html(raw)}</div>{keyword_html}<div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {'AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''
   write(OUT / article_path(p,lang).lstrip('/') / 'index.html',shell(lang,t,desc,url,content,extra))
 for lang in ('en','hi'):
@@ -174,7 +199,7 @@ for lang in ('en','hi'):
  sidebar='<aside class="side"><div class="panel"><h2>Explore AI tools</h2>'+''.join(f'<a href="/{lang}/tools/">{e(x[0])} · {e(x[3])}</a>' for x in TOOLS[:6])+'</div><div class="panel"><h2>Our approach</h2><p>Read original sources. Check dates. Explain what matters. Corrections welcome.</p></div></aside>'
  featured=''.join(f'<article class="tool"><span class="pill">{e(cat)}</span><h3>{e(n)}</h3><p>{e(d)}</p><a href="{e(u)}" target="_blank" rel="noopener noreferrer">{ "Official website" if lang=="en" else "आधिकारिक वेबसाइट"} ↗</a></article>' for n,d,u,cat in TOOLS[:8])
  tools_home=f'<section class="featured-tools" aria-labelledby="featured-tools-heading"><div class="sectiontitle"><h2 id="featured-tools-heading">{"Explore AI Tools" if lang=="en" else "AI टूल्स खोजें"}</h2><a href="/{lang}/tools/">{"View all AI tools" if lang=="en" else "सभी AI टूल्स देखें"} →</a></div><p class="muted">{"Explore trusted official links for writing, research, coding and design." if lang=="en" else "लेखन, रिसर्च, कोडिंग और डिजाइन के लिए आधिकारिक AI टूल्स।"}</p><div class="tools featured-grid">{featured}</div></section>'
- home=f'<div class="wrap"><section class="lead"><div class="eyebrow">WORLDWIDE NEWS & EXPLAINERS</div><h1>{h}</h1><p class="muted">{desc}</p></section><div class="sectiontitle"><h2>{"Latest stories" if lang=="en" else "नई खबरें"}</h2><a href="/{lang}/tools/">AI Tools →</a></div><div class="layout"><div class="cards">{latest}</div>{sidebar}</div>{focus_html}{tools_home}</div>'
+ home=f'<div class="wrap"><section class="lead"><div class="eyebrow">WORLDWIDE NEWS & EXPLAINERS</div><h1>{h}</h1><p class="muted">{desc}</p></section><div class="sectiontitle"><h2>{"Latest stories" if lang=="en" else "नई खबरें"}</h2><a href="/{lang}/tools/">AI Tools →</a></div><div class="layout"><div class="cards">{latest}</div>{sidebar}</div>{focus_html}{trending_section(lang)}{tools_home}</div>'
  write(OUT/lang/'index.html',shell(lang,h+' | GlobeWire Daily',desc,f'{SITE}/{lang}/',home))
  page_size=24
  total_pages=max(1,(len(POSTS)+page_size-1)//page_size)
