@@ -96,17 +96,28 @@ def image_for(p):
  draw.text((90,616),'EDITORIAL ILLUSTRATION',font=small_font,fill=(224,239,247))
  canvas.save(dest,'JPEG',quality=88,optimize=True)
 def body_html(raw):
- parts=[];buf=[]
+ # Render the small, supported Markdown subset without exposing formatting tokens.
+ def inline(value):
+  safe=e(value)
+  safe=re.sub(r'\\*\\*(.+?)\\*\\*',r'<strong>\\1</strong>',safe)
+  safe=re.sub(r'(?<!\\*)\\*([^*\\n]+)\\*(?!\\*)',r'<em>\\1</em>',safe)
+  return safe
+ parts=[];buf=[];items=[]
  def flush():
-  if buf:parts.append('<p>'+e(' '.join(buf))+'</p>');buf.clear()
+  if buf:parts.append('<p>'+inline(' '.join(buf))+'</p>');buf.clear()
+ def flush_items():
+  if items:parts.append('<ul>'+''.join('<li>'+inline(item)+'</li>' for item in items)+'</ul>');items.clear()
  for line in str(raw).splitlines():
   line=line.strip()
-  if not line:flush();continue
-  if line.startswith('### '):flush();parts.append('<h3>'+e(line[4:])+'</h3>')
-  elif line.startswith('## '):flush();parts.append('<h2>'+e(line[3:])+'</h2>')
-  elif line.startswith('- '):flush();parts.append('<p>• '+e(line[2:])+'</p>')
-  else:buf.append(line)
- flush();return ''.join(parts)
+  if not line:flush();flush_items();continue
+  if line.startswith('### '):
+   flush();flush_items();parts.append('<h3>'+inline(line[4:])+'</h3>')
+  elif line.startswith('## '):
+   flush();flush_items();parts.append('<h2>'+inline(line[3:])+'</h2>')
+  elif re.match(r'^(?:[-*] |\\d+\\. )',line):
+   flush();items.append(re.sub(r'^(?:[-*] |\\d+\\. )','',line))
+  else:flush_items();buf.append(line)
+ flush();flush_items();return ''.join(parts)
 def image_caption(p,lang):
  s=slug(p)
  metadata=R/'content'/'featured'/f'{s}.json'
