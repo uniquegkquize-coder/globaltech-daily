@@ -12,6 +12,13 @@ def title(p,lang):return p.get(lang+'_title') or p.get('en_title') or 'Technolog
 CATEGORIES={'technology':('Technology','टेक्नोलॉजी'),'government-schemes':('Government Schemes','सरकारी योजनाएँ'),'sarkari-naukri':('Sarkari Naukri','सरकारी नौकरी'),'private-vacancy':('Private Vacancies','प्राइवेट नौकरी'),'movies-entertainment':('Movies & Entertainment','फिल्में और मनोरंजन'),'world-news':('World News','विश्व समाचार'),'business':('Business','बिज़नेस'),'sports':('Sports','खेल'),'automobiles':('Automobiles','ऑटोमोबाइल'),'health-science':('Health & Science','स्वास्थ्य और विज्ञान'),'gaming':('Gaming','गेमिंग'),'environment':('Environment','पर्यावरण'),'travel':('Travel','यात्रा'),'education':('Education','शिक्षा'),'lifestyle':('Lifestyle','लाइफस्टाइल')}
 def category(p):return p.get('category') if p.get('category') in CATEGORIES else 'technology'
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
+def article_slug(p):
+ base=title(p,'en').lower()
+ base=re.sub(r'[^a-z0-9]+','-',base).strip('-')[:75].rstrip('-')
+ return (base or 'news')+'-'+slug(p)[:10]
+def article_path(p,lang):
+ return f'/{lang}/news/{category(p)}/{article_slug(p)}/'
+
 POSTS=[]
 for f in sorted((R/'content/posts').glob('*.json')):
  try:
@@ -64,7 +71,7 @@ def image_caption(p,lang):
 def card(p,lang):
  s=slug(p);t=title(p,lang)
  picture=f'<img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="{e(t)} — article featured image">' if has_featured(p) else ''
- return f'<article class="card"><a href="/{lang}/news/{s}/">{picture}<div class="inner"><span class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=="en" else 1])}</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])} · {e(urlparse(p.get("source","")).hostname or "Source")}</div></div></a></article>'
+ return f'<article class="card"><a href="{article_path(p,lang)}">{picture}<div class="inner"><span class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=="en" else 1])}</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])} · {e(urlparse(p.get("source","")).hostname or "Source")}</div></div></a></article>'
 
 def limit_article_words(raw,limit=150):
  parts=re.findall(r'\\S+',str(raw or ''))
@@ -75,8 +82,8 @@ for p in POSTS:image_for(p)
 for p in POSTS:
  s=slug(p)
  for lang in ('en','hi'):
-  t=title(p,lang);raw=limit_article_words(p.get(lang+'_body') or p.get('en_body',''));url=f'{SITE}/{lang}/news/{s}/';desc=p.get(lang+'_meta') or re.sub(r'[#\n]+',' ',raw)[:155]
-  related=[q for q in POSTS if slug(q)!=s][:4];related_html=''.join(f'<a href="/{lang}/news/{slug(q)}/">{e(title(q,lang))}</a>' for q in related)
+  t=title(p,lang);raw=limit_article_words(p.get(lang+'_body') or p.get('en_body',''));url=f'{SITE}{article_path(p,lang)}';desc=p.get(lang+'_meta') or re.sub(r'[#\n]+',' ',raw)[:155]
+  related=[q for q in POSTS if slug(q)!=s][:4];related_html=''.join(f'<a href="{article_path(q,lang)}">{e(title(q,lang))}</a>' for q in related)
   schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg'] if has_featured(p) else []),'author':{'@type':'Organization','name':'GlobalTech Daily Editorial Desk'},'publisher':{'@type':'Organization','name':'GlobalTech Daily','url':SITE},'isBasedOn':p['source']}
   if not has_featured(p):schema.pop('image',None)
   schema_json=json.dumps(schema,ensure_ascii=False).replace('<',chr(92)+'u003c')
@@ -86,7 +93,7 @@ for p in POSTS:
   summary=e(p.get(lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
   featured_html=(f'<img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="AI-generated conceptual illustration for {e(t)}"><p class="notice">{e(image_caption(p,lang))}</p>' if has_featured(p) else '')
   content=f'''<div class="wrap"><article class="article"><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1><p class="date">{e(p.get('date','')[:10])} · GlobalTech Daily Editorial Desk · Source: {e(sourcehost)}</p>{featured_html}<div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div><div class="story">{body_html(raw)}</div><div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div></article></div>'''
-  write(OUT/lang/'news'/s/'index.html',shell(lang,t,desc,url,content,extra))
+  write(OUT/article_path(p,lang).lstrip('/')/'index.html',shell(lang,t,desc,url,content,extra))
 for lang in ('en','hi'):
  h='Worldwide news, movies and technology explained' if lang=='en' else 'टेक्नोलॉजी की ताज़ा खबरें, आसान भाषा में'
  desc='Worldwide news, movies, entertainment, technology, business, sports and useful explainers.'
@@ -132,7 +139,7 @@ for lang in ('en','hi'):
   write(OUT/lang/s/'index.html',shell(lang,t,d,f'{SITE}/{lang}/{s}/',content))
 write(OUT/'index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="'+SITE+'/en/"></head><body><a href="/en/">English</a></body></html>')
 write(OUT/'robots.txt',f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\nSitemap: {SITE}/news-sitemap.xml\n')
-urls=[f'/{lang}/{path}' for lang in ('en','hi') for path in ('','tools/','government-schemes/','sarkari-naukri/','private-vacancy/','movies-entertainment/','world-news/','business/','sports/','automobiles/','health-science/','gaming/','environment/','travel/','education/','lifestyle/','technology/','about/','editorial/','corrections/','privacy/','contact/','affiliate/')]+[f'/{lang}/news/{slug(p)}/' for p in POSTS for lang in ('en','hi')]
+urls=[f'/{lang}/{path}' for lang in ('en','hi') for path in ('','tools/','government-schemes/','sarkari-naukri/','private-vacancy/','movies-entertainment/','world-news/','business/','sports/','automobiles/','health-science/','gaming/','environment/','travel/','education/','lifestyle/','technology/','about/','editorial/','corrections/','privacy/','contact/','affiliate/')]+[article_path(p,lang) for p in POSTS for lang in ('en','hi')]
 write(OUT/'sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+xml_escape(SITE+u)+'</loc></url>' for u in urls)+'</urlset>')
 recent=[]
 for p in POSTS:
@@ -140,7 +147,13 @@ for p in POSTS:
   if (dt.datetime.now(dt.timezone.utc)-dt.datetime.fromisoformat(p['date'].replace('Z','+00:00'))).total_seconds()>172800:continue
  except (ValueError,KeyError,TypeError):continue
  for lang in ('en','hi'):
-  recent.append('<url><loc>'+xml_escape(f'{SITE}/{lang}/news/{slug(p)}/')+'</loc><news:news><news:publication><news:name>GlobalTech Daily</news:name><news:language>'+lang+'</news:language></news:publication><news:publication_date>'+e(p['date'])+'</news:publication_date><news:title>'+xml_escape(title(p,lang))+'</news:title></news:news></url>')
+  recent.append('<url><loc>'+xml_escape(f'{SITE}{article_path(p,lang)}')+'</loc><news:news><news:publication><news:name>GlobalTech Daily</news:name><news:language>'+lang+'</news:language></news:publication><news:publication_date>'+e(p['date'])+'</news:publication_date><news:title>'+xml_escape(title(p,lang))+'</news:title></news:news></url>')
 write(OUT/'news-sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">'+''.join(recent)+'</urlset>')
+# Preserve old article URLs as permanent redirects to canonical descriptive URLs.
+redirects=[]
+for p in POSTS:
+ for lang in ('en','hi'):
+  redirects.append(f'/{lang}/news/{slug(p)}/ {article_path(p,lang)} 301')
+write(OUT/'_redirects','\\n'.join(redirects)+'\\n')
 write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/style.css\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n')
 print('Built',len(POSTS),'posts; AI Tools, bilingual pages, news sitemap and responsive layout')
