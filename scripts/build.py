@@ -195,6 +195,13 @@ for lang in ('en','hi'):
  author_url=f'{SITE}/{lang}/author/editorial-desk/'
  author_body='<div class="wrap"><article class="article"><h1>GlobalTech Daily Editorial Desk</h1><p>AI-assisted reporting based on attributed sources. No individual journalist is claimed.</p><p><a href="/'+lang+'/editorial/">Editorial policy</a> · <a href="mailto:'+CONTACT+'">Contact</a></p></article><h2>Recent articles</h2><div class="cards">'+''.join(card(p,lang) for p in POSTS[:24])+'</div></div>'
  write(OUT/lang/'author'/'editorial-desk'/'index.html',shell(lang,'GlobalTech Daily Editorial Desk','Source-attributed news reporting',author_url,author_body))
+for lang in ('en','hi'):
+ for handle in sorted(set(AUTHOR_HANDLES.values())):
+  author_url=f'{SITE}/{lang}/author/{handle}/'
+  author_title='GlobalTech Daily '+handle.replace('-',' ').title()
+  matching=[p for p in POSTS if author_handle(p)==handle]
+  author_body='<div class="wrap"><section class="lead"><h1>'+e(author_title)+'</h1><p>Topic-focused editorial desk of GlobalTech Daily. AI-assisted articles use attributed published sources; no individual reporter or independent verification is implied.</p><p><a href="/'+lang+'/editorial/">Editorial policy</a></p></section><div class="cards">'+''.join(card(p,lang) for p in matching[:24])+'</div></div>'
+  write(OUT/lang/'author'/handle/'index.html',shell(lang,author_title,author_title+' — AI-assisted source-attributed reporting',author_url,author_body))
 write(OUT/'index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="'+SITE+'/en/"></head><body><a href="/en/">English</a></body></html>')
 write(OUT/'robots.txt',f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\nSitemap: {SITE}/news-sitemap.xml\n')
 urls=[f'/{lang}/{path}' for lang in ('en','hi') for path in ('','author/editorial-desk/','tools/','government-schemes/','sarkari-naukri/','private-vacancy/','movies-entertainment/','world-news/','business/','sports/','automobiles/','health-science/','gaming/','environment/','travel/','education/','lifestyle/','technology/','about/','editorial/','corrections/','privacy/','contact/','affiliate/')]+[f'/{lang}/page/{page}/' for lang in ('en','hi') for page in range(2,max(1,(len(POSTS)+23)//24)+1)]+[f'/{lang}/{cat}/page/{page}/' for lang in ('en','hi') for cat in CATEGORIES for page in range(2,max(1,(sum(1 for p in POSTS if category(p)==cat)+23)//24)+1)]+[article_path(p,lang) for p in POSTS for lang in ('en','hi')]
