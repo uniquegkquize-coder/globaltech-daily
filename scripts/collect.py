@@ -696,7 +696,7 @@ def main():
     published_index.append((url.rstrip('/'),title,cat))
    print('Published',post_id,cat,flush=True)
   else:save_state(pending,state)
-   return cat if (POSTS/(post_id+'.json')).exists() else None
+  return cat if (POSTS/(post_id+'.json')).exists() else None
 
  stories=[]
  for story in candidates():
