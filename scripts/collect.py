@@ -566,7 +566,7 @@ def bing_search_stories(cat):
    host=(urlparse(target).hostname or '').lower()
    title=clean(entry.get('title',''))
    if not target.startswith('https://') or len(title)<25:continue
-   if not any(allowed(target,d) for _,_,d in FEEDS):continue
+   if not (any(allowed(target,d) for _,_,d in FEEDS) or any(allowed(target,d) for d in REGIONAL_PORTALS.get(cat,()))):continue
    if host.endswith('bing.com') or host.endswith('microsoft.com'):continue
    stories.append((target,title,cat,host))
   print('Bing search',cat,'publisher stories',len(stories),flush=True)
@@ -719,7 +719,7 @@ def main():
  def process_story(story):
   url,title,cat,domain=story
   if time.monotonic()>=deadline:return None
-  if cat not in {c for _,c,_ in FEEDS}:return None
+  if cat not in ({c for _,c,_ in FEEDS}|set(REGIONAL_PORTALS)):return None
   post_id=hashlib.sha256(url.encode()).hexdigest()[:12]
   if (POSTS/(post_id+'.json')).exists():return None
   with publication_lock:
@@ -736,10 +736,10 @@ def main():
    return None
   if any(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    print('Resuming saved draft:',post_id,'English',words(state.get('en_body','')),'Hindi',words(state.get('hi_body','')),flush=True)
-  if cat=='private-vacancy' and not any(allowed(url,d) for _,c,d in FEEDS if c=='private-vacancy'):
+  if cat=='private-vacancy' and not (any(allowed(url,d) for _,c,d in FEEDS if c=='private-vacancy') or any(allowed(url,d) for d in REGIONAL_PORTALS['private-vacancy'])):
    return None
-  if cat=='sarkari-naukri' and not any(allowed(url,d) for d in OFFICIAL_JOB_DOMAINS):
-   print('Skipping recruitment story without an official government source:',url,flush=True)
+  if cat=='sarkari-naukri' and not (any(allowed(url,d) for d in OFFICIAL_JOB_DOMAINS) or any(allowed(url,d) for d in REGIONAL_PORTALS['sarkari-naukri'])):
+   print('Skipping recruitment story from unapproved source:',url,flush=True)
    return None
   text=source_text(url,domain)
   if (not text.strip() or len(text.strip())<120) and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
