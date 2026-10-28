@@ -32,6 +32,7 @@ CSS += '''.card{min-width:0}.card>a{display:block}.card img{display:block;width:
 CSS += '''.featured-tools{margin:54px 0 10px;padding:30px;border-radius:24px;background:linear-gradient(145deg,#e8f6fb,#f5f8ff);border:1px solid #d5e7f2}.featured-tools .sectiontitle{margin-top:0}.featured-tools .tool{box-shadow:0 6px 18px rgba(10,30,60,.05)}.featured-tools .tool h3{font-size:19px;margin:8px 0}.featured-grid{grid-template-columns:repeat(4,minmax(0,1fr))}@media(max-width:950px){.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.featured-tools{margin:32px 0;padding:18px}.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.featured-grid .tool{padding:13px}.featured-grid .tool h3{font-size:16px}.featured-grid .tool p{font-size:13px}.featured-grid .tool a{font-size:12px}}''';write(OUT/'style.css',CSS)
 JS='''addEventListener('scroll',()=>{let d=document.documentElement;let m=d.scrollHeight-d.clientHeight;let b=document.querySelector('.reading');if(b)b.style.width=(m>0?100*d.scrollTop/m:0)+'%';},{passive:true});'''
 JS += """document.addEventListener('click',async function(ev){const share=ev.target.closest('.native-share');if(share){const data={title:share.dataset.shareTitle,url:share.dataset.shareUrl};if(navigator.share){try{await navigator.share(data)}catch(err){if(err.name!=='AbortError')location.href='https://api.whatsapp.com/send?text='+encodeURIComponent(data.title+' '+data.url)}}else{location.href='https://api.whatsapp.com/send?text='+encodeURIComponent(data.title+' '+data.url)}}const copy=ev.target.closest('.copy-share');if(copy){try{await navigator.clipboard.writeText(copy.dataset.shareUrl);const old=copy.textContent;copy.textContent='✓ Copied';setTimeout(()=>copy.textContent=old,1800)}catch(err){prompt('Copy link:',copy.dataset.shareUrl)}}});"""
+CSS += """.category-pagination{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:30px 0 48px;flex-wrap:wrap}.category-pagination a{display:inline-block;background:#fff;border:1px solid #d9e5f0;border-radius:9px;padding:8px 13px;text-decoration:none}"""
 CSS += """.breadcrumbs{font-size:13px;line-height:1.6;color:#5b6c83;margin-bottom:14px;overflow-wrap:anywhere}.breadcrumbs a{color:#12588b;text-decoration:none}.breadcrumbs span{color:#667085}"""
 CSS += """.article-share{padding:15px 20px;margin:18px 0;border:1px solid #dce5f1;background:#f5f9ff;border-radius:14px}.article-share strong{display:block;margin-bottom:10px}.share-actions{display:flex;flex-wrap:wrap;gap:9px}.share-actions a,.share-actions button{font:600 14px/1.3 system-ui,sans-serif;display:inline-block;border:1px solid #bed2e7;background:white;color:#12588b;border-radius:9px;padding:10px 12px;text-decoration:none;cursor:pointer}.share-actions a:hover,.share-actions button:hover{background:#e5f2ff}"""
 write(OUT/'style.css',CSS)
@@ -138,9 +139,18 @@ for lang in ('en','hi'):
   selected=[p for p in POSTS if category(p)==cat]
   heading=en_label if lang=='en' else hi_label
   intro=('Source-linked reports and explainers. Verify official notices, dates and eligibility with the issuing authority.' if lang=='en' else 'स्रोत सहित समाचार और जानकारी। आधिकारिक नोटिस, तारीख और पात्रता संबंधित विभाग से जरूर जाँचें।')
-  listing=''.join(card(p,lang) for p in selected[:100]) or ('<p>No published articles in this category yet.</p>' if lang=='en' else '<p>इस श्रेणी में अभी कोई प्रकाशित लेख नहीं है।</p>')
-  catbody=f'<div class="wrap"><section class="lead"><h1>{e(heading)}</h1><p class="muted">{e(intro)}</p></section><div class="cards">{listing}</div></div>'
-  write(OUT/lang/cat/'index.html',shell(lang,heading+' | GlobalTech Daily',intro,f'{SITE}/{lang}/{cat}/',catbody))
+  cat_pages=max(1,(len(selected)+23)//24)
+  for cat_page in range(1,cat_pages+1):
+   batch=selected[(cat_page-1)*24:cat_page*24]
+   listing=''.join(card(p,lang) for p in batch) or ('<p>No published articles in this category yet.</p>' if lang=='en' else '<p>इस श्रेणी में अभी कोई प्रकाशित लेख नहीं है।</p>')
+   prev_url=(f'/{lang}/{cat}/' if cat_page==2 else f'/{lang}/{cat}/page/{cat_page-1}/') if cat_page>1 else ''
+   next_url=f'/{lang}/{cat}/page/{cat_page+1}/' if cat_page<cat_pages else ''
+   prev_link=f'<a href="{prev_url}" rel="prev">← {"Previous" if lang=="en" else "पिछला"}</a>' if prev_url else ''
+   next_link=f'<a href="{next_url}" rel="next">{"Next" if lang=="en" else "अगला"} →</a>' if next_url else ''
+   pager=f'<nav class="category-pagination" aria-label="Category pages">{prev_link}<span>{cat_page} / {cat_pages}</span>{next_link}</nav>' if cat_pages>1 else ''
+   catbody=f'<div class="wrap"><section class="lead"><h1>{e(heading)}{f" — {cat_page}" if cat_page>1 else ""}</h1><p class="muted">{e(intro)}</p></section><div class="cards">{listing}</div>{pager}</div>'
+   cat_path=f'/{lang}/{cat}/' if cat_page==1 else f'/{lang}/{cat}/page/{cat_page}/'
+   write(OUT / cat_path.lstrip('/') / 'index.html',shell(lang,heading+(f' — Page {cat_page}' if cat_page>1 else '')+' | GlobalTech Daily',intro,f'{SITE}{cat_path}',catbody))
 
  toolcards=''.join(f'<article class="tool"><span class="pill">{e(cat)}</span><h2>{e(n)}</h2><p>{e(d)}</p><a href="{e(u)}" target="_blank" rel="noopener noreferrer">Official website ↗</a></article>' for n,d,u,cat in TOOLS)
  tools=f'<div class="wrap"><section class="lead"><div class="eyebrow">AI TOOLS DIRECTORY</div><h1>{"Explore useful AI tools" if lang=="en" else "काम के AI टूल्स खोजें"}</h1><p class="muted">Official links, brief descriptions and categories. Availability and pricing can change; verify on provider websites.</p></section><div class="tools">{toolcards}</div></div>'
@@ -157,7 +167,7 @@ for lang in ('en','hi'):
   write(OUT/lang/s/'index.html',shell(lang,t,d,f'{SITE}/{lang}/{s}/',content))
 write(OUT/'index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="'+SITE+'/en/"></head><body><a href="/en/">English</a></body></html>')
 write(OUT/'robots.txt',f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\nSitemap: {SITE}/news-sitemap.xml\n')
-urls=[f'/{lang}/{path}' for lang in ('en','hi') for path in ('','tools/','government-schemes/','sarkari-naukri/','private-vacancy/','movies-entertainment/','world-news/','business/','sports/','automobiles/','health-science/','gaming/','environment/','travel/','education/','lifestyle/','technology/','about/','editorial/','corrections/','privacy/','contact/','affiliate/')]+[f'/{lang}/page/{page}/' for lang in ('en','hi') for page in range(2,max(1,(len(POSTS)+23)//24)+1)]+[article_path(p,lang) for p in POSTS for lang in ('en','hi')]
+urls=[f'/{lang}/{path}' for lang in ('en','hi') for path in ('','tools/','government-schemes/','sarkari-naukri/','private-vacancy/','movies-entertainment/','world-news/','business/','sports/','automobiles/','health-science/','gaming/','environment/','travel/','education/','lifestyle/','technology/','about/','editorial/','corrections/','privacy/','contact/','affiliate/')]+[f'/{lang}/page/{page}/' for lang in ('en','hi') for page in range(2,max(1,(len(POSTS)+23)//24)+1)]+[f'/{lang}/{cat}/page/{page}/' for lang in ('en','hi') for cat in CATEGORIES for page in range(2,max(1,(sum(1 for p in POSTS if category(p)==cat)+23)//24)+1)]+[article_path(p,lang) for p in POSTS for lang in ('en','hi')]
 write(OUT/'sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+xml_escape(SITE+u)+'</loc></url>' for u in urls)+'</urlset>')
 recent=[]
 for p in POSTS:
