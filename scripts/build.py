@@ -88,7 +88,7 @@ def image_caption(p,lang):
     license_name=str(info.get('license') or 'Creative Commons')
     return (f'Image: {credit} — {license_name}' if lang=='en' else f'चित्र: {credit} — {license_name}')
   except (OSError,ValueError):pass
- return 'AI-generated conceptual illustration — not an event photograph.' if lang=='en' else 'AI से बनाई गई सांकेतिक तस्वीर — वास्तविक घटना की फोटो नहीं।'
+ return 'Featured illustration; image provenance not specified.' if lang=='en' else 'फीचर्ड चित्र; चित्र का स्रोत निर्दिष्ट नहीं है।'
 def card(p,lang):
  s=slug(p);t=title(p,lang)
  picture=f'<img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="{e(t)} — article featured image">' if has_featured(p) else ''
