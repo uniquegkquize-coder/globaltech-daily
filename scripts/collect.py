@@ -596,7 +596,7 @@ def candidates():
    url=record.get('source',''); title=record.get('source_title','')
    domain=urlparse(url).hostname or ''
    if record.get('blocked_until','')>dt.datetime.now(UTC).isoformat():continue
-   if title and record.get('category') in {c for _,c,_ in FEEDS} and any(allowed(url,d) for _,_,d in FEEDS) and url not in seen:
+   if title and record.get('category') in {c for _,c,_ in FEEDS} and (any(allowed(url,d) for _,_,d in FEEDS) or any(allowed(url,d) for d in REGIONAL_PORTALS.get(record.get('category'),()))) and url not in seen:
     seen.add(url)
     yield url,title,record.get('category','technology'),domain
   except (OSError,ValueError):pass
