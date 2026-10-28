@@ -93,7 +93,7 @@ for p in POSTS:
   summary=e(p.get(lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
   featured_html=(f'<img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="AI-generated conceptual illustration for {e(t)}"><p class="notice">{e(image_caption(p,lang))}</p>' if has_featured(p) else '')
   content=f'''<div class="wrap"><article class="article"><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1><p class="date">{e(p.get('date','')[:10])} · GlobalTech Daily Editorial Desk · Source: {e(sourcehost)}</p>{featured_html}<div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div><div class="story">{body_html(raw)}</div><div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div></article></div>'''
-  write(OUT/article_path(p,lang).lstrip('/')/'index.html',shell(lang,t,desc,url,content,extra))
+  write(OUT / article_path(p,lang).lstrip('/') / 'index.html',shell(lang,t,desc,url,content,extra))
 for lang in ('en','hi'):
  h='Worldwide news, movies and technology explained' if lang=='en' else 'टेक्नोलॉजी की ताज़ा खबरें, आसान भाषा में'
  desc='Worldwide news, movies, entertainment, technology, business, sports and useful explainers.'
@@ -154,6 +154,6 @@ redirects=[]
 for p in POSTS:
  for lang in ('en','hi'):
   redirects.append(f'/{lang}/news/{slug(p)}/ {article_path(p,lang)} 301')
-write(OUT/'_redirects','\\n'.join(redirects)+'\\n')
+write(OUT/'_redirects','\n'.join(redirects)+'\n')
 write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/style.css\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n')
 print('Built',len(POSTS),'posts; AI Tools, bilingual pages, news sitemap and responsive layout')
