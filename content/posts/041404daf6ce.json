@@ -1,0 +1,16 @@
+{
+  "en_title": "Critical UEFI Firmware Flaw Threatens Global Server Infrastructure",
+  "hi_title": "UEFI फर्मवेयर में गंभीर सुरक्षा खामी: दुनिया भर के सर्वर खतरे में",
+  "en_body": "## Understanding the Vulnerability\nA high-severity vulnerability, tracked as CVE-2026-97631, has been identified in the TianoCore EDK II firmware codebase. With a severity rating of 9.5, the flaw resides in the PXE-Base Code driver, which handles network-based booting. An attacker with local network access can trigger a buffer overflow by sending oversized ICMP error messages, potentially executing malicious code at the CPU's most privileged level (Ring 0) during the boot process.\n\n## Impact and Mitigation\nThis flaw primarily affects enterprise servers and data centers utilizing network booting. Unlike consumer hardware booting from local disks, these systems are uniquely exposed. While no evidence suggests it serves as an initial entry point for network infiltration, it could facilitate privilege escalation. Administrators should contact hardware vendors for firmware updates and consider disabling network boot configurations as a temporary precaution. Details can be found at https://arstechnica.com/security/2026/10/code-execution-flaw-in-uefi-firmware-threatens-most-servers-on-planet-earth/.",
+  "hi_body": "## सुरक्षा जोखिम और प्रभाव\nहाल ही में 'TianoCore EDK II' फर्मवेयर में 'CVE-2026-97631' नामक एक गंभीर सुरक्षा खामी (Severity 9.5/10) की पहचान की गई है। यह खामी उन अधिकांश सर्वरों को प्रभावित करती है जो बूट-अप के दौरान नेटवर्क बूट (PXE) का उपयोग करते हैं। शोधकर्ताओं के अनुसार, हमलावर स्थानीय नेटवर्क का उपयोग करके सर्वर के बूटिंग चरण में दुर्भावनापूर्ण कोड निष्पादित कर सकते हैं। यह समस्या उन उपकरणों के लिए है जो EDK2 कोडबेस का उपयोग करते हैं।\n\n## उपयोगकर्ताओं के लिए सलाह\nयह खामी उन सर्वरों को प्रभावित करती है जो स्थानीय नेटवर्क से बूट होते हैं; सामान्य घरेलू या छोटे कार्यालय के उपयोगकर्ताओं के लिए जोखिम कम है। प्रभावित संगठनों को अपने सर्वर निर्माता से फर्मवेयर अपडेट की जांच करनी चाहिए और यदि संभव हो तो अस्थायी रूप से नेटवर्क बूट सुविधा को अक्षम कर देना चाहिए। विस्तृत जानकारी के लिए आधिकारिक Ars Technica रिपोर्ट देखें: https://arstechnica.com/security/2026/10/code-execution-flaw-in-uefi-firmware-threatens-most-servers-on-planet-earth/",
+  "en_meta": "A breakdown of the critical CVE-2026-97631 firmware vulnerability impacting global server infrastructure and the recommended mitigation steps for IT administrators.",
+  "hi_meta": "UEFI फर्मवेयर में नई सुरक्षा खामी CVE-2026-97631 का विवरण, जो दुनिया भर के सर्वर और डेटा सेंटरों के लिए एक गंभीर खतरा बनी है।",
+  "en_keywords": "CVE-2026-97631, UEFI, firmware, TianoCore, cybersecurity, server security, PXE boot, network vulnerability",
+  "hi_keywords": "UEFI, फर्मवेयर, सुरक्षा, सर्वर, CVE-2026-97631, साइबर सुरक्षा, EDK2, बूट सुरक्षा",
+  "id": "041404daf6ce",
+  "source": "https://arstechnica.com/security/2026/10/code-execution-flaw-in-uefi-firmware-threatens-most-servers-on-planet-earth/",
+  "date": "2026-10-28T02:51:36.639177+00:00",
+  "source_title": "Code-execution flaw in UEFI firmware threatens most servers on planet Earth",
+  "category": "health-science",
+  "image_kind": "conceptual"
+}
