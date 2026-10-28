@@ -58,13 +58,39 @@ def shell(lang,t,desc,url,body,extra=''):
  links=''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in nav)
  return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="/{'hi' if lang=='en' else 'en'}/">{'हिन्दी' if lang=='en' else 'English'}</a></nav></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>Independent bilingual news and explainers with attributed sources and AI-assisted drafting.</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{s.title()}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js"></script></body></html>'''
 def has_featured(p):
- return (R/'content'/'featured'/f'{slug(p)}.jpg').is_file()
+ # Existing licensed/credited images always take priority.
+ return (R/'content'/'featured'/f'{slug(p)}.jpg').is_file() or (OUT/'images'/f'{slug(p)}.jpg').is_file()
 
 def image_for(p):
- """Only publish genuine article-specific featured images; never generate empty placeholders."""
- if not has_featured(p):return
+ """Keep existing photos; generate clearly labeled original editorial artwork only when missing."""
  s=slug(p);dest=OUT/'images'/f'{s}.jpg';dest.parent.mkdir(parents=True,exist_ok=True)
- shutil.copy2(R/'content'/'featured'/f'{s}.jpg',dest)
+ existing=R/'content'/'featured'/f'{s}.jpg'
+ if existing.is_file():
+  shutil.copy2(existing,dest)
+  return
+ # No third-party photos are scraped or reused without documented rights.
+ canvas=Image.new('RGB',(1280,720),(12,28,55))
+ draw=ImageDraw.Draw(canvas)
+ draw.rectangle((0,0,1280,16),fill=(29,199,196))
+ draw.ellipse((930,80,1430,580),outline=(35,91,117),width=18)
+ draw.ellipse((1000,145,1350,495),outline=(35,91,117),width=12)
+ try:
+  font_path='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+  heading_font=ImageFont.truetype(font_path,54)
+  small_font=ImageFont.truetype(font_path,29)
+ except OSError:
+  heading_font=ImageFont.load_default()
+  small_font=ImageFont.load_default()
+ category_name=CATEGORIES[category(p)][0].upper()
+ draw.text((75,65),'GLOBEWIRE DAILY',font=small_font,fill=(85,227,221))
+ draw.text((75,120),category_name,font=small_font,fill=(195,211,231))
+ headline=title(p,'en')
+ lines=textwrap.wrap(headline,width=34)[:4]
+ for index,line in enumerate(lines):
+  draw.text((75,230+index*78),line,font=heading_font,fill=(255,255,255))
+ draw.rectangle((75,610,610,660),fill=(20,66,92))
+ draw.text((90,616),'EDITORIAL ILLUSTRATION',font=small_font,fill=(224,239,247))
+ canvas.save(dest,'JPEG',quality=88,optimize=True)
 def body_html(raw):
  parts=[];buf=[]
  def flush():
@@ -88,7 +114,8 @@ def image_caption(p,lang):
     license_name=str(info.get('license') or 'Creative Commons')
     return (f'Image: {credit} — {license_name}' if lang=='en' else f'चित्र: {credit} — {license_name}')
   except (OSError,ValueError):pass
- return 'Featured illustration; image provenance not specified.' if lang=='en' else 'फीचर्ड चित्र; चित्र का स्रोत निर्दिष्ट नहीं है।'
+ if not metadata.is_file():return 'Original GlobeWire Daily editorial illustration — not an event photograph.' if lang=='en' else 'GlobeWire Daily की मूल सांकेतिक तस्वीर — घटना की वास्तविक फोटो नहीं।'
+ return 'Featured image; provenance not specified.' if lang=='en' else 'फीचर्ड चित्र; स्रोत निर्दिष्ट नहीं है।'
 def card(p,lang):
  s=slug(p);t=title(p,lang)
  picture=f'<img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="{e(t)} — article featured image">' if has_featured(p) else ''
