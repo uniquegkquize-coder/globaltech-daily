@@ -479,12 +479,16 @@ def resolve_google_news(link):
 
 def google_news_stories(cat):
  from urllib.parse import quote
- query=GOOGLE_QUERIES.get(cat,cat.replace('-',' '))+' when:7d'
+ base=GOOGLE_QUERIES.get(cat,cat.replace('-',' '))
+ # Rotate related searches each hour, without accepting unverified sources.
+ variants=(base,cat.replace('-',' ')+' latest',base+' breaking',base+' announcements')
+ hour=dt.datetime.now(UTC).hour
+ query=variants[hour%len(variants)]+' when:7d'
  url='https://news.google.com/rss/search?q='+quote(query)+'&hl=en-IN&gl=IN&ceid=IN:en'
  try:
   resp=requests.get(url,timeout=(5,12),headers={'User-Agent':'Mozilla/5.0'})
   resp.raise_for_status()
-  entries=feedparser.parse(resp.content).entries[:18]
+  entries=feedparser.parse(resp.content).entries[:35]
   stories=[]
   for entry in entries:
    # Resolve the Google News article link; never use the Google URL as evidence.
@@ -688,6 +692,6 @@ def main():
  print('Published',published,'of',remaining,'target categories',flush=True)
  print('Per-category published counts:',dict(sorted(category_published.items())),flush=True)
  print('Categories reaching target:',', '.join(sorted(cat for cat,n in category_published.items() if n>=MIN_POSTS_PER_CATEGORY)),flush=True)
- print('Categories still missing:',', '.join(sorted(set(c for _,c,_ in FEEDS)-{cat for cat,n in category_published.items() if n>=MIN_POSTS_PER_CATEGORY})),flush=True)
+ print('Categories below two-post target:',', '.join(sorted(set(c for _,c,_ in FEEDS)-{cat for cat,n in category_published.items() if n>=MIN_POSTS_PER_CATEGORY})),flush=True)
  return 0
 if __name__=='__main__':sys.exit(main())
