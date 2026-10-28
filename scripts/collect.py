@@ -621,9 +621,13 @@ def main():
  if not any(os.getenv(k) for k in ('GROQ_API_KEY','GEMINI_API_KEY','OPENROUTER_API_KEY','OPENAI_API_KEY')):
   print('No AI provider configured');return 0
  published=0; inspected=0; category_published={}
+ deadline=time.monotonic()+15*60  # Leave time for site build and Git publishing.
  print('Minimum target per category:',MIN_POSTS_PER_CATEGORY,flush=True)
  published_index=published_story_index()
  for url,title,cat,domain in candidates():
+  if time.monotonic()>=deadline:
+   print('News generation time budget reached; saving completed articles for publishing',flush=True)
+   break
   if CALLS>=MAX_CALLS or published>=remaining:break
   if cat not in {c for _,c,_ in FEEDS}:continue
   post_id=hashlib.sha256(url.encode()).hexdigest()[:12]
@@ -655,6 +659,7 @@ def main():
    continue
   state.update({'source':url,'source_title':title,'category':cat,'status':'draft','updated_at':dt.datetime.now(UTC).isoformat()})
   for lang in ('en','hi'):
+   if time.monotonic()>=deadline:break
    if complete_body(state.get(lang+'_body',''),lang):continue
    if CALLS>=MAX_CALLS:break
    prior=state.get(lang+'_body','')
