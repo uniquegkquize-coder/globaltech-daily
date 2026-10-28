@@ -3,7 +3,7 @@ from xml.sax.saxutils import escape as xml_escape
 from urllib.parse import urlparse, quote
 import os, html, json, shutil, re, datetime as dt, math, textwrap, hashlib
 from PIL import Image, ImageDraw, ImageFont
-R=Path(__file__).resolve().parents[1]; OUT=R/'dist'; SITE=os.getenv('SITE_URL','https://globaltech-daily.pages.dev').rstrip('/'); CONTACT='info@sellercalc.net'
+R=Path(__file__).resolve().parents[1]; OUT=R/'dist'; SITE='https://globewiredaily.org'.rstrip('/'); CONTACT='contact@globewiredaily.org'
 shutil.rmtree(OUT,ignore_errors=True);OUT.mkdir(parents=True)
 (OUT/'googled7fc3627b4add656.html').write_text('google-site-verification: googled7fc3627b4add656.html\n',encoding='utf-8')
 def e(x):return html.escape(str(x or ''),quote=True)
@@ -43,7 +43,7 @@ write(OUT/'site.js',JS)
 def shell(lang,t,desc,url,body,extra=''):
  nav=[('Home','होम',''),('AI Tools','AI टूल्स','tools/'),('Schemes','सरकारी योजनाएँ','government-schemes/'),('Jobs','सरकारी नौकरी','sarkari-naukri/'),('Private Jobs','प्राइवेट नौकरी','private-vacancy/'),('Movies','फिल्में','movies-entertainment/'),('World','दुनिया','world-news/'),('Business','बिज़नेस','business/'),('Sports','खेल','sports/'),('Gaming','गेमिंग','gaming/'),('Environment','पर्यावरण','environment/'),('Travel','यात्रा','travel/'),('Education','शिक्षा','education/'),('Lifestyle','लाइफस्टाइल','lifestyle/'),('About','हमारे बारे में','about/'),('Editorial','संपादकीय नीति','editorial/'),('Contact','संपर्क','contact/')]
  links=''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in nav)
- return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="stylesheet" href="/style.css">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobalTech <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="/{'hi' if lang=='en' else 'en'}/">{'हिन्दी' if lang=='en' else 'English'}</a></nav></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobalTech Daily</strong><p>Independent AI-assisted technology explainers with source attribution.</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{s.title()}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js"></script></body></html>'''
+ return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="stylesheet" href="/style.css">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobalTech <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="/{'hi' if lang=='en' else 'en'}/">{'हिन्दी' if lang=='en' else 'English'}</a></nav></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>Independent AI-assisted technology explainers with source attribution.</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{s.title()}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js"></script></body></html>'''
 def has_featured(p):
  return (R/'content'/'featured'/f'{slug(p)}.jpg').is_file()
 
@@ -83,13 +83,13 @@ def card(p,lang):
 
 AUTHOR_HANDLES={'technology':'tech-desk','business':'business-desk','world-news':'world-desk','sports':'sports-desk','health-science':'science-desk','government-schemes':'public-services-desk','sarkari-naukri':'careers-desk','private-vacancy':'careers-desk','movies-entertainment':'entertainment-desk','automobiles':'auto-desk','gaming':'gaming-desk','environment':'climate-desk','travel':'travel-desk','education':'education-desk','lifestyle':'lifestyle-desk'}
 def author_handle(p):return AUTHOR_HANDLES.get(category(p),'editorial-desk')
-def author_name(p):return 'GlobalTech Daily '+author_handle(p).replace('-',' ').title()
+def author_name(p):return 'GlobeWire Daily '+author_handle(p).replace('-',' ').title()
 def article_keywords(p,lang):
  raw=p.get(lang+'_keywords') or p.get('en_keywords') or []
  if isinstance(raw,str):raw=re.split(r'[,;|]',raw)
  if not isinstance(raw,list):raw=[]
  terms=[str(x).strip() for x in raw if str(x).strip()]
- terms.extend([title(p,lang),CATEGORIES[category(p)][0 if lang=='en' else 1],'GlobalTech Daily'])
+ terms.extend([title(p,lang),CATEGORIES[category(p)][0 if lang=='en' else 1],'GlobeWire Daily'])
  seen=set();result=[]
  for term in terms:
   key=term.casefold()
@@ -115,11 +115,11 @@ for p in POSTS:
   t=title(p,lang);raw=limit_article_words(p.get(lang+'_body') or p.get('en_body',''));url=f'{SITE}{article_path(p,lang)}';desc=p.get(lang+'_meta') or re.sub(r'[#\n]+',' ',raw)[:155]
   related=[q for q in POSTS if slug(q)!=s and category(q)==category(p) and has_featured(q)][:4]
   if len(related)<4:related += [q for q in POSTS if slug(q)!=s and q not in related][:4-len(related)]
-  related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder">GlobalTech Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
+  related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
   trending=[q for q in POSTS if slug(q)!=s and has_featured(q)][:5]
   trending_html='<section class="trending-news"><h2>'+('Latest news' if lang=='en' else 'ताज़ा खबरें')+'</h2><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg" alt="">' if has_featured(q) else '')+'<span>'+e(title(q,lang))+'</span></a>' for q in trending)+'</div></section>'
-  schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg'] if has_featured(p) else []),'author':{'@type':'Organization','name':author_name(p),'url':f'{SITE}/{lang}/author/{author_handle(p)}/'},'publisher':{'@type':'Organization','name':'GlobalTech Daily','url':SITE},'isBasedOn':p['source']}
+  schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg'] if has_featured(p) else []),'author':{'@type':'Organization','name':author_name(p),'url':f'{SITE}/{lang}/author/{author_handle(p)}/'},'publisher':{'@type':'Organization','name':'GlobeWire Daily','url':SITE},'isBasedOn':p['source']}
   if not has_featured(p):schema.pop('image',None)
   schema['breadcrumb']={'@type':'BreadcrumbList','itemListElement':[
    {'@type':'ListItem','position':1,'name':'Home' if lang=='en' else 'होम','item':f'{SITE}/{lang}/'},
@@ -131,7 +131,7 @@ for p in POSTS:
   schema_json=json.dumps(schema,ensure_ascii=False).replace('<',chr(92)+'u003c')
   extra_keywords='<meta name="keywords" content="'+e(', '.join(article_keywords(p,lang)))+'">'
   og_image=f'<meta property="og:image" content="{SITE}/images/{s}.jpg">' if has_featured(p) else ''
-  extra=f'<meta property="og:type" content="article"><meta property="og:url" content="{e(url)}"><meta property="og:site_name" content="GlobalTech Daily"><meta property="og:locale" content="{"en_US" if lang=="en" else "hi_IN"}"><meta property="og:title" content="{e(t)}"><meta property="og:description" content="{e(desc[:160])}"><meta property="article:published_time" content="{e(p.get("date",""))}"><meta property="article:section" content="{e(CATEGORIES[category(p)][0])}">{og_image}<meta name="twitter:card" content="{"summary_large_image" if has_featured(p) else "summary"}"><meta name="twitter:title" content="{e(t)}"><meta name="twitter:description" content="{e(desc[:160])}"><script type="application/ld+json">{schema_json}</script>'
+  extra=f'<meta property="og:type" content="article"><meta property="og:url" content="{e(url)}"><meta property="og:site_name" content="GlobeWire Daily"><meta property="og:locale" content="{"en_US" if lang=="en" else "hi_IN"}"><meta property="og:title" content="{e(t)}"><meta property="og:description" content="{e(desc[:160])}"><meta property="article:published_time" content="{e(p.get("date",""))}"><meta property="article:section" content="{e(CATEGORIES[category(p)][0])}">{og_image}<meta name="twitter:card" content="{"summary_large_image" if has_featured(p) else "summary"}"><meta name="twitter:title" content="{e(t)}"><meta name="twitter:description" content="{e(desc[:160])}"><script type="application/ld+json">{schema_json}</script>'
   extra=extra_keywords+extra
   sourcehost=urlparse(p['source']).hostname or 'original source'
   summary=e(p.get(lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
@@ -146,7 +146,7 @@ for p in POSTS:
     f'<button type="button" class="copy-share" data-share-url="{e(url)}">{copy_text}</button></div></div>')
   related=[q for q in POSTS if slug(q)!=s and category(q)==category(p) and has_featured(q)][:4]
   if len(related)<4:related.extend([q for q in POSTS if slug(q)!=s and slug(q) not in {slug(x) for x in related} and category(q)!=category(p)][:4-len(related)])
-  related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder" aria-hidden="true">GlobalTech Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
+  related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder" aria-hidden="true">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
   trending=[q for q in POSTS if slug(q)!=s and has_featured(q)][:5]
   trending_html='<section class="trending-news"><h2>'+('Latest stories' if lang=='en' else 'नई खबरें')+'</h2><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg" alt="">' if has_featured(q) else '')+'<span>'+e(title(q,lang))+'</span></a>' for q in trending)+'</div></section>'
@@ -160,7 +160,7 @@ for lang in ('en','hi'):
  featured=''.join(f'<article class="tool"><span class="pill">{e(cat)}</span><h3>{e(n)}</h3><p>{e(d)}</p><a href="{e(u)}" target="_blank" rel="noopener noreferrer">{ "Official website" if lang=="en" else "आधिकारिक वेबसाइट"} ↗</a></article>' for n,d,u,cat in TOOLS[:8])
  tools_home=f'<section class="featured-tools" aria-labelledby="featured-tools-heading"><div class="sectiontitle"><h2 id="featured-tools-heading">{"Explore AI Tools" if lang=="en" else "AI टूल्स खोजें"}</h2><a href="/{lang}/tools/">{"View all AI tools" if lang=="en" else "सभी AI टूल्स देखें"} →</a></div><p class="muted">{"Explore trusted official links for writing, research, coding and design." if lang=="en" else "लेखन, रिसर्च, कोडिंग और डिजाइन के लिए आधिकारिक AI टूल्स।"}</p><div class="tools featured-grid">{featured}</div></section>'
  home=f'<div class="wrap"><section class="lead"><div class="eyebrow">WORLDWIDE NEWS & EXPLAINERS</div><h1>{h}</h1><p class="muted">{desc}</p></section><div class="sectiontitle"><h2>{"Latest stories" if lang=="en" else "नई खबरें"}</h2><a href="/{lang}/tools/">AI Tools →</a></div><div class="layout"><div class="cards">{latest}</div>{sidebar}</div>{tools_home}</div>'
- write(OUT/lang/'index.html',shell(lang,h+' | GlobalTech Daily',desc,f'{SITE}/{lang}/',home))
+ write(OUT/lang/'index.html',shell(lang,h+' | GlobeWire Daily',desc,f'{SITE}/{lang}/',home))
  page_size=24
  total_pages=max(1,(len(POSTS)+page_size-1)//page_size)
  def page_nav(page):
@@ -168,11 +168,11 @@ for lang in ('en','hi'):
   nxt=f'<a href="/{lang}/page/{page+1}/" rel="next">{"Next" if lang=="en" else "अगला"} →</a>' if page<total_pages else ''
   return f'<nav aria-label="Article pages" style="display:flex;justify-content:space-between;align-items:center;gap:16px;margin:28px 0 42px;font-size:1.1rem"><span>{prev}</span><span>{page} / {total_pages}</span><span>{nxt}</span></nav>'
  home=home.replace(f'<div class="cards">{latest}</div>',f'<div><div class="cards">{latest}</div>{page_nav(1)}</div>')
- write(OUT/lang/'index.html',shell(lang,h+' | GlobalTech Daily',desc,f'{SITE}/{lang}/',home))
+ write(OUT/lang/'index.html',shell(lang,h+' | GlobeWire Daily',desc,f'{SITE}/{lang}/',home))
  for page in range(2,total_pages+1):
   batch=''.join(card(p,lang) for p in POSTS[(page-1)*page_size:page*page_size])
   paged=f'<div class="wrap"><div class="sectiontitle"><h1>{"Latest stories" if lang=="en" else "नई खबरें"} — {page}</h1></div><div class="layout"><div><div class="cards">{batch}</div>{page_nav(page)}</div>{sidebar}</div></div>'
-  write(OUT/lang/'page'/str(page)/'index.html',shell(lang,f'News page {page} | GlobalTech Daily',desc,f'{SITE}/{lang}/page/{page}/',paged))
+  write(OUT/lang/'page'/str(page)/'index.html',shell(lang,f'News page {page} | GlobeWire Daily',desc,f'{SITE}/{lang}/page/{page}/',paged))
 
  for cat,(en_label,hi_label) in CATEGORIES.items():
   selected=[p for p in POSTS if category(p)==cat]
@@ -189,31 +189,31 @@ for lang in ('en','hi'):
    pager=f'<nav class="category-pagination" aria-label="Category pages">{prev_link}<span>{cat_page} / {cat_pages}</span>{next_link}</nav>' if cat_pages>1 else ''
    catbody=f'<div class="wrap"><section class="lead"><h1>{e(heading)}{f" — {cat_page}" if cat_page>1 else ""}</h1><p class="muted">{e(intro)}</p></section><div class="cards">{listing}</div>{pager}</div>'
    cat_path=f'/{lang}/{cat}/' if cat_page==1 else f'/{lang}/{cat}/page/{cat_page}/'
-   write(OUT / cat_path.lstrip('/') / 'index.html',shell(lang,heading+(f' — Page {cat_page}' if cat_page>1 else '')+' | GlobalTech Daily',intro,f'{SITE}{cat_path}',catbody))
+   write(OUT / cat_path.lstrip('/') / 'index.html',shell(lang,heading+(f' — Page {cat_page}' if cat_page>1 else '')+' | GlobeWire Daily',intro,f'{SITE}{cat_path}',catbody))
 
  toolcards=''.join(f'<article class="tool"><span class="pill">{e(cat)}</span><h2>{e(n)}</h2><p>{e(d)}</p><a href="{e(u)}" target="_blank" rel="noopener noreferrer">Official website ↗</a></article>' for n,d,u,cat in TOOLS)
  tools=f'<div class="wrap"><section class="lead"><div class="eyebrow">AI TOOLS DIRECTORY</div><h1>{"Explore useful AI tools" if lang=="en" else "काम के AI टूल्स खोजें"}</h1><p class="muted">Official links, brief descriptions and categories. Availability and pricing can change; verify on provider websites.</p></section><div class="tools">{toolcards}</div></div>'
- write(OUT/lang/'tools/index.html',shell(lang,'AI Tools Directory | GlobalTech Daily','Explore popular AI assistants, research, coding and design tools.',f'{SITE}/{lang}/tools/',tools))
+ write(OUT/lang/'tools/index.html',shell(lang,'AI Tools Directory | GlobeWire Daily','Explore popular AI assistants, research, coding and design tools.',f'{SITE}/{lang}/tools/',tools))
  pages={
- 'about':('About GlobalTech Daily','GlobalTech Daily is an independent bilingual technology publication focused on useful explainers and news. We use AI-assisted drafting, link to source materials, and welcome corrections. We do not claim to independently verify every publisher statement.'),
+ 'about':('About GlobeWire Daily','GlobeWire Daily is an independent bilingual technology publication focused on useful explainers and news. We use AI-assisted drafting, link to source materials, and welcome corrections. We do not claim to independently verify every publisher statement.'),
  'editorial':('Editorial Policy','Our articles are based on attributed source material. We prioritize official announcements, documentation and credible reporting. AI may assist drafting and translation. We prohibit fabricated quotes, unsupported claims, misleading headlines, and unattributed copying. When a claim cannot be confirmed, we label uncertainty or do not publish it. Readers can request corrections.'),
- 'corrections':('Corrections Policy','Report factual errors, misleading headlines, inaccurate translations, or rights concerns to info@sellercalc.net with the article URL and supporting evidence. Substantive corrections should be reflected in the article with an updated date.'),
- 'privacy':('Privacy Policy','This website serves static pages. Hosting providers may process technical logs and IP addresses. External websites have their own privacy policies. We do not operate user accounts or a newsletter. If analytics, advertising, or cookies are added, this notice must be updated before deployment. Privacy enquiries: info@sellercalc.net.'),
- 'contact':('Contact GlobalTech Daily','For news tips, corrections, image rights requests, privacy matters or editorial feedback, email info@sellercalc.net. Do not include sensitive personal information.'),
+ 'corrections':('Corrections Policy','Report factual errors, misleading headlines, inaccurate translations, or rights concerns to contact@globewiredaily.org with the article URL and supporting evidence. Substantive corrections should be reflected in the article with an updated date.'),
+ 'privacy':('Privacy Policy','This website serves static pages. Hosting providers may process technical logs and IP addresses. External websites have their own privacy policies. We do not operate user accounts or a newsletter. If analytics, advertising, or cookies are added, this notice must be updated before deployment. Privacy enquiries: contact@globewiredaily.org.'),
+ 'contact':('Contact GlobeWire Daily','For news tips, corrections, image rights requests, privacy matters or editorial feedback, email contact@globewiredaily.org. Do not include sensitive personal information.'),
  'affiliate':('Affiliate Disclosure','Our AI Tools directory currently contains informational links. If affiliate partnerships or paid placements are introduced, they will be clearly identified. We do not claim that editorial recommendations are paid placements.')}
  for s,(t,d) in pages.items():
-  content=f'<div class="wrap"><article class="article"><div class="eyebrow">GLOBALTECH DAILY</div><h1>{e(t)}</h1><div class="story"><p>{e(d)}</p></div><p>Contact: <a href="mailto:{CONTACT}">{CONTACT}</a></p></article></div>'
+  content=f'<div class="wrap"><article class="article"><div class="eyebrow">GLOBEWIRE DAILY</div><h1>{e(t)}</h1><div class="story"><p>{e(d)}</p></div><p>Contact: <a href="mailto:{CONTACT}">{CONTACT}</a></p></article></div>'
   write(OUT/lang/s/'index.html',shell(lang,t,d,f'{SITE}/{lang}/{s}/',content))
 for lang in ('en','hi'):
  author_url=f'{SITE}/{lang}/author/editorial-desk/'
- author_body='<div class="wrap"><article class="article"><h1>GlobalTech Daily Editorial Desk</h1><p>AI-assisted reporting based on attributed sources. No individual journalist is claimed.</p><p><a href="/'+lang+'/editorial/">Editorial policy</a> · <a href="mailto:'+CONTACT+'">Contact</a></p></article><h2>Recent articles</h2><div class="cards">'+''.join(card(p,lang) for p in POSTS[:24])+'</div></div>'
- write(OUT/lang/'author'/'editorial-desk'/'index.html',shell(lang,'GlobalTech Daily Editorial Desk','Source-attributed news reporting',author_url,author_body))
+ author_body='<div class="wrap"><article class="article"><h1>GlobeWire Daily Editorial Desk</h1><p>AI-assisted reporting based on attributed sources. No individual journalist is claimed.</p><p><a href="/'+lang+'/editorial/">Editorial policy</a> · <a href="mailto:'+CONTACT+'">Contact</a></p></article><h2>Recent articles</h2><div class="cards">'+''.join(card(p,lang) for p in POSTS[:24])+'</div></div>'
+ write(OUT/lang/'author'/'editorial-desk'/'index.html',shell(lang,'GlobeWire Daily Editorial Desk','Source-attributed news reporting',author_url,author_body))
 for lang in ('en','hi'):
  for handle in sorted(set(AUTHOR_HANDLES.values())):
   author_url=f'{SITE}/{lang}/author/{handle}/'
-  author_title='GlobalTech Daily '+handle.replace('-',' ').title()
+  author_title='GlobeWire Daily '+handle.replace('-',' ').title()
   matching=[p for p in POSTS if author_handle(p)==handle]
-  author_body='<div class="wrap"><section class="lead"><h1>'+e(author_title)+'</h1><p>Topic-focused editorial desk of GlobalTech Daily. AI-assisted articles use attributed published sources; no individual reporter or independent verification is implied.</p><p><a href="/'+lang+'/editorial/">Editorial policy</a></p></section><div class="cards">'+''.join(card(p,lang) for p in matching[:24])+'</div></div>'
+  author_body='<div class="wrap"><section class="lead"><h1>'+e(author_title)+'</h1><p>Topic-focused editorial desk of GlobeWire Daily. AI-assisted articles use attributed published sources; no individual reporter or independent verification is implied.</p><p><a href="/'+lang+'/editorial/">Editorial policy</a></p></section><div class="cards">'+''.join(card(p,lang) for p in matching[:24])+'</div></div>'
   write(OUT/lang/'author'/handle/'index.html',shell(lang,author_title,author_title+' — AI-assisted source-attributed reporting',author_url,author_body))
 write(OUT/'index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="'+SITE+'/en/"></head><body><a href="/en/">English</a></body></html>')
 write(OUT/'robots.txt',f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\nSitemap: {SITE}/news-sitemap.xml\n')
@@ -225,7 +225,7 @@ for p in POSTS:
   if (dt.datetime.now(dt.timezone.utc)-dt.datetime.fromisoformat(p['date'].replace('Z','+00:00'))).total_seconds()>172800:continue
  except (ValueError,KeyError,TypeError):continue
  for lang in ('en','hi'):
-  recent.append('<url><loc>'+xml_escape(f'{SITE}{article_path(p,lang)}')+'</loc><news:news><news:publication><news:name>GlobalTech Daily</news:name><news:language>'+lang+'</news:language></news:publication><news:publication_date>'+e(p['date'])+'</news:publication_date><news:title>'+xml_escape(title(p,lang))+'</news:title></news:news></url>')
+  recent.append('<url><loc>'+xml_escape(f'{SITE}{article_path(p,lang)}')+'</loc><news:news><news:publication><news:name>GlobeWire Daily</news:name><news:language>'+lang+'</news:language></news:publication><news:publication_date>'+e(p['date'])+'</news:publication_date><news:title>'+xml_escape(title(p,lang))+'</news:title></news:news></url>')
 write(OUT/'news-sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">'+''.join(recent)+'</urlset>')
 # Preserve old article URLs as permanent redirects to canonical descriptive URLs.
 redirects=[]
