@@ -233,5 +233,6 @@ for p in POSTS:
  for lang in ('en','hi'):
   redirects.append(f'/{lang}/news/{slug(p)}/ {article_path(p,lang)} 301')
 write(OUT/'_redirects','\n'.join(redirects)+'\n')
+write(OUT/'ads.txt','google.com, pub-1849673109734274, DIRECT, f08c47fec0942fa0\n')
 write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/style.css\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n')
 print('Built',len(POSTS),'posts; AI Tools, bilingual pages, news sitemap and responsive layout')
