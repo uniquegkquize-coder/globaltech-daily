@@ -1,0 +1,21 @@
+name: News source validation
+on:
+  push:
+    paths:
+      - 'scripts/collect.py'
+      - 'scripts/test_sources.py'
+      - '.github/workflows/news-source-check.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check Python syntax
+        run: python -m py_compile scripts/collect.py scripts/build.py scripts/test_sources.py
+      - name: Check state and city source coverage
+        run: python scripts/test_sources.py
