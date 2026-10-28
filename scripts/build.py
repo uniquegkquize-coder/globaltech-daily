@@ -168,7 +168,7 @@ for lang in ('en','hi'):
   write(OUT/lang/s/'index.html',shell(lang,t,d,f'{SITE}/{lang}/{s}/',content))
 for lang in ('en','hi'):
  author_url=f'{SITE}/{lang}/author/editorial-desk/'
- author_body='<div class="wrap"><article class="article"><h1>GlobalTech Daily Editorial Desk</h1><p>AI-assisted reporting based on attributed sources. No individual journalist is claimed.</p></article></div>'
+ author_body='<div class="wrap"><article class="article"><h1>GlobalTech Daily Editorial Desk</h1><p>AI-assisted reporting based on attributed sources. No individual journalist is claimed.</p><p><a href="/'+lang+'/editorial/">Editorial policy</a> · <a href="mailto:'+CONTACT+'">Contact</a></p></article><h2>Recent articles</h2><div class="cards">'+''.join(card(p,lang) for p in POSTS[:24])+'</div></div>'
  write(OUT/lang/'author'/'editorial-desk'/'index.html',shell(lang,'GlobalTech Daily Editorial Desk','Source-attributed news reporting',author_url,author_body))
 write(OUT/'index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="'+SITE+'/en/"></head><body><a href="/en/">English</a></body></html>')
 write(OUT/'robots.txt',f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\nSitemap: {SITE}/news-sitemap.xml\n')
