@@ -21,7 +21,7 @@ def complete_body(body,lang):
              and len(re.findall(r'[.!?।]',text))>=2)
 MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
 POSTS_PER_RUN=max(1,min(60,int(os.getenv('POSTS_PER_RUN','30'))))
-POSTS_PER_CATEGORY=max(1,min(5,int(os.getenv('POSTS_PER_CATEGORY','2'))))
+MIN_POSTS_PER_CATEGORY=max(1,int(os.getenv('MIN_POSTS_PER_CATEGORY','2')))
 MIN_SOURCE_WORDS=0
 OFFICIAL_JOB_DOMAINS=('upsc.gov.in','ssc.gov.in','rrbcdg.gov.in','indianrailways.gov.in','employmentnews.gov.in','nta.ac.in','gov.in','nic.in')
 CALLS=0
@@ -617,11 +617,10 @@ def main():
  if not any(os.getenv(k) for k in ('GROQ_API_KEY','GEMINI_API_KEY','OPENROUTER_API_KEY','OPENAI_API_KEY')):
   print('No AI provider configured');return 0
  published=0; inspected=0; category_published={}
- print('Target per category:',POSTS_PER_CATEGORY,flush=True)
+ print('Minimum target per category:',MIN_POSTS_PER_CATEGORY,flush=True)
  published_index=published_story_index()
  for url,title,cat,domain in candidates():
   if CALLS>=MAX_CALLS or published>=remaining:break
-  if category_published.get(cat,0)>=POSTS_PER_CATEGORY:continue
   if cat not in {c for _,c,_ in FEEDS}:continue
   post_id=hashlib.sha256(url.encode()).hexdigest()[:12]
   if (POSTS/(post_id+'.json')).exists():continue
@@ -688,7 +687,7 @@ def main():
  print('AI requests used this run:',CALLS,'of',MAX_CALLS,flush=True)
  print('Published',published,'of',remaining,'target categories',flush=True)
  print('Per-category published counts:',dict(sorted(category_published.items())),flush=True)
- print('Categories reaching target:',', '.join(sorted(cat for cat,n in category_published.items() if n>=POSTS_PER_CATEGORY)),flush=True)
- print('Categories still missing:',', '.join(sorted(set(c for _,c,_ in FEEDS)-{cat for cat,n in category_published.items() if n>=POSTS_PER_CATEGORY})),flush=True)
+ print('Categories reaching target:',', '.join(sorted(cat for cat,n in category_published.items() if n>=MIN_POSTS_PER_CATEGORY)),flush=True)
+ print('Categories still missing:',', '.join(sorted(set(c for _,c,_ in FEEDS)-{cat for cat,n in category_published.items() if n>=MIN_POSTS_PER_CATEGORY})),flush=True)
  return 0
 if __name__=='__main__':sys.exit(main())
