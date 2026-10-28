@@ -69,9 +69,14 @@ jobs:
         run: |
           git config user.name 'GlobalTech News Bot'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add content/posts content/pending content/featured dist
+          git add -A content/posts content/pending content/featured dist
           if ! git diff --cached --quiet; then
             git commit -m 'Publish source-backed tech news and rebuild website'
+            # Capture all remaining generated edits before attempting rebase.
+            if ! git diff --quiet || ! git diff --cached --quiet; then
+              git add -A
+              git commit -m 'Save remaining generated site changes' || true
+            fi
             # Other updates may reach main during a long news run.
             # Rebase generated posts on the newest main rather than losing them.
             for attempt in 1 2 3 4 5; do
