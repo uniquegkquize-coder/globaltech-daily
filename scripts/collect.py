@@ -507,7 +507,7 @@ def google_news_stories(cat):
    target=resolve_google_news(link)
    host=(urlparse(target).hostname or '').lower()
    if not target or host.endswith('google.com') or host.endswith('googleusercontent.com'):continue
-   if not any(allowed(target,d) for _,_,d in FEEDS):continue
+   if not (any(allowed(target,d) for _,_,d in FEEDS) or any(allowed(target,d) for d in REGIONAL_PORTALS.get(cat,()))):continue
    stories.append((target,clean(entry.get('title','')),cat,host))
   print('Google News',cat,'publisher stories',len(stories),flush=True)
   return stories
