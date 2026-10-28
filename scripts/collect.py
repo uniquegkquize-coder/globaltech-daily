@@ -338,7 +338,8 @@ def call_provider(prompt):
   if not key:continue
   models=gemini_models(key) if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else (os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free'))]
   for model in dict.fromkeys(models):
-   if (provider,model) in UNAVAILABLE_MODELS:continue
+   with PROVIDER_LOCK:
+    if (provider,model) in UNAVAILABLE_MODELS:continue
    if CALLS>=MAX_CALLS:break
    with PROVIDER_LOCK:
     if CALLS>=MAX_CALLS:break
@@ -627,7 +628,7 @@ def main():
  if not any(os.getenv(k) for k in ('GROQ_API_KEY','GEMINI_API_KEY','OPENROUTER_API_KEY','OPENAI_API_KEY')):
   print('No AI provider configured');return 0
  published=0; inspected=0; category_published={}
- deadline=time.monotonic()+15*60  # Leave time for site build and Git publishing.
+ deadline=time.monotonic()+14*60  # Leave time for site build and Git publishing.
  print('Minimum target per category:',MIN_POSTS_PER_CATEGORY,flush=True)
  published_index=published_story_index()
  for url,title,cat,domain in candidates():
@@ -664,7 +665,7 @@ def main():
    print('Skipping source before AI:',title[:65],'words',words(text),flush=True)
    continue
   state.update({'source':url,'source_title':title,'category':cat,'status':'draft','updated_at':dt.datetime.now(UTC).isoformat()})
-  # Generate the two languages concurrently; write shared draft state only on main thread.
+  # Generate the two languages concurrently; save draft updates under a per-story lock.
   def generate_language(lang):
    if time.monotonic()>=deadline or CALLS>=MAX_CALLS:return lang,None,None
    prior=state.get(lang+'_body','')
