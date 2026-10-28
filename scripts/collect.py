@@ -1,5 +1,6 @@
 """Quota-capped, source-first bilingual publishing. No external AI calls on import."""
 import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time, threading
+from functools import lru_cache
 from urllib.parse import urlparse
 import requests, feedparser
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -236,6 +237,7 @@ def words(s): return len(re.findall(r'\S+',s or ''))
 def allowed(url,domain):
  h=(urlparse(url).hostname or '').lower()
  return url.startswith('https://') and (h==domain or h.endswith('.'+domain))
+@lru_cache(maxsize=512)
 def source_text(url,domain):
  try:
   if not allowed(url,domain):return ''
