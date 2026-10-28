@@ -79,6 +79,28 @@ def card(p,lang):
  picture=f'<img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="{e(t)} — article featured image">' if has_featured(p) else ''
  return f'<article class="card"><a href="{article_path(p,lang)}">{picture}<div class="inner"><span class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=="en" else 1])}</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])} · {e(urlparse(p.get("source","")).hostname or "Source")}</div></div></a></article>'
 
+AUTHOR_HANDLES={'technology':'tech-desk','business':'business-desk','world-news':'world-desk','sports':'sports-desk','health-science':'science-desk','government-schemes':'public-services-desk','sarkari-naukri':'careers-desk','private-vacancy':'careers-desk','movies-entertainment':'entertainment-desk','automobiles':'auto-desk','gaming':'gaming-desk','environment':'climate-desk','travel':'travel-desk','education':'education-desk','lifestyle':'lifestyle-desk'}
+def author_handle(p):return AUTHOR_HANDLES.get(category(p),'editorial-desk')
+def author_name(p):return 'GlobalTech Daily '+author_handle(p).replace('-',' ').title()
+def article_keywords(p,lang):
+ raw=p.get(lang+'_keywords') or p.get('en_keywords') or []
+ if isinstance(raw,str):raw=re.split(r'[,;|]',raw)
+ if not isinstance(raw,list):raw=[]
+ terms=[str(x).strip() for x in raw if str(x).strip()]
+ terms.extend([title(p,lang),CATEGORIES[category(p)][0 if lang=='en' else 1],'GlobalTech Daily'])
+ seen=set();result=[]
+ for term in terms:
+  key=term.casefold()
+  if key not in seen and len(term)<=100:
+   seen.add(key);result.append(term)
+ return result[:12]
+def display_date(value):
+ try:
+  stamp=dt.datetime.fromisoformat(str(value).replace('Z','+00:00'))
+  if stamp.tzinfo is None:stamp=stamp.replace(tzinfo=dt.timezone.utc)
+  return stamp.astimezone(dt.timezone(dt.timedelta(hours=5,minutes=30))).strftime('%d %b %Y, %I:%M %p IST')
+ except (ValueError,TypeError):return str(value or '')[:10]
+
 def limit_article_words(raw,limit=10000):
  parts=re.findall(r'\\S+',str(raw or ''))
  if len(parts)<=limit:return str(raw or '')
