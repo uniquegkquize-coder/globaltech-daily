@@ -20,7 +20,8 @@ def complete_body(body,lang):
              and len(re.findall(r'\S+',text))>=minimum
              and len(re.findall(r'[.!?।]',text))>=2)
 MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
-POSTS_PER_RUN=max(1,min(30,int(os.getenv('POSTS_PER_RUN','30'))))
+POSTS_PER_RUN=max(1,min(60,int(os.getenv('POSTS_PER_RUN','30'))))
+POSTS_PER_CATEGORY=max(1,min(5,int(os.getenv('POSTS_PER_CATEGORY','2'))))
 MIN_SOURCE_WORDS=0
 OFFICIAL_JOB_DOMAINS=('upsc.gov.in','ssc.gov.in','rrbcdg.gov.in','indianrailways.gov.in','employmentnews.gov.in','nta.ac.in','gov.in','nic.in')
 CALLS=0
@@ -615,11 +616,12 @@ def main():
  if not remaining:return 0
  if not any(os.getenv(k) for k in ('GROQ_API_KEY','GEMINI_API_KEY','OPENROUTER_API_KEY','OPENAI_API_KEY')):
   print('No AI provider configured');return 0
- published=0; inspected=0; completed_categories=set()
+ published=0; inspected=0; category_published={}
+ print('Target per category:',POSTS_PER_CATEGORY,flush=True)
  published_index=published_story_index()
  for url,title,cat,domain in candidates():
   if CALLS>=MAX_CALLS or published>=remaining:break
-  if cat in completed_categories:continue
+  if category_published.get(cat,0)>=POSTS_PER_CATEGORY:continue
   if cat not in {c for _,c,_ in FEEDS}:continue
   post_id=hashlib.sha256(url.encode()).hexdigest()[:12]
   if (POSTS/(post_id+'.json')).exists():continue
@@ -680,12 +682,13 @@ def main():
    pending.unlink(missing_ok=True)
    published_index.append((url.rstrip('/'),title,cat))
    published+=1
-   completed_categories.add(cat)
+   category_published[cat]=category_published.get(cat,0)+1
    print('Published',post_id,cat,flush=True)
   else:save_state(pending,state)
  print('AI requests used this run:',CALLS,'of',MAX_CALLS,flush=True)
  print('Published',published,'of',remaining,'target categories',flush=True)
- print('Categories completed:',', '.join(sorted(completed_categories)),flush=True)
- print('Categories still missing:',', '.join(sorted(set(c for _,c,_ in FEEDS)-completed_categories)),flush=True)
+ print('Per-category published counts:',dict(sorted(category_published.items())),flush=True)
+ print('Categories reaching target:',', '.join(sorted(cat for cat,n in category_published.items() if n>=POSTS_PER_CATEGORY)),flush=True)
+ print('Categories still missing:',', '.join(sorted(set(c for _,c,_ in FEEDS)-{cat for cat,n in category_published.items() if n>=POSTS_PER_CATEGORY})),flush=True)
  return 0
 if __name__=='__main__':sys.exit(main())
