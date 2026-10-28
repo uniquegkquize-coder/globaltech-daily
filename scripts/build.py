@@ -78,7 +78,7 @@ def card(p,lang):
  picture=f'<img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="{e(t)} — article featured image">' if has_featured(p) else ''
  return f'<article class="card"><a href="{article_path(p,lang)}">{picture}<div class="inner"><span class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=="en" else 1])}</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])} · {e(urlparse(p.get("source","")).hostname or "Source")}</div></div></a></article>'
 
-def limit_article_words(raw,limit=150):
+def limit_article_words(raw,limit=10000):
  parts=re.findall(r'\\S+',str(raw or ''))
  if len(parts)<=limit:return str(raw or '')
  return ' '.join(parts[:limit]).rstrip(' ,;:')+'…'
