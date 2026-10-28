@@ -707,24 +707,29 @@ def main():
   if time.monotonic()>=deadline:break
   if len(stories)>=min(POSTS_PER_RUN*5,240):break
   stories.append(story)
- # Prioritize under-served categories; allow extra posts after all minimums.
+ # Prioritize two verified articles per category before filling additional slots.
  grouped={}
  for story in stories:grouped.setdefault(story[2],[]).append(story)
  ordered=[]
+ categories=sorted(grouped)
+ for round_number in range(MIN_POSTS_PER_CATEGORY):
+  for cat in categories:
+   if grouped[cat]:ordered.append(grouped[cat].pop(0))
+ # After the minimum-priority passes, there is no per-category maximum.
  while any(grouped.values()):
-  for cat in sorted(grouped,key=lambda k:(category_published.get(k,0),k)):
+  for cat in categories:
    if grouped[cat]:ordered.append(grouped[cat].pop(0))
  with ThreadPoolExecutor(max_workers=4) as article_pool:
   futures={}
   next_story=iter(ordered)
   while time.monotonic()<deadline and published<remaining and CALLS<MAX_CALLS:
-   while len(futures)<4:
+   while len(futures)<4 and published+len(futures)<remaining:
     try:story=next(next_story)
     except StopIteration:break
     futures[article_pool.submit(process_story,story)]=story
    if not futures:break
    done=next(as_completed(futures))
-   story=futures.pop(done)
+   futures.pop(done)
    try:cat=done.result()
    except Exception as exc:
     print('Article worker failed:',type(exc).__name__,str(exc)[:180],flush=True)
