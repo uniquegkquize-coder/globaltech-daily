@@ -17,7 +17,7 @@ def complete_body(body,lang):
  text=body.strip()
  minimum=MIN_HINDI_WORDS if lang=='hi' else MIN_WORDS
  return bool(len(text)>=max(120,MIN_HINDI_CHARS if lang=='hi' else 0)
-             and len(re.findall(r'\\S+',text))>=minimum
+             and len(re.findall(r'\S+',text))>=minimum
              and len(re.findall(r'[.!?।]',text))>=2)
 MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
 POSTS_PER_RUN=max(1,min(30,int(os.getenv('POSTS_PER_RUN','30'))))
