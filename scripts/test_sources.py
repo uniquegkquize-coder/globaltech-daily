@@ -9,6 +9,10 @@ assert len(regions)==36, f"Expected 36 Indian states and UTs, found {len(regions
 assert all(cities for cities in regions.values())
 assert len(set(regions))==36
 assert sum(map(len,regions.values()))>=100
+# Guard against regressions in the minimum-length quality gate.
+assert "MIN_ARTICLE_WORDS_EN" in source
+assert "MIN_ARTICLE_WORDS_HI" in source
+assert "def complete_body(body,lang):" in source
 assert "rotating_local_feeds()" in source
 assert "resolve_google_news(url)" in source
 assert "results=list(pool.map(read_feed,FEEDS+rotating_local_feeds()))" in source
