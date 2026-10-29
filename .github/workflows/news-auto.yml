@@ -1,5 +1,9 @@
 name: GlobalTech Daily Auto News
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/news-auto.yml'
   workflow_dispatch:
   schedule:
     - cron: '7 * * * *'
