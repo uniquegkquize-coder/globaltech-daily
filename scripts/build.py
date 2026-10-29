@@ -69,6 +69,22 @@ CSS += """/* Robust mobile More menu: viewport-fixed panel avoids clipped scroll
  .top .nav-more-list a{color:#fff!important;background:#172c4a!important;border-radius:8px;margin:3px;padding:12px 8px!important;white-space:normal!important;line-height:1.4}
 }
 """
+CSS += """/* Category menu is OUTSIDE the scrolling nav, so it cannot be clipped. */
+.top .wrap{overflow:visible!important}
+.category-menu{position:relative;z-index:200}
+.category-menu .nav-more{position:relative!important;width:auto!important;flex:none!important}
+.category-menu summary{display:block;cursor:pointer;color:#eaf4ff!important;font-weight:700;padding:9px 13px;border:1px solid #45627f;border-radius:9px;list-style:none}
+.category-menu summary::-webkit-details-marker{display:none}
+.category-menu .nav-more-list{display:none!important}
+.category-menu .nav-more[open] .nav-more-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;position:absolute!important;right:0!important;left:auto!important;top:100%!important;width:min(400px,92vw)!important;max-height:65vh!important;overflow-y:auto!important;background:#10243e!important;border:1px solid #4e7697!important;box-shadow:0 12px 30px #0006!important;z-index:9999!important;padding:10px!important}
+.category-menu .nav-more-list a{display:block;color:#fff!important;background:#1d3655!important;border-radius:7px;margin:3px;padding:10px!important;white-space:normal!important}
+@media(max-width:999px){
+ .top .wrap{display:flex!important;flex-wrap:wrap!important;align-items:center}
+ .top nav{flex:1 1 100%;order:3;overflow-x:auto!important;overflow-y:hidden!important;flex-wrap:nowrap!important}
+ .category-menu{order:2;margin-left:auto}
+ .category-menu .nav-more[open] .nav-more-list{position:absolute!important;right:0!important;top:100%!important;left:auto!important;width:min(340px,90vw)!important;max-height:70vh!important}
+}
+"""
 write(OUT/'style.css',CSS)
 JS='''addEventListener('scroll',()=>{let d=document.documentElement;let m=d.scrollHeight-d.clientHeight;let b=document.querySelector('.reading');if(b)b.style.width=(m>0?100*d.scrollTop/m:0)+'%';},{passive:true});'''
 JS += """document.addEventListener('click',async function(ev){const share=ev.target.closest('.native-share');if(share){const data={title:share.dataset.shareTitle,url:share.dataset.shareUrl};if(navigator.share){try{await navigator.share(data)}catch(err){if(err.name!=='AbortError')location.href='https://api.whatsapp.com/send?text='+encodeURIComponent(data.title+' '+data.url)}}else{location.href='https://api.whatsapp.com/send?text='+encodeURIComponent(data.title+' '+data.url)}}const copy=ev.target.closest('.copy-share');if(copy){try{await navigator.clipboard.writeText(copy.dataset.shareUrl);const old=copy.textContent;copy.textContent='✓ Copied';setTimeout(()=>copy.textContent=old,1800)}catch(err){prompt('Copy link:',copy.dataset.shareUrl)}}});"""
@@ -124,14 +140,30 @@ CSS += """/* Robust mobile More menu: viewport-fixed panel avoids clipped scroll
  .top .nav-more-list a{color:#fff!important;background:#172c4a!important;border-radius:8px;margin:3px;padding:12px 8px!important;white-space:normal!important;line-height:1.4}
 }
 """
+CSS += """/* Category menu is OUTSIDE the scrolling nav, so it cannot be clipped. */
+.top .wrap{overflow:visible!important}
+.category-menu{position:relative;z-index:200}
+.category-menu .nav-more{position:relative!important;width:auto!important;flex:none!important}
+.category-menu summary{display:block;cursor:pointer;color:#eaf4ff!important;font-weight:700;padding:9px 13px;border:1px solid #45627f;border-radius:9px;list-style:none}
+.category-menu summary::-webkit-details-marker{display:none}
+.category-menu .nav-more-list{display:none!important}
+.category-menu .nav-more[open] .nav-more-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;position:absolute!important;right:0!important;left:auto!important;top:100%!important;width:min(400px,92vw)!important;max-height:65vh!important;overflow-y:auto!important;background:#10243e!important;border:1px solid #4e7697!important;box-shadow:0 12px 30px #0006!important;z-index:9999!important;padding:10px!important}
+.category-menu .nav-more-list a{display:block;color:#fff!important;background:#1d3655!important;border-radius:7px;margin:3px;padding:10px!important;white-space:normal!important}
+@media(max-width:999px){
+ .top .wrap{display:flex!important;flex-wrap:wrap!important;align-items:center}
+ .top nav{flex:1 1 100%;order:3;overflow-x:auto!important;overflow-y:hidden!important;flex-wrap:nowrap!important}
+ .category-menu{order:2;margin-left:auto}
+ .category-menu .nav-more[open] .nav-more-list{position:absolute!important;right:0!important;top:100%!important;left:auto!important;width:min(340px,90vw)!important;max-height:70vh!important}
+}
+"""
 write(OUT/'style.css',CSS)
 write(OUT/'site.js',JS)
 def shell(lang,t,desc,url,body,extra=''):
  nav=[('Home','होम',''),('Tech & AI','टेक और AI','technology/'),('Entertainment','मनोरंजन','movies-entertainment/'),('Jobs & Schemes','नौकरी और योजनाएँ','sarkari-naukri/')]
  links=''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in nav)
  more=[('AI Tools','AI टूल्स','tools/'),('Government Schemes','सरकारी योजनाएँ','government-schemes/'),('Private Jobs','प्राइवेट नौकरी','private-vacancy/'),('World','दुनिया','world-news/'),('Business','बिज़नेस','business/'),('Sports','खेल','sports/'),('Gaming','गेमिंग','gaming/'),('Automobiles','ऑटोमोबाइल','automobiles/'),('Health & Science','स्वास्थ्य और विज्ञान','health-science/'),('Environment','पर्यावरण','environment/'),('Travel','यात्रा','travel/'),('Education','शिक्षा','education/'),('Lifestyle','लाइफस्टाइल','lifestyle/'),('About','हमारे बारे में','about/'),('Editorial','संपादकीय नीति','editorial/'),('Contact','संपर्क','contact/')]
- links+='<details class="nav-more"><summary>'+('More' if lang=='en' else 'और देखें')+'</summary><div class="nav-more-list">'+''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in more)+'</div></details>'
- return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="/{'hi' if lang=='en' else 'en'}/">{'हिन्दी' if lang=='en' else 'English'}</a></nav></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>Independent bilingual news and explainers, with clear sourcing, corrections and transparent editorial standards.</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{s.title()}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js"></script></body></html>'''
+ more_html='<details class="nav-more"><summary>'+('More' if lang=='en' else 'और देखें')+'</summary><div class="nav-more-list">'+''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in more)+'</div></details>'
+ return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="/{'hi' if lang=='en' else 'en'}/">{'हिन्दी' if lang=='en' else 'English'}</a></nav><div class="category-menu">{more_html}</div></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>Independent bilingual news and explainers, with clear sourcing, corrections and transparent editorial standards.</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{s.title()}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js"></script></body></html>'''
 def has_featured(p):
  # Existing licensed/credited images always take priority.
  return (R/'content'/'featured'/f'{slug(p)}.jpg').is_file() or (OUT/'images'/f'{slug(p)}.jpg').is_file()
@@ -452,6 +484,22 @@ CSS += """/* Robust mobile More menu: viewport-fixed panel avoids clipped scroll
  .top .nav-more-list a{color:#fff!important;background:#172c4a!important;border-radius:8px;margin:3px;padding:12px 8px!important;white-space:normal!important;line-height:1.4}
 }
 """
+CSS += """/* Category menu is OUTSIDE the scrolling nav, so it cannot be clipped. */
+.top .wrap{overflow:visible!important}
+.category-menu{position:relative;z-index:200}
+.category-menu .nav-more{position:relative!important;width:auto!important;flex:none!important}
+.category-menu summary{display:block;cursor:pointer;color:#eaf4ff!important;font-weight:700;padding:9px 13px;border:1px solid #45627f;border-radius:9px;list-style:none}
+.category-menu summary::-webkit-details-marker{display:none}
+.category-menu .nav-more-list{display:none!important}
+.category-menu .nav-more[open] .nav-more-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;position:absolute!important;right:0!important;left:auto!important;top:100%!important;width:min(400px,92vw)!important;max-height:65vh!important;overflow-y:auto!important;background:#10243e!important;border:1px solid #4e7697!important;box-shadow:0 12px 30px #0006!important;z-index:9999!important;padding:10px!important}
+.category-menu .nav-more-list a{display:block;color:#fff!important;background:#1d3655!important;border-radius:7px;margin:3px;padding:10px!important;white-space:normal!important}
+@media(max-width:999px){
+ .top .wrap{display:flex!important;flex-wrap:wrap!important;align-items:center}
+ .top nav{flex:1 1 100%;order:3;overflow-x:auto!important;overflow-y:hidden!important;flex-wrap:nowrap!important}
+ .category-menu{order:2;margin-left:auto}
+ .category-menu .nav-more[open] .nav-more-list{position:absolute!important;right:0!important;top:100%!important;left:auto!important;width:min(340px,90vw)!important;max-height:70vh!important}
+}
+"""
 write(OUT/'style.css',CSS)
 JS='''addEventListener('scroll',()=>{let d=document.documentElement;let m=d.scrollHeight-d.clientHeight;let b=document.querySelector('.reading');if(b)b.style.width=(m>0?100*d.scrollTop/m:0)+'%';},{passive:true});'''
 JS += """document.addEventListener('click',async function(ev){const share=ev.target.closest('.native-share');if(share){const data={title:share.dataset.shareTitle,url:share.dataset.shareUrl};if(navigator.share){try{await navigator.share(data)}catch(err){if(err.name!=='AbortError')location.href='https://api.whatsapp.com/send?text='+encodeURIComponent(data.title+' '+data.url)}}else{location.href='https://api.whatsapp.com/send?text='+encodeURIComponent(data.title+' '+data.url)}}const copy=ev.target.closest('.copy-share');if(copy){try{await navigator.clipboard.writeText(copy.dataset.shareUrl);const old=copy.textContent;copy.textContent='✓ Copied';setTimeout(()=>copy.textContent=old,1800)}catch(err){prompt('Copy link:',copy.dataset.shareUrl)}}});"""
@@ -493,14 +541,30 @@ CSS += """/* Robust mobile More menu: viewport-fixed panel avoids clipped scroll
  .top .nav-more-list a{color:#fff!important;background:#172c4a!important;border-radius:8px;margin:3px;padding:12px 8px!important;white-space:normal!important;line-height:1.4}
 }
 """
+CSS += """/* Category menu is OUTSIDE the scrolling nav, so it cannot be clipped. */
+.top .wrap{overflow:visible!important}
+.category-menu{position:relative;z-index:200}
+.category-menu .nav-more{position:relative!important;width:auto!important;flex:none!important}
+.category-menu summary{display:block;cursor:pointer;color:#eaf4ff!important;font-weight:700;padding:9px 13px;border:1px solid #45627f;border-radius:9px;list-style:none}
+.category-menu summary::-webkit-details-marker{display:none}
+.category-menu .nav-more-list{display:none!important}
+.category-menu .nav-more[open] .nav-more-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;position:absolute!important;right:0!important;left:auto!important;top:100%!important;width:min(400px,92vw)!important;max-height:65vh!important;overflow-y:auto!important;background:#10243e!important;border:1px solid #4e7697!important;box-shadow:0 12px 30px #0006!important;z-index:9999!important;padding:10px!important}
+.category-menu .nav-more-list a{display:block;color:#fff!important;background:#1d3655!important;border-radius:7px;margin:3px;padding:10px!important;white-space:normal!important}
+@media(max-width:999px){
+ .top .wrap{display:flex!important;flex-wrap:wrap!important;align-items:center}
+ .top nav{flex:1 1 100%;order:3;overflow-x:auto!important;overflow-y:hidden!important;flex-wrap:nowrap!important}
+ .category-menu{order:2;margin-left:auto}
+ .category-menu .nav-more[open] .nav-more-list{position:absolute!important;right:0!important;top:100%!important;left:auto!important;width:min(340px,90vw)!important;max-height:70vh!important}
+}
+"""
 write(OUT/'style.css',CSS)
 write(OUT/'site.js',JS)
 def shell(lang,t,desc,url,body,extra=''):
  nav=[('Home','होम',''),('Tech & AI','टेक और AI','technology/'),('Entertainment','मनोरंजन','movies-entertainment/'),('Jobs & Schemes','नौकरी और योजनाएँ','sarkari-naukri/')]
  links=''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in nav)
  more=[('AI Tools','AI टूल्स','tools/'),('Government Schemes','सरकारी योजनाएँ','government-schemes/'),('Private Jobs','प्राइवेट नौकरी','private-vacancy/'),('World','दुनिया','world-news/'),('Business','बिज़नेस','business/'),('Sports','खेल','sports/'),('Gaming','गेमिंग','gaming/'),('Automobiles','ऑटोमोबाइल','automobiles/'),('Health & Science','स्वास्थ्य और विज्ञान','health-science/'),('Environment','पर्यावरण','environment/'),('Travel','यात्रा','travel/'),('Education','शिक्षा','education/'),('Lifestyle','लाइफस्टाइल','lifestyle/'),('About','हमारे बारे में','about/'),('Editorial','संपादकीय नीति','editorial/'),('Contact','संपर्क','contact/')]
- links+='<details class="nav-more"><summary>'+('More' if lang=='en' else 'और देखें')+'</summary><div class="nav-more-list">'+''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in more)+'</div></details>'
- return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="/{'hi' if lang=='en' else 'en'}/">{'हिन्दी' if lang=='en' else 'English'}</a></nav></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>Independent bilingual news and explainers, with clear sourcing, corrections and transparent editorial standards.</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{s.title()}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js"></script></body></html>'''
+ more_html='<details class="nav-more"><summary>'+('More' if lang=='en' else 'और देखें')+'</summary><div class="nav-more-list">'+''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in more)+'</div></details>'
+ return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="/{'hi' if lang=='en' else 'en'}/">{'हिन्दी' if lang=='en' else 'English'}</a></nav><div class="category-menu">{more_html}</div></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>Independent bilingual news and explainers, with clear sourcing, corrections and transparent editorial standards.</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{s.title()}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js"></script></body></html>'''
 def has_featured(p):
  # Existing licensed/credited images always take priority.
  return (R/'content'/'featured'/f'{slug(p)}.jpg').is_file() or (OUT/'images'/f'{slug(p)}.jpg').is_file()
