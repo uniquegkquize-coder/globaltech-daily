@@ -902,13 +902,18 @@ def main():
  print('Carried-over news candidates:',len(backlog),flush=True)
  stories=list(backlog)
  seen_urls={item[0] for item in stories}
- if len(stories)<POSTS_PER_RUN:
-  for story in candidates():
-   if story[0] not in seen_urls:
-    stories.append(story)
-    seen_urls.add(story[0])
-   if len(stories)>=min(POSTS_PER_RUN*3,180):break
-   if time.monotonic()>=discovery_deadline and len(stories)>=POSTS_PER_RUN:break
+ # Always discover fresh source links, even when the persisted queue is full.
+ # Retain old leads, but reserve room for new discoveries each run.
+ new_leads=[]
+ for story in candidates():
+  if story[0] not in seen_urls:
+   new_leads.append(story)
+   seen_urls.add(story[0])
+  if len(new_leads)>=POSTS_PER_RUN:break
+  if time.monotonic()>=discovery_deadline:break
+ if new_leads:
+  stories=new_leads+stories
+ print('Fresh discovered leads:',len(new_leads),flush=True)
  # Persist discovered leads before AI calls; the next run resumes them even if quota expires.
  save_discovery_queue(stories)
  print('Saved news candidates for retry:',len(stories),flush=True)
