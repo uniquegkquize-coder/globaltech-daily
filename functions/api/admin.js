@@ -1,28 +1,40 @@
 const REPO='uniquegkquize-coder/globaltech-daily';
 const CATS=['technology','government-schemes','sarkari-naukri','private-vacancy','movies-entertainment','world-news','business','sports','automobiles','health-science','gaming','environment','travel','education','lifestyle'];
 const reply=(data,status=200)=>new Response(JSON.stringify(data),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff'}});
-function decode64(s){return Uint8Array.from(atob(s.replace(/-/g,'+').replace(/_/g,'/')+'='.repeat((4-s.length%4)%4)),c=>c.charCodeAt(0));}
-async function verifiedEmail(request,env){
- const token=request.headers.get('Cf-Access-Jwt-Assertion');
- const team=(env.CF_ACCESS_TEAM_DOMAIN||'').replace(/^https?:\/\//,'').replace(/\/$/,'');
- if(!token||!team||!env.CF_ACCESS_AUD)return null;
- const parts=token.split('.');if(parts.length!==3)return null;
- try{
-  const header=JSON.parse(new TextDecoder().decode(decode64(parts[0])));
-  const claims=JSON.parse(new TextDecoder().decode(decode64(parts[1])));
-  if(header.alg!=='RS256'||!header.kid||claims.iss!==`https://${team}`||!Array.isArray(claims.aud)||!claims.aud.includes(env.CF_ACCESS_AUD)||claims.exp<=Date.now()/1000||claims.nbf>Date.now()/1000)return null;
-  const jwks=await fetch(`https://${team}/cdn-cgi/access/certs`,{cf:{cacheTtl:300,cacheEverything:true}}).then(r=>r.json());
-  const key=jwks.keys.find(k=>k.kid===header.kid&&k.kty==='RSA');
-  if(!key)return null;
-  const cryptoKey=await crypto.subtle.importKey('jwk',key,{name:'RSASSA-PKCS1-v1_5',hash:'SHA-256'},false,['verify']);
-  const valid=await crypto.subtle.verify('RSASSA-PKCS1-v1_5',cryptoKey,decode64(parts[2]),new TextEncoder().encode(parts[0]+'.'+parts[1]));
-  return valid?String(claims.email||'').toLowerCase():null;
- }catch{return null;}
+const enc=new TextEncoder();
+const base64=b=>btoa(String.fromCharCode(...b)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+function from64(s){return Uint8Array.from(atob(s.replace(/-/g,'+').replace(/_/g,'/')+'='.repeat((4-s.length%4)%4)),c=>c.charCodeAt(0));}
+async function hmac(message,secret){
+ const key=await crypto.subtle.importKey('raw',enc.encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);
+ return base64(new Uint8Array(await crypto.subtle.sign('HMAC',key,enc.encode(message))));
+}
+async function authorized(request,env){
+ if(!env.ADMIN_SESSION_SECRET||!env.ADMIN_EMAIL)return false;
+ const match=(request.headers.get('cookie')||'').match(/(?:^|; )gwd_admin=([^;]+)/);
+ if(!match)return false;
+ const [payload,sig]=match[1].split('.');
+ if(!payload||!sig||sig!==await hmac(payload,env.ADMIN_SESSION_SECRET))return false;
+ try{const session=JSON.parse(new TextDecoder().decode(from64(payload)));return session.email===env.ADMIN_EMAIL.toLowerCase()&&session.exp>Date.now()}catch{return false}
+}
+const cookie=(value,maxAge)=>'gwd_admin='+value+'; HttpOnly; Secure; SameSite=Strict; Path=/api/admin; Max-Age='+maxAge;
+async function login(request,env){
+ if(!env.ADMIN_EMAIL||!env.ADMIN_PASSWORD||!env.ADMIN_SESSION_SECRET)return reply({error:'Admin credentials are not configured on the server.'},503);
+ let data;try{data=await request.json()}catch{return reply({error:'Invalid request'},400)}
+ const email=String(data.email||'').trim().toLowerCase(),password=String(data.password||'');
+ if(email!==env.ADMIN_EMAIL.toLowerCase()||password!==env.ADMIN_PASSWORD)return reply({error:'Invalid email or password'},401);
+ const payload=base64(enc.encode(JSON.stringify({email,exp:Date.now()+8*3600000})));
+ const sig=await hmac(payload,env.ADMIN_SESSION_SECRET);
+ const response=reply({ok:true,email});
+ response.headers.set('set-cookie',cookie(payload+'.'+sig,28800));
+ return response;
 }
 export async function onRequest({request,env}){
- const email=await verifiedEmail(request,env);
- if(!email||email!==String(env.ADMIN_EMAIL||'').toLowerCase())return reply({error:'Access denied. Configure Cloudflare Access and the approved admin email.'},403);
- if(request.method==='GET')return reply({ok:true,email,categories:CATS});
+ if(request.method==='POST'&&new URL(request.url).searchParams.get('action')==='login')return login(request,env);
+ if(request.method==='POST'&&new URL(request.url).searchParams.get('action')==='logout'){
+  const response=reply({ok:true});response.headers.set('set-cookie',cookie('',0));return response;
+ }
+ if(!await authorized(request,env))return reply({error:'Not signed in'},401);
+ if(request.method==='GET')return reply({ok:true,email:env.ADMIN_EMAIL,categories:CATS});
  if(request.method!=='POST')return reply({error:'Method not allowed'},405);
  if(!env.GITHUB_WRITE_TOKEN)return reply({error:'GitHub write token not configured'},503);
  if(Number(request.headers.get('content-length')||0)>60000)return reply({error:'Payload too large'},413);
