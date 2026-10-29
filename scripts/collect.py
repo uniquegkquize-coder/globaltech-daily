@@ -889,7 +889,7 @@ def main():
  if not remaining:return 0
  if not any(os.getenv(k) for k in ('GROQ_API_KEY','GEMINI_API_KEY','OPENROUTER_API_KEY','OPENAI_API_KEY')):
   print('No AI provider configured');return 0
- published=0; inspected=0; category_published={}
+ published=0; inspected=0; category_published={}; category_reserved=Counter()
  discovery_deadline=time.monotonic()+4*60  # Reserve time for article writing.
  deadline=time.monotonic()+15*60  # Reserve remaining time for build and Git push.
  print('Minimum target per category:',MIN_POSTS_PER_CATEGORY,flush=True)
@@ -956,10 +956,11 @@ def main():
    # Prevent one prolific source category from consuming the whole run.
    # A verified story may remain as a draft for the next scheduled run.
    with publication_lock:
-    if category_published.get(cat,0)>=category_run_cap:
+    if category_reserved[cat]>=category_run_cap:
      save_state(pending,state)
      print('Category publication cap reached; retaining draft:',cat,post_id,flush=True)
      return None
+    category_reserved[cat]+=1
    article={k:state.get(k,'') for k in ('en_title','hi_title','en_body','hi_body','en_meta','hi_meta','en_keywords','hi_keywords')}
    article.update(id=post_id,source=url,date=dt.datetime.now(UTC).isoformat(),source_title=title,category=cat,image_kind='conceptual')
    save_state(POSTS/(post_id+'.json'),article)
