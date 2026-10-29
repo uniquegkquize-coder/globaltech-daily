@@ -995,6 +995,8 @@ def main():
  # limited AI calls; retain all other categories as eligible afterward.
  historical_counts=published_categories()
  categories=sorted(grouped,key=lambda cat:(historical_counts.get(cat,0),cat))
+ missing_candidates=sorted(set(c for _,c,_ in FEEDS)-set(grouped))
+ print('Categories without usable leads:',', '.join(missing_candidates) or 'none',flush=True)
  print('Verified candidate queue per category:',{cat:len(grouped[cat]) for cat in categories},flush=True)
  print('Category processing priority:',', '.join(categories),flush=True)
  for round_number in range(MIN_POSTS_PER_CATEGORY):
