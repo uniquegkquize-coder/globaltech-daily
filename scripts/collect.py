@@ -3,6 +3,7 @@ import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time, threadin
 from functools import lru_cache
 from urllib.parse import urlparse
 import requests, feedparser
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from bs4 import BeautifulSoup
 ROOT=pathlib.Path(__file__).resolve().parents[1]
@@ -605,6 +606,11 @@ def bing_search_stories(cat):
  except (requests.RequestException,ValueError):
   return []
 
+SOURCE_DIAGNOSTICS=Counter()
+SOURCE_DIAGNOSTICS_LOCK=threading.Lock()
+def source_metric(domain,metric,amount=1):
+ with SOURCE_DIAGNOSTICS_LOCK: SOURCE_DIAGNOSTICS[(domain,metric)]+=amount
+
 def candidates():
  seen=set()
  counts=published_categories()
@@ -667,6 +673,7 @@ def candidates():
   website_results=list(pool.map(website_stories,[item for item in FEEDS if 'news.google.com/rss/search' not in item[0] and 'reddit.com' not in item[2]]))
  for (feed,cat,domain),stories in website_results:
   print('Website',domain,'category',cat,'candidates',len(stories),flush=True)
+  source_metric(domain,'website_candidates',len(stories))
   for story in stories:
    if story[0] not in seen:
     seen.add(story[0]);groups[cat].append(story)
@@ -689,6 +696,7 @@ def candidates():
   results=list(pool.map(read_feed,FEEDS+rotating_local_feeds()+rotating_social_feeds()))
  for (feed,cat,domain),entries in results:
   print('Feed',domain,'entries',len(entries),flush=True)
+  source_metric(domain,'feed_entries',len(entries))
   for e in entries:
    url=e.get('link','').strip(); title=clean(e.get('title',''))
    if 'news.google.com' in (urlparse(url).hostname or ''):
@@ -702,6 +710,7 @@ def candidates():
    if age<0 or age>7:continue
    actual_cat=category(title,cat)
    groups[actual_cat].append((url,title,actual_cat,domain))
+   source_metric(domain,'feed_candidates')
  for cat in groups:
   groups[cat].sort(key=lambda item:(not any(t in item[1].lower() for t in trending_terms),*story_priority(item)))
  for i in range(max(map(len,groups.values()),default=0)):
@@ -822,7 +831,9 @@ def main():
   stories.append(story)
  # Prioritize two verified articles per category before filling additional slots.
  grouped={}
- for story in stories:grouped.setdefault(story[2],[]).append(story)
+ for story in stories:
+   grouped.setdefault(story[2],[]).append(story)
+   source_metric(story[3],'queued')
  ordered=[]
  # Give categories with the fewest existing published stories first access to
  # limited AI calls; retain all other categories as eligible afterward.
@@ -845,12 +856,14 @@ def main():
     try:story=next(next_story)
     except StopIteration:break
     futures[article_pool.submit(process_story,story)]=story
+    source_metric(story[3],'attempted')
    if not futures:break
    done=next(as_completed(futures))
    futures.pop(done)
    try:cat=done.result()
    except Exception as exc:
     print('Article worker failed:',type(exc).__name__,str(exc)[:180],flush=True)
+    source_metric(story[3],'worker_errors')
     continue
    if cat:
     published+=1
