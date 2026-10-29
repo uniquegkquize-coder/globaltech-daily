@@ -831,23 +831,35 @@ def candidates():
  # Cap workers: dozens of global sources without making Actions run for hours.
  with ThreadPoolExecutor(max_workers=24) as pool:
   results=list(pool.map(read_feed,FEEDS+rotating_local_feeds()+rotating_social_feeds()))
+ # Validate dates before any costly URL resolution. Resolve eligible Google
+ # News URLs concurrently instead of making thousands of serial requests.
+ eligible=[]
+ today=dt.datetime.now(UTC).date()
  for (feed,cat,domain),entries in results:
   print('Feed',domain,'entries',len(entries),flush=True)
   source_metric(domain,'feed_entries',len(entries))
   for e in entries:
    url=e.get('link','').strip(); title=clean(e.get('title',''))
-   if 'news.google.com' in (urlparse(url).hostname or ''):
-    url=resolve_google_news(url)
-   if not allowed(url,domain) or not title or url in seen: continue
-   seen.add(url)
+   if not url or not title:continue
    published=e.get('published_parsed') or e.get('updated_parsed')
-   if not published: continue
-   try: age=(dt.datetime.now(UTC).date()-dt.date(*published[:3])).days
-   except (TypeError,ValueError): continue
+   if not published:continue
+   try:age=(today-dt.date(*published[:3])).days
+   except (TypeError,ValueError):continue
    if age<0 or age>7:continue
+   eligible.append((url,title,cat,domain))
+ def resolve_eligible(row):
+  url,title,cat,domain=row
+  if 'news.google.com' in (urlparse(url).hostname or ''):
+   url=resolve_google_news(url)
+  return url,title,cat,domain
+ with ThreadPoolExecutor(max_workers=32) as resolver_pool:
+  for url,title,cat,domain in resolver_pool.map(resolve_eligible,eligible):
+   if not allowed(url,domain) or url in seen:continue
+   seen.add(url)
    actual_cat=category(title,cat)
    groups[actual_cat].append((url,title,actual_cat,domain))
    source_metric(domain,'feed_candidates')
+ print('Fresh dated RSS entries examined:',len(eligible),flush=True)
  for cat in groups:
   groups[cat].sort(key=lambda item:(not any(t in item[1].lower() for t in trending_terms),*story_priority(item)))
  for i in range(max(map(len,groups.values()),default=0)):
