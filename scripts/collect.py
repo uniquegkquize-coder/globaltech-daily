@@ -33,6 +33,7 @@ CALLS=0
 # Worldwide source registry: discovery only. Publisher articles must be original,
 # independently summarized, attributed and sufficiently substantiated.
 FEEDS=[
+ ('https://news.google.com/rss/search?q=site%3Asarkariresult.com.cm%20recruitment%20OR%20admit%20card%20OR%20result%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','sarkari-naukri','sarkariresult.com.cm'),
  ('https://news.google.com/rss/search?q=site%3Aamazon.jobs%20hiring&hl=en-IN&gl=IN&ceid=IN%3Aen','private-vacancy','amazon.jobs'),
  ('https://news.google.com/rss/search?q=site%3Acareers.microsoft.com%20jobs&hl=en-IN&gl=IN&ceid=IN%3Aen','private-vacancy','careers.microsoft.com'),
  ('https://feeds.bbci.co.uk/news/world/rss.xml', 'world-news', 'bbc.co.uk'),
@@ -517,7 +518,7 @@ def google_news_stories(cat):
 # Source URLs are attributed; do not infer application deadlines from search snippets.
 REGIONAL_STATE_NAMES=tuple(INDIA_REGIONS)
 REGIONAL_PORTALS={
- 'sarkari-naukri':('freejobalert.com','sarkariresult.com','mysarkarinaukri.com','jagranjosh.com','sarkaripaper.in','niyuktipost.com'),
+ 'sarkari-naukri':('freejobalert.com','sarkariresult.com','sarkariresult.com.cm','mysarkarinaukri.com','jagranjosh.com','sarkaripaper.in','niyuktipost.com'),
  'government-schemes':('myscheme.gov.in','india.gov.in','jagranjosh.com','mzonews.com'),
  'private-vacancy':('freejobalert.com','mysarkarinaukri.com','jagranjosh.com')
 }
