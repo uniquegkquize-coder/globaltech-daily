@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'content/posts/*.json'
+      - 'scripts/build.py'
+      - '.github/workflows/manual-post-build.yml'
 permissions:
   contents: write
 concurrency:
