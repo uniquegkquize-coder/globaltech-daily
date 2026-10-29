@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/news-auto.yml'
+      - 'scripts/collect.py'
   workflow_dispatch:
   schedule:
     - cron: '7 * * * *'
