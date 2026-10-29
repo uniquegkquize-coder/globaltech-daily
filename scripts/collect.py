@@ -33,6 +33,13 @@ CALLS=0
 # Worldwide source registry: discovery only. Publisher articles must be original,
 # independently summarized, attributed and sufficiently substantiated.
 FEEDS=[
+ ('https://news.google.com/rss/search?q=site%3Asahisarkarijobs.in%20uttar%20pradesh%20govt%20jobs%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','sarkari-naukri','sahisarkarijobs.in'),
+ ('https://news.google.com/rss/search?q=site%3Asarkariresult.com%20recruitment%20result%20admit%20card%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','sarkari-naukri','sarkariresult.com'),
+ ('https://news.google.com/rss/search?q=site%3Aofficialsarkarinaukri.com%20latest%20jobs%20recruitment%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','sarkari-naukri','officialsarkarinaukri.com'),
+ ('https://news.google.com/rss/search?q=site%3Aindiasarkarinaukri.com%20government%20jobs%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','sarkari-naukri','indiasarkarinaukri.com'),
+ ('https://news.google.com/rss/search?q=site%3Anaukri.com%20private%20jobs%20hiring%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','private-vacancy','naukri.com'),
+ ('https://news.google.com/rss/search?q=site%3Aindeed.com%20India%20private%20jobs%20hiring%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','private-vacancy','indeed.com'),
+ ('https://news.google.com/rss/search?q=site%3Alinkedin.com%20India%20jobs%20hiring%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','private-vacancy','linkedin.com'),
  ('https://news.google.com/rss/search?q=site%3Asarkariresult.com.cm%20recruitment%20OR%20admit%20card%20OR%20result%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','sarkari-naukri','sarkariresult.com.cm'),
  ('https://news.google.com/rss/search?q=site%3Aamazon.jobs%20hiring&hl=en-IN&gl=IN&ceid=IN%3Aen','private-vacancy','amazon.jobs'),
  ('https://news.google.com/rss/search?q=site%3Acareers.microsoft.com%20jobs&hl=en-IN&gl=IN&ceid=IN%3Aen','private-vacancy','careers.microsoft.com'),
@@ -518,9 +525,9 @@ def google_news_stories(cat):
 # Source URLs are attributed; do not infer application deadlines from search snippets.
 REGIONAL_STATE_NAMES=tuple(INDIA_REGIONS)
 REGIONAL_PORTALS={
- 'sarkari-naukri':('freejobalert.com','sarkariresult.com','sarkariresult.com.cm','mysarkarinaukri.com','jagranjosh.com','sarkaripaper.in','niyuktipost.com'),
+ 'sarkari-naukri':('freejobalert.com','sarkariresult.com','sarkariresult.com.cm','sahisarkarijobs.in','officialsarkarinaukri.com','indiasarkarinaukri.com','mysarkarinaukri.com','jagranjosh.com','sarkaripaper.in','niyuktipost.com'),
  'government-schemes':('myscheme.gov.in','india.gov.in','jagranjosh.com','mzonews.com'),
- 'private-vacancy':('freejobalert.com','mysarkarinaukri.com','jagranjosh.com')
+ 'private-vacancy':('freejobalert.com','mysarkarinaukri.com','jagranjosh.com','naukri.com','indeed.com','linkedin.com')
 }
 def regional_search_stories(cat):
  from urllib.parse import quote
