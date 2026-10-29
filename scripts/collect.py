@@ -476,6 +476,24 @@ def story_priority(item):
 # Website-first discovery: visit publisher home/category pages before RSS fallback.
 # Each website is attempted once per category, with bounded concurrency and timeouts.
 WEBSITE_PATHS={'world-news':'/world','technology':'/technology','business':'/business','sports':'/sport','movies-entertainment':'/entertainment','automobiles':'/auto','health-science':'/science','government-schemes':'/','sarkari-naukri':'/','private-vacancy':'/','gaming':'/gaming','environment':'/environment','travel':'/travel','education':'/education','lifestyle':'/lifeandstyle'}
+# Every configured publisher is eligible for direct discovery, including
+# publishers previously represented only by Google News search URLs.
+# Rotate the broader pool to bound HTTP traffic and preserve article-writing time.
+def rotating_publisher_websites():
+ direct={(cat,domain) for _,cat,domain in DIRECT_SOURCES}
+ options={}
+ for feed,cat,domain in FEEDS:
+  if domain in ('reddit.com','news.google.com') or (cat,domain) in direct:continue
+  if not domain or domain.endswith('google.com'):continue
+  key=(cat,domain)
+  if key not in options:
+   options[key]=(feed,cat,domain) if feed.startswith('https://'+domain+'/') and '/rss' not in feed and '/feed' not in feed else ('https://'+domain+'/',cat,domain)
+ values=list(options.values())
+ if not values:return []
+ limit=max(1,min(100,int(os.getenv('PUBLISHER_WEBSITES_PER_RUN','36'))))
+ start=(dt.datetime.now(UTC).date().toordinal()*limit)%len(values)
+ return [values[(start+i)%len(values)] for i in range(min(limit,len(values)))]
+
 def website_stories(item):
  feed,cat,domain=item
  from urllib.parse import urljoin
@@ -743,7 +761,7 @@ def candidates():
  # First search major publisher websites across every category.
  groups={cat:[] for _,cat,_ in FEEDS}
  with ThreadPoolExecutor(max_workers=10) as pool:
-  website_results=list(pool.map(website_stories,[item for item in FEEDS if item not in DIRECT_SOURCES and 'news.google.com/rss/search' not in item[0] and 'reddit.com' not in item[2]]))
+  website_results=list(pool.map(website_stories,rotating_publisher_websites()))
  for (feed,cat,domain),stories in website_results:
   print('Website',domain,'category',cat,'candidates',len(stories),flush=True)
   source_metric(domain,'website_candidates',len(stories))
