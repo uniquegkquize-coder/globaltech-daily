@@ -164,6 +164,45 @@ FEEDS.extend([
 ])
 
 
+# User-requested website landing pages: discovery only, not article URLs.
+DIRECT_SOURCES=[
+ ("https://www.sahisarkarijobs.in/state/uttar-pradesh-govt-jobs/","sarkari-naukri","sahisarkarijobs.in"),
+ ("https://www.sarkariresult.com/","sarkari-naukri","sarkariresult.com"),
+ ("https://officialsarkarinaukri.com/","sarkari-naukri","officialsarkarinaukri.com"),
+ ("https://www.indiasarkarinaukri.com/","sarkari-naukri","indiasarkarinaukri.com"),
+ ("https://www.naukri.com/sarkari-naukri-jobs","private-vacancy","naukri.com"),
+ ("https://in.indeed.com/","private-vacancy","indeed.com"),
+ ("https://in.linkedin.com/jobs","private-vacancy","linkedin.com"),
+ ("https://govtschemes.in/","government-schemes","govtschemes.in"),
+ ("https://bharatjobzone.com/सरकारी-काम/","government-schemes","bharatjobzone.com"),
+ ("https://navbharattimes.indiatimes.com/","world-news","navbharattimes.indiatimes.com"),
+ ("https://sarkarikyp.com/","government-schemes","sarkarikyp.com"),
+ ("https://www.dainikgorakhpur.com/","world-news","dainikgorakhpur.com"),
+ ("https://www.inextlive.com/","world-news","inextlive.com"),
+ ("https://hindi.news18.com/","world-news","hindi.news18.com"),
+ ("https://www.amarujala.com/","world-news","amarujala.com"),
+ ("https://www.bhaskar.com/","world-news","bhaskar.com"),
+ ("https://gamerant.com/","gaming","gamerant.com"),
+ ("https://www.gamespot.com/","gaming","gamespot.com"),
+ ("https://www.thehindu.com/","world-news","thehindu.com"),
+ ("https://www.business-standard.com/","business","business-standard.com"),
+ ("https://travel.economictimes.indiatimes.com/","travel","travel.economictimes.indiatimes.com"),
+ ("https://travelnewsdigest.in/","travel","travelnewsdigest.in"),
+ ("https://educationworld.in/","education","educationworld.in"),
+ ("https://ai.economictimes.com/","technology","ai.economictimes.com"),
+ ("https://www.artificialintelligence-news.com/","technology","artificialintelligence-news.com"),
+ ("https://diversejobseeker.com/","private-vacancy","diversejobseeker.com"),
+ ("https://github.blog/","technology","github.blog"),
+ ("https://github.com/trending","technology","github.com"),
+ ("https://thehackernews.com/","technology","thehackernews.com"),
+ ("https://www.desidime.com/","lifestyle","desidime.com"),
+ ("https://www.coolztricks.com/","lifestyle","coolztricks.com"),
+ ("https://freekaamaal.com/","lifestyle","freekaamaal.com"),
+]
+for direct_url,direct_cat,direct_domain in DIRECT_SOURCES:
+ if not any(c==direct_cat and d==direct_domain for _,c,d in FEEDS):
+  FEEDS.append((direct_url,direct_cat,direct_domain))
+
 # Nationwide India discovery: all states/UTs, major cities and regional publishers.
 # Rotating local feeds keeps scheduled runs bounded while gradually covering India.
 from urllib.parse import quote as quote_query
@@ -439,26 +478,29 @@ def story_priority(item):
 WEBSITE_PATHS={'world-news':'/world','technology':'/technology','business':'/business','sports':'/sport','movies-entertainment':'/entertainment','automobiles':'/auto','health-science':'/science','government-schemes':'/','sarkari-naukri':'/','private-vacancy':'/','gaming':'/gaming','environment':'/environment','travel':'/travel','education':'/education','lifestyle':'/lifeandstyle'}
 def website_stories(item):
  feed,cat,domain=item
- path=WEBSITE_PATHS.get(cat,'/')
- # Keep all configured publishers; their sites are the primary discovery surface.
- base='https://'+domain+path
+ from urllib.parse import urljoin
+ base=feed if item in DIRECT_SOURCES else 'https://'+domain+WEBSITE_PATHS.get(cat,'/')
  try:
-  response=requests.get(base,timeout=(5,10),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobalTechDaily/1.0)'})
+  response=requests.get(base,timeout=(5,10),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobeWireDaily/1.0)'})
   response.raise_for_status()
   if not allowed(response.url,domain) or 'html' not in response.headers.get('content-type','').lower():return item,[]
-  soup=BeautifulSoup(response.text[:900000],'html.parser')
-  stories=[]; seen_urls=set()
-  for a in soup.select('article a[href], h2 a[href], h3 a[href], main a[href]'):
-   from urllib.parse import urljoin
+  soup=BeautifulSoup(response.text[:1000000],'html.parser')
+  stories=[];seen_urls=set()
+  selectors='article a[href], h2 a[href], h3 a[href], main a[href], .job-list a[href], .job-listing a[href], .job-title a[href], .post-title a[href], .entry-title a[href], [class*="job"] a[href]'
+  for a in soup.select(selectors)[:600]:
    url=urljoin(response.url,a.get('href','')).split('#')[0].split('?')[0]
-   title=clean(a.get_text(' ',strip=True) or a.get('aria-label',''))
-   if not allowed(url,domain) or url in seen_urls or len(title)<35 or len(title)>210:continue
-   if url.rstrip('/')==base.rstrip('/') or any(z in url.lower() for z in ('/tag/','/author/','/category/','/topics/','/video/','/live/','/search/')):continue
-   if len(urlparse(url).path.strip('/').split('/'))<2:continue
+   title=clean(a.get_text(' ',strip=True) or a.get('aria-label','') or a.get('title',''))
+   if not allowed(url,domain) or url in seen_urls or len(title)<24 or len(title)>210:continue
+   if url.rstrip('/')==response.url.rstrip('/'):continue
+   if any(z in url.lower() for z in ('/tag/','/author/','/category/','/topics/','/video/','/live/','/search/','/login','/signup','/privacy','/contact','/about')):continue
+   if len(urlparse(url).path.strip('/').split('/'))<2 and not re.search(r'\d{4,}|[a-z0-9]+[-_][a-z0-9]+',urlparse(url).path):continue
+   if cat in ('sarkari-naukri','private-vacancy') and not re.search(r'job|vacan|recruit|hiring|career|भर्ती|नौकरी|पद|result|admit|exam',title+' '+url,re.I):continue
    seen_urls.add(url);stories.append((url,title,cat,domain))
-   if len(stories)>=15:break
+   if len(stories)>=20:break
   return item,stories
- except (requests.RequestException,ValueError):return item,[]
+ except (requests.RequestException,ValueError) as exc:
+  print('Direct source fetch failed',domain,type(exc).__name__,flush=True)
+  return item,[]
 
 # Google Trends is a discovery signal only; articles always come from publishers.
 def google_trending_terms():
@@ -655,6 +697,19 @@ def candidates():
     seen.add(url)
     yield url,title,record.get('category','technology'),domain
   except (OSError,ValueError):pass
+ # Check explicit source pages ahead of broad search engines.
+ with ThreadPoolExecutor(max_workers=10) as pool:
+  direct_results=list(pool.map(website_stories,DIRECT_SOURCES))
+ direct_groups={}
+ for (feed,cat,domain),items in direct_results:
+  print('Direct source',domain,'category',cat,'candidates',len(items),flush=True)
+  source_metric(domain,'website_candidates',len(items))
+  for story in items:
+   if story[0] not in seen:
+    seen.add(story[0]);direct_groups.setdefault(cat,[]).append(story)
+ for i in range(max(map(len,direct_groups.values()),default=0)):
+  for cat in sorted(direct_groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
+   if i<len(direct_groups[cat]):yield direct_groups[cat][i]
  # Google News category search is the first fresh-news discovery source.
  google_groups={cat:[] for cat in GOOGLE_QUERIES}
  with ThreadPoolExecutor(max_workers=7) as pool:
@@ -688,7 +743,7 @@ def candidates():
  # First search major publisher websites across every category.
  groups={cat:[] for _,cat,_ in FEEDS}
  with ThreadPoolExecutor(max_workers=10) as pool:
-  website_results=list(pool.map(website_stories,[item for item in FEEDS if 'news.google.com/rss/search' not in item[0] and 'reddit.com' not in item[2]]))
+  website_results=list(pool.map(website_stories,[item for item in FEEDS if item not in DIRECT_SOURCES and 'news.google.com/rss/search' not in item[0] and 'reddit.com' not in item[2]]))
  for (feed,cat,domain),stories in website_results:
   print('Website',domain,'category',cat,'candidates',len(stories),flush=True)
   source_metric(domain,'website_candidates',len(stories))
