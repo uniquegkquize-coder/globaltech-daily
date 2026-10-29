@@ -84,9 +84,14 @@ jobs:
               if ! git rebase -X theirs "origin/${{ github.ref_name }}"; then
                 echo "Generated HTML conflicted with a concurrent publish; regenerating on latest main."
                 git rebase --abort || true
+                mkdir -p /tmp/news-publish-backup
+                cp -a content/posts content/pending content/featured /tmp/news-publish-backup/
                 git reset --hard "origin/${{ github.ref_name }}"
+                cp -an /tmp/news-publish-backup/posts/. content/posts/ || true
+                cp -an /tmp/news-publish-backup/pending/. content/pending/ || true
+                cp -an /tmp/news-publish-backup/featured/. content/featured/ || true
                 python -u scripts/build.py
-                git add -A dist
+                git add -A content/posts content/pending content/featured dist
                 if ! git diff --cached --quiet; then
                   git commit -m 'Refresh generated site on latest main'
                 fi
