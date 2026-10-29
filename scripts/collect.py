@@ -953,6 +953,13 @@ def main():
     state['blocked_until']=(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat()
    save_state(pending,state)
   if all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
+   # Prevent one prolific source category from consuming the whole run.
+   # A verified story may remain as a draft for the next scheduled run.
+   with publication_lock:
+    if category_published.get(cat,0)>=category_run_cap:
+     save_state(pending,state)
+     print('Category publication cap reached; retaining draft:',cat,post_id,flush=True)
+     return None
    article={k:state.get(k,'') for k in ('en_title','hi_title','en_body','hi_body','en_meta','hi_meta','en_keywords','hi_keywords')}
    article.update(id=post_id,source=url,date=dt.datetime.now(UTC).isoformat(),source_title=title,category=cat,image_kind='conceptual')
    save_state(POSTS/(post_id+'.json'),article)
@@ -999,6 +1006,9 @@ def main():
  print('Categories without usable leads:',', '.join(missing_candidates) or 'none',flush=True)
  print('Verified candidate queue per category:',{cat:len(grouped[cat]) for cat in categories},flush=True)
  print('Category processing priority:',', '.join(categories),flush=True)
+ # Soft fair-share limit: allow more stories when only a few categories have leads.
+ category_run_cap=max(MIN_POSTS_PER_CATEGORY,(remaining+max(1,len(categories))-1)//max(1,len(categories)))
+ print('Per-category publication cap this run:',category_run_cap,flush=True)
  for round_number in range(MIN_POSTS_PER_CATEGORY):
   for cat in categories:
    if grouped[cat]:ordered.append(grouped[cat].pop(0))
