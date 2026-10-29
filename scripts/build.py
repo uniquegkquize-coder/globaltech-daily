@@ -58,6 +58,19 @@ CSS += """.article-tags{margin:26px 0;padding:16px 0;border-top:1px solid #e5ebf
 CSS += """.article{max-width:850px;margin:28px auto 50px;padding:clamp(20px,4vw,42px);line-height:1.85}.article h1{font-size:clamp(30px,4vw,46px);line-height:1.2}.article .story{font-size:17px;line-height:1.9}.article .story h2{margin:30px 0 12px;font-size:26px}.article .story h3{margin:24px 0 10px;font-size:21px}.article .story p{margin-bottom:20px}.article .hero{width:100%;height:auto;border-radius:12px}.author-about{margin:32px 0;padding:22px;background:#f5f8fc;border:1px solid #e0e8f1;border-radius:14px}.author-about h2{margin:0 0 8px;font-size:20px}@media(max-width:600px){.article{margin:14px auto 28px;padding:18px}.article .story{font-size:16px;line-height:1.8}.article .story h2{font-size:22px}}"""
 CSS += """.card h2,.related-card span,.trending-list span{overflow:visible;text-overflow:clip;white-space:normal;overflow-wrap:anywhere;-webkit-line-clamp:unset;line-clamp:unset}.card,.card .inner{height:auto}.card a:focus-visible{outline:3px solid #0b8a93;outline-offset:3px}@media(max-width:600px){.card h2{font-size:17px;line-height:1.45}}"""
 CSS += """.featured-figure{margin:18px 0 24px}.image-credit{font-size:12px;color:#68778a;margin-top:6px}.card h2{word-break:normal;overflow-wrap:break-word}"""
+CSS += """/* Mobile menu must not be clipped by the horizontally scrolling nav.
+   Keep dropdown in normal document flow and match the dark header. */
+@media(max-width:999px){
+ .top nav{overflow:visible!important;flex-wrap:wrap!important;align-items:center;gap:6px 12px;padding-bottom:4px}
+ .top nav a{white-space:nowrap}
+ .nav-more{position:static;flex-basis:100%;width:100%}
+ .nav-more summary{display:inline-flex;align-items:center;color:#d9e6fb;padding:6px 0}
+ .nav-more-list{position:static!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;max-height:none;overflow:visible;background:#14233d;border:1px solid #354967;box-shadow:none;margin:4px 0 10px;padding:8px;border-radius:10px}
+ .nav-more-list a{white-space:normal!important;color:#e7f2ff!important;font-size:13px;line-height:1.4;padding:10px 8px}
+ .nav-more-list a:hover,.nav-more-list a:focus-visible{background:#263b5b;border-radius:6px}
+ .nav-more:not([open]) .nav-more-list{display:none}
+}
+"""
 CSS += """.top nav{display:flex;align-items:center;flex-wrap:wrap;gap:10px}.nav-more{position:relative;z-index:50}.nav-more summary{cursor:pointer;list-style:none;padding:8px 12px;font-weight:650}.nav-more summary::-webkit-details-marker{display:none}.nav-more-list{position:absolute;right:0;top:100%;width:min(290px,85vw);max-height:70vh;overflow:auto;background:white;border:1px solid #dce5f1;box-shadow:0 12px 30px #0002;border-radius:12px;padding:8px;display:grid;z-index:60}.nav-more-list a{display:block;padding:9px 12px;color:#13263e}.card h2{display:block!important;-webkit-line-clamp:unset!important;line-clamp:unset!important;max-height:none!important;overflow:visible!important}.card .inner{height:auto!important;min-height:0!important}@media(max-width:600px){.nav-more-list{right:0}}"""
 CSS += """.article-share{padding:15px 20px;margin:18px 0;border:1px solid #dce5f1;background:#f5f9ff;border-radius:14px}.article-share strong{display:block;margin-bottom:10px}.share-actions{display:flex;flex-wrap:wrap;gap:9px}.share-actions a,.share-actions button{font:600 14px/1.3 system-ui,sans-serif;display:inline-block;border:1px solid #bed2e7;background:white;color:#12588b;border-radius:9px;padding:10px 12px;text-decoration:none;cursor:pointer}.share-actions a:hover,.share-actions button:hover{background:#e5f2ff}"""
 write(OUT/'style.css',CSS)
