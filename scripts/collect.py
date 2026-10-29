@@ -711,7 +711,7 @@ def load_discovery_queue():
    except (KeyError,TypeError,ValueError):continue
    story=entry.get('story')
    if added>=cutoff and useful_lead(story):rows.append(tuple(story))
-  return rows[:QUEUE_LIMIT]
+  return rows
  except (OSError,ValueError,TypeError):return []
 def save_discovery_queue(rows):
  now=dt.datetime.now(UTC)
@@ -731,7 +731,6 @@ def save_discovery_queue(rows):
   except (ValueError,TypeError):age=dt.timedelta(days=99)
   if age>dt.timedelta(hours=QUEUE_MAX_AGE_HOURS):continue
   entries.append({'story':list(row),'added_at':added})
-  if len(entries)>=QUEUE_LIMIT:break
  temp=QUEUE_FILE.with_suffix('.tmp')
  temp.write_text(json.dumps({'version':2,'items':entries},ensure_ascii=False),encoding='utf-8')
  temp.replace(QUEUE_FILE)
