@@ -825,11 +825,11 @@ def candidates():
   try:
    r=requests.get(feed,timeout=(5,10),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobalTechDaily/1.0)'})
    r.raise_for_status()
-   return item,feedparser.parse(r.content).entries[:30]
+   return item,feedparser.parse(r.content).entries
   except (requests.RequestException,ValueError):
    return item,[]
  # Cap workers: dozens of global sources without making Actions run for hours.
- with ThreadPoolExecutor(max_workers=10) as pool:
+ with ThreadPoolExecutor(max_workers=24) as pool:
   results=list(pool.map(read_feed,FEEDS+rotating_local_feeds()+rotating_social_feeds()))
  for (feed,cat,domain),entries in results:
   print('Feed',domain,'entries',len(entries),flush=True)
