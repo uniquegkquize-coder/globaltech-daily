@@ -520,7 +520,7 @@ def website_stories(item):
    title=clean(a.get_text(' ',strip=True) or a.get('aria-label','') or a.get('title',''))
    if not allowed(url,domain) or url in seen_urls or len(title)<24 or len(title)>210:continue
    if url.rstrip('/')==response.url.rstrip('/'):continue
-   if any(z in url.lower() for z in ('/tag/','/author/','/category/','/topics/','/video/','/live/','/search/','/login','/signup','/privacy','/contact','/about')):continue
+   if any(z in url.lower() for z in ('/tag/','/author/','/category/','/topics/','/video/','/live/','/search/','/login','/signup','/privacy','/contact','/about','/taxonomy/','/complain/','/submission/','/articlelist/','/topic/','/forum/','/deals/','/collections/')):continue
    if len(urlparse(url).path.strip('/').split('/'))<2 and not re.search(r'\d{4,}|[a-z0-9]+[-_][a-z0-9]+',urlparse(url).path):continue
    if cat in ('sarkari-naukri','private-vacancy') and not re.search(r'job|vacan|recruit|hiring|career|भर्ती|नौकरी|पद|result|admit|exam',title+' '+url,re.I):continue
    seen_urls.add(url);stories.append((url,title,cat,domain))
@@ -688,6 +688,7 @@ def useful_lead(row):
  if not isinstance(row,(list,tuple)) or len(row)!=4 or not all(isinstance(x,str) for x in row):return False
  url,title,cat,domain=row
  if len(title)<24 or not allowed(url,domain) or len(url)>500:return False
+ if any(part in urlparse(url).path.lower() for part in ('/taxonomy/','/complain/','/submission/','/articlelist/','/category/','/tag/','/topic/','/forum/','/deals/','/collections/')):return False
  if not (any(allowed(url,d) for _,_,d in FEEDS) or any(allowed(url,d) for d in REGIONAL_PORTALS.get(cat,()))):return False
  if (POSTS/(hashlib.sha256(url.encode()).hexdigest()[:12]+'.json')).exists():return False
  pending=PENDING/(hashlib.sha256(url.encode()).hexdigest()[:12]+'.json')
@@ -920,7 +921,7 @@ def main():
    print('Skipping recruitment story from unapproved source:',url,flush=True)
    return None
   text=source_text(url,domain)
-  if (not text.strip() or len(text.strip())<120) and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
+  if (not text.strip() or words(text)<65) and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    # Preserve completed language drafts even if the publisher temporarily blocks scraping.
    state.update({'source':url,'source_title':title,'category':cat,'status':'source_unavailable','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat(),'source_words':words(text)})
    if pending.exists(): save_state(pending,state)
