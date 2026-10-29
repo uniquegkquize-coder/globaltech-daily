@@ -978,12 +978,21 @@ def main():
  # Always discover fresh source links, even when the persisted queue is full.
  # Retain old leads, but reserve room for new discoveries each run.
  new_leads=[]
+ discovery_categories={cat for _,cat,_ in FEEDS}
+ discovered_by_category=Counter()
+ # Do not stop after 60 stories: prolific categories used to exhaust the
+ # discovery window before education, science and environment were reached.
+ # Reserve a fair share of fresh leads for every category.
+ per_category_discovery_cap=max(4,(POSTS_PER_RUN*3)//max(1,len(discovery_categories)))
  for story in candidates():
-  if story[0] not in seen_urls and useful_lead(story):
+  cat=story[2]
+  if story[0] not in seen_urls and useful_lead(story) and discovered_by_category[cat]<per_category_discovery_cap:
    new_leads.append(story)
+   discovered_by_category[cat]+=1
    seen_urls.add(story[0])
-  if len(new_leads)>=POSTS_PER_RUN:break
+  if discovered_by_category and all(discovered_by_category[c]>=per_category_discovery_cap for c in discovery_categories):break
   if time.monotonic()>=discovery_deadline:break
+ print('Fresh discovered leads by category:',dict(sorted(discovered_by_category.items())),flush=True)
  if new_leads:
   stories=new_leads+backlog
  else:
