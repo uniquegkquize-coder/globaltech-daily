@@ -14,7 +14,7 @@ def write(p,s):
  p.write_bytes(data)
 def title(p,lang):
  raw=str(p.get(lang+'_title') or p.get('en_title') or 'Technology news')
- return re.sub(r'\\s*[—–-]\\s*article featured image\\s*
+ return re.sub(r'\\s*[—–-]\\s*article featured image\\s*$', '', raw, flags=re.I).strip()
 CATEGORIES={'technology':('Technology','टेक्नोलॉजी'),'government-schemes':('Government Schemes','सरकारी योजनाएँ'),'sarkari-naukri':('Sarkari Naukri','सरकारी नौकरी'),'private-vacancy':('Private Vacancies','प्राइवेट नौकरी'),'movies-entertainment':('Movies & Entertainment','फिल्में और मनोरंजन'),'world-news':('World News','विश्व समाचार'),'business':('Business','बिज़नेस'),'sports':('Sports','खेल'),'automobiles':('Automobiles','ऑटोमोबाइल'),'health-science':('Health & Science','स्वास्थ्य और विज्ञान'),'gaming':('Gaming','गेमिंग'),'environment':('Environment','पर्यावरण'),'travel':('Travel','यात्रा'),'education':('Education','शिक्षा'),'lifestyle':('Lifestyle','लाइफस्टाइल')}
 def category(p):return p.get('category') if p.get('category') in CATEGORIES else 'technology'
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
