@@ -33,6 +33,20 @@ CALLS=0
 # Worldwide source registry: discovery only. Publisher articles must be original,
 # independently summarized, attributed and sufficiently substantiated.
 FEEDS=[
+ ('https://news.google.com/rss/search?q=site%3Afreekaamaal.com%20freebies%20deals%20offers%20latest%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','lifestyle','freekaamaal.com'),
+ ('https://news.google.com/rss/search?q=site%3Acoolztricks.com%20freebies%20deals%20offers%20latest%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','lifestyle','coolztricks.com'),
+ ('https://news.google.com/rss/search?q=site%3Adesidime.com%20deals%20offers%20savings%20latest%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','lifestyle','desidime.com'),
+ ('https://news.google.com/rss/search?q=site%3Athehackernews.com%20cybersecurity%20hacking%20latest%20news%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','technology','thehackernews.com'),
+ ('https://news.google.com/rss/search?q=site%3Agithub.com%20GitHub%20trending%20open%20source%20projects%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','technology','github.com'),
+ ('https://news.google.com/rss/search?q=site%3Agithub.blog%20GitHub%20developer%20software%20updates%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','technology','github.blog'),
+ ('https://news.google.com/rss/search?q=site%3Adiversejobseeker.com%20private%20jobs%20recruitment%20hiring%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','private-vacancy','diversejobseeker.com'),
+ ('https://news.google.com/rss/search?q=site%3Aartificialintelligence-news.com%20AI%20artificial%20intelligence%20latest%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','technology','artificialintelligence-news.com'),
+ ('https://news.google.com/rss/search?q=site%3Aai.economictimes.com%20artificial%20intelligence%20AI%20latest%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','technology','ai.economictimes.com'),
+ ('https://news.google.com/rss/search?q=site%3Aeducationworld.in%20schools%20colleges%20education%20latest%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','education','educationworld.in'),
+ ('https://news.google.com/rss/search?q=site%3Atravelnewsdigest.in%20travel%20tourism%20latest%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','travel','travelnewsdigest.in'),
+ ('https://news.google.com/rss/search?q=site%3Atravel.economictimes.indiatimes.com%20tourism%20hospitality%20travel%20latest%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','travel','travel.economictimes.indiatimes.com'),
+ ('https://news.google.com/rss/search?q=site%3Abusiness-standard.com%20economy%20markets%20business%20latest%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','business','business-standard.com'),
+ ('https://news.google.com/rss/search?q=site%3Agamerant.com%20gaming%20video%20games%20latest%20news%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','gaming','gamerant.com'),
  ('https://news.google.com/rss/search?q=site%3Ahindi.news18.com%20latest%20Hindi%20news%20when%3A7d&hl=hi&gl=IN&ceid=IN%3Ahi','world-news','hindi.news18.com'),
  ('https://news.google.com/rss/search?q=site%3Ainextlive.com%20Uttar%20Pradesh%20local%20news%20when%3A7d&hl=hi&gl=IN&ceid=IN%3Ahi','world-news','inextlive.com'),
  ('https://news.google.com/rss/search?q=site%3Adainikgorakhpur.com%20Gorakhpur%20Uttar%20Pradesh%20news%20when%3A7d&hl=hi&gl=IN&ceid=IN%3Ahi','world-news','dainikgorakhpur.com'),
@@ -536,7 +550,7 @@ REGIONAL_STATE_NAMES=tuple(INDIA_REGIONS)
 REGIONAL_PORTALS={
  'sarkari-naukri':('freejobalert.com','sarkariresult.com','sarkariresult.com.cm','sahisarkarijobs.in','navbharattimes.indiatimes.com','officialsarkarinaukri.com','indiasarkarinaukri.com','mysarkarinaukri.com','jagranjosh.com','sarkaripaper.in','niyuktipost.com'),
  'government-schemes':('myscheme.gov.in','india.gov.in','jagranjosh.com','mzonews.com','govtschemes.in','bharatjobzone.com','sarkarikyp.com'),
- 'private-vacancy':('freejobalert.com','mysarkarinaukri.com','jagranjosh.com','naukri.com','indeed.com','linkedin.com')
+ 'private-vacancy':('freejobalert.com','mysarkarinaukri.com','jagranjosh.com','naukri.com','indeed.com','linkedin.com','diversejobseeker.com')
 }
 def regional_search_stories(cat):
  from urllib.parse import quote
