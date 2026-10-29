@@ -752,7 +752,8 @@ def main():
  if not any(os.getenv(k) for k in ('GROQ_API_KEY','GEMINI_API_KEY','OPENROUTER_API_KEY','OPENAI_API_KEY')):
   print('No AI provider configured');return 0
  published=0; inspected=0; category_published={}
- deadline=time.monotonic()+14*60  # Leave time for site build and Git publishing.
+ discovery_deadline=time.monotonic()+4*60  # Reserve time for article writing.
+ deadline=time.monotonic()+15*60  # Reserve remaining time for build and Git push.
  print('Minimum target per category:',MIN_POSTS_PER_CATEGORY,flush=True)
  published_index=published_story_index()
  publication_lock=threading.RLock()
@@ -826,8 +827,8 @@ def main():
 
  stories=[]
  for story in candidates():
-  if time.monotonic()>=deadline:break
-  if len(stories)>=min(POSTS_PER_RUN*10,600):break
+  if time.monotonic()>=discovery_deadline and len(stories)>=POSTS_PER_RUN:break
+  if len(stories)>=min(POSTS_PER_RUN*3,180):break
   stories.append(story)
  # Prioritize two verified articles per category before filling additional slots.
  grouped={}
@@ -848,26 +849,33 @@ def main():
  while any(grouped.values()):
   for cat in categories:
    if grouped[cat]:ordered.append(grouped[cat].pop(0))
- with ThreadPoolExecutor(max_workers=4) as article_pool:
+ article_workers=10
+ print('Parallel article workers:',article_workers,flush=True)
+ with ThreadPoolExecutor(max_workers=article_workers) as article_pool:
   futures={}
   next_story=iter(ordered)
   while time.monotonic()<deadline and published<remaining and CALLS<MAX_CALLS:
-   while len(futures)<4 and published+len(futures)<remaining:
+   while len(futures)<article_workers and published+len(futures)<remaining:
     try:story=next(next_story)
     except StopIteration:break
     futures[article_pool.submit(process_story,story)]=story
     source_metric(story[3],'attempted')
    if not futures:break
    done=next(as_completed(futures))
-   futures.pop(done)
+   story=futures.pop(done)
    try:cat=done.result()
    except Exception as exc:
     print('Article worker failed:',type(exc).__name__,str(exc)[:180],flush=True)
     source_metric(story[3],'worker_errors')
     continue
    if cat:
+    source_metric(story[3],'published')
     published+=1
     category_published[cat]=category_published.get(cat,0)+1
+ print('SOURCE DIAGNOSTICS BEGIN',flush=True)
+ for domain in sorted(set(d for _,_,d in FEEDS)|set(d for d,_ in SOURCE_DIAGNOSTICS)):
+  print('SOURCE',domain,' '.join(f'{key}={SOURCE_DIAGNOSTICS[(domain,key)]}' for key in ('feed_entries','feed_candidates','website_candidates','queued','attempted','published','worker_errors')),flush=True)
+ print('SOURCE DIAGNOSTICS END',flush=True)
  print('AI requests used this run:',CALLS,'of',MAX_CALLS,flush=True)
  print('Published',published,'of',remaining,'target categories',flush=True)
  print('Per-category published counts:',dict(sorted(category_published.items())),flush=True)
