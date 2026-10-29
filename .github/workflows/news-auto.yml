@@ -77,25 +77,24 @@ jobs:
           git add -A content/posts content/pending content/featured dist
           if ! git diff --cached --quiet; then
             git commit -m 'Publish source-backed tech news and rebuild website'
-            # Capture all remaining generated edits before attempting rebase.
-            if ! git diff --quiet || ! git diff --cached --quiet; then
-              git add -A
-              git commit -m 'Save remaining generated site changes' || true
-            fi
-            # Other updates may reach main during a long news run.
-            # Rebase generated posts on the newest main rather than losing them.
+            # Sync new editorial posts with main without replaying generated HTML conflicts.
+            # Rebuild all static pages on the current remote branch after syncing content.
             for attempt in 1 2 3 4 5; do
               git fetch origin "${{ github.ref_name }}"
               if ! git rebase -X theirs "origin/${{ github.ref_name }}"; then
-                echo "::error::News commit conflicts with newer repository changes; keeping existing remote content intact."
+                echo "Generated HTML conflicted with a concurrent publish; regenerating on latest main."
                 git rebase --abort || true
-                exit 1
+                git reset --hard "origin/${{ github.ref_name }}"
+                python -u scripts/build.py
+                git add -A dist
+                if ! git diff --cached --quiet; then
+                  git commit -m 'Refresh generated site on latest main'
+                fi
               fi
               if git push origin "HEAD:${{ github.ref_name }}"; then
-                echo "Published generated articles after sync (attempt $attempt)"
+                echo "Published generated site after sync (attempt $attempt)"
                 exit 0
               fi
-              echo "Remote branch updated during push; retrying sync ($attempt/5)"
               sleep 3
             done
             echo "::error::Unable to publish after five safe sync attempts."
