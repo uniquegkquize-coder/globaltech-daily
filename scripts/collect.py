@@ -338,13 +338,20 @@ def source_text(url,domain):
     paras=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['h2','h3','p','li'])]
     paras=[p for p in paras if len(p)>40]
     if paras:candidates.append('\\n'.join(paras))
+  # Universal extraction fallback: OpenGraph/JSON-LD + common CMS article containers.
+  for node in soup.select('.article-content, .article-body, .story-body, .story-detail, .content-body, .news-content, .post-body, .td-post-content, .single-post-content, [class*="articleContent"], [class*="storyContent"], [itemprop="mainEntityOfPage"]')[:8]:
+   paragraphs=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['p','h2','h3','li'])]
+   paragraphs=[p for p in paragraphs if len(p)>45]
+   if len(paragraphs)>=2:candidates.append('\\n'.join(paragraphs))
   # Prefer article content; never treat navigation or paywall previews as full reporting.
   for node in soup.select('[data-component="text-block"], [data-testid="paragraph"], .article__content, .entry-content, .post-content, .story-content')[:6]:
    paragraphs=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['p','h2','h3'])]
    paragraphs=[p for p in paragraphs if len(p)>40]
    if paragraphs:candidates.append(' '.join(paragraphs))
   # Reject short navigation snippets rather than manufacture 300 words.
-  return max(candidates,key=words,default='')[:24000]
+  best=max(candidates,key=words,default='')[:24000]
+  if words(best)<65:print('EXTRACTION_INSUFFICIENT',domain,url[:130],'words',words(best),flush=True)
+  return best
  except (requests.RequestException,ValueError,TypeError):return ''
 
 def day_count():
@@ -505,7 +512,10 @@ def website_stories(item):
   soup=BeautifulSoup(response.text[:1000000],'html.parser')
   stories=[];seen_urls=set()
   selectors='article a[href], h2 a[href], h3 a[href], main a[href], .job-list a[href], .job-listing a[href], .job-title a[href], .post-title a[href], .entry-title a[href], [class*="job"] a[href]'
-  for a in soup.select(selectors)[:600]:
+  # Universal discovery: semantic links, headline anchors, and structured article links.
+  # Keep bounded scans; reject category/navigation links below.
+  selectors+=', a[href][title], a[href][aria-label], [itemprop="headline"] a[href], a[href*="/20"], a[href*="/news/"], a[href*="/article/"]'
+  for a in soup.select(selectors)[:900]:
    url=urljoin(response.url,a.get('href','')).split('#')[0].split('?')[0]
    title=clean(a.get_text(' ',strip=True) or a.get('aria-label','') or a.get('title',''))
    if not allowed(url,domain) or url in seen_urls or len(title)<24 or len(title)>210:continue
@@ -514,7 +524,7 @@ def website_stories(item):
    if len(urlparse(url).path.strip('/').split('/'))<2 and not re.search(r'\d{4,}|[a-z0-9]+[-_][a-z0-9]+',urlparse(url).path):continue
    if cat in ('sarkari-naukri','private-vacancy') and not re.search(r'job|vacan|recruit|hiring|career|भर्ती|नौकरी|पद|result|admit|exam',title+' '+url,re.I):continue
    seen_urls.add(url);stories.append((url,title,cat,domain))
-   if len(stories)>=20:break
+   if len(stories)>=25:break
   return item,stories
  except (requests.RequestException,ValueError) as exc:
   print('Direct source fetch failed',domain,type(exc).__name__,flush=True)
@@ -672,21 +682,57 @@ def source_metric(domain,metric,amount=1):
  with SOURCE_DIAGNOSTICS_LOCK: SOURCE_DIAGNOSTICS[(domain,metric)]+=amount
 
 QUEUE_FILE=PENDING/'_discovery_queue.json'
+QUEUE_MAX_AGE_HOURS=max(1,int(os.getenv('QUEUE_MAX_AGE_HOURS','36')))
+QUEUE_LIMIT=max(30,int(os.getenv('QUEUE_LIMIT','120')))
+def useful_lead(row):
+ if not isinstance(row,(list,tuple)) or len(row)!=4 or not all(isinstance(x,str) for x in row):return False
+ url,title,cat,domain=row
+ if len(title)<24 or not allowed(url,domain) or len(url)>500:return False
+ if not (any(allowed(url,d) for _,_,d in FEEDS) or any(allowed(url,d) for d in REGIONAL_PORTALS.get(cat,()))):return False
+ if (POSTS/(hashlib.sha256(url.encode()).hexdigest()[:12]+'.json')).exists():return False
+ pending=PENDING/(hashlib.sha256(url.encode()).hexdigest()[:12]+'.json')
+ if pending.exists():
+  try:
+   record=json.loads(pending.read_text(encoding='utf-8'))
+   if record.get('status')=='source_unavailable' and not (record.get('en_body') or record.get('hi_body')):return False
+  except (OSError,ValueError):pass
+ return True
 def load_discovery_queue():
  try:
-  rows=json.loads(QUEUE_FILE.read_text(encoding='utf-8'))
-  if not isinstance(rows,list):return []
-  valid=[]
-  for row in rows:
-   if isinstance(row,list) and len(row)==4:
-    url,title,cat,domain=row
-    if all(isinstance(x,str) for x in row) and (any(allowed(url,d) for _,_,d in FEEDS) or any(allowed(url,d) for d in REGIONAL_PORTALS.get(cat,()))):
-     valid.append(tuple(row))
-  return valid
+  raw=json.loads(QUEUE_FILE.read_text(encoding='utf-8'))
+  # Legacy list queues are dropped: they have no age metadata and accumulated stale headlines.
+  if not isinstance(raw,dict):return []
+  cutoff=dt.datetime.now(UTC)-dt.timedelta(hours=QUEUE_MAX_AGE_HOURS)
+  rows=[]
+  for entry in raw.get('items',[]):
+   if not isinstance(entry,dict):continue
+   try:added=dt.datetime.fromisoformat(entry['added_at'].replace('Z','+00:00'))
+   except (KeyError,TypeError,ValueError):continue
+   story=entry.get('story')
+   if added>=cutoff and useful_lead(story):rows.append(tuple(story))
+  return rows[:QUEUE_LIMIT]
  except (OSError,ValueError,TypeError):return []
 def save_discovery_queue(rows):
+ now=dt.datetime.now(UTC)
+ old={}
+ try:
+  raw=json.loads(QUEUE_FILE.read_text(encoding='utf-8'))
+  if isinstance(raw,dict):
+   for entry in raw.get('items',[]):
+    if isinstance(entry,dict) and isinstance(entry.get('story'),list):old[entry['story'][0]]=entry.get('added_at')
+ except (OSError,ValueError,TypeError,KeyError,IndexError):pass
+ entries=[];seen=set()
+ for row in rows:
+  if not useful_lead(row) or row[0] in seen:continue
+  seen.add(row[0])
+  added=old.get(row[0],now.isoformat())
+  try:age=now-dt.datetime.fromisoformat(added.replace('Z','+00:00'))
+  except (ValueError,TypeError):age=dt.timedelta(days=99)
+  if age>dt.timedelta(hours=QUEUE_MAX_AGE_HOURS):continue
+  entries.append({'story':list(row),'added_at':added})
+  if len(entries)>=QUEUE_LIMIT:break
  temp=QUEUE_FILE.with_suffix('.tmp')
- temp.write_text(json.dumps([list(row) for row in rows],ensure_ascii=False),encoding='utf-8')
+ temp.write_text(json.dumps({'version':2,'items':entries},ensure_ascii=False),encoding='utf-8')
  temp.replace(QUEUE_FILE)
 
 def candidates():
@@ -918,19 +964,22 @@ def main():
 
  backlog=load_discovery_queue()
  print('Carried-over news candidates:',len(backlog),flush=True)
- stories=list(backlog)
+ stories=[]
  seen_urls={item[0] for item in stories}
  # Always discover fresh source links, even when the persisted queue is full.
  # Retain old leads, but reserve room for new discoveries each run.
  new_leads=[]
  for story in candidates():
-  if story[0] not in seen_urls:
+  if story[0] not in seen_urls and useful_lead(story):
    new_leads.append(story)
    seen_urls.add(story[0])
   if len(new_leads)>=POSTS_PER_RUN:break
   if time.monotonic()>=discovery_deadline:break
  if new_leads:
-  stories=new_leads+stories
+  stories=new_leads+backlog
+ else:
+  stories=backlog
+ print('Direct source priority candidates:',sum(any(allowed(row[0],d) for _,_,d in DIRECT_SOURCES) for row in new_leads),flush=True)
  print('Fresh discovered leads:',len(new_leads),flush=True)
  # Persist discovered leads before AI calls; the next run resumes them even if quota expires.
  save_discovery_queue(stories)
@@ -977,7 +1026,7 @@ def main():
     source_metric(story[3],'published')
     published+=1
     category_published[cat]=category_published.get(cat,0)+1
- # Keep every unpublished lead for the next run; remove only confirmed published posts.
+ # Retain only recent, valid, bounded leads; stale or unusable items are discarded.
  remaining_queue=[item for item in stories if not (POSTS/(hashlib.sha256(item[0].encode()).hexdigest()[:12]+'.json')).exists()]
  save_discovery_queue(remaining_queue)
  print('Unpublished candidates retained for next run:',len(remaining_queue),flush=True)
