@@ -33,7 +33,10 @@ CALLS=0
 # Worldwide source registry: discovery only. Publisher articles must be original,
 # independently summarized, attributed and sufficiently substantiated.
 FEEDS=[
- ('https://news.google.com/rss/search?q=site%3Asarkarikyp.com%20government%20scheme%20yojana%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','government-schemes','sarkarikyp.com'),
+ ('https://news.google.com/rss/search?q=site%3Anavbharattimes.indiatimes.com%20latest%20news%20when%3A7d&hl=hi&gl=IN&ceid=IN%3Ahi','world-news','navbharattimes.indiatimes.com'),
+ ('https://news.google.com/rss/search?q=site%3Anavbharattimes.indiatimes.com%20sarkari%20naukri%20recruitment%20when%3A7d&hl=hi&gl=IN&ceid=IN%3Ahi','sarkari-naukri','navbharattimes.indiatimes.com'),
+ ('https://news.google.com/rss/search?q=site%3Anavbharattimes.indiatimes.com%20sarkari%20yojana%20when%3A7d&hl=hi&gl=IN&ceid=IN%3Ahi','government-schemes','navbharattimes.indiatimes.com'),
+ ('https://news.google.com/rss/search?q=site%3Asarkarikyp.com%20government%20scheme%20yojana%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','government-schemes','sarkarikyp.com','navbharattimes.indiatimes.com'),
  ('https://news.google.com/rss/search?q=site%3Agovtschemes.in%20government%20scheme%20yojana%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','government-schemes','govtschemes.in'),
  ('https://news.google.com/rss/search?q=site%3Abharatjobzone.com%20sarkari%20yojana%20scheme%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','government-schemes','bharatjobzone.com'),
  ('https://news.google.com/rss/search?q=site%3Asahisarkarijobs.in%20uttar%20pradesh%20govt%20jobs%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen','sarkari-naukri','sahisarkarijobs.in'),
@@ -528,7 +531,7 @@ def google_news_stories(cat):
 # Source URLs are attributed; do not infer application deadlines from search snippets.
 REGIONAL_STATE_NAMES=tuple(INDIA_REGIONS)
 REGIONAL_PORTALS={
- 'sarkari-naukri':('freejobalert.com','sarkariresult.com','sarkariresult.com.cm','sahisarkarijobs.in','officialsarkarinaukri.com','indiasarkarinaukri.com','mysarkarinaukri.com','jagranjosh.com','sarkaripaper.in','niyuktipost.com'),
+ 'sarkari-naukri':('freejobalert.com','sarkariresult.com','sarkariresult.com.cm','sahisarkarijobs.in','navbharattimes.indiatimes.com','officialsarkarinaukri.com','indiasarkarinaukri.com','mysarkarinaukri.com','jagranjosh.com','sarkaripaper.in','niyuktipost.com'),
  'government-schemes':('myscheme.gov.in','india.gov.in','jagranjosh.com','mzonews.com','govtschemes.in','bharatjobzone.com','sarkarikyp.com'),
  'private-vacancy':('freejobalert.com','mysarkarinaukri.com','jagranjosh.com','naukri.com','indeed.com','linkedin.com')
 }
