@@ -33,6 +33,7 @@ CALLS=0
 # Worldwide source registry: discovery only. Publisher articles must be original,
 # independently summarized, attributed and sufficiently substantiated.
 FEEDS=[
+ ('https://news.google.com/rss/search?q=site%3Ahindi.news18.com%20latest%20Hindi%20news%20when%3A7d&hl=hi&gl=IN&ceid=IN%3Ahi','world-news','hindi.news18.com'),
  ('https://news.google.com/rss/search?q=site%3Ainextlive.com%20Uttar%20Pradesh%20local%20news%20when%3A7d&hl=hi&gl=IN&ceid=IN%3Ahi','world-news','inextlive.com'),
  ('https://news.google.com/rss/search?q=site%3Adainikgorakhpur.com%20Gorakhpur%20Uttar%20Pradesh%20news%20when%3A7d&hl=hi&gl=IN&ceid=IN%3Ahi','world-news','dainikgorakhpur.com'),
  ('https://news.google.com/rss/search?q=site%3Anavbharattimes.indiatimes.com%20latest%20news%20when%3A7d&hl=hi&gl=IN&ceid=IN%3Ahi','world-news','navbharattimes.indiatimes.com'),
@@ -175,7 +176,7 @@ INDIA_REGIONS={
  'Delhi':['New Delhi','Delhi'],'Jammu and Kashmir':['Srinagar','Jammu'],
  'Ladakh':['Leh','Kargil'],'Lakshadweep':['Kavaratti'],'Puducherry':['Puducherry','Karaikal']
 }
-LOCAL_PUBLISHERS=('inextlive.com','dainikgorakhpur.com','jagran.com','amarujala.com','livehindustan.com','bhaskar.com','indiatoday.in','timesofindia.indiatimes.com','thehindu.com','indianexpress.com','news18.com')
+LOCAL_PUBLISHERS=('hindi.news18.com','inextlive.com','dainikgorakhpur.com','jagran.com','amarujala.com','livehindustan.com','bhaskar.com','indiatoday.in','timesofindia.indiatimes.com','thehindu.com','indianexpress.com','news18.com')
 LOCAL_PRIMARY_DOMAINS=('pib.gov.in','mausam.imd.gov.in')
 def local_news_feed(query,domain,cat='world-news'):
  return ('https://news.google.com/rss/search?q='+quote_query(query+' when:7d')+'&hl=en-IN&gl=IN&ceid=IN:en',cat,domain)
