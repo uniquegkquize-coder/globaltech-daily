@@ -890,8 +890,8 @@ def main():
  if not any(os.getenv(k) for k in ('GROQ_API_KEY','GEMINI_API_KEY','OPENROUTER_API_KEY','OPENAI_API_KEY')):
   print('No AI provider configured');return 0
  published=0; inspected=0; category_published={}; category_reserved=Counter()
- discovery_deadline=time.monotonic()+4*60  # Reserve time for article writing.
- deadline=time.monotonic()+15*60  # Reserve remaining time for build and Git push.
+ discovery_deadline=time.monotonic()+8*60  # Allow broader source discovery.
+ deadline=time.monotonic()+32*60  # Reserve remaining time for build and Git push.
  print('Minimum target per category:',MIN_POSTS_PER_CATEGORY,flush=True)
  published_index=published_story_index()
  publication_lock=threading.RLock()
@@ -980,17 +980,14 @@ def main():
  new_leads=[]
  discovery_categories={cat for _,cat,_ in FEEDS}
  discovered_by_category=Counter()
- # Do not stop after 60 stories: prolific categories used to exhaust the
- # discovery window before education, science and environment were reached.
- # Reserve a fair share of fresh leads for every category.
- per_category_discovery_cap=max(4,(POSTS_PER_RUN*3)//max(1,len(discovery_categories)))
+ # No fixed candidate count or per-category cap. Discovery is bounded only
+ # by the time budget so source collection cannot stall publishing forever.
  for story in candidates():
   cat=story[2]
-  if story[0] not in seen_urls and useful_lead(story) and discovered_by_category[cat]<per_category_discovery_cap:
+  if story[0] not in seen_urls and useful_lead(story):
    new_leads.append(story)
    discovered_by_category[cat]+=1
    seen_urls.add(story[0])
-  if discovered_by_category and all(discovered_by_category[c]>=per_category_discovery_cap for c in discovery_categories):break
   if time.monotonic()>=discovery_deadline:break
  print('Fresh discovered leads by category:',dict(sorted(discovered_by_category.items())),flush=True)
  if new_leads:
