@@ -334,7 +334,6 @@ write(OUT/'_redirects','\n'.join(redirects)+'\n')
 write(OUT/'ads.txt','google.com, pub-1849673109734274, DIRECT, f08c47fec0942fa0\n')
 write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/style.css\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n')
 print('Built',len(POSTS),'posts; AI Tools, bilingual pages, news sitemap and responsive layout')
-,'',raw,flags=re.I).strip()
 CATEGORIES={'technology':('Technology','टेक्नोलॉजी'),'government-schemes':('Government Schemes','सरकारी योजनाएँ'),'sarkari-naukri':('Sarkari Naukri','सरकारी नौकरी'),'private-vacancy':('Private Vacancies','प्राइवेट नौकरी'),'movies-entertainment':('Movies & Entertainment','फिल्में और मनोरंजन'),'world-news':('World News','विश्व समाचार'),'business':('Business','बिज़नेस'),'sports':('Sports','खेल'),'automobiles':('Automobiles','ऑटोमोबाइल'),'health-science':('Health & Science','स्वास्थ्य और विज्ञान'),'gaming':('Gaming','गेमिंग'),'environment':('Environment','पर्यावरण'),'travel':('Travel','यात्रा'),'education':('Education','शिक्षा'),'lifestyle':('Lifestyle','लाइफस्टाइल')}
 def category(p):return p.get('category') if p.get('category') in CATEGORIES else 'technology'
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
