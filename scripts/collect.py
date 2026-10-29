@@ -611,6 +611,24 @@ SOURCE_DIAGNOSTICS_LOCK=threading.Lock()
 def source_metric(domain,metric,amount=1):
  with SOURCE_DIAGNOSTICS_LOCK: SOURCE_DIAGNOSTICS[(domain,metric)]+=amount
 
+QUEUE_FILE=PENDING/'_discovery_queue.json'
+def load_discovery_queue():
+ try:
+  rows=json.loads(QUEUE_FILE.read_text(encoding='utf-8'))
+  if not isinstance(rows,list):return []
+  valid=[]
+  for row in rows:
+   if isinstance(row,list) and len(row)==4:
+    url,title,cat,domain=row
+    if all(isinstance(x,str) for x in row) and (any(allowed(url,d) for _,_,d in FEEDS) or any(allowed(url,d) for d in REGIONAL_PORTALS.get(cat,()))):
+     valid.append(tuple(row))
+  return valid
+ except (OSError,ValueError,TypeError):return []
+def save_discovery_queue(rows):
+ temp=QUEUE_FILE.with_suffix('.tmp')
+ temp.write_text(json.dumps([list(row) for row in rows],ensure_ascii=False),encoding='utf-8')
+ temp.replace(QUEUE_FILE)
+
 def candidates():
  seen=set()
  counts=published_categories()
@@ -627,7 +645,7 @@ def candidates():
    blocked=record.get('blocked_until','')>dt.datetime.now(UTC).isoformat()
    return (blocked,record.get('category') not in missing,-complete,-progress,path.name)
   except (OSError,ValueError,TypeError):return (True,0,0,path.name)
- for path in sorted(PENDING.glob('*.json'),key=pending_priority):
+ for path in sorted((p for p in PENDING.glob('*.json') if p!=QUEUE_FILE),key=pending_priority):
   try:
    record=json.loads(path.read_text(encoding='utf-8'))
    url=record.get('source',''); title=record.get('source_title','')
@@ -825,11 +843,20 @@ def main():
   else:save_state(pending,state)
   return cat if (POSTS/(post_id+'.json')).exists() else None
 
- stories=[]
- for story in candidates():
-  if time.monotonic()>=discovery_deadline and len(stories)>=POSTS_PER_RUN:break
-  if len(stories)>=min(POSTS_PER_RUN*3,180):break
-  stories.append(story)
+ backlog=load_discovery_queue()
+ print('Carried-over news candidates:',len(backlog),flush=True)
+ stories=list(backlog)
+ seen_urls={item[0] for item in stories}
+ if len(stories)<POSTS_PER_RUN:
+  for story in candidates():
+   if story[0] not in seen_urls:
+    stories.append(story)
+    seen_urls.add(story[0])
+   if len(stories)>=min(POSTS_PER_RUN*3,180):break
+   if time.monotonic()>=discovery_deadline and len(stories)>=POSTS_PER_RUN:break
+ # Persist discovered leads before AI calls; the next run resumes them even if quota expires.
+ save_discovery_queue(stories)
+ print('Saved news candidates for retry:',len(stories),flush=True)
  # Prioritize two verified articles per category before filling additional slots.
  grouped={}
  for story in stories:
@@ -872,6 +899,10 @@ def main():
     source_metric(story[3],'published')
     published+=1
     category_published[cat]=category_published.get(cat,0)+1
+ # Keep every unpublished lead for the next run; remove only confirmed published posts.
+ remaining_queue=[item for item in stories if not (POSTS/(hashlib.sha256(item[0].encode()).hexdigest()[:12]+'.json')).exists()]
+ save_discovery_queue(remaining_queue)
+ print('Unpublished candidates retained for next run:',len(remaining_queue),flush=True)
  print('SOURCE DIAGNOSTICS BEGIN',flush=True)
  for domain in sorted(set(d for _,_,d in FEEDS)|set(d for d,_ in SOURCE_DIAGNOSTICS)):
   print('SOURCE',domain,' '.join(f'{key}={SOURCE_DIAGNOSTICS[(domain,key)]}' for key in ('feed_entries','feed_candidates','website_candidates','queued','attempted','published','worker_errors')),flush=True)
