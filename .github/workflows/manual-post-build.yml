@@ -31,6 +31,25 @@ jobs:
           git add dist/
           if ! git diff --cached --quiet; then
             git commit -m "Build site after manual editorial post"
-            git pull --rebase origin main
-            git push origin HEAD:main
+            # News automation may publish new articles while this job runs.
+            # Regenerate the site against the latest main instead of rebasing
+            # thousands of generated HTML files (which creates conflicts).
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              git reset --hard origin/main
+              python scripts/build.py
+              git add dist/
+              if git diff --cached --quiet; then
+                echo "Site already up to date"
+                exit 0
+              fi
+              git commit -m "Build site after manual editorial post"
+              if git push origin HEAD:main; then
+                echo "Published latest site (attempt $attempt)"
+                exit 0
+              fi
+              sleep 3
+            done
+            echo "::error::Could not publish after five attempts"
+            exit 1
           fi
