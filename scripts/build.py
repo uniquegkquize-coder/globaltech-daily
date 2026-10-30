@@ -13,13 +13,13 @@ def write(p,s):
  if p.is_file() and p.read_bytes()==data:return
  p.write_bytes(data)
 def title(p,lang):
- raw=str(p.get(lang+'_title') or p.get('en_title') or 'Technology news')
+ raw=str(p.get(lang+'_seo_title') or p.get(lang+'_title') or p.get('en_title') or 'Technology news')
  return re.sub(r'\\s*[—–-]\\s*article featured image\\s*$', '', raw, flags=re.I).strip()
 CATEGORIES={'technology':('Technology','टेक्नोलॉजी'),'government-schemes':('Government Schemes','सरकारी योजनाएँ'),'sarkari-naukri':('Sarkari Naukri','सरकारी नौकरी'),'private-vacancy':('Private Vacancies','प्राइवेट नौकरी'),'movies-entertainment':('Movies & Entertainment','फिल्में और मनोरंजन'),'world-news':('World News','विश्व समाचार'),'business':('Business','बिज़नेस'),'sports':('Sports','खेल'),'automobiles':('Automobiles','ऑटोमोबाइल'),'health-science':('Health & Science','स्वास्थ्य और विज्ञान'),'gaming':('Gaming','गेमिंग'),'environment':('Environment','पर्यावरण'),'travel':('Travel','यात्रा'),'education':('Education','शिक्षा'),'lifestyle':('Lifestyle','लाइफस्टाइल')}
 def category(p):return p.get('category') if p.get('category') in CATEGORIES else 'technology'
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
 def article_slug(p):
- base=title(p,'en').lower()
+ base=str(p.get('url_title') or p.get('en_title') or 'news').lower()
  base=re.sub(r'[^a-z0-9]+','-',base).strip('-')[:75].rstrip('-')
  return (base or 'news')+'-'+slug(p)[:10]
 def article_path(p,lang):
@@ -31,6 +31,21 @@ for f in sorted((R/'content/posts').glob('*.json')):
   p=json.loads(f.read_text(encoding='utf-8'))
   if slug(p) and str(p.get('source','')).startswith('https://') and len(p.get('en_body',''))>=150:POSTS.append(p)
  except (OSError,ValueError,TypeError):pass
+# Collapse repeat imports of the same source (RSS tracking parameters are ignored).
+# Keep the article with the most substantive body, retaining every old URL.
+DUPLICATE_POSTS=[]
+_unique={}
+for _post in sorted(POSTS,key=lambda p:(len(p.get('en_body','')),p.get('date','')),reverse=True):
+ _u=urlparse(_post['source'])
+ _key=(_u.netloc.lower().removeprefix('www.'),_u.path.rstrip('/'))
+ _headline=re.sub(r'[^a-z0-9]+',' ',str(_post.get('en_title','')).lower()).strip()
+ _existing=_unique.get(('source',_key)) or _unique.get(('headline',_headline))
+ if _existing:
+  DUPLICATE_POSTS.append((_post,_existing))
+ else:
+  _unique[('source',_key)]=_post
+  _unique[('headline',_headline)]=_post
+POSTS=list({p['id']:p for p in _unique.values()}.values())
 POSTS.sort(key=lambda x:x.get('date',''),reverse=True)
 TOOLS=[('ChatGPT','Writing, reasoning and coding','https://chatgpt.com/','Assistant'),('Gemini','Multimodal AI assistant','https://gemini.google.com/','Assistant'),('Claude','Writing and analysis','https://claude.ai/','Assistant'),('Perplexity','Research with linked sources','https://www.perplexity.ai/','Research'),('NotebookLM','Research from your own sources','https://notebooklm.google.com/','Research'),('Google AI Studio','Experiment with Gemini models','https://aistudio.google.com/','Developer'),('Hugging Face','Explore models and datasets','https://huggingface.co/','Developer'),('Canva','Visual content design','https://www.canva.com/','Design'),('GitHub Copilot','AI-assisted programming','https://github.com/features/copilot','Developer'),('Adobe Firefly','Creative generative AI','https://firefly.adobe.com/','Design')]
 CSS='''*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f6f8fc;color:#15213a;font:16px/1.7 system-ui,-apple-system,Segoe UI,sans-serif}a{color:#0a6ab7}a:hover{text-decoration:underline}img{max-width:100%}.wrap{max-width:1200px;margin:auto;padding:0 24px}.top{background:#0a1429;color:#fff}.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px;flex-wrap:wrap}.logo{font-size:25px;font-weight:900;letter-spacing:-.9px;color:white;text-decoration:none}.logo span{color:#5ce0dc}nav{display:flex;gap:17px;flex-wrap:wrap}nav a{color:#d9e6fb;text-decoration:none;font-size:14px;font-weight:650}.lead{padding:44px 0 28px}.eyebrow{color:#0b8a93;font-size:12px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(32px,4.4vw,58px);line-height:1.12;letter-spacing:-.04em;margin:12px 0 20px}h2{line-height:1.25;letter-spacing:-.02em}p{margin:0 0 1.15em}.muted{color:#5b6c83}.layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:34px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.card,.panel,.article{background:#fff;border:1px solid #e0e8f1;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(13,35,72,.04)}.card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}.card .inner{padding:20px}.card h2{font-size:21px;margin:6px 0 12px}.card a{text-decoration:none;color:inherit}.card a:hover{color:#006db1}.date{color:#60718b;font-size:13px}.panel{padding:22px;margin-bottom:20px}.panel h2{font-size:18px;margin-top:0}.panel a{display:block;padding:10px 0;border-bottom:1px solid #e8edf5;text-decoration:none}.panel a:last-child{border:0}.article{padding:clamp(18px,4vw,54px);max-width:850px;margin:34px auto}.article h1{font-size:clamp(30px,4vw,48px)}.article .hero{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin:12px 0 26px}.story{font-size:18px;line-height:1.85}.story h2{font-size:27px;margin:36px 0 12px}.story h3{font-size:22px;margin:28px 0 10px}.story ul{padding-left:26px}.story p{margin:0 0 1.25em}.summary{background:#eef8fa;border-left:4px solid #079aa3;padding:18px 22px;border-radius:8px;margin:22px 0}.summary strong{display:block;margin-bottom:8px}.source{border-top:1px solid #dfe8f0;margin-top:32px;padding-top:20px}.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.tool{background:white;border:1px solid #e0e8f1;border-radius:16px;padding:22px}.tool h2{font-size:21px;margin:5px 0}.pill{display:inline-block;padding:3px 10px;border-radius:20px;background:#e2f7f7;color:#006a71;font-size:12px;font-weight:700}.tool a{font-weight:750}.footer{margin-top:65px;background:#0a1429;color:#c9d5e7;padding:36px 0}.footer a{color:#b5e8fa}.footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footerlinks{display:flex;gap:14px;flex-wrap:wrap}.reading{position:fixed;top:0;left:0;height:3px;background:#06aeb8;width:0;z-index:9}.related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.related a{display:block;background:#f2f7fc;padding:15px;border-radius:10px;text-decoration:none;font-weight:650}.langswitch{font-size:14px}.notice{font-size:13px;color:#62718b}.sectiontitle{display:flex;justify-content:space-between;align-items:center;margin:24px 0 20px}@media(max-width:900px){.layout{grid-template-columns:1fr}.tools{grid-template-columns:repeat(2,minmax(0,1fr))}.side{display:none}}@media(max-width:600px){.wrap{padding:0 16px}.top .wrap{padding-top:15px;padding-bottom:15px}.logo{font-size:22px}nav{gap:12px}nav a{font-size:13px}.lead{padding-top:25px}.cards,.tools,.related{grid-template-columns:1fr}.article{border-radius:0;margin:12px auto;padding:20px 16px}.story{font-size:17px}.story h2{font-size:23px}.card .inner{padding:16px}}'''
@@ -426,7 +441,14 @@ redirects=[]
 for p in POSTS:
  for lang in ('en','hi'):
   redirects.append(f'/{lang}/news/{slug(p)}/ {article_path(p,lang)} 301')
-write(OUT/'_redirects','\n'.join(redirects)+'\n')
+for old,canonical in DUPLICATE_POSTS:
+ for lang in ('en','hi'):
+  oldpath=article_path(old,lang)
+  redirects.append(f'{oldpath} {article_path(canonical,lang)} 301')
+  redirects.append(f'/{lang}/news/{slug(old)}/ {article_path(canonical,lang)} 301')
+  olddir=OUT/oldpath.lstrip('/')
+  if olddir.is_dir():shutil.rmtree(olddir)
+write(OUT/'_redirects','\n'.join(dict.fromkeys(redirects))+'\n')
 write(OUT/'ads.txt','google.com, pub-1849673109734274, DIRECT, f08c47fec0942fa0\n')
 write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/style.css\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n')
 print('Built',len(POSTS),'posts; AI Tools, bilingual pages, news sitemap and responsive layout')
@@ -434,7 +456,7 @@ CATEGORIES={'technology':('Technology','टेक्नोलॉजी'),'govern
 def category(p):return p.get('category') if p.get('category') in CATEGORIES else 'technology'
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
 def article_slug(p):
- base=title(p,'en').lower()
+ base=str(p.get('url_title') or p.get('en_title') or 'news').lower()
  base=re.sub(r'[^a-z0-9]+','-',base).strip('-')[:75].rstrip('-')
  return (base or 'news')+'-'+slug(p)[:10]
 def article_path(p,lang):
@@ -446,6 +468,21 @@ for f in sorted((R/'content/posts').glob('*.json')):
   p=json.loads(f.read_text(encoding='utf-8'))
   if slug(p) and str(p.get('source','')).startswith('https://') and len(p.get('en_body',''))>=150:POSTS.append(p)
  except (OSError,ValueError,TypeError):pass
+# Collapse repeat imports of the same source (RSS tracking parameters are ignored).
+# Keep the article with the most substantive body, retaining every old URL.
+DUPLICATE_POSTS=[]
+_unique={}
+for _post in sorted(POSTS,key=lambda p:(len(p.get('en_body','')),p.get('date','')),reverse=True):
+ _u=urlparse(_post['source'])
+ _key=(_u.netloc.lower().removeprefix('www.'),_u.path.rstrip('/'))
+ _headline=re.sub(r'[^a-z0-9]+',' ',str(_post.get('en_title','')).lower()).strip()
+ _existing=_unique.get(('source',_key)) or _unique.get(('headline',_headline))
+ if _existing:
+  DUPLICATE_POSTS.append((_post,_existing))
+ else:
+  _unique[('source',_key)]=_post
+  _unique[('headline',_headline)]=_post
+POSTS=list({p['id']:p for p in _unique.values()}.values())
 POSTS.sort(key=lambda x:x.get('date',''),reverse=True)
 TOOLS=[('ChatGPT','Writing, reasoning and coding','https://chatgpt.com/','Assistant'),('Gemini','Multimodal AI assistant','https://gemini.google.com/','Assistant'),('Claude','Writing and analysis','https://claude.ai/','Assistant'),('Perplexity','Research with linked sources','https://www.perplexity.ai/','Research'),('NotebookLM','Research from your own sources','https://notebooklm.google.com/','Research'),('Google AI Studio','Experiment with Gemini models','https://aistudio.google.com/','Developer'),('Hugging Face','Explore models and datasets','https://huggingface.co/','Developer'),('Canva','Visual content design','https://www.canva.com/','Design'),('GitHub Copilot','AI-assisted programming','https://github.com/features/copilot','Developer'),('Adobe Firefly','Creative generative AI','https://firefly.adobe.com/','Design')]
 CSS='''*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f6f8fc;color:#15213a;font:16px/1.7 system-ui,-apple-system,Segoe UI,sans-serif}a{color:#0a6ab7}a:hover{text-decoration:underline}img{max-width:100%}.wrap{max-width:1200px;margin:auto;padding:0 24px}.top{background:#0a1429;color:#fff}.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px;flex-wrap:wrap}.logo{font-size:25px;font-weight:900;letter-spacing:-.9px;color:white;text-decoration:none}.logo span{color:#5ce0dc}nav{display:flex;gap:17px;flex-wrap:wrap}nav a{color:#d9e6fb;text-decoration:none;font-size:14px;font-weight:650}.lead{padding:44px 0 28px}.eyebrow{color:#0b8a93;font-size:12px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(32px,4.4vw,58px);line-height:1.12;letter-spacing:-.04em;margin:12px 0 20px}h2{line-height:1.25;letter-spacing:-.02em}p{margin:0 0 1.15em}.muted{color:#5b6c83}.layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:34px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.card,.panel,.article{background:#fff;border:1px solid #e0e8f1;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(13,35,72,.04)}.card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}.card .inner{padding:20px}.card h2{font-size:21px;margin:6px 0 12px}.card a{text-decoration:none;color:inherit}.card a:hover{color:#006db1}.date{color:#60718b;font-size:13px}.panel{padding:22px;margin-bottom:20px}.panel h2{font-size:18px;margin-top:0}.panel a{display:block;padding:10px 0;border-bottom:1px solid #e8edf5;text-decoration:none}.panel a:last-child{border:0}.article{padding:clamp(18px,4vw,54px);max-width:850px;margin:34px auto}.article h1{font-size:clamp(30px,4vw,48px)}.article .hero{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin:12px 0 26px}.story{font-size:18px;line-height:1.85}.story h2{font-size:27px;margin:36px 0 12px}.story h3{font-size:22px;margin:28px 0 10px}.story ul{padding-left:26px}.story p{margin:0 0 1.25em}.summary{background:#eef8fa;border-left:4px solid #079aa3;padding:18px 22px;border-radius:8px;margin:22px 0}.summary strong{display:block;margin-bottom:8px}.source{border-top:1px solid #dfe8f0;margin-top:32px;padding-top:20px}.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.tool{background:white;border:1px solid #e0e8f1;border-radius:16px;padding:22px}.tool h2{font-size:21px;margin:5px 0}.pill{display:inline-block;padding:3px 10px;border-radius:20px;background:#e2f7f7;color:#006a71;font-size:12px;font-weight:700}.tool a{font-weight:750}.footer{margin-top:65px;background:#0a1429;color:#c9d5e7;padding:36px 0}.footer a{color:#b5e8fa}.footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footerlinks{display:flex;gap:14px;flex-wrap:wrap}.reading{position:fixed;top:0;left:0;height:3px;background:#06aeb8;width:0;z-index:9}.related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.related a{display:block;background:#f2f7fc;padding:15px;border-radius:10px;text-decoration:none;font-weight:650}.langswitch{font-size:14px}.notice{font-size:13px;color:#62718b}.sectiontitle{display:flex;justify-content:space-between;align-items:center;margin:24px 0 20px}@media(max-width:900px){.layout{grid-template-columns:1fr}.tools{grid-template-columns:repeat(2,minmax(0,1fr))}.side{display:none}}@media(max-width:600px){.wrap{padding:0 16px}.top .wrap{padding-top:15px;padding-bottom:15px}.logo{font-size:22px}nav{gap:12px}nav a{font-size:13px}.lead{padding-top:25px}.cards,.tools,.related{grid-template-columns:1fr}.article{border-radius:0;margin:12px auto;padding:20px 16px}.story{font-size:17px}.story h2{font-size:23px}.card .inner{padding:16px}}'''
@@ -822,7 +859,14 @@ redirects=[]
 for p in POSTS:
  for lang in ('en','hi'):
   redirects.append(f'/{lang}/news/{slug(p)}/ {article_path(p,lang)} 301')
-write(OUT/'_redirects','\n'.join(redirects)+'\n')
+for old,canonical in DUPLICATE_POSTS:
+ for lang in ('en','hi'):
+  oldpath=article_path(old,lang)
+  redirects.append(f'{oldpath} {article_path(canonical,lang)} 301')
+  redirects.append(f'/{lang}/news/{slug(old)}/ {article_path(canonical,lang)} 301')
+  olddir=OUT/oldpath.lstrip('/')
+  if olddir.is_dir():shutil.rmtree(olddir)
+write(OUT/'_redirects','\n'.join(dict.fromkeys(redirects))+'\n')
 write(OUT/'ads.txt','google.com, pub-1849673109734274, DIRECT, f08c47fec0942fa0\n')
 write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/style.css\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n')
 print('Built',len(POSTS),'posts; AI Tools, bilingual pages, news sitemap and responsive layout')
