@@ -272,13 +272,16 @@ def article_keywords(p,lang):
   if key not in seen and len(term)<=100:
    seen.add(key);result.append(term)
  return result[:12]
+_trending_rank_cache=None
 def trending_posts(exclude=None,limit=6):
  """Editorial trending proxy: recent articles with topical keyword overlap.
  No fabricated traffic, view counts or real-time search popularity."""
+ global _trending_rank_cache
+ if _trending_rank_cache is not None:
+  return [p for p in _trending_rank_cache if exclude is None or slug(p)!=slug(exclude)][:limit]
  now=dt.datetime.now(dt.timezone.utc)
  pool=[]
  for p in POSTS:
-  if exclude is not None and slug(p)==slug(exclude):continue
   try:
    published=dt.datetime.fromisoformat(str(p.get('date','')).replace('Z','+00:00'))
    if published.tzinfo is None:published=published.replace(tzinfo=dt.timezone.utc)
@@ -289,7 +292,8 @@ def trending_posts(exclude=None,limit=6):
   score=(max(0,168-age)/24)+min(overlaps,5)*0.7
   pool.append((score,p))
  pool.sort(key=lambda x:x[0],reverse=True)
- return [p for _,p in pool[:limit]]
+ _trending_rank_cache=[p for _,p in pool]
+ return [p for p in _trending_rank_cache if exclude is None or slug(p)!=slug(exclude)][:limit]
 
 def trending_section(lang,exclude=None):
  selected=trending_posts(exclude,6)
@@ -315,7 +319,8 @@ for p in POSTS:
  s=slug(p)
  for lang in ('en','hi'):
   t=title(p,lang);raw=limit_article_words(p.get(lang+'_body') or p.get('en_body',''));url=f'{SITE}{article_path(p,lang)}';desc=p.get(lang+'_meta') or re.sub(r'[#\n]+',' ',raw)[:155]
-  related=[q for q in POSTS if slug(q)!=s and category(q)==category(p) and has_featured(q)][:4]
+  preferred=p.get('related_post_ids',[])
+  related=sorted([q for q in POSTS if slug(q)!=s and has_featured(q) and (category(q)==category(p) or q.get('id') in preferred)],key=lambda q:preferred.index(q['id']) if q.get('id') in preferred else len(preferred))[:4]
   if len(related)<4:related += [q for q in POSTS if slug(q)!=s and q not in related][:4-len(related)]
   related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
@@ -346,7 +351,8 @@ for p in POSTS:
     f'<a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u={quote(url,safe="")}">Facebook</a>'
     f'<a target="_blank" rel="noopener noreferrer" href="https://t.me/share/url?url={quote(url,safe="")}&text={quote(t)}">Telegram</a>'
     f'<button type="button" class="copy-share" data-share-url="{e(url)}">{copy_text}</button></div></div>')
-  related=[q for q in POSTS if slug(q)!=s and category(q)==category(p) and has_featured(q)][:4]
+  preferred=p.get('related_post_ids',[])
+  related=sorted([q for q in POSTS if slug(q)!=s and has_featured(q) and (category(q)==category(p) or q.get('id') in preferred)],key=lambda q:preferred.index(q['id']) if q.get('id') in preferred else len(preferred))[:4]
   if len(related)<4:related.extend([q for q in POSTS if slug(q)!=s and slug(q) not in {slug(x) for x in related} and category(q)!=category(p)][:4-len(related)])
   related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder" aria-hidden="true">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
@@ -695,13 +701,16 @@ def article_keywords(p,lang):
   if key not in seen and len(term)<=100:
    seen.add(key);result.append(term)
  return result[:12]
+_trending_rank_cache=None
 def trending_posts(exclude=None,limit=6):
  """Editorial trending proxy: recent articles with topical keyword overlap.
  No fabricated traffic, view counts or real-time search popularity."""
+ global _trending_rank_cache
+ if _trending_rank_cache is not None:
+  return [p for p in _trending_rank_cache if exclude is None or slug(p)!=slug(exclude)][:limit]
  now=dt.datetime.now(dt.timezone.utc)
  pool=[]
  for p in POSTS:
-  if exclude is not None and slug(p)==slug(exclude):continue
   try:
    published=dt.datetime.fromisoformat(str(p.get('date','')).replace('Z','+00:00'))
    if published.tzinfo is None:published=published.replace(tzinfo=dt.timezone.utc)
@@ -712,7 +721,8 @@ def trending_posts(exclude=None,limit=6):
   score=(max(0,168-age)/24)+min(overlaps,5)*0.7
   pool.append((score,p))
  pool.sort(key=lambda x:x[0],reverse=True)
- return [p for _,p in pool[:limit]]
+ _trending_rank_cache=[p for _,p in pool]
+ return [p for p in _trending_rank_cache if exclude is None or slug(p)!=slug(exclude)][:limit]
 
 def trending_section(lang,exclude=None):
  selected=trending_posts(exclude,6)
@@ -738,7 +748,8 @@ for p in POSTS:
  s=slug(p)
  for lang in ('en','hi'):
   t=title(p,lang);raw=limit_article_words(p.get(lang+'_body') or p.get('en_body',''));url=f'{SITE}{article_path(p,lang)}';desc=p.get(lang+'_meta') or re.sub(r'[#\n]+',' ',raw)[:155]
-  related=[q for q in POSTS if slug(q)!=s and category(q)==category(p) and has_featured(q)][:4]
+  preferred=p.get('related_post_ids',[])
+  related=sorted([q for q in POSTS if slug(q)!=s and has_featured(q) and (category(q)==category(p) or q.get('id') in preferred)],key=lambda q:preferred.index(q['id']) if q.get('id') in preferred else len(preferred))[:4]
   if len(related)<4:related += [q for q in POSTS if slug(q)!=s and q not in related][:4-len(related)]
   related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
@@ -769,7 +780,8 @@ for p in POSTS:
     f'<a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u={quote(url,safe="")}">Facebook</a>'
     f'<a target="_blank" rel="noopener noreferrer" href="https://t.me/share/url?url={quote(url,safe="")}&text={quote(t)}">Telegram</a>'
     f'<button type="button" class="copy-share" data-share-url="{e(url)}">{copy_text}</button></div></div>')
-  related=[q for q in POSTS if slug(q)!=s and category(q)==category(p) and has_featured(q)][:4]
+  preferred=p.get('related_post_ids',[])
+  related=sorted([q for q in POSTS if slug(q)!=s and has_featured(q) and (category(q)==category(p) or q.get('id') in preferred)],key=lambda q:preferred.index(q['id']) if q.get('id') in preferred else len(preferred))[:4]
   if len(related)<4:related.extend([q for q in POSTS if slug(q)!=s and slug(q) not in {slug(x) for x in related} and category(q)!=category(p)][:4-len(related)])
   related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder" aria-hidden="true">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
