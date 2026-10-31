@@ -51,7 +51,7 @@ def extract_facts(text):
         matches=[]
         for index,line in enumerate(lines):
             if len(line)<15 or len(line)>450 or not re.search(pattern,line,re.I):continue
-            if len(line.split())<12 or re.search(r'(?:from|on|as follows|:)\s*$',line,re.I):
+            if re.search(r'(?:from|on|as follows|:)\s*$',line,re.I) or (len(line.split())<=3 and not re.search(r'\d',line)):
                 line=' '.join([line]+[v for v in lines[index+1:index+3] if v])
             if key=='dates' and not re.search(r'\d{1,2}[./-]\d{1,2}[./-](?:20)?\d{2}|\d{1,2}(?:st|nd|rd|th)?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)',line,re.I):continue
             if key=='fees' and not re.search(r'\d|free|nil|exempt',line,re.I):continue
