@@ -1,4 +1,5 @@
 """Quota-capped, source-first bilingual publishing. No external AI calls on import."""
+from news_config import CATEGORIES, EXAM_CATEGORIES, EXTRA_FEEDS, DIRECT_EXTRA, classify, lead_priority, timestamp, PRIORITY
 import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time, threading
 from functools import lru_cache
 from urllib.parse import urlparse
@@ -27,6 +28,7 @@ MIN_POSTS_PER_CATEGORY=max(1,int(os.getenv('MIN_POSTS_PER_CATEGORY','2')))
 MIN_SOURCE_WORDS=0
 OFFICIAL_JOB_DOMAINS=('upsc.gov.in','ssc.gov.in','rrbcdg.gov.in','indianrailways.gov.in','employmentnews.gov.in','nta.ac.in','gov.in','nic.in')
 CALLS=0
+STORY_DATES={}
 # News discovery sources. Official-domain verification occurs BEFORE any AI request.
 # Curated global discovery. Publisher RSS is for finding stories; the linked article is
 # the factual source. Never treat a Google News redirect as an original source.
@@ -138,6 +140,7 @@ FEEDS=[
  ('https://www.theguardian.com/education/rss', 'education', 'theguardian.com'),
  ('https://www.theguardian.com/lifeandstyle/rss', 'lifestyle', 'theguardian.com'),
 ]
+FEEDS.extend(EXTRA_FEEDS)
 
 
 # Additional public discovery feeds. These are leads, not permission to republish text or images.
@@ -199,6 +202,7 @@ DIRECT_SOURCES=[
  ("https://www.coolztricks.com/","lifestyle","coolztricks.com"),
  ("https://freekaamaal.com/","lifestyle","freekaamaal.com"),
 ]
+DIRECT_SOURCES.extend(DIRECT_EXTRA)
 for direct_url,direct_cat,direct_domain in DIRECT_SOURCES:
  if not any(c==direct_cat and d==direct_domain for _,c,d in FEEDS):
   FEEDS.append((direct_url,direct_cat,direct_domain))
@@ -233,7 +237,7 @@ INDIA_REGIONS={
 LOCAL_PUBLISHERS=('hindi.news18.com','inextlive.com','dainikgorakhpur.com','jagran.com','amarujala.com','livehindustan.com','bhaskar.com','indiatoday.in','timesofindia.indiatimes.com','thehindu.com','indianexpress.com','news18.com')
 LOCAL_PRIMARY_DOMAINS=('pib.gov.in','mausam.imd.gov.in')
 def local_news_feed(query,domain,cat='world-news'):
- return ('https://news.google.com/rss/search?q='+quote_query(query+' when:7d')+'&hl=en-IN&gl=IN&ceid=IN:en',cat,domain)
+ return ('https://news.google.com/rss/search?q='+quote_query(query+' when:2d')+'&hl=en-IN&gl=IN&ceid=IN:en',cat,domain)
 # Persist only lightweight source definitions; actual local feeds are sampled each run.
 LOCAL_DISCOVERY=[]
 for state,cities in INDIA_REGIONS.items():
@@ -298,6 +302,8 @@ SCHEME=('scheme','yojana','subsidy','welfare','pension','scholarship','beneficia
 JOB=('recruitment','vacancy','notification','admit card','exam','upsc','ssc','भर्ती','रिक्ति','नौकरी')
 def category(title, default):
  t=title.lower()
+ specific=classify(title,default)
+ if specific!=default:return specific
  if default not in ('sarkari-naukri','government-schemes'): return default
  if any(x in t for x in JOB): return 'sarkari-naukri'
  if any(x in t for x in SCHEME): return 'government-schemes'
@@ -326,6 +332,7 @@ def source_text(url,domain):
       for value in obj:visit(value)
      elif isinstance(obj,dict):
       body=obj.get('articleBody')
+      if obj.get('datePublished') and timestamp(obj.get('datePublished')):STORY_DATES[url]=obj['datePublished']
       if isinstance(body,str) and len(body)>100:candidates.append(clean(body))
       for key in ('@graph','mainEntity','itemListElement'):
        if key in obj:visit(obj[key])
@@ -476,11 +483,7 @@ def published_categories():
 MAJOR_PUBLISHERS=('bbc.co.uk','theguardian.com','npr.org','aljazeera.com','dw.com','france24.com','skynews.com','cbc.ca','abc.net.au','nbcnews.com','nytimes.com','bloomberg.com','wsj.com','espn.com','variety.com','deadline.com','hollywoodreporter.com','technologyreview.com','nasa.gov','pib.gov.in','upsc.gov.in','ssc.gov.in')
 POPULAR_TERMS=('breaking','live','major','record','world cup','election','launch','release','trailer','box office','ai','google','apple','microsoft','nvidia','openai','recruitment','scheme','योजना','भर्ती')
 def story_priority(item):
- url,title,cat,domain=item
- t=title.lower()
- major=any(domain==d or domain.endswith('.'+d) for d in MAJOR_PUBLISHERS)
- popular=any(term in t for term in POPULAR_TERMS)
- return (not major,not popular,title.lower())
+ return lead_priority(item,STORY_DATES.get(item[0]))
 
 # Website-first discovery: visit publisher home/category pages before RSS fallback.
 # Each website is attempted once per category, with bounded concurrency and timeouts.
@@ -559,6 +562,7 @@ GOOGLE_QUERIES={
  'sarkari-naukri':'India government recruitment official notification',
  'private-vacancy':'private sector job openings hiring application',
  'travel':'travel tourism','lifestyle':'lifestyle wellness'}
+GOOGLE_QUERIES.update({cat:en+' latest official announcement' for cat,(en,hi) in CATEGORIES.items() if cat not in GOOGLE_QUERIES})
 def resolve_google_news(link):
  """Resolve Google's opaque RSS ID to its original publisher URL."""
  from urllib.parse import urlencode
@@ -597,22 +601,31 @@ def google_news_stories(cat):
  # Rotate related searches each hour, without accepting unverified sources.
  variants=(base,cat.replace('-',' ')+' latest',base+' breaking',base+' announcements')
  hour=dt.datetime.now(UTC).hour
- query=' OR '.join('('+variants[(hour+offset)%len(variants)]+')' for offset in range(3))+' when:7d'
+ query=' OR '.join('('+variants[(hour+offset)%len(variants)]+')' for offset in range(3))+' when:2d'
  url='https://news.google.com/rss/search?q='+quote(query)+'&hl=en-IN&gl=IN&ceid=IN:en'
  try:
   resp=requests.get(url,timeout=(5,12),headers={'User-Agent':'Mozilla/5.0'})
   resp.raise_for_status()
-  entries=feedparser.parse(resp.content).entries[:35]
-  stories=[]
-  for entry in entries:
-   # Resolve the Google News article link; never use the Google URL as evidence.
+  entries=feedparser.parse(resp.content).entries[:12]
+  def resolve_entry(entry):
    link=entry.get('link','')
-   if not link.startswith('https://'):continue
+   if not link.startswith('https://'):return None
+   published=entry.get('published_parsed') or entry.get('updated_parsed')
+   stamp=None
+   if published:
+    try:stamp=dt.datetime(*published[:6],tzinfo=UTC)
+    except (ValueError,TypeError):pass
+   if stamp and not -300<=(dt.datetime.now(UTC)-stamp).total_seconds()<=172800:return None
    target=resolve_google_news(link)
    host=(urlparse(target).hostname or '').lower()
-   if not target or host.endswith('google.com') or host.endswith('googleusercontent.com'):continue
-   if not (any(allowed(target,d) for _,_,d in FEEDS) or any(allowed(target,d) for d in REGIONAL_PORTALS.get(cat,()))):continue
-   stories.append((target,clean(entry.get('title','')),cat,host))
+   if not target or host.endswith('google.com') or host.endswith('googleusercontent.com'):return None
+   if not (any(allowed(target,d) for _,_,d in FEEDS) or any(allowed(target,d) for d in REGIONAL_PORTALS.get(cat,()))):return None
+   if stamp:STORY_DATES[target]=stamp.isoformat()
+   headline=clean(entry.get('title',''))
+   return target,headline,category(headline,cat),host
+  with ThreadPoolExecutor(max_workers=6) as resolver:
+   stories=[row for row in resolver.map(resolve_entry,entries) if row]
+  stories.sort(key=story_priority)
   print('Google News',cat,'publisher stories',len(stories),flush=True)
   return stories
  except (requests.RequestException,ValueError):return []
@@ -625,6 +638,7 @@ REGIONAL_PORTALS={
  'government-schemes':('myscheme.gov.in','india.gov.in','jagranjosh.com','mzonews.com','govtschemes.in','bharatjobzone.com','sarkarikyp.com'),
  'private-vacancy':('freejobalert.com','mysarkarinaukri.com','jagranjosh.com','naukri.com','indeed.com','linkedin.com','diversejobseeker.com')
 }
+REGIONAL_PORTALS.update({cat:OFFICIAL_JOB_DOMAINS+('ibps.in','ac.in','edu.in') for cat in EXAM_CATEGORIES if cat not in REGIONAL_PORTALS})
 def regional_search_stories(cat):
  from urllib.parse import quote
  if cat not in REGIONAL_PORTALS:return []
@@ -712,7 +726,9 @@ def load_discovery_queue():
    try:added=dt.datetime.fromisoformat(entry['added_at'].replace('Z','+00:00'))
    except (KeyError,TypeError,ValueError):continue
    story=entry.get('story')
-   if added>=cutoff and useful_lead(story):rows.append(tuple(story))
+   if added>=cutoff and useful_lead(story):
+    rows.append(tuple(story))
+    if entry.get('source_published_at'):STORY_DATES[story[0]]=entry['source_published_at']
   return rows
  except (OSError,ValueError,TypeError):return []
 def save_discovery_queue(rows):
@@ -732,7 +748,7 @@ def save_discovery_queue(rows):
   try:age=now-dt.datetime.fromisoformat(added.replace('Z','+00:00'))
   except (ValueError,TypeError):age=dt.timedelta(days=99)
   if age>dt.timedelta(hours=QUEUE_MAX_AGE_HOURS):continue
-  entries.append({'story':list(row),'added_at':added})
+  entries.append({'story':list(row),'added_at':added,'source_published_at':STORY_DATES.get(row[0])})
  temp=QUEUE_FILE.with_suffix('.tmp')
  temp.write_text(json.dumps({'version':2,'items':entries},ensure_ascii=False),encoding='utf-8')
  temp.replace(QUEUE_FILE)
@@ -816,7 +832,7 @@ def candidates():
   for story in stories:
    if story[0] not in seen:
     seen.add(story[0]);groups[cat].append(story)
- for cat in groups:groups[cat].sort(key=lambda item:(not any(t in item[1].lower() for t in trending_terms),*story_priority(item)))
+ for cat in groups:groups[cat].sort(key=story_priority)
  for i in range(max(map(len,groups.values()),default=0)):
   for cat in sorted(groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
    if i<len(groups[cat]):yield groups[cat][i]
@@ -847,12 +863,16 @@ def candidates():
    if not published:continue
    try:age=(today-dt.date(*published[:3])).days
    except (TypeError,ValueError):continue
-   if age<0 or age>7:continue
+   if age<0 or age>2:continue
+   try:STORY_DATES[url]=dt.datetime(*published[:6],tzinfo=UTC).isoformat()
+   except (TypeError,ValueError):pass
    eligible.append((url,title,cat,domain))
  def resolve_eligible(row):
   url,title,cat,domain=row
+  original=url
   if 'news.google.com' in (urlparse(url).hostname or ''):
    url=resolve_google_news(url)
+  if original in STORY_DATES:STORY_DATES[url]=STORY_DATES[original]
   return url,title,cat,domain
  with ThreadPoolExecutor(max_workers=32) as resolver_pool:
   for url,title,cat,domain in resolver_pool.map(resolve_eligible,eligible):
@@ -863,7 +883,7 @@ def candidates():
    source_metric(domain,'feed_candidates')
  print('Fresh dated RSS entries examined:',len(eligible),flush=True)
  for cat in groups:
-  groups[cat].sort(key=lambda item:(not any(t in item[1].lower() for t in trending_terms),*story_priority(item)))
+  groups[cat].sort(key=story_priority)
  for i in range(max(map(len,groups.values()),default=0)):
   for cat in sorted(groups, key=lambda c:(c not in missing, counts.get(c,0),c)):
    if i<len(groups[cat]): yield groups[cat][i]
@@ -930,10 +950,18 @@ def main():
    print('Resuming saved draft:',post_id,'English',words(state.get('en_body','')),'Hindi',words(state.get('hi_body','')),flush=True)
   if cat=='private-vacancy' and not (any(allowed(url,d) for _,c,d in FEEDS if c=='private-vacancy') or any(allowed(url,d) for d in REGIONAL_PORTALS['private-vacancy'])):
    return None
+  if cat in (EXAM_CATEGORIES-{'sarkari-naukri'}) and not any(allowed(url,d) for d in REGIONAL_PORTALS.get(cat,OFFICIAL_JOB_DOMAINS)):
+   print('Skipping examination update from unapproved source:',url,flush=True)
+   return None
   if cat=='sarkari-naukri' and not (any(allowed(url,d) for d in OFFICIAL_JOB_DOMAINS) or any(allowed(url,d) for d in REGIONAL_PORTALS['sarkari-naukri'])):
    print('Skipping recruitment story from unapproved source:',url,flush=True)
    return None
   text=source_text(url,domain)
+  source_stamp=timestamp(STORY_DATES.get(url))
+  max_age=7*86400 if cat in EXAM_CATEGORIES else 48*3600
+  if source_stamp and (dt.datetime.now(UTC).timestamp()-source_stamp>max_age or source_stamp>dt.datetime.now(UTC).timestamp()+300):
+   print('Skipping stale or future-dated source:',title[:80],flush=True)
+   return None
   if (not text.strip() or words(text)<65) and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    # Preserve completed language drafts even if the publisher temporarily blocks scraping.
    state.update({'source':url,'source_title':title,'category':cat,'status':'source_unavailable','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat(),'source_words':words(text)})
@@ -969,13 +997,13 @@ def main():
    # Prevent one prolific source category from consuming the whole run.
    # A verified story may remain as a draft for the next scheduled run.
    with publication_lock:
-    if category_reserved[cat]>=category_run_cap:
+    if category_reserved[cat]>=category_run_cap+(3 if PRIORITY.get(cat,4)>=8 else 0):
      save_state(pending,state)
      print('Category publication cap reached; retaining draft:',cat,post_id,flush=True)
      return None
     category_reserved[cat]+=1
    article={k:state.get(k,'') for k in ('en_title','hi_title','en_body','hi_body','en_meta','hi_meta','en_keywords','hi_keywords')}
-   article.update(id=post_id,source=url,date=dt.datetime.now(UTC).isoformat(),source_title=title,category=cat,image_kind='conceptual')
+   article.update(source_published_at=STORY_DATES.get(url),id=post_id,source=url,date=dt.datetime.now(UTC).isoformat(),source_title=title,category=cat,image_kind='conceptual')
    save_state(POSTS/(post_id+'.json'),article)
    pending.unlink(missing_ok=True)
    with publication_lock:
@@ -1021,7 +1049,8 @@ def main():
  # Give categories with the fewest existing published stories first access to
  # limited AI calls; retain all other categories as eligible afterward.
  historical_counts=published_categories()
- categories=sorted(grouped,key=lambda cat:(historical_counts.get(cat,0),cat))
+ for rows in grouped.values():rows.sort(key=story_priority)
+ categories=sorted(grouped,key=lambda cat:(story_priority(grouped[cat][0]),historical_counts.get(cat,0),cat))
  missing_candidates=sorted(set(c for _,c,_ in FEEDS)-set(grouped))
  print('Categories without usable leads:',', '.join(missing_candidates) or 'none',flush=True)
  print('Verified candidate queue per category:',{cat:len(grouped[cat]) for cat in categories},flush=True)
@@ -1029,13 +1058,14 @@ def main():
  # Soft fair-share limit: allow more stories when only a few categories have leads.
  category_run_cap=max(MIN_POSTS_PER_CATEGORY,(remaining+max(1,len(categories))-1)//max(1,len(categories)))
  print('Per-category publication cap this run:',category_run_cap,flush=True)
+ priority_leads=sorted((row for rows in grouped.values() for row in rows),key=story_priority)[:min(12,remaining//3)]
+ for row in priority_leads:
+  ordered.append(row);grouped[row[2]].remove(row)
  for round_number in range(MIN_POSTS_PER_CATEGORY):
   for cat in categories:
    if grouped[cat]:ordered.append(grouped[cat].pop(0))
  # After the minimum-priority passes, there is no per-category maximum.
- while any(grouped.values()):
-  for cat in categories:
-   if grouped[cat]:ordered.append(grouped[cat].pop(0))
+ ordered.extend(sorted((row for rows in grouped.values() for row in rows),key=story_priority))
  article_workers=10
  print('Parallel article workers:',article_workers,flush=True)
  with ThreadPoolExecutor(max_workers=article_workers) as article_pool:

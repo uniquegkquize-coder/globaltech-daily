@@ -7,6 +7,9 @@ on:
       - 'scripts/build.py'
       - 'scripts/news_sitemap.py'
       - 'scripts/site_ui.py'
+      - 'scripts/news_config.py'
+      - 'scripts/news_hub.py'
+      - 'content/official-exam-notices.json'
       - '.github/workflows/manual-post-build.yml'
 permissions:
   contents: write

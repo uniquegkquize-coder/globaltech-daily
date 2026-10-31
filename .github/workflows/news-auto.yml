@@ -1,5 +1,8 @@
 name: GlobalTech Daily Auto News
 on:
+  push:
+    branches: [main]
+    paths: ['scripts/news_config.py']
   workflow_dispatch:
   schedule:
     - cron: '7 * * * *'

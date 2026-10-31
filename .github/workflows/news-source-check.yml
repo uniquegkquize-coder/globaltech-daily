@@ -7,6 +7,10 @@ on:
       - 'scripts/build.py'
       - 'scripts/news_sitemap.py'
       - 'scripts/site_ui.py'
+      - 'scripts/news_config.py'
+      - 'scripts/news_hub.py'
+      - 'tests/test_news_priority.py'
+      - 'content/official-exam-notices.json'
       - 'tests/test_news_sitemap.py'
       - '.github/workflows/news-source-check.yml'
   workflow_dispatch:

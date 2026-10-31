@@ -18,8 +18,10 @@ class NewsroomConfigTests(unittest.TestCase):
         feeds = next(ast.literal_eval(node.value) for node in tree.body
                      if isinstance(node, ast.Assign)
                      and any(isinstance(t, ast.Name) and t.id == "FEEDS" for t in node.targets))
-        categories = {row[1] for row in feeds}
-        self.assertEqual(len(categories), 15)
+        from scripts.news_config import CATEGORIES, EXTRA_FEEDS
+        categories = {row[1] for row in feeds+EXTRA_FEEDS}
+        self.assertEqual(categories,set(CATEGORIES))
+        self.assertEqual(len(categories), 30)
         self.assertIn('private-vacancy', categories)
         self.assertIn("gaming", categories)
         self.assertTrue(any("ign.com" in row[0] for row in feeds))
