@@ -830,7 +830,12 @@ def save_discovery_queue(rows):
  temp.write_text(json.dumps({'version':2,'items':entries},ensure_ascii=False),encoding='utf-8')
  temp.replace(QUEUE_FILE)
 
-def native_feed_stories():
+def native_feed_registry():
+ # Keep existing global RSS sources ahead of the slow search stages too.
+ known=[row for row in FEEDS if (urlparse(row[0]).hostname or '')!='news.google.com' and any(part in row[0] for part in ('/rss','/feed','.xml')) and row[2] not in {'reddit.com','gadgets360.com','gadgets.ndtv.com'}]
+ return list(dict.fromkeys(NATIVE_FEEDS+known))
+
+def native_feed_stories(feeds=None):
  def read(item):
   feed,cat,domain=item
   try:
@@ -854,7 +859,7 @@ def native_feed_stories():
    code=getattr(getattr(exc,'response',None),'status_code',None)
    print('NATIVE_FEED_FAILED',domain,code or type(exc).__name__,flush=True)
    return []
- results=discovery_map(read,NATIVE_FEEDS,8)
+ results=discovery_map(read,native_feed_registry() if feeds is None else feeds,16)
  # Round robin keeps a prolific publisher from consuming all discovery time.
  for index in range(max(map(len,results),default=0)):
   for rows in results:
@@ -953,7 +958,8 @@ def candidates():
   except (requests.RequestException,ValueError):
    return item,[]
  # Cap workers: dozens of global sources without making Actions run for hours.
- results=discovery_map(read_feed,[item for item in FEEDS if item not in NATIVE_FEEDS]+rotating_local_feeds()+rotating_social_feeds(),24,lambda item:(item,[]))
+ native_sources=set(native_feed_registry())
+ results=discovery_map(read_feed,[item for item in FEEDS if item not in native_sources and not (item[2] in {'gadgets360.com','gadgets.ndtv.com'} and (urlparse(item[0]).hostname or '')!='news.google.com')]+rotating_local_feeds()+rotating_social_feeds(),24,lambda item:(item,[]))
  # Validate dates before any costly URL resolution. Resolve eligible Google
  # News URLs concurrently instead of making thousands of serial requests.
  eligible=[]

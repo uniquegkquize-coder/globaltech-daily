@@ -44,4 +44,10 @@ class BatchRuntimeTests(unittest.TestCase):
   with patch.dict(os.environ,{'GEMINI_API_KEY':'test-placeholder'},clear=True),patch.object(collect,'provider_order',return_value=['gemini']):
    with patch.object(collect,'PROVIDER_COOLDOWNS',{'gemini'}):self.assertFalse(collect.providers_ready())
    with patch.object(collect,'PROVIDER_COOLDOWNS',set()):self.assertTrue(collect.providers_ready())
+ def test_global_native_sources_are_not_delayed_behind_search(self):
+  rows=collect.native_feed_registry()
+  categories={row[1] for row in rows}
+  self.assertTrue({'world-news','business','sports','technology','health-science'}.issubset(categories))
+  self.assertFalse(any('news.google.com' in row[0] for row in rows))
+  self.assertEqual(len(rows),len(set(rows)))
 if __name__=='__main__':unittest.main()

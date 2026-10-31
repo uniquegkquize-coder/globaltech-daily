@@ -3,11 +3,11 @@ import concurrent.futures
 import json
 from collections import Counter
 from collect import native_feed_stories,website_stories,source_text,words,STORY_DATES,category_for_url
-from focused_sources import PAGES
+from focused_sources import PAGES,NATIVE_FEEDS
 TARGETS={'car-launches','mobile-launches','movie-releases','controversies'}
 
 def main():
-    leads=list(native_feed_stories())
+    leads=list(native_feed_stories(NATIVE_FEEDS))
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
         pages=list(pool.map(website_stories,PAGES))
     for item,rows in pages:
