@@ -24,6 +24,58 @@ DATA={
   ('Royal Enfield','India','Motorcycles','https://www.royalenfield.com/'),
   ('Yamaha Motorcycles','Japan','Motorcycles','https://global.yamaha-motor.com/')]
 }
+# Additional official-source directory entries. No unverified fees or prices.
+DATA['colleges'].extend([
+ ('Indian Institute of Technology Bombay','India','Maharashtra','Mumbai','https://www.iitb.ac.in/','Engineering, science and research'),
+ ('Indian Institute of Science','India','Karnataka','Bengaluru','https://iisc.ac.in/','Science, engineering and research'),
+ ('Indian Institute of Technology Madras','India','Tamil Nadu','Chennai','https://www.iitm.ac.in/','Engineering, science and research'),
+ ('Jawaharlal Nehru University','India','Delhi','New Delhi','https://www.jnu.ac.in/','Humanities, social sciences and research'),
+ ('Banaras Hindu University','India','Uttar Pradesh','Varanasi','https://www.bhu.ac.in/','Arts, science, medicine and professional studies'),
+ ('University of Lucknow','India','Uttar Pradesh','Lucknow','https://www.lkouniv.ac.in/','Arts, science, commerce and professional studies'),
+ ('Harvard University','United States','Massachusetts','Cambridge','https://www.harvard.edu/','Undergraduate and graduate programmes'),
+ ('Stanford University','United States','California','Stanford','https://www.stanford.edu/','Engineering, humanities, science and business'),
+ ('University of California Berkeley','United States','California','Berkeley','https://www.berkeley.edu/','Undergraduate and graduate programmes'),
+ ('University of Cambridge','United Kingdom','England','Cambridge','https://www.cam.ac.uk/','Undergraduate and postgraduate programmes'),
+ ('Imperial College London','United Kingdom','England','London','https://www.imperial.ac.uk/','Science, engineering, medicine and business'),
+ ('National University of Singapore','Singapore','Singapore','Singapore','https://www.nus.edu.sg/','Undergraduate and postgraduate programmes'),
+ ('Nanyang Technological University','Singapore','Singapore','Singapore','https://www.ntu.edu.sg/','Engineering, science, business and humanities'),
+ ('University of Tokyo','Japan','Tokyo','Tokyo','https://www.u-tokyo.ac.jp/en/','Undergraduate and graduate programmes'),
+ ('ETH Zurich','Switzerland','Zurich','Zurich','https://ethz.ch/en.html','Science, technology and engineering'),
+ ('Technical University of Munich','Germany','Bavaria','Munich','https://www.tum.de/en/','Engineering, science and management'),
+ ('University of British Columbia','Canada','British Columbia','Vancouver','https://www.ubc.ca/','Undergraduate and graduate programmes'),
+ ('University of Sydney','Australia','New South Wales','Sydney','https://www.sydney.edu.au/','Undergraduate and graduate programmes')
+])
+DATA['cars'].extend([
+ ('Maruti Suzuki','India','Cars and SUVs','https://www.marutisuzuki.com/'),
+ ('Mahindra Auto','India','SUVs and electric vehicles','https://auto.mahindra.com/'),
+ ('Kia','South Korea','Cars and SUVs','https://www.kia.com/'),
+ ('Honda Cars','Japan','Cars and SUVs','https://global.honda/en/automobiles/'),
+ ('BMW','Germany','Cars and SUVs','https://www.bmw.com/'),
+ ('Mercedes-Benz','Germany','Cars and SUVs','https://www.mercedes-benz.com/'),
+ ('Volkswagen','Germany','Cars and SUVs','https://www.volkswagen.com/'),
+ ('Ford','United States','Cars and trucks','https://www.ford.com/'),
+ ('Tesla','United States','Electric vehicles','https://www.tesla.com/')
+])
+DATA['bikes'].extend([
+ ('Bajaj Auto','India','Motorcycles','https://www.bajajauto.com/'),
+ ('Hero MotoCorp','India','Motorcycles and scooters','https://www.heromotocorp.com/'),
+ ('TVS Motor','India','Motorcycles and scooters','https://www.tvsmotor.com/'),
+ ('KTM','Austria','Motorcycles','https://www.ktm.com/'),
+ ('Kawasaki','Japan','Motorcycles','https://www.kawasaki.com/'),
+ ('Suzuki Motorcycles','Japan','Motorcycles','https://www.globalsuzuki.com/motorcycle/'),
+ ('Ducati','Italy','Motorcycles','https://www.ducati.com/'),
+ ('Triumph Motorcycles','United Kingdom','Motorcycles','https://www.triumphmotorcycles.com/')
+])
+DATA['phones'].extend([
+ ('OnePlus','China','Smartphones','https://www.oneplus.com/'),
+ ('Xiaomi','China','Smartphones','https://www.mi.com/global/'),
+ ('Motorola','United States','Smartphones','https://www.motorola.com/'),
+ ('Nothing','United Kingdom','Smartphones','https://nothing.tech/'),
+ ('OPPO','China','Smartphones','https://www.oppo.com/'),
+ ('vivo','China','Smartphones','https://www.vivo.com/'),
+ ('realme','China','Smartphones','https://www.realme.com/'),
+ ('HONOR','China','Smartphones','https://www.honor.com/')
+])
 COURSES=[
  ('B.Tech / Engineering','Physics, mathematics and institution-specific entrance requirements; check official admission rules.'),
  ('MBBS / Medicine','Medical entrance, prerequisite subjects and country-specific medical licensing requirements.'),
