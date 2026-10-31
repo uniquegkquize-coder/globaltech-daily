@@ -20,6 +20,10 @@ class SourcePipelineTests(unittest.TestCase):
     def test_actual_article_container_not_metadata_only(self):
         soup=BeautifulSoup('<div class="news-text"><p>'+('Launch specifications and regional prices. '*6)+'</p></div>','html.parser')
         self.assertGreater(collect.words(max(content_candidates(soup,collect.clean),key=len)),20)
+        generic=BeautifulSoup('<meta property="og:type" content="article"><div class="custom">'+'<p>'+('Launch details and technical specifications. '*20)+'</p></div>','html.parser')
+        self.assertTrue(content_candidates(generic,collect.clean))
+        listing=BeautifulSoup('<div class="custom"><p>'+('Menu and listing links. '*20)+'</p></div>','html.parser')
+        self.assertFalse(content_candidates(listing,collect.clean))
     def test_routing_independent_of_discovery_method(self):
         self.assertEqual(collect.category('New Hyundai SUV launch price and mileage','automobiles'),'car-launches')
         self.assertEqual(collect.category('Samsung Galaxy phone launched with new battery','technology'),'mobile-launches')
@@ -30,6 +34,8 @@ class SourcePipelineTests(unittest.TestCase):
         self.assertEqual(collect.category('Pixel 11 deal hits a low price','technology'),'deals-offers')
         self.assertEqual(collect.category('OnePlus smartphone goes official with new features','technology'),'mobile-launches')
         self.assertEqual(collect.category('New thriller gets a release date','movies-entertainment'),'movie-releases')
+        self.assertNotEqual(collect.category('Samsung Wallet announces new cash card for Galaxy users','technology'),'mobile-launches')
+        self.assertNotEqual(collect.category_for_url('Simpsons debut release date announced','movies-entertainment','https://example.com/tv/news/announcement'),'movie-releases')
     def test_website_leads_are_classified_before_queueing(self):
         class Response:
             url='https://www.cardekho.com/india-car-news.htm'

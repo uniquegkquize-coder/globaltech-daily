@@ -19,6 +19,7 @@ NATIVE_FEEDS=[
 # CarDekho and IMDb returned 403 in verification. Keep them in search
 # discovery only; do not repeatedly fetch their blocked listing pages.
 PAGES=[
+ ('https://www.androidpolice.com/','technology','androidpolice.com'),
  ('https://www.firstshowing.net/','movies-entertainment','firstshowing.net'),
  ('https://www.comingsoon.net/hub/movie-news','movies-entertainment','comingsoon.net'),
  ('https://about.netflix.com/en/news','movies-entertainment','about.netflix.com'),
@@ -36,6 +37,8 @@ PAGES=[
  ('https://apnews.com/hub/entertainment','movies-entertainment','apnews.com'),
 ]
 SEARCH_SOURCES=[
+ ('phonearena.com','mobile-launches','smartphone launch specifications price'),
+ ('androidpolice.com','mobile-launches','new phone launch specifications'),
  ('cardekho.com','car-launches','new car launch price mileage'),
  ('motor1.com','car-launches','new car debut price specifications'),
  ('carscoops.com','car-launches','new model unveiled price'),
@@ -57,7 +60,7 @@ SEARCH_SOURCES=[
 # Publishers expose article copy through different containers. No login,
 # paywall, CAPTCHA, blocked-response or alternate-route bypass is attempted.
 ARTICLE_SELECTORS=(
- '.content_text', '.content-text', '.news-text', '.postContent', '.post-content',
+ '.content_text', '.content-text', '.news-text', '#review-body', '.review-body', '.entry', '.postContent', '.post-content',
  '.article__body', '.article-body', '.article__content', '.article-content',
  '.story_details', '.story__content', '.entry-content',
  '[data-component="text-block"]', '[data-testid="paragraph"]',
@@ -92,4 +95,10 @@ def content_candidates(soup,clean):
             if node.name=='p':paras=[clean(node.get_text(' ',strip=True))]
             paras=list(dict.fromkeys(p for p in paras if len(p)>35))
             if paras:values.append('\n'.join(paras))
+    # Some publishers use nonsemantic wrappers. Only use public paragraphs
+    # when the page explicitly declares itself an article, never a listing.
+    if soup.select_one('meta[property="og:type"][content="article"]') and max((len(v.split()) for v in values),default=0)<65:
+        paragraphs=[clean(p.get_text(' ',strip=True)) for p in soup.find_all('p')]
+        paragraphs=list(dict.fromkeys(p for p in paragraphs if len(p)>60))[:25]
+        if paragraphs:values.append('\n'.join(paragraphs))
     return values

@@ -17,7 +17,7 @@ CATEGORIES={
 PATTERNS={
  'cricket':r'\b(?:cricket|ipl|t20|odi|ashes|icc|bcci|wicket|batting|bowling)\b|क्रिकेट|विकेट',
  'car-launches':r'\b(?:launch(?:es|ed|ing)?|unveil(?:s|ed)?|debut(?:s|ed)?|introduc(?:es|ed)|specifications?|mileage|fuel economy|variant|price|pricing)\b|लॉन्च|माइलेज|कीमत',
- 'mobile-launches':r'(?=.*\b(?:phone|smartphone|iphone|galaxy|pixel|oneplus|xiaomi)\b)(?=.*\b(?:launch(?:es|ed|ing)?|price|specifications?|unveil(?:s|ed)?|releases?|camera|battery|features?|specs|announc(?:es|ed)|goes official|debuts?)\b)|मोबाइल लॉन्च',
+ 'mobile-launches':r'(?=.*\b(?:phone|smartphone|iphone|galaxy\s+[a-z]*(?:\s+[a-z]+)?\s*\d+|pixel\s*\d+|oneplus\s*\d+|xiaomi\s*\d+|redmi|poco|vivo|oppo|razr)\b)(?=.*\b(?:launch(?:es|ed|ing)?|price|specifications?|unveil(?:s|ed)?|releases?|camera|battery|features?|specs|announc(?:es|ed)|goes official|debuts?)\b)|मोबाइल लॉन्च',
  'entertainment-rumours':r'rumou?r|unconfirmed|reportedly.*(?:cast|film|actor|dating)|अफवाह|अपुष्ट',
  'movie-releases':r'\b(?:trailer|release date|premieres?)\b|(?=.*\b(?:movie|film|cinema|theatrical|netflix|ott|box office)\b)(?=.*\b(?:releases?|launch|premieres?|debut|opens|streaming)\b)|फिल्म रिलीज|ट्रेलर',
  'celebrity-news':r'\b(?:actor|actress|celebrity|celebrities|bollywood|hollywood star)\b|अभिनेता|अभिनेत्री|सेलिब्रिटी',

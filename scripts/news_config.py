@@ -50,6 +50,7 @@ def classify(title, default='technology'):
         return 'deals-offers'
     for topic,pattern in sorted(GLOBAL_PATTERNS.items(),key=lambda x:x[0]!='controversies'):
         if topic in SCOPES and default not in SCOPES[topic]:continue
+        if topic=='mobile-launches' and re.search(r'\b(?:wallet|cash card|apps?|software|security patch|one ui)\b',text):continue
         if topic=='mobile-launches' and re.search(r'\b(?:watch|smartwatch|tablet|ipad|laptop|macbook|earbuds)\b',text) and not re.search(r'\b(?:phone|smartphone|iphone)\b',text):continue
         if topic=='entertainment-rumours' and not unconfirmed_story(text):continue
         if re.search(pattern,text):return topic

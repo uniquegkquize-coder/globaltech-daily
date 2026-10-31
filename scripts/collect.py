@@ -312,6 +312,13 @@ def category(title, default):
  if any(x in t for x in SCHEME): return 'government-schemes'
  return default
 
+def category_for_url(title,default,url):
+ actual=category(title,default)
+ # Film release searches also return television episode announcements.
+ if actual=='movie-releases' and any(part in urlparse(url).path.lower() for part in ('/tv/','/television/','/tv-news/')):
+  return 'movies-entertainment'
+ return actual
+
 def clean(s): return re.sub(r'\s+',' ',html.unescape(BeautifulSoup(str(s or ''),'html.parser').get_text(' ',strip=True))).strip()
 def words(s): return len(re.findall(r'\S+',s or ''))
 def allowed(url,domain):
@@ -562,7 +569,7 @@ def website_stories(item):
    if any(z in url.lower() for z in ('/tag/','/author/','/category/','/topics/','/video/','/live/','/search/','/login','/signup','/privacy','/contact','/about','/taxonomy/','/complain/','/submission/','/articlelist/','/topic/','/forum/','/deals/','/collections/')):continue
    if len(urlparse(url).path.strip('/').split('/'))<2 and not re.search(r'\d{4,}|[a-z0-9]+[-_][a-z0-9]+',urlparse(url).path):continue
    if cat in ('sarkari-naukri','private-vacancy') and not re.search(r'job|vacan|recruit|hiring|career|भर्ती|नौकरी|पद|result|admit|exam',title+' '+url,re.I):continue
-   seen_urls.add(url);stories.append((url,title,category(title,cat),domain))
+   seen_urls.add(url);stories.append((url,title,category_for_url(title,cat,url),domain))
    if len(stories)>=25:break
   return item,stories
  except (requests.RequestException,ValueError) as exc:
@@ -656,7 +663,7 @@ def google_news_stories(cat):
    if not (any(allowed(target,d) for _,_,d in FEEDS) or any(allowed(target,d) for d in REGIONAL_PORTALS.get(cat,()))):return None
    if stamp:STORY_DATES[target]=stamp.isoformat()
    headline=clean(entry.get('title',''))
-   return target,headline,category(headline,cat),host
+   return target,headline,category_for_url(headline,cat,target),host
   with ThreadPoolExecutor(max_workers=6) as resolver:
    stories=[row for row in resolver.map(resolve_entry,entries) if row]
   stories.sort(key=story_priority)
@@ -720,7 +727,7 @@ def bing_search_stories(cat):
    if not target.startswith('https://') or len(title)<25:continue
    if not (any(allowed(target,d) for _,_,d in FEEDS) or any(allowed(target,d) for d in REGIONAL_PORTALS.get(cat,()))):continue
    if host.endswith('bing.com') or host.endswith('microsoft.com'):continue
-   stories.append((target,title,category(title,cat),host))
+   stories.append((target,title,category_for_url(title,cat,target),host))
   print('Bing search',cat,'publisher stories',len(stories),flush=True)
   return stories
  except (requests.RequestException,ValueError):
@@ -804,7 +811,7 @@ def native_feed_stories():
     except (ValueError,TypeError):continue
     if not -300<=(now-published).total_seconds()<=48*3600:continue
     STORY_DATES[url]=published.isoformat()
-    rows.append((url,title,category(title,cat),domain))
+    rows.append((url,title,category_for_url(title,cat,url),domain))
    print('NATIVE_FEED',domain,'entries',len(entries),'fresh_leads',len(rows),flush=True)
    return rows
   except requests.RequestException as exc:
@@ -947,7 +954,7 @@ def candidates():
   for url,title,cat,domain in resolver_pool.map(resolve_eligible,eligible):
    if not allowed(url,domain) or url in seen:continue
    seen.add(url)
-   actual_cat=category(title,cat)
+   actual_cat=category_for_url(title,cat,url)
    groups[actual_cat].append((url,title,actual_cat,domain))
    source_metric(domain,'feed_candidates')
  print('Fresh dated RSS entries examined:',len(eligible),flush=True)
@@ -1118,7 +1125,7 @@ def main():
  # Prioritize two verified articles per category before filling additional slots.
  grouped={}
  for story in stories:
-   story=(story[0],story[1],category(story[1],story[2]),story[3])
+   story=(story[0],story[1],category_for_url(story[1],story[2],story[0]),story[3])
    grouped.setdefault(story[2],[]).append(story)
    source_metric(story[3],'queued')
  ordered=[]
