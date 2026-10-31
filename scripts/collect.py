@@ -480,6 +480,8 @@ def call_provider(prompt):
   key=os.getenv({'groq':'GROQ_API_KEY','gemini':'GEMINI_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}[provider],'').strip()
   if not key:continue
   models=gemini_models(key) if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else (os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free'))]
+  preferred=os.getenv('GEMINI_MODEL','').removeprefix('models/').strip() if provider=='gemini' else ''
+  if preferred in models:models=[preferred]+[model for model in models if model!=preferred]
   for model in list(dict.fromkeys(models))[:MODELS_PER_PROVIDER]:
    if RUN_DEADLINE and time.monotonic()>=RUN_DEADLINE:return None,last
    with PROVIDER_LOCK:

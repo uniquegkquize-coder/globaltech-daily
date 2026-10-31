@@ -50,4 +50,11 @@ class BatchRuntimeTests(unittest.TestCase):
   self.assertTrue({'world-news','business','sports','technology','health-science'}.issubset(categories))
   self.assertFalse(any('news.google.com' in row[0] for row in rows))
   self.assertEqual(len(rows),len(set(rows)))
+ def test_configured_model_is_preferred_when_available(self):
+  class Response:
+   ok=False;status_code=500
+  with patch.dict(os.environ,{'GEMINI_API_KEY':'test-placeholder','GEMINI_MODEL':'two'}),patch.object(collect,'RUN_DEADLINE',0),patch.object(collect,'CALLS',0),patch.object(collect,'MODELS_PER_PROVIDER',1),patch.object(collect,'PROVIDER_COOLDOWNS',set()),patch.object(collect,'UNAVAILABLE_MODELS',set()),patch.object(collect,'provider_order',return_value=['gemini']),patch.object(collect,'gemini_models',return_value=['one','two']),patch.object(collect.requests,'post',return_value=Response()) as request:
+   collect.call_provider('test')
+   self.assertIn('/two:generateContent',request.call_args.args[0])
+   self.assertEqual(request.call_count,1)
 if __name__=='__main__':unittest.main()
