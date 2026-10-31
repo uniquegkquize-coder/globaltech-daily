@@ -464,6 +464,11 @@ def provider_order():
 PROVIDER_LOCK=threading.RLock()
 PROVIDER_COOLDOWNS=set()
 UNAVAILABLE_MODELS=set()
+def providers_ready():
+ keys={'gemini':'GEMINI_API_KEY','groq':'GROQ_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}
+ with PROVIDER_LOCK:
+  return any(provider not in PROVIDER_COOLDOWNS and os.getenv(keys[provider],'').strip() for provider in provider_order())
+
 def call_provider(prompt):
  global CALLS
  last=None
@@ -1209,8 +1214,13 @@ def main():
  with ThreadPoolExecutor(max_workers=article_workers) as article_pool:
   futures={}
   next_story=iter(ordered)
+  stop_reason=None
   while time.monotonic()<deadline and published<remaining and CALLS<MAX_CALLS:
-   while len(futures)<article_workers and published+len(futures)<remaining:
+   if not providers_ready() and not futures:
+    stop_reason='providers_unavailable'
+    print('All configured providers unavailable; saving progress without further source scans',flush=True)
+    break
+   while len(futures)<article_workers and published+len(futures)<remaining and providers_ready():
     try:story=next(next_story)
     except StopIteration:break
     futures[article_pool.submit(process_story,story)]=story
@@ -1238,7 +1248,7 @@ def main():
   try:actual_counts[json.loads(path.read_text()).get('category','unknown')]+=1
   except (OSError,ValueError):continue
  category_published=dict(actual_counts);published=sum(actual_counts.values())
- outcome='target_reached' if published>=remaining else ('ai_limit_reached' if CALLS>=MAX_CALLS else ('time_limit_reached' if time.monotonic()>=deadline else 'queue_exhausted'))
+ outcome='target_reached' if published>=remaining else (stop_reason or ('ai_limit_reached' if CALLS>=MAX_CALLS else ('time_limit_reached' if time.monotonic()>=deadline else 'queue_exhausted')))
  write_run_status(outcome,started,category_published,target=remaining,discovered_by_category=dict(discovered_by_category))
  # Retain only recent, valid, bounded leads; stale or unusable items are discarded.
  remaining_queue=[item for item in stories if not (POSTS/(hashlib.sha256(item[0].encode()).hexdigest()[:12]+'.json')).exists()]

@@ -40,4 +40,8 @@ class BatchRuntimeTests(unittest.TestCase):
   self.assertEqual(len(collect.unique_leads(rows)),2)
   self.assertTrue(collect.duplicate_story(rows[0][0],'one','results',[(rows[1][0],'one','results')]))
   self.assertFalse(collect.duplicate_story(rows[2][0],'two','results',[(rows[1][0],'one','results')]))
+ def test_rate_limited_providers_are_not_treated_as_ready(self):
+  with patch.dict(os.environ,{'GEMINI_API_KEY':'test-placeholder'},clear=True),patch.object(collect,'provider_order',return_value=['gemini']):
+   with patch.object(collect,'PROVIDER_COOLDOWNS',{'gemini'}):self.assertFalse(collect.providers_ready())
+   with patch.object(collect,'PROVIDER_COOLDOWNS',set()):self.assertTrue(collect.providers_ready())
 if __name__=='__main__':unittest.main()
