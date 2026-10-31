@@ -20,7 +20,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: globaltech-news
+  group: globaltech-site-build
   cancel-in-progress: false
 jobs:
   build:
