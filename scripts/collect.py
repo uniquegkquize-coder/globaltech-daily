@@ -1,7 +1,8 @@
 """Quota-capped, source-first bilingual publishing. No external AI calls on import."""
 from news_config import CATEGORIES, EXAM_CATEGORIES, EXTRA_FEEDS, DIRECT_EXTRA, classify, lead_priority, timestamp, PRIORITY
-from verticals import requirements, TRUSTED_ENTERTAINMENT
+from verticals import requirements, TRUSTED_ENTERTAINMENT, TRUSTED_CONTROVERSY
 from official_notices import official_url
+from focused_sources import NATIVE_FEEDS, structured_article_data, content_candidates
 import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time, threading
 from functools import lru_cache
 from urllib.parse import urlparse
@@ -315,11 +316,17 @@ def clean(s): return re.sub(r'\s+',' ',html.unescape(BeautifulSoup(str(s or ''),
 def words(s): return len(re.findall(r'\S+',s or ''))
 def allowed(url,domain):
  h=(urlparse(url).hostname or '').lower()
- return url.startswith('https://') and (h==domain or h.endswith('.'+domain))
+ domains={domain}
+ if domain in {'bbc.co.uk','bbc.com'}:domains.update({'bbc.co.uk','bbc.com'})
+ return url.startswith('https://') and any(h==d or h.endswith('.'+d) for d in domains)
+SOURCE_HTTP_BLOCKS={}
+SOURCE_HTTP_LOCK=threading.Lock()
 @lru_cache(maxsize=512)
 def source_text(url,domain):
  try:
   if not allowed(url,domain):return ''
+  with SOURCE_HTTP_LOCK:
+   if domain in SOURCE_HTTP_BLOCKS:return ''
   r=requests.get(url,timeout=(8,18),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobalTechDaily/1.0)','Accept':'text/html,application/xhtml+xml'})
   r.raise_for_status()
   if not allowed(r.url,domain):return ''
@@ -335,6 +342,13 @@ def source_text(url,domain):
   if 'html' not in content_type:return ''
   soup=BeautifulSoup(r.text[:1800000],'html.parser')
   candidates=[]
+  bodies,dates=structured_article_data(soup)
+  candidates.extend(clean(body) for body in bodies)
+  for date in dates:
+   if timestamp(date):STORY_DATES[url]=date;break
+  for tag in soup.select('meta[property="article:published_time"], meta[itemprop="datePublished"]'):
+   value=tag.get('content','')
+   if timestamp(value):STORY_DATES[url]=value;break
   # JSON-LD articleBody is often present even when the visible article is JS-rendered.
   for script in soup.select('script[type="application/ld+json"]'):
    try:
@@ -351,17 +365,18 @@ def source_text(url,domain):
     visit(data)
    except (ValueError,TypeError,RecursionError):pass
   for tag in soup(['script','style','nav','footer','aside','form','header','noscript']):tag.decompose()
+  candidates.extend(content_candidates(soup,clean))
   selectors=('[itemprop="articleBody"]','[class*="article-body"]','[class*="articleBody"]','[class*="story-body"]','[data-testid*="article"]','article','main')
   for selector in selectors:
    for node in soup.select(selector)[:4]:
     paras=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['h2','h3','p','li'])]
     paras=[p for p in paras if len(p)>40]
-    if paras:candidates.append('\\n'.join(paras))
+    if paras:candidates.append('\n'.join(paras))
   # Universal extraction fallback: OpenGraph/JSON-LD + common CMS article containers.
   for node in soup.select('.article-content, .article-body, .story-body, .story-detail, .content-body, .news-content, .post-body, .td-post-content, .single-post-content, [class*="articleContent"], [class*="storyContent"], [itemprop="mainEntityOfPage"]')[:8]:
    paragraphs=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['p','h2','h3','li'])]
    paragraphs=[p for p in paragraphs if len(p)>45]
-   if len(paragraphs)>=2:candidates.append('\\n'.join(paragraphs))
+   if len(paragraphs)>=2:candidates.append('\n'.join(paragraphs))
   # Prefer article content; never treat navigation or paywall previews as full reporting.
   for node in soup.select('[data-component="text-block"], [data-testid="paragraph"], .article__content, .entry-content, .post-content, .story-content')[:6]:
    paragraphs=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['p','h2','h3'])]
@@ -371,7 +386,13 @@ def source_text(url,domain):
   best=max(candidates,key=words,default='')[:24000]
   if words(best)<65:print('EXTRACTION_INSUFFICIENT',domain,url[:130],'words',words(best),flush=True)
   return best
- except (requests.RequestException,ValueError,TypeError):return ''
+ except requests.RequestException as exc:
+  code=getattr(getattr(exc,'response',None),'status_code',None)
+  if code in (401,403,429):
+   with SOURCE_HTTP_LOCK:SOURCE_HTTP_BLOCKS[domain]=code
+  print('SOURCE_FETCH_FAILED',domain,'status',code or type(exc).__name__,flush=True)
+  return ''
+ except (ValueError,TypeError):return ''
 
 def day_count():
  today=dt.datetime.now(UTC).date().isoformat()
@@ -541,7 +562,7 @@ def website_stories(item):
    if any(z in url.lower() for z in ('/tag/','/author/','/category/','/topics/','/video/','/live/','/search/','/login','/signup','/privacy','/contact','/about','/taxonomy/','/complain/','/submission/','/articlelist/','/topic/','/forum/','/deals/','/collections/')):continue
    if len(urlparse(url).path.strip('/').split('/'))<2 and not re.search(r'\d{4,}|[a-z0-9]+[-_][a-z0-9]+',urlparse(url).path):continue
    if cat in ('sarkari-naukri','private-vacancy') and not re.search(r'job|vacan|recruit|hiring|career|भर्ती|नौकरी|पद|result|admit|exam',title+' '+url,re.I):continue
-   seen_urls.add(url);stories.append((url,title,cat,domain))
+   seen_urls.add(url);stories.append((url,title,category(title,cat),domain))
    if len(stories)>=25:break
   return item,stories
  except (requests.RequestException,ValueError) as exc:
@@ -699,7 +720,7 @@ def bing_search_stories(cat):
    if not target.startswith('https://') or len(title)<25:continue
    if not (any(allowed(target,d) for _,_,d in FEEDS) or any(allowed(target,d) for d in REGIONAL_PORTALS.get(cat,()))):continue
    if host.endswith('bing.com') or host.endswith('microsoft.com'):continue
-   stories.append((target,title,cat,host))
+   stories.append((target,title,category(title,cat),host))
   print('Bing search',cat,'publisher stories',len(stories),flush=True)
   return stories
  except (requests.RequestException,ValueError):
@@ -724,7 +745,7 @@ def useful_lead(row):
  if pending.exists():
   try:
    record=json.loads(pending.read_text(encoding='utf-8'))
-   if record.get('status')=='source_unavailable' and not (record.get('en_body') or record.get('hi_body')):return False
+   if record.get('status')=='source_unavailable' and not (record.get('en_body') or record.get('hi_body')) and record.get('blocked_until','')>dt.datetime.now(UTC).isoformat():return False
   except (OSError,ValueError):pass
  return True
 def load_discovery_queue():
@@ -766,6 +787,37 @@ def save_discovery_queue(rows):
  temp.write_text(json.dumps({'version':2,'items':entries},ensure_ascii=False),encoding='utf-8')
  temp.replace(QUEUE_FILE)
 
+def native_feed_stories():
+ def read(item):
+  feed,cat,domain=item
+  try:
+   response=requests.get(feed,timeout=(5,12),headers={'User-Agent':'GlobeWireDaily/1.0'})
+   response.raise_for_status()
+   entries=feedparser.parse(response.content).entries
+   source_metric(domain,'feed_entries',len(entries))
+   rows=[];now=dt.datetime.now(UTC)
+   for entry in entries[:50]:
+    url=entry.get('link','');title=clean(entry.get('title',''))
+    stamp=entry.get('published_parsed') or entry.get('updated_parsed')
+    if not allowed(url,domain) or len(title)<24 or not stamp:continue
+    try:published=dt.datetime(*stamp[:6],tzinfo=UTC)
+    except (ValueError,TypeError):continue
+    if not -300<=(now-published).total_seconds()<=48*3600:continue
+    STORY_DATES[url]=published.isoformat()
+    rows.append((url,title,category(title,cat),domain))
+   print('NATIVE_FEED',domain,'entries',len(entries),'fresh_leads',len(rows),flush=True)
+   return rows
+  except requests.RequestException as exc:
+   code=getattr(getattr(exc,'response',None),'status_code',None)
+   print('NATIVE_FEED_FAILED',domain,code or type(exc).__name__,flush=True)
+   return []
+ with ThreadPoolExecutor(max_workers=8) as pool:
+  results=list(pool.map(read,NATIVE_FEEDS))
+ # Round robin keeps a prolific publisher from consuming all discovery time.
+ for index in range(max(map(len,results),default=0)):
+  for rows in results:
+   if index<len(rows):yield rows[index]
+
 def candidates():
  seen=set()
  counts=published_categories()
@@ -792,6 +844,10 @@ def candidates():
     seen.add(url)
     yield url,title,record.get('category','technology'),domain
   except (OSError,ValueError):pass
+ # Native RSS is independent of opaque Google News redirects and runs first.
+ for story in native_feed_stories():
+  if story[0] not in seen:
+   seen.add(story[0]);yield story
  # Check explicit source pages ahead of broad search engines.
  with ThreadPoolExecutor(max_workers=10) as pool:
   direct_results=list(pool.map(website_stories,DIRECT_SOURCES))
@@ -801,7 +857,7 @@ def candidates():
   source_metric(domain,'website_candidates',len(items))
   for story in items:
    if story[0] not in seen:
-    seen.add(story[0]);direct_groups.setdefault(cat,[]).append(story)
+    seen.add(story[0]);direct_groups.setdefault(story[2],[]).append(story)
  for i in range(max(map(len,direct_groups.values()),default=0)):
   for cat in sorted(direct_groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
    if i<len(direct_groups[cat]):yield direct_groups[cat][i]
@@ -812,7 +868,7 @@ def candidates():
  for cat,stories in zip(google_groups,google_results):
   for story in stories:
    if story[0] not in seen:
-    seen.add(story[0]);google_groups[cat].append(story)
+    seen.add(story[0]);google_groups.setdefault(story[2],[]).append(story)
  for i in range(max(map(len,google_groups.values()),default=0)):
   for cat in sorted(google_groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
    if i<len(google_groups[cat]):yield google_groups[cat][i]
@@ -824,7 +880,7 @@ def candidates():
  for cat,stories in zip(bing_groups,bing_results):
   for story in stories:
    if story[0] not in seen:
-    seen.add(story[0]);bing_groups[cat].append(story)
+    seen.add(story[0]);bing_groups.setdefault(story[2],[]).append(story)
  for i in range(max(map(len,bing_groups.values()),default=0)):
   for cat in sorted(bing_groups,key=lambda x:(x not in missing,counts.get(x,0),x)):
    if i<len(bing_groups[cat]):yield bing_groups[cat][i]
@@ -844,7 +900,7 @@ def candidates():
   source_metric(domain,'website_candidates',len(stories))
   for story in stories:
    if story[0] not in seen:
-    seen.add(story[0]);groups[cat].append(story)
+    seen.add(story[0]);groups.setdefault(story[2],[]).append(story)
  for cat in groups:groups[cat].sort(key=story_priority)
  for i in range(max(map(len,groups.values()),default=0)):
   for cat in sorted(groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
@@ -969,11 +1025,14 @@ def main():
   if cat=='sarkari-naukri' and not (any(allowed(url,d) for d in OFFICIAL_JOB_DOMAINS) or any(allowed(url,d) for d in REGIONAL_PORTALS['sarkari-naukri'])):
    print('Skipping recruitment story from unapproved source:',url,flush=True)
    return None
-  if cat in {'entertainment-rumours','celebrity-news'} and not any(allowed(url,d) for d in TRUSTED_ENTERTAINMENT):
+  if (cat in {'entertainment-rumours','celebrity-news'} and not any(allowed(url,d) for d in TRUSTED_ENTERTAINMENT)) or (cat=='controversies' and not any(allowed(url,d) for d in TRUSTED_CONTROVERSY)):
    print('Skipping unattributable entertainment claim:',url,flush=True)
    return None
   text=source_text(url,domain)
   source_stamp=timestamp(STORY_DATES.get(url))
+  if cat in {'car-launches','mobile-launches','movie-releases','controversies'} and not source_stamp:
+   print('Skipping undated launch or controversy:',domain,title[:80],flush=True)
+   return None
   max_age=7*86400 if cat in EXAM_CATEGORIES else 48*3600
   if source_stamp and (dt.datetime.now(UTC).timestamp()-source_stamp>max_age or source_stamp>dt.datetime.now(UTC).timestamp()+300):
    print('Skipping stale or future-dated source:',title[:80],flush=True)
@@ -981,7 +1040,7 @@ def main():
   if (not text.strip() or words(text)<65) and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    # Preserve completed language drafts even if the publisher temporarily blocks scraping.
    state.update({'source':url,'source_title':title,'category':cat,'status':'source_unavailable','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat(),'source_words':words(text)})
-   if pending.exists(): save_state(pending,state)
+   save_state(pending,state)
    print('Skipping source before AI:',title[:65],'words',words(text),flush=True)
    return None
   state.update({'source':url,'source_title':title,'category':cat,'status':'draft','updated_at':dt.datetime.now(UTC).isoformat()})
@@ -1059,6 +1118,7 @@ def main():
  # Prioritize two verified articles per category before filling additional slots.
  grouped={}
  for story in stories:
+   story=(story[0],story[1],category(story[1],story[2]),story[3])
    grouped.setdefault(story[2],[]).append(story)
    source_metric(story[3],'queued')
  ordered=[]
@@ -1068,8 +1128,8 @@ def main():
  for rows in grouped.values():rows.sort(key=story_priority)
  categories=sorted(grouped,key=lambda cat:(historical_counts.get(cat,0)>0,story_priority(grouped[cat][0]),historical_counts.get(cat,0),cat))
  missing_candidates=sorted(set(c for _,c,_ in FEEDS)-set(grouped))
- print('Categories without usable leads:',', '.join(missing_candidates) or 'none',flush=True)
- print('Verified candidate queue per category:',{cat:len(grouped[cat]) for cat in categories},flush=True)
+ print('Categories without discovered leads:',', '.join(missing_candidates) or 'none',flush=True)
+ print('Candidate queue per category (article extraction pending):',{cat:len(grouped[cat]) for cat in categories},flush=True)
  print('Category processing priority:',', '.join(categories),flush=True)
  # Soft fair-share limit: allow more stories when only a few categories have leads.
  category_run_cap=max(MIN_POSTS_PER_CATEGORY,(remaining+max(1,len(categories))-1)//max(1,len(categories)))

@@ -2,7 +2,7 @@ name: GlobalTech Daily Auto News
 on:
   push:
     branches: [main]
-    paths: ['scripts/news_config.py', 'scripts/verticals.py', '.github/workflows/news-auto.yml']
+    paths: ['scripts/news_config.py', 'scripts/verticals.py', '.github/workflows/news-auto.yml', 'scripts/focused_sources.py', 'scripts/probe_sources.py']
   workflow_dispatch:
   schedule:
     - cron: '7 * * * *'
@@ -30,6 +30,8 @@ jobs:
         run: python -m compileall -q scripts
       - name: Validate newsroom configuration
         run: python -m unittest discover -s tests -v
+      - name: Probe launch and controversy sources without AI
+        run: python -u scripts/probe_sources.py
       - name: Generate source-based news
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

@@ -16,12 +16,12 @@ CATEGORIES={
 }
 PATTERNS={
  'cricket':r'\b(?:cricket|ipl|t20|odi|ashes|icc|bcci|wicket|batting|bowling)\b|क्रिकेट|विकेट',
- 'car-launches':r'\b(?:launch|unveil|debut|specification|mileage|fuel economy|variant|price|pricing)\b|लॉन्च|माइलेज|कीमत',
- 'mobile-launches':r'(?=.*\b(?:phone|smartphone|iphone|galaxy|pixel|oneplus|xiaomi)\b)(?=.*\b(?:launch|price|specifications?|unveil|release|camera|battery)\b)|मोबाइल लॉन्च',
+ 'car-launches':r'\b(?:launch(?:es|ed|ing)?|unveil(?:s|ed)?|debut(?:s|ed)?|introduc(?:es|ed)|specifications?|mileage|fuel economy|variant|price|pricing)\b|लॉन्च|माइलेज|कीमत',
+ 'mobile-launches':r'(?=.*\b(?:phone|smartphone|iphone|galaxy|pixel|oneplus|xiaomi)\b)(?=.*\b(?:launch(?:es|ed|ing)?|price|specifications?|unveil(?:s|ed)?|releases?|camera|battery)\b)|मोबाइल लॉन्च',
  'entertainment-rumours':r'rumou?r|unconfirmed|reportedly.*(?:cast|film|actor|dating)|अफवाह|अपुष्ट',
- 'movie-releases':r'\b(?:movie|film|cinema|trailer|box office)\b.*\b(?:release|launch|premiere|debut|trailer)\b|फिल्म रिलीज|ट्रेलर',
+ 'movie-releases':r'\b(?:trailer|release date|premieres?)\b|(?=.*\b(?:movie|film|cinema|theatrical|netflix|ott|box office)\b)(?=.*\b(?:releases?|launch|premieres?|debut|opens|streaming)\b)|फिल्म रिलीज|ट्रेलर',
  'celebrity-news':r'\b(?:actor|actress|celebrity|celebrities|bollywood|hollywood star)\b|अभिनेता|अभिनेत्री|सेलिब्रिटी',
- 'controversies':r'controversy|controversial|backlash|public dispute|विवाद|विवादित',
+ 'controversies':r'controversy|controversial|backlash|public dispute|lawsuit|allegations?|विवाद|विवादित|आरोप',
  'social-media':r'\b(?:tiktok|instagram|facebook|youtube|threads|snapchat|social media|creator economy)\b|टिकटॉक|इंस्टाग्राम',
  'military-tech':r'\b(?:armou?r|tank|fighter jet|warship|military vehicle|missile defence|air defence|naval ship)\b|सैन्य वाहन|लड़ाकू विमान|युद्धपोत',
  'conflict-news':r'\b(?:ceasefire|invasion|conflict|war zone|peace talks|airstrike|battlefield)\b|युद्ध|संघर्ष|युद्धविराम',
@@ -60,7 +60,7 @@ SOURCES=[
  ('electrek.co','ev-clean-energy','electric vehicles'),('energy.gov','ev-clean-energy','clean energy'),('science.nasa.gov','space-news','space news'),('esa.int','space-news','space news'),
 ]
 DIRECT=[('https://www.icc-cricket.com/news','cricket','icc-cricket.com'),('https://news.samsung.com/global/','mobile-launches','news.samsung.com'),('https://about.fb.com/news/','social-media','about.fb.com'),('https://newsroom.tiktok.com/','social-media','newsroom.tiktok.com'),('https://www.nato.int/','defence','nato.int'),('https://educationusa.state.gov/your-5-steps-us-study','study-abroad','educationusa.state.gov')]
-TRUSTED_ENTERTAINMENT=('variety.com','deadline.com','hollywoodreporter.com','people.com','bbc.com','bbc.co.uk','theguardian.com','news.abplive.com')
+TRUSTED_ENTERTAINMENT=('variety.com','deadline.com','hollywoodreporter.com','people.com','bbc.com','bbc.co.uk','theguardian.com','news.abplive.com','apnews.com','reuters.com')
 REQUIREMENTS={
  'car-launches':'Cover model and market/country, launch versus announcement, variant-wise price with currency and ex-showroom/on-road distinction, engine or battery, transmission, power, safety and availability. Report mileage/range ONLY with stated test cycle (ARAI/WLTP/EPA) and units. Separate manufacturer claims from independently measured results. Mark absent facts as not announced; never estimate missing specifications.',
  'mobile-launches':'Cover confirmed model, launch country/date, variant-wise local price/currency, display, chipset, RAM/storage, cameras, battery, charging, software support, availability and official product link. Distinguish announced, preorder, on-sale and leaked specifications. Never combine different regional variants.',
@@ -91,3 +91,5 @@ def unconfirmed_story(title):
     # The title of Neil Simon’s play Rumors is not an unconfirmed report.
     if re.search(r"neil simon|नील साइमन",text,re.I):return False
     return bool(re.search(r"rumou?r|unconfirmed|अफवाह|अपुष्ट",text,re.I))
+
+TRUSTED_CONTROVERSY=TRUSTED_ENTERTAINMENT+('motor1.com','carscoops.com','insideevs.com','androidauthority.com','gadgets360.com','theverge.com')

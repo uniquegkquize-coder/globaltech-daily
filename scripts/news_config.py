@@ -46,7 +46,7 @@ PRIORITY={'telecom':10,'sarkari-naukri':10,'results':10,'admit-cards':10,'answer
 @lru_cache(maxsize=8192)
 def classify(title, default='technology'):
     text=str(title).lower()
-    for topic,pattern in GLOBAL_PATTERNS.items():
+    for topic,pattern in sorted(GLOBAL_PATTERNS.items(),key=lambda x:x[0]!='controversies'):
         if topic in SCOPES and default not in SCOPES[topic]:continue
         if topic=='entertainment-rumours' and not unconfirmed_story(text):continue
         if re.search(pattern,text):return topic
@@ -101,3 +101,12 @@ OFFICIAL_LINKS=[('SSC','https://ssc.gov.in/'),('UPSC','https://upsc.gov.in/'),('
 EXTRA_FEEDS.extend(search_feed(domain,cat,query) for domain,cat,query in SOURCES)
 DIRECT_EXTRA.extend(DIRECT)
 PRIORITY.update({"cricket":10,"car-launches":9,"mobile-launches":10,"movie-releases":9,"social-media":8,"defence":8,"conflict-news":9,"military-tech":7,"study-abroad":9,"visas-immigration":9,"tourism":7,"travel-packages":7,"freebies":8})
+
+# Native publisher feeds run early in the collector, before opaque search links.
+try:
+    from .focused_sources import NATIVE_FEEDS, PAGES, SEARCH_SOURCES
+except ImportError:
+    from focused_sources import NATIVE_FEEDS, PAGES, SEARCH_SOURCES
+EXTRA_FEEDS.extend(NATIVE_FEEDS)
+EXTRA_FEEDS.extend(search_feed(d,c,q) for d,c,q in SEARCH_SOURCES)
+DIRECT_EXTRA.extend(PAGES)

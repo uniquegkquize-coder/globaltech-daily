@@ -8,6 +8,9 @@ on:
       - 'scripts/news_sitemap.py'
       - 'scripts/site_ui.py'
       - 'scripts/news_config.py'
+      - 'scripts/focused_sources.py'
+      - 'scripts/probe_sources.py'
+      - 'tests/test_source_pipeline.py'
       - 'scripts/verticals.py'
       - 'scripts/expanded_hubs.py'
       - 'scripts/official_notices.py'
@@ -31,8 +34,12 @@ jobs:
           python-version: '3.11'
       - name: Check Python syntax
         run: python -m py_compile scripts/collect.py scripts/build.py scripts/test_sources.py
+      - name: Install source parser dependencies
+        run: python -m pip install requests feedparser beautifulsoup4 'pypdf>=5,<7'
       - name: Test newsroom configuration and news sitemap boundaries
         run: python -m unittest discover -s tests -v
+      - name: Probe worldwide launch sources without AI
+        run: python -u scripts/probe_sources.py
       - name: Check state and city source coverage
         run: python scripts/test_sources.py
       - name: Install static-site build dependencies
