@@ -3,7 +3,10 @@ import datetime as dt
 import re
 from functools import lru_cache
 from urllib.parse import quote
-from verticals import CATEGORIES as GLOBAL_CATEGORIES, PATTERNS as GLOBAL_PATTERNS, SCOPES, SOURCES, DIRECT, unconfirmed_story
+try:
+    from .verticals import CATEGORIES as GLOBAL_CATEGORIES, PATTERNS as GLOBAL_PATTERNS, SCOPES, SOURCES, DIRECT, unconfirmed_story
+except ImportError:
+    from verticals import CATEGORIES as GLOBAL_CATEGORIES, PATTERNS as GLOBAL_PATTERNS, SCOPES, SOURCES, DIRECT, unconfirmed_story
 
 CATEGORIES = {
  'technology':('Technology','टेक्नोलॉजी'), 'government-schemes':('Government Schemes','सरकारी योजनाएँ'),
