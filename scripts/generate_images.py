@@ -71,7 +71,10 @@ def commons_photo(p):
             'format':'json'},headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)'},
             timeout=(5,15)).json()
         pages=data.get('query',{}).get('pages',{})
+        topic_words={w.lower() for w in re.findall(r'[A-Za-z]{4,}',query) if w.lower() not in {'latest','news','after','with','from','about','today','launch','update','report','india','world'}}
         for page in pages.values():
+            filename_words={w.lower() for w in re.findall(r'[A-Za-z]{4,}',page.get('title',''))}
+            if not topic_words or len(topic_words & filename_words)<min(2,len(topic_words)):continue
             info=(page.get('imageinfo') or [{}])[0]
             meta=info.get('extmetadata') or {}
             license_name=re.sub('<[^>]*>','',meta.get('LicenseShortName',{}).get('value','')).strip()
