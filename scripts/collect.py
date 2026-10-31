@@ -31,6 +31,11 @@ MIN_POSTS_PER_CATEGORY=max(1,int(os.getenv('MIN_POSTS_PER_CATEGORY','2')))
 MIN_SOURCE_WORDS=0
 OFFICIAL_JOB_DOMAINS=('upsc.gov.in','ssc.gov.in','rrbcdg.gov.in','indianrailways.gov.in','employmentnews.gov.in','nta.ac.in','gov.in','nic.in')
 CALLS=0
+RUN_DEADLINE=0.0
+DISCOVERY_DEADLINE=0.0
+COLLECT_SECONDS=max(120,min(1920,int(os.getenv('COLLECT_SECONDS','720'))))
+DISCOVERY_SECONDS=max(30,min(COLLECT_SECONDS-60,int(os.getenv('DISCOVERY_SECONDS','180'))))
+MODELS_PER_PROVIDER=max(1,min(3,int(os.getenv('MAX_MODELS_PER_ARTICLE','1'))))
 STORY_DATES={}
 # News discovery sources. Official-domain verification occurs BEFORE any AI request.
 # Curated global discovery. Publisher RSS is for finding stories; the linked article is
@@ -332,7 +337,7 @@ SOURCE_HTTP_LOCK=threading.Lock()
 @lru_cache(maxsize=512)
 def source_text(url,domain):
  try:
-  if not allowed(url,domain):return ''
+  if not allowed(url,domain) or (RUN_DEADLINE and time.monotonic()>=RUN_DEADLINE):return ''
   with SOURCE_HTTP_LOCK:
    if domain in SOURCE_HTTP_BLOCKS:return ''
   r=requests.get(url,timeout=(8,18),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobalTechDaily/1.0)','Accept':'text/html,application/xhtml+xml'})
@@ -421,7 +426,11 @@ def json_object(raw):
   except (ValueError,AttributeError): return {}
 
 GEMINI_MODEL_CACHE={}
+GEMINI_MODEL_LOCK=threading.Lock()
 def gemini_models(key):
+ with GEMINI_MODEL_LOCK:
+  return _discover_gemini_models(key)
+def _discover_gemini_models(key):
  if key in GEMINI_MODEL_CACHE:return GEMINI_MODEL_CACHE[key]
  # Discover every model this API key can actually use for text generation.
  fallback=[x.strip() for x in os.getenv('GEMINI_MODELS','gemini-2.5-flash,gemini-2.5-flash-lite').split(',') if x.strip()]
@@ -459,13 +468,15 @@ def call_provider(prompt):
  global CALLS
  last=None
  for provider in provider_order():
+  if RUN_DEADLINE and time.monotonic()>=RUN_DEADLINE:return None,last
   with PROVIDER_LOCK:
    if CALLS>=MAX_CALLS:break
    if provider in PROVIDER_COOLDOWNS:continue
   key=os.getenv({'groq':'GROQ_API_KEY','gemini':'GEMINI_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}[provider],'').strip()
   if not key:continue
   models=gemini_models(key) if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else (os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free'))]
-  for model in dict.fromkeys(models):
+  for model in list(dict.fromkeys(models))[:MODELS_PER_PROVIDER]:
+   if RUN_DEADLINE and time.monotonic()>=RUN_DEADLINE:return None,last
    with PROVIDER_LOCK:
     if (provider,model) in UNAVAILABLE_MODELS:continue
    if CALLS>=MAX_CALLS:break
@@ -474,12 +485,13 @@ def call_provider(prompt):
     CALLS+=1
    last=provider
    try:
+    response_timeout=min(55,max(1,RUN_DEADLINE-time.monotonic())) if RUN_DEADLINE else 55
     if provider=='gemini':
-     r=requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',headers={'x-goog-api-key':key},json={'contents':[{'parts':[{'text':prompt}]}],'generationConfig':{'responseMimeType':'application/json','maxOutputTokens':8192}},timeout=(7,55))
+     r=requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',headers={'x-goog-api-key':key},json={'contents':[{'parts':[{'text':prompt}]}],'generationConfig':{'responseMimeType':'application/json','maxOutputTokens':8192}},timeout=(min(7,response_timeout),response_timeout))
      raw=''.join(p.get('text','') for p in r.json()['candidates'][0]['content']['parts']) if r.ok else ''
     else:
      url=('https://api.groq.com/openai/v1/chat/completions' if provider=='groq' else ('https://api.openai.com/v1/chat/completions' if provider=='openai' else 'https://openrouter.ai/api/v1/chat/completions'))
-     r=requests.post(url,headers={'Authorization':'Bearer '+key},json={'model':model,'messages':[{'role':'user','content':prompt}],'max_tokens':8192,'temperature':0.2},timeout=(7,55))
+     r=requests.post(url,headers={'Authorization':'Bearer '+key},json={'model':model,'messages':[{'role':'user','content':prompt}],'max_tokens':8192,'temperature':0.2},timeout=(min(7,response_timeout),response_timeout))
      raw=r.json()['choices'][0]['message']['content'] if r.ok else ''
     if not r.ok:
      print('Provider',provider,'model',model,'HTTP',r.status_code,flush=True)
@@ -736,6 +748,24 @@ def bing_search_stories(cat):
 
 SOURCE_DIAGNOSTICS=Counter()
 SOURCE_DIAGNOSTICS_LOCK=threading.Lock()
+def discovery_map(fn,items,workers,fallback=None):
+ """Keep result order, but stop scheduling discovery when its budget expires."""
+ items=list(items)
+ results=[fallback(item) if fallback else [] for item in items]
+ if DISCOVERY_DEADLINE and time.monotonic()>=DISCOVERY_DEADLINE:return results
+ pool=ThreadPoolExecutor(max_workers=workers)
+ futures={pool.submit(fn,item):index for index,item in enumerate(items)}
+ try:
+  timeout=max(0.001,DISCOVERY_DEADLINE-time.monotonic()) if DISCOVERY_DEADLINE else None
+  for future in as_completed(futures,timeout=timeout):
+   try:results[futures[future]]=future.result()
+   except Exception as exc:print('DISCOVERY_WORKER_FAILED',type(exc).__name__,flush=True)
+ except TimeoutError:print('Discovery time budget reached; retaining collected leads',flush=True)
+ finally:
+  for future in futures:future.cancel()
+  pool.shutdown(wait=False,cancel_futures=True)
+ return results
+
 def source_metric(domain,metric,amount=1):
  with SOURCE_DIAGNOSTICS_LOCK: SOURCE_DIAGNOSTICS[(domain,metric)]+=amount
 
@@ -819,8 +849,7 @@ def native_feed_stories():
    code=getattr(getattr(exc,'response',None),'status_code',None)
    print('NATIVE_FEED_FAILED',domain,code or type(exc).__name__,flush=True)
    return []
- with ThreadPoolExecutor(max_workers=8) as pool:
-  results=list(pool.map(read,NATIVE_FEEDS))
+ results=discovery_map(read,NATIVE_FEEDS,8)
  # Round robin keeps a prolific publisher from consuming all discovery time.
  for index in range(max(map(len,results),default=0)):
   for rows in results:
@@ -857,8 +886,7 @@ def candidates():
   if story[0] not in seen:
    seen.add(story[0]);yield story
  # Check explicit source pages ahead of broad search engines.
- with ThreadPoolExecutor(max_workers=10) as pool:
-  direct_results=list(pool.map(website_stories,DIRECT_SOURCES))
+ direct_results=discovery_map(website_stories,DIRECT_SOURCES,10,lambda item:(item,[]))
  direct_groups={}
  for (feed,cat,domain),items in direct_results:
   print('Direct source',domain,'category',cat,'candidates',len(items),flush=True)
@@ -871,8 +899,7 @@ def candidates():
    if i<len(direct_groups[cat]):yield direct_groups[cat][i]
  # Google News category search is the first fresh-news discovery source.
  google_groups={cat:[] for cat in GOOGLE_QUERIES}
- with ThreadPoolExecutor(max_workers=7) as pool:
-  google_results=list(pool.map(google_news_stories,google_groups))
+ google_results=discovery_map(google_news_stories,google_groups,7)
  for cat,stories in zip(google_groups,google_results):
   for story in stories:
    if story[0] not in seen:
@@ -883,8 +910,7 @@ def candidates():
  # Independent keyword search discovery complements Google News and RSS.
  # Only approved original publisher URLs proceed to factual extraction.
  bing_groups={cat:[] for cat in GOOGLE_QUERIES}
- with ThreadPoolExecutor(max_workers=7) as pool:
-  bing_results=list(pool.map(bing_search_stories,bing_groups))
+ bing_results=discovery_map(bing_search_stories,bing_groups,7)
  for cat,stories in zip(bing_groups,bing_results):
   for story in stories:
    if story[0] not in seen:
@@ -893,16 +919,14 @@ def candidates():
   for cat in sorted(bing_groups,key=lambda x:(x not in missing,counts.get(x,0),x)):
    if i<len(bing_groups[cat]):yield bing_groups[cat][i]
  # Region-wise aggregators surface state job and scheme updates.
- with ThreadPoolExecutor(max_workers=3) as pool:
-  regional_results=list(pool.map(regional_search_stories,REGIONAL_PORTALS))
+ regional_results=discovery_map(regional_search_stories,REGIONAL_PORTALS,3)
  for cat,stories in zip(REGIONAL_PORTALS,regional_results):
   for story in stories:
    if story[0] not in seen:
     seen.add(story[0]);yield story
  # First search major publisher websites across every category.
  groups={cat:[] for _,cat,_ in FEEDS}
- with ThreadPoolExecutor(max_workers=10) as pool:
-  website_results=list(pool.map(website_stories,rotating_publisher_websites()))
+ website_results=discovery_map(website_stories,rotating_publisher_websites(),10,lambda item:(item,[]))
  for (feed,cat,domain),stories in website_results:
   print('Website',domain,'category',cat,'candidates',len(stories),flush=True)
   source_metric(domain,'website_candidates',len(stories))
@@ -924,8 +948,7 @@ def candidates():
   except (requests.RequestException,ValueError):
    return item,[]
  # Cap workers: dozens of global sources without making Actions run for hours.
- with ThreadPoolExecutor(max_workers=24) as pool:
-  results=list(pool.map(read_feed,FEEDS+rotating_local_feeds()+rotating_social_feeds()))
+ results=discovery_map(read_feed,[item for item in FEEDS if item not in NATIVE_FEEDS]+rotating_local_feeds()+rotating_social_feeds(),24,lambda item:(item,[]))
  # Validate dates before any costly URL resolution. Resolve eligible Google
  # News URLs concurrently instead of making thousands of serial requests.
  eligible=[]
@@ -951,8 +974,10 @@ def candidates():
    url=resolve_google_news(url)
   if original in STORY_DATES:STORY_DATES[url]=STORY_DATES[original]
   return url,title,cat,domain
- with ThreadPoolExecutor(max_workers=32) as resolver_pool:
-  for url,title,cat,domain in resolver_pool.map(resolve_eligible,eligible):
+ resolved=discovery_map(resolve_eligible,eligible,16,lambda item:None)
+ for row in resolved:
+   if row is None:continue
+   url,title,cat,domain=row
    if not allowed(url,domain) or url in seen:continue
    seen.add(url)
    actual_cat=category_for_url(title,cat,url)
@@ -992,16 +1017,27 @@ def duplicate_story(url,title,cat,index):
   if cat==old_cat and same_story(title,old_title):return True
  return False
 
+def write_run_status(outcome,started,counts=None,**extra):
+ data={'finished_at':dt.datetime.now(UTC).isoformat(),'outcome':outcome,'duration_seconds':round(time.monotonic()-started,1),'published':sum((counts or {}).values()),'by_category':counts or {},'ai_calls':CALLS,'ai_limit':MAX_CALLS,**extra}
+ (ROOT/'content/news-run-status.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+ print('RUN_SUMMARY',json.dumps(data),flush=True)
+
 def main():
- if os.getenv('AUTO_POST','false').lower()!='true':print('AUTO_POST disabled');return 0
+ global RUN_DEADLINE,DISCOVERY_DEADLINE
+ started=time.monotonic()
+ if os.getenv('AUTO_POST','false').lower()!='true':
+  print('AUTO_POST disabled');write_run_status('disabled',started);return 0
  remaining=POSTS_PER_RUN
  print('Target posts this run:',remaining,flush=True)
  if not remaining:return 0
  if not any(os.getenv(k) for k in ('GROQ_API_KEY','GEMINI_API_KEY','OPENROUTER_API_KEY','OPENAI_API_KEY')):
-  print('No AI provider configured');return 0
+  print('No AI provider configured');write_run_status('no_provider',started);return 0
  published=0; inspected=0; category_published={}; category_reserved=Counter()
- discovery_deadline=time.monotonic()+8*60  # Allow broader source discovery.
- deadline=time.monotonic()+32*60  # Reserve remaining time for build and Git push.
+ existing_posts={p.stem for p in POSTS.glob('*.json')}
+ discovery_deadline=time.monotonic()+DISCOVERY_SECONDS
+ deadline=time.monotonic()+COLLECT_SECONDS
+ RUN_DEADLINE=deadline;DISCOVERY_DEADLINE=discovery_deadline
+ print('Batch budgets: discovery',DISCOVERY_SECONDS,'seconds; collector',COLLECT_SECONDS,'seconds',flush=True)
  print('Minimum target per category:',MIN_POSTS_PER_CATEGORY,flush=True)
  published_index=published_story_index()
  publication_lock=threading.RLock()
@@ -1074,7 +1110,7 @@ def main():
      print('Draft ready:',lang,'words',words(body),'via',provider,flush=True)
     else:print('Draft unusable:',lang,'words',words(body),'via',provider,flush=True)
    if not complete_body(state.get(lang+'_body',''),lang):
-    state['blocked_until']=(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat()
+    state['blocked_until']=(dt.datetime.now(UTC)+dt.timedelta(minutes=30)).isoformat()
    save_state(pending,state)
   if all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    # Prevent one prolific source category from consuming the whole run.
@@ -1162,7 +1198,10 @@ def main():
     futures[article_pool.submit(process_story,story)]=story
     source_metric(story[3],'attempted')
    if not futures:break
-   done=next(as_completed(futures))
+   try:done=next(as_completed(futures,timeout=max(0.001,deadline-time.monotonic())))
+   except TimeoutError:
+    print('Publication budget reached; preserving drafts for next batch',flush=True)
+    break
    story=futures.pop(done)
    try:cat=done.result()
    except Exception as exc:
@@ -1173,6 +1212,16 @@ def main():
     source_metric(story[3],'published')
     published+=1
     category_published[cat]=category_published.get(cat,0)+1
+ # In-flight workers may finish while the pool drains. Report actual new files,
+ # rather than only the futures consumed before the time/call limit.
+ actual_counts=Counter()
+ for path in POSTS.glob('*.json'):
+  if path.stem in existing_posts:continue
+  try:actual_counts[json.loads(path.read_text()).get('category','unknown')]+=1
+  except (OSError,ValueError):continue
+ category_published=dict(actual_counts);published=sum(actual_counts.values())
+ outcome='target_reached' if published>=remaining else ('ai_limit_reached' if CALLS>=MAX_CALLS else ('time_limit_reached' if time.monotonic()>=deadline else 'queue_exhausted'))
+ write_run_status(outcome,started,category_published,target=remaining,discovered_by_category=dict(discovered_by_category))
  # Retain only recent, valid, bounded leads; stale or unusable items are discarded.
  remaining_queue=[item for item in stories if not (POSTS/(hashlib.sha256(item[0].encode()).hexdigest()[:12]+'.json')).exists()]
  save_discovery_queue(remaining_queue)

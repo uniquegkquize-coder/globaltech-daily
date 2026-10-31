@@ -20,6 +20,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          ref: main
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -42,6 +43,8 @@ jobs:
           MIN_POSTS_PER_CATEGORY: '2'
           MAX_MODELS_PER_ARTICLE: '1'
           MAX_AI_CALLS_PER_RUN: '100'
+          COLLECT_SECONDS: '720'
+          DISCOVERY_SECONDS: '180'
           MIN_SOURCE_WORDS: '0'
           MIN_ARTICLE_WORDS_EN: '140'
           MIN_ARTICLE_WORDS_HI: '90'
@@ -74,7 +77,7 @@ jobs:
         run: |
           git config user.name 'GlobalTech News Bot'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A content/posts content/pending content/featured dist
+          git add -A content/posts content/pending content/featured content/news-run-status.json dist
           if ! git diff --cached --quiet; then
             git commit -m 'Publish source-backed tech news and rebuild website'
             # Sync new editorial posts with main without replaying generated HTML conflicts.
@@ -86,12 +89,14 @@ jobs:
                 git rebase --abort || true
                 mkdir -p /tmp/news-publish-backup
                 cp -a content/posts content/pending content/featured /tmp/news-publish-backup/
+                cp content/news-run-status.json /tmp/news-publish-backup/news-run-status.json
                 git reset --hard "origin/${{ github.ref_name }}"
                 cp -an /tmp/news-publish-backup/posts/. content/posts/ || true
                 cp -an /tmp/news-publish-backup/pending/. content/pending/ || true
                 cp -an /tmp/news-publish-backup/featured/. content/featured/ || true
+                cp /tmp/news-publish-backup/news-run-status.json content/news-run-status.json
                 python -u scripts/build.py
-                git add -A content/posts content/pending content/featured dist
+                git add -A content/posts content/pending content/featured content/news-run-status.json dist
                 if ! git diff --cached --quiet; then
                   git commit -m 'Refresh generated site on latest main'
                 fi
