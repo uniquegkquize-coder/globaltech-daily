@@ -1105,7 +1105,10 @@ def main():
    print('Skipping undated launch or controversy:',domain,title[:80],flush=True)
    return None
   max_age=72*3600  # Strict maximum source age for every news category
-  if not source_stamp:\n   print('Skipping source without verifiable publication date:',title[:80],flush=True)\n   return None\n  if dt.datetime.now(UTC).timestamp()-source_stamp>max_age or source_stamp>dt.datetime.now(UTC).timestamp()+300:
+   if not source_stamp:
+    print('Skipping source without verifiable publication date:',title[:80],flush=True)
+    return None
+   if dt.datetime.now(UTC).timestamp()-source_stamp>max_age or source_stamp>dt.datetime.now(UTC).timestamp()+300:
    print('Skipping stale or future-dated source:',title[:80],flush=True)
    return None
   if (not text.strip() or words(text)<65) and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
