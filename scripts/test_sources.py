@@ -19,8 +19,10 @@ assert "MIN_ARTICLE_WORDS_HI" in source
 assert "def complete_body(body,lang):" in source
 assert "rotating_local_feeds()" in source
 assert "resolve_google_news(url)" in source
-assert "results=list(pool.map(read_feed,FEEDS+rotating_local_feeds()+rotating_social_feeds()))" in source
+discovery_calls=[n for n in ast.walk(tree) if isinstance(n,ast.Call) and isinstance(n.func,ast.Name) and n.func.id=='discovery_map']
+assert any(n.args and isinstance(n.args[0],ast.Name) and n.args[0].id=='read_feed' for n in discovery_calls)
+assert 'rotating_social_feeds()' in source
 assert "if not allowed(url,domain) or url in seen:continue" in source
 assert "if not url or not title:continue" in source
-assert "resolver_pool.map(resolve_eligible,eligible)" in source
+assert any(n.args and isinstance(n.args[0],ast.Name) and n.args[0].id=='resolve_eligible' for n in discovery_calls)
 print(f"Source validation OK: {len(regions)} states/UTs, {sum(map(len,regions.values()))} cities")
