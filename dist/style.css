@@ -87,3 +87,25 @@
  .category-menu{order:2;margin-left:auto}
  .category-menu .nav-more[open] .nav-more-list{position:absolute!important;right:0!important;top:100%!important;left:auto!important;width:min(340px,90vw)!important;max-height:70vh!important}
 }
+
+/* Anchor the desktop dropdown inside the rightmost header column. */
+@media(min-width:1000px){
+ .top .wrap{grid-template-columns:auto minmax(0,1fr) auto!important}
+ .top .wrap .category-menu{justify-self:end;margin-left:0}
+}
+.top .wrap .category-menu .nav-more[open] .nav-more-list{
+ right:0!important;left:auto!important;width:min(400px,calc(100vw - 32px))!important;
+ overflow-x:hidden!important;box-sizing:border-box;
+}
+@media(max-width:999px){
+ .top .wrap{display:flex!important;flex-wrap:wrap;gap:10px;padding-top:12px;padding-bottom:10px}
+ .top .wrap .logo{order:1}
+ .top .wrap .category-menu{order:2;margin-left:auto}
+ .top .wrap nav[aria-label="Primary"]{order:3;flex:0 0 100%;min-width:0;margin-top:0;overflow-x:auto!important;flex-wrap:nowrap!important}
+ .top .wrap nav[aria-label="Primary"] a{flex:none}
+ .top .wrap .category-menu .nav-more[open] .nav-more-list{
+  position:fixed!important;left:12px!important;right:12px!important;top:126px!important;
+  width:auto!important;max-width:none!important;max-height:calc(100dvh - 142px)!important;
+  overflow-y:auto!important;overscroll-behavior:contain;z-index:99999!important;
+ }
+}
