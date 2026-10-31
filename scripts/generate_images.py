@@ -55,6 +55,49 @@ def licensed_source_image(p):
     except (requests.RequestException,ValueError,OSError):
         return False
 
+def commons_photo(p):
+    """Prefer a real Wikimedia Commons photo with explicit reuse terms."""
+    ident=slug(p)
+    if not ident or (IMAGES/(ident+'.jpg')).exists():return False
+    title=str(p.get('source_title') or p.get('en_title') or '')
+    # Keep search specific; do not substitute unrelated stock images.
+    query=re.sub(r'[^\\w\\s-]',' ',title).strip()
+    if len(query.split())<3:return False
+    try:
+        data=requests.get('https://commons.wikimedia.org/w/api.php',params={
+            'action':'query','generator':'search','gsrsearch':query,
+            'gsrnamespace':6,'gsrlimit':6,'prop':'imageinfo',
+            'iiprop':'url|size|extmetadata','iiurlwidth':1280,
+            'format':'json'},headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)'},
+            timeout=(5,15)).json()
+        pages=data.get('query',{}).get('pages',{})
+        for page in pages.values():
+            info=(page.get('imageinfo') or [{}])[0]
+            meta=info.get('extmetadata') or {}
+            license_name=re.sub('<[^>]*>','',meta.get('LicenseShortName',{}).get('value','')).strip()
+            license_url=meta.get('LicenseUrl',{}).get('value','')
+            if not (license_name.startswith('CC BY') or license_name in ('CC0','Public domain')):continue
+            if info.get('width',0)<600 or info.get('height',0)<320:continue
+            image_url=info.get('thumburl') or info.get('url')
+            if not image_url or not image_url.startswith('https://'):continue
+            res=requests.get(image_url,timeout=(5,20),headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)'})
+            if not res.ok or len(res.content)>12000000:continue
+            with Image.open(io.BytesIO(res.content)) as im:
+                if im.width<600 or im.height<320:continue
+                im=ImageOps.fit(im.convert('RGB'),(1280,720),method=Image.Resampling.LANCZOS)
+                im.save(IMAGES/(ident+'.jpg'),'JPEG',quality=86,optimize=True)
+            attribution=re.sub('<[^>]*>',' ',meta.get('Artist',{}).get('value','')).strip()[:240]
+            (IMAGES/(ident+'.json')).write_text(json.dumps({
+                'kind':'licensed_photo','source_image':info.get('descriptionurl'),
+                'license':license_url or license_name,'attribution':attribution or 'Wikimedia Commons',
+                'rights_status':'licensed','caption':'Representative licensed photograph; not necessarily the reported event.'
+            }),encoding='utf-8')
+            print('Licensed Commons photograph',ident,license_name,flush=True)
+            return True
+    except (requests.RequestException,ValueError,OSError,KeyError) as exc:
+        print('Commons image lookup unavailable',type(exc).__name__,flush=True)
+    return False
+
 def create(p):
     ident=slug(p)
     if not ident:return False
@@ -104,9 +147,6 @@ def create(p):
     return False
 
 def main():
-    if MAX_NEW==0:
-        print('Automatic featured-image requests disabled; static illustrations remain available',flush=True)
-        return 0
     posts=[]
     for f in POSTS.glob('*.json'):
         try:
@@ -123,11 +163,13 @@ def main():
         posts=posts[offset:]+posts[:offset]
         print('Image backfill rotation',offset,'of',len(posts),flush=True)
     count=0
+    photo_limit=max(1,int(os.getenv('MAX_LICENSED_PHOTOS_PER_RUN','12')))
     for p in posts:
-        if MAX_NEW and count>=MAX_NEW:break
+        if count>=photo_limit:break
         if (IMAGES/(slug(p)+'.jpg')).exists():continue
         count+=1
-        # Automatic backfill uses original generated art, never unverified publisher photos.
-        if KEY and len(QUOTA_BLOCKED)<len(MODELS):create(p)
-    print('Image backfill attempts:',count,'of',len(posts),'posts',flush=True)
+        # Real licensed photographs first; never copy unlicensed publisher images.
+        if commons_photo(p):continue
+        if MAX_NEW>0 and KEY and len(QUOTA_BLOCKED)<len(MODELS):create(p)
+    print('Licensed photo lookup attempts:',count,'of',len(posts),'posts',flush=True)
 if __name__=='__main__':main()
