@@ -305,7 +305,8 @@ SCHEME=('scheme','yojana','subsidy','welfare','pension','scholarship','beneficia
 JOB=('recruitment','vacancy','notification','admit card','exam','upsc','ssc','भर्ती','रिक्ति','नौकरी')
 def category(title, default):
  t=title.lower()
- specific=classify(title,default)
+ routing_default={'car-launches':'automobiles','mobile-launches':'technology','movie-releases':'movies-entertainment'}.get(default,default)
+ specific=classify(title,routing_default)
  if specific!=default:return specific
  if default not in ('sarkari-naukri','government-schemes'): return default
  if any(x in t for x in JOB): return 'sarkari-naukri'

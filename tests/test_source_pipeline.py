@@ -35,6 +35,8 @@ class SourcePipelineTests(unittest.TestCase):
         self.assertEqual(collect.category('OnePlus smartphone goes official with new features','technology'),'mobile-launches')
         self.assertEqual(collect.category('New thriller gets a release date','movies-entertainment'),'movie-releases')
         self.assertNotEqual(collect.category('Samsung Wallet announces new cash card for Galaxy users','technology'),'mobile-launches')
+        self.assertNotEqual(collect.category('Samsung Wallet announces new cash card for Galaxy users','mobile-launches'),'mobile-launches')
+        self.assertEqual(collect.category('Manufacturer quarterly earnings report','car-launches'),'automobiles')
         self.assertNotEqual(collect.category_for_url('Simpsons debut release date announced','movies-entertainment','https://example.com/tv/news/announcement'),'movie-releases')
     def test_website_leads_are_classified_before_queueing(self):
         class Response:
