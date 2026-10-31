@@ -5,6 +5,9 @@ on:
       - 'scripts/collect.py'
       - 'scripts/test_sources.py'
       - 'scripts/build.py'
+      - 'scripts/news_sitemap.py'
+      - 'scripts/site_ui.py'
+      - 'tests/test_news_sitemap.py'
       - '.github/workflows/news-source-check.yml'
   workflow_dispatch:
 jobs:
@@ -18,6 +21,8 @@ jobs:
           python-version: '3.11'
       - name: Check Python syntax
         run: python -m py_compile scripts/collect.py scripts/build.py scripts/test_sources.py
+      - name: Test newsroom configuration and news sitemap boundaries
+        run: python -m unittest discover -s tests -v
       - name: Check state and city source coverage
         run: python scripts/test_sources.py
       - name: Install static-site build dependencies
@@ -32,4 +37,4 @@ jobs:
           test -s dist/_headers
           grep -q 'Sitemap: https://globewiredaily.org/sitemap.xml' dist/robots.txt
           grep -q 'urlset' dist/sitemap.xml
-          grep -q 'news:news' dist/news-sitemap.xml || echo 'No news younger than 48 hours; empty news sitemap is permitted'
+          grep -Eq 'news:news|sitemapindex' dist/news-sitemap.xml || echo 'No news younger than 48 hours; empty news sitemap is permitted'

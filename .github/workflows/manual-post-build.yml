@@ -5,6 +5,8 @@ on:
     paths:
       - 'content/posts/*.json'
       - 'scripts/build.py'
+      - 'scripts/news_sitemap.py'
+      - 'scripts/site_ui.py'
       - '.github/workflows/manual-post-build.yml'
 permissions:
   contents: write
