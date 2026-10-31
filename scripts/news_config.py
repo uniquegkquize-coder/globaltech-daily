@@ -46,8 +46,11 @@ PRIORITY={'telecom':10,'sarkari-naukri':10,'results':10,'admit-cards':10,'answer
 @lru_cache(maxsize=8192)
 def classify(title, default='technology'):
     text=str(title).lower()
+    if default in {'technology','gadgets','mobile-launches'} and re.search(r'\b(?:deals?|discount|on sale|all.time low price)\b',text):
+        return 'deals-offers'
     for topic,pattern in sorted(GLOBAL_PATTERNS.items(),key=lambda x:x[0]!='controversies'):
         if topic in SCOPES and default not in SCOPES[topic]:continue
+        if topic=='mobile-launches' and re.search(r'\b(?:watch|smartwatch|tablet|ipad|laptop|macbook|earbuds)\b',text) and not re.search(r'\b(?:phone|smartphone|iphone)\b',text):continue
         if topic=='entertainment-rumours' and not unconfirmed_story(text):continue
         if re.search(pattern,text):return topic
     # Technical/business "results" must never become examination results.

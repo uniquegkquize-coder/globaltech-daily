@@ -18,7 +18,7 @@ class SourcePipelineTests(unittest.TestCase):
         self.assertTrue(collect.allowed('https://www.bbc.com/news/article','bbc.co.uk'))
         self.assertFalse(collect.allowed('https://bbc.com.evil.example/news','bbc.co.uk'))
     def test_actual_article_container_not_metadata_only(self):
-        soup=BeautifulSoup('<div class="content_text"><p>'+('Launch specifications and regional prices. '*6)+'</p></div>','html.parser')
+        soup=BeautifulSoup('<div class="news-text"><p>'+('Launch specifications and regional prices. '*6)+'</p></div>','html.parser')
         self.assertGreater(collect.words(max(content_candidates(soup,collect.clean),key=len)),20)
     def test_routing_independent_of_discovery_method(self):
         self.assertEqual(collect.category('New Hyundai SUV launch price and mileage','automobiles'),'car-launches')
@@ -26,6 +26,10 @@ class SourcePipelineTests(unittest.TestCase):
         self.assertEqual(collect.category('First trailer arrives for the new film','movies-entertainment'),'movie-releases')
         self.assertEqual(collect.category('Actor responds to public controversy and allegations','movies-entertainment'),'controversies')
         self.assertEqual(collect.category('Company share price rises after earnings','business'),'business')
+        self.assertNotEqual(collect.category('Pixel Watch 5 specifications and battery price','technology'),'mobile-launches')
+        self.assertEqual(collect.category('Pixel 11 deal hits a low price','technology'),'deals-offers')
+        self.assertEqual(collect.category('OnePlus smartphone goes official with new features','technology'),'mobile-launches')
+        self.assertEqual(collect.category('New thriller gets a release date','movies-entertainment'),'movie-releases')
     def test_website_leads_are_classified_before_queueing(self):
         class Response:
             url='https://www.cardekho.com/india-car-news.htm'

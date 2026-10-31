@@ -2,6 +2,8 @@
 Sources supply leads for original reporting, never permission to copy articles.
 """
 NATIVE_FEEDS=[
+ ('https://www.firstshowing.net/feed/','movies-entertainment','firstshowing.net'),
+ ('https://www.comingsoon.net/feed','movies-entertainment','comingsoon.net'),
  ('https://www.motor1.com/rss/news/all/','automobiles','motor1.com'),
  ('https://www.carscoops.com/feed/','automobiles','carscoops.com'),
  ('https://insideevs.com/rss/news/all/','automobiles','insideevs.com'),
@@ -17,6 +19,9 @@ NATIVE_FEEDS=[
 # CarDekho and IMDb returned 403 in verification. Keep them in search
 # discovery only; do not repeatedly fetch their blocked listing pages.
 PAGES=[
+ ('https://www.firstshowing.net/','movies-entertainment','firstshowing.net'),
+ ('https://www.comingsoon.net/hub/movie-news','movies-entertainment','comingsoon.net'),
+ ('https://about.netflix.com/en/news','movies-entertainment','about.netflix.com'),
  ('https://www.autocarindia.com/car-news','automobiles','autocarindia.com'),
  ('https://www.carscoops.com/','automobiles','carscoops.com'),
  ('https://www.motor1.com/news/','automobiles','motor1.com'),
@@ -52,7 +57,7 @@ SEARCH_SOURCES=[
 # Publishers expose article copy through different containers. No login,
 # paywall, CAPTCHA, blocked-response or alternate-route bypass is attempted.
 ARTICLE_SELECTORS=(
- '.content_text', '.content-text', '.postContent', '.post-content',
+ '.content_text', '.content-text', '.news-text', '.postContent', '.post-content',
  '.article__body', '.article-body', '.article__content', '.article-content',
  '.story_details', '.story__content', '.entry-content',
  '[data-component="text-block"]', '[data-testid="paragraph"]',

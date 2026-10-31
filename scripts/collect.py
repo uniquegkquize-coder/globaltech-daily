@@ -553,7 +553,7 @@ def website_stories(item):
   selectors='article a[href], h2 a[href], h3 a[href], main a[href], .job-list a[href], .job-listing a[href], .job-title a[href], .post-title a[href], .entry-title a[href], [class*="job"] a[href]'
   # Universal discovery: semantic links, headline anchors, and structured article links.
   # Keep bounded scans; reject category/navigation links below.
-  selectors+=', a[href][title], a[href][aria-label], [itemprop="headline"] a[href], a[href*="/20"], a[href*="/news/"], a[href*="/article/"]'
+  selectors+=', .news-item a[href], a[href*="-news-"], a[href][title], a[href][aria-label], [itemprop="headline"] a[href], a[href*="/20"], a[href*="/news/"], a[href*="/article/"]'
   for a in soup.select(selectors)[:900]:
    url=urljoin(response.url,a.get('href','')).split('#')[0].split('?')[0]
    title=clean(a.get_text(' ',strip=True) or a.get('aria-label','') or a.get('title',''))
