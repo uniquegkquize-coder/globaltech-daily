@@ -233,8 +233,9 @@ def image_caption(p,lang):
    info=json.loads(metadata.read_text(encoding='utf-8'))
    if info.get('kind') in ('licensed_source','publisher_source'):
     credit=str(info.get('attribution') or 'Original publisher')
-    license_name=str(info.get('license') or 'Creative Commons')
-    return (f'Image: {credit} — {license_name}' if lang=='en' else f'चित्र: {credit} — {license_name}')
+    license_name=str(info.get('license') or '').strip()
+    suffix=f' — {license_name}' if license_name else ''
+    return (f'Image: {credit}{suffix}' if lang=='en' else f'चित्र: {credit}{suffix}')
   except (OSError,ValueError):pass
  if not metadata.is_file():
   if (R/'content'/'featured'/f'{s}.jpg').is_file():

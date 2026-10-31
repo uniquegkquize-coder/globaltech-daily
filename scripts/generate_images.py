@@ -16,7 +16,7 @@ KEY=os.getenv('GEMINI_API_KEY','').strip()
 MODEL=os.getenv('GEMINI_IMAGE_MODEL','gemini-2.5-flash-image').strip()
 MODELS=list(dict.fromkeys([m.strip() for m in (MODEL+','+os.getenv('GEMINI_IMAGE_FALLBACK_MODELS','gemini-3-pro-image-preview')).split(',') if m.strip()]))
 QUOTA_BLOCKED=set()
-MAX_NEW=max(0,int(os.getenv('MAX_NEW_IMAGES','0')))  # 0 means scan all posts
+MAX_NEW=max(0,int(os.getenv('MAX_NEW_IMAGES','0')))  # 0 disables automatic image requests
 
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
 
@@ -104,6 +104,9 @@ def create(p):
     return False
 
 def main():
+    if MAX_NEW==0:
+        print('Automatic featured-image requests disabled; static illustrations remain available',flush=True)
+        return 0
     posts=[]
     for f in POSTS.glob('*.json'):
         try:
@@ -124,7 +127,7 @@ def main():
         if MAX_NEW and count>=MAX_NEW:break
         if (IMAGES/(slug(p)+'.jpg')).exists():continue
         count+=1
-        if licensed_source_image(p):continue
+        # Automatic backfill uses original generated art, never unverified publisher photos.
         if KEY and len(QUOTA_BLOCKED)<len(MODELS):create(p)
     print('Image backfill attempts:',count,'of',len(posts),'posts',flush=True)
 if __name__=='__main__':main()
