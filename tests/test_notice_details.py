@@ -41,6 +41,19 @@ class NoticeDetailsTests(unittest.TestCase):
         self.assertNotIn('applications are open',str(saved))
         self.assertIn('id="eligibility"',str(saved))
 
+    def test_transient_fetch_failure_preserves_verified_facts(self):
+        old={'status':'extracted','fields':{'fees':['Application fee Rs.100']},'checked_at':'2026-10-30T00:00:00+00:00'}
+        merged=details.merge_detail_result(old,{'status':'unavailable'},'2026-10-31T00:00:00+00:00')
+        self.assertEqual(merged['fields'],old['fields'])
+        self.assertEqual(merged['status'],'cached-extracted')
+        self.assertEqual(merged['facts_checked_at'],old['checked_at'])
+        self.assertEqual(old['status'],'extracted')
+
+    def test_fresh_facts_replace_cached_details(self):
+        merged=details.merge_detail_result({'fields':{'fees':['old']}},{'status':'extracted','fields':{'fees':['new']}},'2026-10-31')
+        self.assertEqual(merged['fields']['fees'],['new'])
+        self.assertEqual(merged['facts_checked_at'],'2026-10-31')
+
     def test_notice_listing_stays_on_site(self):
         record=load_notices()[0]
         with patch('news_hub.load_notices',return_value=[dict(record,date=__import__('datetime').date.today().isoformat())]):

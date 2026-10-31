@@ -5,7 +5,7 @@ from official_notices import official_url
 from focused_sources import NATIVE_FEEDS, structured_article_data, content_candidates
 import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time, threading
 from functools import lru_cache
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
 import requests, feedparser
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -1010,10 +1010,24 @@ def published_story_index():
     index.append((str(p.get('source','')).rstrip('/'),str(p.get('source_title') or p.get('en_title') or ''),str(p.get('category') or '')))
   except (OSError,ValueError,TypeError):continue
  return index
+@lru_cache(maxsize=8192)
+def canonical_lead_key(url):
+ parsed=urlparse(str(url))
+ query=[(k,v) for k,v in parse_qsl(parsed.query,keep_blank_values=True) if not (k.lower().startswith('utm_') or k.lower() in {'fbclid','gclid','at_medium','at_campaign'})]
+ return urlunparse((parsed.scheme,parsed.netloc.lower().removeprefix('www.'),parsed.path.rstrip('/'),parsed.params,urlencode(query),''))
+
+def unique_leads(rows):
+ result=[];seen=set()
+ for row in rows:
+  key=canonical_lead_key(row[0])
+  if key in seen:continue
+  seen.add(key);result.append(row)
+ return result
+
 def duplicate_story(url,title,cat,index):
- target=str(url or '').rstrip('/')
+ target=canonical_lead_key(url)
  for old_url,old_title,old_cat in index:
-  if target and target==old_url:return True
+  if target and target==canonical_lead_key(old_url):return True
   if cat==old_cat and same_story(title,old_title):return True
  return False
 
@@ -1116,17 +1130,20 @@ def main():
    # Prevent one prolific source category from consuming the whole run.
    # A verified story may remain as a draft for the next scheduled run.
    with publication_lock:
+    if duplicate_story(url,title,cat,published_index):
+     save_state(pending,state)
+     print('Concurrent duplicate retained as draft:',post_id,flush=True)
+     return None
     if category_reserved[cat]>=category_run_cap+(3 if PRIORITY.get(cat,4)>=8 else 0):
      save_state(pending,state)
      print('Category publication cap reached; retaining draft:',cat,post_id,flush=True)
      return None
     category_reserved[cat]+=1
+    published_index.append((url.rstrip('/'),title,cat))
    article={k:state.get(k,'') for k in ('en_title','hi_title','en_body','hi_body','en_meta','hi_meta','en_keywords','hi_keywords')}
    article.update(source_published_at=STORY_DATES.get(url),id=post_id,source=url,date=dt.datetime.now(UTC).isoformat(),source_title=title,category=cat,image_kind='conceptual')
    save_state(POSTS/(post_id+'.json'),article)
    pending.unlink(missing_ok=True)
-   with publication_lock:
-    published_index.append((url.rstrip('/'),title,cat))
    print('Published',post_id,cat,flush=True)
   else:save_state(pending,state)
   return cat if (POSTS/(post_id+'.json')).exists() else None
@@ -1154,6 +1171,7 @@ def main():
   stories=new_leads+backlog
  else:
   stories=backlog
+ stories=unique_leads(stories)
  print('Direct source priority candidates:',sum(any(allowed(row[0],d) for _,_,d in DIRECT_SOURCES) for row in new_leads),flush=True)
  print('Fresh discovered leads:',len(new_leads),flush=True)
  # Persist discovered leads before AI calls; the next run resumes them even if quota expires.

@@ -35,4 +35,9 @@ class BatchRuntimeTests(unittest.TestCase):
    self.assertEqual(report['published'],3)
    self.assertEqual(report['outcome'],'time_limit_reached')
    self.assertEqual(report['target'],60)
+ def test_queues_deduplicate_tracking_but_preserve_document_ids(self):
+  rows=[('https://site.example/notice?id=1&utm_source=feed','one','results','site.example'),('https://site.example/notice?id=1','one','results','site.example'),('https://site.example/notice?id=2','two','results','site.example')]
+  self.assertEqual(len(collect.unique_leads(rows)),2)
+  self.assertTrue(collect.duplicate_story(rows[0][0],'one','results',[(rows[1][0],'one','results')]))
+  self.assertFalse(collect.duplicate_story(rows[2][0],'two','results',[(rows[1][0],'one','results')]))
 if __name__=='__main__':unittest.main()

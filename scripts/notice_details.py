@@ -94,6 +94,19 @@ def fetch_details(url):
             return {'status':'extracted' if fields else 'no-readable-facts','fields':fields,'checked_at':dt.datetime.now(dt.timezone.utc).isoformat()}
     except Exception as exc:return {'status':'unavailable','reason':type(exc).__name__}
 
+def merge_detail_result(previous,result,checked_at):
+    """A transient fetch failure must not erase previously extracted facts."""
+    merged=dict(result)
+    if previous.get('fields') and not result.get('fields'):
+        merged['fields']=previous['fields']
+        merged['last_fetch_status']=result.get('status','unavailable')
+        merged['status']='cached-extracted'
+        merged['facts_checked_at']=previous.get('facts_checked_at') or previous.get('checked_at')
+    elif result.get('fields'):
+        merged['facts_checked_at']=checked_at
+    merged['schema_version']=2;merged['checked_at']=checked_at
+    return merged
+
 def enrich(limit=24):
     from official_notices import load_notices
     import concurrent.futures
@@ -108,7 +121,7 @@ def enrich(limit=24):
     pending=sorted((u for u in sources if needs_refresh(u)),key=lambda u:(u in cache,cache.get(u,{}).get('checked_at','')))[:limit]
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
         for url,result in zip(pending,pool.map(fetch_details,pending)):
-            result['schema_version']=2;result['checked_at']=dt.datetime.now(dt.timezone.utc).isoformat();cache[url]=result
+            cache[url]=merge_detail_result(cache.get(url,{}),result,dt.datetime.now(dt.timezone.utc).isoformat())
     if pending:CACHE.write_text(json.dumps(cache,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'checked':len(pending),'documents':len(cache),'with_facts':sum(bool(x.get('fields')) for x in cache.values())}))
 
@@ -166,6 +179,9 @@ def render_notices(out,site,shell,write):
             intro += (' The listed subject is: ' if en else ' इस नोटिस का विषय है: ') + e(n['en_title'])
             sections='<section id="overview"><h2>'+('Notice overview' if en else 'नोटिस का विवरण')+'</h2><p>'+intro+'</p><table class="exam-table">'+''.join('<tr><th scope="row">'+e(k)+'</th><td>'+e(v)+'</td></tr>' for k,v in rows)+'</table></section>'
             details=cache.get(n['source'],{});fields=details.get('fields',{})
+            if details.get('status')=='cached-extracted':
+                warning=('The latest document check failed. Showing previously extracted details; verify later amendments on the official website.' if en else 'दस्तावेज की नवीनतम जांच सफल नहीं हुई। पहले से उपलब्ध विवरण दिख रहे हैं; बाद के संशोधन आधिकारिक वेबसाइट से जांचें।')
+                sections='<p class="topic-note">'+warning+'</p>'+sections
             for key,(english,hindi,_) in FIELDS.items():
                 vals=fields.get(key,[])
                 text=('Relevant lines from the official document (original language):' if en else 'आधिकारिक दस्तावेज की संबंधित पंक्तियां (मूल भाषा में):')
