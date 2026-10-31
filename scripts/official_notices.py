@@ -87,7 +87,7 @@ def fetch_board(url):
 
 def load_notices(root=ROOT):
     records=[]
-    for name in ('official-exam-notices.json','official-notice-archive.json'):
+    for name in ('official-notice-archive.json','official-exam-notices.json'):
         try:
             data=json.loads((root/'content'/name).read_text())
             records.extend(data if isinstance(data,list) else data.get('records',[]))
@@ -95,6 +95,8 @@ def load_notices(root=ROOT):
     unique={}
     for row in records:
         if official_url(row.get('source','')):
+            row=dict(row)
+            if '/pet-pst/' in urlparse(row['source']).path:row['category']='admit-cards'
             unique[(row['source'],row.get('en_title',''))]=row
     return sorted(unique.values(),key=lambda r:(r.get('date') or '',r.get('en_title','')),reverse=True)
 

@@ -5,6 +5,7 @@ import json
 import re
 from pathlib import Path
 from official_notices import load_notices
+from notice_details import notice_path
 from news_config import CATEGORIES, EXAM_CATEGORIES, OFFICIAL_LINKS, memberships, classify, PRIORITY, timestamp
 
 e=lambda x:html.escape(str(x),quote=True)
@@ -41,7 +42,7 @@ def official_notice_rows(cat,lang):
         if not notice.get('date'):continue
         if notice['category']!=cat or not 0<=(today-dt.date.fromisoformat(notice['date'])).days<=14:continue
         text=notice[lang+'_title']
-        rows.append('<li class="hub-item" data-search-text="'+e(text)+'"><a href="'+e(notice['source'])+'" target="_blank" rel="noopener noreferrer">'+e(text)+' ↗</a><time>'+e(notice['date'])+'</time><span class="hub-pill">'+('Official notice board' if lang=='en' else 'आधिकारिक नोटिस बोर्ड')+'</span></li>')
+        rows.append('<li class="hub-item" data-search-text="'+e(text)+'"><a href="'+e(notice_path(notice,lang))+'">'+e(text)+'</a><time>'+e(notice['date'])+'</time><span class="hub-pill">'+('Read details & official links' if lang=='en' else 'पूरी जानकारी और आधिकारिक लिंक')+'</span></li>')
     return ''.join(rows)
 
 def hub_link(lang,slug,label):

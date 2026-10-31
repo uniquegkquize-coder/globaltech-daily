@@ -5,6 +5,7 @@ from pathlib import Path
 from news_config import CATEGORIES,EXAM_CATEGORIES,memberships
 from news_hub import news_sort,exam_bucket
 from official_notices import load_notices
+from notice_details import notice_path
 from verticals import unconfirmed_story
 
 e=lambda x:html.escape(str(x or ''),quote=True)
@@ -68,7 +69,7 @@ def render_expanded_hubs(out,site,posts,shell,path,title,write):
         records=[]
         for p in posts:
             if exam_bucket(p) in EXAM_CATEGORIES:records.append({'text':title(p,lang),'date':p.get('date','')[:10],'url':path(p,lang),'official':False})
-        for n in load_notices():records.append({'text':n.get(lang+'_title') or n['en_title'],'date':n.get('date') or '', 'url':n['source'],'official':True})
+        for n in load_notices():records.append({'text':n.get(lang+'_title') or n['en_title'],'date':n.get('date') or '', 'url':notice_path(n,lang),'official':False})
         records.sort(key=lambda x:x['date'],reverse=True)
         years=sorted({r['date'][:4] for r in records if r['date']},reverse=True)
         items=''.join('<li class="hub-item" data-archive-row data-year="'+e(r['date'][:4])+'" data-search-text="'+e(r['text'])+'"><a href="'+e(r['url'])+'"'+(' target="_blank" rel="noopener noreferrer"' if r['official'] else '')+'>'+e(r['text'])+(' ↗' if r['official'] else '')+'</a><time>'+e(r['date'] or ('Date not stated' if lang=='en' else 'तारीख उपलब्ध नहीं'))+'</time><span class="archive-note">'+('Official document / board' if r['official'] else 'GlobeWire Daily')+'</span></li>' for r in records)

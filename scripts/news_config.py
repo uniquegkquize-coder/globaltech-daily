@@ -24,10 +24,10 @@ CATEGORIES = {
 CATEGORIES.update(GLOBAL_CATEGORIES)
 EXAM_CATEGORIES={'sarkari-naukri','results','admit-cards','answer-keys','syllabus','admissions','scholarships'}
 TOPIC_PATTERNS={
- 'admit-cards':r'admit card|hall ticket|admission certificate|एडमिट कार्ड|प्रवेश पत्र',
+ 'admit-cards':r'admit[- ]cards?|hall ticket|admission certificate|एडमिट कार्ड|प्रवेश पत्र',
  'answer-keys':r'answer key|answer keys|response sheet|आंसर की|उत्तर कुंजी',
  'results':r'final result|written result|declaration of result|(?:exam|ssc|upsc|rrb|railway|board|neet|jee|cet|recruitment|university|भर्ती|परीक्षा).*(?:result|merit|scorecard|cut.?off|रिजल्ट|परिणाम)|(?:result|merit list|scorecard|रिजल्ट).*(?:exam|ssc|upsc|board|परीक्षा)',
- 'syllabus':r'syllabus|exam date|exam calendar|examination schedule|सिलेबस|परीक्षा तिथि',
+ 'syllabus':r'syllabus|exam date|examination dates?|exam calendar|examination schedule|सिलेबस|परीक्षा तिथि',
  'scholarships':r'scholarship|छात्रवृत्ति', 'admissions':r'college admission|university admission|admission form|counselling|कॉलेज प्रवेश|एडमिशन',
  'telecom':r'\b(?:jio|airtel|bsnl|vodafone|telecom|trai|recharge|broadband|sim card)\b|रिचार्ज|टेलीकॉम|बीएसएनएल|एयरटेल|जियो',
  'cyber-security':r'cyber|phishing|ransomware|data breach|malware|security flaw|साइबर|फिशिंग',

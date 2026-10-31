@@ -11,6 +11,8 @@ on:
       - 'scripts/verticals.py'
       - 'scripts/expanded_hubs.py'
       - 'scripts/official_notices.py'
+      - 'scripts/notice_details.py'
+      - 'tests/test_notice_details.py'
       - 'tests/test_expansion.py'
       - 'scripts/news_hub.py'
       - 'tests/test_news_priority.py'
