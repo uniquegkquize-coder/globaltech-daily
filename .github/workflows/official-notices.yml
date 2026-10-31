@@ -1,0 +1,43 @@
+name: Official notice index
+on:
+  schedule:
+    - cron: '13,28,43,58 * * * *'
+  workflow_dispatch:
+  push:
+    paths: ['scripts/official_notices.py', '.github/workflows/official-notices.yml']
+permissions:
+  contents: write
+concurrency:
+  group: official-notice-index
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check official boards
+        run: python scripts/official_notices.py
+      - name: Publish new notice records
+        run: |
+          if git diff --quiet -- content/official-notice-archive.json; then exit 0; fi
+          cp content/official-notice-archive.json /tmp/official-notices.json
+          python -m pip install Pillow
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/official_notices.py --merge /tmp/official-notices.json
+            if git diff --quiet -- content/official-notice-archive.json; then exit 0; fi
+            SITE_URL=https://globewiredaily.org python scripts/build.py
+            git add content/official-notice-archive.json dist
+            git commit -m 'Update official notice index and archive'
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1

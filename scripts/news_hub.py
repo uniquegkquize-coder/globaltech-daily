@@ -4,6 +4,7 @@ import html
 import json
 import re
 from pathlib import Path
+from official_notices import load_notices
 from news_config import CATEGORIES, EXAM_CATEGORIES, OFFICIAL_LINKS, memberships, classify, PRIORITY, timestamp
 
 e=lambda x:html.escape(str(x),quote=True)
@@ -33,10 +34,11 @@ def matches_category(post,cat):
     return exam_bucket(post)==cat if cat in EXAM_CATEGORIES else cat in memberships(post)
 
 def official_notice_rows(cat,lang):
-    notices=json.loads((Path(__file__).resolve().parents[1]/'content/official-exam-notices.json').read_text())
+    notices=load_notices()
     rows=[]
     today=dt.datetime.now(dt.timezone(dt.timedelta(hours=5,minutes=30))).date()
     for notice in notices:
+        if not notice.get('date'):continue
         if notice['category']!=cat or not 0<=(today-dt.date.fromisoformat(notice['date'])).days<=14:continue
         text=notice[lang+'_title']
         rows.append('<li class="hub-item" data-search-text="'+e(text)+'"><a href="'+e(notice['source'])+'" target="_blank" rel="noopener noreferrer">'+e(text)+' ↗</a><time>'+e(notice['date'])+'</time><span class="hub-pill">'+('Official notice board' if lang=='en' else 'आधिकारिक नोटिस बोर्ड')+'</span></li>')
@@ -47,7 +49,7 @@ def hub_link(lang,slug,label):
 
 def render_hubs(out,site,posts,shell,article_path,title,write):
     posts=sorted(posts,key=news_sort)
-    notices=json.loads((Path(__file__).resolve().parents[1]/'content/official-exam-notices.json').read_text())
+    notices=load_notices()
     for lang in ('en','hi'):
         ix=0 if lang=='en' else 1
         name='Jobs & Exam Updates' if lang=='en' else 'नौकरी और परीक्षा अपडेट'
@@ -63,7 +65,7 @@ def render_hubs(out,site,posts,shell,article_path,title,write):
             empty='No published updates here yet. Check the official links below.' if lang=='en' else 'इस श्रेणी में अभी प्रकाशित अपडेट नहीं हैं। नीचे आधिकारिक लिंक देखें।'
             return '<section class="hub-section"><h2>'+e(label or CATEGORIES[cat][ix])+'</h2><ul>'+rows+'</ul>'+('' if rows else '<p class="hub-empty">'+empty+'</p>')+hub_link(lang,cat,'View all →' if lang=='en' else 'सभी देखें →').replace('<a ','<a class="view-all" ',1)+'</section>'
         sections=[('results',None),('admit-cards',None),('sarkari-naukri',None),('answer-keys',None),('syllabus',None),('admissions',None),('scholarships',None),('private-vacancy',None),('government-schemes',None)]
-        quick=''.join(hub_link(lang,c,CATEGORIES[c][ix]) for c in ['sarkari-naukri','results','admit-cards','answer-keys','syllabus','admissions','scholarships','private-vacancy'])
+        quick=''.join(hub_link(lang,c,CATEGORIES[c][ix]) for c in ['sarkari-naukri','results','admit-cards','answer-keys','syllabus','admissions','scholarships','private-vacancy'])+hub_link(lang,'jobs-archive','Archive' if lang=='en' else 'पुराने नोटिस')
         official=''.join('<a href="'+u+'" target="_blank" rel="noopener noreferrer">'+e(n)+' ↗</a>' for n,u in OFFICIAL_LINKS)
         highlights=''.join('<a href="'+article_path(p,lang)+'">'+e(title(p,lang))+'</a>' for p in [p for p in posts if exam_bucket(p) in EXAM_CATEGORIES][:8])
         notice='Check application dates, eligibility and fees in the original notice. Listing a report does not mean applications are still open.' if lang=='en' else 'आवेदन की तारीख, पात्रता और फीस मूल नोटिस से जांचें। किसी खबर के यहां होने का मतलब आवेदन अभी खुले होना नहीं है।'

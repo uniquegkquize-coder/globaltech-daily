@@ -1,7 +1,9 @@
 """Shared topics, source discovery and transparent freshness-first ordering."""
 import datetime as dt
 import re
+from functools import lru_cache
 from urllib.parse import quote
+from verticals import CATEGORIES as GLOBAL_CATEGORIES, PATTERNS as GLOBAL_PATTERNS, SCOPES, SOURCES, DIRECT, unconfirmed_story
 
 CATEGORIES = {
  'technology':('Technology','टेक्नोलॉजी'), 'government-schemes':('Government Schemes','सरकारी योजनाएँ'),
@@ -19,11 +21,12 @@ CATEGORIES = {
  'consumer-alerts':('Consumer Alerts','उपभोक्ता अलर्ट'), 'deals-offers':('Deals & Offers','डील्स और ऑफर्स'),
  'india-news':('India News','भारत की खबरें'),
 }
+CATEGORIES.update(GLOBAL_CATEGORIES)
 EXAM_CATEGORIES={'sarkari-naukri','results','admit-cards','answer-keys','syllabus','admissions','scholarships'}
 TOPIC_PATTERNS={
  'admit-cards':r'admit card|hall ticket|admission certificate|एडमिट कार्ड|प्रवेश पत्र',
  'answer-keys':r'answer key|answer keys|response sheet|आंसर की|उत्तर कुंजी',
- 'results':r'(?:exam|ssc|upsc|rrb|railway|board|neet|jee|cet|recruitment|university|भर्ती|परीक्षा).*(?:result|merit|scorecard|cut.?off|रिजल्ट|परिणाम)|(?:result|merit list|scorecard|रिजल्ट).*(?:exam|ssc|upsc|board|परीक्षा)',
+ 'results':r'final result|written result|declaration of result|(?:exam|ssc|upsc|rrb|railway|board|neet|jee|cet|recruitment|university|भर्ती|परीक्षा).*(?:result|merit|scorecard|cut.?off|रिजल्ट|परिणाम)|(?:result|merit list|scorecard|रिजल्ट).*(?:exam|ssc|upsc|board|परीक्षा)',
  'syllabus':r'syllabus|exam date|exam calendar|examination schedule|सिलेबस|परीक्षा तिथि',
  'scholarships':r'scholarship|छात्रवृत्ति', 'admissions':r'college admission|university admission|admission form|counselling|कॉलेज प्रवेश|एडमिशन',
  'telecom':r'\b(?:jio|airtel|bsnl|vodafone|telecom|trai|recharge|broadband|sim card)\b|रिचार्ज|टेलीकॉम|बीएसएनएल|एयरटेल|जियो',
@@ -37,8 +40,13 @@ TOPIC_PATTERNS={
 }
 PRIORITY={'telecom':10,'sarkari-naukri':10,'results':10,'admit-cards':10,'answer-keys':9,'ai-news':9,'cyber-security':9,'gadgets':8,'government-schemes':8,'banking-finance':8,'consumer-alerts':8,'apps-software':7,'education':7,'scholarships':7,'sports':7,'india-news':7}
 
+@lru_cache(maxsize=8192)
 def classify(title, default='technology'):
     text=str(title).lower()
+    for topic,pattern in GLOBAL_PATTERNS.items():
+        if topic in SCOPES and default not in SCOPES[topic]:continue
+        if topic=='entertainment-rumours' and not unconfirmed_story(text):continue
+        if re.search(pattern,text):return topic
     # Technical/business "results" must never become examination results.
     for topic,pattern in TOPIC_PATTERNS.items():
         if topic in EXAM_CATEGORIES and default not in EXAM_CATEGORIES|{'education','government-schemes'}:
@@ -86,3 +94,7 @@ EXTRA_FEEDS=[search_feed(d,c,q) for d,c,q in [
  ('gadgets360.com','deals-offers','deals offers discount'),('pib.gov.in','india-news','India announcement')]]
 DIRECT_EXTRA=[('https://www.myvi.in/media/press-releases','telecom','myvi.in'),('https://www.jio.com/about/news-media/','telecom','jio.com'),('https://www.airtel.in/press-release/','telecom','airtel.in'),('https://trai.gov.in/notifications/press-release','telecom','trai.gov.in'),('https://sscnr.nic.in/newlook/site/admit_card.html','admit-cards','sscnr.nic.in'),('https://ssc.gov.in/','results','ssc.gov.in'),('https://nta.ac.in/','answer-keys','nta.ac.in')]
 OFFICIAL_LINKS=[('SSC','https://ssc.gov.in/'),('UPSC','https://upsc.gov.in/'),('NTA','https://nta.ac.in/'),('Railway RRB','https://www.rrbcdg.gov.in/'),('UPSSSC','https://upsssc.gov.in/'),('IBPS','https://www.ibps.in/'),('Scholarships','https://scholarships.gov.in/')]
+
+EXTRA_FEEDS.extend(search_feed(domain,cat,query) for domain,cat,query in SOURCES)
+DIRECT_EXTRA.extend(DIRECT)
+PRIORITY.update({"cricket":10,"car-launches":9,"mobile-launches":10,"movie-releases":9,"social-media":8,"defence":8,"conflict-news":9,"military-tech":7,"study-abroad":9,"visas-immigration":9,"tourism":7,"travel-packages":7,"freebies":8})

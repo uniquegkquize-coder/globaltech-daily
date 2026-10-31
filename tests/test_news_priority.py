@@ -9,7 +9,7 @@ from scripts.news_hub import news_sort, recent_priority, render_hubs, exam_bucke
 
 class NewsPriorityTests(unittest.TestCase):
  def test_topics_and_preserved_primary_category(self):
-  self.assertEqual(len(CATEGORIES),30)
+  self.assertEqual(len(CATEGORIES),48)
   self.assertEqual(classify('Airtel announces new broadband plan','technology'),'telecom')
   self.assertEqual(classify('SSC CGL exam result declared','sarkari-naukri'),'results')
   self.assertEqual(classify('NVIDIA quarterly results','business'),'business')

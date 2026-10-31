@@ -21,7 +21,7 @@ class NewsroomConfigTests(unittest.TestCase):
         from scripts.news_config import CATEGORIES, EXTRA_FEEDS
         categories = {row[1] for row in feeds+EXTRA_FEEDS}
         self.assertEqual(categories,set(CATEGORIES))
-        self.assertEqual(len(categories), 30)
+        self.assertEqual(len(categories), 48)
         self.assertIn('private-vacancy', categories)
         self.assertIn("gaming", categories)
         self.assertTrue(any("ign.com" in row[0] for row in feeds))

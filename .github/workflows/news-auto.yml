@@ -2,7 +2,7 @@ name: GlobalTech Daily Auto News
 on:
   push:
     branches: [main]
-    paths: ['scripts/news_config.py']
+    paths: ['scripts/news_config.py', 'scripts/verticals.py']
   workflow_dispatch:
   schedule:
     - cron: '7 * * * *'
