@@ -21,6 +21,9 @@ class NoticeDetailsTests(unittest.TestCase):
     def test_safe_facts_and_budget(self):
         fields=details.extract_facts('Last date of application: 30/11/2026\nApplication fee: Rs. 100\nCandidate name: Private Person\nRoll number 12345\nEligibility: degree from a recognized university')
         self.assertIn('fees',fields)
+        wrapped=details.extract_facts('Examination is scheduled to be conducted from\n10/11/2026 to 12/11/2026')
+        self.assertIn('10/11/2026',str(wrapped))
+        self.assertNotIn('dates',details.extract_facts('Examination is scheduled to be conducted from'))
         self.assertIn('eligibility',fields)
         self.assertNotIn('Private Person',str(fields))
         self.assertLessEqual(sum(len(x.split()) for vals in fields.values() for x in vals),180)

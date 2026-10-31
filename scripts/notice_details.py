@@ -49,8 +49,12 @@ def extract_facts(text):
     fields={};budget=85;seen=set()
     for key,(_,_,pattern) in FIELDS.items():
         matches=[]
-        for line in lines:
+        for index,line in enumerate(lines):
             if len(line)<15 or len(line)>450 or not re.search(pattern,line,re.I):continue
+            if len(line.split())<12 or re.search(r'(?:from|on|as follows|:)\s*$',line,re.I):
+                line=' '.join([line]+[v for v in lines[index+1:index+3] if v])
+            if key=='dates' and not re.search(r'\d{1,2}[./-]\d{1,2}[./-](?:20)?\d{2}|\d{1,2}(?:st|nd|rd|th)?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)',line,re.I):continue
+            if key=='fees' and not re.search(r'\d|free|nil|exempt',line,re.I):continue
             if re.search(r'roll\s*(?:no|number)|candidate.?s? name|date of birth|@|password|captcha',line,re.I):continue
             if line in seen:continue
             words=line.split()
@@ -96,7 +100,7 @@ def enrich(limit=24):
     cache=details_cache();sources=list(dict.fromkeys(r['source'] for r in load_notices()))
     def needs_refresh(url):
         entry=cache.get(url)
-        if not entry:return True
+        if not entry or entry.get('schema_version')!=2:return True
         try:age=dt.datetime.now(dt.timezone.utc)-dt.datetime.fromisoformat(entry.get('checked_at',''))
         except ValueError:return True
         return age.total_seconds()>86400
@@ -104,7 +108,7 @@ def enrich(limit=24):
     pending=sorted((u for u in sources if needs_refresh(u)),key=lambda u:(u in cache,cache.get(u,{}).get('checked_at','')))[:limit]
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
         for url,result in zip(pending,pool.map(fetch_details,pending)):
-            result['checked_at']=dt.datetime.now(dt.timezone.utc).isoformat();cache[url]=result
+            result['schema_version']=2;result['checked_at']=dt.datetime.now(dt.timezone.utc).isoformat();cache[url]=result
     if pending:CACHE.write_text(json.dumps(cache,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'checked':len(pending),'documents':len(cache),'with_facts':sum(bool(x.get('fields')) for x in cache.values())}))
 
