@@ -10,6 +10,7 @@ from PIL import Image, ImageDraw, ImageFont
 from expanded_hubs import CSS as GLOBAL_CSS, JS as GLOBAL_JS, render_expanded_hubs, article_note
 from notice_details import CSS as EXAM_CSS, inline as linked_inline, article_panel, render_notices, notice_path, details_cache
 from official_notices import load_notices
+from directories import CSS as DIRECTORY_CSS, JS as DIRECTORY_JS, render as render_directories
 R=Path(__file__).resolve().parents[1]; OUT=R/'dist'; SITE='https://globewiredaily.org'.rstrip('/'); CONTACT='contact@globewiredaily.org'
 OUT.mkdir(parents=True,exist_ok=True)
 (OUT/'googled7fc3627b4add656.html').write_text('google-site-verification: googled7fc3627b4add656.html\n',encoding='utf-8')
@@ -422,7 +423,7 @@ for lang in ('en','hi'):
 write(OUT/'index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="'+SITE+'/en/"></head><body><a href="/en/">English</a></body></html>')
 write(OUT/'favicon.svg','''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0a1429"/><circle cx="32" cy="32" r="23" fill="none" stroke="#5ce0dc" stroke-width="2"/><path d="M9 32h46M32 9c-12 12-12 34 0 46M32 9c12 12 12 34 0 46" fill="none" stroke="#5ce0dc" stroke-width="1.5"/><text x="32" y="40" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="21" font-weight="bold">GW</text></svg>''')
 write(OUT/'robots.txt',f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\nSitemap: {SITE}/news-sitemap.xml\n')
-urls=[f'/{lang}/{path}' for lang in ('en','hi') for path in ('','global-topics/','launches/','freebies-deals/','study-abroad-guide/','jobs-archive/','all-news/','jobs-exams/','author/editorial-desk/','tools/','government-schemes/','sarkari-naukri/','private-vacancy/','movies-entertainment/','world-news/','business/','sports/','automobiles/','health-science/','gaming/','environment/','travel/','education/','lifestyle/','technology/','about/','editorial/','corrections/','privacy/','contact/','affiliate/')]+[f'/{lang}/page/{page}/' for lang in ('en','hi') for page in range(2,max(1,(len(POSTS)+23)//24)+1)]+[f'/{lang}/{cat}/page/{page}/' for lang in ('en','hi') for cat in CATEGORIES for page in range(2,max(1,(sum(1 for p in POSTS if matches_category(p,cat))+23)//24)+1)]+[f'/{lang}/author/{handle}/' for lang in ('en','hi') for handle in sorted(set(AUTHOR_HANDLES.values()))]+[article_path(p,lang) for p in POSTS for lang in ('en','hi')]
+urls=[f'/{lang}/{path}' for lang in ('en','hi') for path in ('','colleges/','courses/','cars/','phones/','bikes/','global-topics/','launches/','freebies-deals/','study-abroad-guide/','jobs-archive/','all-news/','jobs-exams/','author/editorial-desk/','tools/','government-schemes/','sarkari-naukri/','private-vacancy/','movies-entertainment/','world-news/','business/','sports/','automobiles/','health-science/','gaming/','environment/','travel/','education/','lifestyle/','technology/','about/','editorial/','corrections/','privacy/','contact/','affiliate/')]+[f'/{lang}/page/{page}/' for lang in ('en','hi') for page in range(2,max(1,(len(POSTS)+23)//24)+1)]+[f'/{lang}/{cat}/page/{page}/' for lang in ('en','hi') for cat in CATEGORIES for page in range(2,max(1,(sum(1 for p in POSTS if matches_category(p,cat))+23)//24)+1)]+[f'/{lang}/author/{handle}/' for lang in ('en','hi') for handle in sorted(set(AUTHOR_HANDLES.values()))]+[article_path(p,lang) for p in POSTS for lang in ('en','hi')]
 notice_cache=details_cache()
 urls += [notice_path(n,lang) for n in load_notices() if notice_cache.get(n['source'],{}).get('fields') for lang in ('en','hi')]
 urls=list(dict.fromkeys(urls+[f'/{lang}/{cat}/' for lang in ('en','hi') for cat in CATEGORIES]))
@@ -450,3 +451,6 @@ render_hubs(OUT,SITE,POSTS,shell,article_path,title,write)
 render_expanded_hubs(OUT,SITE,POSTS,shell,article_path,title,write)
 
 render_notices(OUT,SITE,shell,write)
+render_directories(OUT,SITE,shell,write)
+write(OUT/'style.css',CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS)
+write(OUT/'site.js',JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS)
