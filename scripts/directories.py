@@ -141,6 +141,16 @@ def detailed_profiles():
  try:return json.loads(path.read_text(encoding='utf-8'))
  except (OSError,ValueError):return {}
 
+def record_detail(kind,name,lang):
+ records=external_records(kind)
+ record=next((r for r in records if r.get('name','').casefold()==name.casefold()),None)
+ if not record:return ''
+ fields={'country':('Country','देश'),'introduced':('Introduced / established','शुरुआत / स्थापना'),'manufacturer':('Manufacturer','निर्माता'),'operator':('Operator','संचालक'),'location':('Location','स्थान'),'mass':('Mass (Wikidata units)','वजन (Wikidata इकाई)'),'height':('Height (Wikidata units)','ऊँचाई (Wikidata इकाई)'),'width':('Width (Wikidata units)','चौड़ाई (Wikidata इकाई)'),'length':('Length (Wikidata units)','लंबाई (Wikidata इकाई)'),'retrieved_at':('Last sourced','स्रोत अपडेट')}
+ rows=''.join('<tr><th>'+esc(label[1] if lang=='hi' else label[0])+'</th><td>'+esc(record[key])+'</td></tr>' for key,label in fields.items() if record.get(key))
+ source=record.get('source_url','')
+ if not rows:return ''
+ return '<section class="directory-card"><h2>'+('उपलब्ध डेटा' if lang=='hi' else 'Available sourced specifications')+'</h2><table class="directory-specs">'+rows+'</table><p><a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">Wikidata source record</a></p></section>'
+
 def extra_detail(kind,name,lang):
  details=detailed_profiles().get(kind,{}).get(name,{})
  if not details:return ''
@@ -174,7 +184,7 @@ def entry_detail(kind,row,lang):
   else:
    sections=[('Models and specifications','मॉडल और स्पेसिफिकेशन','Compare official display, chipset, RAM, storage, cameras, battery, charging and software update policy for each phone model.','हर फोन मॉडल की डिस्प्ले, चिपसेट, RAM, स्टोरेज, कैमरा, बैटरी, चार्जिंग और अपडेट नीति देखें।'),('Pricing and availability','कीमत और उपलब्धता','Verify current country-specific official prices, release dates, regional variants and warranty conditions.','देश के अनुसार आधिकारिक कीमत, रिलीज तारीख, क्षेत्रीय वेरिएंट और वारंटी जाँचें।')]
  facts_html=''.join('<li><strong>'+esc(k)+':</strong> '+esc(v)+'</li>' for k,v in facts)
- sections_html=extra_detail(kind,name,lang)+''.join('<section class="directory-card"><h2>'+esc(tr(en,hi))+'</h2><p>'+esc(tr(desc_en,desc_hi))+'</p></section>' for en,hi,desc_en,desc_hi in sections)
+ sections_html=extra_detail(kind,name,lang)+record_detail(kind,name,lang)+''.join('<section class="directory-card"><h2>'+esc(tr(en,hi))+'</h2><p>'+esc(tr(desc_en,desc_hi))+'</p></section>' for en,hi,desc_en,desc_hi in sections)
  note=tr('This is an official-source guide, not a live price or admissions quote. No unverified figures are presented.','यह आधिकारिक स्रोत पर आधारित गाइड है, लाइव कीमत या एडमिशन कोटेशन नहीं। अप्रमाणित आँकड़े नहीं दिए गए हैं।')
  return '<div class="wrap"><section class="directory-hero"><h1>'+esc(name)+'</h1><p class="directory-note">'+esc(note)+'</p><ul>'+facts_html+'</ul><p><a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+tr('Open official source','आधिकारिक स्रोत खोलें')+'</a></p></section><div class="directory-grid">'+sections_html+'</div><p><a href="/'+lang+'/'+kind+'/">'+tr('Back to directory','डायरेक्टरी पर वापस')+'</a></p></div>'
 
