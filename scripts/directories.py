@@ -103,7 +103,7 @@ CSS="""
 .directory-controls{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
 .directory-controls input,.directory-controls select{font:inherit;padding:12px;border:1px solid #a7b7cb;border-radius:10px;background:#fff;min-width:180px;flex:1}
 .directory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0}
-.directory-card{border:1px solid #d9e2ec;border-radius:14px;padding:20px;background:#fff;min-width:0}
+.directory-card[hidden]{display:none!important}\n.directory-card{border:1px solid #d9e2ec;border-radius:14px;padding:20px;background:#fff;min-width:0}
 .directory-card h2{font-size:21px;margin:0 0 9px}.directory-card p{line-height:1.6}
 .directory-card a{font-weight:700}.directory-note{background:#eef6fa;border-left:4px solid #138a9a;padding:15px;margin:18px 0}
 .directory-links{display:flex;gap:10px;flex-wrap:wrap}.directory-links a{border:1px solid #b8d1e5;border-radius:9px;padding:10px 12px}
@@ -117,18 +117,18 @@ document.querySelectorAll('[data-directory]').forEach(root=>{
   const q=search.value.trim().toLocaleLowerCase();
   let shown=0;
   cards.forEach(card=>{
-   const match=card.dataset.search.includes(q)&&(!country.value||card.dataset.country===country.value)&&(!region.value||card.dataset.region===region.value)&&(!city.value||card.dataset.city===city.value);
+   const match=card.dataset.search.includes(q)&&(!country||!country.value||card.dataset.country===country.value)&&(!region||!region.value||card.dataset.region===region.value)&&(!city||!city.value||card.dataset.city===city.value);
    card.hidden=!match;if(match)shown++;
   });
   count.textContent=shown+' results';
  }
  function options(select,field){
   const previous=select.value;
-  const values=[...new Set(cards.filter(card=>(!country.value||card.dataset.country===country.value)&&(field==='city'?(!region.value||card.dataset.region===region.value):true)).map(card=>card.dataset[field]).filter(Boolean))].sort();
+  const values=[...new Set(cards.filter(card=>(!country||!country.value||card.dataset.country===country.value)&&(field==='city'?(!region||!region.value||card.dataset.region===region.value):true)).map(card=>card.dataset[field]).filter(Boolean))].sort();
   select.innerHTML='<option value="">All '+field+'s</option>'+values.map(v=>'<option value="'+v.replaceAll('&','&amp;').replaceAll('"','&quot;')+'">'+v.replaceAll('&','&amp;').replaceAll('<','&lt;')+'</option>').join('');
   select.value=values.includes(previous)?previous:'';
  }
- if(country){country.addEventListener('change',()=>{options(region,'region');options(city,'city');update()});region.addEventListener('change',()=>{options(city,'city');update()});city.addEventListener('change',update)}
+ if(country){country.addEventListener('change',()=>{if(region)options(region,'region');if(city)options(city,'city');update()});}\n if(region){region.addEventListener('change',()=>{if(city)options(city,'city');update()});options(region,'region');}\n if(city){city.addEventListener('change',update);options(city,'city');}
  search.addEventListener('input',update);update();
 });
 """
