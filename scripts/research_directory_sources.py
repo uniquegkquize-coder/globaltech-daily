@@ -6,17 +6,24 @@ import re
 import time
 from pathlib import Path
 from urllib.parse import urlparse
+import feedparser
 import requests
 from bs4 import BeautifulSoup
 
+DOMAINS={
+ 'colleges':('collegedekho.com','shiksha.com','careers360.com','topuniversities.com','timeshighereducation.com','studyportals.com','universityadmissions.se','ucas.com','niche.com','usnews.com'),
+ 'phones':('gsmarena.com','gadgets360.com','91mobiles.com','smartprix.com','phonearena.com','notebookcheck.net','kimovil.com','devicespecifications.com','nanoreview.net','androidauthority.com'),
+ 'cars':('cardekho.com','carwale.com','autocarindia.com','caranddriver.com','motortrend.com','edmunds.com','kbb.com','cars.com','topgear.com','whatcar.com'),
+ 'bikes':('bikedekho.com','bikewale.com','zigwheels.com','motorcycle.com','cycleworld.com','bennetts.co.uk','motorcyclenews.com','visordown.com','autocarindia.com','totalmotorcycle.com')
+}
 ROOT=Path(__file__).resolve().parents[1]
 TARGET=ROOT/'content'/'directory-details.json'
 RECORDS=ROOT/'content'/'directory-records.json'
 FIELDS={
- 'colleges':{'programmes':('programmes','programs','course','courses'),'fees':('tuition','fees'),'admissions':('admission','application'),'placement':('placement','employment')},
- 'phones':{'display':('display','screen'),'processor':('processor','chipset'),'battery':('battery',),'ram':('ram',),'storage':('storage',)},
- 'cars':{'price':('price','msrp'),'powertrain':('engine','powertrain'),'variants':('trim','variant'),'mileage':('fuel economy','mileage')},
- 'bikes':{'price':('price','msrp'),'engine':('engine','displacement'),'power':('power',),'torque':('torque',),'mileage':('mileage','fuel economy')}
+ 'colleges':{'programmes':('programmes','programs','course','courses','degrees','degree programmes'),'fees':('tuition','fees','tuition fees','annual fee'),'admissions':('admission','application','eligibility','entry requirements'),'placement':('placement','employment')},
+ 'phones':{'display':('display','screen','display size'),'processor':('processor','chipset','cpu','soc'),'battery':('battery','battery capacity'),'ram':('ram','memory'),'storage':('storage','internal storage'),},
+ 'cars':{'price':('price','msrp','starting price'),'powertrain':('engine','powertrain','engine type','motor'),'variants':('trim','variant','model'),'mileage':('fuel economy','mileage','range')},
+ 'bikes':{'price':('price','msrp'),'engine':('engine','displacement','engine capacity'),'power':('power','max power','maximum power'),'torque':('torque','max torque'),'mileage':('mileage','fuel economy')}
 }
 def clean(value):
  if isinstance(value,(dict,list)):return ''
@@ -34,8 +41,8 @@ def collect(obj,out):
    elif isinstance(value,(list,dict)):
     collect(value,out)
 
-def enrich(kind,name,record,session):
- url=record.get('official_url') or record.get('source_url','')
+def enrich(kind,name,record,session,url=None):
+ url=url or record.get('official_url') or record.get('source_url','')
  if not url.startswith('https://'):return {}
  # Wikidata identifiers are not a substitute for official product specification pages.
  if urlparse(url).hostname in ('www.wikidata.org','wikidata.org'):return {}
@@ -64,9 +71,29 @@ def enrich(kind,name,record,session):
      break
   if output:
    output['source_url']=url
-   output['official_url']=url
+   output['evidence_url']=url
   return output
  except requests.RequestException:return {}
+
+def discover(kind,name,session):
+ # Search domain-constrained public RSS results, not generated or guessed article URLs.
+ # Only fetch publisher pages with the requested entity in the result title.
+ for domain in DOMAINS[kind]:
+  try:
+   query=requests.utils.quote('site:'+domain+' "'+name+'" specifications fees eligibility')
+   response=session.get('https://www.bing.com/search?format=rss&q='+query,timeout=5)
+   if response.status_code!=200:continue
+   feed=feedparser.parse(response.content)
+   for item in feed.entries[:2]:
+    url=item.get('link','')
+    host=(urlparse(url).hostname or '').lower()
+    if not (host==domain or host.endswith('.'+domain)):continue
+    tokens=[x for x in re.findall(r'[a-z0-9]+',name.lower()) if len(x)>2]
+    title=item.get('title','').lower()
+    if tokens and sum(t in title for t in tokens)<max(1,len(tokens)-1):continue
+    yield url
+  except requests.RequestException:continue
+
 
 def main():
  try:records=json.loads(RECORDS.read_text(encoding='utf-8'))
@@ -86,10 +113,16 @@ def main():
    if not name:continue
    existing=details[kind].get(name,{})
    if all(existing.get(k) for k in FIELDS[kind]):continue
-   if not record.get('official_url'):continue
+   if not (record.get('official_url') or record.get('source_url')):continue
    checked+=1
    checked_kind+=1
-   additions=enrich(kind,name,{**record,**existing},session)
+   base={**record,**existing}
+   additions=enrich(kind,name,base,session)
+   if not all((base|additions).get(field) for field in FIELDS[kind]):
+    for found_url in discover(kind,name,session):
+     extra=enrich(kind,name,{**base,**additions},session,found_url)
+     additions.update(extra)
+     if all((base|additions).get(field) for field in FIELDS[kind]):break
    if additions:
     details[kind][name]={**record,**existing,**additions}
     print('Verified structured fields:',kind,name,list(additions),flush=True)
