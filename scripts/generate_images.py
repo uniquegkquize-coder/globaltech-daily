@@ -30,7 +30,7 @@ def resolved_featured(ident):
     except (OSError,ValueError,TypeError):kind=''
     # Replace representative Commons pictures and AI art when a genuine source image exists.
     # A JPEG without source provenance can be legacy artwork, not a confirmed publisher photo.
-    return kind in ('publisher_source','source_original','manual_original')
+    return kind in ('licensed_photo','publisher_source','source_original','manual_original')
 
 def licensed_source_image(p):
     """Prioritize the actual article's published picture; record its origin and rights status.
