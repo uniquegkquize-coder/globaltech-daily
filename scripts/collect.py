@@ -665,7 +665,7 @@ def google_news_stories(cat):
  # Rotate related searches each hour, without accepting unverified sources.
  variants=(base,cat.replace('-',' ')+' latest',base+' breaking',base+' announcements')
  hour=dt.datetime.now(UTC).hour
- query=' OR '.join('('+variants[(hour+offset)%len(variants)]+')' for offset in range(3))+' when:3d'
+ query=' OR '.join('('+variants[(hour+offset)%len(variants)]+')' for offset in range(3))
  # Rotate worldwide editions on each three-hour run instead of searching India only.
  editions=(('en-US','US','US:en'),('en-GB','GB','GB:en'),('en-IN','IN','IN:en'),('en-AU','AU','AU:en'),('en-CA','CA','CA:en'),('en-SG','SG','SG:en'),('es-ES','ES','ES:es'),('fr-FR','FR','FR:fr'),('de-DE','DE','DE:de'),('pt-BR','BR','BR:pt'),('ar-SA','SA','SA:ar'),('ja-JP','JP','JP:ja'))
  edition=editions[(dt.datetime.now(UTC).hour//3+list(GOOGLE_QUERIES).index(cat))%len(editions)]
@@ -682,7 +682,6 @@ def google_news_stories(cat):
    if published:
     try:stamp=dt.datetime(*published[:6],tzinfo=UTC)
     except (ValueError,TypeError):pass
-   if stamp and not -300<=(dt.datetime.now(UTC)-stamp).total_seconds()<=259200:return None
    target=resolve_google_news(link)
    host=(urlparse(target).hostname or '').lower()
    if not target or host.endswith('google.com') or host.endswith('googleusercontent.com'):return None
@@ -783,7 +782,7 @@ def source_metric(domain,metric,amount=1):
  with SOURCE_DIAGNOSTICS_LOCK: SOURCE_DIAGNOSTICS[(domain,metric)]+=amount
 
 QUEUE_FILE=PENDING/'_discovery_queue.json'
-QUEUE_MAX_AGE_HOURS=max(1,int(os.getenv('QUEUE_MAX_AGE_HOURS','72')))
+QUEUE_MAX_AGE_HOURS=max(1,int(os.getenv('QUEUE_MAX_AGE_HOURS','87600')))
 QUEUE_LIMIT=max(30,int(os.getenv('QUEUE_LIMIT','120')))
 def useful_lead(row):
  if not isinstance(row,(list,tuple)) or len(row)!=4 or not all(isinstance(x,str) for x in row):return False
@@ -868,7 +867,6 @@ def native_feed_stories(feeds=None):
     if not allowed(url,domain) or len(title)<24 or not stamp:continue
     try:published=dt.datetime(*stamp[:6],tzinfo=UTC)
     except (ValueError,TypeError):continue
-    if not -300<=(now-published).total_seconds()<=72*3600:continue
     STORY_DATES[url]=published.isoformat()
     rows.append((url,title,category_for_url(title,cat,url),domain))
    print('NATIVE_FEED',domain,'entries',len(entries),'fresh_leads',len(rows),flush=True)
@@ -993,7 +991,6 @@ def candidates():
    if not published:continue
    try:age=(today-dt.date(*published[:3])).days
    except (TypeError,ValueError):continue
-   if age<0 or age>3:continue
    try:STORY_DATES[url]=dt.datetime(*published[:6],tzinfo=UTC).isoformat()
    except (TypeError,ValueError):pass
    eligible.append((url,title,cat,domain))
@@ -1132,15 +1129,10 @@ def main():
   cached_complete=all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi'))
   text='' if cached_complete and source_stamp else source_text(url,domain)
   source_stamp=timestamp(STORY_DATES.get(url)) or source_stamp
-  if cat in {'car-launches','mobile-launches','movie-releases','controversies'} and not source_stamp:
-   print('Skipping undated launch or controversy:',domain,title[:80],flush=True)
-   return None
-  max_age=72*3600  # Strict maximum source age for every news category
-  if not source_stamp:
-   print('Skipping source without verifiable publication date:',title[:80],flush=True)
-   return None
-  if dt.datetime.now(UTC).timestamp()-source_stamp>max_age or source_stamp>dt.datetime.now(UTC).timestamp()+300:
-   print('Skipping stale or future-dated source:',title[:80],flush=True)
+  # No fixed source-age or mandatory date-verification gate. Older and undated
+  # source-backed stories may publish, but require usable source text or a completed draft.
+  if source_stamp and source_stamp>dt.datetime.now(UTC).timestamp()+300:
+   print('Skipping future-dated source:',title[:80],flush=True)
    return None
   if (not text.strip() or words(text)<65) and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    # Preserve completed language drafts even if the publisher temporarily blocks scraping.
