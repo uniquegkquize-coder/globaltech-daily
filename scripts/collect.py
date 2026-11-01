@@ -1214,7 +1214,7 @@ def main():
  # Prioritize two verified articles per category before filling additional slots.
  grouped={}
  for story in stories:
-   story=(story[0],story[1],category_for_url(story[1],story[2],story[0]),story[3])
+   story=(story[0],story[1],selected or category_for_url(story[1],story[2],story[0]),story[3])
    grouped.setdefault(story[2],[]).append(story)
    source_metric(story[3],'queued')
  ordered=[]
