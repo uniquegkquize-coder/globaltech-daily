@@ -45,7 +45,9 @@ def licensed_source_image(p):
         page=requests.get(source,timeout=(4,10),headers={
             'User-Agent':'Mozilla/5.0 (compatible; GlobeWireDaily/1.0; +https://globewiredaily.org)'
         },allow_redirects=True)
-        if not page.ok or 'html' not in page.headers.get('content-type','').lower():return False
+        if not page.ok or 'html' not in page.headers.get('content-type','').lower():
+            print('Source page unavailable',ident,source,'status',page.status_code,flush=True)
+            return False
         if not str(page.url).startswith('https://'):return False
         soup=BeautifulSoup(page.text[:800000],'html.parser')
         def meta(*keys):
@@ -54,6 +56,9 @@ def licensed_source_image(p):
                 if tag and tag.get('content'):return str(tag['content']).strip()
             return ''
         image=meta('og:image:secure_url','og:image','twitter:image','twitter:image:src')
+        # Some social previews are generic banners; prefer a photograph in the article.
+        if image and re.search(r'(?i)(logo|favicon|avatar|sprite|placeholder|default-image|site-icon|social-share|share-banner|og-default)',urlparse(image).path):
+            image=''
         if not image:
             # Some original articles expose their lead image only as NewsArticle JSON-LD.
             for script in soup.find_all('script',attrs={'type':'application/ld+json'}):
@@ -95,7 +100,9 @@ def licensed_source_image(p):
                     image=candidate
                     break
                 if image:break
-        if not image:return False
+        if not image:
+            print('No source article photo found',ident,source,flush=True)
+            return False
         image=urljoin(page.url,image)
         parsed=urlparse(image)
         if parsed.scheme!='https' or not parsed.hostname:return False
