@@ -47,7 +47,7 @@ def enrich(kind,name,record,session,url=None):
  # Wikidata identifiers are not a substitute for official product specification pages.
  if urlparse(url).hostname in ('www.wikidata.org','wikidata.org'):return {}
  try:
-  response=session.get(url,timeout=8,allow_redirects=True)
+  response=session.get(url,timeout=5,allow_redirects=True)
   response.raise_for_status()
   if 'text/html' not in response.headers.get('Content-Type',''):return {}
   if len(response.content)>2000000:return {}
@@ -78,10 +78,12 @@ def enrich(kind,name,record,session,url=None):
 def discover(kind,name,session):
  # Search domain-constrained public RSS results, not generated or guessed article URLs.
  # Only fetch publisher pages with the requested entity in the result title.
- for domain in DOMAINS[kind]:
+ domains=DOMAINS[kind]
+ start=sum(ord(ch) for ch in name)%len(domains)
+ for domain in (domains[(start+i)%len(domains)] for i in range(3)):
   try:
    query=requests.utils.quote('site:'+domain+' "'+name+'" specifications fees eligibility')
-   response=session.get('https://www.bing.com/search?format=rss&q='+query,timeout=5)
+   response=session.get('https://www.bing.com/search?format=rss&q='+query,timeout=3)
    if response.status_code!=200:continue
    feed=feedparser.parse(response.content)
    for item in feed.entries[:2]:
