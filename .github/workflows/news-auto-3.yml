@@ -83,6 +83,10 @@ jobs:
             # Sync new editorial posts with main without replaying generated HTML conflicts.
             # Rebuild all static pages on the current remote branch after syncing content.
             for attempt in 1 2 3 4 5; do
+              git add -A content/posts content/pending content/featured content/news-run-status.json dist
+              if ! git diff --cached --quiet; then
+                git commit -m "Sync rebuilt news output before rebase"
+              fi
               git fetch origin "${{ github.ref_name }}"
               if ! git rebase -X theirs "origin/${{ github.ref_name }}"; then
                 echo "Generated HTML conflicted with a concurrent publish; regenerating on latest main."
