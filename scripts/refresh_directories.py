@@ -13,7 +13,7 @@ ENDPOINT='https://query.wikidata.org/sparql'
 def fetch(kind,limit=150):
  cls=QUERY[kind]
  q=f"""SELECT DISTINCT ?item ?itemLabel ?countryLabel ?inception ?website WHERE {{
- ?item wdt:P31/wdt:P279* wd:{cls}.
+ ?item wdt:P31 wd:{cls}.
  OPTIONAL {{ ?item wdt:P17 ?country. }}
  OPTIONAL {{ ?item wdt:P571 ?inception. }}
  OPTIONAL {{ ?item wdt:P856 ?website. }}
