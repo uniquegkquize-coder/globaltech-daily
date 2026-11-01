@@ -101,8 +101,9 @@ class ImageRequestTests(unittest.TestCase):
    self.assertEqual(len(selected),8)
    self.assertTrue(any(p in fresh for p in selected))
    self.assertTrue(any(p in old for p in selected))
-   # Existing real photos must never be overwritten by backfill.
+   # Only a photo with verified source metadata is excluded from backfill.
    (Path(temp)/(fresh[0]['id']+'.jpg')).write_bytes(b'photo exists')
+   (Path(temp)/(fresh[0]['id']+'.json')).write_text(json.dumps({'kind':'publisher_source'}),encoding='utf-8')
    selected,nfresh,nolder=generate_images.choose_backfill(fresh+old,now=now,limit=8)
    self.assertNotIn(fresh[0],selected)
 
