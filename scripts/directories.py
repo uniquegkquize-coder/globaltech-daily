@@ -136,6 +136,23 @@ def entry_slug(name):
  import re
  return re.sub(r'[^a-z0-9]+','-',name.lower()).strip('-')
 
+def detailed_profiles():
+ path=Path(__file__).resolve().parents[1]/'content'/'directory-details.json'
+ try:return json.loads(path.read_text(encoding='utf-8'))
+ except (OSError,ValueError):return {}
+
+def extra_detail(kind,name,lang):
+ details=detailed_profiles().get(kind,{}).get(name,{})
+ if not details:return ''
+ labels={'price':('Price','कीमत'),'engine':('Engine','इंजन'),'power':('Power','पावर'),'torque':('Torque','टॉर्क'),'mileage':('Mileage','माइलेज'),'weight':('Weight','वजन'),'display':('Display','डिस्प्ले'),'processor':('Processor','प्रोसेसर'),'battery':('Battery','बैटरी'),'storage':('Storage','स्टोरेज'),'ram':('RAM','रैम'),'rear_camera':('Rear cameras','रियर कैमरे'),'front_camera':('Front cameras','फ्रंट कैमरे'),'fees':('Fees','फीस'),'placement':('Placement','प्लेसमेंट'),'admissions':('Admissions','प्रवेश'),'accreditation':('Accreditation','मान्यता')}
+ rows=[]
+ for k,v in details.items():
+  if k in ('source_url','official_url'):continue
+  label=labels.get(k,(k.replace('_',' ').title(),k.replace('_',' ').title()))
+  rows.append('<tr><th>'+esc(label[1] if lang=='hi' else label[0])+'</th><td>'+esc(v)+'</td></tr>')
+ sources=''.join('<a target="_blank" rel="noopener noreferrer" href="'+esc(details[k])+'">'+('Source reference' if k=='source_url' else 'Manufacturer / institution')+'</a> ' for k in ('source_url','official_url') if details.get(k))
+ return '<section class="directory-card"><h2>'+('विस्तृत जानकारी' if lang=='hi' else 'Detailed specifications and information')+'</h2><table class="directory-specs">'+''.join(rows)+'</table><p>'+sources+'</p><small>'+('कीमतें और जानकारी स्रोत की तारीख के अनुसार बदल सकती हैं।' if lang=='hi' else 'Prices and specifications may change by market and date.')+'</small></section>'
+
 def entry_detail(kind,row,lang):
  ishi=lang=='hi'
  def tr(en,hi):return hi if ishi else en
@@ -157,7 +174,7 @@ def entry_detail(kind,row,lang):
   else:
    sections=[('Models and specifications','मॉडल और स्पेसिफिकेशन','Compare official display, chipset, RAM, storage, cameras, battery, charging and software update policy for each phone model.','हर फोन मॉडल की डिस्प्ले, चिपसेट, RAM, स्टोरेज, कैमरा, बैटरी, चार्जिंग और अपडेट नीति देखें।'),('Pricing and availability','कीमत और उपलब्धता','Verify current country-specific official prices, release dates, regional variants and warranty conditions.','देश के अनुसार आधिकारिक कीमत, रिलीज तारीख, क्षेत्रीय वेरिएंट और वारंटी जाँचें।')]
  facts_html=''.join('<li><strong>'+esc(k)+':</strong> '+esc(v)+'</li>' for k,v in facts)
- sections_html=''.join('<section class="directory-card"><h2>'+esc(tr(en,hi))+'</h2><p>'+esc(tr(desc_en,desc_hi))+'</p></section>' for en,hi,desc_en,desc_hi in sections)
+ sections_html=extra_detail(kind,name,lang)+''.join('<section class="directory-card"><h2>'+esc(tr(en,hi))+'</h2><p>'+esc(tr(desc_en,desc_hi))+'</p></section>' for en,hi,desc_en,desc_hi in sections)
  note=tr('This is an official-source guide, not a live price or admissions quote. No unverified figures are presented.','यह आधिकारिक स्रोत पर आधारित गाइड है, लाइव कीमत या एडमिशन कोटेशन नहीं। अप्रमाणित आँकड़े नहीं दिए गए हैं।')
  return '<div class="wrap"><section class="directory-hero"><h1>'+esc(name)+'</h1><p class="directory-note">'+esc(note)+'</p><ul>'+facts_html+'</ul><p><a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+tr('Open official source','आधिकारिक स्रोत खोलें')+'</a></p></section><div class="directory-grid">'+sections_html+'</div><p><a href="/'+lang+'/'+kind+'/">'+tr('Back to directory','डायरेक्टरी पर वापस')+'</a></p></div>'
 
@@ -169,6 +186,13 @@ def render(out,site,shell,write):
   for kind,base_items in DATA.items():
    items=list(base_items)
    existing={row[0].casefold() for row in items}
+   for profile_name,profile in detailed_profiles().get(kind,{}).items():
+    if profile_name.casefold() in existing:continue
+    existing.add(profile_name.casefold())
+    url=profile.get('official_url') or profile.get('source_url','#')
+    country=profile.get('country','Worldwide')
+    if kind=='colleges':items.append((profile_name,country,profile.get('region','—'),profile.get('city','—'),url,profile.get('programmes','University')))
+    else:items.append((profile_name,country,'Detailed product profile',url))
    for record in external_records(kind):
     name=record['name'].strip()
     if name.casefold() in existing:continue
