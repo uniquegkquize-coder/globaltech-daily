@@ -114,3 +114,41 @@ except ImportError:
 EXTRA_FEEDS.extend(NATIVE_FEEDS)
 EXTRA_FEEDS.extend(search_feed(d,c,q) for d,c,q in SEARCH_SOURCES)
 DIRECT_EXTRA.extend(PAGES)
+
+# Additional worldwide publisher discovery for under-covered sections.
+# These are discovery candidates, not guarantees of accessible full text.
+WORLDWIDE_SOURCE_EXPANSION = [
+ ('apnews.com','world-news','world breaking news'),('reuters.com','world-news','international news'),
+ ('dw.com','world-news','international news'),('france24.com','world-news','global news'),
+ ('thehindu.com','india-news','India latest'),('indianexpress.com','india-news','India news'),
+ ('livemint.com','business','business markets'),('cnbc.com','business','global business'),
+ ('techcrunch.com','technology','technology startups'),('arstechnica.com','technology','technology'),
+ ('theverge.com','gadgets','smartphone gadgets'),('androidauthority.com','gadgets','phone review launch'),
+ ('9to5google.com','apps-software','Android software'),('bleepingcomputer.com','cyber-security','security alert'),
+ ('venturebeat.com','ai-news','artificial intelligence'),('technologyreview.com','ai-news','AI research'),
+ ('espn.com','sports','sports'),('skysports.com','sports','sports'),
+ ('cricbuzz.com','cricket','cricket matches'),('espncricinfo.com','cricket','cricket news'),
+ ('autocar.co.uk','automobiles','car industry'),('motor1.com','car-launches','new car launch'),
+ ('carwale.com','car-launches','car prices launch'),('electrek.co','ev-clean-energy','electric cars'),
+ ('gsmarena.com','mobile-launches','new smartphone'),('phonearena.com','mobile-launches','phone launch'),
+ ('screenrant.com','movies-entertainment','movies entertainment'),('variety.com','movie-releases','movie releases'),
+ ('deadline.com','celebrity-news','celebrity interview'),('hollywoodreporter.com','entertainment-rumours','casting reported'),
+ ('apnews.com','controversies','public controversy'),('socialmediatoday.com','social-media','social media platforms'),
+ ('who.int','health-science','health research'),('sciencedaily.com','health-science','science research'),
+ ('nasa.gov','space-news','space science'),('space.com','space-news','space exploration'),
+ ('ign.com','gaming','video games'),('gamespot.com','gaming','gaming news'),
+ ('unep.org','environment','environment'),('carbonbrief.org','environment','climate research'),
+ ('lonelyplanet.com','travel','travel destinations'),('nationalgeographic.com','tourism','tourism destinations'),
+ ('intrepidtravel.com','travel-packages','travel tours'),('gov.uk','visas-immigration','visa immigration updates'),
+ ('daad.de','study-abroad','international university study'),('timeshighereducation.com','education','universities education'),
+ ('ugc.gov.in','admissions','university admission'),('education.gov.in','scholarships','scholarships'),
+ ('ssc.gov.in','sarkari-naukri','recruitment notification'),('upsc.gov.in','results','examination results'),
+ ('nta.ac.in','admit-cards','admit card'),('nta.ac.in','answer-keys','answer key'),
+ ('upsc.gov.in','syllabus','exam syllabus'),('employmentnews.gov.in','private-vacancy','vacancies jobs'),
+ ('pib.gov.in','government-schemes','government schemes'),('rbi.org.in','banking-finance','banking updates'),
+ ('consumer.ftc.gov','consumer-alerts','consumer scam alerts'),('wired.com','telecom','telecom networks'),
+ ('theverge.com','deals-offers','technology deals'),('epicgames.com','freebies','free games'),
+ ('bbc.com','defence','defence news'),('un.org','conflict-news','conflict peace'),
+ ('defensenews.com','military-tech','military vehicles technology'),('bbc.com','lifestyle','lifestyle'),
+]
+EXTRA_FEEDS.extend(search_feed(domain,cat,query) for domain,cat,query in WORLDWIDE_SOURCE_EXPANSION)
