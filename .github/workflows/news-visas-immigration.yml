@@ -1,0 +1,13 @@
+name: News - visas-immigration
+on:
+  schedule:
+    - cron: '43 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    uses: ./.github/workflows/news-category-publisher.yml
+    with:
+      category: visas-immigration
+    secrets: inherit
