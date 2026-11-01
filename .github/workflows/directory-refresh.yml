@@ -1,5 +1,8 @@
 name: Refresh worldwide directory records (no news publishing)
 on:
+  push:
+    branches: [main]
+    paths: ['scripts/refresh_directories.py', '.github/workflows/directory-refresh.yml']
   workflow_dispatch:
   schedule:
     - cron: '32 3 * * 0'
