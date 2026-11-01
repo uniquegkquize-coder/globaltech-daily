@@ -54,6 +54,19 @@ class ImageRequestTests(unittest.TestCase):
    selected,nfresh,nolder=generate_images.choose_backfill(fresh+old,now=now,limit=8)
    self.assertNotIn(fresh[0],selected)
 
+ def test_archive_cursor_advances_and_does_not_repeat_same_chunk(self):
+  import datetime
+  now=datetime.datetime(2026,11,1,12,tzinfo=datetime.timezone.utc)
+  older=[{'id':format(i,'012x'),'date':'2025-01-01T10:00:00+00:00'} for i in range(1,25)]
+  cursor={}
+  with tempfile.TemporaryDirectory() as temp,patch.object(generate_images,'IMAGES',Path(temp)):
+   first,_,_=generate_images.choose_backfill(older,now=now,limit=6,cursor=cursor,mode='archive')
+   second,_,_=generate_images.choose_backfill(older,now=now,limit=6,cursor=cursor,mode='archive')
+   self.assertEqual(len(first),6)
+   self.assertEqual(len(second),6)
+   self.assertFalse({p['id'] for p in first}&{p['id'] for p in second})
+   self.assertEqual(cursor.get('archive_offset'),12)
+
  def test_commons_credit_visible_under_licensed_images(self):
   tree=ast.parse((ROOT/'scripts/build.py').read_text())
   fn=next(node for node in tree.body if isinstance(node,ast.FunctionDef) and node.name=='image_caption')
