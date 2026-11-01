@@ -1176,8 +1176,10 @@ def main():
   saved_hindi=complete_body(state.get('hi_body',''),'hi') and bool(state.get('hi_title'))
   # Reuse source-grounded drafts to avoid slow publisher re-fetches and transient 403s.
   # New drafts still require extraction from the original source.
+  source_is_original=False
   if words(cached_source)>=65 and (saved_english or saved_hindi):
    text=cached_source
+   source_is_original=True
    print('Using cached publisher excerpt:',post_id,flush=True)
   elif saved_english or saved_hindi:
    text=state['en_body'] if saved_english else state['hi_body']
@@ -1186,7 +1188,8 @@ def main():
    text=''
   else:
    text=source_text(url,domain)
-  if words(text)>=65:
+   source_is_original=True
+  if source_is_original and words(text)>=65:
    state['source_excerpt']=text[:24000]
   source_stamp=timestamp(STORY_DATES.get(url)) or source_stamp
   # No fixed source-age or mandatory date-verification gate. Older and undated
