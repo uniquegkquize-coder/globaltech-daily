@@ -13,9 +13,9 @@ from bs4 import BeautifulSoup
 
 DOMAINS={
  'colleges':('collegedekho.com','shiksha.com','careers360.com','topuniversities.com','timeshighereducation.com','studyportals.com','universityadmissions.se','ucas.com','niche.com','usnews.com'),
- 'phones':('gsmarena.com','gadgets360.com','91mobiles.com','smartprix.com','phonearena.com','notebookcheck.net','kimovil.com','devicespecifications.com','nanoreview.net','androidauthority.com'),
- 'cars':('cardekho.com','carwale.com','autocarindia.com','caranddriver.com','motortrend.com','edmunds.com','kbb.com','cars.com','topgear.com','whatcar.com'),
- 'bikes':('bikedekho.com','bikewale.com','zigwheels.com','motorcycle.com','cycleworld.com','bennetts.co.uk','motorcyclenews.com','visordown.com','autocarindia.com','totalmotorcycle.com')
+ 'phones':('gsmarena.com','gadgets360.com','91mobiles.com','smartprix.com','phonearena.com','notebookcheck.net','kimovil.com','devicespecifications.com','nanoreview.net','androidauthority.com','samsung.com','apple.com','store.google.com','mi.com','oneplus.com','motorola.com','oppo.com','vivo.com'),
+ 'cars':('cardekho.com','carwale.com','autocarindia.com','caranddriver.com','motortrend.com','edmunds.com','kbb.com','cars.com','topgear.com','whatcar.com','toyota.com','ford.com','hyundai.com','kia.com','bmw.com','mercedes-benz.com','tesla.com','mahindra.com'),
+ 'bikes':('bikedekho.com','bikewale.com','zigwheels.com','motorcycle.com','cycleworld.com','bennetts.co.uk','motorcyclenews.com','visordown.com','autocarindia.com','totalmotorcycle.com','heromotocorp.com','honda2wheelersindia.com','yamaha-motor-india.com','bajajauto.com','royalenfield.com','ktm.com')
 }
 ROOT=Path(__file__).resolve().parents[1]
 TARGET=ROOT/'content'/'directory-details.json'
