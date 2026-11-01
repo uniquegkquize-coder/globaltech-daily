@@ -108,12 +108,12 @@ def main():
     published=0
     for kind in KINDS:
         for key,post in items[kind][:2]:
-            (POSTS/(key+'.json')).write_text(json.dumps(post,ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')
+            (POSTS/(key+'.json')).write_text(json.dumps(post,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
             print('Prepared verified directory guide:',kind,post['en_title'],flush=True)
             published+=1
     print('Directory publishing summary:',published,'of 8; missing:',shortage,flush=True)
     (ROOT/'content'/'directory-guide-status.json').write_text(
-        json.dumps({'published':published,'target':8,'missing':shortage,'date':dt.datetime.now(dt.timezone.utc).isoformat()},indent=2)+'\\n',encoding='utf-8')
+        json.dumps({'published':published,'target':8,'missing':shortage,'date':dt.datetime.now(dt.timezone.utc).isoformat()},indent=2)+'\n',encoding='utf-8')
     # Missing source facts are recorded, never fabricated. Other categories can publish.
 
 if __name__=='__main__':main()
