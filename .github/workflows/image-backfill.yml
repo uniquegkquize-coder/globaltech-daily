@@ -1,4 +1,4 @@
-name: Backfill real photos for older news
+name: Backfill original source photos for older news
 on:
   workflow_dispatch:
   push:
@@ -28,7 +28,7 @@ jobs:
           python-version: '3.12'
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Search licensed photographs for archived posts and sync progress
+      - name: Find publisher article images for old posts and sync progress
         shell: bash
         env:
           PYTHONUNBUFFERED: '1'
@@ -41,8 +41,9 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
-          # Retain the originals where licensed; preserve all existing images.
-          # Only import Wikimedia photographs with usable redistribution terms.
+          # Preserve original images and upgrade old Commons/AI stand-ins when a
+          # matching publisher article image is found. Otherwise use the
+          # labelled build.py editorial illustration without unrelated stock.
           python -u scripts/generate_images.py
           git add -A content/featured
           if [ -f content/image-backfill-state.json ]; then
@@ -57,7 +58,7 @@ jobs:
             python -u scripts/build.py
             git add -A dist
           fi
-          git commit -m "Backfill licensed real images for archived news posts"
+          git commit -m "Backfill original source photos for archived news posts"
           git stash push --include-untracked -m 'archive-photo-clean-working-tree' || true
           for attempt in 1 2 3 4; do
             git fetch origin main
