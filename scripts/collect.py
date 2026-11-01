@@ -1164,9 +1164,8 @@ def main():
   if cat=='sarkari-naukri' and not (any(allowed(url,d) for d in OFFICIAL_JOB_DOMAINS) or any(allowed(url,d) for d in REGIONAL_PORTALS['sarkari-naukri'])):
    print('Skipping recruitment story from unapproved source:',url,flush=True)
    return None
-  if (cat in {'entertainment-rumours','celebrity-news'} and not any(allowed(url,d) for d in TRUSTED_ENTERTAINMENT)) or (cat=='controversies' and not any(allowed(url,d) for d in TRUSTED_CONTROVERSY)):
-   print('Skipping unattributable entertainment claim:',url,flush=True)
-   return None
+  # Entertainment and controversy articles are evaluated by the same source-text,
+  # attribution and content-quality checks as other news categories.
   source_stamp=timestamp(STORY_DATES.get(url) or state.get('source_published_at'))
   # Finished drafts only need verified provenance, not another potentially blocked fetch.
   cached_complete=all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi'))
