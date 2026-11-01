@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - 'scripts/collect.py'
+      - 'scripts/public_page_fetch.py'
+      - 'scripts/research_directory_sources.py'
       - 'scripts/test_sources.py'
       - 'scripts/build.py'
       - 'scripts/directories.py'
