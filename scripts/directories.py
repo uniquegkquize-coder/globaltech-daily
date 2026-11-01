@@ -1,5 +1,6 @@
 """Static, source-first directories. Facts are deliberately not invented."""
 import html
+import json
 from pathlib import Path
 
 def esc(v): return html.escape(str(v),quote=True)
@@ -76,6 +77,18 @@ DATA['phones'].extend([
  ('realme','China','Smartphones','https://www.realme.com/'),
  ('HONOR','China','Smartphones','https://www.honor.com/')
 ])
+def load_records():
+ path=Path(__file__).resolve().parents[1]/'content'/'directory-records.json'
+ try:
+  records=json.loads(path.read_text(encoding='utf-8'))
+  return records if isinstance(records,dict) else {}
+ except (OSError,ValueError):return {}
+
+def external_records(kind):
+ records=load_records().get(kind,[])
+ if not isinstance(records,list):return []
+ return [r for r in records if isinstance(r,dict) and r.get('name') and r.get('source_url')][:1000]
+
 COURSES=[
  ('B.Tech / Engineering','Physics, mathematics and institution-specific entrance requirements; check official admission rules.'),
  ('MBBS / Medicine','Medical entrance, prerequisite subjects and country-specific medical licensing requirements.'),
@@ -153,7 +166,17 @@ def render(out,site,shell,write):
   ishi=lang=='hi'
   def tr(en,hi):return hi if ishi else en
   links='<div class="directory-links">'+''.join(f'<a href="/{lang}/{key}/">{esc(tr(label[0],label[1]))}</a>' for key,label in [('colleges',('Colleges','कॉलेज')),('courses',('Courses','कोर्स')),('cars',('Cars','कारें')),('phones',('Phones','फोन')),('bikes',('Bikes','बाइक'))])+'</div>'
-  for kind,items in DATA.items():
+  for kind,base_items in DATA.items():
+   items=list(base_items)
+   existing={row[0].casefold() for row in items}
+   for record in external_records(kind):
+    name=record['name'].strip()
+    if name.casefold() in existing:continue
+    existing.add(name.casefold())
+    url=record.get('official_url') or record['source_url']
+    country=record.get('country') or 'Worldwide'
+    if kind=='colleges':items.append((name,country,'—','—',url,'University / college'))
+    else:items.append((name,country,'Historic / current model',url))
    name={'colleges':('Worldwide College Finder','दुनियाभर के कॉलेज खोजें'),'cars':('Car Explorer','कार एक्सप्लोरर'),'phones':('Phone Explorer','फोन एक्सप्लोरर'),'bikes':('Bike Explorer','बाइक एक्सप्लोरर')}[kind]
    countries=sorted(set(row[1] for row in items))
    controls='<div class="directory-controls"><input data-search aria-label="Search" placeholder="'+esc(tr('Search names or programmes','नाम या कोर्स खोजें'))+'">'
@@ -173,7 +196,7 @@ def render(out,site,shell,write):
     cards.append(f'<article class="directory-card" data-item {attrs} data-search="{esc((" ".join(row)).lower())}"><h2><a href="/{lang}/{kind}/{entry_slug(n)}/">{esc(n)}</a></h2>{detail}<p>{tr("Fees, eligibility, placement or product prices: verify with official source.","फीस, पात्रता, प्लेसमेंट या कीमत: आधिकारिक स्रोत से जाँचें।")}</p><a href="{esc(url)}" rel="noopener noreferrer" target="_blank">{tr("Official website","आधिकारिक वेबसाइट")} ↗</a></article>')
     detail_url=site+'/'+lang+'/'+kind+'/'+entry_slug(n)+'/'
     write(out/lang/kind/entry_slug(n)/'index.html',shell(lang,n,'Official-source guide: '+n,detail_url,entry_detail(kind,row,lang)))
-   note=tr('Starter directory, not an exhaustive global database. We do not invent fees, admissions, placements, prices or specifications. Official sites are the source of truth.','यह शुरुआती डायरेक्टरी है, पूरी विश्व सूची नहीं। फीस, एडमिशन, प्लेसमेंट, कीमत या स्पेसिफिकेशन बिना सत्यापन के नहीं दिए जाते।')
+   note=tr('Growing directory sourced from official websites and Wikidata; not an exhaustive global database. We do not invent fees, admissions, placements, prices or specifications. Official sites are the source of truth.','यह शुरुआती डायरेक्टरी है, पूरी विश्व सूची नहीं। फीस, एडमिशन, प्लेसमेंट, कीमत या स्पेसिफिकेशन बिना सत्यापन के नहीं दिए जाते।')
    body=f'<div class="wrap"><section class="directory-hero"><h1>{esc(tr(*name))}</h1><p class="directory-note">{esc(note)}</p>{links}</section><section data-directory>{controls}<div class="directory-grid">{"".join(cards)}</div></section></div>'
    write(out/lang/kind/'index.html',shell(lang,tr(*name),note,site+'/'+lang+'/'+kind+'/',body))
   cards=[]
