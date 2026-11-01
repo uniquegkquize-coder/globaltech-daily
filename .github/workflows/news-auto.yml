@@ -32,25 +32,26 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: Compile all Python files
         run: python -m compileall -q scripts
-      - name: Generate source-based news
-        id: collect_news
-        continue-on-error: true
+      # Publish three independent short batches. The first successful batch becomes
+      # visible before later discovery/AI processing ends.
+      - name: Publish news in short cycles
+        shell: bash
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           AUTO_POST: ${{ vars.AUTO_POST }}
           SITE_URL: https://globewiredaily.org
           PYTHONUNBUFFERED: '1'
           ENABLE_PUBLIC_BROWSER_FALLBACK: '1'
-          BROWSER_ATTEMPTS_PER_RUN: '8'
+          BROWSER_ATTEMPTS_PER_RUN: '6'
           NEWS_CATEGORY: ''
-          POSTS_PER_RUN: '60'
+          POSTS_PER_RUN: '20'
           MIN_POSTS_PER_CATEGORY: '2'
           MAX_MODELS_PER_ARTICLE: '1'
-          MAX_AI_CALLS_PER_RUN: '100'
-          COLLECT_SECONDS: '1800'
-          DISCOVERY_SECONDS: '300'
+          MAX_AI_CALLS_PER_RUN: '35'
+          COLLECT_SECONDS: '480'
+          DISCOVERY_SECONDS: '90'
           QUEUE_MAX_AGE_HOURS: '87600'
-          PUBLISHER_WEBSITES_PER_RUN: '100'
+          PUBLISHER_WEBSITES_PER_RUN: '35'
           MIN_SOURCE_WORDS: '0'
           MIN_ARTICLE_WORDS_EN: '140'
           MIN_ARTICLE_WORDS_HI: '90'
@@ -62,74 +63,67 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-4.1-mini
           POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
-        run: python -u scripts/collect.py
-      - name: Generate original article featured images (best effort)
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_IMAGE_MODEL: gemini-2.5-flash-image
-          MAX_NEW_IMAGES: '0'
-          MAX_LICENSED_PHOTOS_PER_RUN: '30'
-        run: python -u scripts/generate_images.py
-      - name: Build website
-        env:
-          SITE_URL: https://globewiredaily.org
         run: |
-          python -u scripts/build.py
-          test -f dist/en/index.html
-          test -f dist/hi/index.html
-          test -f dist/sitemap.xml
-          echo 'Website build finished'
-      - name: Commit generated site and articles
-        shell: bash
-        run: |
+          set -u
           git config user.name 'GlobalTech News Bot'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json dist
-          if ! git diff --cached --quiet; then
-            git commit -m 'Publish source-backed tech news and rebuild website'
-            # Sync new editorial posts with main without replaying generated HTML conflicts.
-            # Rebuild all static pages on the current remote branch after syncing content.
-            for attempt in 1 2 3 4 5; do
-              git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json dist
-              if ! git diff --cached --quiet; then
-                git commit -m "Sync rebuilt news output before rebase"
-              fi
-              git add -A
-              if ! git diff --cached --quiet; then
-                git commit -m "Save all generated changes before sync"
-              fi
-              git fetch origin "${{ github.ref_name }}"
-              if ! git rebase -X theirs "origin/${{ github.ref_name }}"; then
-                echo "Generated HTML conflicted with a concurrent publish; regenerating on latest main."
+          published_cycle=0
+          for cycle in 1 2 3; do
+            echo "::group::News publish cycle $cycle/3"
+            python -u scripts/collect.py || echo "::warning::Collector cycle $cycle returned nonzero; preserving any completed drafts"
+            # Avoid expensive image backfill on every cycle. Existing/remote images
+            # remain available; images can be processed separately after article push.
+            if ! python -u scripts/build.py; then
+              echo "::error::Build failed; retain local drafts and stop"
+              exit 1
+            fi
+            if ! test -f dist/en/index.html || ! test -f dist/hi/index.html || ! test -f dist/sitemap.xml; then
+              echo "::error::Required output missing; refusing incomplete publish"
+              exit 1
+            fi
+            git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json dist
+            if git diff --cached --quiet; then
+              echo "Cycle $cycle: no changes to publish"
+              echo "::endgroup::"
+              break
+            fi
+            git commit -m "Publish incremental news cycle $cycle"
+            # Retain new generated content across competing commits on main.
+            pushed=0
+            for attempt in 1 2 3 4; do
+              git fetch origin main
+              if git rebase -X theirs origin/main; then
+                if git push origin HEAD:main; then
+                  pushed=1
+                  break
+                fi
+              else
                 git rebase --abort || true
-                mkdir -p /tmp/news-publish-backup
-                cp -a content/posts content/pending content/featured /tmp/news-publish-backup/
-                cp content/news-run-status.json /tmp/news-publish-backup/news-run-status.json
-                git reset --hard "origin/${{ github.ref_name }}"
-                cp -an /tmp/news-publish-backup/posts/. content/posts/ || true
-                cp -an /tmp/news-publish-backup/pending/. content/pending/ || true
-                cp -an /tmp/news-publish-backup/featured/. content/featured/ || true
-                cp /tmp/news-publish-backup/news-run-status.json content/news-run-status.json
-                python -u scripts/build.py
-                git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json dist
+                echo "::warning::Concurrent HTML changes; rebuilding on latest main"
+                mkdir -p /tmp/news-cycle-$cycle
+                cp -a content/posts content/pending content/featured /tmp/news-cycle-$cycle/ || true
+                git reset --hard origin/main
+                cp -an /tmp/news-cycle-$cycle/posts/. content/posts/ || true
+                cp -an /tmp/news-cycle-$cycle/pending/. content/pending/ || true
+                cp -an /tmp/news-cycle-$cycle/featured/. content/featured/ || true
+                python -u scripts/build.py || exit 1
+                git add -A content/posts content/pending content/featured dist
                 if ! git diff --cached --quiet; then
-                  git commit -m 'Refresh generated site on latest main'
+                  git commit -m "Rebuild incremental news cycle $cycle"
+                fi
+                if git push origin HEAD:main; then
+                  pushed=1
+                  break
                 fi
               fi
-              if git push origin "HEAD:${{ github.ref_name }}"; then
-                echo "Published generated site after sync (attempt $attempt)"
-                exit 0
-              fi
-              sleep 3
+              sleep 2
             done
-            echo "::error::Unable to publish after five safe sync attempts."
-            exit 1
-          else
-            echo 'No changes to commit'
-          fi
-
-      - name: Report collector outcome after preserving drafts
-        if: ${{ always() && steps.collect_news.outcome == 'failure' }}
-        run: |
-          echo '::error::Collector failed or produced zero publishable posts. Drafts and diagnostics were preserved; investigate news-run-status.json.'
-          exit 1
+            if [ "$pushed" -ne 1 ]; then
+              echo "::error::Could not safely push cycle $cycle"
+              exit 1
+            fi
+            published_cycle=$((published_cycle + 1))
+            echo "Pushed cycle $cycle to main; additional news can continue"
+            echo "::endgroup::"
+          done
+          echo "Completed $published_cycle incremental publication cycles"
