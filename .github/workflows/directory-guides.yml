@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Publish two sourced evergreen guides
+      - name: Prepare at least two verified guides per category
         shell: bash
         run: |
           set -e
@@ -33,12 +33,12 @@ jobs:
             python scripts/publish_directory_guides.py
             git add content/posts/
             if git diff --cached --quiet; then
-              echo 'No eligible new guides remain'
+              echo 'No new guides generated'
               exit 0
             fi
             git commit -m 'Publish two sourced directory guides'
             if git push origin HEAD:main; then
-              echo 'Two directory guides published; manual build workflow will render pages.'
+              echo 'Eight directory guides committed; site build will render pages.'
               exit 0
             fi
             echo "Concurrent push, retry $attempt"
