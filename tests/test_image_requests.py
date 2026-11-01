@@ -78,4 +78,22 @@ class ImageRequestTests(unittest.TestCase):
    self.assertIn('Jane Photographer',context['image_caption']({},'en'))
    self.assertIn('CC BY 4.0',context['image_caption']({},'en'))
 
+ def test_licensed_photo_has_clickable_source_and_license(self):
+  import html
+  tree=ast.parse((ROOT/'scripts/build.py').read_text())
+  fns=[node for node in tree.body if isinstance(node,ast.FunctionDef) and node.name in ('image_caption','image_caption_html')]
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);folder=root/'content/featured';folder.mkdir(parents=True)
+   (folder/'sample.json').write_text(json.dumps({
+     'kind':'licensed_photo','attribution':'Jane Photographer','license_name':'CC BY-SA 4.0',
+     'license':'https://creativecommons.org/licenses/by-sa/4.0/',
+     'source_image':'https://commons.wikimedia.org/wiki/File:Example.jpg'}))
+   context={'R':root,'slug':lambda p:'sample','json':json,'e':html.escape}
+   exec(compile(ast.Module(body=fns,type_ignores=[]),'caption','exec'),context)
+   caption=context['image_caption_html']({},'en')
+   self.assertIn('Jane Photographer',caption)
+   self.assertIn('Photo source',caption)
+   self.assertIn('License terms',caption)
+   self.assertIn('Cropped to 16:9',caption)
+
 if __name__=='__main__':unittest.main()
