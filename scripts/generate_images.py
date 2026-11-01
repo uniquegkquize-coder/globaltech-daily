@@ -20,42 +20,96 @@ MAX_NEW=max(0,int(os.getenv('MAX_NEW_IMAGES','0')))  # 0 disables automatic imag
 
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
 
-def licensed_source_image(p):
-    """Fetch the original publisher image and retain provenance; rights are unverified."""
-    source=str(p.get('source') or '')
-    if not source.startswith('https://'):return False
-    ident=slug(p)
+def resolved_featured(ident):
+    """Existing original/manual art is preserved; older Commons substitutes can be upgraded."""
+    path=IMAGES/(ident+'.jpg')
+    if not path.is_file():return False
+    meta=IMAGES/(ident+'.json')
     try:
-        page=requests.get(source,timeout=(5,12),headers={'User-Agent':'GlobalTechDaily/1.0 (editorial image licensing check)'},allow_redirects=True)
+        kind=json.loads(meta.read_text(encoding='utf-8')).get('kind') if meta.is_file() else ''
+    except (OSError,ValueError,TypeError):kind=''
+    return kind!='licensed_photo'
+
+def licensed_source_image(p):
+    """Prioritize the actual article's published picture; record its origin and rights status.
+
+    Metadata such as og:image is an image locator, NOT proof of a reusable license.
+    This pipeline records that limitation instead of mislabelling publisher photos CC.
+    """
+    source=str(p.get('source') or '')
+    ident=slug(p)
+    if not source.startswith('https://') or not ident:return False
+    if resolved_featured(ident):return False
+    try:
+        page=requests.get(source,timeout=(4,10),headers={
+            'User-Agent':'Mozilla/5.0 (compatible; GlobeWireDaily/1.0; +https://globewiredaily.org)'
+        },allow_redirects=True)
         if not page.ok or 'html' not in page.headers.get('content-type','').lower():return False
-        soup=BeautifulSoup(page.text[:650000],'html.parser')
+        if not str(page.url).startswith('https://'):return False
+        soup=BeautifulSoup(page.text[:800000],'html.parser')
         def meta(*keys):
             for key in keys:
                 tag=soup.find('meta',attrs={'property':key}) or soup.find('meta',attrs={'name':key})
                 if tag and tag.get('content'):return str(tag['content']).strip()
             return ''
-        image=meta('og:image','twitter:image')
-        license_url=meta('license','dc.rights','dcterms.license','cc:license')
+        image=meta('og:image:secure_url','og:image','twitter:image','twitter:image:src')
+        if not image:
+            # Some original articles expose their lead image only as NewsArticle JSON-LD.
+            for script in soup.find_all('script',attrs={'type':'application/ld+json'}):
+                try:payload=json.loads(script.string or script.get_text() or '{}')
+                except (ValueError,TypeError):continue
+                nodes=payload if isinstance(payload,list) else [payload]
+                if isinstance(payload,dict) and isinstance(payload.get('@graph'),list):
+                    nodes+=payload['@graph']
+                for node in nodes:
+                    if not isinstance(node,dict):continue
+                    kinds=node.get('@type',[])
+                    kinds=[kinds] if isinstance(kinds,str) else kinds
+                    if not any(k in ('Article','NewsArticle','BlogPosting') for k in kinds):continue
+                    field=node.get('image') or node.get('thumbnailUrl')
+                    if isinstance(field,dict):field=field.get('url') or field.get('contentUrl')
+                    if isinstance(field,list):field=next(iter(field),'')
+                    if isinstance(field,dict):field=field.get('url') or field.get('contentUrl')
+                    if isinstance(field,str) and field.strip():
+                        image=field.strip();break
+                if image:break
         if not image:return False
-        # Publisher verification does not confer image reuse rights. Require an explicit reusable license.
-        allowed_license=bool(('creativecommons.org/licenses/' in license_url.lower() or 'creativecommons.org/publicdomain/' in license_url.lower() or license_url.strip().lower() in ('cc0','public domain')))
-        if not allowed_license:return False
         image=urljoin(page.url,image)
-        if urlparse(image).scheme!='https':return False
-        res=requests.get(image,timeout=(5,20),headers={'User-Agent':'GlobalTechDaily/1.0'},stream=True)
-        if not res.ok or not res.headers.get('content-type','').lower().startswith('image/'):return False
+        parsed=urlparse(image)
+        if parsed.scheme!='https' or not parsed.hostname:return False
+        # Explicitly reject icons, publisher logos, placeholders and trackers.
+        if re.search(r'(?i)(?:logo|favicon|avatar|sprite|placeholder|tracking-pixel|default-image|site-icon)',parsed.path):
+            return False
+        res=requests.get(image,timeout=(4,14),headers={
+            'User-Agent':'Mozilla/5.0 (compatible; GlobeWireDaily/1.0)'
+        },stream=True,allow_redirects=True)
+        if not res.ok or 'image/' not in res.headers.get('content-type','').lower():return False
+        if not str(res.url).startswith('https://'):return False
         raw=bytearray()
         for chunk in res.iter_content(65536):
             raw.extend(chunk)
-            if len(raw)>12000000:return False
+            if len(raw)>12_000_000:return False
         with Image.open(io.BytesIO(raw)) as im:
             if im.width<600 or im.height<320:return False
+            ratio=im.width/max(1,im.height)
+            if ratio<0.65 or ratio>4.0:return False
+            im=ImageOps.exif_transpose(im)
             im=ImageOps.fit(im.convert('RGB'),(1280,720),method=Image.Resampling.LANCZOS)
             im.save(IMAGES/(ident+'.jpg'),'JPEG',quality=86,optimize=True)
-        (IMAGES/(ident+'.json')).write_text(json.dumps({'kind':'publisher_source','source_image':image,'license':license_url,'attribution':meta('dc.creator','author') or urlparse(page.url).hostname,'source':page.url,'rights_status':'license_metadata_present'}),encoding='utf-8')
-        print('Original publisher image',ident,flush=True)
+        license_url=meta('license','dc.rights','dcterms.license','cc:license')
+        status='source_rights_unverified'
+        if 'creativecommons.org/licenses/' in license_url.lower() or 'creativecommons.org/publicdomain/' in license_url.lower():
+            status='source_license_claimed'
+        (IMAGES/(ident+'.json')).write_text(json.dumps({
+            'kind':'publisher_source','source_image':image,
+            'license':license_url,'attribution':meta('dc.creator','author','article:author','og:site_name') or urlparse(page.url).hostname,
+            'source':page.url,'rights_status':status,
+            'caption':'Actual source-article image; publisher photo rights are not independently verified.',
+            'modifications':'Cropped to 16:9 for the website'
+        },ensure_ascii=False),encoding='utf-8')
+        print('Original source-article photo',ident,source,flush=True)
         return True
-    except (requests.RequestException,ValueError,OSError):
+    except (requests.RequestException,ValueError,OSError,TypeError):
         return False
 
 # Search for the actual subject rather than an entire news headline. The previous
@@ -216,8 +270,8 @@ BACKFILL_STATE=ROOT/'content/image-backfill-state.json'
 def choose_backfill(posts,now=None,limit=None,cursor=None,mode=None):
     """Search fresh news and historic posts, advancing persistent group cursors.
 
-    Photo matches remain article-specific and licensed; existing photos are never
-    replaced. The dedicated archive workflow processes old posts exclusively.
+    Preserve existing source/owner images; allow older unrelated Commons photos
+    to be upgraded to the original publisher image. Archive mode scans old posts.
     """
     now=now or datetime.datetime.now(datetime.timezone.utc)
     limit=max(0,int(limit if limit is not None else os.getenv('MAX_LICENSED_PHOTOS_PER_RUN','8')))
@@ -225,7 +279,7 @@ def choose_backfill(posts,now=None,limit=None,cursor=None,mode=None):
     fresh=[];older=[]
     for post in sorted(posts,key=lambda p:p.get('date',''),reverse=True):
         ident=slug(post)
-        if not ident or (IMAGES/(ident+'.jpg')).exists():continue
+        if not ident or resolved_featured(ident):continue
         try:
             stamp=datetime.datetime.fromisoformat(str(post.get('date','')).replace('Z','+00:00'))
             if stamp.tzinfo is None:stamp=stamp.replace(tzinfo=datetime.timezone.utc)
@@ -274,17 +328,14 @@ def main():
     print('Fresh news awaiting reusable photos:',fresh_count,
           'older archive missing reusable photos:',older_count,flush=True)
     new_original=0
-    new_commons=0
     for p in candidates:
         if licensed_source_image(p):
             new_original+=1
             continue
-        if commons_photo(p):
-            new_commons+=1
-            continue
+        # If the publisher has no usable image, build.py produces an editorial illustration.
+        # Do not substitute unrelated Commons/stock photos for original article images.
         if MAX_NEW>0 and KEY and len(QUOTA_BLOCKED)<len(MODELS):
             create(p)
     print('Photo backfill attempted:',len(candidates),'original:',new_original,
-          'licensed Commons:',new_commons,
-          'remaining posts use existing/fallback illustrations',flush=True)
+          'fallback: editorial illustrations',flush=True)
 if __name__=='__main__':main()
