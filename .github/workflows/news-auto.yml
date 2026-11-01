@@ -45,7 +45,7 @@ jobs:
           MIN_ARTICLE_WORDS_EN: '140'
           MIN_ARTICLE_WORDS_HI: '90'
           QUEUE_MAX_AGE_HOURS: '87600'
-          AI_PROVIDER_ORDER: gemini,groq,openrouter
+          AI_PROVIDER_ORDER: gemini,groq,openrouter,openai
           GEMINI_MODEL: gemini-flash-lite-latest
           GROQ_MODEL: openai/gpt-oss-120b
           OPENAI_MODEL: gpt-4.1-mini
@@ -130,7 +130,7 @@ jobs:
           MAX_NEW_IMAGES: '0'
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: openai/gpt-oss-120b
-          AI_PROVIDER_ORDER: gemini,groq,openrouter
+          AI_PROVIDER_ORDER: gemini,groq,openrouter,openai
           GEMINI_MODEL: gemini-flash-lite-latest
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -145,6 +145,11 @@ jobs:
             echo "Publishing pass $pass/3"
             if ! python -u scripts/collect.py; then
               echo "::warning::Collector pass $pass incomplete; drafts remain saved"
+            fi
+            # A provider-wide 429 cannot be fixed by immediately repeating the batch.
+            if python -c "import json,sys;d=json.load(open('content/news-run-status.json'));sys.exit(0 if d.get('outcome')=='providers_unavailable' else 1)"; then
+              echo "::warning::AI providers exhausted or rate-limited. Stop retries until the next scheduled run; check API quotas and keys."
+              break
             fi
             if python -c "import sys;sys.path.insert(0,'scripts');from news_config import CATEGORIES;from collect import published_categories;c=published_categories();missing={k:c.get(k,0) for k in CATEGORIES if c.get(k,0)<2};print('CATEGORY_MINIMUM_AUDIT',missing);sys.exit(bool(missing))"; then
               echo "Every category has at least two published posts"
