@@ -1,0 +1,13 @@
+name: News - space-news
+on:
+  schedule:
+    - cron: '50 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    uses: ./.github/workflows/news-category-publisher.yml
+    with:
+      category: space-news
+    secrets: inherit
