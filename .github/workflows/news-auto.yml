@@ -4,8 +4,8 @@ on:
     branches: [main]
     paths: ['.github/workflows/news-auto.yml']
   schedule:
-    # Four short batches/hour avoid overlapping long-running workflows.
-    - cron: '5,20,35,50 * * * *'
+    # Run every two hours, UTC.
+    - cron: '7 */2 * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -119,7 +119,7 @@ jobs:
           CATEGORY_PUBLISH_CAP: '0'
           MAX_MODELS_PER_ARTICLE: '2'
           MAX_AI_CALLS_PER_RUN: '100'
-          COLLECT_SECONDS: '1800'
+          COLLECT_SECONDS: '500'
           DISCOVERY_SECONDS: '90'
           QUEUE_MAX_AGE_HOURS: '87600'
           PUBLISHER_WEBSITES_PER_RUN: '32'
@@ -141,9 +141,16 @@ jobs:
           git config user.name 'GlobalTech News Bot'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           echo "::group::Collect and complete bilingual news drafts"
-          if ! python -u scripts/collect.py; then
-            echo "::warning::Collector did not meet its post target; completed drafts remain saved"
-          fi
+          for pass in 1 2 3; do
+            echo "Publishing pass $pass/3"
+            if ! python -u scripts/collect.py; then
+              echo "::warning::Collector pass $pass incomplete; drafts remain saved"
+            fi
+            if python -c "import sys;sys.path.insert(0,'scripts');from news_config import CATEGORIES;from collect import published_categories;c=published_categories();missing={k:c.get(k,0) for k in CATEGORIES if c.get(k,0)<2};print('CATEGORY_MINIMUM_AUDIT',missing);sys.exit(bool(missing))"; then
+              echo "Every category has at least two published posts"
+              break
+            fi
+          done
           echo "::endgroup::"
 
           # Locate the real picture published with the source article first,
