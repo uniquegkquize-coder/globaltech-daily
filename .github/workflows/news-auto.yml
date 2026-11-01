@@ -53,6 +53,10 @@ jobs:
           for pass in 1 2 3 4 5 6 7 8; do
             echo "Backlog publication pass $pass/8"
             python -u scripts/collect.py || echo "::warning::Draft pass $pass incomplete"
+            if python -c "import json,sys; d=json.load(open('content/news-run-status.json')); sys.exit(0 if d.get('outcome')=='providers_unavailable' and d.get('published',0)==0 else 1)"; then
+              echo '::warning::All providers unavailable and no posts published; stop costly retries'
+              break
+            fi
           done
       # Refresh all categories and audit remaining original-photo gaps after the archive-wide detection fix.
       - name: Scan all archived and fresh articles for publisher images
