@@ -117,9 +117,14 @@ def licensed_source_image(p):
         if not image:
             print('No source article photo found',ident,source,flush=True)
             return False
+        # Skip tracker endpoints and malformed JS-object URLs.
+        if not isinstance(image,str) or '[object Object]' in image:
+            return False
         image=urljoin(page.url,image)
         parsed=urlparse(image)
         if parsed.scheme!='https' or not parsed.hostname:return False
+        if parsed.hostname.lower() in ('facebook.com','www.facebook.com','connect.facebook.net'):return False
+        if parsed.path.lower().endswith('.webwebp'):return False
         # Explicitly reject icons, publisher logos, placeholders and trackers.
         if re.search(r'(?i)(?:logo|favicon|avatar|sprite|placeholder|tracking-pixel|default-image|site-icon|/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',parsed.path):
             return False
