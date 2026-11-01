@@ -160,14 +160,28 @@ def main():
             if slug(p):posts.append(p)
         except (OSError,ValueError):pass
     posts.sort(key=lambda p:p.get('date',''),reverse=True)
-    # Rotate the backfill window each run; otherwise the same newest 30 missing-image posts
-    # consume every run and older stories never get examined.
-    if posts:
+    # Prefer missing images for newly published news, then rotate older backfill.
+    # Previously the rotation could skip fresh posts until their news window expired.
+    now=datetime.datetime.now(datetime.timezone.utc)
+    fresh=[];older=[]
+    for post in posts:
+        try:
+            stamp=datetime.datetime.fromisoformat(str(post.get('date','')).replace('Z','+00:00'))
+            if stamp.tzinfo is None:stamp=stamp.replace(tzinfo=datetime.timezone.utc)
+            recent=datetime.timedelta(0)<=now-stamp<=datetime.timedelta(days=3)
+        except (TypeError,ValueError):recent=False
+        if recent and not (IMAGES/(slug(post)+'.jpg')).exists():
+            fresh.append(post)
+        else:
+            older.append(post)
+    if older:
         window=max(1,int(os.getenv('MAX_LICENSED_PHOTOS_PER_RUN','12')))
-        slot=int(datetime.datetime.now(datetime.timezone.utc).timestamp()//3600)
-        offset=(slot*window)%len(posts)
-        posts=posts[offset:]+posts[:offset]
-        print('Image backfill rotation',offset,'of',len(posts),flush=True)
+        slot=int(now.timestamp()//3600)
+        offset=(slot*window)%len(older)
+        older=older[offset:]+older[:offset]
+        print('Older image backfill rotation',offset,'of',len(older),flush=True)
+    posts=fresh+older
+    print('Fresh news awaiting licensed images:',len(fresh),flush=True)
     count=0
     photo_limit=max(0,int(os.getenv('MAX_LICENSED_PHOTOS_PER_RUN','12')))
     for p in posts:
