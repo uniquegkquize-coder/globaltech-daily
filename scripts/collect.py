@@ -908,7 +908,7 @@ def candidates():
   source_metric(domain,'website_candidates',len(items))
   for story in items:
    if story[0] not in seen:
-    seen.add(story[0]);direct_groups.setdefault(story[2],[]).append(story)
+    seen.add(story[0]);direct_groups.setdefault(os.getenv('NEWS_CATEGORY','').strip() or story[2],[]).append(story)
  for i in range(max(map(len,direct_groups.values()),default=0)):
   for cat in sorted(direct_groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
    if i<len(direct_groups[cat]):yield direct_groups[cat][i]
@@ -918,7 +918,7 @@ def candidates():
  for cat,stories in zip(google_groups,google_results):
   for story in stories:
    if story[0] not in seen:
-    seen.add(story[0]);google_groups.setdefault(story[2],[]).append(story)
+    seen.add(story[0]);google_groups.setdefault(os.getenv('NEWS_CATEGORY','').strip() or story[2],[]).append(story)
  for i in range(max(map(len,google_groups.values()),default=0)):
   for cat in sorted(google_groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
    if i<len(google_groups[cat]):yield google_groups[cat][i]
@@ -996,7 +996,8 @@ def candidates():
    url,title,cat,domain=row
    if not allowed(url,domain) or url in seen:continue
    seen.add(url)
-   actual_cat=category_for_url(title,cat,url)
+   actual_cat=os.getenv('NEWS_CATEGORY','').strip() or category_for_url(title,cat,url)
+   if actual_cat not in groups:continue
    groups[actual_cat].append((url,title,actual_cat,domain))
    source_metric(domain,'feed_candidates')
  print('Fresh dated RSS entries examined:',len(eligible),flush=True)
