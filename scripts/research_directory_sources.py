@@ -110,7 +110,7 @@ def discover(kind,name,session):
  # Only fetch publisher pages with the requested entity in the result title.
  domains=DOMAINS[kind]
  start=sum(ord(ch) for ch in name)%len(domains)
- for domain in (domains[(start+i)%len(domains)] for i in range(3)):
+ for domain in (domains[(start+i)%len(domains)] for i in range(5)):
   try:
    terms={'colleges':'courses fees eligibility admissions','phones':'display chipset battery specifications','cars':'engine variants price specifications','bikes':'engine power torque specifications'}[kind]
    query=requests.utils.quote('site:'+domain+' "'+name+'" '+terms)
@@ -145,7 +145,7 @@ def main():
    offset=(slot*9)%len(entries)
    entries=entries[offset:]+entries[:offset]
   for record in entries:
-   if checked_kind>=9:break
+   if checked_kind>=24:break
    if not isinstance(record,dict):continue
    name=record.get('name','')
    if not name:continue
