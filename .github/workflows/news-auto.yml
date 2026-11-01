@@ -88,6 +88,10 @@ jobs:
               break
             fi
             git commit -m "Publish incremental news cycle $cycle"
+            # Build tooling may leave ignored/untracked or modified tracked files.
+            # Stash only remaining working-tree changes so rebase can run cleanly.
+            # The generated article/pending/dist changes are already committed above.
+            git stash push --include-untracked -m "news-cycle-$cycle-rebase-cleanup" || true
             # Retain new generated content across competing commits on main.
             pushed=0
             for attempt in 1 2 3 4; do
@@ -103,6 +107,7 @@ jobs:
                 mkdir -p /tmp/news-cycle-$cycle
                 cp -a content/posts content/pending content/featured /tmp/news-cycle-$cycle/ || true
                 git reset --hard origin/main
+                mkdir -p content/posts content/pending content/featured
                 cp -an /tmp/news-cycle-$cycle/posts/. content/posts/ || true
                 cp -an /tmp/news-cycle-$cycle/pending/. content/pending/ || true
                 cp -an /tmp/news-cycle-$cycle/featured/. content/featured/ || true
