@@ -77,9 +77,10 @@ def main():
  session.headers.update({'User-Agent':'GlobeWireDaily-DirectoryResearch/1.0 (contact@globewiredaily.org)'})
  checked=0
  for kind in FIELDS:
+  checked_kind=0
   details.setdefault(kind,{})
   for record in records.get(kind,[]):
-   if checked>=36:break
+   if checked_kind>=9:break
    if not isinstance(record,dict):continue
    name=record.get('name','')
    if not name:continue
@@ -87,6 +88,7 @@ def main():
    if all(existing.get(k) for k in FIELDS[kind]):continue
    if not record.get('official_url'):continue
    checked+=1
+   checked_kind+=1
    additions=enrich(kind,name,{**record,**existing},session)
    if additions:
     details[kind][name]={**record,**existing,**additions}
