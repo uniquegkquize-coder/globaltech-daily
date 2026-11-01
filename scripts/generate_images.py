@@ -100,6 +100,11 @@ def commons_photo(p):
     """Get relevant reusable REAL photographs, with clear source and credit."""
     ident=slug(p)
     if not ident or (IMAGES/(ident+'.jpg')).exists():return False
+    # Broad job-listing titles produce irrelevant office seals and foreign photos.
+    # Prefer a documented employer-owned original image, else use an illustration.
+    if p.get('category')=='private-vacancy':
+        print('Commons skipped for generic private vacancy',ident,flush=True)
+        return False
     title=str(p.get('source_title') or p.get('en_title') or '')
     queries=commons_queries(title)
     if not queries:
@@ -118,6 +123,168 @@ def commons_photo(p):
             keywords={w.casefold() for w in re.findall(r'[A-Za-z]{4,}',query)}
             for page in sorted(pages.values(),key=lambda item:item.get('index',1000)):
                 file_title=page.get('title','')
+                # The MediaWiki thumbnail API also returns rendered PDF pages,
+                # logos, maps and seals; those are not news event photographs.
+                if not re.search(r'\.(?:jpe?g|png|webp)
+                if len(keywords & filename_words)<2:continue
+
+                info=(page.get('imageinfo') or [{}])[0]
+                meta=info.get('extmetadata') or {}
+                short_name=re.sub('<[^>]*>','',meta.get('LicenseShortName',{}).get('value','')).strip()
+                license_url=meta.get('LicenseUrl',{}).get('value','')
+                if not commons_reuse_allowed(short_name,license_url):continue
+                if info.get('width',0)<600 or info.get('height',0)<320:continue
+                image_url=info.get('thumburl') or info.get('url')
+                if not image_url or not image_url.startswith('https://'):continue
+                res=requests.get(image_url,timeout=(5,18),headers=headers)
+                if not res.ok or len(res.content)>12_000_000:continue
+                with Image.open(io.BytesIO(res.content)) as im:
+                    if im.width<600 or im.height<320:continue
+                    im=ImageOps.fit(im.convert('RGB'),(1280,720),method=Image.Resampling.LANCZOS)
+                    im.save(IMAGES/(ident+'.jpg'),'JPEG',quality=86,optimize=True)
+                attribution=re.sub('<[^>]*>',' ',meta.get('Artist',{}).get('value','')).strip()[:240]
+                (IMAGES/(ident+'.json')).write_text(json.dumps({
+                    'kind':'licensed_photo','source_image':info.get('descriptionurl'),
+                    'license':license_url or short_name,'license_name':short_name,
+                    'attribution':attribution or 'Wikimedia Commons',
+                    'rights_status':'licensed','caption':'Representative licensed photograph; not necessarily the reported event.',
+                    'modifications':'Cropped to a 16:9 editorial format',
+                    'matched_title':file_title,'search_query':query
+                },ensure_ascii=False),encoding='utf-8')
+                print('Licensed Commons photograph',ident,short_name,'query',query,flush=True)
+                return True
+            print('Commons: no licensed matching photo',ident,'query',query,flush=True)
+        except (requests.RequestException,ValueError,OSError,KeyError,IndexError) as exc:
+            print('Commons lookup unavailable',ident,type(exc).__name__,flush=True)
+    return False
+
+def create(p):
+    ident=slug(p)
+    if not ident:return False
+    dest=IMAGES/(ident+'.jpg')
+    if dest.exists():return False
+    title=str(p.get('en_title') or p.get('source_title') or 'technology update')[:220]
+    source=str(p.get('source_title') or '')[:180]
+    detail=re.sub(r'\s+',' ',str(p.get('en_body') or ''))[:1400]
+    prompt=(
+      'Create one high-quality ORIGINAL 16:9 editorial conceptual illustration uniquely about the exact news event described below, not a generic category thumbnail. '
+      'Category: '+str(p.get('category','technology'))+'. Topic: '+title+'. Source headline: '+source+'. Verified article context: '+detail+'. '
+      'Show the most distinctive verifiable subject, product, setting, or action mentioned in this story. Avoid generic category icons, globes, film reels, stock-style placeholders, and unrelated technology objects. If the exact real-world scene cannot be faithfully depicted, use an unmistakably illustrative editorial interpretation grounded in the article. '
+      'Absolutely NO text, letters, watermarks, fake screenshots, news logos, fake photographs of real people, or misleading depictions of specific events. '
+      'Do not portray this as a documentary photograph. Leave safe margins for cropping. '
+      'Landscape 16:9, premium professional news publication cover art. For government schemes use public-service visual metaphors; for recruitment use exam and careers imagery; for technology use topic-specific tech imagery; for movies depict a cinema environment, camera, projector, or generic film set without recreating copyrighted posters or real actors; for sports use sport-specific equipment; for world news use an accurate non-misleading conceptual scene.'
+    )
+    for model in MODELS:
+      if model in QUOTA_BLOCKED:continue
+      url=f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent'
+      try:
+        response=requests.post(url,headers={'x-goog-api-key':KEY},json={
+          'contents':[{'parts':[{'text':prompt}]}],
+          'generationConfig':{'responseModalities':['IMAGE','TEXT']}
+        },timeout=(10,95))
+        if not response.ok:
+            print('Image API unavailable',model,response.status_code,response.text[:160],flush=True)
+            if response.status_code in (429,403):
+                QUOTA_BLOCKED.add(model)
+            continue
+        parts=response.json().get('candidates',[{}])[0].get('content',{}).get('parts',[])
+        for part in parts:
+            data=part.get('inlineData') or part.get('inline_data') or {}
+            if data.get('data') and str(data.get('mimeType','image/')).startswith('image/'):
+                import base64
+                raw=base64.b64decode(data['data'],validate=True)
+                if len(raw)>18_000_000:continue
+                with Image.open(io.BytesIO(raw)) as img:
+                    if img.width<400 or img.height<250:continue
+                    img=ImageOps.fit(img.convert('RGB'),(1280,720),method=Image.Resampling.LANCZOS,centering=(.5,.5))
+                    img.save(dest,'JPEG',quality=88,optimize=True)
+                (IMAGES/(ident+'.json')).write_text(json.dumps({'kind':'ai_generated','model':model,'caption':'AI-generated conceptual illustration; not an event photograph.'}),encoding='utf-8')
+                print('Generated featured image',ident,model,flush=True)
+                return True
+        print('Image API returned no image for',ident,model,flush=True)
+      except (requests.RequestException,ValueError,OSError,KeyError,IndexError) as exc:
+        print('Image generation failed',model,type(exc).__name__,str(exc)[:130],flush=True)
+    return False
+
+BACKFILL_STATE=ROOT/'content/image-backfill-state.json'
+
+def choose_backfill(posts,now=None,limit=None,cursor=None,mode=None):
+    """Search fresh news and historic posts, advancing persistent group cursors.
+
+    Photo matches remain article-specific and licensed; existing photos are never
+    replaced. The dedicated archive workflow processes old posts exclusively.
+    """
+    now=now or datetime.datetime.now(datetime.timezone.utc)
+    limit=max(0,int(limit if limit is not None else os.getenv('MAX_LICENSED_PHOTOS_PER_RUN','8')))
+    if limit==0:return [],0,0
+    fresh=[];older=[]
+    for post in sorted(posts,key=lambda p:p.get('date',''),reverse=True):
+        ident=slug(post)
+        if not ident or (IMAGES/(ident+'.jpg')).exists():continue
+        try:
+            stamp=datetime.datetime.fromisoformat(str(post.get('date','')).replace('Z','+00:00'))
+            if stamp.tzinfo is None:stamp=stamp.replace(tzinfo=datetime.timezone.utc)
+            is_fresh=datetime.timedelta(0)<=now-stamp<=datetime.timedelta(days=3)
+        except (TypeError,ValueError):is_fresh=False
+        (fresh if is_fresh else older).append(post)
+    mode=(mode or os.getenv('IMAGE_BACKFILL_MODE','mixed')).strip().lower()
+    if mode=='archive' and older:
+        fresh_budget=0
+        older_budget=min(limit,len(older))
+    else:
+        # 60% new news, 40% historic archive, even with a continuous new-news queue.
+        fresh_budget=min(len(fresh),max(1,(limit*3+4)//5)) if fresh else 0
+        older_budget=min(len(older),limit-fresh_budget)
+        if fresh_budget+older_budget<limit:
+            room=limit-fresh_budget-older_budget
+            fresh_budget+=min(room,len(fresh)-fresh_budget)
+            room=limit-fresh_budget-older_budget
+            older_budget+=min(room,len(older)-older_budget)
+    def rotate(rows,n,key):
+        if not rows or n<=0:return []
+        if cursor is None:
+            start=(int(now.timestamp()//900)*n)%len(rows)
+        else:
+            start=max(0,int(cursor.get(key,0)))%len(rows)
+            cursor[key]=start+n
+        return (rows[start:]+rows[:start])[:n]
+    selected=rotate(fresh,fresh_budget,'fresh_offset')+rotate(older,older_budget,'archive_offset')
+    return selected,len(fresh),len(older)
+
+def main():
+    posts=[]
+    for f in POSTS.glob('*.json'):
+        try:
+            p=json.loads(f.read_text(encoding='utf-8'))
+            if slug(p):posts.append(p)
+        except (OSError,ValueError):pass
+    try:cursor=json.loads(BACKFILL_STATE.read_text(encoding='utf-8'))
+    except (OSError,ValueError):cursor={}
+    if not isinstance(cursor,dict):cursor={}
+    candidates,fresh_count,older_count=choose_backfill(posts,cursor=cursor)
+    if candidates:
+        BACKFILL_STATE.parent.mkdir(parents=True,exist_ok=True)
+        BACKFILL_STATE.write_text(json.dumps(cursor,indent=2)+'\n',encoding='utf-8')
+    print('Image backfill mode:',os.getenv('IMAGE_BACKFILL_MODE','mixed'),flush=True)
+    print('Fresh news awaiting reusable photos:',fresh_count,
+          'older archive missing reusable photos:',older_count,flush=True)
+    new_original=0
+    new_commons=0
+    for p in candidates:
+        if licensed_source_image(p):
+            new_original+=1
+            continue
+        if commons_photo(p):
+            new_commons+=1
+            continue
+        if MAX_NEW>0 and KEY and len(QUOTA_BLOCKED)<len(MODELS):
+            create(p)
+    print('Photo backfill attempted:',len(candidates),'original:',new_original,
+          'licensed Commons:',new_commons,
+          'remaining posts use existing/fallback illustrations',flush=True)
+if __name__=='__main__':main()
+,file_title,re.I):continue
+                if re.search(r'\b(logo|icon|clipart|screenshot|poster|seal|emblem|map|diagram|chart|document|manual|outline|illustration|drawing|stamp|flag|plan)\b',file_title,re.I):continue
                 filename_words={w.casefold() for w in re.findall(r'[A-Za-z]{4,}',file_title)}
                 if len(keywords & filename_words)<2:continue
                 if re.search(r'\b(logo|icon|clipart|screenshot|poster)\b',file_title,re.I):continue
