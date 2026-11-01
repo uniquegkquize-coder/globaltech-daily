@@ -665,12 +665,15 @@ def google_news_stories(cat):
  # Rotate related searches each hour, without accepting unverified sources.
  variants=(base,cat.replace('-',' ')+' latest',base+' breaking',base+' announcements')
  hour=dt.datetime.now(UTC).hour
- query=' OR '.join('('+variants[(hour+offset)%len(variants)]+')' for offset in range(3))+' when:2d'
- url='https://news.google.com/rss/search?q='+quote(query)+'&hl=en-IN&gl=IN&ceid=IN:en'
+ query=' OR '.join('('+variants[(hour+offset)%len(variants)]+')' for offset in range(3))+' when:3d'
+ # Rotate worldwide editions on each three-hour run instead of searching India only.
+ editions=(('en-US','US','US:en'),('en-GB','GB','GB:en'),('en-IN','IN','IN:en'),('en-AU','AU','AU:en'),('en-CA','CA','CA:en'),('en-SG','SG','SG:en'),('es-ES','ES','ES:es'),('fr-FR','FR','FR:fr'),('de-DE','DE','DE:de'),('pt-BR','BR','BR:pt'),('ar-SA','SA','SA:ar'),('ja-JP','JP','JP:ja'))
+ edition=editions[(dt.datetime.now(UTC).hour//3+list(GOOGLE_QUERIES).index(cat))%len(editions)]
+ url='https://news.google.com/rss/search?q='+quote(query)+'&hl='+edition[0]+'&gl='+edition[1]+'&ceid='+edition[2]
  try:
   resp=requests.get(url,timeout=(5,12),headers={'User-Agent':'Mozilla/5.0'})
   resp.raise_for_status()
-  entries=feedparser.parse(resp.content).entries[:12]
+  entries=feedparser.parse(resp.content).entries[:35]
   def resolve_entry(entry):
    link=entry.get('link','')
    if not link.startswith('https://'):return None
@@ -679,7 +682,7 @@ def google_news_stories(cat):
    if published:
     try:stamp=dt.datetime(*published[:6],tzinfo=UTC)
     except (ValueError,TypeError):pass
-   if stamp and not -300<=(dt.datetime.now(UTC)-stamp).total_seconds()<=172800:return None
+   if stamp and not -300<=(dt.datetime.now(UTC)-stamp).total_seconds()<=259200:return None
    target=resolve_google_news(link)
    host=(urlparse(target).hostname or '').lower()
    if not target or host.endswith('google.com') or host.endswith('googleusercontent.com'):return None
@@ -855,7 +858,7 @@ def native_feed_stories(feeds=None):
     if not allowed(url,domain) or len(title)<24 or not stamp:continue
     try:published=dt.datetime(*stamp[:6],tzinfo=UTC)
     except (ValueError,TypeError):continue
-    if not -300<=(now-published).total_seconds()<=48*3600:continue
+    if not -300<=(now-published).total_seconds()<=72*3600:continue
     STORY_DATES[url]=published.isoformat()
     rows.append((url,title,category_for_url(title,cat,url),domain))
    print('NATIVE_FEED',domain,'entries',len(entries),'fresh_leads',len(rows),flush=True)
@@ -980,7 +983,7 @@ def candidates():
    if not published:continue
    try:age=(today-dt.date(*published[:3])).days
    except (TypeError,ValueError):continue
-   if age<0 or age>2:continue
+   if age<0 or age>3:continue
    try:STORY_DATES[url]=dt.datetime(*published[:6],tzinfo=UTC).isoformat()
    except (TypeError,ValueError):pass
    eligible.append((url,title,cat,domain))
