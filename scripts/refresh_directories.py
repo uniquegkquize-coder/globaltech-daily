@@ -14,11 +14,13 @@ HEADERS={'User-Agent':'GlobeWireDailyDirectoryBot/1.0 (contact@globewiredaily.or
 
 def fetch(kind,limit=100,offset=0):
  cls=QUERY[kind]
- q=f"""SELECT DISTINCT ?item ?itemLabel ?countryLabel ?inception ?website ?manufacturerLabel ?operatorLabel ?locationLabel ?mass ?height ?width ?length WHERE {{
+ q=f"""SELECT DISTINCT ?item ?itemLabel ?countryLabel ?regionLabel ?cityLabel ?inception ?website ?manufacturerLabel ?operatorLabel ?locationLabel ?mass ?height ?width ?length WHERE {{
  ?item wdt:P31 wd:{cls}.
  OPTIONAL {{ ?item wdt:P17 ?country. }}
  OPTIONAL {{ ?item wdt:P571 ?inception. }}
  OPTIONAL {{ ?item wdt:P856 ?website. }}
+ OPTIONAL {{ ?item wdt:P131 ?region. }}
+ OPTIONAL {{ ?item wdt:P131/wdt:P131? ?city. }}
  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
  }} ORDER BY ?item LIMIT {int(limit)} OFFSET {int(offset)}"""
  response=requests.get(ENDPOINT,params={'query':q,'format':'json'},headers=HEADERS,timeout=30)
@@ -31,6 +33,7 @@ def fetch(kind,limit=100,offset=0):
   if not name or name.startswith('Q') or not item.startswith('http'):continue
   rows.append({'name':name[:160],'country':get('countryLabel')[:90],
                'introduced':get('inception')[:10],'official_url':get('website')[:300],
+               'region':get('regionLabel')[:100], 'city':get('cityLabel')[:100],
                'source_url':item,'source':'Wikidata',
                'manufacturer':get('manufacturerLabel')[:120],
                'operator':get('operatorLabel')[:120],
