@@ -354,7 +354,9 @@ def choose_backfill(posts,now=None,limit=None,cursor=None,mode=None):
             start=max(0,int(cursor.get(key,0)))%len(rows)
             cursor[key]=start+n
         return (rows[start:]+rows[:start])[:n]
-    selected=fresh[:fresh_budget]+rotate(older,older_budget,'archive_offset')
+    # Rotate fresh candidates too, so historic posts retain their reserved share
+    # and repeated scheduled runs do not always select the same fresh images.
+    selected=rotate(fresh,fresh_budget,'fresh_offset')+rotate(older,older_budget,'archive_offset')
     return selected,len(fresh),len(older)
 
 def main():
