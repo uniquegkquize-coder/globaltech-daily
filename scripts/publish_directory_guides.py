@@ -81,24 +81,37 @@ def article(kind,name,entry,source):
                 'date':now,'category':CATEGORY[kind],'image_kind':'none',
                 'content_type':'evergreen_directory_guide'}
 
+def sufficient(kind,entry):
+    """Require multiple source-listed, non-placeholder facts before publishing."""
+    required={
+      'colleges':('programmes','admissions','fees'),
+      'phones':('display','processor','battery'),
+      'cars':('powertrain','variants','price'),
+      'bikes':('engine','power','torque')
+    }[kind]
+    missing=[field for field in required if not str(entry.get(field,'')).strip()
+             or str(entry[field]).lower() in ('unknown','n/a','not available','—')]
+    return not missing and bool(entry.get('official_url')) and bool(entry.get('source_url'))
+
 def main():
     POSTS.mkdir(parents=True,exist_ok=True)
-    # Rotate across topics, selecting never-before-published profiles.
     items={k:[] for k in KINDS}
     for kind,name,entry,source in candidates():
+        if not sufficient(kind,entry):
+            continue
         key,post=article(kind,name,entry,source)
-        if not (POSTS/(key+'.json')).exists():items[kind].append((key,post))
-    for group in items.values():group.sort(key=lambda p:p[0])
-    published=0
-    while published<2 and any(items.values()):
-        for kind in KINDS:
-            if published>=2:break
-            if not items[kind]:continue
-            key,post=items[kind].pop(0)
+        if not (POSTS/(key+'.json')).exists():
+            items[kind].append((key,post))
+    for group in items.values():
+        group.sort(key=lambda p:p[0])
+    shortage={kind:2-len(group) for kind,group in items.items() if len(group)<2}
+    if shortage:
+        print('Insufficient fully sourced new profiles for mandatory category quota:',shortage,flush=True)
+        raise SystemExit(2)
+    for kind in KINDS:
+        for key,post in items[kind][:2]:
             (POSTS/(key+'.json')).write_text(json.dumps(post,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-            print('Published sourced directory guide:',kind,post['en_title'],flush=True)
-            published+=1
-    if published<2:
-        print(f'Only {published} eligible new profiles; no duplicate or fabricated posts created.',flush=True)
+            print('Prepared verified directory guide:',kind,post['en_title'],flush=True)
+    print('Prepared exactly eight guides: two per category.',flush=True)
 
 if __name__=='__main__':main()
