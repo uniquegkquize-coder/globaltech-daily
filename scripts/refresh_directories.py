@@ -14,7 +14,7 @@ HEADERS={'User-Agent':'GlobeWireDailyDirectoryBot/1.0 (contact@globewiredaily.or
 
 def fetch(kind,limit=100,offset=0):
  cls=QUERY[kind]
- q=f"""SELECT DISTINCT ?item ?itemLabel ?countryLabel ?inception ?website WHERE {{
+ q=f"""SELECT DISTINCT ?item ?itemLabel ?countryLabel ?inception ?website ?manufacturerLabel ?operatorLabel ?locationLabel ?mass ?height ?width ?length WHERE {{
  ?item wdt:P31 wd:{cls}.
  OPTIONAL {{ ?item wdt:P17 ?country. }}
  OPTIONAL {{ ?item wdt:P571 ?inception. }}
@@ -32,6 +32,11 @@ def fetch(kind,limit=100,offset=0):
   rows.append({'name':name[:160],'country':get('countryLabel')[:90],
                'introduced':get('inception')[:10],'official_url':get('website')[:300],
                'source_url':item,'source':'Wikidata',
+               'manufacturer':get('manufacturerLabel')[:120],
+               'operator':get('operatorLabel')[:120],
+               'location':get('locationLabel')[:120],
+               'mass':get('mass')[:60], 'height':get('height')[:60],
+               'width':get('width')[:60], 'length':get('length')[:60],
                'retrieved_at':datetime.datetime.now(datetime.timezone.utc).date().isoformat()})
  return rows
 
