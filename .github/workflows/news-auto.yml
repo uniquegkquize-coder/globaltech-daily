@@ -27,6 +27,8 @@ jobs:
           python-version: '3.12'
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Validate image extractor syntax
+        run: python -m py_compile scripts/generate_images.py
       - name: Scan all archived and fresh articles for publisher images
         env:
           MAX_LICENSED_PHOTOS_PER_RUN: '100000'
