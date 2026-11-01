@@ -36,7 +36,7 @@ RUN_DEADLINE=0.0
 DISCOVERY_DEADLINE=0.0
 COLLECT_SECONDS=max(120,min(1920,int(os.getenv('COLLECT_SECONDS','720'))))
 DISCOVERY_SECONDS=max(30,min(COLLECT_SECONDS-60,int(os.getenv('DISCOVERY_SECONDS','180'))))
-MODELS_PER_PROVIDER=max(1,min(3,int(os.getenv('MAX_MODELS_PER_ARTICLE','1'))))
+MODELS_PER_PROVIDER=max(1,min(5,int(os.getenv('MAX_MODELS_PER_ARTICLE','5'))))
 STORY_DATES={}
 # News discovery sources. Official-domain verification occurs BEFORE any AI request.
 # Curated global discovery. Publisher RSS is for finding stories; the linked article is
@@ -542,7 +542,12 @@ def call_provider(prompt):
     if not r.ok:
      print('Provider',provider,'model',model,'HTTP',r.status_code,flush=True)
      if r.status_code in (401,402,403,429):
-      with PROVIDER_LOCK:PROVIDER_COOLDOWNS.add(provider)
+      with PROVIDER_LOCK:
+       if provider=='gemini' and r.status_code==429:
+        UNAVAILABLE_MODELS.add((provider,model))
+       else:
+        PROVIDER_COOLDOWNS.add(provider)
+      if provider=='gemini' and r.status_code==429:continue
       break
      if r.status_code in (404,503):
       # Avoid repeatedly spending requests on unavailable or overloaded models.
