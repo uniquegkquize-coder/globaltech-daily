@@ -101,6 +101,19 @@ def licensed_source_image(p):
                     break
                 if image:break
         if not image:
+            # Look for publisher photographs in lazy-loaded and picture markup.
+            for tag in soup.select('article img, main img, figure img, picture source, img')[:120]:
+                srcset=tag.get('data-srcset') or tag.get('srcset') or ''
+                candidate=(tag.get('data-original') or tag.get('data-full-src')
+                           or tag.get('data-image') or tag.get('data-lazy-src')
+                           or tag.get('data-src') or tag.get('src') or '')
+                if not candidate and srcset:
+                    candidate=srcset.split(',')[-1].strip().split(' ')[0]
+                if candidate and not candidate.startswith('data:') and not re.search(
+                    r'(?i)(logo|favicon|avatar|sprite|placeholder|pixel|icon)',candidate):
+                    image=candidate
+                    break
+        if not image:
             print('No source article photo found',ident,source,flush=True)
             return False
         image=urljoin(page.url,image)
