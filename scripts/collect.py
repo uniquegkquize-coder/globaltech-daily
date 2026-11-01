@@ -1172,10 +1172,20 @@ def main():
   # A completed English draft can survive a temporary source outage while Hindi is generated.
   # Keep the source requirement for fresh articles; only resume source-backed drafts.
   cached_source=state.get('source_excerpt','')
-  text='' if cached_complete and source_stamp else source_text(url,domain)
-  if words(text)<65 and words(cached_source)>=65 and complete_body(state.get('en_body',''),'en'):
+  saved_english=complete_body(state.get('en_body',''),'en') and bool(state.get('en_title'))
+  saved_hindi=complete_body(state.get('hi_body',''),'hi') and bool(state.get('hi_title'))
+  # Reuse source-grounded drafts to avoid slow publisher re-fetches and transient 403s.
+  # New drafts still require extraction from the original source.
+  if words(cached_source)>=65 and (saved_english or saved_hindi):
    text=cached_source
-   print('Using saved source excerpt for Hindi retry:',post_id,flush=True)
+   print('Using cached publisher excerpt:',post_id,flush=True)
+  elif saved_english or saved_hindi:
+   text=state['en_body'] if saved_english else state['hi_body']
+   print('Recovering missing language from saved source-grounded draft:',post_id,flush=True)
+  elif cached_complete and source_stamp:
+   text=''
+  else:
+   text=source_text(url,domain)
   if words(text)>=65:
    state['source_excerpt']=text[:24000]
   source_stamp=timestamp(STORY_DATES.get(url)) or source_stamp
@@ -1286,12 +1296,14 @@ def main():
    draft=json.loads(draft_path.read_text(encoding='utf-8'))
    source=draft.get('source',''); category=draft.get('category',''); title=draft.get('source_title','')
    if selected and category!=selected:continue
-   if not complete_body(draft.get('en_body',''),'en') or complete_body(draft.get('hi_body',''),'hi'):continue
+   ready_en=complete_body(draft.get('en_body',''),'en') and bool(draft.get('en_title'))
+   ready_hi=complete_body(draft.get('hi_body',''),'hi') and bool(draft.get('hi_title'))
+   if ready_en==ready_hi:continue
    row=(source,title,category,urlparse(source).hostname or '')
    if useful_lead(row):saved_drafts.append(row)
   except (OSError,ValueError,TypeError):continue
  stories=unique_leads(saved_drafts+stories)
- print('Resumable English-to-Hindi pending drafts prioritized:',len(saved_drafts),flush=True)
+ print('Resumable single-language pending drafts prioritized:',len(saved_drafts),flush=True)
  print('Direct source priority candidates:',sum(any(allowed(row[0],d) for _,_,d in DIRECT_SOURCES) for row in new_leads),flush=True)
  print('Fresh discovered leads:',len(new_leads),flush=True)
  # Persist discovered leads before AI calls; the next run resumes them even if quota expires.
@@ -1327,9 +1339,9 @@ def main():
  # Saved bilingual drafts should be finished before spending the run on new leads.
  # Fully sourced English-only drafts get the very first AI slots.
  # Previously any empty/failed pending record competed on equal footing.
- english_only_ids={path.stem for path in PENDING.glob('*.json') if not path.name.startswith('_') and path.stem in {hashlib.sha256(row[0].encode()).hexdigest()[:12] for row in saved_drafts}}
+ single_language_ids={hashlib.sha256(row[0].encode()).hexdigest()[:12] for row in saved_drafts}
  pending_ids={p.stem for p in PENDING.glob('*.json') if not p.name.startswith('_')}
- ordered.sort(key=lambda row:(hashlib.sha256(row[0].encode()).hexdigest()[:12] not in english_only_ids,hashlib.sha256(row[0].encode()).hexdigest()[:12] not in pending_ids,story_priority(row)))
+ ordered.sort(key=lambda row:(hashlib.sha256(row[0].encode()).hexdigest()[:12] not in single_language_ids,hashlib.sha256(row[0].encode()).hexdigest()[:12] not in pending_ids,story_priority(row)))
  article_workers=10
  print('Parallel article workers:',article_workers,flush=True)
  with ThreadPoolExecutor(max_workers=article_workers) as article_pool:
