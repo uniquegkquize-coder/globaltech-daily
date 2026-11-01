@@ -86,6 +86,10 @@ jobs:
               if ! git diff --cached --quiet; then
                 git commit -m "Sync rebuilt news output before rebase"
               fi
+              git add -A
+              if ! git diff --cached --quiet; then
+                git commit -m "Save all generated changes before sync"
+              fi
               git fetch origin "${{ github.ref_name }}"
               if ! git rebase -X theirs "origin/${{ github.ref_name }}"; then
                 echo "Generated HTML conflicted with a concurrent publish; regenerating on latest main."
