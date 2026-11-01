@@ -1,0 +1,13 @@
+name: News - ev-clean-energy
+on:
+  schedule:
+    - cron: '24 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    uses: ./.github/workflows/news-category-publisher.yml
+    with:
+      category: ev-clean-energy
+    secrets: inherit
