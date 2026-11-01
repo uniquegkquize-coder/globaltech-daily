@@ -355,6 +355,8 @@ def choose_backfill(posts,now=None,limit=None,cursor=None,mode=None):
             cursor[key]=start+n
         return (rows[start:]+rows[:start])[:n]
     selected=fresh[:fresh_budget]+rotate(older,older_budget,'archive_offset')
+    # Prioritize the reported cricket article while retaining the normal archive scan.
+    selected.sort(key=lambda post: 0 if slug(post).startswith('d9a0f59e3e') else 1)
     return selected,len(fresh),len(older)
 
 def main():
