@@ -54,7 +54,7 @@ class NewsroomConfigTests(unittest.TestCase):
         self.assertIn("for cycle in 1 2 3", workflow)
         self.assertIn("Publish news in short cycles", workflow)
         self.assertIn("MIN_POSTS_PER_CATEGORY: '2'", workflow)
-        self.assertIn("MAX_AI_CALLS_PER_RUN: '100'", workflow)
+        self.assertIn("MAX_AI_CALLS_PER_RUN: '35'", workflow)
         self.assertIn("AI_PROVIDER_ORDER: gemini,groq,openrouter", workflow)
         self.assertIn("python -u scripts/build.py", workflow)
 
