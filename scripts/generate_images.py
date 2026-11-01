@@ -197,6 +197,41 @@ def create(p):
         print('Image generation failed',model,type(exc).__name__,str(exc)[:130],flush=True)
     return False
 
+def choose_backfill(posts,now=None,limit=None):
+    """Allocate some image searches to fresh news AND older archive posts.
+
+    Both groups rotate every quarter hour. A run does not retry the same first
+    few missing images forever, and archive photos get attention even while
+    new posts continue arriving. Never overwrite an existing featured photo.
+    """
+    now=now or datetime.datetime.now(datetime.timezone.utc)
+    limit=max(0,int(limit if limit is not None else os.getenv('MAX_LICENSED_PHOTOS_PER_RUN','8')))
+    if limit==0:return [],0,0
+    fresh=[];older=[]
+    for post in sorted(posts,key=lambda p:p.get('date',''),reverse=True):
+        ident=slug(post)
+        if not ident or (IMAGES/(ident+'.jpg')).exists():continue
+        try:
+            stamp=datetime.datetime.fromisoformat(str(post.get('date','')).replace('Z','+00:00'))
+            if stamp.tzinfo is None:stamp=stamp.replace(tzinfo=datetime.timezone.utc)
+            is_fresh=datetime.timedelta(0)<=now-stamp<=datetime.timedelta(days=3)
+        except (TypeError,ValueError):is_fresh=False
+        (fresh if is_fresh else older).append(post)
+    # 60% fresh news, 40% older articles when both have missing images.
+    fresh_budget=min(len(fresh), max(1,(limit*3+4)//5)) if fresh else 0
+    older_budget=min(len(older),limit-fresh_budget)
+    if fresh_budget+older_budget<limit:
+        room=limit-fresh_budget-older_budget
+        fresh_budget+=min(room,len(fresh)-fresh_budget)
+        room=limit-fresh_budget-older_budget
+        older_budget+=min(room,len(older)-older_budget)
+    slot=int(now.timestamp()//900)
+    def rotate(rows,n):
+        if n<=0 or not rows:return []
+        start=(slot*n)%len(rows)
+        return (rows[start:]+rows[:start])[:n]
+    return rotate(fresh,fresh_budget)+rotate(older,older_budget),len(fresh),len(older)
+
 def main():
     posts=[]
     for f in POSTS.glob('*.json'):
@@ -204,38 +239,21 @@ def main():
             p=json.loads(f.read_text(encoding='utf-8'))
             if slug(p):posts.append(p)
         except (OSError,ValueError):pass
-    posts.sort(key=lambda p:p.get('date',''),reverse=True)
-    # Prefer missing images for newly published news, then rotate older backfill.
-    # Previously the rotation could skip fresh posts until their news window expired.
-    now=datetime.datetime.now(datetime.timezone.utc)
-    fresh=[];older=[]
-    for post in posts:
-        try:
-            stamp=datetime.datetime.fromisoformat(str(post.get('date','')).replace('Z','+00:00'))
-            if stamp.tzinfo is None:stamp=stamp.replace(tzinfo=datetime.timezone.utc)
-            recent=datetime.timedelta(0)<=now-stamp<=datetime.timedelta(days=3)
-        except (TypeError,ValueError):recent=False
-        if recent and not (IMAGES/(slug(post)+'.jpg')).exists():
-            fresh.append(post)
-        else:
-            older.append(post)
-    if older:
-        window=max(1,int(os.getenv('MAX_LICENSED_PHOTOS_PER_RUN','12')))
-        slot=int(now.timestamp()//3600)
-        offset=(slot*window)%len(older)
-        older=older[offset:]+older[:offset]
-        print('Older image backfill rotation',offset,'of',len(older),flush=True)
-    posts=fresh+older
-    print('Fresh news awaiting licensed images:',len(fresh),flush=True)
-    count=0
-    photo_limit=max(0,int(os.getenv('MAX_LICENSED_PHOTOS_PER_RUN','12')))
-    for p in posts:
-        if count>=photo_limit:break
-        if (IMAGES/(slug(p)+'.jpg')).exists():continue
-        count+=1
-        # Real licensed photographs first; never copy unlicensed publisher images.
-        if licensed_source_image(p):continue
-        if commons_photo(p):continue
-        if MAX_NEW>0 and KEY and len(QUOTA_BLOCKED)<len(MODELS):create(p)
-    print('Licensed photo lookup attempts:',count,'of',len(posts),'posts',flush=True)
+    candidates,fresh_count,older_count=choose_backfill(posts)
+    print('Fresh news awaiting reusable photos:',fresh_count,
+          'older archive missing reusable photos:',older_count,flush=True)
+    new_original=0
+    new_commons=0
+    for p in candidates:
+        if licensed_source_image(p):
+            new_original+=1
+            continue
+        if commons_photo(p):
+            new_commons+=1
+            continue
+        if MAX_NEW>0 and KEY and len(QUOTA_BLOCKED)<len(MODELS):
+            create(p)
+    print('Photo backfill attempted:',len(candidates),'original:',new_original,
+          'licensed Commons:',new_commons,
+          'remaining posts use existing/fallback illustrations',flush=True)
 if __name__=='__main__':main()
