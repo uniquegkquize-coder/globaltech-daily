@@ -1,0 +1,13 @@
+name: News - travel-packages
+on:
+  schedule:
+    - cron: '3 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    uses: ./.github/workflows/news-category-publisher.yml
+    with:
+      category: travel-packages
+    secrets: inherit
