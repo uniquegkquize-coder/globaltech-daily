@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish-news:
-    if: ${{ vars.PUBLICATION_PAUSED != 'true' }}
+    if: ${{ false }} # Publication paused by owner until directory and image work is complete
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
