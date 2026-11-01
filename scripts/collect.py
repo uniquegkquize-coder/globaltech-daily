@@ -1274,5 +1274,8 @@ def main():
  print('Per-category published counts:',dict(sorted(category_published.items())),flush=True)
  print('Categories reaching target:',', '.join(sorted(cat for cat,n in category_published.items() if n>=MIN_POSTS_PER_CATEGORY)),flush=True)
  print('Categories below two-post target:',', '.join(sorted(set(c for _,c,_ in FEEDS)-{cat for cat,n in category_published.items() if n>=MIN_POSTS_PER_CATEGORY})),flush=True)
+ if published==0:
+  print('::error::News collector published zero new articles. Outcome: '+outcome+'; inspect source dates, source text and saved bilingual drafts.',flush=True)
+  return 2
  return 0
 if __name__=='__main__':sys.exit(main())
