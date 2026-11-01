@@ -1,7 +1,8 @@
 name: GlobalTech Daily Auto News
 on:
   schedule:
-    - cron: '7 */3 * * *'
+    # Four short batches/hour avoid overlapping long-running workflows.
+    - cron: '5,20,35,50 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -12,7 +13,7 @@ jobs:
   publish-news:
     if: ${{ true }} # Re-enabled by owner after validation; source and image checks remain enforced
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 14
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,8 +33,8 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: Compile all Python files
         run: python -m compileall -q scripts
-      # Run five five-minute-spaced batches; prioritize saved bilingual drafts in each batch.
-      # A batch publishes only verified completed posts, never unfinished drafts.
+      # A single bounded batch per scheduled run: no idle sleeping or queued marathon runs.
+      # Keep the existing 48 category routes and featured image provenance intact.
       - name: Publish news in short cycles
         shell: bash
         env:
@@ -48,13 +49,15 @@ jobs:
           MIN_POSTS_PER_CATEGORY: '2'
           MAX_MODELS_PER_ARTICLE: '1'
           MAX_AI_CALLS_PER_RUN: '18'
-          COLLECT_SECONDS: '240'
-          DISCOVERY_SECONDS: '45'
+          COLLECT_SECONDS: '300'
+          DISCOVERY_SECONDS: '35'
           QUEUE_MAX_AGE_HOURS: '87600'
-          PUBLISHER_WEBSITES_PER_RUN: '35'
+          PUBLISHER_WEBSITES_PER_RUN: '16'
           MIN_SOURCE_WORDS: '0'
           MIN_ARTICLE_WORDS_EN: '140'
           MIN_ARTICLE_WORDS_HI: '90'
+          MAX_LICENSED_PHOTOS_PER_RUN: '2'
+          MAX_NEW_IMAGES: '0'
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: openai/gpt-oss-120b
           AI_PROVIDER_ORDER: gemini,groq,openrouter
@@ -67,77 +70,49 @@ jobs:
           set -u
           git config user.name 'GlobalTech News Bot'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          published_cycle=0
-          for cycle in 1 2 3 4 5; do
-            cycle_started=$SECONDS
-            echo "::group::News publish cycle $cycle/5"
-            python -u scripts/collect.py || echo "::warning::Collector cycle $cycle returned nonzero; preserving any completed drafts"
-            # Avoid expensive image backfill on every cycle. Existing/remote images
-            # remain available; images can be processed separately after article push.
-            if ! python -u scripts/build.py; then
-              echo "::error::Build failed; retain local drafts and stop"
+          echo "::group::Collect and complete bilingual news drafts"
+          if ! python -u scripts/collect.py; then
+            echo "::warning::Collector did not meet its post target; completed drafts remain saved"
+          fi
+          echo "::endgroup::"
+
+          # Fill only a small number of missing images per run. Licensed Commons
+          # photos (with attribution) take priority. The build provides original
+          # labeled editorial illustrations when no reusable photo is available.
+          echo "::group::Preserve and backfill featured images"
+          python -u scripts/generate_images.py || echo "::warning::Optional photo lookup unavailable"
+          echo "::endgroup::"
+
+          python -u scripts/build.py || { echo "::error::Static-site build failed"; exit 1; }
+          for output in dist/en/index.html dist/hi/index.html dist/sitemap.xml; do
+            if ! test -s "$output"; then
+              echo "::error::Required output is missing: $output"
               exit 1
-            fi
-            if ! test -f dist/en/index.html || ! test -f dist/hi/index.html || ! test -f dist/sitemap.xml; then
-              echo "::error::Required output missing; refusing incomplete publish"
-              exit 1
-            fi
-            git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json dist
-            if git diff --cached --quiet; then
-              echo "Cycle $cycle: no completed posts or draft changes to sync"
-              echo "::endgroup::"
-              if [ "$cycle" -lt 5 ]; then
-                remaining_wait=$((300 - (SECONDS - cycle_started)))
-                if [ "$remaining_wait" -gt 0 ]; then sleep "$remaining_wait"; fi
-              fi
-              continue
-            fi
-            git commit -m "Publish incremental news cycle $cycle"
-            # Build tooling may leave ignored/untracked or modified tracked files.
-            # Stash only remaining working-tree changes so rebase can run cleanly.
-            # The generated article/pending/dist changes are already committed above.
-            git stash push --include-untracked -m "news-cycle-$cycle-rebase-cleanup" || true
-            # Retain new generated content across competing commits on main.
-            pushed=0
-            for attempt in 1 2 3 4; do
-              git fetch origin main
-              if git rebase -X theirs origin/main; then
-                if git push origin HEAD:main; then
-                  pushed=1
-                  break
-                fi
-              else
-                git rebase --abort || true
-                echo "::warning::Concurrent HTML changes; rebuilding on latest main"
-                mkdir -p /tmp/news-cycle-$cycle
-                cp -a content/posts content/pending content/featured /tmp/news-cycle-$cycle/ || true
-                git reset --hard origin/main
-                mkdir -p content/posts content/pending content/featured
-                cp -an /tmp/news-cycle-$cycle/posts/. content/posts/ || true
-                cp -an /tmp/news-cycle-$cycle/pending/. content/pending/ || true
-                cp -an /tmp/news-cycle-$cycle/featured/. content/featured/ || true
-                python -u scripts/build.py || exit 1
-                git add -A content/posts content/pending content/featured dist
-                if ! git diff --cached --quiet; then
-                  git commit -m "Rebuild incremental news cycle $cycle"
-                fi
-                if git push origin HEAD:main; then
-                  pushed=1
-                  break
-                fi
-              fi
-              sleep 2
-            done
-            if [ "$pushed" -ne 1 ]; then
-              echo "::error::Could not safely push cycle $cycle"
-              exit 1
-            fi
-            published_cycle=$((published_cycle + 1))
-            echo "Pushed cycle $cycle to main; additional news can continue"
-            echo "::endgroup::"
-            if [ "$cycle" -lt 5 ]; then
-              remaining_wait=$((300 - (SECONDS - cycle_started)))
-              if [ "$remaining_wait" -gt 0 ]; then sleep "$remaining_wait"; fi
             fi
           done
-          echo "Completed $published_cycle incremental publication cycles"
+
+          git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json dist
+          if git diff --cached --quiet; then
+            echo "No new completed posts, images or pending progress to sync"
+            exit 0
+          fi
+          git commit -m "Publish verified bilingual news and featured images"
+          git stash push --include-untracked -m "news-publisher-working-tree-cleanup" || true
+
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            if ! git rebase -X theirs origin/main; then
+              git rebase --abort || true
+              echo "::error::News publish rebase conflicted; keeping data in original commit for inspection"
+              exit 1
+            fi
+            if git push origin HEAD:main; then
+              echo "Published and synced bilingual news, pending progress and images"
+              exit 0
+            fi
+            echo "::warning::Concurrent push detected; retrying on latest main ($attempt/4)"
+            sleep 3
+          done
+          echo "::error::News generated but could not be synced safely after four attempts"
+          exit 1
+
