@@ -913,7 +913,7 @@ def candidates():
   for cat in sorted(direct_groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
    if i<len(direct_groups[cat]):yield direct_groups[cat][i]
  # Google News category search is the first fresh-news discovery source.
- google_groups={cat:[] for cat in GOOGLE_QUERIES}
+ google_groups={cat:[] for cat in GOOGLE_QUERIES if not os.getenv('NEWS_CATEGORY') or cat==os.getenv('NEWS_CATEGORY')}
  google_results=discovery_map(google_news_stories,google_groups,7)
  for cat,stories in zip(google_groups,google_results):
   for story in stories:
@@ -924,18 +924,19 @@ def candidates():
    if i<len(google_groups[cat]):yield google_groups[cat][i]
  # Independent keyword search discovery complements Google News and RSS.
  # Only approved original publisher URLs proceed to factual extraction.
- bing_groups={cat:[] for cat in GOOGLE_QUERIES}
+ bing_groups={cat:[] for cat in GOOGLE_QUERIES if not os.getenv('NEWS_CATEGORY') or cat==os.getenv('NEWS_CATEGORY')}
  bing_results=discovery_map(bing_search_stories,bing_groups,7)
  for cat,stories in zip(bing_groups,bing_results):
   for story in stories:
    if story[0] not in seen:
-    seen.add(story[0]);bing_groups.setdefault(story[2],[]).append(story)
+    seen.add(story[0]);bing_groups.setdefault(os.getenv('NEWS_CATEGORY','').strip() or story[2],[]).append(story)
  for i in range(max(map(len,bing_groups.values()),default=0)):
   for cat in sorted(bing_groups,key=lambda x:(x not in missing,counts.get(x,0),x)):
    if i<len(bing_groups[cat]):yield bing_groups[cat][i]
  # Region-wise aggregators surface state job and scheme updates.
  regional_results=discovery_map(regional_search_stories,REGIONAL_PORTALS,3)
  for cat,stories in zip(REGIONAL_PORTALS,regional_results):
+  if os.getenv('NEWS_CATEGORY') and cat!=os.getenv('NEWS_CATEGORY'):continue
   for story in stories:
    if story[0] not in seen:
     seen.add(story[0]);yield story
@@ -947,7 +948,7 @@ def candidates():
   source_metric(domain,'website_candidates',len(stories))
   for story in stories:
    if story[0] not in seen:
-    seen.add(story[0]);groups.setdefault(story[2],[]).append(story)
+    seen.add(story[0]);groups.setdefault(os.getenv('NEWS_CATEGORY','').strip() or story[2],[]).append(story)
  for cat in groups:groups[cat].sort(key=story_priority)
  for i in range(max(map(len,groups.values()),default=0)):
   for cat in sorted(groups,key=lambda c:(c not in missing,counts.get(c,0),c)):
