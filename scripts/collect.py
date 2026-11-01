@@ -1270,7 +1270,21 @@ def main():
   stories=new_leads+backlog
  else:
   stories=backlog
- stories=unique_leads(stories)
+ # Explicitly pull resumable pending drafts to the front of the processing queue.
+ # This avoids a large fresh-news discovery list burying years of saved work.
+ saved_drafts=[]
+ for draft_path in PENDING.glob('*.json'):
+  if draft_path.name.startswith('_') or draft_path==QUEUE_FILE:continue
+  try:
+   draft=json.loads(draft_path.read_text(encoding='utf-8'))
+   source=draft.get('source',''); category=draft.get('category',''); title=draft.get('source_title','')
+   if selected and category!=selected:continue
+   if not complete_body(draft.get('en_body',''),'en') or complete_body(draft.get('hi_body',''),'hi'):continue
+   row=(source,title,category,urlparse(source).hostname or '')
+   if useful_lead(row):saved_drafts.append(row)
+  except (OSError,ValueError,TypeError):continue
+ stories=unique_leads(saved_drafts+stories)
+ print('Resumable English-to-Hindi pending drafts prioritized:',len(saved_drafts),flush=True)
  print('Direct source priority candidates:',sum(any(allowed(row[0],d) for _,_,d in DIRECT_SOURCES) for row in new_leads),flush=True)
  print('Fresh discovered leads:',len(new_leads),flush=True)
  # Persist discovered leads before AI calls; the next run resumes them even if quota expires.
