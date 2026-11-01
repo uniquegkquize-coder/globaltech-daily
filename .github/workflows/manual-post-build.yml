@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - 'content/posts/*.json'
+      - 'content/directory-records.json'
+      - 'content/directory-details.json'
+      - 'scripts/directories.py'
       - 'scripts/build.py'
       - 'scripts/news_sitemap.py'
       - 'scripts/site_ui.py'
