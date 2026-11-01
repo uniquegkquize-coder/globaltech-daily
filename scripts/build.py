@@ -189,7 +189,7 @@ def image_for(p):
    info=json.loads(metadata.read_text(encoding='utf-8'))
    source_path=urlparse(str(info.get('source_image') or '')).path
    generic=bool(re.search(r'(?i)(?:/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',source_path))
-   use_original=info.get('kind')!='licensed_photo' and not generic
+   use_original=info.get('kind') in ('licensed_photo','publisher_source','source_original','manual_original') and not generic
   except (ValueError,OSError,TypeError):
    use_original=False
  if use_original:
