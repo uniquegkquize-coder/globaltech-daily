@@ -3,7 +3,8 @@
   "source_title": "AxiomMath/CFSG: A Lean formalization of the Classification of Finite Simple Groups - GitHub",
   "category": "apps-software",
   "status": "draft",
-  "updated_at": "2026-11-01T07:38:50.529561+00:00",
-  "blocked_until": "2026-11-01T08:08:50.536984+00:00",
-  "source_published_at": null
+  "updated_at": "2026-11-01T17:11:16.149231+00:00",
+  "blocked_until": "2026-11-01T17:41:16.152059+00:00",
+  "source_published_at": null,
+  "source_excerpt": "A sorry-free Lean4 (v4.35.0-rc3) proof of the Classification of Finite Simple Groups (CFSG), built on Mathlib and TauCeti, using the standard axioms Classical.choice , propext , and Quot.sound (no native_decide ). We primarily follow the first generation proof of CFSG.\nWe use the statement of CFSG from the TauCeti project\nlake build builds the entire project. We used a few open changes to Lake and some optimizations we plan to upstream soon to get this project's build time under 24 hours.\nA Lean formalization of the Classification of Finite Simple Groups"
 }

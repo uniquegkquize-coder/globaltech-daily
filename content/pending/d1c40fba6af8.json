@@ -3,7 +3,8 @@
   "source_title": "ub-mode/README.md at master · unclebob/ub-mode - GitHub",
   "category": "apps-software",
   "status": "draft",
-  "updated_at": "2026-11-01T07:40:44.861475+00:00",
-  "blocked_until": "2026-11-01T08:10:44.889232+00:00",
-  "source_published_at": null
+  "updated_at": "2026-11-01T17:14:24.321837+00:00",
+  "blocked_until": "2026-11-01T17:44:24.322666+00:00",
+  "source_published_at": null,
+  "source_excerpt": "ub-mode is an agent skill that enforces disciplined software engineering principles when writing or changing code. It is loosely based on portions of @poteto 's rules ( poteto-mode / pstack ), reduced and paired with deterministic quality-gate tools:\nFirst Make it Work — Laziness Protocol, Foundational Thinking, TDD, Redesign From First Principles, Attack the Premise, Subtract Before You Add, Outcome-Oriented Execution, Build the Lever, and Architecture (Model the Domain, Boundary Discipline, Type System Discipline, Make Operations Idempotent, Separate Before Serializing Shared State).\nThen Make it Right — Fix Root Causes, Sequence Work into Verifiable Units, Test Behavior (Not Implementation), Crapper ( CRAP < 10 ), Dryer (duplication < 0.8 ), Mutator (cover the uncovered, kill the survivors, delete dead code), and Refactoring.\nPractice — Keep a Log, Guard the Context Window, Worktree Cleanup, and Commit and Push in small ordered commits.\nub-mode relies on deterministic quality-gate tools to enforce structure, complexity, duplication, and test thoroughness:\nunclebob/crapper — Computes cyclomatic complexity, test coverage, and CRAP score per function so every function stays under the CRAP threshold ( < 10 ).\nunclebob/dryer — Detects structural code duplication so duplicate blocks ( >= 0.8 similarity) are eliminated.\nunclebob/mutator — Runs mutation testing to expose uncovered code and surviving mutants that tests fail to catch.\nunclebob/uml-viewer — Visualizes components, coverage, CRAP, mutation scores, and dependency directions.\nCopy SKILL.md into your agent's skills directory as ub-mode/SKILL.md (for example ~/.grok/skills/ub-mode/SKILL.md , ~/.claude/skills/ub-mode/SKILL.md , or ~/.cursor/skills/ub-mode/SKILL.md ), then invoke /ub-mode ."
 }
