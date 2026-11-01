@@ -56,11 +56,11 @@ class NewsroomConfigTests(unittest.TestCase):
     def test_workflow_targets(self):
         workflow = WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("cron: '5,20,35,50 * * * *'", workflow)
-        self.assertIn("POSTS_PER_RUN: '8'", workflow)
+        self.assertIn("POSTS_PER_RUN: '100'", workflow)
         self.assertIn("MIN_POSTS_PER_CATEGORY: '2'", workflow)
         self.assertIn("MAX_AI_CALLS_PER_RUN: '18'", workflow)
         self.assertIn("AI_PROVIDER_ORDER: gemini,groq,openrouter", workflow)
-        self.assertIn("MAX_LICENSED_PHOTOS_PER_RUN: '8'", workflow)
+        self.assertIn("MAX_LICENSED_PHOTOS_PER_RUN: '100'", workflow)
         self.assertIn("python -u scripts/generate_images.py", workflow)
         self.assertIn("python -u scripts/build.py", workflow)
         self.assertIn("git rebase -X theirs origin/main", workflow)
