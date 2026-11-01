@@ -138,8 +138,10 @@ def commons_photo(p):
                 attribution=re.sub('<[^>]*>',' ',meta.get('Artist',{}).get('value','')).strip()[:240]
                 (IMAGES/(ident+'.json')).write_text(json.dumps({
                     'kind':'licensed_photo','source_image':info.get('descriptionurl'),
-                    'license':license_url or short_name,'attribution':attribution or 'Wikimedia Commons',
+                    'license':license_url or short_name,'license_name':short_name,
+                    'attribution':attribution or 'Wikimedia Commons',
                     'rights_status':'licensed','caption':'Representative licensed photograph; not necessarily the reported event.',
+                    'modifications':'Cropped to a 16:9 editorial format',
                     'matched_title':file_title,'search_query':query
                 },ensure_ascii=False),encoding='utf-8')
                 print('Licensed Commons photograph',ident,short_name,'query',query,flush=True)
