@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T14:37:26.119606+00:00",
+  "updated_at": "2026-11-01T14:40:40.511592+00:00",
   "categories": {
     "technology": {
       "discovered": 0,
@@ -13,7 +13,7 @@
     },
     "sarkari-naukri": {
       "discovered": 0,
-      "published": 0,
+      "published": 3,
       "sources_configured": 9
     },
     "private-vacancy": {
@@ -78,7 +78,7 @@
     },
     "telecom": {
       "discovered": 0,
-      "published": 0,
+      "published": 2,
       "sources_configured": 6
     },
     "ai-news": {
@@ -153,7 +153,7 @@
     },
     "cricket": {
       "discovered": 0,
-      "published": 3,
+      "published": 6,
       "sources_configured": 3
     },
     "car-launches": {
@@ -364,11 +364,14 @@
       "queued": 2
     },
     "navbharattimes.indiatimes.com": {
-      "queued": 484
+      "queued": 484,
+      "attempted": 4,
+      "published": 3
     },
     "news.abplive.com": {
       "queued": 301,
-      "attempted": 1
+      "attempted": 2,
+      "published": 1
     },
     "news.microsoft.com": {
       "queued": 1
@@ -434,7 +437,9 @@
       "queued": 51
     },
     "timesofindia.indiatimes.com": {
-      "queued": 1238
+      "queued": 1238,
+      "attempted": 2,
+      "published": 1
     },
     "trai.gov.in": {
       "queued": 25
@@ -480,8 +485,8 @@
       "attempted": 2
     },
     "www.bbc.com": {
-      "queued": 248,
-      "attempted": 14,
+      "queued": 245,
+      "attempted": 15,
       "published": 3
     },
     "www.bhaskar.com": {
@@ -603,7 +608,9 @@
       "queued": 10
     },
     "www.indiatoday.in": {
-      "queued": 507
+      "queued": 507,
+      "attempted": 1,
+      "published": 1
     },
     "www.inextlive.com": {
       "queued": 279
@@ -649,7 +656,8 @@
     },
     "www.prnewswire.com": {
       "queued": 1005,
-      "attempted": 1
+      "attempted": 2,
+      "published": 1
     },
     "www.reddit.com": {
       "queued": 10
@@ -661,7 +669,9 @@
       "queued": 115
     },
     "www.sahisarkarijobs.in": {
-      "queued": 27
+      "queued": 27,
+      "attempted": 1,
+      "published": 1
     },
     "www.sammobile.com": {
       "queued": 12
