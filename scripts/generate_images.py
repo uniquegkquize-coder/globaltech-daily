@@ -125,7 +125,12 @@ def commons_photo(p):
                 file_title=page.get('title','')
                 # The MediaWiki thumbnail API also returns rendered PDF pages,
                 # logos, maps and seals; those are not news event photographs.
-                if not re.search(r'\.(?:jpe?g|png|webp)
+                if not file_title.lower().endswith(('.jpg','.jpeg','.png','.webp')):continue
+                filename_words={w.casefold() for w in re.findall(r'[A-Za-z]{4,}',file_title)}
+                excluded={'logo','icon','clipart','screenshot','poster','seal','emblem',
+                          'map','diagram','chart','document','manual','outline',
+                          'illustration','drawing','stamp','flag','plan'}
+                if filename_words & excluded:continue
                 if len(keywords & filename_words)<2:continue
 
                 info=(page.get('imageinfo') or [{}])[0]
