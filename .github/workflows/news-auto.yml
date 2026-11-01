@@ -26,6 +26,10 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Install optional public-page browser
+        run: |
+          pip install 'playwright>=1.55,<2'
+          python -m playwright install --with-deps chromium
       - name: Compile all Python files
         run: python -m compileall -q scripts
       - name: Generate source-based news
@@ -36,6 +40,8 @@ jobs:
           AUTO_POST: ${{ vars.AUTO_POST }}
           SITE_URL: https://globewiredaily.org
           PYTHONUNBUFFERED: '1'
+          ENABLE_PUBLIC_BROWSER_FALLBACK: '1'
+          BROWSER_ATTEMPTS_PER_RUN: '8'
           NEWS_CATEGORY: ''
           POSTS_PER_RUN: '60'
           MIN_POSTS_PER_CATEGORY: '2'
