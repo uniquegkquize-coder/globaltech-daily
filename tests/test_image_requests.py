@@ -11,7 +11,7 @@ import generate_images
 
 class ImageRequestTests(unittest.TestCase):
  def test_zero_budget_makes_no_external_requests(self):
-  with patch.object(generate_images,'MAX_NEW',0),patch.object(generate_images.requests,'get') as get,patch.object(generate_images.requests,'post') as post:
+  with patch.object(generate_images,'MAX_NEW',0),patch.dict('os.environ',{'MAX_LICENSED_PHOTOS_PER_RUN':'0'}),patch.object(generate_images.requests,'get') as get,patch.object(generate_images.requests,'post') as post:
    generate_images.main()
    get.assert_not_called();post.assert_not_called()
  def test_missing_image_license_is_not_labelled_creative_commons(self):
