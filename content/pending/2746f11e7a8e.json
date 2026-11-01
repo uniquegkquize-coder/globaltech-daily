@@ -3,6 +3,8 @@
   "source_title": "Webhook IP ranges added to the Meta API",
   "category": "technology",
   "status": "draft",
-  "updated_at": "2026-10-29T18:59:28.808411+00:00",
-  "blocked_until": "2026-10-30T06:59:28.869070+00:00"
+  "updated_at": "2026-11-01T18:10:01.415386+00:00",
+  "blocked_until": "2026-11-01T18:40:01.416405+00:00",
+  "source_excerpt": "We’re adding IP ranges for GitHub webhook deliveries on github.com. The Meta API now includes these additional ranges in the hooks field.\nIf you maintain a static network allowlist for incoming webhook deliveries, add these CIDR prefixes alongside your existing webhook IP ranges to avoid rejecting deliveries:\nIf you already keep your allowlist up to date using the Meta API, no changes are needed for these additions.\nThese ranges apply to webhook deliveries on github.com across all plans, including GitHub Enterprise Cloud.\nYou can retrieve the current webhook IP ranges using the Meta API and follow the webhook delivery best practices .\nDiscover tips, technical guides, and best practices in our biweekly newsletter just for devs.",
+  "source_published_at": "2026-10-29T17:14:38+00:00"
 }

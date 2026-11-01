@@ -3,8 +3,8 @@
   "source_title": "0xSero/ascii-art: Dot-lattice art: photo to two-tone dot map to seamless animated loop (engine + scripts) - GitHub",
   "category": "apps-software",
   "status": "draft",
-  "updated_at": "2026-11-01T17:10:59.824643+00:00",
-  "blocked_until": "2026-11-01T17:40:59.840774+00:00",
+  "updated_at": "2026-11-01T18:26:21.025093+00:00",
+  "blocked_until": "2026-11-01T18:56:21.027649+00:00",
   "source_published_at": null,
   "source_excerpt": "Turn any photo, sculpture, object or drawing into a figure made of dots on a fixed grid — charcoal ground, two grey tones, rare crimson — then animate it into a seamless loop: disintegration into wind-blown dust, things emerging or growing out of the figure, voids, tentacles, fine-stipple creatures.\nThis repo is the skill: the method, the engine, and the scripts that do the mechanical parts.\nPython 3.10+ with numpy , scipy , Pillow , scikit-image\nplaywright with a chromium build ( python -m playwright install chromium )\ngrab_frames.py out.html sheet.png sheet captures a contact sheet instead of frames.\nCoverage matters more than contrast: most subject cells should be bright ; dim dots are shadow accents, empty cells are line art (eyes, mouth, the deepest folds).\nSKILL.md — the craft: anatomy, step-by-step method, motion vocabulary, loop maths, review checklist.\nreferences/engine.md — scene JSON format, layers and their parameters.\nreferences/case-study.md — one piece end to end, including every round of feedback.\nexamples/scenes/*.json and examples/bust-skull.map.txt are the scenes and dot map of one finished piece. The reference photographs they point at are not included (third-party imagery), so the scenes document structure rather than run as-is; bust-skull.map.txt is enough to build the figure layers.\nMIT — see LICENSE . It covers this code and text only. Any image you feed the scripts stays yours (or its owner's); nothing here grants rights to it.\nDot-lattice art: photo to two-tone dot map to seamless animated loop (engine + scripts)"
 }
