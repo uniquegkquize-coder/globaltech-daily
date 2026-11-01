@@ -234,7 +234,7 @@ def image_caption(p,lang):
    info=json.loads(metadata.read_text(encoding='utf-8'))
    if info.get('kind') in ('licensed_source','publisher_source','licensed_photo'):
     credit=str(info.get('attribution') or 'Original publisher')
-    license_name=str(info.get('license') or '').strip()
+    license_name=str(info.get('license_name') or info.get('license') or '').strip()
     suffix=f' — {license_name}' if license_name else ''
     return (f'Image: {credit}{suffix}' if lang=='en' else f'चित्र: {credit}{suffix}')
    if info.get('kind')=='ai_generated':
@@ -245,6 +245,26 @@ def image_caption(p,lang):
    return 'Featured image; source information not supplied.' if lang=='en' else 'फीचर्ड चित्र; स्रोत की जानकारी उपलब्ध नहीं है।'
   return 'Original GlobeWire Daily editorial illustration — not an event photograph.' if lang=='en' else 'GlobeWire Daily की मूल सांकेतिक तस्वीर — घटना की वास्तविक फोटो नहीं।'
  return 'Featured image; provenance not specified.' if lang=='en' else 'फीचर्ड चित्र; स्रोत निर्दिष्ट नहीं है।'
+def image_caption_html(p,lang):
+ # Photographer, photo-source page, reuse terms and crop disclosure follow the
+ # photo. Every user-controlled value is escaped before inserting into HTML.
+ caption=e(image_caption(p,lang))
+ metadata=R/'content'/'featured'/f'{slug(p)}.json'
+ if not metadata.is_file():return caption
+ try:
+  info=json.loads(metadata.read_text(encoding='utf-8'))
+  links=[]
+  source_url=str(info.get('source_image') or info.get('image_url') or '')
+  if source_url.startswith('https://'):
+   links.append('<a target="_blank" rel="noopener noreferrer" href="'+e(source_url)+'">'+('Photo source' if lang=='en' else 'चित्र स्रोत')+'</a>')
+  license_url=str(info.get('license') or '')
+  if license_url.startswith('https://'):
+   links.append('<a target="_blank" rel="noopener noreferrer" href="'+e(license_url)+'">'+('License terms' if lang=='en' else 'लाइसेंस शर्तें')+'</a>')
+  if info.get('kind')=='licensed_photo':
+   links.append('Cropped to 16:9; representative photograph' if lang=='en' else '16:9 में काटी गई प्रतिनिधि फोटो')
+  return caption+(' · '+' · '.join(links) if links else '')
+ except (OSError,ValueError,TypeError):return caption
+
 def card(p,lang):
  s=slug(p);t=title(p,lang)
  picture=f'<img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="{e(t)}">' if has_featured(p) else ''
@@ -335,7 +355,7 @@ for p in POSTS:
   extra=extra_keywords+extra
   sourcehost=urlparse(p['source']).hostname or 'original source'
   summary=e(p.get(lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
-  featured_html=(f'<img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="{e(t)}"><p class="notice">{e(image_caption(p,lang))}</p>' if has_featured(p) else '')
+  featured_html=(f'<img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="{e(t)}"><p class="notice">{image_caption_html(p,lang)}</p>' if has_featured(p) else '')
   share_text=('Share this article' if lang=='en' else 'यह खबर शेयर करें')
   copy_text=('Copy link' if lang=='en' else 'लिंक कॉपी करें')
   share_html=(f'<div class="article-share"><strong>{share_text}</strong><div class="share-actions">'
