@@ -185,8 +185,11 @@ def image_for(p):
  use_original=existing.is_file()
  if use_original and metadata.is_file():
   try:
-   # Historic Commons substitutions are not the source article's real photograph.
-   use_original=json.loads(metadata.read_text(encoding='utf-8')).get('kind')!='licensed_photo'
+   # Do not publish generic Commons substitutes or publisher social-sharing logos.
+   info=json.loads(metadata.read_text(encoding='utf-8'))
+   source_path=urlparse(str(info.get('source_image') or '')).path
+   generic=bool(re.search(r'(?i)(?:/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',source_path))
+   use_original=info.get('kind')!='licensed_photo' and not generic
   except (ValueError,OSError,TypeError):
    use_original=False
  if use_original:
