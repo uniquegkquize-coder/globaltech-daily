@@ -23,7 +23,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: globaltech-site-build
+  group: globaltech-main-publish
   cancel-in-progress: false
 jobs:
   build:
@@ -42,7 +42,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for attempt in 1 2 3; do
+          for attempt in 1 2 3 4 5 6 7 8; do
             git fetch origin main
             git reset --hard origin/main
             python scripts/build.py
@@ -53,6 +53,8 @@ jobs:
             fi
             git commit -m "Build site after manual editorial post"
             if git push origin HEAD:main; then exit 0; fi
+            echo "Concurrent main update on attempt $attempt; retrying against latest branch"
+            sleep $((attempt * 2))
           done
-          echo "::error::Could not publish after three safe rebuild attempts"
+          echo "::error::Could not publish after eight safe rebuild attempts"
           exit 1
