@@ -899,7 +899,7 @@ def candidates():
    blocked=record.get('blocked_until','')>dt.datetime.now(UTC).isoformat()
    return (blocked,record.get('category') not in missing,-complete,-progress,path.name)
   except (OSError,ValueError,TypeError):return (True,0,0,path.name)
- for path in sorted((p for p in PENDING.glob('*.json') if p!=QUEUE_FILE),key=pending_priority):
+ for path in sorted((p for p in PENDING.glob('*.json') if p!=QUEUE_FILE and not p.name.startswith('_')),key=pending_priority):
   try:
    record=json.loads(path.read_text(encoding='utf-8'))
    url=record.get('source',''); title=record.get('source_title','')
