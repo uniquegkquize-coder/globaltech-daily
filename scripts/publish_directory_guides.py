@@ -64,6 +64,14 @@ def article(kind,name,entry,source):
           f'Figures and specifications may change by country, variant and date. '
           f'Always confirm on the [source page]({source}) before applying or buying. '
           f'Published as a reference guide on {now[:10]}, not as breaking news.')
+    if kind=='colleges':
+        location=', '.join(str(entry.get(k,'')) for k in ('city','region','country') if entry.get(k)) or 'Not verified'
+        extra=(f'## College location and profile\n\nLocation: {location}. Institution type: {entry.get("type") or "Not verified"}. Accreditation: {entry.get("accreditation") or "Not verified"}.\n\n'
+               f'## Courses offered\n\n{entry.get("programmes") or "See official course catalogue"}\n\n'
+               f'## Admission and eligibility\n\n{entry.get("admissions") or "Check official admission criteria"}\n\n'
+               f'## Course fees\n\n{entry.get("fees") or "Current course-wise fees not verified"}\n\n'
+               f'## Placements\n\n{entry.get("placement") or "Programme-wise placements not verified"}\n\n')
+        body=body.replace('## Source-listed information',extra+'## Source-listed information')
     hi=(f'## परिचय\n\n{name} हमारी वैश्विक {LABEL[kind]} डायरेक्टरी में दर्ज है। देश/बाजार: {country}। '
         f'यह जानकारी देने वाली गाइड है, नई लॉन्च या ताज़ा घटना की खबर नहीं।\n\n'
         f'## स्रोत में दर्ज विवरण\n\n{facts}\n\n'
