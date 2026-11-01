@@ -76,10 +76,10 @@ jobs:
           fi
           echo "::endgroup::"
 
-          # Fill only a small number of missing images per run. Licensed Commons
-          # photos (with attribution) take priority. The build provides original
-          # labeled editorial illustrations when no reusable photo is available.
-          echo "::group::Preserve and backfill featured images"
+          # Locate the real picture published with the source article first,
+          # including older posts. Store source/rights metadata. If unavailable,
+          # build.py supplies an explicitly labelled editorial illustration.
+          echo "::group::Find original source photos and preserve editorial fallbacks"
           python -u scripts/generate_images.py || echo "::warning::Optional photo lookup unavailable"
           echo "::endgroup::"
 
