@@ -27,7 +27,7 @@ def complete_body(body,lang):
              and len(re.findall(r'\S+',text))>=minimum
              and len(re.findall(r'[.!?।]',text))>=2)
 MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
-POSTS_PER_RUN=max(1,min(60,int(os.getenv('POSTS_PER_RUN','30'))))
+POSTS_PER_RUN=max(1,min(100,int(os.getenv('POSTS_PER_RUN','30'))))
 MIN_POSTS_PER_CATEGORY=max(1,int(os.getenv('MIN_POSTS_PER_CATEGORY','2')))
 MIN_SOURCE_WORDS=0
 OFFICIAL_JOB_DOMAINS=('upsc.gov.in','ssc.gov.in','rrbcdg.gov.in','indianrailways.gov.in','employmentnews.gov.in','nta.ac.in','gov.in','nic.in')
