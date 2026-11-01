@@ -43,6 +43,7 @@ jobs:
           MAX_AI_CALLS_PER_RUN: '100'
           COLLECT_SECONDS: '1800'
           DISCOVERY_SECONDS: '300'
+          QUEUE_MAX_AGE_HOURS: '72'
           PUBLISHER_WEBSITES_PER_RUN: '100'
           MIN_SOURCE_WORDS: '0'
           MIN_ARTICLE_WORDS_EN: '140'
@@ -77,13 +78,13 @@ jobs:
         run: |
           git config user.name 'GlobalTech News Bot'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A content/posts content/pending content/featured content/news-run-status.json dist
+          git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json dist
           if ! git diff --cached --quiet; then
             git commit -m 'Publish source-backed tech news and rebuild website'
             # Sync new editorial posts with main without replaying generated HTML conflicts.
             # Rebuild all static pages on the current remote branch after syncing content.
             for attempt in 1 2 3 4 5; do
-              git add -A content/posts content/pending content/featured content/news-run-status.json dist
+              git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json dist
               if ! git diff --cached --quiet; then
                 git commit -m "Sync rebuilt news output before rebase"
               fi
@@ -104,7 +105,7 @@ jobs:
                 cp -an /tmp/news-publish-backup/featured/. content/featured/ || true
                 cp /tmp/news-publish-backup/news-run-status.json content/news-run-status.json
                 python -u scripts/build.py
-                git add -A content/posts content/pending content/featured content/news-run-status.json dist
+                git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json dist
                 if ! git diff --cached --quiet; then
                   git commit -m 'Refresh generated site on latest main'
                 fi
