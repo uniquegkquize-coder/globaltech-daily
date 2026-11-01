@@ -58,50 +58,95 @@ def licensed_source_image(p):
     except (requests.RequestException,ValueError,OSError):
         return False
 
+# Search for the actual subject rather than an entire news headline. The previous
+# pattern accidentally escaped \w and \s, turning almost every character into a
+# space and making most Commons searches empty.
+COMMONS_STOPWORDS={
+    'latest','news','after','before','with','from','about','today','launch',
+    'update','report','reports','india','world','amid','will','could','would',
+    'says','said','claims','reveals','unveils','launches','announces','new',
+    'first','over','under','into','the','and','for','that','this','its',
+    'how','what','when','where','more','their','game','film','movie',
+    'release','releases','official','watch','stream','streaming'
+}
+
+def commons_queries(title):
+    """Return a few searchable names from the headline, never generic filler."""
+    clean_title=re.sub(r'[^\w\s-]',' ',str(title or ''),flags=re.UNICODE)
+    tokens=re.findall(r'[A-Za-z][A-Za-z0-9-]{2,}',clean_title)
+    useful=[]
+    used=set()
+    for token in tokens:
+        key=token.casefold()
+        if key in COMMONS_STOPWORDS or key in used:continue
+        useful.append(token)
+        used.add(key)
+    if len(useful)<2:return []
+    return list(dict.fromkeys([' '.join(useful[:5]),' '.join(useful[:2])]))
+
+def commons_reuse_allowed(short_name,license_url):
+    """Only licenses permitting redistribution in a commercial news site."""
+    short=re.sub(r'\s+',' ',short_name or '').strip().casefold()
+    url=(license_url or '').lower()
+    if re.search(r'(^|[-\s])(nc|nd)([-\s]|$)',short):return False
+    if any(k in url for k in ('/by-nc/','/by-nd/','/by-nc-sa/','/by-nc-nd/')):return False
+    if short in ('cc0','public domain','public domain mark'):return True
+    if re.fullmatch(r'cc by(?:-sa)?(?:\s+\d+(?:\.\d+)?)?',short):return True
+    return any(k in url for k in ('creativecommons.org/publicdomain/zero/',
+                                  'creativecommons.org/licenses/by/',
+                                  'creativecommons.org/licenses/by-sa/'))
+
 def commons_photo(p):
-    """Prefer a real Wikimedia Commons photo with explicit reuse terms."""
+    """Get relevant reusable REAL photographs, with clear source and credit."""
     ident=slug(p)
     if not ident or (IMAGES/(ident+'.jpg')).exists():return False
     title=str(p.get('source_title') or p.get('en_title') or '')
-    # Keep search specific; do not substitute unrelated stock images.
-    query=re.sub(r'[^\\w\\s-]',' ',title).strip()
-    if len(query.split())<3:return False
-    try:
-        data=requests.get('https://commons.wikimedia.org/w/api.php',params={
-            'action':'query','generator':'search','gsrsearch':query,
-            'gsrnamespace':6,'gsrlimit':6,'prop':'imageinfo',
-            'iiprop':'url|size|extmetadata','iiurlwidth':1280,
-            'format':'json'},headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)'},
-            timeout=(5,15)).json()
-        pages=data.get('query',{}).get('pages',{})
-        topic_words={w.lower() for w in re.findall(r'[A-Za-z]{4,}',query) if w.lower() not in {'latest','news','after','with','from','about','today','launch','update','report','india','world'}}
-        for page in pages.values():
-            filename_words={w.lower() for w in re.findall(r'[A-Za-z]{4,}',page.get('title',''))}
-            if not topic_words or len(topic_words & filename_words)<min(2,len(topic_words)):continue
-            info=(page.get('imageinfo') or [{}])[0]
-            meta=info.get('extmetadata') or {}
-            license_name=re.sub('<[^>]*>','',meta.get('LicenseShortName',{}).get('value','')).strip()
-            license_url=meta.get('LicenseUrl',{}).get('value','')
-            if not (license_name.startswith('CC BY') or license_name in ('CC0','Public domain')):continue
-            if info.get('width',0)<600 or info.get('height',0)<320:continue
-            image_url=info.get('thumburl') or info.get('url')
-            if not image_url or not image_url.startswith('https://'):continue
-            res=requests.get(image_url,timeout=(5,20),headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)'})
-            if not res.ok or len(res.content)>12000000:continue
-            with Image.open(io.BytesIO(res.content)) as im:
-                if im.width<600 or im.height<320:continue
-                im=ImageOps.fit(im.convert('RGB'),(1280,720),method=Image.Resampling.LANCZOS)
-                im.save(IMAGES/(ident+'.jpg'),'JPEG',quality=86,optimize=True)
-            attribution=re.sub('<[^>]*>',' ',meta.get('Artist',{}).get('value','')).strip()[:240]
-            (IMAGES/(ident+'.json')).write_text(json.dumps({
-                'kind':'licensed_photo','source_image':info.get('descriptionurl'),
-                'license':license_url or license_name,'attribution':attribution or 'Wikimedia Commons',
-                'rights_status':'licensed','caption':'Representative licensed photograph; not necessarily the reported event.'
-            }),encoding='utf-8')
-            print('Licensed Commons photograph',ident,license_name,flush=True)
-            return True
-    except (requests.RequestException,ValueError,OSError,KeyError) as exc:
-        print('Commons image lookup unavailable',type(exc).__name__,flush=True)
+    queries=commons_queries(title)
+    if not queries:
+        print('Commons search skipped (insufficient subject keywords)',ident,flush=True)
+        return False
+    headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)'}
+    for query in queries:
+        try:
+            response=requests.get('https://commons.wikimedia.org/w/api.php',params={
+                'action':'query','generator':'search','gsrsearch':query,
+                'gsrnamespace':6,'gsrlimit':8,'prop':'imageinfo',
+                'iiprop':'url|size|extmetadata','iiurlwidth':1280,
+                'format':'json'},headers=headers,timeout=(5,12))
+            response.raise_for_status()
+            pages=response.json().get('query',{}).get('pages',{})
+            keywords={w.casefold() for w in re.findall(r'[A-Za-z]{4,}',query)}
+            for page in sorted(pages.values(),key=lambda item:item.get('index',1000)):
+                file_title=page.get('title','')
+                filename_words={w.casefold() for w in re.findall(r'[A-Za-z]{4,}',file_title)}
+                if len(keywords & filename_words)<2:continue
+                if re.search(r'\b(logo|icon|clipart|screenshot|poster)\b',file_title,re.I):continue
+                info=(page.get('imageinfo') or [{}])[0]
+                meta=info.get('extmetadata') or {}
+                short_name=re.sub('<[^>]*>','',meta.get('LicenseShortName',{}).get('value','')).strip()
+                license_url=meta.get('LicenseUrl',{}).get('value','')
+                if not commons_reuse_allowed(short_name,license_url):continue
+                if info.get('width',0)<600 or info.get('height',0)<320:continue
+                image_url=info.get('thumburl') or info.get('url')
+                if not image_url or not image_url.startswith('https://'):continue
+                res=requests.get(image_url,timeout=(5,18),headers=headers)
+                if not res.ok or len(res.content)>12_000_000:continue
+                with Image.open(io.BytesIO(res.content)) as im:
+                    if im.width<600 or im.height<320:continue
+                    im=ImageOps.fit(im.convert('RGB'),(1280,720),method=Image.Resampling.LANCZOS)
+                    im.save(IMAGES/(ident+'.jpg'),'JPEG',quality=86,optimize=True)
+                attribution=re.sub('<[^>]*>',' ',meta.get('Artist',{}).get('value','')).strip()[:240]
+                (IMAGES/(ident+'.json')).write_text(json.dumps({
+                    'kind':'licensed_photo','source_image':info.get('descriptionurl'),
+                    'license':license_url or short_name,'attribution':attribution or 'Wikimedia Commons',
+                    'rights_status':'licensed','caption':'Representative licensed photograph; not necessarily the reported event.',
+                    'matched_title':file_title,'search_query':query
+                },ensure_ascii=False),encoding='utf-8')
+                print('Licensed Commons photograph',ident,short_name,'query',query,flush=True)
+                return True
+            print('Commons: no licensed matching photo',ident,'query',query,flush=True)
+        except (requests.RequestException,ValueError,OSError,KeyError,IndexError) as exc:
+            print('Commons lookup unavailable',ident,type(exc).__name__,flush=True)
     return False
 
 def create(p):
