@@ -171,8 +171,8 @@ def render(out,site,shell,write):
      n,c,area,url=row;attrs=f'data-country="{esc(c)}"'
      detail=f'<p>{esc(c)} · {esc(area)}</p>'
     cards.append(f'<article class="directory-card" data-item {attrs} data-search="{esc((" ".join(row)).lower())}"><h2><a href="/{lang}/{kind}/{entry_slug(n)}/">{esc(n)}</a></h2>{detail}<p>{tr("Fees, eligibility, placement or product prices: verify with official source.","फीस, पात्रता, प्लेसमेंट या कीमत: आधिकारिक स्रोत से जाँचें।")}</p><a href="{esc(url)}" rel="noopener noreferrer" target="_blank">{tr("Official website","आधिकारिक वेबसाइट")} ↗</a></article>')
-   detail_url=site+'/'+lang+'/'+kind+'/'+entry_slug(n)+'/'
-   write(out/lang/kind/entry_slug(n)/'index.html',shell(lang,n,'Official-source guide: '+n,detail_url,entry_detail(kind,row,lang)))
+    detail_url=site+'/'+lang+'/'+kind+'/'+entry_slug(n)+'/'
+    write(out/lang/kind/entry_slug(n)/'index.html',shell(lang,n,'Official-source guide: '+n,detail_url,entry_detail(kind,row,lang)))
    note=tr('Starter directory, not an exhaustive global database. We do not invent fees, admissions, placements, prices or specifications. Official sites are the source of truth.','यह शुरुआती डायरेक्टरी है, पूरी विश्व सूची नहीं। फीस, एडमिशन, प्लेसमेंट, कीमत या स्पेसिफिकेशन बिना सत्यापन के नहीं दिए जाते।')
    body=f'<div class="wrap"><section class="directory-hero"><h1>{esc(tr(*name))}</h1><p class="directory-note">{esc(note)}</p>{links}</section><section data-directory>{controls}<div class="directory-grid">{"".join(cards)}</div></section></div>'
    write(out/lang/kind/'index.html',shell(lang,tr(*name),note,site+'/'+lang+'/'+kind+'/',body))
