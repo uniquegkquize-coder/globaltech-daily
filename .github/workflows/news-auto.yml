@@ -42,6 +42,8 @@ jobs:
           git add -A content/featured content/image-backfill-state.json dist
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Backfill original source photos across archive'
+          # The build may modify other tracked files. Stash them before rebasing.
+          git stash push --include-untracked -m 'archive-backfill-working-tree-cleanup' || true
           for attempt in 1 2 3 4; do
             git fetch origin main
             git rebase -X theirs origin/main || { git rebase --abort; exit 1; }
