@@ -1103,8 +1103,9 @@ def main():
   if (cat in {'entertainment-rumours','celebrity-news'} and not any(allowed(url,d) for d in TRUSTED_ENTERTAINMENT)) or (cat=='controversies' and not any(allowed(url,d) for d in TRUSTED_CONTROVERSY)):
    print('Skipping unattributable entertainment claim:',url,flush=True)
    return None
+  source_stamp=timestamp(STORY_DATES.get(url) or state.get('source_published_at'))
   text=source_text(url,domain)
-  source_stamp=timestamp(STORY_DATES.get(url))
+  source_stamp=timestamp(STORY_DATES.get(url)) or source_stamp
   if cat in {'car-launches','mobile-launches','movie-releases','controversies'} and not source_stamp:
    print('Skipping undated launch or controversy:',domain,title[:80],flush=True)
    return None
@@ -1224,6 +1225,9 @@ def main():
    if grouped[cat]:ordered.append(grouped[cat].pop(0))
  # After the minimum-priority passes, there is no per-category maximum.
  ordered.extend(sorted((row for rows in grouped.values() for row in rows),key=story_priority))
+ # Saved bilingual drafts should be finished before spending the run on new leads.
+ pending_ids={p.stem for p in PENDING.glob('*.json') if p!=QUEUE_FILE}
+ ordered.sort(key=lambda row:(hashlib.sha256(row[0].encode()).hexdigest()[:12] not in pending_ids,story_priority(row)))
  article_workers=10
  print('Parallel article workers:',article_workers,flush=True)
  with ThreadPoolExecutor(max_workers=article_workers) as article_pool:
