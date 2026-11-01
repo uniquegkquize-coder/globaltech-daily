@@ -209,7 +209,7 @@ def render(out,site,shell,write):
     existing.add(name.casefold())
     url=record.get('official_url') or record['source_url']
     country=record.get('country') or 'Worldwide'
-    if kind=='colleges':items.append((name,country,'—','—',url,'University / college'))
+    if kind=='colleges':items.append((name,country,record.get('region') or '—',record.get('city') or '—',url,'University / college'))
     else:items.append((name,country,'Historic / current model',url))
    name={'colleges':('Worldwide College Finder','दुनियाभर के कॉलेज खोजें'),'cars':('Car Explorer','कार एक्सप्लोरर'),'phones':('Phone Explorer','फोन एक्सप्लोरर'),'bikes':('Bike Explorer','बाइक एक्सप्लोरर')}[kind]
    countries=sorted(set(row[1] for row in items))
