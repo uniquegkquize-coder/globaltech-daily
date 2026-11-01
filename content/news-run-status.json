@@ -1,13 +1,15 @@
 {
-  "finished_at": "2026-11-01T06:18:03.490462+00:00",
-  "outcome": "queue_exhausted",
-  "duration_seconds": 46.3,
-  "published": 0,
-  "by_category": {},
-  "ai_calls": 0,
+  "finished_at": "2026-11-01T06:20:37.849067+00:00",
+  "outcome": "ai_limit_reached",
+  "duration_seconds": 50.4,
+  "published": 2,
+  "by_category": {
+    "business": 2
+  },
+  "ai_calls": 12,
   "ai_limit": 12,
   "target": 3,
   "discovered_by_category": {
-    "syllabus": 2
+    "business": 1625
   }
 }
