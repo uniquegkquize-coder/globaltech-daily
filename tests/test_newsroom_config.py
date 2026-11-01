@@ -5,7 +5,7 @@ import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 COLLECT = ROOT / "scripts" / "collect.py"
-WORKFLOW = ROOT / ".github" / "workflows" / "news-category-publisher.yml"
+WORKFLOW = ROOT / ".github" / "workflows" / "news-auto.yml"
 
 class NewsroomConfigTests(unittest.TestCase):
     def test_python_compiles(self):
@@ -50,9 +50,9 @@ class NewsroomConfigTests(unittest.TestCase):
 
     def test_workflow_targets(self):
         workflow = WORKFLOW.read_text(encoding="utf-8")
-        self.assertIn("POSTS_PER_RUN: '3'", workflow)
-        self.assertIn("MIN_POSTS_PER_CATEGORY: '1'", workflow)
-        self.assertIn("MAX_AI_CALLS_PER_RUN: '12'", workflow)
+        self.assertIn("POSTS_PER_RUN: '60'", workflow)
+        self.assertIn("MIN_POSTS_PER_CATEGORY: '2'", workflow)
+        self.assertIn("MAX_AI_CALLS_PER_RUN: '100'", workflow)
         self.assertIn("AI_PROVIDER_ORDER: gemini,groq,openrouter", workflow)
         self.assertIn("python -u scripts/build.py", workflow)
 
