@@ -2,7 +2,7 @@ name: GlobalTech Daily Auto News
 on:
   push:
     branches: [main]
-    paths: ['scripts/collect.py', 'scripts/news_config.py', 'scripts/verticals.py', '.github/workflows/news-auto.yml', 'scripts/focused_sources.py', 'scripts/probe_sources.py']
+    paths: ['scripts/collect.py', 'scripts/news_config.py', 'scripts/verticals.py', '.github/workflows/news-auto.yml', 'scripts/focused_sources.py', 'scripts/probe_sources.py', 'scripts/directories.py', 'scripts/generate_images.py', 'tests/**']
   workflow_dispatch:
   schedule:
     - cron: '7 * * * *'
