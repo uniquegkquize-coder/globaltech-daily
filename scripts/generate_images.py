@@ -197,12 +197,13 @@ def create(p):
         print('Image generation failed',model,type(exc).__name__,str(exc)[:130],flush=True)
     return False
 
-def choose_backfill(posts,now=None,limit=None):
-    """Allocate some image searches to fresh news AND older archive posts.
+BACKFILL_STATE=ROOT/'content/image-backfill-state.json'
 
-    Both groups rotate every quarter hour. A run does not retry the same first
-    few missing images forever, and archive photos get attention even while
-    new posts continue arriving. Never overwrite an existing featured photo.
+def choose_backfill(posts,now=None,limit=None,cursor=None,mode=None):
+    """Search fresh news and historic posts, advancing persistent group cursors.
+
+    Photo matches remain article-specific and licensed; existing photos are never
+    replaced. The dedicated archive workflow processes old posts exclusively.
     """
     now=now or datetime.datetime.now(datetime.timezone.utc)
     limit=max(0,int(limit if limit is not None else os.getenv('MAX_LICENSED_PHOTOS_PER_RUN','8')))
@@ -217,20 +218,29 @@ def choose_backfill(posts,now=None,limit=None):
             is_fresh=datetime.timedelta(0)<=now-stamp<=datetime.timedelta(days=3)
         except (TypeError,ValueError):is_fresh=False
         (fresh if is_fresh else older).append(post)
-    # 60% fresh news, 40% older articles when both have missing images.
-    fresh_budget=min(len(fresh), max(1,(limit*3+4)//5)) if fresh else 0
-    older_budget=min(len(older),limit-fresh_budget)
-    if fresh_budget+older_budget<limit:
-        room=limit-fresh_budget-older_budget
-        fresh_budget+=min(room,len(fresh)-fresh_budget)
-        room=limit-fresh_budget-older_budget
-        older_budget+=min(room,len(older)-older_budget)
-    slot=int(now.timestamp()//900)
-    def rotate(rows,n):
-        if n<=0 or not rows:return []
-        start=(slot*n)%len(rows)
+    mode=(mode or os.getenv('IMAGE_BACKFILL_MODE','mixed')).strip().lower()
+    if mode=='archive' and older:
+        fresh_budget=0
+        older_budget=min(limit,len(older))
+    else:
+        # 60% new news, 40% historic archive, even with a continuous new-news queue.
+        fresh_budget=min(len(fresh),max(1,(limit*3+4)//5)) if fresh else 0
+        older_budget=min(len(older),limit-fresh_budget)
+        if fresh_budget+older_budget<limit:
+            room=limit-fresh_budget-older_budget
+            fresh_budget+=min(room,len(fresh)-fresh_budget)
+            room=limit-fresh_budget-older_budget
+            older_budget+=min(room,len(older)-older_budget)
+    def rotate(rows,n,key):
+        if not rows or n<=0:return []
+        if cursor is None:
+            start=(int(now.timestamp()//900)*n)%len(rows)
+        else:
+            start=max(0,int(cursor.get(key,0)))%len(rows)
+            cursor[key]=start+n
         return (rows[start:]+rows[:start])[:n]
-    return rotate(fresh,fresh_budget)+rotate(older,older_budget),len(fresh),len(older)
+    selected=rotate(fresh,fresh_budget,'fresh_offset')+rotate(older,older_budget,'archive_offset')
+    return selected,len(fresh),len(older)
 
 def main():
     posts=[]
@@ -239,7 +249,14 @@ def main():
             p=json.loads(f.read_text(encoding='utf-8'))
             if slug(p):posts.append(p)
         except (OSError,ValueError):pass
-    candidates,fresh_count,older_count=choose_backfill(posts)
+    try:cursor=json.loads(BACKFILL_STATE.read_text(encoding='utf-8'))
+    except (OSError,ValueError):cursor={}
+    if not isinstance(cursor,dict):cursor={}
+    candidates,fresh_count,older_count=choose_backfill(posts,cursor=cursor)
+    if candidates:
+        BACKFILL_STATE.parent.mkdir(parents=True,exist_ok=True)
+        BACKFILL_STATE.write_text(json.dumps(cursor,indent=2)+'\n',encoding='utf-8')
+    print('Image backfill mode:',os.getenv('IMAGE_BACKFILL_MODE','mixed'),flush=True)
     print('Fresh news awaiting reusable photos:',fresh_count,
           'older archive missing reusable photos:',older_count,flush=True)
     new_original=0
