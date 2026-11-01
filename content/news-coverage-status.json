@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-01T09:06:10.191744+00:00",
+  "updated_at": "2026-11-01T09:28:56.600558+00:00",
   "categories": {
     "technology": {
-      "discovered": 837,
+      "discovered": 838,
       "published": 0,
       "sources_configured": 27
     },
@@ -27,18 +27,18 @@
       "sources_configured": 16
     },
     "world-news": {
-      "discovered": 4248,
+      "discovered": 4257,
       "published": 0,
       "sources_configured": 28
     },
     "business": {
-      "discovered": 1400,
+      "discovered": 1402,
       "published": 0,
       "sources_configured": 9
     },
     "sports": {
       "discovered": 612,
-      "published": 1,
+      "published": 0,
       "sources_configured": 5
     },
     "automobiles": {
@@ -47,7 +47,7 @@
       "sources_configured": 9
     },
     "health-science": {
-      "discovered": 59,
+      "discovered": 60,
       "published": 0,
       "sources_configured": 4
     },
@@ -82,8 +82,8 @@
       "sources_configured": 6
     },
     "ai-news": {
-      "discovered": 538,
-      "published": 3,
+      "discovered": 535,
+      "published": 0,
       "sources_configured": 2
     },
     "cyber-security": {
@@ -93,12 +93,12 @@
     },
     "gadgets": {
       "discovered": 93,
-      "published": 0,
+      "published": 2,
       "sources_configured": 1
     },
     "apps-software": {
       "discovered": 290,
-      "published": 0,
+      "published": 1,
       "sources_configured": 1
     },
     "results": {
@@ -133,7 +133,7 @@
     },
     "banking-finance": {
       "discovered": 22,
-      "published": 0,
+      "published": 1,
       "sources_configured": 1
     },
     "consumer-alerts": {
@@ -148,12 +148,12 @@
     },
     "india-news": {
       "discovered": 17,
-      "published": 0,
+      "published": 2,
       "sources_configured": 1
     },
     "cricket": {
-      "discovered": 322,
-      "published": 1,
+      "discovered": 321,
+      "published": 0,
       "sources_configured": 3
     },
     "car-launches": {
@@ -167,8 +167,8 @@
       "sources_configured": 10
     },
     "movie-releases": {
-      "discovered": 56,
-      "published": 1,
+      "discovered": 55,
+      "published": 0,
       "sources_configured": 6
     },
     "celebrity-news": {
@@ -188,17 +188,17 @@
     },
     "social-media": {
       "discovered": 67,
-      "published": 0,
+      "published": 1,
       "sources_configured": 3
     },
     "defence": {
       "discovered": 127,
-      "published": 0,
+      "published": 1,
       "sources_configured": 4
     },
     "conflict-news": {
-      "discovered": 139,
-      "published": 1,
+      "discovered": 138,
+      "published": 0,
       "sources_configured": 3
     },
     "military-tech": {
@@ -222,8 +222,8 @@
       "sources_configured": 4
     },
     "visas-immigration": {
-      "discovered": 45,
-      "published": 1,
+      "discovered": 44,
+      "published": 0,
       "sources_configured": 4
     },
     "freebies": {
@@ -269,7 +269,7 @@
     },
     "aljazeera.com": {
       "feed_entries": 25,
-      "queued": 43
+      "queued": 48
     },
     "amarujala.com": {
       "website_candidates": 22,
@@ -300,7 +300,7 @@
       "queued": 63
     },
     "artificialintelligence-news.com": {
-      "website_candidates": 25
+      "website_candidates": 0
     },
     "au.variety.com": {
       "queued": 10
@@ -311,7 +311,7 @@
     },
     "bbc.co.uk": {
       "feed_entries": 173,
-      "queued": 34
+      "queued": 35
     },
     "bbc.com": {
       "queued": 12
@@ -342,7 +342,7 @@
     },
     "bloomberg.com": {
       "feed_entries": 25,
-      "queued": 4
+      "queued": 5
     },
     "business-standard.com": {
       "direct_fetch_failed": 1,
@@ -621,9 +621,7 @@
     },
     "news.abplive.com": {
       "feed_entries": 60,
-      "queued": 355,
-      "attempted": 1,
-      "published": 1
+      "queued": 355
     },
     "news.kent.gov.uk": {
       "queued": 1
@@ -633,9 +631,8 @@
     },
     "news.samsung.com": {
       "feed_entries": 50,
-      "website_candidates": 0,
-      "queued": 73,
-      "direct_fetch_failed": 2
+      "website_candidates": 25,
+      "queued": 73
     },
     "news.un.org": {
       "queued": 8
@@ -646,7 +643,7 @@
     },
     "npr.org": {
       "feed_entries": 40,
-      "queued": 2
+      "queued": 3
     },
     "nta.ac.in": {
       "website_candidates": 0
@@ -749,14 +746,14 @@
     },
     "techradar.com": {
       "feed_entries": 50,
-      "queued": 2
+      "queued": 3
     },
     "telecomtalk.info": {
       "queued": 35
     },
     "theguardian.com": {
       "feed_entries": 287,
-      "queued": 67
+      "queued": 69
     },
     "thehackernews.com": {
       "website_candidates": 25,
@@ -771,9 +768,9 @@
     },
     "timesofindia.indiatimes.com": {
       "feed_entries": 66,
-      "queued": 1355,
-      "attempted": 1,
-      "published": 1
+      "queued": 1358,
+      "attempted": 3,
+      "published": 3
     },
     "trai.gov.in": {
       "website_candidates": 25,
@@ -809,7 +806,7 @@
       "queued": 13
     },
     "www.abc.net.au": {
-      "queued": 273,
+      "queued": 272,
       "attempted": 1,
       "published": 1
     },
@@ -895,9 +892,7 @@
       "queued": 3
     },
     "www.dw.com": {
-      "queued": 117,
-      "attempted": 1,
-      "published": 1
+      "queued": 116
     },
     "www.eastmidlands-cca.gov.uk": {
       "queued": 1
@@ -906,9 +901,9 @@
       "queued": 1
     },
     "www.engadget.com": {
-      "queued": 110,
-      "attempted": 1,
-      "published": 1
+      "queued": 109,
+      "attempted": 3,
+      "published": 3
     },
     "www.esa.int": {
       "queued": 9
@@ -1056,20 +1051,16 @@
       "queued": 17
     },
     "www.techradar.com": {
-      "queued": 224,
-      "attempted": 1,
-      "published": 1
+      "queued": 223
     },
     "www.theguardian.com": {
-      "queued": 638,
-      "attempted": 1,
-      "published": 1
+      "queued": 637
     },
     "www.thehindu.com": {
       "queued": 476
     },
     "www.theverge.com": {
-      "queued": 67,
+      "queued": 66,
       "attempted": 1,
       "published": 1
     },
