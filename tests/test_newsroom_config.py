@@ -48,9 +48,9 @@ class NewsroomConfigTests(unittest.TestCase):
         self.assertIn("for story in candidates():", code)
         self.assertIn("while time.monotonic()<deadline and published<remaining and CALLS<MAX_CALLS:", code)
 
-    def test_root_homepage_is_real_news_not_meta_refresh(self):
+    def test_root_redirects_to_canonical_english_homepage(self):
         build = (ROOT / "scripts" / "build.py").read_text(encoding="utf-8")
-        self.assertIn("write(OUT/'index.html',(OUT/'en'/'index.html').read_text(encoding='utf-8'))", build)
+        self.assertIn('http-equiv="refresh" content="0;url=/en/"', build)
         self.assertIn("Cache-Control: public, max-age=0, must-revalidate", build)
 
     def test_workflow_targets(self):
