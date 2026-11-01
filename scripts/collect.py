@@ -1266,7 +1266,8 @@ def main():
   else:save_state(pending,state)
   return cat if (POSTS/(post_id+'.json')).exists() else None
 
- backlog=load_discovery_queue()
+ bulk_pending=os.getenv('BULK_PENDING_ONLY','').lower()=='true'
+ backlog=[] if bulk_pending else load_discovery_queue()
  if selected:backlog=[row for row in backlog if row[2]==selected]
  print('Carried-over news candidates:',len(backlog),flush=True)
  stories=[]
@@ -1278,7 +1279,7 @@ def main():
  discovered_by_category=Counter()
  # No fixed candidate count or per-category cap. Discovery is bounded only
  # by the time budget so source collection cannot stall publishing forever.
- for story in candidates():
+ for story in (() if bulk_pending else candidates()):
   cat=story[2]
   if selected and cat!=selected:continue
   if story[0] not in seen_urls and useful_lead(story):
@@ -1306,6 +1307,21 @@ def main():
    row=(source,title,category,urlparse(source).hostname or '')
    if useful_lead(row):saved_drafts.append(row)
   except (OSError,ValueError,TypeError):continue
+ if bulk_pending:
+  # Process existing pending records only; never introduce fresh discovery leads.
+  # Keep a bounded candidate window so each run can checkpoint and resume.
+  pending_rows=[]
+  for draft_path in sorted(PENDING.glob('*.json')):
+   if draft_path.name.startswith('_'):continue
+   try:
+    draft=json.loads(draft_path.read_text(encoding='utf-8'))
+    source=draft.get('source','');title=draft.get('source_title','');cat=draft.get('category','')
+    if selected and cat!=selected:continue
+    row=(source,title,cat,urlparse(source).hostname or '')
+    if useful_lead(row):pending_rows.append(row)
+   except (OSError,ValueError,TypeError):continue
+  stories=pending_rows
+  print('Bulk pending-only eligible drafts:',len(stories),flush=True)
  stories=unique_leads(saved_drafts+stories)
  print('Resumable single-language pending drafts prioritized:',len(saved_drafts),flush=True)
  print('Direct source priority candidates:',sum(any(allowed(row[0],d) for _,_,d in DIRECT_SOURCES) for row in new_leads),flush=True)
