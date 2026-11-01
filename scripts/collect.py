@@ -628,7 +628,8 @@ def website_stories(item):
    title=clean(a.get_text(' ',strip=True) or a.get('aria-label','') or a.get('title',''))
    if not allowed(url,domain) or url in seen_urls or len(title)<24 or len(title)>210:continue
    if url.rstrip('/')==page_url.rstrip('/'):continue
-   if any(z in url.lower() for z in ('/tag/','/author/','/category/','/topics/','/video/','/live/','/search/','/login','/signup','/privacy','/contact','/about','/taxonomy/','/complain/','/submission/','/articlelist/','/topic/','/forum/','/deals/','/collections/')):continue
+   if any(z in url.lower() for z in ('/tag/','/author/','/category/','/topics/','/video/','/live/','/search/','/login','/signup','/privacy','/contact','/about','/taxonomy/','/complain/','/submission/','/articlelist/','/topic/','/forum/','/deals/','/collections/','/sitemap','/age-calculator','/service-length-calculator')):continue
+   if cat=='private-vacancy' and ('linkedin.com' in domain or 'indeed.com' in domain or 'naukri.com' in domain) and not re.search(r'/jobs/view/|/viewjob|/job/|/jobs/[a-z0-9-]+-[0-9]{6,}',urlparse(url).path,re.I):continue
    if len(urlparse(url).path.strip('/').split('/'))<2 and not re.search(r'\d{4,}|[a-z0-9]+[-_][a-z0-9]+',urlparse(url).path):continue
    if cat in ('sarkari-naukri','private-vacancy') and not re.search(r'job|vacan|recruit|hiring|career|भर्ती|नौकरी|पद|result|admit|exam',title+' '+url,re.I):continue
    seen_urls.add(url);stories.append((url,title,category_for_url(title,cat,url),domain))
