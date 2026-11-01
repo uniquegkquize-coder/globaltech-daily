@@ -79,7 +79,7 @@ def licensed_source_image(p):
         parsed=urlparse(image)
         if parsed.scheme!='https' or not parsed.hostname:return False
         # Explicitly reject icons, publisher logos, placeholders and trackers.
-        if re.search(r'(?i)(?:logo|favicon|avatar|sprite|placeholder|tracking-pixel|default-image|site-icon)',parsed.path):
+        if re.search(r'(?i)(?:logo|favicon|avatar|sprite|placeholder|tracking-pixel|default-image|site-icon|/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',parsed.path):
             return False
         res=requests.get(image,timeout=(4,14),headers={
             'User-Agent':'Mozilla/5.0 (compatible; GlobeWireDaily/1.0)'
