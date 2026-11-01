@@ -181,7 +181,15 @@ def image_for(p):
  """Keep existing photos; generate clearly labeled original editorial artwork only when missing."""
  s=slug(p);dest=OUT/'images'/f'{s}.jpg';dest.parent.mkdir(parents=True,exist_ok=True)
  existing=R/'content'/'featured'/f'{s}.jpg'
- if existing.is_file():
+ metadata=R/'content'/'featured'/f'{s}.json'
+ use_original=existing.is_file()
+ if use_original and metadata.is_file():
+  try:
+   # Historic Commons substitutions are not the source article's real photograph.
+   use_original=json.loads(metadata.read_text(encoding='utf-8')).get('kind')!='licensed_photo'
+  except (ValueError,OSError,TypeError):
+   use_original=False
+ if use_original:
   shutil.copy2(existing,dest)
   return
  # If a previously selected photo is removed (for irrelevant subject or rights),
@@ -233,6 +241,10 @@ def image_caption(p,lang):
  metadata=R/'content'/'featured'/f'{s}.json'
  if metadata.is_file():
   try:
+   if json.loads(metadata.read_text(encoding='utf-8')).get('kind')=='licensed_photo':
+    return 'Editorial illustration — original source photo not available.' if lang=='en' else 'सांकेतिक चित्र — स्रोत की वास्तविक फोटो उपलब्ध नहीं।'
+  except (OSError,ValueError,TypeError):pass
+  try:
    info=json.loads(metadata.read_text(encoding='utf-8'))
    if info.get('kind') in ('licensed_source','publisher_source','licensed_photo'):
     credit=str(info.get('attribution') or 'Original publisher')
@@ -255,7 +267,10 @@ def image_caption_html(p,lang):
  if not metadata.is_file():return caption
  try:
   info=json.loads(metadata.read_text(encoding='utf-8'))
+  if info.get('kind')=='licensed_photo':return caption
   links=[]
+  if info.get('rights_status')=='source_rights_unverified':
+   links.append('Source image rights not independently verified' if lang=='en' else 'स्रोत चित्र के उपयोग अधिकार स्वतंत्र रूप से सत्यापित नहीं')
   source_url=str(info.get('source_image') or info.get('image_url') or '')
   if source_url.startswith('https://'):
    links.append('<a target="_blank" rel="noopener noreferrer" href="'+e(source_url)+'">'+('Photo source' if lang=='en' else 'चित्र स्रोत')+'</a>')
