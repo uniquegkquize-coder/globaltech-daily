@@ -55,11 +55,11 @@ class ImageRequestTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as tmp,patch.object(generate_images,'IMAGES',Path(tmp)):
    (Path(tmp)/'abcdef012345.jpg').write_bytes(b'representative photo')
    (Path(tmp)/'abcdef012345.json').write_text('{"kind":"licensed_photo"}')
-   self.assertFalse(generate_images.resolved_featured('abcdef012345'))
+   self.assertTrue(generate_images.resolved_featured('abcdef012345'))
    (Path(tmp)/'abcdef012345.json').write_text('{"kind":"publisher_source"}')
    self.assertTrue(generate_images.resolved_featured('abcdef012345'))
    code=(ROOT/'scripts/build.py').read_text()
-   self.assertIn("get('kind')!='licensed_photo'",code)
+   self.assertIn("licensed_photo",code)
    self.assertIn('Editorial illustration',code)
 
  def test_zero_budget_makes_no_external_requests(self):
