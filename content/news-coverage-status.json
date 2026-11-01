@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T12:10:48.943999+00:00",
+  "updated_at": "2026-11-01T12:21:22.676257+00:00",
   "categories": {
     "technology": {
       "discovered": 848,
@@ -22,12 +22,12 @@
       "sources_configured": 6
     },
     "movies-entertainment": {
-      "discovered": 1337,
+      "discovered": 1338,
       "published": 0,
       "sources_configured": 16
     },
     "world-news": {
-      "discovered": 4278,
+      "discovered": 4279,
       "published": 0,
       "sources_configured": 28
     },
@@ -72,13 +72,13 @@
       "sources_configured": 2
     },
     "lifestyle": {
-      "discovered": 79,
+      "discovered": 80,
       "published": 0,
       "sources_configured": 4
     },
     "telecom": {
       "discovered": 73,
-      "published": 0,
+      "published": 1,
       "sources_configured": 6
     },
     "ai-news": {
@@ -152,8 +152,8 @@
       "sources_configured": 1
     },
     "cricket": {
-      "discovered": 312,
-      "published": 1,
+      "discovered": 310,
+      "published": 0,
       "sources_configured": 3
     },
     "car-launches": {
@@ -311,7 +311,7 @@
       "queued": 22
     },
     "bbc.co.uk": {
-      "feed_entries": 177,
+      "feed_entries": 175,
       "queued": 42
     },
     "bbc.com": {
@@ -342,7 +342,7 @@
       "queued": 1
     },
     "bloomberg.com": {
-      "feed_entries": 25,
+      "feed_entries": 24,
       "queued": 10
     },
     "business-standard.com": {
@@ -373,7 +373,7 @@
     },
     "comingsoon.net": {
       "feed_entries": 20,
-      "website_candidates": 14,
+      "website_candidates": 11,
       "queued": 7
     },
     "coolztricks.com": {
@@ -632,9 +632,8 @@
     },
     "news.samsung.com": {
       "feed_entries": 50,
-      "website_candidates": 0,
-      "queued": 73,
-      "direct_fetch_failed": 2
+      "website_candidates": 25,
+      "queued": 73
     },
     "news.un.org": {
       "queued": 8
@@ -756,7 +755,7 @@
     },
     "theguardian.com": {
       "feed_entries": 287,
-      "queued": 81
+      "queued": 84
     },
     "thehackernews.com": {
       "website_candidates": 25,
@@ -816,7 +815,9 @@
       "queued": 331
     },
     "www.amarujala.com": {
-      "queued": 523
+      "queued": 523,
+      "attempted": 1,
+      "published": 1
     },
     "www.amazon.jobs": {
       "queued": 2
@@ -839,7 +840,7 @@
     },
     "www.bbc.com": {
       "queued": 277,
-      "attempted": 8
+      "attempted": 12
     },
     "www.bhaskar.com": {
       "queued": 179
@@ -954,8 +955,7 @@
       "queued": 2
     },
     "www.icc-cricket.com": {
-      "queued": 27,
-      "attempted": 1
+      "queued": 26
     },
     "www.ign.com": {
       "queued": 169
