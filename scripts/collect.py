@@ -937,7 +937,7 @@ def candidates():
    record=json.loads(path.read_text(encoding='utf-8'))
    complete=sum(complete_body(record.get(lang+'_body',''),lang) for lang in ('en','hi'))
    progress=sum(min(words(record.get(lang+'_body','')),MIN_WORDS) for lang in ('en','hi'))
-   blocked=record.get('blocked_until','')>dt.datetime.now(UTC).isoformat()
+   blocked=record.get('blocked_until','')>dt.datetime.now(UTC).isoformat() and not complete_body(record.get('en_body',''),'en')
    return (blocked,record.get('category') not in missing,-complete,-progress,path.name)
   except (OSError,ValueError,TypeError):return (True,0,0,path.name)
  for path in sorted((p for p in PENDING.glob('*.json') if p!=QUEUE_FILE and not p.name.startswith('_')),key=pending_priority):
@@ -945,7 +945,7 @@ def candidates():
    record=json.loads(path.read_text(encoding='utf-8'))
    url=record.get('source',''); title=record.get('source_title','')
    domain=urlparse(url).hostname or ''
-   if record.get('blocked_until','')>dt.datetime.now(UTC).isoformat():continue
+   if record.get('blocked_until','')>dt.datetime.now(UTC).isoformat() and not complete_body(record.get('en_body',''),'en'):continue
    if title and record.get('category') in {c for _,c,_ in FEEDS} and (any(allowed(url,d) for _,_,d in FEEDS) or any(allowed(url,d) for d in REGIONAL_PORTALS.get(record.get('category'),()))) and url not in seen:
     seen.add(url)
     yield url,title,record.get('category','technology'),domain
@@ -1150,7 +1150,7 @@ def main():
   try:state=json.loads(pending.read_text()) if pending.exists() else {}
   except ValueError:state={}
   # Avoid retrying the same insufficient or failed source repeatedly within a day.
-  if state.get('blocked_until','')>dt.datetime.now(UTC).isoformat():
+  if state.get('blocked_until','')>dt.datetime.now(UTC).isoformat() and not complete_body(state.get('en_body',''),'en'):
    print('Pending draft cooling down:',post_id,flush=True)
    return None
   if state.get('source_published_at') and not STORY_DATES.get(url):STORY_DATES[url]=state['source_published_at']
@@ -1184,6 +1184,12 @@ def main():
   if source_stamp and source_stamp>dt.datetime.now(UTC).timestamp()+300:
    print('Skipping future-dated source:',title[:80],flush=True)
    return None
+  # A previously source-backed English draft is valid grounding for its missing Hindi version.
+  # Never block that translation merely because the publisher now returns a 403/empty page.
+  has_complete_english=complete_body(state.get('en_body',''),'en') and bool(state.get('en_title'))
+  if (not text.strip() or words(text)<65) and has_complete_english:
+   text=state['en_body']
+   print('Resuming Hindi from saved source-grounded English draft:',post_id,flush=True)
   if (not text.strip() or words(text)<65) and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    # Preserve completed language drafts even if the publisher temporarily blocks scraping.
    state.update({'source':url,'source_title':title,'category':cat,'status':'source_unavailable','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat(),'source_words':words(text)})
@@ -1200,7 +1206,9 @@ def main():
     prompt += ('\\nEXISTING ORIGINAL DRAFT (preserve its accurate material; return a COMPLETE revised body, not only an addendum):\\n'+prior[:24000]+'\\nImprove clarity and completeness using only SOURCE-SUPPORTED context. Never fabricate details.')
    data,provider=call_provider(prompt)
    return lang,data,provider
-  languages=[lang for lang in ('en','hi') if not complete_body(state.get(lang+'_body',''),lang)]
+  languages=[lang for lang in ('hi','en') if not complete_body(state.get(lang+'_body',''),lang)]
+  if has_complete_english and 'hi' in languages:
+   print('Prioritizing missing Hindi for saved English draft:',post_id,flush=True)
   with ThreadPoolExecutor(max_workers=2) as language_pool:
    results=list(language_pool.map(generate_language,languages))
   for lang,data,provider in results:
