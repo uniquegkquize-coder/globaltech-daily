@@ -10,6 +10,7 @@ import requests, feedparser
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from bs4 import BeautifulSoup
+from public_page_fetch import fetch_public_html
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 POSTS=ROOT/'content/posts'; PENDING=ROOT/'content/pending'
 POSTS.mkdir(parents=True,exist_ok=True); PENDING.mkdir(parents=True,exist_ok=True)
@@ -610,20 +611,23 @@ def website_stories(item):
  from urllib.parse import urljoin
  base=feed if item in DIRECT_SOURCES else 'https://'+domain+WEBSITE_PATHS.get(cat,'/')
  try:
-  response=requests.get(base,timeout=(5,10),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobeWireDaily/1.0)'})
-  response.raise_for_status()
-  if not allowed(response.url,domain) or 'html' not in response.headers.get('content-type','').lower():return item,[]
-  soup=BeautifulSoup(response.text[:1000000],'html.parser')
+  page_html,page_url,method=fetch_public_html(base,timeout=(5,10),max_bytes=1000000)
+  if not page_html:
+   print('Direct source fetch unavailable',domain,method,flush=True)
+   source_metric(domain,'direct_fetch_failed')
+   return item,[]
+  if not allowed(page_url,domain):return item,[]
+  soup=BeautifulSoup(page_html[:1000000],'html.parser')
   stories=[];seen_urls=set()
   selectors='article a[href], h2 a[href], h3 a[href], main a[href], .job-list a[href], .job-listing a[href], .job-title a[href], .post-title a[href], .entry-title a[href], [class*="job"] a[href]'
   # Universal discovery: semantic links, headline anchors, and structured article links.
   # Keep bounded scans; reject category/navigation links below.
   selectors+=', .news-item a[href], a[href*="-news-"], a[href][title], a[href][aria-label], [itemprop="headline"] a[href], a[href*="/20"], a[href*="/news/"], a[href*="/article/"]'
   for a in soup.select(selectors)[:900]:
-   url=urljoin(response.url,a.get('href','')).split('#')[0].split('?')[0]
+   url=urljoin(page_url,a.get('href','')).split('#')[0].split('?')[0]
    title=clean(a.get_text(' ',strip=True) or a.get('aria-label','') or a.get('title',''))
    if not allowed(url,domain) or url in seen_urls or len(title)<24 or len(title)>210:continue
-   if url.rstrip('/')==response.url.rstrip('/'):continue
+   if url.rstrip('/')==page_url.rstrip('/'):continue
    if any(z in url.lower() for z in ('/tag/','/author/','/category/','/topics/','/video/','/live/','/search/','/login','/signup','/privacy','/contact','/about','/taxonomy/','/complain/','/submission/','/articlelist/','/topic/','/forum/','/deals/','/collections/')):continue
    if len(urlparse(url).path.strip('/').split('/'))<2 and not re.search(r'\d{4,}|[a-z0-9]+[-_][a-z0-9]+',urlparse(url).path):continue
    if cat in ('sarkari-naukri','private-vacancy') and not re.search(r'job|vacan|recruit|hiring|career|भर्ती|नौकरी|पद|result|admit|exam',title+' '+url,re.I):continue
