@@ -37,7 +37,10 @@ def licensed_source_image(p):
         image=meta('og:image','twitter:image')
         license_url=meta('license','dc.rights','dcterms.license','cc:license')
         if not image:return False
-        # Publisher verification does not confer image reuse rights. Require an explicit reusable license.\n        allowed_license=bool(re.search(r'creativecommons\\.org/licenses/(?:by|by-sa|by-nd|by-nc|zero)/|creativecommons\\.org/publicdomain/|\\bCC0\\b|\\bpublic.domain\\b',license_url,re.I))\n        if not allowed_license:return False\n        image=urljoin(page.url,image)
+        # Publisher verification does not confer image reuse rights. Require an explicit reusable license.
+        allowed_license=bool(re.search(r'creativecommons\\.org/licenses/(?:by|by-sa|by-nd|by-nc|zero)/|creativecommons\\.org/publicdomain/|\\bCC0\\b|\\bpublic.domain\\b',license_url,re.I))
+        if not allowed_license:return False
+        image=urljoin(page.url,image)
         if urlparse(image).scheme!='https':return False
         res=requests.get(image,timeout=(5,20),headers={'User-Agent':'GlobalTechDaily/1.0'},stream=True)
         if not res.ok or not res.headers.get('content-type','').lower().startswith('image/'):return False
@@ -172,7 +175,8 @@ def main():
         if (IMAGES/(slug(p)+'.jpg')).exists():continue
         count+=1
         # Real licensed photographs first; never copy unlicensed publisher images.
-        if licensed_source_image(p):continue\n        if commons_photo(p):continue
+        if licensed_source_image(p):continue
+        if commons_photo(p):continue
         if MAX_NEW>0 and KEY and len(QUOTA_BLOCKED)<len(MODELS):create(p)
     print('Licensed photo lookup attempts:',count,'of',len(posts),'posts',flush=True)
 if __name__=='__main__':main()
