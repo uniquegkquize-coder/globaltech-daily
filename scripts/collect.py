@@ -783,7 +783,7 @@ def source_metric(domain,metric,amount=1):
  with SOURCE_DIAGNOSTICS_LOCK: SOURCE_DIAGNOSTICS[(domain,metric)]+=amount
 
 QUEUE_FILE=PENDING/'_discovery_queue.json'
-QUEUE_MAX_AGE_HOURS=max(1,int(os.getenv('QUEUE_MAX_AGE_HOURS','36')))
+QUEUE_MAX_AGE_HOURS=max(1,int(os.getenv('QUEUE_MAX_AGE_HOURS','72')))
 QUEUE_LIMIT=max(30,int(os.getenv('QUEUE_LIMIT','120')))
 def useful_lead(row):
  if not isinstance(row,(list,tuple)) or len(row)!=4 or not all(isinstance(x,str) for x in row):return False
@@ -837,6 +837,16 @@ def save_discovery_queue(rows):
  temp=QUEUE_FILE.with_suffix('.tmp')
  temp.write_text(json.dumps({'version':2,'items':entries},ensure_ascii=False),encoding='utf-8')
  temp.replace(QUEUE_FILE)
+ # Single workflow, separate persistent per-category queues for coverage diagnostics.
+ # They are snapshots of the canonical queue, not competing publishing workers.
+ if not os.getenv('NEWS_CATEGORY','').strip():
+  category_rows={category:[] for category in CATEGORIES}
+  for entry in entries:
+   cat=entry['story'][2]
+   if cat in category_rows:category_rows[cat].append(entry)
+  snapshot={'updated_at':now.isoformat(),'max_age_hours':QUEUE_MAX_AGE_HOURS,
+            'by_category':{cat:{'queued':len(items),'items':items} for cat,items in category_rows.items()}}
+  (PENDING/'_category_discovery_queues.json').write_text(json.dumps(snapshot,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 
 def native_feed_registry():
  # Keep existing global RSS sources ahead of the slow search stages too.
@@ -1287,6 +1297,13 @@ def main():
  category_published=dict(actual_counts);published=sum(actual_counts.values())
  outcome='target_reached' if published>=remaining else (stop_reason or ('ai_limit_reached' if CALLS>=MAX_CALLS else ('time_limit_reached' if time.monotonic()>=deadline else 'queue_exhausted')))
  write_run_status(outcome,started,category_published,target=remaining,discovered_by_category=dict(discovered_by_category))
+ coverage={'updated_at':dt.datetime.now(UTC).isoformat(),
+           'categories':{cat:{'discovered':discovered_by_category.get(cat,0),'published':category_published.get(cat,0),
+                              'sources_configured':len({domain for _,c,domain in FEEDS if c==cat})}
+                         for cat in CATEGORIES},
+           'sources':{domain:{metric:count for (d,metric),count in SOURCE_DIAGNOSTICS.items() if d==domain}
+                      for domain in sorted({d for d,_ in SOURCE_DIAGNOSTICS})}}
+ (ROOT/'content/news-coverage-status.json').write_text(json.dumps(coverage,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  # Retain only recent, valid, bounded leads; stale or unusable items are discarded.
  remaining_queue=[item for item in stories if not (POSTS/(hashlib.sha256(item[0].encode()).hexdigest()[:12]+'.json')).exists()]
  save_discovery_queue(remaining_queue)
