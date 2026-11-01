@@ -10,6 +10,45 @@ sys.path.insert(0,str(ROOT/'scripts'))
 import generate_images
 
 class ImageRequestTests(unittest.TestCase):
+ def test_source_article_photo_is_saved_first_with_explicit_rights_status(self):
+  from io import BytesIO
+  from PIL import Image
+  class Page:
+   ok=True
+   url='https://example.org/story'
+   headers={'content-type':'text/html; charset=utf-8'}
+   text='<html><head><meta property="og:image" content="https://cdn.example.org/story-photo.jpg"><meta property="og:site_name" content="Example News"></head></html>'
+  class Photo:
+   ok=True
+   url='https://cdn.example.org/story-photo.jpg'
+   headers={'content-type':'image/jpeg'}
+   def __init__(self):
+    buf=BytesIO()
+    Image.new('RGB',(1280,720),'gray').save(buf,format='JPEG')
+    self.raw=buf.getvalue()
+   def iter_content(self,n):yield self.raw
+  post={'id':'abcdef012345','source':'https://example.org/story'}
+  with tempfile.TemporaryDirectory() as tmp,patch.object(generate_images,'IMAGES',Path(tmp)):
+   with patch.object(generate_images.requests,'get',side_effect=[Page(),Photo()]) as get:
+    self.assertTrue(generate_images.licensed_source_image(post))
+    self.assertEqual(get.call_count,2)
+   metadata=json.loads((Path(tmp)/'abcdef012345.json').read_text())
+   self.assertEqual(metadata['kind'],'publisher_source')
+   self.assertEqual(metadata['rights_status'],'source_rights_unverified')
+   self.assertEqual(metadata['source_image'],'https://cdn.example.org/story-photo.jpg')
+   self.assertTrue((Path(tmp)/'abcdef012345.jpg').is_file())
+
+ def test_representative_commons_photo_is_not_mistaken_for_source_original(self):
+  with tempfile.TemporaryDirectory() as tmp,patch.object(generate_images,'IMAGES',Path(tmp)):
+   (Path(tmp)/'abcdef012345.jpg').write_bytes(b'representative photo')
+   (Path(tmp)/'abcdef012345.json').write_text('{"kind":"licensed_photo"}')
+   self.assertFalse(generate_images.resolved_featured('abcdef012345'))
+   (Path(tmp)/'abcdef012345.json').write_text('{"kind":"publisher_source"}')
+   self.assertTrue(generate_images.resolved_featured('abcdef012345'))
+   code=(ROOT/'scripts/build.py').read_text()
+   self.assertIn("get('kind')!='licensed_photo'",code)
+   self.assertIn('Editorial illustration',code)
+
  def test_zero_budget_makes_no_external_requests(self):
   with patch.object(generate_images,'MAX_NEW',0),patch.dict('os.environ',{'MAX_LICENSED_PHOTOS_PER_RUN':'0'}),patch.object(generate_images.requests,'get') as get,patch.object(generate_images.requests,'post') as post:
    generate_images.main()
