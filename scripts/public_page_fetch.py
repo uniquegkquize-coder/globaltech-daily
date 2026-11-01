@@ -15,7 +15,7 @@ def fetch_public_html(url, session=None, timeout=(5,12), max_bytes=2000000):
     global _attempts
     client=session or requests
     try:
-        response=client.get(url,timeout=timeout,allow_redirects=True,headers={
+        response=client.get(url,timeout=timeout,headers={
             "User-Agent":"GlobalTechDaily/1.0 (+https://globewiredaily.org)",
             "Accept":"text/html,application/xhtml+xml",
         })
