@@ -87,7 +87,7 @@ def load_records():
 def external_records(kind):
  records=load_records().get(kind,[])
  if not isinstance(records,list):return []
- return [r for r in records if isinstance(r,dict) and r.get('name') and r.get('source_url')][:1000]
+ return [r for r in records if isinstance(r,dict) and r.get('name') and r.get('source_url')]
 
 COURSES=[
  ('B.Tech / Engineering','Physics, mathematics and institution-specific entrance requirements; check official admission rules.'),
