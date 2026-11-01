@@ -166,7 +166,7 @@ def main():
         posts=posts[offset:]+posts[:offset]
         print('Image backfill rotation',offset,'of',len(posts),flush=True)
     count=0
-    photo_limit=max(1,int(os.getenv('MAX_LICENSED_PHOTOS_PER_RUN','12')))
+    photo_limit=max(0,int(os.getenv('MAX_LICENSED_PHOTOS_PER_RUN','12')))
     for p in posts:
         if count>=photo_limit:break
         if (IMAGES/(slug(p)+'.jpg')).exists():continue
