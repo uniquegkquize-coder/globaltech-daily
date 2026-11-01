@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 import feedparser
 import requests
 from bs4 import BeautifulSoup
+from public_page_fetch import fetch_public_html
 
 DOMAINS={
  'colleges':('collegedekho.com','shiksha.com','careers360.com','topuniversities.com','timeshighereducation.com','studyportals.com','universityadmissions.se','ucas.com','niche.com','usnews.com'),
@@ -86,12 +87,10 @@ def enrich(kind,name,record,session,url=None):
  # Wikidata identifiers are not a substitute for official product specification pages.
  if urlparse(url).hostname in ('www.wikidata.org','wikidata.org'):return {}
  try:
-  response=session.get(url,timeout=(5,12),allow_redirects=True)
-  response.raise_for_status()
-  if 'html' not in response.headers.get('Content-Type','').lower():return {}
-  if response.url.startswith('http://'):return {}
-  if len(response.content)>2000000:return {}
-  soup=BeautifulSoup(response.text,'html.parser')
+  html,final_url,method=fetch_public_html(url,session=session)
+  if not html:return {}
+  if urlparse(final_url).scheme!='https':return {}
+  soup=BeautifulSoup(html,'html.parser')
   found=extract_pairs(soup)
   # Expand semantic product labels from HTML meta properties where present.
   for meta in soup.select('meta[itemprop][content], meta[property][content]')[:120]:
@@ -106,8 +105,8 @@ def enrich(kind,name,record,session,url=None):
      output[field]=value
      break
   if output:
-   output['source_url']=url
-   output['evidence_url']=url
+   output['source_url']=final_url
+   output['evidence_url']=final_url
   return output
  except requests.RequestException:return {}
 
