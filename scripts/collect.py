@@ -631,7 +631,11 @@ def website_stories(item):
    if len(stories)>=25:break
   return item,stories
  except (requests.RequestException,ValueError) as exc:
-  print('Direct source fetch failed',domain,type(exc).__name__,flush=True)
+  status=getattr(getattr(exc,'response',None),'status_code',None)
+  print('Direct source fetch failed',domain,'HTTP',status or 'unknown',type(exc).__name__,flush=True)
+  # A rejected publisher page is not a fatal collector error. Other independent
+  # sources and discovery channels remain eligible; do not evade access controls.
+  source_metric(domain,'direct_fetch_failed')
   return item,[]
 
 # Google Trends is a discovery signal only; articles always come from publishers.
