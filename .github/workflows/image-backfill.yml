@@ -6,7 +6,8 @@ on:
     paths:
       - '.github/workflows/image-backfill.yml'
   schedule:
-    - cron: '12 1,7,13,19 * * *'
+    # Rotate through older image gaps every three hours, not just four times/day.
+    - cron: '12 */3 * * *'
 permissions:
   contents: write
 concurrency:
@@ -32,7 +33,7 @@ jobs:
         env:
           PYTHONUNBUFFERED: '1'
           IMAGE_BACKFILL_MODE: archive
-          MAX_LICENSED_PHOTOS_PER_RUN: '12'
+          MAX_LICENSED_PHOTOS_PER_RUN: '16'
           MAX_NEW_IMAGES: '0'
           SITE_URL: https://globewiredaily.org
         run: |
