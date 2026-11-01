@@ -1318,8 +1318,11 @@ def main():
  # After the minimum-priority passes, there is no per-category maximum.
  ordered.extend(sorted((row for rows in grouped.values() for row in rows),key=story_priority))
  # Saved bilingual drafts should be finished before spending the run on new leads.
- pending_ids={p.stem for p in PENDING.glob('*.json') if p!=QUEUE_FILE}
- ordered.sort(key=lambda row:(hashlib.sha256(row[0].encode()).hexdigest()[:12] not in pending_ids,story_priority(row)))
+ # Fully sourced English-only drafts get the very first AI slots.
+ # Previously any empty/failed pending record competed on equal footing.
+ english_only_ids={path.stem for path in PENDING.glob('*.json') if not path.name.startswith('_') and path.stem in {hashlib.sha256(row[0].encode()).hexdigest()[:12] for row in saved_drafts}}
+ pending_ids={p.stem for p in PENDING.glob('*.json') if not p.name.startswith('_')}
+ ordered.sort(key=lambda row:(hashlib.sha256(row[0].encode()).hexdigest()[:12] not in english_only_ids,hashlib.sha256(row[0].encode()).hexdigest()[:12] not in pending_ids,story_priority(row)))
  article_workers=10
  print('Parallel article workers:',article_workers,flush=True)
  with ThreadPoolExecutor(max_workers=article_workers) as article_pool:
