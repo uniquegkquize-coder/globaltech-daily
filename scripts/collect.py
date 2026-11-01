@@ -359,8 +359,11 @@ def source_text(url,domain):
   candidates.extend(clean(body) for body in bodies)
   for date in dates:
    if timestamp(date):STORY_DATES[url]=date;break
-  for tag in soup.select('meta[property="article:published_time"], meta[itemprop="datePublished"]'):
+  for tag in soup.select('meta[property="article:published_time"], meta[itemprop="datePublished"], meta[name="date"], meta[name="pubdate"], meta[name="publish_date"], meta[name="DC.date.issued"], meta[property="og:published_time"], meta[name="parsely-pub-date"], meta[name="sailthru.date"], meta[property="article:modified_time"]'):
    value=tag.get('content','')
+   if timestamp(value):STORY_DATES[url]=value;break
+  for node in soup.select('time[datetime], [itemprop="datePublished"][datetime]')[:12]:
+   value=node.get('datetime','')
    if timestamp(value):STORY_DATES[url]=value;break
   # JSON-LD articleBody is often present even when the visible article is JS-rendered.
   for script in soup.select('script[type="application/ld+json"]'):
@@ -1086,6 +1089,7 @@ def main():
   if state.get('blocked_until','')>dt.datetime.now(UTC).isoformat():
    print('Pending draft cooling down:',post_id,flush=True)
    return None
+  if state.get('source_published_at') and not STORY_DATES.get(url):STORY_DATES[url]=state['source_published_at']
   if any(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    print('Resuming saved draft:',post_id,'English',words(state.get('en_body','')),'Hindi',words(state.get('hi_body','')),flush=True)
   if cat=='private-vacancy' and not (any(allowed(url,d) for _,c,d in FEEDS if c=='private-vacancy') or any(allowed(url,d) for d in REGIONAL_PORTALS['private-vacancy'])):
@@ -1117,7 +1121,7 @@ def main():
    save_state(pending,state)
    print('Skipping source before AI:',title[:65],'words',words(text),flush=True)
    return None
-  state.update({'source':url,'source_title':title,'category':cat,'status':'draft','updated_at':dt.datetime.now(UTC).isoformat()})
+  state.update({'source':url,'source_title':title,'category':cat,'status':'draft','source_published_at':STORY_DATES.get(url),'updated_at':dt.datetime.now(UTC).isoformat()})
   # Generate the two languages concurrently; save draft updates under a per-story lock.
   def generate_language(lang):
    if time.monotonic()>=deadline or CALLS>=MAX_CALLS:return lang,None,None
