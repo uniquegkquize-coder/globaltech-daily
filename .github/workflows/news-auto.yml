@@ -92,6 +92,7 @@ jobs:
           done
 
           git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json dist
+          if [ -f content/image-backfill-state.json ]; then git add -A content/image-backfill-state.json; fi
           if git diff --cached --quiet; then
             echo "No new completed posts, images or pending progress to sync"
             exit 0
