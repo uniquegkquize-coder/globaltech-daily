@@ -106,25 +106,25 @@ class ImageRequestTests(unittest.TestCase):
    self.assertFalse({p['id'] for p in first}&{p['id'] for p in second})
    self.assertEqual(cursor.get('archive_offset'),12)
 
- def test_commons_credit_visible_under_licensed_images(self):
+ def test_original_source_credit_visible_under_publisher_images(self):
   tree=ast.parse((ROOT/'scripts/build.py').read_text())
   fn=next(node for node in tree.body if isinstance(node,ast.FunctionDef) and node.name=='image_caption')
   with tempfile.TemporaryDirectory() as temp:
    root=Path(temp);folder=root/'content/featured';folder.mkdir(parents=True)
-   (folder/'sample.json').write_text(json.dumps({'kind':'licensed_photo','attribution':'Jane Photographer','license':'CC BY 4.0'}))
+   (folder/'sample.json').write_text(json.dumps({'kind':'publisher_source','attribution':'Jane Photographer','license':'CC BY 4.0'}))
    context={'R':root,'slug':lambda p:'sample','json':json}
    exec(compile(ast.Module(body=[fn],type_ignores=[]),'caption','exec'),context)
    self.assertIn('Jane Photographer',context['image_caption']({},'en'))
    self.assertIn('CC BY 4.0',context['image_caption']({},'en'))
 
- def test_licensed_photo_has_clickable_source_and_license(self):
+ def test_source_original_has_clickable_photo_source_and_license(self):
   import html
   tree=ast.parse((ROOT/'scripts/build.py').read_text())
   fns=[node for node in tree.body if isinstance(node,ast.FunctionDef) and node.name in ('image_caption','image_caption_html')]
   with tempfile.TemporaryDirectory() as temp:
    root=Path(temp);folder=root/'content/featured';folder.mkdir(parents=True)
    (folder/'sample.json').write_text(json.dumps({
-     'kind':'licensed_photo','attribution':'Jane Photographer','license_name':'CC BY-SA 4.0',
+     'kind':'publisher_source','attribution':'Jane Photographer','license_name':'CC BY-SA 4.0',
      'license':'https://creativecommons.org/licenses/by-sa/4.0/',
      'source_image':'https://commons.wikimedia.org/wiki/File:Example.jpg'}))
    context={'R':root,'slug':lambda p:'sample','json':json,'e':html.escape}
