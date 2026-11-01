@@ -144,11 +144,14 @@ def main():
  for kind in FIELDS:
   checked_kind=0
   details.setdefault(kind,{})
-  entries=[r for r in records.get(kind,[]) if isinstance(r,dict)]
+  # Research curated entities first; worldwide Wikidata imports remain a secondary pool.
+  curated=[{'name':name,**entry} for name,entry in details[kind].items() if isinstance(entry,dict)]
+  entries=curated+[r for r in records.get(kind,[]) if isinstance(r,dict) and r.get('name') not in details[kind]]
   if entries:
    slot=int(dt.datetime.now(dt.timezone.utc).timestamp()//1800)
    offset=(slot*9)%len(entries)
-   entries=entries[offset:]+entries[:offset]
+   curated_count=len(curated)
+   entries=entries[:curated_count]+entries[curated_count+offset%max(1,len(entries)-curated_count):]+entries[curated_count:curated_count+offset%max(1,len(entries)-curated_count)]
   for record in entries:
    if checked_kind>=24:break
    if not isinstance(record,dict):continue
