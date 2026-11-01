@@ -116,4 +116,5 @@ jobs:
       - name: Report collector outcome after preserving drafts
         if: ${{ always() && steps.collect_news.outcome == 'failure' }}
         run: |
-          echo '::warning::Collector produced no publishable new posts or encountered an error; pending drafts and diagnostics were saved by the commit step.'
+          echo '::error::Collector failed or produced zero publishable posts. Drafts and diagnostics were preserved; investigate news-run-status.json.'
+          exit 1
