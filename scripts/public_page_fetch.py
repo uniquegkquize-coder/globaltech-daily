@@ -20,7 +20,7 @@ def fetch_public_html(url, session=None, timeout=(5,12), max_bytes=2000000):
             "Accept":"text/html,application/xhtml+xml",
         })
         response.raise_for_status()
-        if "html" in response.headers.get("Content-Type","").lower() and len(response.content)<=max_bytes:
+        if "html" in response.headers.get("Content-Type","").lower() and len(response.text.encode("utf-8"))<=max_bytes:
             return response.text,response.url,"http"
         return "",response.url,"non-html"
     except requests.HTTPError as exc:
