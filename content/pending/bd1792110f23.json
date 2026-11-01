@@ -3,8 +3,8 @@
   "source_title": "pollen-robotics/microduck: A Tiny biped duck robot - GitHub",
   "category": "apps-software",
   "status": "draft",
-  "updated_at": "2026-11-01T18:27:09.785142+00:00",
-  "blocked_until": "2026-11-01T18:57:09.786936+00:00",
+  "updated_at": "2026-11-01T19:04:26.555697+00:00",
+  "blocked_until": "2026-11-01T19:34:26.556836+00:00",
   "source_published_at": null,
   "source_excerpt": "A tiny biped robot that moves using reinforcement learning policies.\nGet yours here · Cheat sheet · Training the policies · How it works · Contributing\nThis repo is the duck's brain. About 25 cm and 800 g of robot, run by a handful of daemons on a Rockchip RK3566: a 50 Hz control loop driving fifteen servos from neural policies, the radios and the camera, and the update machinery that gets new software onto a robot without bricking it.\nEverything you need to run a Microduck is here. If you want one, get yours here .\nThe policies it runs are trained next door, in microduck_rl — MuJoCo and PPO, the sim2real recipe, and the export to ONNX that this repo loads.\nIt also sits, kicks a ball, rolls forward on command, and quacks in a voice that is its own.\nRust, no framework, one workspace. robotd owns the control loop and the motor bus; updaterd installs signed releases and rolls them back when a robot comes up unhealthy; configd owns wifi and identity; btd is the Bluetooth path a phone uses; padd reads the gamepad; mediad streams the camera over WebRTC; tofd serves the depth sensor. They talk over one JSON-RPC contract on Unix sockets, and every client — the app, the console, the gamepad, your script — sends exactly the same calls.\nThe interesting decisions are written down: docs/design/ is why things are the way they are, and docs/project/ is what has gone wrong and what would close it.\nNo duck was harmed in the making of this robot. Several were consulted."
 }

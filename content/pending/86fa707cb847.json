@@ -3,8 +3,8 @@
   "source_title": "nathanliow/atlas-of-physics: An interactive 3D textbook for AP Physics 1 and AP Physics C - GitHub",
   "category": "apps-software",
   "status": "draft",
-  "updated_at": "2026-11-01T18:26:57.970402+00:00",
-  "blocked_until": "2026-11-01T18:56:57.976434+00:00",
+  "updated_at": "2026-11-01T19:04:13.768788+00:00",
+  "blocked_until": "2026-11-01T19:34:13.787402+00:00",
   "source_excerpt": "An interactive textbook. Each chapter is one simple motion drawn in 3D like a textbook diagram (paper solids, ink edges, one lit thing). No apparatus: only the moving object, its vectors, axes and graphs. Scroll turns the pages and moves the camera; hover lights a thing; click breaks it down (a vector into components, a graph into slope and area).\nTools need npm install (puppeteer-core) and Chrome (set CHROME to its path if not at the macOS default). Screenshots: CHAPTER=newton PARTS=rest:0,car:5 node tools/shoot.mjs shots/newton (PARTS = key or key:page)\nRun: python3 -m http.server 8137 (any static server; three.js loads from jsDelivr) and open http://127.0.0.1:8137/ Keys: ← → turn pages, Esc puts a part back. Links: newton/#4 opens page 2.4. Phones and tablets: the figure stacks over the text, swipes snap to whole pages, a tap breaks a part down; resolution steps down by itself if frames run slow.\nAP® is a trademark of the College Board, which does not endorse this site. The equation sheet follows the published AP Physics equation tables.\nAn interactive 3D textbook for AP Physics 1 and AP Physics C",
   "source_published_at": null
 }
