@@ -1169,7 +1169,15 @@ def main():
   source_stamp=timestamp(STORY_DATES.get(url) or state.get('source_published_at'))
   # Finished drafts only need verified provenance, not another potentially blocked fetch.
   cached_complete=all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi'))
+  # A completed English draft can survive a temporary source outage while Hindi is generated.
+  # Keep the source requirement for fresh articles; only resume source-backed drafts.
+  cached_source=state.get('source_excerpt','')
   text='' if cached_complete and source_stamp else source_text(url,domain)
+  if words(text)<65 and words(cached_source)>=65 and complete_body(state.get('en_body',''),'en'):
+   text=cached_source
+   print('Using saved source excerpt for Hindi retry:',post_id,flush=True)
+  if words(text)>=65:
+   state['source_excerpt']=text[:24000]
   source_stamp=timestamp(STORY_DATES.get(url)) or source_stamp
   # No fixed source-age or mandatory date-verification gate. Older and undated
   # source-backed stories may publish, but require usable source text or a completed draft.
