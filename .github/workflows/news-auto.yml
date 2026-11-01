@@ -1,7 +1,7 @@
 name: GlobalTech Daily Auto News
 on:
   schedule:
-    - cron: '7 * * * *'
+    - cron: '7 */3 * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -42,7 +42,8 @@ jobs:
           MAX_MODELS_PER_ARTICLE: '1'
           MAX_AI_CALLS_PER_RUN: '100'
           COLLECT_SECONDS: '1800'
-          DISCOVERY_SECONDS: '180'
+          DISCOVERY_SECONDS: '300'
+          PUBLISHER_WEBSITES_PER_RUN: '100'
           MIN_SOURCE_WORDS: '0'
           MIN_ARTICLE_WORDS_EN: '140'
           MIN_ARTICLE_WORDS_HI: '90'
