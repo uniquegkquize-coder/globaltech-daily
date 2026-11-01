@@ -120,6 +120,7 @@
 .directory-controls{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
 .directory-controls input,.directory-controls select{font:inherit;padding:12px;border:1px solid #a7b7cb;border-radius:10px;background:#fff;min-width:180px;flex:1}
 .directory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0}
+.directory-card[hidden]{display:none!important}
 .directory-card{border:1px solid #d9e2ec;border-radius:14px;padding:20px;background:#fff;min-width:0}
 .directory-card h2{font-size:21px;margin:0 0 9px}.directory-card p{line-height:1.6}
 .directory-card a{font-weight:700}.directory-note{background:#eef6fa;border-left:4px solid #138a9a;padding:15px;margin:18px 0}

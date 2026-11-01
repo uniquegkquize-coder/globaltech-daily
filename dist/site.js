@@ -6,17 +6,19 @@ document.querySelectorAll('[data-directory]').forEach(root=>{
   const q=search.value.trim().toLocaleLowerCase();
   let shown=0;
   cards.forEach(card=>{
-   const match=card.dataset.search.includes(q)&&(!country.value||card.dataset.country===country.value)&&(!region.value||card.dataset.region===region.value)&&(!city.value||card.dataset.city===city.value);
+   const match=card.dataset.search.includes(q)&&(!country||!country.value||card.dataset.country===country.value)&&(!region||!region.value||card.dataset.region===region.value)&&(!city||!city.value||card.dataset.city===city.value);
    card.hidden=!match;if(match)shown++;
   });
   count.textContent=shown+' results';
  }
  function options(select,field){
   const previous=select.value;
-  const values=[...new Set(cards.filter(card=>(!country.value||card.dataset.country===country.value)&&(field==='city'?(!region.value||card.dataset.region===region.value):true)).map(card=>card.dataset[field]).filter(Boolean))].sort();
+  const values=[...new Set(cards.filter(card=>(!country||!country.value||card.dataset.country===country.value)&&(field==='city'?(!region||!region.value||card.dataset.region===region.value):true)).map(card=>card.dataset[field]).filter(Boolean))].sort();
   select.innerHTML='<option value="">All '+field+'s</option>'+values.map(v=>'<option value="'+v.replaceAll('&','&amp;').replaceAll('"','&quot;')+'">'+v.replaceAll('&','&amp;').replaceAll('<','&lt;')+'</option>').join('');
   select.value=values.includes(previous)?previous:'';
  }
- if(country){country.addEventListener('change',()=>{options(region,'region');options(city,'city');update()});region.addEventListener('change',()=>{options(city,'city');update()});city.addEventListener('change',update)}
+ if(country){country.addEventListener('change',()=>{if(region)options(region,'region');if(city)options(city,'city');update()});}
+ if(region){region.addEventListener('change',()=>{if(city)options(city,'city');update()});options(region,'region');}
+ if(city){city.addEventListener('change',update);options(city,'city');}
  search.addEventListener('input',update);update();
 });
