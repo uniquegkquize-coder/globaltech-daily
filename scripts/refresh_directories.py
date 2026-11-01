@@ -18,7 +18,7 @@ def fetch(kind,limit=150):
  OPTIONAL {{ ?item wdt:P571 ?inception. }}
  OPTIONAL {{ ?item wdt:P856 ?website. }}
  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
- }} LIMIT {int(limit)}"""
+ }} ORDER BY ?item LIMIT {int(limit)}"""
  r=requests.get(ENDPOINT,params={'query':q,'format':'json'},headers={'User-Agent':'GlobeWireDailyDirectoryBot/1.0 (contact@globewiredaily.org)','Accept':'application/sparql-results+json'},timeout=35)
  r.raise_for_status()
  rows=[]
