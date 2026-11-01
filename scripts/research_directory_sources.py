@@ -34,13 +34,51 @@ def collect(obj,out):
  if isinstance(obj,list):
   for item in obj:collect(item,out)
  elif isinstance(obj,dict):
+  # Schema.org PropertyValue entries store the label in name and the fact in value.
+  if obj.get('name') and obj.get('value') is not None:
+   key=clean(obj['name']).lower()
+   val=clean(obj['value'])
+   if key and val:out.setdefault(key,val)
   for key,value in obj.items():
-   if key in ('@graph','mainEntity','additionalProperty','offers','itemListElement'):
+   if key in ('@graph','mainEntity','additionalProperty','specification','offers','itemListElement','hasPart'):
     collect(value,out)
    elif isinstance(value,(str,int,float)):
     out.setdefault(key.lower(),clean(value))
    elif isinstance(value,(list,dict)):
     collect(value,out)
+
+def extract_pairs(soup):
+ found={}
+ for tag in soup.select('script[type="application/ld+json"]')[:30]:
+  try:collect(json.loads(tag.string or tag.get_text()),found)
+  except (ValueError,TypeError):pass
+ for row in soup.select('tr')[:250]:
+  cells=row.find_all(['th','td'],recursive=False)
+  if len(cells)==2:
+   key=clean(cells[0].get_text(' ',strip=True)).lower()
+   value=clean(cells[1].get_text(' ',strip=True))
+   if key and value:found.setdefault(key,value)
+ for dl in soup.select('dl')[:100]:
+  for dt_tag in dl.find_all('dt'):
+   dd=dt_tag.find_next_sibling('dd')
+   if dd:
+    key=clean(dt_tag.get_text(' ',strip=True)).lower()
+    value=clean(dd.get_text(' ',strip=True))
+    if key and value:found.setdefault(key,value)
+ for item in soup.select('[itemprop="additionalProperty"],[itemprop="specification"]')[:120]:
+  name=item.select_one('[itemprop="name"]')
+  value=item.select_one('[itemprop="value"]')
+  if name and value:found.setdefault(clean(name.get('content') or name.get_text(' ',strip=True)).lower(),clean(value.get('content') or value.get_text(' ',strip=True)))
+ for row in soup.select('li,div')[:1200]:
+  if not row.get('class'):continue
+  classes=' '.join(row.get('class',[])).lower()
+  if not any(t in classes for t in ('spec','attribute','feature','detail','parameter')):continue
+  children=row.find_all(recursive=False)
+  if len(children)!=2:continue
+  key=clean(children[0].get_text(' ',strip=True)).lower()
+  value=clean(children[1].get_text(' ',strip=True))
+  if 2<len(key)<55 and 2<len(value)<180:found.setdefault(key,value)
+ return found
 
 def enrich(kind,name,record,session,url=None):
  url=url or record.get('official_url') or record.get('source_url','')
@@ -53,21 +91,12 @@ def enrich(kind,name,record,session,url=None):
   if 'text/html' not in response.headers.get('Content-Type',''):return {}
   if len(response.content)>2000000:return {}
   soup=BeautifulSoup(response.text,'html.parser')
-  found={}
-  for tag in soup.select('script[type="application/ld+json"]')[:20]:
-   try:collect(json.loads(tag.string or tag.get_text()),found)
-   except (ValueError,TypeError):pass
-  for row in soup.select('tr')[:100]:
-   cells=row.find_all(['th','td'],recursive=False)
-   if len(cells)==2:
-    key=clean(cells[0].get_text(' ',strip=True)).lower()
-    value=clean(cells[1].get_text(' ',strip=True))
-    if key and value:found.setdefault(key,value)
+  found=extract_pairs(soup)
   output={}
   for field,aliases in FIELDS[kind].items():
    if record.get(field):continue
    for key,value in found.items():
-    if any(key==alias or key.startswith(alias+' ') for alias in aliases) and value and len(value)>2:
+    if any(key==alias or key.startswith(alias+' ') or key.endswith(' '+alias) for alias in aliases) and value and len(value)>2:
      output[field]=value
      break
   if output:
