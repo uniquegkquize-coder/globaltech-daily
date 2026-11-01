@@ -2,6 +2,7 @@
 Only import explicitly labeled facts; never infer missing prices or fees.
 """
 import json
+import datetime as dt
 import re
 import time
 from pathlib import Path
@@ -82,7 +83,8 @@ def discover(kind,name,session):
  start=sum(ord(ch) for ch in name)%len(domains)
  for domain in (domains[(start+i)%len(domains)] for i in range(3)):
   try:
-   query=requests.utils.quote('site:'+domain+' "'+name+'" specifications fees eligibility')
+   terms={'colleges':'courses fees eligibility admissions','phones':'display chipset battery specifications','cars':'engine variants price specifications','bikes':'engine power torque specifications'}[kind]
+   query=requests.utils.quote('site:'+domain+' "'+name+'" '+terms)
    response=session.get('https://www.bing.com/search?format=rss&q='+query,timeout=3)
    if response.status_code!=200:continue
    feed=feedparser.parse(response.content)
@@ -108,7 +110,12 @@ def main():
  for kind in FIELDS:
   checked_kind=0
   details.setdefault(kind,{})
-  for record in records.get(kind,[]):
+  entries=[r for r in records.get(kind,[]) if isinstance(r,dict)]
+  if entries:
+   slot=int(dt.datetime.now(dt.timezone.utc).timestamp()//1800)
+   offset=(slot*9)%len(entries)
+   entries=entries[offset:]+entries[:offset]
+  for record in entries:
    if checked_kind>=9:break
    if not isinstance(record,dict):continue
    name=record.get('name','')
