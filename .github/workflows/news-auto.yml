@@ -61,6 +61,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_IMAGE_MODEL: gemini-2.5-flash-image
           MAX_NEW_IMAGES: '0'
+          MAX_LICENSED_PHOTOS_PER_RUN: '30'
         run: python -u scripts/generate_images.py
       - name: Build website
         env:
