@@ -86,12 +86,18 @@ def enrich(kind,name,record,session,url=None):
  # Wikidata identifiers are not a substitute for official product specification pages.
  if urlparse(url).hostname in ('www.wikidata.org','wikidata.org'):return {}
  try:
-  response=session.get(url,timeout=5,allow_redirects=True)
+  response=session.get(url,timeout=(5,12),allow_redirects=True)
   response.raise_for_status()
-  if 'text/html' not in response.headers.get('Content-Type',''):return {}
+  if 'html' not in response.headers.get('Content-Type','').lower():return {}
+  if response.url.startswith('http://'):return {}
   if len(response.content)>2000000:return {}
   soup=BeautifulSoup(response.text,'html.parser')
   found=extract_pairs(soup)
+  # Expand semantic product labels from HTML meta properties where present.
+  for meta in soup.select('meta[itemprop][content], meta[property][content]')[:120]:
+   key=clean(meta.get('itemprop') or meta.get('property')).lower()
+   val=clean(meta.get('content'))
+   if key and val:found.setdefault(key,val)
   output={}
   for field,aliases in FIELDS[kind].items():
    if record.get(field):continue
@@ -151,7 +157,6 @@ def main():
    if not name:continue
    existing=details[kind].get(name,{})
    if all(existing.get(k) for k in FIELDS[kind]):continue
-   if not (record.get('official_url') or record.get('source_url')):continue
    checked+=1
    checked_kind+=1
    base={**record,**existing}
