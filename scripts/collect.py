@@ -1053,7 +1053,16 @@ def write_run_status(outcome,started,counts=None,**extra):
  print('RUN_SUMMARY',json.dumps(data),flush=True)
 
 def main():
- global RUN_DEADLINE,DISCOVERY_DEADLINE
+ global RUN_DEADLINE,DISCOVERY_DEADLINE,FEEDS,DIRECT_SOURCES,NATIVE_FEEDS,QUEUE_FILE
+ selected=os.getenv('NEWS_CATEGORY','').strip()
+ if selected:
+  if selected not in CATEGORIES:
+   print('::error::Unknown news category:',selected,flush=True);return 2
+  FEEDS=[row for row in FEEDS if row[1]==selected]
+  DIRECT_SOURCES=[row for row in DIRECT_SOURCES if row[1]==selected]
+  NATIVE_FEEDS=[row for row in NATIVE_FEEDS if row[1]==selected]
+  QUEUE_FILE=PENDING/('_discovery_queue_'+selected+'.json')
+  print('Isolated news category:',selected,'feeds',len(FEEDS),flush=True)
  started=time.monotonic()
  if os.getenv('AUTO_POST','false').lower()!='true':
   print('AUTO_POST disabled');write_run_status('disabled',started);return 0
@@ -1172,6 +1181,7 @@ def main():
   return cat if (POSTS/(post_id+'.json')).exists() else None
 
  backlog=load_discovery_queue()
+ if selected:backlog=[row for row in backlog if row[2]==selected]
  print('Carried-over news candidates:',len(backlog),flush=True)
  stories=[]
  seen_urls={item[0] for item in stories}
@@ -1184,6 +1194,7 @@ def main():
  # by the time budget so source collection cannot stall publishing forever.
  for story in candidates():
   cat=story[2]
+  if selected and cat!=selected:continue
   if story[0] not in seen_urls and useful_lead(story):
    new_leads.append(story)
    discovered_by_category[cat]+=1
