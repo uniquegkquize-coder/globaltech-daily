@@ -39,13 +39,14 @@ jobs:
           AUTO_POST: ${{ vars.AUTO_POST }}
           POSTS_PER_RUN: '100'
           MAX_AI_CALLS_PER_RUN: '100'
-          COLLECT_SECONDS: '300'
-          DISCOVERY_SECONDS: '35'
+          COLLECT_SECONDS: '480'
+          DISCOVERY_SECONDS: '45'
           MIN_SOURCE_WORDS: '0'
           MIN_ARTICLE_WORDS_EN: '140'
           MIN_ARTICLE_WORDS_HI: '90'
           QUEUE_MAX_AGE_HOURS: '87600'
           AI_PROVIDER_ORDER: gemini,openrouter,groq,openai
+          MAX_MODELS_PER_ARTICLE: '5'
           GEMINI_MODEL: gemini-flash-lite-latest
           GROQ_MODEL: openai/gpt-oss-120b
           OPENAI_MODEL: gpt-4.1-mini
