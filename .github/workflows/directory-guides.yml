@@ -1,5 +1,12 @@
 name: Publish worldwide college and product guides
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/publish_directory_guides.py'
+      - 'scripts/research_directory_sources.py'
+      - 'scripts/refresh_directories.py'
+      - '.github/workflows/directory-guides.yml'
   schedule:
     - cron: '21 */3 * * *'
   workflow_dispatch:
