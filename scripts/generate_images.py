@@ -38,7 +38,7 @@ def licensed_source_image(p):
         license_url=meta('license','dc.rights','dcterms.license','cc:license')
         if not image:return False
         # Publisher verification does not confer image reuse rights. Require an explicit reusable license.
-        allowed_license=bool(re.search(r'creativecommons\\.org/licenses/(?:by|by-sa|by-nd|by-nc|zero)/|creativecommons\\.org/publicdomain/|\\bCC0\\b|\\bpublic.domain\\b',license_url,re.I))
+        allowed_license=bool(('creativecommons.org/licenses/' in license_url.lower() or 'creativecommons.org/publicdomain/' in license_url.lower() or license_url.strip().lower() in ('cc0','public domain')))
         if not allowed_license:return False
         image=urljoin(page.url,image)
         if urlparse(image).scheme!='https':return False
