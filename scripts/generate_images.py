@@ -355,8 +355,6 @@ def choose_backfill(posts,now=None,limit=None,cursor=None,mode=None):
             cursor[key]=start+n
         return (rows[start:]+rows[:start])[:n]
     selected=fresh[:fresh_budget]+rotate(older,older_budget,'archive_offset')
-    # Prioritize the reported cricket article while retaining the normal archive scan.
-    selected.sort(key=lambda post: 0 if slug(post).startswith('d9a0f59e3e') else 1)
     return selected,len(fresh),len(older)
 
 def main():
@@ -385,6 +383,8 @@ def main():
         # Do not substitute unrelated Commons/stock photos for original article images.
         if MAX_NEW>0 and KEY and len(QUOTA_BLOCKED)<len(MODELS):
             create(p)
+    remaining=sum(not resolved_featured(slug(p)) for p in posts if slug(p))
     print('Photo backfill attempted:',len(candidates),'original:',new_original,
           'fallback: editorial illustrations',flush=True)
+    print('Archive image audit: total_posts=',len(posts),'still_without_confirmed_source_photo=',remaining,flush=True)
 if __name__=='__main__':main()
