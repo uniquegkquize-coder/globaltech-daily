@@ -43,7 +43,7 @@ jobs:
           MAX_AI_CALLS_PER_RUN: '100'
           COLLECT_SECONDS: '1800'
           DISCOVERY_SECONDS: '300'
-          QUEUE_MAX_AGE_HOURS: '72'
+          QUEUE_MAX_AGE_HOURS: '87600'
           PUBLISHER_WEBSITES_PER_RUN: '100'
           MIN_SOURCE_WORDS: '0'
           MIN_ARTICLE_WORDS_EN: '140'
