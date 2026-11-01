@@ -22,7 +22,14 @@ jobs:
           python-version: '3.12'
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Install optional public-page browser
+        run: |
+          pip install 'playwright>=1.55,<2'
+          python -m playwright install --with-deps chromium
       - name: Research official sources and prepare two guides per category
+        env:
+          ENABLE_PUBLIC_BROWSER_FALLBACK: '1'
+          BROWSER_ATTEMPTS_PER_RUN: '8'
         shell: bash
         run: |
           set -e
