@@ -30,17 +30,17 @@ jobs:
           for attempt in 1 2 3 4 5 6 7 8; do
             git fetch origin main
             git reset --hard origin/main
-            python -m py_compile scripts/publish_directory_guides.py
+            python -m py_compile scripts/publish_directory_guides.py scripts/research_directory_sources.py
             python scripts/refresh_directories.py
             python scripts/research_directory_sources.py
             python scripts/publish_directory_guides.py
             python scripts/build.py
-            git add content/posts/ content/directory-records.json content/directory-details.json dist/
+            git add content/posts/ content/directory-records.json content/directory-details.json content/directory-guide-status.json dist/
             if git diff --cached --quiet; then
               echo 'No new guides generated'
               exit 0
             fi
-            git commit -m 'Publish two sourced directory guides'
+            git commit -m 'Publish verified directory guides and research cache'
             if git push origin HEAD:main; then
               echo 'Eight directory guides committed; site build will render pages.'
               exit 0
