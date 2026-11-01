@@ -420,7 +420,9 @@ for lang in ('en','hi'):
   matching=[p for p in POSTS if author_handle(p)==handle]
   author_body='<div class="wrap"><section class="lead"><h1>'+e(author_title)+'</h1><p>Topic-focused editorial desk of GlobeWire Daily. AI-assisted articles use attributed published sources; no individual reporter or independent verification is implied.</p><p><a href="/'+lang+'/editorial/">Editorial policy</a></p></section><div class="cards">'+''.join(card(p,lang) for p in matching[:24])+'</div></div>'
   write(OUT/lang/'author'/handle/'index.html',shell(lang,author_title,author_title+' — AI-assisted source-attributed reporting',author_url,author_body))
-write(OUT/'index.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=/en/"><link rel="canonical" href="'+SITE+'/en/"></head><body><a href="/en/">English</a></body></html>')
+# Serve real latest news at the bare domain instead of a meta-refresh-only page.
+# /en/ stays canonical to prevent duplicate indexing; the bilingual navigation remains intact.
+write(OUT/'index.html',(OUT/'en'/'index.html').read_text(encoding='utf-8'))
 write(OUT/'favicon.svg','''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0a1429"/><circle cx="32" cy="32" r="23" fill="none" stroke="#5ce0dc" stroke-width="2"/><path d="M9 32h46M32 9c-12 12-12 34 0 46M32 9c12 12 12 34 0 46" fill="none" stroke="#5ce0dc" stroke-width="1.5"/><text x="32" y="40" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="21" font-weight="bold">GW</text></svg>''')
 write(OUT/'robots.txt',f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\nSitemap: {SITE}/news-sitemap.xml\n')
 urls=[f'/{lang}/{path}' for lang in ('en','hi') for path in ('','colleges/','courses/','cars/','phones/','bikes/','global-topics/','launches/','freebies-deals/','study-abroad-guide/','jobs-archive/','all-news/','jobs-exams/','author/editorial-desk/','tools/','government-schemes/','sarkari-naukri/','private-vacancy/','movies-entertainment/','world-news/','business/','sports/','automobiles/','health-science/','gaming/','environment/','travel/','education/','lifestyle/','technology/','about/','editorial/','corrections/','privacy/','contact/','affiliate/')]+[f'/{lang}/page/{page}/' for lang in ('en','hi') for page in range(2,max(1,(len(POSTS)+23)//24)+1)]+[f'/{lang}/{cat}/page/{page}/' for lang in ('en','hi') for cat in CATEGORIES for page in range(2,max(1,(sum(1 for p in POSTS if matches_category(p,cat))+23)//24)+1)]+[f'/{lang}/author/{handle}/' for lang in ('en','hi') for handle in sorted(set(AUTHOR_HANDLES.values()))]+[article_path(p,lang) for p in POSTS for lang in ('en','hi')]
@@ -443,7 +445,7 @@ for old,canonical in DUPLICATE_POSTS:
   if olddir.is_dir():shutil.rmtree(olddir)
 write(OUT/'_redirects','\n'.join(dict.fromkeys(redirects))+'\n')
 write(OUT/'ads.txt','google.com, pub-1849673109734274, DIRECT, f08c47fec0942fa0\n')
-write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/style.css\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n')
+write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n  Cache-Control: public, max-age=0, must-revalidate\n/style.css\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n')
 print('Built',len(POSTS),'posts; AI Tools, bilingual pages, news sitemap and responsive layout')
 
 render_hubs(OUT,SITE,POSTS,shell,article_path,title,write)
