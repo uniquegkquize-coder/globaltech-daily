@@ -27,7 +27,7 @@ def complete_body(body,lang):
              and len(re.findall(r'\S+',text))>=minimum
              and len(re.findall(r'[.!?।]',text))>=2)
 MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
-POSTS_PER_RUN=max(1,min(100,int(os.getenv('POSTS_PER_RUN','30'))))
+POSTS_PER_RUN=max(1,int(os.getenv('POSTS_PER_RUN','100')))
 MIN_POSTS_PER_CATEGORY=max(1,int(os.getenv('MIN_POSTS_PER_CATEGORY','2')))
 MIN_SOURCE_WORDS=0
 OFFICIAL_JOB_DOMAINS=('upsc.gov.in','ssc.gov.in','rrbcdg.gov.in','indianrailways.gov.in','employmentnews.gov.in','nta.ac.in','gov.in','nic.in')
@@ -929,7 +929,7 @@ def candidates():
  seen=set()
  counts=published_categories()
  trending_terms=google_trending_terms()
- missing={cat for cat,n in counts.items() if n==0}
+ missing={cat for cat,n in counts.items() if n<MIN_POSTS_PER_CATEGORY}
  print('Categories without a published article:',', '.join(sorted(missing)) or 'none',flush=True)
  # Resume verified drafts first instead of spending calls on new headlines.
  # Finish the most complete bilingual drafts before starting any new story.
@@ -1252,7 +1252,7 @@ def main():
      save_state(pending,state)
      print('Concurrent duplicate retained as draft:',post_id,flush=True)
      return None
-    if category_reserved[cat]>=category_run_cap+(3 if PRIORITY.get(cat,4)>=8 else 0):
+    if os.getenv('CATEGORY_PUBLISH_CAP','0').isdigit() and int(os.getenv('CATEGORY_PUBLISH_CAP','0'))>0 and category_reserved[cat]>=int(os.getenv('CATEGORY_PUBLISH_CAP','0')):
      save_state(pending,state)
      print('Category publication cap reached; retaining draft:',cat,post_id,flush=True)
      return None
@@ -1340,13 +1340,13 @@ def main():
  # limited AI calls; retain all other categories as eligible afterward.
  historical_counts=published_categories()
  for rows in grouped.values():rows.sort(key=story_priority)
- categories=sorted(grouped,key=lambda cat:(historical_counts.get(cat,0)>0,story_priority(grouped[cat][0]),historical_counts.get(cat,0),cat))
+ categories=sorted(grouped,key=lambda cat:(historical_counts.get(cat,0)>=MIN_POSTS_PER_CATEGORY,historical_counts.get(cat,0),story_priority(grouped[cat][0]),cat))
  missing_candidates=sorted(set(c for _,c,_ in FEEDS)-set(grouped))
  print('Categories without discovered leads:',', '.join(missing_candidates) or 'none',flush=True)
  print('Candidate queue per category (article extraction pending):',{cat:len(grouped[cat]) for cat in categories},flush=True)
  print('Category processing priority:',', '.join(categories),flush=True)
  # Soft fair-share limit: allow more stories when only a few categories have leads.
- category_run_cap=max(MIN_POSTS_PER_CATEGORY,(remaining+max(1,len(categories))-1)//max(1,len(categories)))
+ category_run_cap=0  # Unlimited per-category; only overall run budget and source/AI capacity apply
  print('Per-category publication cap this run:',category_run_cap,flush=True)
  priority_leads=sorted((row for rows in grouped.values() for row in rows),key=story_priority)[:min(12,remaining//3)]
  for row in priority_leads:
@@ -1361,7 +1361,7 @@ def main():
  # Previously any empty/failed pending record competed on equal footing.
  single_language_ids={hashlib.sha256(row[0].encode()).hexdigest()[:12] for row in saved_drafts}
  pending_ids={p.stem for p in PENDING.glob('*.json') if not p.name.startswith('_')}
- ordered.sort(key=lambda row:(hashlib.sha256(row[0].encode()).hexdigest()[:12] not in single_language_ids,hashlib.sha256(row[0].encode()).hexdigest()[:12] not in pending_ids,story_priority(row)))
+ ordered.sort(key=lambda row:(historical_counts.get(row[2],0)>=MIN_POSTS_PER_CATEGORY,hashlib.sha256(row[0].encode()).hexdigest()[:12] not in single_language_ids,hashlib.sha256(row[0].encode()).hexdigest()[:12] not in pending_ids,story_priority(row)))
  # Keep concurrent provider traffic under free-tier rate limits; unfinished drafts survive.
  article_workers=max(1,min(6,int(os.getenv('ARTICLE_WORKERS','3'))))
  print('Parallel article workers:',article_workers,flush=True)
