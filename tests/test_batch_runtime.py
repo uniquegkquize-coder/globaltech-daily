@@ -20,6 +20,21 @@ class BatchRuntimeTests(unittest.TestCase):
    collect.call_provider('test')
    self.assertEqual(request.call_count,1)
    self.assertEqual(collect.CALLS,1)
+ def test_gemini_404_falls_back_to_second_discovered_model(self):
+  class Response:
+   def __init__(self,status):
+    self.status_code=status
+    self.ok=status==200
+   def json(self):
+    return {'candidates':[{'content':{'parts':[{'text':'{"title":"Verified title","body":"Verified content."}' }]}}]}
+  def respond(url,**kwargs):
+   return Response(404 if '/missing-model:' in url else 200)
+  with patch.dict(os.environ,{'GEMINI_API_KEY':'test-placeholder','GEMINI_MODEL':'missing-model'},clear=True),patch.object(collect,'RUN_DEADLINE',0),patch.object(collect,'CALLS',0),patch.object(collect,'MAX_CALLS',18),patch.object(collect,'MODELS_PER_PROVIDER',2),patch.object(collect,'PROVIDER_COOLDOWNS',set()),patch.object(collect,'UNAVAILABLE_MODELS',set()),patch.object(collect,'provider_order',return_value=['gemini']),patch.object(collect,'gemini_models',return_value=['missing-model','other-model']),patch.object(collect.requests,'post',side_effect=respond) as request:
+   data,provider=collect.call_provider('test')
+   self.assertEqual(provider,'gemini')
+   self.assertEqual(data['title'],'Verified title')
+   self.assertEqual(request.call_count,2)
+   self.assertEqual(collect.CALLS,2)
  def test_expired_discovery_preserves_item_order_without_requests(self):
   with patch.object(collect,'DISCOVERY_DEADLINE',1),patch.object(collect.time,'monotonic',return_value=2):
    with patch.object(collect.requests,'get') as request:
