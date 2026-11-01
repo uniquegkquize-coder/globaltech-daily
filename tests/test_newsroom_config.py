@@ -50,13 +50,24 @@ class NewsroomConfigTests(unittest.TestCase):
 
     def test_workflow_targets(self):
         workflow = WORKFLOW.read_text(encoding="utf-8")
-        self.assertIn("POSTS_PER_RUN: '20'", workflow)
-        self.assertIn("for cycle in 1 2 3", workflow)
-        self.assertIn("Publish news in short cycles", workflow)
+        self.assertIn("cron: '5,20,35,50 * * * *'", workflow)
+        self.assertIn("POSTS_PER_RUN: '8'", workflow)
         self.assertIn("MIN_POSTS_PER_CATEGORY: '2'", workflow)
-        self.assertIn("MAX_AI_CALLS_PER_RUN: '35'", workflow)
+        self.assertIn("MAX_AI_CALLS_PER_RUN: '18'", workflow)
         self.assertIn("AI_PROVIDER_ORDER: gemini,groq,openrouter", workflow)
+        self.assertIn("MAX_LICENSED_PHOTOS_PER_RUN: '2'", workflow)
+        self.assertIn("python -u scripts/generate_images.py", workflow)
         self.assertIn("python -u scripts/build.py", workflow)
+        self.assertIn("git rebase -X theirs origin/main", workflow)
+        self.assertNotIn("sleep 300", workflow)
+
+    def test_saved_drafts_are_prioritized_in_both_languages(self):
+        code = COLLECT.read_text(encoding="utf-8")
+        self.assertIn("ready_en==ready_hi", code)
+        self.assertIn("single_language_ids=", code)
+        self.assertIn("Recovering missing language from saved source-grounded draft", code)
+        self.assertIn("Prioritizing missing English for saved Hindi draft", code)
+        self.assertIn("Prioritizing missing Hindi for saved English draft", code)
 
 if __name__ == "__main__":
     unittest.main()
