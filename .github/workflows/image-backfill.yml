@@ -1,0 +1,75 @@
+name: Backfill real photos for older news
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/image-backfill.yml'
+  schedule:
+    - cron: '12 1,7,13,19 * * *'
+permissions:
+  contents: write
+concurrency:
+  # Do not race the article collector while either job modifies image cursors.
+  group: globaltech-news-publish
+  cancel-in-progress: false
+jobs:
+  archive-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Search licensed photographs for archived posts and sync progress
+        shell: bash
+        env:
+          PYTHONUNBUFFERED: '1'
+          IMAGE_BACKFILL_MODE: archive
+          MAX_LICENSED_PHOTOS_PER_RUN: '12'
+          MAX_NEW_IMAGES: '0'
+          SITE_URL: https://globewiredaily.org
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          # Retain the originals where licensed; preserve all existing images.
+          # Only import Wikimedia photographs with usable redistribution terms.
+          python -u scripts/generate_images.py
+          git add -A content/featured
+          if [ -f content/image-backfill-state.json ]; then
+            git add -A content/image-backfill-state.json
+          fi
+          if git diff --cached --quiet; then
+            echo "No archive photos or cursor updates to sync"
+            exit 0
+          fi
+
+          if git diff --cached --name-only | grep -q '^content/featured/'; then
+            python -u scripts/build.py
+            git add -A dist
+          fi
+          git commit -m "Backfill licensed real images for archived news posts"
+          git stash push --include-untracked -m 'archive-photo-clean-working-tree' || true
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            if ! git rebase -X theirs origin/main; then
+              git rebase --abort || true
+              echo "::error::Archive photo rebase conflict; no images overwritten"
+              exit 1
+            fi
+            if git push origin HEAD:main; then
+              echo "Archived photo backfill progress synced"
+              exit 0
+            fi
+            sleep 3
+          done
+          echo "::error::Archive photo backfill could not sync; retry on next run"
+          exit 1
