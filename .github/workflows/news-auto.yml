@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish-news:
-    if: ${{ false }} # Publication paused by owner until directory and image work is complete
+    if: ${{ true }} # Re-enabled by owner after validation; source and image checks remain enforced
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
