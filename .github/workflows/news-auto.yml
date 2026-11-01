@@ -54,6 +54,7 @@ jobs:
             echo "Backlog publication pass $pass/8"
             python -u scripts/collect.py || echo "::warning::Draft pass $pass incomplete"
           done
+      # Refresh older illustrated posts after the publisher-image detection fix.
       - name: Scan all archived and fresh articles for publisher images
         env:
           MAX_LICENSED_PHOTOS_PER_RUN: '100000'
