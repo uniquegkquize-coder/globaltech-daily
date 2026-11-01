@@ -30,6 +30,14 @@ class NewsPriorityTests(unittest.TestCase):
   self.assertEqual(sorted([old,new],key=news_sort),[new,old])
   now=dt.datetime(2026,10,31,12,tzinfo=dt.timezone.utc).timestamp()
   self.assertEqual(recent_priority([old,new],now=now),[new])
+ def test_recent_site_publication_is_above_older_import_with_newer_source_date(self):
+  # Regression: articles saved at 09:06 previously appeared below 04:11 imports
+  # merely because the third-party publisher timestamp was different.
+  old_import={'id':'old','category':'automobiles','date':'2026-11-01T04:11:37+00:00'}
+  new_import={'id':'new','category':'sports','date':'2026-11-01T09:06:03+00:00',
+              'source_published_at':'2026-11-01T03:34:26+00:00'}
+  self.assertEqual(sorted([old_import,new_import],key=news_sort),[new_import,old_import])
+
  def test_discovery_covers_every_added_topic(self):
   base={'technology','government-schemes','sarkari-naukri','private-vacancy','movies-entertainment','world-news','business','sports','automobiles','health-science','gaming','environment','travel','education','lifestyle'}
   self.assertEqual(set(CATEGORIES)-base,{c for _,c,_ in EXTRA_FEEDS}-base)
