@@ -110,9 +110,13 @@ def licensed_source_image(p):
         if re.search(r'(?i)(?:logo|favicon|avatar|sprite|placeholder|tracking-pixel|default-image|site-icon|/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',parsed.path):
             return False
         res=requests.get(image,timeout=(4,14),headers={
-            'User-Agent':'Mozilla/5.0 (compatible; GlobeWireDaily/1.0)'
+            'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36',
+            'Referer':page.url,
+            'Accept':'image/avif,image/webp,image/apng,image/*,*/*;q=0.8'
         },stream=True,allow_redirects=True)
-        if not res.ok or 'image/' not in res.headers.get('content-type','').lower():return False
+        if not res.ok or 'image/' not in res.headers.get('content-type','').lower():
+            print('Source image download failed',ident,res.status_code,image,flush=True)
+            return False
         if not str(res.url).startswith('https://'):return False
         raw=bytearray()
         for chunk in res.iter_content(65536):
