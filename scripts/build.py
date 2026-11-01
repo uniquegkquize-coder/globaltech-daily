@@ -184,7 +184,9 @@ def image_for(p):
  if existing.is_file():
   shutil.copy2(existing,dest)
   return
- # No third-party photos are scraped or reused without documented rights.
+ # If a previously selected photo is removed (for irrelevant subject or rights),
+ # overwrite its old dist JPEG with a clearly labeled editorial illustration.
+ # Never leave a misleading cached photo after the source image was removed.
  canvas=Image.new('RGB',(1280,720),(12,28,55))
  draw=ImageDraw.Draw(canvas)
  draw.rectangle((0,0,1280,16),fill=(29,199,196))
