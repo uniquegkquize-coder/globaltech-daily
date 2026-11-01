@@ -56,7 +56,7 @@ jobs:
           MIN_SOURCE_WORDS: '0'
           MIN_ARTICLE_WORDS_EN: '140'
           MIN_ARTICLE_WORDS_HI: '90'
-          MAX_LICENSED_PHOTOS_PER_RUN: '2'
+          MAX_LICENSED_PHOTOS_PER_RUN: '6'
           MAX_NEW_IMAGES: '0'
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: openai/gpt-oss-120b
