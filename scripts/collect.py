@@ -398,6 +398,41 @@ def source_text(url,domain):
    paragraphs=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['p','h2','h3'])]
    paragraphs=[p for p in paragraphs if len(p)>40]
    if paragraphs:candidates.append(' '.join(paragraphs))
+  # Recover factual text from publisher-rendered JSON state without executing JS.
+  # Only accept explicit article-body/content fields, not arbitrary page scripts.
+  for script in soup.select('script[type="application/json"], script#__NEXT_DATA__, script#__NUXT_DATA__')[:8]:
+   try:
+    data=json.loads(script.string or script.get_text() or '{}')
+    extracted=[]
+    def walk(value,depth=0):
+     if depth>12 or len(extracted)>25:return
+     if isinstance(value,dict):
+      for key,item in value.items():
+       if key.lower() in ('articlebody','article_body','bodytext','storybody','articlecontent','textbody') and isinstance(item,str) and len(item)>250:
+        extracted.append(clean(BeautifulSoup(item,'html.parser').get_text(' ',strip=True)))
+       elif isinstance(item,(dict,list)):walk(item,depth+1)
+     elif isinstance(value,list):
+      for item in value[:60]:walk(item,depth+1)
+    walk(data)
+    candidates.extend(extracted)
+   except (ValueError,TypeError,RecursionError):pass
+  # Accessible AMP pages can provide server-rendered article text when the
+  # canonical page contains only a JavaScript shell.
+  if max((words(x) for x in candidates),default=0)<65:
+   amp=soup.select_one('link[rel="amphtml"][href]')
+   if amp:
+    from urllib.parse import urljoin
+    amp_url=urljoin(r.url,amp.get('href',''))
+    if amp_url!=r.url and allowed(amp_url,domain):
+     try:
+      amp_response=requests.get(amp_url,timeout=(5,10),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobalTechDaily/1.0)'})
+      if amp_response.ok and allowed(amp_response.url,domain) and 'html' in amp_response.headers.get('content-type','').lower():
+       amp_soup=BeautifulSoup(amp_response.text[:1000000],'html.parser')
+       for node in amp_soup.select('article, [itemprop="articleBody"], main')[:3]:
+        paragraphs=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['p','h2','h3','li'])]
+        paragraphs=[p for p in paragraphs if len(p)>40]
+        if paragraphs:candidates.append(' '.join(paragraphs))
+     except requests.RequestException:pass
   # Reject short navigation snippets rather than manufacture 300 words.
   best=max(candidates,key=words,default='')[:24000]
   if words(best)<65:print('EXTRACTION_INSUFFICIENT',domain,url[:130],'words',words(best),flush=True)
