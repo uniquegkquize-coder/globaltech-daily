@@ -15,8 +15,11 @@ HUB_CSS='''
 HUB_JS='''document.querySelectorAll('[data-news-search]').forEach(input=>{input.addEventListener('input',()=>{let q=input.value.trim().toLocaleLowerCase();let scope=input.closest('[data-news-hub]');let rows=scope.querySelectorAll('[data-search-text]');let count=0;rows.forEach(row=>{let match=row.dataset.searchText.toLocaleLowerCase().includes(q);row.hidden=!match;if(match)count++;});let status=scope.querySelector('[data-search-status]');if(status)status.textContent=scope.dataset.searchLanguage==='hi'?`${count} खबरें मिलीं`:`${count} matching updates`;});});'''
 
 def news_sort(post):
-    # Publication time is the primary signal. Topic preference only breaks ties.
-    return (-timestamp(post.get('source_published_at') or post.get('date')),-max(PRIORITY.get(c,4) for c in memberships(post)),post.get('id',''))
+    # Latest Stories means most recently published ON OUR SITE, not the age of
+    # the publisher's original article. A later-imported source can predate an
+    # earlier-imported source, so source timestamps must not bury new posts.
+    # Keep original publisher dates for source freshness and News sitemap checks.
+    return (-timestamp(post.get('date')),-timestamp(post.get('source_published_at')),-max(PRIORITY.get(c,4) for c in memberships(post)),post.get('id',''))
 
 def recent_priority(posts,limit=8,now=None):
     now=now or dt.datetime.now(dt.timezone.utc).timestamp()
