@@ -22,10 +22,10 @@ jobs:
         run: python scripts/refresh_directories.py
       - name: Commit directory cache only (no publishing)
         run: |
-          if git diff --quiet -- content/directory-records.json; then exit 0; fi
+          git add content/directory-records.json
+          if git diff --cached --quiet; then exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add content/directory-records.json
           git commit -m 'Refresh worldwide directory reference records'
           git pull --rebase origin main
           git push origin HEAD:main
