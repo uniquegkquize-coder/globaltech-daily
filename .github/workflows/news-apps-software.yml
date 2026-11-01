@@ -1,0 +1,13 @@
+name: News - apps-software
+on:
+  schedule:
+    - cron: '10 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    uses: ./.github/workflows/news-category-publisher.yml
+    with:
+      category: apps-software
+    secrets: inherit
