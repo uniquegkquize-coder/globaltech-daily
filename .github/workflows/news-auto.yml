@@ -56,7 +56,7 @@ jobs:
   publish-news:
     if: github.event_name != 'push' # Normal scheduled publisher; push performs one-time full archive backfill
     runs-on: ubuntu-latest
-    timeout-minutes: 14
+    timeout-minutes: 45
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -91,8 +91,8 @@ jobs:
           POSTS_PER_RUN: '100'
           MIN_POSTS_PER_CATEGORY: '2'
           MAX_MODELS_PER_ARTICLE: '2'
-          MAX_AI_CALLS_PER_RUN: '18'
-          COLLECT_SECONDS: '300'
+          MAX_AI_CALLS_PER_RUN: '100'
+          COLLECT_SECONDS: '1800'
           DISCOVERY_SECONDS: '35'
           QUEUE_MAX_AGE_HOURS: '87600'
           PUBLISHER_WEBSITES_PER_RUN: '16'
