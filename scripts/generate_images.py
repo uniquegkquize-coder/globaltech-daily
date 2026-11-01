@@ -74,6 +74,27 @@ def licensed_source_image(p):
                     if isinstance(field,str) and field.strip():
                         image=field.strip();break
                 if image:break
+        if not image:
+            # Publisher templates sometimes put the actual lead photograph in
+            # article markup rather than Open Graph or JSON-LD metadata.
+            for selector in (
+                'article figure img', 'main article img',
+                'article picture img', '[itemprop="image"]',
+                'main figure img', 'article img'
+            ):
+                for tag in soup.select(selector)[:12]:
+                    candidate=(tag.get('data-src') or tag.get('data-original')
+                               or tag.get('data-lazy-src') or tag.get('src') or '')
+                    if not candidate:
+                        srcset=tag.get('srcset') or tag.get('data-srcset') or ''
+                        if srcset:
+                            candidate=srcset.split(',')[-1].strip().split(' ')[0]
+                    if not candidate or candidate.startswith('data:'):continue
+                    if re.search(r'(?i)(logo|favicon|avatar|sprite|placeholder|pixel|icon)',candidate):
+                        continue
+                    image=candidate
+                    break
+                if image:break
         if not image:return False
         image=urljoin(page.url,image)
         parsed=urlparse(image)
