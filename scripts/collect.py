@@ -1342,7 +1342,8 @@ def main():
  single_language_ids={hashlib.sha256(row[0].encode()).hexdigest()[:12] for row in saved_drafts}
  pending_ids={p.stem for p in PENDING.glob('*.json') if not p.name.startswith('_')}
  ordered.sort(key=lambda row:(hashlib.sha256(row[0].encode()).hexdigest()[:12] not in single_language_ids,hashlib.sha256(row[0].encode()).hexdigest()[:12] not in pending_ids,story_priority(row)))
- article_workers=10
+ # Keep concurrent provider traffic under free-tier rate limits; unfinished drafts survive.
+ article_workers=max(1,min(6,int(os.getenv('ARTICLE_WORKERS','3'))))
  print('Parallel article workers:',article_workers,flush=True)
  with ThreadPoolExecutor(max_workers=article_workers) as article_pool:
   futures={}
