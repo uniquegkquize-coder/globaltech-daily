@@ -1,0 +1,100 @@
+name: Resumable Bulk Pending Publisher
+on:
+  workflow_dispatch:
+    inputs:
+      passes:
+        description: "Batches in this run (1-30); rerun to resume remaining drafts"
+        required: false
+        default: "12"
+      include_old_news:
+        description: "Allow older source-backed pending news"
+        type: boolean
+        default: true
+permissions:
+  contents: write
+concurrency:
+  group: globaltech-news-publish
+  cancel-in-progress: false
+jobs:
+  bulk-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Validate scripts
+        run: python -m compileall -q scripts
+      - name: Resume and checkpoint pending drafts
+        shell: bash
+        env:
+          AUTO_POST: 'true'
+          BULK_PENDING_ONLY: 'true'
+          POSTS_PER_RUN: '100'
+          MAX_AI_CALLS_PER_RUN: '100'
+          COLLECT_SECONDS: '650'
+          DISCOVERY_SECONDS: '1'
+          QUEUE_MAX_AGE_HOURS: '87600'
+          MIN_SOURCE_WORDS: '0'
+          MIN_ARTICLE_WORDS_EN: '140'
+          MIN_ARTICLE_WORDS_HI: '90'
+          MAX_LICENSED_PHOTOS_PER_RUN: '100'
+          MAX_NEW_IMAGES: '0'
+          AI_PROVIDER_ORDER: gemini,groq,openrouter
+          GEMINI_MODEL: gemini-flash-lite-latest
+          GROQ_MODEL: openai/gpt-oss-120b
+          OPENAI_MODEL: gpt-4.1-mini
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+          PASSES: ${{ inputs.passes }}
+        run: |
+          set -euo pipefail
+          git config user.name 'GlobalTech News Bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if ! [[ "$PASSES" =~ ^[0-9]+$ ]] || (( PASSES < 1 || PASSES > 30 )); then
+            echo "::error::passes must be between 1 and 30"; exit 1
+          fi
+          echo "Initial pending drafts: $(find content/pending -maxdepth 1 -name '*.json' ! -name '_*' | wc -l)"
+          for ((pass=1; pass<=PASSES; pass++)); do
+            echo "::group::Bulk pending pass $pass/$PASSES"
+            before=$(find content/pending -maxdepth 1 -name '*.json' ! -name '_*' | wc -l)
+            if (( before == 0 )); then echo "No drafts remain"; echo "::endgroup::"; break; fi
+            python -u scripts/collect.py || echo "::warning::Collector stopped; keeping saved progress"
+            python -u scripts/generate_images.py || echo "::warning::Optional image lookup unavailable"
+            python -u scripts/build.py
+            for output in dist/en/index.html dist/hi/index.html dist/sitemap.xml; do
+              test -s "$output" || { echo "::error::Missing $output"; exit 1; }
+            done
+            git add -A content/posts content/pending content/featured dist
+            for f in content/news-run-status.json content/news-coverage-status.json content/image-backfill-state.json; do
+              if test -f "$f"; then git add -A "$f"; fi
+            done
+            if ! git diff --cached --quiet; then
+              git commit -m "Bulk publish saved drafts checkpoint $pass"
+              git stash push --include-untracked -m 'bulk-publisher-worktree-cleanup' || true
+              for attempt in 1 2 3 4; do
+                git fetch origin main
+                git rebase -X theirs origin/main || { git rebase --abort || true; exit 1; }
+                if git push origin HEAD:main; then break; fi
+                if (( attempt == 4 )); then echo "::error::Could not sync checkpoint"; exit 1; fi
+                sleep 4
+              done
+            fi
+            after=$(find content/pending -maxdepth 1 -name '*.json' ! -name '_*' | wc -l)
+            echo "Pending before=$before after=$after published_this_pass=$((before-after))"
+            echo "::endgroup::"
+            if (( after == before )); then
+              echo "::warning::No drafts completed in this pass; check provider quota, source access, and cooldowns"
+              break
+            fi
+          done
+          echo "Remaining pending drafts: $(find content/pending -maxdepth 1 -name '*.json' ! -name '_*' | wc -l)"
