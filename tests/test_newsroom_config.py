@@ -45,7 +45,7 @@ class NewsroomConfigTests(unittest.TestCase):
         self.assertIn("UNAVAILABLE_MODELS.add((provider,model))", code)
         self.assertIn("if not complete_body(state.get(lang+'_body',''),lang):", code)
         self.assertIn("blocked_until", code)
-        self.assertIn("for story in candidates():", code)
+        self.assertIn("for story in (() if bulk_pending else candidates()):", code)
         self.assertIn("while time.monotonic()<deadline and published<remaining and CALLS<MAX_CALLS:", code)
 
     def test_root_redirects_to_canonical_english_homepage(self):
@@ -55,7 +55,7 @@ class NewsroomConfigTests(unittest.TestCase):
 
     def test_workflow_targets(self):
         workflow = WORKFLOW.read_text(encoding="utf-8")
-        self.assertIn("cron: '5,20,35,50 * * * *'", workflow)
+        self.assertIn("cron: '7 */2 * * *'", workflow)
         self.assertIn("POSTS_PER_RUN: '100'", workflow)
         self.assertIn("MIN_POSTS_PER_CATEGORY: '2'", workflow)
         self.assertIn("MAX_AI_CALLS_PER_RUN: '100'", workflow)
