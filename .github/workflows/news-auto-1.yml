@@ -32,6 +32,8 @@ jobs:
       - name: Probe launch and controversy sources without AI
         run: python -u scripts/probe_sources.py
       - name: Generate source-based news
+        id: collect_news
+        continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           AUTO_POST: ${{ vars.AUTO_POST }}
@@ -41,8 +43,8 @@ jobs:
           MIN_POSTS_PER_CATEGORY: '2'
           MAX_MODELS_PER_ARTICLE: '1'
           MAX_AI_CALLS_PER_RUN: '100'
-          COLLECT_SECONDS: '720'
-          DISCOVERY_SECONDS: '180'
+          COLLECT_SECONDS: '960'
+          DISCOVERY_SECONDS: '60'
           MIN_SOURCE_WORDS: '0'
           MIN_ARTICLE_WORDS_EN: '140'
           MIN_ARTICLE_WORDS_HI: '90'
@@ -110,3 +112,8 @@ jobs:
           else
             echo 'No changes to commit'
           fi
+
+      - name: Report collector outcome after preserving drafts
+        if: ${{ always() && steps.collect_news.outcome == 'failure' }}
+        run: |
+          echo '::warning::Collector produced no publishable new posts or encountered an error; pending drafts and diagnostics were saved by the commit step.'
