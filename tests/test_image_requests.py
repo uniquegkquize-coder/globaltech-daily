@@ -38,6 +38,19 @@ class ImageRequestTests(unittest.TestCase):
    self.assertEqual(metadata['source_image'],'https://cdn.example.org/story-photo.jpg')
    self.assertTrue((Path(tmp)/'abcdef012345.jpg').is_file())
 
+ def test_generic_app_store_share_image_is_rejected(self):
+  class Page:
+   ok=True
+   url='https://apps.apple.com/mx/iphone/apps'
+   headers={'content-type':'text/html'}
+   text='<meta property="og:image" content="https://apps.apple.com/assets/images/share/app-store.png">'
+  post={'id':'abcdef012345','source':'https://apps.apple.com/mx/iphone/apps'}
+  with tempfile.TemporaryDirectory() as tmp,patch.object(generate_images,'IMAGES',Path(tmp)):
+   with patch.object(generate_images.requests,'get',return_value=Page()) as get:
+    self.assertFalse(generate_images.licensed_source_image(post))
+    self.assertEqual(get.call_count,1)
+   self.assertFalse((Path(tmp)/'abcdef012345.jpg').exists())
+
  def test_representative_commons_photo_is_not_mistaken_for_source_original(self):
   with tempfile.TemporaryDirectory() as tmp,patch.object(generate_images,'IMAGES',Path(tmp)):
    (Path(tmp)/'abcdef012345.jpg').write_bytes(b'representative photo')
