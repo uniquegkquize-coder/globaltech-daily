@@ -17,6 +17,8 @@ on:
       - 'scripts/focused_sources.py'
       - 'scripts/probe_sources.py'
       - 'tests/test_source_pipeline.py'
+      - 'tests/test_newsroom_config.py'
+      - '.github/workflows/news-auto.yml'
       - 'tests/test_batch_runtime.py'
       - 'tests/test_image_requests.py'
       - 'scripts/generate_images.py'
