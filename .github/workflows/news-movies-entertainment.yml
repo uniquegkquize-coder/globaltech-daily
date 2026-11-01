@@ -1,0 +1,13 @@
+name: News - movies-entertainment
+on:
+  schedule:
+    - cron: '28 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    uses: ./.github/workflows/news-category-publisher.yml
+    with:
+      category: movies-entertainment
+    secrets: inherit
