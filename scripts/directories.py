@@ -119,6 +119,35 @@ document.querySelectorAll('[data-directory]').forEach(root=>{
  search.addEventListener('input',update);update();
 });
 """
+def entry_slug(name):
+ import re
+ return re.sub(r'[^a-z0-9]+','-',name.lower()).strip('-')
+
+def entry_detail(kind,row,lang):
+ ishi=lang=='hi'
+ def tr(en,hi):return hi if ishi else en
+ if kind=='colleges':
+  name,country,region,city,url,area=row
+  facts=[('Country / देश',country),('State / राज्य',region),('City / शहर',city),('Study areas / अध्ययन क्षेत्र',area)]
+  sections=[
+   ('Courses and eligibility','कोर्स और पात्रता','Check the institution\'s programme catalogue for exact degree names, subject prerequisites, entry tests, language requirements and deadlines.','सटीक डिग्री, विषय पात्रता, प्रवेश परीक्षा, भाषा आवश्यकताएँ और अंतिम तारीख संस्थान के आधिकारिक कोर्स कैटलॉग से जाँचें।'),
+   ('Fees and scholarships','फीस और छात्रवृत्ति','Fees vary by course, academic year and domestic/international student status. Verify tuition, housing, financial aid and scholarships with admissions.','फीस कोर्स, वर्ष और घरेलू/विदेशी छात्र के अनुसार बदलती है। ट्यूशन, हॉस्टल और छात्रवृत्ति एडमिशन कार्यालय से जाँचें।'),
+   ('Admissions process','प्रवेश प्रक्रिया','Choose a programme, verify requirements, prepare transcripts and test scores, apply through the official admissions portal and monitor the decision.','कोर्स चुनें, पात्रता जाँचें, अंकपत्र और परीक्षा स्कोर तैयार करें, आधिकारिक पोर्टल पर आवेदन करें और परिणाम देखें।'),
+   ('Placements and outcomes','प्लेसमेंट और परिणाम','Request the latest official career report, programme-level employment outcomes, median salary methodology and internship details. Unverified placement percentages are not published.','नवीनतम आधिकारिक करियर रिपोर्ट, कोर्सवार रोजगार आँकड़े, वेतन की गणना और इंटर्नशिप देखें। अप्रमाणित प्लेसमेंट प्रतिशत प्रकाशित नहीं किए जाते।')]
+ else:
+  name,country,area,url=row
+  facts=[('Origin / देश',country),('Category / श्रेणी',area)]
+  if kind=='cars':
+   sections=[('Models and variants','मॉडल और वेरिएंट','Check the manufacturer\'s current model range, trims, launch status and market availability.','निर्माता की मौजूदा मॉडल सूची, वेरिएंट, लॉन्च स्थिति और बाजार में उपलब्धता देखें।'),('Price, mileage and safety','कीमत, माइलेज और सुरक्षा','Compare official ex-showroom/MSRP pricing, certified efficiency, crash-test ratings, warranties and local taxes. Prices vary by market and date.','आधिकारिक कीमत, प्रमाणित माइलेज, क्रैश टेस्ट, वारंटी और स्थानीय टैक्स की तुलना करें।')]
+  elif kind=='bikes':
+   sections=[('Models and engine specifications','मॉडल और इंजन स्पेसिफिकेशन','Compare official engine displacement, power, torque, weight, seat height, ABS and transmission by model and market.','मॉडल के अनुसार इंजन, पावर, टॉर्क, वजन, सीट की ऊँचाई, ABS और गियरबॉक्स देखें।'),('Price, efficiency and ownership','कीमत, माइलेज और रखरखाव','Verify local prices, certified fuel economy or range, service intervals, warranty and dealer availability.','स्थानीय कीमत, माइलेज या रेंज, सर्विस अंतराल, वारंटी और डीलर उपलब्धता जाँचें।')]
+  else:
+   sections=[('Models and specifications','मॉडल और स्पेसिफिकेशन','Compare official display, chipset, RAM, storage, cameras, battery, charging and software update policy for each phone model.','हर फोन मॉडल की डिस्प्ले, चिपसेट, RAM, स्टोरेज, कैमरा, बैटरी, चार्जिंग और अपडेट नीति देखें।'),('Pricing and availability','कीमत और उपलब्धता','Verify current country-specific official prices, release dates, regional variants and warranty conditions.','देश के अनुसार आधिकारिक कीमत, रिलीज तारीख, क्षेत्रीय वेरिएंट और वारंटी जाँचें।')]
+ facts_html=''.join('<li><strong>'+esc(k)+':</strong> '+esc(v)+'</li>' for k,v in facts)
+ sections_html=''.join('<section class="directory-card"><h2>'+esc(tr(en,hi))+'</h2><p>'+esc(tr(desc_en,desc_hi))+'</p></section>' for en,hi,desc_en,desc_hi in sections)
+ note=tr('This is an official-source guide, not a live price or admissions quote. No unverified figures are presented.','यह आधिकारिक स्रोत पर आधारित गाइड है, लाइव कीमत या एडमिशन कोटेशन नहीं। अप्रमाणित आँकड़े नहीं दिए गए हैं।')
+ return '<div class="wrap"><section class="directory-hero"><h1>'+esc(name)+'</h1><p class="directory-note">'+esc(note)+'</p><ul>'+facts_html+'</ul><p><a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+tr('Open official source','आधिकारिक स्रोत खोलें')+'</a></p></section><div class="directory-grid">'+sections_html+'</div><p><a href="/'+lang+'/'+kind+'/">'+tr('Back to directory','डायरेक्टरी पर वापस')+'</a></p></div>'
+
 def render(out,site,shell,write):
  for lang in ('en','hi'):
   ishi=lang=='hi'
