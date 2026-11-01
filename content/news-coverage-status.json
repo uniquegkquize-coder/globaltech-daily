@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T14:29:48.728357+00:00",
+  "updated_at": "2026-11-01T14:33:18.972455+00:00",
   "categories": {
     "technology": {
       "discovered": 0,
@@ -153,7 +153,7 @@
     },
     "cricket": {
       "discovered": 0,
-      "published": 5,
+      "published": 6,
       "sources_configured": 3
     },
     "car-launches": {
@@ -367,7 +367,9 @@
       "queued": 484
     },
     "news.abplive.com": {
-      "queued": 303
+      "queued": 303,
+      "attempted": 3,
+      "published": 2
     },
     "news.microsoft.com": {
       "queued": 1
@@ -433,7 +435,9 @@
       "queued": 51
     },
     "timesofindia.indiatimes.com": {
-      "queued": 1241
+      "queued": 1241,
+      "attempted": 3,
+      "published": 3
     },
     "trai.gov.in": {
       "queued": 25
@@ -442,7 +446,7 @@
       "queued": 4
     },
     "travel.economictimes.indiatimes.com": {
-      "queued": 23
+      "queued": 24
     },
     "variety.com": {
       "queued": 388
@@ -479,9 +483,9 @@
       "attempted": 2
     },
     "www.bbc.com": {
-      "queued": 254,
-      "attempted": 10,
-      "published": 5
+      "queued": 249,
+      "attempted": 8,
+      "published": 1
     },
     "www.bhaskar.com": {
       "queued": 177
@@ -644,7 +648,7 @@
       "queued": 28
     },
     "www.pib.gov.in": {
-      "queued": 8
+      "queued": 9
     },
     "www.prnewswire.com": {
       "queued": 1005,
