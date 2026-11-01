@@ -232,11 +232,13 @@ def image_caption(p,lang):
  if metadata.is_file():
   try:
    info=json.loads(metadata.read_text(encoding='utf-8'))
-   if info.get('kind') in ('licensed_source','publisher_source'):
+   if info.get('kind') in ('licensed_source','publisher_source','licensed_photo'):
     credit=str(info.get('attribution') or 'Original publisher')
     license_name=str(info.get('license') or '').strip()
     suffix=f' — {license_name}' if license_name else ''
     return (f'Image: {credit}{suffix}' if lang=='en' else f'चित्र: {credit}{suffix}')
+   if info.get('kind')=='ai_generated':
+    return 'AI-generated editorial illustration — not an event photograph.' if lang=='en' else 'AI से बनी सांकेतिक तस्वीर — घटना की वास्तविक फोटो नहीं।'
   except (OSError,ValueError):pass
  if not metadata.is_file():
   if (R/'content'/'featured'/f'{s}.jpg').is_file():
