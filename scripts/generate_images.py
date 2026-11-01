@@ -29,7 +29,8 @@ def resolved_featured(ident):
         kind=json.loads(meta.read_text(encoding='utf-8')).get('kind') if meta.is_file() else ''
     except (OSError,ValueError,TypeError):kind=''
     # Replace representative Commons pictures and AI art when a genuine source image exists.
-    return kind not in ('licensed_photo','ai_generated','illustration')
+    # A JPEG without source provenance can be legacy artwork, not a confirmed publisher photo.
+    return kind in ('publisher_source','source_original','manual_original')
 
 def licensed_source_image(p):
     """Prioritize the actual article's published picture; record its origin and rights status.
