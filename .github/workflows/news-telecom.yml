@@ -1,0 +1,13 @@
+name: News - telecom
+on:
+  schedule:
+    - cron: '45 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    uses: ./.github/workflows/news-category-publisher.yml
+    with:
+      category: telecom
+    secrets: inherit
