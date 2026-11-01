@@ -569,7 +569,7 @@ def article_prompt(lang,title,source,source_material,cat):
 
 def published_categories():
  """Count only published posts, never drafts, toward category coverage."""
- counts={cat:0 for _,cat,_ in FEEDS}
+ counts={cat:0 for cat in CATEGORIES}
  for path in POSTS.glob('*.json'):
   try:
    item=json.loads(path.read_text(encoding='utf-8'))
@@ -1404,10 +1404,14 @@ def main():
  category_published=dict(actual_counts);published=sum(actual_counts.values())
  outcome='target_reached' if published>=remaining else (stop_reason or ('ai_limit_reached' if CALLS>=MAX_CALLS else ('time_limit_reached' if time.monotonic()>=deadline else 'queue_exhausted')))
  write_run_status(outcome,started,category_published,target=remaining,discovered_by_category=dict(discovered_by_category))
+ total_category_counts=published_categories()
  coverage={'updated_at':dt.datetime.now(UTC).isoformat(),
-           'categories':{cat:{'discovered':discovered_by_category.get(cat,0),'published':category_published.get(cat,0),
+           'categories':{cat:{'discovered':discovered_by_category.get(cat,0),'published':total_category_counts.get(cat,0),
                               'sources_configured':len({domain for _,c,domain in FEEDS if c==cat})}
                          for cat in CATEGORIES},
+           'published_total':sum(total_category_counts.values()),
+           'categories_below_minimum':{cat:count for cat,count in total_category_counts.items() if count<MIN_POSTS_PER_CATEGORY},
+           'provider_status':{'configured':[p for p in provider_order() if os.getenv({'gemini':'GEMINI_API_KEY','groq':'GROQ_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}[p],'').strip()], 'cooldown':sorted(PROVIDER_COOLDOWNS), 'unavailable_models':[{'provider':p,'model':m} for p,m in sorted(UNAVAILABLE_MODELS)]},
            'sources':{domain:{metric:count for (d,metric),count in SOURCE_DIAGNOSTICS.items() if d==domain}
                       for domain in sorted({d for d,_ in SOURCE_DIAGNOSTICS})}}
  (ROOT/'content/news-coverage-status.json').write_text(json.dumps(coverage,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
