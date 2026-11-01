@@ -96,4 +96,23 @@ class ImageRequestTests(unittest.TestCase):
    self.assertIn('License terms',caption)
    self.assertIn('Cropped to 16:9',caption)
 
+ def test_generic_job_listing_never_receives_unrelated_commons_photo(self):
+  with tempfile.TemporaryDirectory() as temp,patch.object(generate_images,'IMAGES',Path(temp)),patch.object(generate_images.requests,'get') as get:
+   post={'id':'abcdef012345','category':'private-vacancy','source_title':'Administrative Assistant Jobs in Boydton'}
+   self.assertFalse(generate_images.commons_photo(post))
+   get.assert_not_called()
+
+ def test_commons_search_rejects_seals_and_pdf_previews(self):
+  class ApiResponse:
+   def raise_for_status(self):pass
+   def json(self):
+    return {'query':{'pages':{
+      '1':{'title':'File:Atlanta Dream press office seal.gif'},
+      '2':{'title':'File:Atlanta Dream planning document.pdf'}
+    }}}
+  with tempfile.TemporaryDirectory() as temp,patch.object(generate_images,'IMAGES',Path(temp)),patch.object(generate_images.requests,'get',return_value=ApiResponse()) as get:
+   post={'id':'abcdef012345','category':'sports','source_title':'Atlanta Dream New Season'}
+   self.assertFalse(generate_images.commons_photo(post))
+   self.assertEqual(get.call_count,len(generate_images.commons_queries(post['source_title'])))
+
 if __name__=='__main__':unittest.main()
