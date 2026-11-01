@@ -277,7 +277,9 @@ def image_caption_html(p,lang):
   license_url=str(info.get('license') or '')
   if license_url.startswith('https://'):
    links.append('<a target="_blank" rel="noopener noreferrer" href="'+e(license_url)+'">'+('License terms' if lang=='en' else 'लाइसेंस शर्तें')+'</a>')
-  if info.get('kind')=='licensed_photo':
+  if info.get('kind')=='publisher_source':
+   links.append('Cropped to 16:9; original source image' if lang=='en' else 'स्रोत चित्र 16:9 अनुपात में काटा गया')
+  elif info.get('kind')=='licensed_photo':
    links.append('Cropped to 16:9; representative photograph' if lang=='en' else '16:9 में काटी गई प्रतिनिधि फोटो')
   return caption+(' · '+' · '.join(links) if links else '')
  except (OSError,ValueError,TypeError):return caption
