@@ -1104,7 +1104,9 @@ def main():
    print('Skipping unattributable entertainment claim:',url,flush=True)
    return None
   source_stamp=timestamp(STORY_DATES.get(url) or state.get('source_published_at'))
-  text=source_text(url,domain)
+  # Finished drafts only need verified provenance, not another potentially blocked fetch.
+  cached_complete=all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi'))
+  text='' if cached_complete and source_stamp else source_text(url,domain)
   source_stamp=timestamp(STORY_DATES.get(url)) or source_stamp
   if cat in {'car-launches','mobile-launches','movie-releases','controversies'} and not source_stamp:
    print('Skipping undated launch or controversy:',domain,title[:80],flush=True)
