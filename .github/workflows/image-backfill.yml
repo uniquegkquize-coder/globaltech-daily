@@ -57,7 +57,7 @@ jobs:
           # Preserve original images and upgrade old Commons/AI stand-ins when a
           # matching publisher article image is available. Otherwise use the
           # labelled build.py editorial illustration without unrelated stock.
-          python -m unittest discover -s tests -p 'test_image*.py'
+          IMAGE_BACKFILL_MODE=mixed ENABLE_PUBLIC_BROWSER_FALLBACK=0 python -m unittest discover -s tests -p 'test_*image*.py'
           python -u scripts/generate_images.py
           git add -A content/featured content/image-audit-status.json content/image-audit-archive.json
           if [ -f content/image-backfill-state.json ]; then
