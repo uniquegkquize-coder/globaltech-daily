@@ -157,12 +157,12 @@
       "eligible_updates": 0,
       "shortfall": 2,
       "reasons": {
-        "considered": 417,
+        "considered": 505,
         "already_published_unchanged": 3,
-        "missing or invalid HTTPS evidence URL": 346,
-        "insufficient verified descriptive fields": 68
+        "missing or invalid HTTPS evidence URL": 427,
+        "insufficient verified descriptive fields": 75
       },
-      "rejected_count": 414,
+      "rejected_count": 502,
       "rejected_sample": [
         {
           "name": "Huawei Y7 Prime (2019)",
@@ -439,13 +439,18 @@
       "eligible_updates": 0,
       "shortfall": 2,
       "reasons": {
-        "considered": 330,
+        "considered": 436,
         "already_published_unchanged": 3,
-        "missing or invalid HTTPS evidence URL": 294,
-        "insufficient verified descriptive fields": 33
+        "insufficient verified descriptive fields": 47,
+        "missing or invalid HTTPS evidence URL": 386
       },
-      "rejected_count": 327,
+      "rejected_count": 433,
       "rejected_sample": [
+        {
+          "name": "Benelli TRK",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.benelli.com/it-it/products/trk-702-x-eu5-plus"
+        },
         {
           "name": "Farm bike",
           "reason": "missing or invalid HTTPS evidence URL",
@@ -565,14 +570,9 @@
           "name": "DKW ZM",
           "reason": "missing or invalid HTTPS evidence URL",
           "source": "http://www.wikidata.org/entity/Q108041766"
-        },
-        {
-          "name": "Aprilia Atlantic",
-          "reason": "missing or invalid HTTPS evidence URL",
-          "source": "http://www.wikidata.org/entity/Q108201950"
         }
       ]
     }
   },
-  "date": "2026-11-02T02:45:10.925604+00:00"
+  "date": "2026-11-02T04:29:22.812866+00:00"
 }
