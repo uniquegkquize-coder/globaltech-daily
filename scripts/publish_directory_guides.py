@@ -54,9 +54,9 @@ def article(kind,name,entry,source):
     now=dt.datetime.now(dt.timezone.utc).isoformat()
     country=entry.get('country') or 'not recorded'
     fields=[(k.replace('_',' ').title(),str(v)) for k,v in entry.items()
-            if k not in ('source','source_url','official_url','retrieved_at','name','country','evidence_url')
+            if k not in ('source','source_url','official_url','retrieved_at','name','country','evidence_url','image_source_url','audit_notes','reviewed_fields')
             and isinstance(v,(str,int,float)) and str(v).strip()]
-    facts='\n'.join('- **'+k+':** '+v for k,v in fields[:15]) or '- Detailed specifications are not yet available from this source.'
+    facts='\n'.join('- **'+k+':** '+v for k,v in fields[:45]) or '- Detailed specifications are not yet available from this source.'
     topic=SUBJECT[kind]
     intro=f'{name} is listed in our worldwide {topic} directory. Country or market recorded: {country}. This is an evergreen reference guide, not a new launch or a claim that the institution or product was recently announced.'
     sections={
@@ -86,12 +86,22 @@ def article(kind,name,entry,source):
         for row in entry['courses'][:30]:
             if isinstance(row,dict):rows.append('- '+'; '.join(str(k)+': '+str(v) for k,v in row.items()))
         body+='\n\n## Source-listed course details\n\n'+'\n'.join(rows)
+    structured=[]
+    for key in ('engines','variants','placement_statistics','specification_rows'):
+        records=entry.get(key,[])
+        if isinstance(records,list):
+            lines=['- '+'; '.join(str(k).replace('_',' ')+': '+str(v) for k,v in row.items()) for row in records[:100] if isinstance(row,dict)]
+            if lines:structured.append('## '+key.replace('_',' ').title()+'\n\n'+'\n'.join(lines))
+    if structured:body+='\n\n'+'\n\n'.join(structured)
     hi=(f'## परिचय\n\n{name} हमारी वैश्विक {LABEL[kind]} डायरेक्टरी में दर्ज है। देश/बाजार: {country}। '
         f'यह जानकारी देने वाली गाइड है, नई लॉन्च या ताज़ा घटना की खबर नहीं।\n\n'
         f'## स्रोत में दर्ज विवरण\n\n{facts}\n\n'
         f'## जरूरी जाँच\n\n{b}\n\n{d}\n\n{f}\n\n'
         f'## सत्यापन\n\nआवेदन या खरीद से पहले [आधिकारिक या संदर्भ स्रोत]({source}) पर फीस, कीमत, मॉडल, पात्रता और उपलब्धता जाँचें। '
         f'बिना सत्यापन के कोई नया दावा नहीं किया गया है।')
+    if structured:hi+='\n\n'+'\n\n'.join(structured)
+    if kind=='colleges' and isinstance(entry.get('courses'),list):
+        hi+='\n\n## कोर्स, फीस और पात्रता\n\n'+'\n'.join('- '+'; '.join(str(k).replace('_',' ')+': '+str(v) for k,v in row.items()) for row in entry['courses'] if isinstance(row,dict))
     key=hashlib.sha256(('directory-guide:'+kind+':'+name.casefold()).encode()).hexdigest()[:24]
     return key,{'id':key,'en_title':f'{name}: {LABEL[kind].title()}, Facts and Verification Guide',
                 'hi_title':f'{name}: विवरण, पात्रता/स्पेसिफिकेशन और सत्यापन गाइड',
@@ -110,12 +120,12 @@ def sufficient(kind,entry):
     as unverified in the article. Never invent missing figures.
     """
     source=evidence_source(entry) or ''
-    if not str(source).startswith('https://'):
+    if urlparse(str(source)).scheme not in ('http','https'):
         return False
     fields={
       'colleges':('programmes','admissions','fees','placement','accreditation','city','region','country'),
       'phones':('display','processor','battery','ram','storage'),
-      'cars':('powertrain','variants','price','mileage'),
+      'cars':('powertrain','engine','engines','power','torque','transmission','dimensions','variants','price','mileage','fuel_tank'),
       'bikes':('engine','power','torque','price','mileage')
     }[kind]
     known=sum(bool(str(entry.get(field,'')).strip()) and
@@ -131,7 +141,11 @@ def sufficient(kind,entry):
 
 def fingerprint(entry):
     # Only substantive facts alter the profile. Retrieval timestamps do not.
-    facts={k:v for k,v in entry.items() if k not in ('retrieved_at','field_sources')}
+    def factual(v):
+        if isinstance(v,dict):return {k:factual(x) for k,x in v.items() if k not in ('retrieved_at','checked_at','field_sources','reviewed_fields')}
+        if isinstance(v,list):return [factual(x) for x in v]
+        return v
+    facts=factual(entry)
     return hashlib.sha256(json.dumps(facts,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 
 def main():
@@ -142,8 +156,8 @@ def main():
     for kind,name,entry,source in candidates():
         diagnostics[kind]['considered']+=1
         host=(urlparse(source).hostname or '').lower()
-        if urlparse(source or '').scheme!='https' or not host:
-            reason='missing or invalid HTTPS evidence URL'
+        if urlparse(source or '').scheme not in ('http','https') or not host:
+            reason='missing or invalid evidence URL'
         elif host in ('www.wikidata.org','wikidata.org'):
             reason='identifier URL is not specification evidence'
         elif not sufficient(kind,entry):

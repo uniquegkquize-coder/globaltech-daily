@@ -2,6 +2,8 @@
 import html
 import json
 from pathlib import Path
+from functools import lru_cache
+from directory_facts import structured_html,media_html,meaningful,photo,schema
 
 def esc(v): return html.escape(str(v),quote=True)
 DATA={
@@ -77,6 +79,7 @@ DATA['phones'].extend([
  ('realme','China','Smartphones','https://www.realme.com/'),
  ('HONOR','China','Smartphones','https://www.honor.com/')
 ])
+@lru_cache(maxsize=1)
 def load_records():
  path=Path(__file__).resolve().parents[1]/'content'/'directory-records.json'
  try:
@@ -99,6 +102,8 @@ COURSES=[
  ('Law','Undergraduate or graduate entry routes depend on jurisdiction and institution.'),
  ('Diploma / Vocational','Entry qualification and duration depend on the programme and accreditor.')]
 CSS="""
+.directory-wide{grid-column:1/-1}.directory-table-wrap{overflow-x:auto}.directory-card table{width:100%;border-collapse:collapse;font-size:14px}.directory-card th,.directory-card td{border-bottom:1px solid #d9e2ec;padding:10px;vertical-align:top;text-align:left;overflow-wrap:anywhere}.directory-media{margin:0 0 18px}.directory-media img{display:block;width:100%;height:auto;max-height:480px;object-fit:contain;background:#edf2f7;border-radius:12px}.directory-media figcaption{font-size:12px;color:#4b6076;margin-top:5px}.directory-card .directory-media img{aspect-ratio:16/9}
+
 .directory-hero{padding:30px 0 12px}.directory-hero h1{font-size:clamp(30px,5vw,48px)}
 .directory-controls{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
 .directory-controls input,.directory-controls select{font:inherit;padding:12px;border:1px solid #a7b7cb;border-radius:10px;background:#fff;min-width:180px;flex:1}
@@ -134,8 +139,9 @@ document.querySelectorAll('[data-directory]').forEach(root=>{
 """
 def entry_slug(name):
  import re
- return re.sub(r'[^a-z0-9]+','-',name.lower()).strip('-')
+ return re.sub(r'[^a-z0-9]+','-',name.lower().replace('+',' plus ')).strip('-')
 
+@lru_cache(maxsize=1)
 def detailed_profiles():
  path=Path(__file__).resolve().parents[1]/'content'/'directory-details.json'
  try:return json.loads(path.read_text(encoding='utf-8'))
@@ -157,13 +163,16 @@ def extra_detail(kind,name,lang):
  labels={'price':('Price','कीमत'),'engine':('Engine','इंजन'),'power':('Power','पावर'),'torque':('Torque','टॉर्क'),'mileage':('Mileage','माइलेज'),'weight':('Weight','वजन'),'display':('Display','डिस्प्ले'),'processor':('Processor','प्रोसेसर'),'battery':('Battery','बैटरी'),'storage':('Storage','स्टोरेज'),'ram':('RAM','रैम'),'rear_camera':('Rear cameras','रियर कैमरे'),'front_camera':('Front cameras','फ्रंट कैमरे'),'fees':('Fees','फीस'),'placement':('Placement','प्लेसमेंट'),'admissions':('Admissions','प्रवेश'),'accreditation':('Accreditation','मान्यता')}
  rows=[]
  for k,v in details.items():
-  if k in ('source_url','official_url'):continue
+  if k in ('source_url','official_url','evidence_url','field_sources','audit_notes','reviewed_fields','image_source_url') or isinstance(v,(dict,list,bool)):continue
   label=labels.get(k,(k.replace('_',' ').title(),k.replace('_',' ').title()))
-  rows.append('<tr><th>'+esc(label[1] if lang=='hi' else label[0])+'</th><td>'+esc(v)+'</td></tr>')
+  provenance=details.get('field_sources',{}).get(k,{})
+  evidence=provenance.get('url','') if isinstance(provenance,dict) else ''
+  citation=(' <a class="fact-source" href="'+esc(evidence)+'" target="_blank" rel="noopener noreferrer">'+('स्रोत' if lang=='hi' else 'Source')+'</a>') if evidence.startswith(('https://','http://')) else ''
+  rows.append('<tr><th>'+esc(label[1] if lang=='hi' else label[0])+'</th><td>'+esc(v)+citation+'</td></tr>')
  sources=''.join('<a target="_blank" rel="noopener noreferrer" href="'+esc(details[k])+'">'+('Source reference' if k=='source_url' else 'Manufacturer / institution')+'</a> ' for k in ('source_url','official_url') if details.get(k))
- return '<section class="directory-card"><h2>'+('विस्तृत जानकारी' if lang=='hi' else 'Detailed specifications and information')+'</h2><table class="directory-specs">'+''.join(rows)+'</table><p>'+sources+'</p><small>'+('कीमतें और जानकारी स्रोत की तारीख के अनुसार बदल सकती हैं।' if lang=='hi' else 'Prices and specifications may change by market and date.')+'</small></section>'
+ return '<section class="directory-card directory-wide"><h2>'+('विस्तृत जानकारी' if lang=='hi' else 'Detailed specifications and information')+'</h2><table class="directory-specs">'+''.join(rows)+'</table><p>'+sources+'</p><small>'+('कीमतें और जानकारी स्रोत की तारीख के अनुसार बदल सकती हैं।' if lang=='hi' else 'Prices and specifications may change by market and date.')+'</small></section>'+structured_html(details,lang)
 
-def entry_detail(kind,row,lang):
+def entry_detail(kind,row,lang,out=None):
  ishi=lang=='hi'
  def tr(en,hi):return hi if ishi else en
  if kind=='colleges':
@@ -176,7 +185,7 @@ def entry_detail(kind,row,lang):
    ('Placements and outcomes','प्लेसमेंट और परिणाम','Request the latest official career report, programme-level employment outcomes, median salary methodology and internship details. Unverified placement percentages are not published.','नवीनतम आधिकारिक करियर रिपोर्ट, कोर्सवार रोजगार आँकड़े, वेतन की गणना और इंटर्नशिप देखें। अप्रमाणित प्लेसमेंट प्रतिशत प्रकाशित नहीं किए जाते।')]
  else:
   name,country,area,url=row
-  facts=[('Origin / देश',country),('Category / श्रेणी',area)]
+  facts=[('Country / देश',country),('Category / श्रेणी',area)]
   if kind=='cars':
    sections=[('Models and variants','मॉडल और वेरिएंट','Check the manufacturer\'s current model range, trims, launch status and market availability.','निर्माता की मौजूदा मॉडल सूची, वेरिएंट, लॉन्च स्थिति और बाजार में उपलब्धता देखें।'),('Price, mileage and safety','कीमत, माइलेज और सुरक्षा','Compare official ex-showroom/MSRP pricing, certified efficiency, crash-test ratings, warranties and local taxes. Prices vary by market and date.','आधिकारिक कीमत, प्रमाणित माइलेज, क्रैश टेस्ट, वारंटी और स्थानीय टैक्स की तुलना करें।')]
   elif kind=='bikes':
@@ -184,9 +193,9 @@ def entry_detail(kind,row,lang):
   else:
    sections=[('Models and specifications','मॉडल और स्पेसिफिकेशन','Compare official display, chipset, RAM, storage, cameras, battery, charging and software update policy for each phone model.','हर फोन मॉडल की डिस्प्ले, चिपसेट, RAM, स्टोरेज, कैमरा, बैटरी, चार्जिंग और अपडेट नीति देखें।'),('Pricing and availability','कीमत और उपलब्धता','Verify current country-specific official prices, release dates, regional variants and warranty conditions.','देश के अनुसार आधिकारिक कीमत, रिलीज तारीख, क्षेत्रीय वेरिएंट और वारंटी जाँचें।')]
  facts_html=''.join('<li><strong>'+esc(k)+':</strong> '+esc(v)+'</li>' for k,v in facts)
- sections_html=extra_detail(kind,name,lang)+record_detail(kind,name,lang)+''.join('<section class="directory-card"><h2>'+esc(tr(en,hi))+'</h2><p>'+esc(tr(desc_en,desc_hi))+'</p></section>' for en,hi,desc_en,desc_hi in sections)
- note=tr('This is an official-source guide, not a live price or admissions quote. No unverified figures are presented.','यह आधिकारिक स्रोत पर आधारित गाइड है, लाइव कीमत या एडमिशन कोटेशन नहीं। अप्रमाणित आँकड़े नहीं दिए गए हैं।')
- return '<div class="wrap"><section class="directory-hero"><h1>'+esc(name)+'</h1><p class="directory-note">'+esc(note)+'</p><ul>'+facts_html+'</ul><p><a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+tr('Open official source','आधिकारिक स्रोत खोलें')+'</a></p></section><div class="directory-grid">'+sections_html+'</div><p><a href="/'+lang+'/'+kind+'/">'+tr('Back to directory','डायरेक्टरी पर वापस')+'</a></p></div>'
+ sections_html=extra_detail(kind,name,lang)+record_detail(kind,name,lang)+('' if meaningful(detailed_profiles().get(kind,{}).get(name,{})) else ''.join('<section class="directory-card"><h2>'+esc(tr(en,hi))+'</h2><p>'+esc(tr(desc_en,desc_hi))+'</p></section>' for en,hi,desc_en,desc_hi in sections))
+ note=tr('Source-listed reference profile. Prices, fees and availability depend on the market, programme, version and source date.','स्रोत आधारित विवरण। कीमत, फीस और उपलब्धता बाजार, कोर्स, वर्जन और स्रोत की तारीख पर निर्भर हैं।')
+ return '<div class="wrap">'+(media_html(kind,name,out) if out else '')+'<section class="directory-hero"><h1>'+esc(name)+'</h1><p class="directory-note">'+esc(note)+'</p><ul>'+facts_html+'</ul><p><a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+tr('Open source','स्रोत खोलें')+'</a></p></section><div class="directory-grid">'+sections_html+'</div><p><a href="/'+lang+'/'+kind+'/">'+tr('Back to directory','डायरेक्टरी पर वापस')+'</a></p></div>'
 
 def render(out,site,shell,write):
  for lang in ('en','hi'):
@@ -200,8 +209,8 @@ def render(out,site,shell,write):
     if profile_name.casefold() in existing:continue
     existing.add(profile_name.casefold())
     url=profile.get('official_url') or profile.get('source_url','#')
-    country=profile.get('country','Worldwide')
-    if kind=='colleges':items.append((profile_name,country,profile.get('region','—'),profile.get('city','—'),url,profile.get('programmes','University')))
+    country=profile.get('country') or 'Worldwide'
+    if kind=='colleges':items.append((profile_name,country,profile.get('region') or '—',profile.get('city') or '—',url,profile.get('programmes') or 'University'))
     else:items.append((profile_name,country,'Detailed product profile',url))
    for record in external_records(kind):
     name=record['name'].strip()
@@ -219,7 +228,11 @@ def render(out,site,shell,write):
     controls+='<select data-region aria-label="State or region"><option value="">All regions</option></select><select data-city aria-label="City"><option value="">All cities</option></select>'
    controls+='</div><p data-count role="status"></p>'
    cards=[]
+   seen_slugs=set()
    for row in items:
+    profile_slug=entry_slug(row[0])
+    if profile_slug in seen_slugs:continue
+    seen_slugs.add(profile_slug)
     if kind=='colleges':
      n,c,r,city,url,area=row
      attrs=f'data-country="{esc(c)}" data-region="{esc(r)}" data-city="{esc(city)}"'
@@ -227,9 +240,14 @@ def render(out,site,shell,write):
     else:
      n,c,area,url=row;attrs=f'data-country="{esc(c)}"'
      detail=f'<p>{esc(c)} · {esc(area)}</p>'
-    cards.append(f'<article class="directory-card" data-item {attrs} data-search="{esc((" ".join(row)).lower())}"><h2><a href="/{lang}/{kind}/{entry_slug(n)}/">{esc(n)}</a></h2>{detail}<p>{tr("Fees, eligibility, placement or product prices: verify with official source.","फीस, पात्रता, प्लेसमेंट या कीमत: आधिकारिक स्रोत से जाँचें।")}</p><a href="{esc(url)}" rel="noopener noreferrer" target="_blank">{tr("Official website","आधिकारिक वेबसाइट")} ↗</a></article>')
+    thumbnail=media_html(kind,n,out) if n in detailed_profiles().get(kind,{}) else ''
+    cards.append(f'<article class="directory-card" data-item {attrs} data-search="{esc((" ".join(row)).lower())}">{thumbnail}<h2><a href="/{lang}/{kind}/{entry_slug(n)}/">{esc(n)}</a></h2>{detail}<p>{tr("Fees, eligibility, placement or product prices: verify with official source.","फीस, पात्रता, प्लेसमेंट या कीमत: आधिकारिक स्रोत से जाँचें।")}</p><a href="{esc(url)}" rel="noopener noreferrer" target="_blank">{tr("Source website","स्रोत वेबसाइट")} ↗</a></article>')
     detail_url=site+'/'+lang+'/'+kind+'/'+entry_slug(n)+'/'
-    write(out/lang/kind/entry_slug(n)/'index.html',shell(lang,n,'Official-source guide: '+n,detail_url,entry_detail(kind,row,lang)))
+    entry=detailed_profiles().get(kind,{}).get(n,{})
+    page=shell(lang,n,'Source-listed courses and specifications for '+n,detail_url,entry_detail(kind,row,lang,out))
+    if meaningful(entry):page=page.replace('</head>',schema(kind,n,entry,detail_url,photo(kind,n,out))+'</head>')
+    else:page=page.replace('content="index,follow,max-image-preview:large"','content="noindex,follow,max-image-preview:large"')
+    write(out/lang/kind/entry_slug(n)/'index.html',page)
    note=tr('Growing directory sourced from official websites and Wikidata; not an exhaustive global database. We do not invent fees, admissions, placements, prices or specifications. Official sites are the source of truth.','यह शुरुआती डायरेक्टरी है, पूरी विश्व सूची नहीं। फीस, एडमिशन, प्लेसमेंट, कीमत या स्पेसिफिकेशन बिना सत्यापन के नहीं दिए जाते।')
    body=f'<div class="wrap"><section class="directory-hero"><h1>{esc(tr(*name))}</h1><p class="directory-note">{esc(note)}</p>{links}</section><section data-directory>{controls}<div class="directory-grid">{"".join(cards)}</div></section></div>'
    write(out/lang/kind/'index.html',shell(lang,tr(*name),note,site+'/'+lang+'/'+kind+'/',body))
@@ -243,3 +261,20 @@ def render(out,site,shell,write):
    cards.append(f'<article class="directory-card" data-item data-search="{esc((n+" "+d).lower())}"><h2><a href="/{lang}/courses/{slugname}/">{esc(n)}</a></h2><p>{esc(d)}</p></article>')
   body=f'<div class="wrap"><section class="directory-hero"><h1>{tr("Worldwide Course Explorer","दुनियाभर के कोर्स")}</h1><p class="directory-note">{tr("Course admission requirements and licensing vary by institution and country.","कोर्स की पात्रता और लाइसेंसिंग देश व संस्थान के अनुसार बदलती है।")}</p>{links}</section><section data-directory><div class="directory-controls"><input data-search aria-label="Search courses" placeholder="{tr("Search courses","कोर्स खोजें")}"></div><p data-count role="status"></p><div class="directory-grid">{"".join(cards)}</div></section></div>'
   write(out/lang/'courses'/'index.html',shell(lang,tr('Worldwide Course Explorer','दुनियाभर के कोर्स'),'Course guides and official admissions guidance',site+'/'+lang+'/courses/',body))
+ add_profile_sitemap(out,site)
+
+
+def add_profile_sitemap(out,site):
+ import xml.etree.ElementTree as ET
+ path=Path(out)/'sitemap.xml'
+ if not path.exists():return
+ ns='http://www.sitemaps.org/schemas/sitemap/0.9';ET.register_namespace('',ns)
+ root=ET.fromstring(path.read_text());existing={n.text for n in root.iter('{'+ns+'}loc')}
+ for kind,entries in detailed_profiles().items():
+  for name,entry in entries.items():
+   if not meaningful(entry):continue
+   for lang in ('en','hi'):
+    url=site+'/'+lang+'/'+kind+'/'+entry_slug(name)+'/'
+    if url not in existing:
+     node=ET.SubElement(root,'{'+ns+'}url');ET.SubElement(node,'{'+ns+'}loc').text=url;existing.add(url)
+ path.write_text(ET.tostring(root,encoding='unicode'))
