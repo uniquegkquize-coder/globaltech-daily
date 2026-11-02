@@ -157,12 +157,12 @@
       "eligible_updates": 0,
       "shortfall": 2,
       "reasons": {
-        "considered": 505,
+        "considered": 693,
         "already_published_unchanged": 3,
-        "missing or invalid HTTPS evidence URL": 427,
-        "insufficient verified descriptive fields": 75
+        "missing or invalid HTTPS evidence URL": 604,
+        "insufficient verified descriptive fields": 86
       },
-      "rejected_count": 502,
+      "rejected_count": 690,
       "rejected_sample": [
         {
           "name": "Huawei Y7 Prime (2019)",
@@ -452,6 +452,11 @@
           "source": "https://www.benelli.com/it-it/products/trk-702-x-eu5-plus"
         },
         {
+          "name": "Kymco CV3",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.kymco.co.uk/scooters-and-motorcycles-range/maxi-scooters/cv3"
+        },
+        {
           "name": "Farm bike",
           "reason": "missing or invalid HTTPS evidence URL",
           "source": "http://www.wikidata.org/entity/Q100151385"
@@ -565,14 +570,9 @@
           "name": "DKW ZSW 500",
           "reason": "missing or invalid HTTPS evidence URL",
           "source": "http://www.wikidata.org/entity/Q108025310"
-        },
-        {
-          "name": "DKW ZM",
-          "reason": "missing or invalid HTTPS evidence URL",
-          "source": "http://www.wikidata.org/entity/Q108041766"
         }
       ]
     }
   },
-  "date": "2026-11-02T04:59:52.379870+00:00"
+  "date": "2026-11-02T07:50:20.393779+00:00"
 }
