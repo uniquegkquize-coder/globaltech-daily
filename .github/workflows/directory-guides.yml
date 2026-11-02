@@ -16,7 +16,7 @@ permissions:
   contents: write
 concurrency:
   group: globaltech-directory-guides
-  cancel-in-progress: false
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 jobs:
   publish:
     runs-on: ubuntu-latest
