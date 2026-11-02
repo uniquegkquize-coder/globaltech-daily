@@ -35,3 +35,13 @@ class OriginalReliabilityTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as tmp,patch.object(g,'IMAGES',Path(tmp)):
    rows,_,_=g.choose_backfill(posts,limit=2,cursor=cursor,mode='all')
   self.assertEqual({p['id'] for p in rows},{'000003','000004'})
+
+class PublisherMarkupTests(unittest.TestCase):
+ def test_press_release_and_lazy_background_images_are_found(self):
+  from bs4 import BeautifulSoup
+  soup=BeautifulSoup('''<div class="release-body"><img data-src="/release.jpg"></div><main><div style="background-image:url('/hero.jpg')"></div><div data-bg="/lazy.jpg"></div></main>''','html.parser')
+  urls={row['url'] for row in g.source_candidates(soup,'https://example.org/story')}
+  self.assertTrue({'https://example.org/release.jpg','https://example.org/hero.jpg','https://example.org/lazy.jpg'} <= urls)
+ def test_tracking_and_generic_publisher_badges_are_not_photo_candidates(self):
+  for url in ['https://rt.prnewswire.com/rt.gif?NewsItemId=123','https://example.org/subject-and-industry-code-images/CPR.jpg','https://cdn.example.org/is/image/site/Facebook?qlt=82']:
+   self.assertTrue(g.generic_image(url),url)

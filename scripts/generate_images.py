@@ -51,7 +51,7 @@ def diagnostic(ident,reason,**extra):
     print('PHOTO_DIAGNOSTIC',json.dumps({'id':ident,'reason':reason,**extra}),flush=True)
 
 def generic_image(url):
-    return bool(re.search(r'(?i)(logo|favicon|avatar|sprite|placeholder|tracking-pixel|default-image|site-icon|/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',urlparse(str(url)).path))
+    return bool(re.search(r'(?i)(logo|favicon|avatar|sprite|placeholder|tracking-pixel|default-image|site-icon|/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$)|/rt\.gif$|/subject-and-industry-code-images/|incredible-india-og|/(?:facebook|twitter|instagram|linkedin|youtube|x)$)',urlparse(str(url)).path))
 
 def source_candidates(soup,base):
     rows=[]
@@ -80,7 +80,7 @@ def source_candidates(soup,base):
     for key in ('og:image:secure_url','og:image','twitter:image','twitter:image:src'):
         tag=soup.find('meta',attrs={'property':key}) or soup.find('meta',attrs={'name':key})
         if tag:add(tag.get('content'),origin='social')
-    for tag in soup.select('article img,main img,figure img,[itemprop="image"],picture source')[:100]:
+    for tag in soup.select('article img,main img,figure img,[itemprop="image"],picture source,.release-body img,.article-body img,[itemprop="articleBody"] img,.hero img')[:100]:
         srcset=tag.get('data-srcset') or tag.get('srcset') or ''
         sizes=[]
         for part in srcset.split(','):
@@ -92,6 +92,12 @@ def source_candidates(soup,base):
         for _,url in sorted(sizes,reverse=True):add(url,label=tag.get('alt',''),origin='article')
         for attr in ('data-original','data-full-src','data-lazy-src','data-src','data-lazy','src'):
             if tag.get(attr):add(tag[attr],label=tag.get('alt',''),origin='article')
+    # Publisher hero photography may use lazy CSS backgrounds instead of img.
+    for tag in soup.select('article [style],main [style],.hero[style],[class*="banner"][style],[data-bg],[data-background],[data-background-image]')[:100]:
+        for attr in ('data-bg','data-background','data-background-image'):
+            if tag.get(attr):add(tag[attr],origin='article')
+        for value in re.findall(r'url\(\s*[\"\']?([^\"\')]+)',tag.get('style',''),re.I):
+            add(value.strip(),origin='article')
     seen=set();out=[]
     for row in rows:
         if row['url'] not in seen:seen.add(row['url']);out.append(row)
