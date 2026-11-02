@@ -1,23 +1,33 @@
 {
-  "published": 8,
+  "published": 0,
   "updated": 0,
   "target": 8,
-  "missing": {},
+  "missing": {
+    "colleges": 2,
+    "phones": 2,
+    "cars": 2,
+    "bikes": 2
+  },
   "categories": {
     "colleges": {
-      "new": 2,
+      "new": 0,
       "updated": 0,
-      "eligible_new": 2,
+      "eligible_new": 0,
       "eligible_updates": 0,
-      "shortfall": 0,
+      "shortfall": 2,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 1,
-        "missing or invalid HTTPS evidence URL": 216,
-        "insufficient verified descriptive fields": 83
+        "already_published_unchanged": 3,
+        "insufficient verified descriptive fields": 83,
+        "missing or invalid HTTPS evidence URL": 216
       },
       "rejected_count": 299,
       "rejected_sample": [
+        {
+          "name": "Institut Sciences Campus",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://legrandfrere.africa/etablissement/institut-science-campus-isc/"
+        },
         {
           "name": "Darul Uloom Latheefia",
           "reason": "missing or invalid HTTPS evidence URL",
@@ -67,11 +77,6 @@
           "name": "Universit\u00e9 de Ouahigouya",
           "reason": "insufficient verified descriptive fields",
           "source": "https://adscientificindex.com/university/universite-de-ouahigouya/24209/"
-        },
-        {
-          "name": "Institut Sciences Campus",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://legrandfrere.africa/etablissement/institut-science-campus-isc/"
         },
         {
           "name": "Universit\u00e9 Polytechnique Int\u00e9gr\u00e9e",
@@ -146,14 +151,14 @@
       ]
     },
     "phones": {
-      "new": 2,
+      "new": 0,
       "updated": 0,
-      "eligible_new": 2,
+      "eligible_new": 0,
       "eligible_updates": 0,
-      "shortfall": 0,
+      "shortfall": 2,
       "reasons": {
         "considered": 417,
-        "already_published_unchanged": 1,
+        "already_published_unchanged": 3,
         "missing or invalid HTTPS evidence URL": 346,
         "insufficient verified descriptive fields": 68
       },
@@ -247,7 +252,7 @@
         {
           "name": "Xiaomi Mi 11",
           "reason": "insufficient verified descriptive fields",
-          "source": "https://www.mi.com/ua/product/mi-11/overview"
+          "source": "https://www.mi.com/global/product/mi-11/"
         },
         {
           "name": "Moto G9",
@@ -287,14 +292,14 @@
       ]
     },
     "cars": {
-      "new": 2,
+      "new": 0,
       "updated": 0,
-      "eligible_new": 2,
+      "eligible_new": 0,
       "eligible_updates": 0,
-      "shortfall": 0,
+      "shortfall": 2,
       "reasons": {
         "considered": 650,
-        "already_published_unchanged": 3,
+        "already_published_unchanged": 5,
         "missing or invalid HTTPS evidence URL": 551,
         "insufficient verified descriptive fields": 94
       },
@@ -408,7 +413,7 @@
         {
           "name": "Geely Haoyue",
           "reason": "insufficient verified descriptive fields",
-          "source": "https://haoyue.geely.com/"
+          "source": "https://global.geely.com/en/models/okavango"
         },
         {
           "name": "De Dion-Bouton Type AD",
@@ -428,18 +433,18 @@
       ]
     },
     "bikes": {
-      "new": 2,
+      "new": 0,
       "updated": 0,
-      "eligible_new": 2,
+      "eligible_new": 0,
       "eligible_updates": 0,
-      "shortfall": 0,
+      "shortfall": 2,
       "reasons": {
-        "considered": 264,
-        "already_published_unchanged": 1,
-        "missing or invalid HTTPS evidence URL": 242,
-        "insufficient verified descriptive fields": 19
+        "considered": 317,
+        "already_published_unchanged": 3,
+        "missing or invalid HTTPS evidence URL": 283,
+        "insufficient verified descriptive fields": 31
       },
-      "rejected_count": 261,
+      "rejected_count": 314,
       "rejected_sample": [
         {
           "name": "Farm bike",
@@ -452,9 +457,24 @@
           "source": "https://unitedkingdom.benelli.com/product/bn-125"
         },
         {
+          "name": "Yamaha YZF-R1M",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100744519"
+        },
+        {
           "name": "LinTo 500 GP",
           "reason": "missing or invalid HTTPS evidence URL",
           "source": "http://www.wikidata.org/entity/Q10356331"
+        },
+        {
+          "name": "Yamaha TDM",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q1043815"
+        },
+        {
+          "name": "VinFast Theon",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q104913276"
         },
         {
           "name": "Tomos CTX 80",
@@ -482,6 +502,11 @@
           "source": "http://www.wikidata.org/entity/Q105826212"
         },
         {
+          "name": "Husqvarna MC 258",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q10589673"
+        },
+        {
           "name": "MZ TS 250",
           "reason": "missing or invalid HTTPS evidence URL",
           "source": "http://www.wikidata.org/entity/Q106413425"
@@ -497,6 +522,11 @@
           "source": "http://www.wikidata.org/entity/Q106691340"
         },
         {
+          "name": "VinFast Feliz",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q106779032"
+        },
+        {
           "name": "Kawasaki H2R",
           "reason": "missing or invalid HTTPS evidence URL",
           "source": "http://www.wikidata.org/entity/Q106867882"
@@ -505,6 +535,11 @@
           "name": "Yamaha SRV",
           "reason": "missing or invalid HTTPS evidence URL",
           "source": "http://www.wikidata.org/entity/Q10723359"
+        },
+        {
+          "name": "BLAZE",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q107263635"
         },
         {
           "name": "Norton Model 7 Dominator",
@@ -532,42 +567,12 @@
           "source": "http://www.wikidata.org/entity/Q108041766"
         },
         {
-          "name": "Malaguti Centro",
+          "name": "Aprilia Atlantic",
           "reason": "missing or invalid HTTPS evidence URL",
-          "source": "http://www.wikidata.org/entity/Q108490208"
-        },
-        {
-          "name": "Malaguti Madison",
-          "reason": "missing or invalid HTTPS evidence URL",
-          "source": "http://www.wikidata.org/entity/Q108546305"
-        },
-        {
-          "name": "Malaguti Password",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://web.archive.org/web/20110606021516/http://www.malaguti.com/it-IT/Modelli/scooter-125-300cc/PASSWORD-250cc.aspx"
-        },
-        {
-          "name": "Benelli TRK",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://italy.benelli.com/product/trk-502-2020"
-        },
-        {
-          "name": "DKW E 250",
-          "reason": "missing or invalid HTTPS evidence URL",
-          "source": "http://www.wikidata.org/entity/Q108564770"
-        },
-        {
-          "name": "Malaguti Ciak",
-          "reason": "missing or invalid HTTPS evidence URL",
-          "source": "http://www.wikidata.org/entity/Q108882232"
-        },
-        {
-          "name": "Malaguti F18 Warrior",
-          "reason": "missing or invalid HTTPS evidence URL",
-          "source": "http://www.wikidata.org/entity/Q108901800"
+          "source": "http://www.wikidata.org/entity/Q108201950"
         }
       ]
     }
   },
-  "date": "2026-11-02T02:06:19.815285+00:00"
+  "date": "2026-11-02T02:36:14.783376+00:00"
 }
