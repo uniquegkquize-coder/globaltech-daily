@@ -16,7 +16,8 @@ permissions:
 concurrency:
   # Do not race the article collector while either job modifies image cursors.
   group: globaltech-news-publish
-  cancel-in-progress: false
+  # Explicit image-code fixes take priority; scheduled backfills remain serialized.
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 jobs:
   archive-images:
     runs-on: ubuntu-latest
