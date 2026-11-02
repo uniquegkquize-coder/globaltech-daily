@@ -29,6 +29,11 @@
           "source": "https://legrandfrere.africa/etablissement/institut-science-campus-isc/"
         },
         {
+          "name": "Dhemaji Engineering College",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://dec.ac.in/"
+        },
+        {
           "name": "Darul Uloom Latheefia",
           "reason": "missing or invalid HTTPS evidence URL",
           "source": "http://www.wikidata.org/entity/Q100233622"
@@ -92,11 +97,6 @@
           "name": "University of Aizu",
           "reason": "insufficient verified descriptive fields",
           "source": "https://u-aizu.ac.jp/en/"
-        },
-        {
-          "name": "Dhemaji Engineering College",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://dec.ac.in/"
         },
         {
           "name": "Federal University, Wukari",
@@ -439,12 +439,12 @@
       "eligible_updates": 0,
       "shortfall": 2,
       "reasons": {
-        "considered": 317,
+        "considered": 330,
         "already_published_unchanged": 3,
-        "missing or invalid HTTPS evidence URL": 283,
-        "insufficient verified descriptive fields": 31
+        "missing or invalid HTTPS evidence URL": 294,
+        "insufficient verified descriptive fields": 33
       },
-      "rejected_count": 314,
+      "rejected_count": 327,
       "rejected_sample": [
         {
           "name": "Farm bike",
@@ -574,5 +574,5 @@
       ]
     }
   },
-  "date": "2026-11-02T02:36:14.783376+00:00"
+  "date": "2026-11-02T02:45:10.925604+00:00"
 }
