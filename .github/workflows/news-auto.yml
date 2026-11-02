@@ -25,7 +25,8 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python -m unittest discover -s tests
   publish-news:
-    if: github.event_name != 'push' # Scheduled/manual publishing; code pushes only validate
+    # A deliberate [publish-now] commit is an auditable manual publishing trigger.
+    if: github.event_name != 'push' || contains(github.event.head_commit.message, '[publish-now]')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
