@@ -32,3 +32,15 @@ def saved_photo_allowed(info,root=None):
     if institution(subject):
         return campus_image(subject,info.get('matched_title',''),info.get('image_description',''))
     return True
+
+
+def pipeline_fingerprint(root):
+    """Version the deployed image code/config without relying on provider badges."""
+    import hashlib
+    from pathlib import Path
+    digest=hashlib.sha256()
+    for name in ('scripts/build.py','scripts/generate_images.py','scripts/image_rules.py','content/approved-photo-sources.json','content/photo-subjects.json'):
+        digest.update(name.encode()+b'\0')
+        digest.update((Path(root)/name).read_bytes())
+        digest.update(b'\0')
+    return digest.hexdigest()

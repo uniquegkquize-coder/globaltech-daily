@@ -521,3 +521,7 @@ render_notices(OUT,SITE,shell,write)
 render_directories(OUT,SITE,shell,write)
 write(OUT/'style.css',CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS)
 write(OUT/'site.js',JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS)
+
+# Let production checks distinguish a stale status badge from a stale deployment.
+from image_rules import pipeline_fingerprint
+write(OUT/'deployment.json',json.dumps({'image_pipeline':pipeline_fingerprint(R),'posts':len(POSTS)},sort_keys=True)+'\n')
