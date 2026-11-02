@@ -1,24 +1,22 @@
 {
-  "published": 4,
-  "updated": 14,
+  "published": 8,
+  "updated": 4,
   "target": 8,
-  "missing": {
-    "phones": 2,
-    "cars": 2
-  },
+  "missing": {},
   "categories": {
     "colleges": {
       "new": 2,
-      "updated": 3,
-      "eligible_new": 3,
-      "eligible_updates": 3,
+      "updated": 0,
+      "eligible_new": 5,
+      "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 302,
-        "insufficient verified descriptive fields": 80,
-        "identifier URL is not specification evidence": 216
+        "already_published_unchanged": 5,
+        "insufficient verified descriptive fields": 85,
+        "identifier URL is not specification evidence": 207
       },
-      "rejected_count": 296,
+      "rejected_count": 292,
       "rejected_sample": [
         {
           "name": "Universit\u00e9 Notre Dame de Lomami",
@@ -41,6 +39,91 @@
           "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/"
         },
         {
+          "name": "Bryant University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.bryant.edu/"
+        },
+        {
+          "name": "California College of the Arts",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.cca.edu/"
+        },
+        {
+          "name": "California Miramar University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/California_Miramar_University"
+        },
+        {
+          "name": "California State Polytechnic University, Pomona",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/California_State_Polytechnic_University%2C_Pomona"
+        },
+        {
+          "name": "California State University, Bakersfield",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/California_State_University%2C_Bakersfield"
+        },
+        {
+          "name": "California State University, Fresno",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/California_State_University%2C_Fresno"
+        },
+        {
+          "name": "California State University, East Bay",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/California_State_University%2C_East_Bay"
+        },
+        {
+          "name": "California State University, Dominguez Hills",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/California_State_University%2C_Dominguez_Hills"
+        },
+        {
+          "name": "California State University, Fullerton",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/California_State_University%2C_Fullerton"
+        },
+        {
+          "name": "California State University, San Bernardino",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/California_State_University%2C_San_Bernardino"
+        },
+        {
+          "name": "DigiPen Institute of Technology",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.digipen.edu/"
+        },
+        {
+          "name": "Dalian University of Foreign Languages",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Dalian_University_of_Foreign_Languages"
+        },
+        {
+          "name": "Oikos University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.oikos.edu/wp-content/uploads/2026/08/2025-School-Performance-Fact-Sheet.pdf"
+        },
+        {
+          "name": "Mohammad Ali Jinnah University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Mohammad_Ali_Jinnah_University"
+        },
+        {
+          "name": "Federal Urdu University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Federal_Urdu_University"
+        },
+        {
+          "name": "Tor Vergata University of Rome",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/University_of_Rome_Tor_Vergata"
+        },
+        {
+          "name": "METROCAMP",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.wyden.com.br/unidades/unimetrocamp"
+        },
+        {
           "name": "Darul Uloom Latheefia",
           "reason": "identifier URL is not specification evidence",
           "source": "http://www.wikidata.org/entity/Q100233622"
@@ -59,107 +142,58 @@
           "name": "Universit\u00e9 Chadli Bendjedid d'El Tarf",
           "reason": "identifier URL is not specification evidence",
           "source": "http://www.wikidata.org/entity/Q100258391"
-        },
-        {
-          "name": "Manara University",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://manara.edu.sy/"
-        },
-        {
-          "name": "Universit\u00e9 Internationale d'Agadir",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://universiapolis.ma/"
-        },
-        {
-          "name": "Bulacan State University",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.bulsu.edu.ph/"
-        },
-        {
-          "name": "Zamfara State University",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.zamsut.edu.ng"
-        },
-        {
-          "name": "Dhammaduta Chekinda University",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.dcumyanmar.com"
-        },
-        {
-          "name": "Universit\u00e9 de Ouahigouya",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://adscientificindex.com/university/universite-de-ouahigouya/24209/"
-        },
-        {
-          "name": "Universit\u00e9 Polytechnique Int\u00e9gr\u00e9e",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100523631"
-        },
-        {
-          "name": "Universit\u00e9 Tahar Moulay de Saida",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.univ-saida.dz/ar/"
-        },
-        {
-          "name": "University of Aizu",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://u-aizu.ac.jp/en/"
-        },
-        {
-          "name": "Federal University, Wukari",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.fuwukari.edu.ng/"
-        },
-        {
-          "name": "Angola Central Highlands University",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100927380"
-        },
-        {
-          "name": "Yorker International University",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100927381"
-        },
-        {
-          "name": "Pacific Corporate University",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100927384"
-        },
-        {
-          "name": "Dely Brahim University",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100927385"
-        },
-        {
-          "name": "International Virtual University",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100927393"
-        },
-        {
-          "name": "Ethiopian Catholic University of Saint Thomas Aquinas",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.ecu.edu.et/"
-        },
-        {
-          "name": "New Global Vision University College",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://ngvc.edu.et/"
         }
       ]
     },
     "phones": {
-      "new": 0,
-      "updated": 3,
-      "eligible_new": 0,
-      "eligible_updates": 3,
-      "shortfall": 2,
+      "new": 2,
+      "updated": 1,
+      "eligible_new": 85,
+      "eligible_updates": 1,
+      "shortfall": 0,
       "reasons": {
-        "considered": 1001,
-        "identifier URL is not specification evidence": 895,
-        "insufficient verified descriptive fields": 103
+        "considered": 1159,
+        "already_published_unchanged": 2,
+        "insufficient verified descriptive fields": 94,
+        "identifier URL is not specification evidence": 977
       },
-      "rejected_count": 998,
+      "rejected_count": 1071,
       "rejected_sample": [
+        {
+          "name": "OnePlus Open",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.oneplus.com/us/open"
+        },
+        {
+          "name": "iPhone Air",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.apple.com/iphone-air/"
+        },
+        {
+          "name": "iPhone 17e",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.apple.com/iphone-17e/"
+        },
+        {
+          "name": "iPhone 18 Pro",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.apple.com/iphone-18-pro/"
+        },
+        {
+          "name": "iPhone Duo",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.apple.com/ae/iphone-duo/"
+        },
+        {
+          "name": "Moto",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.motorola.com/us/en/cart"
+        },
+        {
+          "name": "Nokia Lumia 730",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_730"
+        },
         {
           "name": "Huawei Y7 Prime (2019)",
           "reason": "identifier URL is not specification evidence",
@@ -249,56 +283,22 @@
           "name": "Xiaomi Mi 11",
           "reason": "insufficient verified descriptive fields",
           "source": "https://www.mi.com/global/product/mi-11/"
-        },
-        {
-          "name": "Moto G9",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q104553915"
-        },
-        {
-          "name": "Samsung Galaxy A12",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q104772244"
-        },
-        {
-          "name": "Huawei Y360",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q104776908"
-        },
-        {
-          "name": "Huawei Y3 2018",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q104776914"
-        },
-        {
-          "name": "Meizu PRO 7",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.meizu.com/en/pro7/summary/"
-        },
-        {
-          "name": "Moto E7",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.motorola.com/we/smartphones-moto-e-gen-7/p"
-        },
-        {
-          "name": "Nokia 2.4",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q104803350"
         }
       ]
     },
     "cars": {
-      "new": 0,
-      "updated": 5,
-      "eligible_new": 0,
-      "eligible_updates": 5,
-      "shortfall": 2,
+      "new": 2,
+      "updated": 1,
+      "eligible_new": 70,
+      "eligible_updates": 1,
+      "shortfall": 0,
       "reasons": {
         "considered": 650,
-        "insufficient verified descriptive fields": 94,
-        "identifier URL is not specification evidence": 551
+        "already_published_unchanged": 4,
+        "insufficient verified descriptive fields": 42,
+        "identifier URL is not specification evidence": 533
       },
-      "rejected_count": 645,
+      "rejected_count": 575,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -309,6 +309,71 @@
           "name": "Cadillac XTS",
           "reason": "insufficient verified descriptive fields",
           "source": "https://web.archive.org/web/20191117172152/https://www.cadillac.com/sedans/xts-sedan"
+        },
+        {
+          "name": "Dacia Bigster",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.dacia.co.uk/hybrid-and-electric-range/bigster-suv.html"
+        },
+        {
+          "name": "Alpine A521",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://web.archive.org/web/20210302162445/https://www.alpinecars.com/fr/formule-1/alpine-a521/"
+        },
+        {
+          "name": "Aion Y",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Aion_Y"
+        },
+        {
+          "name": "VinFast VF 9",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/VinFast_VF_9"
+        },
+        {
+          "name": "VinFast VF 8",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/VinFast_VF_8"
+        },
+        {
+          "name": "Alfa Romeo Racing C41",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Alfa_Romeo_Racing_C41"
+        },
+        {
+          "name": "Toyota Glanza",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.toyotabharat.com/showroom/glanza/"
+        },
+        {
+          "name": "Bestune E01",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Bestune_E01"
+        },
+        {
+          "name": "Hyundai Staria",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.hyundai.com/worldwide/en/mpv/staria-2021/highlights"
+        },
+        {
+          "name": "Hyundai Alcazar",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.hyundai.com/in/en/find-a-car/alcazar/highlights.html"
+        },
+        {
+          "name": "Automobili Estrema",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Automobili_Estrema"
+        },
+        {
+          "name": "Chevrolet Uplander",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://web.archive.org/web/20070928110744/http://www.chevrolet.com/uplander/"
+        },
+        {
+          "name": "BYD D1",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/BYD_D1"
         },
         {
           "name": "Jaguar XK140",
@@ -359,91 +424,127 @@
           "name": "Bugatti Type 57",
           "reason": "identifier URL is not specification evidence",
           "source": "http://www.wikidata.org/entity/Q1002464"
-        },
-        {
-          "name": "De Dion-Bouton Type S",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100255613"
-        },
-        {
-          "name": "De Dion-Bouton Type W",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100255618"
-        },
-        {
-          "name": "De Dion-Bouton Type AB",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100255620"
-        },
-        {
-          "name": "De Dion-Bouton Type AC",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100255621"
-        },
-        {
-          "name": "De Dion-Bouton Type AN",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100255624"
-        },
-        {
-          "name": "De Dion-Bouton Type AV",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100255626"
-        },
-        {
-          "name": "De Dion-Bouton Type DE2",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100255632"
-        },
-        {
-          "name": "De Dion-Bouton Type DG",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100255634"
-        },
-        {
-          "name": "De Dion-Bouton Type DW 2",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100255636"
-        },
-        {
-          "name": "De Dion-Bouton Type EJ 2",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100255642"
-        },
-        {
-          "name": "Foton View",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://van.foton.com.cn/van/car/modelDetail/20%20official%20website"
-        },
-        {
-          "name": "Geely Haoyue",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://global.geely.com/en/models/okavango"
-        },
-        {
-          "name": "De Dion-Bouton Type AD",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100263822"
         }
       ]
     },
     "bikes": {
       "new": 2,
-      "updated": 3,
-      "eligible_new": 2,
-      "eligible_updates": 3,
+      "updated": 2,
+      "eligible_new": 17,
+      "eligible_updates": 2,
       "shortfall": 0,
       "reasons": {
         "considered": 436,
-        "insufficient verified descriptive fields": 45,
-        "identifier URL is not specification evidence": 386
+        "already_published_unchanged": 3,
+        "insufficient verified descriptive fields": 48,
+        "identifier URL is not specification evidence": 366
       },
-      "rejected_count": 431,
+      "rejected_count": 414,
       "rejected_sample": [
         {
           "name": "Yamaha Gear Ultima",
           "reason": "insufficient verified descriptive fields",
           "source": "https://www.yamaha-motor.co.id/product/gear-ultima/"
+        },
+        {
+          "name": "Boss Hoss Cycles",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://bosshoss.com/collections/hats-caps/products/black-boss-hoss-cycles-cap-with-horsehead"
+        },
+        {
+          "name": "Piaggio Liberty",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Piaggio_Liberty"
+        },
+        {
+          "name": "Piaggio X9",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Piaggio_X9"
+        },
+        {
+          "name": "Piaggio Medley",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Piaggio_Medley"
+        },
+        {
+          "name": "Suter MMX2",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Suter_MMX2"
+        },
+        {
+          "name": "Aprilia Mojito",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Aprilia_Mojito"
+        },
+        {
+          "name": "Ducati 98",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://web.archive.org/web/20120815124429/http://www.ducati.com/history/60s/ducati_98/index.do"
+        },
+        {
+          "name": "Suzuki Burgman",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://suzukicycles.com:443/scooter/2026/burgman-400"
+        },
+        {
+          "name": "Moto Guzzi V85 TT",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Moto_Guzzi_V85_TT"
+        },
+        {
+          "name": "Norton Classic",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Norton_Classic"
+        },
+        {
+          "name": "Malaguti Password",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://web.archive.org/web/20110606021516/http://www.malaguti.com/it-IT/Modelli/scooter-125-300cc/PASSWORD-250cc.aspx"
+        },
+        {
+          "name": "Yamaha Bolt",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Yamaha_Bolt"
+        },
+        {
+          "name": "Himalayan",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Royal_Enfield_Himalayan"
+        },
+        {
+          "name": "Auto Four",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Auto_Four"
+        },
+        {
+          "name": "BMW F900R",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/BMW_F900R"
+        },
+        {
+          "name": "Suzuki AX100",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Suzuki_AX100"
+        },
+        {
+          "name": "boda boda",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Boda_boda"
+        },
+        {
+          "name": "Aprilia RX",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Aprilia_RX"
+        },
+        {
+          "name": "Brough Superior SS100",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Brough_Superior_SS100"
+        },
+        {
+          "name": "Brough Superior SS80",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Brough_Superior_SS80"
         },
         {
           "name": "Farm bike",
@@ -464,109 +565,9 @@
           "name": "LinTo 500 GP",
           "reason": "identifier URL is not specification evidence",
           "source": "http://www.wikidata.org/entity/Q10356331"
-        },
-        {
-          "name": "Yamaha TDM",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q1043815"
-        },
-        {
-          "name": "VinFast Theon",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q104913276"
-        },
-        {
-          "name": "Tomos CTX 80",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q105002044"
-        },
-        {
-          "name": "Jawa 350/360",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q105044760"
-        },
-        {
-          "name": "BMW R28",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q105771898"
-        },
-        {
-          "name": "MZ ETS 175/250",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q105825955"
-        },
-        {
-          "name": "MZ ETS 125/150",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q105826212"
-        },
-        {
-          "name": "Husqvarna MC 258",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q10589673"
-        },
-        {
-          "name": "MZ TS 250",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q106413425"
-        },
-        {
-          "name": "MZ TS 150",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q106413432"
-        },
-        {
-          "name": "MZ 500R",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q106691340"
-        },
-        {
-          "name": "VinFast Feliz",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q106779032"
-        },
-        {
-          "name": "Kawasaki H2R",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q106867882"
-        },
-        {
-          "name": "Yamaha SRV",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q10723359"
-        },
-        {
-          "name": "BLAZE",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q107263635"
-        },
-        {
-          "name": "Norton Model 7 Dominator",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q107299404"
-        },
-        {
-          "name": "Norton Model 88 Dominator",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q107396910"
-        },
-        {
-          "name": "Norton Model 99 Dominator",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q107490649"
-        },
-        {
-          "name": "DKW ZSW 500",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q108025310"
-        },
-        {
-          "name": "DKW ZM",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q108041766"
         }
       ]
     }
   },
-  "date": "2026-11-02T13:08:51.293692+00:00"
+  "date": "2026-11-02T13:32:26.292339+00:00"
 }
