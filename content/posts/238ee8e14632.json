@@ -1,0 +1,29 @@
+{
+  "en_title": "How to Build Your Own Galaxy 'Pause Point' Alternative Using One UI",
+  "hi_title": "One UI टूल का उपयोग करके अपना खुद का गैलेक्सी 'पॉज पॉइंट' विकल्प कैसे बनाएं",
+  "en_body": "## Understanding the Pause Point Feature\n\nPause Point is designed to disrupt habitual phone scrolling by intercepting users right before a distracting feed loads. According to reports, the feature introduces an unskippable delay or prompts a brief pause—such as breathing exercises—when opening targeted apps. Deactivating it reportedly requires a full device restart, creating a significant hurdle during moments of temptation.\n\nWhile the feature has reportedly expanded to various devices through updates like Android 17 QPR1 and specific vendor betas, many Samsung Galaxy users are still waiting for official availability.\n\n## Creating a DIY Stand-In with One UI Tools\n\nWhile waiting for native support, Galaxy users can combine existing Samsung features to replicate aspects of the pause mechanism:\n\n* **App Timers:** Navigate to **Settings > Digital Wellbeing and parental controls > App timers** to set strict daily limits on distracting apps. Setting a limit to one minute can quickly block access, though Samsung's interface currently allows users to easily bypass the restriction with a tap.\n* **Modes and Routines:** Under **Settings > Modes and Routines**, users can set up custom Focus modes to restrict apps, though this requires manual activation or scheduling in advance.\n* **Automated Routines:** To react instantly when an app opens, go to the **Routines** tab:\n  * Set the **If** condition to \"App opened\" and select your target apps.\n  * Set the **Then** action to enable system-wide grayscale (found under **Settings > Accessibility > Vision enhancements**) to remove engaging colors.\n  * Add an action to trigger Edge lighting for a jarring visual alert the moment the app launches.\n\n## Practical Implications and Verification\n\nHomemade workarounds lack the strict safeguards of a native operating system feature, such as mandatory device restarts to disable restrictions. However, these custom routines offer a practical stopgap to interrupt mindless scrolling until official updates roll out to Galaxy devices.\n\nTo verify original announcements regarding software updates and feature rollouts, check official Samsung and Android release channels or verified tech journalism outlets.",
+  "hi_body": "## पॉज पॉइंट फीचर को समझना\n\nपॉज पॉइंट को विचलित करने वाले फ़ीड लोड होने से ठीक पहले उपयोगकर्ताओं को रोककर आदत के रूप में फोन स्क्रॉलिंग को बाधित करने के लिए डिज़ाइन किया गया है। रिपोर्ट के अनुसार, यह सुविधा लक्षित ऐप्स को खोलते समय एक अनिवार्य देरी पेश करती है या सांस लेने के व्यायाम जैसे संक्षिप्त विराम का संकेत देती है। इसे निष्क्रिय करने के लिए कथित तौर पर एक पूर्ण डिवाइस रीस्टार्ट की आवश्यकता होती है, जो प्रलोभन के क्षणों में एक महत्वपूर्ण बाधा पैदा करता है।\n\nहालाँकि यह सुविधा एंड्रॉइड 17 QPR1 और विशिष्ट वेंडर बीटा जैसे अपडेट के माध्यम से विभिन्न उपकरणों तक पहुँच चुकी है, लेकिन कई सैमसंग गैलेक्सी उपयोगकर्ता अभी भी आधिकारिक उपलब्धता का इंतजार कर रहे हैं।\n\n## वन यूआई टूल के साथ एक DIY विकल्प बनाना\n\nमूल समर्थन की प्रतीक्षा करते हुए, गैलेक्सी उपयोगकर्ता विराम तंत्र के पहलुओं को दोहराने के लिए मौजूदा सैमसंग सुविधाओं को जोड़ सकते हैं:\n* **ऐप टाइमर:** विचलित करने वाले ऐप्स पर सख्त दैनिक सीमा निर्धारित करने के लिए **Settings > Digital Wellbeing and parental controls > App timers** पर जाएं। सीमा को एक मिनट पर सेट करने से तुरंत पहुंच अवरुद्ध हो सकती है, हालांकि सैमसंग का इंटरफ़ेस वर्तमान में उपयोगकर्ताओं को आसानी से प्रतिबंध को बायपास करने की अनुमति देता है।\n* **मोड्स और रूटीन:** **Settings > Modes and Routines** के तहत, उपयोगकर्ता ऐप्स को प्रतिबंधित करने के लिए कस्टम फोकस मोड सेट कर सकते हैं, हालांकि इसके लिए मैन्युअल सक्रियण या अग्रिम शेड्यूलिंग की आवश्यकता होती है।\n* **स्वचालित रूटीन:** ऐप खुलने पर तुरंत प्रतिक्रिया देने के लिए, **Routines** टैब पर जाएं:\n  * **If** स्थिति को \"App opened\" पर सेट करें और अपने लक्षित ऐप्स चुनें।\n  * आकर्षक रंगों को हटाने के लिए **Then** क्रिया को सिस्टम-व्यापी ग्रेस्केल सक्षम करने के लिए सेट करें (जो **Settings > Accessibility > Vision enhancements** के तहत मिलता है)।\n  * ऐप लॉन्च होने के क्षण में एक विजुअल अलर्ट के लिए एज लाइटिंग को ट्रिगर करने के लिए एक क्रिया जोड़ें।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nघरेलू नुस्खों में मूल ऑपरेटिंग सिस्टम सुविधा के सख्त सुरक्षा उपाय नहीं होते हैं, जैसे कि प्रतिबंधों को अक्षम करने के लिए अनिवार्य डिवाइस रीस्टार्ट। हालाँकि, गैलेक्सी उपकरणों पर आधिकारिक अपडेट आने तक यह कस्टम रूटीन बिना सोचे-समझे स्क्रॉलिंग को बाधित करने का एक व्यावहारिक उपाय प्रदान करते हैं।\n\nसॉफ्टवेयर अपडेट और फीचर रोलआउट से संबंधित मूल घोषणाओं को सत्यापित करने के लिए, आधिकारिक सैमसंग और एंड्रॉइड रिलीज़ चैनलों की जाँच करें।",
+  "en_meta": "Learn how to build a DIY alternative to the Pause Point scrolling blocker on Samsung Galaxy devices using built-in One UI tools.",
+  "hi_meta": "सैमसंग गैलेक्सी उपकरणों पर बिल्ट-इन वन यूआई टूल का उपयोग करके पॉज पॉइंट स्क्रॉलिंग ब्लॉकर का DIY विकल्प बनाना सीखें।",
+  "en_keywords": [
+    "Galaxy Pause Point alternative",
+    "One UI routines",
+    "digital wellbeing Samsung",
+    "stop mindless scrolling",
+    "Android screen time"
+  ],
+  "hi_keywords": [
+    "गैलेक्सी पॉज पॉइंट विकल्प",
+    "वन यूआई रूटीन",
+    "डिजिटल वेलबीइंग सैमसंग",
+    "स्क्रॉलिंग रोकें",
+    "एंड्रॉइड स्क्रीन टाइम"
+  ],
+  "source_published_at": "2026-10-31T10:00:10Z",
+  "id": "238ee8e14632",
+  "source": "https://www.androidpolice.com/galaxy-pause-point-alternative/",
+  "date": "2026-11-02T09:03:18.995750+00:00",
+  "source_title": "My Galaxy phone still can't run Pause Point, so I built my own version with One UI tools",
+  "category": "gadgets",
+  "image_kind": "conceptual"
+}
