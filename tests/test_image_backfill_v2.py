@@ -74,3 +74,22 @@ class BackfillV2Tests(unittest.TestCase):
    self.assertFalse(g.resolved_featured('abcdef'))
 
 if __name__=='__main__':unittest.main()
+
+class ArticleOriginalPriorityTests(unittest.TestCase):
+ def test_representative_stays_eligible_but_publisher_photo_is_preserved(self):
+  with tempfile.TemporaryDirectory() as tmp,patch.object(g,'IMAGES',Path(tmp)):
+   for ident,kind in [('abcdef','licensed_photo'),('abcdee','publisher_source')]:
+    Image.new('RGB',(1280,720)).save(Path(tmp)/(ident+'.jpg'))
+    (Path(tmp)/(ident+'.json')).write_text(json.dumps({'kind':kind,'source_image':'https://example.org/photo.jpg'}))
+   selected,_,_=g.choose_backfill([{'id':'abcdef'},{'id':'abcdee'}],limit=10,mode='all')
+   self.assertEqual([p['id'] for p in selected],['abcdef'])
+ def test_failed_original_lookup_keeps_existing_representative(self):
+  class Page:status_code=403;ok=False
+  with tempfile.TemporaryDirectory() as tmp,patch.object(g,'IMAGES',Path(tmp)):
+   photo=Path(tmp)/'abcdef.jpg';Image.new('RGB',(1280,720)).save(photo)
+   before=photo.read_bytes()
+   (Path(tmp)/'abcdef.json').write_text(json.dumps({'kind':'licensed_photo','source_image':'https://example.org/photo.jpg'}))
+   with patch.object(g.requests,'get',return_value=Page()) as get:
+    self.assertFalse(g.licensed_source_image({'id':'abcdef','source':'https://example.org/story'}))
+   self.assertEqual(get.call_count,1)
+   self.assertEqual(photo.read_bytes(),before)

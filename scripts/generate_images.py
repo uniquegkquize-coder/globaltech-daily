@@ -35,6 +35,13 @@ def resolved_featured(ident):
     # A JPEG without source provenance can be legacy artwork, not a confirmed publisher photo.
     return kind in ('licensed_source','licensed_photo','publisher_source','source_original','manual_original') and not generic_image(json.loads(meta.read_text()).get('source_image','')) and saved_photo_allowed(json.loads(meta.read_text()),ROOT)
 
+def representative_featured(ident):
+    """Reusable subject photos remain eligible for a better article-original photo."""
+    try:
+        meta=json.loads((IMAGES/(ident+'.json')).read_text())
+        return meta.get('kind')=='licensed_photo' and resolved_featured(ident)
+    except (OSError,ValueError,AttributeError):return False
+
 PHOTO_DIAGNOSTICS={}
 PHOTO_LOCK=threading.Lock()
 DENIED=(401,403,407,429,451)
@@ -115,7 +122,7 @@ def save_source_photo(ident,image,source,license_url,authorized,credit,alt):
 def licensed_source_image(p):
     source=str(p.get('source') or '');ident=slug(p)
     if not source.startswith('https://') or not ident:return False
-    if resolved_featured(ident):return False
+    if resolved_featured(ident) and not representative_featured(ident):return False
     try:
         page=requests.get(source,timeout=(4,10),headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)'})
         code=getattr(page,'status_code',200)
@@ -432,7 +439,7 @@ def choose_backfill(posts,now=None,limit=None,cursor=None,mode=None):
     fresh=[];older=[]
     for post in sorted(posts,key=lambda p:p.get('date',''),reverse=True):
         ident=slug(post)
-        if not ident or resolved_featured(ident):continue
+        if not ident or (resolved_featured(ident) and not representative_featured(ident)):continue
         try:
             stamp=datetime.datetime.fromisoformat(str(post.get('date','')).replace('Z','+00:00'))
             if stamp.tzinfo is None:stamp=stamp.replace(tzinfo=datetime.timezone.utc)
@@ -500,7 +507,7 @@ def main():
     for post in posts:
         ident=slug(post)
         if resolved_featured(ident):
-            if post.get('source'):source_cache.setdefault(str(post['source']).split('#')[0],ident)
+            if post.get('source') and not representative_featured(ident):source_cache.setdefault(str(post['source']).split('#')[0],ident)
             try:meta=json.loads((IMAGES/(ident+'.json')).read_text())
             except (OSError,ValueError):meta={}
             if meta.get('subject') and commons_reuse_allowed(meta.get('license_name',''),meta.get('license','')):
@@ -518,6 +525,9 @@ def main():
             (IMAGES/(ident+'.json')).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
             return {'id':ident,'result':'source_cache_reused'}
         if licensed_source_image(post):result='source_photo_saved'
+        elif resolved_featured(ident):
+            result=PHOTO_DIAGNOSTICS.get(ident,{}).get('reason','no_article_original')
+            diagnostic(ident,result,**{k:v for k,v in PHOTO_DIAGNOSTICS.get(ident,{}).items() if k!='reason'},existing_representative_preserved=True)
         elif normalized(exact_subject(post)) in subject_cache:
             import shutil
             other=subject_cache[normalized(exact_subject(post))]
