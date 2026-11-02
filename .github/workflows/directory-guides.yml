@@ -58,11 +58,15 @@ jobs:
           python scripts/research_directory_sources.py
           # Retain research outside the checkout across concurrent-push retries.
           cp content/directory-details.json /tmp/directory-details.json
+          cp content/directory-research-state.json /tmp/directory-research-state.json
+          cp content/directory-research-status.json /tmp/directory-research-status.json
           for attempt in 1 2 3; do
             if [ "$attempt" -gt 1 ]; then
               git fetch origin main
               git reset --hard origin/main
               python -c "import json; from pathlib import Path; p=Path('content/directory-details.json'); current=json.loads(p.read_text()); saved=json.load(open('/tmp/directory-details.json')); [current.setdefault(k,{}).update(v) for k,v in saved.items()]; p.write_text(json.dumps(current,ensure_ascii=False,indent=2)+'\n')"
+              python -c "import json; from pathlib import Path; p=Path('content/directory-research-state.json'); current=json.loads(p.read_text()) if p.exists() else {}; saved=json.load(open('/tmp/directory-research-state.json')); current.update({k:v for k,v in saved.items() if v.get('attempted',0)>=current.get(k,{}).get('attempted',0)}); p.write_text(json.dumps(current,indent=2)+'\n')"
+              cp /tmp/directory-research-status.json content/directory-research-status.json
             fi
             python scripts/publish_directory_guides.py
             python scripts/build.py
