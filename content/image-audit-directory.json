@@ -1,94 +1,88 @@
 {
-  "total_posts": 1613,
-  "selected": 12,
+  "total_posts": 1641,
+  "selected": 13,
   "results": {
     "source_photo_saved": 7,
-    "no_source_image": 3,
-    "cooldown": 1,
-    "source_error": 1
+    "cooldown": 5,
+    "invalid_source_images": 1
   },
-  "still_missing": 108,
+  "still_missing": 110,
   "articles": [
     {
-      "id": "557ece9593dfaf552b8900ea",
-      "source": "https://en.wikipedia.org/wiki/Kia_K8",
+      "id": "51c2f90b67ae461d04b2a46b",
+      "source": "https://www.royalenfield.com/in/en/motorcycles/bullet-650/",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793668615.3036711
+      "retry_after": 1793678495.9402554
     },
     {
-      "id": "279f7923cf38f6154daae39b",
-      "source": "https://en.wikipedia.org/wiki/Suzuki_GSX250F_Across",
+      "id": "d1b7bc0c3d642fa088cb1331",
+      "source": "https://en.wikipedia.org/wiki/Jinbei_Grand_Haise",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793668615.4783
+      "retry_after": 1793678495.9668796
     },
     {
-      "id": "423ea716f1204cf5e6b7891c",
-      "source": "https://en.wikipedia.org/wiki/Yamaha_FZR1000",
+      "id": "07281babd0cc42f32067dea8",
+      "source": "https://en.wikipedia.org/wiki/Ducati_Panigale_V2",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793668615.4871564
+      "retry_after": 1793678496.0090866
     },
     {
-      "id": "4c1be512d983d2e43baf39ee",
-      "source": "https://en.wikipedia.org/wiki/Institute_for_Advanced_Studies_in_Basic_Sciences",
+      "id": "2509b7005616ee1cc772f8df",
+      "source": "https://en.wikipedia.org/wiki/Roewe_iMAX8",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793668616.0017595
+      "retry_after": 1793678496.550936
     },
     {
-      "id": "b4186033effc57949b3729df",
-      "source": "https://en.wikipedia.org/wiki/IPhone_15_Pro",
+      "id": "c62cb9cacc2e1c0affc19704",
+      "source": "https://en.wikipedia.org/wiki/Federal_University%2C_Wukari",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793668616.4522219
-    },
-    {
-      "id": "622740fbf231d0d96b223c1a",
-      "source": "https://en.wikipedia.org/wiki/Nio_ET7",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793668616.50557
-    },
-    {
-      "id": "c885ef925c1c73b27024ccbb",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_5_V",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793668616.590113
+      "retry_after": 1793678496.6938205
     },
     {
       "id": "8444aa187e09b377f661fcbf",
-      "source": "https://dec.ac.in/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793668616.753674
+      "result": "cooldown"
+    },
+    {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
     },
     {
       "id": "ab5757b7bde7e5a43128d256",
       "result": "cooldown"
     },
     {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "source": "https://isc-edu.org/",
+      "id": "3086cb2e3cc8f584c5e5eca3",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_12_Lite",
       "policy": "93e2ad7deccc",
-      "result": "source_error",
-      "retry_after": 1793668616.7636774
+      "result": "source_photo_saved",
+      "retry_after": 1793678497.1564786
     },
     {
-      "id": "8af54bb949a0c055391d640a",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "id": "ed7f7ae04aced5948723aabc",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_13T",
       "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793668618.7097635
+      "result": "source_photo_saved",
+      "retry_after": 1793678497.8575442
     },
     {
-      "id": "fbff6440d68d52399ca212b1",
-      "source": "https://cctu.edu.gh/site/index",
+      "id": "a6510273f0889bf4d7684eae",
+      "source": "https://mua.ac.ke/",
       "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793668620.2514434
+      "result": "invalid_source_images",
+      "retry_after": 1793678499.4155369
     }
   ],
   "missing": [
@@ -266,6 +260,13 @@
       "title": "TRAI Releases Drive Test Performance Report for Balasore, Odisha",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No128of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "ab1e7f889baf",
+      "category": "world-news",
+      "title": "Binance Replenishes 90% of Funds Following Massive $6.3B Crypto Hack",
+      "source": "https://www.cbc.ca/news/world/binance-hack-north-korea-9.7404502?cmp=rss",
+      "reason": "source_error"
     },
     {
       "id": "04bcdc448261",
@@ -539,6 +540,13 @@
       "title": "US Administration Challenges State Voter Rolls Ahead of Midterm Elections",
       "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28297?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "a6510273f0889bf4d7684eae",
+      "category": "education",
+      "title": "Management University of Africa: College Admissions, Facts and Verification Guide",
+      "source": "https://mua.ac.ke/",
+      "reason": "invalid_source_images"
     },
     {
       "id": "a28e5c356dd7",
@@ -851,65 +859,56 @@
   ],
   "missing_reasons": {
     "source_unavailable": 21,
-    "source_error": 2,
+    "source_error": 3,
     "access_denied": 16,
-    "invalid_source_images": 23,
+    "invalid_source_images": 24,
     "no_source_image": 46
   },
-  "existing_representatives_preserved": 1,
+  "existing_representatives_preserved": 0,
   "diagnostics": {
-    "557ece9593dfaf552b8900ea": {
+    "51c2f90b67ae461d04b2a46b": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Kia_K8",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Kia_K8_Hybrid_GL3_HEV_Snow_White_Pearl_%281%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://www.royalenfield.com/in/en/motorcycles/bullet-650/",
+      "image": "https://www.royalenfield.com/content/dam/royal-enfield-revamp/header/shop/configure/bullet-350.webp"
     },
-    "279f7923cf38f6154daae39b": {
+    "d1b7bc0c3d642fa088cb1331": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Suzuki_GSX250F_Across",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/57/Suzuki_Across.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Jinbei_Grand_Haise",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Jin_Bei_H2L_Minibus_2011_%2811792018613%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "423ea716f1204cf5e6b7891c": {
+    "07281babd0cc42f32067dea8": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Yamaha_FZR1000",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/YAMAHA_FZR1000_1991.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ducati_Panigale_V2",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Ducati_Panigale_V2S_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "4c1be512d983d2e43baf39ee": {
+    "2509b7005616ee1cc772f8df": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Institute_for_Advanced_Studies_in_Basic_Sciences",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Iasbs6.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Roewe_iMAX8",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/2021_SAIC_Roewe_iMAX8.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "b4186033effc57949b3729df": {
+    "c62cb9cacc2e1c0affc19704": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/IPhone_15_Pro",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/IPhone_15_Pro_Vector.svg/960px-IPhone_15_Pro_Vector.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+      "source": "https://en.wikipedia.org/wiki/Federal_University%2C_Wukari",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Federal_University_Wukari_03.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "622740fbf231d0d96b223c1a": {
+    "3086cb2e3cc8f584c5e5eca3": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nio_ET7",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/NIO_ET7_1X7A6679_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_12_Lite",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Xiaomi_12_Lite_front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "c885ef925c1c73b27024ccbb": {
+    "ed7f7ae04aced5948723aabc": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_5_V",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/ca/XP-55.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_13T",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Xiaomi_13T_Series_sample.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "8444aa187e09b377f661fcbf": {
-      "reason": "no_source_image",
-      "source": "https://dec.ac.in/"
-    },
-    "0a95ccf111c45db4cfb5c9e3": {
-      "reason": "source_error",
-      "source": "https://isc-edu.org/",
-      "error": "ConnectionError"
-    },
-    "8af54bb949a0c055391d640a": {
-      "reason": "no_source_image",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "existing_representative_preserved": true
-    },
-    "fbff6440d68d52399ca212b1": {
-      "reason": "no_source_image",
-      "source": "https://cctu.edu.gh/site/index"
+    "a6510273f0889bf4d7684eae": {
+      "reason": "invalid_source_images",
+      "source": "https://mua.ac.ke/",
+      "candidate_count": 2,
+      "candidates": [
+        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
+        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png"
+      ]
     }
   },
   "mode": "directory"

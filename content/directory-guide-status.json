@@ -7,14 +7,14 @@
     "colleges": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 4,
+      "eligible_new": 2,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 9,
-        "insufficient verified descriptive fields": 88,
-        "identifier URL is not specification evidence": 201
+        "already_published_unchanged": 11,
+        "insufficient verified descriptive fields": 89,
+        "identifier URL is not specification evidence": 200
       },
       "rejected_count": 289,
       "rejected_sample": [
@@ -148,16 +148,16 @@
     "phones": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 268,
+      "eligible_new": 351,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1835,
-        "already_published_unchanged": 7,
-        "insufficient verified descriptive fields": 151,
-        "identifier URL is not specification evidence": 1409
+        "already_published_unchanged": 9,
+        "insufficient verified descriptive fields": 86,
+        "identifier URL is not specification evidence": 1389
       },
-      "rejected_count": 1560,
+      "rejected_count": 1475,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -225,6 +225,46 @@
           "source": "https://www.asus.com/ph/mobile-handhelds/phones/all-series/zenfone-go-zc500tg/"
         },
         {
+          "name": "Bittium Tough Mobile 2",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.bittium.com/defence-security/bittium-tough-mobile-2-c/"
+        },
+        {
+          "name": "Realme 5 Pro",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.realme.com/in/realme-5-pro/specs"
+        },
+        {
+          "name": "Realme 5",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.realme.com/in/realme-5/specs"
+        },
+        {
+          "name": "Rakuten Mini",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://network.mobile.rakuten.co.jp/product/smartphone/rakuten-mini/"
+        },
+        {
+          "name": "Moto G8",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Moto_G8"
+        },
+        {
+          "name": "Samsung Galaxy A31",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.samsung.com/in/support/model/SM-A315FZKWINS/"
+        },
+        {
+          "name": "realme 6",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.realme.com/in/realme-6"
+        },
+        {
+          "name": "OnePlus 8T",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.oneplus.com/global/8t/specs"
+        },
+        {
           "name": "Huawei Y7 Prime (2019)",
           "reason": "identifier URL is not specification evidence",
           "source": "http://www.wikidata.org/entity/Q100258603"
@@ -243,62 +283,22 @@
           "name": "Samsung A520",
           "reason": "identifier URL is not specification evidence",
           "source": "http://www.wikidata.org/entity/Q100309371"
-        },
-        {
-          "name": "OnePlus 8T",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.oneplus.com/global/8t"
-        },
-        {
-          "name": "realme 7 Pro",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100707241"
-        },
-        {
-          "name": "Huawei Mate 40 RS Porsche Design",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100773701"
-        },
-        {
-          "name": "Honor 6C",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100939876"
-        },
-        {
-          "name": "Huawei P Smart 2020",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://consumer.huawei.com/en/phones/p-smart-2020/"
-        },
-        {
-          "name": "Huawei Mate Xs",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://consumer.huawei.com/cn/phones/mate-x-s/"
-        },
-        {
-          "name": "Realme 7",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q102279550"
-        },
-        {
-          "name": "Realme 6i",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q102838356"
         }
       ]
     },
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 160,
+      "eligible_new": 183,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 650,
-        "already_published_unchanged": 9,
-        "insufficient verified descriptive fields": 47,
-        "identifier URL is not specification evidence": 434
+        "already_published_unchanged": 11,
+        "insufficient verified descriptive fields": 48,
+        "identifier URL is not specification evidence": 408
       },
-      "rejected_count": 481,
+      "rejected_count": 456,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -430,16 +430,16 @@
     "bikes": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 74,
+      "eligible_new": 86,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 442,
-        "already_published_unchanged": 9,
-        "insufficient verified descriptive fields": 73,
-        "identifier URL is not specification evidence": 286
+        "considered": 447,
+        "already_published_unchanged": 11,
+        "insufficient verified descriptive fields": 84,
+        "identifier URL is not specification evidence": 266
       },
-      "rejected_count": 359,
+      "rejected_count": 350,
       "rejected_sample": [
         {
           "name": "Yamaha Gear Ultima",
@@ -569,5 +569,5 @@
       ]
     }
   },
-  "date": "2026-11-02T19:16:48.671958+00:00"
+  "date": "2026-11-02T22:01:30.338306+00:00"
 }
