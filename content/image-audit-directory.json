@@ -1,40 +1,39 @@
 {
-  "total_posts": 1549,
-  "selected": 10,
+  "total_posts": 1568,
+  "selected": 11,
   "results": {
-    "source_photo_saved": 6,
-    "cooldown": 3,
-    "source_unavailable": 1
+    "source_photo_saved": 7,
+    "cooldown": 4
   },
   "still_missing": 107,
   "articles": [
     {
-      "id": "73f502e9351df1ee4f3a30ee",
-      "source": "https://en.wikipedia.org/wiki/Toyota_Camry_%28XV70%29",
+      "id": "1d64733ec9fa7096ba208f74",
+      "source": "https://en.wikipedia.org/wiki/Aprilia_RXV/SXV",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793647966.5862777
+      "retry_after": 1793658109.9505696
     },
     {
-      "id": "09ad529f744daf934402f543",
-      "source": "https://en.wikipedia.org/wiki/Lexus_LS",
+      "id": "aac104451a7222734b43e8db",
+      "source": "https://en.wikipedia.org/wiki/Leapmotor_C11",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793647966.650022
+      "retry_after": 1793658110.4250631
     },
     {
-      "id": "8ccfa633bb6d912662c668e7",
-      "source": "https://en.wikipedia.org/wiki/Ariel_Ace",
+      "id": "43ab116fe05454414fe4e509",
+      "source": "https://mitsubishi-motors.co.uk/model-range/outlander-phev/",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793647966.656654
+      "retry_after": 1793658110.8201082
     },
     {
-      "id": "9b5287eee1fae37033543aa8",
-      "source": "https://en.wikipedia.org/wiki/Yamaha_FZ750",
+      "id": "ad52072dae42aba43c8c8984",
+      "source": "https://en.wikipedia.org/wiki/Ducati_Panigale_V4",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793647966.6835978
+      "retry_after": 1793658110.906099
     },
     {
       "id": "8444aa187e09b377f661fcbf",
@@ -50,24 +49,28 @@
     },
     {
       "id": "ab5757b7bde7e5a43128d256",
-      "source": "https://exploitsmw.com/",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793647967.1384711
+      "result": "cooldown"
     },
     {
-      "id": "903f026cdf91573480969e8c",
-      "source": "https://en.wikipedia.org/wiki/Redmi_12",
+      "id": "24499ec1b042933d7e842256",
+      "source": "https://en.wikipedia.org/wiki/Brigham_Young_University%E2%80%93Idaho",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793647967.2803125
+      "retry_after": 1793658111.0878184
     },
     {
-      "id": "9dcccc87c7e09a98c6a19582",
-      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_Arc",
+      "id": "5a41d3304d9bffd30df515c1",
+      "source": "https://en.wikipedia.org/wiki/IPhone_15",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793647967.4637747
+      "retry_after": 1793658111.469874
+    },
+    {
+      "id": "caef34bfabfcff5ed78866f5",
+      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_X10_Mini",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793658111.7824118
     }
   ],
   "missing": [
@@ -830,40 +833,40 @@
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "73f502e9351df1ee4f3a30ee": {
+    "1d64733ec9fa7096ba208f74": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Toyota_Camry_%28XV70%29",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ac/2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Aprilia_RXV/SXV",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Aprila_SXV_450_links.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "09ad529f744daf934402f543": {
+    "aac104451a7222734b43e8db": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Lexus_LS",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/2019_Lexus_LS_500_AWD_beige%2C_front_Hagerty_6.1.19.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Leapmotor_C11",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/2020_Leapmotor_C11_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "8ccfa633bb6d912662c668e7": {
+    "43ab116fe05454414fe4e509": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ariel_Ace",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/Ariel_Ace.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://mitsubishi-motors.co.uk/model-range/outlander-phev/",
+      "image": "https://cc-im-group.s3.eu-west-2.amazonaws.com/mitsubishi/uploads/2026/03/Web-medium-25MY_OUTLANDER_PHEV_Instyle_Hero_1car_Static_rear.jpg"
     },
-    "9b5287eee1fae37033543aa8": {
+    "ad52072dae42aba43c8c8984": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Yamaha_FZ750",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Yamaha_FZ_750-1985_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ducati_Panigale_V4",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Ducati_Panigale_V4_-_Tuning_World_Bodensee_2018%2C_Friedrichshafen_%28OW1A0484%29.jpg/1280px-Ducati_Panigale_V4_-_Tuning_World_Bodensee_2018%2C_Friedrichshafen_%28OW1A0484%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
     },
-    "ab5757b7bde7e5a43128d256": {
-      "reason": "source_unavailable",
-      "source": "https://exploitsmw.com/",
-      "status": 200
-    },
-    "903f026cdf91573480969e8c": {
+    "24499ec1b042933d7e842256": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Redmi_12",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/73/Redmi_12_front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Brigham_Young_University%E2%80%93Idaho",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Brigham_Young_University%E2%80%93Idaho_medallion.svg/1280px-Brigham_Young_University%E2%80%93Idaho_medallion.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
     },
-    "9dcccc87c7e09a98c6a19582": {
+    "5a41d3304d9bffd30df515c1": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_Arc",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b4/SO-01C_front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/IPhone_15",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/IPhone_15_Vector.svg/960px-IPhone_15_Vector.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+    },
+    "caef34bfabfcff5ed78866f5": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_X10_Mini",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Sony_Ericsson_Xperia_X10_Mini_on_stand.jpeg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"

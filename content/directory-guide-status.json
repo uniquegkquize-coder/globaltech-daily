@@ -1,22 +1,22 @@
 {
   "published": 8,
-  "updated": 4,
+  "updated": 0,
   "target": 8,
   "missing": {},
   "categories": {
     "colleges": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 5,
+      "eligible_new": 4,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 5,
-        "insufficient verified descriptive fields": 85,
-        "identifier URL is not specification evidence": 207
+        "already_published_unchanged": 7,
+        "insufficient verified descriptive fields": 88,
+        "identifier URL is not specification evidence": 203
       },
-      "rejected_count": 292,
+      "rejected_count": 291,
       "rejected_sample": [
         {
           "name": "Universit\u00e9 Notre Dame de Lomami",
@@ -124,40 +124,40 @@
           "source": "https://www.wyden.com.br/unidades/unimetrocamp"
         },
         {
-          "name": "Darul Uloom Latheefia",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100233622"
-        },
-        {
-          "name": "New Cairo Technological University",
+          "name": "UCLA Center for Neighborhood Knowledge",
           "reason": "insufficient verified descriptive fields",
-          "source": "https://nctu.edu.eg/?lang=ar"
+          "source": "https://knowledge.luskin.ucla.edu/wp-content/uploads/2022/04/Housing_Insecurity_COVID_Report.pdf"
         },
         {
-          "name": "University Center Nour Bashir (El-Bayadh)",
+          "name": "Cape Peninsula University of Technology",
           "reason": "insufficient verified descriptive fields",
-          "source": "https://www.cu-elbayadh.dz/fr/"
+          "source": "https://en.wikipedia.org/wiki/Cape_Peninsula_University_of_Technology"
         },
         {
-          "name": "Universit\u00e9 Chadli Bendjedid d'El Tarf",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100258391"
+          "name": "Canisius University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Canisius_University"
+        },
+        {
+          "name": "L\u00fario University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/L%C3%BArio_University"
         }
       ]
     },
     "phones": {
       "new": 2,
-      "updated": 1,
-      "eligible_new": 85,
-      "eligible_updates": 1,
+      "updated": 0,
+      "eligible_new": 178,
+      "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 1159,
-        "already_published_unchanged": 2,
-        "insufficient verified descriptive fields": 94,
-        "identifier URL is not specification evidence": 977
+        "considered": 1570,
+        "already_published_unchanged": 5,
+        "insufficient verified descriptive fields": 161,
+        "identifier URL is not specification evidence": 1226
       },
-      "rejected_count": 1071,
+      "rejected_count": 1387,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -193,6 +193,11 @@
           "name": "Nokia Lumia 730",
           "reason": "insufficient verified descriptive fields",
           "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_730"
+        },
+        {
+          "name": "Lenovo IdeaPhone K900",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Lenovo_IdeaPhone_K900"
         },
         {
           "name": "Huawei Y7 Prime (2019)",
@@ -278,27 +283,22 @@
           "name": "Oppo F17 Pro",
           "reason": "identifier URL is not specification evidence",
           "source": "http://www.wikidata.org/entity/Q104442189"
-        },
-        {
-          "name": "Xiaomi Mi 11",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.mi.com/global/product/mi-11/"
         }
       ]
     },
     "cars": {
       "new": 2,
-      "updated": 1,
-      "eligible_new": 70,
-      "eligible_updates": 1,
+      "updated": 0,
+      "eligible_new": 110,
+      "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 650,
-        "already_published_unchanged": 4,
-        "insufficient verified descriptive fields": 42,
-        "identifier URL is not specification evidence": 533
+        "already_published_unchanged": 7,
+        "insufficient verified descriptive fields": 41,
+        "identifier URL is not specification evidence": 492
       },
-      "rejected_count": 575,
+      "rejected_count": 533,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -376,6 +376,16 @@
           "source": "https://en.wikipedia.org/wiki/BYD_D1"
         },
         {
+          "name": "Chery eQ5",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Chery_eQ5"
+        },
+        {
+          "name": "Chevrolet Stepvan",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Chevrolet_Step-Van"
+        },
+        {
           "name": "Jaguar XK140",
           "reason": "identifier URL is not specification evidence",
           "source": "http://www.wikidata.org/entity/Q1000013"
@@ -414,32 +424,22 @@
           "name": "Bugatti Type 40",
           "reason": "identifier URL is not specification evidence",
           "source": "http://www.wikidata.org/entity/Q1002373"
-        },
-        {
-          "name": "Bugatti Type 41",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q1002399"
-        },
-        {
-          "name": "Bugatti Type 57",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q1002464"
         }
       ]
     },
     "bikes": {
       "new": 2,
-      "updated": 2,
-      "eligible_new": 17,
-      "eligible_updates": 2,
+      "updated": 0,
+      "eligible_new": 49,
+      "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 436,
-        "already_published_unchanged": 3,
-        "insufficient verified descriptive fields": 48,
-        "identifier URL is not specification evidence": 366
+        "already_published_unchanged": 7,
+        "insufficient verified descriptive fields": 63,
+        "identifier URL is not specification evidence": 317
       },
-      "rejected_count": 414,
+      "rejected_count": 380,
       "rejected_sample": [
         {
           "name": "Yamaha Gear Ultima",
@@ -547,27 +547,27 @@
           "source": "https://en.wikipedia.org/wiki/Brough_Superior_SS80"
         },
         {
-          "name": "Farm bike",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100151385"
-        },
-        {
-          "name": "Benelli BN 125",
+          "name": "Piaggio 1",
           "reason": "insufficient verified descriptive fields",
-          "source": "https://unitedkingdom.benelli.com/product/bn-125"
+          "source": "https://en.wikipedia.org/wiki/Piaggio_1"
         },
         {
-          "name": "Yamaha YZF-R1M",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100744519"
+          "name": "Suzuki Gemma",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Suzuki_Gemma"
         },
         {
-          "name": "LinTo 500 GP",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q10356331"
+          "name": "Muravey",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Muravey_%28scooter%29"
+        },
+        {
+          "name": "Abako",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Abako_%28motorcycle%29"
         }
       ]
     }
   },
-  "date": "2026-11-02T13:32:26.292339+00:00"
+  "date": "2026-11-02T16:21:46.106446+00:00"
 }
