@@ -1,25 +1,31 @@
 {
-  "checked_at": "2026-11-02T15:49:50.086617+00:00",
+  "checked_at": "2026-11-02T16:52:41.537553+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "a47c214581df"
+    "fdd130ae0361",
+    "7b2b7480ca5e"
   ],
   "results": [
     {
-      "id": "a47c214581df",
+      "id": "fdd130ae0361",
       "result": "published",
-      "title": "Jake Paul to fight MMA star Cedric Doumbe"
+      "title": "Elon Musk throttles Grok Bot limits due to ‘unsustainably high’ costs"
     },
     {
       "id": "e9addcae3535",
       "result": "source_unavailable",
       "title": "French school protests resume on smaller scale after autumn break"
+    },
+    {
+      "id": "7b2b7480ca5e",
+      "result": "published",
+      "title": "Uganda begins withdrawing troops from Somalia after two decades"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 8
+      "articles": 7
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
@@ -35,7 +41,7 @@
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
-      "articles": 20
+      "articles": 22
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
@@ -49,71 +55,63 @@
       "status": "ok",
       "articles": 2
     },
-    "https://blog.google/rss/": {
+    "https://rss.dw.com/rdf/rss-en-top": {
+      "status": "ok",
+      "articles": 9
+    },
+    "https://feeds.skynews.com/feeds/rss/world.xml": {
       "status": "ok",
       "articles": 0
     },
-    "https://www.nasa.gov/feed/": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://www.technologyreview.com/feed/": {
-      "status": "ok",
-      "articles": 2
-    },
-    "https://www.bleepingcomputer.com/feed/": {
-      "status": "ok",
-      "articles": 6
-    },
-    "https://www.cnet.com/rss/news/": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://www.techradar.com/feeds.xml": {
-      "status": "ok",
-      "articles": 23
-    },
-    "https://feeds.npr.org/1019/rss.xml": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://variety.com/v/film/feed/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://www.theguardian.com/film/rss": {
-      "status": "ok",
-      "articles": 4
-    },
-    "https://www.theguardian.com/culture/rss": {
-      "status": "ok",
-      "articles": 6
-    },
-    "https://feeds.npr.org/1045/rss.xml": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://ew.com/feed/": {
+    "https://www.cbc.ca/webfeed/rss/rss-world": {
       "status": "unavailable",
       "articles": 0
     },
-    "https://www.rollingstone.com/feed/": {
+    "https://www.abc.net.au/news/feed/51120/rss.xml": {
+      "status": "ok",
+      "articles": 3
+    },
+    "https://timesofindia.indiatimes.com/rssfeedstopstories.cms": {
+      "status": "ok",
+      "articles": 26
+    },
+    "https://feeds.nbcnews.com/nbcnews/public/world": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://rss.nytimes.com/services/xml/rss/nyt/World.xml": {
+      "status": "ok",
+      "articles": 7
+    },
+    "https://techcrunch.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://techcrunch.com/category/artificial-intelligence/feed/": {
       "status": "ok",
       "articles": 5
     },
-    "https://news.abplive.com/entertainment/movies/feed": {
+    "https://www.theverge.com/rss/index.xml": {
+      "status": "ok",
+      "articles": 8
+    },
+    "https://feeds.arstechnica.com/arstechnica/index": {
+      "status": "ok",
+      "articles": 2
+    },
+    "https://www.wired.com/feed/rss": {
+      "status": "ok",
+      "articles": 8
+    },
+    "https://www.wired.com/feed/tag/ai/latest/rss": {
       "status": "ok",
       "articles": 1
     },
-    "https://news.abplive.com/entertainment/television/feed": {
+    "https://www.engadget.com/rss.xml": {
       "status": "ok",
-      "articles": 1
-    },
-    "https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms": {
-      "status": "ok",
-      "articles": 19
+      "articles": 11
     }
   },
-  "discovered": 312,
-  "trending_events": 3
+  "discovered": 342,
+  "trending_events": 4
 }
