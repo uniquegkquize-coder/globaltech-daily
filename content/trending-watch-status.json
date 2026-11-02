@@ -1,20 +1,19 @@
 {
-  "checked_at": "2026-11-02T11:42:30.093369+00:00",
+  "checked_at": "2026-11-02T12:35:32.512548+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "83f9b7f4ae34",
-    "0908be9751e1"
+    "e9addcae3535"
   ],
   "results": [
     {
       "id": "83f9b7f4ae34",
-      "result": "published",
-      "title": "Supermarket freezers in Belgium and Sweden hit by suspected cyber-attack"
+      "result": "no_material_change",
+      "title": "Supermarket freezers in Belgium, Sweden and Luxembourg hit by suspected cyber-attack"
     },
     {
-      "id": "0908be9751e1",
+      "id": "e9addcae3535",
       "result": "published",
-      "title": "Jack Lowden Is Tight-Lipped on Those Bond Rumors: “I’m Not Going to Add to the Noise”"
+      "title": "French school protests resume on small scale as students return from break"
     }
   ],
   "feeds": {
@@ -24,23 +23,23 @@
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
-      "articles": 1
+      "articles": 0
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 11
+      "articles": 7
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
-      "articles": 2
+      "articles": 0
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
-      "articles": 24
+      "articles": 25
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
-      "articles": 20
+      "articles": 21
     },
     "https://www.arabnews.com/rss.xml": {
       "status": "unavailable",
@@ -50,63 +49,67 @@
       "status": "ok",
       "articles": 0
     },
-    "https://www.firstshowing.net/feed/": {
+    "https://www.nasa.gov/feed/": {
       "status": "ok",
       "articles": 0
     },
-    "https://www.comingsoon.net/feed": {
+    "https://www.wired.com/feed/category/science/latest/rss": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://feeds.arstechnica.com/arstechnica/science": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://news.abplive.com/health/feed": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://www.ign.com/rss/articles/feed": {
       "status": "ok",
       "articles": 6
     },
-    "https://www.motor1.com/rss/news/all/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://www.carscoops.com/feed/": {
+    "https://www.gamespot.com/feeds/mashup/": {
       "status": "ok",
       "articles": 0
     },
-    "https://insideevs.com/rss/news/all/": {
+    "https://www.theguardian.com/environment/rss": {
       "status": "ok",
       "articles": 2
     },
-    "https://www.gsmarena.com/rss-news-reviews.php3": {
+    "https://www.theguardian.com/travel/rss": {
       "status": "ok",
       "articles": 1
     },
-    "https://www.androidauthority.com/feed/": {
+    "https://www.theguardian.com/education/rss": {
       "status": "ok",
-      "articles": 13
+      "articles": 1
     },
-    "https://www.sammobile.com/feed/": {
+    "https://www.theguardian.com/lifeandstyle/rss": {
       "status": "ok",
       "articles": 3
     },
-    "https://9to5google.com/feed/": {
+    "https://www.apple.com/newsroom/rss-feed.rss": {
       "status": "ok",
       "articles": 0
     },
-    "https://variety.com/feed/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://deadline.com/feed/": {
-      "status": "ok",
-      "articles": 7
-    },
-    "https://www.hollywoodreporter.com/feed/": {
-      "status": "ok",
-      "articles": 3
-    },
-    "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml": {
+    "https://news.samsung.com/global/feed": {
       "status": "ok",
       "articles": 1
     },
-    "https://feeds.npr.org/1004/rss.xml": {
+    "https://www.microsoft.com/en-us/research/feed/": {
       "status": "ok",
-      "articles": 2
+      "articles": 0
+    },
+    "https://www.prnewswire.com/rss/news-releases-list.rss": {
+      "status": "ok",
+      "articles": 20
+    },
+    "https://www.reutersagency.com/feed/": {
+      "status": "unavailable",
+      "articles": 0
     }
   },
-  "discovered": 235,
-  "trending_events": 3
+  "discovered": 244,
+  "trending_events": 4
 }
