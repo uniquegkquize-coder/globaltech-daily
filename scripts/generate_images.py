@@ -48,7 +48,15 @@ def licensed_source_image(p):
         },allow_redirects=True)
         if not page.ok or 'html' not in page.headers.get('content-type','').lower():
             print('Source page unavailable',ident,source,'status',page.status_code,flush=True)
-            return False
+            try:
+                from public_page_fetch import fetch_public_html
+                html, final_url, method = fetch_public_html(source, session=requests.Session())
+                if not html or not str(final_url).startswith('https://'):return False
+                page._content=html.encode('utf-8') if isinstance(html,str) else html
+                page.url=final_url
+                print('Recovered publisher HTML with',method,ident,flush=True)
+            except (ImportError,requests.RequestException,ValueError,TypeError,AttributeError):
+                return False
         if not str(page.url).startswith('https://'):return False
         soup=BeautifulSoup(page.text[:800000],'html.parser')
         def meta(*keys):
