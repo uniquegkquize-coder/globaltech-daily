@@ -1,26 +1,32 @@
 {
-  "total_posts": 1519,
-  "selected": 4,
+  "total_posts": 1541,
+  "selected": 3,
   "results": {
-    "cooldown": 4
+    "no_source_image": 2,
+    "source_error": 1
   },
   "still_missing": 106,
   "articles": [
     {
-      "id": "1afe1c431cab62b81a431ed7",
-      "result": "cooldown"
+      "id": "8444aa187e09b377f661fcbf",
+      "source": "https://dec.ac.in/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793646547.3489933
     },
     {
       "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793646548.4163408
     },
     {
-      "id": "063f4803fe742d225120749a",
-      "result": "cooldown"
-    },
-    {
-      "id": "35138ef1243bd14940422a54",
-      "result": "cooldown"
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "source": "https://isc-edu.org/",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1793646548.88434
     }
   ],
   "missing": [
@@ -43,7 +49,7 @@
       "category": "private-vacancy",
       "title": "Community and Social Services Openings Highlight Diverse Employment Landscape in Cheyenne, WY",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "41e3cf0806d9",
@@ -57,7 +63,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted in Cheyenne, Wyoming",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "06f842f028fe",
@@ -71,7 +77,7 @@
       "category": "private-vacancy",
       "title": "Exploring Private Sector Job Listings in India: Recent Openings and Roles",
       "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Br%C9%99yl%C9%99r-%2Bonlayn%2Bfikirl%C9%99ri%2Bayr%C4%B1ca%2Binc%C9%99l%C9%99yin.ekq-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "8fb539b04f5d",
@@ -113,7 +119,7 @@
       "category": "private-vacancy",
       "title": "Recent Program and Project Management Openings Listed on LinkedIn for the San Francisco Bay Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "03fdad6de98e",
@@ -190,7 +196,7 @@
       "category": "private-vacancy",
       "title": "Wordsmith Learning Hub Recruits Senior Digital Marketing Manager for Tamil Edtech Sector",
       "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "f638281840d9",
@@ -218,21 +224,21 @@
       "category": "private-vacancy",
       "title": "Credit Saison India Recruits Relationship Manager for Secured Direct Operations in South India",
       "source": "https://in.linkedin.com/jobs/view/relationship-manager-secured-direct-south-ap-ts-tn-at-credit-saison-india-4480041233",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "021c54d7abdb",
       "category": "private-vacancy",
       "title": "Professional Career Openings Listed on LinkedIn for the Jersey Region",
       "source": "https://je.linkedin.com/jobs/Win%20Gaming%20API%20-%20India%20Market%20API%F0%9F%8F%A7TG%40gameapi26-jobs?position=1&pageNum=0",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "ff059456a4ee",
       "category": "private-vacancy",
       "title": "Exploring Community and Social Services Openings Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-phoenix-az",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "c455f726510c",
@@ -260,7 +266,7 @@
       "category": "private-vacancy",
       "title": "Recent Administrative Assistant and Support Openings Listed in the Des Moines, Iowa Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-des-moines-ia",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "0da0ead215c3",
@@ -281,7 +287,7 @@
       "category": "private-vacancy",
       "title": "Alok Industries Limited Lists Assistant Manager Opening in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-alok-industries-limited-india-4481052431",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "285dd8d5ec2f",
@@ -414,7 +420,7 @@
       "category": "private-vacancy",
       "title": "The Souled Store Lists Founder's Office Intern Position in Mumbai Focused on GCC Expansion",
       "source": "https://in.linkedin.com/jobs/view/founder-s-office-intern-at-the-souled-store-4483622129",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "0e2fde519d11",
@@ -480,13 +486,6 @@
       "reason": "no_source_image"
     },
     {
-      "id": "35138ef1243bd14940422a54",
-      "category": "education",
-      "title": "Parul University: College Admissions, Facts and Verification Guide",
-      "source": "https://www.collegedekho.com/colleges/parul-university",
-      "reason": "no_source_image"
-    },
-    {
       "id": "52c013755cd0",
       "category": "sarkari-naukri",
       "title": "8th Pay Commission Salary Projection Tools Emerge Amid Anticipation for Official Pay Matrix",
@@ -505,7 +504,7 @@
       "category": "private-vacancy",
       "title": "Innow8 Lists Stem Innovation Engineer Role Across Multiple Locations in Northern India",
       "source": "https://in.linkedin.com/jobs/view/stem-innovation-engineer-in-chandigarh-ghaziabad-uttar-pradesh-bulandshahr-noida-punjab-gurgaon-meerut-sangrur-mohali-at-innow8-4472659090",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "0493b37f6575",
@@ -550,6 +549,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "category": "education",
+      "title": "Institut Sciences Campus: College Admissions, Facts and Verification Guide",
+      "source": "https://isc-edu.org/",
+      "reason": "source_error"
+    },
+    {
       "id": "07746bc77e63",
       "category": "business",
       "title": "RCG Ventures Closes Fund VIII Above Target at $515 Million, Citing Strong Institutional Demand",
@@ -568,7 +574,7 @@
       "category": "private-vacancy",
       "title": "Make Your Own Perfume (MYOP) Seeks Sales Executive in Pune and Pimpri-Chinchwad Area",
       "source": "https://in.linkedin.com/jobs/view/sales-executive-at-make-your-own-perfume-myop-4484796852",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "9db43091aef2",
@@ -589,14 +595,7 @@
       "category": "private-vacancy",
       "title": "Fanzart Seeks Business Development Specialist for On-Site Role in Ranchi",
       "source": "https://in.linkedin.com/jobs/view/business-development-specialist-at-fanzart-designer-fans-4484908686",
-      "reason": "access_denied"
-    },
-    {
-      "id": "063f4803fe742d225120749a",
-      "category": "gadgets",
-      "title": "Vivo X Fold 5: Smartphone Specifications, Facts and Verification Guide",
-      "source": "https://www.gadgets360.com/vivo-x-fold-5-price-in-india-133304",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "9b3641414312",
@@ -648,6 +647,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "8444aa187e09b377f661fcbf",
+      "category": "education",
+      "title": "Dhemaji Engineering College: College Admissions, Facts and Verification Guide",
+      "source": "https://dec.ac.in/",
+      "reason": "no_source_image"
+    },
+    {
       "id": "62f5310583d8",
       "category": "ev-clean-energy",
       "title": "Navigating India's Expanding EV Charging Infrastructure",
@@ -659,14 +665,14 @@
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Cheyenne and Surrounding Region",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "080b28de54ff",
       "category": "private-vacancy",
       "title": "Amrit Skills Development Reports MIS Executive Opening in Delhi",
       "source": "https://in.linkedin.com/jobs/view/mis-executive-at-amrit-skills-development-4480055351",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "b9e7ebed5efd",
@@ -680,7 +686,7 @@
       "category": "private-vacancy",
       "title": "Bright Blue Gemstones Announces Client Acquisition Internship in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/client-acquisition-intern-at-bright-blue-gemstones-4471542402",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "021dcf06da61",
@@ -694,14 +700,14 @@
       "category": "private-vacancy",
       "title": "WeMakeScholars Recruits Education Finance Officers Across Multiple Indian Regions",
       "source": "https://in.linkedin.com/jobs/view/education-finance-officer-in-nashik-trichey-begumpet-mangalore-solapur-bidar-bhubaneswar-coimbatore-cuttack-kollam-chennai-hyderabad-maharashta-koramangala-andhra-pradesh-at-wemakescholars-4483353601",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "6734d0b5d4b1",
       "category": "private-vacancy",
       "title": "Community and Social Services Openings Highlighted Across Des Moines Area Employers",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-des-moines-ia",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "01a6933a42b8",
@@ -757,7 +763,7 @@
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Boydton Area Listings",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-boydton-va",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "a91a82825e4a",
@@ -769,12 +775,27 @@
   ],
   "missing_reasons": {
     "source_unavailable": 20,
-    "source_error": 1,
-    "no_source_image": 31,
-    "access_denied": 48,
-    "invalid_source_images": 6
+    "source_error": 2,
+    "access_denied": 31,
+    "no_source_image": 37,
+    "invalid_source_images": 16
   },
-  "existing_representatives_preserved": 0,
-  "diagnostics": {},
+  "existing_representatives_preserved": 1,
+  "diagnostics": {
+    "8444aa187e09b377f661fcbf": {
+      "reason": "no_source_image",
+      "source": "https://dec.ac.in/"
+    },
+    "8af54bb949a0c055391d640a": {
+      "reason": "no_source_image",
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "existing_representative_preserved": true
+    },
+    "0a95ccf111c45db4cfb5c9e3": {
+      "reason": "source_error",
+      "source": "https://isc-edu.org/",
+      "error": "ConnectionError"
+    }
+  },
   "mode": "directory"
 }
