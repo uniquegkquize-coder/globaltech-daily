@@ -110,7 +110,7 @@ def save_source_photo(ident,image,source,license_url,authorized,credit,alt):
             im=ImageOps.pad(im,(1280,720),method=Image.Resampling.LANCZOS,color=(12,28,55))
             tmp=IMAGES/(ident+'.tmp.jpg');im.save(tmp,'JPEG',quality=86,optimize=True);tmp.replace(IMAGES/(ident+'.jpg'))
         meta={'kind':'publisher_source','source_image':image,'image_url':image,'source':source,
-              'license':license_url,'attribution':credit,'rights_status':'authorized' if authorized else 'source_license_claimed',
+              'license':license_url,'attribution':authorized.get('attribution') or credit,'rights_status':'authorized' if authorized else 'source_license_claimed',
               'authorization':authorized,'post_id':ident,'width':1280,'height':720,'original_dimensions':original_size,
               'alt':alt,'modifications':'Resized and letterboxed to 16:9; no AI generation'}
         (IMAGES/(ident+'.json')).write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
@@ -210,10 +210,37 @@ def normalized(value):
     value=unicodedata.normalize('NFKD',str(value)).encode('ascii','ignore').decode().lower().replace('+',' plus ')
     return ' '.join(re.findall(r'[a-z0-9]+',value))
 
+def reviewed_subjects():
+    try:data=json.loads((ROOT/'content/photo-subjects.json').read_text())
+    except (OSError,ValueError):return {}
+    return data if isinstance(data,dict) else {}
+
+def reviewed_subject(p):
+    title=' '+normalized(str(p.get('en_title',''))+' '+str(p.get('source_title','')))+' '
+    matches=[]
+    for subject,rule in reviewed_subjects().items():
+        if p.get('id') in rule.get('article_ids',[]):return subject
+        for alias in rule.get('aliases',[]):
+            key=normalized(alias)
+            if len(key.split())>=2 and ' '+key+' ' in title:
+                matches.append((title.index(' '+key+' '),-len(key),subject))
+    return min(matches)[2] if matches else ''
+
+def commons_page_license(soup):
+    # Multi-licensed files may list GFDL before a perfectly usable CC license.
+    for block in soup.select('.licensetpl') or [soup]:
+        short=block.select_one('.licensetpl_short');link=block.select_one('.licensetpl_link')
+        short=short.get_text(' ',strip=True) if short else ''
+        url=link.get_text(' ',strip=True) if link else ''
+        if commons_reuse_allowed(short,url):return short,url
+    return '',''
+
 def exact_subject(p):
     global _SUBJECTS
     if p.get('image_subject'):return str(p['image_subject'])
     if p.get('directory_name'):return str(p['directory_name'])
+    reviewed=reviewed_subject(p)
+    if reviewed:return reviewed
     if _SUBJECTS is None:
         names=set()
         for filename in ('directory-details.json','directory-records.json'):
@@ -270,10 +297,8 @@ def public_commons_photo(p,subject):
             fs=BeautifulSoup(response.text[:1500000],'html.parser')
             text=fs.get_text(' ',strip=True)
             if re.search(r'copyright violation|missing permission|no permission|digitally upscaled|AI.generated',text,re.I):continue
-            short=fs.select_one('.licensetpl_short');link=fs.select_one('.licensetpl_link')
-            short=short.get_text(' ',strip=True) if short else ''
-            license_url=link.get_text(' ',strip=True) if link else ''
-            if not commons_reuse_allowed(short,license_url):continue
+            short,license_url=commons_page_license(fs)
+            if not short and not license_url:continue
             description=fs.select_one('#fileinfotpl_desc+td')
             description=description.get_text(' ',strip=True) if description else ''
             categories=' '.join(a.get_text(' ',strip=True) for a in fs.select('#mw-normal-catlinks a') if 'taken with' not in a.get_text(' ',strip=True).lower())
@@ -284,18 +309,28 @@ def public_commons_photo(p,subject):
             photo=fs.select_one('.fullImageLink img')
             if not photo:continue
             srcset=photo.get('srcset','')
-            image=srcset.split(',')[-1].strip().split(' ')[0] if srcset else photo.get('src')
-            image=urljoin(page_url,image or '')
-            if urlparse(image).scheme!='https':continue
-            res=client.get(image,timeout=(4,14),headers={**headers,'Referer':page_url})
-            if not res.ok or len(res.content)>12_000_000:continue
-            with Image.open(io.BytesIO(res.content)) as im:
-                if im.width<600 or im.height<320:continue
-                im=ImageOps.exif_transpose(im).convert('RGB')
-                im=ImageOps.pad(im,(1280,720),method=Image.Resampling.LANCZOS,color=(12,28,55))
-                im.save(IMAGES/(ident+'.jpg'),'JPEG',quality=86,optimize=True)
+            original=fs.select_one('.fullImageLink a[href]')
+            preview=srcset.split(',')[-1].strip().split(' ')[0] if srcset else photo.get('src')
+            image_urls=[urljoin(page_url,preview or '')]
+            if original:image_urls.append(urljoin(page_url,original.get('href','')))
+            saved=False
+            for image in list(dict.fromkeys(image_urls))[:2]:
+                if urlparse(image).scheme!='https':continue
+                res=client.get(image,timeout=(4,14),headers={**headers,'Referer':page_url})
+                if res.status_code in DENIED:break
+                if not res.ok or len(res.content)>12_000_000:continue
+                try:
+                    with Image.open(io.BytesIO(res.content)) as im:
+                        if im.width<600 or im.height<320:continue
+                        im=ImageOps.exif_transpose(im).convert('RGB')
+                        im=ImageOps.pad(im,(1280,720),method=Image.Resampling.LANCZOS,color=(12,28,55))
+                        im.save(IMAGES/(ident+'.jpg'),'JPEG',quality=86,optimize=True)
+                    saved=True;break
+                except (OSError,ValueError):continue
+            if not saved:continue
             author=fs.select_one('#fileinfotpl_aut+td')
             author=author.get_text(' ',strip=True)[:240] if author else 'Wikimedia Commons contributor'
+            author=reviewed_subjects().get(subject,{}).get('credits',{}).get(page_url,author)
             metadata={'kind':'licensed_photo','post_id':ident,'subject':subject,'source_image':page_url,'image_url':image,
                       'license':license_url,'license_name':short,'attribution':author,'rights_status':'licensed',
                       'matched_title':file_title,'image_description':description,'width':1280,'height':720,'alt':subject+' — licensed representative photograph',
@@ -501,7 +536,7 @@ def main():
     deadline=time.monotonic()+seconds
     attempts=cursor.setdefault('attempts',{});results=[]
     force=os.getenv('IMAGE_BACKFILL_FORCE','0')=='1'
-    policy=hashlib.sha256(b''.join((ROOT/'content'/name).read_bytes() if (ROOT/'content'/name).exists() else b'' for name in ('approved-photo-sources.json','image-authorizations.json'))).hexdigest()[:12]
+    policy=hashlib.sha256(b''.join((ROOT/'content'/name).read_bytes() if (ROOT/'content'/name).exists() else b'' for name in ('approved-photo-sources.json','image-authorizations.json','photo-subjects.json'))).hexdigest()[:12]
     posts=list({slug(p):p for p in posts}.values())
     source_cache={};subject_cache={}
     for post in posts:
@@ -549,9 +584,11 @@ def main():
             if row['result'] not in ('cooldown','time_budget'):attempts[row['id']]=row
     BACKFILL_STATE.write_text(json.dumps(cursor,ensure_ascii=False,indent=2)+'\n')
     counts=dict(Counter(row['result'] for row in results))
-    missing=[{'id':slug(p),'category':p.get('category'),'title':p.get('en_title'),'source':p.get('source')} for p in posts if not resolved_featured(slug(p))]
+    missing=[{'id':slug(p),'category':p.get('category'),'title':p.get('en_title'),'source':p.get('source'),'reason':PHOTO_DIAGNOSTICS.get(slug(p),{}).get('reason') or attempts.get(slug(p),{}).get('result','not_attempted')} for p in posts if not resolved_featured(slug(p))]
     report={'total_posts':len(posts),'selected':len(candidates),'results':counts,'still_missing':len(missing),
-            'articles':results,'missing':missing,'diagnostics':PHOTO_DIAGNOSTICS,'mode':mode}
+            'articles':results,'missing':missing,'missing_reasons':dict(Counter(row['reason'] for row in missing)),
+            'existing_representatives_preserved':sum(bool(d.get('existing_representative_preserved')) for d in PHOTO_DIAGNOSTICS.values()),
+            'diagnostics':PHOTO_DIAGNOSTICS,'mode':mode}
     serialized=json.dumps(report,ensure_ascii=False,indent=2)+'\n'
     (ROOT/'content/image-audit-status.json').write_text(serialized)
     audit_name='archive' if mode=='all' else ('directory' if mode=='directory' else 'news')

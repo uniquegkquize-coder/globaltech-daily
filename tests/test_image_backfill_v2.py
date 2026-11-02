@@ -93,3 +93,21 @@ class ArticleOriginalPriorityTests(unittest.TestCase):
     self.assertFalse(g.licensed_source_image({'id':'abcdef','source':'https://example.org/story'}))
    self.assertEqual(get.call_count,1)
    self.assertEqual(photo.read_bytes(),before)
+
+class ReviewedSubjectsTests(unittest.TestCase):
+ def test_person_place_and_ambiguous_name_matching(self):
+  rules={'Heidi Klum':{'aliases':['Heidi Klum']},'Yash Actor':{'aliases':['Yash'],'article_ids':['aaa001']},'Gladstone Gaol':{'aliases':['Gladstone Gaol']}}
+  with patch.object(g,'reviewed_subjects',return_value=rules),patch.object(g,'_SUBJECTS',[]):
+   self.assertEqual(g.exact_subject({'en_title':'Heidi Klum attends an event'}),'Heidi Klum')
+   self.assertEqual(g.exact_subject({'en_title':'Gladstone Gaol reopens'}),'Gladstone Gaol')
+   self.assertEqual(g.exact_subject({'id':'aaa001','en_title':'Yash visits Disneyland'}),'Yash Actor')
+   self.assertEqual(g.exact_subject({'en_title':'Yash Kumarr announces a film'}),'')
+   self.assertEqual(g.exact_subject({'en_title':'Heidi Klumson attends an event'}),'')
+ def test_explicit_editorial_override_takes_priority(self):
+  with patch.object(g,'reviewed_subjects',return_value={'Heidi Klum':{'aliases':['Heidi Klum']}}):
+   self.assertEqual(g.exact_subject({'image_subject':'Different verified subject','en_title':'Heidi Klum news'}),'Different verified subject')
+ def test_multi_licensed_file_selects_cc_instead_of_rejecting_gfdl(self):
+  markup='<table class="licensetpl"><span class="licensetpl_short">GFDL</span><span class="licensetpl_link">https://gnu.org/copyleft/fdl.html</span></table><table class="licensetpl"><span class="licensetpl_short">CC BY-SA 3.0</span><span class="licensetpl_link">https://creativecommons.org/licenses/by-sa/3.0/</span></table>'
+  self.assertEqual(g.commons_page_license(BeautifulSoup(markup,'html.parser')),('CC BY-SA 3.0','https://creativecommons.org/licenses/by-sa/3.0/'))
+ def test_no_reuse_license_is_not_invented(self):
+  self.assertEqual(g.commons_page_license(BeautifulSoup('<p>All rights reserved</p>','html.parser')),('',''))

@@ -37,6 +37,15 @@ jobs:
           root=Path('.')
           ids=['71f48906c4f9acc6c7ed345c','ec6863e32188cfdfaf0e0f03','9343770524a2e7223a9b618e','0e40232a288ace699862891d','feea9cd2e6e32e1f453adabd','06db24bb717ca54f66f62f32','1afe1c431cab62b81a431ed7','8c8db2af05e935abb15eaa18','927b49babdc939df240ee79f','4c81415bc8d0','4b874f09e9b9','023ca2302135','13e71ca09340','536d88298af5','8af54bb949a0c055391d640a','f6f7df052281']
           pages=list(Path('dist/en/news').glob('*/*/index.html'))
+          # Cover every published reusable photo, including future backfill additions.
+          for metadata_path in Path('content/featured').glob('*.json'):
+              try:metadata=json.loads(metadata_path.read_text())
+              except (OSError,ValueError):continue
+              if not isinstance(metadata,dict):continue
+              ident=metadata.get('post_id','')
+              if metadata.get('kind')=='licensed_photo' and ident and any(p.parent.name.endswith('-'+ident[:10]) for p in pages):
+                  ids.append(ident)
+          ids=list(dict.fromkeys(ids))
           def verify(ident):
               meta=json.loads((root/'content/featured'/f'{ident}.json').read_text())
               expected=(root/'content/featured'/f'{ident}.jpg').read_bytes()
