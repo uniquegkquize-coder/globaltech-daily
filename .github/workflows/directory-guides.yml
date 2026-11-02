@@ -57,16 +57,10 @@ jobs:
             fi
             git commit -m 'Publish verified directory guides and research cache'
             if git push origin HEAD:main; then
-              python - <<'PY'
-              import json
-              from pathlib import Path
-              status=json.loads(Path('content/directory-guide-status.json').read_text())
-              published=status.get('published',0)
-              missing=status.get('missing',{})
-              print(f'Directory guides published: {published}/8; missing verified candidates: {missing}')
-              if published==0:
-                  print('::warning::No new directory guides published; source research or candidate completeness needs improvement.')
-              PY
+              python -c "import json; from pathlib import Path; d=json.loads(Path('content/directory-guide-status.json').read_text()); print('Directory guides published: {}/8; missing verified candidates: {}'.format(d.get('published',0),d.get('missing',{})))"
+              if python -c "import json,sys; d=json.load(open('content/directory-guide-status.json')); sys.exit(0 if d.get('published',0)==0 else 1)"; then
+                echo '::warning::No new directory guides published; source research or candidate completeness needs improvement.'
+              fi
               echo 'Directory research cache and site build committed.'
               exit 0
             fi
