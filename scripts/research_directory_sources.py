@@ -26,7 +26,7 @@ TARGET=ROOT/'content'/'directory-details.json'
 RECORDS=ROOT/'content'/'directory-records.json'
 FIELDS={
  'colleges':{'programmes':('programmes','programs','course','courses','degrees','degree programmes'),'duration':('duration','course duration'),'fees':('tuition','fees','tuition fees','annual fee'),'admissions':('admission','application','eligibility','entry requirements'),'placement':('placement','employment'),'scholarships':('scholarships','financial aid'),'accreditation':('accreditation','recognition'),'application_process':('application process','how to apply'),'eligibility':('eligibility','entry requirements'),'country':('country','addresscountry'),'region':('state','addressregion'),'city':('city','addresslocality')},
- 'phones':{'display':('display','screen','display size'),'processor':('chipset','processor make','processor','soc','cpu'),'battery':('battery','battery capacity'),'ram':('ram','memory'),'storage':('storage','internal storage'),'cameras':('camera','cameras','rear camera','main camera'),'charging':('charging','fast charging'),'connectivity':('connectivity','network','network technology'),'launch_date':('launch date','announced','releasedate'),'price':('price','msrp'),'manufacturer':('manufacturer','brand')},
+ 'phones':{'display':('display','screen','display size','screen size'),'processor':('chipset','processor make','processor','soc','cpu'),'battery':('battery','battery capacity'),'ram':('ram','memory'),'storage':('storage','internal storage'),'cameras':('camera','cameras','rear camera','main camera'),'charging':('charging','fast charging'),'connectivity':('connectivity','network','network technology'),'launch_date':('launch date','announced','releasedate'),'price':('price','msrp'),'manufacturer':('manufacturer','brand')},
  'cars':{'price':('price','msrp','starting price'),'powertrain':('engine','powertrain','engine type','motor'),'variants':('trim levels','variant','variants'),'mileage':('fuel economy','mileage','range'),'transmission':('transmission','gearbox'),'dimensions':('dimensions','length','width','height','wheelbase'),'safety':('safety','airbags','safety features'),'features':('features','standard features'),'availability':('availability','market availability'),'manufacturer':('manufacturer','brand')},
  'bikes':{'price':('price','msrp'),'engine':('engine','displacement','engine capacity'),'power':('power','max power','maximum power'),'torque':('torque','max torque'),'mileage':('mileage','fuel economy'),'brakes':('brakes','front brake','rear brake'),'variants':('variants','variant'),'specifications':('specifications','kerb weight','seat height'),'manufacturer':('manufacturer','brand')}
 }
@@ -102,6 +102,21 @@ def extract_pairs(soup):
    if value:found.setdefault(key,value)
  return found
 
+def extract_course_rows(soup):
+ rows=[]
+ for table in soup.select('table')[:30]:
+  trs=table.find_all('tr')
+  if not trs:continue
+  headers=[clean(c.get_text(' ',strip=True)).lower() for c in trs[0].find_all(['td','th'])]
+  if not headers or not any(h in ('course','courses','programme','programmes') for h in headers):continue
+  if not any(any(t in h for t in ('duration','fees','eligibility')) for h in headers):continue
+  for row in trs[1:31]:
+   cells=row.find_all(['td','th'])
+   if len(cells)!=len(headers):continue
+   data={h:clean(c.get_text(' ',strip=True)) for h,c in zip(headers,cells)}
+   if any(data.values()):rows.append(data)
+ return rows
+
 def enrich(kind,name,record,session,url=None):
  url=url or evidence_source(record)
  if not url.startswith('https://'):return {}
@@ -137,6 +152,8 @@ def enrich(kind,name,record,session,url=None):
    ranked=sorted(found.items(),key=lambda item: aliases.index(item[0]) if item[0] in aliases else len(aliases))
    for key,value in ranked:
     if re.sub(r'\s*\([^)]*\)\s*',' ',key).strip() in aliases and value and len(value)>2:
+     unit=re.search(r'\((mAh|Ah|GB|MB|inches|mm|cm|kg|PS|Nm)\)',key,re.I)
+     if unit and re.fullmatch(r'[\d., -]+',value):value+=' '+{'mah':'mAh','ah':'Ah','gb':'GB','mb':'MB','ps':'PS','nm':'Nm'}.get(unit.group(1).lower(),unit.group(1))
      if field in ('engine','power','torque','specifications','battery','ram','storage','charging') and re.fullmatch(r'[\d., -]+',value):continue
      if field in ('dimensions','specifications'):value=key+': '+value
      if field=='dimensions' and not re.search(r'\b(?:mm|cm|inches|in|metres)\b',value,re.I):continue
@@ -144,6 +161,20 @@ def enrich(kind,name,record,session,url=None):
      if field=='price' and found.get('pricecurrency'):value=found['pricecurrency']+' '+value
      output[field]=value
      break
+  if kind=='colleges':
+   courses=extract_course_rows(soup)
+   if courses:
+    output['courses']=courses
+    for field,labels in {'programmes':('course','courses','programme','programmes'),
+                         'duration':('duration',),'fees':('fees',),
+                         'eligibility':('eligibility',),'admissions':('selection',)}.items():
+     values=[]
+     for row in courses:
+      course=next((v for k,v in row.items() if k in ('course','courses','programme','programmes')),'')
+      for key,value in row.items():
+       if (key in labels if field=='programmes' else any(label in key for label in labels)):
+        values.append(value if field=='programmes' else course+': '+key+' — '+value)
+     if values:output[field]='; '.join(dict.fromkeys(values))[:2400]
   print('SOURCE_RESULT',json.dumps({'url':final_url,'name':name,'method':method,'matched_fields':list(output),'label_count':len(found)}),flush=True)
   if output:
    output['field_sources']={field:{'url':final_url,'retrieved_at':dt.datetime.now(dt.timezone.utc).isoformat()} for field in output}
@@ -251,7 +282,7 @@ def main():
      sources={**additions.get('field_sources',{}),**extra.get('field_sources',{})}
      additions.update(extra)
      if sources:additions['field_sources']=sources
-   changes={k:v for k,v in additions.items() if k in FIELDS[kind] and v!=existing.get(k)}
+   changes={k:v for k,v in additions.items() if (k in FIELDS[kind] or k=='courses') and v!=existing.get(k)}
    if changes:
     sources={**existing.get('field_sources',{}),**additions.get('field_sources',{})}
     details[kind][name]={**base,**additions,'field_sources':sources}

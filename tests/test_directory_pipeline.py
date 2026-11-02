@@ -15,6 +15,16 @@ class DirectoryTests(unittest.TestCase):
  def test_explicit_pairs_cover_structured_and_table_fields(self):
   pairs=research.extract_pairs(BeautifulSoup('<script type="application/ld+json">{"additionalProperty":[{"name":"Chipset","value":"Example CPU"}]}</script><table><tr><td>Battery</td><td>5000 mAh</td></tr></table><dl><dt>RAM</dt><dd>8 GB</dd></dl>','html.parser'))
   self.assertEqual(pairs['chipset'],'Example CPU');self.assertEqual(pairs['battery'],'5000 mAh');self.assertEqual(pairs['ram'],'8 GB')
+ def test_course_tables_keep_course_fees_and_eligibility_associated(self):
+  soup=BeautifulSoup('<table><tr><th>Course</th><th>Duration</th><th>Total Fees</th></tr><tr><td>BTech</td><td>4 Years</td><td>INR 800000</td></tr></table>','html.parser')
+  rows=research.extract_course_rows(soup)
+  self.assertEqual(rows,[{'course':'BTech','duration':'4 Years','total fees':'INR 800000'}])
+ def test_units_in_labels_are_preserved_and_image_sizes_ignored(self):
+  html='<title>Test Phone</title><script type="application/ld+json">{"@type":"ImageObject","width":"900"}</script><table><tr><td>Battery capacity (mAh)</td><td>5000</td></tr></table>'
+  with patch.object(research,'fetch_public_html',return_value=(html,'https://example.com/test-phone','http')):
+   facts=research.enrich('phones','Test Phone',{},Mock(),'https://example.com/test-phone')
+  self.assertEqual(facts['battery'],'5000 mAh')
+  self.assertNotIn('dimensions',facts)
  def test_new_limit_updates_and_dates(self):
   with tempfile.TemporaryDirectory() as tmp,patch.object(publisher,'ROOT',Path(tmp)),patch.object(publisher,'POSTS',Path(tmp)/'content/posts'):
    content=Path(tmp)/'content';content.mkdir()

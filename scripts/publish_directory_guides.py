@@ -81,6 +81,11 @@ def article(kind,name,entry,source):
                f'## Course fees\n\n{entry.get("fees") or "Current course-wise fees not verified"}\n\n'
                f'## Placements\n\n{entry.get("placement") or "Programme-wise placements not verified"}\n\n')
         body=body.replace('## Source-listed information',extra+'## Source-listed information')
+    if kind=='colleges' and isinstance(entry.get('courses'),list):
+        rows=[]
+        for row in entry['courses'][:30]:
+            if isinstance(row,dict):rows.append('- '+'; '.join(str(k)+': '+str(v) for k,v in row.items()))
+        body+='\n\n## Source-listed course details\n\n'+'\n'.join(rows)
     hi=(f'## परिचय\n\n{name} हमारी वैश्विक {LABEL[kind]} डायरेक्टरी में दर्ज है। देश/बाजार: {country}। '
         f'यह जानकारी देने वाली गाइड है, नई लॉन्च या ताज़ा घटना की खबर नहीं।\n\n'
         f'## स्रोत में दर्ज विवरण\n\n{facts}\n\n'

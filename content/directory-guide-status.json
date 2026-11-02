@@ -1,22 +1,17 @@
 {
-  "published": 0,
-  "updated": 1,
+  "published": 8,
+  "updated": 0,
   "target": 8,
-  "missing": {
-    "colleges": 2,
-    "phones": 2,
-    "cars": 2,
-    "bikes": 2
-  },
+  "missing": {},
   "categories": {
     "colleges": {
-      "new": 0,
+      "new": 2,
       "updated": 0,
-      "eligible_new": 0,
+      "eligible_new": 2,
       "eligible_updates": 0,
-      "shortfall": 2,
+      "shortfall": 0,
       "reasons": {
-        "considered": 300,
+        "considered": 302,
         "already_published_unchanged": 1,
         "missing or invalid HTTPS evidence URL": 216,
         "insufficient verified descriptive fields": 83
@@ -151,17 +146,18 @@
       ]
     },
     "phones": {
-      "new": 0,
-      "updated": 1,
-      "eligible_new": 0,
-      "eligible_updates": 1,
-      "shortfall": 2,
+      "new": 2,
+      "updated": 0,
+      "eligible_new": 2,
+      "eligible_updates": 0,
+      "shortfall": 0,
       "reasons": {
-        "considered": 416,
-        "missing or invalid HTTPS evidence URL": 347,
+        "considered": 417,
+        "already_published_unchanged": 1,
+        "missing or invalid HTTPS evidence URL": 346,
         "insufficient verified descriptive fields": 68
       },
-      "rejected_count": 415,
+      "rejected_count": 414,
       "rejected_sample": [
         {
           "name": "Huawei Y7 Prime (2019)",
@@ -291,13 +287,13 @@
       ]
     },
     "cars": {
-      "new": 0,
+      "new": 2,
       "updated": 0,
-      "eligible_new": 0,
+      "eligible_new": 2,
       "eligible_updates": 0,
-      "shortfall": 2,
+      "shortfall": 0,
       "reasons": {
-        "considered": 648,
+        "considered": 650,
         "already_published_unchanged": 3,
         "missing or invalid HTTPS evidence URL": 551,
         "insufficient verified descriptive fields": 94
@@ -432,13 +428,13 @@
       ]
     },
     "bikes": {
-      "new": 0,
+      "new": 2,
       "updated": 0,
-      "eligible_new": 0,
+      "eligible_new": 2,
       "eligible_updates": 0,
-      "shortfall": 2,
+      "shortfall": 0,
       "reasons": {
-        "considered": 262,
+        "considered": 264,
         "already_published_unchanged": 1,
         "missing or invalid HTTPS evidence URL": 242,
         "insufficient verified descriptive fields": 19
@@ -573,5 +569,5 @@
       ]
     }
   },
-  "date": "2026-11-02T01:56:55.227659+00:00"
+  "date": "2026-11-02T02:06:19.815285+00:00"
 }
