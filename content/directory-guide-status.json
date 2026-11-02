@@ -39,6 +39,26 @@
           "source": "https://apply.exploitsonline.com/"
         },
         {
+          "name": "Universit\u00e9 Notre Dame de Lomami",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/"
+        },
+        {
+          "name": "Universit\u00e9 P\u00e9dagogique de Kananga",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/"
+        },
+        {
+          "name": "Universit\u00e9 Officielle de Mweka",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.unirank.org/cd/uni/universite-officielle-de-mweka/map/index.htm#map"
+        },
+        {
+          "name": "Universit\u00e9 Officielle de Semuliki",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/"
+        },
+        {
           "name": "Darul Uloom Latheefia",
           "reason": "missing or invalid HTTPS evidence URL",
           "source": "http://www.wikidata.org/entity/Q100233622"
@@ -127,26 +147,6 @@
           "name": "Dely Brahim University",
           "reason": "missing or invalid HTTPS evidence URL",
           "source": "http://www.wikidata.org/entity/Q100927385"
-        },
-        {
-          "name": "International Virtual University",
-          "reason": "missing or invalid HTTPS evidence URL",
-          "source": "http://www.wikidata.org/entity/Q100927393"
-        },
-        {
-          "name": "Ethiopian Catholic University of Saint Thomas Aquinas",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.ecu.edu.et/"
-        },
-        {
-          "name": "New Global Vision University College",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://ngvc.edu.et/"
-        },
-        {
-          "name": "Wachemo University",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.wcu.edu.et/"
         }
       ]
     },
@@ -157,12 +157,12 @@
       "eligible_updates": 0,
       "shortfall": 2,
       "reasons": {
-        "considered": 693,
+        "considered": 1001,
         "already_published_unchanged": 3,
-        "missing or invalid HTTPS evidence URL": 604,
-        "insufficient verified descriptive fields": 86
+        "missing or invalid HTTPS evidence URL": 895,
+        "insufficient verified descriptive fields": 103
       },
-      "rejected_count": 690,
+      "rejected_count": 998,
       "rejected_sample": [
         {
           "name": "Huawei Y7 Prime (2019)",
@@ -300,11 +300,21 @@
       "reasons": {
         "considered": 650,
         "already_published_unchanged": 5,
-        "missing or invalid HTTPS evidence URL": 551,
-        "insufficient verified descriptive fields": 94
+        "insufficient verified descriptive fields": 94,
+        "missing or invalid HTTPS evidence URL": 551
       },
       "rejected_count": 645,
       "rejected_sample": [
+        {
+          "name": "Hyundai Bayon",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.hyundai.com/be/fr/modeles/bayon.html"
+        },
+        {
+          "name": "Cadillac XTS",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://web.archive.org/web/20191117172152/https://www.cadillac.com/sedans/xts-sedan"
+        },
         {
           "name": "Jaguar XK140",
           "reason": "missing or invalid HTTPS evidence URL",
@@ -419,16 +429,6 @@
           "name": "De Dion-Bouton Type AD",
           "reason": "missing or invalid HTTPS evidence URL",
           "source": "http://www.wikidata.org/entity/Q100263822"
-        },
-        {
-          "name": "De Dion-Bouton Type BH",
-          "reason": "missing or invalid HTTPS evidence URL",
-          "source": "http://www.wikidata.org/entity/Q100265668"
-        },
-        {
-          "name": "De Dion-Bouton Type CI",
-          "reason": "missing or invalid HTTPS evidence URL",
-          "source": "http://www.wikidata.org/entity/Q100266188"
         }
       ]
     },
@@ -455,6 +455,11 @@
           "name": "Kymco CV3",
           "reason": "insufficient verified descriptive fields",
           "source": "https://www.kymco.co.uk/scooters-and-motorcycles-range/maxi-scooters/cv3"
+        },
+        {
+          "name": "Yamaha Gear Ultima",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.yamaha-motor.co.id/product/gear-ultima/"
         },
         {
           "name": "Farm bike",
@@ -565,14 +570,9 @@
           "name": "Norton Model 99 Dominator",
           "reason": "missing or invalid HTTPS evidence URL",
           "source": "http://www.wikidata.org/entity/Q107490649"
-        },
-        {
-          "name": "DKW ZSW 500",
-          "reason": "missing or invalid HTTPS evidence URL",
-          "source": "http://www.wikidata.org/entity/Q108025310"
         }
       ]
     }
   },
-  "date": "2026-11-02T07:50:20.393779+00:00"
+  "date": "2026-11-02T10:33:35.271379+00:00"
 }
