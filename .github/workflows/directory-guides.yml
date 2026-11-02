@@ -67,8 +67,12 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           python -m compileall -q scripts
           python -m unittest discover -s tests -p 'test_directory*.py' -v
-          python scripts/refresh_directories.py
-          python scripts/research_directory_sources.py
+          if [ "$GITHUB_EVENT_NAME" != "push" ]; then
+            python scripts/refresh_directories.py
+            python scripts/research_directory_sources.py
+          else
+            echo 'Deploy verified profiles now; source discovery resumes on the next scheduled run.'
+          fi
           # Retain research outside the checkout across concurrent-push retries.
           cp content/directory-details.json /tmp/directory-details.json
           cp content/directory-research-state.json /tmp/directory-research-state.json

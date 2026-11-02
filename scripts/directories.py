@@ -163,7 +163,7 @@ def extra_detail(kind,name,lang):
  labels={'price':('Price','कीमत'),'engine':('Engine','इंजन'),'power':('Power','पावर'),'torque':('Torque','टॉर्क'),'mileage':('Mileage','माइलेज'),'weight':('Weight','वजन'),'display':('Display','डिस्प्ले'),'processor':('Processor','प्रोसेसर'),'battery':('Battery','बैटरी'),'storage':('Storage','स्टोरेज'),'ram':('RAM','रैम'),'rear_camera':('Rear cameras','रियर कैमरे'),'front_camera':('Front cameras','फ्रंट कैमरे'),'fees':('Fees','फीस'),'placement':('Placement','प्लेसमेंट'),'admissions':('Admissions','प्रवेश'),'accreditation':('Accreditation','मान्यता')}
  rows=[]
  for k,v in details.items():
-  if k in ('source_url','official_url','evidence_url','field_sources','audit_notes','reviewed_fields','image_source_url') or isinstance(v,(dict,list,bool)):continue
+  if k in ('source_url','official_url','evidence_url','field_sources','audit_notes','reviewed_fields','image_source_url','source_image_url') or isinstance(v,(dict,list,bool)):continue
   label=labels.get(k,(k.replace('_',' ').title(),k.replace('_',' ').title()))
   provenance=details.get('field_sources',{}).get(k,{})
   evidence=provenance.get('url','') if isinstance(provenance,dict) else ''

@@ -26,6 +26,15 @@ class CompleteDirectoryTests(unittest.TestCase):
    photos.sync_guide_photo('colleges','Test University','profile')
    self.assertEqual((folder/'guide.jpg').read_bytes(),b'photo')
    self.assertEqual(json.loads((folder/'guide.json').read_text())['post_id'],'guide')
+ def test_reviewed_direct_photo_keeps_original_source(self):
+  entry={'source_image_url':'https://cdn.example/model.jpg','image_source_url':'https://manufacturer.example/model','manufacturer':'Maker'}
+  with patch.object(photos.images,'save_source_photo',return_value=True) as save:
+   self.assertTrue(photos.pinned_photo(entry,'profile','Phone'))
+   self.assertEqual(save.call_args.args[1:4],('https://cdn.example/model.jpg','https://manufacturer.example/model',''))
+ def test_pinned_photo_rejects_unsafe_urls(self):
+  with patch.object(photos.images,'save_source_photo') as save:
+   self.assertFalse(photos.pinned_photo({'source_image_url':'javascript:alert(1)','official_url':'https://example.com'},'id','Phone'))
+   save.assert_not_called()
  def test_base_model_excludes_xtec_led(self):
   soup=BeautifulSoup((FIX/'hero-model-sections.html').read_text(),'html.parser')
   rows=f.embedded_model_rows(f.model_scope(soup,'https://hero.example/splendor-plus.html'))
