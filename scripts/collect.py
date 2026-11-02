@@ -555,7 +555,7 @@ def call_provider(prompt):
       continue
      continue
     data=json_object(raw)
-    if isinstance(data,dict) and (data.get('body') or any(isinstance(data.get(lang),dict) and data[lang].get('body') for lang in ('en','hi'))):
+    if isinstance(data,dict) and (data.get('unchanged') is True or data.get('body') or any(isinstance(data.get(lang),dict) and data[lang].get('body') for lang in ('en','hi'))):
      print('Provider success:',provider,'model',model,flush=True)
      return data,provider
     print('Provider',provider,'returned unusable JSON; trying next option',flush=True)
@@ -1108,6 +1108,9 @@ def published_story_index():
    p=json.loads(path.read_text(encoding='utf-8'))
    if isinstance(p,dict):
     index.append((str(p.get('source','')).rstrip('/'),str(p.get('source_title') or p.get('en_title') or ''),str(p.get('category') or '')))
+    for previous in p.get('source_history',[]):
+     if isinstance(previous,dict) and previous.get('url'):
+      index.append((str(previous['url']).rstrip('/'),str(previous.get('title') or p.get('en_title') or ''),str(p.get('category') or '')))
   except (OSError,ValueError,TypeError):continue
  return index
 @lru_cache(maxsize=8192)

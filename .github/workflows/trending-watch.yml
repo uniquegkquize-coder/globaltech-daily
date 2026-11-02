@@ -1,0 +1,101 @@
+name: Trending Watch - fresh developments
+on:
+  schedule:
+    # Offset from quarter-hour peaks; GitHub may delay scheduled jobs.
+    - cron: '2,17,32,47 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/trending_watch.py'
+      - 'tests/test_trending_watch.py'
+      - '.github/workflows/trending-watch.yml'
+permissions:
+  contents: write
+concurrency:
+  # Serialize article writes with the regular 100-post publisher and image repair.
+  group: globaltech-news-publish
+  cancel-in-progress: false
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PYTHONUNBUFFERED: '1'
+      TREND_STATE_PATH: .cache/trending/state.json
+      TREND_POSTS_PER_RUN: '2'
+      MAX_AI_CALLS_PER_RUN: '6'
+      MAX_MODELS_PER_ARTICLE: '2'
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      AI_PROVIDER_ORDER: gemini,openrouter,groq,openai
+      GEMINI_MODEL: gemini-flash-lite-latest
+      GROQ_MODEL: openai/gpt-oss-120b
+      OPENAI_MODEL: gpt-4.1-mini
+      SITE_URL: https://globewiredaily.org
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Test the trend detector before enabling changed code
+        if: github.event_name == 'push'
+        # Isolate production AI budgets from offline test expectations.
+        run: MAX_AI_CALLS_PER_RUN=100 MAX_MODELS_PER_ARTICLE=5 python -m unittest discover -s tests
+      - uses: actions/cache/restore@v4
+        with:
+          path: .cache/trending
+          key: trending-watch-main-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: trending-watch-main-
+      - name: Check fresh coverage and publish only material developments
+        id: scan
+        run: |
+          python -u scripts/trending_watch.py
+          python - <<'PY'
+          import json,os
+          report=json.load(open('content/trending-watch-status.json'))
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:
+              out.write('changed='+('true' if report['changed_ids'] else 'false')+'\n')
+          PY
+      - name: Fetch original source photos for changed articles
+        if: steps.scan.outputs.changed == 'true'
+        # Never let an image CDN prevent completed text from being saved.
+        continue-on-error: true
+        run: timeout 60s python -u scripts/trending_watch.py --photos
+      - name: Build and sync changed news only
+        if: steps.scan.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          git config user.name 'GlobeWire Trending Watch'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add content/posts content/featured content/trending-watch-status.json
+          git commit -m 'Publish or update source-backed trending developments'
+          # Keep latest repository content before generating homepage/sitemaps.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git rebase -X theirs origin/main || { git rebase --abort; exit 1; }
+            python -u scripts/build.py
+            git add dist
+            if ! git diff --cached --quiet; then git commit -m 'Build trending news, original photos and SEO metadata'; fi
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
+      - name: Persist detector signatures and provider backoff
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/trending
+          key: trending-watch-main-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Retain detection diagnostics without redeploying on empty checks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trending-watch-diagnostics
+          path: content/trending-watch-status.json
+          retention-days: 7
