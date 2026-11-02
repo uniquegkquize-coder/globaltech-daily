@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 import directory_facts as f
 import directories as d
+import directory_photos as photos
 import research_directory_sources as r
 import publish_directory_guides as p
 FIX=Path(__file__).parent/'fixtures/directory'
@@ -18,6 +19,13 @@ class CompleteDirectoryTests(unittest.TestCase):
    self.assertTrue((out/'en/colleges/test-university/index.html').exists())
  def test_plus_model_urls_do_not_overwrite_base(self):
   self.assertNotEqual(d.entry_slug('Samsung Galaxy S24'),d.entry_slug('Samsung Galaxy S24+'))
+ def test_profile_original_is_reused_by_existing_guide(self):
+  with tempfile.TemporaryDirectory() as tmp,patch.object(photos.images,'IMAGES',Path(tmp)),patch.object(photos,'guide_images',return_value={('colleges','test university'):'guide'}):
+   folder=Path(tmp);(folder/'profile.jpg').write_bytes(b'photo')
+   (folder/'profile.json').write_text(json.dumps({'kind':'publisher_source','source_image':'https://official.example/campus.jpg'}))
+   photos.sync_guide_photo('colleges','Test University','profile')
+   self.assertEqual((folder/'guide.jpg').read_bytes(),b'photo')
+   self.assertEqual(json.loads((folder/'guide.json').read_text())['post_id'],'guide')
  def test_base_model_excludes_xtec_led(self):
   soup=BeautifulSoup((FIX/'hero-model-sections.html').read_text(),'html.parser')
   rows=f.embedded_model_rows(f.model_scope(soup,'https://hero.example/splendor-plus.html'))
