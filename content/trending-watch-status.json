@@ -1,25 +1,25 @@
 {
-  "checked_at": "2026-11-02T21:48:55.941730+00:00",
+  "checked_at": "2026-11-02T23:13:59.417043+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "9c785f4dc61a",
-    "cff998440d7c"
+    "339edc957113",
+    "e7389883fb55"
   ],
   "results": [
     {
-      "id": "9c785f4dc61a",
-      "result": "published",
-      "title": "US to drop South Africa, Rwanda from duty-free trade initiative"
-    },
-    {
-      "id": "9bcfdc55331d",
-      "result": "no_material_change",
-      "title": "Russian bombing kills 26 people at Ukraine aid centre, Kyiv says"
-    },
-    {
       "id": "cff998440d7c",
+      "result": "no_material_change",
+      "title": "Reddit and libertarian group challenge Australia’s under-16s social media ban in high court"
+    },
+    {
+      "id": "339edc957113",
       "result": "published",
-      "title": "High Court to hear challenge to under-16s social media ban"
+      "title": "Supreme Court rejects Trump bid to block 20,000 California ballots"
+    },
+    {
+      "id": "e7389883fb55",
+      "result": "published",
+      "title": "New York Times and other outlets sue web browser Brave over alleged content scraping"
     }
   ],
   "feeds": {
@@ -33,7 +33,7 @@
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 6
+      "articles": 5
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
@@ -41,11 +41,11 @@
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
-      "articles": 25
+      "articles": 21
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
-      "articles": 18
+      "articles": 11
     },
     "https://www.arabnews.com/rss.xml": {
       "status": "unavailable",
@@ -57,7 +57,7 @@
     },
     "https://rss.dw.com/rdf/rss-en-top": {
       "status": "ok",
-      "articles": 3
+      "articles": 4
     },
     "https://feeds.skynews.com/feeds/rss/world.xml": {
       "status": "ok",
@@ -73,7 +73,7 @@
     },
     "https://timesofindia.indiatimes.com/rssfeedstopstories.cms": {
       "status": "ok",
-      "articles": 19
+      "articles": 18
     },
     "https://feeds.nbcnews.com/nbcnews/public/world": {
       "status": "ok",
@@ -81,7 +81,7 @@
     },
     "https://rss.nytimes.com/services/xml/rss/nyt/World.xml": {
       "status": "ok",
-      "articles": 13
+      "articles": 11
     },
     "https://techcrunch.com/feed/": {
       "status": "ok",
@@ -97,11 +97,11 @@
     },
     "https://feeds.arstechnica.com/arstechnica/index": {
       "status": "ok",
-      "articles": 7
+      "articles": 5
     },
     "https://www.wired.com/feed/rss": {
       "status": "ok",
-      "articles": 6
+      "articles": 4
     },
     "https://www.wired.com/feed/tag/ai/latest/rss": {
       "status": "ok",
@@ -109,10 +109,9 @@
     },
     "https://www.engadget.com/rss.xml": {
       "status": "ok",
-      "articles": 12
+      "articles": 10
     }
   },
-  "discovered": 408,
-  "trending_events": 8,
-  "provider_backoff_seconds": 3600
+  "discovered": 353,
+  "trending_events": 7
 }
