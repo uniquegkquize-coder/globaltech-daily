@@ -1,25 +1,30 @@
 {
-  "checked_at": "2026-11-02T19:39:28.235434+00:00",
+  "checked_at": "2026-11-02T20:25:47.843383+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "9bcfdc55331d"
+    "fc006f0c02ec"
   ],
   "results": [
     {
       "id": "589fdba784fc",
       "result": "no_material_change",
-      "title": "Andy Garcia, David Foster, Paul Anka Lead Kennedy Center Honors"
+      "title": "Kennedy Center Honorees Class Of 2026: Paul Anka, David Foster, Andy Garcia, David Mamet & Barbara Mandrell"
     },
     {
       "id": "9bcfdc55331d",
+      "result": "no_material_change",
+      "title": "Russian bombing kills 26 people at Ukraine aid centre, Kyiv says"
+    },
+    {
+      "id": "fc006f0c02ec",
       "result": "published",
-      "title": "Russian bombing kills 24 people at Ukraine aid centre, Kyiv says"
+      "title": "Michael Wilbon Takes Leave From ESPN for Health Reasons"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 9
+      "articles": 11
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
@@ -27,7 +32,7 @@
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 8
+      "articles": 6
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
@@ -39,7 +44,7 @@
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
-      "articles": 21
+      "articles": 18
     },
     "https://www.arabnews.com/rss.xml": {
       "status": "unavailable",
@@ -49,71 +54,63 @@
       "status": "ok",
       "articles": 2
     },
-    "https://blog.google/rss/": {
-      "status": "ok",
-      "articles": 2
-    },
-    "https://www.nasa.gov/feed/": {
-      "status": "ok",
-      "articles": 4
-    },
-    "https://www.technologyreview.com/feed/": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://www.bleepingcomputer.com/feed/": {
+    "https://www.firstshowing.net/feed/": {
       "status": "ok",
       "articles": 6
     },
-    "https://www.cnet.com/rss/news/": {
+    "https://www.comingsoon.net/feed": {
+      "status": "ok",
+      "articles": 20
+    },
+    "https://www.motor1.com/rss/news/all/": {
       "status": "ok",
       "articles": 4
     },
-    "https://www.techradar.com/feeds.xml": {
+    "https://www.carscoops.com/feed/": {
       "status": "ok",
-      "articles": 22
+      "articles": 7
     },
-    "https://feeds.npr.org/1019/rss.xml": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://variety.com/v/film/feed/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://www.theguardian.com/film/rss": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.theguardian.com/culture/rss": {
-      "status": "ok",
-      "articles": 4
-    },
-    "https://feeds.npr.org/1045/rss.xml": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://ew.com/feed/": {
-      "status": "unavailable",
-      "articles": 0
-    },
-    "https://www.rollingstone.com/feed/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://news.abplive.com/entertainment/movies/feed": {
+    "https://insideevs.com/rss/news/all/": {
       "status": "ok",
       "articles": 2
     },
-    "https://news.abplive.com/entertainment/television/feed": {
+    "https://www.gsmarena.com/rss-news-reviews.php3": {
       "status": "ok",
-      "articles": 1
+      "articles": 4
     },
-    "https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms": {
+    "https://www.androidauthority.com/feed/": {
+      "status": "ok",
+      "articles": 15
+    },
+    "https://www.sammobile.com/feed/": {
+      "status": "ok",
+      "articles": 4
+    },
+    "https://9to5google.com/feed/": {
       "status": "ok",
       "articles": 11
+    },
+    "https://variety.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://deadline.com/feed/": {
+      "status": "ok",
+      "articles": 12
+    },
+    "https://www.hollywoodreporter.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml": {
+      "status": "ok",
+      "articles": 4
+    },
+    "https://feeds.npr.org/1004/rss.xml": {
+      "status": "ok",
+      "articles": 0
     }
   },
-  "discovered": 384,
-  "trending_events": 3
+  "discovered": 398,
+  "trending_events": 4
 }
