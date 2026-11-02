@@ -57,7 +57,17 @@ jobs:
             fi
             git commit -m 'Publish verified directory guides and research cache'
             if git push origin HEAD:main; then
-              echo 'Eight directory guides committed; site build will render pages.'
+              python - <<'PY'
+              import json
+              from pathlib import Path
+              status=json.loads(Path('content/directory-guide-status.json').read_text())
+              published=status.get('published',0)
+              missing=status.get('missing',{})
+              print(f'Directory guides published: {published}/8; missing verified candidates: {missing}')
+              if published==0:
+                  print('::warning::No new directory guides published; source research or candidate completeness needs improvement.')
+              PY
+              echo 'Directory research cache and site build committed.'
               exit 0
             fi
             echo "Concurrent push, retry $attempt"
