@@ -18,7 +18,7 @@ LABEL={'colleges':'college admissions','phones':'smartphone specifications','car
 
 def read(path):
     try:
-        value=json.loads(path.read_text(encoding='utf-8'))
+        value=json.loads(path.read_text(encoding='utf-8').removesuffix(chr(92)+'n'))
         return value if isinstance(value,dict) else {}
     except (OSError,ValueError):
         return {}

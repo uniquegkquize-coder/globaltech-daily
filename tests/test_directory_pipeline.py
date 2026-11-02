@@ -32,6 +32,7 @@ class DirectoryTests(unittest.TestCase):
    (content/'directory-details.json').write_text(json.dumps(details))
    publisher.main();status=json.loads((content/'directory-guide-status.json').read_text());self.assertEqual(status['published'],2)
    first=next((content/'posts').glob('*.json'));old=json.loads(first.read_text())
+   first.write_text(json.dumps(old)+chr(92)+'n') # Legacy files contained a literal escaped newline after JSON.
    details['phones'][old['directory_name']]['battery']='5100 mAh';(content/'directory-details.json').write_text(json.dumps(details))
    publisher.main();status=json.loads((content/'directory-guide-status.json').read_text());self.assertEqual(status['published'],1);self.assertEqual(status['updated'],1)
    self.assertEqual(json.loads(first.read_text())['date'],old['date'])
