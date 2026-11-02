@@ -1,76 +1,94 @@
 {
-  "total_posts": 1568,
-  "selected": 11,
+  "total_posts": 1613,
+  "selected": 12,
   "results": {
     "source_photo_saved": 7,
-    "cooldown": 4
+    "no_source_image": 3,
+    "cooldown": 1,
+    "source_error": 1
   },
-  "still_missing": 107,
+  "still_missing": 108,
   "articles": [
     {
-      "id": "1d64733ec9fa7096ba208f74",
-      "source": "https://en.wikipedia.org/wiki/Aprilia_RXV/SXV",
+      "id": "557ece9593dfaf552b8900ea",
+      "source": "https://en.wikipedia.org/wiki/Kia_K8",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793658109.9505696
+      "retry_after": 1793668615.3036711
     },
     {
-      "id": "aac104451a7222734b43e8db",
-      "source": "https://en.wikipedia.org/wiki/Leapmotor_C11",
+      "id": "279f7923cf38f6154daae39b",
+      "source": "https://en.wikipedia.org/wiki/Suzuki_GSX250F_Across",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793658110.4250631
+      "retry_after": 1793668615.4783
     },
     {
-      "id": "43ab116fe05454414fe4e509",
-      "source": "https://mitsubishi-motors.co.uk/model-range/outlander-phev/",
+      "id": "423ea716f1204cf5e6b7891c",
+      "source": "https://en.wikipedia.org/wiki/Yamaha_FZR1000",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793658110.8201082
+      "retry_after": 1793668615.4871564
     },
     {
-      "id": "ad52072dae42aba43c8c8984",
-      "source": "https://en.wikipedia.org/wiki/Ducati_Panigale_V4",
+      "id": "4c1be512d983d2e43baf39ee",
+      "source": "https://en.wikipedia.org/wiki/Institute_for_Advanced_Studies_in_Basic_Sciences",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793658110.906099
+      "retry_after": 1793668616.0017595
+    },
+    {
+      "id": "b4186033effc57949b3729df",
+      "source": "https://en.wikipedia.org/wiki/IPhone_15_Pro",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793668616.4522219
+    },
+    {
+      "id": "622740fbf231d0d96b223c1a",
+      "source": "https://en.wikipedia.org/wiki/Nio_ET7",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793668616.50557
+    },
+    {
+      "id": "c885ef925c1c73b27024ccbb",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_5_V",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793668616.590113
     },
     {
       "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
-    },
-    {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
-    },
-    {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
+      "source": "https://dec.ac.in/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793668616.753674
     },
     {
       "id": "ab5757b7bde7e5a43128d256",
       "result": "cooldown"
     },
     {
-      "id": "24499ec1b042933d7e842256",
-      "source": "https://en.wikipedia.org/wiki/Brigham_Young_University%E2%80%93Idaho",
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "source": "https://isc-edu.org/",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793658111.0878184
+      "result": "source_error",
+      "retry_after": 1793668616.7636774
     },
     {
-      "id": "5a41d3304d9bffd30df515c1",
-      "source": "https://en.wikipedia.org/wiki/IPhone_15",
+      "id": "8af54bb949a0c055391d640a",
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793658111.469874
+      "result": "no_source_image",
+      "retry_after": 1793668618.7097635
     },
     {
-      "id": "caef34bfabfcff5ed78866f5",
-      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_X10_Mini",
+      "id": "fbff6440d68d52399ca212b1",
+      "source": "https://cctu.edu.gh/site/index",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793658111.7824118
+      "result": "no_source_image",
+      "retry_after": 1793668620.2514434
     }
   ],
   "missing": [
@@ -114,7 +132,7 @@
       "category": "private-vacancy",
       "title": "A Full Renovation – Home Improvement Lists Virtual Assistant Opening in the United States",
       "source": "https://www.linkedin.com/jobs/view/virtual-assistant-at-a-full-renovation-%E2%80%93-home-improvement-4483788958",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "0983ec5f08f3",
@@ -149,7 +167,7 @@
       "category": "private-vacancy",
       "title": "Recent Administrative Assistant Job Listings Highlight Opportunities Across the San Francisco Bay Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-san-francisco-ca",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "a41b914c9659",
@@ -163,7 +181,7 @@
       "category": "private-vacancy",
       "title": "Recent Program and Project Management Openings Listed on LinkedIn for the San Francisco Bay Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "03fdad6de98e",
@@ -184,14 +202,14 @@
       "category": "private-vacancy",
       "title": "Media and Communications Openings Highlighted Across Central Washington Employers",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-moses-lake-wa",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "58f11d3687a2",
       "category": "private-vacancy",
       "title": "Overview of Current Media and Communications Private Vacancies in the Des Moines Area",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-des-moines-ia",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "090cabc5ee27",
@@ -226,7 +244,7 @@
       "category": "private-vacancy",
       "title": "Overview of Current Administrative and Support Vacancies in Moses Lake, Washington",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-moses-lake-wa",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "3b439d483131",
@@ -254,14 +272,14 @@
       "category": "private-vacancy",
       "title": "KONE Advertises Private Sector Vacancy for Material Management Coordinator in Chennai",
       "source": "https://in.linkedin.com/jobs/view/material-management-coordinator-at-kone-4484477721?position=46&pageNum=0&refId=7GWgQQ0v3ze9a3w3Q2vwcw%3D%3D&trackingId=BYWzdYE16qmuOI8vgMHtPQ%3D%3D",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "9d38ac0228db",
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-phoenix-az",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "0bdb0918a8cf",
@@ -282,7 +300,7 @@
       "category": "private-vacancy",
       "title": "Exploring Community and Social Services Openings Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-phoenix-az",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "c455f726510c",
@@ -317,7 +335,7 @@
       "category": "private-vacancy",
       "title": "WeMakeScholars Recruits Technical HR Professional Across Multiple Indian Cities",
       "source": "https://in.linkedin.com/jobs/view/technial-hr-recruiter-in-secunderabad-hyderabad-hyderabad-hyderabad-vishakhapatnam-alwal-visakhapatnam-at-wemakescholars-4484295029?position=58&pageNum=0&refId=IYfwluMaDIcsUuazNwoLjw%3D%3D&trackingId=4yed8vCMLTz%2BknFIMv5vzQ%3D%3D",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "7f651ce9d3f0",
@@ -345,7 +363,7 @@
       "category": "private-vacancy",
       "title": "EH Jobs Recruits Western Music Teacher for Primary Grades in Tellapur, Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/looking-for-western-music-teacher-primary-1-5-in-tellapur-hyderabad-at-eh-jobs-4481687605",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "c929a77d3cf4",
@@ -408,7 +426,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted in Des Moines Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-des-moines-ia",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "3570bb7ef821",
@@ -429,7 +447,7 @@
       "category": "private-vacancy",
       "title": "Saatvik Agro Advertises Full-Time Backend Developer Java Opening in Morena",
       "source": "https://in.linkedin.com/jobs/view/backend-developer-java-at-saatvik-agro-4484932211",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "0e7392808f2b",
@@ -457,7 +475,7 @@
       "category": "private-vacancy",
       "title": "Recent Program and Project Management Openings Highlighted for Boydton and Surrounding Regions",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-boydton-va",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "040dd341f762",
@@ -471,7 +489,7 @@
       "category": "private-vacancy",
       "title": "TradeTrust Announces Growth & Vendor Onboarding Internship for Surat’s Textile Market",
       "source": "https://in.linkedin.com/jobs/view/growth-vendor-onboarding-intern-surat-textile-market-at-tradetrust-4484792454",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "9e7d68e39abe",
@@ -506,7 +524,7 @@
       "category": "private-vacancy",
       "title": "Fintech Firm FatakPay Announces Search for Compliance Manager in Mumbai",
       "source": "https://in.linkedin.com/jobs/view/compliance-manager-at-fatakpay-4482278882",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "6189652eeaaa",
@@ -695,7 +713,7 @@
       "category": "private-vacancy",
       "title": "San Francisco Bay Area Media and Communications Job Listings Highlight Tech and Corporate Sector Demand",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "8444aa187e09b377f661fcbf",
@@ -730,7 +748,7 @@
       "category": "private-vacancy",
       "title": "Community and Social Services Career Openings Highlight Regional Employment Landscape",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-boydton-va",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "090108930e0d",
@@ -738,6 +756,13 @@
       "title": "Bright Blue Gemstones Announces Client Acquisition Internship in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/client-acquisition-intern-at-bright-blue-gemstones-4471542402",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "category": "education",
+      "title": "Cape Coast Technical University: College Admissions, Facts and Verification Guide",
+      "source": "https://cctu.edu.gh/site/index",
+      "reason": "no_source_image"
     },
     {
       "id": "021dcf06da61",
@@ -786,7 +811,7 @@
       "category": "private-vacancy",
       "title": "Active Administrative Assistant Openings Listed Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-phoenix-az",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "9acdf4deb8ec",
@@ -827,46 +852,64 @@
   "missing_reasons": {
     "source_unavailable": 21,
     "source_error": 2,
-    "access_denied": 31,
-    "no_source_image": 37,
-    "invalid_source_images": 16
+    "access_denied": 16,
+    "invalid_source_images": 23,
+    "no_source_image": 46
   },
-  "existing_representatives_preserved": 0,
+  "existing_representatives_preserved": 1,
   "diagnostics": {
-    "1d64733ec9fa7096ba208f74": {
+    "557ece9593dfaf552b8900ea": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Aprilia_RXV/SXV",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Aprila_SXV_450_links.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Kia_K8",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Kia_K8_Hybrid_GL3_HEV_Snow_White_Pearl_%281%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "aac104451a7222734b43e8db": {
+    "279f7923cf38f6154daae39b": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Leapmotor_C11",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/2020_Leapmotor_C11_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Suzuki_GSX250F_Across",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/57/Suzuki_Across.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "43ab116fe05454414fe4e509": {
+    "423ea716f1204cf5e6b7891c": {
       "reason": "source_photo_saved",
-      "source": "https://mitsubishi-motors.co.uk/model-range/outlander-phev/",
-      "image": "https://cc-im-group.s3.eu-west-2.amazonaws.com/mitsubishi/uploads/2026/03/Web-medium-25MY_OUTLANDER_PHEV_Instyle_Hero_1car_Static_rear.jpg"
+      "source": "https://en.wikipedia.org/wiki/Yamaha_FZR1000",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/YAMAHA_FZR1000_1991.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "ad52072dae42aba43c8c8984": {
+    "4c1be512d983d2e43baf39ee": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ducati_Panigale_V4",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Ducati_Panigale_V4_-_Tuning_World_Bodensee_2018%2C_Friedrichshafen_%28OW1A0484%29.jpg/1280px-Ducati_Panigale_V4_-_Tuning_World_Bodensee_2018%2C_Friedrichshafen_%28OW1A0484%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+      "source": "https://en.wikipedia.org/wiki/Institute_for_Advanced_Studies_in_Basic_Sciences",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Iasbs6.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "24499ec1b042933d7e842256": {
+    "b4186033effc57949b3729df": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Brigham_Young_University%E2%80%93Idaho",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Brigham_Young_University%E2%80%93Idaho_medallion.svg/1280px-Brigham_Young_University%E2%80%93Idaho_medallion.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+      "source": "https://en.wikipedia.org/wiki/IPhone_15_Pro",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/IPhone_15_Pro_Vector.svg/960px-IPhone_15_Pro_Vector.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
     },
-    "5a41d3304d9bffd30df515c1": {
+    "622740fbf231d0d96b223c1a": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/IPhone_15",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/IPhone_15_Vector.svg/960px-IPhone_15_Vector.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+      "source": "https://en.wikipedia.org/wiki/Nio_ET7",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/NIO_ET7_1X7A6679_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "caef34bfabfcff5ed78866f5": {
+    "c885ef925c1c73b27024ccbb": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_X10_Mini",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Sony_Ericsson_Xperia_X10_Mini_on_stand.jpeg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_5_V",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/ca/XP-55.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "8444aa187e09b377f661fcbf": {
+      "reason": "no_source_image",
+      "source": "https://dec.ac.in/"
+    },
+    "0a95ccf111c45db4cfb5c9e3": {
+      "reason": "source_error",
+      "source": "https://isc-edu.org/",
+      "error": "ConnectionError"
+    },
+    "8af54bb949a0c055391d640a": {
+      "reason": "no_source_image",
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "existing_representative_preserved": true
+    },
+    "fbff6440d68d52399ca212b1": {
+      "reason": "no_source_image",
+      "source": "https://cctu.edu.gh/site/index"
     }
   },
   "mode": "directory"

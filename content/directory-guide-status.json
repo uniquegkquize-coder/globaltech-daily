@@ -12,11 +12,11 @@
       "shortfall": 0,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 7,
+        "already_published_unchanged": 9,
         "insufficient verified descriptive fields": 88,
-        "identifier URL is not specification evidence": 203
+        "identifier URL is not specification evidence": 201
       },
-      "rejected_count": 291,
+      "rejected_count": 289,
       "rejected_sample": [
         {
           "name": "Universit\u00e9 Notre Dame de Lomami",
@@ -148,16 +148,16 @@
     "phones": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 178,
+      "eligible_new": 268,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 1570,
-        "already_published_unchanged": 5,
-        "insufficient verified descriptive fields": 161,
-        "identifier URL is not specification evidence": 1226
+        "considered": 1835,
+        "already_published_unchanged": 7,
+        "insufficient verified descriptive fields": 151,
+        "identifier URL is not specification evidence": 1409
       },
-      "rejected_count": 1387,
+      "rejected_count": 1560,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -198,6 +198,31 @@
           "name": "Lenovo IdeaPhone K900",
           "reason": "insufficient verified descriptive fields",
           "source": "https://en.wikipedia.org/wiki/Lenovo_IdeaPhone_K900"
+        },
+        {
+          "name": "OnePlus 6T",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.oneplus.com/global/6t"
+        },
+        {
+          "name": "OnePlus 7 Pro",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.oneplus.com/us/7pro"
+        },
+        {
+          "name": "iPhone",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.apple.com/iphone-16/specs/"
+        },
+        {
+          "name": "Redmi 7A",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Redmi_7A"
+        },
+        {
+          "name": "Asus ZenFone Go (ZC500TG)",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.asus.com/ph/mobile-handhelds/phones/all-series/zenfone-go-zc500tg/"
         },
         {
           "name": "Huawei Y7 Prime (2019)",
@@ -258,47 +283,22 @@
           "name": "Realme 6i",
           "reason": "identifier URL is not specification evidence",
           "source": "http://www.wikidata.org/entity/Q102838356"
-        },
-        {
-          "name": "Wiko Lenny 4",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q103024022"
-        },
-        {
-          "name": "HTC First",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q10333237"
-        },
-        {
-          "name": "Samsung GT-i6220",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q10367304"
-        },
-        {
-          "name": "Realme C12",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q104145199"
-        },
-        {
-          "name": "Oppo F17 Pro",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q104442189"
         }
       ]
     },
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 110,
+      "eligible_new": 160,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 650,
-        "already_published_unchanged": 7,
-        "insufficient verified descriptive fields": 41,
-        "identifier URL is not specification evidence": 492
+        "already_published_unchanged": 9,
+        "insufficient verified descriptive fields": 47,
+        "identifier URL is not specification evidence": 434
       },
-      "rejected_count": 533,
+      "rejected_count": 481,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -386,60 +386,60 @@
           "source": "https://en.wikipedia.org/wiki/Chevrolet_Step-Van"
         },
         {
-          "name": "Jaguar XK140",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q1000013"
+          "name": "Neta Aya",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Neta_Aya"
         },
         {
-          "name": "Land Rover Series",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q1000300"
+          "name": "Checker Superba",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Checker_Superba"
         },
         {
-          "name": "Ferrari GT4",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q1000732"
+          "name": "Zbrojovka Z 6V",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Zbrojovka_Z_6V"
         },
         {
-          "name": "Ferrari P4/5 by Pininfarina",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q1000739"
+          "name": "Rolls-Royce Silent Shadow",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Rolls-Royce_Silent_Shadow"
         },
         {
-          "name": "Buddy",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q1001167"
+          "name": "Chevrolet Beauville",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Chevrolet_Beauville"
         },
         {
-          "name": "Subaru Outback (sixth generation)",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100152215"
+          "name": "Chevrolet C/K",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Chevrolet_C/K"
         },
         {
-          "name": "Bugatti Type 13",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q1002352"
+          "name": "Chevrolet LUV",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Chevrolet_LUV"
         },
         {
-          "name": "Bugatti Type 40",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q1002373"
+          "name": "Chevrolet Opala",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Chevrolet_Opala"
         }
       ]
     },
     "bikes": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 49,
+      "eligible_new": 74,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 436,
-        "already_published_unchanged": 7,
-        "insufficient verified descriptive fields": 63,
-        "identifier URL is not specification evidence": 317
+        "considered": 442,
+        "already_published_unchanged": 9,
+        "insufficient verified descriptive fields": 73,
+        "identifier URL is not specification evidence": 286
       },
-      "rejected_count": 380,
+      "rejected_count": 359,
       "rejected_sample": [
         {
           "name": "Yamaha Gear Ultima",
@@ -569,5 +569,5 @@
       ]
     }
   },
-  "date": "2026-11-02T16:21:46.106446+00:00"
+  "date": "2026-11-02T19:16:48.671958+00:00"
 }
