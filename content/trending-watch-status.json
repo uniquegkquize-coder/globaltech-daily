@@ -1,20 +1,26 @@
 {
-  "checked_at": "2026-11-02T10:04:44.019423+00:00",
+  "checked_at": "2026-11-02T11:42:30.093369+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "9d25dae59b5c"
+    "83f9b7f4ae34",
+    "0908be9751e1"
   ],
   "results": [
     {
-      "id": "9d25dae59b5c",
+      "id": "83f9b7f4ae34",
       "result": "published",
-      "title": "Popular Australian children's author jailed over child exploitation offences"
+      "title": "Supermarket freezers in Belgium and Sweden hit by suspected cyber-attack"
+    },
+    {
+      "id": "0908be9751e1",
+      "result": "published",
+      "title": "Jack Lowden Is Tight-Lipped on Those Bond Rumors: “I’m Not Going to Add to the Noise”"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 6
+      "articles": 7
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
@@ -22,7 +28,7 @@
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 10
+      "articles": 11
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
@@ -30,11 +36,11 @@
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
-      "articles": 23
+      "articles": 24
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
-      "articles": 10
+      "articles": 20
     },
     "https://www.arabnews.com/rss.xml": {
       "status": "unavailable",
@@ -44,67 +50,63 @@
       "status": "ok",
       "articles": 0
     },
-    "https://www.nasa.gov/feed/": {
+    "https://www.firstshowing.net/feed/": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.comingsoon.net/feed": {
+      "status": "ok",
+      "articles": 6
+    },
+    "https://www.motor1.com/rss/news/all/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://www.carscoops.com/feed/": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://insideevs.com/rss/news/all/": {
       "status": "ok",
       "articles": 2
     },
-    "https://www.wired.com/feed/category/science/latest/rss": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://feeds.arstechnica.com/arstechnica/science": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://news.abplive.com/health/feed": {
+    "https://www.gsmarena.com/rss-news-reviews.php3": {
       "status": "ok",
       "articles": 1
     },
-    "https://www.ign.com/rss/articles/feed": {
+    "https://www.androidauthority.com/feed/": {
       "status": "ok",
-      "articles": 2
+      "articles": 13
     },
-    "https://www.gamespot.com/feeds/mashup/": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.theguardian.com/environment/rss": {
-      "status": "ok",
-      "articles": 2
-    },
-    "https://www.theguardian.com/travel/rss": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://www.theguardian.com/education/rss": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.theguardian.com/lifeandstyle/rss": {
+    "https://www.sammobile.com/feed/": {
       "status": "ok",
       "articles": 3
     },
-    "https://www.apple.com/newsroom/rss-feed.rss": {
+    "https://9to5google.com/feed/": {
       "status": "ok",
       "articles": 0
     },
-    "https://news.samsung.com/global/feed": {
+    "https://variety.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://deadline.com/feed/": {
+      "status": "ok",
+      "articles": 7
+    },
+    "https://www.hollywoodreporter.com/feed/": {
+      "status": "ok",
+      "articles": 3
+    },
+    "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml": {
       "status": "ok",
       "articles": 1
     },
-    "https://www.microsoft.com/en-us/research/feed/": {
+    "https://feeds.npr.org/1004/rss.xml": {
       "status": "ok",
-      "articles": 0
-    },
-    "https://www.prnewswire.com/rss/news-releases-list.rss": {
-      "status": "ok",
-      "articles": 20
-    },
-    "https://www.reutersagency.com/feed/": {
-      "status": "unavailable",
-      "articles": 0
+      "articles": 2
     }
   },
-  "discovered": 136,
-  "trending_events": 1
+  "discovered": 235,
+  "trending_events": 3
 }
