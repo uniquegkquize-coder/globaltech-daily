@@ -1,31 +1,26 @@
 {
-  "checked_at": "2026-11-02T16:52:41.537553+00:00",
+  "checked_at": "2026-11-02T17:47:50.217773+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "fdd130ae0361",
-    "7b2b7480ca5e"
+    "589fdba784fc",
+    "5aa0581a402b"
   ],
   "results": [
     {
-      "id": "fdd130ae0361",
+      "id": "589fdba784fc",
       "result": "published",
-      "title": "Elon Musk throttles Grok Bot limits due to ‘unsustainably high’ costs"
+      "title": "Kennedy Center Sets 2026 Honorees: David Mamet, Paul Anka, Andy Garcia and More"
     },
     {
-      "id": "e9addcae3535",
-      "result": "source_unavailable",
-      "title": "French school protests resume on smaller scale after autumn break"
-    },
-    {
-      "id": "7b2b7480ca5e",
+      "id": "5aa0581a402b",
       "result": "published",
-      "title": "Uganda begins withdrawing troops from Somalia after two decades"
+      "title": "The Further Mis-Adventures of Cliff Booth’s New Retro Poster Comes With a Big Announcement"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 7
+      "articles": 10
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
@@ -33,15 +28,15 @@
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 8
+      "articles": 7
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
-      "articles": 1
+      "articles": 2
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
-      "articles": 22
+      "articles": 25
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
@@ -55,63 +50,63 @@
       "status": "ok",
       "articles": 2
     },
-    "https://rss.dw.com/rdf/rss-en-top": {
-      "status": "ok",
-      "articles": 9
-    },
-    "https://feeds.skynews.com/feeds/rss/world.xml": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.cbc.ca/webfeed/rss/rss-world": {
-      "status": "unavailable",
-      "articles": 0
-    },
-    "https://www.abc.net.au/news/feed/51120/rss.xml": {
-      "status": "ok",
-      "articles": 3
-    },
-    "https://timesofindia.indiatimes.com/rssfeedstopstories.cms": {
-      "status": "ok",
-      "articles": 26
-    },
-    "https://feeds.nbcnews.com/nbcnews/public/world": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://rss.nytimes.com/services/xml/rss/nyt/World.xml": {
-      "status": "ok",
-      "articles": 7
-    },
-    "https://techcrunch.com/feed/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://techcrunch.com/category/artificial-intelligence/feed/": {
+    "https://www.firstshowing.net/feed/": {
       "status": "ok",
       "articles": 5
     },
-    "https://www.theverge.com/rss/index.xml": {
+    "https://www.comingsoon.net/feed": {
       "status": "ok",
-      "articles": 8
+      "articles": 20
     },
-    "https://feeds.arstechnica.com/arstechnica/index": {
+    "https://www.motor1.com/rss/news/all/": {
+      "status": "ok",
+      "articles": 4
+    },
+    "https://www.carscoops.com/feed/": {
+      "status": "ok",
+      "articles": 6
+    },
+    "https://insideevs.com/rss/news/all/": {
       "status": "ok",
       "articles": 2
     },
-    "https://www.wired.com/feed/rss": {
+    "https://www.gsmarena.com/rss-news-reviews.php3": {
       "status": "ok",
-      "articles": 8
+      "articles": 6
     },
-    "https://www.wired.com/feed/tag/ai/latest/rss": {
+    "https://www.androidauthority.com/feed/": {
+      "status": "ok",
+      "articles": 16
+    },
+    "https://www.sammobile.com/feed/": {
+      "status": "ok",
+      "articles": 3
+    },
+    "https://9to5google.com/feed/": {
+      "status": "ok",
+      "articles": 9
+    },
+    "https://variety.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://deadline.com/feed/": {
+      "status": "ok",
+      "articles": 12
+    },
+    "https://www.hollywoodreporter.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml": {
+      "status": "ok",
+      "articles": 3
+    },
+    "https://feeds.npr.org/1004/rss.xml": {
       "status": "ok",
       "articles": 1
-    },
-    "https://www.engadget.com/rss.xml": {
-      "status": "ok",
-      "articles": 11
     }
   },
-  "discovered": 342,
-  "trending_events": 4
+  "discovered": 402,
+  "trending_events": 5
 }
