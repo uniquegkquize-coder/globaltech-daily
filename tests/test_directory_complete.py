@@ -39,8 +39,8 @@ class CompleteDirectoryTests(unittest.TestCase):
   soup=BeautifulSoup('<script type="application/json">{"specs":[{"label":"Battery","value":"6000 mAh"}]}</script>','html.parser')
   self.assertEqual(f.framework_pairs(soup)['battery'],'6000 mAh')
  def test_structured_fees_and_regulatory_history_visible(self):
-  output=f.structured_html({'fee_schedule':{'basis':'2026 annual','tuition':'USD 1000'},'regulatory_history':[{'programme':'BBA','status':'withdrawn'}]},'en')
-  for term in ('2026 annual','USD 1000','withdrawn'):self.assertIn(term,output)
+  output=f.structured_html({'fee_schedule':{'basis':'2026 annual','tuition':[{'category':'Reserved','amount':1000}]},'regulatory_history':[{'programme':'BBA','status':'withdrawn'}]},'en')
+  for term in ('2026 annual','Reserved','1000','withdrawn'):self.assertIn(term,output)
  def test_table_escapes_and_links(self):
   output=f.table_html('Fees',[{'course':'<script>','source_url':'https://official.example/fees'}])
   self.assertNotIn('<script>',output);self.assertIn('&lt;script&gt;',output);self.assertIn('href="https://official.example/fees"',output)

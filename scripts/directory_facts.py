@@ -137,6 +137,12 @@ def media_html(kind,name,out):
  link=' · <a target="_blank" rel="noopener noreferrer" href="'+esc(image['source'])+'">Photo source</a>' if safe_url(image['source']) else ''
  return '<figure class="directory-media"><img loading="lazy" width="1280" height="720" src="'+esc(image['src'])+'" alt="'+esc(name)+'"><figcaption>'+esc(image['credit'])+link+'</figcaption></figure>'
 
+def value_html(value):
+ esc=lambda v:html.escape(str(v),quote=True)
+ if isinstance(value,dict):return '<ul>'+''.join('<li><strong>'+esc(k.replace('_',' ').title())+':</strong> '+value_html(v)+'</li>' for k,v in value.items())+'</ul>'
+ if isinstance(value,list):return '<ul>'+''.join('<li>'+value_html(v)+'</li>' for v in value)+'</ul>'
+ return esc(value)
+
 def table_html(title,rows):
  esc=lambda v:html.escape(str(v),quote=True)
  columns=list(dict.fromkeys(k for r in rows for k in r if k not in ('field_sources','checked_at')))
@@ -146,8 +152,7 @@ def table_html(title,rows):
   result+='<tr>'
   for k in columns:
    value=row.get(k,'—')
-   if isinstance(value,(dict,list)):value=json.dumps(value,ensure_ascii=False)
-   cell='<a target="_blank" rel="noopener noreferrer" href="'+esc(value)+'">Source</a>' if k.endswith(('url','source')) and safe_url(value) else esc(value)
+   cell='<a target="_blank" rel="noopener noreferrer" href="'+esc(value)+'">Source</a>' if isinstance(value,str) and k.endswith(('url','source')) and safe_url(value) else value_html(value)
    result+='<td>'+cell+'</td>'
   result+='</tr>'
  return result+'</tbody></table></div></section>'
@@ -171,7 +176,7 @@ def structured_html(entry,lang):
   if key in handled:continue
   title=key.replace('_',' ').title()
   if isinstance(value,dict):
-   result+=table_html(title,[{'field':k.replace('_',' ').title(),'value':v} for k,v in value.items() if not isinstance(v,(dict,list))])
+   result+=table_html(title,[{'field':k.replace('_',' ').title(),'value':v} for k,v in value.items()])
   elif isinstance(value,list) and value:
    if all(isinstance(row,dict) for row in value):result+=table_html(title,value)
    elif all(isinstance(row,(str,int,float)) for row in value):result+=table_html(title,[{'value':row} for row in value])
