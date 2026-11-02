@@ -35,7 +35,7 @@ def main():
    sync_guide_photo(kind,name,ident);return 1
   for source in dict.fromkeys([entry.get('official_url'),entry.get('image_source_url'),entry.get('evidence_url'),entry.get('source_url')]):
    if not source or not source.startswith('https://') or source.lower().endswith('.pdf') or time.monotonic()>end:continue
-   if images.licensed_source_image({'id':ident,'source':source,'en_title':name,'image_subject':name}):break
+   if images.licensed_source_image({'id':ident,'source':source,'en_title':name,'image_subject':name,'directory_name':name}):break
   sync_guide_photo(kind,name,ident)
   return 1
  with ThreadPoolExecutor(max_workers=4) as pool:done=sum(pool.map(fetch,tasks[:limit]))

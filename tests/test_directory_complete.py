@@ -1,4 +1,4 @@
-import json,sys,unittest,tempfile
+import json,sys,unittest,tempfile,hashlib
 from unittest.mock import patch
 from pathlib import Path
 from bs4 import BeautifulSoup
@@ -6,6 +6,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 import directory_facts as f
 import directories as d
 import directory_photos as photos
+import image_rules as rules
 import research_directory_sources as r
 import publish_directory_guides as p
 FIX=Path(__file__).parent/'fixtures/directory'
@@ -35,6 +36,21 @@ class CompleteDirectoryTests(unittest.TestCase):
   with patch.object(photos.images,'save_source_photo') as save:
    self.assertFalse(photos.pinned_photo({'source_image_url':'javascript:alert(1)','official_url':'https://example.com'},'id','Phone'))
    save.assert_not_called()
+ def test_gv60_navigation_photo_rejected_for_gv70(self):
+  self.assertFalse(rules.directory_photo_matches('Genesis GV70',{'url':'https://cdn.example/2026-gv60-prf-awd.jpg','label':'','origin':'article'}))
+  self.assertTrue(rules.directory_photo_matches('Genesis GV70',{'url':'https://cdn.example/2026-gv70-25t-advanced.jpg','label':'','origin':'article'}))
+ def test_opaque_body_navigation_images_need_identity(self):
+  self.assertFalse(rules.directory_photo_matches('Genesis GV70',{'url':'https://cdn.example/hash.png','label':'','origin':'article'}))
+  self.assertTrue(rules.directory_photo_matches('Vivo X Fold 5',{'url':'https://cdn.example/hash.png','label':'','origin':'social'}))
+ def test_existing_wrong_model_photo_cannot_be_reused(self):
+  self.assertFalse(rules.saved_photo_allowed({'kind':'publisher_source','source':'https://genesis.example/us/en/gv70/previous','source_image':'https://cdn.example/2026-gv60-prf.jpg'}))
+ def test_rejected_stable_photo_is_not_mislabeled_as_illustration(self):
+  with tempfile.TemporaryDirectory() as tmp,patch.object(f,'ROOT',Path(tmp)),patch.object(f,'guide_images',return_value={}):
+   root=Path(tmp);ident=hashlib.sha256(b'directory:cars:Genesis GV70').hexdigest()[:24]
+   folder=root/'content/featured';folder.mkdir(parents=True);out=root/'dist';(out/'images').mkdir(parents=True)
+   (folder/(ident+'.jpg')).write_bytes(b'wrong photo');(out/'images'/(ident+'.jpg')).write_bytes(b'wrong photo')
+   (folder/(ident+'.json')).write_text(json.dumps({'kind':'publisher_source','source':'https://genesis.example/gv70/previous','source_image':'https://cdn.example/gv60.jpg'}))
+   self.assertIsNone(f.photo('cars','Genesis GV70',out))
  def test_base_model_excludes_xtec_led(self):
   soup=BeautifulSoup((FIX/'hero-model-sections.html').read_text(),'html.parser')
   rows=f.embedded_model_rows(f.model_scope(soup,'https://hero.example/splendor-plus.html'))

@@ -9,7 +9,7 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 from PIL import Image, ImageOps
-from image_rules import saved_photo_allowed, institution, campus_image, words
+from image_rules import saved_photo_allowed, institution, campus_image, words, directory_photo_matches
 
 ROOT=Path(__file__).resolve().parents[1]
 POSTS=ROOT/'content/posts'
@@ -53,7 +53,7 @@ def diagnostic(ident,reason,**extra):
 def generic_image(url):
     return bool(re.search(r'(?i)(logo|favicon|avatar|sprite|placeholder|tracking-pixel|default-image|site-icon|/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$)|/rt\.gif$|/subject-and-industry-code-images/|incredible-india-og|/(?:facebook|twitter|instagram|linkedin|youtube|x)$)',urlparse(str(url)).path))
 
-def source_candidates(soup,base):
+def source_candidates(soup,base,limit=12):
     rows=[]
     def add(value,license_url='',label='',origin=''):
         if isinstance(value,list):
@@ -101,7 +101,7 @@ def source_candidates(soup,base):
     seen=set();out=[]
     for row in rows:
         if row['url'] not in seen:seen.add(row['url']);out.append(row)
-    return out[:12]
+    return out[:limit]
 
 def save_source_photo(ident,image,source,license_url,authorized,credit,alt):
     response=requests.get(image,timeout=(4,12),headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)','Referer':source,'Accept':'image/*'},stream=True)
@@ -142,12 +142,12 @@ def licensed_source_image(p):
         from public_page_fetch import restricted
         if restricted(page.text):diagnostic(ident,'restricted_page',source=source);return False
         soup=BeautifulSoup(page.text[:2000000],'html.parser')
-        candidates=source_candidates(soup,page.url)
+        candidates=source_candidates(soup,page.url,60 if p.get('directory_name') else 12)
         if not candidates:
             if os.getenv('ENABLE_PUBLIC_BROWSER_FALLBACK','0')=='1':
                 from public_page_fetch import fetch_public_html
                 html,final,method=fetch_public_html(source,render=True)
-                if html:soup=BeautifulSoup(html,'html.parser');candidates=source_candidates(soup,final)
+                if html:soup=BeautifulSoup(html,'html.parser');candidates=source_candidates(soup,final,60 if p.get('directory_name') else 12)
         if not candidates:diagnostic(ident,'no_source_image',source=source);return False
         def meta(*keys):
             for key in keys:
@@ -161,6 +161,7 @@ def licensed_source_image(p):
         except (OSError,ValueError):permissions={}
         authorized_candidates=0
         for candidate in candidates:
+            if p.get('directory_name') and not directory_photo_matches(p['directory_name'],candidate):continue
             image=candidate['url'];permission=permissions.get(image,{})
             license_url=candidate['license'] or page_license
             # Publisher originals are selected by the site owner's editorial policy.

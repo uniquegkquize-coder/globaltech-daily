@@ -127,7 +127,7 @@ def photo(kind,name,out):
   if src.is_file() and saved_photo_allowed(meta,ROOT) and meta.get('kind') in ('publisher_source','licensed_source','licensed_photo','source_original','manual_original'):
    dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dest)
    return dict(src='/images/'+ident+'.jpg?v='+hashlib.sha256(dest.read_bytes()).hexdigest()[:12],credit=meta.get('attribution') or 'Source publisher',source=meta.get('source_image') or meta.get('source',''),original=True)
-  if dest.is_file():return dict(src='/images/'+ident+'.jpg?v='+hashlib.sha256(dest.read_bytes()).hexdigest()[:12],credit='Editorial illustration — source photograph unavailable',source='',original=False)
+  if dest.is_file() and ident==guide_images().get((kind,name.casefold()),''):return dict(src='/images/'+ident+'.jpg?v='+hashlib.sha256(dest.read_bytes()).hexdigest()[:12],credit='Editorial illustration — source photograph unavailable',source='',original=False)
  return None
 
 def media_html(kind,name,out):
