@@ -146,12 +146,12 @@ def main():
   details.setdefault(kind,{})
   # Research curated entities first; worldwide Wikidata imports remain a secondary pool.
   curated=[{'name':name,**entry} for name,entry in details[kind].items() if isinstance(entry,dict)]
-  entries=curated+[r for r in records.get(kind,[]) if isinstance(r,dict) and r.get('name') not in details[kind]]
-  if entries:
-   slot=int(dt.datetime.now(dt.timezone.utc).timestamp()//1800)
-   offset=(slot*9)%len(entries)
-   curated_count=len(curated)
-   entries=entries[:curated_count]+entries[curated_count+offset%max(1,len(entries)-curated_count):]+entries[curated_count:curated_count+offset%max(1,len(entries)-curated_count)]
+  secondary=[r for r in records.get(kind,[]) if isinstance(r,dict) and r.get('name') not in details[kind]]
+  if secondary:
+   slot=int(dt.datetime.now(dt.timezone.utc).timestamp()//10800)
+   offset=(slot*24)%len(secondary)
+   secondary=secondary[offset:]+secondary[:offset]
+  entries=curated+secondary
   for record in entries:
    if checked_kind>=24:break
    if not isinstance(record,dict):continue
