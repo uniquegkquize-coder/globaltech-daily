@@ -128,14 +128,17 @@ def main():
     # Existing published IDs are skipped above, so each run can advance to new entities.
     shortage={kind:max(0,2-len(group)) for kind,group in items.items() if len(group)<2}
     published=0
+    diagnostics={kind:{'candidate_count':len(items[kind]),'missing_required_fields':{}} for kind in KINDS}
     for kind in KINDS:
         for key,post in items[kind][:2]:
             (POSTS/(key+'.json')).write_text(json.dumps(post,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
             print('Prepared verified directory guide:',kind,post['en_title'],flush=True)
             published+=1
     print('Directory publishing summary:',published,'of 8 new guides; missing verified candidates:',shortage,flush=True)
+    if published==0:
+        print('::warning::No publishable NEW records. Source research must enrich more entities; rerunning unchanged data will not fix this.',flush=True)
     (ROOT/'content'/'directory-guide-status.json').write_text(
-        json.dumps({'published':published,'target':8,'missing':shortage,'date':dt.datetime.now(dt.timezone.utc).isoformat()},indent=2)+'\n',encoding='utf-8')
+        json.dumps({'published':published,'target':8,'missing':shortage,'candidate_counts':{k:len(v) for k,v in items.items()},'date':dt.datetime.now(dt.timezone.utc).isoformat()},indent=2)+'\n',encoding='utf-8')
     # Missing source facts are recorded, never fabricated. Other categories can publish.
 
 if __name__=='__main__':main()
