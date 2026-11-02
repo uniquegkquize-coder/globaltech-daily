@@ -30,7 +30,7 @@ def resolved_featured(ident):
     except (OSError,ValueError,TypeError):kind=''
     # Replace representative Commons pictures and AI art when a genuine source image exists.
     # A JPEG without source provenance can be legacy artwork, not a confirmed publisher photo.
-    return kind in ('licensed_photo','publisher_source','source_original','manual_original')
+    return kind in ('licensed_source','licensed_photo','publisher_source','source_original','manual_original')
 
 def licensed_source_image(p):
     """Prioritize the actual article's published picture; record its origin and rights status.
@@ -136,6 +136,15 @@ def licensed_source_image(p):
         # Explicitly reject icons, publisher logos, placeholders and trackers.
         if re.search(r'(?i)(?:logo|favicon|avatar|sprite|placeholder|tracking-pixel|default-image|site-icon|/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',parsed.path):
             return False
+        license_url=meta('license','dc.rights','dcterms.license','cc:license')
+        license_link=soup.select_one('a[rel~="license"],link[rel~="license"]')
+        if not license_url and license_link:license_url=license_link.get('href','')
+        authorizations=ROOT/'content'/'image-authorizations.json'
+        try:authorized=json.loads(authorizations.read_text()).get(image,{})
+        except (OSError,ValueError):authorized={}
+        if not commons_reuse_allowed('',license_url) and not authorized.get('permission_reference'):
+            print('Image authorization missing',ident,image,flush=True)
+            return False
         res=requests.get(image,timeout=(4,14),headers={
             'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36',
             'Referer':page.url,
@@ -156,15 +165,15 @@ def licensed_source_image(p):
             im=ImageOps.exif_transpose(im)
             im=ImageOps.fit(im.convert('RGB'),(1280,720),method=Image.Resampling.LANCZOS)
             im.save(IMAGES/(ident+'.jpg'),'JPEG',quality=86,optimize=True)
-        license_url=meta('license','dc.rights','dcterms.license','cc:license')
-        status='source_rights_unverified'
+        status='authorized' if authorized else 'licensed'
         if 'creativecommons.org/licenses/' in license_url.lower() or 'creativecommons.org/publicdomain/' in license_url.lower():
             status='source_license_claimed'
         (IMAGES/(ident+'.json')).write_text(json.dumps({
             'kind':'publisher_source','source_image':image,
             'license':license_url,'attribution':meta('dc.creator','author','article:author','og:site_name') or urlparse(page.url).hostname,
-            'source':page.url,'rights_status':status,
-            'caption':'Actual source-article image; publisher photo rights are not independently verified.',
+            'source':page.url,'rights_status':status,'authorization':authorized,
+            'width':1280,'height':720,'alt':str(p.get('en_title') or p.get('source_title') or ''),
+            'caption':'Source article photograph with documented reuse terms.',
             'modifications':'Cropped to 16:9 for the website'
         },ensure_ascii=False),encoding='utf-8')
         print('Original source-article photo',ident,source,flush=True)

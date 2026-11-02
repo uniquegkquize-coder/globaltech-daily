@@ -189,7 +189,7 @@ def image_for(p):
    info=json.loads(metadata.read_text(encoding='utf-8'))
    source_path=urlparse(str(info.get('source_image') or '')).path
    generic=bool(re.search(r'(?i)(?:/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',source_path))
-   use_original=info.get('kind') in ('licensed_photo','publisher_source','source_original','manual_original') and not generic
+   use_original=info.get('kind') in ('licensed_source','licensed_photo','publisher_source','source_original','manual_original') and not generic
   except (ValueError,OSError,TypeError):
    use_original=False
  if use_original:
@@ -244,10 +244,6 @@ def image_caption(p,lang):
  metadata=R/'content'/'featured'/f'{s}.json'
  if metadata.is_file():
   try:
-   if json.loads(metadata.read_text(encoding='utf-8')).get('kind')=='licensed_photo':
-    return 'Editorial illustration — original source photo not available.' if lang=='en' else 'सांकेतिक चित्र — स्रोत की वास्तविक फोटो उपलब्ध नहीं।'
-  except (OSError,ValueError,TypeError):pass
-  try:
    info=json.loads(metadata.read_text(encoding='utf-8'))
    if info.get('kind') in ('licensed_source','publisher_source','licensed_photo'):
     credit=str(info.get('attribution') or 'Original publisher')
@@ -270,7 +266,6 @@ def image_caption_html(p,lang):
  if not metadata.is_file():return caption
  try:
   info=json.loads(metadata.read_text(encoding='utf-8'))
-  if info.get('kind')=='licensed_photo':return caption
   links=[]
   if info.get('rights_status')=='source_rights_unverified':
    links.append('Source image rights not independently verified' if lang=='en' else 'स्रोत चित्र के उपयोग अधिकार स्वतंत्र रूप से सत्यापित नहीं')
@@ -361,7 +356,7 @@ for p in POSTS:
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
   trending=[q for q in POSTS if slug(q)!=s and has_featured(q)][:5]
   trending_html='<section class="trending-news"><h2>'+('Latest news' if lang=='en' else 'ताज़ा खबरें')+'</h2><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg" alt="">' if has_featured(q) else '')+'<span>'+e(title(q,lang))+'</span></a>' for q in trending)+'</div></section>'
-  schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg'] if has_featured(p) else []),'author':{'@type':'Organization','name':author_name(p),'url':f'{SITE}/{lang}/author/{author_handle(p)}/'},'publisher':{'@type':'Organization','name':'GlobeWire Daily','url':SITE},'isBasedOn':p['source']}
+  schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('updated_at') or p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg'] if has_featured(p) else []),'author':{'@type':'Organization','name':author_name(p),'url':f'{SITE}/{lang}/author/{author_handle(p)}/'},'publisher':{'@type':'Organization','name':'GlobeWire Daily','url':SITE},'isBasedOn':p['source']}
   if not has_featured(p):schema.pop('image',None)
   schema['breadcrumb']={'@type':'BreadcrumbList','itemListElement':[
    {'@type':'ListItem','position':1,'name':'Home' if lang=='en' else 'होम','item':f'{SITE}/{lang}/'},

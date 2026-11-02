@@ -1,5 +1,6 @@
 {
   "published": 0,
+  "updated": 1,
   "target": 8,
   "missing": {
     "colleges": 2,
@@ -7,11 +8,570 @@
     "cars": 2,
     "bikes": 2
   },
-  "candidate_counts": {
-    "colleges": 0,
-    "phones": 0,
-    "cars": 0,
-    "bikes": 0
+  "categories": {
+    "colleges": {
+      "new": 0,
+      "updated": 0,
+      "eligible_new": 0,
+      "eligible_updates": 0,
+      "shortfall": 2,
+      "reasons": {
+        "considered": 300,
+        "already_published_unchanged": 1,
+        "missing or invalid HTTPS evidence URL": 216,
+        "insufficient verified descriptive fields": 83
+      },
+      "rejected_count": 299,
+      "rejected_sample": [
+        {
+          "name": "Darul Uloom Latheefia",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100233622"
+        },
+        {
+          "name": "New Cairo Technological University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://nctu.edu.eg/?lang=ar"
+        },
+        {
+          "name": "University Center Nour Bashir (El-Bayadh)",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.cu-elbayadh.dz/fr/"
+        },
+        {
+          "name": "Universit\u00e9 Chadli Bendjedid d'El Tarf",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100258391"
+        },
+        {
+          "name": "Manara University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://manara.edu.sy/"
+        },
+        {
+          "name": "Universit\u00e9 Internationale d'Agadir",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://universiapolis.ma/"
+        },
+        {
+          "name": "Bulacan State University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.bulsu.edu.ph/"
+        },
+        {
+          "name": "Zamfara State University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.zamsut.edu.ng"
+        },
+        {
+          "name": "Dhammaduta Chekinda University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.dcumyanmar.com"
+        },
+        {
+          "name": "Universit\u00e9 de Ouahigouya",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://adscientificindex.com/university/universite-de-ouahigouya/24209/"
+        },
+        {
+          "name": "Institut Sciences Campus",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://legrandfrere.africa/etablissement/institut-science-campus-isc/"
+        },
+        {
+          "name": "Universit\u00e9 Polytechnique Int\u00e9gr\u00e9e",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100523631"
+        },
+        {
+          "name": "Universit\u00e9 Tahar Moulay de Saida",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.univ-saida.dz/ar/"
+        },
+        {
+          "name": "University of Aizu",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://u-aizu.ac.jp/en/"
+        },
+        {
+          "name": "Dhemaji Engineering College",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://dec.ac.in/"
+        },
+        {
+          "name": "Federal University, Wukari",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.fuwukari.edu.ng/"
+        },
+        {
+          "name": "Angola Central Highlands University",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100927380"
+        },
+        {
+          "name": "Yorker International University",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100927381"
+        },
+        {
+          "name": "Pacific Corporate University",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100927384"
+        },
+        {
+          "name": "Dely Brahim University",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100927385"
+        },
+        {
+          "name": "International Virtual University",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100927393"
+        },
+        {
+          "name": "Ethiopian Catholic University of Saint Thomas Aquinas",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.ecu.edu.et/"
+        },
+        {
+          "name": "New Global Vision University College",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://ngvc.edu.et/"
+        },
+        {
+          "name": "Wachemo University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.wcu.edu.et/"
+        },
+        {
+          "name": "Christ Apostolic University College",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://cauc.edu.gh/"
+        }
+      ]
+    },
+    "phones": {
+      "new": 0,
+      "updated": 1,
+      "eligible_new": 0,
+      "eligible_updates": 1,
+      "shortfall": 2,
+      "reasons": {
+        "considered": 416,
+        "missing or invalid HTTPS evidence URL": 347,
+        "insufficient verified descriptive fields": 68
+      },
+      "rejected_count": 415,
+      "rejected_sample": [
+        {
+          "name": "Huawei Y7 Prime (2019)",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100258603"
+        },
+        {
+          "name": "Huawei Y9a",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100261067"
+        },
+        {
+          "name": "Sony Xperia 5 II",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100286751"
+        },
+        {
+          "name": "Samsung A520",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100309371"
+        },
+        {
+          "name": "OnePlus 8T",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.oneplus.com/global/8t"
+        },
+        {
+          "name": "realme 7 Pro",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100707241"
+        },
+        {
+          "name": "Huawei Mate 40 RS Porsche Design",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100773701"
+        },
+        {
+          "name": "Honor 6C",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100939876"
+        },
+        {
+          "name": "Huawei P Smart 2020",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://consumer.huawei.com/en/phones/p-smart-2020/"
+        },
+        {
+          "name": "Huawei Mate Xs",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://consumer.huawei.com/cn/phones/mate-x-s/"
+        },
+        {
+          "name": "Realme 7",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q102279550"
+        },
+        {
+          "name": "Realme 6i",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q102838356"
+        },
+        {
+          "name": "Wiko Lenny 4",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q103024022"
+        },
+        {
+          "name": "HTC First",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q10333237"
+        },
+        {
+          "name": "Samsung GT-i6220",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q10367304"
+        },
+        {
+          "name": "Realme C12",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q104145199"
+        },
+        {
+          "name": "Oppo F17 Pro",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q104442189"
+        },
+        {
+          "name": "Xiaomi Mi 11",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.mi.com/ua/product/mi-11/overview"
+        },
+        {
+          "name": "Moto G9",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q104553915"
+        },
+        {
+          "name": "Samsung Galaxy A12",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q104772244"
+        },
+        {
+          "name": "Huawei Y360",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q104776908"
+        },
+        {
+          "name": "Huawei Y3 2018",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q104776914"
+        },
+        {
+          "name": "Meizu PRO 7",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.meizu.com/en/pro7/summary/"
+        },
+        {
+          "name": "Moto E7",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.motorola.com/we/smartphones-moto-e-gen-7/p"
+        },
+        {
+          "name": "Nokia 2.4",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q104803350"
+        }
+      ]
+    },
+    "cars": {
+      "new": 0,
+      "updated": 0,
+      "eligible_new": 0,
+      "eligible_updates": 0,
+      "shortfall": 2,
+      "reasons": {
+        "considered": 648,
+        "already_published_unchanged": 3,
+        "missing or invalid HTTPS evidence URL": 551,
+        "insufficient verified descriptive fields": 94
+      },
+      "rejected_count": 645,
+      "rejected_sample": [
+        {
+          "name": "Jaguar XK140",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q1000013"
+        },
+        {
+          "name": "Land Rover Series",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q1000300"
+        },
+        {
+          "name": "Ferrari GT4",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q1000732"
+        },
+        {
+          "name": "Ferrari P4/5 by Pininfarina",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q1000739"
+        },
+        {
+          "name": "Buddy",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q1001167"
+        },
+        {
+          "name": "Subaru Outback (sixth generation)",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100152215"
+        },
+        {
+          "name": "Bugatti Type 13",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q1002352"
+        },
+        {
+          "name": "Bugatti Type 40",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q1002373"
+        },
+        {
+          "name": "Bugatti Type 41",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q1002399"
+        },
+        {
+          "name": "Bugatti Type 57",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q1002464"
+        },
+        {
+          "name": "De Dion-Bouton Type S",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100255613"
+        },
+        {
+          "name": "De Dion-Bouton Type W",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100255618"
+        },
+        {
+          "name": "De Dion-Bouton Type AB",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100255620"
+        },
+        {
+          "name": "De Dion-Bouton Type AC",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100255621"
+        },
+        {
+          "name": "De Dion-Bouton Type AN",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100255624"
+        },
+        {
+          "name": "De Dion-Bouton Type AV",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100255626"
+        },
+        {
+          "name": "De Dion-Bouton Type DE2",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100255632"
+        },
+        {
+          "name": "De Dion-Bouton Type DG",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100255634"
+        },
+        {
+          "name": "De Dion-Bouton Type DW 2",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100255636"
+        },
+        {
+          "name": "De Dion-Bouton Type EJ 2",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100255642"
+        },
+        {
+          "name": "Foton View",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://van.foton.com.cn/van/car/modelDetail/20%20official%20website"
+        },
+        {
+          "name": "Geely Haoyue",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://haoyue.geely.com/"
+        },
+        {
+          "name": "De Dion-Bouton Type AD",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100263822"
+        },
+        {
+          "name": "De Dion-Bouton Type BH",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100265668"
+        },
+        {
+          "name": "De Dion-Bouton Type CI",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100266188"
+        }
+      ]
+    },
+    "bikes": {
+      "new": 0,
+      "updated": 0,
+      "eligible_new": 0,
+      "eligible_updates": 0,
+      "shortfall": 2,
+      "reasons": {
+        "considered": 262,
+        "already_published_unchanged": 1,
+        "missing or invalid HTTPS evidence URL": 242,
+        "insufficient verified descriptive fields": 19
+      },
+      "rejected_count": 261,
+      "rejected_sample": [
+        {
+          "name": "Farm bike",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q100151385"
+        },
+        {
+          "name": "Benelli BN 125",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://unitedkingdom.benelli.com/product/bn-125"
+        },
+        {
+          "name": "LinTo 500 GP",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q10356331"
+        },
+        {
+          "name": "Tomos CTX 80",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q105002044"
+        },
+        {
+          "name": "Jawa 350/360",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q105044760"
+        },
+        {
+          "name": "BMW R28",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q105771898"
+        },
+        {
+          "name": "MZ ETS 175/250",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q105825955"
+        },
+        {
+          "name": "MZ ETS 125/150",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q105826212"
+        },
+        {
+          "name": "MZ TS 250",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q106413425"
+        },
+        {
+          "name": "MZ TS 150",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q106413432"
+        },
+        {
+          "name": "MZ 500R",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q106691340"
+        },
+        {
+          "name": "Kawasaki H2R",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q106867882"
+        },
+        {
+          "name": "Yamaha SRV",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q10723359"
+        },
+        {
+          "name": "Norton Model 7 Dominator",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q107299404"
+        },
+        {
+          "name": "Norton Model 88 Dominator",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q107396910"
+        },
+        {
+          "name": "Norton Model 99 Dominator",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q107490649"
+        },
+        {
+          "name": "DKW ZSW 500",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q108025310"
+        },
+        {
+          "name": "DKW ZM",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q108041766"
+        },
+        {
+          "name": "Malaguti Centro",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q108490208"
+        },
+        {
+          "name": "Malaguti Madison",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q108546305"
+        },
+        {
+          "name": "Malaguti Password",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://web.archive.org/web/20110606021516/http://www.malaguti.com/it-IT/Modelli/scooter-125-300cc/PASSWORD-250cc.aspx"
+        },
+        {
+          "name": "Benelli TRK",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://italy.benelli.com/product/trk-502-2020"
+        },
+        {
+          "name": "DKW E 250",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q108564770"
+        },
+        {
+          "name": "Malaguti Ciak",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q108882232"
+        },
+        {
+          "name": "Malaguti F18 Warrior",
+          "reason": "missing or invalid HTTPS evidence URL",
+          "source": "http://www.wikidata.org/entity/Q108901800"
+        }
+      ]
+    }
   },
-  "date": "2026-11-02T01:44:57.258282+00:00"
+  "date": "2026-11-02T01:56:55.227659+00:00"
 }

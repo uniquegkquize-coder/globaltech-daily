@@ -5,6 +5,8 @@ import datetime as dt
 import hashlib
 import json
 import os
+from collections import Counter
+from urllib.parse import urlparse
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -21,6 +23,13 @@ def read(path):
     except (OSError,ValueError):
         return {}
 
+def evidence_source(entry):
+    for key in ('evidence_url','source_url','official_url'):
+        url=str(entry.get(key) or '')
+        if urlparse(url).scheme=='https' and (urlparse(url).hostname or '').lower() not in ('wikidata.org','www.wikidata.org'):
+            return url
+    return str(entry.get('source_url') or entry.get('official_url') or '')
+
 def candidates():
     records=read(ROOT/'content'/'directory-records.json')
     details=read(ROOT/'content'/'directory-details.json')
@@ -28,16 +37,16 @@ def candidates():
         seen=set()
         for name,entry in (details.get(kind) or {}).items():
             if not isinstance(entry,dict):continue
-            source=entry.get('official_url') or entry.get('source_url')
-            if source and source.startswith('https://'):
+            source=evidence_source(entry)
+            if name:
                 seen.add(name.casefold())
                 yield kind,name,entry,source
         for entry in records.get(kind,[]):
             if not isinstance(entry,dict):continue
             name=str(entry.get('name','')).strip()
             if not name or name.casefold() in seen:continue
-            source=entry.get('official_url') or entry.get('source_url')
-            if source and source.startswith('https://'):
+            source=evidence_source(entry)
+            if name:
                 seen.add(name.casefold())
                 yield kind,name,entry,source
 
@@ -45,7 +54,7 @@ def article(kind,name,entry,source):
     now=dt.datetime.now(dt.timezone.utc).isoformat()
     country=entry.get('country') or 'not recorded'
     fields=[(k.replace('_',' ').title(),str(v)) for k,v in entry.items()
-            if k not in ('source','source_url','official_url','retrieved_at','name','country')
+            if k not in ('source','source_url','official_url','retrieved_at','name','country','evidence_url')
             and isinstance(v,(str,int,float)) and str(v).strip()]
     facts='\n'.join('- **'+k+':** '+v for k,v in fields[:15]) or '- Detailed specifications are not yet available from this source.'
     topic=SUBJECT[kind]
@@ -95,7 +104,7 @@ def sufficient(kind,entry):
     Unknown fees, admission requirements and specifications are explicitly labelled
     as unverified in the article. Never invent missing figures.
     """
-    source=entry.get('official_url') or entry.get('source_url') or ''
+    source=evidence_source(entry) or ''
     if not str(source).startswith('https://'):
         return False
     fields={
@@ -115,30 +124,60 @@ def sufficient(kind,entry):
         return known>=3 and descriptive>=1
     return known>=2
 
+def fingerprint(entry):
+    # Only substantive facts alter the profile. Retrieval timestamps do not.
+    facts={k:v for k,v in entry.items() if k not in ('retrieved_at','field_sources')}
+    return hashlib.sha256(json.dumps(facts,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+
 def main():
     POSTS.mkdir(parents=True,exist_ok=True)
-    items={k:[] for k in KINDS}
+    limit=max(0,min(2,int(os.getenv('DIRECTORY_GUIDES_PER_CATEGORY','2'))))
+    items={k:[] for k in KINDS};updates={k:[] for k in KINDS}
+    diagnostics={k:Counter() for k in KINDS};rejected={k:[] for k in KINDS}
     for kind,name,entry,source in candidates():
-        if not sufficient(kind,entry):
+        diagnostics[kind]['considered']+=1
+        host=(urlparse(source).hostname or '').lower()
+        if urlparse(source or '').scheme!='https' or not host:
+            reason='missing or invalid HTTPS evidence URL'
+        elif host in ('www.wikidata.org','wikidata.org'):
+            reason='identifier URL is not specification evidence'
+        elif not sufficient(kind,entry):
+            reason='insufficient verified descriptive fields'
+        else:reason=''
+        if reason:
+            diagnostics[kind][reason]+=1
+            rejected[kind].append({'name':name,'reason':reason,'source':source})
             continue
         key,post=article(kind,name,entry,source)
-        if not (POSTS/(key+'.json')).exists():
-            items[kind].append((key,post))
-    # Keep curated records first; deterministic ordering avoids reordering on every run.
-    # Existing published IDs are skipped above, so each run can advance to new entities.
-    shortage={kind:max(0,2-len(group)) for kind,group in items.items() if len(group)<2}
-    published=0
-    diagnostics={kind:{'candidate_count':len(items[kind]),'missing_required_fields':{}} for kind in KINDS}
+        post['directory_kind']=kind;post['directory_name']=name
+        post['directory_fingerprint']=fingerprint(entry)
+        path=POSTS/(key+'.json')
+        if path.exists():
+            old=read(path)
+            if old.get('directory_fingerprint')==post['directory_fingerprint']:
+                diagnostics[kind]['already_published_unchanged']+=1;continue
+            # Preserve original publication date, IDs, images and other editorial metadata.
+            post={**old,**post,'date':old.get('date',post['date']),
+                  'updated_at':dt.datetime.now(dt.timezone.utc).isoformat()}
+            for field in ('image_kind','image','author'):
+                if field in old:post[field]=old[field]
+            updates[kind].append((key,post))
+        else:items[kind].append((key,post))
+    counts={};published=0;updated=0
     for kind in KINDS:
-        for key,post in items[kind][:2]:
+        fresh=items[kind][:limit]
+        changed=updates[kind][:max(1,int(os.getenv('DIRECTORY_UPDATES_PER_CATEGORY','10')))]
+        for key,post in fresh+changed:
             (POSTS/(key+'.json')).write_text(json.dumps(post,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-            print('Prepared verified directory guide:',kind,post['en_title'],flush=True)
-            published+=1
-    print('Directory publishing summary:',published,'of 8 new guides; missing verified candidates:',shortage,flush=True)
-    if published==0:
-        print('::warning::No publishable NEW records. Source research must enrich more entities; rerunning unchanged data will not fix this.',flush=True)
-    (ROOT/'content'/'directory-guide-status.json').write_text(
-        json.dumps({'published':published,'target':8,'missing':shortage,'candidate_counts':{k:len(v) for k,v in items.items()},'date':dt.datetime.now(dt.timezone.utc).isoformat()},indent=2)+'\n',encoding='utf-8')
-    # Missing source facts are recorded, never fabricated. Other categories can publish.
+        counts[kind]={'new':len(fresh),'updated':len(changed),'eligible_new':len(items[kind]),
+                      'eligible_updates':len(updates[kind]),'shortfall':max(0,limit-len(fresh)),
+                      'reasons':dict(diagnostics[kind]),'rejected_count':len(rejected[kind]),'rejected_sample':rejected[kind][:25]}
+        published+=len(fresh);updated+=len(changed)
+    status={'published':published,'updated':updated,'target':limit*len(KINDS),
+            'missing':{k:v['shortfall'] for k,v in counts.items() if v['shortfall']},
+            'categories':counts,'date':dt.datetime.now(dt.timezone.utc).isoformat()}
+    (ROOT/'content'/'directory-guide-status.json').write_text(json.dumps(status,indent=2)+'\n',encoding='utf-8')
+    print('DIRECTORY_PUBLICATION',json.dumps(status),flush=True)
+    if published==0:print('::warning::Zero new guides; inspect category reasons in directory-guide-status.json',flush=True)
 
 if __name__=='__main__':main()

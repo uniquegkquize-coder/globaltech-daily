@@ -17,6 +17,10 @@ def main():
         raise SystemExit('Invalid kind')
     if not post_id or any(c not in '0123456789abcdef' for c in post_id.lower()) or len(post_id)>32:
         raise SystemExit('Expected hexadecimal post ID')
+    matches=[f for f in (ROOT/'content'/'posts').glob('*.json') if f.stem.startswith(post_id)]
+    if len(matches)!=1:raise SystemExit('Post ID must resolve to exactly one existing article')
+    post=json.loads(matches[0].read_text(encoding='utf-8'))
+    post_id=str(post['id'])
     if any(urlparse(u).scheme!='https' for u in (url,source)):
         raise SystemExit('HTTPS image and attribution URLs required')
     if not license_name.strip() or not credit.strip():
@@ -29,10 +33,10 @@ def main():
     im=ImageOps.exif_transpose(im).convert('RGB')
     if im.width<1200:
         raise SystemExit('Image must be at least 1200 pixels wide')
-    im.thumbnail((1600,1200))
+    im=ImageOps.pad(im,(1280,720),method=Image.Resampling.LANCZOS,color=(12,28,55))
     folder=ROOT/'content'/'featured'
     folder.mkdir(parents=True,exist_ok=True)
     im.save(folder/(post_id+'.jpg'),quality=84,optimize=True)
-    (folder/(post_id+'.json')).write_text(json.dumps({'kind':kind,'attribution':credit,'license':license_name,'source_url':source,'image_url':url},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (folder/(post_id+'.json')).write_text(json.dumps({'kind':kind,'attribution':credit,'license':license_name,'source_url':source,'image_url':url,'post_id':post_id,'width':1280,'height':720,'alt':post.get('en_title',''),'rights_status':'authorized','modifications':'Resized and letterboxed to 1280x720'},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print('Imported image with attribution metadata:',post_id)
 if __name__=='__main__':main()

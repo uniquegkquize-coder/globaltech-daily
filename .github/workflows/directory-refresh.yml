@@ -25,7 +25,7 @@ jobs:
         run: python scripts/refresh_directories.py
       - name: Commit directory cache only (no publishing)
         run: |
-          git add content/directory-records.json
+          git add content/directory-records.json content/directory-import-state.json
           if git diff --cached --quiet; then exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -36,7 +36,7 @@ jobs:
             git rebase --abort 2>/dev/null || true
             git reset --hard origin/main
             python scripts/refresh_directories.py
-            git add content/directory-records.json
+            git add content/directory-records.json content/directory-import-state.json
             if git diff --cached --quiet; then exit 0; fi
             git commit -m 'Refresh worldwide directory reference records'
           done

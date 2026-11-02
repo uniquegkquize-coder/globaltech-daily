@@ -40,6 +40,10 @@ class SourcePipelineTests(unittest.TestCase):
         self.assertNotEqual(collect.category_for_url('Simpsons debut release date announced','movies-entertainment','https://example.com/tv/news/announcement'),'movie-releases')
     def test_website_leads_are_classified_before_queueing(self):
         class Response:
+            status_code=200
+            encoding='utf-8'
+            def close(self):pass
+            def iter_content(self,n):yield self.text.encode()
             url='https://www.cardekho.com/india-car-news.htm'
             headers={'content-type':'text/html'}
             text='<main><a href="/india-car-news/new-suv-launch-12345.htm">New Hyundai SUV launch price and mileage details</a></main>'

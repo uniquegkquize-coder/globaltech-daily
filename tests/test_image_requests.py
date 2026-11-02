@@ -10,14 +10,14 @@ sys.path.insert(0,str(ROOT/'scripts'))
 import generate_images
 
 class ImageRequestTests(unittest.TestCase):
- def test_source_article_photo_is_saved_first_with_explicit_rights_status(self):
+ def test_source_article_photo_is_saved_first_with_documented_license(self):
   from io import BytesIO
   from PIL import Image
   class Page:
    ok=True
    url='https://example.org/story'
    headers={'content-type':'text/html; charset=utf-8'}
-   text='<html><head><meta property="og:image" content="https://cdn.example.org/story-photo.jpg"><meta property="og:site_name" content="Example News"></head></html>'
+   text='<html><head><meta property="og:image" content="https://cdn.example.org/story-photo.jpg"><meta property="og:site_name" content="Example News"><meta name="license" content="https://creativecommons.org/licenses/by/4.0/"></head></html>'
   class Photo:
    ok=True
    url='https://cdn.example.org/story-photo.jpg'
@@ -34,7 +34,7 @@ class ImageRequestTests(unittest.TestCase):
     self.assertEqual(get.call_count,2)
    metadata=json.loads((Path(tmp)/'abcdef012345.json').read_text())
    self.assertEqual(metadata['kind'],'publisher_source')
-   self.assertEqual(metadata['rights_status'],'source_rights_unverified')
+   self.assertEqual(metadata['rights_status'],'source_license_claimed')
    self.assertEqual(metadata['source_image'],'https://cdn.example.org/story-photo.jpg')
    self.assertTrue((Path(tmp)/'abcdef012345.jpg').is_file())
 
@@ -60,7 +60,7 @@ class ImageRequestTests(unittest.TestCase):
    self.assertTrue(generate_images.resolved_featured('abcdef012345'))
    code=(ROOT/'scripts/build.py').read_text()
    self.assertIn("licensed_photo",code)
-   self.assertIn('Editorial illustration',code)
+   self.assertIn('EDITORIAL ILLUSTRATION',code)
 
  def test_zero_budget_makes_no_external_requests(self):
   with patch.object(generate_images,'MAX_NEW',0),patch.dict('os.environ',{'MAX_LICENSED_PHOTOS_PER_RUN':'0'}),patch.object(generate_images.requests,'get') as get,patch.object(generate_images.requests,'post') as post:

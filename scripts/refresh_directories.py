@@ -15,9 +15,11 @@ HEADERS={'User-Agent':'GlobeWireDailyDirectoryBot/1.0 (contact@globewiredaily.or
 def fetch(kind,limit=100,offset=0):
  cls=QUERY[kind]
  q=f"""SELECT DISTINCT ?item ?itemLabel ?countryLabel ?regionLabel ?cityLabel ?inception ?website ?manufacturerLabel ?operatorLabel ?locationLabel ?mass ?height ?width ?length WHERE {{
- ?item wdt:P31 wd:{cls}.
+ ?item wdt:P31/wdt:P279* wd:{cls}.
  OPTIONAL {{ ?item wdt:P17 ?country. }}
  OPTIONAL {{ ?item wdt:P571 ?inception. }}
+ OPTIONAL {{ ?item wdt:P176 ?manufacturer. }}
+ OPTIONAL {{ ?item wdt:P137 ?operator. }}
  OPTIONAL {{ ?item wdt:P856 ?website. }}
  OPTIONAL {{ ?item wdt:P131 ?region. }}
  OPTIONAL {{ ?item wdt:P131/wdt:P131? ?city. }}
@@ -52,9 +54,13 @@ def main():
  for kind in QUERY:
   previous=data.get(kind,[])
   if not isinstance(previous,list):previous=[]
+  unkeyed=[r for r in previous if isinstance(r,dict) and not r.get('source_url')]
   by_id={r['source_url']:r for r in previous if isinstance(r,dict) and r.get('source_url')}
   # Resume from existing cache. Re-check the beginning only after a complete traversal.
-  offset=len(by_id)
+  cursor_path=ROOT/'content'/'directory-import-state.json'
+  try:cursors=json.loads(cursor_path.read_text())
+  except (OSError,ValueError):cursors={}
+  offset=int(cursors.get(kind,0))
   for page in range(pages_per_run):
    try:
     rows=fetch(kind,page_size,offset)
@@ -62,14 +68,17 @@ def main():
      old=by_id.get(row['source_url'],{})
      by_id[row['source_url']]={**old,**{k:(v or old.get(k,'')) for k,v in row.items()}}
     print(kind,'offset',offset,'fetched',len(rows),'total',len(by_id),flush=True)
-    if len(rows)<page_size:
-     break
     offset+=page_size
+    if not rows:
+     offset=0
+     break
     time.sleep(1)
    except (requests.RequestException,ValueError,KeyError) as exc:
     print(kind,'fetch failed, preserving cache',type(exc).__name__,flush=True)
     break
-  data[kind]=sorted(by_id.values(),key=lambda r:r['source_url'])
+  cursors[kind]=offset
+  cursor_path.write_text(json.dumps(cursors,indent=2)+'\n')
+  data[kind]=sorted(list(by_id.values())+unkeyed,key=lambda r:r.get('source_url',''))
  if any(data.get(k) for k in QUERY):
   TARGET.parent.mkdir(parents=True,exist_ok=True)
   serialized=json.dumps(data,ensure_ascii=False,indent=2)+'\n'

@@ -5,37 +5,104 @@
       "region": "Gujarat",
       "city": "Vadodara",
       "type": "Private university",
-      "accreditation": "NAAC A++",
+      "accreditation": "NAAC A++ Grade",
       "programmes": "Engineering, management, pharmacy, design, medicine, science and health programmes",
       "admissions": "Programme-specific; entrance examinations can include JEE Main, GUJCET, NEET, CAT/MAT/CMAT and NATA",
       "placement": "2025 reported highest package ₹60 LPA; check programme-specific outcomes",
       "fees": "Programme and year dependent",
       "source_url": "https://www.collegedekho.com/colleges/parul-university",
-      "official_url": "https://paruluniversity.ac.in/"
+      "official_url": "https://paruluniversity.ac.in/",
+      "field_sources": {
+        "accreditation": {
+          "url": "https://www.collegedekho.com/colleges/parul-university",
+          "retrieved_at": "2026-11-02T01:52:30.162065+00:00"
+        },
+        "region": {
+          "url": "https://www.collegedekho.com/colleges/parul-university",
+          "retrieved_at": "2026-11-02T01:52:30.162082+00:00"
+        }
+      },
+      "evidence_url": "https://www.collegedekho.com/colleges/parul-university"
     }
   },
   "cars": {
     "Mahindra Thar": {
       "country": "India",
-      "price": "₹10.32–18.99 lakh (New Delhi ex-showroom, observed Nov 2026)",
-      "powertrain": "Petrol and diesel; rear-wheel drive or four-wheel drive depending on variant",
+      "price": "INR 1032000",
+      "powertrain": "D22 mHawk",
       "variants": "15 variants listed at source; varies by model year",
       "features": "10.25-inch touchscreen; off-road capability; variant-specific safety and equipment",
-      "source_url": "https://www.cardekho.com/mahindra/thar",
-      "official_url": "https://auto.mahindra.com/"
+      "source_url": "https://www.cardekho.com/mahindra/thar/specs",
+      "official_url": "https://auto.mahindra.com/",
+      "transmission": "6-Speed",
+      "dimensions": "width: 1870 mm",
+      "availability": "https://schema.org/InStock",
+      "manufacturer": "Mahindra",
+      "field_sources": {
+        "price": {
+          "url": "https://www.cardekho.com/mahindra/thar/specs",
+          "retrieved_at": "2026-11-02T01:52:30.221841+00:00"
+        },
+        "powertrain": {
+          "url": "https://www.cardekho.com/mahindra/thar/specs",
+          "retrieved_at": "2026-11-02T01:52:30.221961+00:00"
+        },
+        "transmission": {
+          "url": "https://www.cardekho.com/mahindra/thar/specs",
+          "retrieved_at": "2026-11-02T01:52:30.221963+00:00"
+        },
+        "dimensions": {
+          "url": "https://www.cardekho.com/mahindra/thar/specs",
+          "retrieved_at": "2026-11-02T01:52:30.221965+00:00"
+        },
+        "availability": {
+          "url": "https://www.cardekho.com/mahindra/thar/specs",
+          "retrieved_at": "2026-11-02T01:52:30.221966+00:00"
+        },
+        "manufacturer": {
+          "url": "https://www.cardekho.com/mahindra/thar/specs",
+          "retrieved_at": "2026-11-02T01:52:30.221967+00:00"
+        }
+      },
+      "evidence_url": "https://www.cardekho.com/mahindra/thar/specs"
     },
     "Genesis GV70": {
       "name": "Genesis GV70",
       "country": "",
       "introduced": "",
       "official_url": "https://www.genesis.com/us/en/2022/genesis-gv70.html",
-      "source_url": "https://www.genesis.com/us/en/2022/genesis-gv70.html",
+      "source_url": "https://www.genesis.com/us/en/gv70",
       "source": "Wikidata",
       "retrieved_at": "2026-11-01",
-      "price": "49350",
+      "price": "USD 49350",
       "powertrain": "3.5L twin-turbo V6 with 375 hp and 391 lb-ft of torque",
       "variants": "GV70",
-      "evidence_url": "https://www.genesis.com/us/en/2022/genesis-gv70.html"
+      "evidence_url": "https://www.genesis.com/us/en/gv70",
+      "safety": "Advanced Rear Occupant Alert",
+      "availability": "https://schema.org/InStock",
+      "manufacturer": "Genesis",
+      "field_sources": {
+        "price": {
+          "url": "https://www.genesis.com/us/en/gv70",
+          "retrieved_at": "2026-11-02T01:52:30.419457+00:00"
+        },
+        "powertrain": {
+          "url": "https://www.genesis.com/us/en/gv70",
+          "retrieved_at": "2026-11-02T01:52:30.419476+00:00"
+        },
+        "safety": {
+          "url": "https://www.genesis.com/us/en/gv70",
+          "retrieved_at": "2026-11-02T01:52:30.419478+00:00"
+        },
+        "availability": {
+          "url": "https://www.genesis.com/us/en/gv70",
+          "retrieved_at": "2026-11-02T01:52:30.419479+00:00"
+        },
+        "manufacturer": {
+          "url": "https://www.genesis.com/us/en/gv70",
+          "retrieved_at": "2026-11-02T01:52:30.419481+00:00"
+        }
+      }
     },
     "Infiniti QX55": {
       "name": "Infiniti QX55",
@@ -62,15 +129,48 @@
   "bikes": {
     "Hero Splendor Plus": {
       "country": "India",
-      "price": "₹77,777–80,531 (source-listed India ex-showroom, observed Nov 2026)",
+      "price": "INR 77777",
       "engine": "97.2 cc",
       "power": "8.02 PS",
       "torque": "8.05 Nm",
-      "mileage": "70 kmpl (source-listed figure)",
+      "mileage": "70 kmpl",
       "weight": "112 kg",
       "variants": "Standard, Black and Accent, i3S, Million Edition",
       "source_url": "https://www.bikedekho.com/hero/splendor-plus",
-      "official_url": "https://www.heromotocorp.com/"
+      "official_url": "https://www.heromotocorp.com/",
+      "brakes": "Drum",
+      "specifications": "kerb weight: 112 kg",
+      "field_sources": {
+        "price": {
+          "url": "https://www.bikedekho.com/hero/splendor-plus",
+          "retrieved_at": "2026-11-02T01:52:30.520272+00:00"
+        },
+        "engine": {
+          "url": "https://www.bikedekho.com/hero/splendor-plus",
+          "retrieved_at": "2026-11-02T01:52:30.520289+00:00"
+        },
+        "power": {
+          "url": "https://www.bikedekho.com/hero/splendor-plus",
+          "retrieved_at": "2026-11-02T01:52:30.520290+00:00"
+        },
+        "torque": {
+          "url": "https://www.bikedekho.com/hero/splendor-plus",
+          "retrieved_at": "2026-11-02T01:52:30.520292+00:00"
+        },
+        "mileage": {
+          "url": "https://www.bikedekho.com/hero/splendor-plus",
+          "retrieved_at": "2026-11-02T01:52:30.520293+00:00"
+        },
+        "brakes": {
+          "url": "https://www.bikedekho.com/hero/splendor-plus",
+          "retrieved_at": "2026-11-02T01:52:30.520295+00:00"
+        },
+        "specifications": {
+          "url": "https://www.bikedekho.com/hero/splendor-plus",
+          "retrieved_at": "2026-11-02T01:52:30.520296+00:00"
+        }
+      },
+      "evidence_url": "https://www.bikedekho.com/hero/splendor-plus"
     }
   },
   "phones": {
@@ -79,15 +179,50 @@
       "price": "₹139,999 (source-listed; availability may vary)",
       "display": "8.03-inch main (2480×2200); 6.53-inch cover (1172×2748)",
       "processor": "Snapdragon 8 Gen 3",
-      "ram": "16 GB",
-      "storage": "512 GB",
+      "ram": "16GB",
+      "storage": "512GB",
       "rear_camera": "50 MP + 50 MP + 50 MP",
       "front_camera": "20 MP + 20 MP",
       "battery": "6000 mAh",
       "os": "Android 15",
       "release": "25 June 2025",
       "source_url": "https://www.gadgets360.com/vivo-x-fold-5-price-in-india-133304",
-      "official_url": "https://www.vivo.com/"
+      "official_url": "https://www.vivo.com/",
+      "cameras": "50-megapixel (f/1.57) + 50-megapixel (f/2.05) + 50-megapixel (f/2.55)",
+      "charging": "80W Fast Charging",
+      "launch_date": "25th June 2025",
+      "manufacturer": "Vivo",
+      "field_sources": {
+        "processor": {
+          "url": "https://www.gadgets360.com/vivo-x-fold-5-price-in-india-133304",
+          "retrieved_at": "2026-11-02T01:53:03.593900+00:00"
+        },
+        "ram": {
+          "url": "https://www.gadgets360.com/vivo-x-fold-5-price-in-india-133304",
+          "retrieved_at": "2026-11-02T01:53:03.593917+00:00"
+        },
+        "storage": {
+          "url": "https://www.gadgets360.com/vivo-x-fold-5-price-in-india-133304",
+          "retrieved_at": "2026-11-02T01:53:03.593919+00:00"
+        },
+        "cameras": {
+          "url": "https://www.gadgets360.com/vivo-x-fold-5-price-in-india-133304",
+          "retrieved_at": "2026-11-02T01:53:03.593921+00:00"
+        },
+        "charging": {
+          "url": "https://www.gadgets360.com/vivo-x-fold-5-price-in-india-133304",
+          "retrieved_at": "2026-11-02T01:53:03.593922+00:00"
+        },
+        "launch_date": {
+          "url": "https://www.gadgets360.com/vivo-x-fold-5-price-in-india-133304",
+          "retrieved_at": "2026-11-02T01:53:03.593923+00:00"
+        },
+        "manufacturer": {
+          "url": "https://www.gadgets360.com/vivo-x-fold-5-price-in-india-133304",
+          "retrieved_at": "2026-11-02T01:53:03.593925+00:00"
+        }
+      },
+      "evidence_url": "https://www.gadgets360.com/vivo-x-fold-5-price-in-india-133304"
     }
   }
 }
