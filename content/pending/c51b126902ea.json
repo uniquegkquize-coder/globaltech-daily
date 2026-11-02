@@ -3,9 +3,9 @@
   "source_title": "A new vulnerability can brick your Android phone when receiving the SMS of Death",
   "category": "apps-software",
   "status": "draft",
-  "blocked_until": "2026-11-02T03:40:28.012579+00:00",
+  "blocked_until": "2026-11-02T05:45:48.474793+00:00",
   "source_words": 0,
   "source_published_at": "2026-10-30T21:03:02+01:00",
-  "updated_at": "2026-11-02T03:10:28.011046+00:00",
+  "updated_at": "2026-11-02T05:15:48.470550+00:00",
   "source_excerpt": "Security researcher Mark Blaszczyk found a new scary vulnerability that affects phones running Android 12 or later. It involves receiving a specially crafted WAP Push SMS message that Android's telephony framework cannot properly process.\nThe tricky part is that instead of displaying the message in the inbox, Android tries to process it in the background. This triggers an error that can cause all sorts of issues. Active phone calls start to disconnect, the device temporarily loses cellular service, and when receiving multiple messages like this, the device can even become unusable. Recovery is also very hard, requiring technical support.\nThe worst part is that the user doesn't have to do anything. This isn't some sort of phishing attack. It's an attack that doesn't require the user's involvement at all.\nSo far, researchers have found the issue to be present on Google Pixel and Samsung Galaxy phones, although all devices running Android 12 or later are vulnerable.\nAlthough Google has denied the security issue when researchers reported it in May, Android's engineering team came up with a solution and has included a fix with the latest October security patch for all devices running Android 14 or later. Older phones, unfortunately, remain vulnerable.\nThe fix itself is very simple, though. The system recognizes one of the 20 potentially malicious messages, and instead of trying to process it, Android removes the message on the spot.\nSo what can you do? If you are running an Android 13-powered phone or older, there's nothing much you can do. But if you have a more modern handset as a daily driver, check for the October security patch from Google and install it."
 }
