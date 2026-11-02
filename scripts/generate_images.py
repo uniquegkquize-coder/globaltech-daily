@@ -162,7 +162,9 @@ def licensed_source_image(p):
         authorized_candidates=0
         for candidate in candidates:
             if p.get('directory_name') and not directory_photo_matches(p['directory_name'],candidate):continue
-            image=candidate['url'];permission=permissions.get(image,{})
+            image=candidate['url']
+            if not saved_photo_allowed({'kind':'publisher_source','source':page.url,'source_image':image}):continue
+            permission=permissions.get(image,{})
             license_url=candidate['license'] or page_license
             # Publisher originals are selected by the site owner's editorial policy.
             # Preserve rights metadata without inventing permission or a license.

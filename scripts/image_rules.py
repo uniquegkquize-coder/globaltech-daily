@@ -51,7 +51,9 @@ def directory_photo_matches(subject,candidate):
 def saved_photo_allowed(info,root=None):
     if str(info.get('review_status','')).lower() in ('replace','rejected','needs_replacement'):return False
     source_path=unquote(urlparse(str(info.get('source',''))).path)
-    if model_conflict(source_path,info.get('source_image','')):return False
+    product_path=bool(re.search(r'(?:^|/)[a-z]{1,4}\d{1,3}[a-z]?(?:/previous)?/?$',source_path,re.I))
+    expected=info.get('directory_subject') or (source_path if product_path else '')
+    if expected and model_conflict(expected,info.get('source_image','')):return False
     if info.get('kind')!='licensed_photo':return True
     subject=info.get('subject','')
     if institution(subject):
