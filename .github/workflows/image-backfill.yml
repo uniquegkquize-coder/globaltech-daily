@@ -57,7 +57,7 @@ jobs:
           # matching publisher article image has explicit reuse terms or an authorization record. Otherwise use the
           # labelled build.py editorial illustration without unrelated stock.
           python -u scripts/generate_images.py
-          git add -A content/featured content/image-audit-status.json
+          git add -A content/featured content/image-audit-status.json content/image-audit-archive.json
           if [ -f content/image-backfill-state.json ]; then
             git add -A content/image-backfill-state.json
           fi
@@ -94,4 +94,5 @@ jobs:
           name: image-backfill-diagnostics
           path: |
             content/image-audit-status.json
+            content/image-audit-archive.json
             content/image-backfill-state.json

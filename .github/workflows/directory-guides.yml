@@ -77,7 +77,7 @@ jobs:
             python scripts/publish_directory_guides.py
             python scripts/generate_images.py
             python scripts/build.py
-            git add content/posts/ content/directory-records.json content/directory-details.json content/directory-guide-status.json content/directory-*-state.json content/directory-research-status.json content/featured/ content/image-backfill-state.json content/image-audit-status.json dist/
+            git add content/posts/ content/directory-records.json content/directory-details.json content/directory-guide-status.json content/directory-*-state.json content/directory-research-status.json content/featured/ content/image-backfill-state.json content/image-audit-status.json content/image-audit-directory.json dist/
             if git diff --cached --quiet; then
               echo 'No new guides generated'
               exit 0

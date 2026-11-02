@@ -184,6 +184,8 @@ def featured_info(ident):
  except (OSError,ValueError):return {}
 def image_alt(p,lang):
  info=featured_info(slug(p))
+ from image_rules import saved_photo_allowed
+ if not saved_photo_allowed(info,R) or not (R/'content'/'featured'/f'{slug(p)}.jpg').is_file():return title(p,lang)
  return str(info.get(lang+'_alt') or info.get('alt') or title(p,lang))
 
 def has_featured(p):
@@ -202,7 +204,8 @@ def image_for(p):
    info=json.loads(metadata.read_text(encoding='utf-8'))
    source_path=urlparse(str(info.get('source_image') or info.get('image_url') or '')).path
    generic=bool(re.search(r'(?i)(?:/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',source_path))
-   use_original=info.get('kind') in ('licensed_source','licensed_photo','publisher_source','source_original','manual_original') and not generic
+   from image_rules import saved_photo_allowed
+   use_original=saved_photo_allowed(info,R) and info.get('kind') in ('licensed_source','licensed_photo','publisher_source','source_original','manual_original') and not generic
   except (ValueError,OSError,TypeError):
    use_original=False
  if use_original:
@@ -262,7 +265,8 @@ def image_caption(p,lang):
    import re
    path=urlparse(str(info.get('source_image') or info.get('image_url') or '')).path
    generic=bool(re.search(r'(?i)(?:/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',path))
-   if generic or not (R/'content'/'featured'/f'{s}.jpg').is_file():
+   from image_rules import saved_photo_allowed
+   if generic or not saved_photo_allowed(info,R) or not (R/'content'/'featured'/f'{s}.jpg').is_file():
     return 'Original GlobeWire Daily editorial illustration — source photograph unavailable.' if lang=='en' else 'GlobeWire Daily का सांकेतिक चित्र — स्रोत फोटो उपलब्ध नहीं।'
    if info.get('kind') in ('licensed_source','publisher_source','licensed_photo'):
     credit=str(info.get('attribution') or 'Original publisher')

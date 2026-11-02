@@ -57,6 +57,16 @@ class BackfillV2Tests(unittest.TestCase):
     self.assertTrue(g.licensed_source_image({'id':'abcdef','source':'https://example.org/story'}))
    meta=json.loads((Path(tmp)/'abcdef.json').read_text())
    self.assertEqual(meta['source_image'],'https://example.org/real.jpg')
+ def test_institution_photos_are_campus_not_cats_or_portraits(self):
+  self.assertFalse(g.subject_matches('IIT Delhi','File:2d cat at IITD.jpg',{'ImageDescription':{'value':'Cat at IIT Delhi campus'}}))
+  self.assertFalse(g.subject_matches('IIT Bombay','File:14-InOffice.jpg',{'ImageDescription':{'value':'Professor in his office at IIT Bombay'}}))
+  self.assertTrue(g.subject_matches('IIT Delhi','File:Indian Institute of Technology Delhi.jpg',{'ImageDescription':{'value':'Main campus building'}}))
+  self.assertTrue(g.subject_matches('IIT Bombay','File:IIT Bombay Manas Apartments.jpg',{}))
+ def test_rejected_photo_is_researched_instead_of_marked_complete(self):
+  with tempfile.TemporaryDirectory() as tmp,patch.object(g,'IMAGES',Path(tmp)):
+   (Path(tmp)/'abcdef.jpg').write_bytes(b'wrong image')
+   (Path(tmp)/'abcdef.json').write_text(json.dumps({'kind':'licensed_photo','subject':'Mahindra Thar','review_status':'replace'}))
+   self.assertFalse(g.resolved_featured('abcdef'))
  def test_saved_generic_social_banner_is_not_resolved(self):
   with tempfile.TemporaryDirectory() as tmp,patch.object(g,'IMAGES',Path(tmp)):
    (Path(tmp)/'abcdef.jpg').write_bytes(b'old image')

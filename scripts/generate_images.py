@@ -9,6 +9,7 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 from PIL import Image, ImageOps
+from image_rules import saved_photo_allowed, institution, campus_image, words
 
 ROOT=Path(__file__).resolve().parents[1]
 POSTS=ROOT/'content/posts'
@@ -32,7 +33,7 @@ def resolved_featured(ident):
     except (OSError,ValueError,TypeError,AttributeError):kind=''
     # Replace representative Commons pictures and AI art when a genuine source image exists.
     # A JPEG without source provenance can be legacy artwork, not a confirmed publisher photo.
-    return kind in ('licensed_source','licensed_photo','publisher_source','source_original','manual_original') and not generic_image(json.loads(meta.read_text()).get('source_image',''))
+    return kind in ('licensed_source','licensed_photo','publisher_source','source_original','manual_original') and not generic_image(json.loads(meta.read_text()).get('source_image','')) and saved_photo_allowed(json.loads(meta.read_text()),ROOT)
 
 PHOTO_DIAGNOSTICS={}
 PHOTO_LOCK=threading.Lock()
@@ -204,8 +205,8 @@ def normalized(value):
 
 def exact_subject(p):
     global _SUBJECTS
-    if p.get('directory_name'):return str(p['directory_name'])
     if p.get('image_subject'):return str(p['image_subject'])
+    if p.get('directory_name'):return str(p['directory_name'])
     if _SUBJECTS is None:
         names=set()
         for filename in ('directory-details.json','directory-records.json'):
@@ -230,8 +231,11 @@ def subject_matches(subject,file_title,metadata):
     description=normalized(re.sub('<[^>]+>',' ',metadata.get('ImageDescription',{}).get('value','')))
     # A photograph taken WITH a phone is not a photograph OF that phone.
     if re.search(r'taken with|shot on|photographed with|captured with',description):return False
-    tokens=set(normalized(subject).split())
-    if not tokens or not tokens.issubset(set((filename+' '+description).split())):return False
+    if institution(subject) and not campus_image(subject,file_title,description):return False
+    tokens=set(words(subject).split())
+    if not tokens or not tokens.issubset(set(words(file_title+' '+description).split())):return False
+    tail=' '.join(normalized(subject).split()[-2:])
+    if re.search(re.escape(tail)+r'\s+(pro|ultra|plus|fe|roxx|dzire)\b',description) and not set(normalized(subject).split())&{'pro','ultra','plus','fe','roxx','dzire'}:return False
     variants={'ultra','plus','pro','max','fe','roxx','4v','dzire','grand','cross','electrified','hybrid'}
     if (set(filename.split()) & variants)-tokens:return False
     return True
@@ -265,6 +269,8 @@ def public_commons_photo(p,subject):
             if not commons_reuse_allowed(short,license_url):continue
             description=fs.select_one('#fileinfotpl_desc+td')
             description=description.get_text(' ',strip=True) if description else ''
+            categories=' '.join(a.get_text(' ',strip=True) for a in fs.select('#mw-normal-catlinks a') if 'taken with' not in a.get_text(' ',strip=True).lower())
+            description+=' '+categories
             file_title=fs.select_one('#firstHeading')
             file_title=file_title.get_text(' ',strip=True) if file_title else ''
             if not subject_matches(subject,file_title,{'ImageDescription':{'value':description}}):continue
@@ -285,7 +291,7 @@ def public_commons_photo(p,subject):
             author=author.get_text(' ',strip=True)[:240] if author else 'Wikimedia Commons contributor'
             metadata={'kind':'licensed_photo','post_id':ident,'subject':subject,'source_image':page_url,'image_url':image,
                       'license':license_url,'license_name':short,'attribution':author,'rights_status':'licensed',
-                      'matched_title':file_title,'width':1280,'height':720,'alt':subject+' — licensed representative photograph',
+                      'matched_title':file_title,'image_description':description,'width':1280,'height':720,'alt':subject+' — licensed representative photograph',
                       'modifications':'Resized and letterboxed to 16:9; representative photograph, not an event photograph.'}
             (IMAGES/(ident+'.json')).write_text(json.dumps(metadata,ensure_ascii=False,indent=2)+'\n')
             diagnostic(ident,'licensed_subject_saved',subject=subject,image=image);return True
@@ -308,6 +314,9 @@ def commons_photo(p):
         print('Commons search skipped (insufficient subject keywords)',ident,flush=True)
         return False
     if public_commons_photo(p,subject):return True
+    try:approved=json.loads((ROOT/'content/approved-photo-sources.json').read_text())
+    except (OSError,ValueError):approved={}
+    if subject in approved:return False
     headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)'}
     for query in queries:
         try:
@@ -475,7 +484,7 @@ def main():
     try:cursor=json.loads(BACKFILL_STATE.read_text())
     except (OSError,ValueError):cursor={}
     if not isinstance(cursor,dict):cursor={}
-    mode=os.getenv('IMAGE_BACKFILL_MODE') or ('new' if os.getenv('AUTO_POST','').lower()=='true' else 'mixed')
+    mode=os.getenv('IMAGE_BACKFILL_MODE') or ('new' if os.getenv('AUTO_POST','').lower() in ('true','1','yes') else 'mixed')
     candidates,fresh_count,older_count=choose_backfill(posts,cursor=cursor,mode=mode)
     if not candidates:
         print('IMAGE_BACKFILL_SUMMARY',json.dumps({'selected':0,'total_posts':len(posts)}),flush=True)
@@ -533,6 +542,9 @@ def main():
     missing=[{'id':slug(p),'category':p.get('category'),'title':p.get('en_title'),'source':p.get('source')} for p in posts if not resolved_featured(slug(p))]
     report={'total_posts':len(posts),'selected':len(candidates),'results':counts,'still_missing':len(missing),
             'articles':results,'missing':missing,'diagnostics':PHOTO_DIAGNOSTICS,'mode':mode}
-    (ROOT/'content/image-audit-status.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+    serialized=json.dumps(report,ensure_ascii=False,indent=2)+'\n'
+    (ROOT/'content/image-audit-status.json').write_text(serialized)
+    audit_name='archive' if mode=='all' else ('directory' if mode=='directory' else 'news')
+    (ROOT/'content'/('image-audit-'+audit_name+'.json')).write_text(serialized)
     print('IMAGE_BACKFILL_SUMMARY',json.dumps({k:v for k,v in report.items() if k not in ('articles','missing','diagnostics')}),flush=True)
 if __name__=='__main__':main()
