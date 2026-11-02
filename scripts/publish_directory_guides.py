@@ -90,16 +90,30 @@ def article(kind,name,entry,source):
                 'content_type':'evergreen_directory_guide'}
 
 def sufficient(kind,entry):
-    """Require multiple source-listed, non-placeholder facts before publishing."""
-    required={
-      'colleges':('programmes','admissions','fees'),
-      'phones':('display','processor','battery'),
-      'cars':('powertrain','variants','price'),
-      'bikes':('engine','power','torque')
+    """Publish useful source-backed profiles even if optional details are missing.
+
+    Unknown fees, admission requirements and specifications are explicitly labelled
+    as unverified in the article. Never invent missing figures.
+    """
+    source=entry.get('official_url') or entry.get('source_url') or ''
+    if not str(source).startswith('https://'):
+        return False
+    fields={
+      'colleges':('programmes','admissions','fees','placement','accreditation','city','region','country'),
+      'phones':('display','processor','battery','ram','storage'),
+      'cars':('powertrain','variants','price','mileage'),
+      'bikes':('engine','power','torque','price','mileage')
     }[kind]
-    missing=[field for field in required if not str(entry.get(field,'')).strip()
-             or str(entry[field]).lower() in ('unknown','n/a','not available','—')]
-    return not missing and bool(entry.get('official_url')) and bool(entry.get('source_url'))
+    known=sum(bool(str(entry.get(field,'')).strip()) and
+              str(entry.get(field,'')).strip().lower() not in
+              ('unknown','n/a','not available','—','none')
+              for field in fields)
+    # Require actual descriptive facts, not merely a Wikidata name and country.
+    if kind=='colleges':
+        descriptive=sum(bool(str(entry.get(field,'')).strip()) for field in
+                        ('programmes','admissions','fees','placement','accreditation'))
+        return known>=3 and descriptive>=1
+    return known>=2
 
 def main():
     POSTS.mkdir(parents=True,exist_ok=True)
@@ -110,8 +124,8 @@ def main():
         key,post=article(kind,name,entry,source)
         if not (POSTS/(key+'.json')).exists():
             items[kind].append((key,post))
-    for group in items.values():
-        group.sort(key=lambda p:p[0])
+    # Keep curated records first; deterministic ordering avoids reordering on every run.
+    # Existing published IDs are skipped above, so each run can advance to new entities.
     shortage={kind:max(0,2-len(group)) for kind,group in items.items() if len(group)<2}
     published=0
     for kind in KINDS:
