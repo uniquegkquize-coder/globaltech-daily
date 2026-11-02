@@ -3,8 +3,8 @@
   "source_title": "Global default for Copilot features generally available - The GitHub Blog",
   "category": "apps-software",
   "status": "draft",
-  "updated_at": "2026-11-01T22:59:18.034537+00:00",
-  "blocked_until": "2026-11-01T23:29:18.035252+00:00",
+  "updated_at": "2026-11-02T03:11:33.132668+00:00",
+  "blocked_until": "2026-11-02T03:41:33.133625+00:00",
   "source_published_at": "2026-10-22T20:44:28+00:00",
   "source_excerpt": "In September, we announced a global default policy for generally available GitHub Copilot features and supported client capabilities on Copilot Business and Copilot Enterprise plans. Starting today, we’re gradually rolling out enforcement of the policy through October 26, so it may take effect at different times for different enterprises and organizations. Eligible features left unconfigured will be set according to the global policy. Administrators can still make explicit choices for individual features at any time.\nThe policy applies to eligible settings on “Features & clients” and “MCP servers in Copilot”. You can review your setting under AI Controls → Copilot → Default policy for new features . For eligibility and exceptions, see the documentation on default availability .\nOnce the policy takes effect for your enterprise or organization:\nEligible generally available features and capabilities left Unconfigured will be set according to the selected global default of Enabled , Disabled , or Let organizations decide . This is a one-time change. Subsequent changes to the default policy won’t change feature policies that are already set.\nExplicit choices are preserved. If you’ve enabled or disabled an individual feature, the rollout won’t change that setting.\nPreview features remain opt-in. If you opted into a preview that later becomes generally available, your choice will be preserved. Otherwise, the default policy will apply when it becomes eligible.\nJoin the discussion within GitHub Community .\nDiscover tips, technical guides, and best practices in our biweekly newsletter just for devs."
 }

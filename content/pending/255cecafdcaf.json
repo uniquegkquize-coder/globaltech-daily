@@ -3,8 +3,8 @@
   "source_title": "Create and manage Copilot Automations in Visual Studio Code - The GitHub Blog",
   "category": "apps-software",
   "status": "draft",
-  "updated_at": "2026-11-01T22:59:01.324161+00:00",
-  "blocked_until": "2026-11-01T23:29:01.324782+00:00",
+  "updated_at": "2026-11-02T03:11:17.006214+00:00",
+  "blocked_until": "2026-11-02T03:41:17.006976+00:00",
   "source_excerpt": "Copilot Automations in Visual Studio Code can now run in the cloud. You can create and manage cloud automations from the Agents window without leaving your editor.\nWith Copilot Automations, you combine prompts, triggers, and tools to design workflows around the way you work. Pick when an automation should run and what it is allowed to do, then write a prompt telling Copilot how to complete the task.\nVisual Studio Code already supports personal automations that run locally on a schedule. With cloud automations, you can now:\nRun personal scheduled automations even when Visual Studio Code is closed : Cloud automations keep running when your computer is asleep or turned off, so recurring work does not depend on your machine being available.\nSet up personal automations that run in response to events on GitHub : Act automatically when activity happens in your repository (e.g., an issue being assigned to you or a pull request being opened).\nBuild shared workflows in the cloud with your team : Create automations visible to everyone with access to the repository and act as Copilot.\nTo get started, update to Visual Studio Code 1.144 and enable the chat.automations.cloud.enabled setting. You’ll find automations in the Automations tab in the Agents window. To learn more, see “Create and manage agent automations” in the Visual Studio Code docs.\nCopilot Automations is available with Copilot Pro, Pro+, Max, Business, and Enterprise plans.\nJoin the discussion within GitHub Community .\nDiscover tips, technical guides, and best practices in our biweekly newsletter just for devs.",
   "source_published_at": "2026-10-28T15:30:00+00:00"
 }

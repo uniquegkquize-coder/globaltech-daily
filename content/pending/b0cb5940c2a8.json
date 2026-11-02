@@ -3,8 +3,8 @@
   "source_title": "speedyfriend433/sandbox_extension-TOCTOU-bug: Read restricted system files with sandbox_extension TOCTOU bug - GitHub",
   "category": "apps-software",
   "status": "draft",
-  "updated_at": "2026-11-01T22:49:35.831505+00:00",
-  "blocked_until": "2026-11-01T23:19:35.832402+00:00",
+  "updated_at": "2026-11-02T03:02:06.440583+00:00",
+  "blocked_until": "2026-11-02T03:32:06.441507+00:00",
   "source_published_at": null,
   "source_excerpt": "sandbox_extension_issue_file resolves symlinks at issue time but does not enforce SANDBOX_EXTENSION_NOFOLLOW . An app can issue an extension for a symlink pointing to a sandboxed file, swap the symlink to an out of sandbox target, then consume the extension and read the target. The kernel does not verify that the access path matches the extension token path. This is deterministic even TOCTOU so no race timing required.\nbecause apple doesn’t see this as a security issue.\nRead restricted system files with sandbox_extension TOCTOU bug"
 }

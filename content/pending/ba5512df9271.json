@@ -3,8 +3,8 @@
   "source_title": "GitHub Copilot assisted permissions generally available - The GitHub Blog",
   "category": "apps-software",
   "status": "draft",
-  "updated_at": "2026-11-01T22:59:13.691646+00:00",
-  "blocked_until": "2026-11-01T23:29:13.692637+00:00",
+  "updated_at": "2026-11-02T03:11:29.538612+00:00",
+  "blocked_until": "2026-11-02T03:41:29.539373+00:00",
   "source_excerpt": "Assisted permissions are now generally available in GitHub Copilot CLI, GitHub Copilot app, and Visual Studio Code.\nWhen Copilot requests permission to run a command, access a file system path, or open a URL, a large language model evaluates the request. Requests classified as clearly safe automatically proceed. Other requests require your approval.\nRun /permissions , then select assisted .\nOpen the mode picker, click Tool permissions , then select Assisted .\nOpen the permissions picker, then select Assisted permissions .\nIf you’re an enterprise administrator, you can use enterprise-managed settings to block Allow All while keeping Assisted available or disable Assisted separately.\nYou can also choose the default permission mode for new sessions. Developers can still select another mode permitted by policy. If the default is unavailable or prohibited by policy, the session starts with manual approval.\nFor details about how assisted permissions evaluate requests and when approval is required, see Allowing safe commands to run without manual approval .\nDiscover tips, technical guides, and best practices in our biweekly newsletter just for devs.",
   "source_published_at": "2026-10-26T22:31:30+00:00"
 }

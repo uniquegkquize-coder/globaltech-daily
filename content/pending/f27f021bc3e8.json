@@ -3,8 +3,8 @@
   "source_title": "Enterprise installations for GitHub Apps generally available - The GitHub Blog",
   "category": "apps-software",
   "status": "draft",
-  "updated_at": "2026-11-01T22:59:17.388887+00:00",
-  "blocked_until": "2026-11-01T23:29:17.389733+00:00",
+  "updated_at": "2026-11-02T03:11:32.423505+00:00",
+  "blocked_until": "2026-11-02T03:41:32.441645+00:00",
   "source_published_at": "2026-10-23T15:03:30+00:00",
   "source_excerpt": "Installing GitHub Apps on your enterprise is now generally available. You can replace classic PATs with GitHub Apps in more of your enterprise and organization automation with the expanded API support detailed below. These new and expanded permissions are focused on governance, security, and administrative settings for your enterprise, with two gaps at the organization level also closed.\nGovernance: Manage enterprise-level repository policies and rulesets as well as read delegated bypass requests.\nSecurity: Configure two-factor authentication requirements, verify domains, manage IP allowlists, and control enterprise access restrictions.\nAdministration: Update enterprise profiles and manage both member privileges and repository access settings across the enterprise.\nChoose the permissions your workflow needs in your GitHub App settings.\nSome APIs and objects had gaps in their support for GitHub Apps. These fixes should unblock more automation scenarios with those permissions.\nTo get started, choose permissions for your GitHub App for the workflows you want to migrate.\nThese updates will be available in GHES 3.24. For details on using GraphQL with a GitHub App, see Managing an enterprise account with GraphQL . To learn more about enterprise app installations, see Installing a GitHub App on your enterprise .\nDiscover tips, technical guides, and best practices in our biweekly newsletter just for devs."
 }
