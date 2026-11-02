@@ -200,7 +200,7 @@ def image_for(p):
   try:
    # Do not publish generic Commons substitutes or publisher social-sharing logos.
    info=json.loads(metadata.read_text(encoding='utf-8'))
-   source_path=urlparse(str(info.get('source_image') or '')).path
+   source_path=urlparse(str(info.get('source_image') or info.get('image_url') or '')).path
    generic=bool(re.search(r'(?i)(?:/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',source_path))
    use_original=info.get('kind') in ('licensed_source','licensed_photo','publisher_source','source_original','manual_original') and not generic
   except (ValueError,OSError,TypeError):
@@ -258,6 +258,12 @@ def image_caption(p,lang):
  if metadata.is_file():
   try:
    info=json.loads(metadata.read_text(encoding='utf-8'))
+   from urllib.parse import urlparse
+   import re
+   path=urlparse(str(info.get('source_image') or info.get('image_url') or '')).path
+   generic=bool(re.search(r'(?i)(?:/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',path))
+   if generic or not (R/'content'/'featured'/f'{s}.jpg').is_file():
+    return 'Original GlobeWire Daily editorial illustration — source photograph unavailable.' if lang=='en' else 'GlobeWire Daily का सांकेतिक चित्र — स्रोत फोटो उपलब्ध नहीं।'
    if info.get('kind') in ('licensed_source','publisher_source','licensed_photo'):
     credit=str(info.get('attribution') or 'Original publisher')
     license_name=str(info.get('license_name') or info.get('license') or '').strip()
@@ -279,6 +285,7 @@ def image_caption_html(p,lang):
  if not metadata.is_file():return caption
  try:
   info=json.loads(metadata.read_text(encoding='utf-8'))
+  if 'illustration' in caption.lower() or 'सांकेतिक' in caption:return caption
   links=[]
   if info.get('rights_status')=='source_rights_unverified':
    links.append('Source image rights not independently verified' if lang=='en' else 'स्रोत चित्र के उपयोग अधिकार स्वतंत्र रूप से सत्यापित नहीं')
@@ -288,7 +295,9 @@ def image_caption_html(p,lang):
   license_url=str(info.get('license') or '')
   if license_url.startswith('https://'):
    links.append('<a target="_blank" rel="noopener noreferrer" href="'+e(license_url)+'">'+('License terms' if lang=='en' else 'लाइसेंस शर्तें')+'</a>')
-  if info.get('kind')=='publisher_source':
+  if info.get('modifications'):
+   links.append(e(str(info['modifications'])))
+  elif info.get('kind')=='publisher_source':
    links.append('Cropped to 16:9; original source image' if lang=='en' else 'स्रोत चित्र 16:9 अनुपात में काटा गया')
   elif info.get('kind')=='licensed_photo':
    links.append('Cropped to 16:9; representative photograph' if lang=='en' else '16:9 में काटी गई प्रतिनिधि फोटो')

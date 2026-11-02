@@ -2,7 +2,9 @@
 Falls back to build.py's original illustrations when image generation is unavailable.
 """
 from pathlib import Path
-import os, json, io, time, re, datetime
+import os, json, io, time, re, datetime, hashlib, threading, unicodedata
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from collections import Counter
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
@@ -27,159 +29,134 @@ def resolved_featured(ident):
     meta=IMAGES/(ident+'.json')
     try:
         kind=json.loads(meta.read_text(encoding='utf-8')).get('kind') if meta.is_file() else ''
-    except (OSError,ValueError,TypeError):kind=''
+    except (OSError,ValueError,TypeError,AttributeError):kind=''
     # Replace representative Commons pictures and AI art when a genuine source image exists.
     # A JPEG without source provenance can be legacy artwork, not a confirmed publisher photo.
-    return kind in ('licensed_source','licensed_photo','publisher_source','source_original','manual_original')
+    return kind in ('licensed_source','licensed_photo','publisher_source','source_original','manual_original') and not generic_image(json.loads(meta.read_text()).get('source_image',''))
+
+PHOTO_DIAGNOSTICS={}
+PHOTO_LOCK=threading.Lock()
+DENIED=(401,403,407,429,451)
+
+def diagnostic(ident,reason,**extra):
+    with PHOTO_LOCK:PHOTO_DIAGNOSTICS[ident]={'reason':reason,**extra}
+    print('PHOTO_DIAGNOSTIC',json.dumps({'id':ident,'reason':reason,**extra}),flush=True)
+
+def generic_image(url):
+    return bool(re.search(r'(?i)(logo|favicon|avatar|sprite|placeholder|tracking-pixel|default-image|site-icon|/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',urlparse(str(url)).path))
+
+def source_candidates(soup,base):
+    rows=[]
+    def add(value,license_url='',label='',origin=''):
+        if isinstance(value,list):
+            for v in value:add(v,license_url,label,origin)
+        elif isinstance(value,dict):
+            add(value.get('contentUrl') or value.get('url'),value.get('license') or license_url,value.get('caption') or value.get('name') or label,origin)
+        elif isinstance(value,str):
+            url=urljoin(base,value.strip())
+            if urlparse(url).scheme=='https' and not generic_image(url):rows.append({'url':url,'license':license_url,'label':label,'origin':origin})
+    def walk(node):
+        if isinstance(node,list):
+            for v in node:walk(v)
+        elif isinstance(node,dict):
+            kinds=node.get('@type',[]);kinds=[kinds] if isinstance(kinds,str) else kinds
+            if set(kinds)&{'Article','NewsArticle','BlogPosting','Product','Car','Motorcycle','MobilePhone'}:
+                add(node.get('image') or node.get('thumbnailUrl'),node.get('license',''),node.get('headline') or node.get('name',''),'structured')
+            for key in ('@graph','mainEntity','mainEntityOfPage','subjectOf','hasPart'):
+                if key in node:walk(node[key])
+    for tag in soup.select('script[type="application/ld+json"]')[:40]:
+        try:walk(json.loads(tag.string or tag.get_text()))
+        except (ValueError,TypeError):pass
+    for key in ('og:image:secure_url','og:image','twitter:image','twitter:image:src'):
+        tag=soup.find('meta',attrs={'property':key}) or soup.find('meta',attrs={'name':key})
+        if tag:add(tag.get('content'),origin='social')
+    for tag in soup.select('article img,main img,figure img,[itemprop="image"],picture source')[:100]:
+        srcset=tag.get('data-srcset') or tag.get('srcset') or ''
+        sizes=[]
+        for part in srcset.split(','):
+            bits=part.strip().split()
+            if bits:
+                size=float(re.sub(r'[^0-9.]','',bits[1]) or '0') if len(bits)>1 else 0
+                sizes.append((size,bits[0]))
+        for _,url in sorted(sizes,reverse=True):add(url,label=tag.get('alt',''),origin='article')
+        for attr in ('data-original','data-full-src','data-lazy-src','data-src','src'):
+            if tag.get(attr):add(tag[attr],label=tag.get('alt',''),origin='article')
+    seen=set();out=[]
+    for row in rows:
+        if row['url'] not in seen:seen.add(row['url']);out.append(row)
+    return out[:12]
+
+def save_source_photo(ident,image,source,license_url,authorized,credit,alt):
+    response=requests.get(image,timeout=(4,12),headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)','Referer':source,'Accept':'image/*'},stream=True)
+    try:
+        if not response.ok:return False # Decode the bytes; some valid CDNs send application/octet-stream.
+        raw=bytearray()
+        for chunk in response.iter_content(65536):
+            raw.extend(chunk)
+            if len(raw)>12_000_000:return False
+        with Image.open(io.BytesIO(raw)) as im:
+            if im.width<600 or im.height<320:return False
+            original_size=im.size
+            im=ImageOps.exif_transpose(im).convert('RGB')
+            # Retain the complete product/subject instead of cropping off phones or wheels.
+            im=ImageOps.pad(im,(1280,720),method=Image.Resampling.LANCZOS,color=(12,28,55))
+            tmp=IMAGES/(ident+'.tmp.jpg');im.save(tmp,'JPEG',quality=86,optimize=True);tmp.replace(IMAGES/(ident+'.jpg'))
+        meta={'kind':'publisher_source','source_image':image,'image_url':image,'source':source,
+              'license':license_url,'attribution':credit,'rights_status':'authorized' if authorized else 'source_license_claimed',
+              'authorization':authorized,'post_id':ident,'width':1280,'height':720,'original_dimensions':original_size,
+              'alt':alt,'modifications':'Resized and letterboxed to 16:9; no AI generation'}
+        (IMAGES/(ident+'.json')).write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        return True
+    except (OSError,ValueError):return False
+    finally:
+        if hasattr(response,'close'):response.close()
 
 def licensed_source_image(p):
-    """Prioritize the actual article's published picture; record its origin and rights status.
-
-    Metadata such as og:image is an image locator, NOT proof of a reusable license.
-    This pipeline records that limitation instead of mislabelling publisher photos CC.
-    """
-    source=str(p.get('source') or '')
-    ident=slug(p)
+    source=str(p.get('source') or '');ident=slug(p)
     if not source.startswith('https://') or not ident:return False
     if resolved_featured(ident):return False
     try:
-        page=requests.get(source,timeout=(4,10),headers={
-            'User-Agent':'Mozilla/5.0 (compatible; GlobeWireDaily/1.0; +https://globewiredaily.org)'
-        },allow_redirects=True)
+        page=requests.get(source,timeout=(4,10),headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)'})
+        code=getattr(page,'status_code',200)
+        if code in DENIED:
+            diagnostic(ident,'access_denied',source=source,status=code);return False
         if not page.ok or 'html' not in page.headers.get('content-type','').lower():
-            print('Source page unavailable',ident,source,'status',page.status_code,flush=True)
-            try:
+            diagnostic(ident,'source_unavailable',source=source,status=code);return False
+        from public_page_fetch import restricted
+        if restricted(page.text):diagnostic(ident,'restricted_page',source=source);return False
+        soup=BeautifulSoup(page.text[:2000000],'html.parser')
+        candidates=source_candidates(soup,page.url)
+        if not candidates:
+            if os.getenv('ENABLE_PUBLIC_BROWSER_FALLBACK','0')=='1':
                 from public_page_fetch import fetch_public_html
-                html, final_url, method = fetch_public_html(source, session=requests.Session())
-                if not html or not str(final_url).startswith('https://'):return False
-                page._content=html.encode('utf-8') if isinstance(html,str) else html
-                page.url=final_url
-                print('Recovered publisher HTML with',method,ident,flush=True)
-            except (ImportError,requests.RequestException,ValueError,TypeError,AttributeError):
-                return False
-        if not str(page.url).startswith('https://'):return False
-        soup=BeautifulSoup(page.text[:800000],'html.parser')
+                html,final,method=fetch_public_html(source,render=True)
+                if html:soup=BeautifulSoup(html,'html.parser');candidates=source_candidates(soup,final)
+        if not candidates:diagnostic(ident,'no_source_image',source=source);return False
         def meta(*keys):
             for key in keys:
                 tag=soup.find('meta',attrs={'property':key}) or soup.find('meta',attrs={'name':key})
                 if tag and tag.get('content'):return str(tag['content']).strip()
             return ''
-        image=meta('og:image:secure_url','og:image','twitter:image','twitter:image:src')
-        # Some social previews are generic banners; prefer a photograph in the article.
-        if image and re.search(r'(?i)(logo|favicon|avatar|sprite|placeholder|default-image|site-icon|social-share|share-banner|og-default)',urlparse(image).path):
-            image=''
-        if not image:
-            # Some original articles expose their lead image only as NewsArticle JSON-LD.
-            for script in soup.find_all('script',attrs={'type':'application/ld+json'}):
-                try:payload=json.loads(script.string or script.get_text() or '{}')
-                except (ValueError,TypeError):continue
-                nodes=payload if isinstance(payload,list) else [payload]
-                if isinstance(payload,dict) and isinstance(payload.get('@graph'),list):
-                    nodes+=payload['@graph']
-                for node in nodes:
-                    if not isinstance(node,dict):continue
-                    kinds=node.get('@type',[])
-                    kinds=[kinds] if isinstance(kinds,str) else kinds
-                    if not any(k in ('Article','NewsArticle','BlogPosting') for k in kinds):continue
-                    field=node.get('image') or node.get('thumbnailUrl')
-                    if isinstance(field,dict):field=field.get('url') or field.get('contentUrl')
-                    if isinstance(field,list):field=next(iter(field),'')
-                    if isinstance(field,dict):field=field.get('url') or field.get('contentUrl')
-                    if isinstance(field,str) and field.strip():
-                        image=field.strip();break
-                if image:break
-        if not image:
-            # Publisher templates sometimes put the actual lead photograph in
-            # article markup rather than Open Graph or JSON-LD metadata.
-            for selector in (
-                'article figure img', 'main article img',
-                'article picture img', '[itemprop="image"]',
-                'main figure img', 'article img'
-            ):
-                for tag in soup.select(selector)[:12]:
-                    candidate=(tag.get('data-src') or tag.get('data-original')
-                               or tag.get('data-lazy-src') or tag.get('src') or '')
-                    if not candidate:
-                        srcset=tag.get('srcset') or tag.get('data-srcset') or ''
-                        if srcset:
-                            candidate=srcset.split(',')[-1].strip().split(' ')[0]
-                    if not candidate or candidate.startswith('data:'):continue
-                    if re.search(r'(?i)(logo|favicon|avatar|sprite|placeholder|pixel|icon)',candidate):
-                        continue
-                    image=candidate
-                    break
-                if image:break
-        if not image:
-            # Look for publisher photographs in lazy-loaded and picture markup.
-            for tag in soup.select('article img, main img, figure img, picture source, img')[:120]:
-                srcset=tag.get('data-srcset') or tag.get('srcset') or ''
-                candidate=(tag.get('data-original') or tag.get('data-full-src')
-                           or tag.get('data-image') or tag.get('data-lazy-src')
-                           or tag.get('data-src') or tag.get('src') or '')
-                if not candidate and srcset:
-                    candidate=srcset.split(',')[-1].strip().split(' ')[0]
-                if candidate and not candidate.startswith('data:') and not re.search(
-                    r'(?i)(logo|favicon|avatar|sprite|placeholder|pixel|icon)',candidate):
-                    image=candidate
-                    break
-        if not image:
-            print('No source article photo found',ident,source,flush=True)
-            return False
-        # Skip tracker endpoints and malformed JS-object URLs.
-        if not isinstance(image,str) or '[object Object]' in image:
-            return False
-        image=urljoin(page.url,image)
-        parsed=urlparse(image)
-        if parsed.scheme!='https' or not parsed.hostname:return False
-        if parsed.hostname.lower() in ('facebook.com','www.facebook.com','connect.facebook.net'):return False
-        if parsed.path.lower().endswith('.webwebp'):return False
-        # Explicitly reject icons, publisher logos, placeholders and trackers.
-        if re.search(r'(?i)(?:logo|favicon|avatar|sprite|placeholder|tracking-pixel|default-image|site-icon|/assets/images/share/|/(?:app-store|appstore|social-share|share-banner|og-default)(?:[._/-]|$))',parsed.path):
-            return False
-        license_url=meta('license','dc.rights','dcterms.license','cc:license')
-        license_link=soup.select_one('a[rel~="license"],link[rel~="license"]')
-        if not license_url and license_link:license_url=license_link.get('href','')
-        authorizations=ROOT/'content'/'image-authorizations.json'
-        try:authorized=json.loads(authorizations.read_text()).get(image,{})
-        except (OSError,ValueError):authorized={}
-        if not commons_reuse_allowed('',license_url) and not authorized.get('permission_reference'):
-            print('Image authorization missing',ident,image,flush=True)
-            return False
-        res=requests.get(image,timeout=(4,14),headers={
-            'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36',
-            'Referer':page.url,
-            'Accept':'image/avif,image/webp,image/apng,image/*,*/*;q=0.8'
-        },stream=True,allow_redirects=True)
-        if not res.ok or 'image/' not in res.headers.get('content-type','').lower():
-            print('Source image download failed',ident,res.status_code,image,flush=True)
-            return False
-        if not str(res.url).startswith('https://'):return False
-        raw=bytearray()
-        for chunk in res.iter_content(65536):
-            raw.extend(chunk)
-            if len(raw)>12_000_000:return False
-        with Image.open(io.BytesIO(raw)) as im:
-            if im.width<600 or im.height<320:return False
-            ratio=im.width/max(1,im.height)
-            if ratio<0.65 or ratio>4.0:return False
-            im=ImageOps.exif_transpose(im)
-            im=ImageOps.fit(im.convert('RGB'),(1280,720),method=Image.Resampling.LANCZOS)
-            im.save(IMAGES/(ident+'.jpg'),'JPEG',quality=86,optimize=True)
-        status='authorized' if authorized else 'licensed'
-        if 'creativecommons.org/licenses/' in license_url.lower() or 'creativecommons.org/publicdomain/' in license_url.lower():
-            status='source_license_claimed'
-        (IMAGES/(ident+'.json')).write_text(json.dumps({
-            'kind':'publisher_source','source_image':image,
-            'license':license_url,'attribution':meta('dc.creator','author','article:author','og:site_name') or urlparse(page.url).hostname,
-            'source':page.url,'rights_status':status,'authorization':authorized,
-            'width':1280,'height':720,'alt':str(p.get('en_title') or p.get('source_title') or ''),
-            'caption':'Source article photograph with documented reuse terms.',
-            'modifications':'Cropped to 16:9 for the website'
-        },ensure_ascii=False),encoding='utf-8')
-        print('Original source-article photo',ident,source,flush=True)
-        return True
-    except (requests.RequestException,ValueError,OSError,TypeError):
+        page_license=meta('license','dc.rights','dcterms.license','cc:license')
+        link=soup.select_one('link[rel~="license"],a[rel~="license"]')
+        if not page_license and link:page_license=urljoin(page.url,link.get('href',''))
+        try:permissions=json.loads((ROOT/'content/image-authorizations.json').read_text())
+        except (OSError,ValueError):permissions={}
+        authorized_candidates=0
+        for candidate in candidates:
+            image=candidate['url'];permission=permissions.get(image,{})
+            license_url=candidate['license'] or page_license
+            if not commons_reuse_allowed('',license_url) and not permission.get('permission_reference'):continue
+            authorized_candidates+=1
+            if save_source_photo(ident,image,page.url,license_url,permission,
+                                 meta('dc.creator','author','og:site_name') or urlparse(page.url).hostname,
+                                 candidate['label'] or str(p.get('en_title') or '')):
+                diagnostic(ident,'source_photo_saved',source=page.url,image=image);return True
+        reason='invalid_source_images' if authorized_candidates else 'authorization_required'
+        diagnostic(ident,reason,source=source,candidate_count=len(candidates),candidates=[c['url'] for c in candidates[:3]])
         return False
+    except (requests.RequestException,ValueError,OSError,TypeError) as exc:
+        diagnostic(ident,'source_error',source=source,error=type(exc).__name__);return False
 
 # Search for the actual subject rather than an entire news headline. The previous
 # pattern accidentally escaped \w and \s, turning almost every character into a
@@ -219,42 +196,140 @@ def commons_reuse_allowed(short_name,license_url):
                                   'creativecommons.org/licenses/by/',
                                   'creativecommons.org/licenses/by-sa/'))
 
+_SUBJECTS=None
+
+def normalized(value):
+    value=unicodedata.normalize('NFKD',str(value)).encode('ascii','ignore').decode().lower().replace('+',' plus ')
+    return ' '.join(re.findall(r'[a-z0-9]+',value))
+
+def exact_subject(p):
+    global _SUBJECTS
+    if p.get('directory_name'):return str(p['directory_name'])
+    if p.get('image_subject'):return str(p['image_subject'])
+    if _SUBJECTS is None:
+        names=set()
+        for filename in ('directory-details.json','directory-records.json'):
+            try:data=json.loads((ROOT/'content'/filename).read_text())
+            except (OSError,ValueError):continue
+            for kind,rows in data.items():
+                if kind not in ('cars','bikes','phones','colleges'):continue
+                if isinstance(rows,dict):names.update(rows)
+                elif isinstance(rows,list):names.update(r.get('name','') for r in rows if isinstance(r,dict))
+        _SUBJECTS=[name for name in names if len(normalized(name).split())>=2]
+    title=' '+normalized(str(p.get('en_title',''))+' '+str(p.get('source_title','')))+' '
+    matches=[name for name in _SUBJECTS if ' '+normalized(name)+' ' in title]
+    if matches:return min(matches,key=lambda n:(title.index(' '+normalized(n)+' '),-len(n)))
+    parsed=urlparse(str(p.get('source','')))
+    url_words=set(normalized((parsed.hostname or '')+' '+parsed.path).split())
+    matches=[name for name in _SUBJECTS if set(normalized(name).split()).issubset(url_words)]
+    return max(matches,key=len) if matches else ''
+
+def subject_matches(subject,file_title,metadata):
+    filename=normalized(file_title)
+    if set(filename.split())&{'logo','icon','seal','map','poster','diagram','drawing','illustration','banner'}:return False
+    description=normalized(re.sub('<[^>]+>',' ',metadata.get('ImageDescription',{}).get('value','')))
+    # A photograph taken WITH a phone is not a photograph OF that phone.
+    if re.search(r'taken with|shot on|photographed with|captured with',description):return False
+    tokens=set(normalized(subject).split())
+    if not tokens or not tokens.issubset(set((filename+' '+description).split())):return False
+    variants={'ultra','plus','pro','max','fe','roxx','4v','dzire','grand','cross','electrified','hybrid'}
+    if (set(filename.split()) & variants)-tokens:return False
+    return True
+
+def public_commons_photo(p,subject):
+    """Read public category/file pages, verify each file's own reuse terms."""
+    from urllib.parse import quote
+    ident=slug(p);headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)'}
+    category='https://commons.wikimedia.org/wiki/Category:'+quote(subject.replace(' ','_'),safe='')
+    try:
+        client=requests.Session()
+        try:approved=json.loads((ROOT/'content/approved-photo-sources.json').read_text())
+        except (OSError,ValueError):approved={}
+        urls=list(approved.get(subject,[]))
+        if urls:soup=BeautifulSoup('', 'html.parser')
+        else:
+            response=client.get(category,timeout=(4,10),headers=headers)
+            soup=BeautifulSoup(response.text[:1500000] if response.ok else '', 'html.parser')
+        for a in soup.select('.gallerytext a[href],.galleryfilename[href]'):
+            url=urljoin(category,a.get('href',''))
+            if '/wiki/File:' in url and url.lower().split('?')[0].endswith(('.jpg','.jpeg','.png','.webp')):urls.append(url)
+        for page_url in list(dict.fromkeys(urls))[:6]:
+            response=client.get(page_url,timeout=(4,10),headers=headers)
+            if not response.ok:continue
+            fs=BeautifulSoup(response.text[:1500000],'html.parser')
+            text=fs.get_text(' ',strip=True)
+            if re.search(r'copyright violation|missing permission|no permission|digitally upscaled|AI.generated',text,re.I):continue
+            short=fs.select_one('.licensetpl_short');link=fs.select_one('.licensetpl_link')
+            short=short.get_text(' ',strip=True) if short else ''
+            license_url=link.get_text(' ',strip=True) if link else ''
+            if not commons_reuse_allowed(short,license_url):continue
+            description=fs.select_one('#fileinfotpl_desc+td')
+            description=description.get_text(' ',strip=True) if description else ''
+            file_title=fs.select_one('#firstHeading')
+            file_title=file_title.get_text(' ',strip=True) if file_title else ''
+            if not subject_matches(subject,file_title,{'ImageDescription':{'value':description}}):continue
+            photo=fs.select_one('.fullImageLink img')
+            if not photo:continue
+            srcset=photo.get('srcset','')
+            image=srcset.split(',')[-1].strip().split(' ')[0] if srcset else photo.get('src')
+            image=urljoin(page_url,image or '')
+            if urlparse(image).scheme!='https':continue
+            res=client.get(image,timeout=(4,14),headers={**headers,'Referer':page_url})
+            if not res.ok or len(res.content)>12_000_000:continue
+            with Image.open(io.BytesIO(res.content)) as im:
+                if im.width<600 or im.height<320:continue
+                im=ImageOps.exif_transpose(im).convert('RGB')
+                im=ImageOps.pad(im,(1280,720),method=Image.Resampling.LANCZOS,color=(12,28,55))
+                im.save(IMAGES/(ident+'.jpg'),'JPEG',quality=86,optimize=True)
+            author=fs.select_one('#fileinfotpl_aut+td')
+            author=author.get_text(' ',strip=True)[:240] if author else 'Wikimedia Commons contributor'
+            metadata={'kind':'licensed_photo','post_id':ident,'subject':subject,'source_image':page_url,'image_url':image,
+                      'license':license_url,'license_name':short,'attribution':author,'rights_status':'licensed',
+                      'matched_title':file_title,'width':1280,'height':720,'alt':subject+' — licensed representative photograph',
+                      'modifications':'Resized and letterboxed to 16:9; representative photograph, not an event photograph.'}
+            (IMAGES/(ident+'.json')).write_text(json.dumps(metadata,ensure_ascii=False,indent=2)+'\n')
+            diagnostic(ident,'licensed_subject_saved',subject=subject,image=image);return True
+        return False
+    except (requests.RequestException,ValueError,OSError,AttributeError):return False
+
 def commons_photo(p):
     """Get relevant reusable REAL photographs, with clear source and credit."""
     ident=slug(p)
-    if not ident or (IMAGES/(ident+'.jpg')).exists():return False
+    if not ident or resolved_featured(ident):return False
     # Broad job-listing titles produce irrelevant office seals and foreign photos.
     # Prefer a documented employer-owned original image, else use an illustration.
     if p.get('category')=='private-vacancy':
         print('Commons skipped for generic private vacancy',ident,flush=True)
         return False
     title=str(p.get('source_title') or p.get('en_title') or '')
-    queries=commons_queries(title)
+    subject=exact_subject(p)
+    queries=[subject] if subject else []
     if not queries:
         print('Commons search skipped (insufficient subject keywords)',ident,flush=True)
         return False
+    if public_commons_photo(p,subject):return True
     headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)'}
     for query in queries:
         try:
             response=requests.get('https://commons.wikimedia.org/w/api.php',params={
                 'action':'query','generator':'search','gsrsearch':query,
-                'gsrnamespace':6,'gsrlimit':8,'prop':'imageinfo',
+                'gsrnamespace':6,'gsrlimit':4,'prop':'imageinfo',
                 'iiprop':'url|size|extmetadata','iiurlwidth':1280,
                 'format':'json'},headers=headers,timeout=(5,12))
             response.raise_for_status()
             pages=response.json().get('query',{}).get('pages',{})
-            keywords={w.casefold() for w in re.findall(r'[A-Za-z]{4,}',query)}
+            keywords=set(normalized(query).split())
             for page in sorted(pages.values(),key=lambda item:item.get('index',1000)):
                 file_title=page.get('title','')
                 # The MediaWiki thumbnail API also returns rendered PDF pages,
                 # logos, maps and seals; those are not news event photographs.
                 if not file_title.lower().endswith(('.jpg','.jpeg','.png','.webp')):continue
-                filename_words={w.casefold() for w in re.findall(r'[A-Za-z]{4,}',file_title)}
+                filename_words=set(normalized(file_title).split())
                 excluded={'logo','icon','clipart','screenshot','poster','seal','emblem',
                           'map','diagram','chart','document','manual','outline',
                           'illustration','drawing','stamp','flag','plan'}
                 if filename_words & excluded:continue
-                if len(keywords & filename_words)<min(2,len(keywords)):continue
+                if not subject_matches(subject,file_title,(page.get('imageinfo') or [{}])[0].get('extmetadata',{})):continue
 
                 info=(page.get('imageinfo') or [{}])[0]
                 meta=info.get('extmetadata') or {}
@@ -268,14 +343,14 @@ def commons_photo(p):
                 if not res.ok or len(res.content)>12_000_000:continue
                 with Image.open(io.BytesIO(res.content)) as im:
                     if im.width<600 or im.height<320:continue
-                    im=ImageOps.fit(im.convert('RGB'),(1280,720),method=Image.Resampling.LANCZOS)
+                    im=ImageOps.pad(im.convert('RGB'),(1280,720),method=Image.Resampling.LANCZOS,color=(12,28,55))
                     im.save(IMAGES/(ident+'.jpg'),'JPEG',quality=86,optimize=True)
                 attribution=re.sub('<[^>]*>',' ',meta.get('Artist',{}).get('value','')).strip()[:240]
                 (IMAGES/(ident+'.json')).write_text(json.dumps({
-                    'kind':'licensed_photo','source_image':info.get('descriptionurl'),
+                    'kind':'licensed_photo','source_image':info.get('descriptionurl'),'image_url':image_url,'post_id':ident,'width':1280,'height':720,'subject':subject,
                     'license':license_url or short_name,'license_name':short_name,
                     'attribution':attribution or 'Wikimedia Commons',
-                    'rights_status':'licensed','caption':'Representative licensed photograph; not necessarily the reported event.',
+                    'rights_status':'licensed','caption':'Licensed photograph of the named subject; representative, not the reported event.',
                     'modifications':'Cropped to a 16:9 editorial format',
                     'matched_title':file_title,'search_query':query
                 },ensure_ascii=False),encoding='utf-8')
@@ -356,6 +431,15 @@ def choose_backfill(posts,now=None,limit=None,cursor=None,mode=None):
         except (TypeError,ValueError):is_fresh=False
         (fresh if is_fresh else older).append(post)
     mode=(mode or os.getenv('IMAGE_BACKFILL_MODE','mixed')).strip().lower()
+    if mode=='new':
+        # Complete the fresh publication batch; the wall-clock budget bounds work.
+        fresh_limit=max(limit,len(fresh))
+        return (fresh+older)[:fresh_limit],len(fresh),len(older)
+    if mode in ('all','directory'):
+        rows=fresh+older
+        if mode=='directory':rows=[p for p in rows if p.get('content_type')=='evergreen_directory_guide']
+        rows.sort(key=lambda p:(0 if p.get('directory_name') else 1,p.get('category',''),p.get('id','')))
+        return rows[:limit],len(fresh),len(older)
     if mode=='archive' and older:
         fresh_budget=0
         older_budget=min(limit,len(older))
@@ -385,30 +469,70 @@ def main():
     posts=[]
     for f in POSTS.glob('*.json'):
         try:
-            p=json.loads(f.read_text(encoding='utf-8'))
+            p=json.loads(f.read_text(encoding='utf-8').removesuffix(chr(92)+'n'))
             if slug(p):posts.append(p)
         except (OSError,ValueError):pass
-    try:cursor=json.loads(BACKFILL_STATE.read_text(encoding='utf-8'))
+    try:cursor=json.loads(BACKFILL_STATE.read_text())
     except (OSError,ValueError):cursor={}
     if not isinstance(cursor,dict):cursor={}
-    candidates,fresh_count,older_count=choose_backfill(posts,cursor=cursor)
-    if candidates:
-        BACKFILL_STATE.parent.mkdir(parents=True,exist_ok=True)
-        BACKFILL_STATE.write_text(json.dumps(cursor,indent=2)+'\n',encoding='utf-8')
-    print('Image backfill mode:',os.getenv('IMAGE_BACKFILL_MODE','mixed'),flush=True)
-    print('Fresh news awaiting reusable photos:',fresh_count,
-          'older archive missing reusable photos:',older_count,flush=True)
-    new_original=0
-    for p in candidates:
-        if licensed_source_image(p):
-            new_original+=1
-            continue
-        # If the publisher has no usable image, build.py produces an editorial illustration.
-        # Do not substitute unrelated Commons/stock photos for original article images.
-        if MAX_NEW>0 and KEY and len(QUOTA_BLOCKED)<len(MODELS):
-            create(p)
-    remaining=sum(not resolved_featured(slug(p)) for p in posts if slug(p))
-    print('Photo backfill attempted:',len(candidates),'original:',new_original,
-          'fallback: editorial illustrations',flush=True)
-    print('Archive image audit: total_posts=',len(posts),'still_without_confirmed_source_photo=',remaining,flush=True)
+    mode=os.getenv('IMAGE_BACKFILL_MODE') or ('new' if os.getenv('AUTO_POST','').lower()=='true' else 'mixed')
+    candidates,fresh_count,older_count=choose_backfill(posts,cursor=cursor,mode=mode)
+    if not candidates:
+        print('IMAGE_BACKFILL_SUMMARY',json.dumps({'selected':0,'total_posts':len(posts)}),flush=True)
+        return
+    seconds=max(1,int(os.getenv('IMAGE_BACKFILL_SECONDS','420')))
+    workers=max(1,min(12,int(os.getenv('IMAGE_BACKFILL_WORKERS','6'))))
+    deadline=time.monotonic()+seconds
+    attempts=cursor.setdefault('attempts',{});results=[]
+    force=os.getenv('IMAGE_BACKFILL_FORCE','0')=='1'
+    policy=hashlib.sha256(b''.join((ROOT/'content'/name).read_bytes() if (ROOT/'content'/name).exists() else b'' for name in ('approved-photo-sources.json','image-authorizations.json'))).hexdigest()[:12]
+    posts=list({slug(p):p for p in posts}.values())
+    source_cache={};subject_cache={}
+    for post in posts:
+        ident=slug(post)
+        if resolved_featured(ident):
+            if post.get('source'):source_cache.setdefault(str(post['source']).split('#')[0],ident)
+            try:meta=json.loads((IMAGES/(ident+'.json')).read_text())
+            except (OSError,ValueError):meta={}
+            if meta.get('subject') and commons_reuse_allowed(meta.get('license_name',''),meta.get('license','')):
+                subject_cache.setdefault(normalized(meta['subject']),ident)
+    def process(post):
+        ident=slug(post);source=str(post.get('source','')).split('#')[0]
+        if time.monotonic()>=deadline:return {'id':ident,'result':'time_budget'}
+        previous=attempts.get(ident,{})
+        if not force and previous.get('source')==source and previous.get('policy')==policy and previous.get('retry_after',0)>time.time():return {'id':ident,'result':'cooldown'}
+        other=source_cache.get(source)
+        if other and other!=ident:
+            import shutil
+            shutil.copy2(IMAGES/(other+'.jpg'),IMAGES/(ident+'.jpg'))
+            data=json.loads((IMAGES/(other+'.json')).read_text());data.update(post_id=ident,reused_from=other)
+            (IMAGES/(ident+'.json')).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+            return {'id':ident,'result':'source_cache_reused'}
+        if licensed_source_image(post):result='source_photo_saved'
+        elif normalized(exact_subject(post)) in subject_cache:
+            import shutil
+            other=subject_cache[normalized(exact_subject(post))]
+            shutil.copy2(IMAGES/(other+'.jpg'),IMAGES/(ident+'.jpg'))
+            data=json.loads((IMAGES/(other+'.json')).read_text());data.update(post_id=ident,reused_from=other)
+            (IMAGES/(ident+'.json')).write_text(json.dumps(data,ensure_ascii=False,indent=2)+chr(10))
+            result='licensed_subject_reused'
+        elif time.monotonic()<deadline and commons_photo(post):result='licensed_subject_saved'
+        else:result=PHOTO_DIAGNOSTICS.get(ident,{}).get('reason','no_suitable_photo')
+        if result in ('source_photo_saved','licensed_subject_saved','licensed_subject_reused'):
+            with PHOTO_LOCK:source_cache.setdefault(source,ident)
+        return {'id':ident,'source':source,'policy':policy,'result':result,'retry_after':time.time()+21600}
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures={pool.submit(process,p):p for p in candidates}
+        for future in as_completed(futures):
+            try:row=future.result()
+            except Exception as exc:row={'id':slug(futures[future]),'result':'worker_error','error':type(exc).__name__}
+            results.append(row)
+            if row['result'] not in ('cooldown','time_budget'):attempts[row['id']]=row
+    BACKFILL_STATE.write_text(json.dumps(cursor,ensure_ascii=False,indent=2)+'\n')
+    counts=dict(Counter(row['result'] for row in results))
+    missing=[{'id':slug(p),'category':p.get('category'),'title':p.get('en_title'),'source':p.get('source')} for p in posts if not resolved_featured(slug(p))]
+    report={'total_posts':len(posts),'selected':len(candidates),'results':counts,'still_missing':len(missing),
+            'articles':results,'missing':missing,'diagnostics':PHOTO_DIAGNOSTICS,'mode':mode}
+    (ROOT/'content/image-audit-status.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+    print('IMAGE_BACKFILL_SUMMARY',json.dumps({k:v for k,v in report.items() if k not in ('articles','missing','diagnostics')}),flush=True)
 if __name__=='__main__':main()

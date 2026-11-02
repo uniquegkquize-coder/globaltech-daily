@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/image-backfill.yml'
+      - 'scripts/generate_images.py'
+      - 'content/approved-photo-sources.json'
   schedule:
     # Rotate through older image gaps every three hours, not just four times/day.
     - cron: '12 */3 * * *'
@@ -17,7 +19,7 @@ concurrency:
 jobs:
   archive-images:
     runs-on: ubuntu-latest
-    timeout-minutes: 14
+    timeout-minutes: 24
     steps:
       - uses: actions/checkout@v4
         with:
@@ -28,12 +30,22 @@ jobs:
           python-version: '3.12'
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Install optional public page renderer
+        continue-on-error: true
+        run: |
+          pip install 'playwright>=1.55,<2'
+          python -m playwright install --with-deps chromium
       - name: Find publisher article images for old posts and sync progress
         shell: bash
         env:
           PYTHONUNBUFFERED: '1'
-          IMAGE_BACKFILL_MODE: archive
-          MAX_LICENSED_PHOTOS_PER_RUN: '16'
+          ENABLE_PUBLIC_BROWSER_FALLBACK: '1'
+          BROWSER_ATTEMPTS_PER_RUN: '12'
+          IMAGE_BACKFILL_MODE: all
+          MAX_LICENSED_PHOTOS_PER_RUN: '5000'
+          IMAGE_BACKFILL_WORKERS: '8'
+          IMAGE_BACKFILL_SECONDS: '600'
+          IMAGE_BACKFILL_FORCE: ${{ github.event_name == 'push' && '1' || '0' }}
           MAX_NEW_IMAGES: '0'
           SITE_URL: https://globewiredaily.org
         run: |
@@ -45,7 +57,7 @@ jobs:
           # matching publisher article image has explicit reuse terms or an authorization record. Otherwise use the
           # labelled build.py editorial illustration without unrelated stock.
           python -u scripts/generate_images.py
-          git add -A content/featured
+          git add -A content/featured content/image-audit-status.json
           if [ -f content/image-backfill-state.json ]; then
             git add -A content/image-backfill-state.json
           fi
@@ -75,3 +87,11 @@ jobs:
           done
           echo "::error::Archive photo backfill could not sync; retry on next run"
           exit 1
+      - name: Retain archive image diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: image-backfill-diagnostics
+          path: |
+            content/image-audit-status.json
+            content/image-backfill-state.json

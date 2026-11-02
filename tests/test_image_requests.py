@@ -80,7 +80,7 @@ class ImageRequestTests(unittest.TestCase):
   tree=ast.parse((ROOT/'scripts/build.py').read_text())
   fn=next(node for node in tree.body if isinstance(node,ast.FunctionDef) and node.name=='image_caption')
   with tempfile.TemporaryDirectory() as temp:
-   root=Path(temp);folder=root/'content/featured';folder.mkdir(parents=True)
+   root=Path(temp);folder=root/'content/featured';folder.mkdir(parents=True);(folder/'sample.jpg').write_bytes(b'original image')
    (folder/'sample.json').write_text(json.dumps({'kind':'publisher_source','attribution':'Example publisher','license':''}))
    context={'R':root,'slug':lambda p:'sample','json':json}
    exec(compile(ast.Module(body=[fn],type_ignores=[]),'caption','exec'),context)
@@ -134,7 +134,7 @@ class ImageRequestTests(unittest.TestCase):
   tree=ast.parse((ROOT/'scripts/build.py').read_text())
   fn=next(node for node in tree.body if isinstance(node,ast.FunctionDef) and node.name=='image_caption')
   with tempfile.TemporaryDirectory() as temp:
-   root=Path(temp);folder=root/'content/featured';folder.mkdir(parents=True)
+   root=Path(temp);folder=root/'content/featured';folder.mkdir(parents=True);(folder/'sample.jpg').write_bytes(b'original image')
    (folder/'sample.json').write_text(json.dumps({'kind':'publisher_source','attribution':'Jane Photographer','license':'CC BY 4.0'}))
    context={'R':root,'slug':lambda p:'sample','json':json}
    exec(compile(ast.Module(body=[fn],type_ignores=[]),'caption','exec'),context)
@@ -146,7 +146,7 @@ class ImageRequestTests(unittest.TestCase):
   tree=ast.parse((ROOT/'scripts/build.py').read_text())
   fns=[node for node in tree.body if isinstance(node,ast.FunctionDef) and node.name in ('image_caption','image_caption_html')]
   with tempfile.TemporaryDirectory() as temp:
-   root=Path(temp);folder=root/'content/featured';folder.mkdir(parents=True)
+   root=Path(temp);folder=root/'content/featured';folder.mkdir(parents=True);(folder/'sample.jpg').write_bytes(b'original image')
    (folder/'sample.json').write_text(json.dumps({
      'kind':'publisher_source','attribution':'Jane Photographer','license_name':'CC BY-SA 4.0',
      'license':'https://creativecommons.org/licenses/by-sa/4.0/',
@@ -173,9 +173,9 @@ class ImageRequestTests(unittest.TestCase):
       '1':{'title':'File:Atlanta Dream press office seal.gif'},
       '2':{'title':'File:Atlanta Dream planning document.pdf'}
     }}}
-  with tempfile.TemporaryDirectory() as temp,patch.object(generate_images,'IMAGES',Path(temp)),patch.object(generate_images.requests,'get',return_value=ApiResponse()) as get:
-   post={'id':'abcdef012345','category':'sports','source_title':'Atlanta Dream New Season'}
+  with tempfile.TemporaryDirectory() as temp,patch.object(generate_images,'IMAGES',Path(temp)),patch.object(generate_images,'public_commons_photo',return_value=False),patch.object(generate_images.requests,'get',return_value=ApiResponse()) as get:
+   post={'id':'abcdef012345','category':'sports','source_title':'Atlanta Dream New Season','image_subject':'Atlanta Dream'}
    self.assertFalse(generate_images.commons_photo(post))
-   self.assertEqual(get.call_count,len(generate_images.commons_queries(post['source_title'])))
+   self.assertEqual(get.call_count,1)
 
 if __name__=='__main__':unittest.main()
