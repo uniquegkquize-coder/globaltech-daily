@@ -555,13 +555,36 @@ def call_provider(prompt):
       continue
      continue
     data=json_object(raw)
-    if isinstance(data,dict) and data.get('body'):
+    if isinstance(data,dict) and (data.get('body') or any(isinstance(data.get(lang),dict) and data[lang].get('body') for lang in ('en','hi'))):
      print('Provider success:',provider,'model',model,flush=True)
      return data,provider
     print('Provider',provider,'returned unusable JSON; trying next option',flush=True)
    except (requests.RequestException,ValueError,KeyError,IndexError,TypeError) as exc:
     print('Provider',provider,'error',type(exc).__name__,flush=True)
+  if models and all((provider,model) in UNAVAILABLE_MODELS for model in list(dict.fromkeys(models))[:MODELS_PER_PROVIDER]):
+   with PROVIDER_LOCK:PROVIDER_COOLDOWNS.add(provider)
  return None,last
+
+def generate_story_languages(state,title,url,text,cat,languages):
+ # Complete existing drafts with a single-language call; new stories use one
+ # bilingual request, so a 100-call budget can support up to 100 stories.
+ if len(languages)==2:
+  prompt=article_prompt('en',title,url,text,cat)
+  prompt=prompt.replace('Write ONE original source-grounded news article in English.',
+      'Write original English AND natural Hindi (Devanagari) versions of the same source-grounded news article.')
+  prompt=prompt.replace('Return ONLY JSON with title, body, meta, keywords.',
+      'Return ONLY JSON with two objects, en and hi; each has title, body, meta, and keywords (an array of phrases). Both versions must be complete; do not return an empty translation.')
+  data,provider=call_provider(prompt)
+  return [(lang,data.get(lang) if isinstance(data,dict) else None,provider) for lang in languages]
+ results=[]
+ for lang in languages:
+  prompt=article_prompt(lang,title,url,text,cat)
+  prior=state.get(lang+'_body','')
+  if prior and not complete_body(prior,lang):
+   prompt+='\nEXISTING ORIGINAL DRAFT (revise using source-supported facts only):\n'+prior[:24000]
+  data,provider=call_provider(prompt)
+  results.append((lang,data,provider))
+ return results
 
 def article_prompt(lang,title,source,source_material,cat):
  language='English' if lang=='en' else 'Hindi (Devanagari)'
@@ -1220,30 +1243,19 @@ def main():
    print('Skipping source before AI:',title[:65],'words',words(text),flush=True)
    return None
   state.update({'source':url,'source_title':title,'category':cat,'status':'draft','source_published_at':STORY_DATES.get(url),'updated_at':dt.datetime.now(UTC).isoformat()})
-  # Generate the two languages concurrently; save draft updates under a per-story lock.
-  def generate_language(lang):
-   if time.monotonic()>=deadline or CALLS>=MAX_CALLS:return lang,None,None
-   prior=state.get(lang+'_body','')
-   prompt=article_prompt(lang,title,url,text,cat)
-   if prior and not complete_body(prior,lang):
-    prompt += ('\\nEXISTING ORIGINAL DRAFT (preserve its accurate material; return a COMPLETE revised body, not only an addendum):\\n'+prior[:24000]+'\\nImprove clarity and completeness using only SOURCE-SUPPORTED context. Never fabricate details.')
-   data,provider=call_provider(prompt)
-   return lang,data,provider
   languages=[lang for lang in ('hi','en') if not complete_body(state.get(lang+'_body',''),lang)]
   if has_complete_hindi and 'en' in languages:
-   languages=['en']+[lang for lang in languages if lang!='en']
    print('Prioritizing missing English for saved Hindi draft:',post_id,flush=True)
   if has_complete_english and 'hi' in languages:
    print('Prioritizing missing Hindi for saved English draft:',post_id,flush=True)
-  with ThreadPoolExecutor(max_workers=2) as language_pool:
-   results=list(language_pool.map(generate_language,languages))
+  results=generate_story_languages(state,title,url,text,cat,languages)
   for lang,data,provider in results:
    if isinstance(data,dict):
     body=str(data.get('body') or '')
     if complete_body(body,lang) and len(str(data.get('title') or ''))>=20:
      state[lang+'_body']=body;state[lang+'_title']=str(data['title'])
      state[lang+'_meta']=str(data.get('meta') or '')
-     state[lang+'_keywords']=str(data.get('keywords') or '')
+     state[lang+'_keywords']=data.get('keywords') or []
      print('Draft ready:',lang,'words',words(body),'via',provider,flush=True)
     else:print('Draft unusable:',lang,'words',words(body),'via',provider,flush=True)
    if not complete_body(state.get(lang+'_body',''),lang):

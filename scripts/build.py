@@ -318,7 +318,14 @@ def author_handle(p):return AUTHOR_HANDLES.get(category(p),'editorial-desk')
 def author_name(p):return 'GlobeWire Daily '+author_handle(p).replace('-',' ').title()
 def article_keywords(p,lang):
  raw=p.get(lang+'_keywords') or p.get('en_keywords') or []
- if isinstance(raw,str):raw=re.split(r'[,;|]',raw)
+ if isinstance(raw,str):
+  # Older drafts stringified keyword arrays as Python literals.
+  if raw.strip().startswith('['):
+   try:
+    import ast
+    raw=ast.literal_eval(raw)
+   except (ValueError,SyntaxError):raw=re.split(r'[,;|]',raw)
+  else:raw=re.split(r'[,;|]',raw)
  if not isinstance(raw,list):raw=[]
  terms=[str(x).strip() for x in raw if str(x).strip()]
  terms.extend([title(p,lang),CATEGORIES[category(p)][0 if lang=='en' else 1],'GlobeWire Daily'])
