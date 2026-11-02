@@ -135,7 +135,8 @@ def enrich(kind,name,record,session,url=None):
   tokens=words(name)
   headings=' '.join(t.get_text(' ',strip=True) for t in soup.select('title,h1'))
   heading_words=set(words(headings))
-  if tokens and sum(t in heading_words for t in tokens)<max(1,len(tokens)-1):
+  required=[t for t in tokens if t not in ('the','of','and','at','in')]
+  if required and not all(t in heading_words for t in required):
    print('SOURCE_FAILURE',json.dumps({'url':url,'reason':'entity title mismatch','name':name}),flush=True)
    return {}
   found=extract_pairs(soup)

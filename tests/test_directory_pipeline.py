@@ -50,6 +50,10 @@ class DirectoryTests(unittest.TestCase):
     self.assertEqual(method,'browser')
     self.assertIn('5000 mAh',BeautifulSoup(html,'html.parser').get_text())
   finally:server.shutdown();server.server_close();thread.join()
+ def test_different_model_generation_is_rejected(self):
+  html='<title>Apple iPhone 18 Pro</title><table><tr><td>Battery</td><td>5000 mAh</td></tr></table>'
+  with patch.object(research,'fetch_public_html',return_value=(html,'https://example.com/iphone-18-pro','http')):
+   self.assertEqual(research.enrich('phones','iPhone 13 Pro',{},Mock(),'https://example.com/iphone-13-pro'),{})
  def test_new_limit_updates_and_dates(self):
   with tempfile.TemporaryDirectory() as tmp,patch.object(publisher,'ROOT',Path(tmp)),patch.object(publisher,'POSTS',Path(tmp)/'content/posts'):
    content=Path(tmp)/'content';content.mkdir()
