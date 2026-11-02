@@ -1,26 +1,25 @@
 {
-  "checked_at": "2026-11-02T17:47:50.217773+00:00",
+  "checked_at": "2026-11-02T19:39:28.235434+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "589fdba784fc",
-    "5aa0581a402b"
+    "9bcfdc55331d"
   ],
   "results": [
     {
       "id": "589fdba784fc",
-      "result": "published",
-      "title": "Kennedy Center Sets 2026 Honorees: David Mamet, Paul Anka, Andy Garcia and More"
+      "result": "no_material_change",
+      "title": "Andy Garcia, David Foster, Paul Anka Lead Kennedy Center Honors"
     },
     {
-      "id": "5aa0581a402b",
+      "id": "9bcfdc55331d",
       "result": "published",
-      "title": "The Further Mis-Adventures of Cliff Booth’s New Retro Poster Comes With a Big Announcement"
+      "title": "Russian bombing kills 24 people at Ukraine aid centre, Kyiv says"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 10
+      "articles": 9
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
@@ -28,11 +27,11 @@
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 7
+      "articles": 8
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
-      "articles": 2
+      "articles": 1
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
@@ -40,7 +39,7 @@
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
-      "articles": 24
+      "articles": 21
     },
     "https://www.arabnews.com/rss.xml": {
       "status": "unavailable",
@@ -50,63 +49,71 @@
       "status": "ok",
       "articles": 2
     },
-    "https://www.firstshowing.net/feed/": {
-      "status": "ok",
-      "articles": 5
-    },
-    "https://www.comingsoon.net/feed": {
-      "status": "ok",
-      "articles": 20
-    },
-    "https://www.motor1.com/rss/news/all/": {
-      "status": "ok",
-      "articles": 4
-    },
-    "https://www.carscoops.com/feed/": {
-      "status": "ok",
-      "articles": 6
-    },
-    "https://insideevs.com/rss/news/all/": {
+    "https://blog.google/rss/": {
       "status": "ok",
       "articles": 2
     },
-    "https://www.gsmarena.com/rss-news-reviews.php3": {
+    "https://www.nasa.gov/feed/": {
+      "status": "ok",
+      "articles": 4
+    },
+    "https://www.technologyreview.com/feed/": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://www.bleepingcomputer.com/feed/": {
       "status": "ok",
       "articles": 6
     },
-    "https://www.androidauthority.com/feed/": {
+    "https://www.cnet.com/rss/news/": {
       "status": "ok",
-      "articles": 16
+      "articles": 4
     },
-    "https://www.sammobile.com/feed/": {
+    "https://www.techradar.com/feeds.xml": {
       "status": "ok",
-      "articles": 3
+      "articles": 22
     },
-    "https://9to5google.com/feed/": {
+    "https://feeds.npr.org/1019/rss.xml": {
       "status": "ok",
-      "articles": 9
+      "articles": 0
     },
-    "https://variety.com/feed/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://deadline.com/feed/": {
-      "status": "ok",
-      "articles": 12
-    },
-    "https://www.hollywoodreporter.com/feed/": {
+    "https://variety.com/v/film/feed/": {
       "status": "ok",
       "articles": 10
     },
-    "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml": {
+    "https://www.theguardian.com/film/rss": {
       "status": "ok",
-      "articles": 3
+      "articles": 0
     },
-    "https://feeds.npr.org/1004/rss.xml": {
+    "https://www.theguardian.com/culture/rss": {
+      "status": "ok",
+      "articles": 4
+    },
+    "https://feeds.npr.org/1045/rss.xml": {
       "status": "ok",
       "articles": 1
+    },
+    "https://ew.com/feed/": {
+      "status": "unavailable",
+      "articles": 0
+    },
+    "https://www.rollingstone.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://news.abplive.com/entertainment/movies/feed": {
+      "status": "ok",
+      "articles": 2
+    },
+    "https://news.abplive.com/entertainment/television/feed": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms": {
+      "status": "ok",
+      "articles": 11
     }
   },
-  "discovered": 402,
-  "trending_events": 5
+  "discovered": 384,
+  "trending_events": 3
 }
