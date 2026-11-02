@@ -45,7 +45,7 @@ jobs:
           ENABLE_PUBLIC_BROWSER_FALLBACK: '1'
           BROWSER_ATTEMPTS_PER_RUN: '12'
           DIRECTORY_RESEARCH_LIMIT: '120'
-          DIRECTORY_RESEARCH_SECONDS: '480'
+          DIRECTORY_RESEARCH_SECONDS: ${{ github.event_name == 'push' && '120' || '480' }}
           DIRECTORY_DOMAINS_PER_ENTITY: '4'
         shell: bash
         run: |

@@ -1,4 +1,5 @@
 import ast
+import os
 import json
 from pathlib import Path
 import sys
@@ -25,6 +26,30 @@ class DirectoryTests(unittest.TestCase):
    facts=research.enrich('phones','Test Phone',{},Mock(),'https://example.com/test-phone')
   self.assertEqual(facts['battery'],'5000 mAh')
   self.assertNotIn('dimensions',facts)
+ def test_metadata_only_shell_is_rendered_for_specs(self):
+  initial='<title>Test Phone</title><script type="application/ld+json">{"@type":"WebPage","name":"Test Phone"}</script>'
+  rendered='<title>Test Phone</title><table><tr><td>Battery capacity (mAh)</td><td>5000</td></tr><tr><td>RAM</td><td>8 GB</td></tr></table>'
+  with patch.object(research,'fetch_public_html',side_effect=[(initial,'https://example.com/model','http'),(rendered,'https://example.com/model','browser')]) as fetch:
+   facts=research.enrich('phones','Test Phone',{},Mock(),'https://example.com/model')
+   self.assertTrue(fetch.call_args.kwargs['render'])
+   self.assertEqual(facts['battery'],'5000 mAh')
+ @unittest.skipUnless(os.getenv('ENABLE_PUBLIC_BROWSER_FALLBACK')=='1','Chromium integration runs in the directory workflow')
+ def test_real_browser_renders_javascript_specs(self):
+  import threading
+  from http.server import BaseHTTPRequestHandler,HTTPServer
+  class Handler(BaseHTTPRequestHandler):
+   def log_message(self,*args):pass
+   def do_GET(self):
+    self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.end_headers()
+    self.wfile.write(b'<html><body><script>document.body.innerHTML = "<table><tr><td>Battery</td><td>5000 mAh</td></tr></table>";</script></body></html>')
+  server=HTTPServer(('127.0.0.1',0),Handler)
+  thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
+  try:
+   with tempfile.TemporaryDirectory() as tmp,patch.object(fetcher,'CACHE',Path(tmp)):
+    html,url,method=fetcher.fetch_public_html('http://127.0.0.1:'+str(server.server_port))
+    self.assertEqual(method,'browser')
+    self.assertIn('5000 mAh',BeautifulSoup(html,'html.parser').get_text())
+  finally:server.shutdown();server.server_close();thread.join()
  def test_new_limit_updates_and_dates(self):
   with tempfile.TemporaryDirectory() as tmp,patch.object(publisher,'ROOT',Path(tmp)),patch.object(publisher,'POSTS',Path(tmp)/'content/posts'):
    content=Path(tmp)/'content';content.mkdir()

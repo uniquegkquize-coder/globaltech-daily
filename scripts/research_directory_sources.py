@@ -139,9 +139,13 @@ def enrich(kind,name,record,session,url=None):
    print('SOURCE_FAILURE',json.dumps({'url':url,'reason':'entity title mismatch','name':name}),flush=True)
    return {}
   found=extract_pairs(soup)
-  if not found and method in ('http','cached-http'):
+  labels={alias for aliases in FIELDS[kind].values() for alias in aliases}
+  matched=sum(re.sub(r'\s*\([^)]*\)\s*',' ',key).strip() in labels for key in found)
+  if matched<2 and method in ('http','cached-http'):
    rendered,final_url,method=fetch_public_html(url,session=session,render=True)
-   if rendered:found=extract_pairs(BeautifulSoup(rendered,'html.parser'))
+   if rendered:
+    soup=BeautifulSoup(rendered,'html.parser')
+    found=extract_pairs(soup)
   # Expand semantic product labels from HTML meta properties where present.
   for meta in soup.select('meta[itemprop][content], meta[property][content]')[:120]:
    key=clean(meta.get('itemprop') or meta.get('property')).lower()
