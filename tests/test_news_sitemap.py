@@ -42,3 +42,29 @@ class NewsSitemapTests(unittest.TestCase):
                 lambda p, lang: f'/{lang}/', lambda p, lang: 'News', now)
             root = ET.parse(out / 'news-sitemap.xml').getroot()
             self.assertEqual(len(root.findall('s:url', NS)), 2)
+
+    def test_reference_guides_are_not_classified_as_news(self):
+        from news_sitemap import is_news_article
+        now=dt.datetime(2026,11,2,tzinfo=dt.timezone.utc)
+        posts=[{'id':'news','date':now.isoformat()},
+               {'id':'guide','date':now.isoformat(),'content_type':'evergreen_directory_guide'},
+               {'id':'legacy-guide','date':now.isoformat(),'directory_kind':'phones'}]
+        with tempfile.TemporaryDirectory() as tmp:
+            out=pathlib.Path(tmp);normal=out/'sitemap.xml';normal.write_text('preserved normal sitemap')
+            write_news_sitemap(out,'https://example.org',posts,
+                lambda p,lang:f'/{lang}/{p["id"]}/',lambda p,lang:'Title',now)
+            urls=[n.text for n in ET.parse(out/'news-sitemap.xml').getroot().findall('s:url/s:loc',NS)]
+            self.assertEqual(urls,['https://example.org/en/news/','https://example.org/hi/news/'])
+            self.assertTrue(is_news_article(posts[0]));self.assertFalse(is_news_article(posts[1]))
+            self.assertEqual(normal.read_text(),'preserved normal sitemap')
+
+    def test_48_hour_boundary_and_future_dates(self):
+        now=dt.datetime(2026,11,2,tzinfo=dt.timezone.utc)
+        posts=[{'id':str(i),'date':stamp.isoformat()} for i,stamp in enumerate([
+            now-dt.timedelta(hours=48),now-dt.timedelta(hours=48,seconds=1),now+dt.timedelta(seconds=1)])]
+        with tempfile.TemporaryDirectory() as tmp:
+            out=pathlib.Path(tmp)
+            write_news_sitemap(out,'https://example.org',posts,
+                lambda p,lang:f'/{lang}/{p["id"]}/',lambda p,lang:'Title',now)
+            urls=[n.text for n in ET.parse(out/'news-sitemap.xml').getroot().findall('s:url/s:loc',NS)]
+            self.assertEqual(urls,['https://example.org/en/0/','https://example.org/hi/0/'])

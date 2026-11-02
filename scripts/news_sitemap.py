@@ -3,10 +3,17 @@ import datetime as dt
 from xml.sax.saxutils import escape
 
 
+def is_news_article(post):
+    """Reference directory guides stay in the normal sitemap, not Google News."""
+    return post.get('content_type')!='evergreen_directory_guide' and not post.get('directory_kind')
+
+
 def write_news_sitemap(out, site, posts, article_path, title, now=None):
     now = now or dt.datetime.now(dt.timezone.utc)
     entries = []
     for post in posts:
+        if not is_news_article(post):
+            continue
         try:
             published = dt.datetime.fromisoformat(post['date'].replace('Z', '+00:00'))
             if published.tzinfo is None:
