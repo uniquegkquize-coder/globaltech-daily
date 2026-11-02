@@ -5,7 +5,7 @@ from news_config import CATEGORIES, memberships
 from news_hub import HUB_CSS, HUB_JS, render_hubs, recent_priority, news_sort, matches_category, official_notice_rows
 from xml.sax.saxutils import escape as xml_escape
 from urllib.parse import urlparse, quote
-import os, html, json, shutil, re, datetime as dt, math, textwrap, hashlib
+import os, html, json, shutil, re, datetime as dt, math, textwrap, hashlib, functools
 from PIL import Image, ImageDraw, ImageFont
 from expanded_hubs import CSS as GLOBAL_CSS, JS as GLOBAL_JS, render_expanded_hubs, article_note
 from notice_details import CSS as EXAM_CSS, inline as linked_inline, article_panel, render_notices, notice_path, details_cache
@@ -173,6 +173,19 @@ def shell(lang,t,desc,url,body,extra=''):
  more=[('All Latest News','सभी ताज़ा खबरें','all-news/'),('Jobs & Exam Hub','नौकरी और परीक्षा हब','jobs-exams/'),('Launches & Specs','लॉन्च और स्पेक्स','launches/'),('Freebies & Discounts','फ्रीबीज़ और डिस्काउंट','freebies-deals/'),('Study Abroad Guide','विदेश में पढ़ाई','study-abroad-guide/'),('Jobs Archive','पुराने नोटिस','jobs-archive/'),('AI Tools','AI टूल्स','tools/'),('College Finder','कॉलेज खोजें','colleges/'),('Course Explorer','कोर्स खोजें','courses/'),('Car Explorer','कार खोजें','cars/'),('Phone Explorer','फोन खोजें','phones/'),('Bike Explorer','बाइक खोजें','bikes/')]+[(en,hi,cat+'/') for cat,(en,hi) in CATEGORIES.items()]+[('About','हमारे बारे में','about/'),('Contact','संपर्क','contact/')]
  more_html='<details class="nav-more"><summary>'+('More' if lang=='en' else 'और देखें')+'</summary><div class="nav-more-list">'+''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in more)+'</div></details>'
  return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css?v={hashlib.sha256((CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS).encode()).hexdigest()[:12]}">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="{e(url.replace('/en/','/hi/',1) if lang=='en' else url.replace('/hi/','/en/',1)) if ('/en/' in url or '/hi/' in url) else '/'+('hi' if lang=='en' else 'en')+'/'}" hreflang="{'hi' if lang=='en' else 'en'}">{'हिन्दी' if lang=='en' else 'English'}</a></nav><div class="category-menu">{more_html}</div></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>{label("Independent bilingual news and explainers, with clear sourcing, corrections and transparent editorial standards.",lang)}</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{label(s.title(),lang)}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js?v={hashlib.sha256((JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS).encode()).hexdigest()[:12]}"></script></body></html>'''
+@functools.lru_cache(maxsize=None)
+def image_digest(ident):
+ try:return hashlib.sha256((OUT/'images'/f'{ident}.jpg').read_bytes()).hexdigest()[:12]
+ except OSError:return '0'
+def image_version(p):return image_digest(slug(p))
+@functools.lru_cache(maxsize=None)
+def featured_info(ident):
+ try:return json.loads((R/'content'/'featured'/f'{ident}.json').read_text(encoding='utf-8'))
+ except (OSError,ValueError):return {}
+def image_alt(p,lang):
+ info=featured_info(slug(p))
+ return str(info.get(lang+'_alt') or info.get('alt') or title(p,lang))
+
 def has_featured(p):
  # Existing licensed/credited images always take priority.
  return (R/'content'/'featured'/f'{slug(p)}.jpg').is_file() or (OUT/'images'/f'{slug(p)}.jpg').is_file()
@@ -284,7 +297,7 @@ def image_caption_html(p,lang):
 
 def card(p,lang):
  s=slug(p);t=title(p,lang)
- picture=f'<img loading="lazy" src="/images/{s}.jpg" width="1280" height="720" alt="{e(t)}">' if has_featured(p) else ''
+ picture=f'<img loading="lazy" src="/images/{s}.jpg?v={image_version(p)}" width="1280" height="720" alt="{e(t)}">' if has_featured(p) else ''
  return f'<article class="card"><a href="{article_path(p,lang)}">{picture}<div class="inner"><span class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=="en" else 1])}</span><h2>{e(t)}</h2><div class="date">{e(p.get("date","")[:10])}</div></div></a></article>'
 
 AUTHOR_HANDLES={'technology':'tech-desk','business':'business-desk','world-news':'world-desk','sports':'sports-desk','health-science':'science-desk','government-schemes':'public-services-desk','sarkari-naukri':'careers-desk','private-vacancy':'careers-desk','movies-entertainment':'entertainment-desk','automobiles':'auto-desk','gaming':'gaming-desk','environment':'climate-desk','travel':'travel-desk','education':'education-desk','lifestyle':'lifestyle-desk'}
@@ -330,7 +343,7 @@ def trending_section(lang,exclude=None):
  if not selected:return ''
  heading='Trending on GlobeWire Daily' if lang=='en' else 'GlobeWire Daily पर चर्चित खबरें'
  note='Selected from recent coverage and related topics; not live search rankings.' if lang=='en' else 'हालिया खबरों और संबंधित विषयों पर आधारित चयन; लाइव सर्च रैंकिंग नहीं।'
- return '<section class="trending-news trending-feature"><h2>'+heading+'</h2><p class="muted">'+note+'</p><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg" alt="">' if has_featured(q) else '<span class="related-placeholder">News</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in selected)+'</div></section>'
+ return '<section class="trending-news trending-feature"><h2>'+heading+'</h2><p class="muted">'+note+'</p><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg?v={image_version(q)}" alt="">' if has_featured(q) else '<span class="related-placeholder">News</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in selected)+'</div></section>'
 
 def display_date(value):
  try:
@@ -352,11 +365,11 @@ for p in POSTS:
   preferred=p.get('related_post_ids',[])
   related=sorted([q for q in POSTS if slug(q)!=s and has_featured(q) and (category(q)==category(p) or q.get('id') in preferred)],key=lambda q:preferred.index(q['id']) if q.get('id') in preferred else len(preferred))[:4]
   if len(related)<4:related += [q for q in POSTS if slug(q)!=s and q not in related][:4-len(related)]
-  related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
+  related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg?v={image_version(q)}" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
   trending=[q for q in POSTS if slug(q)!=s and has_featured(q)][:5]
-  trending_html='<section class="trending-news"><h2>'+('Latest news' if lang=='en' else 'ताज़ा खबरें')+'</h2><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg" alt="">' if has_featured(q) else '')+'<span>'+e(title(q,lang))+'</span></a>' for q in trending)+'</div></section>'
-  schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('updated_at') or p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg'] if has_featured(p) else []),'author':{'@type':'Organization','name':author_name(p),'url':f'{SITE}/{lang}/author/{author_handle(p)}/'},'publisher':{'@type':'Organization','name':'GlobeWire Daily','url':SITE},'isBasedOn':p['source']}
+  trending_html='<section class="trending-news"><h2>'+('Latest news' if lang=='en' else 'ताज़ा खबरें')+'</h2><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg?v={image_version(q)}" alt="">' if has_featured(q) else '')+'<span>'+e(title(q,lang))+'</span></a>' for q in trending)+'</div></section>'
+  schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('updated_at') or p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg?v={image_version(p)}'] if has_featured(p) else []),'author':{'@type':'Organization','name':author_name(p),'url':f'{SITE}/{lang}/author/{author_handle(p)}/'},'publisher':{'@type':'Organization','name':'GlobeWire Daily','url':SITE},'isBasedOn':p['source']}
   if not has_featured(p):schema.pop('image',None)
   schema['breadcrumb']={'@type':'BreadcrumbList','itemListElement':[
    {'@type':'ListItem','position':1,'name':'Home' if lang=='en' else 'होम','item':f'{SITE}/{lang}/'},
@@ -367,12 +380,12 @@ for p in POSTS:
   schema['url']=url
   schema_json=json.dumps(schema,ensure_ascii=False).replace('<',chr(92)+'u003c')
   extra_keywords='<meta name="keywords" content="'+e(', '.join(article_keywords(p,lang)))+'">'
-  og_image=f'<meta property="og:image" content="{SITE}/images/{s}.jpg"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta property="og:image:alt" content="{e(t)}"><meta name="twitter:image" content="{SITE}/images/{s}.jpg">' if has_featured(p) else ''
+  og_image=f'<meta property="og:image" content="{SITE}/images/{s}.jpg?v={image_version(p)}"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta property="og:image:alt" content="{e(image_alt(p,lang))}"><meta name="twitter:image" content="{SITE}/images/{s}.jpg?v={image_version(p)}">' if has_featured(p) else ''
   extra=f'<meta property="og:type" content="article"><meta property="og:url" content="{e(url)}"><meta property="og:site_name" content="GlobeWire Daily"><meta property="og:locale" content="{"en_US" if lang=="en" else "hi_IN"}"><meta property="og:title" content="{e(t)}"><meta property="og:description" content="{e(desc[:160])}"><meta property="article:published_time" content="{e(p.get("date",""))}"><meta property="article:section" content="{e(CATEGORIES[category(p)][0])}">{og_image}<meta name="twitter:card" content="{"summary_large_image" if has_featured(p) else "summary"}"><meta name="twitter:title" content="{e(t)}"><meta name="twitter:description" content="{e(desc[:160])}"><script type="application/ld+json">{schema_json}</script>'
   extra=extra_keywords+extra
   sourcehost=urlparse(p['source']).hostname or 'original source'
   summary=e(p.get(lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
-  featured_html=(f'<img class="hero" src="/images/{s}.jpg" width="1280" height="720" fetchpriority="high" alt="{e(t)}"><p class="notice">{image_caption_html(p,lang)}</p>' if has_featured(p) else '')
+  featured_html=(f'<img class="hero" src="/images/{s}.jpg?v={image_version(p)}" width="1280" height="720" fetchpriority="high" alt="{e(image_alt(p,lang))}"><p class="notice">{image_caption_html(p,lang)}</p>' if has_featured(p) else '')
   share_text=('Share this article' if lang=='en' else 'यह खबर शेयर करें')
   copy_text=('Copy link' if lang=='en' else 'लिंक कॉपी करें')
   share_html=(f'<div class="article-share"><strong>{share_text}</strong><div class="share-actions">'
@@ -384,7 +397,7 @@ for p in POSTS:
   preferred=p.get('related_post_ids',[])
   related=sorted([q for q in POSTS if slug(q)!=s and has_featured(q) and (category(q)==category(p) or q.get('id') in preferred)],key=lambda q:preferred.index(q['id']) if q.get('id') in preferred else len(preferred))[:4]
   if len(related)<4:related.extend([q for q in POSTS if slug(q)!=s and slug(q) not in {slug(x) for x in related} and category(q)!=category(p)][:4-len(related)])
-  related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder" aria-hidden="true">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
+  related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg?v={image_version(q)}" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder" aria-hidden="true">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
   trending_html=trending_section(lang,p)
   content=f'''<div class="wrap"><article class="article"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/{lang}/">{'Home' if lang=='en' else 'होम'}</a> › <a href="/{lang}/{category(p)}/">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</a> › <span>{e(t)}</span></nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1><p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> · Source: {e(sourcehost)}</p>{featured_html}{share_html}{article_note(p,lang)}{article_panel(p,lang)}<div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div><div class="story">{body_html(raw)}</div>{keyword_html}<div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {'AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''

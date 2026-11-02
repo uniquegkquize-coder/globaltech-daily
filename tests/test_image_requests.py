@@ -10,6 +10,16 @@ sys.path.insert(0,str(ROOT/'scripts'))
 import generate_images
 
 class ImageRequestTests(unittest.TestCase):
+ def test_photo_content_versions_change_after_replacement(self):
+  import functools,hashlib
+  tree=ast.parse((Path(__file__).resolve().parents[1]/'scripts/build.py').read_text())
+  nodes=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in ('image_digest','image_version')]
+  with tempfile.TemporaryDirectory() as tmp:
+   out=Path(tmp);(out/'images').mkdir();path=out/'images/abc.jpg';path.write_bytes(b'old illustration')
+   scope={'OUT':out,'functools':functools,'hashlib':hashlib,'slug':lambda p:'abc'}
+   exec(compile(ast.Module(body=nodes,type_ignores=[]),'image-version','exec'),scope)
+   old=scope['image_version']({});path.write_bytes(b'authorized photograph');scope['image_digest'].cache_clear()
+   self.assertNotEqual(old,scope['image_version']({}))
  def test_source_article_photo_is_saved_first_with_documented_license(self):
   from io import BytesIO
   from PIL import Image
