@@ -1,0 +1,33 @@
+{
+  "en_title": "Northflank Urges Credential Rotation Following Security Breach and AI API Key Abuse",
+  "hi_title": "सुरक्षा उल्लंघन और एआई एपीआई कुंजी के दुरुपयोग के बाद नॉर्थफ्लैंक ने क्रेडेंशियल बदलने की अपील की",
+  "en_body": "## Overview of the Security Incident\nCloud application hosting platform Northflank has advised all customers to immediately rotate their credentials and secrets after a security breach resulted in the unauthorized use of customer AI API keys. Northflank enables developers to deploy and manage applications, containers, databases, and AI services without handling underlying infrastructure.\n\nAccording to published incident updates, Northflank received a threat alert from cloud security firm Wiz on October 30. Following the notification, the company warned users to assume that all environment variables had been decrypted and that stored secrets were compromised.\n\n## Practical Implications and Risks\nApplications routinely store sensitive data in environment variables, including:\n* Database passwords\n* Cloud service credentials\n* Authentication tokens\n* API keys\n\nWhen exposed, these credentials can lead to unauthorized access, data theft, and unexpected billing. Northflank confirmed that multiple users reported unauthorized use of AI API keys stored on the platform.\n\n## Response and Mitigation Steps\nNorthflank's incident response included applying network policy patches, requesting assistance from Wiz, and enabling credential rotation for databases such as PostgreSQL, MongoDB, MySQL, and Redis. The company also enabled audit logs for all users, including free accounts, to aid investigations.\n\n**Recommended Actions for Customers:**\n* Immediately disable and rotate all user-provided secrets, environment variables, and global secrets stored on Northflank.\n* Review AI provider usage and billing logs for unexpected activity.\n* Report suspicious activity to Northflank and respective AI providers.\n* Disable public access to add-ons where enabled.\n\n## Broader Context and LLMJacking\nSecurity researchers at Wiz reported a series of incidents targeting AI development platforms in a report titled \"Black October for AI Developer Platforms.\" The research highlighted multiple platforms experiencing security events, with attackers frequently targeting environment variables containing AI credentials.\n\nThis tactic, known as LLMJacking, involves using stolen API keys to access expensive AI models, generating massive bills or allowing unauthorized resale of AI access. Wiz noted instances where compromised credentials led to millions of unauthorized API calls and substantial financial charges.\n\n## How to Verify the Announcement\nUsers can verify official updates and instructions by visiting Northflank's official announcements page or reviewing direct communications sent to registered account administrators.",
+  "hi_body": "## सुरक्षा घटना का अवलोकन\nक्लाउड एप्लिकेशन होस्टिंग प्लेटफॉर्म नॉर्थफ्लैंक ने अपने सभी ग्राहकों को सुरक्षा उल्लंघन के बाद अपने सभी क्रेडेंशियल और सिगरेट तुरंत बदलने की सलाह दी है, जिसके कारण ग्राहकों की एआई एपीआई कुंजियों का अनधिकृत उपयोग हुआ। नॉर्थफ्लैंक डेवलपर्स को बुनियादी ढांचे का प्रबंधन किए बिना एप्लिकेशन, कंटेनर, डेटाबेस और एआई सेवाओं को तैनात करने और प्रबंधित करने की अनुमति देता है।\n\nप्रकाशित घटना अपडेट के अनुसार, नॉर्थफ्लैंक को 30 अक्टूबर को क्लाउड सुरक्षा फर्म विज़ से एक धमकी चेतावनी मिली थी। इस चेतावनी के बाद, कंपनी ने उपयोगकर्ताओं को यह मानने के लिए सचेत किया कि सभी पर्यावरण चर (environment variables) डिक्रिप्ट कर लिए गए हैं और उनमें संग्रहीत गुप्त डेटा से छेड़छाड़ की गई है।\n\n## व्यावहारिक निहितार्थ और जोखिम\nएप्लिकेशन आमतौर पर संवेदनशील डेटा को पर्यावरण चर में संग्रहीत करते हैं, जिनमें शामिल हैं:\n* डेटाबेस पासवर्ड\n* क्लाउड सेवा क्रेडेंशियल\n* प्रमाणीकरण टोकन\n* एपीआई कुंजियां\n\nएक्सपोज होने पर, ये क्रेडेंशियल अनधिकृत पहुंच, डेटा चोरी और अप्रत्याशित बिलिंग का कारण बन सकते हैं। नॉर्थफ्लैंक ने पुष्टि की कि कई उपयोगकर्ताओं ने प्लेटफॉर्म पर संग्रहीत एआई एपीआई कुंजियों के अनधिकृत उपयोग की सूचना दी है।\n\n## प्रतिक्रिया और बचाव के उपाय\nनॉर्थफ्लैंक की प्रतिक्रिया में नेटवर्क पॉलिसी पैच लागू करना, विज़ से सहायता का अनुरोध करना और पोस्टग्रेएसक्यूएल, मोंगोग्रिड, माईएसक्यूएल और रेडिस जैसे डेटाबेस के लिए क्रेडेंशियल रोटेशन सक्षम करना शामिल था। कंपनी ने जांच में सहायता के लिए मुफ्त खातों सहित सभी उपयोगकर्ताओं के लिए ऑडिट लॉग भी सक्षम किए हैं।\n\n**ग्राहकों के लिए अनुशंसित कदम:**\n* नॉर्थफ्लैंक पर संग्रहीत सभी उपयोगकर्ता-प्रदत्त रहस्यों, पर्यावरण चर और वैश्विक रहस्यों को तुरंत अक्षम करें और बदलें।\n* अप्रत्याशित गतिविधि के लिए एआई प्रदाता उपयोग और बिलिंग लॉग की समीक्षा करें।\n* नॉर्थफ्लैंक और संबंधित एआई प्रदाताओं को संदिग्ध गतिविधि की सूचना दें।\n* जहां सक्षम हो, ऐड-ऑन तक सार्वजनिक पहुंच अक्षम करें।\n\n## व्यापक संदर्भ और एलएलएमजैकिंग\nविज़ के सुरक्षा शोधकर्ताओं ने \"ब्लैक अक्टूबर फॉर एआई डेवलपर प्लेटफॉर्म्स\" शीर्षक वाली रिपोर्ट में एआई विकास प्लेटफार्मों को लक्षित करने वाली कई घटनाओं की सूचना दी है। अनुसंधान ने कई प्लेटफार्मों पर सुरक्षा घटनाओं को उजागर किया, जिसमें हमलावरों ने अक्सर एआई क्रेडेंशियल वाले पर्यावरण चर को लक्षित किया।\n\nएलएलएमजैकिंग के रूप में जानी जाने वाली इस युक्ति में महंगे एआई मॉडल तक पहुंचने के लिए चुराए गए एपीआई कुंजियों का उपयोग करना शामिल है, जिससे भारी बिल उत्पन्न होते हैं या एआई पहुंच के अनधिकृत पुनर्विक्रय की अनुमति मिलती है। विज़ ने ऐसे उदाहरणों का उल्लेख किया जहां समझौता किए गए क्रेडेंशियल्स के कारण लाखों अनधिकृत एपीआई कॉल हुए।\n\n## मूल घोषणा की पुष्टि कैसे करें\nउपयोगकर्ता नॉर्थफ्लैंक के आधिकारिक घोषणा पृष्ठ पर जाकर या पंजीकृत खाता प्रशासनों को भेजे गए सीधे संचार की समीक्षा करके आधिकारिक अपडेट और निर्देशों की पुष्टि कर सकते हैं।",
+  "en_meta": "Northflank advises customers to rotate credentials and secrets after a security breach leads to unauthorized AI API key usage, linked to broader attacks on AI platforms.",
+  "hi_meta": "सुरक्षा उल्लंघन के कारण एआई एपीआई कुंजियों के दुरुपयोग के बाद नॉर्थफ्लैंक ने ग्राहकों को क्रेडेंशियल बदलने की सलाह दी है।",
+  "en_keywords": [
+    "Northflank",
+    "security breach",
+    "AI API keys",
+    "credential rotation",
+    "LLMJacking",
+    "Wiz",
+    "environment variables"
+  ],
+  "hi_keywords": [
+    "नॉर्थफ्लैंक",
+    "सुरक्षा उल्लंघन",
+    "एआई एपीआई कुंजी",
+    "क्रेडेंशियल रोटेशन",
+    "एलएलएमजैकिंग",
+    "विज़",
+    "पर्यावरण चर"
+  ],
+  "source_published_at": "2026-10-31T14:01:12-04:00",
+  "id": "a4df36c045ad",
+  "source": "https://www.bleepingcomputer.com/news/security/northflank-security-breach-leads-to-abuse-of-customers-ai-api-keys/",
+  "date": "2026-11-02T08:51:43.532830+00:00",
+  "source_title": "Northflank security breach leads to abuse of customers' AI API keys",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
