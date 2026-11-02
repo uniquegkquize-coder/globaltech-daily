@@ -76,6 +76,8 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add content/posts content/featured content/trending-watch-status.json
           git commit -m 'Publish or update source-backed trending developments'
+          # Tests/imports modify legacy tracked bytecode; committed article files are safe.
+          git restore --worktree -- .
           # Keep latest repository content before generating homepage/sitemaps.
           for attempt in 1 2 3; do
             git fetch origin main
@@ -83,6 +85,7 @@ jobs:
             python -u scripts/build.py
             git add dist
             if ! git diff --cached --quiet; then git commit -m 'Build trending news, original photos and SEO metadata'; fi
+            git restore --worktree -- .
             if git push origin HEAD:main; then exit 0; fi
           done
           exit 1
