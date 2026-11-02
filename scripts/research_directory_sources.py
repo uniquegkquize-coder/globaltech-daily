@@ -4,16 +4,18 @@ Only import explicitly labeled facts; never infer missing prices or fees.
 import json
 import os
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import datetime as dt
 import re
 import time
 from pathlib import Path
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urlparse, urljoin, quote
 import unicodedata
 import feedparser
 import requests
 from bs4 import BeautifulSoup
 from public_page_fetch import fetch_public_html
+from directory_facts import source_tables,specification_rows,framework_pairs,label,FOCUS,programme_cards,pdf_page,model_scope,embedded_model_rows
 
 DOMAINS={
  'colleges':('collegedekho.com','shiksha.com','careers360.com','topuniversities.com','timeshighereducation.com','studyportals.com','universityadmissions.se','ucas.com','niche.com','usnews.com'),
@@ -31,6 +33,32 @@ FIELDS={
  'bikes':{'price':('price','msrp'),'engine':('engine','displacement','engine capacity'),'power':('power','max power','maximum power'),'torque':('torque','max torque'),'mileage':('mileage','fuel economy'),'brakes':('brakes','front brake','rear brake'),'variants':('variants','variant'),'specifications':('specifications','kerb weight','seat height'),'manufacturer':('manufacturer','brand')}
 }
 
+FIELDS['phones'].update({'os':('operating system','os','software'),'front_camera':('front camera','selfie camera'),'weight':('weight','body weight'),'dimensions':('dimensions','body dimensions'),'protection':('protection','water resistance','ip rating'),'color':('colours','colors','colour','color')})
+FIELDS['cars'].update({'displacement':('displacement','engine displacement'),'power':('max power','power','maximum power'),'torque':('max torque','torque'),'fuel_tank':('fuel tank capacity','fuel capacity'),'seating_capacity':('seating capacity','seats'),'boot_space':('boot space','boot capacity')})
+FIELDS['bikes'].update({'transmission':('transmission','gearbox'),'weight':('kerb weight','weight'),'seat_height':('seat height','saddle height'),'wheelbase':('wheelbase',),'fuel_tank':('fuel tank capacity','fuel capacity'),'fuel_system':('fuel system',),'suspension':('suspension','front suspension','rear suspension')})
+
+def merge_facts(current,extra):
+ for key,value in extra.items():
+  if key in ('courses','source_tables','specification_rows') and isinstance(value,list):
+   combined=list(current.get(key,[]));seen={json.dumps(r,sort_keys=True,ensure_ascii=False) for r in combined}
+   for row in value:
+    signature=json.dumps(row,sort_keys=True,ensure_ascii=False)
+    if signature not in seen:combined.append(row);seen.add(signature)
+   current[key]=combined[:300]
+  elif key=='field_sources':current[key]={**current.get(key,{}),**value}
+  else:current[key]=value
+ return current
+
+def reference_article(record,session):
+ match=re.search(r'(Q[0-9]+)(?:$|[?#/])',str(record.get('source_url') or ''))
+ if not match:return None
+ try:
+  r=session.get('https://www.wikidata.org/wiki/Special:EntityData/'+match.group(1)+'.json',timeout=(3,7));r.raise_for_status();entity=r.json()['entities'][match.group(1)]
+  item=entity.get('sitelinks',{}).get('enwiki',{})
+  if item.get('title'):return 'https://en.wikipedia.org/wiki/'+quote(item['title'].replace(' ','_'))
+ except (requests.RequestException,ValueError,KeyError,TypeError):pass
+ return None
+
 def evidence_source(entry):
     for key in ('evidence_url','source_url','official_url'):
         url=str(entry.get(key) or '')
@@ -40,14 +68,17 @@ def evidence_source(entry):
 
 def clean(value):
  if isinstance(value,(dict,list)):return ''
- return re.sub(r'\s+',' ',str(value)).strip()[:180]
+ return re.sub(r'\s+',' ',str(value)).strip()[:1200]
 
-def collect(obj,out):
+def collect(obj,out,entity_name=None):
  if isinstance(obj,list):
-  for item in obj:collect(item,out)
+  for item in obj:collect(item,out,entity_name)
  elif isinstance(obj,dict):
   types=obj.get('@type',[])
   if isinstance(types,str):types=[types]
+  if entity_name and any(t in ('Organization','LocalBusiness','CollegeOrUniversity','EducationalOrganization','Product') for t in types) and obj.get('name'):
+   wanted=label(entity_name);actual=label(obj['name'])
+   if wanted not in actual and actual not in wanted:return
   if any(t in ('ImageObject','VideoObject','WebSite','BreadcrumbList','Review','AggregateRating') for t in types):return
   # Schema.org PropertyValue entries store the label in name and the fact in value.
   if obj.get('name') and obj.get('value') is not None:
@@ -56,16 +87,25 @@ def collect(obj,out):
    if key and val:out.setdefault(key,val)
   for key,value in obj.items():
    if key in ('@graph','mainEntity','additionalProperty','specification','offers','itemListElement','hasPart'):
-    collect(value,out)
+    collect(value,out,entity_name)
    elif isinstance(value,(str,int,float)):
     out.setdefault(key.lower(),clean(value))
    elif isinstance(value,(list,dict)):
-    collect(value,out)
+    collect(value,out,entity_name)
 
-def extract_pairs(soup):
- found={}
+def extract_pairs(soup,entity_name=None):
+ found=framework_pairs(soup)
+ aliases={label(a) for values in FIELDS.values() for names in values.values() for a in names}
+ for tag in soup.find_all(['div','span','p','h2','h3','h4','h5','h6','strong'])[:6000]:
+  if tag.find_parent(['nav','header','footer','aside']):continue
+  key=clean(tag.get_text(' ',strip=True)).strip(': ')
+  if len(key)>65 or label(key) not in aliases:continue
+  sibling=tag.find_next_sibling()
+  if sibling:
+   value=clean(sibling.get_text(' ',strip=True))
+   if value and label(value) not in aliases:found.setdefault(key.lower(),value)
  for tag in soup.select('script[type="application/ld+json"]')[:30]:
-  try:collect(json.loads(tag.string or tag.get_text()),found)
+  try:collect(json.loads(tag.string or tag.get_text()),found,entity_name)
   except (ValueError,TypeError):pass
  for row in soup.select('tr')[:250]:
   cells=row.find_all(['th','td'],recursive=False)
@@ -108,9 +148,9 @@ def extract_course_rows(soup):
   trs=table.find_all('tr')
   if not trs:continue
   headers=[clean(c.get_text(' ',strip=True)).lower() for c in trs[0].find_all(['td','th'])]
-  if not headers or not any(h in ('course','courses','programme','programmes') for h in headers):continue
+  if not headers or not any(re.search(r'\b(course|courses|programme|programmes|program)\b',h) for h in headers):continue
   if not any(any(t in h for t in ('duration','fees','eligibility')) for h in headers):continue
-  for row in trs[1:31]:
+  for row in trs[1:101]:
    cells=row.find_all(['td','th'])
    if len(cells)!=len(headers):continue
    data={h:clean(c.get_text(' ',strip=True)) for h,c in zip(headers,cells)}
@@ -119,45 +159,58 @@ def extract_course_rows(soup):
 
 def enrich(kind,name,record,session,url=None):
  url=url or evidence_source(record)
- if not url.startswith('https://'):return {}
+ if urlparse(url).scheme not in ('http','https'):return {}
  # Wikidata identifiers are not a substitute for official product specification pages.
  if urlparse(url).hostname in ('www.wikidata.org','wikidata.org'):return {}
  try:
-  html,final_url,method=fetch_public_html(url,session=session)
-  if not html:
-   print('SOURCE_FAILURE',json.dumps({'url':url,'reason':method}),flush=True)
-   return {}
-  if urlparse(final_url).scheme!='https':return {}
-  soup=BeautifulSoup(html,'html.parser')
+  if urlparse(url).path.lower().endswith('.pdf'):
+   soup,final_url=pdf_page(url,name,session);method='pdf'
+   if soup is None:return {}
+  else:
+   html,final_url,method=fetch_public_html(url,session=session,timeout=(3,7))
+   if not html:
+    print('SOURCE_FAILURE',json.dumps({'url':url,'reason':method}),flush=True);return {}
+   if urlparse(final_url).scheme not in ('http','https'):return {}
+   soup=BeautifulSoup(html,'html.parser')
   def words(value):
-   value=unicodedata.normalize('NFKD',value).encode('ascii','ignore').decode().lower()
+   value=unicodedata.normalize('NFKD',value.replace('+',' plus ')).encode('ascii','ignore').decode().lower()
    return re.findall(r'[a-z0-9]+',value)
-  tokens=words(name)
+  tokens=words(name.replace('IIT ','Indian Institute of Technology '))
   headings=' '.join(t.get_text(' ',strip=True) for t in soup.select('title,h1'))
-  heading_words=set(words(headings))
+  heading_words=set(words(headings.replace('IIT ','Indian Institute of Technology ')))
   required=[t for t in tokens if t not in ('the','of','and','at','in')]
-  if required and not all(t in heading_words for t in required):
+  if required and not (all(t in heading_words for t in required) or ''.join(required) in ''.join(words(headings))):
    print('SOURCE_FAILURE',json.dumps({'url':url,'reason':'entity title mismatch','name':name}),flush=True)
    return {}
-  found=extract_pairs(soup)
+  h=soup.find('h1')
+  if h:
+   actual=' '.join(words(h.get_text(' ',strip=True)));expected=' '.join(words(name))
+   if any(re.search(r'\b'+term+r'\b',actual) and not re.search(r'\b'+term+r'\b',expected) for term in ('ultra','roxx','xtec','pro max')):return {}
+  soup=model_scope(soup,final_url)
+  found=extract_pairs(soup,name)
   labels={alias for aliases in FIELDS[kind].values() for alias in aliases}
   matched=sum(re.sub(r'\s*\([^)]*\)\s*',' ',key).strip() in labels for key in found)
   if matched<2 and method in ('http','cached-http'):
    rendered,final_url,method=fetch_public_html(url,session=session,render=True)
    if rendered:
     soup=BeautifulSoup(rendered,'html.parser')
-    found=extract_pairs(soup)
+    headings=' '.join(t.get_text(' ',strip=True) for t in soup.select('title,h1'))
+    if required and not (all(t in set(words(headings)) for t in required) or ''.join(required) in ''.join(words(headings))):return {}
+    soup=model_scope(soup,final_url)
+    found=extract_pairs(soup,name)
   # Expand semantic product labels from HTML meta properties where present.
   for meta in soup.select('meta[itemprop][content], meta[property][content]')[:120]:
    key=clean(meta.get('itemprop') or meta.get('property')).lower()
    val=clean(meta.get('content'))
    if key and val:found.setdefault(key,val)
+  embedded=embedded_model_rows(soup)
+  for row in embedded:found.setdefault(row['label'].lower(),row['value'])
   output={}
   for field,aliases in FIELDS[kind].items():
    ranked=sorted(found.items(),key=lambda item: aliases.index(item[0]) if item[0] in aliases else len(aliases))
    for key,value in ranked:
-    if re.sub(r'\s*\([^)]*\)\s*',' ',key).strip() in aliases and value and len(value)>2:
-     unit=re.search(r'\((mAh|Ah|GB|MB|inches|mm|cm|kg|PS|Nm)\)',key,re.I)
+    if label(key) in {label(a) for a in aliases} and value:
+     unit=re.search(r'\((mAh|Ah|GB|MB|inches|mm|cm|kg|PS|Nm|cc|kW|bhp)\)',key,re.I)
      if unit and re.fullmatch(r'[\d., -]+',value):value+=' '+{'mah':'mAh','ah':'Ah','gb':'GB','mb':'MB','ps':'PS','nm':'Nm'}.get(unit.group(1).lower(),unit.group(1))
      if field in ('engine','power','torque','specifications','battery','ram','storage','charging') and re.fullmatch(r'[\d., -]+',value):continue
      if field in ('dimensions','specifications'):value=key+': '+value
@@ -166,8 +219,19 @@ def enrich(kind,name,record,session,url=None):
      if field=='price' and found.get('pricecurrency'):value=found['pricecurrency']+' '+value
      output[field]=value
      break
+  rows=specification_rows(soup)+embedded;tables=source_tables(soup)
+  if rows:
+   for row in rows:row['source_url']=final_url
+   output['specification_rows']=rows
+  if tables:
+   for table in tables:table['source_url']=final_url
+   output['source_tables']=tables
+  if kind in ('cars','bikes'):
+   dims=[r['label']+': '+r['value'] for r in rows if any(t in r['label'].lower() for t in ('length','width','height','wheelbase','clearance'))]
+   if dims:output['dimensions']='; '.join(dict.fromkeys(dims))
   if kind=='colleges':
-   courses=extract_course_rows(soup)
+   courses=extract_course_rows(soup)+programme_cards(soup)
+   for course in courses:course['source_url']=final_url
    if courses:
     output['courses']=courses
     for field,labels in {'programmes':('course','courses','programme','programmes'),
@@ -186,7 +250,7 @@ def enrich(kind,name,record,session,url=None):
    output['source_url']=final_url
    output['evidence_url']=final_url
   return output
- except requests.RequestException:return {}
+ except (requests.RequestException,ValueError,KeyError,OSError):return {}
 
 def public_links(url,name,session):
  html,final,method=fetch_public_html(url,session=session)
@@ -216,7 +280,8 @@ def public_links(url,name,session):
     for target in candidates:
      if urlparse(target).hostname==host and tokens and all(t in target.lower() for t in tokens):links.append(target)
   except requests.RequestException:continue
- for target in list(dict.fromkeys(links))[:3]:yield target
+ links=list(dict.fromkeys(links));links.sort(key=lambda u:(-sum(t in u.lower() for t in ('spec','brochure','technical','course','program','admission','fee','placement','scholarship')),len(u)))
+ for target in links[:4]:yield target
 
 def discover(kind,name,session):
  # Search domain-constrained public RSS results, not generated or guessed article URLs.
@@ -247,58 +312,57 @@ def save(path,data):
  temp.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  temp.replace(path)
 
+
 def main():
  def read(path):
   try:return json.loads(path.read_text(encoding='utf-8'))
   except (OSError,ValueError):return {}
- records=read(RECORDS);details=read(TARGET)
- state_path=ROOT/'content'/'directory-research-state.json'
- state=read(state_path);report={}
- session=requests.Session()
- session.headers.update({'User-Agent':'GlobeWireDaily-DirectoryResearch/2.0 (contact@globewiredaily.org)'})
- per_kind=max(1,int(os.getenv('DIRECTORY_RESEARCH_LIMIT','120')))
- budget=max(1,int(os.getenv('DIRECTORY_RESEARCH_SECONDS','480')))
- deadline=time.monotonic()+budget
+ records=read(RECORDS);details=read(TARGET);state_path=ROOT/'content/directory-research-state.json';state=read(state_path);report={}
+ limit=max(1,int(os.getenv('DIRECTORY_RESEARCH_LIMIT','120')));budget=max(1,int(os.getenv('DIRECTORY_RESEARCH_SECONDS','480')));workers=max(1,min(6,int(os.getenv('DIRECTORY_RESEARCH_WORKERS','4'))))
  for kind in FIELDS:
-  kind_deadline=min(deadline,time.monotonic()+budget/len(FIELDS))
-  details.setdefault(kind,{})
-  curated=[{'name':name,**entry} for name,entry in details[kind].items() if isinstance(entry,dict)]
-  entries=curated+[r for r in records.get(kind,[]) if isinstance(r,dict) and r.get('name') not in details[kind]]
-  # Least recently attempted first, including failed entities. Persist across runs.
-  entries.sort(key=lambda r:state.get(kind+':'+r.get('name',''),{}).get('attempted',0))
-  counts=Counter(); failures=[]
+  end=time.monotonic()+budget/len(FIELDS);details.setdefault(kind,{})
+  entries=[{'name':name,**entry} for name,entry in details[kind].items() if isinstance(entry,dict)]+[r for r in records.get(kind,[]) if isinstance(r,dict) and r.get('name') not in details[kind]]
+  entries.sort(key=lambda r:(r.get('name') not in FOCUS.get(kind,[]),not bool(r.get('official_url')),not bool(r.get('name') in details[kind]),state.get(kind+':'+r.get('name',''),{}).get('attempted',0)))
+  counts=Counter();failures=[];eligible=[]
   for record in entries:
-   if counts['attempted']>=per_kind or time.monotonic()>=kind_deadline:break
-   name=record.get('name','')
-   if not name:continue
-   key=kind+':'+name;previous=state.get(key,{})
-   if previous.get('retry_after',0)>time.time():counts['cooldown']+=1;continue
-   existing=details[kind].get(name,{})
-   base={**record,**existing};counts['attempted']+=1
-   additions=enrich(kind,name,base,session)
-   if not additions and base.get('official_url') and time.monotonic()<kind_deadline:
-    for linked_url in public_links(base['official_url'],name,session):
-     if time.monotonic()>=kind_deadline:break
-     additions.update(enrich(kind,name,base,session,linked_url))
-   if not all((base|additions).get(field) for field in FIELDS[kind]):
-    for found_url in discover(kind,name,session):
-     if time.monotonic()>=kind_deadline:break
-     extra=enrich(kind,name,{**base,**additions},session,found_url)
-     sources={**additions.get('field_sources',{}),**extra.get('field_sources',{})}
-     additions.update(extra)
-     if sources:additions['field_sources']=sources
-   changes={k:v for k,v in additions.items() if (k in FIELDS[kind] or k=='courses') and v!=existing.get(k)}
-   if changes:
-    sources={**existing.get('field_sources',{}),**additions.get('field_sources',{})}
-    details[kind][name]={**base,**additions,'field_sources':sources}
-    save(TARGET,details) # Checkpoint each successful entity, not just process exit.
-    counts['updated' if existing else 'new']+=1
-   else:
-    counts['no_new_facts']+=1
-    failures.append({'name':name,'reason':'no new explicitly labelled facts from accessible sources'})
-   state[key]={'attempted':time.time(),'retry_after':time.time()+(86400 if changes else 21600)}
-   save(state_path,state)
-  report[kind]={**counts,'failures':failures,'remaining':len(entries)-counts['attempted'],'budget_exhausted':time.monotonic()>=kind_deadline}
- save(ROOT/'content'/'directory-research-status.json',report)
- print('DIRECTORY_RESEARCH',json.dumps(report),flush=True)
+   if not record.get('name'):continue
+   if state.get(kind+':'+record['name'],{}).get('retry_after',0)>time.time():counts['cooldown']+=1
+   else:eligible.append(record)
+  def process(record):
+   if time.monotonic()>=end:return None
+   name=record['name'];existing=details[kind].get(name,{});base={**record,**existing};session=requests.Session();session.headers.update({'User-Agent':'GlobeWireDaily-DirectoryResearch/3.0 (contact@globewiredaily.org)'})
+   try:
+    additions=enrich(kind,name,base,session)
+    if not additions and base.get('official_url') and time.monotonic()<end:
+     for linked in public_links(base['official_url'],name,session):
+      if time.monotonic()>=end:break
+      merge_facts(additions,enrich(kind,name,base,session,linked))
+    if not additions and time.monotonic()<end:
+     reference=reference_article(record,session)
+     if reference:merge_facts(additions,enrich(kind,name,base,session,reference))
+    if sum(bool((base|additions).get(f)) for f in FIELDS[kind])<5 and time.monotonic()<end:
+     for found in discover(kind,name,session):
+      if time.monotonic()>=end:break
+      merge_facts(additions,enrich(kind,name,{**base,**additions},session,found))
+    protected=set(existing.get('reviewed_fields',[]))-{'field_sources','source_url','evidence_url','official_url'}
+    for field in protected:additions.pop(field,None)
+    if protected:
+     for field in ('source_url','evidence_url','official_url'):additions.pop(field,None)
+     additions['field_sources']={k:v for k,v in additions.get('field_sources',{}).items() if k not in protected}
+    changes={k:v for k,v in additions.items() if (k in FIELDS[kind] or k in ('courses','source_tables','specification_rows')) and v!=existing.get(k)}
+    return name,base,existing,additions,changes
+   finally:session.close()
+  with ThreadPoolExecutor(max_workers=workers) as pool:
+   futures={pool.submit(process,r):r for r in eligible[:limit]}
+   for future in as_completed(futures):
+    try:result=future.result()
+    except Exception as exc:counts['errors']+=1;failures.append({'name':futures[future]['name'],'reason':type(exc).__name__});continue
+    if result is None:continue
+    name,base,existing,additions,changes=result;counts['attempted']+=1
+    if changes:
+     details[kind][name]={**base,**additions,'field_sources':{**existing.get('field_sources',{}),**additions.get('field_sources',{})}};save(TARGET,details);counts['updated' if existing else 'new']+=1
+    else:counts['no_new_facts']+=1;failures.append({'name':name,'reason':'no additional source-labelled facts available'})
+    state[kind+':'+name]={'attempted':time.time(),'retry_after':time.time()+(86400 if changes else 21600)};save(state_path,state)
+  report[kind]={**counts,'failures':failures[:50],'remaining':len(eligible)-counts['attempted'],'budget_exhausted':time.monotonic()>=end}
+ save(ROOT/'content/directory-research-status.json',report);print('DIRECTORY_RESEARCH',json.dumps(report),flush=True)
 if __name__=='__main__':main()
