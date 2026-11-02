@@ -1,22 +1,1758 @@
 {
-  "total_posts": 1483,
-  "selected": 3,
+  "total_posts": 1488,
+  "selected": 249,
   "results": {
-    "cooldown": 3
+    "authorization_required": 167,
+    "access_denied": 48,
+    "no_source_image": 9,
+    "source_unavailable": 23,
+    "restricted_page": 1,
+    "source_error": 1
   },
-  "still_missing": 221,
+  "still_missing": 226,
   "articles": [
     {
-      "id": "063f4803fe742d225120749a",
-      "result": "cooldown"
+      "id": "feea9cd2e6e32e1f453adabd",
+      "source": "https://www.bikedekho.com/hero/splendor-plus",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619069.673827
     },
     {
-      "id": "35138ef1243bd14940422a54",
-      "result": "cooldown"
+      "id": "0e40232a288ace699862891d",
+      "source": "https://www.cardekho.com/hyundai/creta/specs",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619069.7030838
+    },
+    {
+      "id": "9343770524a2e7223a9b618e",
+      "source": "https://www.cardekho.com/mahindra/thar/specs",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619069.709317
+    },
+    {
+      "id": "06db24bb717ca54f66f62f32",
+      "source": "https://www.bikedekho.com/bajaj/pulsar-150",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619069.7108653
+    },
+    {
+      "id": "ec6863e32188cfdfaf0e0f03",
+      "source": "https://www.bikedekho.com/tvs/apache-rtr-160-4v",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619069.77569
+    },
+    {
+      "id": "1afe1c431cab62b81a431ed7",
+      "source": "https://www.gadgets360.com/samsung-galaxy-s24-price-in-india-123380",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619069.8665621
+    },
+    {
+      "id": "71f48906c4f9acc6c7ed345c",
+      "source": "https://www.infinitiusa.com/vehicles/discontinued-vehicles/qx55.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619070.1895316
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "source": "https://www.gadgets360.com/google-pixel-9-price-in-india-127628",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619070.1915696
     },
     {
       "id": "afd6fb7b59b23e9a1dffcdaa",
-      "result": "cooldown"
+      "source": "https://www.cardekho.com/maruti/swift/specs",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619070.6887393
+    },
+    {
+      "id": "063f4803fe742d225120749a",
+      "source": "https://www.gadgets360.com/vivo-x-fold-5-price-in-india-133304",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619071.1018407
+    },
+    {
+      "id": "66fea5fdaa3b",
+      "source": "https://www.incredibleindia.gov.in/en/tripura",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619071.427014
+    },
+    {
+      "id": "8c8db2af05e935abb15eaa18",
+      "source": "https://www.collegedekho.com/colleges/iitb",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619071.4551682
+    },
+    {
+      "id": "927b49babdc939df240ee79f",
+      "source": "https://www.collegedekho.com/colleges/iit-delhi",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619071.4978786
+    },
+    {
+      "id": "4d937d0d23b5",
+      "source": "https://help.openai.com/en/articles/20001516-managing-usage-with-gpt-6-astra-in-work-and-codex",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619071.9671395
+    },
+    {
+      "id": "4805037fd814",
+      "source": "https://www.prnewswire.com/news-releases/tairex-launches-multi-agent-ai-system-to-transform-clinical-collaboration-and-decision-support-302916729.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619072.0832696
+    },
+    {
+      "id": "9db43091aef2",
+      "source": "https://www.business-standard.com/world-news/student-enrolment-in-us-computer-science-programs-falls-as-ai-takes-jobs-126102900433_1.html",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619072.3643045
+    },
+    {
+      "id": "688194199d3a",
+      "source": "https://www.incredibleindia.gov.in/en/meghalaya",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619072.4117656
+    },
+    {
+      "id": "9bcfb13f35c2",
+      "source": "https://www.prnewswire.com/news-releases/modelbest-and-openbmb-open-source-minicpm-ocr-series-delivering-high-performance-document-parsing-and-ai-powered-quality-control-302925594.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619072.412541
+    },
+    {
+      "id": "731720281d96",
+      "source": "https://www.prnewswire.com/news-releases/tata-communications-to-build-indias-ai-super-highway-302922235.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619072.5421076
+    },
+    {
+      "id": "8dec8c22190f",
+      "source": "https://github.com/mainplane-ai/mainplane",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619072.6142743
+    },
+    {
+      "id": "a28e5c356dd7",
+      "source": "https://www.prnewswire.com/news-releases/arctic-wolf-named-a-leader-in-2026-qks-spark-matrix-for-ai-soc-automation-302923421.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619072.999777
+    },
+    {
+      "id": "c6fb5b87e001",
+      "source": "https://www.prnewswire.com/in/news-releases/prohance-launches-ai-adoption-index-to-measure-ai-roi-302923386.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619073.0791352
+    },
+    {
+      "id": "a5f43758a0b4",
+      "source": "https://www.prnewswire.com/news-releases/white-paper-outlining-strategies-to-address-rural-ai-skills-gaps-and-support-workforce-retention-published-by-the-university-of-phoenix-college-of-doctoral-studies-302924623.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619073.1489158
+    },
+    {
+      "id": "c9852d26a946",
+      "source": "https://github.com/dietrichgebert/ponytail",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619073.4965694
+    },
+    {
+      "id": "cd652bf418a1",
+      "source": "https://www.prnewswire.com/news-releases/cognizant-zet-meer-dan-25-000-professionals-in-voor-de-implementatie-van-openai-oplossingen-nu-ondernemingen-geavanceerde-ai-in-productie-nemen-302925664.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619073.5526373
+    },
+    {
+      "id": "e0560c89dba7",
+      "source": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619073.6249523
+    },
+    {
+      "id": "8e4c8ed516d4",
+      "source": "https://github.blog/changelog/2026-10-28-copilot-code-review-merge-with-confidence-with-max-and-approvals/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619074.515289
+    },
+    {
+      "id": "ad024d7bf12f",
+      "source": "https://www.techradar.com/ai-platforms-assistants",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619074.7881966
+    },
+    {
+      "id": "91cdd0b20502",
+      "source": "https://www.incredibleindia.gov.in/en/nagaland",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619074.9782548
+    },
+    {
+      "id": "5fb0f6590999",
+      "source": "https://nagaland.gov.in/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619074.9836721
+    },
+    {
+      "id": "a679eaf857aa",
+      "source": "https://www.incredibleindia.gov.in/en/sikkim",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619075.1340783
+    },
+    {
+      "id": "bc5f9a4c4b04",
+      "source": "https://www.androidpolice.com/chrome-flags-faster-browsing/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619075.2251642
+    },
+    {
+      "id": "cac7e748a084",
+      "source": "https://www.incredibleindia.gov.in/en/mizoram",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619075.6184459
+    },
+    {
+      "id": "641ce636f53e",
+      "source": "https://www.caranddriver.com/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619076.08753
+    },
+    {
+      "id": "536d88298af5",
+      "source": "https://www.hyundai.com/in/en/find-a-car/bayon/price",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619076.5885882
+    },
+    {
+      "id": "4c81415bc8d0",
+      "source": "https://www.hyundai.com/in/en/hyundai-story/media-center/press-release/performance-on-with-hyundai-bayon",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619076.6065593
+    },
+    {
+      "id": "023ca2302135",
+      "source": "https://www.hyundai.com/in/en/blog/hyundai-bayon-safety-features",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619076.6243992
+    },
+    {
+      "id": "13e71ca09340",
+      "source": "https://www.hyundai.com/in/en/find-a-car/bayon/convenience",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619076.8557703
+    },
+    {
+      "id": "021dcf06da61",
+      "source": "https://www.prnewswire.com/news-releases/tuhura-biosciences-provides-first-look-at-data-from-its-open-label-study-of-ifx-2-0-as-an-adjunctive-therapy-to-keytruda-in-first-line-treatment-of-patients-with-deep-seated-metastatic-merkel-cell-carcinoma-302918838.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619076.8791018
+    },
+    {
+      "id": "03fdad6de98e",
+      "source": "https://www.prnewswire.com/news-releases/all-in-print-china-2026-concludes-successfully-as-ruizhi-machinery-showcases-three-new-machines-302923371.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619077.458891
+    },
+    {
+      "id": "35138ef1243bd14940422a54",
+      "source": "https://www.collegedekho.com/colleges/parul-university",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619077.4609957
+    },
+    {
+      "id": "036d1e10e017",
+      "source": "https://www.prnewswire.com/news-releases/new-clinical-data-on-lecanemab-to-be-presented-at-ctad-conference-2026-302924707.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619077.6162436
+    },
+    {
+      "id": "029b646a13ec",
+      "source": "https://www.prnewswire.com/news-releases/esg-reporting-software-market-worth-4-48-billion-by-2031--report-by-marketsandmarkets-302924789.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619077.8008788
+    },
+    {
+      "id": "4b874f09e9b9",
+      "source": "https://www.hyundai.com/in/en/find-a-car/bayon/features",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619077.851305
+    },
+    {
+      "id": "94ecfea200ee",
+      "source": "https://www.hyundai.com/in/en/hyundai-story/media-center/press-release/hmi-launches-hyundai-bayon-price",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619077.9948716
+    },
+    {
+      "id": "074cb06de604",
+      "source": "https://www.prnewswire.com/news-releases/duol-investors-have-opportunity-to-lead-duolingo-inc-securities-fraud-lawsuit-with-sbs-law-302924160.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619078.4097552
+    },
+    {
+      "id": "040073763955",
+      "source": "https://www.prnewswire.com/news-releases/yeastar-reconoce-la-ia-la-innovacion-tecnica-y-el-exito-de-los-clientes-en-los-yeahs-awards-2026-302917649.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619078.4291744
+    },
+    {
+      "id": "05bc5a47b19b",
+      "source": "https://www.prnewswire.com/news-releases/turner-mason--company-releases-four-fall-energy-market-outlook-reports-302923877.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619078.4304423
+    },
+    {
+      "id": "05d05c18d987",
+      "source": "https://www.prnewswire.com/news-releases/dodgen-reports-poe-devolatilization-milestones-across-three-industrial-projects-in-china-302923001.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619078.5211096
+    },
+    {
+      "id": "07746bc77e63",
+      "source": "https://www.prnewswire.com/news-releases/rcg-ventures-closes-fund-viii-above-target-at-515-million-302919410.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619078.7151062
+    },
+    {
+      "id": "9e7d68e39abe",
+      "source": "https://www.business-standard.com/external-affairs-defence-security/news/secure-supply-chains-resilience-key-for-global-economy-jaishankar-at-g20-126110100012_1.html",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619078.8611057
+    },
+    {
+      "id": "06157d85578b",
+      "source": "https://www.prnewswire.com/news-releases/the-society-for-immunotherapy-of-cancer-announces-late-breaking-abstracts-and-press-briefing-presented-at-sitc-2026-302923852.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619079.0428188
+    },
+    {
+      "id": "513299dd74b0",
+      "source": "https://www.prnewswire.com/news-releases/from-ifa-berlin-to-ces-2027-ollobot-continues-its-journey-in-emotional-companionship-302925063.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619079.1339803
+    },
+    {
+      "id": "3b439d483131",
+      "source": "https://www.prnewswire.com/news-releases/ubcf-and-ggp-formerly-brookfield-properties-launch-2026-pink-bag-event-initiative-302925520.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619079.430349
+    },
+    {
+      "id": "9acdf4deb8ec",
+      "source": "https://www.prnewswire.com/news-releases/pakistaanse-banken-slagen-niet-voor-de-klimaat--en-natuurbeleidstest-omdat-financieringswaarborgen-tekortschieten-302925673.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619079.515242
+    },
+    {
+      "id": "577e14c837fb",
+      "source": "https://www.prnewswire.com/news-releases/huawei-lance-des-solutions-dexploitation-et-de-maintenance-destinees-au-secteur-industriel-302925670.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619079.515462
+    },
+    {
+      "id": "9359fbbe265d",
+      "source": "https://www.prnewswire.com/news-releases/hk-tightens-oversight-of-building-repair-work-302925549.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619079.5570698
+    },
+    {
+      "id": "a63748b1bd49",
+      "source": "https://news.abplive.com/business/commercial-lpg-cylinder-price-hike-rs-10-11-50-nov-1-diwali-domestic-rates-unchanged-check-city-wise-rates-1874173",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619079.7630413
+    },
+    {
+      "id": "ef6d4c03dede",
+      "source": "https://www.prnewswire.com/news-releases/xpeng-announces-vehicle-delivery-results-for-october-2026-302925668.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619079.8107104
+    },
+    {
+      "id": "36a5897449ef",
+      "source": "https://www.bbc.com/news/world/australia",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619079.93811
+    },
+    {
+      "id": "3850526be7f2",
+      "source": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619080.312146
+    },
+    {
+      "id": "ba4320656bde",
+      "source": "https://www.aljazeera.com/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619080.3251112
+    },
+    {
+      "id": "0c3ea34ef3ae",
+      "source": "https://www.bbc.com/sport/articles/cqly0z047x6yo",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619080.4358025
+    },
+    {
+      "id": "2271690f92c4",
+      "source": "https://www.icc-cricket.com/news/south-africa-topple-australia-to-climb-test-team-rankings-summit",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619080.5216408
+    },
+    {
+      "id": "9e35e8d14cac",
+      "source": "https://www.icc-cricket.com/news/sensational-south-africa-seal-the-series-in-cape-town",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619080.6936722
+    },
+    {
+      "id": "083453935c43",
+      "source": "https://www.autocarindia.com/cars/maruti-suzuki/fronx-facelift/price-in-nellore",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619080.9877496
+    },
+    {
+      "id": "93060df7626e",
+      "source": "https://timesofindia.indiatimes.com/sports/cricket/wpl/wpl-to-get-more-teams-from-next-year-bcci-secretary-devajit-saikia-shares-latest-update/articleshow/135301417.cms",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619081.3090034
+    },
+    {
+      "id": "74e9a6b8276f",
+      "source": "https://www.icc-cricket.com/news/india-bolster-pace-attack-for-new-zealand-odis",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619081.3319142
+    },
+    {
+      "id": "88cf2aa5020e",
+      "source": "https://www.icc-cricket.com/news/warrican-s-five-for-headlines-eventful-day-2-in-mirpur",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619081.3710768
+    },
+    {
+      "id": "917bca19741c",
+      "source": "https://www.icc-cricket.com/news/cummins-hints-at-changes-after-south-africa-series-loss",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619081.5587564
+    },
+    {
+      "id": "b00176270c18",
+      "source": "https://www.bhaskar.com/g/sports/cricket/news/sri-lanka-vs-pakistan-odi-tri-series-final-lahore-live-updates-139547058.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619081.5727193
+    },
+    {
+      "id": "69bf94442786",
+      "source": "https://www.autocarindia.com/cars/mahindra/be.07/price-in-amaravati",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619081.7335954
+    },
+    {
+      "id": "b7745043adef",
+      "source": "https://www.autocarindia.com/cars/mahindra/scorpio-lifestyler/price-in-delhi",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619081.752164
+    },
+    {
+      "id": "9b3641414312",
+      "source": "https://www.business-standard.com/amp/world-news/iran-warns-of-wider-retaliation-even-as-diplomatic-talks-with-us-progress-126103101346_1.html",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619081.8236642
+    },
+    {
+      "id": "d9a0f59e3e5a",
+      "source": "https://www.icc-cricket.com/news/state-of-play-as-the-icc-world-test-championship-2025-27-resumes",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619081.8907747
+    },
+    {
+      "id": "9d72856192eb",
+      "source": "https://www.prnewswire.com/news-releases/navy-mutual-awards-milmos-lacey-langford-with-the-2026-lieutenant-timothy-dix-bolles-excellency-in-education-award-302922401.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619082.0264096
+    },
+    {
+      "id": "4276fb8776e9",
+      "source": "https://www.bhaskar.com/g/lifestyle/news/diwali-2026-cyber-fraud-types-shopping-website-app-scam-prevention-rules-guide-139549456.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619082.1228263
+    },
+    {
+      "id": "11493efbbc99",
+      "source": "https://fr.linkedin.com/posts/antoninopapalia_%C3%A9ducation-orientationscolaire-r%C3%A9ussite%C3%A9ducative-activity-7521765355648626688-auPH",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619082.2434564
+    },
+    {
+      "id": "50c473a205c3",
+      "source": "https://sarkariresult.com.cm/armed-forces-afms-ssc-medical-officer-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619082.3873465
+    },
+    {
+      "id": "6189652eeaaa",
+      "source": "https://www.prnewswire.com/news-releases/university-of-phoenix-associate-dean-to-present-ai-literacy-framework-implementation-at-aacu-conference-on-ai-and-higher-education-302924272.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619082.4511266
+    },
+    {
+      "id": "5e8e1a0ac44f",
+      "source": "https://www.theguardian.com/education",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619082.5741844
+    },
+    {
+      "id": "e3e8417bf2c4",
+      "source": "https://www.icc-cricket.com/news/pakistan-clinch-tri-series-with-big-chase-against-sri-lanka",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619082.8187015
+    },
+    {
+      "id": "62f5310583d8",
+      "source": "https://www.cardekho.com:443/electric-charging-station",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619082.842221
+    },
+    {
+      "id": "9f99e8365ecc",
+      "source": "https://www.caranddriver.com/ev/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619082.985607
+    },
+    {
+      "id": "064527450b6c",
+      "source": "https://www.govtschemes.in/tamil-nadu-vetri-150-scheme",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619083.3207133
+    },
+    {
+      "id": "1739a9e15c84",
+      "source": "https://www.govtschemes.in/gujarat-surya-urja-rooftop-yojana",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619083.6759012
+    },
+    {
+      "id": "179b343d3570",
+      "source": "https://www.govtschemes.in/west-bengal-mukhyamantri-kisan-samman-nidhi-scheme",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619084.0584047
+    },
+    {
+      "id": "7f94bd7f6aa5",
+      "source": "https://www.desidime.com/discussions/hubble-app-gift-card-offer-2191117",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619084.105261
+    },
+    {
+      "id": "17195b854776",
+      "source": "https://www.govtschemes.in/rajasthan-economic-help-sahariya-students-bed-training-scheme",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619084.172585
+    },
+    {
+      "id": "193b9ffb115a",
+      "source": "https://www.govtschemes.in/nspire-scholarship-higher-education-she",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619084.3969717
+    },
+    {
+      "id": "21b55746a839",
+      "source": "https://www.govtschemes.in/gujarat-sardar-krushi-jyoti-yojana-skjy",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619085.2028925
+    },
+    {
+      "id": "26a06274862a",
+      "source": "https://www.govtschemes.in/rajasthan-mukhyamantri-shahri-rojgar-guarantee-yojana",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619085.2677424
+    },
+    {
+      "id": "d7fbf9b18b8a",
+      "source": "https://news.abplive.com/health/common-gut-bacterium-may-fuel-colon-cancer-but-scientists-find-a-way-to-block-its-toxin-1874174",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619085.3761578
+    },
+    {
+      "id": "1c4f6e29aff4",
+      "source": "https://www.theguardian.com/info/2016/jan/25/content-funding",
+      "policy": "2721a4b42159",
+      "result": "no_source_image",
+      "retry_after": 1793619085.4447854
+    },
+    {
+      "id": "ed99df3183ca",
+      "source": "https://apps.apple.com/mx/iphone/apps",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619085.5252962
+    },
+    {
+      "id": "022df2730726",
+      "source": "https://www.coolztricks.com/amazon-free-samples.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619085.654542
+    },
+    {
+      "id": "3f437cd6deee",
+      "source": "https://www.nytimes.com/spotlight/lifestyle",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619085.8041725
+    },
+    {
+      "id": "285dd8d5ec2f",
+      "source": "https://www.desidime.com/discussions/update-on-applicable-charges-for-2189852",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619085.8622901
+    },
+    {
+      "id": "20687ba6ed09",
+      "source": "https://timesofindia.indiatimes.com/entertainment/english/hollywood/news/sandra-bullock-shares-halloween-throwback-post-with-rare-family-pics-nothing-is-off-limits-in-this-household/articleshow/135415554.cms",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619085.9787302
+    },
+    {
+      "id": "8b35f96970af",
+      "source": "https://variety.com/2026/scene/news/heidi-klum-halloween-2026-severed-human-hand-costume-1236935653/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619086.3058805
+    },
+    {
+      "id": "00f079e2ba3a",
+      "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-alok-industries-limited-india-4481052431",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619086.3714695
+    },
+    {
+      "id": "e3a0509dd7c3",
+      "source": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/yash-takes-a-break-from-ramayana-promotions-to-enjoy-day-at-disneyland-with-kids-watch/articleshow/135414879.cms",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619086.3792167
+    },
+    {
+      "id": "76373a4c3552",
+      "source": "https://www.hollywoodreporter.com/lifestyle/lifestyle-news/heidi-klum-2026-halloween-costume-reveal-1236741385/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619086.380576
+    },
+    {
+      "id": "8e4eeb531af7",
+      "source": "https://deadline.com/2026/10/dubai-faisal-hashmi-spine-drop-pictures-horror-slate-1237210593/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619086.6607046
+    },
+    {
+      "id": "04bcdc448261",
+      "source": "https://in.linkedin.com/jobs/view/material-management-coordinator-at-kone-4484477721?position=46&pageNum=0&refId=7GWgQQ0v3ze9a3w3Q2vwcw%3D%3D&trackingId=BYWzdYE16qmuOI8vgMHtPQ%3D%3D",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619086.6617572
+    },
+    {
+      "id": "66d37df8160c",
+      "source": "https://www.coolztricks.com/2020/04/best-10-fantasy-cricket-apps-ipl-2019.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619086.7886841
+    },
+    {
+      "id": "05cc9a358c55",
+      "source": "https://in.linkedin.com/jobs/view/business-development-specialist-at-fanzart-designer-fans-4484908686",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619086.8013601
+    },
+    {
+      "id": "05d3b71dd6e0",
+      "source": "https://in.linkedin.com/jobs/view/sales-executive-at-make-your-own-perfume-myop-4484796852",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619086.8121047
+    },
+    {
+      "id": "06f842f028fe",
+      "source": "https://www.linkedin.com/jobs/view/virtual-assistant-at-a-full-renovation-%E2%80%93-home-improvement-4483788958",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619086.8988817
+    },
+    {
+      "id": "079aeaa0eeef",
+      "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619086.910011
+    },
+    {
+      "id": "07f40dc280d1",
+      "source": "https://in.linkedin.com/jobs/view/looking-for-western-music-teacher-primary-1-5-in-tellapur-hyderabad-at-eh-jobs-4481687605",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619087.0992787
+    },
+    {
+      "id": "021c54d7abdb",
+      "source": "https://je.linkedin.com/jobs/Win%20Gaming%20API%20-%20India%20Market%20API%F0%9F%8F%A7TG%40gameapi26-jobs?position=1&pageNum=0",
+      "policy": "2721a4b42159",
+      "result": "no_source_image",
+      "retry_after": 1793619087.4197793
+    },
+    {
+      "id": "040dd341f762",
+      "source": "https://in.linkedin.com/jobs/view/founder-s-office-intern-at-the-souled-store-4483622129",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619087.4207394
+    },
+    {
+      "id": "0391c4373eca",
+      "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-phoenix-az",
+      "policy": "2721a4b42159",
+      "result": "no_source_image",
+      "retry_after": 1793619087.5605505
+    },
+    {
+      "id": "029ee2179ac9",
+      "source": "https://in.linkedin.com/jobs/view/backend-developer-java-at-saatvik-agro-4484932211",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619087.5919657
+    },
+    {
+      "id": "090108930e0d",
+      "source": "https://in.linkedin.com/jobs/view/client-acquisition-intern-at-bright-blue-gemstones-4471542402",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619087.8516965
+    },
+    {
+      "id": "090cabc5ee27",
+      "source": "https://in.linkedin.com/jobs/%E0%A6%B2%E0%A7%87%E0%A6%95%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%BE%E0%A6%B0-jobs",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619087.8894494
+    },
+    {
+      "id": "07f5b24312a4",
+      "source": "https://in.linkedin.com/jobs/view/stem-innovation-engineer-in-chandigarh-ghaziabad-uttar-pradesh-bulandshahr-noida-punjab-gurgaon-meerut-sangrur-mohali-at-innow8-4472659090",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619087.9998531
+    },
+    {
+      "id": "0983ec5f08f3",
+      "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Br%C9%99yl%C9%99r-%2Bonlayn%2Bfikirl%C9%99ri%2Bayr%C4%B1ca%2Binc%C9%99l%C9%99yin.ekq-jobs",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.0054622
+    },
+    {
+      "id": "0b33380de117",
+      "source": "https://in.linkedin.com/jobs/view/compliance-manager-at-fatakpay-4482278882",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.0373194
+    },
+    {
+      "id": "0bdb0918a8cf",
+      "source": "https://in.linkedin.com/jobs/view/relationship-manager-secured-direct-south-ap-ts-tn-at-credit-saison-india-4480041233",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.0523918
+    },
+    {
+      "id": "080b28de54ff",
+      "source": "https://in.linkedin.com/jobs/view/mis-executive-at-amrit-skills-development-4480055351",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619088.0687363
+    },
+    {
+      "id": "0e2fde519d11",
+      "source": "https://in.linkedin.com/jobs/view/growth-vendor-onboarding-intern-surat-textile-market-at-tradetrust-4484792454",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.2619514
+    },
+    {
+      "id": "08a83556bce2",
+      "source": "https://in.linkedin.com/jobs/view/education-finance-officer-in-nashik-trichey-begumpet-mangalore-solapur-bidar-bhubaneswar-coimbatore-cuttack-kollam-chennai-hyderabad-maharashta-koramangala-andhra-pradesh-at-wemakescholars-4483353601",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619088.2923446
+    },
+    {
+      "id": "0e7392808f2b",
+      "source": "https://in.linkedin.com/jobs/view/fashion-designer-educator-at-skillinabox-4483836717",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.2985997
+    },
+    {
+      "id": "0f2e549a24cc",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-moses-lake-wa",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.3158422
+    },
+    {
+      "id": "0da0ead215c3",
+      "source": "https://in.linkedin.com/jobs/view/technial-hr-recruiter-in-secunderabad-hyderabad-hyderabad-hyderabad-vishakhapatnam-alwal-visakhapatnam-at-wemakescholars-4484295029?position=58&pageNum=0&refId=IYfwluMaDIcsUuazNwoLjw%3D%3D&trackingId=4yed8vCMLTz%2BknFIMv5vzQ%3D%3D",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.3270462
+    },
+    {
+      "id": "122b5649e749",
+      "source": "https://in.linkedin.com/jobs/view/sales-associate-onboard-international-cruise-line-at-ivory-lighthouse-recruitment-services-pvt-ltd-4482589473",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.3281476
+    },
+    {
+      "id": "1ad731a65211",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-moses-lake-wa",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.3562975
+    },
+    {
+      "id": "2254c016ebd0",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-cheyenne-wy",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.411939
+    },
+    {
+      "id": "35c6b2e75c5a",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.441703
+    },
+    {
+      "id": "257900039128",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-moses-lake-wa",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.456286
+    },
+    {
+      "id": "37c0e160c49f",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-cheyenne-wy",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.4665504
+    },
+    {
+      "id": "38138689935d",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-boydton-va",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.4829369
+    },
+    {
+      "id": "36fc08c8c68d",
+      "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-des-moines-ia",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.545227
+    },
+    {
+      "id": "4002fcf12fa5",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-phoenix-az",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.5577257
+    },
+    {
+      "id": "6ba39bcd4548",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.590737
+    },
+    {
+      "id": "58f11d3687a2",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-des-moines-ia",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.6037455
+    },
+    {
+      "id": "6734d0b5d4b1",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-des-moines-ia",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.6156971
+    },
+    {
+      "id": "92088c2de8c2",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-des-moines-ia",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.6547039
+    },
+    {
+      "id": "736ca0bcddb6",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-des-moines-ia",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.665529
+    },
+    {
+      "id": "91712e374b16",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-boydton-va",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.6794617
+    },
+    {
+      "id": "9d38ac0228db",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-phoenix-az",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.7148445
+    },
+    {
+      "id": "b9e7ebed5efd",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-boydton-va",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.7266278
+    },
+    {
+      "id": "9e37935bcd6c",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.7823033
+    },
+    {
+      "id": "aa511d7af8e4",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-san-francisco-ca",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.7943168
+    },
+    {
+      "id": "c929a77d3cf4",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-phoenix-az",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.82263
+    },
+    {
+      "id": "ff059456a4ee",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-phoenix-az",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619088.8362784
+    },
+    {
+      "id": "bc48687185e4",
+      "source": "https://www.incredibleindia.gov.in/en/delhi",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619089.3543906
+    },
+    {
+      "id": "03abd2476ec3",
+      "source": "https://sarkariresult.com.cm/mp-high-court-stenographer-assistant-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619089.5055678
+    },
+    {
+      "id": "04364fe578a3",
+      "source": "https://sarkariresult.com.cm/up-budaun-ecce-educator-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619089.632864
+    },
+    {
+      "id": "04d288eb687a",
+      "source": "https://sarkariresult.com.cm/isro-assistant-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619089.784393
+    },
+    {
+      "id": "05643ec6e714",
+      "source": "https://sarkariresult.com.cm/hpsc-fso-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619089.920729
+    },
+    {
+      "id": "f4db96d26a30",
+      "source": "https://www.icc-cricket.com/news/dominant-west-indies-go-1-0-up-in-mirpur",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619090.4824038
+    },
+    {
+      "id": "456a77a3e836",
+      "source": "https://haryana.gov.in/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619090.5766172
+    },
+    {
+      "id": "0dcd28330735",
+      "source": "https://sarkariresult.com.cm/upessc-prt-assistant-teacher-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619090.6818917
+    },
+    {
+      "id": "14e5520453bf",
+      "source": "https://sarkariresult.com.cm/csjmu-kanpur-teaching-post-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619090.7471924
+    },
+    {
+      "id": "1a26d2c45b49",
+      "source": "https://sarkariresult.com.cm/mpesb-group-3-sub-engineer-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619090.853577
+    },
+    {
+      "id": "3570bb7ef821",
+      "source": "https://www.upsc.gov.in/sites/default/files/AdvtNo-51-2026-Special-Engl-240726.pdf",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619091.2441401
+    },
+    {
+      "id": "3727810ceb63",
+      "source": "https://sarkariresult.com.cm/rrb-ntpc-inter-level-07-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619091.4021876
+    },
+    {
+      "id": "39e19d25868f",
+      "source": "https://sarkariresult.com.cm/bihar-bssc-field-assistant-pre-result-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619091.5475023
+    },
+    {
+      "id": "2ea1ae3dba72",
+      "source": "https://www.jagranjosh.com/lite/articles/uppsc-ro-aro-notification-2026-out-apply-online-for-501-posts-check-eligibility-here-1800018227-1",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619091.6374683
+    },
+    {
+      "id": "712c404a4a7d",
+      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_2_29102026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619091.6376593
+    },
+    {
+      "id": "44f0f610ca23",
+      "source": "https://sarkariresult.com.cm/upsssc-pet-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619091.7537048
+    },
+    {
+      "id": "49c9e678b8e6",
+      "source": "https://www.jagranjosh.com/lite/articles/rrb-section-controller-answer-key-2026-out-download-response-sheet-pdf-at-rrb-indianrailways-gov-in-1800018229-1",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619092.4742537
+    },
+    {
+      "id": "6f4b009a8cf7",
+      "source": "https://www.freejobalert.com/articles/sainik-school-nagrota-recruitment-2026-apply-offline-for-3-tgt-art-master-and-more-posts-3077510",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619092.8499382
+    },
+    {
+      "id": "61ab99a70d23",
+      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_3_29102026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619093.009657
+    },
+    {
+      "id": "70794edbf210",
+      "source": "https://sarkariresult.com.cm/nta-csir-ugc-net-december-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619093.028775
+    },
+    {
+      "id": "74be455ea69c",
+      "source": "https://sarkariresult.com.cm/rrb-alp-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619093.6388268
+    },
+    {
+      "id": "73cbea983e4a",
+      "source": "https://sarkariresult.com.cm/nta-jee-mains-session-i-2027/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619093.834341
+    },
+    {
+      "id": "79a395619e00",
+      "source": "https://www.incredibleindia.gov.in/en/haryana",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619093.889685
+    },
+    {
+      "id": "75c0df289e98",
+      "source": "https://sarkariresult.com.cm/nta-ugc-net-december-2026-2/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619094.0163708
+    },
+    {
+      "id": "7651bebe982e",
+      "source": "https://sarkariresult.com.cm/railway-rrb-station-master-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619094.2602956
+    },
+    {
+      "id": "8ba79e7533cc",
+      "source": "https://sarkariresult.com.cm/clat-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619094.488383
+    },
+    {
+      "id": "d4504bc286b8",
+      "source": "https://www.incredibleindia.gov.in/en/chhattisgarh",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619094.9407501
+    },
+    {
+      "id": "7ff9a9cec087",
+      "source": "https://www.jagranjosh.com/lite/articles/lic-hfl-recruitment-2026-apply-online-last-date-for-232-apprentice-vacancies-check-direct-link-here-1800018446-1",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619094.9721866
+    },
+    {
+      "id": "95cdf6baf4a1",
+      "source": "https://sarkariresult.com.cm/bseb-slet-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619094.997571
+    },
+    {
+      "id": "b784ee370b35",
+      "source": "https://sarkariresult.com.cm/upessc-up-tgt-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619095.1621451
+    },
+    {
+      "id": "bff77d8cc54a",
+      "source": "https://sarkariresult.com.cm/nta-niftee-2027/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619095.3431213
+    },
+    {
+      "id": "d0a7a71477a8",
+      "source": "https://sarkariresult.com.cm/bpsc-school-teacher-tre-4-0-2026/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619095.5128691
+    },
+    {
+      "id": "09eaa4a8cbc9",
+      "source": "https://www.sahisarkarijobs.in/age-calculator/",
+      "policy": "2721a4b42159",
+      "result": "no_source_image",
+      "retry_after": 1793619095.782038
+    },
+    {
+      "id": "a1cbe0a8a4a4",
+      "source": "https://www.jagranjosh.com/lite/articles/rrb-station-master-notification-2026-out-apply-online-for-1265-posts-check-eligibility-here-1800018266-1",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619095.8949215
+    },
+    {
+      "id": "e1489204dede",
+      "source": "https://www.freejobalert.com/articles/iol-chairman-managing-director-recruitment-2026-3077507",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619096.2046635
+    },
+    {
+      "id": "b86345326a46",
+      "source": "https://www.jagranjosh.com/lite/articles/ongc-apprentice-recruitment-2026-direct-link-to-apply-online-check-eligibility-and-other-details-1800018454-1",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619096.3356078
+    },
+    {
+      "id": "dd54d85ef928",
+      "source": "https://www.sahisarkarijobs.in/photo-resizer/",
+      "policy": "2721a4b42159",
+      "result": "restricted_page",
+      "retry_after": 1793619097.717857
+    },
+    {
+      "id": "d3f9477c8fd1",
+      "source": "https://www.theverge.com/entertainment/1024096/halloween-spirit-youtube-horror",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619098.0182924
+    },
+    {
+      "id": "0e0b629ddbc4",
+      "source": "https://home.maharashtra.gov.in/en/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619098.3828902
+    },
+    {
+      "id": "e4d4cfaf119b",
+      "source": "https://www.androidpolice.com/youtube-music-premium-solved-daily-battery-drain-issue/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619098.5945997
+    },
+    {
+      "id": "2ad6ac3deefa",
+      "source": "https://www.theguardian.com/football/all",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619098.6885412
+    },
+    {
+      "id": "2d5ab3e6a288",
+      "source": "https://www.indiatoday.in/sports/cricket/story/gautam-gambhir-stay-humble-india-new-zealand-record-t20i-series-win-3026314-2026-10-27",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619098.9984338
+    },
+    {
+      "id": "8fb539b04f5d",
+      "source": "https://www.haryana.gov.in/about-haryana/",
+      "policy": "2721a4b42159",
+      "result": "no_source_image",
+      "retry_after": 1793619099.12721
+    },
+    {
+      "id": "b8e8c42dfb64",
+      "source": "https://maharashtra.gov.in/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619099.5875487
+    },
+    {
+      "id": "56e1692c2f72",
+      "source": "https://www.bbc.co.uk/sport/football/articles/ck1l396jqv4zo",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619099.699272
+    },
+    {
+      "id": "c766ee90465d",
+      "source": "https://www.theguardian.com/football/live",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619099.9827595
+    },
+    {
+      "id": "39a5ec089c08",
+      "source": "https://www.goa.gov.in/",
+      "policy": "2721a4b42159",
+      "result": "no_source_image",
+      "retry_after": 1793619100.0426025
+    },
+    {
+      "id": "ce842e67b595",
+      "source": "https://www.bbc.co.uk/sport/football/articles/cje36dn5nx36o",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619100.1100187
+    },
+    {
+      "id": "fb293bf7f58b",
+      "source": "https://www.bbc.co.uk/sport/cricket/articles/cwz0vevng3n0o?at_medium=RSS&at_campaign=rss",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619100.218725
+    },
+    {
+      "id": "02ed539fac86",
+      "source": "https://github.blog/news-insights/company-news/the-august-17-outage-and-the-work-ahead/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619100.7528386
+    },
+    {
+      "id": "a91a82825e4a",
+      "source": "https://jeemain.nta.nic.in/",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619100.841644
+    },
+    {
+      "id": "7e8ee14ae6ce",
+      "source": "https://www.incredibleindia.gov.in/en/rajasthan",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619100.9385881
+    },
+    {
+      "id": "52c013755cd0",
+      "source": "https://www.sahisarkarijobs.in/8th-pay-commission-calculator/",
+      "policy": "2721a4b42159",
+      "result": "no_source_image",
+      "retry_after": 1793619100.998578
+    },
+    {
+      "id": "07b5b3ef9223",
+      "source": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5127936-update-released-with-41-changes-and-fixes/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619101.0507267
+    },
+    {
+      "id": "186442aeaf00",
+      "source": "https://blog.google/innovation-and-ai/models-and-research/google-labs/create-music-production-plugins-google-flow/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619101.487884
+    },
+    {
+      "id": "1cf8f670adac",
+      "source": "https://techcrunch.com/2026/10/31/data-centers-are-now-a-midterm-issue-even-in-brooklyn/",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619101.5038686
+    },
+    {
+      "id": "0493b37f6575",
+      "source": "https://www.business-standard.com/companies/news/cci-xavier-niel-vodafone-stake-prosus-navi-aditya-birla-adani-deals-126103100598_1.html",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619101.5050797
+    },
+    {
+      "id": "27acad2a1225",
+      "source": "https://www.amarujala.com/rajasthan/sikar/rajasthan-sikar-bank-glitch-one-lakh-crore-blocked-message-medical-store-employee-sameer-khan-2026-10-31",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619102.234734
+    },
+    {
+      "id": "9cfed70093fb",
+      "source": "https://www.sahisarkarijobs.in/salary-calculator/",
+      "policy": "2721a4b42159",
+      "result": "no_source_image",
+      "retry_after": 1793619103.2226522
+    },
+    {
+      "id": "29f12d5d640a",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No.129_of_2026.pdf.PDF",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619104.1716383
+    },
+    {
+      "id": "d113f09eda07",
+      "source": "https://www.sahisarkarijobs.in/service-length-calculator/",
+      "policy": "2721a4b42159",
+      "result": "no_source_image",
+      "retry_after": 1793619104.244215
+    },
+    {
+      "id": "7f651ce9d3f0",
+      "source": "https://www.prnewswire.com/news-releases/123net-awarded-86-million-in-federal-bead-funding-for-michigan-broadband-infrastructure-302922523.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619104.4635065
+    },
+    {
+      "id": "8254f0386bd3",
+      "source": "https://navbharattimes.indiatimes.com/tech/gadgets-news/jio-affordable-calling-plans-trai-mandated-voice-pack-details-benefits/articleshow/135390560.cms",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619105.1119683
+    },
+    {
+      "id": "01a6933a42b8",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No122of2026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619105.4768407
+    },
+    {
+      "id": "06e9199a393c",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No133of2026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619109.427069
+    },
+    {
+      "id": "c1856f75520c",
+      "source": "https://www.bhaskar.com/business/news/jio-platforms-q2-results-revenue-profit-growth-share-price-update-139539782.html",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619109.9590642
+    },
+    {
+      "id": "031f3d5eda5f",
+      "source": "https://news.samsung.com/in/author/malay-anil/page/331",
+      "policy": "2721a4b42159",
+      "result": "source_error",
+      "retry_after": 1793619110.4723926
+    },
+    {
+      "id": "3b5a7fa28a88",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No134of2026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619110.8684554
+    },
+    {
+      "id": "a41b914c9659",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No132of2026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619111.5903468
+    },
+    {
+      "id": "41e3cf0806d9",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No131of2026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619112.3745198
+    },
+    {
+      "id": "4eb7b2235122",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No124of2026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619112.3957212
+    },
+    {
+      "id": "1e8ccf0069bd",
+      "source": "https://timesofindia.indiatimes.com/world/south-asia/six-indian-tourists-go-missing-during-trek-to-nepals-shey-phoksundo-lake/articleshow/135416519.cms",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619112.6172223
+    },
+    {
+      "id": "02518f2b343c",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28297?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619113.167667
+    },
+    {
+      "id": "3a99b749f100",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No123of2026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619113.3750942
+    },
+    {
+      "id": "308dda053820",
+      "source": "https://www.abc.net.au/news/2026-11-01/should-all-australian-workers-get-reproductive-leave/107329210",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619113.6871896
+    },
+    {
+      "id": "43669547d8a9",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28286?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619113.687573
+    },
+    {
+      "id": "4d6ec6e63361",
+      "source": "https://www.abc.net.au/news/2026-11-01/katy-gallagher-wont-promise-myefo-net-savings/107333248",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619113.846028
+    },
+    {
+      "id": "ca9ab95087f5",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No127of2026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619114.0180306
+    },
+    {
+      "id": "583d33efd457",
+      "source": "https://www.aljazeera.com/news/2026/11/1/thousands-rally-in-israel-urging-eisenkot-arab-deal-to-remove-netanyahu?traffic_source=rss",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619114.1116984
+    },
+    {
+      "id": "572d5792fe9b",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28297?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619114.2876174
+    },
+    {
+      "id": "56e4dcfd0edd",
+      "source": "https://www.amarujala.com/photo-gallery/astrology/predictions/aaj-ka-rashifal-31-october-2026-daily-horoscope-prediction-in-hindi-mesh-kark-singh-kanya-kumbh-makar-2026-10-30",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619114.484926
+    },
+    {
+      "id": "7867f4e6d3d5",
+      "source": "https://www.theguardian.com/world/2026/oct/31/police-clash-rioters-after-largely-peaceful-protests-across-france",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619114.6084583
+    },
+    {
+      "id": "7548888dfa18",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28297?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619114.8550684
+    },
+    {
+      "id": "5e97b1b54978",
+      "source": "https://www.abc.net.au/news/2026-11-01/noosa-triathlon-swim-cancelled-shark-sightings/107290942",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619114.879427
+    },
+    {
+      "id": "8070f1f217ec",
+      "source": "https://www.theguardian.com/world/asia",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619115.0100746
+    },
+    {
+      "id": "8c6ddded2bc5",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28274?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619115.1741204
+    },
+    {
+      "id": "9a0aada26bcb",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28250?dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue&mm=03%3Fgb%3Dtrue",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619115.207149
+    },
+    {
+      "id": "a7ac8ab278d7",
+      "source": "https://timesofindia.indiatimes.com/world/us/donald-trump-speaks-to-benjamin-netanyahu-as-us-weighs-fresh-military-strikes-on-iran-report/articleshow/135415379.cms",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619115.3858757
+    },
+    {
+      "id": "821d9382178d",
+      "source": "https://www.abc.net.au/news/2026-11-01/fremantle-traffic-bridge-walyalup-bridge-opens-ahead-of-schedule/107311386",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619115.5290327
+    },
+    {
+      "id": "8c5c703a7bcc",
+      "source": "https://www.abc.net.au/news/2026-11-01/gladstone-gaol-reopens/107333388",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619115.6429484
+    },
+    {
+      "id": "b908434da6d5",
+      "source": "https://www.abc.net.au/news/2026-11-01/rob-hirst-book-midnight-oil-drummer-songwriter/107314400",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619115.8547509
+    },
+    {
+      "id": "b08f3712a37e",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28313?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619115.8712661
+    },
+    {
+      "id": "d25fe3284c63",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28302?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619115.9187112
+    },
+    {
+      "id": "fddacd9eaeff",
+      "source": "https://www.business-standard.com/amp/world-news/france-protests-turn-violent-again-as-police-brace-for-halloween-unrest-126110100051_1.html",
+      "policy": "2721a4b42159",
+      "result": "access_denied",
+      "retry_after": 1793619115.96593
+    },
+    {
+      "id": "e9859cc440f7",
+      "source": "https://www.abc.net.au/news/2026-11-01/ot-critical-infrastructure-hacking-cyber-security/107288694",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619116.1787443
+    },
+    {
+      "id": "cbc520eb0572",
+      "source": "https://www.abc.net.au/news/2026-11-01/two-teenage-boys-dead-bullsbrook-crash/107333718",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619116.3305035
+    },
+    {
+      "id": "fe009a8c9b44",
+      "source": "https://www.abc.net.au/news/2026-11-01/russia-responds-to-us-intelligence-moscow-terrorist-attack/107333516",
+      "policy": "2721a4b42159",
+      "result": "authorization_required",
+      "retry_after": 1793619116.4442759
+    },
+    {
+      "id": "f638281840d9",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No128of2026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619117.075767
+    },
+    {
+      "id": "948554632b74",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No125of2026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619117.5936637
+    },
+    {
+      "id": "c4038aa3469b",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No126of2026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619119.2028108
+    },
+    {
+      "id": "c455f726510c",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No130of2026.pdf",
+      "policy": "2721a4b42159",
+      "result": "source_unavailable",
+      "retry_after": 1793619122.6646106
     }
   ],
   "missing": [
@@ -219,6 +1955,12 @@
       "source": "https://sarkariresult.com.cm/rrb-alp-2026/"
     },
     {
+      "id": "e1489204dede",
+      "category": "sarkari-naukri",
+      "title": "India Optel Limited Announces Recruitment for Chairman and Managing Director Post in 2026",
+      "source": "https://www.freejobalert.com/articles/iol-chairman-managing-director-recruitment-2026-3077507"
+    },
+    {
       "id": "03fdad6de98e",
       "category": "business",
       "title": "Ruizhi Machinery Unveils Three New Paper Bag Machines at All in Print China 2026",
@@ -399,6 +2141,12 @@
       "source": "https://www.hollywoodreporter.com/lifestyle/lifestyle-news/heidi-klum-2026-halloween-costume-reveal-1236741385/"
     },
     {
+      "id": "688194199d3a",
+      "category": "admit-cards",
+      "title": "Meghalaya Tourism Overview: Exploring the Abode of Clouds",
+      "source": "https://www.incredibleindia.gov.in/en/meghalaya"
+    },
+    {
       "id": "a679eaf857aa",
       "category": "answer-keys",
       "title": "Sikkim Tourism Highlights: Natural Heritage and Cultural Landscapes",
@@ -535,6 +2283,12 @@
       "category": "education",
       "title": "Montréal School Hosts Orientation Fair to Help Students Explore Future Pathways",
       "source": "https://fr.linkedin.com/posts/antoninopapalia_%C3%A9ducation-orientationscolaire-r%C3%A9ussite%C3%A9ducative-activity-7521765355648626688-auPH"
+    },
+    {
+      "id": "93060df7626e",
+      "category": "cricket",
+      "title": "BCCI Mulls Adding Teams to Women’s Premier League from 2028, Says Secretary Devajit Saikia",
+      "source": "https://timesofindia.indiatimes.com/sports/cricket/wpl/wpl-to-get-more-teams-from-next-year-bcci-secretary-devajit-saikia-shares-latest-update/articleshow/135301417.cms"
     },
     {
       "id": "064527450b6c",
@@ -1065,6 +2819,12 @@
       "source": "https://www.business-standard.com/amp/world-news/iran-warns-of-wider-retaliation-even-as-diplomatic-talks-with-us-progress-126103101346_1.html"
     },
     {
+      "id": "88cf2aa5020e",
+      "category": "cricket",
+      "title": "Warrican’s Five‑Wicket Haul Powers West Indies to Dominant Position on Day 2 of Bangladesh Test",
+      "source": "https://www.icc-cricket.com/news/warrican-s-five-for-headlines-eventful-day-2-in-mirpur"
+    },
+    {
       "id": "3727810ceb63",
       "category": "sarkari-naukri",
       "title": "RRB Opens Applications for NTPC Inter-Level Recruitment 2026: Check Details",
@@ -1117,6 +2877,12 @@
       "category": "telecom",
       "title": "TRAI Releases Mobile Network Performance Audit for Thrissur District",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No133of2026.pdf"
+    },
+    {
+      "id": "cac7e748a084",
+      "category": "admit-cards",
+      "title": "Inquiry Regarding Employment Admit Cards for the State of Mizoram",
+      "source": "https://www.incredibleindia.gov.in/en/mizoram"
     },
     {
       "id": "122b5649e749",
@@ -1347,6 +3113,2063 @@
       "source": "https://www.bbc.co.uk/sport/football/articles/cje36dn5nx36o"
     }
   ],
-  "diagnostics": {},
-  "mode": "directory"
+  "diagnostics": {
+    "afd6fb7b59b23e9a1dffcdaa": {
+      "reason": "authorization_required",
+      "source": "https://www.cardekho.com/maruti/swift/specs",
+      "candidate_count": 8,
+      "candidates": [
+        "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Swift/9226/1755777061785/front-left-side-47.jpg",
+        "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Swift/9226/1778825394048/rear-left-view-121.jpg",
+        "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Swift/12028/1774511510786/front-right-view-120.jpg"
+      ]
+    },
+    "9343770524a2e7223a9b618e": {
+      "reason": "authorization_required",
+      "source": "https://www.cardekho.com/mahindra/thar/specs",
+      "candidate_count": 8,
+      "candidates": [
+        "https://stimg.cardekho.com/images/carexteriorimages/930x620/Mahindra/Thar/13948/1790589447439/front-left-side-47.jpg",
+        "https://stimg.cardekho.com/images/carexteriorimages/930x620/Mahindra/Thar/13948/1790588115946/front-view-118.jpg",
+        "https://stimg.cardekho.com/images/carexteriorimages/930x620/Mahindra/Thar/13948/1790588115946/side-view-(left)-90.jpg"
+      ],
+      "existing_representative_preserved": true
+    },
+    "feea9cd2e6e32e1f453adabd": {
+      "reason": "authorization_required",
+      "source": "https://www.bikedekho.com/hero/splendor-plus",
+      "candidate_count": 12,
+      "candidates": [
+        "https://cdn.bikedekho.com/processedimages/hero-motocorp/hero-motocorp-splendor/source/hero-motocorp-splendor69ba806bcfb9f.jpg",
+        "https://cdn.bikedekho.com/processedimages/hero-motocorp/hero-motocorp-splendor/source/hero-motocorp-splendor69ba806bcfb9f.jpg?imwidth=600&impolicy=resize",
+        "https://cdn.bikedekho.com/processedimages/hero-motocorp/hero-motocorp-splendor/source/hero-motocorp-splendor690ecfbe6b22d.jpg?imwidth=600&impolicy=resize"
+      ],
+      "existing_representative_preserved": true
+    },
+    "06db24bb717ca54f66f62f32": {
+      "reason": "authorization_required",
+      "source": "https://www.bikedekho.com/bajaj/pulsar-150",
+      "candidate_count": 12,
+      "candidates": [
+        "https://cdn.bikedekho.com/processedimages/bajaj/2026-pulsar-150/source/2026-pulsar-1506aa919c686f73.jpg",
+        "https://cdn.bikedekho.com/processedimages/bajaj/2026-pulsar-150/source/2026-pulsar-1506aa919c686f73.jpg?imwidth=600&impolicy=resize",
+        "https://cdn.bikedekho.com/processedimages/bajaj/2026-pulsar-150/source/2026-pulsar-1506aa919e0c2dc3.jpg?imwidth=600&impolicy=resize"
+      ],
+      "existing_representative_preserved": true
+    },
+    "0e40232a288ace699862891d": {
+      "reason": "authorization_required",
+      "source": "https://www.cardekho.com/hyundai/creta/specs",
+      "candidate_count": 8,
+      "candidates": [
+        "https://stimg.cardekho.com/images/carexteriorimages/930x620/Hyundai/Creta/8667/1793256627889/front-left-side-47.jpg",
+        "https://stimg.cardekho.com/images/carexteriorimages/930x620/Hyundai/Creta/11467/1778825201649/rear-left-view-121.jpg",
+        "https://stimg.cardekho.com/images/carexteriorimages/930x620/Hyundai/Creta/8667/1751535724464/front-right-view-120.jpg"
+      ],
+      "existing_representative_preserved": true
+    },
+    "ec6863e32188cfdfaf0e0f03": {
+      "reason": "authorization_required",
+      "source": "https://www.bikedekho.com/tvs/apache-rtr-160-4v",
+      "candidate_count": 12,
+      "candidates": [
+        "https://cdn.bikedekho.com/processedimages/tvs/apache-rtr-160-4v/source/apache-rtr-160-4v6aacee01c9bb2.jpg",
+        "https://cdn.bikedekho.com/processedimages/tvs/apache-rtr-160-4v/source/apache-rtr-160-4v6aacee01c9bb2.jpg?imwidth=600&impolicy=resize",
+        "https://cdn.bikedekho.com/processedimages/tvs/apache-rtr-160-4v/source/apache-rtr-160-4v6aaceddcc0b6e.jpg?imwidth=600&impolicy=resize"
+      ],
+      "existing_representative_preserved": true
+    },
+    "1afe1c431cab62b81a431ed7": {
+      "reason": "access_denied",
+      "source": "https://www.gadgets360.com/samsung-galaxy-s24-price-in-india-123380",
+      "status": 403,
+      "existing_representative_preserved": true
+    },
+    "063f4803fe742d225120749a": {
+      "reason": "access_denied",
+      "source": "https://www.gadgets360.com/vivo-x-fold-5-price-in-india-133304",
+      "status": 403
+    },
+    "8af54bb949a0c055391d640a": {
+      "reason": "access_denied",
+      "source": "https://www.gadgets360.com/google-pixel-9-price-in-india-127628",
+      "status": 403,
+      "existing_representative_preserved": true
+    },
+    "71f48906c4f9acc6c7ed345c": {
+      "reason": "authorization_required",
+      "source": "https://www.infinitiusa.com/vehicles/discontinued-vehicles/qx55.html",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.infinitiusa.com/content/dam/Infiniti/US/vehicles/QX65/2027/vehicle-profile-assets/model-2027-infiniti-qx65-autograph-awd-sunfire-red-two-tone.png.ximg.l_3_m.smart.png",
+        "https://www.infinitiusa.com/content/dam/Infiniti/US/vehicles/QX60/2027/vehicle-profile-assets/model-2027-infiniti-qx60-autograph-awd-black-obsidian-v2.png.ximg.l_3_m.smart.png",
+        "https://www.infinitiusa.com/content/dam/Infiniti/US/vehicles/QX80/my27-5/vehicle-profile-assets/model-2027-infiniti-qx80-autograph-4wd-black-obsidian-dynamic-metal.png.ximg.l_3_m.smart.png"
+      ],
+      "existing_representative_preserved": true
+    },
+    "66fea5fdaa3b": {
+      "reason": "authorization_required",
+      "source": "https://www.incredibleindia.gov.in/en/tripura",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.incredibleindia.gov.in/content/dam/incredible-india/images/global/incredible-india-og.png",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/Facebook?qlt=82&ts=1772696214675",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/X?qlt=82&ts=1772696214675"
+      ]
+    },
+    "8c8db2af05e935abb15eaa18": {
+      "reason": "authorization_required",
+      "source": "https://www.collegedekho.com/colleges/iitb",
+      "candidate_count": 1,
+      "candidates": [
+        "https://media.collegedekho.com/media/img/institute/crawled_images/TDay2015A_0.JPG"
+      ],
+      "existing_representative_preserved": true
+    },
+    "927b49babdc939df240ee79f": {
+      "reason": "authorization_required",
+      "source": "https://www.collegedekho.com/colleges/iit-delhi",
+      "candidate_count": 1,
+      "candidates": [
+        "https://media.collegedekho.com/media/img/institute/crawled_images/iit_delhi_MEwt1eh.jpg"
+      ],
+      "existing_representative_preserved": true
+    },
+    "4d937d0d23b5": {
+      "reason": "authorization_required",
+      "source": "https://help.openai.com/en/articles/20001516-managing-usage-with-gpt-6-astra-in-work-and-codex",
+      "candidate_count": 1,
+      "candidates": [
+        "https://help.openai.com/og-image.png"
+      ]
+    },
+    "4805037fd814": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/tairex-launches-multi-agent-ai-system-to-transform-clinical-collaboration-and-decision-support-302916729.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=EN78807&Transmission_Id=202610220500PR_NEWS_EURO_ND__EN78807&DateId=20261022",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/AFI.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/STW.jpg"
+      ]
+    },
+    "9db43091aef2": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/world-news/student-enrolment-in-us-computer-science-programs-falls-as-ai-takes-jobs-126102900433_1.html",
+      "status": 403
+    },
+    "688194199d3a": {
+      "reason": "authorization_required",
+      "source": "https://www.incredibleindia.gov.in/en/meghalaya",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.incredibleindia.gov.in/content/dam/incredible-india/images/global/incredible-india-og.png",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/Facebook?qlt=82&ts=1772696214675",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/X?qlt=82&ts=1772696214675"
+      ]
+    },
+    "9bcfb13f35c2": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/modelbest-and-openbmb-open-source-minicpm-ocr-series-delivering-high-performance-document-parsing-and-ai-powered-quality-control-302925594.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=CN86192&Transmission_Id=202610311124PR_NEWS_USPR_____CN86192&DateId=20261031",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/STW.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/CPR.jpg"
+      ]
+    },
+    "731720281d96": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/tata-communications-to-build-indias-ai-super-highway-302922235.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=EN83235&Transmission_Id=202610290530PR_NEWS_EURO_ND__EN83235&DateId=20261029",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/CPR.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/TLS.jpg"
+      ]
+    },
+    "8dec8c22190f": {
+      "reason": "authorization_required",
+      "source": "https://github.com/mainplane-ai/mainplane",
+      "candidate_count": 10,
+      "candidates": [
+        "https://opengraph.githubassets.com/55a2efb46e158a9d25629b1d6a0b269e8a40fc0e106f0175ed1ef7fadc851ffa/mainplane-ai/mainplane",
+        "https://avatars.githubusercontent.com/u/325439885?s=60&v=4",
+        "https://raw.githubusercontent.com/mainplane-ai/github-media/main/hero-mobile-v2.svg"
+      ]
+    },
+    "a28e5c356dd7": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/arctic-wolf-named-a-leader-in-2026-qks-spark-matrix-for-ai-soc-automation-302923421.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=IO84463&Transmission_Id=202610290443PR_NEWS_USPR_____IO84463&DateId=20261029",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/OUT.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/HTS.jpg"
+      ]
+    },
+    "c6fb5b87e001": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/in/news-releases/prohance-launches-ai-adoption-index-to-measure-ai-roi-302923386.html",
+      "candidate_count": 2,
+      "candidates": [
+        "https://mmx.prnewswire.com/media/MS2023345/ProHance-Launches-AI-Adoption-Index-to-Measure-AI-ROI.mp4?id=OA3046831&p=thumbnail",
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=EN84393&Transmission_Id=202610290420PR_NEWS_EURO_ND__EN84393&DateId=20261029"
+      ]
+    },
+    "a5f43758a0b4": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/white-paper-outlining-strategies-to-address-rural-ai-skills-gaps-and-support-workforce-retention-published-by-the-university-of-phoenix-college-of-doctoral-studies-302924623.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=LA85196&Transmission_Id=202610310800PR_NEWS_USPR_____LA85196&DateId=20261031",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/EDU.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/AFI.jpg"
+      ]
+    },
+    "cd652bf418a1": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/cognizant-zet-meer-dan-25-000-professionals-in-voor-de-implementatie-van-openai-oplossingen-nu-ondernemingen-geavanceerde-ai-in-productie-nemen-302925664.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=NL85234&Transmission_Id=202610300600PR_NEWS_EURO_ND__NL85234&DateId=20261031",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/CPR.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/STW.jpg"
+      ]
+    },
+    "c9852d26a946": {
+      "reason": "authorization_required",
+      "source": "https://github.com/dietrichgebert/ponytail",
+      "candidate_count": 12,
+      "candidates": [
+        "https://repository-images.githubusercontent.com/1266797999/b20d9cb8-11f0-4db8-965a-7e22ab2b6bb6",
+        "https://avatars.githubusercontent.com/u/137048761?s=60&v=4",
+        "https://camo.githubusercontent.com/c9eff6dda97e97dcabec3309c894825997d202f1e261c8df48734b8368375553/68747470733a2f2f7472656e6473686966742e696f2f6170692f62616467652f7265706f7369746f726965732f3530363638"
+      ]
+    },
+    "e0560c89dba7": {
+      "reason": "authorization_required",
+      "source": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo",
+      "candidate_count": 12,
+      "candidates": [
+        "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/10b0/live/dcdf2a60-d46e-11f1-9dda-1ba6fcc7d159.jpg",
+        "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/10b0/live/dcdf2a60-d46e-11f1-9dda-1ba6fcc7d159.jpg.webp",
+        "https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/10b0/live/dcdf2a60-d46e-11f1-9dda-1ba6fcc7d159.jpg.webp"
+      ]
+    },
+    "8e4c8ed516d4": {
+      "reason": "authorization_required",
+      "source": "https://github.blog/changelog/2026-10-28-copilot-code-review-merge-with-confidence-with-max-and-approvals/",
+      "candidate_count": 9,
+      "candidates": [
+        "https://github.blog/wp-content/uploads/2026/11/683060765-43cffe61-3c1c-47b7-9067-57635b1b60e4.png?resize=150%2C150",
+        "https://github.blog/wp-content/uploads/2026/11/683060766-2dd9d49e-657e-45a9-ac71-9fe1f593f0b7.png",
+        "https://github.blog/wp-content/uploads/2026/11/683060765-43cffe61-3c1c-47b7-9067-57635b1b60e4.png?w=1600"
+      ]
+    },
+    "ad024d7bf12f": {
+      "reason": "authorization_required",
+      "source": "https://www.techradar.com/ai-platforms-assistants",
+      "candidate_count": 12,
+      "candidates": [
+        "https://cdn.mos.cms.futurecdn.net/flexiimages/h0mke6edxz1770889266-800-80.jpg",
+        "https://cdn.mos.cms.futurecdn.net/v7DvrGvEfUSWhuAWwLN5mL-840-80.jpg.webp",
+        "https://cdn.mos.cms.futurecdn.net/v7DvrGvEfUSWhuAWwLN5mL-650-80.jpg.webp"
+      ]
+    },
+    "91cdd0b20502": {
+      "reason": "authorization_required",
+      "source": "https://www.incredibleindia.gov.in/en/nagaland",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.incredibleindia.gov.in/content/dam/incredible-india/images/global/incredible-india-og.png",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/Facebook?qlt=82&ts=1772696214675",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/X?qlt=82&ts=1772696214675"
+      ]
+    },
+    "5fb0f6590999": {
+      "reason": "authorization_required",
+      "source": "https://nagaland.gov.in/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://nagaland.gov.in/storage/vips/BPgH3hjM4DcQkV1gW5ufvz2cBSNDuR5rFTQYdm02.jpg",
+        "https://nagaland.gov.in/storage/vips/Nagaland-cm.jpg",
+        "https://nagaland.gov.in/storage/vips/chief-secy-2.jpg"
+      ]
+    },
+    "a679eaf857aa": {
+      "reason": "authorization_required",
+      "source": "https://www.incredibleindia.gov.in/en/sikkim",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.incredibleindia.gov.in/content/dam/incredible-india/images/global/incredible-india-og.png",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/Facebook?qlt=82&ts=1772696214675",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/X?qlt=82&ts=1772696214675"
+      ]
+    },
+    "bc5f9a4c4b04": {
+      "reason": "authorization_required",
+      "source": "https://www.androidpolice.com/chrome-flags-faster-browsing/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://static0.anpoimages.com/wordpress%2Fwp-content%2Fauthors%2F6a7d71948096d-147249.jpg?fit=crop&w=36&h=36",
+        "https://static0.anpoimages.com/wordpress%2Fwp-content%2Fauthors%2F6a7d71948096d-147249.jpg?fit=crop&w=90&h=90",
+        "https://static0.anpoimages.com/wordpress/wp-content/uploads/2026/10/auto-dark-mode-chrome-flag.jpg?q=49&fit=contain&w=604&h=340&dpr=2"
+      ]
+    },
+    "cac7e748a084": {
+      "reason": "authorization_required",
+      "source": "https://www.incredibleindia.gov.in/en/mizoram",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.incredibleindia.gov.in/content/dam/incredible-india/images/global/incredible-india-og.png",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/Facebook?qlt=82&ts=1772696214675",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/X?qlt=82&ts=1772696214675"
+      ]
+    },
+    "641ce636f53e": {
+      "reason": "authorization_required",
+      "source": "https://www.caranddriver.com/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.caranddriver.com/top&resize=640:*",
+        "https://www.caranddriver.com/top&resize=480:*",
+        "https://hips.hearstapps.com/hmg-prod/images/c643aa3d-c08c-41a2-ad19-580a830d6ef2.jpg?crop=0.66650390625xw:1xh;center"
+      ]
+    },
+    "35138ef1243bd14940422a54": {
+      "reason": "authorization_required",
+      "source": "https://www.collegedekho.com/colleges/parul-university",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.collegedekho.com/colleges/null"
+      ]
+    },
+    "536d88298af5": {
+      "reason": "authorization_required",
+      "source": "https://www.hyundai.com/in/en/find-a-car/bayon/price",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.hyundai.com/in/en/find-a-car/bayon/[object Object]",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Thumbnail/bayon-thumb-pc.png",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Thumbnail/exter_thumbnail_pc.png"
+      ],
+      "existing_representative_preserved": true
+    },
+    "4c81415bc8d0": {
+      "reason": "authorization_required",
+      "source": "https://www.hyundai.com/in/en/hyundai-story/media-center/press-release/performance-on-with-hyundai-bayon",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Thumbnail/bayon-thumb-pc.png",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Thumbnail/exter_thumbnail_pc.png",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Thumbnail/venue_thumbnail_pc.png"
+      ],
+      "existing_representative_preserved": true
+    },
+    "023ca2302135": {
+      "reason": "authorization_required",
+      "source": "https://www.hyundai.com/in/en/blog/hyundai-bayon-safety-features",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Thumbnail/bayon-thumb-pc.png",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Thumbnail/exter_thumbnail_pc.png",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Thumbnail/venue_thumbnail_pc.png"
+      ],
+      "existing_representative_preserved": true
+    },
+    "13e71ca09340": {
+      "reason": "authorization_required",
+      "source": "https://www.hyundai.com/in/en/find-a-car/bayon/convenience",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/bayon/bayon-main-des-banner.jpg",
+        "https://www.hyundai.com/in/en/find-a-car/bayon/[object Object]",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Thumbnail/bayon-thumb-pc.png"
+      ],
+      "existing_representative_preserved": true
+    },
+    "021dcf06da61": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/tuhura-biosciences-provides-first-look-at-data-from-its-open-label-study-of-ifx-2-0-as-an-adjunctive-therapy-to-keytruda-in-first-line-treatment-of-patients-with-deep-seated-metastatic-merkel-cell-carcinoma-302918838.html",
+      "candidate_count": 4,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=LA80464&Transmission_Id=202610260730PR_NEWS_USPR_____LA80464&DateId=20261026",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/HEA.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/BIO.jpg"
+      ]
+    },
+    "036d1e10e017": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/new-clinical-data-on-lecanemab-to-be-presented-at-ctad-conference-2026-302924707.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=EN85418&Transmission_Id=202610300320PR_NEWS_EURO_ND__EN85418&DateId=20261030",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/HEA.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/BIO.jpg"
+      ]
+    },
+    "03fdad6de98e": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/all-in-print-china-2026-concludes-successfully-as-ruizhi-machinery-showcases-three-new-machines-302923371.html",
+      "candidate_count": 1,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=CN80623&Transmission_Id=202610290413PR_NEWS_USPR_____CN80623&DateId=20261029"
+      ]
+    },
+    "029b646a13ec": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/esg-reporting-software-market-worth-4-48-billion-by-2031--report-by-marketsandmarkets-302924789.html",
+      "candidate_count": 4,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=IO85396&Transmission_Id=202610301001PR_NEWS_USPR_____IO85396&DateId=20261030",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/STW.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/CPR.jpg"
+      ]
+    },
+    "4b874f09e9b9": {
+      "reason": "authorization_required",
+      "source": "https://www.hyundai.com/in/en/find-a-car/bayon/features",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/find-a-car/bayon/bayon-main-des-banner.jpg",
+        "https://www.hyundai.com/in/en/find-a-car/bayon/[object Object]",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Thumbnail/bayon-thumb-pc.png"
+      ],
+      "existing_representative_preserved": true
+    },
+    "94ecfea200ee": {
+      "reason": "authorization_required",
+      "source": "https://www.hyundai.com/in/en/hyundai-story/media-center/press-release/hmi-launches-hyundai-bayon-price",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Thumbnail/bayon-thumb-pc.png",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Thumbnail/exter_thumbnail_pc.png",
+        "https://www.hyundai.com/content/dam/hyundai/in/en/data/vehicle-thumbnail/Thumbnail/venue_thumbnail_pc.png"
+      ],
+      "existing_representative_preserved": true
+    },
+    "040073763955": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/yeastar-reconoce-la-ia-la-innovacion-tecnica-y-el-exito-de-los-clientes-en-los-yeahs-awards-2026-302917649.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=SE78759&Transmission_Id=202610290300PR_NEWS_EURO_ND__SE78759&DateId=20261029",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/TCS.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/VIP.jpg"
+      ]
+    },
+    "05bc5a47b19b": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/turner-mason--company-releases-four-fall-energy-market-outlook-reports-302923877.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=DA84706&Transmission_Id=202610291100PR_NEWS_USPR_____DA84706&DateId=20261029",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/OIL.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/CPR.jpg"
+      ]
+    },
+    "074cb06de604": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/duol-investors-have-opportunity-to-lead-duolingo-inc-securities-fraud-lawsuit-with-sbs-law-302924160.html",
+      "candidate_count": 1,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=LA85021&Transmission_Id=202610291727PR_NEWS_USPR_____LA85021&DateId=20261029"
+      ]
+    },
+    "05d05c18d987": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/dodgen-reports-poe-devolatilization-milestones-across-three-industrial-projects-in-china-302923001.html",
+      "candidate_count": 1,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=CN84326&Transmission_Id=202610282322PR_NEWS_USPR_____CN84326&DateId=20261028"
+      ]
+    },
+    "07746bc77e63": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/rcg-ventures-closes-fund-viii-above-target-at-515-million-302919410.html",
+      "candidate_count": 1,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=NY80529&Transmission_Id=202610261000PR_NEWS_USPR_____NY80529&DateId=20261026"
+      ]
+    },
+    "06157d85578b": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/the-society-for-immunotherapy-of-cancer-announces-late-breaking-abstracts-and-press-briefing-presented-at-sitc-2026-302923852.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=CG83850&Transmission_Id=202610291100PR_NEWS_USPR_____CG83850&DateId=20261029",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/HEA.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/MTC.jpg"
+      ]
+    },
+    "9e7d68e39abe": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/external-affairs-defence-security/news/secure-supply-chains-resilience-key-for-global-economy-jaishankar-at-g20-126110100012_1.html",
+      "status": 403
+    },
+    "513299dd74b0": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/from-ifa-berlin-to-ces-2027-ollobot-continues-its-journey-in-emotional-companionship-302925063.html",
+      "candidate_count": 8,
+      "candidates": [
+        "https://i.ytimg.com/vi/-35l_Xz7xUM/hqdefault.jpg",
+        "https://mmx.prnewswire.com/media/MS2024413/20261030093614EDT_image_1.jpg?id=OA3049678&p=facebook",
+        "https://mmx.prnewswire.com/media/MS2024413/20261030093614EDT_image_1.jpg?id=OA3049678"
+      ]
+    },
+    "3b439d483131": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/ubcf-and-ggp-formerly-brookfield-properties-launch-2026-pink-bag-event-initiative-302925520.html",
+      "candidate_count": 4,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=NY86183&Transmission_Id=202610310830PR_NEWS_USPR_____NY86183&DateId=20261031",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/HEA.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/ADV.jpg"
+      ]
+    },
+    "9acdf4deb8ec": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/pakistaanse-banken-slagen-niet-voor-de-klimaat--en-natuurbeleidstest-omdat-financieringswaarborgen-tekortschieten-302925673.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=NL85428&Transmission_Id=202610312329PR_NEWS_EURO_ND__NL85428&DateId=20261031",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/FIN.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/ENV.jpg"
+      ]
+    },
+    "577e14c837fb": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/huawei-lance-des-solutions-dexploitation-et-de-maintenance-destinees-au-secteur-industriel-302925670.html",
+      "candidate_count": 10,
+      "candidates": [
+        "https://mmx.prnewswire.com/media/MS2024154/20261029231756EDT_image_1.jpg?id=OA3049287&p=facebook",
+        "https://mmx.prnewswire.com/media/MS2024154/20261029231756EDT_image_1.jpg?id=OA3049287&p=twitter",
+        "https://mmx.prnewswire.com/media/MS2024154/20261029231756EDT_image_1.jpg?id=OA3049287&p=medium"
+      ]
+    },
+    "9359fbbe265d": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/hk-tightens-oversight-of-building-repair-work-302925549.html",
+      "candidate_count": 6,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=CN86189&Transmission_Id=202610310415PR_NEWS_USPR_____CN86189&DateId=20261031",
+        "https://mmx.prnewswire.com/media/MS2024387/20261030091109EDT_image_1.jpg?id=OA3049623",
+        "https://mmx.prnewswire.com/media/MS2023265/20261028224359EDT_image_1.jpg?id=OA3046625"
+      ]
+    },
+    "a63748b1bd49": {
+      "reason": "authorization_required",
+      "source": "https://news.abplive.com/business/commercial-lpg-cylinder-price-hike-rs-10-11-50-nov-1-diwali-domestic-rates-unchanged-check-city-wise-rates-1874173",
+      "candidate_count": 3,
+      "candidates": [
+        "https://feeds.abplive.com/onecms/images/uploaded-images/2026/10/25/ebd79dbeeaf85f5b4a48ff50b8f6928917929023946191379_original.jpg?impolicy=abp_cdn&imwidth=1200&height=675",
+        "https://feeds.abplive.com/onecms/images/uploaded-images/2026/10/25/ebd79dbeeaf85f5b4a48ff50b8f6928917929023946191379_original.jpg?impolicy=abp_cdn&imwidth=1200",
+        "https://feeds.abplive.com/onecms/images/uploaded-images/2026/10/25/ebd79dbeeaf85f5b4a48ff50b8f6928917929023946191379_original.jpg?impolicy=abp_cdn&imwidth=640"
+      ]
+    },
+    "ef6d4c03dede": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/xpeng-announces-vehicle-delivery-results-for-october-2026-302925668.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=CN86280&Transmission_Id=202610312310PR_NEWS_USPR_____CN86280&DateId=20261031",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/AFI.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/TRN.jpg"
+      ]
+    },
+    "36a5897449ef": {
+      "reason": "authorization_required",
+      "source": "https://www.bbc.com/news/world/australia",
+      "candidate_count": 12,
+      "candidates": [
+        "https://ichef.bbci.co.uk/news/1536/cpsprodpb/ce75/live/a6edaf70-d618-11f1-93e1-3b657b665bcf.jpg.webp",
+        "https://ichef.bbci.co.uk/news/1024/cpsprodpb/ce75/live/a6edaf70-d618-11f1-93e1-3b657b665bcf.jpg.webp",
+        "https://ichef.bbci.co.uk/news/800/cpsprodpb/ce75/live/a6edaf70-d618-11f1-93e1-3b657b665bcf.jpg.webp"
+      ]
+    },
+    "ba4320656bde": {
+      "reason": "authorization_required",
+      "source": "https://www.aljazeera.com/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.aljazeera.com/wp-content/uploads/2026/11/AFP__20261101__D6368MJ__v1__HighRes__IranIsraelUsWar-1793576931.jpg?resize=770%2C513&quality=80",
+        "https://www.aljazeera.com/wp-content/uploads/2026/11/AFP__20261101__D6368MJ__v1__HighRes__IranIsraelUsWar-1793576931.jpg?resize=570%2C380&quality=80",
+        "https://www.aljazeera.com/wp-content/uploads/2026/11/AFP__20261101__D6368MJ__v1__HighRes__IranIsraelUsWar-1793576931.jpg?resize=375%2C250&quality=80"
+      ]
+    },
+    "3850526be7f2": {
+      "reason": "authorization_required",
+      "source": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+      "candidate_count": 6,
+      "candidates": [
+        "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Annual_Report_2026",
+        "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Icon_Facebook_2x-1?scl=1",
+        "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Accessibility_Icon_X_40x40_v1?scl=1"
+      ]
+    },
+    "0c3ea34ef3ae": {
+      "reason": "authorization_required",
+      "source": "https://www.bbc.com/sport/articles/cqly0z047x6yo",
+      "candidate_count": 12,
+      "candidates": [
+        "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/33d2/live/58079e20-d398-11f1-b490-07d78ce4b8e5.jpg",
+        "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/33d2/live/58079e20-d398-11f1-b490-07d78ce4b8e5.jpg.webp",
+        "https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/33d2/live/58079e20-d398-11f1-b490-07d78ce4b8e5.jpg.webp"
+      ]
+    },
+    "2271690f92c4": {
+      "reason": "authorization_required",
+      "source": "https://www.icc-cricket.com/news/south-africa-topple-australia-to-climb-test-team-rankings-summit",
+      "candidate_count": 4,
+      "candidates": [
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/mmbedqf1r7btay1uz0oo",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size50-webp/prd/mmbedqf1r7btay1uz0oo",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size40-webp/prd/mmbedqf1r7btay1uz0oo"
+      ]
+    },
+    "9e35e8d14cac": {
+      "reason": "authorization_required",
+      "source": "https://www.icc-cricket.com/news/sensational-south-africa-seal-the-series-in-cape-town",
+      "candidate_count": 6,
+      "candidates": [
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/vos84xcpsgyh0zunvrkd",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size50-webp/prd/vos84xcpsgyh0zunvrkd",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size40-webp/prd/vos84xcpsgyh0zunvrkd"
+      ]
+    },
+    "083453935c43": {
+      "reason": "authorization_required",
+      "source": "https://www.autocarindia.com/cars/maruti-suzuki/fronx-facelift/price-in-nellore",
+      "candidate_count": 12,
+      "candidates": [
+        "https://asset.autocarindia.com/static/car-images/maruti-suzuki/fronx-facelift/maruti-suzuki-fronx-facelift-front-left-three-quarter.jpg",
+        "https://asset.autocarindia.com/static/car-images/maruti-suzuki/fronx-facelift/maruti-suzuki-fronx-facelift-rear-left-three-quarter.jpg",
+        "https://asset.autocarindia.com/static/car-images/maruti-suzuki/fronx-facelift/maruti-suzuki-fronx-facelift-front-bumper.jpg"
+      ]
+    },
+    "93060df7626e": {
+      "reason": "authorization_required",
+      "source": "https://timesofindia.indiatimes.com/sports/cricket/wpl/wpl-to-get-more-teams-from-next-year-bcci-secretary-devajit-saikia-shares-latest-update/articleshow/135301417.cms",
+      "candidate_count": 6,
+      "candidates": [
+        "https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-135301602/135301602.jpg",
+        "https://static.toiimg.com/thumb/msid-135301602,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+        "https://static.toiimg.com/photo/83033472.cms"
+      ]
+    },
+    "74e9a6b8276f": {
+      "reason": "authorization_required",
+      "source": "https://www.icc-cricket.com/news/india-bolster-pace-attack-for-new-zealand-odis",
+      "candidate_count": 4,
+      "candidates": [
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/pf3jhto7dubktewchpnw",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size50-webp/prd/pf3jhto7dubktewchpnw",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size40-webp/prd/pf3jhto7dubktewchpnw"
+      ]
+    },
+    "88cf2aa5020e": {
+      "reason": "authorization_required",
+      "source": "https://www.icc-cricket.com/news/warrican-s-five-for-headlines-eventful-day-2-in-mirpur",
+      "candidate_count": 4,
+      "candidates": [
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/v1793276894/prd/a5uufxizogu34jh5tizb",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size50-webp/v1793276894/prd/a5uufxizogu34jh5tizb",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size40-webp/v1793276894/prd/a5uufxizogu34jh5tizb"
+      ]
+    },
+    "b00176270c18": {
+      "reason": "authorization_required",
+      "source": "https://www.bhaskar.com/g/sports/cricket/news/sri-lanka-vs-pakistan-odi-tri-series-final-lahore-live-updates-139547058.html",
+      "candidate_count": 12,
+      "candidates": [
+        "https://images.bhaskarassets.com/thumb/1200x900/web2images/521/2026/10/31/dbgifmagic_-_2026-10-31t222730_974_1793465901604.gif",
+        "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2026/10/31/dbgifmagic_-_2026-10-31t222730_974_1793465901604.gif",
+        "https://www.bhaskar.com/assets/images/top-news.a4108012.svg"
+      ]
+    },
+    "917bca19741c": {
+      "reason": "authorization_required",
+      "source": "https://www.icc-cricket.com/news/cummins-hints-at-changes-after-south-africa-series-loss",
+      "candidate_count": 4,
+      "candidates": [
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/ou12oft2tyugaxiuhnap",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size50-webp/prd/ou12oft2tyugaxiuhnap",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size40-webp/prd/ou12oft2tyugaxiuhnap"
+      ]
+    },
+    "69bf94442786": {
+      "reason": "authorization_required",
+      "source": "https://www.autocarindia.com/cars/mahindra/be.07/price-in-amaravati",
+      "candidate_count": 12,
+      "candidates": [
+        "https://cdn-s3.autocarindia.com/Mahindra/be-07/Mahindra-BE07_Spy_Shot.png",
+        "https://cdn-s3.autocarindia.com/Mahindra/be-07/Mahindra%20BE-07_3.jpg",
+        "https://cdn-s3.autocarindia.com/Mahindra/be-07/Mahindra%20BE-07_2.jpg"
+      ]
+    },
+    "b7745043adef": {
+      "reason": "authorization_required",
+      "source": "https://www.autocarindia.com/cars/mahindra/scorpio-lifestyler/price-in-delhi",
+      "candidate_count": 12,
+      "candidates": [
+        "https://cdn-s3.autocarindia.com/Mahindra/scorpio-lifestyler/Scorpio_lifestyler%20wallpaper.png",
+        "https://cdn-s3.autocarindia.com/Mahindra/scorpio-lifestyler/2026%20Scorpio_lifestyler_Front%20left%20quarter.png",
+        "https://cdn-s3.autocarindia.com/Mahindra/scorpio-lifestyler/Scorpio_lifestyler_Front%20Sand%20trail.png"
+      ]
+    },
+    "9b3641414312": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/amp/world-news/iran-warns-of-wider-retaliation-even-as-diplomatic-talks-with-us-progress-126103101346_1.html",
+      "status": 403
+    },
+    "d9a0f59e3e5a": {
+      "reason": "authorization_required",
+      "source": "https://www.icc-cricket.com/news/state-of-play-as-the-icc-world-test-championship-2025-27-resumes",
+      "candidate_count": 4,
+      "candidates": [
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/nmtd4yw36hkmhtizhqo5",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size50-webp/prd/nmtd4yw36hkmhtizhqo5",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size40-webp/prd/nmtd4yw36hkmhtizhqo5"
+      ]
+    },
+    "9d72856192eb": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/navy-mutual-awards-milmos-lacey-langford-with-the-2026-lieutenant-timothy-dix-bolles-excellency-in-education-award-302922401.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=PH82620&Transmission_Id=202610311500PR_NEWS_USPR_____PH82620&DateId=20261031",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/HIN.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/HEA.jpg"
+      ]
+    },
+    "4276fb8776e9": {
+      "reason": "authorization_required",
+      "source": "https://www.bhaskar.com/g/lifestyle/news/diwali-2026-cyber-fraud-types-shopping-website-app-scam-prevention-rules-guide-139549456.html",
+      "candidate_count": 12,
+      "candidates": [
+        "https://images.bhaskarassets.com/thumb/1200x900/web2images/521/2026/10/31/cl_diwali-cyber-fraud-0_1793446290985.gif",
+        "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2026/10/31/cl_diwali-cyber-fraud-0_1793446290985.gif",
+        "https://www.bhaskar.com/assets/images/top-news.a4108012.svg"
+      ]
+    },
+    "11493efbbc99": {
+      "reason": "authorization_required",
+      "source": "https://fr.linkedin.com/posts/antoninopapalia_%C3%A9ducation-orientationscolaire-r%C3%A9ussite%C3%A9ducative-activity-7521765355648626688-auPH",
+      "candidate_count": 2,
+      "candidates": [
+        "https://media.licdn.com/dms/image/v2/D5622AQHooGcveHwVHA/feedshare-shrink_1280/B56aGKtur0GsAQ-/0/1793328606272?e=2147483647&v=beta&t=FdEdr_1fbs8nPyZpRC-BixPQxk1-3QRrLw5aC_rYYiA",
+        "https://media.licdn.com/dms/image/v2/D4E16AQHkXUDiVN2knw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1736102528283?e=2147483647&v=beta&t=5-6P0fJt8tnPo6nvzoLVhu-5_yf-i6nwVVGXmlnV__E"
+      ]
+    },
+    "50c473a205c3": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/armed-forces-afms-ssc-medical-officer-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-31T121841.416.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-31T121841.416-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-31T121841.416-768x432.jpg"
+      ]
+    },
+    "6189652eeaaa": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/university-of-phoenix-associate-dean-to-present-ai-literacy-framework-implementation-at-aacu-conference-on-ai-and-higher-education-302924272.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=LA85165&Transmission_Id=202610291647PR_NEWS_USPR_____LA85165&DateId=20261029",
+        "https://mmx.prnewswire.com/media/MS2019772/NTW-2026-infographic-FINAL.jpg?id=OA3036957",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/EDU.jpg"
+      ]
+    },
+    "5e8e1a0ac44f": {
+      "reason": "authorization_required",
+      "source": "https://www.theguardian.com/education",
+      "candidate_count": 12,
+      "candidates": [
+        "https://i.guim.co.uk/img/media/57d3198b98ba147dabbee0ef8314c8582b184720/0_0_3780_3024/master/3780.jpg?width=460&dpr=2&s=none&crop=5%3A4",
+        "https://i.guim.co.uk/img/media/57d3198b98ba147dabbee0ef8314c8582b184720/0_0_3780_3024/master/3780.jpg?width=460&dpr=1&s=none&crop=5%3A4",
+        "https://i.guim.co.uk/img/media/57d3198b98ba147dabbee0ef8314c8582b184720/0_0_3780_3024/master/3780.jpg?width=330&dpr=2&s=none&crop=5%3A4"
+      ],
+      "existing_representative_preserved": true
+    },
+    "e3e8417bf2c4": {
+      "reason": "authorization_required",
+      "source": "https://www.icc-cricket.com/news/pakistan-clinch-tri-series-with-big-chase-against-sri-lanka",
+      "candidate_count": 4,
+      "candidates": [
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/iiuhdxqjnkihbeeoafh9",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size50-webp/prd/iiuhdxqjnkihbeeoafh9",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size40-webp/prd/iiuhdxqjnkihbeeoafh9"
+      ]
+    },
+    "62f5310583d8": {
+      "reason": "authorization_required",
+      "source": "https://www.cardekho.com:443/electric-charging-station",
+      "candidate_count": 2,
+      "candidates": [
+        "https://www.cardekho.com:443/electric-charging-station",
+        "https://stimg.cardekho.com/pwa/img/spacer3x2.png"
+      ]
+    },
+    "9f99e8365ecc": {
+      "reason": "authorization_required",
+      "source": "https://www.caranddriver.com/ev/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.caranddriver.com/ev/top",
+        "https://www.caranddriver.com/ev/top&resize=1800:*",
+        "https://www.caranddriver.com/ev/top&resize=1400:*"
+      ]
+    },
+    "064527450b6c": {
+      "reason": "authorization_required",
+      "source": "https://www.govtschemes.in/tamil-nadu-vetri-150-scheme",
+      "candidate_count": 5,
+      "candidates": [
+        "https://www.govtschemes.in/themes/custom/b5subtheme/images/heart-round.svg",
+        "https://www.govtschemes.in/sites/default/files/styles/medium/public/2026-05/Tamil%20Nadu%20CM%20Vijay.jpg?itok=626m9Zg5",
+        "https://www.govtschemes.in/sites/default/files/2026-10/Tamil%20Nadu%20Vetri%20150%20Scheme%20Image.jpg?v=1"
+      ]
+    },
+    "1739a9e15c84": {
+      "reason": "authorization_required",
+      "source": "https://www.govtschemes.in/gujarat-surya-urja-rooftop-yojana",
+      "candidate_count": 7,
+      "candidates": [
+        "https://www.govtschemes.in/themes/custom/b5subtheme/images/heart-round.svg",
+        "https://www.govtschemes.in/sites/default/files/styles/medium/public/2024-10/Bhupendrabhai%20Patel%20CM%20Gujrat.jpg?itok=IPhaz-Sa",
+        "https://www.govtschemes.in/sites/default/files/2026-10/Gujarat%20Surya%20Urja%20Rooftop%20Yojana%20Image.jpg?v=1"
+      ]
+    },
+    "179b343d3570": {
+      "reason": "authorization_required",
+      "source": "https://www.govtschemes.in/west-bengal-mukhyamantri-kisan-samman-nidhi-scheme",
+      "candidate_count": 7,
+      "candidates": [
+        "https://www.govtschemes.in/themes/custom/b5subtheme/images/heart-round.svg",
+        "https://www.govtschemes.in/sites/default/files/styles/medium/public/2026-05/Suvendu%20Adhikari.jpg?itok=sUCmuhoM",
+        "https://www.govtschemes.in/sites/default/files/2026-11/West%20Bengal%20Mukhyamantri%20Krishak%20Samman%20Nidhi%20Scheme%20Image.jpg?v=1"
+      ]
+    },
+    "7f94bd7f6aa5": {
+      "reason": "authorization_required",
+      "source": "https://www.desidime.com/discussions/hubble-app-gift-card-offer-2191117",
+      "candidate_count": 6,
+      "candidates": [
+        "https://cdn3.desidime.com/topics/photos/2191117/thumb/hubble-app-gift-card-offer-2191117.jpg?1793439285",
+        "https://cdn2.desidime.com/topics/photos/2191117/medium/hubble-app-gift-card-offer-2191117.jpg?1793439285",
+        "https://cdn1.desidime.com/topics/photos/2191117/small/hubble-app-gift-card-offer-2191117.jpg?1793439285"
+      ]
+    },
+    "17195b854776": {
+      "reason": "authorization_required",
+      "source": "https://www.govtschemes.in/rajasthan-economic-help-sahariya-students-bed-training-scheme",
+      "candidate_count": 7,
+      "candidates": [
+        "https://www.govtschemes.in/themes/custom/b5subtheme/images/heart-round.svg",
+        "https://www.govtschemes.in/sites/default/files/styles/medium/public/2024-10/Bhajan%20Lal%20Sharma%20CM%20Rajasthan.jpg?itok=Um6I93eI",
+        "https://www.govtschemes.in/sites/default/files/2026-10/Rajasthan%20Economic%20Help%20to%20Sahariya%20Students%20for%20B.ED%20Training%20Scheme%20Image.jpg?v=1"
+      ]
+    },
+    "193b9ffb115a": {
+      "reason": "authorization_required",
+      "source": "https://www.govtschemes.in/nspire-scholarship-higher-education-she",
+      "candidate_count": 7,
+      "candidates": [
+        "https://www.govtschemes.in/sites/default/files/styles/thumbnail/public/pictures/2026-06/1000106873.jpg?itok=m6-_tjO_",
+        "https://www.govtschemes.in/themes/custom/b5subtheme/images/heart-round.svg",
+        "https://www.govtschemes.in/sites/default/files/styles/medium/public/2024-10/Narendra%20Modi%20PM%20of%20India.jpg?itok=4cfgVyot"
+      ]
+    },
+    "21b55746a839": {
+      "reason": "authorization_required",
+      "source": "https://www.govtschemes.in/gujarat-sardar-krushi-jyoti-yojana-skjy",
+      "candidate_count": 7,
+      "candidates": [
+        "https://www.govtschemes.in/themes/custom/b5subtheme/images/heart-round.svg",
+        "https://www.govtschemes.in/sites/default/files/styles/medium/public/2024-10/Bhupendrabhai%20Patel%20CM%20Gujrat.jpg?itok=IPhaz-Sa",
+        "https://www.govtschemes.in/sites/default/files/2026-10/Gujarat%20Sardar%20Krushi%20Jyoti%20Yojana%20Image.jpg?v=1"
+      ]
+    },
+    "26a06274862a": {
+      "reason": "authorization_required",
+      "source": "https://www.govtschemes.in/rajasthan-mukhyamantri-shahri-rojgar-guarantee-yojana",
+      "candidate_count": 6,
+      "candidates": [
+        "https://www.govtschemes.in/themes/custom/b5subtheme/images/heart-round.svg",
+        "https://www.govtschemes.in/sites/default/files/styles/medium/public/2024-10/Bhajan%20Lal%20Sharma%20CM%20Rajasthan.jpg?itok=Um6I93eI",
+        "https://www.govtschemes.in/sites/default/files/2026-10/Rajasthan%20Mukhyamantri%20Shahari%20Rozgar%20Guarantee%20Yojana%20Image.jpg?v=1"
+      ]
+    },
+    "d7fbf9b18b8a": {
+      "reason": "authorization_required",
+      "source": "https://news.abplive.com/health/common-gut-bacterium-may-fuel-colon-cancer-but-scientists-find-a-way-to-block-its-toxin-1874174",
+      "candidate_count": 3,
+      "candidates": [
+        "https://feeds.abplive.com/onecms/images/uploaded-images/2026/11/01/dfc8690259b38e98aaa3357cb7eb7a0317935011996601090_original.png?impolicy=abp_cdn&imwidth=1200&height=675",
+        "https://feeds.abplive.com/onecms/images/uploaded-images/2026/11/01/dfc8690259b38e98aaa3357cb7eb7a0317935011996601090_original.png?impolicy=abp_cdn&imwidth=1200",
+        "https://feeds.abplive.com/onecms/images/uploaded-images/2026/11/01/dfc8690259b38e98aaa3357cb7eb7a0317935011996601090_original.png?impolicy=abp_cdn&imwidth=640"
+      ]
+    },
+    "1c4f6e29aff4": {
+      "reason": "no_source_image",
+      "source": "https://www.theguardian.com/info/2016/jan/25/content-funding"
+    },
+    "ed99df3183ca": {
+      "reason": "authorization_required",
+      "source": "https://apps.apple.com/mx/iphone/apps",
+      "candidate_count": 12,
+      "candidates": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/82/da/ad/82daad76-c4f3-dfc1-5341-af7d8e622df2/3d8cf7be-5f49-4aa4-a125-f686a82b0203.png/34x48bb.webp",
+        "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/82/da/ad/82daad76-c4f3-dfc1-5341-af7d8e622df2/3d8cf7be-5f49-4aa4-a125-f686a82b0203.png/17x24bb.webp",
+        "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/82/da/ad/82daad76-c4f3-dfc1-5341-af7d8e622df2/3d8cf7be-5f49-4aa4-a125-f686a82b0203.png/34x48bb-60.jpg"
+      ]
+    },
+    "022df2730726": {
+      "reason": "authorization_required",
+      "source": "https://www.coolztricks.com/amazon-free-samples.html",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.coolztricks.com/wp-content/uploads/2023/06/ggggg.jpg",
+        "https://www.coolztricks.com/wp-content/uploads/2023/06/ggggg-300x137.jpg",
+        "https://www.coolztricks.com/wp-content/uploads/2023/06/photo_6115944751770482522_y.jpg"
+      ]
+    },
+    "3f437cd6deee": {
+      "reason": "access_denied",
+      "source": "https://www.nytimes.com/spotlight/lifestyle",
+      "status": 403,
+      "existing_representative_preserved": true
+    },
+    "285dd8d5ec2f": {
+      "reason": "authorization_required",
+      "source": "https://www.desidime.com/discussions/update-on-applicable-charges-for-2189852",
+      "candidate_count": 1,
+      "candidates": [
+        "https://cdn1.desidime.com/topics/photos/2189852/large/update-on-applicable-charges-for-2189852.png?1793269960"
+      ]
+    },
+    "20687ba6ed09": {
+      "reason": "authorization_required",
+      "source": "https://timesofindia.indiatimes.com/entertainment/english/hollywood/news/sandra-bullock-shares-halloween-throwback-post-with-rare-family-pics-nothing-is-off-limits-in-this-household/articleshow/135415554.cms",
+      "candidate_count": 6,
+      "candidates": [
+        "https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-135415570/135415570.jpg",
+        "https://static.toiimg.com/thumb/msid-135415570,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+        "https://static.toiimg.com/photo/83033472.cms"
+      ]
+    },
+    "8b35f96970af": {
+      "reason": "authorization_required",
+      "source": "https://variety.com/2026/scene/news/heidi-klum-halloween-2026-severed-human-hand-costume-1236935653/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://variety.com/wp-content/uploads/2026/10/2302926100.jpg",
+        "https://variety.com/wp-content/uploads/2026/10/2302926100.jpg?crop=0px%2C505px%2C3155px%2C1776px&resize=1000%2C563",
+        "https://variety.com/wp-content/themes/pmc-variety-2020/assets/src/svg/icons/google-preferred.svg"
+      ]
+    },
+    "e3a0509dd7c3": {
+      "reason": "authorization_required",
+      "source": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/yash-takes-a-break-from-ramayana-promotions-to-enjoy-day-at-disneyland-with-kids-watch/articleshow/135414879.cms",
+      "candidate_count": 6,
+      "candidates": [
+        "https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-135415294/135415294.jpg",
+        "https://static.toiimg.com/thumb/msid-135415294,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+        "https://static.toiimg.com/photo/83033472.cms"
+      ]
+    },
+    "00f079e2ba3a": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-alok-industries-limited-india-4481052431",
+      "status": 429
+    },
+    "76373a4c3552": {
+      "reason": "authorization_required",
+      "source": "https://www.hollywoodreporter.com/lifestyle/lifestyle-news/heidi-klum-2026-halloween-costume-reveal-1236741385/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.hollywoodreporter.com/wp-content/uploads/2026/10/GettyImages-2302925088.jpg",
+        "https://www.hollywoodreporter.com/wp-content/uploads/2026/10/GettyImages-2302925088.jpg?crop=0px%2C75px%2C4500px%2C2518px&resize=1440%2C810",
+        "https://www.hollywoodreporter.com/wp-content/themes/vip/pmc-hollywoodreporter-2021/assets/src/svg/google-preferred.svg"
+      ]
+    },
+    "8e4eeb531af7": {
+      "reason": "authorization_required",
+      "source": "https://deadline.com/2026/10/dubai-faisal-hashmi-spine-drop-pictures-horror-slate-1237210593/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://deadline.com/wp-content/uploads/2025/03/Melanie-Goodfellow.jpg?w=193&h=193&crop=1",
+        "https://deadline.com/wp-content/themes/pmc-deadline-2019/assets/src/svg/icons/google-preferred.svg",
+        "https://deadline.com/wp-content/uploads/2026/10/Screenshot-2026-10-31-at-10.24.22-PM.png?w=300"
+      ]
+    },
+    "04bcdc448261": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/material-management-coordinator-at-kone-4484477721?position=46&pageNum=0&refId=7GWgQQ0v3ze9a3w3Q2vwcw%3D%3D&trackingId=BYWzdYE16qmuOI8vgMHtPQ%3D%3D",
+      "status": 429
+    },
+    "66d37df8160c": {
+      "reason": "authorization_required",
+      "source": "https://www.coolztricks.com/2020/04/best-10-fantasy-cricket-apps-ipl-2019.html",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.coolztricks.com/wp-content/uploads/2019/04/WhatsApp-Image-2019-03-25-at-5.23.32-PM-300x300.jpeg",
+        "https://www.coolztricks.com/wp-content/uploads/2019/04/WhatsApp-Image-2019-03-25-at-5.23.32-PM-300x300-275x300.jpeg",
+        "https://coolztricks.com/wp-content/uploads/2019/04/WhatsApp-Image-2019-03-25-at-5.23.32-PM-300x300-275x300.jpeg"
+      ]
+    },
+    "05cc9a358c55": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/business-development-specialist-at-fanzart-designer-fans-4484908686",
+      "status": 429
+    },
+    "05d3b71dd6e0": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/sales-executive-at-make-your-own-perfume-myop-4484796852",
+      "status": 429
+    },
+    "06f842f028fe": {
+      "reason": "access_denied",
+      "source": "https://www.linkedin.com/jobs/view/virtual-assistant-at-a-full-renovation-%E2%80%93-home-improvement-4483788958",
+      "status": 429
+    },
+    "079aeaa0eeef": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
+      "status": 429
+    },
+    "07f40dc280d1": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/looking-for-western-music-teacher-primary-1-5-in-tellapur-hyderabad-at-eh-jobs-4481687605",
+      "status": 429
+    },
+    "021c54d7abdb": {
+      "reason": "no_source_image",
+      "source": "https://je.linkedin.com/jobs/Win%20Gaming%20API%20-%20India%20Market%20API%F0%9F%8F%A7TG%40gameapi26-jobs?position=1&pageNum=0"
+    },
+    "040dd341f762": {
+      "reason": "authorization_required",
+      "source": "https://in.linkedin.com/jobs/view/founder-s-office-intern-at-the-souled-store-4483622129",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "0391c4373eca": {
+      "reason": "no_source_image",
+      "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-phoenix-az"
+    },
+    "029ee2179ac9": {
+      "reason": "authorization_required",
+      "source": "https://in.linkedin.com/jobs/view/backend-developer-java-at-saatvik-agro-4484932211",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "090108930e0d": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/client-acquisition-intern-at-bright-blue-gemstones-4471542402",
+      "status": 429
+    },
+    "090cabc5ee27": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/%E0%A6%B2%E0%A7%87%E0%A6%95%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%BE%E0%A6%B0-jobs",
+      "status": 429
+    },
+    "0b33380de117": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/compliance-manager-at-fatakpay-4482278882",
+      "status": 429
+    },
+    "07f5b24312a4": {
+      "reason": "authorization_required",
+      "source": "https://in.linkedin.com/jobs/view/stem-innovation-engineer-in-chandigarh-ghaziabad-uttar-pradesh-bulandshahr-noida-punjab-gurgaon-meerut-sangrur-mohali-at-innow8-4472659090",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "0983ec5f08f3": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Br%C9%99yl%C9%99r-%2Bonlayn%2Bfikirl%C9%99ri%2Bayr%C4%B1ca%2Binc%C9%99l%C9%99yin.ekq-jobs",
+      "status": 429
+    },
+    "0bdb0918a8cf": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/relationship-manager-secured-direct-south-ap-ts-tn-at-credit-saison-india-4480041233",
+      "status": 429
+    },
+    "080b28de54ff": {
+      "reason": "authorization_required",
+      "source": "https://in.linkedin.com/jobs/view/mis-executive-at-amrit-skills-development-4480055351",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "0e2fde519d11": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/growth-vendor-onboarding-intern-surat-textile-market-at-tradetrust-4484792454",
+      "status": 429
+    },
+    "122b5649e749": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/sales-associate-onboard-international-cruise-line-at-ivory-lighthouse-recruitment-services-pvt-ltd-4482589473",
+      "status": 429
+    },
+    "0f2e549a24cc": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-moses-lake-wa",
+      "status": 429
+    },
+    "08a83556bce2": {
+      "reason": "authorization_required",
+      "source": "https://in.linkedin.com/jobs/view/education-finance-officer-in-nashik-trichey-begumpet-mangalore-solapur-bidar-bhubaneswar-coimbatore-cuttack-kollam-chennai-hyderabad-maharashta-koramangala-andhra-pradesh-at-wemakescholars-4483353601",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "0e7392808f2b": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/fashion-designer-educator-at-skillinabox-4483836717",
+      "status": 429
+    },
+    "0da0ead215c3": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/technial-hr-recruiter-in-secunderabad-hyderabad-hyderabad-hyderabad-vishakhapatnam-alwal-visakhapatnam-at-wemakescholars-4484295029?position=58&pageNum=0&refId=IYfwluMaDIcsUuazNwoLjw%3D%3D&trackingId=4yed8vCMLTz%2BknFIMv5vzQ%3D%3D",
+      "status": 429
+    },
+    "1ad731a65211": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-moses-lake-wa",
+      "status": 429
+    },
+    "2254c016ebd0": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-cheyenne-wy",
+      "status": 429
+    },
+    "35c6b2e75c5a": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
+      "status": 429
+    },
+    "257900039128": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-moses-lake-wa",
+      "status": 429
+    },
+    "37c0e160c49f": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-cheyenne-wy",
+      "status": 429
+    },
+    "38138689935d": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-boydton-va",
+      "status": 429
+    },
+    "36fc08c8c68d": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-des-moines-ia",
+      "status": 429
+    },
+    "4002fcf12fa5": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-phoenix-az",
+      "status": 429
+    },
+    "6ba39bcd4548": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
+      "status": 429
+    },
+    "58f11d3687a2": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-des-moines-ia",
+      "status": 429
+    },
+    "6734d0b5d4b1": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-des-moines-ia",
+      "status": 429
+    },
+    "92088c2de8c2": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-des-moines-ia",
+      "status": 429
+    },
+    "736ca0bcddb6": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-des-moines-ia",
+      "status": 429
+    },
+    "91712e374b16": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-boydton-va",
+      "status": 429
+    },
+    "9d38ac0228db": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-phoenix-az",
+      "status": 429
+    },
+    "b9e7ebed5efd": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-boydton-va",
+      "status": 429
+    },
+    "9e37935bcd6c": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
+      "status": 429
+    },
+    "aa511d7af8e4": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-san-francisco-ca",
+      "status": 429
+    },
+    "c929a77d3cf4": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-phoenix-az",
+      "status": 429
+    },
+    "ff059456a4ee": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-phoenix-az",
+      "status": 429
+    },
+    "bc48687185e4": {
+      "reason": "authorization_required",
+      "source": "https://www.incredibleindia.gov.in/en/delhi",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.incredibleindia.gov.in/content/dam/incredible-india/images/global/incredible-india-og.png",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/Facebook?qlt=82&ts=1772696214675",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/X?qlt=82&ts=1772696214675"
+      ]
+    },
+    "03abd2476ec3": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/mp-high-court-stenographer-assistant-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-06T174628.761.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-06T174628.761-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-06T174628.761-768x432.jpg"
+      ]
+    },
+    "04364fe578a3": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/up-budaun-ecce-educator-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-24T141404.894.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-24T141404.894-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-24T141404.894-768x432.jpg"
+      ]
+    },
+    "04d288eb687a": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/isro-assistant-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-28T163857.956.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-28T163857.956-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-28T163857.956-768x432.jpg"
+      ]
+    },
+    "05643ec6e714": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/hpsc-fso-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-19T114350.201.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-19T114350.201-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-19T114350.201-768x432.jpg"
+      ]
+    },
+    "f4db96d26a30": {
+      "reason": "authorization_required",
+      "source": "https://www.icc-cricket.com/news/dominant-west-indies-go-1-0-up-in-mirpur",
+      "candidate_count": 4,
+      "candidates": [
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size20-webp/prd/yoo1avxltsfrdvp98584",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size50-webp/prd/yoo1avxltsfrdvp98584",
+        "https://images.icc-cricket.com/image/upload/t_ratio16_9-size40-webp/prd/yoo1avxltsfrdvp98584"
+      ]
+    },
+    "456a77a3e836": {
+      "reason": "authorization_required",
+      "source": "https://haryana.gov.in/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2024/12/20241213520143229.jpeg",
+        "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2024/12/20241204328937773.jpg",
+        "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2020/05/2020050857.png"
+      ]
+    },
+    "0dcd28330735": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/upessc-prt-assistant-teacher-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-15T214643.075.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-15T214643.075-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-15T214643.075-768x432.jpg"
+      ]
+    },
+    "14e5520453bf": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/csjmu-kanpur-teaching-post-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-05T165519.312.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-05T165519.312-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-05T165519.312-768x432.jpg"
+      ]
+    },
+    "1a26d2c45b49": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/mpesb-group-3-sub-engineer-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/08/Official-Sarkari-Result-Since-2009-2026-08-29T104147.335.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/08/Official-Sarkari-Result-Since-2009-2026-08-29T104147.335-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/08/Official-Sarkari-Result-Since-2009-2026-08-29T104147.335-768x432.jpg"
+      ]
+    },
+    "3570bb7ef821": {
+      "reason": "access_denied",
+      "source": "https://www.upsc.gov.in/sites/default/files/AdvtNo-51-2026-Special-Engl-240726.pdf",
+      "status": 403
+    },
+    "3727810ceb63": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/rrb-ntpc-inter-level-07-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-22T125834.244.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-22T125834.244-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-22T125834.244-768x432.jpg"
+      ]
+    },
+    "39e19d25868f": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/bihar-bssc-field-assistant-pre-result-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/01/Official-Sarkari-Result-Since-2009-2026-10-17T104625.790.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/01/Official-Sarkari-Result-Since-2009-2026-10-17T104625.790-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/01/Official-Sarkari-Result-Since-2009-2026-10-17T104625.790-768x432.jpg"
+      ]
+    },
+    "2ea1ae3dba72": {
+      "reason": "authorization_required",
+      "source": "https://www.jagranjosh.com/lite/articles/uppsc-ro-aro-notification-2026-out-apply-online-for-501-posts-check-eligibility-here-1800018227-1",
+      "candidate_count": 2,
+      "candidates": [
+        "https://img.jagranjosh.com/images/2026/10/26/template/image/UPPSC-RO-ARO-Notification-2026-Out-1792999518864.webp",
+        "https://img.jagranjosh.com/images/2026/10/26/template/image/UPPSC-RO-ARO-Notification-2026-Out-1792999518864.webwebp"
+      ]
+    },
+    "712c404a4a7d": {
+      "reason": "source_unavailable",
+      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_2_29102026.pdf",
+      "status": 200
+    },
+    "44f0f610ca23": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/upsssc-pet-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-10T112810.631.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-10T112810.631-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-10T112810.631-768x432.jpg"
+      ]
+    },
+    "49c9e678b8e6": {
+      "reason": "authorization_required",
+      "source": "https://www.jagranjosh.com/lite/articles/rrb-section-controller-answer-key-2026-out-download-response-sheet-pdf-at-rrb-indianrailways-gov-in-1800018229-1",
+      "candidate_count": 2,
+      "candidates": [
+        "https://img.jagranjosh.com/images/2026/10/26/template/image/rrb-section-controller-answer-key-2026-1793001111391.webp",
+        "https://img.jagranjosh.com/images/2026/10/26/template/image/rrb-section-controller-answer-key-2026-1793001111391.webwebp"
+      ]
+    },
+    "6f4b009a8cf7": {
+      "reason": "authorization_required",
+      "source": "https://www.freejobalert.com/articles/sainik-school-nagrota-recruitment-2026-apply-offline-for-3-tgt-art-master-and-more-posts-3077510",
+      "candidate_count": 3,
+      "candidates": [
+        "https://img2.freejobalert.com/freejobalert/2026/10/sainik-school-nagrota-20261031132133-1a190f147d1-1200.webp",
+        "https://img2.freejobalert.com/freejobalert/2026/10/sainik-school-nagrota-20261031132133-1a190f147d1-300.webp",
+        "https://img2.freejobalert.com/author/sangeetha-k.webp"
+      ]
+    },
+    "61ab99a70d23": {
+      "reason": "source_unavailable",
+      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_3_29102026.pdf",
+      "status": 200
+    },
+    "70794edbf210": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/nta-csir-ugc-net-december-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-08T164745.502.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-08T164745.502-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-08T164745.502-768x432.jpg"
+      ]
+    },
+    "74be455ea69c": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/rrb-alp-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/08/Official-Sarkari-Result-Since-2009-2026-09-21T165311.558.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/08/Official-Sarkari-Result-Since-2009-2026-09-21T165311.558-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/08/Official-Sarkari-Result-Since-2009-2026-09-21T165311.558-768x432.jpg"
+      ]
+    },
+    "73cbea983e4a": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/nta-jee-mains-session-i-2027/",
+      "candidate_count": 3,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/NTA-JEE-Mains-Session-I-Online-Form-2027.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/NTA-JEE-Mains-Session-I-Online-Form-2027-768x432.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/NTA-JEE-Mains-Session-I-Online-Form-2027-300x169.jpg"
+      ]
+    },
+    "79a395619e00": {
+      "reason": "authorization_required",
+      "source": "https://www.incredibleindia.gov.in/en/haryana",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.incredibleindia.gov.in/content/dam/incredible-india/images/global/incredible-india-og.png",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/Facebook?qlt=82&ts=1772696214675",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/X?qlt=82&ts=1772696214675"
+      ]
+    },
+    "75c0df289e98": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/nta-ugc-net-december-2026-2/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-09T155847.617.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-09T155847.617-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-09T155847.617-768x432.jpg"
+      ]
+    },
+    "7651bebe982e": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/railway-rrb-station-master-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-27T102959.063.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-27T102959.063-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-27T102959.063-768x432.jpg"
+      ]
+    },
+    "8ba79e7533cc": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/clat-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/07/Official-Sarkari-Result-Since-2009-2026-07-27T133559.605.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/07/Official-Sarkari-Result-Since-2009-2026-07-27T133559.605-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/07/Official-Sarkari-Result-Since-2009-2026-07-27T133559.605-768x432.jpg"
+      ]
+    },
+    "d4504bc286b8": {
+      "reason": "authorization_required",
+      "source": "https://www.incredibleindia.gov.in/en/chhattisgarh",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.incredibleindia.gov.in/content/dam/incredible-india/images/global/incredible-india-og.png",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/Facebook?qlt=82&ts=1772696214675",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/X?qlt=82&ts=1772696214675"
+      ]
+    },
+    "7ff9a9cec087": {
+      "reason": "authorization_required",
+      "source": "https://www.jagranjosh.com/lite/articles/lic-hfl-recruitment-2026-apply-online-last-date-for-232-apprentice-vacancies-check-direct-link-here-1800018446-1",
+      "candidate_count": 2,
+      "candidates": [
+        "https://img.jagranjosh.com/images/2026/10/31/template/image/LIC-HFL-Recruitment-2026-1793431252232.webp",
+        "https://img.jagranjosh.com/images/2026/10/31/template/image/LIC-HFL-Recruitment-2026-1793431252232.webwebp"
+      ]
+    },
+    "95cdf6baf4a1": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/bseb-slet-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-01T130949.930.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-01T130949.930-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-01T130949.930-768x432.jpg"
+      ]
+    },
+    "b784ee370b35": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/upessc-up-tgt-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-23T202618.789.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-23T202618.789-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-23T202618.789-768x432.jpg"
+      ]
+    },
+    "bff77d8cc54a": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/nta-niftee-2027/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-17T111440.097.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-17T111440.097-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/10/Official-Sarkari-Result-Since-2009-2026-10-17T111440.097-768x432.jpg"
+      ]
+    },
+    "d0a7a71477a8": {
+      "reason": "authorization_required",
+      "source": "https://sarkariresult.com.cm/bpsc-school-teacher-tre-4-0-2026/",
+      "candidate_count": 4,
+      "candidates": [
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-29T143135.738.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-29T143135.738-1024x576.jpg",
+        "https://sarkariresult.com.cm/wp-content/uploads/2026/09/Official-Sarkari-Result-Since-2009-2026-09-29T143135.738-768x432.jpg"
+      ]
+    },
+    "09eaa4a8cbc9": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/age-calculator/"
+    },
+    "a1cbe0a8a4a4": {
+      "reason": "authorization_required",
+      "source": "https://www.jagranjosh.com/lite/articles/rrb-station-master-notification-2026-out-apply-online-for-1265-posts-check-eligibility-here-1800018266-1",
+      "candidate_count": 2,
+      "candidates": [
+        "https://img.jagranjosh.com/images/2026/10/27/template/image/RRB-Station-Master-Notification-2026-1793079692486.webp",
+        "https://img.jagranjosh.com/images/2026/10/27/template/image/RRB-Station-Master-Notification-2026-1793079692486.webwebp"
+      ]
+    },
+    "e1489204dede": {
+      "reason": "authorization_required",
+      "source": "https://www.freejobalert.com/articles/iol-chairman-managing-director-recruitment-2026-3077507",
+      "candidate_count": 2,
+      "candidates": [
+        "https://img2.freejobalert.com/freejobalert/2026/10/iol-20261031132702-1a190f64cde-1200.webp",
+        "https://img2.freejobalert.com/freejobalert/2026/10/iol-20261031132702-1a190f64cde-300.webp"
+      ]
+    },
+    "b86345326a46": {
+      "reason": "authorization_required",
+      "source": "https://www.jagranjosh.com/lite/articles/ongc-apprentice-recruitment-2026-direct-link-to-apply-online-check-eligibility-and-other-details-1800018454-1",
+      "candidate_count": 2,
+      "candidates": [
+        "https://img.jagranjosh.com/images/2026/10/31/template/image/ONGC-APPRENTICE-RECRUITMENT-2026-1793441614426.webp",
+        "https://img.jagranjosh.com/images/2026/10/31/template/image/ONGC-APPRENTICE-RECRUITMENT-2026-1793441614426.webwebp"
+      ]
+    },
+    "dd54d85ef928": {
+      "reason": "restricted_page",
+      "source": "https://www.sahisarkarijobs.in/photo-resizer/",
+      "existing_representative_preserved": true
+    },
+    "d3f9477c8fd1": {
+      "reason": "authorization_required",
+      "source": "https://www.theverge.com/entertainment/1024096/halloween-spirit-youtube-horror",
+      "candidate_count": 12,
+      "candidates": [
+        "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/TERRENCE_BLURPLE.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400",
+        "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/TERRENCE_BLURPLE.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2048",
+        "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/TERRENCE_BLURPLE.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=1920"
+      ]
+    },
+    "0e0b629ddbc4": {
+      "reason": "authorization_required",
+      "source": "https://home.maharashtra.gov.in/en/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://cdnbbsr.s3waas.gov.in/s3a012869311d64a44b5a0d567cd20de04/uploads/2026/07/20260703493387863.jpeg",
+        "https://cdnbbsr.s3waas.gov.in/s3a012869311d64a44b5a0d567cd20de04/uploads/2025/08/20250801711775616.jpeg",
+        "https://cdnbbsr.s3waas.gov.in/s3a012869311d64a44b5a0d567cd20de04/uploads/2025/08/202508011894739506.jpg"
+      ]
+    },
+    "e4d4cfaf119b": {
+      "reason": "authorization_required",
+      "source": "https://www.androidpolice.com/youtube-music-premium-solved-daily-battery-drain-issue/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://static0.anpoimages.com/wordpress%2Fwp-content%2Fauthors%2F6a734e2fe1a24-000035.JPG?fit=crop&w=36&h=36",
+        "https://static0.anpoimages.com/wordpress%2Fwp-content%2Fauthors%2F6a734e2fe1a24-000035.JPG?fit=crop&w=90&h=90",
+        "https://static0.anpoimages.com/wordpress/wp-content/uploads/2026/10/person-enjoying-youtube-music-experience.jpg?q=49&fit=crop&w=220&h=124&dpr=2"
+      ]
+    },
+    "2ad6ac3deefa": {
+      "reason": "authorization_required",
+      "source": "https://www.theguardian.com/football/all",
+      "candidate_count": 12,
+      "candidates": [
+        "https://i.guim.co.uk/img/media/67ed78edc563a3512b694f044f0b7a319dd546eb/450_0_3541_2834/master/3541.jpg?width=220&dpr=2&s=none&crop=5%3A4",
+        "https://i.guim.co.uk/img/media/67ed78edc563a3512b694f044f0b7a319dd546eb/450_0_3541_2834/master/3541.jpg?width=220&dpr=1&s=none&crop=5%3A4",
+        "https://i.guim.co.uk/img/media/67ed78edc563a3512b694f044f0b7a319dd546eb/450_0_3541_2834/master/3541.jpg?width=160&dpr=2&s=none&crop=5%3A4"
+      ]
+    },
+    "2d5ab3e6a288": {
+      "reason": "authorization_required",
+      "source": "https://www.indiatoday.in/sports/cricket/story/gautam-gambhir-stay-humble-india-new-zealand-record-t20i-series-win-3026314-2026-10-27",
+      "candidate_count": 12,
+      "candidates": [
+        "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202610/gautam-gambhir-272156727-16x9_0.d_pl_uu9vjr-htzxoftqqavoly5p3rhvzxzjguq3t5e?VersionId=Yivtq8U20dUQPWWRYGzAYARckgvoPwLe&size=1280:720",
+        "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202610/gautam-gambhir-272156727-16x9_0.d_pl_uu9vjr-htzxoftqqavoly5p3rhvzxzjguq3t5e?VersionId=Yivtq8U20dUQPWWRYGzAYARckgvoPwLe",
+        "https://akm-img-a-in.tosshub.com/aajtak/resources/loading_at.gif"
+      ]
+    },
+    "8fb539b04f5d": {
+      "reason": "no_source_image",
+      "source": "https://www.haryana.gov.in/about-haryana/"
+    },
+    "b8e8c42dfb64": {
+      "reason": "authorization_required",
+      "source": "https://maharashtra.gov.in/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://maharashtra.gov.in/path-to-share-image.jpg",
+        "https://maharashtra.gov.in/Site/Upload/Images/Governor-Photo.jpg",
+        "https://maharashtra.gov.in/site/upload/images/CM-Maharashtra.jpg"
+      ]
+    },
+    "56e1692c2f72": {
+      "reason": "authorization_required",
+      "source": "https://www.bbc.co.uk/sport/football/articles/ck1l396jqv4zo",
+      "candidate_count": 12,
+      "candidates": [
+        "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/14eb/live/d3634440-d3dc-11f1-b441-2b33b063138f.png",
+        "https://ichef.bbci.co.uk/ace/standard/624/cpsprodpb/e8d3/live/6222f730-d3eb-11f1-93e1-3b657b665bcf.png.webp",
+        "https://ichef.bbci.co.uk/ace/standard/480/cpsprodpb/e8d3/live/6222f730-d3eb-11f1-93e1-3b657b665bcf.png.webp"
+      ]
+    },
+    "c766ee90465d": {
+      "reason": "authorization_required",
+      "source": "https://www.theguardian.com/football/live",
+      "candidate_count": 12,
+      "candidates": [
+        "https://i.guim.co.uk/img/sport/football/crests/31.png?width=20&dpr=2&s=none&crop=none",
+        "https://i.guim.co.uk/img/sport/football/crests/31.png?width=20&dpr=1&s=none&crop=none",
+        "https://i.guim.co.uk/img/sport/football/crests/8.png?width=20&dpr=2&s=none&crop=none"
+      ]
+    },
+    "39a5ec089c08": {
+      "reason": "no_source_image",
+      "source": "https://www.goa.gov.in/"
+    },
+    "ce842e67b595": {
+      "reason": "authorization_required",
+      "source": "https://www.bbc.co.uk/sport/football/articles/cje36dn5nx36o",
+      "candidate_count": 12,
+      "candidates": [
+        "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/f4ff/live/98c57790-d2ce-11f1-b441-2b33b063138f.jpg",
+        "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/f4ff/live/98c57790-d2ce-11f1-b441-2b33b063138f.jpg.webp",
+        "https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/f4ff/live/98c57790-d2ce-11f1-b441-2b33b063138f.jpg.webp"
+      ]
+    },
+    "fb293bf7f58b": {
+      "reason": "authorization_required",
+      "source": "https://www.bbc.co.uk/sport/cricket/articles/cwz0vevng3n0o?at_medium=RSS&at_campaign=rss",
+      "candidate_count": 12,
+      "candidates": [
+        "https://ichef.bbci.co.uk/ace/branded_sport/1200/cpsprodpb/42b2/live/34539a90-d3bd-11f1-93e1-3b657b665bcf.jpg",
+        "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/42b2/live/34539a90-d3bd-11f1-93e1-3b657b665bcf.jpg.webp",
+        "https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/42b2/live/34539a90-d3bd-11f1-93e1-3b657b665bcf.jpg.webp"
+      ]
+    },
+    "02ed539fac86": {
+      "reason": "authorization_required",
+      "source": "https://github.blog/news-insights/company-news/the-august-17-outage-and-the-work-ahead/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://github.blog/wp-content/uploads/2026/08/blog-post-aug-17-outage-1.png?w=1920",
+        "https://github.blog/wp-content/uploads/2026/08/blog-post-aug-17-outage-1.png?w=1536",
+        "https://github.blog/wp-content/uploads/2026/08/blog-post-aug-17-outage-1.png?w=1024"
+      ]
+    },
+    "a91a82825e4a": {
+      "reason": "access_denied",
+      "source": "https://jeemain.nta.nic.in/",
+      "status": 403
+    },
+    "7e8ee14ae6ce": {
+      "reason": "authorization_required",
+      "source": "https://www.incredibleindia.gov.in/en/rajasthan",
+      "candidate_count": 12,
+      "candidates": [
+        "https://www.incredibleindia.gov.in/content/dam/incredible-india/images/global/incredible-india-og.png",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/Facebook?qlt=82&ts=1772696214675",
+        "https://s7ap1.scene7.com/is/image/incredibleindia/X?qlt=82&ts=1772696214675"
+      ]
+    },
+    "52c013755cd0": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/8th-pay-commission-calculator/"
+    },
+    "07b5b3ef9223": {
+      "reason": "authorization_required",
+      "source": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5127936-update-released-with-41-changes-and-fixes/",
+      "candidate_count": 3,
+      "candidates": [
+        "https://www.bleepstatic.com/c/w/AI-Security-Bundle.jpg",
+        "https://www.bleepstatic.com/images/news/u/1109292/2026/Windows%2011%20KB5127936%20preview%20update.jpg",
+        "https://www.bleepstatic.com/c/a/deploy-email-security-agent.jpg"
+      ]
+    },
+    "186442aeaf00": {
+      "reason": "authorization_required",
+      "source": "https://blog.google/innovation-and-ai/models-and-research/google-labs/create-music-production-plugins-google-flow/",
+      "candidate_count": 9,
+      "candidates": [
+        "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/119A6335_1.max-1440x810.jpg",
+        "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/hero_pic.2e16d0ba.fill-600x600.format-webp.webp",
+        "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/hero_pic.2e16d0ba.fill-300x300.format-webp.webp"
+      ]
+    },
+    "1cf8f670adac": {
+      "reason": "authorization_required",
+      "source": "https://techcrunch.com/2026/10/31/data-centers-are-now-a-midterm-issue-even-in-brooklyn/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://techcrunch.com/wp-content/uploads/2026/10/Newsreel-Midterm-Madness-22.jpg?resize=1200,800",
+        "https://techcrunch.com/wp-content/uploads/2026/05/tc-lockup-hp.svg",
+        "https://techcrunch.com/wp-content/uploads/2026/10/Newsreel-Midterm-Madness-22.jpg"
+      ]
+    },
+    "0493b37f6575": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/companies/news/cci-xavier-niel-vodafone-stake-prosus-navi-aditya-birla-adani-deals-126103100598_1.html",
+      "status": 403
+    },
+    "27acad2a1225": {
+      "reason": "authorization_required",
+      "source": "https://www.amarujala.com/rajasthan/sikar/rajasthan-sikar-bank-glitch-one-lakh-crore-blocked-message-medical-store-employee-sameer-khan-2026-10-31",
+      "candidate_count": 9,
+      "candidates": [
+        "https://staticimg.amarujala.com/assets/images/2026/10/31/fail-fata_10e611e58b3ffb5a2ba99b930838dc0c.jpeg?w=1200",
+        "https://staticimg.amarujala.com/assets/images/2026/10/31/fail-fata_10e611e58b3ffb5a2ba99b930838dc0c.jpeg?w=1200&dpr=1.0",
+        "https://staticimg.amarujala.com/assets/images/2026/10/31/fail-fata_10e611e58b3ffb5a2ba99b930838dc0c.jpeg"
+      ]
+    },
+    "9cfed70093fb": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/salary-calculator/"
+    },
+    "29f12d5d640a": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No.129_of_2026.pdf.PDF",
+      "status": 200
+    },
+    "d113f09eda07": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/service-length-calculator/",
+      "existing_representative_preserved": true
+    },
+    "7f651ce9d3f0": {
+      "reason": "authorization_required",
+      "source": "https://www.prnewswire.com/news-releases/123net-awarded-86-million-in-federal-bead-funding-for-michigan-broadband-infrastructure-302922523.html",
+      "candidate_count": 5,
+      "candidates": [
+        "https://rt.prnewswire.com/rt.gif?NewsItemId=DE83373&Transmission_Id=202610281410PR_NEWS_USPR_____DE83373&DateId=20261028",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/CPR.jpg",
+        "https://www.prnewswire.com/content/dam/prnewswire/subject-and-industry-code-images/TLS.jpg"
+      ]
+    },
+    "8254f0386bd3": {
+      "reason": "authorization_required",
+      "source": "https://navbharattimes.indiatimes.com/tech/gadgets-news/jio-affordable-calling-plans-trai-mandated-voice-pack-details-benefits/articleshow/135390560.cms",
+      "candidate_count": 12,
+      "candidates": [
+        "https://static.langimg.com/nbt/thumb/135390560/jio-released-trai-mandate-plans.jpg?imgsize=1487020&width=1600&height=900&resizemode=75",
+        "https://static.langimg.com/nbt/thumb/135390560/jio-affordable-calling-plans-trai-mandated-voice-pack-details-benefits.jpg?imgsize=1487020&width=1600&height=900&resizemode=75",
+        "https://static.langimg.com/nbt/thumb/135390560/jio-released-trai-mandate-plans.jpg?imgsize=1487020&width=700&height=394&resizemode=75"
+      ]
+    },
+    "01a6933a42b8": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No122of2026.pdf",
+      "status": 200
+    },
+    "06e9199a393c": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No133of2026.pdf",
+      "status": 200
+    },
+    "c1856f75520c": {
+      "reason": "authorization_required",
+      "source": "https://www.bhaskar.com/business/news/jio-platforms-q2-results-revenue-profit-growth-share-price-update-139539782.html",
+      "candidate_count": 12,
+      "candidates": [
+        "https://images.bhaskarassets.com/thumb/1200x900/web2images/521/2026/10/30/comp_27_jio_ipo__1_1792640870854_1792731339712_179_1793368408075.gif",
+        "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2026/10/30/comp_27_jio_ipo__1_1792640870854_1792731339712_179_1793368408075.gif",
+        "https://www.bhaskar.com/assets/images/top-news.a4108012.svg"
+      ]
+    },
+    "031f3d5eda5f": {
+      "reason": "source_error",
+      "source": "https://news.samsung.com/in/author/malay-anil/page/331",
+      "error": "ReadTimeout"
+    },
+    "3b5a7fa28a88": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No134of2026.pdf",
+      "status": 200
+    },
+    "a41b914c9659": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No132of2026.pdf",
+      "status": 200
+    },
+    "41e3cf0806d9": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No131of2026.pdf",
+      "status": 200
+    },
+    "4eb7b2235122": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No124of2026.pdf",
+      "status": 200
+    },
+    "1e8ccf0069bd": {
+      "reason": "authorization_required",
+      "source": "https://timesofindia.indiatimes.com/world/south-asia/six-indian-tourists-go-missing-during-trek-to-nepals-shey-phoksundo-lake/articleshow/135416519.cms",
+      "candidate_count": 6,
+      "candidates": [
+        "https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-135416559/135416559.jpg",
+        "https://static.toiimg.com/thumb/msid-135416559,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+        "https://static.toiimg.com/photo/83033472.cms"
+      ]
+    },
+    "02518f2b343c": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28297?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "status": 404
+    },
+    "3a99b749f100": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No123of2026.pdf",
+      "status": 200
+    },
+    "43669547d8a9": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28286?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "status": 404,
+      "existing_representative_preserved": true
+    },
+    "308dda053820": {
+      "reason": "authorization_required",
+      "source": "https://www.abc.net.au/news/2026-11-01/should-all-australian-workers-get-reproductive-leave/107329210",
+      "candidate_count": 12,
+      "candidates": [
+        "https://live-production.wcms.abc-cdn.net.au/ac4a99ec26936bc29e8e59aacf71b43d?impolicy=wcms_crop_resize&cropH=2813&cropW=5000&xPos=0&yPos=234&width=862&height=485",
+        "https://live-production.wcms.abc-cdn.net.au/ac4a99ec26936bc29e8e59aacf71b43d?impolicy=wcms_watermark_news&cropH=2813&cropW=5000&xPos=0&yPos=234&width=862&height=485&imformat=generic",
+        "https://live-production.wcms.abc-cdn.net.au/5145c24fb9e34e3c07b3491e233f8daf?impolicy=wcms_crop_resize&cropH=2813&cropW=5000&xPos=0&yPos=260&width=862&height=485"
+      ]
+    },
+    "4d6ec6e63361": {
+      "reason": "authorization_required",
+      "source": "https://www.abc.net.au/news/2026-11-01/katy-gallagher-wont-promise-myefo-net-savings/107333248",
+      "candidate_count": 12,
+      "candidates": [
+        "https://live-production.wcms.abc-cdn.net.au/f01f78c5704fe6112ca3853b9ea3da76?impolicy=wcms_crop_resize&cropH=2970&cropW=5280&xPos=0&yPos=1&width=862&height=485",
+        "https://live-production.wcms.abc-cdn.net.au/f01f78c5704fe6112ca3853b9ea3da76?impolicy=wcms_watermark_news&cropH=2970&cropW=5280&xPos=0&yPos=1&width=862&height=485&imformat=generic",
+        "https://live-production.wcms.abc-cdn.net.au/038bb9ca4a6021bdedc610a3418842e2?impolicy=wcms_crop_resize&cropH=3338&cropW=5934&xPos=0&yPos=0&width=862&height=485"
+      ]
+    },
+    "ca9ab95087f5": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No127of2026.pdf",
+      "status": 200
+    },
+    "583d33efd457": {
+      "reason": "authorization_required",
+      "source": "https://www.aljazeera.com/news/2026/11/1/thousands-rally-in-israel-urging-eisenkot-arab-deal-to-remove-netanyahu?traffic_source=rss",
+      "candidate_count": 11,
+      "candidates": [
+        "https://www.aljazeera.com/wp-content/uploads/2026/11/afp_6ae686b8a739-1793492664.jpg?resize=1920%2C1440",
+        "https://www.aljazeera.com/wp-content/uploads/2026/11/afp_6ae686b8a739-1793492664.jpg?resize=1920%2C1080",
+        "https://www.aljazeera.com/wp-content/uploads/2026/11/afp_6ae686b8a739-1793492664.jpg?resize=1800%2C1800"
+      ]
+    },
+    "572d5792fe9b": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28297?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue",
+      "status": 404,
+      "existing_representative_preserved": true
+    },
+    "56e4dcfd0edd": {
+      "reason": "authorization_required",
+      "source": "https://www.amarujala.com/photo-gallery/astrology/predictions/aaj-ka-rashifal-31-october-2026-daily-horoscope-prediction-in-hindi-mesh-kark-singh-kanya-kumbh-makar-2026-10-30",
+      "candidate_count": 12,
+      "candidates": [
+        "https://staticimg.amarujala.com/assets/images/2026/10/30/aaj-ka-rashifal-31-october-2026_555b8a5142acf49c69623e7371492b48.jpeg?w=1200",
+        "https://staticimg.amarujala.com/assets/images/2026/10/30/aaj-ka-rashifal-31-october-2026_555b8a5142acf49c69623e7371492b48.jpeg?w=1200&dpr=1.0",
+        "https://staticimg.amarujala.com/assets/images/2026/10/30/aaj-ka-rashifal-31-october-2026_555b8a5142acf49c69623e7371492b48.jpeg"
+      ]
+    },
+    "7867f4e6d3d5": {
+      "reason": "authorization_required",
+      "source": "https://www.theguardian.com/world/2026/oct/31/police-clash-rioters-after-largely-peaceful-protests-across-france",
+      "candidate_count": 12,
+      "candidates": [
+        "https://i.guim.co.uk/img/media/3546bec1281afb0dcb3d211110686c453d00fa3e/0_0_4914_3933/master/4914.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=25ae1ad153c484c45e16ebb69be0175e",
+        "https://i.guim.co.uk/img/media/3546bec1281afb0dcb3d211110686c453d00fa3e/0_0_4914_3933/master/4914.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=b02560583596f1de9029a29ee433d41e",
+        "https://i.guim.co.uk/img/media/3546bec1281afb0dcb3d211110686c453d00fa3e/0_0_4914_3933/master/4914.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=4166e2e89d250e840ea57dad6c47dd62"
+      ]
+    },
+    "7548888dfa18": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28297?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "status": 404
+    },
+    "5e97b1b54978": {
+      "reason": "authorization_required",
+      "source": "https://www.abc.net.au/news/2026-11-01/noosa-triathlon-swim-cancelled-shark-sightings/107290942",
+      "candidate_count": 12,
+      "candidates": [
+        "https://live-production.wcms.abc-cdn.net.au/af66dc2f6b4b81e4fbd67f1413a8f028?impolicy=wcms_crop_resize&cropH=576&cropW=1024&xPos=0&yPos=0&width=862&height=485",
+        "https://live-production.wcms.abc-cdn.net.au/af66dc2f6b4b81e4fbd67f1413a8f028?impolicy=wcms_watermark_news&cropH=576&cropW=1024&xPos=0&yPos=0&width=862&height=485&imformat=generic",
+        "https://live-production.wcms.abc-cdn.net.au/5efbd2b034c7ad0d81a325848f8e2599?impolicy=wcms_crop_resize&cropH=1818&cropW=2726&xPos=66&yPos=182&width=862&height=575"
+      ]
+    },
+    "8070f1f217ec": {
+      "reason": "authorization_required",
+      "source": "https://www.theguardian.com/world/asia",
+      "candidate_count": 12,
+      "candidates": [
+        "https://i.guim.co.uk/img/media/85ebfc268b05d8953c7e260e77d281e7aeb8c85e/0_0_3588_2871/master/3588.jpg?width=620&dpr=2&s=none&crop=5%3A4",
+        "https://i.guim.co.uk/img/media/85ebfc268b05d8953c7e260e77d281e7aeb8c85e/0_0_3588_2871/master/3588.jpg?width=620&dpr=1&s=none&crop=5%3A4",
+        "https://i.guim.co.uk/img/media/85ebfc268b05d8953c7e260e77d281e7aeb8c85e/0_0_3588_2871/master/3588.jpg?width=460&dpr=2&s=none&crop=5%3A4"
+      ]
+    },
+    "8c6ddded2bc5": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28274?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "status": 404
+    },
+    "9a0aada26bcb": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28250?dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue&mm=03%3Fgb%3Dtrue",
+      "status": 404
+    },
+    "a7ac8ab278d7": {
+      "reason": "authorization_required",
+      "source": "https://timesofindia.indiatimes.com/world/us/donald-trump-speaks-to-benjamin-netanyahu-as-us-weighs-fresh-military-strikes-on-iran-report/articleshow/135415379.cms",
+      "candidate_count": 6,
+      "candidates": [
+        "https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-135415605/135415605.jpg",
+        "https://static.toiimg.com/thumb/msid-135415605,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+        "https://static.toiimg.com/photo/83033472.cms"
+      ]
+    },
+    "821d9382178d": {
+      "reason": "authorization_required",
+      "source": "https://www.abc.net.au/news/2026-11-01/fremantle-traffic-bridge-walyalup-bridge-opens-ahead-of-schedule/107311386",
+      "candidate_count": 12,
+      "candidates": [
+        "https://live-production.wcms.abc-cdn.net.au/51106bb6e0e2541c41d61a35336a5419?impolicy=wcms_crop_resize&cropH=2592&cropW=4608&xPos=0&yPos=240&width=862&height=485",
+        "https://live-production.wcms.abc-cdn.net.au/51106bb6e0e2541c41d61a35336a5419?impolicy=wcms_watermark_news&cropH=2592&cropW=4608&xPos=0&yPos=240&width=862&height=485&imformat=generic",
+        "https://live-production.wcms.abc-cdn.net.au/0f32038d596288d326538e496c497665?impolicy=wcms_crop_resize&cropH=3072&cropW=4608&xPos=0&yPos=0&width=862&height=575"
+      ]
+    },
+    "8c5c703a7bcc": {
+      "reason": "authorization_required",
+      "source": "https://www.abc.net.au/news/2026-11-01/gladstone-gaol-reopens/107333388",
+      "candidate_count": 12,
+      "candidates": [
+        "https://live-production.wcms.abc-cdn.net.au/4cb3bf1b39fc13e18e42e0d1b4bbcc73?impolicy=wcms_crop_resize&cropH=2813&cropW=5000&xPos=0&yPos=0&width=862&height=485",
+        "https://live-production.wcms.abc-cdn.net.au/4cb3bf1b39fc13e18e42e0d1b4bbcc73?impolicy=wcms_watermark_news&cropH=2813&cropW=5000&xPos=0&yPos=0&width=862&height=485&imformat=generic",
+        "https://live-production.wcms.abc-cdn.net.au/800584fac93b820df05ce9389b01bb5a?impolicy=wcms_crop_resize&cropH=803&cropW=803&xPos=644&yPos=132&width=160&height=160"
+      ]
+    },
+    "b908434da6d5": {
+      "reason": "authorization_required",
+      "source": "https://www.abc.net.au/news/2026-11-01/rob-hirst-book-midnight-oil-drummer-songwriter/107314400",
+      "candidate_count": 12,
+      "candidates": [
+        "https://live-production.wcms.abc-cdn.net.au/7ee6f190de6d7dbb04203e514bfae9ec?impolicy=wcms_crop_resize&cropH=700&cropW=700&xPos=0&yPos=0&width=862&height=862",
+        "https://live-production.wcms.abc-cdn.net.au/276bed212fdd717f04575e1bb1b01c50?impolicy=wcms_watermark_news&cropH=997&cropW=1772&xPos=0&yPos=109&width=862&height=485&imformat=generic",
+        "https://live-production.wcms.abc-cdn.net.au/55d3a198ad9248ba8d016f69fc1835f1?impolicy=wcms_crop_resize&cropH=660&cropW=661&xPos=431&yPos=0&width=160&height=160"
+      ]
+    },
+    "b08f3712a37e": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28313?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "status": 404,
+      "existing_representative_preserved": true
+    },
+    "d25fe3284c63": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28302?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "status": 404
+    },
+    "fddacd9eaeff": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/amp/world-news/france-protests-turn-violent-again-as-police-brace-for-halloween-unrest-126110100051_1.html",
+      "status": 403
+    },
+    "e9859cc440f7": {
+      "reason": "authorization_required",
+      "source": "https://www.abc.net.au/news/2026-11-01/ot-critical-infrastructure-hacking-cyber-security/107288694",
+      "candidate_count": 12,
+      "candidates": [
+        "https://live-production.wcms.abc-cdn.net.au/7ee6f190de6d7dbb04203e514bfae9ec?impolicy=wcms_crop_resize&cropH=700&cropW=700&xPos=0&yPos=0&width=862&height=862",
+        "https://live-production.wcms.abc-cdn.net.au/a707ec93daa153b0765278023108fb2d?impolicy=wcms_watermark_news&cropH=1080&cropW=1920&xPos=0&yPos=0&width=862&height=485&imformat=generic",
+        "https://live-production.wcms.abc-cdn.net.au/91038565ac4383f7a4a4bcd8d62e44a2?impolicy=wcms_crop_resize&cropH=721&cropW=406&xPos=657&yPos=0&width=862&height=1533"
+      ]
+    },
+    "cbc520eb0572": {
+      "reason": "authorization_required",
+      "source": "https://www.abc.net.au/news/2026-11-01/two-teenage-boys-dead-bullsbrook-crash/107333718",
+      "candidate_count": 12,
+      "candidates": [
+        "https://live-production.wcms.abc-cdn.net.au/7f400849c87b069802a868a6c41ecf2d?impolicy=wcms_crop_resize&cropH=900&cropW=1600&xPos=0&yPos=83&width=862&height=485",
+        "https://live-production.wcms.abc-cdn.net.au/7f400849c87b069802a868a6c41ecf2d?impolicy=wcms_watermark_news&cropH=900&cropW=1600&xPos=0&yPos=83&width=862&height=485&imformat=generic",
+        "https://live-production.wcms.abc-cdn.net.au/0e5c8138a2214bb6d180312f85588b82?impolicy=wcms_crop_resize&cropH=3333&cropW=5000&xPos=0&yPos=0&width=862&height=575"
+      ]
+    },
+    "fe009a8c9b44": {
+      "reason": "authorization_required",
+      "source": "https://www.abc.net.au/news/2026-11-01/russia-responds-to-us-intelligence-moscow-terrorist-attack/107333516",
+      "candidate_count": 12,
+      "candidates": [
+        "https://live-production.wcms.abc-cdn.net.au/12b23aeaf0bda211ecf0ba04d169ae34?impolicy=wcms_crop_resize&cropH=1687&cropW=2997&xPos=1&yPos=0&width=862&height=485",
+        "https://live-production.wcms.abc-cdn.net.au/12b23aeaf0bda211ecf0ba04d169ae34?impolicy=wcms_watermark_news&cropH=1687&cropW=2997&xPos=1&yPos=0&width=862&height=485&imformat=generic",
+        "https://live-production.wcms.abc-cdn.net.au/6b4d4a96489173f50bff8fb995286140?impolicy=wcms_crop_resize&cropH=3333&cropW=5000&xPos=0&yPos=0&width=862&height=575"
+      ]
+    },
+    "f638281840d9": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No128of2026.pdf",
+      "status": 200
+    },
+    "948554632b74": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No125of2026.pdf",
+      "status": 200
+    },
+    "c4038aa3469b": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No126of2026.pdf",
+      "status": 200
+    },
+    "c455f726510c": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No130of2026.pdf",
+      "status": 200
+    }
+  },
+  "mode": "all"
 }
