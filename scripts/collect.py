@@ -555,7 +555,7 @@ def call_provider(prompt):
       continue
      continue
     data=json_object(raw)
-    if isinstance(data,dict) and (data.get('unchanged') is True or data.get('body') or any(isinstance(data.get(lang),dict) and data[lang].get('body') for lang in ('en','hi'))):
+    if isinstance(data,dict) and (data.get('unchanged') is True or data.get('body') or any(isinstance(data.get(lang),dict) and data[lang].get('body') for lang in ('en','hi','english','hindi')) or any(data.get(lang+'_body') for lang in ('en','hi'))):
      print('Provider success:',provider,'model',model,flush=True)
      return data,provider
     print('Provider',provider,'returned unusable JSON; trying next option',flush=True)
@@ -564,6 +564,20 @@ def call_provider(prompt):
   if models and all((provider,model) in UNAVAILABLE_MODELS for model in list(dict.fromkeys(models))[:MODELS_PER_PROVIDER]):
    with PROVIDER_LOCK:PROVIDER_COOLDOWNS.add(provider)
  return None,last
+
+def language_payloads(data):
+ if not isinstance(data,dict):return {}
+ result={}
+ for lang,aliases in (('en',('en','english','English')),('hi',('hi','hindi','Hindi'))):
+  for key in aliases:
+   if isinstance(data.get(key),dict):result[lang]=data[key];break
+  if lang not in result and data.get(lang+'_body'):
+   result[lang]={name:data.get(lang+'_'+name) for name in ('title','body','meta','keywords')}
+ if not result and data.get('body'):
+  # Some free providers ignore the bilingual envelope. Retain the usable draft.
+  lang='hi' if len(re.findall(r'[\u0900-\u097f]',str(data['body'])))>=20 else 'en'
+  result[lang]=data
+ return result
 
 def generate_story_languages(state,title,url,text,cat,languages):
  # Complete existing drafts with a single-language call; new stories use one
@@ -575,7 +589,16 @@ def generate_story_languages(state,title,url,text,cat,languages):
   prompt=prompt.replace('Return ONLY JSON with title, body, meta, keywords.',
       'Return ONLY JSON with two objects, en and hi; each has title, body, meta, and keywords (an array of phrases). Both versions must be complete; do not return an empty translation.')
   data,provider=call_provider(prompt)
-  return [(lang,data.get(lang) if isinstance(data,dict) else None,provider) for lang in languages]
+  payloads=language_payloads(data)
+  # Finish only the absent language, within the same request/time budget.
+  if len(payloads)==1 and CALLS<MAX_CALLS and (not RUN_DEADLINE or time.monotonic()<RUN_DEADLINE-10):
+   present=next(iter(payloads))
+   if complete_body(str(payloads[present].get('body') or ''),present):
+    missing='hi' if present=='en' else 'en'
+    translated,other_provider=call_provider(article_prompt(missing,title,url,text,cat))
+    other=language_payloads(translated)
+    if missing in other:payloads[missing]=other[missing]
+  return [(lang,payloads.get(lang),provider) for lang in languages]
  results=[]
  for lang in languages:
   prompt=article_prompt(lang,title,url,text,cat)
@@ -583,7 +606,7 @@ def generate_story_languages(state,title,url,text,cat,languages):
   if prior and not complete_body(prior,lang):
    prompt+='\nEXISTING ORIGINAL DRAFT (revise using source-supported facts only):\n'+prior[:24000]
   data,provider=call_provider(prompt)
-  results.append((lang,data,provider))
+  results.append((lang,language_payloads(data).get(lang),provider))
  return results
 
 def article_prompt(lang,title,source,source_material,cat):

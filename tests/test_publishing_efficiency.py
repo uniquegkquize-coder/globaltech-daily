@@ -26,3 +26,17 @@ class PublishingEfficiencyTests(unittest.TestCase):
   exec(compile(ast.Module(body=[fn],type_ignores=[]),'keywords','exec'),scope)
   terms=scope['article_keywords']({'en_keywords':"['Cricket', 'World Cup']"},'en')
   self.assertEqual(terms[:2],['Cricket','World Cup'])
+
+class ProviderEnvelopeTests(unittest.TestCase):
+ def test_flat_english_is_retained_and_only_hindi_is_retried(self):
+  english={'title':'A complete original English headline','body':('Verified source material. '*150)}
+  hindi={'title':'स्रोत पर आधारित पूरा हिन्दी समाचार शीर्षक','body':('यह स्रोत पर आधारित खबर है। '*100)}
+  with patch.object(collect,'CALLS',0),patch.object(collect,'MAX_CALLS',6),patch.object(collect,'RUN_DEADLINE',0),patch.object(collect,'call_provider',side_effect=[(english,'openrouter'),(hindi,'openrouter')]) as call:
+   rows=collect.generate_story_languages({},'Source title','https://example.org','Source evidence','world-news',['en','hi'])
+  self.assertEqual(call.call_count,2)
+  self.assertEqual(rows[0][1]['body'],english['body']);self.assertEqual(rows[1][1]['body'],hindi['body'])
+ def test_common_language_aliases_normalize_without_another_call(self):
+  data={'english':{'body':'English body'},'hindi':{'body':'हिन्दी खबर'}}
+  with patch.object(collect,'call_provider',return_value=(data,'openrouter')) as call:
+   rows=collect.generate_story_languages({},'Title','https://example.org','Evidence','world-news',['en','hi'])
+  self.assertEqual(call.call_count,1);self.assertEqual(rows[1][1]['body'],'हिन्दी खबर')

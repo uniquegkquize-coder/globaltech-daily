@@ -156,7 +156,7 @@ def generate(group,old,record,now):
   if isinstance(data,dict) and data.get('unchanged') is True:
    record.update(source_hash=source_hash,tokens=[digest(t)[:12] for t in sorted(tokens(text))[:1200]],signature=signature(row))
    return None,'no_material_change'
-  results=[(lang,data.get(lang) if isinstance(data,dict) else None,provider) for lang in languages]
+  results=[(lang,newsroom.language_payloads(data).get(lang),provider) for lang in languages]
  else:results=newsroom.generate_story_languages(pending,row['title'],row['url'],text,row['category'],languages)
  for lang,data,provider in results:
   if isinstance(data,dict) and newsroom.complete_body(str(data.get('body') or ''),lang) and len(str(data.get('title') or ''))>=20:
@@ -186,6 +186,10 @@ def run(now=None):
  except (OSError,ValueError):state={}
  if not isinstance(state,dict):state={}
  events=state.setdefault('events',{})
+ if state.get('generation_version')!=2:
+  for record in events.values():
+   if 'draft' in record:record.pop('retry_after',None)
+  state['generation_version']=2
  report=dict(checked_at=dt.datetime.fromtimestamp(now,dt.timezone.utc).isoformat(),signal='publisher coverage, not search-volume data',changed_ids=[],results=[],feeds={})
  # RSS checks still run during provider cooldown; generation alone is deferred.
  rows,report['feeds']=discover(now)
@@ -215,7 +219,7 @@ def run(now=None):
   if post:
    report['changed_ids'].append(post['id']);posts=[p for p in posts if p['id']!=post['id']]+[post]
    record['last_seen']=now
-  elif result not in ('baseline_recorded','no_material_change'):record['retry_after']=now+1800
+  elif result not in ('baseline_recorded','no_material_change'):record['retry_after']=now+(900 if record.get('draft') else 1800)
   if not newsroom.providers_ready() or newsroom.CALLS>=newsroom.MAX_CALLS:
    state['provider_retry_after']=now+3600;report['provider_backoff_seconds']=3600;break
  # Prune cache so a frequently checked feed cannot grow state indefinitely.
