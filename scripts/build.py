@@ -1,5 +1,7 @@
 from pathlib import Path
 from news_sitemap import write_news_sitemap
+from seo_text import description as seo_description
+from redirect_assets import write_redirects
 from site_ui import MENU_CSS, label
 from news_config import CATEGORIES, memberships
 from news_hub import HUB_CSS, HUB_JS, render_hubs, recent_priority, news_sort, matches_category, official_notice_rows
@@ -385,14 +387,7 @@ for p in POSTS:image_for(p)
 for p in POSTS:
  s=slug(p)
  for lang in ('en','hi'):
-  t=title(p,lang);raw=limit_article_words(p.get(lang+'_body') or p.get('en_body',''));url=f'{SITE}{article_path(p,lang)}';desc=p.get(lang+'_meta') or re.sub(r'[#\n]+',' ',raw)[:155]
-  preferred=p.get('related_post_ids',[])
-  related=sorted([q for q in POSTS if slug(q)!=s and has_featured(q) and (category(q)==category(p) or q.get('id') in preferred)],key=lambda q:preferred.index(q['id']) if q.get('id') in preferred else len(preferred))[:4]
-  if len(related)<4:related += [q for q in POSTS if slug(q)!=s and q not in related][:4-len(related)]
-  related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg?v={image_version(q)}" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
-  keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
-  trending=[q for q in POSTS if slug(q)!=s and has_featured(q)][:5]
-  trending_html='<section class="trending-news"><h2>'+('Latest news' if lang=='en' else 'ताज़ा खबरें')+'</h2><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg?v={image_version(q)}" alt="">' if has_featured(q) else '')+'<span>'+e(title(q,lang))+'</span></a>' for q in trending)+'</div></section>'
+  t=title(p,lang);raw=limit_article_words(p.get(lang+'_body') or p.get('en_body',''));url=f'{SITE}{article_path(p,lang)}';desc=seo_description(p.get(lang+'_meta'),raw,t)
   schema={'@context':'https://schema.org','@type':'NewsArticle','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('updated_at') or p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg?v={image_version(p)}'] if has_featured(p) else []),'author':{'@type':'Organization','name':author_name(p),'url':f'{SITE}/{lang}/author/{author_handle(p)}/'},'publisher':{'@type':'Organization','name':'GlobeWire Daily','url':SITE},'isBasedOn':p['source']}
   if not has_featured(p):schema.pop('image',None)
   schema['breadcrumb']={'@type':'BreadcrumbList','itemListElement':[
@@ -508,7 +503,7 @@ urls=list(dict.fromkeys(urls+[f'/{lang}/{cat}/' for lang in ('en','hi') for cat 
 write(OUT/'sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+xml_escape(SITE+u)+'</loc></url>' for u in urls)+'</urlset>')
 write_news_sitemap(OUT,SITE,POSTS,article_path,title)
 # Preserve old article URLs as permanent redirects to canonical descriptive URLs.
-redirects=[]
+redirects=['/ /en/ 301']
 for p in POSTS:
  for lang in ('en','hi'):
   redirects.append(f'/{lang}/news/{slug(p)}/ {article_path(p,lang)} 301')
@@ -519,7 +514,7 @@ for old,canonical in DUPLICATE_POSTS:
   redirects.append(f'/{lang}/news/{slug(old)}/ {article_path(canonical,lang)} 301')
   olddir=OUT/oldpath.lstrip('/')
   if olddir.is_dir():shutil.rmtree(olddir)
-write(OUT/'_redirects','\n'.join(dict.fromkeys(redirects))+'\n')
+print('SEO_REDIRECTS',write_redirects(OUT,redirects,write,SITE))
 write(OUT/'ads.txt','google.com, pub-1849673109734274, DIRECT, f08c47fec0942fa0\n')
 write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n  Cache-Control: public, max-age=0, must-revalidate\n/style.css\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n')
 print('Built',len(POSTS),'posts; AI Tools, bilingual pages, news sitemap and responsive layout')
