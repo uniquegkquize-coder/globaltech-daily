@@ -45,7 +45,7 @@ jobs:
           IMAGE_BACKFILL_MODE: all
           MAX_LICENSED_PHOTOS_PER_RUN: '5000'
           IMAGE_BACKFILL_WORKERS: '8'
-          IMAGE_BACKFILL_SECONDS: '600'
+          IMAGE_BACKFILL_SECONDS: '900'
           IMAGE_BACKFILL_FORCE: ${{ github.event_name == 'push' && '1' || '0' }}
           MAX_NEW_IMAGES: '0'
           SITE_URL: https://globewiredaily.org
@@ -55,8 +55,9 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
           # Preserve original images and upgrade old Commons/AI stand-ins when a
-          # matching publisher article image has explicit reuse terms or an authorization record. Otherwise use the
+          # matching publisher article image is available. Otherwise use the
           # labelled build.py editorial illustration without unrelated stock.
+          python -m unittest discover -s tests -p 'test_image*.py'
           python -u scripts/generate_images.py
           git add -A content/featured content/image-audit-status.json content/image-audit-archive.json
           if [ -f content/image-backfill-state.json ]; then

@@ -62,7 +62,7 @@ def source_candidates(soup,base):
             add(value.get('contentUrl') or value.get('url'),value.get('license') or license_url,value.get('caption') or value.get('name') or label,origin)
         elif isinstance(value,str):
             url=urljoin(base,value.strip())
-            if urlparse(url).scheme=='https' and not generic_image(url):rows.append({'url':url,'license':license_url,'label':label,'origin':origin})
+            if urlparse(url).scheme in ('https','http') and urlparse(url).hostname and not generic_image(url):rows.append({'url':url,'license':license_url,'label':label,'origin':origin})
     def walk(node):
         if isinstance(node,list):
             for v in node:walk(v)
@@ -70,11 +70,13 @@ def source_candidates(soup,base):
             kinds=node.get('@type',[]);kinds=[kinds] if isinstance(kinds,str) else kinds
             if set(kinds)&{'Article','NewsArticle','BlogPosting','Product','Car','Motorcycle','MobilePhone'}:
                 add(node.get('image') or node.get('thumbnailUrl'),node.get('license',''),node.get('headline') or node.get('name',''),'structured')
-            for key in ('@graph','mainEntity','mainEntityOfPage','subjectOf','hasPart'):
+            for key in ('@graph','mainEntity','mainEntityOfPage','subjectOf','hasPart','itemListElement','item'):
                 if key in node:walk(node[key])
     for tag in soup.select('script[type="application/ld+json"]')[:40]:
         try:walk(json.loads(tag.string or tag.get_text()))
         except (ValueError,TypeError):pass
+    for tag in soup.select('link[rel~="image_src"]'):
+        add(tag.get('href'),origin='social')
     for key in ('og:image:secure_url','og:image','twitter:image','twitter:image:src'):
         tag=soup.find('meta',attrs={'property':key}) or soup.find('meta',attrs={'name':key})
         if tag:add(tag.get('content'),origin='social')
@@ -84,10 +86,11 @@ def source_candidates(soup,base):
         for part in srcset.split(','):
             bits=part.strip().split()
             if bits:
-                size=float(re.sub(r'[^0-9.]','',bits[1]) or '0') if len(bits)>1 else 0
+                try:size=float(re.sub(r'[^0-9.]','',bits[1]) or '0') if len(bits)>1 else 0
+                except ValueError:size=0
                 sizes.append((size,bits[0]))
         for _,url in sorted(sizes,reverse=True):add(url,label=tag.get('alt',''),origin='article')
-        for attr in ('data-original','data-full-src','data-lazy-src','data-src','src'):
+        for attr in ('data-original','data-full-src','data-lazy-src','data-src','data-lazy','src'):
             if tag.get(attr):add(tag[attr],label=tag.get('alt',''),origin='article')
     seen=set();out=[]
     for row in rows:
@@ -103,14 +106,14 @@ def save_source_photo(ident,image,source,license_url,authorized,credit,alt):
             raw.extend(chunk)
             if len(raw)>12_000_000:return False
         with Image.open(io.BytesIO(raw)) as im:
-            if im.width<600 or im.height<320:return False
+            if im.width<320 or im.height<180:return False
             original_size=im.size
             im=ImageOps.exif_transpose(im).convert('RGB')
             # Retain the complete product/subject instead of cropping off phones or wheels.
             im=ImageOps.pad(im,(1280,720),method=Image.Resampling.LANCZOS,color=(12,28,55))
             tmp=IMAGES/(ident+'.tmp.jpg');im.save(tmp,'JPEG',quality=86,optimize=True);tmp.replace(IMAGES/(ident+'.jpg'))
         meta={'kind':'publisher_source','source_image':image,'image_url':image,'source':source,
-              'license':license_url,'attribution':authorized.get('attribution') or credit,'rights_status':'authorized' if authorized else 'source_license_claimed',
+              'license':license_url,'attribution':authorized.get('attribution') or credit,'rights_status':'authorized' if authorized else ('source_license_claimed' if license_url else 'publisher_original_unverified'),
               'authorization':authorized,'post_id':ident,'width':1280,'height':720,'original_dimensions':original_size,
               'alt':alt,'modifications':'Resized and letterboxed to 16:9; no AI generation'}
         (IMAGES/(ident+'.json')).write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
@@ -154,13 +157,19 @@ def licensed_source_image(p):
         for candidate in candidates:
             image=candidate['url'];permission=permissions.get(image,{})
             license_url=candidate['license'] or page_license
-            if not commons_reuse_allowed('',license_url) and not permission.get('permission_reference'):continue
+            # Publisher originals are selected by the site owner's editorial policy.
+            # Preserve rights metadata without inventing permission or a license.
             authorized_candidates+=1
-            if save_source_photo(ident,image,page.url,license_url,permission,
-                                 meta('dc.creator','author','og:site_name') or urlparse(page.url).hostname,
-                                 candidate['label'] or str(p.get('en_title') or '')):
+            try:
+                saved=save_source_photo(ident,image,page.url,license_url,permission,
+                                        meta('dc.creator','author','og:site_name') or urlparse(page.url).hostname,
+                                        candidate['label'] or str(p.get('en_title') or ''))
+            except requests.RequestException:
+                # One broken CDN candidate must not hide the next article image.
+                continue
+            if saved:
                 diagnostic(ident,'source_photo_saved',source=page.url,image=image);return True
-        reason='invalid_source_images' if authorized_candidates else 'authorization_required'
+        reason='invalid_source_images'
         diagnostic(ident,reason,source=source,candidate_count=len(candidates),candidates=[c['url'] for c in candidates[:3]])
         return False
     except (requests.RequestException,ValueError,OSError,TypeError) as exc:
@@ -490,6 +499,9 @@ def choose_backfill(posts,now=None,limit=None,cursor=None,mode=None):
         rows=fresh+older
         if mode=='directory':rows=[p for p in rows if p.get('content_type')=='evergreen_directory_guide']
         rows.sort(key=lambda p:(0 if p.get('directory_name') else 1,p.get('category',''),p.get('id','')))
+        # Visit never-attempted/oldest-attempted posts first, including across time-budget exits.
+        attempts=(cursor or {}).get('attempts',{})
+        rows.sort(key=lambda p:attempts.get(slug(p),{}).get('retry_after',0))
         return rows[:limit],len(fresh),len(older)
     if mode=='archive' and older:
         fresh_budget=0
@@ -536,7 +548,7 @@ def main():
     deadline=time.monotonic()+seconds
     attempts=cursor.setdefault('attempts',{});results=[]
     force=os.getenv('IMAGE_BACKFILL_FORCE','0')=='1'
-    policy=hashlib.sha256(b''.join((ROOT/'content'/name).read_bytes() if (ROOT/'content'/name).exists() else b'' for name in ('approved-photo-sources.json','image-authorizations.json','photo-subjects.json'))).hexdigest()[:12]
+    policy=hashlib.sha256(Path(__file__).read_bytes()+b''.join((ROOT/'content'/name).read_bytes() if (ROOT/'content'/name).exists() else b'' for name in ('approved-photo-sources.json','image-authorizations.json','photo-subjects.json'))).hexdigest()[:12]
     posts=list({slug(p):p for p in posts}.values())
     source_cache={};subject_cache={}
     for post in posts:
@@ -563,14 +575,6 @@ def main():
         elif resolved_featured(ident):
             result=PHOTO_DIAGNOSTICS.get(ident,{}).get('reason','no_article_original')
             diagnostic(ident,result,**{k:v for k,v in PHOTO_DIAGNOSTICS.get(ident,{}).items() if k!='reason'},existing_representative_preserved=True)
-        elif normalized(exact_subject(post)) in subject_cache:
-            import shutil
-            other=subject_cache[normalized(exact_subject(post))]
-            shutil.copy2(IMAGES/(other+'.jpg'),IMAGES/(ident+'.jpg'))
-            data=json.loads((IMAGES/(other+'.json')).read_text());data.update(post_id=ident,reused_from=other)
-            (IMAGES/(ident+'.json')).write_text(json.dumps(data,ensure_ascii=False,indent=2)+chr(10))
-            result='licensed_subject_reused'
-        elif time.monotonic()<deadline and commons_photo(post):result='licensed_subject_saved'
         else:result=PHOTO_DIAGNOSTICS.get(ident,{}).get('reason','no_suitable_photo')
         if result in ('source_photo_saved','licensed_subject_saved','licensed_subject_reused'):
             with PHOTO_LOCK:source_cache.setdefault(source,ident)
