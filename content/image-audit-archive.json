@@ -1,326 +1,65 @@
 {
-  "total_posts": 1690,
-  "selected": 134,
+  "total_posts": 1728,
+  "selected": 139,
   "results": {
-    "access_denied": 20,
-    "invalid_source_images": 5,
-    "no_source_image": 13,
-    "source_unavailable": 8,
-    "restricted_page": 1,
-    "cooldown": 86,
-    "source_error": 1
+    "cooldown": 139
   },
-  "still_missing": 127,
+  "still_missing": 132,
   "articles": [
     {
-      "id": "3f437cd6deee",
-      "source": "https://www.nytimes.com/spotlight/lifestyle",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690067.6950614
-    },
-    {
-      "id": "040dd341f762",
-      "source": "https://in.linkedin.com/jobs/view/founder-s-office-intern-at-the-souled-store-4483622129",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793690069.2510047
-    },
-    {
-      "id": "00f079e2ba3a",
-      "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-alok-industries-limited-india-4481052431",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793690069.25524
-    },
-    {
-      "id": "07f40dc280d1",
-      "source": "https://in.linkedin.com/jobs/view/looking-for-western-music-teacher-primary-1-5-in-tellapur-hyderabad-at-eh-jobs-4481687605",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793690069.2585473
-    },
-    {
-      "id": "285dd8d5ec2f",
-      "source": "https://www.desidime.com/discussions/update-on-applicable-charges-for-2189852",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793690069.4366548
-    },
-    {
-      "id": "257900039128",
-      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-moses-lake-wa",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690070.9715366
-    },
-    {
-      "id": "090cabc5ee27",
-      "source": "https://in.linkedin.com/jobs/%E0%A6%B2%E0%A7%87%E0%A6%95%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%BE%E0%A6%B0-jobs",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690070.9956806
-    },
-    {
-      "id": "079aeaa0eeef",
-      "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690071.1966484
-    },
-    {
-      "id": "0b33380de117",
-      "source": "https://in.linkedin.com/jobs/view/compliance-manager-at-fatakpay-4482278882",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793690071.261536
-    },
-    {
-      "id": "080b28de54ff",
-      "source": "https://in.linkedin.com/jobs/view/mis-executive-at-amrit-skills-development-4480055351",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690071.3061879
-    },
-    {
-      "id": "0391c4373eca",
-      "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-phoenix-az",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690071.3125305
-    },
-    {
-      "id": "91712e374b16",
-      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-boydton-va",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690071.3690698
-    },
-    {
-      "id": "9e37935bcd6c",
-      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690071.4053144
-    },
-    {
-      "id": "c929a77d3cf4",
-      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-phoenix-az",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690071.4797838
-    },
-    {
-      "id": "2254c016ebd0",
-      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-cheyenne-wy",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690071.499545
-    },
-    {
-      "id": "35c6b2e75c5a",
-      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690071.6346102
-    },
-    {
-      "id": "736ca0bcddb6",
-      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-des-moines-ia",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690071.7743926
-    },
-    {
-      "id": "6ba39bcd4548",
-      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690071.9645686
-    },
-    {
-      "id": "1ad731a65211",
-      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-moses-lake-wa",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690072.1181448
-    },
-    {
-      "id": "0983ec5f08f3",
-      "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Br%C9%99yl%C9%99r-%2Bonlayn%2Bfikirl%C9%99ri%2Bayr%C4%B1ca%2Binc%C9%99l%C9%99yin.ekq-jobs",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690072.2788124
-    },
-    {
-      "id": "9d38ac0228db",
-      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-phoenix-az",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690072.36836
-    },
-    {
-      "id": "b9e7ebed5efd",
-      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-boydton-va",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690072.6471071
-    },
-    {
-      "id": "37c0e160c49f",
-      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-cheyenne-wy",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690073.032169
-    },
-    {
-      "id": "aa511d7af8e4",
-      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-san-francisco-ca",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690073.0456967
-    },
-    {
-      "id": "021dcf06da61",
-      "source": "https://www.prnewswire.com/news-releases/tuhura-biosciences-provides-first-look-at-data-from-its-open-label-study-of-ifx-2-0-as-an-adjunctive-therapy-to-keytruda-in-first-line-treatment-of-patients-with-deep-seated-metastatic-merkel-cell-carcinoma-302918838.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690073.191849
-    },
-    {
-      "id": "58f11d3687a2",
-      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-des-moines-ia",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690073.2478957
-    },
-    {
-      "id": "36fc08c8c68d",
-      "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-des-moines-ia",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690073.281207
-    },
-    {
-      "id": "4002fcf12fa5",
-      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-phoenix-az",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690073.2839222
-    },
-    {
-      "id": "03fdad6de98e",
-      "source": "https://www.prnewswire.com/news-releases/all-in-print-china-2026-concludes-successfully-as-ruizhi-machinery-showcases-three-new-machines-302923371.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690073.3639915
-    },
-    {
-      "id": "ff059456a4ee",
-      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-phoenix-az",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690073.368798
-    },
-    {
-      "id": "38138689935d",
-      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-boydton-va",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690073.3722737
-    },
-    {
-      "id": "92088c2de8c2",
-      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-des-moines-ia",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690073.437787
-    },
-    {
-      "id": "6734d0b5d4b1",
-      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-des-moines-ia",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793690073.4846406
-    },
-    {
-      "id": "7548888dfa18",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28297?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793690073.7426617
-    },
-    {
-      "id": "d25fe3284c63",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28302?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793690073.8851268
-    },
-    {
-      "id": "dd54d85ef928",
-      "source": "https://www.sahisarkarijobs.in/photo-resizer/",
-      "policy": "93e2ad7deccc",
-      "result": "restricted_page",
-      "retry_after": 1793690073.950525
-    },
-    {
-      "id": "8c6ddded2bc5",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28274?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793690074.0558803
-    },
-    {
-      "id": "572d5792fe9b",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28297?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793690074.1430917
-    },
-    {
-      "id": "43669547d8a9",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28286?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793690074.1995463
-    },
-    {
-      "id": "b08f3712a37e",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28313?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793690074.2625098
-    },
-    {
-      "id": "9a0aada26bcb",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28250?dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue&mm=03%3Fgb%3Dtrue",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793690074.573621
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
+      "id": "4be79532a665",
       "result": "cooldown"
     },
     {
-      "id": "0a95ccf111c45db4cfb5c9e3",
+      "id": "d15bcc8a3c3b",
       "result": "cooldown"
     },
     {
-      "id": "8af54bb949a0c055391d640a",
+      "id": "9e7d68e39abe",
       "result": "cooldown"
     },
     {
-      "id": "fbff6440d68d52399ca212b1",
+      "id": "a9716e8287f2",
       "result": "cooldown"
     },
     {
-      "id": "ab5757b7bde7e5a43128d256",
+      "id": "0493b37f6575",
       "result": "cooldown"
     },
     {
-      "id": "ab1e7f889baf",
+      "id": "d828981e6826",
+      "result": "cooldown"
+    },
+    {
+      "id": "9ac2bb5ad6c4",
+      "result": "cooldown"
+    },
+    {
+      "id": "0346b2c5ec85",
+      "result": "cooldown"
+    },
+    {
+      "id": "ade2cb72b841",
+      "result": "cooldown"
+    },
+    {
+      "id": "efeded53a5bb",
+      "result": "cooldown"
+    },
+    {
+      "id": "75ebcc814325",
+      "result": "cooldown"
+    },
+    {
+      "id": "d0f211debf6a",
+      "result": "cooldown"
+    },
+    {
+      "id": "51e45078d38e",
+      "result": "cooldown"
+    },
+    {
+      "id": "38accdd4d36d",
       "result": "cooldown"
     },
     {
@@ -332,35 +71,7 @@
       "result": "cooldown"
     },
     {
-      "id": "38accdd4d36d",
-      "result": "cooldown"
-    },
-    {
-      "id": "51e45078d38e",
-      "result": "cooldown"
-    },
-    {
-      "id": "0346b2c5ec85",
-      "result": "cooldown"
-    },
-    {
-      "id": "9ac2bb5ad6c4",
-      "result": "cooldown"
-    },
-    {
-      "id": "d828981e6826",
-      "result": "cooldown"
-    },
-    {
-      "id": "a9716e8287f2",
-      "result": "cooldown"
-    },
-    {
-      "id": "4be79532a665",
-      "result": "cooldown"
-    },
-    {
-      "id": "80ca872b27a0",
+      "id": "ef6d4c03dede",
       "result": "cooldown"
     },
     {
@@ -368,39 +79,11 @@
       "result": "cooldown"
     },
     {
-      "id": "d0f211debf6a",
-      "result": "cooldown"
-    },
-    {
-      "id": "efeded53a5bb",
-      "result": "cooldown"
-    },
-    {
-      "id": "ade2cb72b841",
-      "result": "cooldown"
-    },
-    {
-      "id": "0493b37f6575",
-      "result": "cooldown"
-    },
-    {
-      "id": "9e7d68e39abe",
-      "result": "cooldown"
-    },
-    {
-      "id": "d15bcc8a3c3b",
+      "id": "80ca872b27a0",
       "result": "cooldown"
     },
     {
       "id": "ec8b9639359a",
-      "result": "cooldown"
-    },
-    {
-      "id": "ef6d4c03dede",
-      "result": "cooldown"
-    },
-    {
-      "id": "75ebcc814325",
       "result": "cooldown"
     },
     {
@@ -644,53 +327,240 @@
       "result": "cooldown"
     },
     {
+      "id": "3f437cd6deee",
+      "result": "cooldown"
+    },
+    {
+      "id": "040dd341f762",
+      "result": "cooldown"
+    },
+    {
+      "id": "00f079e2ba3a",
+      "result": "cooldown"
+    },
+    {
+      "id": "07f40dc280d1",
+      "result": "cooldown"
+    },
+    {
+      "id": "285dd8d5ec2f",
+      "result": "cooldown"
+    },
+    {
+      "id": "257900039128",
+      "result": "cooldown"
+    },
+    {
+      "id": "090cabc5ee27",
+      "result": "cooldown"
+    },
+    {
+      "id": "079aeaa0eeef",
+      "result": "cooldown"
+    },
+    {
+      "id": "0b33380de117",
+      "result": "cooldown"
+    },
+    {
+      "id": "080b28de54ff",
+      "result": "cooldown"
+    },
+    {
+      "id": "0391c4373eca",
+      "result": "cooldown"
+    },
+    {
+      "id": "91712e374b16",
+      "result": "cooldown"
+    },
+    {
+      "id": "9e37935bcd6c",
+      "result": "cooldown"
+    },
+    {
+      "id": "c929a77d3cf4",
+      "result": "cooldown"
+    },
+    {
+      "id": "2254c016ebd0",
+      "result": "cooldown"
+    },
+    {
+      "id": "35c6b2e75c5a",
+      "result": "cooldown"
+    },
+    {
+      "id": "736ca0bcddb6",
+      "result": "cooldown"
+    },
+    {
+      "id": "6ba39bcd4548",
+      "result": "cooldown"
+    },
+    {
+      "id": "1ad731a65211",
+      "result": "cooldown"
+    },
+    {
+      "id": "0983ec5f08f3",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d38ac0228db",
+      "result": "cooldown"
+    },
+    {
+      "id": "b9e7ebed5efd",
+      "result": "cooldown"
+    },
+    {
+      "id": "37c0e160c49f",
+      "result": "cooldown"
+    },
+    {
+      "id": "aa511d7af8e4",
+      "result": "cooldown"
+    },
+    {
+      "id": "021dcf06da61",
+      "result": "cooldown"
+    },
+    {
+      "id": "58f11d3687a2",
+      "result": "cooldown"
+    },
+    {
+      "id": "36fc08c8c68d",
+      "result": "cooldown"
+    },
+    {
+      "id": "4002fcf12fa5",
+      "result": "cooldown"
+    },
+    {
+      "id": "03fdad6de98e",
+      "result": "cooldown"
+    },
+    {
+      "id": "ff059456a4ee",
+      "result": "cooldown"
+    },
+    {
+      "id": "38138689935d",
+      "result": "cooldown"
+    },
+    {
+      "id": "92088c2de8c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "6734d0b5d4b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "7548888dfa18",
+      "result": "cooldown"
+    },
+    {
+      "id": "d25fe3284c63",
+      "result": "cooldown"
+    },
+    {
+      "id": "dd54d85ef928",
+      "result": "cooldown"
+    },
+    {
+      "id": "8c6ddded2bc5",
+      "result": "cooldown"
+    },
+    {
+      "id": "572d5792fe9b",
+      "result": "cooldown"
+    },
+    {
+      "id": "43669547d8a9",
+      "result": "cooldown"
+    },
+    {
+      "id": "b08f3712a37e",
+      "result": "cooldown"
+    },
+    {
+      "id": "9a0aada26bcb",
+      "result": "cooldown"
+    },
+    {
       "id": "021c54d7abdb",
-      "source": "https://je.linkedin.com/jobs/Win%20Gaming%20API%20-%20India%20Market%20API%F0%9F%8F%A7TG%40gameapi26-jobs?position=1&pageNum=0",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690074.5968285
+      "result": "cooldown"
     },
     {
       "id": "02518f2b343c",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28297?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793690074.700115
+      "result": "cooldown"
     },
     {
       "id": "09eaa4a8cbc9",
-      "source": "https://www.sahisarkarijobs.in/age-calculator/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690075.5889792
+      "result": "cooldown"
     },
     {
       "id": "040073763955",
-      "source": "https://www.prnewswire.com/news-releases/yeastar-reconoce-la-ia-la-innovacion-tecnica-y-el-exito-de-los-clientes-en-los-yeahs-awards-2026-302917649.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690075.972671
+      "result": "cooldown"
     },
     {
       "id": "1c4f6e29aff4",
-      "source": "https://www.theguardian.com/info/2016/jan/25/content-funding",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690078.121887
+      "result": "cooldown"
     },
     {
       "id": "d113f09eda07",
-      "source": "https://www.sahisarkarijobs.in/service-length-calculator/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690078.425347
+      "result": "cooldown"
     },
     {
       "id": "031f3d5eda5f",
-      "source": "https://news.samsung.com/in/author/malay-anil/page/331",
-      "policy": "93e2ad7deccc",
-      "result": "source_error",
-      "retry_after": 1793690084.4940891
+      "result": "cooldown"
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "e62d34be0421",
+      "result": "cooldown"
+    },
+    {
+      "id": "4ca42dad8d6f",
+      "result": "cooldown"
+    },
+    {
+      "id": "c3c44629d231",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5757b7bde7e5a43128d256",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab1e7f889baf",
+      "result": "cooldown"
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "result": "cooldown"
+    },
+    {
+      "id": "ef614dcb4163038685679d1d",
+      "result": "cooldown"
     }
   ],
   "missing": [
@@ -912,6 +782,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "c3c44629d231",
+      "category": "ai-news",
+      "title": "CareerMaker.ai Announces Bengaluru On-Site Assessment Research Intern Opening",
+      "source": "https://in.linkedin.com/jobs/view/assessment-research-intern-at-careermaker-ai-4483632864",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "0bdb0918a8cf",
       "category": "private-vacancy",
       "title": "Credit Saison India Recruits Relationship Manager for Secured Direct Operations in South India",
@@ -961,6 +838,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "e62d34be0421",
+      "category": "ai-news",
+      "title": "Definitive Healthcare Announces Data Scientist, Applied AI Role to Boost Healthcare‑Focused LLM Solutions",
+      "source": "https://www.linkedin.com/jobs/view/data-scientist-applied-ai-at-definitive-healthcare-4484088856",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "d0f211debf6a",
       "category": "telecom",
       "title": "TRAI Releases Mobile Network Quality Findings for Parts of Kolkata LSA",
@@ -1000,6 +884,20 @@
       "category": "private-vacancy",
       "title": "EH Jobs Recruits Western Music Teacher for Primary Grades in Tellapur, Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/looking-for-western-music-teacher-primary-1-5-in-tellapur-hyderabad-at-eh-jobs-4481687605",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "category": "gadgets",
+      "title": "Nokia Lumia 925: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "4ca42dad8d6f",
+      "category": "visas-immigration",
+      "title": "Deloitte Highlights Global Mobility and Immigration Role in Hyderabad",
+      "source": "https://in.linkedin.com/jobs/view/associate-global-mobility-and-immigration-talent-services-tipm-perm-services-hyderabad-at-deloitte-4484168606",
       "reason": "invalid_source_images"
     },
     {
@@ -1162,6 +1060,13 @@
       "title": "TRAI Releases Independent Drive Test Findings for Mobile Networks in Leh and Ladakh",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No143of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "ef614dcb4163038685679d1d",
+      "category": "gadgets",
+      "title": "Samsung Galaxy F15 5G: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
+      "reason": "no_source_image"
     },
     {
       "id": "9e7d68e39abe",
@@ -1588,258 +1493,10 @@
     "source_unavailable": 33,
     "source_error": 3,
     "access_denied": 26,
-    "invalid_source_images": 26,
-    "no_source_image": 39
+    "invalid_source_images": 30,
+    "no_source_image": 40
   },
-  "existing_representatives_preserved": 6,
-  "diagnostics": {
-    "3f437cd6deee": {
-      "reason": "access_denied",
-      "source": "https://www.nytimes.com/spotlight/lifestyle",
-      "status": 403,
-      "existing_representative_preserved": true
-    },
-    "040dd341f762": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/founder-s-office-intern-at-the-souled-store-4483622129",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "00f079e2ba3a": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-alok-industries-limited-india-4481052431",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "07f40dc280d1": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/looking-for-western-music-teacher-primary-1-5-in-tellapur-hyderabad-at-eh-jobs-4481687605",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "285dd8d5ec2f": {
-      "reason": "invalid_source_images",
-      "source": "https://www.desidime.com/discussions/update-on-applicable-charges-for-2189852",
-      "candidate_count": 1,
-      "candidates": [
-        "https://cdn3.desidime.com/topics/photos/2189852/large/update-on-applicable-charges-for-2189852.png?1793269960"
-      ]
-    },
-    "257900039128": {
-      "reason": "no_source_image",
-      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-moses-lake-wa"
-    },
-    "090cabc5ee27": {
-      "reason": "no_source_image",
-      "source": "https://in.linkedin.com/jobs/%E0%A6%B2%E0%A7%87%E0%A6%95%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%BE%E0%A6%B0-jobs"
-    },
-    "079aeaa0eeef": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
-      "status": 429
-    },
-    "0b33380de117": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/compliance-manager-at-fatakpay-4482278882",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "080b28de54ff": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/view/mis-executive-at-amrit-skills-development-4480055351",
-      "status": 429
-    },
-    "0391c4373eca": {
-      "reason": "no_source_image",
-      "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-phoenix-az"
-    },
-    "91712e374b16": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-boydton-va",
-      "status": 429
-    },
-    "9e37935bcd6c": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
-      "status": 429
-    },
-    "c929a77d3cf4": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-phoenix-az",
-      "status": 429
-    },
-    "2254c016ebd0": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-cheyenne-wy",
-      "status": 429
-    },
-    "35c6b2e75c5a": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
-      "status": 429
-    },
-    "736ca0bcddb6": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-des-moines-ia",
-      "status": 429
-    },
-    "6ba39bcd4548": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
-      "status": 429
-    },
-    "1ad731a65211": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-moses-lake-wa",
-      "status": 429
-    },
-    "0983ec5f08f3": {
-      "reason": "no_source_image",
-      "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Br%C9%99yl%C9%99r-%2Bonlayn%2Bfikirl%C9%99ri%2Bayr%C4%B1ca%2Binc%C9%99l%C9%99yin.ekq-jobs"
-    },
-    "9d38ac0228db": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-phoenix-az",
-      "status": 429
-    },
-    "b9e7ebed5efd": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-boydton-va",
-      "status": 429
-    },
-    "37c0e160c49f": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-cheyenne-wy",
-      "status": 429
-    },
-    "aa511d7af8e4": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-san-francisco-ca",
-      "status": 429
-    },
-    "021dcf06da61": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/tuhura-biosciences-provides-first-look-at-data-from-its-open-label-study-of-ifx-2-0-as-an-adjunctive-therapy-to-keytruda-in-first-line-treatment-of-patients-with-deep-seated-metastatic-merkel-cell-carcinoma-302918838.html"
-    },
-    "58f11d3687a2": {
-      "reason": "no_source_image",
-      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-des-moines-ia"
-    },
-    "4002fcf12fa5": {
-      "reason": "no_source_image",
-      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-phoenix-az"
-    },
-    "36fc08c8c68d": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-des-moines-ia",
-      "status": 429
-    },
-    "03fdad6de98e": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/all-in-print-china-2026-concludes-successfully-as-ruizhi-machinery-showcases-three-new-machines-302923371.html"
-    },
-    "ff059456a4ee": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-phoenix-az",
-      "status": 429
-    },
-    "38138689935d": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-boydton-va",
-      "status": 429
-    },
-    "92088c2de8c2": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-des-moines-ia",
-      "status": 429
-    },
-    "6734d0b5d4b1": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-des-moines-ia",
-      "status": 429
-    },
-    "7548888dfa18": {
-      "reason": "source_unavailable",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28297?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
-      "status": 404
-    },
-    "d25fe3284c63": {
-      "reason": "source_unavailable",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28302?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
-      "status": 404
-    },
-    "dd54d85ef928": {
-      "reason": "restricted_page",
-      "source": "https://www.sahisarkarijobs.in/photo-resizer/",
-      "existing_representative_preserved": true
-    },
-    "8c6ddded2bc5": {
-      "reason": "source_unavailable",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28274?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
-      "status": 404
-    },
-    "572d5792fe9b": {
-      "reason": "source_unavailable",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28297?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue",
-      "status": 404,
-      "existing_representative_preserved": true
-    },
-    "43669547d8a9": {
-      "reason": "source_unavailable",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28286?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
-      "status": 404,
-      "existing_representative_preserved": true
-    },
-    "b08f3712a37e": {
-      "reason": "source_unavailable",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28313?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
-      "status": 404,
-      "existing_representative_preserved": true
-    },
-    "9a0aada26bcb": {
-      "reason": "source_unavailable",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28250?dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue&mm=03%3Fgb%3Dtrue",
-      "status": 404
-    },
-    "021c54d7abdb": {
-      "reason": "no_source_image",
-      "source": "https://je.linkedin.com/jobs/Win%20Gaming%20API%20-%20India%20Market%20API%F0%9F%8F%A7TG%40gameapi26-jobs?position=1&pageNum=0"
-    },
-    "02518f2b343c": {
-      "reason": "source_unavailable",
-      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28297?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
-      "status": 404
-    },
-    "09eaa4a8cbc9": {
-      "reason": "no_source_image",
-      "source": "https://www.sahisarkarijobs.in/age-calculator/"
-    },
-    "040073763955": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/yeastar-reconoce-la-ia-la-innovacion-tecnica-y-el-exito-de-los-clientes-en-los-yeahs-awards-2026-302917649.html"
-    },
-    "1c4f6e29aff4": {
-      "reason": "no_source_image",
-      "source": "https://www.theguardian.com/info/2016/jan/25/content-funding"
-    },
-    "d113f09eda07": {
-      "reason": "no_source_image",
-      "source": "https://www.sahisarkarijobs.in/service-length-calculator/",
-      "existing_representative_preserved": true
-    },
-    "031f3d5eda5f": {
-      "reason": "source_error",
-      "source": "https://news.samsung.com/in/author/malay-anil/page/331",
-      "error": "ReadTimeout"
-    }
-  },
+  "existing_representatives_preserved": 0,
+  "diagnostics": {},
   "mode": "all"
 }
