@@ -1,0 +1,33 @@
+{
+  "en_title": "XERJ Brings Local AI Search and MCP Server Capabilities to Coding Agents",
+  "hi_title": "XERJ कोडिंग एजेंटों के लिए स्थानीय AI सर्च और MCP सर्वर सुविधाएँ लाता है",
+  "en_body": "## Overview\n\nXERJ is a local-first search engine and Model Context Protocol (MCP) server designed specifically for AI agents and developers. Distributed as a single Rust binary, it aims to reduce token consumption by indexing local codebases, documentation, logs, and structured files like CSV, JSON, and PDFs, exposing an Elasticsearch-compatible API.\n\nAccording to project documentation, the primary use case is reference coding—allowing coding agents to query indexed open-source repositories or internal codebases to retrieve specific implementation patterns rather than reading entire files or relying solely on grep.\n\n## Core Features and Capabilities\n\n- **Elasticsearch-Compatible API:** Integrates with standard client libraries and dashboards without requiring a Java runtime.\n- **Automated Indexing:** Uses tree-sitter for AST-aware code parsing, extracting symbols and line numbers from source files.\n- **Multiple Search Modalities:** Supports BM25 full-text search, vector embeddings, and hybrid search.\n- **Agent Memory:** Implements endpoints such as `/_memory/{namespace}` for persistent agent long-term memory and recall.\n- **MCP Integration:** Acts as an MCP server via `xerj mcp`, exposing tools for search, definition lookup, and repository mapping to supported desktop assistants and CLI tools.\n\n## Measured Performance and Claims\n\nProject documentation cites controlled study results showing that reference coding via XERJ reduced agent output tokens significantly compared to grep-based approaches or memory alone on specific benchmark tasks. However, these benefits depend on the dataset; the documentation notes that retrieval provides little advantage for popular public libraries that a model has already memorized.\n\n## Security and Configuration\n\nBy default, XERJ binds to `127.0.0.1` for local development. The `--insecure` flag disables TLS and API-key authentication, granting all callers superuser privileges over the local instance. Production or shared environments require proper API key configuration (`--api-key` or `XERJ_API_KEY`) to prevent unauthorized access.\n\n## How to Verify\n\nUsers can inspect the official repository, review the security model documentation, test local installation scripts, and examine client configuration recipes on the project's website.",
+  "hi_body": "## अवलोकन\n\nXERJ एक स्थानीय-प्रथम (local-first) सर्च इंजन और मॉडल संदर्भ प्रोटोकॉल (MCP) सर्वर है जिसे विशेष रूप से AI एजेंटों और डेवलपर्स के लिए डिज़ाइन किया गया है। एक एकल Rust बाइनरी के रूप में वितरित, यह कोडबेस, दस्तावेज़ों, लॉग और संरचित फ़ाइलों को अनुक्रमित (index) करके टोकन की खपत को कम करने का प्रयास करता है।\n\nपरियोजना दस्तावेज़ीकरण के अनुसार, इसका मुख्य उपयोग मामला संदर्भ कोडिंग (reference coding) है—जो कोडिंग एजेंटों को पूरी फ़ाइलों को पढ़ने या केवल grep पर निर्भर रहने के बजाय विशिष्ट कार्यान्वयन पैटर्न प्राप्त करने की अनुमति देता है।\n\n## मुख्य विशेषताएँ और क्षमताएँ\n\n- **Elasticsearch-संगत API:** जावा रनटाइम की आवश्यकता के बिना मानक क्लाइंट लाइब्रेरी के साथ एकीकृत होता है।\n- **स्वचालित इंडेक्सिंग:** स्रोत फ़ाइलों से प्रतीकों और लाइन नंबरों को निकालते हुए, AST-जागरूक कोड पार्सिंग के लिए tree-sitter का उपयोग करता है।\n- **विविध सर्च मोड:** BM25 फुल-टेक्स्ट सर्च, वेक्टर एम्बेडिंग और हाइब्रिड सर्च का समर्थन करता है।\n- **एजेंट मेमोरी:** निरंतर एजेंट दीर्घकालिक स्मृति के लिए `/_memory/{namespace}` जैसे एंडपॉइंट्स को लागू करता है।\n- **MCP एकीकरण:** समर्थित डेस्कटॉप सहायकों और CLI टूल के लिए सर्च, परिभाषा लुकअप और रिपॉजिटरी मैपिंग टूल उजागर करता है।\n\n## सुरक्षा और कॉन्फ़िगरेशन\n\nडिफ़ॉल्ट रूप से, XERJ स्थानीय विकास के लिए `127.0.0.1` से बाइंड होता है। `--insecure` फ़्लैग TLS और API-कुंजी प्रमाणीकरण को अक्षम करता है, जिससे सभी कॉलर को स्थानीय उदाहरण पर सुपरयूज़र विशेषाधिकार मिलते हैं।\n\n## कैसे सत्यापित करें\n\nउपयोगकर्ता आधिकारिक रिपॉजिटरी का निरीक्षण कर सकते हैं, सुरक्षा मॉडल दस्तावेज़ की समीक्षा कर सकते हैं, और परियोजना की वेबसाइट पर क्लाइंट कॉन्फ़िगरेशन व्यंजनों की जांच कर सकते हैं।",
+  "en_meta": "Learn about XERJ, a local Rust-based search engine and MCP server designed to optimize AI coding agents through hybrid search and Elasticsearch compatibility.",
+  "hi_meta": "XERJ के बारे में जानें, जो एक स्थानीय Rust-आधारित सर्च इंजन और MCP सर्वर है जो हाइब्रिड सर्च के माध्यम से AI कोडिंग एजेंटों को अनुकूलित करता है।",
+  "en_keywords": [
+    "XERJ",
+    "AI search engine",
+    "MCP server",
+    "Rust binary",
+    "Elasticsearch API",
+    "code search",
+    "agent memory"
+  ],
+  "hi_keywords": [
+    "XERJ",
+    "AI सर्च इंजन",
+    "MCP सर्वर",
+    "Rust बाइनरी",
+    "Elasticsearch API",
+    "कोड सर्च",
+    "एजेंट मेमोरी"
+  ],
+  "source_published_at": null,
+  "id": "9a082b67929a",
+  "source": "https://github.com/xerj-org/xerj",
+  "date": "2026-11-03T15:00:39.780385+00:00",
+  "source_title": "xerj-org/xerj: AI search engine and MCP server for bots and agents. One Rust binary indexes code, docs, logs, JSONL/CSV and PDFs for BM25 full-text, vector and hybrid search, code search without grep, agent memory and RAG. Elasticsearch-compatible AP - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

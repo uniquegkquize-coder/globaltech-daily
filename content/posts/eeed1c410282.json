@@ -1,0 +1,29 @@
+{
+  "en_title": "Horizon Open-Source Project Offers AI-Powered News Aggregation and Briefing Generation",
+  "hi_title": "हॉरिजन ओपन-सोर्स प्रोजेक्ट एआई-संचालित समाचार एकत्रीकरण और संक्षिप्त विवरण प्रदान करता है",
+  "en_body": "## Overview of Horizon\n\nHorizon is an open-source project designed to act as an AI-powered news radar, collecting, filtering, and deduplicating information from various feeds to generate structured daily briefings. The project aggregates content from sources such as RSS feeds, Hacker News, Reddit, Telegram, X, GitHub, and financial news platforms.\n\n## Core Features and Processing\n\nAccording to the project documentation, Horizon uses customizable profiles to determine how different types of content are scored, treated, and summarized. Users can define specific editorial rules or allow AI assistance to categorize and route items. \n\nKey processing steps include:\n* **Collection and Filtering:** Gathering raw inputs from configured channels.\n* **Deduplication:** Merging repeated stories within designated profiles.\n* **Enrichment:** Adding web-researched background and community discussions where applicable.\n* **Digest Balancing:** Capping briefing lengths and category shares to prevent single topics from dominating the output.\n\n## Configuration and Delivery\n\nHorizon offers an interactive setup wizard for generating configuration files based on user interests. The system supports environment variable references for sensitive data such as API keys and base URLs. \n\nGenerated briefings can be produced in English and Chinese, formatted as Markdown, published via GitHub Pages, or delivered through email, webhooks, and other channels. The project also includes a Command Line Interface (CLI) and support for Model Context Protocol (MCP) integration, allowing AI assistants to execute pipeline stages.\n\n## Verification and Availability\n\nUsers interested in reviewing the full setup instructions, system requirements—such as Node.js and Python dependencies—and deployment templates can consult the official GitHub repository for Horizon to verify installation steps and configuration guidelines.",
+  "hi_body": "## हॉरिजन का परिचय\n\nहॉरिजन एक ओपन-सोर्स प्रोजेक्ट है जिसे एआई-संचालित समाचार रडार के रूप में काम करने के लिए डिज़ाइन किया गया है। यह विभिन्न फीड्स से जानकारी एकत्र, फ़िल्टर और डुप्लीकेट करता है ताकि संरचित दैनिक संक्षिप्त विवरण (briefings) तैयार किए जा सकें। यह प्रोजेक्ट आरएसएस (RSS), हैकर न्यूज, रेडिट, टेलीग्राम, एक्स, गिटहब और वित्तीय समाचार प्लेटफार्मों जैसे स्रोतों से सामग्री एकत्र करता है।\n\n## मुख्य विशेषताएँ और प्रसंस्करण\n\nप्रोजेक्ट दस्तावेज़ के अनुसार, हॉरिजन यह तय करने के लिए कस्टमाइज़ेबल प्रोफाइल का उपयोग करता है कि विभिन्न प्रकार की सामग्री का मूल्यांकन, उपचार और सारांश कैसे किया जाए। उपयोगकर्ता विशिष्ट संपादकीय नियम तय कर सकते हैं या एआई सहायता को आइटम को वर्गीकृत करने की अनुमति दे सकते हैं।\n\nमुख्य प्रसंस्करण चरणों में शामिल हैं:\n* **संग्रह और फ़िल्टरिंग:** कॉन्फ़िगर किए गए चैनलों से कच्चे इनपुट एकत्र करना।\n* **डुप्लीकेट हटाना:** निर्दिष्ट प्रोफाइलों के भीतर दोहराई गई कहानियों को मिलाना।\n* **संवर्धन:** जहां लागू हो, वेब-अनुसंधानित पृष्ठभूमि और सामुदायिक चर्चाएं जोड़ना।\n* **संतुलित डाइजेस्ट:** एकल विषयों को हावी होने से रोकने के लिए ब्रीफिंग की लंबाई और श्रेणी के हिस्से को सीमित करना।\n\n## कॉन्फ़िगरेशन और वितरण\n\nहॉरिजन उपयोगकर्ता की रुचियों के आधार पर कॉन्फ़िगरेशन फ़ाइलें जनरेट करने के लिए एक इंटरैक्टिव सेटअप विज़ार्ड प्रदान करता है। यह प्रणाली एपीआई कुंजियों और बेस यूआरएल जैसे संवेदनशील डेटा के लिए पर्यावरण चर संदर्भों का समर्थन करती है।\n\nजनरेट की गई ब्रीफिंग अंग्रेजी और चीनी में तैयार की जा सकती हैं, जिन्हें मार्कडाउन के रूप में स्वरूपित किया जाता है, गिटहब पेजों के माध्यम से प्रकाशित किया जाता है, या ईमेल और वेबहुक के माध्यम से वितरित किया जाता है। इस प्रोजेक्ट में कमांड लाइन इंटरफ़ेस (CLI) और मॉडल कॉन्टेक्स्ट प्रोटोकॉल (MCP) एकीकरण के लिए समर्थन भी शामिल है।\n\n## सत्यापन और उपलब्धता\n\nपूर्ण सेटअप निर्देशों, सिस्टम आवश्यकताओं—जैसे नोड.जेएस (Node.js) और पायथन निर्भरता—और परिनियोजन टेम्प्लेट की समीक्षा करने के इच्छुक उपयोगकर्ता स्थापना चरणों और कॉन्फ़िगरेशन दिशानिर्देशों को सत्यापित करने के लिए हॉरिजन के आधिकारिक गिटहब रिपॉजिटरी देख सकते हैं।",
+  "en_meta": "Learn about Horizon, an open-source AI news radar project that collects, filters, and generates bilingual briefings from multiple sources.",
+  "hi_meta": "हॉरिजन के बारे में जानें, जो एक ओपन-सोर्स एआई समाचार रडार प्रोजेक्ट है जो कई स्रोतों से द्विभाषी ब्रीफिंग एकत्र, फ़िल्टर और जनरेट करता है।",
+  "en_keywords": [
+    "Horizon",
+    "AI news radar",
+    "open-source project",
+    "daily briefings",
+    "RSS aggregation"
+  ],
+  "hi_keywords": [
+    "हॉरिजन",
+    "एआई समाचार रडार",
+    "ओपन-सोर्स प्रोजेक्ट",
+    "दैनिक ब्रीफिंग",
+    "आरएसएस एकत्रीकरण"
+  ],
+  "source_published_at": null,
+  "id": "eeed1c410282",
+  "source": "https://github.com/Thysrael/Horizon",
+  "date": "2026-11-03T15:00:48.039856+00:00",
+  "source_title": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达 - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
