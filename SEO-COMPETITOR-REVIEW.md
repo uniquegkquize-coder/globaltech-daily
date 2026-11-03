@@ -44,6 +44,7 @@ No competitor article bodies, reviews, rankings, ratings, prices or placement cl
 - A final sitemap reconciliation includes only generated indexable self-canonical HTML after all page families render, including course pages and directory profiles. Redirect fallbacks, empty categories and existing thin noindex profiles are omitted. Article lastmod comes from stored editorial dates, never filesystem modification time.
 - Google News sitemap retains its 48-hour and 1,000-URL-per-file rules and now respects actual translation availability. Reference guides remain outside the News sitemap.
 - English and Hindi HTML topic directories are linked from every footer. A keyboard skip link and reduced-motion behavior improve page access.
+- A real noindex 404 document prevents missing URLs from falling back to the English homepage with a successful status.
 - The manual build workflow runs the test suite and checks every canonical sitemap target before publishing generated files. This change does not trigger a news-generation run or change its schedule/quotas.
 - The Gujarat Anganwadi search title and description now prioritize the e-HRMS check guide rather than suggesting a current result announcement. Its URL and original publication time are preserved.
 

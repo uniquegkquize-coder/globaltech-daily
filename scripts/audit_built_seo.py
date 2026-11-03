@@ -13,6 +13,8 @@ def audit(out,site='https://globewiredaily.org'):
     errors=[];checked=0;article_count=0;alternates=0
     if len(urls)!=len(set(urls)):errors.append('Duplicate canonical sitemap URLs')
     if len(urls)>50000:errors.append('Normal sitemap exceeds 50,000 URLs')
+    missing=out/'404.html'
+    if not missing.is_file() or 'noindex' not in missing.read_text(encoding='utf-8').split('</head>',1)[0]:errors.append('Missing noindex 404 document')
     redirects={line.split()[0] for line in (out/'_redirects').read_text().splitlines() if line.strip() and not line.startswith('#')}
     existence={}
     def exists(path):
