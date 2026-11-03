@@ -1,26 +1,26 @@
 {
-  "checked_at": "2026-11-03T21:15:31.180659+00:00",
+  "checked_at": "2026-11-03T22:01:47.765442+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "57688d552de2",
-    "c16066d2a6dc"
+    "8e8745dd0414",
+    "31a27c7480fe"
   ],
   "results": [
     {
-      "id": "57688d552de2",
+      "id": "8e8745dd0414",
       "result": "published",
-      "title": "Nicolas Cage Says He’s “a Little Bit Homeless” After Sinkhole Damaged His Malibu Home"
+      "title": "Barcelona 3-0 Aston Villa: Champions League – live"
     },
     {
-      "id": "c16066d2a6dc",
+      "id": "31a27c7480fe",
       "result": "published",
-      "title": "James Wan & Jason Blum Unveil Their Blumhouse Atomic Monster Horror Company’s New Name"
+      "title": "Spanish transport minister resigns after deadly train crash"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 5
+      "articles": 6
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
@@ -28,7 +28,7 @@
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 5
+      "articles": 6
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
@@ -36,11 +36,11 @@
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
-      "articles": 22
+      "articles": 19
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
-      "articles": 23
+      "articles": 16
     },
     "https://www.arabnews.com/rss.xml": {
       "status": "unavailable",
@@ -50,63 +50,71 @@
       "status": "ok",
       "articles": 1
     },
-    "https://www.firstshowing.net/feed/": {
+    "https://www.theguardian.com/business/rss": {
       "status": "ok",
-      "articles": 2
+      "articles": 0
     },
-    "https://www.comingsoon.net/feed": {
+    "https://feeds.bbci.co.uk/news/business/rss.xml": {
       "status": "ok",
-      "articles": 20
+      "articles": 1
     },
-    "https://www.motor1.com/rss/news/all/": {
+    "https://feeds.bloomberg.com/markets/news.rss": {
       "status": "ok",
-      "articles": 4
+      "articles": 16
     },
-    "https://www.carscoops.com/feed/": {
+    "https://feeds.bloomberg.com/economics/news.rss": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
       "status": "ok",
       "articles": 10
     },
-    "https://insideevs.com/rss/news/all/": {
+    "https://feeds.npr.org/1006/rss.xml": {
       "status": "ok",
       "articles": 3
     },
-    "https://www.gsmarena.com/rss-news-reviews.php3": {
-      "status": "ok",
-      "articles": 4
-    },
-    "https://www.androidauthority.com/feed/": {
-      "status": "ok",
-      "articles": 17
-    },
-    "https://www.sammobile.com/feed/": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://9to5google.com/feed/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://variety.com/feed/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://deadline.com/feed/": {
-      "status": "ok",
-      "articles": 12
-    },
-    "https://www.hollywoodreporter.com/feed/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml": {
+    "https://news.abplive.com/business/feed": {
       "status": "ok",
       "articles": 2
     },
-    "https://feeds.npr.org/1004/rss.xml": {
+    "https://www.espn.com/espn/rss/news": {
       "status": "ok",
-      "articles": 1
+      "articles": 0
+    },
+    "https://www.espn.com/espn/rss/soccer/news": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.espn.com/espn/rss/nba/news": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://feeds.bbci.co.uk/sport/rss.xml": {
+      "status": "ok",
+      "articles": 13
+    },
+    "https://www.theguardian.com/sport/rss": {
+      "status": "ok",
+      "articles": 8
+    },
+    "https://www.france24.com/en/sport/rss": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://news.abplive.com/sports/feed": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://news.abplive.com/auto/feed": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.engadget.com/rss.xml": {
+      "status": "ok",
+      "articles": 17
     }
   },
-  "discovered": 439,
-  "trending_events": 10
+  "discovered": 434,
+  "trending_events": 9
 }
