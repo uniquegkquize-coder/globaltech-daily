@@ -1,0 +1,54 @@
+name: IndexNow URL notifications
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'content/posts/**'
+      - 'content/directory-records.json'
+  schedule:
+    - cron: '17 5 * * *'
+permissions:
+  contents: read
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Notify IndexNow of recently modified sitemap URLs
+        env:
+          INDEXNOW_HOST: globewiredaily.org
+          INDEXNOW_KEY: d9e47b8c32a16f5098c7d6e5b4a3210f
+        run: |
+          python - <<'PY'
+          import os, urllib.request, urllib.parse, json, xml.etree.ElementTree as ET, datetime
+          host=os.environ['INDEXNOW_HOST']; key=os.environ['INDEXNOW_KEY']
+          base='https://'+host
+          with urllib.request.urlopen(base+'/'+key+'.txt',timeout=20) as r:
+              assert r.read().decode().strip()==key, 'IndexNow key not deployed yet'
+          urls=[]
+          for path in (['/news-sitemap.xml','/sitemap.xml'] if host=='globewiredaily.org' else ['/sitemap.xml']):
+              try:
+                  with urllib.request.urlopen(base+path,timeout=25) as r: root=ET.fromstring(r.read())
+              except Exception as e:
+                  print('Could not fetch',path,e); continue
+              for el in root.iter():
+                  if el.tag.rsplit('}',1)[-1]!='url': continue
+                  fields={c.tag.rsplit('}',1)[-1]:(c.text or '') for c in el}
+                  loc=fields.get('loc','').strip()
+                  if urllib.parse.urlparse(loc).netloc!=host: continue
+                  lastmod=fields.get('lastmod','').strip()
+                  if lastmod:
+                      try:
+                          stamp=datetime.date.fromisoformat(lastmod[:10])
+                          if (datetime.datetime.now(datetime.timezone.utc).date()-stamp).days>3: continue
+                      except ValueError: pass
+                  elif host=='globewiredaily.org' and '/news/' not in loc: continue
+                  urls.append(loc)
+          urls=list(dict.fromkeys(urls))[:200]
+          if not urls:
+              print('No recent URLs to notify'); raise SystemExit(0)
+          payload=json.dumps({'host':host,'key':key,'keyLocation':base+'/'+key+'.txt','urlList':urls}).encode()
+          req=urllib.request.Request('https://api.indexnow.org/indexnow',data=payload,headers={'Content-Type':'application/json; charset=utf-8'},method='POST')
+          with urllib.request.urlopen(req,timeout=35) as r: print('IndexNow status',r.status,'URLs',len(urls))
+          PY
