@@ -1,75 +1,32 @@
 {
-  "total_posts": 1897,
+  "total_posts": 1936,
   "selected": 19,
   "results": {
     "source_photo_saved": 6,
-    "invalid_source_images": 2,
-    "source_unavailable": 1,
-    "cooldown": 9,
-    "no_source_image": 1
+    "cooldown": 13
   },
-  "still_missing": 152,
+  "still_missing": 155,
   "articles": [
     {
-      "id": "837b5d1bc6dbbd7ea060e8a4",
-      "source": "https://en.wikipedia.org/wiki/AJS_Model_D",
+      "id": "8dab3cfd7a1b34cc7ef85719",
+      "source": "https://en.wikipedia.org/wiki/BSA_B31",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793743844.6857538
+      "retry_after": 1793754934.9735656
     },
     {
-      "id": "1bb33d8bdc240838e7b3a804",
-      "source": "https://en.wikipedia.org/wiki/Haima_7X",
+      "id": "d094af5739181877015203ad",
+      "source": "https://en.wikipedia.org/wiki/BSA_Fury",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793743845.2840416
+      "retry_after": 1793754935.3118994
     },
     {
-      "id": "4afa4536b18e5a41b30a3497",
-      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793743845.447865
-    },
-    {
-      "id": "761cd74659597a56ea04795d",
-      "source": "https://en.wikipedia.org/wiki/Toyota_Yaris_%28XP210%29",
+      "id": "f681e126d43c416ed1b73a68",
+      "source": "https://en.wikipedia.org/wiki/Kama_Ruijie",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793743845.544584
-    },
-    {
-      "id": "004925351cb9d6a0d424e3b3",
-      "source": "https://en.wikipedia.org/wiki/BMW_C600_Sport_and_C650GT",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793743845.8393176
-    },
-    {
-      "id": "1161fb76fb10fea6822a08f2",
-      "source": "https://en.wikipedia.org/wiki/Pixel_11_Pro_Fold",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793743845.8732812
-    },
-    {
-      "id": "ab5757b7bde7e5a43128d256",
-      "source": "https://exploitsmw.com/",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793743846.0483134
-    },
-    {
-      "id": "b211f120ea27b93fc925f6b4",
-      "result": "cooldown"
-    },
-    {
-      "id": "6548e415fc086ccec65bbb7c",
-      "result": "cooldown"
-    },
-    {
-      "id": "a6510273f0889bf4d7684eae",
-      "result": "cooldown"
+      "retry_after": 1793754935.3987927
     },
     {
       "id": "007acb84538e69bcc14f4f9f",
@@ -96,25 +53,53 @@
       "result": "cooldown"
     },
     {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793743846.3837948
+      "id": "4afa4536b18e5a41b30a3497",
+      "result": "cooldown"
     },
     {
-      "id": "4f9cd995e22f2282c3a1cc40",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793743846.5511394
+      "id": "ab5757b7bde7e5a43128d256",
+      "result": "cooldown"
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "result": "cooldown"
     },
     {
       "id": "ef614dcb4163038685679d1d",
-      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
+      "result": "cooldown"
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "6548e415fc086ccec65bbb7c",
+      "result": "cooldown"
+    },
+    {
+      "id": "a6510273f0889bf4d7684eae",
+      "result": "cooldown"
+    },
+    {
+      "id": "2f93572d872303f93fcc8cda",
+      "source": "https://en.wikipedia.org/wiki/Hongqi_E-QM5",
       "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793743853.2656965
+      "result": "source_photo_saved",
+      "retry_after": 1793754935.8096342
+    },
+    {
+      "id": "692686758bd5471e6d32a149",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_625",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793754935.8118675
+    },
+    {
+      "id": "75fb6ac6dbae70d901370e16",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_ZR",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793754935.959487
     }
   ],
   "missing": [
@@ -532,6 +517,13 @@
       "reason": "source_unavailable"
     },
     {
+      "id": "1285f1ac72a8",
+      "category": "social-media",
+      "title": "Meld: Android Music Client Unifying Spotify and YouTube Music",
+      "source": "https://github.com/FrancescoGrazioso/Meld",
+      "reason": "restricted_page"
+    },
+    {
       "id": "a5f43758a0b4",
       "category": "ai-news",
       "title": "University of Phoenix White Paper Examines AI Skills Gaps and Workforce Retention in Rural Communities",
@@ -635,6 +627,13 @@
       "title": "Université Notre Dame de Lomami: College Admissions, Facts and Verification Guide",
       "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "12d3cc56ebe6",
+      "category": "business",
+      "title": "Five California Nonprofits Receive $500,000 in Final Round of PG&E Foundation Grants",
+      "source": "https://www.prnewswire.com/news-releases/five-california-nonprofits-receive-500-000-to-restore-habitats-expand-environmental-education-and-strengthen-local-food-systems-302924612.html",
+      "reason": "no_source_image"
     },
     {
       "id": "029b646a13ec",
@@ -1162,6 +1161,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "89a9f272b95b",
+      "category": "social-media",
+      "title": "Exploring Content and Social Media Marketing Internship Opportunities in Delhi",
+      "source": "https://in.linkedin.com/jobs/view/content-and-social-media-marketing-internship-in-delhi-at-denmonk-4484771273",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "0391c4373eca",
       "category": "private-vacancy",
       "title": "Military and Protective Services Job Openings Highlighted Across the Greater Phoenix Area",
@@ -1187,67 +1193,41 @@
     "source_unavailable": 34,
     "source_error": 4,
     "access_denied": 21,
-    "invalid_source_images": 52,
-    "no_source_image": 41
+    "invalid_source_images": 53,
+    "no_source_image": 42,
+    "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "837b5d1bc6dbbd7ea060e8a4": {
+    "8dab3cfd7a1b34cc7ef85719": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/AJS_Model_D",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/AJS_1920_D_1.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/BSA_B31",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/1949_BSA_B31_350cc-OHV_motorcycle_right_side.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "1bb33d8bdc240838e7b3a804": {
+    "d094af5739181877015203ad": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Haima_7X",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Haima_7X_005.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/BSA_Fury",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/83/Prototype_BSA_Fury_motorcycle.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "4afa4536b18e5a41b30a3497": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18613.jpg"
-      ]
-    },
-    "761cd74659597a56ea04795d": {
+    "f681e126d43c416ed1b73a68": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Toyota_Yaris_%28XP210%29",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/2020_Toyota_Yaris_Design_HEV_CVT_1.5_Front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Kama_Ruijie",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Kama_Ruijie_electric_van_001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "004925351cb9d6a0d424e3b3": {
+    "2f93572d872303f93fcc8cda": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/BMW_C600_Sport_and_C650GT",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Motorroller_BMW_C600_Sport_P2RM0105.jpg/1280px-Motorroller_BMW_C600_Sport_P2RM0105.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+      "source": "https://en.wikipedia.org/wiki/Hongqi_E-QM5",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0e/2021_FAW_Hongqi_E-QM5_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "1161fb76fb10fea6822a08f2": {
+    "692686758bd5471e6d32a149": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Pixel_11_Pro_Fold",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Pixel_wordmark.svg/1280px-Pixel_wordmark.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_625",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Nokia_Lumia_625.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "ab5757b7bde7e5a43128d256": {
-      "reason": "source_unavailable",
-      "source": "https://exploitsmw.com/",
-      "status": 200
-    },
-    "8f4b17c49d1b2a0c5cb45a53": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
-      "candidate_count": 6,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "4f9cd995e22f2282c3a1cc40": {
+    "75fb6ac6dbae70d901370e16": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Samsung_Galaxy_S_III.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "ef614dcb4163038685679d1d": {
-      "reason": "no_source_image",
-      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/"
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_ZR",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/82/SONY_XPERIA_A_%28docomo_SO-04E%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
