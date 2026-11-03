@@ -1,44 +1,27 @@
 {
-  "published": 6,
-  "updated": 1,
+  "published": 8,
+  "updated": 0,
   "target": 8,
-  "missing": {
-    "colleges": 2
-  },
+  "missing": {},
   "categories": {
     "colleges": {
-      "new": 0,
+      "new": 2,
       "updated": 0,
-      "eligible_new": 0,
+      "eligible_new": 3,
       "eligible_updates": 0,
-      "shortfall": 2,
+      "shortfall": 0,
       "reasons": {
         "considered": 302,
         "already_published_unchanged": 13,
-        "insufficient verified descriptive fields": 90,
+        "insufficient verified descriptive fields": 87,
         "identifier URL is not specification evidence": 199
       },
-      "rejected_count": 289,
+      "rejected_count": 286,
       "rejected_sample": [
-        {
-          "name": "Universit\u00e9 Notre Dame de Lomami",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/"
-        },
-        {
-          "name": "Universit\u00e9 P\u00e9dagogique de Kananga",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/"
-        },
         {
           "name": "Universit\u00e9 Officielle de Mweka",
           "reason": "insufficient verified descriptive fields",
           "source": "https://www.unirank.org/cd/uni/universite-officielle-de-mweka/map/index.htm#map"
-        },
-        {
-          "name": "Universit\u00e9 Officielle de Semuliki",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/"
         },
         {
           "name": "Bryant University",
@@ -144,22 +127,37 @@
           "name": "L\u00fario University",
           "reason": "insufficient verified descriptive fields",
           "source": "https://en.wikipedia.org/wiki/L%C3%BArio_University"
+        },
+        {
+          "name": "Universidade Potiguar",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.unp.br/noticias/unp-fortalece-a-pesquisa-cientifica-com-novos-projeto-no-prociencia/"
+        },
+        {
+          "name": "Bulacan State University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Bulacan_State_University"
+        },
+        {
+          "name": "Zamfara State University",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Zamfara_State_University"
         }
       ]
     },
     "phones": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 517,
+      "eligible_new": 579,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1835,
-        "already_published_unchanged": 19,
-        "insufficient verified descriptive fields": 81,
-        "identifier URL is not specification evidence": 1218
+        "already_published_unchanged": 21,
+        "insufficient verified descriptive fields": 86,
+        "identifier URL is not specification evidence": 1149
       },
-      "rejected_count": 1299,
+      "rejected_count": 1235,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -282,25 +280,25 @@
           "source": "https://en.wikipedia.org/wiki/Moto_G_%282026%29"
         },
         {
-          "name": "Huawei Y7 Prime (2019)",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100258603"
+          "name": "Sony Ericsson P990",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_P990"
         }
       ]
     },
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 308,
+      "eligible_new": 350,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 883,
-        "already_published_unchanged": 21,
-        "insufficient verified descriptive fields": 82,
-        "identifier URL is not specification evidence": 472
+        "considered": 1054,
+        "already_published_unchanged": 23,
+        "insufficient verified descriptive fields": 108,
+        "identifier URL is not specification evidence": 573
       },
-      "rejected_count": 554,
+      "rejected_count": 681,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -431,13 +429,13 @@
     },
     "bikes": {
       "new": 2,
-      "updated": 1,
-      "eligible_new": 79,
-      "eligible_updates": 1,
+      "updated": 0,
+      "eligible_new": 77,
+      "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 447,
-        "already_published_unchanged": 20,
+        "already_published_unchanged": 23,
         "insufficient verified descriptive fields": 84,
         "identifier URL is not specification evidence": 263
       },
@@ -571,5 +569,5 @@
       ]
     }
   },
-  "date": "2026-11-03T10:13:18.083485+00:00"
+  "date": "2026-11-03T13:25:08.963487+00:00"
 }
