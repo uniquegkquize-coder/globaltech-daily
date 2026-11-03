@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-11-03T19:01:16.445512+00:00",
+  "checked_at": "2026-11-03T19:47:16.020273+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "b39242fba58f",
-    "b3922c87fbdb"
+    "4e090c2b7cf0",
+    "50f27309a047"
   ],
   "results": [
     {
@@ -12,20 +12,20 @@
       "title": "U.S. will stop $4B in aid to Israel at the end of the year, Trump says"
     },
     {
-      "id": "b39242fba58f",
+      "id": "4e090c2b7cf0",
       "result": "published",
-      "title": "The next Elder Scrolls game is officially called Sentinel"
+      "title": "Judi Dench Reveals Daniel Craig Pushed to Kill Off M in Skyfall"
     },
     {
-      "id": "b3922c87fbdb",
+      "id": "50f27309a047",
       "result": "published",
-      "title": "Seven flights across Europe targeted by suspected bomb threats"
+      "title": "Lionsgate Teaming With Sony To Make Destin Daniel Cretton’s ‘Naruto’"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 10
+      "articles": 7
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
@@ -33,15 +33,15 @@
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 9
+      "articles": 8
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
-      "articles": 3
+      "articles": 2
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
-      "articles": 25
+      "articles": 24
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
@@ -55,63 +55,67 @@
       "status": "ok",
       "articles": 1
     },
-    "https://rss.dw.com/rdf/rss-en-top": {
-      "status": "ok",
-      "articles": 9
-    },
-    "https://feeds.skynews.com/feeds/rss/world.xml": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.cbc.ca/webfeed/rss/rss-world": {
-      "status": "unavailable",
-      "articles": 0
-    },
-    "https://www.abc.net.au/news/feed/51120/rss.xml": {
-      "status": "ok",
-      "articles": 18
-    },
-    "https://timesofindia.indiatimes.com/rssfeedstopstories.cms": {
-      "status": "ok",
-      "articles": 26
-    },
-    "https://feeds.nbcnews.com/nbcnews/public/world": {
+    "https://www.nasa.gov/feed/": {
       "status": "ok",
       "articles": 2
     },
-    "https://rss.nytimes.com/services/xml/rss/nyt/World.xml": {
+    "https://www.wired.com/feed/category/science/latest/rss": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://feeds.arstechnica.com/arstechnica/science": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://news.abplive.com/health/feed": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.ign.com/rss/articles/feed": {
+      "status": "ok",
+      "articles": 20
+    },
+    "https://www.gamespot.com/feeds/mashup/": {
       "status": "ok",
       "articles": 11
     },
-    "https://techcrunch.com/feed/": {
+    "https://www.theguardian.com/environment/rss": {
       "status": "ok",
-      "articles": 10
+      "articles": 3
     },
-    "https://techcrunch.com/category/artificial-intelligence/feed/": {
+    "https://www.theguardian.com/travel/rss": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.theguardian.com/education/rss": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.theguardian.com/lifeandstyle/rss": {
       "status": "ok",
       "articles": 6
     },
-    "https://www.theverge.com/rss/index.xml": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://feeds.arstechnica.com/arstechnica/index": {
-      "status": "ok",
-      "articles": 6
-    },
-    "https://www.wired.com/feed/rss": {
-      "status": "ok",
-      "articles": 4
-    },
-    "https://www.wired.com/feed/tag/ai/latest/rss": {
+    "https://www.apple.com/newsroom/rss-feed.rss": {
       "status": "ok",
       "articles": 1
     },
-    "https://www.engadget.com/rss.xml": {
+    "https://news.samsung.com/global/feed": {
       "status": "ok",
-      "articles": 18
+      "articles": 0
+    },
+    "https://www.microsoft.com/en-us/research/feed/": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://www.prnewswire.com/rss/news-releases-list.rss": {
+      "status": "ok",
+      "articles": 20
+    },
+    "https://www.reutersagency.com/feed/": {
+      "status": "unavailable",
+      "articles": 0
     }
   },
-  "discovered": 468,
-  "trending_events": 9
+  "discovered": 430,
+  "trending_events": 10
 }
