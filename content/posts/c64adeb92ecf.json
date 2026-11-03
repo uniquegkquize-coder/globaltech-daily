@@ -1,0 +1,33 @@
+{
+  "en_title": "Higgsfield AI Launches Markdown-Based Skill Set for Visual Brand Agents",
+  "hi_title": "Higgsfield AI ने विजुअल ब्रांडिंग के लिए मार्कडाउन-आधारित स्किल सेट पेश किया",
+  "en_body": "## Overview of Higgsfield AI Skills\nHiggsfield AI has released a library of Markdown-based skills designed to integrate directly with AI coding assistants. These skills allow agents—such as Claude Code, Cursor, and Codex—to execute complex visual content workflows, including image generation, video production, and brand identity management.\n\n## Core Functionality\nThe platform offers a modular approach to visual tasks, emphasizing programmatic control over brand assets:\n\n*   **Marketing Studio & Virality Predictor:** These tools facilitate the creation of branded advertising videos, incorporating predictive scoring to evaluate potential reach.\n*   **Identity Systems:** The 'brandkit' feature chains various models, such as Recraft and Seedream, alongside local tools to maintain consistency across visual outputs.\n*   **Specialized Workflows:** Dedicated modules for product photoshoots, marketplace assets, and YouTube thumbnails automate the backend prompt enhancement process.\n*   **Website Integration:** Users can chain these skills with website generators to automatically produce hero images, video loops, and Open Graph assets.\n\n## Implementation\nIntegration follows a standardized setup process for AI coding agents. Users can initialize the environment using the `npx skills` command, which handles the CLI installation and authentication. The repository provides additional documentation for agent-specific installation flows within the provided GitHub repository.\n\n## Practical Implications\nBy utilizing these skills, developers can transition from simple image generation to building automated, brand-consistent visual systems. The framework is designed for extensibility, allowing agents to chain different model outputs into cohesive marketing campaigns. \n\n## Verification\nInterested users can verify these integration capabilities by reviewing the technical documentation and installation guides hosted on the official Higgsfield AI GitHub repository. As this is a technical tool, users should test individual skills within a sandbox environment before deploying them to production pipelines.",
+  "hi_body": "## Higgsfield AI स्किल्स का परिचय\nHiggsfield AI ने मार्कडाउन-आधारित स्किल्स की एक लाइब्रेरी जारी की है, जिसे सीधे AI कोडिंग असिस्टेंट के साथ एकीकृत करने के लिए डिज़ाइन किया गया है। ये स्किल्स Claude Code, Cursor और Codex जैसे AI एजेंट्स को इमेज जनरेशन, वीडियो प्रोडक्शन और ब्रांड पहचान प्रबंधन जैसे जटिल विजुअल कार्य करने में सक्षम बनाती हैं।\n\n## मुख्य कार्यक्षमता\nयह प्लेटफॉर्म विजुअल कार्यों के लिए एक मॉड्यूलर दृष्टिकोण प्रदान करता है, जो ब्रांड एसेट्स के प्रोग्रामेटिक नियंत्रण पर जोर देता है:\n\n*   **मार्केटिंग स्टूडियो और वायरल प्रिडिक्टर:** ये उपकरण ब्रांडेड विज्ञापन वीडियो बनाने में मदद करते हैं और उनकी संभावित पहुंच का मूल्यांकन करने के लिए प्रिडिक्टिव स्कोरिंग का उपयोग करते हैं।\n*   **आइडेंटिटी सिस्टम:** 'brandkit' फीचर विजुअल आउटपुट में स्थिरता बनाए रखने के लिए Recraft और Seedream जैसे विभिन्न मॉडलों को स्थानीय उपकरणों के साथ जोड़ता है।\n*   **विशेष वर्कफ़्लो:** उत्पाद फोटोशूट, मार्केटप्लेस एसेट और YouTube थंबनेल के लिए समर्पित मॉड्यूल प्रॉम्प्ट एन्हांसमेंट प्रक्रिया को स्वचालित करते हैं।\n*   **वेबसाइट एकीकरण:** उपयोगकर्ता इन स्किल्स को वेबसाइट जनरेटर के साथ जोड़कर ऑटो-जेनरेटेड हीरो इमेज, वीडियो लूप और ओपन ग्राफ एसेट्स प्राप्त कर सकते हैं।\n\n## कार्यान्वयन\nएकीकरण के लिए AI कोडिंग एजेंट्स के लिए एक मानकीकृत सेटअप प्रक्रिया अपनाई गई है। उपयोगकर्ता `npx skills` कमांड का उपयोग करके वातावरण को इनिशियलाइज़ कर सकते हैं, जो CLI इंस्टॉलेशन और ऑथेंटिकेशन का प्रबंधन करता है। इंस्टॉलेशन से संबंधित विस्तृत जानकारी आधिकारिक गिटहब रिपॉजिटरी पर उपलब्ध है।\n\n## व्यावहारिक निहितार्थ\nइन स्किल्स का उपयोग करके, डेवलपर्स साधारण इमेज जनरेशन से आगे बढ़कर स्वचालित और ब्रांड-संगत विजुअल सिस्टम बना सकते हैं। यह ढांचा विस्तार के लिए बनाया गया है, जो एजेंट्स को विभिन्न मॉडल आउटपुट को एक साथ जोड़ने की सुविधा देता है।\n\n## सत्यापन\nउपयोगकर्ता आधिकारिक Higgsfield AI गिटहब रिपॉजिटरी पर होस्ट किए गए तकनीकी दस्तावेज़ों और इंस्टॉलेशन गाइड की समीक्षा करके इन एकीकरण क्षमताओं को सत्यापित कर सकते हैं। यह एक तकनीकी उपकरण है, इसलिए उत्पादन पाइपलाइन में उपयोग करने से पहले सैंडबॉक्स वातावरण में परीक्षण करने की सलाह दी जाती है।",
+  "en_meta": "Higgsfield AI introduces a Markdown-based skill library for AI coding agents to automate image generation, video branding, and complex visual workflows.",
+  "hi_meta": "Higgsfield AI ने AI कोडिंग एजेंट्स के लिए एक मार्कडाउन-आधारित स्किल लाइब्रेरी पेश की है, जो वीडियो और इमेज जनरेशन को स्वचालित करने में मदद करती है।",
+  "en_keywords": [
+    "Higgsfield AI",
+    "AI Agents",
+    "Video Generation",
+    "Marketing Automation",
+    "Brand Identity",
+    "Markdown Skills",
+    "AI Coding Tools"
+  ],
+  "hi_keywords": [
+    "Higgsfield AI",
+    "AI एजेंट्स",
+    "वीडियो जनरेशन",
+    "मार्केटिंग ऑटोमेशन",
+    "ब्रांडिंग",
+    "मार्कडाउन स्किल्स",
+    "AI कोडिंग टूल्स"
+  ],
+  "source_published_at": null,
+  "id": "c64adeb92ecf",
+  "source": "https://github.com/higgsfield-ai/skills",
+  "date": "2026-11-03T04:59:50.024435+00:00",
+  "source_title": "Higgsfield AI Skills - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,35 @@
+{
+  "en_title": "Fake PS5 Emulators on GitHub Spread Password‑Stealing Malware, NordVPN Warns",
+  "hi_title": "गिटहब पर नकली PS5 एमुलेटर्स पासवर्ड चुराने वाले मैलवेयर फैला रहे हैं, नॉर्डवीपीएन ने चेताया",
+  "en_body": "## Overview\nAccording to NordVPN’s Threat Intelligence research team, malicious repositories masquerading as popular PS5 emulators have been discovered on GitHub. The fake emulators are designed to steal passwords and other personal data. As of now, the most notable impostors are named **Kyttyps5** and **AnyPS5**.\n\n## Confirmed details\n- The malicious code adds exclusion rules to **Microsoft Defender**, preventing antivirus scans.\n- An executable file believed to be an **infostealer** is deployed, harvesting credentials and any accessible information.\n- A cleanup script runs after the attack, deleting the malware’s own files so the victim may never notice.\n- The repositories mimic legitimate emulation software, using similar naming and description to appear trustworthy.\n\n## Reported claims\n- NordVPN CTO **Marijus Briedis** notes that emulation enthusiasts are a “perfect target” because they often download experimental software from GitHub and run unsigned files.\n- The malware hides from detection, erases its tracks, and can remain invisible to the PC owner.\n- The rise in popularity of unofficial emulators may be linked to Sony’s decision earlier this year to stop officially porting first‑party games to PC.\n\n## Unknowns\n- The exact number of infected repositories currently active on GitHub.\n- The full range of data that the infostealer can exfiltrate beyond passwords.\n\n## Practical implications and how to verify\n- **Verify the source**: Double‑check that the GitHub link belongs to the official project team behind the emulator.\n- **Watch for red flags**: Be cautious of repositories created recently, with few commits or reviews.\n- **Keep security software enabled**: Do not disable antivirus protection during download or installation.\n- **Use official channels**: Whenever possible, obtain emulators from trusted, community‑verified sources.\n\n## Broader context\nSony’s announcement that it will no longer bring its first‑party titles to PC has created a vacuum that unofficial emulators attempt to fill. While legitimate emulation projects exist, users must remain vigilant against malicious copies that exploit this demand.",
+  "hi_body": "## अवलोकन\nनॉर्डवीपीएन की थ्रेट इंटेलिजेंस रिसर्च टीम के अनुसार, गिटहब पर लोकप्रिय PS5 एमुलेटर्स के रूप में प्रच्छन्न हानिकारक रिपॉजिटरीज़ का पता चला है। ये नकली एमुलेटर्स पासवर्ड और अन्य व्यक्तिगत डेटा चुराने के लिए डिज़ाइन किए गए हैं। वर्तमान में सबसे प्रमुख नकली रिपॉजिटरीज़ का नाम किटीप्स5 और एनिपी5 है।\n\n## पुष्ट जानकारी\n- मैलवेयर माइक्रोसॉफ्ट डिफेंडर में बहिष्करण नियम जोड़ता है, जिससे एंटीवायरस स्कैनिंग रुक जाती है।\n- एक एक्जीक्यूटेबल फ़ाइल तैनात की जाती है जिसे नॉर्डवीपीएन एक इन्फोस्टीअलर मानता है, जो क्रेडेंशियल्स और अन्य पहुँच योग्य जानकारी एकत्र करता है।\n- हमले के बाद एक क्लीनअप स्क्रिप्ट चलती है, जो मैलवेयर की अपनी फ़ाइलों को मिटा देती है, जिससे पीड़ित को कभी पता नहीं चलता।\n- रिपॉजिटरीज़ वैध एमुलेशन सॉफ़्टवेयर की नकल करती हैं, जिससे वे विश्वसनीय लगती हैं।\n\n## रिपोर्ट की गई दावे\n- नॉर्डवीपीएन के सीटीओ मारिजस ब्रिडिस का कहना है कि एमुलेशन प्रेमी एक \"सही लक्ष्य\" हैं क्योंकि वे अक्सर गिटहब से प्रयोगात्मक सॉफ़्टवेयर डाउनलोड करते हैं और असाइन किए गए फ़ाइलों को चलाते हैं।\n- मैलवेयर पता लगाने से बचता है, अपने निशान मिटाता है, और पीसी मालिक को कभी पता नहीं चलता कि वह वहाँ था।\n- सोनी के पहले इस साल पीसी पर अपने पहले पार्टी गेम्स को आधिकारिक तौर पर पोर्ट करना बंद करने के फैसले के कारण अनौपचारिक एमुलेटर्स की लोकप्रियता में वृद्धि हुई हो सकती है।\n\n## अज्ञात\n- गिटहब पर वर्तमान में सक्रिय संक्रमित रिपॉजिटरीज़ की सटीक संख्या।\n- इन्फोस्टीअलर द्वारा पासवर्ड से परे किस प्रकार के डेटा को बाहर निकाला जा सकता है।\n\n## व्यावहारिक प्रभाव और सत्यापन कैसे करें\n- **स्रोत की पुष्टि करें**: डाउनलोड किए जा रहे गिटहब लिंक की दोबारा जाँच करें कि वह एमुलेटर के पीछे की प्रोजेक्ट टीम से संबद्ध है।\n- **लाल झंडों पर ध्यान दें**: हाल ही में बनाए गए रिपॉजिटरीज़ से सावधान रहें, जिनमें कम कमिट्स या समीक्षाएँ हों।\n- **सुरक्षा सॉफ़्टवेयर को सक्षम रखें**: डाउनलोड और इंस्टॉलेशन प्रक्रिया के दौरान एंटीवायरस सॉफ़्टवेयर को अक्षम न करें।\n- **आधिकारिक चैनलों का उपयोग करें**: जब संभव हो, एमुलेटर्स को विश्वसनीय, समुदाय-सत्यापित स्रोतों से प्राप्त करें।\n\n## व्यापक संदर्भ\nसोनी के इस साल पहले पीसी पर अपने पहले पार्टी गेम्स को आधिकारिक तौर पर पोर्ट करना बंद करने के फैसले ने एक खालीपन पैदा किया है, जिसे अनौपचारिक एमुलेटर्स भरने का प्रयास कर रहे हैं। जबकि वैध एमुलेशन प्रोजेक्ट्स मौजूद हैं, उपयोगकर्ताओं को इन हानिकारक नकलों से सावधान रहना चाहिए जो इस मांग का फायदा उठाते हैं।",
+  "en_meta": "Fake PS5 emulators on GitHub spread password‑stealing malware; NordVPN advises users to verify sources and keep antivirus active.",
+  "hi_meta": "गिटहब पर नकली PS5 एमुलेटर्स पासवर्ड चुराने वाले मैलवेयर फैला रहे हैं; नॉर्डवीपीएन उपयोगकर्ताओं को स्रोतों की पुष्टि करने और एंटीवायरस सक्रिय रखने की सलाह देता…",
+  "en_keywords": [
+    "GitHub malware",
+    "PS5 emulator",
+    "password stealer",
+    "NordVPN Threat Intelligence",
+    "cybersecurity",
+    "Microsoft Defender",
+    "infostealer",
+    "emulator safety"
+  ],
+  "hi_keywords": [
+    "गिटहब मैलवेयर",
+    "PS5 एमुलेटर",
+    "पासवर्ड स्टीलर",
+    "नॉर्डवीपीएन थ्रेट इंटेलिजेंस",
+    "साइबर सुरक्षा",
+    "माइक्रोसॉफ्ट डिफेंडर",
+    "इन्फोस्टीअलर",
+    "एमुलेटर सुरक्षा"
+  ],
+  "source_published_at": "2026-10-28T17:10:09+00:00",
+  "id": "946b5a0a345e",
+  "source": "https://www.engadget.com/2299912/fake-ps5-emulators-on-github-are-spreading-password-stealing-malware/",
+  "date": "2026-11-03T04:58:26.489795+00:00",
+  "source_title": "Fake PS5 emulators on GitHub are spreading password-stealing malware",
+  "category": "cyber-security",
+  "image_kind": "conceptual"
+}

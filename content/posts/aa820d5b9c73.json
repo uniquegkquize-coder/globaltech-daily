@@ -1,0 +1,31 @@
+{
+  "en_title": "Ovis: Open-Source Client Brings Coding Agents to Browsers and Mobile Devices",
+  "hi_title": "ओविस (Ovis): ओपन-सोर्स क्लाइंट जो कोडिंग एजेंटों को ब्राउज़र और मोबाइल पर लाता है",
+  "en_body": "## Overview of Ovis\n\nOvis, formerly known as the herdr web UI, is a free, open-source client designed to interface with coding agents running on local machines. According to the project's documentation, the software allows users to interact with terminal-based and background coding assistants through a web browser, a Mac application, or mobile clients. It aims to bridge the gap between desktop development tools and mobile accessibility.\n\n## Key Features\n\n- **Cross-Platform Interface:** Provides access via modern web browsers, desktop apps, and mobile devices (including TestFlight and Google Play beta options).\n- **Agent Support:** Designed to work with multiple coding agents such as Claude Code, Codex, OpenCode, and others, presenting prompts as interactive cards.\n- **Live Terminal Access:** Offers a live terminal view that mirrors the underlying agent pane, complete with a specialized key bar for mobile usage.\n- **Remote Access and Notifications:** Supports remote connections via Tailscale, custom SSH tunnels, VPNs, or an optional end-to-end encrypted relay, alongside web push alerts for pending agent queries.\n\n## Installation and Requirements\n\nOvis relies on the `herdr` backend and requires the host computer to remain powered on. Installation procedures vary by operating system:\n\n- **Mac:** Available via a downloadable DMG file.\n- **Windows:** Available via a downloadable executable.\n- **Linux:** Installable via a command-line shell script.\n\nThe installation process automatically provisions `herdr` and Bun if they are absent. Node.js is not required.\n\n## Privacy and Telemetry\n\nAccording to the project documentation, chat sessions remain local to the computer running the agent, and Ovis does not require user accounts. While anonymous usage counts are enabled by default, they can be disabled via the settings menu or through the `OVIS_TELEMETRY=0` environment variable. The optional relay logs connection metadata—such as connecting addresses and timestamps—without reading the payload contents.\n\n## How to Verify\n\nUsers can inspect the source code, installation guides, and documentation directly on the official [GitHub repository](https://github.com/devswha/ovis).",
+  "hi_body": "## ओविस का परिचय\n\nओविस (जिसे पहले herdr वेब UI के रूप में जाना जाता था) एक स्वतंत्र और ओपन-सोर्स क्लाइंट है, जिसे स्थानीय कंप्यूटरों पर चलने वाले कोडिंग एजेंटों के साथ इंटरफेस करने के लिए डिज़ाइन किया गया है। उपलब्ध दस्तावेज़ीकरण के अनुसार, यह सॉफ्टवेयर उपयोगकर्ताओं को वेब ब्राउज़र, मैक एप्लिकेशन या मोबाइल क्लाइंट के माध्यम से टर्मिनल-आधारित और बैकग्राउंड कोडिंग सहायकों के साथ बातचीत करने की अनुमति देता है।\n\n## मुख्य विशेषताm\n\n- **क्रॉस-प्लेटफ़ॉर्म इंटरफ़ेस:** आधुनिक वेब ब्राउज़र, डेस्कटॉप ऐप और मोबाइल उपकरणों (TestFlight और Google Play बीटा विकल्पों सहित) के माध्यम से पहुंच प्रदान करता है।\n- **एजेंट समर्थन:** Claude Code, Codex, OpenCode और अन्य जैसे कई कोडिंग एजेंटों के साथ काम करने के लिए डिज़ाइन किया गया है, जो प्रॉम्प्ट को इंटरैक्टिव कार्ड के रूप में प्रस्तुत करता है।\n- **लाइव टर्मिनल एक्सेस:** एक लाइव टर्मिनल दृश्य प्रदान करता है जो अंतर्निहित एजेंट पेन को दर्शाता है, जिसमें मोबाइल उपयोग के लिए एक विशेष कुंजी बार भी शामिल है।\n- **रिमोट एक्सेस और सूचनाएं:** टेलस्केल, कस्टम एसएसएच टनल, वीपीएन या एक वैकल्पिक एंड-टू-एंड एन्क्रिप्टेड रिले के माध्यम से दूरस्थ कनेक्शन का समर्थन करता है, साथ ही लंबित एजेंट प्रश्नों के लिए वेब पुश अलर्ट भी देता है।\n\n## स्थापना और आवश्यकताएं\n\nओविस `herdr` बैकएंड पर निर्भर करता है और इसके लिए होस्ट कंप्यूटर का चालू रहना आवश्यक है। ऑपरेटिंग सिस्टम के अनुसार इंस्टॉलेशन प्रक्रिया भिन्न होती है:\n\n- **मैक:** डाउनलोड करने योग्य DMG फ़ाइल के माध्यम से उपलब्ध है।\n- **विंडोज़:** डाउनलोड करने योग्य निष्पादन योग्य फ़ाइल के माध्यम से उपलब्ध है।\n- **लिनक्स:** कमांड-लाइन शेल स्क्रिप्ट के माध्यम से स्थापित किया जा सकता है।\n\nयदि वे अनुपस्थित हैं तो इंस्टॉलेशन प्रक्रिया स्वचालित रूप से `herdr` और Bun को सेट करती है। Node.js की आवश्यकता नहीं है।\n\n## गोपनीयता और टेलीमेट्री\n\nप्रोजेक्ट दस्तावेज़ीकरण के अनुसार, चैट सत्र उस कंप्यूटर पर स्थानीय रहते हैं जो एजेंट को चलाता है, और ओविस को उपयोगकर्ता खातों की आवश्यकता नहीं होती है। हालांकि अनाम उपयोग गणना डिफ़ॉल्ट रूप से सक्षम होती है, उन्हें सेटिंग्स मेनू या `OVIS_TELEMETRY=0` वातावरण चर के माध्यम से अक्षम किया जा सकता है।\n\n## कैसे सत्यापित करें\n\nउपयोगकर्ता आधिकारिक [GitHub रिपॉजिटरी](https://github.com/devswha/ovis) पर सीधे स्रोत कोड, इंस्टॉलेशन गाइड और दस्तावेज़ीकरण की जांच कर सकते हैं।",
+  "en_meta": "Discover Ovis, a free and open-source client for herdr that brings coding agents to your browser, Mac, and phone with live terminals and push alerts.",
+  "hi_meta": "ओविस के बारे में जानें, जो herdr के लिए एक मुफ्त और ओपन-सोर्स क्लाइंट है जो कोडिंग एजेंटों को आपके ब्राउज़र, मैक और फोन पर लाता है।",
+  "en_keywords": [
+    "Ovis",
+    "herdr web UI",
+    "coding agents",
+    "Claude Code",
+    "open-source client",
+    "mobile coding assistant"
+  ],
+  "hi_keywords": [
+    "ओविस",
+    "herdr",
+    "कोडिंग एजेंट",
+    "ओपन-सोर्स",
+    "Claude Code",
+    "मोबाइल क्लाइंट"
+  ],
+  "source_published_at": null,
+  "id": "aa820d5b9c73",
+  "source": "https://github.com/devswha/ovis",
+  "date": "2026-11-03T04:55:59.188934+00:00",
+  "source_title": "devswha/ovis: Ovis (formerly herdr web UI): free, open-source browser and phone client for herdr. Chat and live terminal for Claude Code, Codex and every agent pane, remote PCs over SSH, web push alerts - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,31 @@
+{
+  "en_title": "Open Source Community Launches New Home for Papers with Code",
+  "hi_title": "ओपन सोर्स समुदाय ने 'पेपर्स विद कोड' के लिए नया मंच पेश किया",
+  "en_body": "## A Collaborative Effort for AI Research\nFollowing the retirement of the original Papers with Code platform by Meta in 2025, the open-source community, led by Hugging Face, has introduced a successor project to ensure the continued accessibility of AI research artifacts. The new platform, available at paperswithcode.co, serves as a repository for research papers, implementation code, models, datasets, and performance leaderboards.\n\n## Key Features of the Platform\nThe project maintains the core functionality of the original site while introducing modernized infrastructure. Key components include:\n\n* **Comprehensive Catalog:** Provides access to papers linked with official code, project pages, and Hugging Face assets.\n* **Automated Curation:** Employs agent workflows and scheduled jobs to import daily research, link tasks and methods, and track citations.\n* **Leaderboards:** Tracks paper-native evaluation results on benchmarks through automated synchronization.\n* **Advanced Search:** Features a hybrid search engine combining lexical and semantic retrieval using pgvector.\n* **Developer Support:** Includes a REST API compliant with the original version, OpenAPI documentation, and an optional research-focused chat assistant.\n\n## Developer and Contributor Access\nThe platform is built with a focus on open maintenance and accessibility. The backend utilizes a PostgreSQL database, with architecture managed through environment variables for security. Developers can interact with the system using the `pwc` CLI, which allows for catalog maintenance and data indexing. \n\nThose interested in the underlying architecture or contributing to the project can review the extensive documentation hosted in the repository, covering database schemas, data workflows, and deployment operations. The source code is released under the Apache License 2.0. Users are encouraged to verify project updates and documentation directly via the official GitHub repository or the live site.",
+  "hi_body": "## एआई अनुसंधान के लिए एक सहयोगात्मक प्रयास\nमेटा द्वारा 2025 में मूल 'पेपर्स विद कोड' प्लेटफॉर्म को बंद किए जाने के बाद, हगिंग फेस (Hugging Face) के नेतृत्व में ओपन-सोर्स समुदाय ने एआई अनुसंधान सामग्री की उपलब्धता सुनिश्चित करने के लिए एक उत्तराधिकारी प्रोजेक्ट शुरू किया है। नया प्लेटफॉर्म, जो paperswithcode.co पर उपलब्ध है, अनुसंधान पत्रों, उनके कोड, मॉडल, डेटासेट और प्रदर्शन लीडरबोर्ड के लिए एक महत्वपूर्ण भंडार के रूप में कार्य करता है।\n\n## प्लेटफॉर्म की प्रमुख विशेषताएं\nयह नया प्रोजेक्ट मूल साइट की मुख्य कार्यक्षमता को आधुनिक बुनियादी ढांचे के साथ बनाए रखता है। इसकी प्रमुख विशेषताओं में शामिल हैं:\n\n* **व्यापक कैटलॉग:** अनुसंधान पत्रों को आधिकारिक कोड, प्रोजेक्ट पेजों और हगिंग फेस एसेट के साथ जोड़कर प्रस्तुत करता है।\n* **स्वचालित क्यूरेशन:** एजेंट वर्कफ़्लो और शेड्यूल किए गए कार्यों का उपयोग करके दैनिक शोध अपडेट करना, कार्यों को जोड़ना और उद्धरणों को ट्रैक करना।\n* **लीडरबोर्ड:** बेंचमार्क पर शोध पत्रों के मूल्यांकन परिणामों को स्वचालित रूप से सिंक करना।\n* **उन्नत खोज:** इसमें pgvector का उपयोग करके लेक्सिकल और सिमेंटिक खोज का हाइब्रिड मॉडल शामिल है।\n* **डेवलपर सपोर्ट:** मूल संस्करण के साथ संगत REST API, OpenAPI दस्तावेज़ीकरण और एक वैकल्पिक एआई चैट असिस्टेंट।\n\n## डेवलपर और योगदानकर्ता जानकारी\nयह प्लेटफॉर्म ओपन मेंटेनेंस और एक्सेसिबिलिटी पर केंद्रित है। बैकएंड के लिए PostgreSQL डेटाबेस का उपयोग किया गया है, और सुरक्षा के लिए एनवायरनमेंट वेरिएबल्स के जरिए आर्किटेक्चर को प्रबंधित किया जाता है। डेवलपर्स कैटलॉग रखरखाव और डेटा इंडेक्सिंग के लिए `pwc` CLI का उपयोग कर सकते हैं।\n\nजो लोग इसके तकनीकी ढांचे में रुचि रखते हैं, वे रिपॉजिटरी में उपलब्ध विस्तृत दस्तावेज़ों (जैसे डेटाबेस स्कीमा, डेटा वर्कफ़्लो और परिनियोजन संचालन) की जांच कर सकते हैं। यह प्रोजेक्ट Apache License 2.0 के तहत जारी किया गया है। उपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी या लाइव साइट के माध्यम से प्रोजेक्ट अपडेट और नवीनतम जानकारी देख सकते हैं।",
+  "en_meta": "Hugging Face and the open-source community have launched a successor to Papers with Code, providing an updated platform for tracking AI research and datasets.",
+  "hi_meta": "हगिंग फेस और ओपन सोर्स समुदाय ने पेपर्स विद कोड का उत्तराधिकारी पेश किया है, जो एआई शोध, कोड और डेटासेट को ट्रैक करने के लिए एक आधुनिक मंच प्रदान करता है।",
+  "en_keywords": [
+    "AI research",
+    "Hugging Face",
+    "Papers with Code",
+    "Open Source",
+    "Machine Learning",
+    "Datasets"
+  ],
+  "hi_keywords": [
+    "एआई अनुसंधान",
+    "हगिंग फेस",
+    "पेपर्स विद कोड",
+    "ओपन सोर्स",
+    "मशीन लर्निंग",
+    "डेटासेट"
+  ],
+  "source_published_at": null,
+  "id": "ce49618f4252",
+  "source": "https://github.com/huggingface/paperswithcode",
+  "date": "2026-11-03T05:00:11.474948+00:00",
+  "source_title": "huggingface/paperswithcode: This repository hosts the code of Papers with Code, which tracks trending AI research with code, datasets and leaderboards. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

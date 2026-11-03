@@ -1,0 +1,31 @@
+{
+  "en_title": "ReelMimic Project Introduces AI-Driven Style Replication for Local Animation Production",
+  "hi_title": "रीलमिमिक प्रोजेक्ट स्थानीय एनिमेशन निर्माण के लिए एआई-संचालित स्टाइल रेप्लिका पेश करता है",
+  "en_body": "## Overview of ReelMimic\n\nAn open-source project named ReelMimic has been published on GitHub, designed to analyze reference videos and generate new animated content matching their style. According to the repository documentation, users can supply a reference file, phone recording, or online link alongside a brief description to initiate the process. The tool runs locally on user hardware, utilizing designated AI coding assistants such as Claude Code or Codex.\n\n## Core Workflow and Multi-Agent Architecture\n\nThe production pipeline divides tasks across multiple specialized agents. \n\n* **Reference Analysis:** The system breaks down the source video into metrics like shot counts, editing rhythm, frames, colors, and camera movements.\n* **Planning Phase:** A storyboard, character designs, assets, and style frames are generated for user review before production begins.\n* **Distributed Production and Review:** Up to six agents handle different video segments simultaneously. Finished shots undergo a review process by a separate agent, requiring visual proof such as before-and-after screenshots for any corrections.\n\n## Supported Styles and Technical Requirements\n\nThe software focuses exclusively on 2D animation rather than live-action footage. It includes seven drawing engines, ranging from vector graphics and pixel art to hand-painted watercolor and anime cels. \n\nRendering times vary, typically requiring between one and three and a half hours for a 30 to 60-second video, depending on the chosen style and complexity. Watercolor and crayon engines are noted as slower because every frame is painted individually.\n\nPrerequisites for running the software locally include:\n\n* Node.js 22.18 or higher\n* Python 3.10 or higher\n* FFmpeg and Google Chrome\n* An active Claude Code or Codex CLI account\n\n## Privacy, Licensing, and Verification\n\nProject documentation notes that processing relies on the user's connected AI account usage limits. The software does not automatically upload content; publishing tools require manual execution with specific flags. The repository code is distributed under the MIT license, with third-party components carrying individual notices. Users interested in verifying the setup or examining technical specifications can consult the official GitHub repository and its associated configuration guides.",
+  "hi_body": "## रीलमिमिक का परिचय\n\nGitHub पर रीलमिमिक नामक एक ओपन-सोर्स प्रोजेक्ट प्रकाशित किया गया है, जिसे संदर्भ वीडियो का विश्लेषण करने और उनकी शैली से मेल खाते हुए नए एनिमेटेड कंटेंट को उत्पन्न करने के लिए डिज़ाइन किया गया है। रिपॉजिटरी दस्तावेज़ के अनुसार, उपयोगकर्ता इस प्रक्रिया को शुरू करने के लिए एक संक्षिप्त विवरण के साथ संदर्भ फ़ाइल, फ़ोन रिकॉर्डिंग या ऑनलाइन लिंक प्रदान कर सकते हैं। यह टूल उपयोगकर्ता के हार्डवेयर पर स्थानीय रूप से चलता है, जिसमें क्लॉड कोड (Claude Code) या कोडेक्स (Codex) जैसे निर्दिष्ट एआई कोडिंग सहायकों का उपयोग होता है।\n\n## मुख्य कार्यप्रवाह और मल्टी-एजेंट आर्किटेक्चर\n\nउत्पादन पाइपलाइन कार्यों को कई विशेष एजेंटों में विभाजित करती है।\n\n* **संदर्भ विश्लेषण:** सिस्टम स्रोत वीडियो को शॉट काउंट, संपादन ताल, फ्रेम, रंगों और कैमरा मूवमेंट जैसे मेट्रिक्स में तोड़ता है।\n* **नियोजन चरण:** उत्पादन शुरू होने से पहले उपयोगकर्ता की समीक्षा के लिए एक स्टोरीबोर्ड, चरित्र डिजाइन, एसेट और स्टाइल फ्रेम तैयार किए जाते हैं।\n* **वितरित उत्पादन और समीक्षा:** अधिकतम छह एजेंट एक साथ अलग-अलग वीडियो खंडों को संभालते हैं। तैयार शॉट्स की समीक्षा एक अलग एजेंट द्वारा की जाती है, जिसके लिए किसी भी सुधार हेतु पहले और बाद के स्क्रीनशॉट जैसे दृश्य प्रमाण की आवश्यकता होती है।\n\n## समर्थित शैलियाँ और तकनीकी आवश्यकताएं\n\nयह सॉफ्टवेयर लाइव-एक्शन फुटेज के बजाय विशेष रूप से 2D एनिमेशन पर ध्यान केंद्रित करता है। इसमें सात ड्राइंग इंजन शामिल हैं, जिनमें वेक्टर ग्राफिक्स और पिक्सेल आर्ट से लेकर हाथ से रंगे हुए वॉटरकलर और एनीमे सेल शामिल हैं।\n\nरेंडरिंग का समय अलग-अलग हो सकता है, जिसमें चुने गए स्टाइल और जटिलता के आधार पर 30 से 60 सेकंड के वीडियो के लिए आमतौर पर एक से साढ़े तीन घंटे लगते हैं। वॉटरकलर और क्रॉन इंजन को धीमा बताया गया है क्योंकि प्रत्येक फ्रेम को व्यक्तिगत रूप से पेंट किया जाता है।\n\nस्थानीय रूप से सॉफ्टवेयर चलाने के लिए पूर्वापेक्षाएँ:\n\n* Node.js 22.18 या इसके बाद का संस्करण\n* Python 3.10 या इसके बाद का संस्करण\n* FFmpeg और Google Chrome\n* एक सक्रिय Claude Code या Codex CLI खाता\n\n## गोपनीयता, लाइसेंसिंग और सत्यापन\n\nप्रोजेक्ट दस्तावेज़ बताता है कि प्रोसेसिंग उपयोगकर्ता के जुड़े हुए एआई खाते के उपयोग की सीमाओं पर निर्भर करती है। सॉफ्टवेयर स्वचालित रूप से सामग्री अपलोड नहीं करता है; प्रकाशन टूल को विशिष्ट फ्लैग के साथ मैन्युअल निष्पादन की आवश्यकता होती है। रिपॉजिटरी कोड MIT लाइसेंस के तहत वितरित किया जाता है, जिसमें तृतीय-पक्ष घटक अलग-अलग नोटिस रखते हैं। सेटअप को सत्यापित करने या तकनीकी विनिर्देशों की जांच करने के इच्छुक उपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी और उसके संबंधित कॉन्फ़िगरेशन गाइड देख सकते हैं।",
+  "en_meta": "Learn about ReelMimic, an open-source local tool that uses AI agents to generate 2D animations based on reference video styles.",
+  "hi_meta": "रीलमिमिक के बारे में जानें, जो संदर्भ वीडियो शैलियों के आधार पर 2D एनिमेशन बनाने के लिए एआई एजेंटों का उपयोग करने वाला एक स्थानीय टूल है।",
+  "en_keywords": [
+    "ReelMimic",
+    "AI animation",
+    "GitHub repository",
+    "Claude Code",
+    "Codex",
+    "2D animation generator"
+  ],
+  "hi_keywords": [
+    "ReelMimic",
+    "एआई एनिमेशन",
+    "GitHub रिपॉजिटरी",
+    "Claude Code",
+    "Codex",
+    "2D एनिमेशन जेनरेटर"
+  ],
+  "source_published_at": null,
+  "id": "f9c4bac94922",
+  "source": "https://github.com/edenfunf/reelmimic",
+  "date": "2026-11-03T04:55:59.722238+00:00",
+  "source_title": "edenfunf/reelmimic: Show it a video you love. Get a new video in the same style. An AI crew (Claude Code or Codex) plans, builds and reviews it with you. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
