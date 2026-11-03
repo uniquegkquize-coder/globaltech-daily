@@ -1,0 +1,31 @@
+{
+  "en_title": "0oz Design Introduces a Streamlined, Dashboard-Style Layout for Herdr",
+  "hi_title": "0oz डिज़ाइन ने Herdr ऐप के लिए एक नया डैशबोर्ड-स्टाइल लेआउट पेश किया",
+  "en_body": "## Overview\nDevelopers and power users of the Herdr application can now customize their workspace with '0oz design,' a neutral, dark-themed dashboard layout. Inspired by modern interface design paradigms like shadcn's dashboard-01 and Coss UI, this aesthetic choice focuses on reducing visual clutter and organizing complex workflows.\n\n## Core Features\nThe design implements a structured environment using several key elements:\n* **Unified Containment:** The entire workspace is housed within a single rounded, thinly bordered card inset into the application window.\n* **Terminal Management:** Features multiple terminal interfaces separated by precise 1px hairlines. Active terminals are indicated via header styling rather than distracting, high-contrast rings.\n* **Dashboard Sidebar:** A dedicated navigation panel that includes a \"New space\" trigger, initial workspace tiles, nested worktree support, and a persistent account information chip.\n* **Navigation and Panels:** Navigation is handled through a segmented pill interface for tabs, accompanied by flat, minimalist panels for \"Files\" and \"Changes.\"\n\n## Technical Implementation\nThe 0oz design is compatible with Herdr version 0.1.7. Users can install the layout by copying the provided files into their local Herdr home directory. The system allows for easy toggling between layouts using `ctrl-shift-l` to revert to previous settings.\n\n### Privacy and Structure\n* **Local Execution:** According to the documentation, the underlying \"oz-spaces\" component utilizes local git commands and `hc machine ls` to display branch and machine information. It does not perform network requests, prioritizing local privacy.\n* **Rebuildability:** A comprehensive `RECIPE.md` file is included to allow agents or developers to understand the layout's construction and recreate it from the ground up.\n* **Licensing:** The project is distributed under the Apache-2.0 license. It functions as a modification of existing Herdr modules, with detailed documentation provided in each file regarding the specific changes made from the original code.\n\nTo verify these details or download the files, users should review the official repository at the provided GitHub URL. The project serves as a practical example of how interface layouts can be modularized within the Herdr ecosystem.",
+  "hi_body": "## परिचय\nHerdr एप्लिकेशन के उपयोगकर्ता अब '0oz डिज़ाइन' के साथ अपने वर्कस्पेस को एक नया रूप दे सकते हैं। यह एक तटस्थ (neutral), डार्क-थीम वाला डैशबोर्ड लेआउट है, जो shadcn और Coss UI जैसे आधुनिक डिज़ाइन सिद्धांतों से प्रेरित है। इसका मुख्य उद्देश्य जटिल वर्कफ़्लो को सरल और व्यवस्थित बनाना है।\n\n## मुख्य विशेषताएं\nयह डिज़ाइन लेआउट एक व्यवस्थित वातावरण बनाने के लिए कई तत्वों का उपयोग करता है:\n* **एकीकृत कंटेनर:** पूरा वर्कस्पेस एक गोल और पतले बॉर्डर वाले कार्ड के भीतर सेट किया गया है।\n* **टर्मिनल प्रबंधन:** इसमें 1 पिक्सेल की लाइन द्वारा विभाजित कई टर्मिनल मिलते हैं। सक्रिय टर्मिनल को एक अलग हेडर स्टाइल के माध्यम से पहचाना जा सकता है।\n* **डैशबोर्ड साइडबार:** इसमें एक \"New space\" बटन, वर्कस्पेस टाइल्स, नेस्टेड वर्कट्री और एक अकाउंट चिप शामिल है।\n* **नेविगेशन:** टैब के लिए एक सेगमेंटेड पिल डिज़ाइन और फाइलों के लिए फ्लैट, मिनिमलिस्ट पैनल का उपयोग किया गया है।\n\n## तकनीकी जानकारी और उपयोग\nयह डिज़ाइन Herdr 0.1.7 संस्करण के साथ काम करता है। इसे इंस्टॉल करने के लिए, उपयोगकर्ताओं को फ़ाइलों को अपने Herdr होम डायरेक्टरी में कॉपी करना होगा। आप `ctrl-shift-l` शॉर्टकट का उपयोग करके पुराने लेआउट पर वापस आ सकते हैं।\n\n### गोपनीयता और संरचना\n* **स्थानीय कार्यक्षमता:** \"oz-spaces\" घटक स्थानीय git कमांड का उपयोग करता है और कोई भी नेटवर्क अनुरोध नहीं करता है, जिससे डेटा गोपनीयता बनी रहती है।\n* **पुनर्निर्माण क्षमता:** एक `RECIPE.md` फ़ाइल उपलब्ध है जो बताती है कि लेआउट कैसे बनाया गया है।\n* **लाइसेंसिंग:** यह प्रोजेक्ट Apache-2.0 लाइसेंस के तहत उपलब्ध है। यह Herdr के मौजूदा मॉड्यूलों का एक संशोधित संस्करण है।\n\nअधिक जानकारी और फाइलों के लिए, उपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी देख सकते हैं। यह प्रोजेक्ट दिखाता है कि कैसे इंटरफ़ेस लेआउट्स को Herdr इकोसिस्टम में मॉड्यूलर बनाया जा सकता है।",
+  "en_meta": "Explore the 0oz design for Herdr, a minimalist dark-themed dashboard layout inspired by Coss UI. Learn about its features, privacy, and installation…",
+  "hi_meta": "Herdr ऐप के लिए नए 0oz डिज़ाइन डैशबोर्ड लेआउट के बारे में जानें। यह डार्क-थीम, मिनिमलिस्ट इंटरफ़ेस और इसकी स्थापना प्रक्रिया की जानकारी प्रदान करता है।",
+  "en_keywords": [
+    "Herdr",
+    "UI design",
+    "dashboard layout",
+    "coding tools",
+    "minimalist interface",
+    "GitHub"
+  ],
+  "hi_keywords": [
+    "Herdr",
+    "UI डिज़ाइन",
+    "डैशबोर्ड लेआउट",
+    "कोडिंग टूल",
+    "मिनिमलिस्ट इंटरफ़ेस",
+    "GitHub"
+  ],
+  "source_published_at": null,
+  "id": "db57e3232088",
+  "source": "https://github.com/0OZ/0oz-design",
+  "date": "2026-11-03T22:45:10.118073+00:00",
+  "source_title": "0oz design: a calm, neutral, dashboard-style layout for the Herdr app - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

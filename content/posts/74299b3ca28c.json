@@ -1,0 +1,31 @@
+{
+  "en_title": "Transform Static Imagery into Dynamic Dot-Lattice Animations with 0xSero's ASCII-Art Engine",
+  "hi_title": "0xSero के ASCII-Art इंजन का उपयोग करके स्थिर छवियों को डॉट-लैटिस एनिमेशन में बदलें",
+  "en_body": "## Overview of the Dot-Lattice Tool\nThe `0xSero/ascii-art` project on GitHub provides a specialized engine and set of scripts designed to convert static images—including photographs, drawings, and sculptures—into two-tone dot-lattice animations. The tool focuses on creating seamless, looping visuals where subjects appear to emerge, disintegrate, or evolve through stippling effects.\n\n## Core Mechanics\nThe software relies on a grid-based system where subjects are rendered using:\n* **Charcoal backgrounds**\n* **Two distinct grey tones**\n* **Selective crimson accents**\n\nThe output relies on the contrast between \"bright\" subject cells, \"dim\" shadow accents, and empty cells used for fine line art, such as facial features or deep contours. The project includes a detailed guide titled `SKILL.md` that covers the anatomical approach, motion vocabulary, and loop mathematics required to achieve these aesthetic effects.\n\n## Technical Prerequisites\nTo utilize this engine, the following environment setup is required:\n* **Language/Libraries:** Python 3.10+, numpy, scipy, Pillow, and scikit-image.\n* **Browser Automation:** Playwright with a Chromium build (installed via `python -m playwright install chromium`).\n\n## Documentation and Files\nThe repository provides several resources to help users understand the structure of the dot-map animations:\n* **`references/engine.md`:** Describes the JSON format for scenes and layer parameters.\n* **`references/case-study.md`:** Offers a comprehensive walkthrough of a single project from start to finish.\n* **`examples/`:** Contains template scene files and dot maps, such as `bust-skull.map.txt`, which can be used to construct figure layers.\n\n## Usage Notes\nUsers should note that the provided examples contain structure definitions but do not include the original third-party reference photographs. The project is licensed under the MIT License, which pertains strictly to the code and documentation provided. Users retain all rights to the imagery they choose to process through these scripts.",
+  "hi_body": "## डॉट-लैटिस टूल का परिचय\nGitHub पर उपलब्ध `0xSero/ascii-art` प्रोजेक्ट एक विशेष इंजन और स्क्रिप्ट का संग्रह है, जो स्थिर छवियों—जैसे फोटोग्राफ, रेखाचित्र और मूर्तियों—को दो-टोन डॉट-लैटिस एनिमेशन में बदलने के लिए डिज़ाइन किया गया है। यह टूल ऐसे लूपिंग दृश्य बनाने पर केंद्रित है जहाँ विषय स्टिपलिंग (stippling) प्रभावों के माध्यम से उभरते, बिखरते या विकसित होते हुए प्रतीत होते हैं।\n\n## मुख्य कार्यप्रणाली\nयह सॉफ्टवेयर एक ग्रिड-आधारित प्रणाली पर काम करता है, जहाँ विषयों को निम्नलिखित के माध्यम से प्रस्तुत किया जाता है:\n* **चारकोल बैकग्राउंड**\n* **दो अलग-अलग ग्रे टोन**\n* **चयनित क्रिमसन एक्सेंट**\n\nआउटपुट 'ब्राइट' सब्जेक्ट सेल, 'डिम' शैडो एक्सेंट, और चेहरे की विशेषताओं या गहरी रेखाओं के लिए उपयोग किए जाने वाले खाली सेल के बीच के अंतर पर निर्भर करता है। प्रोजेक्ट में `SKILL.md` नाम की एक विस्तृत गाइड शामिल है, जो इन सौंदर्यपूर्ण प्रभावों को प्राप्त करने के लिए आवश्यक शारीरिक दृष्टिकोण, गति शब्दावली और लूप गणित को कवर करती है।\n\n## तकनीकी आवश्यकताएं\nइस इंजन का उपयोग करने के लिए निम्नलिखित सेटअप की आवश्यकता होती है:\n* **लैंग्वेज और लाइब्रेरीज़:** Python 3.10+, numpy, scipy, Pillow, और scikit-image.\n* **ब्राउज़र ऑटोमेशन:** Chromium बिल्ड के साथ Playwright (जिसे `python -m playwright install chromium` कमांड से इंस्टॉल किया जा सकता है)।\n\n## दस्तावेज़ीकरण और फाइलें\nरिपॉजिटरी में डॉट-मैप एनिमेशन की संरचना को समझने के लिए कई संसाधन उपलब्ध हैं:\n* **`references/engine.md`:** दृश्यों के लिए JSON प्रारूप और लेयर पैरामीटर्स का विवरण देता है।\n* **`references/case-study.md`:** एक पूर्ण प्रोजेक्ट का स्टेप-बाय-स्टेप विवरण प्रदान करता है।\n* **`examples/`:** इसमें टेम्पलेट सीन फाइलें और डॉट मैप शामिल हैं, जैसे `bust-skull.map.txt`, जिनका उपयोग फिगर लेयर्स बनाने के लिए किया जा सकता है।\n\n## उपयोग संबंधी महत्वपूर्ण जानकारी\nउपयोगकर्ताओं को ध्यान देना चाहिए कि दिए गए उदाहरणों में संरचना की परिभाषाएँ शामिल हैं, लेकिन मूल थर्ड-पार्टी संदर्भ फोटोग्राफ इसमें शामिल नहीं हैं। यह प्रोजेक्ट MIT लाइसेंस के तहत है, जो केवल प्रदान किए गए कोड और दस्तावेज़ीकरण पर लागू होता है। उपयोगकर्ता उन छवियों के सभी अधिकारों को बरकरार रखते हैं जिन्हें वे इन स्क्रिप्ट के माध्यम से प्रोसेस करते हैं।",
+  "en_meta": "Explore the 0xSero dot-lattice engine, a Python-based tool for converting static images into seamless, two-tone animated loops using dot-grid transformations.",
+  "hi_meta": "0xSero के डॉट-लैटिस इंजन का उपयोग करें, जो स्थिर चित्रों को सहज, दो-टोन वाले एनिमेटेड लूप में बदलने के लिए एक पायथन-आधारित टूल है।",
+  "en_keywords": [
+    "ASCII art",
+    "dot-lattice",
+    "Python scripts",
+    "animation engine",
+    "generative art",
+    "image processing"
+  ],
+  "hi_keywords": [
+    "ASCII कला",
+    "डॉट-लैटिस",
+    "पायथन स्क्रिप्ट",
+    "एनिमेशन इंजन",
+    "जेनरेटिव आर्ट",
+    "इमेज प्रोसेसिंग"
+  ],
+  "source_published_at": null,
+  "id": "74299b3ca28c",
+  "source": "https://github.com/0xSero/ascii-art",
+  "date": "2026-11-03T22:45:12.075539+00:00",
+  "source_title": "0xSero/ascii-art: Dot-lattice art: photo to two-tone dot map to seamless animated loop (engine + scripts) - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
