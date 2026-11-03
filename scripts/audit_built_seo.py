@@ -35,6 +35,13 @@ def audit(out,site='https://globewiredaily.org'):
         if len(re.findall(r'<meta name="description"',head))!=1:errors.append('Missing/duplicate description: '+url)
         if len(re.findall(r'<h1(?:\s|>)',source))!=1:errors.append('H1 count: '+url)
         if source.count('id="main-content"')!=1:errors.append('Missing/duplicate main landmark: '+url)
+        if 'data-article-layout="v3"' in source:
+            ids=re.findall(r'\bid="([^"]+)"',source)
+            if len(ids)!=len(set(ids)):errors.append('Duplicate reading anchor: '+url)
+            toc=re.search(r'<nav class="article-toc".*?</nav>',source,re.S)
+            if toc:
+                for anchor in re.findall(r'href="#([^"]+)"',toc[0]):
+                    if html.unescape(anchor) not in ids:errors.append('Broken reading anchor: '+url)
         for raw in re.findall(r'<script type="application/ld\+json">(.*?)</script>',head,re.S):
             try:
                 value=json.loads(raw)

@@ -1,6 +1,7 @@
 """Publish two source-attributed evergreen directory explainers per run.
 These are dated guides, NOT newly launched products or fresh breaking news.
 """
+from article_layout import guide_body
 import datetime as dt
 import hashlib
 import json
@@ -105,7 +106,7 @@ def article(kind,name,entry,source):
     key=hashlib.sha256(('directory-guide:'+kind+':'+name.casefold()).encode()).hexdigest()[:24]
     return key,{'id':key,'en_title':f'{name}: {LABEL[kind].title()}, Facts and Verification Guide',
                 'hi_title':f'{name}: विवरण, पात्रता/स्पेसिफिकेशन और सत्यापन गाइड',
-                'en_body':body,'hi_body':hi,'en_meta':f'Explore sourced {LABEL[kind]} for {name}; verify details before making a decision.',
+                'en_body':guide_body(body),'hi_body':guide_body(hi),'en_meta':f'Explore sourced {LABEL[kind]} for {name}; verify details before making a decision.',
                 'hi_meta':f'{name} के स्रोत आधारित विवरण और जरूरी जाँच।',
                 'en_keywords':f'{name}, {LABEL[kind]}, official source, comparison',
                 'hi_keywords':f'{name}, जानकारी, तुलना, आधिकारिक स्रोत',

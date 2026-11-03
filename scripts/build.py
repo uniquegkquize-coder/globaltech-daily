@@ -1,4 +1,5 @@
 from pathlib import Path
+from article_layout import render as render_article, guide_body, excerpt, CSS as ARTICLE_CSS
 from news_sitemap import write_news_sitemap, is_news_article
 from seo_text import description as seo_description
 from seo_site import head as seo_head, article_languages, iso_date, json_ld, category_description, write_site_sitemap, related_index, ROBOTS
@@ -27,6 +28,9 @@ def write(p,s):
  p.write_bytes(data)
 def title(p,lang):
  raw=str(p.get(lang+'_seo_title') or p.get(lang+'_title') or p.get('en_title') or 'Technology news')
+ if p.get('directory_name') and p.get('content_type')=='evergreen_directory_guide' and not p.get(lang+'_seo_title'):
+  suffix={'phones':('Specifications & buying guide','स्पेसिफिकेशन और खरीद गाइड'),'cars':('Specifications, variants & buying guide','स्पेसिफिकेशन, वेरिएंट और खरीद गाइड'),'bikes':('Specifications & buying guide','स्पेसिफिकेशन और खरीद गाइड'),'colleges':('Courses, fees & admission guide','कोर्स, फीस और एडमिशन गाइड')}.get(p.get('directory_kind'))
+  if suffix:raw=p['directory_name']+': '+suffix[lang=='hi']
  return re.sub(r'\s*[—–-]\s*article featured image\s*$', '', raw, flags=re.I).strip()
 TOOLS=[('ChatGPT','Writing, reasoning and coding','https://chatgpt.com/','Assistant'),('Gemini','Multimodal AI assistant','https://gemini.google.com/','Assistant'),('Claude','Writing and analysis','https://claude.ai/','Assistant'),('Perplexity','Research with linked sources','https://www.perplexity.ai/','Research'),('NotebookLM','Research from your own sources','https://notebooklm.google.com/','Research'),('Google AI Studio','Experiment with Gemini models','https://aistudio.google.com/','Developer'),('Hugging Face','Explore models and datasets','https://huggingface.co/','Developer'),('Canva','Visual content design','https://www.canva.com/','Design'),('GitHub Copilot','AI-assisted programming','https://github.com/features/copilot','Developer'),('Adobe Firefly','Creative generative AI','https://firefly.adobe.com/','Design')]
 def category(p):return p.get('category') if p.get('category') in CATEGORIES else 'technology'
@@ -185,7 +189,7 @@ def shell(lang,t,desc,url,body,extra='',*,alternate_urls=None,canonical_url=None
  links=''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in nav)
  more=[('All Latest News','सभी ताज़ा खबरें','all-news/'),('Jobs & Exam Hub','नौकरी और परीक्षा हब','jobs-exams/'),('Launches & Specs','लॉन्च और स्पेक्स','launches/'),('Freebies & Discounts','फ्रीबीज़ और डिस्काउंट','freebies-deals/'),('Study Abroad Guide','विदेश में पढ़ाई','study-abroad-guide/'),('Jobs Archive','पुराने नोटिस','jobs-archive/'),('AI Tools','AI टूल्स','tools/'),('College Finder','कॉलेज खोजें','colleges/'),('Course Explorer','कोर्स खोजें','courses/'),('Car Explorer','कार खोजें','cars/'),('Phone Explorer','फोन खोजें','phones/'),('Bike Explorer','बाइक खोजें','bikes/')]+[(en,hi,cat+'/') for cat,(en,hi) in CATEGORIES.items()]+[('About','हमारे बारे में','about/'),('Contact','संपर्क','contact/')]
  more_html='<details class="nav-more"><summary>'+('More' if lang=='en' else 'और देखें')+'</summary><div class="nav-more-list">'+''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in more)+'</div></details>'
- return f'''<!doctype html><html lang="{document_lang or lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script>{meta}<meta name="generator" content="GlobeWire SEO v2"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css?v={hashlib.sha256((CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS).encode()).hexdigest()[:12]}"></head><body><a class="skip-link" href="#main-content">{'Skip to content' if lang=='en' else 'मुख्य सामग्री पर जाएँ'}</a><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="{e(switch_url)}" hreflang="{target_lang}">{switch_label}</a></nav><div class="category-menu">{more_html}</div></div></header><main id="main-content">{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>{label("Independent bilingual news and explainers, with clear sourcing, corrections and transparent editorial standards.",lang)}</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{label(s.title(),lang)}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools','site-map'])}</div></div></footer><script defer src="/site.js?v={hashlib.sha256((JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS).encode()).hexdigest()[:12]}"></script></body></html>'''
+ return f'''<!doctype html><html lang="{document_lang or lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script>{meta}<meta name="generator" content="GlobeWire SEO v2"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css?v={hashlib.sha256((CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS+ARTICLE_CSS).encode()).hexdigest()[:12]}"></head><body><a class="skip-link" href="#main-content">{'Skip to content' if lang=='en' else 'मुख्य सामग्री पर जाएँ'}</a><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="{e(switch_url)}" hreflang="{target_lang}">{switch_label}</a></nav><div class="category-menu">{more_html}</div></div></header><main id="main-content">{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>{label("Independent bilingual news and explainers, with clear sourcing, corrections and transparent editorial standards.",lang)}</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{label(s.title(),lang)}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools','site-map'])}</div></div></footer><script defer src="/site.js?v={hashlib.sha256((JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS).encode()).hexdigest()[:12]}"></script></body></html>'''
 @functools.lru_cache(maxsize=None)
 def image_digest(ident):
  try:return hashlib.sha256((OUT/'images'/f'{ident}.jpg').read_bytes()).hexdigest()[:12]
@@ -256,24 +260,7 @@ def image_dimensions(ident):
  except (OSError,ValueError):return (1280,720)
 
 def body_html(raw):
- # Render the small, supported Markdown subset without exposing formatting tokens.
- def inline(value):return linked_inline(value)
- parts=[];buf=[];items=[]
- def flush():
-  if buf:parts.append('<p>'+inline(' '.join(buf))+'</p>');buf.clear()
- def flush_items():
-  if items:parts.append('<ul>'+''.join('<li>'+inline(item)+'</li>' for item in items)+'</ul>');items.clear()
- for line in str(raw).splitlines():
-  line=line.strip()
-  if not line:flush();flush_items();continue
-  if line.startswith('### '):
-   flush();flush_items();parts.append('<h3>'+inline(line[4:])+'</h3>')
-  elif line.startswith('## '):
-   flush();flush_items();parts.append('<h2>'+inline(line[3:])+'</h2>')
-  elif re.match(r'^(?:[-*] |\d+\. )',line):
-   flush();items.append(re.sub(r'^(?:[-*] |\d+\. )','',line))
-  else:flush_items();buf.append(line)
- flush();flush_items();return ''.join(parts)
+ return render_article(raw)[0]
 def image_caption(p,lang):
  s=slug(p)
  metadata=R/'content'/'featured'/f'{s}.json'
@@ -417,6 +404,8 @@ for p in POSTS:
  for lang in ('en','hi'):
   available=article_languages(p);fallback=lang not in available;content_lang='en' if fallback else lang
   t=title(p,content_lang);raw=limit_article_words(p.get(content_lang+'_body') or p.get('en_body',''));url=f'{SITE}{article_path(p,lang)}';desc=seo_description(p.get(content_lang+'_meta'),raw,t)
+  if p.get('content_type')=='evergreen_directory_guide':raw=guide_body(raw)
+  story_html,toc_html,reading_minutes=render_article(raw,content_lang)
   canonical_url=f'{SITE}{article_path(p,"en")}' if fallback else url
   alternate_urls={code:SITE+article_path(p,code) for code in available}
   schema={'@context':'https://schema.org','@type':'NewsArticle' if is_news_article(p) else 'Article','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('updated_at') or p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg?v={image_version(p)}'] if has_featured(p) else []),'author':{'@type':'Organization','name':author_name(p),'url':f'{SITE}/{lang}/author/{author_handle(p)}/'},'publisher':{'@type':'Organization','name':'GlobeWire Daily','url':SITE},'isBasedOn':p['source']}
@@ -445,7 +434,7 @@ for p in POSTS:
   extra=extra_keywords+extra
   if schema.get("dateModified"):extra+='<meta property="article:modified_time" content="'+e(schema["dateModified"])+'">'
   sourcehost=urlparse(p['source']).hostname or 'original source'
-  summary=e(p.get(content_lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
+  summary=e(excerpt(raw,p.get(content_lang+'_summary') or ''))
   featured_html=(f'<img class="hero" src="/images/{s}.jpg?v={image_version(p)}" width="{image_width}" height="{image_height}" fetchpriority="high" alt="{e(image_alt(p,lang))}"><p class="notice">{image_caption_html(p,lang)}</p>' if has_featured(p) else '')
   share_text=('Share this article' if lang=='en' else 'यह खबर शेयर करें')
   copy_text=('Copy link' if lang=='en' else 'लिंक कॉपी करें')
@@ -458,8 +447,20 @@ for p in POSTS:
   related=RELATED_POSTS.get(p['id'],[])
   related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg?v={image_version(q)}" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder" aria-hidden="true">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
+  context_html='<aside class="context-links"><strong>'+('Explore this topic' if lang=='en' else 'इस विषय पर और पढ़ें')+'</strong><a href="/'+lang+'/'+category(p)+'/">'+e(CATEGORIES[category(p)][0 if lang=='en' else 1])+'</a>'
+  if p.get('directory_kind') in ('phones','cars','bikes','colleges') and p.get('directory_name'):
+   from directories import entry_slug
+   kind=p['directory_kind'];name=p['directory_name']
+   context_html+='<a href="/'+lang+'/'+kind+'/'+entry_slug(name)+'/">'+e(name)+(' — full directory profile' if lang=='en' else ' — डायरेक्टरी में पूरा विवरण')+'</a>'
+  context_html+=''.join('<a href="'+article_path(q,lang)+'">'+e(title(q,lang))+'</a>' for q in related[:2])+'</aside>'
+  # Offer relevant next steps at a section boundary without interrupting prose.
+  boundaries=list(re.finditer(r'<h2 id=',story_html))
+  split=boundaries[2].start() if len(boundaries)>2 else len(story_html)
+  story_html=story_html[:split]+context_html+story_html[split:]
+  reading_html='<p class="reading-meta">'+(f'{reading_minutes} min read' if content_lang=='en' else f'{reading_minutes} मिनट में पढ़ें')+'</p>'
+  guide_notice=('<p class="guide-context">'+('Reference guide • Source-listed details may cover multiple variants. Check the exact model and market before buying.' if content_lang=='en' else 'संदर्भ गाइड • स्रोत में कई वेरिएंट का विवरण हो सकता है। खरीदने से पहले सही मॉडल और बाजार की जानकारी जाँचें।')+'</p>') if p.get('directory_kind') in ('phones','cars','bikes') else ''
   trending_html=trending_section(lang,p)
-  content=f'''<div class="wrap"><article class="article"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/{lang}/">{'Home' if lang=='en' else 'होम'}</a> › <a href="/{lang}/{category(p)}/">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</a> › <span>{e(t)}</span></nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1><p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> · Source: {e(sourcehost)}</p>{updated_notice(p,lang)}{featured_html}{share_html}{article_note(p,lang)}{article_panel(p,lang)}<div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div><div class="story">{body_html(raw)}</div>{keyword_html}<div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {'AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''
+  content=f'''<div class="wrap"><article class="article readable-article" data-article-layout="v3"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/{lang}/">{'Home' if lang=='en' else 'होम'}</a> › <a href="/{lang}/{category(p)}/">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</a> › <span>{e(t)}</span></nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1><p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> · Source: {e(sourcehost)}</p>{reading_html}{updated_notice(p,lang)}<div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div>{featured_html}{guide_notice}{article_note(p,lang)}{article_panel(p,lang)}{toc_html}<div class="story">{story_html}</div>{share_html}{keyword_html}<div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {'AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''
   write(OUT / article_path(p,lang).lstrip('/') / 'index.html',shell(lang,t,desc,url,content,extra,alternate_urls=alternate_urls,canonical_url=canonical_url,robots='noindex,follow,max-image-preview:large' if fallback else ROBOTS,document_lang=content_lang))
 for lang in ('en','hi'):
  h='Worldwide news, movies and technology explained' if lang=='en' else 'दुनियाभर की ताज़ा खबरें, आसान हिंदी में'
@@ -568,7 +569,7 @@ render_expanded_hubs(OUT,SITE,POSTS,shell,article_path,title,write)
 
 render_notices(OUT,SITE,shell,write)
 render_directories(OUT,SITE,shell,write)
-write(OUT/'style.css',CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS)
+write(OUT/'style.css',CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS+ARTICLE_CSS)
 write(OUT/'site.js',JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS)
 
 # Let production checks distinguish a stale status badge from a stale deployment.
