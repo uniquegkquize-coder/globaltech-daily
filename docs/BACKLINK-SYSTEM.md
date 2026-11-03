@@ -165,3 +165,20 @@ header request; this is not presented as a successful live sitemap crawl.
 Browser visual testing was unavailable because Chromium is not installed. Build,
 HTML/JSON-LD/link checks and unit tests passed; interactive browser behavior is
 covered by source inspection only. `targets.json` is a regenerated ignored cache.
+
+## Activation verification, 3 November 2026
+
+PR #2 merged successfully. The website build completed successfully and the live
+`/en/resources/` endpoint returned HTTP 200 with the expected resource heading.
+Production car comparison filtering and selected-row mode were tested in the
+cloud browser; filtering for Mahindra Thar and selecting it showed exactly one
+selected and visible row.
+
+The first main-branch research run completed successfully:
+https://github.com/uniquegkquize-coder/globaltech-daily/actions/runs/41577509352
+All stages, report artifact upload, run-summary publication and data-branch push
+passed. Persistent results on backlink-data: 362 candidates, 26 researched
+prospects, 12 provisionally qualified prospects, 1 review-only draft, 0 sent emails,
+0 confirmed live backlinks. The 300 researched-prospect target remains pending.
+Daily research is installed; weekly verification remains scheduled for Monday.
+No automatic external link posting or email sending is enabled.
