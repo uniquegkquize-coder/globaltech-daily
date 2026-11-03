@@ -1,39 +1,34 @@
 {
-  "checked_at": "2026-11-03T12:21:45.127255+00:00",
+  "checked_at": "2026-11-03T16:21:31.731022+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "db2af41f6057",
-    "2322b1942d24"
+    "2554ba3f6222",
+    "013ba68b3b7b"
   ],
   "results": [
     {
-      "id": "40705a7ad889",
-      "result": "source_unavailable",
-      "title": "US strikes Iran's Qeshm Island as midterm elections start"
+      "id": "2554ba3f6222",
+      "result": "published",
+      "title": "Trump says US will stop providing aid to Israel after year-end"
     },
     {
-      "id": "db2af41f6057",
+      "id": "013ba68b3b7b",
       "result": "published",
-      "title": "Indian tourist killed after two helicopters collide near Everest base camp"
-    },
-    {
-      "id": "2322b1942d24",
-      "result": "published",
-      "title": "Tenerife’s Jesus de Miguel dies after on-field collision with goalkeeper"
+      "title": "Blue Eye Samurai Season 2 Trailer Sets Netflix Streaming Release Date for Beloved Action Show"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 11
+      "articles": 8
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
-      "articles": 1
+      "articles": 2
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 9
+      "articles": 11
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
@@ -45,7 +40,7 @@
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
-      "articles": 20
+      "articles": 24
     },
     "https://www.arabnews.com/rss.xml": {
       "status": "unavailable",
@@ -55,67 +50,63 @@
       "status": "ok",
       "articles": 2
     },
-    "https://www.nasa.gov/feed/": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.wired.com/feed/category/science/latest/rss": {
+    "https://www.firstshowing.net/feed/": {
       "status": "ok",
       "articles": 2
     },
-    "https://feeds.arstechnica.com/arstechnica/science": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://news.abplive.com/health/feed": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://www.ign.com/rss/articles/feed": {
-      "status": "ok",
-      "articles": 4
-    },
-    "https://www.gamespot.com/feeds/mashup/": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.theguardian.com/environment/rss": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://www.theguardian.com/travel/rss": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.theguardian.com/education/rss": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.theguardian.com/lifeandstyle/rss": {
-      "status": "ok",
-      "articles": 2
-    },
-    "https://www.apple.com/newsroom/rss-feed.rss": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://news.samsung.com/global/feed": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://www.microsoft.com/en-us/research/feed/": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.prnewswire.com/rss/news-releases-list.rss": {
+    "https://www.comingsoon.net/feed": {
       "status": "ok",
       "articles": 20
     },
-    "https://www.reutersagency.com/feed/": {
-      "status": "unavailable",
-      "articles": 0
+    "https://www.motor1.com/rss/news/all/": {
+      "status": "ok",
+      "articles": 6
+    },
+    "https://www.carscoops.com/feed/": {
+      "status": "ok",
+      "articles": 7
+    },
+    "https://insideevs.com/rss/news/all/": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://www.gsmarena.com/rss-news-reviews.php3": {
+      "status": "ok",
+      "articles": 5
+    },
+    "https://www.androidauthority.com/feed/": {
+      "status": "ok",
+      "articles": 18
+    },
+    "https://www.sammobile.com/feed/": {
+      "status": "ok",
+      "articles": 9
+    },
+    "https://9to5google.com/feed/": {
+      "status": "ok",
+      "articles": 8
+    },
+    "https://variety.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://deadline.com/feed/": {
+      "status": "ok",
+      "articles": 12
+    },
+    "https://www.hollywoodreporter.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml": {
+      "status": "ok",
+      "articles": 5
+    },
+    "https://feeds.npr.org/1004/rss.xml": {
+      "status": "ok",
+      "articles": 4
     }
   },
-  "discovered": 279,
-  "trending_events": 7
+  "discovered": 391,
+  "trending_events": 9
 }
