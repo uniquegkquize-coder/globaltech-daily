@@ -1,35 +1,20 @@
 {
-  "checked_at": "2026-11-03T02:28:48.720627+00:00",
+  "checked_at": "2026-11-03T04:20:59.592550+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "f2f73bf56802"
+    "dbeed6350c55"
   ],
   "results": [
     {
-      "id": "f2f73bf56802",
+      "id": "dbeed6350c55",
       "result": "published",
-      "title": "Man and boy arrested after allegedly attacking One Nation volunteer with baseball bat in Australia"
-    },
-    {
-      "id": "9bcfdc55331d",
-      "result": "no_material_change",
-      "title": "Russian bombing kills 26 people at Ukraine aid centre, Kyiv says"
-    },
-    {
-      "id": "57cdcd943aa8",
-      "result": "source_unavailable",
-      "title": "Multiple Russian strikes kill at least 26 at Ukraine aid centre"
-    },
-    {
-      "id": "c2029f7db0b7",
-      "result": "no_material_change",
-      "title": "Investigative journalist Kate McClymont gives evidence in Alan Jones indecent assault trial"
+      "title": "Trent Reznor and Atticus Ross to Score David Fincher’s ‘The Further Mis-Adventures of Cliff Booth’"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 7
+      "articles": 10
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
@@ -37,19 +22,19 @@
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 5
+      "articles": 7
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
-      "articles": 0
+      "articles": 2
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
-      "articles": 17
+      "articles": 13
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
-      "articles": 10
+      "articles": 6
     },
     "https://www.arabnews.com/rss.xml": {
       "status": "unavailable",
@@ -59,67 +44,71 @@
       "status": "ok",
       "articles": 0
     },
+    "https://blog.google/rss/": {
+      "status": "ok",
+      "articles": 0
+    },
     "https://www.nasa.gov/feed/": {
       "status": "ok",
-      "articles": 2
+      "articles": 0
     },
-    "https://www.wired.com/feed/category/science/latest/rss": {
+    "https://www.technologyreview.com/feed/": {
       "status": "ok",
       "articles": 0
     },
-    "https://feeds.arstechnica.com/arstechnica/science": {
+    "https://www.bleepingcomputer.com/feed/": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.cnet.com/rss/news/": {
+      "status": "ok",
+      "articles": 4
+    },
+    "https://www.techradar.com/feeds.xml": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://feeds.npr.org/1019/rss.xml": {
       "status": "ok",
       "articles": 1
     },
-    "https://news.abplive.com/health/feed": {
+    "https://variety.com/v/film/feed/": {
       "status": "ok",
-      "articles": 1
+      "articles": 10
     },
-    "https://www.ign.com/rss/articles/feed": {
-      "status": "ok",
-      "articles": 20
-    },
-    "https://www.gamespot.com/feeds/mashup/": {
-      "status": "ok",
-      "articles": 6
-    },
-    "https://www.theguardian.com/environment/rss": {
+    "https://www.theguardian.com/film/rss": {
       "status": "ok",
       "articles": 0
     },
-    "https://www.theguardian.com/travel/rss": {
+    "https://www.theguardian.com/culture/rss": {
       "status": "ok",
       "articles": 0
     },
-    "https://www.theguardian.com/education/rss": {
+    "https://feeds.npr.org/1045/rss.xml": {
       "status": "ok",
       "articles": 0
     },
-    "https://www.theguardian.com/lifeandstyle/rss": {
-      "status": "ok",
-      "articles": 2
-    },
-    "https://www.apple.com/newsroom/rss-feed.rss": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://news.samsung.com/global/feed": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.microsoft.com/en-us/research/feed/": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.prnewswire.com/rss/news-releases-list.rss": {
-      "status": "ok",
-      "articles": 20
-    },
-    "https://www.reutersagency.com/feed/": {
+    "https://ew.com/feed/": {
       "status": "unavailable",
       "articles": 0
+    },
+    "https://www.rollingstone.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://news.abplive.com/entertainment/movies/feed": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://news.abplive.com/entertainment/television/feed": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms": {
+      "status": "ok",
+      "articles": 17
     }
   },
-  "discovered": 216,
-  "trending_events": 6
+  "discovered": 235,
+  "trending_events": 3
 }
