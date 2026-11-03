@@ -1,36 +1,47 @@
 {
-  "checked_at": "2026-11-03T06:20:35.340537+00:00",
+  "checked_at": "2026-11-03T09:32:45.152525+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "c004fedc823a"
+    "1f6ee5338f91",
+    "d0e6fb403f83"
   ],
   "results": [
     {
-      "id": "c004fedc823a",
+      "id": "1f6ee5338f91",
       "result": "published",
-      "title": "Has New James Bond Been Cast? Callum Turner & Dua Lipa Report Explained"
+      "title": "West Ham sack head coach Nuno after 14 months"
+    },
+    {
+      "id": "9824217a7593",
+      "result": "source_unavailable",
+      "title": "Israeli opposition unites behind Eisenkot as Netanyahu says voters chose him for PM"
+    },
+    {
+      "id": "d0e6fb403f83",
+      "result": "published",
+      "title": "AFC postpones Asian Cup in Saudi Arabia to late 2027 due to conflict in Middle East"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 6
+      "articles": 8
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
-      "articles": 0
+      "articles": 1
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 8
+      "articles": 9
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
-      "articles": 3
+      "articles": 2
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
-      "articles": 18
+      "articles": 24
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
@@ -42,65 +53,73 @@
     },
     "https://news.google.com/rss/search?q=site%3Aspa.gov.sa%20when%3A1d&hl=en-US&gl=US&ceid=US%3Aen": {
       "status": "ok",
-      "articles": 0
-    },
-    "https://www.firstshowing.net/feed/": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://www.comingsoon.net/feed": {
-      "status": "ok",
-      "articles": 18
-    },
-    "https://www.motor1.com/rss/news/all/": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://www.carscoops.com/feed/": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://insideevs.com/rss/news/all/": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.gsmarena.com/rss-news-reviews.php3": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://www.androidauthority.com/feed/": {
-      "status": "ok",
-      "articles": 4
-    },
-    "https://www.sammobile.com/feed/": {
-      "status": "ok",
       "articles": 2
     },
-    "https://9to5google.com/feed/": {
+    "https://www.theguardian.com/business/rss": {
       "status": "ok",
-      "articles": 1
+      "articles": 0
     },
-    "https://variety.com/feed/": {
+    "https://feeds.bbci.co.uk/news/business/rss.xml": {
       "status": "ok",
-      "articles": 10
+      "articles": 6
     },
-    "https://deadline.com/feed/": {
+    "https://feeds.bloomberg.com/markets/news.rss": {
+      "status": "ok",
+      "articles": 15
+    },
+    "https://feeds.bloomberg.com/economics/news.rss": {
+      "status": "ok",
+      "articles": 5
+    },
+    "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
+      "status": "ok",
+      "articles": 5
+    },
+    "https://feeds.npr.org/1006/rss.xml": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://news.abplive.com/business/feed": {
       "status": "ok",
       "articles": 9
     },
-    "https://www.hollywoodreporter.com/feed/": {
-      "status": "ok",
-      "articles": 4
-    },
-    "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml": {
-      "status": "ok",
-      "articles": 3
-    },
-    "https://feeds.npr.org/1004/rss.xml": {
+    "https://www.espn.com/espn/rss/news": {
       "status": "ok",
       "articles": 0
+    },
+    "https://www.espn.com/espn/rss/soccer/news": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.espn.com/espn/rss/nba/news": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://feeds.bbci.co.uk/sport/rss.xml": {
+      "status": "ok",
+      "articles": 14
+    },
+    "https://www.theguardian.com/sport/rss": {
+      "status": "ok",
+      "articles": 7
+    },
+    "https://www.france24.com/en/sport/rss": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://news.abplive.com/sports/feed": {
+      "status": "ok",
+      "articles": 7
+    },
+    "https://news.abplive.com/auto/feed": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://www.engadget.com/rss.xml": {
+      "status": "ok",
+      "articles": 1
     }
   },
-  "discovered": 222,
-  "trending_events": 2
+  "discovered": 215,
+  "trending_events": 4
 }
