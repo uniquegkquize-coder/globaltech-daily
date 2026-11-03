@@ -1,0 +1,29 @@
+{
+  "en_title": "Postiz-Cheap: Open-Source Social Media Scheduler and AI Content Tool",
+  "hi_title": "पोस्टिज़-चीप: ओपन-सोर्स सोशल मीडिया शेड्यूलर और एआई कंटेंट टूल",
+  "en_body": "## Introduction to Postiz-Cheap\nPostiz-cheap is an independent, open-source social media management and scheduling application designed for creators who want total control over their infrastructure. Licensed under the MIT License, the software provides a self-hostable alternative for planning, composing, and publishing content across multiple connected platforms.\n\n## Core Features and Capabilities\n\n* **Shared Content Calendar:** Review scheduled, processing, published, and failed posts in a unified interface. Create new entries directly from calendar slots or modify existing posts.\n* **Multi-Platform Composer:** Select connected channels, attach media, and adjust platform-specific settings such as video options, tags, and privacy controls.\n* **AI Writing and Assistant:** Generate titles, captions, and tags using an integrated AI writer. Use the conversational workspace to brainstorm ideas and refine copy with contextual follow-up prompts.\n* **Account Management:** Connect accounts through supported provider authorization flows, rename connections, or disconnect platforms as needed.\n* **Media Gallery:** Review and download successfully published videos returned by connected channels.\n\n## Technical Architecture and Self-Hosting\n\nThe application is built using Next.js 16 App Router, React 19, Tailwind CSS, Framer Motion, and Prisma with a PostgreSQL database. Authentication relies on NextAuth with Google sign-in support.\n\nBecause this is a self-hosted repository rather than a managed service, users must provide their own infrastructure, database, and necessary external provider credentials. Real AI generation, account connections, and publishing require MuAPI keys, and usage charges from external providers may apply. Optional Stripe credit checkout integration is also available for configuration.\n\n## Verification and Official Resources\nTo review the source code, examine setup instructions, and verify deployment guidelines, consult the official [Postiz-cheap GitHub Repository](https://github.com/SamurAIGPT/postiz-cheap).",
+  "hi_body": "## पोस्टिज़-चीप का परिचय\nपोस्टिज़-चीप एक स्वतंत्र, ओपन-सोर्स सोशल मीडिया प्रबंधन और शेड्यूलिंग एप्लिकेशन है जिसे उन रचनाकारों के लिए डिज़ाइन किया गया है जो अपने इंफ्रास्ट्रक्चर पर पूर्ण नियंत्रण चाहते हैं। एमआईटी लाइसेंस के तहत जारी यह सॉफ्टवेयर कई जुड़े हुए प्लेटफार्मों पर सामग्री की योजना बनाने, लिखने और प्रकाशित करने के लिए एक सेल्फ-होस्ट करने योग्य विकल्प प्रदान करता है।\n\n## मुख्य विशेषताएं और क्षमताएं\n\n* **साझा कंटेंट कैलेंडर:** एक एकीकृत इंटरफेस में निर्धारित, प्रोसेस हो रहे, प्रकाशित और असफल पोस्ट की समीक्षा करें। कैलेंडर स्लॉट से सीधे नई प्रविष्टियां बनाएं या मौजूदा पोस्ट संशोधित करें।\n* **मल्टी-प्लेटफॉर्म कंपोजर:** जुड़े हुए चैनलों का चयन करें, मीडिया संलग्न करें, और वीडियो विकल्प, टैग और गोपनीयता नियंत्रण जैसी प्लेटफॉर्म-विशिष्ट सेटिंग्स समायोजित करें।\n* **एआई राइटिंग और असिस्टेंट:** एक एकीकृत एआई लेखक का उपयोग करके शीर्षक, कैप्शन और टैग जनरेट करें। प्रासंगिक संकेतों के साथ विचारों पर मंथन करने और कॉपी को परिष्कृत करने के लिए संवादात्मक कार्यक्षेत्र का उपयोग करें।\n* **खाता प्रबंधन:** समर्थित प्रदाता प्राधिकरण प्रवाह के माध्यम से खाते कनेक्ट करें, कनेक्शन का नाम बदलें, या आवश्यकतानुसार प्लेटफ़ॉर्म डिस्कनेक्ट करें।\n* **मीडिया गैलरी:** कनेक्टेड चैनलों द्वारा लौटाए गए सफलतापूर्वक प्रकाशित वीडियो की समीक्षा करें और डाउनलोड करें।\n\n## तकनीकी आर्किटेक्चर और सेल्फ-होस्टिंग\n\nएप्लिकेशन को Next.js 16 ऐप राउटर, React 19, Tailwind CSS, Framer Motion और PostgreSQL डेटाबेस के साथ Prisma का उपयोग करके बनाया गया है। प्रमाणीकरण Google साइन-इन समर्थन के साथ NextAuth पर निर्भर करता है।\n\nचूंकि यह एक प्रबंधित सेवा के बजाय एक सेल्फ-होस्टेड रिपॉजिटरी है, इसलिए उपयोगकर्ताओं को अपना स्वयं का बुनियादी ढांचा, डेटाबेस और आवश्यक बाहरी प्रदाता क्रेडेंशियल प्रदान करने होंगे। वास्तविक एआई जनरेशन, खाता कनेक्शन और प्रकाशन के लिए MuAPI कुंजियों की आवश्यकता होती है, और बाहरी प्रदाताओं से उपयोग शुल्क लागू हो सकते हैं। वैकल्पिक स्ट्राइप क्रेडिट चेकआउट एकीकरण भी कॉन्फ़िगरेशन के लिए उपलब्ध है।\n\n## सत्यापन और आधिकारिक संसाधन\nसोर्स कोड की समीक्षा करने, सेटअप निर्देशों की जांच करने और तैनाती दिशानिर्देशों को सत्यापित करने के लिए, आधिकारिक [पोस्टिज़-चीप गिटहब रिपॉजिटरी](https://github.com/SamurAIGPT/postiz-cheap) देखें।",
+  "en_meta": "Explore Postiz-cheap, an open-source, self-hosted social media scheduler with AI writing, content calendars, and multi-platform publishing.",
+  "hi_meta": "पोस्टिज़-चीप का अन्वेषण करें, जो एआई राइटिंग, कंटेंट कैलेंडर और मल्टी-प्लेटफॉर्म पब्लिशिंग के साथ एक ओपन-सोर्स सोशल मीडिया शेड्यूलर है।",
+  "en_keywords": [
+    "social media scheduler",
+    "open source",
+    "self hosted",
+    "Next.js",
+    "AI content writer"
+  ],
+  "hi_keywords": [
+    "सोशल मीडिया शेड्यूलर",
+    "ओपन सोर्स",
+    "सेल्फ होस्टेड",
+    "Next.js",
+    "एआई कंटेंट राइटर"
+  ],
+  "source_published_at": null,
+  "id": "28fe90346609",
+  "source": "https://github.com/SamurAIGPT/postiz-cheap",
+  "date": "2026-11-03T20:51:06.173585+00:00",
+  "source_title": "SamurAIGPT/postiz-cheap: Free, open-source Postiz alternative: self-host a social media scheduler with an AI post writer, content calendar, and publishing across 8 platforms. MIT licensed; external provider charges may apply. - GitHub",
+  "category": "social-media",
+  "image_kind": "conceptual"
+}
