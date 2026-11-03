@@ -1,0 +1,97 @@
+name: Editorial backlink research
+on:
+  schedule:
+    - cron: '43 1 * * *'
+  workflow_dispatch:
+    inputs:
+      weekly:
+        description: 'Also verify submitted backlinks and save weekly snapshot'
+        type: boolean
+        default: false
+  push:
+    branches: [main, feat/editorial-backlinks]
+    paths:
+      - 'scripts/backlinks/**'
+      - 'tests/test_backlinks.py'
+      - '.github/workflows/backlink-automation.yml'
+permissions:
+  contents: read
+concurrency:
+  group: editorial-backlinks-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'requests>=2.31,<3' 'beautifulsoup4>=4.12,<5' 'PyYAML>=6,<7'
+      - run: python -m compileall -q scripts/backlinks
+      - run: python -m unittest discover -s tests -p test_backlinks.py -v
+  research:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'push'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write # Only required to persist results to backlink-data; never pushes main.
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'requests>=2.31,<3' 'beautifulsoup4>=4.12,<5'
+      - name: Restore persistent research state
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code origin refs/heads/backlink-data >/dev/null 2>&1; then
+            git fetch origin backlink-data
+            git restore --source=FETCH_HEAD --worktree -- data/backlinks
+          fi
+      - name: Research and prepare drafts; verify weekly on Monday
+        env:
+          REQUEST_WEEKLY: ${{ inputs.weekly }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=()
+          if [[ "$(date -u +%u)" == 1 || "$REQUEST_WEEKLY" == true ]]; then args+=(--weekly); fi
+          python -m scripts.backlinks.run --limit 30 --seconds 480 "${args[@]}"
+      - name: Publish report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backlink-research-${{ github.run_id }}
+          path: data/backlinks/
+          retention-days: 30
+      - name: Add dashboard to run summary
+        if: always()
+        run: cat data/backlinks/REPORT.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Persist data on separate branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp -a data/backlinks "$RUNNER_TEMP/backlink-results"
+          if git ls-remote --exit-code origin refs/heads/backlink-data >/dev/null 2>&1; then
+            git fetch origin backlink-data
+            git switch --discard-changes --force-create backlink-data FETCH_HEAD
+          else
+            git switch --create backlink-data
+          fi
+          rm -rf data/backlinks
+          mkdir -p data
+          cp -a "$RUNNER_TEMP/backlink-results" data/backlinks
+          git add -- data/backlinks
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Update editorial prospect research and verified link report'
+          git push origin HEAD:backlink-data
