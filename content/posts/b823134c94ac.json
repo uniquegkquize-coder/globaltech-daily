@@ -1,0 +1,29 @@
+{
+  "en_title": "Locally Uncensored AI Studio Releases Version 3.0.8 with Expanded Local Media and Web Search Features",
+  "hi_title": "लोकल अनसेंसर्ड एआई स्टूडियो ने विस्तृत लोकल मीडिया और वेब सर्च फीचर्स के साथ वर्जन 3.0.8 लॉन्च किया",
+  "en_body": "## Overview of Locally Uncensored v3.0.8\n\nLocally Uncensored (LU), a desktop application designed to provide an all-in-one local artificial intelligence studio, has released version 3.0.8. The free, open-source project runs chat, image generation, video generation, and a coding agent directly on user hardware for Windows and Linux systems without requiring Docker or a command-line terminal.\n\n## Key Updates in the Latest Release\n\n* **Restored Web Search:** The application can query five search services sequentially without requiring API keys.\n* **Enhanced Media Handling:** Users can play generated videos directly within the chat interface, render longer videos in the background, and attach pictures to reach the image processing tools.\n* **Dual-GPU Support:** Systems equipped with two graphics cards can allocate separate cards for chat and ComfyUI operations.\n* **Hardware and Engine Updates:** AMD cards on Windows now utilize AMD's current ROCm build, and the LU Engine provides memory planning from model files alongside one-click context shortening.\n* **Settings Management:** The chat interface can now read and modify application settings via confirmation cards, while a new Model Manager feature allows users to create local model copies with reduced refusal rates.\n\n## Architecture and Privacy\n\nThe application operates primarily in a local mode where data remains on the user's machine. Network requests are limited to update checks against GitHub Releases and minimal telemetry regarding the optional cloud-switch usage. Users can optionally connect to LU Cloud or external API providers for higher-resource models.\n\n## Verification and Installation\n\nInstallers are built via GitHub Actions from public source code, and update channels are signed using a public minisign key detailed in the project's security documentation. While unsigned NSIS installers may trigger false positives on some antivirus engines due to bundled binary downloads, users can independently verify release signatures and build provenance.",
+  "hi_body": "## लोकल अनसेंसर्ड v3.0.8 का अवलोकन\n\nलोकल अनसेंसर्ड (LU), जो डेस्कटॉप के लिए एक ऑल-इन-वन लोकल आर्टिफिशियल इंटेलिजेंस स्टूडियो है, ने अपना वर्जन 3.0.8 जारी कर दिया है। यह मुफ्त और ओपन-सोर्स एप्लिकेशन विंडोज और लिनक्स उपयोगकर्ताओं को बिना किसी डॉकर या कमांड-लाइन टर्मिनल की आवश्यकता के अपने स्वयं के हार्डवेयर पर सीधे चैट, इमेज जनरेशन, वीडियो जनरेशन और कोडिंग एजेंट चलाने की अनुमति देता है।\n<br>\n## नवीनतम रिलीज में मुख्य अपडेट\n\n* **बहाली वेब सर्च:** यह एप्लिकेशन बिना किसी एपीआई कुंजी की आवश्यकता के क्रमिक रूप से पांच सर्च सेवाओं से पूछताछ कर सकता है।\n* **उन्नत मीडिया हैंडलिंग:** उपयोगकर्ता सीधे चैट इंटरफ़ेस के भीतर जनरेट किए गए वीडियो चला सकते हैं, पृष्ठभूमि में लंबे वीडियो रेंडर कर सकते हैं, और इमेज टूल्स तक पहुंचने के लिए तस्वीरें संलग्न कर सकते हैं।\n* **डुअल-जीपीयू सपोर्ट:** दो ग्राफिक्स कार्ड से लैस सिस्टम चैट और ComfyUI संचालन के लिए अलग-अलग कार्ड आवंटित कर सकते हैं।\n* **हार्डवेयर और इंजन अपडेट:** विंडोज पर एएमडी कार्ड अब एएमडी के वर्तमान ROCm बिल्ड का उपयोग करते हैं, और LU इंजन मॉडल फाइलों से मेमोरी प्लानिंग प्रदान करता है।\n* **सेटिंग्स प्रबंधन:** चैट इंटरफ़ेस अब कन्फर्मेशन कार्ड के माध्यम से सेटिंग्स पढ़ और संशोधित कर सकता है, जबकि नया मॉडल मैनेजर उपयोगकर्ताओं को लोकल मॉडल प्रतियां बनाने की अनुमति देता है।\n\n## वास्तुकला और गोपनीयता\n\nयह एप्लिकेशन मुख्य रूप से एक लोकल मोड में संचालित होता है जहां डेटा उपयोगकर्ता की मशीन पर रहता है। नेटवर्क अनुरोध गिटहब रिलीज़ के खिलाफ अपडेट जांच और वैकल्पिक क्लाउड-स्विच उपयोग से संबंधित न्यूनतम टेलीमेट्री तक सीमित हैं। उपयोगकर्ता उच्च-संसाधन मॉडल के लिए वैकल्पिक रूप से LU क्लाउड से कनेक्ट कर सकते हैं।\n\n## सत्यापन और स्थापना\n\nइंस्टॉलर सार्वजनिक स्रोत कोड से गिटहब एक्शन के माध्यम से बनाए जाते हैं, और अपडेट चैनल एक सार्वजनिक मिनिसाइन कुंजी का उपयोग करके हस्ताक्षरित होते हैं। हालांकि कुछ एंटीवायरस इंजन अप्रमाणित इंस्टॉजर्स पर चेतावनी दे सकते हैं, उपयोगकर्ता रिलीज हस्ताक्षर और बिल्ड स्रोतों को स्वतंत्र रूप से सत्यापित कर सकते हैं।",
+  "en_meta": "Discover Locally Uncensored v3.0.8, the all-in-one desktop AI studio for chat, image, video, and coding. Free, open-source, and runs locally on Windows and…",
+  "hi_meta": "Locally Uncensored v3.0.8 के बारे में जानें, जो चैट, इमेज, वीडियो और कोडिंग के लिए एक मुफ्त, ओपन-सोर्स डेस्कटॉप एआई स्टूडियो है। विंडोज और लिनक्स के लिए…",
+  "en_keywords": [
+    "Locally Uncensored",
+    "local AI studio",
+    "open source AI",
+    "ComfyUI desktop",
+    "AI coding agent"
+  ],
+  "hi_keywords": [
+    "लोकल अनसेंसर्ड",
+    "लोकल एआई स्टूडियो",
+    "ओपन सोर्स एआई",
+    "ComfyUI डेस्कटॉप",
+    "एआई कोडिंग एजेंट"
+  ],
+  "source_published_at": null,
+  "id": "b823134c94ac",
+  "source": "https://github.com/PurpleDoubleD/locally-uncensored",
+  "date": "2026-11-03T13:00:59.028476+00:00",
+  "source_title": "PurpleDoubleD/locally-uncensored: The all-in-one local AI studio for your desktop: chat, image and video generation and a coding agent in one free, open source app. Windows and Linux. No Docker, no terminal, no cloud required. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

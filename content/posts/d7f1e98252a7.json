@@ -1,0 +1,32 @@
+{
+  "en_title": "omux: A Native macOS Terminal Manager for Running Multiple Coding Agents",
+  "hi_title": "omux: एकाधिक कोडिंग एजेंट चलाने के लिए एक नेटिव macOS टर्मिनल मैनेजर",
+  "en_body": "Managing multiple AI coding assistants simultaneously often involves constant tab switching and window juggling. A new open-source project called omux, developed by Onur Özcan, aims to address this workflow challenge by providing a native macOS terminal specifically designed to run and monitor multiple Claude Code and Codex sessions side by side.\n\n## Core Architecture and Design\nBuilt entirely using Swift, SwiftUI, and SwiftTerm, omux avoids Electron and web-view frameworks. The application has a lightweight footprint of approximately 5 MB and launches instantly. Because it is written natively for macOS, it operates without telemetry and is designed to run on Apple Silicon hardware running macOS 14 or later.\n\n## Key Features and Workflow Integration\nAccording to the project documentation, omux includes several specialized capabilities for managing multiple AI agents:\n\n* **Centralized Sidebar:** All active agent sessions are listed in a single sidebar organized by projects. \n* **Status Tracking:** The interface displays whether an agent is actively working, requires user input, or has completed its task, with pending actions also indicated via a macOS Dock badge.\n* **Inline Approvals:** Users can respond to Claude Code permission prompts and Codex approvals directly from the sidebar using dedicated Allow and Deny buttons without switching windows.\n* **Resumable Conversations:** Sessions maintain their exact conversation state across application restarts and relaunches.\n* **Git Worktree Integration:** Worktree sessions can be assigned separate branches and folders. Pull request checks and reviews appear directly alongside the session, allowing users to send failing check details back to the agent with a single click.\n* **Code Review Tools:** Users can read diffs, leave line notes, and bundle them into a single message for the agent.\n\n## Network Usage and Privacy\nThe documentation states that omux communicates with the network for a limited set of functions: checking usage limits using Claude Code's login credentials stored in the Keychain, and retrieving pull request status via the GitHub CLI (`gh`). The project documentation emphasizes that no personal or machine data is transmitted elsewhere.\n\n## Requirements and Installation\nTo run pre-built releases, users need a Mac with Apple Silicon running macOS 14 or later. Depending on the desired functionality, Claude Code or Codex CLI must be installed independently. Building from source requires Swift 6.2 or later.\n\nUsers can verify the project details, building instructions, and privacy specifications directly via the official GitHub repository (`onurozcan/omux`). It should be noted that omux is an independent project and is not affiliated with or endorsed by Anthropic or OpenAI.",
+  "hi_body": "एक साथ कई AI कोडिंग सहायकों को प्रबंधित करने में अक्सर लगातार टैब बदलना और विंडो संभालना शामिल होता है। ऑनुर ओज़कान (Onur Özcan) द्वारा विकसित omux नामक एक नए ओपन-सोर्स प्रोजेक्ट का उद्देश्य कई Claude Code और Codex सत्रों को एक साथ चलाने और मॉनिटर करने के लिए एक नेटिव macOS टर्मिनल प्रदान करके इस कार्यप्रवाह को आसान बनाना है।\n\n## मुख्य वास्तुकला और डिज़ाइन\nSwift, SwiftUI और SwiftTerm का उपयोग करके निर्मित, omux इलेक्ट्रॉन और वेब-व्यू फ्रेमवर्क से बचता है। एप्लिकेशन का आकार लगभग 5 MB है और यह तुरंत लॉन्च होता है। चूंकि इसे macOS के लिए नेटिव रूप से लिखा गया है, यह बिना टेलीमेट्री के काम करता है और इसे macOS 14 या इसके बाद के संस्करण वाले Apple Silicon हार्डवेयर पर चलाने के लिए डिज़ाइन किया गया है।\n\n## मुख्य विशेषताएं और कार्यप्रवाह एकीकरण\nप्रोजेक्ट दस्तावेज़ीकरण के अनुसार, omux में कई AI एजेंटों को प्रबंधित करने के लिए कई विशेष क्षमताएं शामिल हैं:\n\n* **केंद्रीकृत साइडबार:** सभी सक्रिय एजेंट सत्र परियोजनाओं द्वारा व्यवस्थित एक ही साइडबार में सूचीबद्ध होते हैं।\n* **स्थिति ट्रैकिंग:** इंटरफ़ेस प्रदर्शित करता है कि कोई एजेंट सक्रिय रूप से काम कर रहा है, उसे उपयोगकर्ता इनपुट की आवश्यकता है, या उसने अपना कार्य पूरा कर लिया है।\n* **इनलाइन अनुमोदन:** उपयोगकर्ता विंडो स्विच किए बिना समर्पित Allow और Deny बटन का उपयोग करके सीधे साइडबार से Claude Code अनुमति संकेतों और Codex अनुमोदनों का जवाब दे सकते हैं।\n* **पुनः शुरू करने योग्य वार्तालाप:** सत्र एप्लिकेशन रीस्टार्ट के दौरान अपनी सटीक बातचीत स्थिति बनाए रखते हैं।\n* **Git वर्कट्री एकीकरण:** वर्कट्री सत्रों को अलग शाखाएं और फ़ोल्डर असाइंड किए जा सकते हैं।\n\n## नेटवर्क उपयोग और गोपनीयता\nदस्तावेज़ बताते हैं कि omux सीमित कार्यों के लिए नेटवर्क के साथ संचार करता है: कीचेन में संग्रहीत Claude Code के लॉगिन क्रेडेंशियल का उपयोग करके उपयोग सीमा की जांच करना, और GitHub CLI (`gh`) के माध्यम से पुल अनुरोध स्थिति प्राप्त करना। प्रोजेक्ट दस्तावेज़ इस बात पर जोर देते हैं कि कोई व्यक्तिगत या मशीन डेटा प्रेषित नहीं किया जाता है।\n\n## आवश्यकताएं और स्थापना\nपूर्व-निर्मित रिलीज़ चलाने के लिए, उपयोगकर्ताओं को macOS 14 या इसके बाद के संस्करण वाले Apple Silicon मैक की आवश्यकता होती है। स्रोत से निर्माण करने के लिए Swift 6.2 या इसके बाद के संस्करण की आवश्यकता होती है। उपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी के माध्यम से विवरण सत्यापित कर सकते हैं। यह ध्यान दिया जाना चाहिए कि omux एक स्वतंत्र प्रोजेक्ट है और Anthropic या OpenAI से संबद्ध नहीं है।",
+  "en_meta": "Discover omux, a 5 MB native macOS terminal built with SwiftUI for running multiple Claude Code and Codex sessions side by side with workspace management.",
+  "hi_meta": "omux के बारे में जानें, जो कई Claude Code और Codex सत्रों को एक साथ चलाने के लिए SwiftUI के साथ निर्मित 5 MB का नेटिव macOS टर्मिनल है।",
+  "en_keywords": [
+    "omux",
+    "macOS terminal",
+    "Claude Code",
+    "Codex sessions",
+    "SwiftUI",
+    "AI coding agents",
+    "SwiftTerm"
+  ],
+  "hi_keywords": [
+    "omux",
+    "macOS टर्मिनल",
+    "Claude Code",
+    "Codex",
+    "SwiftUI",
+    "AI कोडिंग एजेंट"
+  ],
+  "source_published_at": null,
+  "id": "d7f1e98252a7",
+  "source": "https://github.com/onurozcan/omux",
+  "date": "2026-11-03T13:00:33.812299+00:00",
+  "source_title": "onurozcan/omux: Native macOS terminal for running multiple Claude Code sessions side by side. AI coding agent manager with projects, live agent status, resumable conversations and file previews. Built with SwiftUI. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

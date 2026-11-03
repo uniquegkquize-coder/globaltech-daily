@@ -1,0 +1,31 @@
+{
+  "en_title": "Shipwords Framework Launches to Deploy AI Media Sites per Keyword on Cloudflare",
+  "hi_title": "शिपवर्ड्स फ्रेमवर्क क्लाउडफ्लेयर पर कीवर्ड-आधारित एआई साइटें लॉन्च करने के लिए जारी",
+  "en_body": "## Overview of Shipwords\n\nAn open-source project named Shipwords has been released on GitHub under the MIT license, offering a Cloudflare-native framework designed to launch individual AI image and video websites for distinct keywords. The project aims to let developers deploy separate sites quickly, allowing them to scale successful projects while maintaining a shared codebase for core features.\n\nAccording to the documentation, the framework uses a shared core for features that remain constant across sites, while individual sites maintain independent pages, visual themes, and domains. Each site runs as an independent application on Cloudflare infrastructure, utilizing its own database, storage, and payment integrations.\n\n## Core Features and Built-In Capabilities\n\nShipwords integrates several built-in functions designed to handle user accounts, payments, and generation tasks out of the box:\n\n* **Authentication and Payments:** Supports Google and email sign-in, user accounts, and payment processing through Stripe and PayPal for credit packs and subscriptions.\n* **AI Generation Integration:** Connects to multiple image and video generation models through a single API key, billed per generation.\n* **Operational Pages:** Automatically includes essential pages such as privacy policies, terms, refund information, DMCA notices, and XML sitemaps.\n* **Abuse Prevention:** Incorporates support for free guest trials protected by reCAPTCHA v3 limits.\n\n## Architecture and Deployment Requirements\n\nEach generated site operates as a TanStack Start and React 19 application running on a Cloudflare Worker, backed by Cloudflare D1, R2, and Workflows. \n\nTo use the framework locally and prepare for deployment, developers need specific tools and accounts:\n\n* **Development Environment:** Node.js version 24, pnpm version 10, and Git Bash or WSL for Windows users.\n* **Live Launch Requirements:** A Cloudflare account alongside a Stripe or PayPal merchant account.\n* **External Costs:** Domains via Cloudflare Registrar, Cloudflare platform usage fees (including Workers Paid plans for container-based video stitching), payment gateway transaction fees, and underlying AI model API costs.\n\nDevelopers can test the framework locally using a mock upstream mode (`UPSTREAM_MOCK=1`) that simulates AI generations without requiring a paid model API key, and verify webhooks locally using provided testing scripts.\n\n## Verification and Community\n\nInterested developers can inspect the complete source code, review documentation, and fork example implementations directly from the official GitHub repository (`shipwords-dev/shipwords`). Questions and community discussions are hosted on GitHub Discussions.",
+  "hi_body": "## शिपवर्ड्स का परिचय\n\nGitHub पर MIT लाइसेंस के तहत 'शिपवर्ड्स' (Shipwords) नामक एक नया ओपन-सोर्स फ्रेमवर्क जारी किया गया है। यह क्लाउडफ्लेयर-नेटिव फ्रेमवर्क डेवलपर्स को प्रत्येक नए कीवर्ड के लिए अलग एआई इमेज और वीडियो वेबसाइट तेजी से लॉन्च करने की अनुमति देने के लिए डिज़ाइन किया गया है।\n\nदस्तावेज़ीकरण के अनुसार, यह फ्रेमवर्क मुख्य सुविधाओं के लिए एक साझा कोडबेस का उपयोग करता है, जबकि प्रत्येक साइट के अपने अलग पेज, डिज़ाइन और डोमेन होते हैं। प्रत्येक साइट क्लाउडफ्लेयर बुनियादी ढांचे पर अपने स्वयं के डेटाबेस, स्टोरेज और भुगतान खातों के साथ स्वतंत्र रूप से चलती है।\n\n## मुख्य विशेषताएं और कार्यक्षमता\n\nशिपवर्ड्स में उपयोगकर्ता खातों, भुगतानों और एआई जनरेशन को संभालने के लिए कई अंतर्निहित टूल शामिल हैं:\n\n* **प्रमाणन और भुगतान:** गूगल और ईमेल लॉगिन, उपयोगकर्ता खाते, और स्ट्राइप (Stripe) तथा पेपैल (PayPal) के माध्यम से क्रेडिट पैक और सब्सक्रिप्शन का समर्थन।\n* **एआई जनरेशन:** एक ही एपीआई कुंजी के पीछे विभिन्न इमेज और वीडियो मॉडल तक पहुंच, जिसमें प्रति जनरेशन भुगतान होता है।\n* **जरूरी पेज:** गोपनीयता नीति, नियम, रिफंड जानकारी, डीएमसीए नोटिस और एसईओ साइटमैप स्वचालित रूप से शामिल हैं।\n* **दुरुपयोग से सुरक्षा:** reCAPTCHA v3 के साथ मुफ्त गेस्ट ट्रायल की सुविधा।\n\n## वास्तुकला और तैनाती की आवश्यकताएं\n\nप्रत्येक साइट क्लाउडफ्लेयर वर्कर पर चलने वाला TanStack Start और React 19 एप्लिकेशन है, जो D1, R2 और वर्कफ़्लो का उपयोग करता है।\n\nस्थानीय रूप से इसका उपयोग करने और इसे लाइव करने के लिए निम्नलिखित आवश्यकताओं की आवश्यकता होती है:\n\n* **डेवलपमेंट एनवायरनमेंट:** Node.js (वर्जन 24), pnpm (वर्जन 10), और विंडोज के लिए Git Bash या WSL।\n* **लाइव लॉन्च आवश्यकताएं:** एक क्लाउडफ्लेयर खाता और स्ट्राइप या पेपैल खाता।\n* **अन्य खर्च:** डोमेन लागत, क्लाउडफ्लेयर उपयोग शुल्क, भुगतान गेटवे शुल्क, और एआई मॉडल एपीआई लागत।\n\nडेवलपर नकली अपस्ट्रीम मोड (`UPSTREAM_MOCK=1`) का उपयोग करके बिना वास्तविक एपीआई कुंजी के स्थानीय रूप से कोड का परीक्षण कर सकते हैं।\n\n## सत्यापन और समुदाय\n\nइच्छुक डेवलपर आधिकारिक GitHub रिपॉजिटरी (`shipwords-dev/shipwords`) से सोर्स कोड की जांच कर सकते हैं, दस्तावेज़ पढ़ सकते हैं और उदाहरणों का उपयोग कर सकते हैं। चर्चाएं GitHub Discussions पर उपलब्ध हैं।",
+  "en_meta": "Learn about Shipwords, an open-source Cloudflare-native framework for deploying keyword-specific AI image and video websites with built-in payments and auth.",
+  "hi_meta": "शिपवर्ड्स ओपन-सोर्स क्लाउडफ्लेयर फ्रेमवर्क के बारे में जानें जो कीवर्ड-विशिष्ट एआई साइटों को भुगतान और प्रमाणीकरण के साथ तैनात करता है।",
+  "en_keywords": [
+    "Shipwords",
+    "Cloudflare",
+    "AI site generator",
+    "open source framework",
+    "React 19",
+    "TanStack Start"
+  ],
+  "hi_keywords": [
+    "शिपवर्ड्स",
+    "क्लाउडफ्लेयर",
+    "एआई साइट जनरेटर",
+    "ओपन सोर्स फ्रेमवर्क",
+    "React 19",
+    "TanStack Start"
+  ],
+  "source_published_at": null,
+  "id": "34755f822579",
+  "source": "https://github.com/shipwords-dev/shipwords",
+  "date": "2026-11-03T13:01:50.705342+00:00",
+  "source_title": "shipwords-dev/shipwords: Ship a money-making AI site for every new keyword. Cloudflare-native starter with auth, credits, payments and AI generation. | 新词站群框架：一个新词一个站，一个下午上线。起量的继续迭代，没起来的放着不管。不变的共享，变的独立。 - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

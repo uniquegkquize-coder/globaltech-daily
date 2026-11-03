@@ -1,0 +1,31 @@
+{
+  "en_title": "Video Shotcraft Released: AI Video Generation Skill for Claude Code and Codex",
+  "hi_title": "वीडियो शॉटक्राफ्ट लॉन्च: क्लोद कोड और कोडेक्स के लिए एआई वीडियो स्किल",
+  "en_body": "## Overview\nAn open-source AI video skill named **video-shotcraft** has been released for integration with coding assistants like Claude Code and Codex. Designed to generate cinematic, fully editable product promotional videos, the tool combines automated storyboarding, Remotion-based animation, beat-syncing, and sound design into a unified workflow.\n\nAccording to the project documentation, the tool functions not as a traditional video generator, but as a programmatic editor. It captures screenshots and copy from actual web pages, uses tuned motion recipes to construct scenes, and renders final MP4 files that remain completely editable.\n\n## Key Features and Components\n* **Shot Library:** Includes 124 shot recipe cards across 10 categories, encompassing 150 total motion previews.\n* **Motion Workbench:** A browser-based editor styled similarly to CapCut, allowing users to modify copy, adjust font sizes and colors, trim clips, and apply speed-ramping after initial delivery.\n* **Audio Integration:** Features automated sound effect searches utilizing Freesound along with background music tracks, synchronizing motion beats directly to audio cues.\n* **Export Options:** Supports standard Remotion rendering alongside JianYing (CapCut CN) project exports for macOS.\n\n## Technical Considerations and Verification\nUsers looking to deploy the skill can access the repository via GitHub or through an AtomGit mirror for regions with restricted network access. \n\nDocumentation notes specific technical constraints for Linux environments with low core counts or restricted CDN access. Rendering configurations may require adjusting concurrency limits, utilizing specific `chrome-headless-shell` binaries, and managing browser executable paths when executing templates through Node.js.\n\n## Licensing and Attribution\n* **Remotion Licensing:** The underlying Remotion framework maintains its own licensing structure, which is free for individuals and small teams but may require paid licenses for larger enterprises.\n* **Assets and Sound:** Sound effects sourced from Freesound operate under individual creator licenses, requiring adherence to CC0 or CC BY attribution manifests. Background music and demonstration screenshots require verification and replacement with proprietary brand assets before commercial publishing.\n\nTo verify original claims and review complete installation guidelines, users should consult the official GitHub repository and its associated Markdown guides.",
+  "hi_body": "## अवलोकन\nक्लोद कोड (Claude Code) और कोडेक्स (Codex) के साथ एकीकरण के लिए **video-shotcraft** नामक एक ओपन-सोर्स एआई वीडियो स्किल जारी की गई है। यह टूल सिनेमैटिक और पूरी तरह से एडिटेबल प्रोडक्ट प्रमोशनल वीडियो तैयार करने के लिए स्वचालित स्टोरीबोर्डिंग, रेमोशन-आधारित एनिमेशन, बीट-सिंकिंग और साउंड डिज़ाइन को एक साथ जोड़ता है।\n\nप्रोजेक्ट दस्तावेज़ के अनुसार, यह टूल पारंपरिक वीडियो जनरेटर के रूप में काम नहीं करता, बल्कि एक प्रोग्रामेटिक एडिटर के रूप में कार्य करता है। यह वास्तविक वेब पेजों से स्क्रीनशॉट और टेक्स्ट कैप्चर करता है, और अंतिम MP4 फाइलें रेंडर करता है जिन्हें पूरी तरह से एडिट किया जा सकता है।\n\n## मुख्य विशेषताएँ और घटक\n* **शॉट लाइब्रेरी:** इसमें 10 श्रेणियों में 124 शॉट रेसिपी कार्ड शामिल हैं, जिनमें कुल 150 मोशन प्रीव्यू मिलते हैं।\n* **मोशन वर्कबेंच:** कैपकट (CapCut) जैसा ब्राउज़र-आधारित एडिटर, जो उपयोगकर्ताओं को शुरुआती डिलीवरी के बाद टेक्स्ट, फॉन्ट साइज़, रंग और क्लिप को संशोधित करने की अनुमति देता है।\n* **ऑडियो एकीकरण:** इसमें फ्रीसाउंड (Freesound) का उपयोग करके स्वचालित साउंड इफेक्ट्स और बैकग्राउंड म्यूजिक ट्रैक शामिल हैं।\n* **एक्सपोर्ट विकल्प:** यह मानक रेमोशन रेंडरिंग के साथ-साथ मैकओएस के लिए जियानयिंग (JianYing CapCut CN) प्रोजेक्ट एक्सपोर्ट का समर्थन करता है।\n\n## तकनीकी विचार और सत्यापन\nइस स्किल का उपयोग करने वाले डेवलपर्स गिटहब (GitHub) या एटमगिट (AtomGit) मिरर के माध्यम से रिपॉजिटरी तक पहुँच सकते हैं। दस्तावेज़ कम कोर वाले लिनक्स वातावरण या प्रतिबंधित नेटवर्क के लिए विशिष्ट तकनीकी सीमाओं का उल्लेख करता है, जहाँ रेंडरिंग के लिए कॉनकरेंसी लिमिट समायोजित करने और विशिष्ट बाइनरी पाथ उपयोग करने की आवश्यकता हो सकती है।\n\n## लाइसेंसिंग और एट्रिब्यूशन\n* **रेमोशन लाइसेंस:** अंतर्निहित रेमोशन फ्रेमवर्क का अपना लाइसेंस है, जो व्यक्तियों और छोटी टीमों के लिए स्वतंत्र है लेकिन बड़ी कंपनियों के लिए भुगतान किए गए लाइसेंस की आवश्यकता हो सकती है।\n* **एसेट्स और साउंड:** फ्रीसाउंड से प्राप्त साउंड इफेक्ट्स संबंधित रचनाकारों के लाइसेंस के अधीन हैं, जिसके लिए सीसी0 या सीसी बाय (CC BY) एट्रिब्यूशन की आवश्यकता होती है।\n\nमूल घोषणा की पुष्टि करने के लिए, उपयोगकर्ता आधिकारिक गिटहब रिपॉजिटरी और उसके संबंधित दस्तावेज़ों की जाँच कर सकते हैं।",
+  "en_meta": "Explore video-shotcraft, an AI video skill for Claude Code and Codex featuring Remotion animations, 124 shot recipes, and editable product promos.",
+  "hi_meta": "वीडियो शॉटक्राफ्ट का परिचय, क्लोद कोड और कोडेक्स के लिए एक एआई वीडियो स्किल जो रेमोशन और 124 शॉट रेसिपी के साथ प्रोडक्ट प्रोमो बनाती है।",
+  "en_keywords": [
+    "AI video skill",
+    "Claude Code",
+    "Codex",
+    "Remotion",
+    "video-shotcraft",
+    "product promos"
+  ],
+  "hi_keywords": [
+    "एआई वीडियो स्किल",
+    "क्लोद कोड",
+    "कोडेक्स",
+    "रेमोशन",
+    "वीडियो-शॉटक्राफ्ट",
+    "उत्पाद प्रोमो"
+  ],
+  "source_published_at": null,
+  "id": "3e09ebb04c00",
+  "source": "https://github.com/Vincentwei1021/video-shotcraft",
+  "date": "2026-11-03T13:03:21.712966+00:00",
+  "source_title": "Vincentwei1021/video-shotcraft: AI video skill for Claude Code & Codex — cinematic, editable product promos with Remotion: 124 shot recipe cards, 150 motion previews, beat sync, sound design, Motion Workbench & JianYing (CapCut CN) export. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

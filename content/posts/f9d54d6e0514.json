@@ -1,0 +1,29 @@
+{
+  "en_title": "FreeLLMAPI Aggregates Free AI Tiers Into a Single OpenAI-Compatible Endpoint",
+  "hi_title": "फ्रीएलएलएमएपीआई (FreeLLMAPI) मुफ्त एआई टियर को एक एकल ओपनएआई-संगत एंडपॉइंट में जोड़ता है",
+  "en_body": "## Overview of FreeLLMAPI\n\nFreeLLMAPI is an open-source, local-first project designed for personal experimentation. It aggregates free tiers from dozens of AI providers behind a single OpenAI-compatible `/v1` endpoint. By combining multiple services, the project reports an estimated working inference capacity of roughly 7.4 billion tokens per month across 474 model families and 635 free endpoints.\n\n## Core Architecture and Features\n\n* **Unified Endpoint:** Instead of managing 34 different SDKs and rate limits, developers point standard OpenAI-compatible clients to a local server.\n* **Smart Routing and Failover:** The router assesses speed, capability, and reliability scores, automatically switching to another provider if a rate limit (`429`) or server error (`5xx`) occurs.\n* **Encrypted Key Storage:** Provider API keys are stored encrypted using AES-256-GCM in a local SQLite database, exposing only a single unified bearer token to client applications.\n* **Self-Updating Catalog:** A signed model catalog syncs automatically to track new models, quota changes, and compatibility updates without requiring manual software updates.\n\n## Practical Implications and Limitations\n\nWhile the project simplifies prototyping across multiple free tiers, it is intended strictly for personal experimentation and learning, not production workloads. Stacking free tiers involves trade-offs such as variable latency, lack of service-level agreements (SLAs), and daily capacity caps that reset at UTC midnight.\n\nUsers must verify announcements, installation steps, and terms of service directly through the official GitHub repository and documentation index.",
+  "hi_body": "## फ्रीएलएलएमएपीआई का परिचय\n\nफ्रीएलएलएमएपीआई (FreeLLMAPI) एक ओपन-सोर्स, लोकल-फर्स्ट प्रोजेक्ट है जिसे व्यक्तिगत प्रयोग के लिए डिज़ाइन किया गया है। यह कई एआई प्रदाताओं के मुफ्त टियर को एक ही ओपनएआई-संगत `/v1` एंडपॉइंट के पीछे एकत्रित करता है। कई सेवाओं को मिलाकर, यह प्रोजेक्ट 474 मॉडल परिवारों और 635 मुफ्त एंडपॉइंट्स में प्रति माह लगभग 7.4 बिलियन टोकन की अनुमानित कार्यशील क्षमता प्रदान करने का दावा करता है।\n\n## मुख्य आर्किटेक्चर और विशेषताएं\n\n* **एकीकृत एंडपॉइंट:** 34 अलग-अलग एसडीके और रेट लिमिट को प्रबंधित करने के बजाय, डेवलपर्स मानक ओपनएआई-संगत क्लाइंट्स को एक स्थानीय सर्वर पर इंगित कर सकते हैं।\n* **स्मार्ट रूटिंग और फेलओवर:** राउटर गति और विश्वसनीयता स्कोर का आकलन करता है, और रेट लिमिट (`429`) या सर्वर त्रुटि (`5xx`) होने पर स्वचालित रूप से दूसरे प्रदाता पर स्विच हो जाता है।\n* **एक्रिप्टेड कुंजी संग्रहण:** प्रदाता एपीआई कुंजियों को स्थानीय एसक्यूलाइट (SQLite) डेटाबेस में एईएस-256-जीसीएम (AES-256-GCM) का उपयोग करके एन्क्रिप्ट किया जाता है।\n* **स्व-अद्यतन कैटलॉग:** एक हस्ताक्षरित मॉडल कैटलॉग नए मॉडल और कोटा परिवर्तनों को ट्रैक करने के लिए स्वचालित रूप से सिंक होता है।\n\n## व्यावहारिक निहितार्थ और सीमाएं\n\nहालाँकि यह प्रोजेक्ट कई मुफ्त टियर में प्रोटोटाइपिंग को सरल बनाता है, यह केवल व्यक्तिगत प्रयोग और सीखने के लिए है, न कि प्रोडक्शन वर्कलोड के लिए। मुफ्त टियर का उपयोग करने में परिवर्तनीय विलंबता (latency) और सेवा स्तर समझौतों (SLAs) की कमी जैसी सीमाएं शामिल हैं।\n\nउपयोगकर्ता आधिकारिक गिटहब रिपॉजिटरी और प्रलेखन के माध्यम से घोषणाओं और स्थापना चरणों को सत्यापित कर सकते हैं।",
+  "en_meta": "Explore FreeLLMAPI, a local-first tool aggregating 34 free AI providers and 635 endpoints into a single OpenAI-compatible endpoint for personal testing.",
+  "hi_meta": "FreeLLMAPI व्यक्तिगत परीक्षण के लिए 34 मुफ्त एआई प्रदाताओं और 635 एंडपॉइंट्स को एक एकल ओपनएआई-संगत एंडपॉइंट में जोड़ता है।",
+  "en_keywords": [
+    "FreeLLMAPI",
+    "OpenAI compatible endpoint",
+    "free LLM providers",
+    "AI model router",
+    "personal experimentation"
+  ],
+  "hi_keywords": [
+    "FreeLLMAPI",
+    "ओपनएआई संगत एंडपॉइंट",
+    "मुफ्त एआई प्रदाता",
+    "एआई मॉडल राउटर",
+    "व्यक्तिगत प्रयोग"
+  ],
+  "source_published_at": null,
+  "id": "f9d54d6e0514",
+  "source": "https://github.com/tashfeenahmed/freellmapi",
+  "date": "2026-11-03T13:02:14.184839+00:00",
+  "source_title": "tashfeenahmed/freellmapi: 7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

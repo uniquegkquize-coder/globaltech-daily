@@ -1,0 +1,32 @@
+{
+  "en_title": "Orca Project Emerges as an AI Agent Orchestrator for Multi-Model Workflows",
+  "hi_title": "मल्टी-मॉडल वर्कफ़्लो के लिए एआई एजेंट ऑर्केस्ट्रेटर के रूप में ओरका प्रोजेक्ट की शुरुआत",
+  "en_body": "## Introduction to Orca\n\nOpen-source software projects focused on artificial intelligence continue to evolve, with new tooling emerging to help developers manage multiple AI models simultaneously. Among these recent releases is Orca, a platform designed to serve as an orchestrator for running and monitoring fleets of coding and text-based AI agents, such as Claude Code, Codex, and others.\n\nAccording to documentation published in its repository, the software is provided under the MIT License and aims to simplify how developers interact with various AI services using their own subscriptions.\n\n## Core Features and Capabilities\n\nThe project repository highlights several intended capabilities for managing multiple AI workflows:\n\n* **Multi-Agent Worktrees:** Run multiple agents side-by-side, each isolated within its own git worktree.\n* **Prompt Broadcasting:** Send a single prompt across multiple agents simultaneously to compare results and merge preferred outputs.\n* **Remote and Mobile Integration:** Features remote runtime support alongside a mobile companion app for monitoring agent progress and sending follow-up instructions.\n* **Terminal and Editor Integration:** Incorporates terminal capabilities with WebGL rendering, alongside an integrated editor experience with autosave and file-dropping functionality.\n* **Visual Context Tools:** Allows users to interact with a Chromium window to send UI elements, HTML, CSS, and cropped screenshots directly into an agent prompt.\n\n## Compatibility and Extensibility\n\nThe platform reports compatibility with any command-line interface (CLI) agent that operates inside a terminal. A wide array of tools and models are referenced in the documentation, including various coding assistants and proprietary models.\n\n## Practical Implications and Verification\n\nFor developers evaluating multi-agent orchestration tools, platforms like Orca offer a unified workspace to test multiple AI models against the same repository context. However, users should independently verify system requirements, stability, and security implications when running third-party CLI tools and remote relays.\n\nTo review the official documentation, installation builds, and source code, interested parties can visit the official GitHub repository at stablyai/orca.",
+  "hi_body": "## ओरका का परिचय\n\nआर्टिफिशियल इंटेलिजेंस पर केंद्रित ओपन-सर्च सॉफ्टवेयर प्रोजेक्ट लगातार विकसित हो रहे हैं। डेवलपर्स को एक साथ कई एआई मॉडल प्रबंधित करने में मदद करने के लिए नए टूल सामने आ रहे हैं। इन्हीं हालिया रिलीज़ में 'ओरका' (Orca) भी शामिल है, जिसे क्लाउड कोड, कोडेक और अन्य जैसे कोडिंग और टेक्स्ट-आधारित एआई एजेंटों के बेड़े को चलाने और निगरानी करने के लिए एक ऑर्केस्ट्रेटर के रूप में डिज़ाइन किया गया है।\n\nइसके रिपॉजिटरी में प्रकाशित प्रलेखन के अनुसार, यह सॉफ्टवेयर एमआईटी लाइसेंस (MIT License) के तहत प्रदान किया गया है और इसका उद्देश्य डेवलपर्स द्वारा अपने स्वयं के सब्सक्रिप्शन का उपयोग करके विभिन्न एआई सेवाओं के साथ बातचीत करने के तरीके को सरल बनाना है।\n\n## मुख्य विशेषताएँ और क्षमताएँ\n\nप्रोजेक्ट रिपॉजिटरी कई एआई वर्कफ़्लो को प्रबंधित करने के लिए निम्नलिखित संभावित क्षमताओं पर प्रकाश डालती है:\n\n* **मल्टी-एजेंट वर्कट्री:** कई एजेंटों को एक साथ चलाना, जिनमें से प्रत्येक अपने स्वयं के गिट वर्कट्री (git worktree) के भीतर पृथक हो।\n* **प्रॉम्प्ट ब्रॉडकास्टिंग:** परिणामों की तुलना करने और पसंदीदा आउटपुट को मर्ज करने के लिए एक साथ कई एजेंटों को एक ही प्रॉम्प्ट भेजना।\n* **रिमोट और मोबाइल इंटीग्रेशन:** एजेंट की प्रगति की निगरानी करने और अनुवर्ती निर्देश भेजने के लिए मोबाइल कंपेनियन ऐप के साथ रिमोट रनटाइम समर्थन की सुविधा है।\n* **टर्मिनल और एडिटर एकीकरण:** ऑटोसेव और फाइल-ड्रॉपिंग कार्यक्षमता के साथ एक एकीकृत एडिटर अनुभव के साथ, वेबजीएल रेंडरिंग (WebGL rendering) वाली टर्मिनल क्षमताएं शामिल हैं।\n* **विजुअल संदर्भ उपकरण:** उपयोगकर्ताओं को सीधे एजेंट प्रॉम्प्ट में यूआई तत्व, एचटीएमएल, सीएसएस और क्रॉप किए गए स्क्रीनशॉट भेजने के लिए क्रोमियम विंडो के साथ इंटरैक्ट करने की अनुमति देता है।\n\n## अनुकूलता और विस्तारशीलता\n\nयह प्लेटफॉर्म किसी भी कमांड-लाइन इंटरफेस (CLI) एजेंट के साथ अनुकूलता की रिपोर्ट करता है जो टर्मिनल के अंदर संचालित होता है। विभिन्न कोडिंग सहायकों और मालिकाना मॉडल सहित कई प्रकार के टूल और मॉडल प्रलेखन में संदर्भित हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nमल्टी-एजेंट ऑर्केस्ट्रुएशन टूल का मूल्यांकन करने वाले डेवलपर्स के लिए, ओरका जैसे प्लेटफॉर्म एक ही रिपॉजिटरी संदर्भ के खिलाफ कई एआई मॉडल का परीक्षण करने के लिए एक एकीकृत कार्यक्षेत्र प्रदान करते हैं। हालाँकि, तृतीय-पक्ष CLI टूल और रिमोट रिले चलाते समय उपयोगकर्ताओं को सिस्टम आवश्यकताओं, स्थिरता और सुरक्षा निहितार्थों को स्वतंत्र रूप से सत्यापित करना चाहिए।\n\nआधिकारिक प्रलेखन, इंस्टॉलेशन बिल्ड और सोर्स कोड की समीक्षा करने के लिए, इच्छुक पक्ष stablyai/orca पर आधिकारिक गिटहब रिपॉजिटरी देख सकते हैं।",
+  "en_meta": "Explore Orca, an open-source AI agent orchestrator designed to run, monitor, and compare multiple coding agents across isolated git worktrees.",
+  "hi_meta": "ओरका (Orca) के बारे में जानें, जो कई कोडिंग एजेंटों को चलाने, निगरानी करने और तुलना करने के लिए डिज़ाइन किया गया एक ओपन-सोर्स एआई एजेंट ऑर्केस्ट्रेटर है।",
+  "en_keywords": [
+    "Orca",
+    "AI agents",
+    "multi-agent orchestration",
+    "Claude Code",
+    "Codex",
+    "developer tools",
+    "open source"
+  ],
+  "hi_keywords": [
+    "ओरका",
+    "एआई एजेंट",
+    "मल्टी-एजेंट ऑर्केस्ट्रेशन",
+    "क्लाउड कोड",
+    "डेवलपर टूल",
+    "ओपन सोर्स"
+  ],
+  "source_published_at": null,
+  "id": "0a8884baa5f5",
+  "source": "https://github.com/stablyai/orca",
+  "date": "2026-11-03T13:02:11.996654+00:00",
+  "source_title": "stablyai/orca: Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

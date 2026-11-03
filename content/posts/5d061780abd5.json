@@ -1,0 +1,35 @@
+{
+  "en_title": "RabbitWall Introduces Web Console for Linux Gateways to Monitor and Control AI Network Traffic",
+  "hi_title": "RabbitWall ने एआई नेटवर्क ट्रैफ़िक की निगरानी और नियंत्रण के लिए Linux गेटवे कंसोल पेश किया",
+  "en_body": "## Overview of RabbitWall\n\nRabbitWall has been released as a web console for Linux gateways designed to help users observe traffic from an AI network and control its Internet access. According to the project repository, the tool functions by sitting between an existing local area network and an AI network, requiring a machine with two wired network interfaces.\n\n## Core Features and Monitoring Capabilities\n\nThe software provides several ways to visualize and monitor network activity:\n\n* **Session Visualization:** View connection sessions on a world map, in a route list, or via session history.\n* **Node and Domain Insights:** Monitor node availability while displaying inferred domains, estimated countries, and newly observed domains.\n* **Traffic Ranking:** Track traffic volume over the last hour or 24 hours.\n* **Access Control:** Close Internet access entirely—including established connections and DNS—or temporarily approve exact domains per AI node for specific durations such as 1, 5, or 30 minutes.\n\n## Security and Management\n\nManagement access is restricted to a single PC using source-IP filtering and Caddy client-certificate authentication (mTLS). The application relies on a single JSON file to configure IP addresses, network interfaces, initial nodes, upstream DNS, and map locations. DNS forwarding utilizes Unbound alongside a separate dnstap observer for inferred domains.\n\n## System Requirements and Deployment\n\nThe target production environment requires Debian 13 or later, or Ubuntu 24.04, equipped with systemd, NetworkManager, and two wired network interfaces. Debian 12 and earlier are explicitly noted as unsupported due to dependency version requirements for dnspython. Additionally, a Python 3.11 demo mode is available for testing on supported systems or macOS without altering operating system settings.\n\nPublishers and administrators should consult the official GitHub repository and installation guide to verify prerequisites, hardware drivers, and mTLS registration steps before attempting deployment.",
+  "hi_body": "## RabbitWall का परिचय\n\nRabbitWall को Linux गेटवे के लिए एक वेब कंसोल के रूप में जारी किया गया है, जो उपयोगकर्ताओं को एआई नेटवर्क से आने वाले ट्रैफ़िक का निरीक्षण करने और उसके इंटरनेट एक्सेस को नियंत्रित करने में मदद करता है। प्रोजेक्ट रिपॉजिटरी के अनुसार, यह टूल मौजूदा लोकल एरिया नेटवर्क और एआई नेटवर्क के बीच काम करता है, जिसके लिए दो वायर्ड नेटवर्क इंटरफेस वाली मशीन की आवश्यकता होती है।\n\n## मुख्य विशेषताएँ और निगरानी क्षमताएँ\n\nयह सॉफ्टवेयर नेटवर्क गतिविधि को देखने और मॉनिटर करने के कई तरीके प्रदान करता है:\n\n* **सत्र विज़ुअलाइज़ेशन:** विश्व मानचित्र, रूट सूची या सत्र इतिहास में कनेक्शन सत्र देखें।\n* **नोड और डोमेन जानकारी:** अनुमानित डोमेन, देशों और नए देखे गए डोमेन को प्रदर्शित करते हुए नोड की उपलब्धता की निगरानी करें।\n* **ट्रैफ़िक रैंकिंग:** पिछले एक घंटे या 24 घंटों में ट्रैफ़िक वॉल्यूम को ट्रैक करें।\n* **एक्सेस नियंत्रण:** स्थापित कनेक्शन और DNS सहित इंटरनेट एक्सेस को पूरी तरह बंद करें, या 1, 5 या 30 मिनट जैसी विशिष्ट अवधि के लिए प्रति एआई नोड सटीक डोमेन को अस्थायी रूप से स्वीकृत करें।\n\n## सुरक्षा और प्रबंधन\n\nप्रबंधन एक्सेस को सोर्स-आईपी फ़िल्टरिंग और Caddy क्लाइंट-सर्टिफिकेट प्रमाणीकरण (mTLS) का उपयोग करके एक ही पीसी तक सीमित किया गया है। यह एप्लिकेशन आईपी पते, नेटवर्क इंटरफेस, प्रारंभिक नोड्स, अपस्ट्रीम DNS और मानचित्र स्थानों को कॉन्फ़िगर करने के लिए एक एकल JSON फ़ाइल पर निर्भर करता है।\n\n## सिस्टम आवश्यकताएँ और तैनाती\n\nलक्ष्य उत्पादन वातावरण के लिए systemd, NetworkManager और दो वायर्ड नेटवर्क इंटरफेस के साथ Debian 13 या नया, अथवा Ubuntu 24.04 की आवश्यकता होती है। dnspython की निर्भरता आवश्यकताओं के कारण Debian 12 और उससे पहले के संस्करण समर्थित नहीं हैं। इसके अलावा, ऑपरेटिंग सिस्टम सेटिंग्स को बदले बिना परीक्षण के लिए Python 3.11 डेमो मोड उपलब्ध है।\n\nव्यवस्थापकों को तैनाती से पहले पूर्वापेक्षाओं, हार्डवेयर ड्राइवरों और mTLS पंजीकरण चरणों को सत्यापित करने के लिए आधिकारिक GitHub रिपॉजिटरी और इंस्टॉलेशन गाइड की जांच करनी चाहिए।",
+  "en_meta": "Discover RabbitWall, a web console for Linux gateways that monitors AI network traffic and controls Internet access using mTLS and structured configuration.",
+  "hi_meta": "RabbitWall के बारे में जानें, जो Linux गेटवे के लिए एक वेब कंसोल है जो AI नेटवर्क ट्रैफ़िक की निगरानी करता है और mTLS का उपयोग करके इंटरनेट एक्सेस नियंत्रित…",
+  "en_keywords": [
+    "RabbitWall",
+    "Linux gateway",
+    "AI network traffic",
+    "web console",
+    "network monitoring",
+    "access control",
+    "mTLS authentication",
+    "Debian 13"
+  ],
+  "hi_keywords": [
+    "RabbitWall",
+    "Linux गेटवे",
+    "AI नेटवर्क ट्रैफ़िक",
+    "वेब कंसोल",
+    "नेटवर्क निगरानी",
+    "एक्सेस कंट्रोल",
+    "mTLS प्रमाणीकरण",
+    "Debian 13"
+  ],
+  "source_published_at": null,
+  "id": "5d061780abd5",
+  "source": "https://github.com/ysuito/RabbitWall",
+  "date": "2026-11-03T13:01:13.867039+00:00",
+  "source_title": "RabbitWall is a web console for a Linux gateway that lets you observe traffic from an AI network and switch its Internet access on or off. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

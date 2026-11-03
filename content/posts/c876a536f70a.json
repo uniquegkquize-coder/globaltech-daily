@@ -1,0 +1,29 @@
+{
+  "en_title": "Orkas Brings Local-First Multi-Agent AI Teams to the Desktop",
+  "hi_title": "ओर्कास डेस्कटॉप के लिए स्थानीय रूप से आधारित मल्टी-एजेंट एआई टीम प्रस्तुत करता है",
+  "en_body": "## Overview of Orkas\n\nOrkas is an open-source (MIT licensed) and local-first multi-agent desktop application designed to handle complex workflows by breaking goals down into actionable steps. Rather than acting as a single conversational chatbot, the platform utilizes a central \"Commander\" to coordinate tasks, delegate work, and manage projects directly on a user's machine.\n\n## Core Features and Architecture\n\nThe software ships with 16 built-in specialist agents covering various domains, including video production, research, content writing, design, and office tasks. Additionally, it integrates with popular command-line interface (CLI) tools and external agents such as Claude Code, Codex, OpenCode, OpenClaw, and Hermes-Agent.\n\n* **Local-First Design:** Conversations, files, and custom knowledge bases remain stored locally on the user's disk by default.\n* **Task Automation:** Features include to-do lists, auto-advance capabilities to progress through items sequentially, and scheduled automations running hourly, daily, weekly, or monthly.\n* **Library and Document Search:** Users can index local PDF and document files, allowing the app to search passages and generate answers complete with source citations.\n* **Flexibility in Model Selection:** The application supports the built-in Orkas model, external API keys (including OpenAI, Anthropic, Gemini, DeepSeek, and others), or local endpoints compatible with OpenAI.\n\n## Practical Implications and Verification\n\nOrkas is tailored for users seeking a continuous, multi-agent workflow rather than a single-prompt assistant. The application offers packaged installers for macOS and Windows, while Linux users can run the tool from source (requiring Node 22.12+ and glibc 2.34+). \n\nBecause specifications, pricing plans, and feature sets can change, readers should verify the original announcement, licensing terms, and system requirements directly via the official GitHub repository or official documentation before deployment.",
+  "hi_body": "## ओर्कास का परिचय\n\nओर्कास (Orkas) एक ओपन-सोर्स (MIT लाइसेंस प्राप्त) और लोकल-फर्स्ट मल्टी-एजेंट डेस्कटॉप एप्लिकेशन है, जिसे उपयोगकर्ता के लक्ष्यों को छोटे कार्यों में विभाजित करके जटिल वर्कफ़्लो को प्रबंधित करने के लिए डिज़ाइन किया गया है। यह केवल एक सामान्य चैटबॉट के रूप में काम करने के बजाय, एक केंद्रीय \"कमांडर\" के माध्यम से कार्यों का समन्वय करता है और सीधे उपयोगकर्ता के कंप्यूटर पर प्रोजेक्ट्स को संभालता है।\n\n## मुख्य विशेषताmएं और वास्तुकला\n\nयह सॉफ्टवेयर 16 अंतर्निहित विशेष एजेंटों के साथ आता है जो वीडियो प्रोडक्शन, रिसर्च, कंटेंट राइटिंग, डिज़ाइन और ऑफिस के कामों जैसी विभिन्न श्रेणियों को संभालते हैं। इसके अलावा, यह लोकप्रिय कमांड-लाइन इंटरफ़ेस (CLI) टूल और बाहरी एजेंटों जैसे Claude Code, Codex, OpenCode, OpenClaw और Hermes-Agent के साथ भी एकीकृत होता है।\n\n* **लोकल-फर्स्ट डिज़ाइन:** बातचीत, फाइलें और कस्टम ज्ञान आधार डिफ़ॉल्ट रूप से उपयोगकर्ता की डिस्क पर स्थानीय रूप से संग्रहीत रहते हैं।\n* **टास्क ऑटोमेशन:** इसमें टू-डू सूचियां, कार्यों को स्वचालित रूप से आगे बढ़ाने की क्षमता, और प्रति घंटा, दैनिक, साप्ताहिक या मासिक रूप से चलने वाले निर्धारित स्वचालन शामिल हैं।\n* **लाइब्रेरी और दस्तावेज़ खोज:** उपयोगकर्ता स्थानीय पीडीएफ और दस्तावेजों को अनुक्रमित कर सकते हैं, जिससे ऐप प्रासंगिक अंशों को खोज सकता है और स्रोत संदर्भों के साथ उत्तर दे सकता है।\n* **मॉडल चयन में लचीलापन:** एप्लिकेशन अंतर्निहित ओर्कास मॉडल, बाहरी एपीआई कुंजियों (जैसे OpenAI, Anthropic, Gemini, DeepSeek आदि), या स्थानीय एंडपॉइंट्स का समर्थन करता है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nओर्कास उन उपयोगकर्ताओं के लिए उपयुक्त है जो एक ही प्रॉम्प्ट के बजाय निरंतर, मल्टी-एजेंट वर्कफ़्लो चाहते हैं। यह एप्लिकेशन macOS और Windows के लिए पैकेज्ड इंस्टॉलर प्रदान करता है, जबकि Linux उपयोगकर्ता इसे सोर्स से चला सकते हैं (जिसके लिए Node 22.12+ और glibc 2.34+ की आवश्यकता होती है)।\n\nचूंकि विशिष्टताएं, मूल्य निर्धारण योजनाएं और सुविधाएं बदल सकती हैं, इसलिए पाठकों को तैनाती से पहले सीधे आधिकारिक गिटहब रिपॉजिटरी या आधिकारिक दस्तावेजों के माध्यम से मूल घोषणा, लाइसेंसिंग शर्तों और सिस्टम आवश्यकताओं का सत्यापन करना चाहिए।",
+  "en_meta": "Discover Orkas, an open-source, local-first multi-agent desktop app featuring a Commander and specialist agents to manage projects and automate workflows.",
+  "hi_meta": "ओर्कास एक ओपन-सोर्स, लोकल-फर्स्ट मल्टी-एजेंट डेस्कटॉप ऐप है जो प्रोजेक्ट्स को प्रबंधित करने के लिए एक कमांडर और विशेष एजेंट प्रदान करता है।",
+  "en_keywords": [
+    "Orkas",
+    "open-source AI",
+    "multi-agent desktop app",
+    "local-first AI",
+    "AI automation"
+  ],
+  "hi_keywords": [
+    "ओर्कास",
+    "ओपन-सोर्स एआई",
+    "मल्टी-एजेंट ऐप",
+    "लोकल-फर्स्ट एआई",
+    "एआई ऑटोमेशन"
+  ],
+  "source_published_at": null,
+  "id": "c876a536f70a",
+  "source": "https://github.com/Orkas-AI/Orkas",
+  "date": "2026-11-03T13:00:35.444923+00:00",
+  "source_title": "Orkas-AI/Orkas: Orkas is an open-source (MIT), local-first AI team for your desktop: a Commander turns your goal into to-dos and coordinates 16 built-in specialist agents plus Claude Code, Codex, OpenCode, OpenClaw and Hermes, with projects, scheduled - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
