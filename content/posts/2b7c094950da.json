@@ -1,0 +1,31 @@
+{
+  "en_title": "Munder Difflin Releases v0.5.6 as Open-Source Multi-Agent Office Harness",
+  "hi_title": "मंडर डिफ्लिन (Munder Difflin) ने ओपन-सोर्स मल्टी-एजेंट ऑफिस हार्नेस v0.5.6 किया रिलीज़",
+  "en_body": "## Overview of Munder Difflin\n\nMunder Difflin is an open-source desktop application designed to coordinate multiple AI terminal-agent CLIs within a simulated 2D office environment. Operating on local machines across macOS, Windows, and Linux, the software wraps standard developer command-line interfaces—such as Claude Code, OpenAI Codex, and Gemini CLI—into autonomous agents equipped with long-term memory, mailboxes, and visual avatars.\n\n## Key Features and Architecture\n\n- **Agent Integration:** Wraps popular tools like Claude Code, Grok, Kimi, Qwen, and GitHub Copilot, allowing users to leverage existing subscriptions and hourly limits.\n- **Visual Office Interface:** Built with Electron, React, TypeScript, and Pixi.js, the interface renders agents as avatars moving across a shared office floor, where messages are visually passed as envelopes between desks.\n- **Autonomous Coordination:** A central orchestration agent (termed the GOD agent or \"Michael\") manages routine task routing, adjudicates traffic, and escalates critical decisions to human operators.\n- **Local Memory and Transcription:** Utilizes a markdown-first memory layer alongside local audio transcription tools (powered by Whisper models) to handle dictation and meeting notes directly on the device.\n\n## Version 0.5.6 Updates and Pricing\n\nRelease v0.5.6 introduces expanded team integrations, enhanced token usage controls, and a Pro tier featuring an advanced sidebar, an integrated IDE (Monaco), and a marketplace of model context protocol (MCP) servers.\n\n- **Launch Offer:** The Pro tier is currently available for free to all users until Saturday, October 24, 2026. Following the promotional period, annual plans are scheduled to range between $100 and $150 USD, adjusted for regional purchasing power.\n- **System Verification:** Users can inspect pre-requisite dependencies directly through the application's settings menu or verify official announcements and download signed builds via the official GitHub repository (`HarnessMD/munder-difflin`).\n\n## Practical Implications\n\nFor developers managing multiple AI coding assistants, the tool consolidates disparate CLI sessions into a single monitored workspace. However, users should verify subscription limits, data privacy implications of local transcription tools, and API key management requirements before deployment.",
+  "hi_body": "## मंडर डिफ्लिन का परिचय\n\nमंडर डिफ्लिन एक ओपन-सोर्स डेस्कटॉप एप्लिकेशन है जिसे सिम्युलेटेड 2D ऑफिस वातावरण के भीतर कई AI टर्मिनल-एजेंट CLI को कॉर्डिनेट करने के लिए डिज़ाइन किया गया है। macOS, विंडोज और लिनक्स पर लोकल मशीनों पर काम करते हुए, यह सॉफ्टवेयर मानक डेवलपर कमांड-लाइन इंटरफेस—जैसे क्लॉड कोड, ओपनएआई कोडेक्स और जेमिनी सीएलआई—को लॉन्ग-टर्म मेमोरी, मेलबॉक्स और विजुअल अवतार से लैस स्वायत्त एजेंटों में बदल देता है।\n\n## मुख्य विशेषताएँ और वास्तुकला\n\n- **एजेंट एकीकरण:** क्लॉड कोड, ग्रोक, कि्मी, क्वेन और गिटहब कोपायलट जैसे लोकप्रिय टूल को रैप करता है, जिससे उपयोगकर्ताओं को मौजूदा सब्सक्रिप्शन और उनके hourly limits का उपयोग करने की अनुमति मिलती है।\n- **विजुअल ऑफिस इंटरफेस:** इलेक्ट्रॉन, रिएक्ट, टाइपस्क्रिप्ट और Pixi.js के साथ निर्मित, यह इंटरफेस एजेंटों को एक साझा ऑफिस फ्लोर पर घूमते हुए अवतारों के रूप में प्रदर्शित करता है।\n- **स्वायत्त समन्वय:** एक केंद्रीय ऑर्केस्ट्रेशन एजेंट (जिसे गॉड एजेंट या \"माइकल\" कहा जाता है) नियमित कार्य रूटिंग का प्रबंधन करता है, ट्रैफिक का न्याय करता है, और महत्वपूर्ण निर्णयों को मानव ऑपरेटरों तक पहुंचाता है।\n- **लोकल मेमोरी और ट्रांसक्रिप्शन:** डिवाइस पर सीधे डिक्टेशन और मीटिंग नोट्स को संभालने के लिए लोकल ऑडियो ट्रांसक्रिप्शन टूल (Whisper मॉडल द्वारा संचालित) के साथ एक मार्कडाउन-फर्स्ट मेमोरी लेयर का उपयोग करता है।\n\n## संस्करण 0.5.6 अपडेट और मूल्य निर्धारण\n\nसंस्करण v0.5.6 विस्तारित टीम एकीकरण, उन्नत टोकन उपयोग नियंत्रण, और एक प्रो टियर पेश करता है जिसमें एक उन्नत साइडबार, एक एकीकृत आईडीई (Monaco), और मॉडल संदर्भ प्रोटोकॉल (MCP) सर्वर का एक बाज़ार शामिल है।\n\n- **लॉन्च ऑफर:** प्रो टियर वर्तमान में शनिवार, 24 अक्टूबर 2026 तक सभी उपयोगकर्ताओं के लिए मुफ्त उपलब्ध है। प्रचार अवधि के बाद, क्षेत्रीय क्रय शक्ति के अनुसार वार्षिक योजनाओं की कीमत $100 से $150 USD के बीच होने की उम्मीद है।\n- **सिस्टम सत्यापन:** उपयोगकर्ता एप्लिकेशन के सेटिंग्स मेनू के माध्यम से सीधे आवश्यक निर्भरता (prerequisites) का निरीक्षण कर सकते हैं या आधिकारिक घोषणाओं को सत्यापित कर सकते हैं और आधिकारिक गिटहब रिपॉजिटरी (`HarnessMD/munder-difflin`) के माध्यम से साइन किए गए बिल्ड डाउनलोड कर सकते हैं।\n\n## व्यावहारिक निहितार्थ\n\nएकाधिक AI कोडिंग सहायकों का प्रबंधन करने वाले डेवलपर्स के लिए, यह टूल अलग-अलग CLI सत्रों को एक ही मॉनिटर किए गए कार्यक्षेत्र में समेकित करता है। हालाँकि, उपयोगकर्ताओं को तैनाती से पहले सब्सक्रिप्शन सीमाओं, लोकल ट्रांसक्रिप्शन टूल के डेटा गोपनीयता निहितार्थ और API कुंजी प्रबंधन आवश्यकताओं को सत्यापित करना चाहिए।",
+  "en_meta": "Discover Munder Difflin v0.5.6, an open-source multi-agent office harness that coordinates terminal AI coding assistants on your local machine.",
+  "hi_meta": "मंडर डिफ्लिन v0.5.6 की खोज करें, एक ओपन-सोर्स मल्टी-एजेंट ऑफिस हार्नेस जो आपकी लोकल मशीन पर टर्मिनल AI कोडिंग सहायकों को कॉर्डिनेट करता है।",
+  "en_keywords": [
+    "Munder Difflin",
+    "AI agents",
+    "open source",
+    "terminal CLI",
+    "multi-agent harness",
+    "Claude Code"
+  ],
+  "hi_keywords": [
+    "मंडर डिफ्लिन",
+    "AI एजेंट",
+    "ओपन सोर्स",
+    "टर्मिनल CLI",
+    "मल्टी-एजेंट हार्नेस",
+    "क्लॉड कोड"
+  ],
+  "source_published_at": null,
+  "id": "2b7c094950da",
+  "source": "https://github.com/HarnessMD/munder-difflin",
+  "date": "2026-11-03T07:07:02.786138+00:00",
+  "source_title": "HarnessMD/munder-difflin: an open-source alternative to the dots, bots and muses of the world, run an office of claude code/codex like agents on your laptop, sandboxes or anywhere, uses your existing subscriptions - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

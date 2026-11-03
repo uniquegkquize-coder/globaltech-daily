@@ -1,0 +1,29 @@
+{
+  "en_title": "Google Releases Open-Source Elephant Goldfish Model for AI Software Design",
+  "hi_title": "गूगल ने सॉफ्टवेयर डिज़ाइन के लिए ओपन-सोर्स एलिफेंट गोल्डफिश मॉडल किया जारी",
+  "en_body": "## Introduction to Elephant Goldfish Model\n\nAn open-source plugin called the Elephant Goldfish Model (EGM) has been made available to help software engineering teams design and review code using AI agents. According to project documentation, the framework aims to structure how AI assists in drafting software specifications and stress-testing them before implementation.\n\n## Core Workflow and Dual-Agent Roles\n\nThe framework divides the software design process into two distinct phases utilizing different agent contexts:\n\n* **Elephant:** This component is designed to hold project context and assist developers in drafting the initial technical specification.\n* **Goldfish:** This component uses zero-context subagents to review the draft and referenced source material without prior conversational baggage, aiming to uncover unstated assumptions and blind spots.\n\nDevelopers retain ultimate responsibility for architectural trade-offs and must explicitly approve the specification before any coding begins.\n\n## Practical Application and Guidelines\n\nProject guidelines suggest applying the workflow when tackling features that require upfront design decisions, such as handling webhook delivery failures or duplicate events. For minor bug fixes, the documentation recommends sticking to standard coding workflows.\n\n* **Installation:** Available for supported environments including Antigravity App, IDE extensions, Claude Cowork, and ChatGPT Work.\n* **Execution:** Commands may require specific prefixes depending on the CLI version or coding agent used.\n* **Limitations:** Reviews require environments capable of creating fresh subagent contexts. The system does not replace human judgment or automated testing.\n\n## How to Verify and Learn More\n\nUsers interested in examining the codebase, licensing details (Apache 2.0), or contribution guidelines can access the official GitHub repository hosted under google/elephant-goldfish-model. The repository also includes links to documentation, setup guides, and the original conceptual essay by Dave Rensin. It is important to note that the project documentation explicitly states this is not an officially supported Google product.",
+  "hi_body": "## एलिफेंट गोल्डफिश मॉडल का परिचय\n\nएलिफेंट गोल्डफिश मॉडल (EGM) नामक एक ओपन-सोर्स प्लगइन उपलब्ध कराया गया है, जिसका उद्देश्य सॉफ्टवेयर इंजीनियरिंग टीमों को एआई एजेंटों का उपयोग करके कोड डिज़ाइन और समीक्षा करने में मदद करना है। प्रोजेक्ट दस्तावेज़ के अनुसार, यह फ्रेमवर्क इस बात को व्यवस्थित करता है कि कैसे एआई सॉफ्टवेयर विशिष्टताओं (specs) का मसौदा तैयार करने और कार्यान्वयन से पहले उनका परीक्षण करने में सहायता करता है।\n\n## मुख्य कार्यप्रवाह और दोहरे-एजेंट की भूमिकाएँ\n\nयह फ्रेमवर्क विभिन्न एजेंट संदर्भों का उपयोग करके सॉफ्टवेयर डिज़ाइन प्रक्रिया को दो चरणों में विभाजित करता है:\n\n* **एलिफेंट (Elephant):** यह घटक प्रोजेक्ट के संदर्भ को सुरक्षित रखता है और डेवलपर्स को प्रारंभिक तकनीकी विनिर्देश तैयार करने में मदद करता है।\n* **गोल्डफिश (Goldfish):** यह घटक बिना किसी पिछली बातचीत के संदर्भ के, मसौदे और संदर्भित सामग्री की समीक्षा करने के लिए शून्य-संदर्भ उप-एजेंटों का उपयोग करता है, जिससे छिपी हुई कमियों का पता लगाया जा सके।\n\nआर्किटेक्चरल ट्रेड-ऑफ का निर्णय और विनिर्देश को मंजूरी देने की ज़िम्मेदारी अंततः डेवलपर की होती है।\n\n## व्यावहारिक अनुप्रयोग और दिशानिर्देश\n\nदस्तावेज़ सुझाव देते हैं कि इस कार्यप्रवाह का उपयोग उन फीचर्स के लिए किया जाए जिनके लिए शुरुआती डिज़ाइन निर्णयों की आवश्यकता होती है, जैसे कि वेबहुक डिलीवरी विफलता को संभालना। छोटे बग फिक्स के लिए, मानक कोडिंग वर्कफ़्लो का उपयोग करने की सलाह दी जाती है।\n\n* **इंस्टॉलेशन:** यह एंटीग्रैविटी ऐप, आईडीई एक्सटेंशन, क्लाउड कोवॉक और चैटजीपीटी वर्क जैसे समर्थित वातावरणों के लिए उपलब्ध है।\n* **सीमाएँ:** समीक्षा के लिए ऐसे वातावरण की आवश्यकता होती है जो नए उप-एजेंट संदर्भ बना सकें। यह प्रणाली मानव निर्णय या स्वचालित परीक्षण का विकल्प नहीं है।\n\n## सत्यापन और अधिक जानकारी\n\nकोडबेस, लाइसेंसिंग विवरण (Apache 2.0), या योगदान दिशानिर्देशों की जांच करने के इच्छुक उपयोगकर्ता google/elephant-goldfish-model के तहत आधिकारिक GitHub रिपॉजिटरी पर जा सकते हैं। दस्तावेज़ स्पष्ट रूप से उल्लेख करते हैं कि यह आधिकारिक तौर पर समर्थित गूगल उत्पाद नहीं है।",
+  "en_meta": "Discover the open-source Elephant Goldfish Model (EGM) plugin by Google for AI-assisted software design, specification drafting, and agent reviews.",
+  "hi_meta": "एआई-सहायता प्राप्त सॉफ्टवेयर डिज़ाइन और विशिष्टताओं के लिए गूगल के ओपन-सोर्स एलिफेंट गोल्डफिश मॉडल (EGM) प्लगइन के बारे में जानें।",
+  "en_keywords": [
+    "Elephant Goldfish Model",
+    "AI software design",
+    "open-source plugin",
+    "coding agents",
+    "software specifications"
+  ],
+  "hi_keywords": [
+    "एलिफेंट गोल्डफिश मॉडल",
+    "एआई सॉफ्टवेयर डिज़ाइन",
+    "ओपन-सोर्स प्लगइन",
+    "कोडिंग एजेंट",
+    "सॉफ्टवेयर विनिर्देश"
+  ],
+  "source_published_at": null,
+  "id": "5b77ba33d5d8",
+  "source": "https://github.com/google/elephant-goldfish-model",
+  "date": "2026-11-03T07:06:56.616939+00:00",
+  "source_title": "google/elephant-goldfish-model: Open-source skills for designing and reviewing software with AI agents - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

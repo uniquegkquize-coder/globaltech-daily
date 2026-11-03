@@ -1,0 +1,31 @@
+{
+  "en_title": "Diagram Design Open-Source Agent Skill Launches for Multi-Platform AI Coding Assistants",
+  "hi_title": "मल्टी-प्लेटफॉर्म एआई कोडिंग सहायक के लिए डायग्राम डिज़ाइन ओपन-सोर्स एजेंट स्किल लॉन्च",
+  "en_body": "## Overview\nAn open-source project titled **diagram-design** has been released by LittleMight to help AI coding agents generate self-contained HTML and SVG diagrams. The skill supports 45 diagram types, aiming to produce styled graphics that align with specific brand palettes and typography without relying on external image dependencies or heavy JavaScript frameworks.\n\n## Key Features and Capabilities\n- **Self-Contained Output:** Generates a single `.html` file containing inline SVG that can be opened directly in any modern web browser.\n- **Brand Matching:** Automatically samples brand colors, paper backgrounds, and font families from a provided website URL to match existing design identities.\n- **Import Support:** Can parse and redraw existing files from Mermaid, draw.io, and Excalidraw formats.\n- **Multi-Agent Compatibility:** Operates across various AI assistant hosts, including Claude Code, GitHub Copilot, Codex, Cursor, Qoder, Pi, Factory Droid, and other agent skill-compatible environments.\n\n## Design Philosophy\nThe project moves away from generic rounded boxes and heavy shadows, relying instead on a strict 4-pixel layout grid, 1px hairlines, and restrained accent colors to highlight specific focal points. It includes support for light, dark, and full-editorial visual variants.\n\n## Verification and Access\nUsers can inspect the official repository, review privacy documentation, and verify installation steps directly on the public GitHub project hosted under `cathrynlavery/diagram-design`. Official builds are distributed exclusively through this repository.",
+  "hi_body": "## अवलोकन\nLittleMight द्वारा **diagram-design** नामक एक ओपन-सोर्स प्रोजेक्ट जारी किया गया है, जो एआई कोडिंग एजेंटों को सेल्फ-कंटेन HTML और SVG डायग्राम बनाने में मदद करता है। यह स्किल 45 प्रकार के डायग्राम का समर्थन करती है, जिसका उद्देश्य बाहरी छवि निर्भरता या भारी जावास्क्रिप्ट फ्रेमवर्क पर निर्भर रहे बिना विशिष्ट ब्रांड पैलेट और टाइप्ोग्राफी के अनुरूप स्टाइल वाले ग्राफिक तैयार करना है।\n\n## मुख्य विशेषताएं और क्षमताएं\n- **सेल्फ-कंटेन आउटपुट:** इनलाइन SVG वाला एक सिंगल `.html` फ़ाइल जेनरेट करता है जिसे किसी भी आधुनिक वेब ब्राउज़र में सीधे खोला जा सकता है।\n- **ब्रांड मिलान:** मौजूदा डिज़ाइन पहचान से मेल खाने के लिए दिए गए वेबसाइट यूआरएल से स्वचालित रूप से ब्रांड रंग, पेपर बैकग्राउंड और फ़ॉन्ट परिवार प्राप्त करता है।\n- **इंपोर्ट समर्थन:** Mermaid, draw.io, और Excalidraw प्रारूपों से मौजूदा फ़ाइलों को पार्स और फिर से तैयार कर सकता है।\n- **मल्टी-एजेंट संगतता:** Claude Code, GitHub Copilot, Codex, Cursor, Qoder, Pi, Factory Droid, और अन्य एजेंट स्किल-संगत वातावरण सहित विभिन्न एआई सहायक होस्ट में काम करता है।\n\n## डिज़ाइन दर्शन\nयह प्रोजेक्ट सामान्य गोलाकार बॉक्स और भारी छाया से दूर हटकर सख्त 4-पिक्सेल लेआउट ग्रिड, 1px हेयरलाइन और विशिष्ट फोकल पॉइंट को हाइलाइट करने के लिए संयमित रंग का उपयोग करता है। यह लाइट, डार्क और फुल-एडिटोरियल विजुअल वेरिएंट का समर्थन करता है।\n\n## सत्यापन और पहुंच\nउपयोगकर्ता आधिकारिक रिपॉजिटरी की जांच कर सकते हैं, गोपनीयता दस्तावेजों की समीक्षा कर सकते हैं, और `cathrynlavery/diagram-design` के तहत होस्ट किए गए सार्वजनिक GitHub प्रोजेक्ट पर सीधे स्थापना चरणों को सत्यापित कर सकते हैं। आधिकारिक बिल्ड विशेष रूप से इसी रिपॉजिटरी के माध्यम से वितरित किए जाते हैं।",
+  "en_meta": "Learn about diagram-design, an open-source agent skill for Claude Code, Copilot, and Cursor that generates self-contained HTML and SVG brand-matched diagrams.",
+  "hi_meta": "diagram-design के बारे में जानें, जो Claude Code, Copilot और Cursor के लिए एक ओपन-सोर्स एजेंट स्किल है जो ब्रांड-मैच्ड HTML और SVG डायग्राम बनाती है।",
+  "en_keywords": [
+    "diagram-design",
+    "AI coding assistants",
+    "Agent Skills",
+    "Claude Code",
+    "GitHub Copilot",
+    "SVG diagrams"
+  ],
+  "hi_keywords": [
+    "डायग्राम डिज़ाइन",
+    "एआई कोडिंग सहायक",
+    "एजेंट स्किल",
+    "Claude Code",
+    "GitHub Copilot",
+    "SVG डायग्राम"
+  ],
+  "source_published_at": null,
+  "id": "9c939c7199af",
+  "source": "https://github.com/cathrynlavery/diagram-design",
+  "date": "2026-11-03T07:06:49.522393+00:00",
+  "source_title": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,31 @@
+{
+  "en_title": "cvENGINE Launches as an Open-Source, AI-Driven External Attack Surface Assessment Tool",
+  "hi_title": "cvENGINE ओपन-सोर्स और एआई-संचालित बाहरी आक्रमण सतह मूल्यांकन टूल के रूप में लॉन्च",
+  "en_body": "## Overview of cvENGINE\n\ncvENGINE has been introduced as a self-hosted, open-source external attack surface assessment platform. The project combines asset discovery, vulnerability scanning, and threat feeds into a continuous loop. According to the project documentation on GitHub, the tool aims to help organizations identify exposed assets and prioritize vulnerabilities based on real-world exploitation data without requiring license fees or per-asset pricing.\n\n## Core Features and Capabilities\n\n- **Continuous Discovery:** Automatically maps domains, subdomains, IPs, ports, products, versions, TLS configurations, and technologies into a centralized inventory.\n- **Exploitation Ranking:** Categorizes CVEs into threat levels based on real-world exploitation sources and matches them against active inventory.\n- **AI Triage and Evidence:** Combines AI triage with read-only validation checks to reproduce findings and record exact commands, aiming to reduce alert fatigue.\n- **Distributed Scanning with Sentinels:** Allows users to deploy lightweight worker nodes called Sentinels inside or outside networks to distribute scanning workloads, including private IP ranges.\n- **Integrated Scanners:** Incorporates tools like nmap, naabu, Nuclei, testssl.sh, and optional OpenVAS integration for comprehensive network testing.\n\n## Security and Deployment\n\nDesigned to run via Docker Compose on Linux servers (such as Debian or Ubuntu), the platform emphasizes local control and privacy. The documentation specifies that users must bring their own AI API keys or run local models.\n\n- **Safety Measures:** Employs read-only checks, avoids default password guessing, and excludes loopback or cloud metadata addresses.\n- **Access Controls:** Includes two-step authentication, IP allowlisting, and audit logs to secure administrative access.\n- **Licensing:** Released under the GPL-3.0 license as a fork of reNgine 2.x.\n\n## Verification and Next Steps\n\nOrganizations interested in evaluating cvENGINE can review the official repository on GitHub (`hevnsnt/CVEngine`). Users are advised to verify installation requirements, review third-party credits, and ensure they have explicit authorization before scanning any target networks or assets.",
+  "hi_body": "## cvENGINE का परिचय\n\ncvENGINE को एक सेल्फ-होस्टेड, ओपन-सोर्स बाहरी आक्रमण सतह मूल्यांकन प्लेटफॉर्म के रूप में पेश किया गया है। यह प्रोजेक्ट एसेट डिस्कवरी, वल्नरेबिलिटी स्कैनिंग और थ्रेट फीड्स को एक निरंतर लूप में जोड़ता है। GitHub पर उपलब्ध प्रोजेक्ट दस्तावेज़ के अनुसार, इस टूल का उद्देश्य संगठनों को उजागर संपत्तियों की पहचान करने और बिना किसी लाइसेंस शुल्क या प्रति-एसेट मूल्य निर्धारण के वास्तविक दुनिया के शोषण डेटा के आधार पर कमजोरियों को प्राथमिकता देने में मदद करना है।\n\n## मुख्य विशेषताएं और क्षमताएं\n\n- **निरंतर खोज (Continuous Discovery):** डोमेन, सबडोमेन, आईपी, पोर्ट, उत्पादों, संस्करणों, टीएलएस कॉन्फ़िगरेशन और तकनीकों को स्वचालित रूप से एक केंद्रीकृत इन्वेंट्री में मैप करता है।\n- **शोषण रैंकिंग (Exploitation Ranking):** वास्तविक दुनिया के शोषण स्रोतों के आधार पर सीवीई (CVEs) को वर्गीकृत करता है और उनका सक्रिय इन्वेंट्री से मिलान करता है।\n- **एआई ट्राइएज और साक्ष्य:** अलर्ट थकान को कम करने के उद्देश्य से निष्कर्षों को पुनरुत्पादित करने के लिए एआई ट्राइएज को रीड-ऑलिव वैलिडेशन जांच के साथ जोड़ता है.\n- **सेंटिनल्स के साथ वितरित स्कैनिंग:** उपयोगकर्ताओं को स्कैनिंग वर्कलोड को वितरित करने के लिए नेटवर्क के भीतर या बाहर सेंटिनल्स नामक हल्के वर्कर नोड्स तैनात करने की अनुमति देता है।\n- **एकीकृत स्कैनर:** व्यापक नेटवर्क परीक्षण के लिए nmap, naabu, Nuclei, testssl.sh और वैकल्पिक OpenVAS एकीकरण जैसे टूल शामिल हैं।\n\n## सुरक्षा और तैनाती\n\nलिनक्स सर्वर (जैसे डेबियन या उबंटू) पर डॉकर कंपोज के माध्यम से चलने के लिए डिज़ाइन किया गया यह प्लेटफॉर्म स्थानीय नियंत्रण और गोपनीयता पर जोर देता है। दस्तावेज़ निर्दिष्ट करते हैं कि उपयोगकर्ताओं को अपनी खुद की एआई एपीआई कुंजियाँ लानी होंगी या स्थानीय मॉडल चलाने होंगे।\n\n- **सुरक्षा उपाय:** रीड-ऑनली जांच का उपयोग करता है, डिफ़ॉल्ट पासवर्ड अनुमान से बचता है, और लूपबैक या क्लाउड मेटाडेटा पतों को बाहर रखता है।\n- **एक्सेस नियंत्रण:** प्रशासनिक पहुंच को सुरक्षित करने के लिए दो-चरण प्रमाणीकरण, आईपी व्हाइटलिस्टिंग और ऑडिट लॉग शामिल हैं।\n- **लाइसेंसिंग:** इसे reNgine 2.x के फोर्क के रूप में GPL-3.0 लाइसेंस के तहत जारी किया गया है।\n\n## सत्यापन और अगले चरण\n\ncvENGINE का मूल्यांकन करने में रुचि रखने वाले संगठन GitHub पर आधिकारिक रिपॉजिटरी (`hevnsnt/CVEngine`) की समीक्षा कर सकते हैं। उपयोगकर्ताओं को सलाह दी जाती है कि वे स्थापना आवश्यकताओं को सत्यापित करें, तृतीय-पक्ष क्रेडिट की समीक्षा करें, और किसी भी लक्ष्य नेटवर्क या संपत्ति को स्कैन करने से पहले स्पष्ट प्राधिकरण सुनिश्चित करें।",
+  "en_meta": "Explore cvENGINE, an open-source, AI-driven external attack surface assessment tool featuring continuous discovery and vulnerability validation.",
+  "hi_meta": "cvENGINE एक ओपन-सोर्स और एआई-संचालित बाहरी आक्रमण सतह मूल्यांकन टूल है जो निरंतर खोज और वल्नरेबिलिटी वैलिडेशन प्रदान करता है।",
+  "en_keywords": [
+    "cvENGINE",
+    "attack surface management",
+    "vulnerability scanner",
+    "open source security",
+    "AI triage",
+    "GitHub repository"
+  ],
+  "hi_keywords": [
+    "cvENGINE",
+    "अटैक सरफेस मैनेजमेंट",
+    "वल्नरेबिलिटी स्कैनर",
+    "ओपन सोर्स सुरक्षा",
+    "एआई ट्राइएज",
+    "गिटहब"
+  ],
+  "source_published_at": null,
+  "id": "49270cf8389d",
+  "source": "https://github.com/hevnsnt/CVEngine",
+  "date": "2026-11-03T07:07:05.225705+00:00",
+  "source_title": "hevnsnt/CVEngine: AI-first external attack surface assessment with continuous discovery, evidence-based vulnerability validation, and developer-agent MCP integration. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
