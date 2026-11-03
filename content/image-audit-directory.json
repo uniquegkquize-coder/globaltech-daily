@@ -1,56 +1,62 @@
 {
-  "total_posts": 1734,
-  "selected": 14,
+  "total_posts": 1781,
+  "selected": 16,
   "results": {
-    "source_photo_saved": 4,
-    "invalid_source_images": 3,
-    "cooldown": 7
+    "source_photo_saved": 6,
+    "source_error": 1,
+    "no_source_image": 3,
+    "cooldown": 6
   },
-  "still_missing": 134,
+  "still_missing": 135,
   "articles": [
     {
-      "id": "3511f9969942e69695cedff9",
-      "source": "https://en.wikipedia.org/wiki/Suzuki_RM85",
+      "id": "cf1d49aa7c08e2b368c586f5",
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Z300",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793700562.5448716
+      "retry_after": 1793712806.9890327
     },
     {
-      "id": "321e5c98c70d31e8f7e9ee4c",
-      "source": "https://en.wikipedia.org/wiki/KTM_RC16",
+      "id": "6481536e9a163e37ee3321d3",
+      "source": "https://en.wikipedia.org/wiki/Tula_T-200",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793700562.6880035
+      "retry_after": 1793712807.2814076
     },
     {
-      "id": "f50879cdeb553349e62ab6a7",
-      "source": "https://en.wikipedia.org/wiki/Changan_UNI-K",
+      "id": "050fe41868751cc140b53291",
+      "source": "https://en.wikipedia.org/wiki/IPhone_16e",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793700562.7805924
+      "retry_after": 1793712807.6988935
     },
     {
-      "id": "6548e415fc086ccec65bbb7c",
-      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "id": "3712fa7aa57e69c055110281",
+      "source": "https://en.wikipedia.org/wiki/BYD_Song_Plus",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793700562.8349895
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
+      "result": "source_photo_saved",
+      "retry_after": 1793712807.785915
     },
     {
       "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
+      "source": "https://isc-edu.org/",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1793712808.0230613
     },
     {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
+      "id": "8444aa187e09b377f661fcbf",
+      "source": "https://dec.ac.in/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793712808.0412793
     },
     {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
+      "id": "c8e8393e48372a38e4f41e48",
+      "source": "https://en.wikipedia.org/wiki/Mercedes-Benz_C-Class_%28W206%29",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793712808.0522692
     },
     {
       "id": "ab5757b7bde7e5a43128d256",
@@ -65,25 +71,37 @@
       "result": "cooldown"
     },
     {
-      "id": "b211f120ea27b93fc925f6b4",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793700563.4226747
+      "id": "6548e415fc086ccec65bbb7c",
+      "result": "cooldown"
     },
     {
-      "id": "b00e9b37fc68d865d871998b",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Xcover_7",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793700563.4675858
+      "id": "b211f120ea27b93fc925f6b4",
+      "result": "cooldown"
     },
     {
       "id": "a6510273f0889bf4d7684eae",
-      "source": "https://mua.ac.ke/",
+      "result": "cooldown"
+    },
+    {
+      "id": "9182575a3f0882e2cc39db1c",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_928",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793700566.1488254
+      "result": "source_photo_saved",
+      "retry_after": 1793712808.1396172
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793712809.4619055
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "source": "https://cctu.edu.gh/site/index",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793712819.9139042
     }
   ],
   "missing": [
@@ -141,7 +159,7 @@
       "category": "private-vacancy",
       "title": "Exploring Private Sector Job Listings in India: Recent Openings and Roles",
       "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Br%C9%99yl%C9%99r-%2Bonlayn%2Bfikirl%C9%99ri%2Bayr%C4%B1ca%2Binc%C9%99l%C9%99yin.ekq-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "8fb539b04f5d",
@@ -225,14 +243,14 @@
       "category": "private-vacancy",
       "title": "Overview of Current Media and Communications Private Vacancies in the Des Moines Area",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "090cabc5ee27",
       "category": "private-vacancy",
       "title": "Exploring Private Sector Openings and Academic Vacancies Listed on Professional Networks in India",
       "source": "https://in.linkedin.com/jobs/%E0%A6%B2%E0%A7%87%E0%A6%95%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%BE%E0%A6%B0-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "9cfed70093fb",
@@ -323,14 +341,14 @@
       "category": "private-vacancy",
       "title": "Credit Saison India Recruits Relationship Manager for Secured Direct Operations in South India",
       "source": "https://in.linkedin.com/jobs/view/relationship-manager-secured-direct-south-ap-ts-tn-at-credit-saison-india-4480041233",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "021c54d7abdb",
       "category": "private-vacancy",
       "title": "Professional Career Openings Listed on LinkedIn for the Jersey Region",
       "source": "https://je.linkedin.com/jobs/Win%20Gaming%20API%20-%20India%20Market%20API%F0%9F%8F%A7TG%40gameapi26-jobs?position=1&pageNum=0",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "ff059456a4ee",
@@ -386,7 +404,7 @@
       "category": "private-vacancy",
       "title": "WeMakeScholars Recruits Technical HR Professional Across Multiple Indian Cities",
       "source": "https://in.linkedin.com/jobs/view/technial-hr-recruiter-in-secunderabad-hyderabad-hyderabad-hyderabad-vishakhapatnam-alwal-visakhapatnam-at-wemakescholars-4484295029?position=58&pageNum=0&refId=IYfwluMaDIcsUuazNwoLjw%3D%3D&trackingId=4yed8vCMLTz%2BknFIMv5vzQ%3D%3D",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "7f651ce9d3f0",
@@ -400,7 +418,7 @@
       "category": "private-vacancy",
       "title": "Alok Industries Limited Lists Assistant Manager Opening in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-alok-industries-limited-india-4481052431",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "285dd8d5ec2f",
@@ -515,6 +533,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "b321d228efd2",
+      "category": "ai-news",
+      "title": "Garry Tan Releases gstack: An Open-Source Virtual Engineering Team for AI Coding Agents",
+      "source": "https://github.com/garrytan/gstack",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "3570bb7ef821",
       "category": "sarkari-naukri",
       "title": "UPSC Announces Special Advertisement No. 51/2026 for Principal and Vice-Principal Posts in Delhi Education Department",
@@ -575,7 +600,7 @@
       "category": "private-vacancy",
       "title": "The Souled Store Lists Founder's Office Intern Position in Mumbai Focused on GCC Expansion",
       "source": "https://in.linkedin.com/jobs/view/founder-s-office-intern-at-the-souled-store-4483622129",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0e2fde519d11",
@@ -613,6 +638,13 @@
       "reason": "source_unavailable"
     },
     {
+      "id": "d47d25fb753a",
+      "category": "ai-news",
+      "title": "HCLTech Advertises Vice President Role for SAP AI in Bengaluru",
+      "source": "https://in.linkedin.com/jobs/view/vice-president-sap-ai-at-hcltech-4473146204",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "61ab99a70d23",
       "category": "sarkari-naukri",
       "title": "Staff Selection Commission Releases With-Held Candidate List for SI in Delhi Police and CAPFs Exam 2025",
@@ -638,7 +670,7 @@
       "category": "private-vacancy",
       "title": "Fintech Firm FatakPay Announces Search for Compliance Manager in Mumbai",
       "source": "https://in.linkedin.com/jobs/view/compliance-manager-at-fatakpay-4482278882",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "6189652eeaaa",
@@ -673,7 +705,7 @@
       "category": "ai-news",
       "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
       "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
-      "reason": "no_source_image"
+      "reason": "invalid_source_images"
     },
     {
       "id": "52c013755cd0",
@@ -981,7 +1013,7 @@
       "category": "private-vacancy",
       "title": "Active Administrative Assistant Openings Listed Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-phoenix-az",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "9acdf4deb8ec",
@@ -1002,14 +1034,7 @@
       "category": "private-vacancy",
       "title": "Military and Protective Services Job Openings Highlighted Across the Greater Phoenix Area",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-phoenix-az",
-      "reason": "no_source_image"
-    },
-    {
-      "id": "d828981e6826",
-      "category": "ai-news",
-      "title": "Claude Code’s New ‘Academic Research Skills’ Suite Aims to Keep Humans in the Loop",
-      "source": "https://github.com/imbad0202/academic-research-skills",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "38138689935d",
@@ -1029,60 +1054,59 @@
   "missing_reasons": {
     "source_unavailable": 33,
     "source_error": 3,
-    "access_denied": 26,
-    "invalid_source_images": 32,
-    "no_source_image": 40
+    "access_denied": 37,
+    "invalid_source_images": 29,
+    "no_source_image": 33
   },
-  "existing_representatives_preserved": 0,
+  "existing_representatives_preserved": 1,
   "diagnostics": {
-    "3511f9969942e69695cedff9": {
+    "cf1d49aa7c08e2b368c586f5": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Suzuki_RM85",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Suzuki_RM85_01.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Z300",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/35/Kawasaki_Z300SE.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "321e5c98c70d31e8f7e9ee4c": {
+    "6481536e9a163e37ee3321d3": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/KTM_RC16",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/MotoGP_2025_Malaysian_Grand_Prix_-_KTM_Factory_Racing_-_Brad_Binder.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Tula_T-200",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Tula_roler_%282%29.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "f50879cdeb553349e62ab6a7": {
+    "050fe41868751cc140b53291": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Changan_UNI-K",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Changan_UNI-K_001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/IPhone_16e",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/IPhone_16e_Vector.svg/960px-IPhone_16e_Vector.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
     },
-    "6548e415fc086ccec65bbb7c": {
-      "reason": "invalid_source_images",
-      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
-      "candidate_count": 20,
-      "candidates": [
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/frontier/vehicle-profile-assets/2027/model-2027-frontier-crew-cab-pro-4x-red-alert.png-v2.png",
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue-hybrid/vehicle-profile-assets/2027/model-2027-rogue-hybrid-sr-horizon-blue-pearl-metallic-super-black-two-tone.png.ximg.l_3_m.smart.png",
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue/vehicle-profile-assets/2027/model-2027-rogue-rock-creek-intelligent-awd-baja-storm-metallic.png.ximg.l_3_m.smart.png"
-      ]
-    },
-    "b211f120ea27b93fc925f6b4": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
-      "candidate_count": 8,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/1/1e/Nokia_Asha_501.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/250px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/120px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "b00e9b37fc68d865d871998b": {
+    "3712fa7aa57e69c055110281": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Xcover_7",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Samsung_Galaxy_Xcover_7.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/BYD_Song_Plus",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/2023_BYD_Song_Plus_DM-i_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "a6510273f0889bf4d7684eae": {
-      "reason": "invalid_source_images",
-      "source": "https://mua.ac.ke/",
-      "candidate_count": 2,
-      "candidates": [
-        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
-        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png"
-      ]
+    "0a95ccf111c45db4cfb5c9e3": {
+      "reason": "source_error",
+      "source": "https://isc-edu.org/",
+      "error": "ConnectionError"
+    },
+    "8444aa187e09b377f661fcbf": {
+      "reason": "no_source_image",
+      "source": "https://dec.ac.in/"
+    },
+    "c8e8393e48372a38e4f41e48": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Mercedes-Benz_C-Class_%28W206%29",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Mercedes-Benz_W206_IMG_5796.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "9182575a3f0882e2cc39db1c": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_928",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Nokia_Lumia_928_Windows_Phone.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "8af54bb949a0c055391d640a": {
+      "reason": "no_source_image",
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "existing_representative_preserved": true
+    },
+    "fbff6440d68d52399ca212b1": {
+      "reason": "no_source_image",
+      "source": "https://cctu.edu.gh/site/index"
     }
   },
   "mode": "directory"
