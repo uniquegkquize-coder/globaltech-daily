@@ -1,26 +1,31 @@
 {
-  "checked_at": "2026-11-03T16:21:31.731022+00:00",
+  "checked_at": "2026-11-03T17:24:38.772321+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "2554ba3f6222",
-    "013ba68b3b7b"
+    "cf40debca952",
+    "178adf683e37"
   ],
   "results": [
     {
       "id": "2554ba3f6222",
-      "result": "published",
-      "title": "Trump says US will stop providing aid to Israel after year-end"
+      "result": "no_material_change",
+      "title": "Trump says US will end military aid to Israel by the end of this year"
     },
     {
-      "id": "013ba68b3b7b",
+      "id": "cf40debca952",
       "result": "published",
-      "title": "Blue Eye Samurai Season 2 Trailer Sets Netflix Streaming Release Date for Beloved Action Show"
+      "title": "Russell Brand Trial: Jury Begins Verdict Deliberations"
+    },
+    {
+      "id": "178adf683e37",
+      "result": "published",
+      "title": "Josh O’Connor Calls Bond Speculation “Incredibly Bizarre Pinch Me Moment”"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 8
+      "articles": 9
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
@@ -32,7 +37,7 @@
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
-      "articles": 2
+      "articles": 3
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
@@ -48,65 +53,69 @@
     },
     "https://news.google.com/rss/search?q=site%3Aspa.gov.sa%20when%3A1d&hl=en-US&gl=US&ceid=US%3Aen": {
       "status": "ok",
-      "articles": 2
+      "articles": 1
     },
-    "https://www.firstshowing.net/feed/": {
+    "https://www.nasa.gov/feed/": {
       "status": "ok",
       "articles": 2
     },
-    "https://www.comingsoon.net/feed": {
+    "https://www.wired.com/feed/category/science/latest/rss": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://feeds.arstechnica.com/arstechnica/science": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://news.abplive.com/health/feed": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.ign.com/rss/articles/feed": {
       "status": "ok",
       "articles": 20
     },
-    "https://www.motor1.com/rss/news/all/": {
+    "https://www.gamespot.com/feeds/mashup/": {
       "status": "ok",
-      "articles": 6
+      "articles": 11
     },
-    "https://www.carscoops.com/feed/": {
+    "https://www.theguardian.com/environment/rss": {
       "status": "ok",
-      "articles": 7
+      "articles": 5
     },
-    "https://insideevs.com/rss/news/all/": {
+    "https://www.theguardian.com/travel/rss": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.theguardian.com/education/rss": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.theguardian.com/lifeandstyle/rss": {
+      "status": "ok",
+      "articles": 4
+    },
+    "https://www.apple.com/newsroom/rss-feed.rss": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://news.samsung.com/global/feed": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.microsoft.com/en-us/research/feed/": {
       "status": "ok",
       "articles": 1
     },
-    "https://www.gsmarena.com/rss-news-reviews.php3": {
+    "https://www.prnewswire.com/rss/news-releases-list.rss": {
       "status": "ok",
-      "articles": 5
+      "articles": 20
     },
-    "https://www.androidauthority.com/feed/": {
-      "status": "ok",
-      "articles": 18
-    },
-    "https://www.sammobile.com/feed/": {
-      "status": "ok",
-      "articles": 9
-    },
-    "https://9to5google.com/feed/": {
-      "status": "ok",
-      "articles": 8
-    },
-    "https://variety.com/feed/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://deadline.com/feed/": {
-      "status": "ok",
-      "articles": 12
-    },
-    "https://www.hollywoodreporter.com/feed/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml": {
-      "status": "ok",
-      "articles": 5
-    },
-    "https://feeds.npr.org/1004/rss.xml": {
-      "status": "ok",
-      "articles": 4
+    "https://www.reutersagency.com/feed/": {
+      "status": "unavailable",
+      "articles": 0
     }
   },
-  "discovered": 391,
+  "discovered": 404,
   "trending_events": 9
 }
