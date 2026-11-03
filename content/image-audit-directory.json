@@ -1,62 +1,70 @@
 {
-  "total_posts": 1781,
+  "total_posts": 1803,
   "selected": 16,
   "results": {
     "source_photo_saved": 6,
-    "source_error": 1,
-    "no_source_image": 3,
-    "cooldown": 6
+    "invalid_source_images": 3,
+    "cooldown": 7
   },
   "still_missing": 135,
   "articles": [
     {
-      "id": "cf1d49aa7c08e2b368c586f5",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Z300",
+      "id": "176c86916e06d28a5759f3b7",
+      "source": "https://en.wikipedia.org/wiki/Geely_Xingyue_L",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793712806.9890327
+      "retry_after": 1793722404.1434588
     },
     {
-      "id": "6481536e9a163e37ee3321d3",
-      "source": "https://en.wikipedia.org/wiki/Tula_T-200",
+      "id": "3752894c470e415f43789ae4",
+      "source": "https://en.wikipedia.org/wiki/Suzuki_Choinori",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793712807.2814076
+      "retry_after": 1793722404.637038
     },
     {
-      "id": "050fe41868751cc140b53291",
-      "source": "https://en.wikipedia.org/wiki/IPhone_16e",
+      "id": "e086189bb9e202bb4a6994ec",
+      "source": "https://en.wikipedia.org/wiki/Bestune_T55",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793712807.6988935
+      "retry_after": 1793722404.6844034
     },
     {
-      "id": "3712fa7aa57e69c055110281",
-      "source": "https://en.wikipedia.org/wiki/BYD_Song_Plus",
+      "id": "9033b29b6f9050fb07c65136",
+      "source": "https://en.wikipedia.org/wiki/BMW_R1250RS",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793712807.785915
+      "retry_after": 1793722404.849128
+    },
+    {
+      "id": "62e69368d50c3d4bb5b144fb",
+      "source": "https://en.wikipedia.org/wiki/HTC_Butterfly_S",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793722405.0552826
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793722406.1584587
     },
     {
       "id": "0a95ccf111c45db4cfb5c9e3",
-      "source": "https://isc-edu.org/",
-      "policy": "93e2ad7deccc",
-      "result": "source_error",
-      "retry_after": 1793712808.0230613
+      "result": "cooldown"
     },
     {
       "id": "8444aa187e09b377f661fcbf",
-      "source": "https://dec.ac.in/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793712808.0412793
+      "result": "cooldown"
     },
     {
-      "id": "c8e8393e48372a38e4f41e48",
-      "source": "https://en.wikipedia.org/wiki/Mercedes-Benz_C-Class_%28W206%29",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793712808.0522692
+      "id": "8af54bb949a0c055391d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
     },
     {
       "id": "ab5757b7bde7e5a43128d256",
@@ -72,36 +80,24 @@
     },
     {
       "id": "6548e415fc086ccec65bbb7c",
-      "result": "cooldown"
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793722406.1838584
     },
     {
-      "id": "b211f120ea27b93fc925f6b4",
-      "result": "cooldown"
+      "id": "ffbee0fbb965ec92e7982af7",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Z_Ultra",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793722406.9298463
     },
     {
       "id": "a6510273f0889bf4d7684eae",
-      "result": "cooldown"
-    },
-    {
-      "id": "9182575a3f0882e2cc39db1c",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_928",
+      "source": "https://mua.ac.ke/",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793712808.1396172
-    },
-    {
-      "id": "8af54bb949a0c055391d640a",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793712809.4619055
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "source": "https://cctu.edu.gh/site/index",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793712819.9139042
+      "result": "invalid_source_images",
+      "retry_after": 1793722409.2974966
     }
   ],
   "missing": [
@@ -1058,55 +1054,66 @@
     "invalid_source_images": 29,
     "no_source_image": 33
   },
-  "existing_representatives_preserved": 1,
+  "existing_representatives_preserved": 0,
   "diagnostics": {
-    "cf1d49aa7c08e2b368c586f5": {
+    "176c86916e06d28a5759f3b7": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Z300",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/35/Kawasaki_Z300SE.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Geely_Xingyue_L",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Geely_Monjaro_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "6481536e9a163e37ee3321d3": {
+    "3752894c470e415f43789ae4": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Tula_T-200",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Tula_roler_%282%29.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Suzuki_Choinori",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Suzuki_Choinori_in_the_Suzuki_History_Museum.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "050fe41868751cc140b53291": {
+    "e086189bb9e202bb4a6994ec": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/IPhone_16e",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/IPhone_16e_Vector.svg/960px-IPhone_16e_Vector.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+      "source": "https://en.wikipedia.org/wiki/Bestune_T55",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/98/2021_FAW_Bestune_T55.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "3712fa7aa57e69c055110281": {
+    "9033b29b6f9050fb07c65136": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/BYD_Song_Plus",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/2023_BYD_Song_Plus_DM-i_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/BMW_R1250RS",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/88/BMW_R_1250_RS%2C_re._Seite_%282024-04-29_Sp%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "0a95ccf111c45db4cfb5c9e3": {
-      "reason": "source_error",
-      "source": "https://isc-edu.org/",
-      "error": "ConnectionError"
-    },
-    "8444aa187e09b377f661fcbf": {
-      "reason": "no_source_image",
-      "source": "https://dec.ac.in/"
-    },
-    "c8e8393e48372a38e4f41e48": {
+    "62e69368d50c3d4bb5b144fb": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Mercedes-Benz_C-Class_%28W206%29",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Mercedes-Benz_W206_IMG_5796.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/HTC_Butterfly_S",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/85/HTC_Butterfly_S_sample_20130927.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "9182575a3f0882e2cc39db1c": {
+    "b211f120ea27b93fc925f6b4": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "candidate_count": 8,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/commons/1/1e/Nokia_Asha_501.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/250px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/120px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "6548e415fc086ccec65bbb7c": {
+      "reason": "invalid_source_images",
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "candidate_count": 20,
+      "candidates": [
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/frontier/vehicle-profile-assets/2027/model-2027-frontier-crew-cab-pro-4x-red-alert.png-v2.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue-hybrid/vehicle-profile-assets/2027/model-2027-rogue-hybrid-sr-horizon-blue-pearl-metallic-super-black-two-tone.png.ximg.l_3_m.smart.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue/vehicle-profile-assets/2027/model-2027-rogue-rock-creek-intelligent-awd-baja-storm-metallic.png.ximg.l_3_m.smart.png"
+      ]
+    },
+    "ffbee0fbb965ec92e7982af7": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_928",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Nokia_Lumia_928_Windows_Phone.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Z_Ultra",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Z_Ultra.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "8af54bb949a0c055391d640a": {
-      "reason": "no_source_image",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "existing_representative_preserved": true
-    },
-    "fbff6440d68d52399ca212b1": {
-      "reason": "no_source_image",
-      "source": "https://cctu.edu.gh/site/index"
+    "a6510273f0889bf4d7684eae": {
+      "reason": "invalid_source_images",
+      "source": "https://mua.ac.ke/",
+      "candidate_count": 2,
+      "candidates": [
+        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
+        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png"
+      ]
     }
   },
   "mode": "directory"

@@ -150,16 +150,16 @@
     "phones": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 437,
+      "eligible_new": 517,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1835,
-        "already_published_unchanged": 17,
-        "insufficient verified descriptive fields": 80,
-        "identifier URL is not specification evidence": 1301
+        "already_published_unchanged": 19,
+        "insufficient verified descriptive fields": 81,
+        "identifier URL is not specification evidence": 1218
       },
-      "rejected_count": 1381,
+      "rejected_count": 1299,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -277,30 +277,30 @@
           "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Stellar"
         },
         {
+          "name": "Moto G (2026)",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Moto_G_%282026%29"
+        },
+        {
           "name": "Huawei Y7 Prime (2019)",
           "reason": "identifier URL is not specification evidence",
           "source": "http://www.wikidata.org/entity/Q100258603"
-        },
-        {
-          "name": "Huawei Y9a",
-          "reason": "identifier URL is not specification evidence",
-          "source": "http://www.wikidata.org/entity/Q100261067"
         }
       ]
     },
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 268,
+      "eligible_new": 308,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 812,
-        "already_published_unchanged": 19,
-        "insufficient verified descriptive fields": 65,
-        "identifier URL is not specification evidence": 460
+        "considered": 883,
+        "already_published_unchanged": 21,
+        "insufficient verified descriptive fields": 82,
+        "identifier URL is not specification evidence": 472
       },
-      "rejected_count": 525,
+      "rejected_count": 554,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -432,12 +432,12 @@
     "bikes": {
       "new": 2,
       "updated": 1,
-      "eligible_new": 81,
+      "eligible_new": 79,
       "eligible_updates": 1,
       "shortfall": 0,
       "reasons": {
         "considered": 447,
-        "already_published_unchanged": 18,
+        "already_published_unchanged": 20,
         "insufficient verified descriptive fields": 84,
         "identifier URL is not specification evidence": 263
       },
@@ -571,5 +571,5 @@
       ]
     }
   },
-  "date": "2026-11-03T07:33:13.865828+00:00"
+  "date": "2026-11-03T10:13:18.083485+00:00"
 }
