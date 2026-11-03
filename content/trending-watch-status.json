@@ -1,35 +1,35 @@
 {
-  "checked_at": "2026-11-03T17:24:38.772321+00:00",
+  "checked_at": "2026-11-03T18:12:55.681716+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "cf40debca952",
-    "178adf683e37"
+    "98d7c391bc50",
+    "b0284974e65b"
   ],
   "results": [
     {
-      "id": "2554ba3f6222",
-      "result": "no_material_change",
-      "title": "Trump says US will end military aid to Israel by the end of this year"
-    },
-    {
       "id": "cf40debca952",
-      "result": "published",
-      "title": "Russell Brand Trial: Jury Begins Verdict Deliberations"
+      "result": "no_material_change",
+      "title": "Jury Begins Deliberation in Russell Brand’s Rape and Sexual Assault Trial"
     },
     {
-      "id": "178adf683e37",
+      "id": "98d7c391bc50",
       "result": "published",
-      "title": "Josh O’Connor Calls Bond Speculation “Incredibly Bizarre Pinch Me Moment”"
+      "title": "Ian McKellen pays emotional tribute to Patrick Stewart at a gala in London - Watch"
+    },
+    {
+      "id": "b0284974e65b",
+      "result": "published",
+      "title": "Nicole Taylor, Country Singer in Triplet Trio Taylor Red, Dies at 35"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 9
+      "articles": 10
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
-      "articles": 2
+      "articles": 1
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
@@ -53,69 +53,73 @@
     },
     "https://news.google.com/rss/search?q=site%3Aspa.gov.sa%20when%3A1d&hl=en-US&gl=US&ceid=US%3Aen": {
       "status": "ok",
-      "articles": 1
+      "articles": 0
+    },
+    "https://blog.google/rss/": {
+      "status": "ok",
+      "articles": 5
     },
     "https://www.nasa.gov/feed/": {
       "status": "ok",
       "articles": 2
     },
-    "https://www.wired.com/feed/category/science/latest/rss": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://feeds.arstechnica.com/arstechnica/science": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://news.abplive.com/health/feed": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.ign.com/rss/articles/feed": {
-      "status": "ok",
-      "articles": 20
-    },
-    "https://www.gamespot.com/feeds/mashup/": {
-      "status": "ok",
-      "articles": 11
-    },
-    "https://www.theguardian.com/environment/rss": {
-      "status": "ok",
-      "articles": 5
-    },
-    "https://www.theguardian.com/travel/rss": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.theguardian.com/education/rss": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.theguardian.com/lifeandstyle/rss": {
-      "status": "ok",
-      "articles": 4
-    },
-    "https://www.apple.com/newsroom/rss-feed.rss": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://news.samsung.com/global/feed": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.microsoft.com/en-us/research/feed/": {
+    "https://www.technologyreview.com/feed/": {
       "status": "ok",
       "articles": 1
     },
-    "https://www.prnewswire.com/rss/news-releases-list.rss": {
+    "https://www.bleepingcomputer.com/feed/": {
       "status": "ok",
-      "articles": 20
+      "articles": 4
     },
-    "https://www.reutersagency.com/feed/": {
+    "https://www.cnet.com/rss/news/": {
+      "status": "ok",
+      "articles": 6
+    },
+    "https://www.techradar.com/feeds.xml": {
+      "status": "ok",
+      "articles": 30
+    },
+    "https://feeds.npr.org/1019/rss.xml": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://variety.com/v/film/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://www.theguardian.com/film/rss": {
+      "status": "ok",
+      "articles": 3
+    },
+    "https://www.theguardian.com/culture/rss": {
+      "status": "ok",
+      "articles": 4
+    },
+    "https://feeds.npr.org/1045/rss.xml": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://ew.com/feed/": {
       "status": "unavailable",
       "articles": 0
+    },
+    "https://www.rollingstone.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://news.abplive.com/entertainment/movies/feed": {
+      "status": "ok",
+      "articles": 4
+    },
+    "https://news.abplive.com/entertainment/television/feed": {
+      "status": "ok",
+      "articles": 2
+    },
+    "https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms": {
+      "status": "ok",
+      "articles": 16
     }
   },
-  "discovered": 404,
-  "trending_events": 9
+  "discovered": 435,
+  "trending_events": 10
 }
