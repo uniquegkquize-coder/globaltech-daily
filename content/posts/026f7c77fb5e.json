@@ -1,0 +1,31 @@
+{
+  "en_title": "Over 26,000 Active AI and Cloud Credentials Exposed on Gitee",
+  "hi_title": "Gitee पर 26,000 से अधिक सक्रिय AI और क्लाउड क्रेडेंशियल्स का खुलासा",
+  "en_body": "## Security Vulnerability Report\nA recent security analysis of 7.25 million public repositories on the Chinese code-hosting platform Gitee has revealed that 26,400 cloud and AI service credentials remain active. Independent researcher Ben Zimmermann conducted the scan, which utilized two secret-scanning tools: TruffleHog and Kingfisher.\n\n## Key Findings\n* **Total Active Credentials:** 26,400.\n* **Major Sources:** The largest group included 9,473 Alibaba Cloud AccessKey pairs, followed by 3,805 YouTube API keys, 3,170 DeepSeek keys, 1,489 Zhipu BigModel keys, and 1,348 OpenAI keys.\n* **Temporal Data:** Nearly half of the compromised credentials (12,242) were introduced in 2025, though some dated back to the late 2000s.\n\n## The Risks of Exposed Keys\nExposing an API key can lead to significant operational risks, including unauthorized charges, data loss, and depletion of service quotas. The researcher noted that even if a key is removed from a repository's current code, it remains valid if found in the repository's commit history. Deleting code does not revoke access; users must actively rotate keys through the service provider's management console.\n\n## Mitigation and Verification\nSecurity experts and service providers recommend the following steps for those who may have pushed keys to public platforms:\n* **Revoke and Rotate:** Immediately invalidate compromised keys at the provider level and issue new ones.\n* **Apply Restrictions:** Implement API-level restrictions to ensure keys function only with necessary services.\n* **Monitor Logs:** Review audit logs (e.g., Alibaba Cloud's ActionTrail) for unauthorized API calls or unexpected resource changes.\n* **Tooling:** Developers should verify that their secret-scanning tools adequately cover all services utilized in their infrastructure, as the study found significant overlap gaps between TruffleHog and Kingfisher.\n\nIt remains unclear if any of the exposed credentials were exploited by malicious actors prior to the researcher's discovery. Users are advised to assume any key pushed to a public repository is compromised.",
+  "hi_body": "## सुरक्षा रिपोर्ट\nचीनी कोड-होस्टिंग प्लेटफॉर्म Gitee पर हाल ही में किए गए 72.5 लाख सार्वजनिक रिपॉजिटरी के एक विश्लेषण में 26,400 सक्रिय क्लाउड और AI सेवा क्रेडेंशियल्स का पता चला है। स्वतंत्र शोधकर्ता बेन ज़िमरमैन ने 'ट्रफलहॉग' (TruffleHog) और 'किंगफिशर' (Kingfisher) जैसे गुप्त-स्कैनिंग टूल का उपयोग करके यह डेटा एकत्र किया।\n\n## मुख्य निष्कर्ष\n* **कुल सक्रिय क्रेडेंशियल्स:** 26,400।\n* **प्रमुख सेवाएँ:** इसमें 9,473 अलीबाबा क्लाउड एक्सेस-की, 3,805 यूट्यूब एपीआई-की, 3,170 डीपसीक (DeepSeek) की, 1,489 झिपु (Zhipu) बिगमॉडल की, और 1,348 ओपनएआई (OpenAI) की शामिल हैं।\n* **समय अवधि:** लगभग आधे क्रेडेंशियल्स (12,242) वर्ष 2025 में लीक हुए, जबकि कुछ 2000 के दशक के उत्तरार्ध के भी हैं।\n\n## जोखिम और प्रभाव\nकिसी API की के सार्वजनिक होने से अनधिकृत शुल्क, डेटा की हानि और कोटे की समाप्ति जैसे गंभीर खतरे पैदा हो सकते हैं। शोधकर्ता ने स्पष्ट किया कि कोड से की (key) हटा देने या रिपॉजिटरी का इतिहास बदलने से एक्सेस रद्द नहीं होता है। जब तक प्रदाता के डैशबोर्ड से की को रोटेट या रद्द नहीं किया जाता, वह सक्रिय बनी रहती है।\n\n## सुरक्षा उपाय\nयदि आपका कोई क्रेडेंशियल सार्वजनिक रिपॉजिटरी में रहा है, तो ये कदम उठाएं:\n* **तत्काल रोटेशन:** प्रदाता के माध्यम से पुराने क्रेडेंशियल को तुरंत डिसेबल और डिलीट करें, और नए क्रेडेंशियल जारी करें।\n* **एपीआई प्रतिबंध:** केवल आवश्यक सेवाओं के लिए एपीआई प्रतिबंध लागू करें।\n* **लॉग मॉनिटरिंग:** अलीबाबा क्लाउड के 'एक्शनट्रेल' जैसे लॉग की समीक्षा करें ताकि किसी भी अनधिकृत गतिविधि या संसाधनों में बदलाव का पता चल सके।\n* **स्कैनिंग टूल:** सुनिश्चित करें कि आपके द्वारा उपयोग किए जा रहे स्कैनिंग टूल आपकी सभी सेवाओं को कवर करते हैं, क्योंकि शोध के दौरान पाया गया कि अलग-अलग टूल अलग-अलग प्रकार की की ढूंढने में सक्षम हैं।\n\nयह स्पष्ट नहीं है कि क्या इस खोज से पहले किसी दुर्भावनापूर्ण अभिनेता ने इन क्रेडेंशियल्स का उपयोग किया है या नहीं। सभी डेवलपर्स को यह मानकर चलना चाहिए कि सार्वजनिक रिपॉजिटरी में डाली गई कोई भी की सुरक्षित नहीं है।",
+  "en_meta": "A researcher identified 26,400 active cloud and AI credentials in public Gitee repositories. Learn how to secure your accounts and rotate exposed API keys.",
+  "hi_meta": "Gitee पर 26,400 सक्रिय AI और क्लाउड क्रेडेंशियल्स असुरक्षित पाए गए। अपने खातों को सुरक्षित रखने और API की को कैसे बदलें, इस बारे में जानें।",
+  "en_keywords": [
+    "Gitee",
+    "API security",
+    "credential leakage",
+    "TruffleHog",
+    "Kingfisher",
+    "cloud security"
+  ],
+  "hi_keywords": [
+    "Gitee",
+    "सुरक्षा",
+    "API सुरक्षा",
+    "डेटा लीक",
+    "क्लाउड सिक्योरिटी",
+    "साइबर सुरक्षा"
+  ],
+  "source_published_at": "2026-10-29T17:03:00+05:30",
+  "id": "026f7c77fb5e",
+  "source": "https://thehackernews.com/2026/10/26400-valid-cloud-and-ai-credentials.html",
+  "date": "2026-11-03T01:01:32.796772+00:00",
+  "source_title": "26,400 Valid Cloud and AI Credentials Found Exposed in Public Gitee Repositories - The Hacker News",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

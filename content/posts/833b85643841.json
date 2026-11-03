@@ -1,0 +1,31 @@
+{
+  "en_title": "Reanimate: A Claude Code Skill for High-Fidelity Animation Reverse Engineering",
+  "hi_title": "Reanimate: एनीमेशन को रिवर्स-इंजीनियर करने वाला एक नया Claude Code स्किल",
+  "en_body": "## Overview of Reanimate\nReanimate is a tool designed to address the challenges developers face when attempting to replicate complex web animations. Unlike standard AI agents that may struggle to interpret motion or timing, Reanimate uses an iterative, verification-based approach to clone animations from live sites, screen recordings, or media files.\n\n## How It Works\n*   **Record:** The tool captures the reference animation in a headless browser, documenting frame-by-frame movement, CSS properties, Web Animations API states, and GPU calls for canvas or WebGL elements.\n*   **Analyze:** It extracts technical specifications, including timing, easing, and coordinate transformations.\n*   **Build:** The agent generates code tailored to the user's preferred stack (e.g., Framer Motion, GSAP, or Three.js).\n*   **Verify:** It records the newly created animation and performs a side-by-side comparison against the original. If discrepancies exist, the agent iterates until the motion profiles align.\n\n## Technical Capabilities\n*   **WebGL/Canvas Tracing:** For complex graphical elements, Reanimate tracks GPU calls, shader sources, and uniform constants. Using a virtual clock, it ensures that even randomized effects are reproducible frame-by-frame.\n*   **Physics Matching:** Rather than relying solely on source code, it calculates physics parameters, such as spring behavior, based on observed movement characteristics like overshoot and settling time.\n*   **Compatibility:** The tool supports macOS and Linux (with Bun 1.1 or later) and integrates with Claude Code. \n\n## Important Considerations\nUsers should verify the original source's terms of use. Reanimate is intended as a technical tool for study and development; it is not affiliated with the companies whose animations are used as examples in the project documentation. For those interested in the underlying methodology, the project source is available on GitHub under the MIT license.",
+  "hi_body": "## Reanimate का परिचय\nReanimate एक ऐसा टूल है जिसे डेवलपर्स के लिए जटिल वेब एनिमेशन को सटीक रूप से दोहराने के उद्देश्य से बनाया गया है। पारंपरिक AI एजेंट अक्सर गति या टाइमिंग को सही ढंग से नहीं समझ पाते, लेकिन Reanimate एक 'वेरिफिकेशन-आधारित' तरीका अपनाता है, जिससे एनिमेशन को किसी लाइव वेबसाइट, स्क्रीन रिकॉर्डिंग या वीडियो फाइल से कॉपी किया जा सकता है।\n\n## यह कैसे काम करता है?\n*   **रिकॉर्ड:** यह टूल एक हेडलेस ब्राउज़र में ओरिजिनल एनिमेशन को फ्रेम-दर-फ्रेम कैप्चर करता है। यह CSS प्रॉपर्टीज, वेब एनिमेशन API, और GPU कॉल को ट्रैक करता है।\n*   **विश्लेषण:** यह टाइमिंग, ईजिंग और एलिमेंट की पोजीशन का तकनीकी डेटा तैयार करता है।\n*   **बिल्ड:** यह आपके प्रोजेक्ट के अनुकूल कोड (जैसे Framer Motion, GSAP, या Three.js) तैयार करता है।\n*   **सत्यापन:** यह आपके द्वारा बनाए गए एनिमेशन को रिकॉर्ड करता है और ओरिजिनल के साथ तुलना करता है। यदि कोई अंतर है, तो एजेंट तब तक सुधार करता है जब तक दोनों के आंकड़े समान न हो जाएं।\n\n## तकनीकी विशेषताएं\n*   **WebGL और Canvas:** यह WebGL और Canvas के लिए GPU कॉल और शेडर्स को ट्रेस करता है। एक वर्चुअल क्लॉक का उपयोग करके, यह रैंडम एनिमेशन को भी हर बार एक समान तरीके से कैप्चर करता है।\n*   **फिजिक्स मैचिंग:** यह एनिमेशन के ओवरशूट और सेटल टाइम के आधार पर स्प्रिंग फिजिक्स की गणना करता है, जिससे एनिमेशन की गति असली जैसी दिखती है।\n*   **सिस्टम आवश्यकताएँ:** इसके लिए macOS या Linux पर Bun 1.1 या बाद का वर्ज़न आवश्यक है। यह मुख्य रूप से Claude Code के साथ काम करने के लिए डिज़ाइन किया गया है।\n\n## मुख्य बातें\nउपयोगकर्ताओं को सलाह दी जाती है कि वे किसी भी साइट के कंटेंट का उपयोग करने से पहले उनके नियमों की जांच करें। यह टूल केवल एक तकनीकी अध्ययन और विकास का साधन है और इसका किसी भी बड़ी कंपनी (जैसे Stripe, Vercel) से कोई आधिकारिक संबंध नहीं है। प्रोजेक्ट का कोड GitHub पर MIT लाइसेंस के तहत उपलब्ध है।",
+  "en_meta": "Reanimate is a Claude Code skill that reverse-engineers web animations frame-by-frame, ensuring precise, verified motion reproduction for developers.",
+  "hi_meta": "Reanimate एक ऐसा Claude Code स्किल है जो वेब एनिमेशन को फ्रेम-दर-फ्रेम रिवर्स-इंजीनियर करता है ताकि डेवलपर्स उन्हें सटीकता से फिर से बना सकें।",
+  "en_keywords": [
+    "Claude Code",
+    "Animation",
+    "Reverse Engineering",
+    "Web Development",
+    "WebGL",
+    "Automation"
+  ],
+  "hi_keywords": [
+    "Claude Code",
+    "एनीमेशन",
+    "रिवर्स इंजीनियरिंग",
+    "वेब डेवलपमेंट",
+    "WebGL",
+    "स्वचालन"
+  ],
+  "source_published_at": null,
+  "id": "833b85643841",
+  "source": "https://github.com/NiazMorshed2007/reanimate",
+  "date": "2026-11-03T01:01:53.980637+00:00",
+  "source_title": "A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
