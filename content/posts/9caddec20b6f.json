@@ -1,0 +1,39 @@
+{
+  "en_title": "New Claude Code Skill Brings Professional Mobile App UI Design Principles to Developers",
+  "hi_title": "नया क्लॉड कोड स्किल पेशेवर मोबाइल ऐप UI डिज़ाइन सिद्धांतों को डेवलपर्स तक पहुँचाता है",
+  "en_body": "## Open-Source Skill Codifies Design Systems from Leading Apps\n\nA new GitHub repository, **ceorkm/mobile-app-ui-design**, publishes a Claude Code skill that packages mobile app UI/UX best practices into a reusable framework. The skill draws on documented patterns from Airbnb, Duolingo, Spotify, Revolut, and Phantom, aiming to move developers beyond functional screens toward interfaces described as \"intentional, smooth, personal, and alive.\"\n\n## What the Skill Covers\n\n- **Five-step design process** — from context gathering to final polish\n- **Industry-specific conventions** — patterns for nine-plus sectors including AI, crypto, finance, and health\n- **Emotional design principles** — Peak-End Rule (from Nobel Prize research), feedback loops, and strategic interaction patterns\n- **Design systems** — typography hierarchy (max four sizes, two weights), 60/30/10 color rule, 8-point grid spacing\n- **Implementation guidance** — React, Tailwind CSS, and component patterns for React Native, Flutter, and SwiftUI\n\n## Automatic Triggers\n\nAccording to the repository, the skill activates when a user asks Claude to:\n\n- Improve an existing mobile app design\n- Build React Native, Flutter, or SwiftUI interfaces\n\n## Practical Implications\n\nDevelopers can copy the skill files into `~/.claude/skills/mobile-app-ui-design/` and immediately apply:\n\n- Visual design rules for typography, color, spacing, and shadows\n- Industry-specific design languages\n- Micro-interaction CSS transitions\n- A four-phase client-work process with line-numbered navigation\n\nThe maintainers also note that screens designed with the skill can serve as App Store or Google Play screenshots, and mention a companion tool, **ASO Shots**, that generates headline copy, offers three style directions, and exports images at platform-required sizes.\n\n## Licensing and Contributions\n\nThe project is released under the MIT License. Contributions are welcome via pull requests. Design principles are attributed to \"industry best practices, research papers, and case studies from leading design teams\" without naming specific internal documents.\n\n## How to Verify\n\n- Visit the repository: `https://github.com/ceorkm/mobile-app-ui-design`\n- Review the README for the full feature list and installation steps\n- Check the license file for usage terms\n- Open issues or submit pull requests for improvements\n\n## Unknowns\n\n- No release date or version number is published in the source text\n- Adoption metrics and community size are not disclosed\n- The relationship between this skill and any official Anthropic offering is not clarified",
+  "hi_body": "## ओपन-सोर्स स्किल ने अग्रणी ऐप्स के डिज़ाइन सिस्टम को संहिताबद्ध किया\n\nएक नया गिटहब रिपॉजिटरी, **ceorkm/mobile-app-ui-design**, एक क्लॉड कोड स्किल प्रकाशित करता है जो मोबाइल ऐप UI/UX की सर्वोत्तम प्रथाओं को एक पुन: प्रयोज्य फ्रेमवर्क में पैकेज करता है। यह स्किल एयरबीएनबी, डुओलिंगो, स्पॉटिफाई, रेवोल्यूट और फैंटम के दस्तावेज़ीकृत पैटर्न पर आधारित है, जिसका उद्देश्य डेवलपर्स को केवल कार्यात्मक स्क्रीन से आगे बढ़ाकर ऐसे इंटरफेस की ओर ले जाना है जिन्हें \"इरादतन, सहज, व्यक्तिगत और जीवंत\" बताया गया है।\n\n## स्किल में क्या शामिल है\n\n- **पांच-चरणीय डिज़ाइन प्रक्रिया** — संदर्भ एकत्र करने से लेकर अंतिम पॉलिश तक\n- **उद्योग-विशिष्ट परंपराएं** — AI, क्रिप्टो, वित्त और स्वास्थ्य सहित नौ-प्लस क्षेत्रों के लिए पैटर्न\n- **भावनात्मक डिज़ाइन सिद्धांत** — पीक-एंड नियम (नोबेल पुरस्कार अनुसंधान से), फीडबैक लूप, और रणनीतिक इंटरैक्शन पैटर्न\n- **डिज़ाइन सिस्टम** — टाइपोग्राफी पदानुक्रम (अधिकतम चार आकार, दो वजन), 60/30/10 रंग नियम, 8-पॉइंट ग्रिड स्पेसिंग\n- **कार्यान्वयन मार्गदर्शन** — रिएक्ट, टेलविंड CSS, और रिएक्ट नेटिव, फ्लटर, स्विफ्टयूआई के लिए कंपोनेंट पैटर्न\n\n## स्वचालित ट्रिगर\n\nरिपॉजिटरी के अनुसार, स्किल तब सक्रिय होता है जब उपयोगकर्ता क्लॉड से पूछते हैं:\n\n- मौजूदा मोबाइल ऐप डिज़ाइन में सुधार करें\n- रिएक्ट नेटिव, फ्लटर, या स्विफ्टयूआई इंटरफेस बनाएं\n\n## व्यावहारिक निहितार्थ\n\nडेवलपर्स स्किल फाइलों को `~/.claude/skills/mobile-app-ui-design/` में कॉपी कर सकते हैं और तुरंत लागू कर सकते हैं:\n\n- टाइपोग्राफी, रंग, स्पेसिंग और शैडो के लिए विज़ुअल डिज़ाइन नियम\n- उद्योग-विशिष्ट डिज़ाइन भाषाएं\n- माइक्रो-इंटरैक्शन CSS ट्रांज़िशन\n- लाइन-नंबर नेविगेशन के साथ चार-चरणीय क्लाइंट-वर्क प्रक्रिया\n\nरखरखावकर्ता यह भी नोट करते हैं कि इस स्किल से डिज़ाइन की गई स्क्रीन ऐप स्टोर या गूगल प्ले स्क्रीनशॉट के रूप में काम कर सकती हैं, और एक साथी टूल **ASO शॉट्स** का उल्लेख करते हैं जो हेडलाइन कॉपी उत्पन्न करता है, तीन स्टाइल दिशाएं प्रदान करता है, और प्लेटफ़ॉर्म-आवश्यक आकारों में छवियों को निर्यात करता है।\n\n## लाइसेंसिंग और योगदान\n\nपरियोजना MIT लाइसेंस के तहत जारी की गई है। पुल रिक्वेस्ट के माध्यम से योगदान का स्वागत है। डिज़ाइन सिद्धांतों को \"उद्योग की सर्वोत्तम प्रथाओं, शोध पत्रों, और अग्रणी डिज़ाइन टीमों के केस स्टडीज़\" के लिए जिम्मेदार ठहराया गया है, बिना विशिष्ट आंतरिक दस्तावेजों का नाम लिए।\n\n## सत्यापन कैसे करें\n\n- रिपॉजिटरी पर जाएँ: `https://github.com/ceorkm/mobile-app-ui-design`\n- पूर्ण सुविधा सूची और इंस्टॉलेशन चरणों के लिए README देखें\n- उपयोग की शर्तों के लिए लाइसेंस फाइल जांचें\n- सुधार के लिए इश्यू खोलें या पुल रिक्वेस्ट सबमिट करें\n\n## अज्ञात\n\n- स्रोत पाठ में कोई रिलीज़ डेट या संस्करण संख्या प्रकाशित नहीं है\n- अपनाने के मेट्रिक्स और समुदाय का आकार प्रकट नहीं किया गया है\n- इस स्किल और किसी आधिकारिक एंथ्रोपिक पेशकश के बीच संबंध स्पष्ट नहीं किया गया है",
+  "en_meta": "New open-source Claude Code skill packages mobile UI/UX principles from top apps into a reusable design framework for developers.",
+  "hi_meta": "नया ओपन-सोर्स क्लॉड कोड स्किल शीर्ष ऐप्स के मोबाइल UI/UX सिद्धांतों को डेवलपर्स के लिए पुन: प्रयोज्य डिज़ाइन फ्रेमवर्क में पैकेज करता है।",
+  "en_keywords": [
+    "Claude Code skill",
+    "mobile app UI design",
+    "design systems",
+    "60/30/10 color rule",
+    "8-point grid",
+    "Peak-End Rule",
+    "React Native",
+    "Flutter",
+    "SwiftUI",
+    "open source"
+  ],
+  "hi_keywords": [
+    "क्लॉड कोड स्किल",
+    "मोबाइल ऐप UI डिज़ाइन",
+    "डिज़ाइन सिस्टम",
+    "60/30/10 रंग नियम",
+    "8-पॉइंट ग्रिड",
+    "पीक-एंड नियम",
+    "रिएक्ट नेटिव",
+    "फ्लटर",
+    "स्विफ्टयूआई",
+    "ओपन सोर्स"
+  ],
+  "source_published_at": null,
+  "id": "9caddec20b6f",
+  "source": "https://github.com/ceorkm/mobile-app-ui-design",
+  "date": "2026-11-03T02:53:53.977180+00:00",
+  "source_title": "ceorkm/mobile-app-ui-design: Professional mobile app UI/UX design skill for Claude Code - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

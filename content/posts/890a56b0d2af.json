@@ -1,0 +1,35 @@
+{
+  "en_title": "DeepSeek AI Releases Open-Source Agent Harness with Plugin-First Architecture",
+  "hi_title": "डीपसीक AI ने प्लगइन-फर्स्ट आर्किटेक्चर के साथ ओपन-सोर्स एजेंट हार्नेस जारी किया",
+  "en_body": "## DeepSeek Harness Enters Developer Preview\n\nDeepSeek AI has published **DeepSeek Harness (dsh)**, an open-source agent harness built on an \"everything-is-a-plugin\" architecture. The project is powered by **Cordis**, a framework whose design is described in the paper *A Programming Paradigm for Spatiotemporal Composability*.\n\nThe repository is currently in **developer preview** and the maintainers warn that **compatibility-breaking changes will occur** as the project iterates rapidly.\n\n## Key Features and Design\n\n- **Plugin-centric model**: Every capability — tools, memory, planning, UI — is implemented as a plugin.\n- **Cordis runtime**: Provides spatiotemporal composability, allowing plugins to be composed across time and space dimensions.\n- **Local Web UI**: The `dsh web` command starts a server at `http://127.0.0.1:3080` and opens it in the default browser. An `--no-open` flag runs the server without launching the browser.\n- **SSH-aware launch**: When started over SSH, only the host URL is printed because the SSH client or editor owns the forwarded address.\n- **Development workflow**: `pnpm run dev:web` builds, serves, and hot-reloads client bundles in a single terminal. `make help` lists matching Make targets for Web and Desktop builds.\n\n## Safety and Community\n\n- A **safety notice** is included in the repository and should be reviewed before running the project.\n- Third-party dependencies and their licenses are disclosed in `THIRD_PARTY_NOTICES.md`.\n- Feedback and bug reports are accepted through **GitHub Discussions**.\n- Plugin authors are encouraged to add the `dsh-plugin` topic to their repositories for discoverability.\n- A **Discord community** is available for real-time discussion.\n\n## Practical Implications\n\nDevelopers interested in building modular, composable AI agents can experiment with DeepSeek Harness today, but should treat it as **unstable pre-release software**. The plugin architecture may appeal to teams wanting fine-grained control over agent capabilities without vendor lock-in.\n\n## How to Verify\n\n- Source repository: <https://github.com/deepseek-ai/deepseek-harness>\n- Documentation: <https://deepseek-harness.github.io/deepseek-harness/>\n- Cordis design paper: *A Programming Paradigm for Spatiotemporal Composability* (linked from the repo)\n- All claims above are drawn from the public GitHub repository and its documentation. No private access or insider information was used.",
+  "hi_body": "## डीपसीक हार्नेस डेवलपर प्रीव्यू में प्रवेश करता है\n\nडीपसीक AI ने **डीपसीक हार्नेस (dsh)** प्रकाशित किया है, जो एक ओपन-सोर्स एजेंट हार्नेस है जिसे \"सब कुछ एक प्लगइन है\" आर्किटेक्चर पर बनाया गया है। यह परियोजना **कॉर्डिस** द्वारा संचालित है, एक फ्रेमवर्क जिसका डिज़ाइन *ए प्रोग्रामिंग पैराडाइम फॉर स्पेशियोटेम्पोरल कंपोज़ेबिलिटी* पेपर में वर्णित है।\n\nरिपॉजिटरी वर्तमान में **डेवलपर प्रीव्यू** में है और अनुरक्षक चेतावनी देते हैं कि जैसे-जैसे परियोजना तेजी से विकसित होगी, **कंपैटिबिलिटी-ब्रेकिंग परिवर्तन होंगे**।\n\n## मुख्य विशेषताएं और डिज़ाइन\n\n- **प्लगइन-केंद्रित मॉडल**: हर क्षमता — टूल्स, मेमोरी, प्लानिंग, UI — एक प्लगइन के रूप में लागू की गई है।\n- **कॉर्डिस रनटाइम**: स्पेशियोटेम्पोरल कंपोज़ेबिलिटी प्रदान करता है, जिससे प्लगइन्स को समय और स्थान के आयामों में कंपोज़ किया जा सकता है।\n- **लोकल वेब UI**: `dsh web` कमांड `http://127.0.0.1:3080` पर एक सर्वर शुरू करता है और इसे डिफ़ॉल्ट ब्राउज़र में खोलता है। `--no-open` फ्लैग ब्राउज़र लॉन्च किए बिना सर्वर चलाता है।\n- **SSH-अवेयर लॉन्च**: जब SSH पर शुरू किया जाता है, तो केवल होस्ट URL प्रिंट होता है क्योंकि SSH क्लाइंट या एडिटर फॉरवर्डेड एड्रेस का मालिक होता है।\n- **डेवलपमेंट वर्कफ्लो**: `pnpm run dev:web` एक ही टर्मिनल में बिल्ड करता है, सर्व करता है, और क्लाइंट बंडल्स को हॉट-रिलोड करता है। `make help` वेब और डेस्कटॉप बिल्ड के लिए मिलान करने वाले मेक टारगेट्स सूचीबद्ध करता है।\n\n## सुरक्षा और समुदाय\n\n- रिपॉजिटरी में एक **सुरक्षा नोटिस** शामिल है जिसे परियोजना चलाने से पहले समीक्षा की जानी चाहिए।\n- थर्ड-पार्टी निर्भरताएं और उनके लाइसेंस `THIRD_PARTY_NOTICES.md` में प्रकट किए गए हैं।\n- फीडबैक और बग रिपोर्ट **GitHub Discussions** के माध्यम से स्वीकार किए जाते हैं।\n- प्लगइन लेखकों को खोज योग्यता के लिए अपने रिपॉजिटरी में `dsh-plugin` टॉपिक जोड़ने के लिए प्रोत्साहित किया जाता है।\n- रीयल-टाइम चर्चा के लिए एक **डिस्कॉर्ड समुदाय** उपलब्ध है।\n\n## व्यावहारिक निहितार्थ\n\nमॉड्यूलर, कंपोज़ेबल AI एजेंट बनाने में रुचि रखने वाले डेवलपर्स आज डीपसीक हार्नेस के साथ प्रयोग कर सकते हैं, लेकिन इसे **अस्थिर प्री-रिलीज़ सॉफ़्टवेयर** मानना चाहिए। प्लगइन आर्किटेक्चर उन टीमों को आकर्षित कर सकती है जो वेंडर लॉक-इन के बिना एजेंट क्षमताओं पर बारीक नियंत्रण चाहती हैं।\n\n## सत्यापन कैसे करें\n\n- स्रोत रिपॉजिटरी: <https://github.com/deepseek-ai/deepseek-harness>\n- दस्तावेज़ीकरण: <https://deepseek-harness.github.io/deepseek-harness/>\n- कॉर्डिस डिज़ाइन पेपर: *ए प्रोग्रामिंग पैराडाइम फॉर स्पेशियोटेम्पोरल कंपोज़ेबिलिटी* (रिपो से लिंक्ड)\n- उपरोक्त सभी दावे सार्वजनिक GitHub रिपॉजिटरी और उसके दस्तावेज़ीकरण से लिए गए हैं। किसी निजी पहुंच या अंदरूनी जानकारी का उपयोग नहीं किया गया।",
+  "en_meta": "DeepSeek AI releases open-source agent harness DeepSeek Harness (dsh) with plugin-first architecture powered by Cordis. Developer preview with breaking…",
+  "hi_meta": "डीपसीक AI ने ओपन-सोर्स एजेंट हार्नेस डीपसीक हार्नेस (dsh) जारी किया, जिसमें कॉर्डिस द्वारा संचालित प्लगइन-फर्स्ट आर्किटेक्चर है। डेवलपर प्रीव्यू में ब्रेकिंग…",
+  "en_keywords": [
+    "DeepSeek AI",
+    "DeepSeek Harness",
+    "dsh",
+    "agent harness",
+    "plugin architecture",
+    "Cordis",
+    "open-source AI",
+    "developer preview"
+  ],
+  "hi_keywords": [
+    "डीपसीक AI",
+    "डीपसीक हार्नेस",
+    "dsh",
+    "एजेंट हार्नेस",
+    "प्लगइन आर्किटेक्चर",
+    "कॉर्डिस",
+    "ओपन-सोर्स AI",
+    "डेवलपर प्रीव्यू"
+  ],
+  "source_published_at": null,
+  "id": "890a56b0d2af",
+  "source": "https://github.com/deepseek-ai/deepseek-harness",
+  "date": "2026-11-03T02:57:23.389416+00:00",
+  "source_title": "deepseek-ai/deepseek-harness: DeepSeek Harness: Everything is a Plugin. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

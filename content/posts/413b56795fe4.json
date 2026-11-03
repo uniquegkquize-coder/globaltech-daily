@@ -1,0 +1,31 @@
+{
+  "en_title": "Automated AI Digital Human Video Generation Toolset Released on GitHub",
+  "hi_title": "GitHub पर एआई डिजिटल ह्यूमन वीडियो जनरेशन टूलसेट लॉन्च",
+  "en_body": "A new open-source project titled **digital-human-koubo** by developer Berryxia (andyhuo520) has been published on GitHub, providing an agent-driven framework to generate talking-head presenter videos from a single photograph. The repository integrates remote MCP generation, automated quality assurance, voice spectral matching, and multi-style creator packaging.\n\n## Core Workflow and Capabilities\n\nThe project is structured as an Agent Skill (`SKILL.md`) designed to work with AI coding assistants and agent frameworks such as Claude Code, Codex, OpenClaw, and WorkBuddy. According to the documentation, the primary workflow operates through several automated stages:\n\n* **Persona Persistence:** Stores a fixed presenter configuration (face, outfit, voice description, prompt template) in `persona.json` to maintain visual consistency across clips.\n* **Segment Generation:** Splits scripts into segments under 15 seconds and utilizes video generation models via the Renoise Model Context Protocol (MCP) server.\n* **Quality Control:** Automated checks use Whisper transcription to verify audio against the script, alongside frame inspection to detect and regenerate segments with rendering issues.\n* **Audio Unification:** Applies spectral matching, loudness normalization, and reverb to ensure separately generated clips sound cohesive.\n\n## Creator Packaging and Styling\n\nThe repository includes five editing styles and 48 creator-grade packaging components reverse-engineered from popular creator formats. Key visual features include:\n\n* **Text-Behind-Presenter:** Utilizes macOS Vision segmentation to place graphics between the background and the speaker.\n* **Automated Thumbnails:** Generates a 16:9, 9:16, or 3:4 hook frame as the opening 0.5 seconds of the video.\n* **Multi-Language Support:** Documented tests cover English, Japanese, Korean, French, Spanish, and Arabic.\n\n## Prerequisites and Execution\n\nRunning the pipeline requires a local environment with `ffmpeg`, Python, and Node, alongside an active account on Renoise for generation credits. An optional integration with Xiaomi MiMo TTS is available for custom or cloned voices.\n\n## Practical Implications and Verification\n\nThe author emphasizes ethical guidelines, requiring explicit permission for any face or voice used, mandatory disclosure labels identifying AI-generated content, and explicit user approval before credit expenditure. Readers can verify the original announcement, review setup instructions, and inspect the code directly on the [GitHub repository](https://github.com/andyhuo520/digital-human-koubo).",
+  "hi_body": "डेवलपर बेरीक्सिया (andyhuo520) द्वारा **digital-human-koubo** नामक एक नया ओपन-सोर्स प्रोजेक्ट GitHub पर जारी किया गया है। यह टूल एक ही तस्वीर से एआई प्रेजेंटर वाले वीडियो बनाने के लिए एक एजेंट-संचालित फ्रेमवर्क प्रदान करता है। यह रिपॉजिटरी रिमोट एमसीपी जनरेशन, स्वचालित गुणवत्ता जांच, वॉयस स्पेक्ट्रल मिलान और मल्टी-स्टाइल पैकेजिंग को एकीकृत करती है।\n\n## मुख्य कार्यप्रवाह और क्षमताएं\n\nइस प्रोजेक्ट को एक एजेंट स्किल (`SKILL.md`) के रूप में तैयार किया गया है, जो Claude Code, Codex, OpenClaw, और WorkBuddy जैसे एआई कोडिंग सहायकों के साथ काम कर सकता है। दस्तावेज़ीकरण के अनुसार, मुख्य कार्यप्रवाह में निम्नलिखित चरण शामिल हैं:\n\n* **पर्सना स्थिरता:** विजुअल स्थिरता बनाए रखने के लिए `persona.json` में चेहरे, पोशाक और आवाज का विवरण सहेजा जाता है।\n* **सेगमेंट जनरेशन:** स्क्रिप्ट को 15 सेकंड से कम के खंडों में विभाजित किया जाता है और Renoise मॉडल कॉन्टेक्स्ट प्रोटोकॉल (MCP) सर्वर के माध्यम से वीडियो जनरेट किए जाते हैं।\n* **गुणवत्ता नियंत्रण:** स्क्रिप्ट के साथ ऑडियो सत्यापित करने के लिए Whisper ट्रांसक्रिप्शन का उपयोग किया जाता है, साथ ही फ्रेम निरीक्षण भी किया जाता है।\n* **ऑडियो समेकन:** अलग-अलग जनरेट किए गए क्लिप को एक जैसी आवाज देने के लिए स्पेक्ट्रल मैचिंग और लाउडनेस नॉर्मलाइजेशन लागू किया जाता है।\n\n## क्रिएटर पैकेजिंग और स्टाइलिंग\n\nइस रिपॉजिटरी में पांच एडिटिंग स्टाइल और 48 पैकेजिंग घटक शामिल हैं। मुख्य दृश्य विशेषताओं में शामिल हैं:\n\n* **टेक्स्ट-बिहाइंड-प्रेजेंटर:** पृष्ठभूमि और वक्ता के बीच ग्राफिक्स रखने के लिए macOS Vision विभाजन का उपयोग करता है।\n* **स्वचालित थंबनेल:** वीडियो के शुरुआती 0.5 सेकंड में एक हुक फ्रेम उत्पन्न करता है।\n* **बहु-भाषा समर्थन:** अंग्रेजी, जापानी, कोरियाई, फ्रेंच, स्पेनिश और अरबी के लिए परीक्षण किए गए हैं।\n\n## पूर्वापेक्षाएँ और सत्यापन\n\nइस टूल को चलाने के लिए `ffmpeg`, Python, और Node के साथ एक स्थानीय वातावरण और Renoise पर एक सक्रिय खाते की आवश्यकता होती है। \n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nलेखक नैतिक दिशानिर्देशों पर जोर देता है, जिसमें किसी भी चेहरे या आवाज के उपयोग के लिए स्पष्ट अनुमति, एआई-जनित सामग्री की अनिवार्य घोषणा और क्रेडिट खर्च करने से पहले उपयोगकर्ता की मंजूरी शामिल है। पाठक [GitHub रिपॉजिटरी](https://github.com/andyhuo520/digital-human-koubo) पर मूल घोषणा की जांच कर सकते हैं।",
+  "en_meta": "Discover digital-human-koubo, an open-source GitHub agent skill for generating AI talking-head videos from a single photo with Renoise MCP and creator…",
+  "hi_meta": "Renoise MCP और क्रिएटर पैकेजिंग के साथ एक फोटो से एआई टॉकिंग-हेड वीडियो जनरेट करने के लिए digital-human-koubo ओपन-सोर्स गिटहब प्रोजेक्ट की जानकारी।",
+  "en_keywords": [
+    "AI digital human",
+    "talking head video",
+    "Renoise MCP",
+    "Agent Skill",
+    "open source GitHub",
+    "video automation"
+  ],
+  "hi_keywords": [
+    "एआई डिजिटल ह्यूमन",
+    "टॉकिंग हेड वीडियो",
+    "Renoise MCP",
+    "एजेंट स्किल",
+    "ओपन सोर्स गिटहब",
+    "वीडियो ऑटोमेशन"
+  ],
+  "source_published_at": null,
+  "id": "413b56795fe4",
+  "source": "https://github.com/andyhuo520/digital-human-koubo",
+  "date": "2026-11-03T02:53:10.737753+00:00",
+  "source_title": "andyhuo520/digital-human-koubo: AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude Code / Codex / OpenClaw / WorkBuddy … - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

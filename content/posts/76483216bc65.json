@@ -1,0 +1,29 @@
+{
+  "en_title": "ShadowBroker Platform Aggregates Open-Source Global Telemetry Into Unified Mapping Interface",
+  "hi_title": "शैडोब्रुकर प्लेटफ़ॉर्म वैश्विक ओपन-सोर्स टेलीमेट्री को एकीकृत मानचित्र इंटरफ़ेस में जोड़ता है",
+  "en_body": "## Overview of ShadowBroker\n\nShadowBroker is an open-source decentralized intelligence project designed to aggregate multi-domain open-source intelligence (OSINT) telemetry into a single interactive map interface. The platform combines dozens of public datasets, including aircraft tracking, maritime traffic, satellite orbits, seismic activity, and geopolitical news feeds, into a cohesive operational view.\n\n## Core Architecture and Features\n\nBuilt using Next.js, MapLibre GL, FastAPI, and Python, the software operates via self-hosted deployments without built-in analytics or tracking accounts. Key capabilities include:\n\n* **Multi-Domain Tracking:** Visualizes commercial and military flights, marine vessels via AIS, orbital satellites, and land transit.\n* **Reconnaissance Toolkit:** Provides server-side tools for IP geolocation, DNS lookups, WHOIS data, and certificate transparency checks with Server-Side Request Forgery (SSRF) protections.\n* **Agent Integration:** Features an HMAC-signed command channel allowing external AI agents, such as OpenClaw implementations, to query telemetry and interact with map data.\n* **Experimental Testnet (InfoNet):** Includes an experimental communication mesh utilizing Tor and Reticulum for obfuscated message relay and decentralized governance simulations.\n\n## Practical Implications and Verification\n\nBecause the platform relies entirely on public data feeds and self-hosted environments, operators retain control over external API keys and data sources. Users interested in verifying the software's functionality can review the complete source code repositories available on GitHub or deploy containers locally using Docker or Helm charts. Operators must note that experimental features like InfoNet are currently unverified and intended for testnet environments rather than private communications.\n\nTo confirm official updates or inspect the security model, users should consult the official repository documentation and verify container release digests directly through project-maintained verification guidelines.",
+  "hi_body": "## शैडोब्रुकर का परिचय\n\nशैडोब्रुकर एक ओपन-सोर्स विकेंद्रीकृत इंटेलिजेंस प्रोजेक्ट है जिसे कई डोमेन से ओपन-सोर्स इंटेलिजेंस (OSINT) टेलीमेट्री को एक ही इंटरैक्टिव मानचित्र इंटरफ़ेस में एकत्र करने के लिए डिज़ाइन किया गया है। यह प्लेटफ़ॉर्म विमान ट्रैकिंग, समुद्री यातायात, उपग्रह कक्षाओं, भूकंपीय गतिविधि और भू-राजनीतिक समाचार फ़ीड जैसे सार्वजनिक डेटासेट को एक साथ जोड़ता है।\n\n## मुख्य वास्तुकला और विशेषताएँ\n\nNext.js, MapLibre GL, FastAPI और Python का उपयोग करके निर्मित, यह सॉफ़्टवेयर बिना किसी अंतर्निहित एनालिटिक्स या ट्रैकिंग खातों के स्व-होस्टेड परिनियोजन के माध्यम से संचालित होता है। मुख्य क्षमताओं में शामिल हैं:\n\n* **मल्टी-डोमेन ट्रैकिंग:** वाणिज्यिक और सैन्य उड़ानों, AIS के माध्यम से समुद्री जहाजों, कक्षीय उपग्रहों और भूमि पारगमन को विज़ुअलाइज़ करता है।\n* **रिकॉन टूलकिट:** सर्वर-साइड अनुरोध जालसाजी (SSRF) सुरक्षा के साथ आईपी जियोलोकेशन, डीएनएस लुकअप और डब्ल्यूएचओआईएस डेटा के लिए सर्वर-साइड टूल प्रदान करता है।\n* **एजेंट एकीकरण:** इसमें एक एचएमएसी-हस्ताक्षरयुक्त कमांड चैनल है जो बाहरी एआई एजेंटों को टेलीमेट्री का उपभोग करने और मानचित्र डेटा के साथ बातचीत करने की अनुमति देता है।\n* **प्रयोगात्मक टेस्टनेट (InfoNet):** अस्पष्ट संदेश रिले और विकेंद्रीकृत शासन सिमुलेशन के लिए टॉर और रेटिकुलम का उपयोग करने वाला एक प्रयोगात्मक संचार जाल शामिल है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nचूंकि प्लेटफ़ॉर्म पूरी तरह से सार्वजनिक डेटा फ़ीड और स्व-होस्टेड वातावरण पर निर्भर करता है, इसलिए ऑपरेटर बाहरी एपीआई कुंजियों और डेटा स्रोतों पर नियंत्रण रखते हैं। सॉफ़्टवेयर की कार्यक्षमता को सत्यापित करने के इच्छुक उपयोगकर्ता गिटहब पर उपलब्ध पूर्ण स्रोत कोड रिपॉजिटरी की समीक्षा कर सकते हैं या डॉकर का उपयोग करके स्थानीय स्तर पर कंटेनर तैनात कर सकते हैं।\n\nआधिकारिक अपडेट की पुष्टि करने या सुरक्षा मॉडल का निरीक्षण करने के लिए, उपयोगकर्ताओं को आधिकारिक रिपॉजिटरी दस्तावेज़ से परामर्श करना चाहिए और प्रोजेक्ट-समर्थित सत्यापन दिशानिर्देशों की जांच करनी चाहिए।",
+  "en_meta": "Explore ShadowBroker, an open-source geospatial intelligence platform aggregating public global telemetry, flight tracking, and recon tools into a unified map.",
+  "hi_meta": "शैडोब्रुकर एक ओपन-सोर्स जियोस्पेशियल इंटेलिजेंस प्लेटफ़ॉर्म है जो सार्वजनिक वैश्विक टेलीमेट्री और रिकॉन टूल को एक मानचित्र पर एकत्र करता है।",
+  "en_keywords": [
+    "ShadowBroker",
+    "OSINT platform",
+    "open-source intelligence",
+    "geospatial telemetry",
+    "Next.js map interface"
+  ],
+  "hi_keywords": [
+    "शैडोब्रुकर",
+    "OSINT प्लेटफ़ॉर्म",
+    "ओपन-सोर्स इंटेलिजेंस",
+    "जियोस्पेशियल टेलीमेट्री",
+    "मानचित्र इंटरफ़ेस"
+  ],
+  "source_published_at": null,
+  "id": "76483216bc65",
+  "source": "https://github.com/bigbodycobain/shadowbroker",
+  "date": "2026-11-03T02:53:16.604193+00:00",
+  "source_title": "BigBodyCobain/Shadowbroker: Open-source intelligence for the global theater. Track everything from the corporate/private jets of the wealthy, and spy satellites, to seismic events in one unified interface. Hook an AI agent up to have it parse through data and fi - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

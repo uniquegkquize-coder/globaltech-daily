@@ -1,0 +1,39 @@
+{
+  "en_title": "codebase-memory-mcp Launches Local Code Intelligence for AI Agents",
+  "hi_title": "कोडबेस-मेमोरी-एमसीपी ने एआई एजेंट्स के लिए स्थानीय कोड इंटेलिजेंस लॉन्च की",
+  "en_body": "## Overview\n\n- **codebase-memory-mcp** is an MCP server that builds a persistent local knowledge graph of code, documentation, configuration, and infrastructure.\n- It enables developers to locate unfamiliar features, trace calls across services, and assess the impact of changes without relying on a hosted service.\n\n## Key Features\n\n- **Graph‑based indexing**: No API keys or external hosting required; indexes stay on the machine.\n- **CBM Lens (Beta)**: Visual companion with source reader, architecture maps, 3D Galaxy view, coverage diagnostics, and local chat.\n- **Native C backend**: 17 MCP tools, multi‑language parsing, hybrid LSP type resolution.\n- **Wide client support**: 45 integrations for tools like Claude Code, Codex, OpenCode, etc.\n- **Smart CI**: Combines static relationships with per‑test coverage for C/C++ test harnesses, falling back to broader runs when evidence is insufficient.\n- **Local processing**: All analysis runs locally; optional browser AI model can be downloaded for on‑device inference.\n\n## How It Works\n\n1. Install via script or package manager; a daemon runs in the background.\n2. Start the visual UI with `codebase-memory-mcp daemon start --open --port=9749`.\n3. Index a project with a single command; the graph persists across sessions.\n4. Query the graph from the CLI or through MCP hooks; results reduce repeated file reads and token usage.\n\n## Practical Implications\n\n- **Reduced latency**: No network round‑trips for code navigation.\n- **Privacy**: Sensitive code never leaves the local machine.\n- **Team baseline**: Optional graph artifacts allow sharing a common reference across a team.\n- **CI integration**: Smart CI can pre‑check changes against indexed relationships before they are merged.\n\n## Verification\n\n- The original announcement and installation instructions are available in the GitHub repository at https://github.com/DeusData/codebase-memory-mcp.\n- Users can inspect the source code, download the latest release, and test the tool on their own repositories.\n- The project includes a security guide (SECURITY.md) and notes on known false‑positive antivirus detections.\n\n## Confirmed Information\n\n- The tool is open‑source under an MIT‑like license.\n- It supports macOS, Linux, and Windows.\n- The visual Lens is in open beta (v0.0.1) and can be accessed via a browser UI on port 9749.\n- Indexing and graph queries require no external service.\n\n## Reported Claims / Unknowns\n\n- No external claims are made by the project; all features are described in the repository.\n- Unknown: Future roadmap beyond the current beta features.\n\n## Getting Started\n\n1. Download the appropriate archive for your platform.\n2. Run the installer (`./install.sh` or `.\\install.ps1`).\n3. Start the daemon and open the UI.\n4. Index a project and begin exploring with Lens or CLI.\n\n## Conclusion\n\ncodebase-memory-mcp provides a self‑contained, local alternative to cloud‑based code intelligence platforms, giving AI agents and developers a persistent, searchable knowledge graph of their codebase.",
+  "hi_body": "## अवलोकन\n\n- **कोडबेस-मेमोरी-एमसीपी** एक एमसीपी सर्वर है जो कोड, दस्तावेज, कॉन्फ़िगरेशन और इंफ्रास्ट्रक्चर को एक स्थायी स्थानीय ज्ञान ग्राफ में जोड़ता है।\n- यह डेवलपर्स को अपरिचित फीचर को खोजने, सेवाओं के बीच कॉल को ट्रैक करने और परिवर्तन के प्रभाव का आकलन करने में सक्षम बनाता है बिना किसी होस्टेड सेवा के।\n\n## प्रमुख विशेषताएँ\n\n- **ग्राफ-आधारित इंडेक्सिंग**: कोई API कुंजी या बाहरी होस्टिंग की आवश्यकता नहीं; इंडेक्स मशीन पर ही रहते हैं।\n- **सीबीएम लेंस (बीटा)**: विजुअल साथी जिसमें सोर्स रीडर, आर्किटेक्चर मैप, 3डी गैलेक्सी व्यू, कवरेज डायग्नोस्टिक्स और स्थानीय चैट शामिल हैं।\n- **नेटिव सी बैकएंड**: 17 एमसीपी टूल, मल्टी-लैंग्वेज पार्सिंग, हाइब्रिड एलएसपी टाइप रिज़ॉल्यूशन।\n- **व्यापक क्लाइंट सपोर्ट**: क्लॉड कोड, कोडेक्स, ओपनकोड आदि जैसे 45 इंटीग्रेशन के लिए।\n- **स्मार्ट सीआई**: स्थिर संबंधों और प्रति-टेस्ट कवरेज को जोड़ता है सी/सी++ टेस्ट हार्नेस के लिए, जब सबूत अपर्याप्त हो तो व्यापक रन पर वापस जाता है।\n- **स्थानीय प्रोसेसिंग**: सभी विश्लेषण स्थानीय मशीन पर चलते हैं; वैकल्पिक ब्राउज़र एआई मॉडल को ऑन-डिवाइस इन्फेरेंस के लिए डाउनलोड किया जा सकता है।\n\n## यह कैसे काम करता है\n\n1. स्क्रिप्ट या पैकेज मैनेजर के माध्यम से इंस्टॉल करें; डेमॉन पृष्ठभूमि में चलता है।\n2. `codebase-memory-mcp daemon start --open --port=9749` का उपयोग करके विजुअल यूआई को शुरू करें।\n3. एक कमांड के साथ प्रोजेक्ट को इंडेक्स करें; ग्राफ सत्रों के बीच बना रहता है।\n4. एमसीपी हुक के माध्यम से या सीएलआई से ग्राफ को क्वेरी करें; परिणाम दोहराए गए फ़ाइल रीड और टोकन उपयोग को कम करते हैं।\n\n## व्यावहारिक प्रभाव\n\n- **कम विलंबता**: कोड नेविगेशन के लिए कोई नेटवर्क राउंड-ट्रिप नहीं।\n- **गोपनीयता**: संवेदनशील कोड कभी भी स्थानीय मशीन से बाहर नहीं जाता।\n- **टीम बेसलाइन**: वैकल्पिक ग्राफ आर्टिफैक्ट्स एक टीम के लिए एक सामान्य संदर्भ साझा करने की अनुमति देते हैं।\n- **सीआई एकीकरण**: स्मार्ट सीआई परिवर्तन के प्रभाव का पूर्व-मूल्यांकन कर सकता है सूचीबद्ध संबंधों के आधार पर उन्हें मर्ज करने से पहले।\n\n## सत्यापन\n\n- मूल घोषणा और इंस्टॉलेशन निर्देश GitHub रिपॉजिटरी पर उपलब्ध हैं: https://github.com/DeusData/codebase-memory-mcp.\n- उपयोगकर्ता स्रोत कोड का निरीक्षण कर सकते हैं, नवीनतम रिलीज़ डाउनलोड कर सकते हैं और उपकरण का अपने स्वयं के रिपॉजिटरी पर परीक्षण कर सकते हैं।\n- परियोजना में सुरक्षा गाइड (SECURITY.md) और ज्ञात गलत सकारात्मक एंटीवायरस डिटेक्शन के नोट शामिल हैं।\n\n## पुष्टि की गई जानकारी\n\n- उपकरण ओपन-सोर्स है, एमआईटी-जैसे लाइसेंस के तहत उपलब्ध है।\n- यह मैकओएस, लिनक्स और विंडोज़ का समर्थन करता है।\n- विजुअल लेंस वर्तमान में ओपन बीटा (v0.0.1) में है और इसे पोर्ट 9749 पर ब्राउज़र यूआई के माध्यम से एक्सेस किया जा सकता है।\n- इंडेक्सिंग और ग्राफ क्वेरी के लिए किसी बाहरी सेवा की आवश्यकता नहीं है।\n\n## रिपोर्ट की गई दावे / अज्ञात\n\n- परियोजना द्वारा कोई बाहरी दावा नहीं किया जाता है; सभी सुविधाओं का वर्णन रिपॉजिटरी में किया गया है।\n- अज्ञात: वर्तमान बीटा सुविधाओं से परे भविष्य की रोडमैप।\n\n## शुरुआत कैसे करें\n\n1. अपने प्लेटफॉर्म के लिए उपयुक्त आर्काइव डाउनलोड करें।\n2. इंस्टॉलर चलाएँ (`./install.sh` या `.\\install.ps1`)।\n3. डेमॉन शुरू करें और यूआई खोलें।\n4. प्रोजेक्ट को इंडेक्स करें और लेंस या सीएलआई के माध्यम से एक्सप्लोर करना शुरू करें।\n\n## निष्कर्ष\n\nकोडबेस-मेमोरी-एमसीपी क्लाउड-आधारित कोड इंटेलिजेंस प्लेटफॉर्म के लिए एक स्व-निहित, स्थानीय विकल्प प्रदान करता है, जो एआई एजेंट्स और डेवलपर्स को अपने कोडबेस के एक स्थायी, खोज योग्य ज्ञान ग्राफ के साथ सशक्त बनाता है।",
+  "en_meta": "codebase-memory-mcp offers local, persistent code intelligence for AI agents via MCP, with a visual Lens and graph‑based navigation.",
+  "hi_meta": "कोडबेस-मेमोरी-एमसीपी एआई एजेंट्स के लिए स्थानीय, स्थायी कोड इंटेलिजेंस प्रदान करता है, जिसमें विजुअल लेंस और ग्राफ-आधारित नेविगेशन शामिल है।",
+  "en_keywords": [
+    "codebase-memory-mcp",
+    "local code intelligence",
+    "AI agents",
+    "Model Context Protocol",
+    "knowledge graph",
+    "CBM Lens",
+    "code navigation",
+    "static analysis",
+    "Smart CI",
+    "open source"
+  ],
+  "hi_keywords": [
+    "कोडबेस-मेमोरी-एमसीपी",
+    "स्थानीय कोड इंटेलिजेंस",
+    "एआई एजेंट्स",
+    "मॉडल कॉन्टेक्स्ट प्रोटोकॉल",
+    "ज्ञान ग्राफ",
+    "सीबीएम लेंस",
+    "कोड नेविगेशन",
+    "स्थिर विश्लेषण",
+    "स्मार्ट सीआई",
+    "ओपन सोर्स"
+  ],
+  "source_published_at": null,
+  "id": "f74d5b6b78b8",
+  "source": "https://github.com/DeusData/codebase-memory-mcp",
+  "date": "2026-11-03T02:55:12.950150+00:00",
+  "source_title": "codebase-memory-mcp: local code intelligence for AI agents via MCP - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
