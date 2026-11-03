@@ -1,0 +1,29 @@
+{
+  "en_title": "Obsidian Second Brain Project Updates Shared on GitHub",
+  "hi_title": "GitHub पर ऑब्सीडियन सेकंड ब्रेन प्रोजेक्ट के अपडेट साझा किए गए",
+  "en_body": "## Overview of the Project\n\nRecent updates to the open-source repository `obsidian-second-brain` on GitHub outline a system designed to maintain persistent memory across multiple AI interfaces, including Claude Code, Codex, Cursor, and Grok Bot. The project combines local Markdown vaults with automated ingestion and synthesis workflows, functioning across different command-line tools and plain folders.\n\n## Key Components and Features\n\n- **Shared Agent Logbook:** Different AI agents can record job logs in a shared folder, allowing subsequent sessions to reference past actions and leave review notes.\n- **Open Knowledge Metabolism (OKM):** An approach to knowledge management where stored facts are categorized as timeless, dated, or pointers to prevent information decay.\n- **Multimodal Ingestion:** Commands support ingesting various formats—such as audio files via local Whisper, documents via LibreOffice converters, and web or video links—to update existing vault pages instead of solely appending new text.\n- **Automated Synthesis:** Scheduled maintenance routines close out daily notes, reconcile contradictions, and structure cross-source patterns.\n\n## Practical Implications and Verification\n\nThe documentation notes specific prerequisites, such as Python 3.10 or later, and optional API keys for expanded web research via Perplexity or X integration. Because software configurations and tool integrations change frequently, users should review the official repository configuration files, dependency requirements, and changelogs directly on GitHub before deployment.",
+  "hi_body": "## प्रोजेक्ट का अवलोकन\n\nGitHub पर उपलब्ध ओपन-सोर्स रिपॉजिटरी `obsidian-second-brain` के हालिया अपडेट एक ऐसी प्रणाली की रूपरेखा प्रस्तुत करते हैं जो Claude Code, Codex, Cursor और Grok Bot जैसे कई AI इंटरफेस के बीच लगातार मेमोरी बनाए रखने के लिए डिज़ाइन की गई है। यह प्रोजेक्ट स्थानीय मार्कडाउन वॉल्ट को स्वचालित डेटा इनटेक और सिंथेसिस वर्कफ़्लो के साथ जोड़ता है।\n\n## मुख्य विशेषताएं और घटक\n\n- **साझा एजेंट लॉगबुक:** विभिन्न AI एजेंट एक साझा फ़ोल्डर में कार्य लॉग रिकॉर्ड कर सकते हैं, जिससे बाद के सत्रों को पिछले कार्यों को संदर्भित करने में मदद मिलती है।\n- **ओपन नॉलेज मेटाबॉलिज्म (OKM):** ज्ञान प्रबंधन का एक दृष्टिकोण जहाँ संग्रहीत तथ्यों को कालजयी, दिनांकित या पॉइंटर्स के रूप में वर्गीकृत किया जाता है।\n- **मल्टीमॉडल इनटेक:** कमांड्स विभिन्न प्रारूपों जैसे कि स्थानीय व्हिस्पर के माध्यम से ऑडियो फाइलें, लिब्रे ऑफिस कन्वर्टर्स के माध्यम से दस्तावेज़, और वेब या वीडियो लिंक का समर्थन करती हैं।\n- **स्वचालित संश्लेषण:** अनुसूचित रखरखाव प्रक्रियाएं दैनिक नोट्स को व्यवस्थित करती हैं और अंतर्विरोधों का समाधान करती हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nडिफ़ॉल्ट रूप से, इसके लिए Python 3.10 या उससे, और वैकल्पिक API कुंजियों की आवश्यकता होती है। चूंकि सॉफ़्टवेयर कॉन्फ़िगरेशन बदलते रहते हैं, उपयोगकर्ताओं को परिनियोजन से पहले सीधे GitHub पर आधिकारिक रिपॉजिटरी की जाँच करनी चाहिए।",
+  "en_meta": "Learn about the obsidian-second-brain GitHub project connecting AI agents like Claude and Grok with persistent vault memory and automated synthesis.",
+  "hi_meta": "Obsidian-second-brain GitHub प्रोजेक्ट के बारे में जानें जो Claude और Grok जैसे AI एजेंटों को स्थायी वॉल्ट मेमोरी से जोड़ता है।",
+  "en_keywords": [
+    "Obsidian Second Brain",
+    "AI memory",
+    "Claude Code",
+    "Knowledge management",
+    "GitHub repository"
+  ],
+  "hi_keywords": [
+    "ऑब्सीडियन सेकंड ब्रेन",
+    "AI मेमोरी",
+    "Claude Code",
+    "ज्ञान प्रबंधन",
+    "GitHub रिपॉजिटरी"
+  ],
+  "source_published_at": null,
+  "id": "aa69b3d63b1e",
+  "source": "https://github.com/eugeniughelbur/obsidian-second-brain",
+  "date": "2026-11-03T10:58:41.836370+00:00",
+  "source_title": "obsidian-second-brain: AI second brain for Obsidian - persistent memory for Claude Code, Codex, Cursor and Grok Bot - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

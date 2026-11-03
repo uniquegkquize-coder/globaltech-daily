@@ -1,0 +1,31 @@
+{
+  "en_title": "ai-phone: Running an AI-Powered SIP Phone Agent Locally on Apple Silicon",
+  "hi_title": "ai-phone: Apple Silicon पर AI-संचालित SIP फोन एजेंट चलाने का एक टूल",
+  "en_body": "## Overview of ai-phone\n\nai-phone is an open-source project that enables users to operate an AI-powered SIP (Session Initiation Protocol) phone agent directly on Apple Silicon hardware. By leveraging local speech processing, the project aims to facilitate automated voice communication handled by a combination of local and remote language models.\n\n## How it Works\n\n* **Local Speech Processing:** The system uses MLX to perform speech recognition and synthesis on the local machine, ensuring that voice data is processed locally before being transmitted.\n* **Language Models:** While speech remains local, the conversation logic (the language model) is processed remotely. Users are advised that their conversation transcripts and instructions are sent to the external cloud provider selected during setup.\n* **Hardware Requirements:** The platform currently requires Apple Silicon. While the caller on the other end can use any standard phone or SIP client, the host machine running the agent must be an Apple Silicon Mac.\n* **SIP Integration:** The tool integrates with SIP providers like SignalWire. Users are required to manage their own SIP credentials and numbers through these third-party portals.\n\n## Implementation and Usage\n\nThe software is managed via a command-line interface (CLI). Users run an installation script, followed by a setup wizard that detects system RAM to recommend suitable local models. \n\n### Core Features\n\n* **Call Handling:** It supports incoming calls, outgoing calls, or both. \n* **Relay Mode:** Advanced users can utilize a JSON-based relay mode to programmatically handle calls, allowing an external agent to exert control over each turn of the conversation.\n* **Operational Constraints:** Currently, the system supports English language conversations and handles one call at a time. It does not install as a persistent background service, meaning users must keep the terminal active to receive incoming calls.\n\n## Verification and Performance\n\nThe developer provides documentation on call flows, network configurations (NAT), and architectural design. Performance benchmarks from late 2026 recorded a median first-audible response time of 1.50 seconds under memory pressure. Users should be aware that standard carrier charges and SIP subscription limits apply to all calls made through the platform.\n\nFor those interested in verifying the functionality, the repository includes details on testing successful call exchanges between major SIP providers. As an AGPL-3.0 licensed project, users are encouraged to review the documentation and license notes before deployment.",
+  "hi_body": "## ai-phone का परिचय\n\nai-phone एक ओपन-सोर्स प्रोजेक्ट है जो उपयोगकर्ताओं को Apple Silicon हार्डवेयर पर सीधे AI-संचालित SIP (Session Initiation Protocol) फोन एजेंट चलाने की अनुमति देता है। यह प्रोजेक्ट स्थानीय स्पीच प्रोसेसिंग का उपयोग करता है ताकि वॉयस कॉल को स्थानीय और रिमोट भाषा मॉडल के माध्यम से संभाला जा सके।\n\n## यह कैसे काम करता है\n\n* **स्थानीय स्पीच प्रोसेसिंग:** सिस्टम Apple Silicon पर MLX का उपयोग करता है ताकि स्पीच रिकग्निशन और सिंथेसिस स्थानीय रूप से हो सके।\n* **भाषा मॉडल:** बातचीत की लॉजिक (भाषा मॉडल) को रिमोट सर्वर पर प्रोसेस किया जाता है। उपयोगकर्ताओं को ध्यान देना चाहिए कि बातचीत के ट्रांसक्रिप्ट और निर्देश चुनी गई क्लाउड सेवा प्रदाता को भेजे जाते हैं।\n* **सिस्टम आवश्यकताएँ:** वर्तमान में इसके लिए Apple Silicon की आवश्यकता है। हालांकि, फोन कॉल करने वाला व्यक्ति किसी भी सामान्य फोन या SIP क्लाइंट का उपयोग कर सकता है।\n* **SIP एकीकरण:** यह टूल SignalWire जैसे SIP प्रदाताओं के साथ काम करता है। उपयोगकर्ताओं को अपने SIP क्रेडेंशियल्स और फोन नंबरों को स्वयं प्रबंधित करना होता है।\n\n## सेटअप और उपयोग\n\nइस सॉफ़्टवेयर को कमांड-लाइन इंटरफेस (CLI) के माध्यम से चलाया जाता है। सेटअप विज़ार्ड सिस्टम RAM के आधार पर मॉडल की सिफारिश करता है।\n\n### मुख्य विशेषताएं\n\n* **कॉल प्रबंधन:** यह आने वाली (incoming) और जाने वाली (outgoing) कॉलों का समर्थन करता है।\n* **रिले मोड:** अनुभवी उपयोगकर्ता JSON-आधारित रिले मोड का उपयोग कर सकते हैं ताकि बाहरी एजेंट कॉल के हर चरण को नियंत्रित कर सके।\n* **सीमाएं:** वर्तमान में यह केवल अंग्रेजी भाषा और एक समय में एक ही कॉल का समर्थन करता है। यह बैकग्राउंड सर्विस के रूप में स्थापित नहीं होता है, इसलिए आने वाली कॉलों को प्राप्त करने के लिए टर्मिनल को खुला रखना आवश्यक है।\n\n## सत्यापन और प्रदर्शन\n\nडेवलपर ने कॉल फ्लो, नेटवर्क कॉन्फ़िगरेशन और आर्किटेक्चर के लिए दस्तावेज़ प्रदान किए हैं। अक्टूबर 2026 के बेंचमार्क के अनुसार, मेमोरी दबाव के तहत पहली प्रतिक्रिया का औसत समय 1.50 सेकंड मापा गया था। उपयोगकर्ताओं को यह ध्यान रखना चाहिए कि इस प्लेटफॉर्म के माध्यम से की गई सभी कॉलों पर सामान्य कैरियर शुल्क और SIP सब्सक्रिप्शन सीमाएं लागू होती हैं।\n\nकार्यक्षमता को सत्यापित करने के लिए, रिपॉजिटरी में प्रमुख SIP प्रदाताओं के बीच सफल कॉल परीक्षणों के विवरण उपलब्ध हैं। यह प्रोजेक्ट AGPL-3.0 लाइसेंस के तहत उपलब्ध है, और उपयोगकर्ताओं को तैनात करने से पहले लाइसेंस नोट पढ़ने की सलाह दी जाती है।",
+  "en_meta": "Explore ai-phone, an open-source tool for running AI-powered SIP agents on Apple Silicon with local speech processing and remote language model support.",
+  "hi_meta": "Apple Silicon पर स्थानीय स्पीच प्रोसेसिंग और रिमोट भाषा मॉडल के साथ AI-संचालित SIP फोन एजेंट चलाने के लिए ai-phone के बारे में जानें।",
+  "en_keywords": [
+    "AI phone agent",
+    "SIP telephony",
+    "Apple Silicon",
+    "MLX",
+    "Speech-to-text",
+    "Local AI"
+  ],
+  "hi_keywords": [
+    "AI फोन एजेंट",
+    "SIP टेलीफोनी",
+    "Apple Silicon",
+    "MLX",
+    "स्पीच रिकग्निशन",
+    "स्थानीय AI"
+  ],
+  "source_published_at": null,
+  "id": "142c90a0dba0",
+  "source": "https://github.com/oxnw/ai-phone",
+  "date": "2026-11-03T10:59:54.777089+00:00",
+  "source_title": "oxnw/ai-phone: A SIP phone daemon with local speech and language models on Apple Silicon. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,31 @@
+{
+  "en_title": "OpenDesign Emerges as a Collaborative AI Design Agent Workspace with Local-First Architecture",
+  "hi_title": "OpenDesign: लोकल-फर्स्ट और ओपन-सोर्स सहयोगी AI डिज़ाइन एजेंट वर्कस्पेस",
+  "en_body": "## Overview of OpenDesign\n\nOpenDesign is introduced as a collaborative AI design agent workspace designed to integrate coding agents, design systems, and rendering templates into a single workflow. Operating under the Apache 2.0 license, the platform is structured around a local-first approach, allowing teams and individuals to build prototypes, websites, dashboards, presentations, and motion graphics using compatible AI coding assistants.\n\n## Core Architecture and Workflows\n\n- **Agent Integration:** OpenDesign connects with mainstream coding environments and CLI tools. It supports native runtimes such as DeepSeek Harness via the official `dsh` CLI, alongside Model Context Protocol (MCP) integrations for tools like Claude Desktop.\n- **Design Systems:** Every render references a core brand contract via a `DESIGN.md` file. The repository includes multiple pre-packaged design systems and templates to maintain brand consistency.\n- **Output Surfaces:** The platform supports various artifact types, including sandboxed HTML previews, live dashboards, slide decks exportable to PDF, PPTX, or Markdown, and image or video frameworks.\n\n## Privacy, Security, and Configuration\n\nOpenDesign implements a local-first security model where the daemon binds locally by default. It features built-in Server-Side Request Forgery (SSRF) protection for API proxy requests and handles user analytics with consent-gated telemetry.\n\n### How to Verify and Get Started\n\nUsers can inspect the source code, review documentation, or download official desktop builds from the official GitHub repository (`nexu-io/open-design`). Installation instructions, environment requirements, and contribution guidelines are detailed within the repository's documentation.",
+  "hi_body": "## ओपनडिज़ाइन का परिचय\n\nOpenDesign को एक सहयोगी AI डिज़ाइन एजेंट वर्कस्पेस के रूप में प्रस्तुत किया गया है, जो कोडिंग एजेंटों, डिज़ाइन सिस्टम और रेंडरिंग टेम्पलेट्स को एक ही वर्कफ़्लो में एकीकृत करता है। Apache 2.0 लाइसेंस के तहत संचालित, यह प्लेटफ़ॉर्म एक लोकल-फर्स्ट दृष्टिकोण पर आधारित है, जिससे टीमों और डेवलपर्स को प्रोटोटाइप, वेबसाइट, डैशबोर्ड और प्रस्तुतियाँ बनाने की अनुमति मिलती है।\n\n## मुख्य वास्तुकला और कार्यप्रणाली\n\n- **एजेंट एकीकरण:** ओपनडिज़ाइन मुख्यधारा के कोडिंग वातावरण और सीएलआई टूल के साथ जुड़ता है। यह आधिकारिक `dsh` सीएलआई के माध्यम से डीपसीक हार्नेस जैसे मूल रनटाइम का समर्थन करता है।\n- **डिज़ाइन सिस्टम:** प्रत्येक रेंडर `DESIGN.md` फ़ाइल के माध्यम से एक मुख्य ब्रांड अनुबंध का संदर्भ देता है। रिपॉजिटरी में ब्रांड स्थिरता बनाए रखने के लिए कई पूर्व-पैकेज्ड डिज़ाइन सिस्टम शामिल हैं।\n- **आउटपुट सतहें:** प्लेटफ़ॉर्म विभिन्न कलाकृतियों का समर्थन करता है, जिसमें सैंडबॉक्स किए गए HTML पूर्वावलोकन, लाइव डैशबोर्ड और स्लाइड डेक शामिल हैं।\n\n## गोपनीयता और सुरक्षा\n\nओपनडिज़ाइन एक लोकल-फर्स्ट सुरक्षा मॉडल को लागू करता है जहाँ डेमॉन डिफ़ॉल्ट रूप से स्थानीय रूप से बाइंड होता है। इसमें एपीआई प्रॉक्सी अनुरोधों के लिए अंतर्निहित सर्वर-साइड अनुरोध जालसाजी (SSRF) सुरक्षा शामिल है।\n\n### कैसे सत्यापित करें और शुरुआत करें\n\nउपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी (`nexu-io/open-design`) से स्रोत कोड की जांच कर सकते हैं, दस्तावेज़ की समीक्षा कर सकते हैं या आधिकारिक डेस्कटॉप बिल्ड डाउनलोड कर सकते हैं।",
+  "en_meta": "Explore OpenDesign, an open-source, local-first collaborative AI design agent workspace supporting multi-model workflows and brand-driven templates.",
+  "hi_meta": "OpenDesign का परिचय, एक ओपन-सोर्स लोकल-फर्स्ट सहयोगी AI डिज़ाइन एजेंट वर्कस्पेस जो मल्टी-मॉडल वर्कफ़्लो का समर्थन करता है।",
+  "en_keywords": [
+    "OpenDesign",
+    "AI design agent",
+    "local-first",
+    "open source",
+    "coding assistant",
+    "design system"
+  ],
+  "hi_keywords": [
+    "OpenDesign",
+    "AI डिज़ाइन एजेंट",
+    "लोकल-फर्स्ट",
+    "ओपन-सोर्स",
+    "कोडिंग सहायक",
+    "डिज़ाइन सिस्टम"
+  ],
+  "source_published_at": null,
+  "id": "d8ff876dfb1e",
+  "source": "https://github.com/nexu-io/open-design",
+  "date": "2026-11-03T10:58:36.409443+00:00",
+  "source_title": "nexu-io/open-design: The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, a - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

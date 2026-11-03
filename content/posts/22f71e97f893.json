@@ -1,0 +1,31 @@
+{
+  "en_title": "MiniMax-AI Releases OpenAgentCore: An Open-Source, Self-Hosted Implementation of the OpenAI Agents API",
+  "hi_title": "MiniMax-AI ने OpenAgentCore किया लॉन्च: OpenAI एजेंट्स API का ओपन-सोर्स और सेल्फ-होस्टेड संस्करण",
+  "en_body": "## Overview of OpenAgentCore\n\nMiniMax-AI has published **OpenAgentCore**, an open-source and self-hosted project designed to replicate the OpenAI Agents API specification. According to the public repository documentation, the project allows developers to run coding assistants such as Codex, Claude Code, or MiniMax Code on local infrastructure or custom environments using the official OpenAI SDK or standard HTTP requests.\n\n## Core Features and Compatibility\n\n* **OpenAI API Compatibility:** The platform implements an API structure matching OpenAI's standards. Developers can configure existing tools by pointing the `OPENAI_BASE_URL` to their self-hosted instance while using standard project API keys.\n* **Harness Flexibility:** Sessions can natively execute supported coding harnesses and connect with user-configured model providers.\n* **Persistent Workspaces and Compute Management:** The platform incorporates sandbox options (such as microsandbox and E2B) designed to release idle compute resources while retaining workspace files on independent storage for later resumption.\n* **Modular Architecture:** Core components—including Sandbox Providers, workspace filesystems, execution harnesses, and model providers—interact through defined protocols, allowing individual parts to be replaced independently.\n\n## Getting Started and Deployment\n\nAccording to the installation documentation, OpenAgentCore can be deployed on Linux or macOS environments utilizing Docker for Core, Web, and PostgreSQL components. \n\n* **Setup Steps:**\n  1. Run the Docker installation for Core, Web, and PostgreSQL.\n  2. Log into the Web interface using the Core key generated during installation.\n  3. Configure the public address, establish a default model, and generate a Project API key.\n  4. Add sandbox capacity using a local node or an integration like E2B.\n\nOnce configured, applications can interact with the environment by setting the appropriate base URL and API key variables within the official OpenAI SDK.\n\n## Practical Implications and Verification\n\nOpenAgentCore offers teams looking for self-hosted agent orchestration an alternative compatible with standard tooling. Because execution states and workspace files are managed through defined protocols, developers can audit the architecture and adapt components to specific compliance or infrastructure requirements.\n\nTo verify the original announcement, review the project repository, setup guides, and licensing details directly on the official GitHub page.",
+  "hi_body": "## OpenAgentCore का परिचय\n\nMiniMax-AI ने **OpenAgentCore** नामक एक नए ओपन-सोर्स प्रोजेक्ट को सार्वजनिक किया है, जिसे OpenAI एजेंट्स API के विनिर्देशों के अनुरूप तैयार किया गया है। रिपॉजिटरी के अनुसार, यह प्रोजेक्ट डेवलपर्स को आधिकारिक OpenAI SDK या मानक HTTP अनुरोधों का उपयोग करके अपने स्वयं के हार्डवेयर या कस्टम वातावरण पर कोडिंग सहायक जैसे Codex, Claude Code, या MiniMax Code चलाने की अनुमति देता है।\n\n## मुख्य विशेषताएँ और अनुकूलता\n\n* **OpenAI API अनुकूलता:** यह प्लेटफॉर्म OpenAI के मानकों से मेल खाने वाली API संरचना प्रदान करता है। डेवलपर `OPENAI_BASE_URL` को अपने सेल्फ-होस्टed इंस्टेंस पर सेट करके अपने मौजूदा टूल का उपयोग कर सकते हैं।\n* **लचीलापन:** सत्र (Sessions) स्थानीय रूप से समर्थित कोडिंग हार्नेस को निष्पादित कर सकते हैं और उपयोगकर्ता-कॉन्फ़िगर मॉडल प्रदाताओं के साथ जुड़ सकते हैं।\n* **पर्सिस्टेंट वर्कस्पेस और कंप्यूट प्रबंधन:** प्लेटफॉर्म में सैंडबॉक्स विकल्प शामिल हैं जो निष्क्रिय कंप्यूट संसाधनों को रिलीज़ करते हैं जबकि स्वतंत्र स्टोरेज पर वर्कस्पेस फ़ाइलों को सुरक्षित रखते हैं।\n* **मॉड्यूलर आर्किटेक्चर:** सैंडबॉक्स प्रदाता, फ़ाइल सिस्टम और मॉडल प्रदाता परिभाषित प्रोटोकॉल के माध्यम से जुड़ते हैं, जिससे व्यक्तिगत भागों को स्वतंत्र रूप से बदलना संभव होता है।\n\n## स्थापना और शुरुआत\n\nप्रलेखन (documentation) के अनुसार, OpenAgentCore को Linux या macOS वातावरण में Docker का उपयोग करके Core, Web, और PostgreSQL घटकों के साथ तैनात किया जा सकता है।\n\n* **स्थापना के चरण:**\n  1. Docker के माध्यम से Core, Web और PostgreSQL स्थापित करें।\n  2. इंस्टॉलर द्वारा जनरेट की गई Core कुंजी का उपयोग करके Web इंटरफ़ेस में साइन इन करें।\n  3. सार्वजनिक पता कॉन्फ़िगर करें, एक डिफ़ॉल्ट मॉडल सेट करें, और प्रोजेक्ट API कुंजी जारी करें।\n  4. स्थानीय नोड या E2B एकीकरण का उपयोग करके सैंडबॉक्स क्षमता जोड़ें।\n\nकॉन्फ़िगरेशन पूरा होने के बाद, एप्लिकेशन आधिकारिक OpenAI SDK के भीतर उपयुक्त बेस URL और API कुंजी चर सेट करके इस वातावरण से जुड़ सकते हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nOpenAgentCore उन टीमों के लिए एक विकल्प प्रदान करता है जो मानक टूलिंग के साथ संगत सेल्फ-होस्टेड एजेंट ऑर्केस्ट्रेशन चाहते हैं। चूंकि निष्पादन स्थिति और वर्कस्पेस फ़ाइलों को परिभाषित प्रोटोकॉल के माध्यम से प्रबंधित किया जाता है, डेवलपर आर्किटेक्चर की समीक्षा कर सकते हैं।\n\nमूल घोषणा का सत्यापन करने के लिए, आधिकारिक GitHub पेज पर जाकर प्रोजेक्ट रिपॉजिटरी, सेटअप गाइड और लाइसेंसिंग विवरण की जांच करें।",
+  "en_meta": "MiniMax-AI introduces OpenAgentCore, a self-hosted, open-source implementation of the OpenAI Agents API supporting local coding assistants and custom models.",
+  "hi_meta": "MiniMax-AI ने OpenAgentCore पेश किया, जो स्थानीय कोडिंग सहायकों का समर्थन करने वाली OpenAI Agents API की सेल्फ-होस्टेड ओपन-सोर्स रिपॉजिटरी है।",
+  "en_keywords": [
+    "OpenAgentCore",
+    "MiniMax-AI",
+    "OpenAI Agents API",
+    "self-hosted AI agents",
+    "open source AI",
+    "Codex Claude Code"
+  ],
+  "hi_keywords": [
+    "OpenAgentCore",
+    "MiniMax-AI",
+    "OpenAI Agents API",
+    "सेल्फ-होस्टेड AI",
+    "ओपन सोर्स",
+    "कोडिंग असिस्टेंट"
+  ],
+  "source_published_at": null,
+  "id": "22f71e97f893",
+  "source": "https://github.com/MiniMax-AI/OpenAgentCore",
+  "date": "2026-11-03T10:58:26.355033+00:00",
+  "source_title": "MiniMax-AI/OpenAgentCore: The OpenAI Agents API, open source and self-hosted. Run Codex, Claude Code or MiniMax Code on your own machines with your own models, through the official OpenAI SDK. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

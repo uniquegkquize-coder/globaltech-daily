@@ -1,0 +1,33 @@
+{
+  "en_title": "OpenBot Introduces Local-First Desktop Workspace for Managing Multiple AI Teammates",
+  "hi_title": "OpenBot ने एकाधिक AI सहयोगियों के प्रबंधन के लिए लोकल-फर्स्ट डेस्कटॉप वर्कस्पेस पेश किया",
+  "en_body": "## Overview\nOpenBot is a local-first desktop workspace designed to run and coordinate persistent AI agents within a single application. The software provides dedicated workspaces, task queues, file sharing, and browser control for various underlying models and command-line interfaces.\n\n## Supported Providers and Integrations\nThe application supports multiple AI runtimes and interfaces, offering connection options for different providers:\n* **Local and CLI Integrations:** Integrates with local Codex App Server, Claude Code, Grok CLI, OpenCode, Gemini, Cursor CLI, Cline CLI, Kimi Code CLI, and Hermes Agent through ACP.\n* **Custom Endpoints:** Supports OpenAI-compatible endpoints and custom ACP agents, with automatic detection of local model servers like Ollama and LM Studio.\n* **Provider Management:** Allows users to download or configure required CLIs, with update checks and managed runtime handling.\n\n## Key Features\n* **Workspace Isolation:** Every agent receives its own dedicated workspace and conversation thread.\n* **Task Queues:** Features FIFO message queues equipped with pause, resume, cancellation, and crash-safe persistence.\n* **Agent Collaboration:** Supports agent-to-agent messaging, shared desktop channel chats with explicit task delegation, and reaction handling.\n* **Embedded Browser:** Includes a persistent embedded browser that agents can open, inspect, and control, alongside optional Computer Use capabilities on macOS, Windows, and Linux.\n\n## Security and Execution Policy\nAs a development preview, agents currently operate with broad execution permissions following initial launch consent. Users are advised to run only trusted agents and tasks, maintain backups, and review system security configurations before deployment.\n\n## Verification and Getting Started\nTo verify original specifications, installation steps, and system requirements, consult the official repository and documentation on GitHub under nightly-labs/openbot.",
+  "hi_body": "## अवलोकन\nOpenBot एक लोकल-फर्स्ट डेस्कटॉप वर्कस्पेस है जिसे एक ही एप्लिकेशन के भीतर लगातार AI एजेंटों को चलाने और प्रबंधित करने के लिए डिज़ाइन किया गया है। यह सॉफ्टवेयर विभिन्न मॉडलों और कमांड-लाइन इंटरफेस के लिए समर्पित वर्कस्पेस, टास्क कतारें, फ़ाइल शेयरिंग और ब्राउज़र नियंत्रण प्रदान करता है।\n\n## समर्थित प्रदाता और एकीकरण\nयह एप्लिकेशन कई AI रनटाइम और इंटरफेस का समर्थन करता है, जो विभिन्न प्रदाताओं के लिए कनेक्शन विकल्प प्रदान करता है:\n* **लोकल और सीएलआई एकीकरण:** एसीपी के माध्यम से लोकल कोडेक्स ऐप सर्वर, क्लाउड कोड, ग्रोक सीएलआई, ओपनकोड, जेमिनी, कर्सर सीएलआई, क्लाइन सीएलआई, किमी कोड सीएलआई और हर्मीस एजेंट के साथ एकीकृत होता है।\n* **कस्टम एंडपॉइंट्स:** ओपनएआई-संगत एंडपॉइंट्स और कस्टम एसीपी एजेंटों का समर्थन करता है, जिसमें ओलामा और एलएम स्टूडियो जैसे लोकल मॉडल सर्वर की स्वचालित पहचान शामिल है।\n* **प्रदाता प्रबंधन:** उपयोगकर्ताओं को आवश्यक सीएलआई डाउनलोड या कॉन्फ़िगर करने की अनुमति देता है।\n\n## मुख्य विशेषताएँ\n* **वर्कस्पेस आइसोलेशन:** प्रत्येक एजेंट को अपना समर्पित वर्कस्पेस और वार्तालाप धागा मिलता है।\n* **टास्क कतारें:** इसमें रोक, फिर से शुरू करने, रद्दीकरण और क्रैश-सुरक्षित दृढ़ता से सुसज्जित एफआईएफओ संदेश कतारें हैं।\n* **एजेंट सहयोग:** एजेंट-से-एजेंट संदेश भेजने, स्पष्ट कार्य प्रतिनिधिमंडल के साथ साझा डेस्कटॉप चैनल चैट और प्रतिक्रिया प्रबंधन का समर्थन करता है।\n* **एम्बेडेड ब्राउज़र:** इसमें एक लगातार एम्बेडेड ब्राउज़र शामिल है जिसे एजेंट खोल सकते हैं, निरीक्षण कर सकते हैं और नियंत्रित कर सकते हैं।\n\n## सुरक्षा और निष्पादन नीति\nविकास पूर्वावलोकन के रूप में, एजेंट वर्तमान में प्रारंभिक लॉन्च सहमति के बाद व्यापक निष्पादन अनुमतियों के साथ काम करते हैं। उपयोगकर्ताओं को सलाह दी जाती है कि वे केवल विश्वसनीय एजेंटों और कार्यों को चलाएं, बैकअप बनाए रखें और सुरक्षा निर्देशों की समीक्षा करें।\n\n## सत्यापन और शुरुआत करना\nमूल विशिष्टताओं, स्थापना चरणों और सिस्टम आवश्यकताओं को सत्यापित करने के लिए, nightly-labs/openbot के तहत GitHub पर आधिकारिक रिपॉजिटरी और दस्तावेज़ देखें।",
+  "en_meta": "Discover OpenBot, a local-first desktop workspace for managing persistent AI teammates like Codex, Claude, and Grok with dedicated tools and queues.",
+  "hi_meta": "OpenBot की खोज करें, जो कोडेक्स, क्लाउड और ग्रोक जैसे लगातार AI सहयोगियों के प्रबंधन के लिए एक लोकल-फर्स्ट डेस्कटॉप वर्कस्पेस है।",
+  "en_keywords": [
+    "OpenBot",
+    "AI workspace",
+    "local-first AI",
+    "Claude Code",
+    "Codex",
+    "Grok CLI",
+    "desktop AI agents"
+  ],
+  "hi_keywords": [
+    "OpenBot",
+    "AI वर्कस्पेस",
+    "लोकल-फर्स्ट",
+    "क्लाउड कोड",
+    "कोडेक्स",
+    "ग्रोक सीएलआई",
+    "डेस्कटॉप AI एजेंट"
+  ],
+  "source_published_at": null,
+  "id": "59f086ad2f83",
+  "source": "https://github.com/nightly-labs/openbot",
+  "date": "2026-11-03T10:58:36.944188+00:00",
+  "source_title": "nightly-labs/openbot: A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

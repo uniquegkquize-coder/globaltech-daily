@@ -1,0 +1,29 @@
+{
+  "en_title": "Anti-Slop Open-Source Project Aims to Filter Generic AI Coding Outputs",
+  "hi_title": "एंटी-स्लोप ओपन-सोर्स प्रोजेक्ट जेनेरिक एआई कोडिंग आउटपुट को फ़िल्टर करने का लक्ष्य रखता है",
+  "en_body": "## Overview of Anti-Slop\n\nA publicly available project titled **anti-slop**, hosted on GitHub by user miqdadbadjuber, has emerged to help filter out generic, AI-shaped UI designs, text, and code produced by AI coding agents. According to the project documentation, the utility functions as a filter rather than a rigid style guide, meaning it does not prescribe specific colors, fonts, or layouts, leaving stylistic direction entirely to the user.\n\n## Core Rules and Structure\n\nThe repository outlines 40 mandatory rules categorized into three tiers:\n- **Hard Gate**\n- **Purpose-Gate**\n- **Quality Locks**\n\nAdditionally, it features a \"Liveliness Toolkit\" comprising three dials—Energy, Rhythm, and Motion—alongside a Design Read to encourage more dynamic outputs. Before any code is shipped, a mandatory Delivery Gate provides a pass/fail report split into four blocks.\n\n## Operation Modes and Agent Compatibility\n\nAnti-slop can operate in two distinct modes during an agent session:\n1. **During Mode:** Guides the work as it is being built, culminating in a Delivery Gate report.\n2. **After Mode:** Audits existing work through a numbered findings list for user review and remediation.\n\nThe project integrates with various AI coding assistants and CLI tools, including Claude Code, Cursor, GitHub Copilot, and Gemini CLI, among others. Installation can be handled via automated setup scripts, manual file pasting, or through community directories like skills.sh.\n\n## Important Caveats and Verification\n\nThe documentation stresses that anti-slop does not supply creative direction; a separate `DESIGN.md` file is required for UI projects to avoid sterile results. Furthermore, the project maintainers explicitly note that the tool has no associated cryptocurrency, tokens, NFTs, or fundraising campaigns, warning that any financial solicitations using the name are unassociated scams.\n\nTo verify original claims and review installation instructions, interested users can consult the official GitHub repository at `miqdadbadjuber/anti-slop` or the project website.",
+  "hi_body": "## एंटी-स्लोप का परिचय\n\nGitHub पर उपयोगकर्ता miqdadbadjuber द्वारा होस्ट किया गया **anti-slop** नामक एक सार्वजनिक प्रोजेक्ट सामने आया है, जो एआई कोडिंग एजेंटों द्वारा उत्पादित जेनेरिक यूआई डि डिज़ाइन, टेक्स्ट और कोड को फ़िल्टर करने में मदद करता है। प्रोजेक्ट दस्तावेज़ के अनुसार, यह यूटिलिटी एक कठोर स्टाइल गाइड के बजाय एक फ़िल्टर के रूप में कार्य करती है, जिसका अर्थ है कि यह विशिष्ट रंगों, फ़ॉन्ट या लेआउट को निर्धारित नहीं करती है।\n\n## मुख्य नियम और संरचना\n\nप्रोजेक्ट रिपॉजिटरी में तीन श्रेणियों में 40 अनिवार्य नियमों की रूपरेखा दी गई है:\n- **हार्ड गेट (Hard Gate)**\n- **पर्पस-गेट (Purpose-Gate)**\n- **क्वालिटी लॉक्स (Quality Locks)**\n\nइसके अतिरिक्त, इसमें अधिक गतिशील आउटपुट को प्रोत्साहित करने के लिए 'एनर्जी', 'रिदम' और 'मोशन' नामक तीन डायल वाला एक 'लाइवलीनेस टूलकिट' शामिल है।\n\n## ऑपरेशन मोड और एजेंट संगतता\n\nएंटी-स्लोप एजेंट सत्र के दौरान दो अलग-अलग मोड में काम कर सकता है:\n1. **ड्यूरिंग मोड (During Mode):** निर्माण के दौरान काम का मार्गदर्शन करता है।\n2. **आफ्टर मोड (After Mode):** समीक्षा के लिए मौजूदा काम का ऑडिट करता है।\n\nयह प्रोजेक्ट Claude Code, Cursor, GitHub Copilot और अन्य सहित विभिन्न एआई कोडिंग सहायकों के साथ एकीकृत होता है। स्थापना को स्वचालित सेटअप स्क्रिप्ट या मैनुअल फ़ाइल पेस्टिंग के माध्यम से प्रबंधित किया जा सकता है।\n\n## महत्वपूर्ण चेतावनियाँ और सत्यापन\n\nदस्तावेज़ में इस बात पर जोर दिया गया है कि एंटी-स्लोप कोई रचनात्मक दिशा प्रदान नहीं करता है; इसके लिए एक अलग `DESIGN.md` फ़ाइल की आवश्यकता होती है। इसके अलावा, प्रोजेक्ट रखरखावकर्ताओं ने स्पष्ट रूप से नोट किया है कि इस टूल से जुड़ी कोई क्रिप्टोकरेंसी, टोकन या फंडरेज़िंग कैंपेन नहीं है।\n\nमूल दावों को सत्यापित करने और स्थापना निर्देशों की समीक्षा करने के लिए, उपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी `miqdadbadjuber/anti-slop` या प्रोजेक्ट वेबसाइट देख सकते हैं।",
+  "en_meta": "Learn about the open-source anti-slop project designed to filter generic AI-generated code, text, and UI designs using structured rules and agent skills.",
+  "hi_meta": "जेनेरिक एआई-उत्पादित कोड, टेक्स्ट और यूआई डिज़ाइन को फ़िल्टर करने के लिए डिज़ाइन किए गए ओपन-सोर्स एंटी-स्लोप प्रोजेक्ट के बारे में जानें।",
+  "en_keywords": [
+    "anti-slop",
+    "AI coding agent",
+    "generic code filter",
+    "GitHub repository",
+    "UI design"
+  ],
+  "hi_keywords": [
+    "एंटी-स्लोप",
+    "एआई कोडिंग एजेंट",
+    "जेनेरिक कोड फ़िल्टर",
+    "GitHub रिपॉजिटरी",
+    "यूआई डिज़ाइन"
+  ],
+  "source_published_at": null,
+  "id": "2b748bcf99ed",
+  "source": "https://github.com/miqdadbadjuber/anti-slop",
+  "date": "2026-11-03T10:58:28.207907+00:00",
+  "source_title": "miqdadbadjuber/anti-slop: Rules for an AI coding agent to filter out generic AI-generated UI designs, text, and code. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
