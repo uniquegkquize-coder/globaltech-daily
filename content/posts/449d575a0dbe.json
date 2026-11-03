@@ -1,0 +1,29 @@
+{
+  "en_title": "Meta Open-Sources Astryx, a Customizable Design System Built for React and AI Agents",
+  "hi_title": "मेटा ने एस्टरिक्स (Astryx) ओपन-सोर्स डिज़ाइन सिस्टम लॉन्च किया, जो रिएक्ट और एआई एजेंटों के लिए है",
+  "en_body": "## Introduction to Astryx\nMeta has open-sourced **Astryx**, a design system developed internally over the last eight years. According to repository documentation, Astryx powers over 13,000 internal applications within Meta. It is currently available in a **Beta** release and is built on **React 19+** and **StyleX**.\n\n## Core Features and Architecture\nAstryx provides a cohesive ecosystem for developers and designers, featuring:\n* **150+ Accessible Components:** Fully typed React components with TypeScript support.\n* **Theming & Dark Mode:** Brand-level theming through CSS custom property overrides, allowing customization without wrapping or forking.\n* **No Styling Lock-In:** While built with StyleX, consumers can override styles using Tailwind, CSS modules, or plain CSS.\n* **Open Internals & Swizzling:** Components are exposed directly, and a \"swizzle\" feature ejects full component source code into projects for complete ownership.\n* **Agent Readiness:** Built explicitly so that both human developers and AI coding assistants can utilize the same tooling, CLI commands, and references.\n\n## Technical Requirements and Setup\nAstryx requires **React 19 or later** as a peer dependency (`react` and `react-dom`). \n\n* **Installation:** Projects can install core packages via package managers alongside a theme.\n* **CLI Usage:** A command-line interface is available for local project use or global installation, helping coding assistants invoke commands correctly.\n* **Experimental Packages:** Packages like `@astryxdesign/lab` are unpublished, while `@astryxdesign/vega` and `@astryxdesign/charts` are published only under the `@canary` distribution tag.\n\n## Practical Implications and Verification\nFor teams adopting React 19, Astryx offers a battle-tested foundation derived from large-scale enterprise use at Meta. However, because the system is currently in Beta and relies on modern stack requirements, developers should review the official documentation, setup guides for frameworks like Next.js and Vite, and contribution guidelines.\n\nTo verify original details, access the official repository and documentation resources:\n* [Astryx GitHub Repository](https://github.com/facebook/astryx)\n* Official documentation, Storybook, and Discord links available directly via the repository source.",
+  "hi_body": "## एस्टरिक्स का परिचय\nमेटा ने आधिकारिक तौर पर **Astryx** (एस्टरिक्स) को ओपन-सोर्स कर दिया है, जिसे पिछले आठ वर्षों में आंतरिक रूप से विकसित किया गया था। रिपॉजिटरी दस्तावेज़ के अनुसार, एस्टरिक्स मेटा के भीतर 13,000 से अधिक आंतरिक अनुप्रयोगों को संचालित करता है। यह वर्तमान में **बीटा** रिलीज़ में उपलब्ध है और **React 19+** तथा **StyleX** पर आधारित है।\n\n## मुख्य विशेषताएँ और वास्तुकला\nएस्टरिक्स डेवलपर्स और डिजाइनरों के लिए एक सुसंगत पारिस्थितिकी तंत्र प्रदान करता है, जिसमें शामिल हैं:\n* **150+ सुलभ घटक (Components):** टाइपस्क्रिप्ट समर्थन के साथ पूरी तरह से टाइप्ड रिएक्ट घटक।\n* **थीमिंग और डार्क मोड:** सीएसएस कस्टम प्रॉपर्टी ओवरराइड के माध्यम से ब्रांड-स्तरीय थीमिंग, जिससे घटक स्रोत को फोर्क किए बिना कस्टमाइज़ेशन संभव है।\n* **स्टाइलिंग लॉक-इन नहीं:** हालांकि इसे StyleX के साथ बनाया गया है, उपयोगकर्ता Tailwind, CSS modules या सादे CSS का उपयोग करके शैलियों को ओवरराइड कर सकते हैं।\n* **ओपन इंटरनल और स्विज़लिंग:** घटकों को सीधे निर्यात किया जाता है, और एक \"swizzle\" सुविधा पूर्ण प्रोजेक्ट स्वामित्व के लिए घटक के स्रोत कोड को प्रोजेक्ट में इंजेक्ट करती है।\n* **एआई एजेंट अनुकूलता:** इसे विशेष रूप से इस तरह डिज़ाइन किया गया है कि मानव डेवलपर्स और एआई कोडिंग सहायक दोनों एक ही टूलिंग, सीएलआई कमांड और संदर्भ का उपयोग कर सकें।\n\n## तकनीकी आवश्यकताएं और सेटअप\nएस्टरिक्स के लिए सह-निर्भरता (`react` और `react-dom`) के रूप में **React 19 या इसके बाद के संस्करण** की आवश्यकता होती है।\n\n* **इंस्टॉलेशन:** प्रोजेक्ट्स थीम के साथ पैकेज मैनेजर के माध्यम से कोर पैकेज इंस्टॉल कर सकते हैं।\n* **सीएलआई उपयोग:** स्थानीय प्रोजेक्ट उपयोग या वैश्विक स्थापना के लिए एक कमांड-लाइन इंटरफ़ेस उपलब्ध है।\n* **प्रयोगात्मक पैकेज:** `@astryxdesign/lab` जैसे पैकेज अप्रकाशित हैं, जबकि `@astryxdesign/vega` और `@astryxdesign/charts` केवल `@canary` डिस्ट-टैग के तहत प्रकाशित किए जाते हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nरैपक्ट 19 अपनाने वाली टीमों के लिए, एस्टरिक्स मेटा में बड़े पैमाने पर उपयोग से प्राप्त एक सिद्ध आधार प्रदान करता है। हालांकि, चूंकि सिस्टम वर्तमान में बीटा में है और आधुनिक स्टैक आवश्यकताओं पर निर्भर करता है, डेवलपर्स को आधिकारिक दस्तावेज और सेटअप गाइड की समीक्षा करनी चाहिए।\n\nमूल विवरण सत्यापित करने के लिए, आधिकारिक रिपॉजिटरी और दस्तावेजों की जांच करें:\n* [Astryx GitHub Repository](https://github.com/facebook/astryx)\n* आधिकारिक दस्तावेज़, स्टोरीबुक और डिस्कॉर्ड लिंक रिपॉजिटरी के माध्यम से उपलब्ध हैं।",
+  "en_meta": "Meta open-sources Astryx, a customizable design system built on React 19 and StyleX for developers and AI agents. Learn features, requirements, and setup.",
+  "hi_meta": "मेटा ने रिएक्ट 19 और स्टाइलएक्स पर आधारित कस्टमाइज़ेबल डिज़ाइन सिस्टम एस्टरिक्स को ओपन-सोर्स किया। विशेषताएं और सेटअप विवरण जानें।",
+  "en_keywords": [
+    "Astryx",
+    "Meta design system",
+    "React 19 UI library",
+    "open source design system",
+    "AI agent coding tools"
+  ],
+  "hi_keywords": [
+    "एस्टरिक्स",
+    "मेटा डिज़ाइन सिस्टम",
+    "रैपक्ट 19 यूआई लाइब्रेरी",
+    "ओपन सोर्स डिज़ाइन सिस्टम",
+    "एआई कोडिंग टूल्स"
+  ],
+  "source_published_at": null,
+  "id": "449d575a0dbe",
+  "source": "https://github.com/facebook/astryx",
+  "date": "2026-11-03T16:58:32.741037+00:00",
+  "source_title": "facebook/astryx: An open source design system that's fully customizable and agent ready - GitHub",
+  "category": "social-media",
+  "image_kind": "conceptual"
+}

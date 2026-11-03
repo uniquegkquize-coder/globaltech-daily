@@ -1,0 +1,29 @@
+{
+  "en_title": "Meld: Android Music Client Unifying Spotify and YouTube Music",
+  "hi_title": "मेल्ड (Meld): एंड्रॉइड म्यूजिक क्लाइंट जो स्पॉटिफाई और यूट्यूब म्यूजिक को जोड़ता है",
+  "en_body": "## Overview of Meld\nMeld is an open-source music client designed for Android devices that combines the personalization features of Spotify with the streaming catalog of YouTube Music. The application allows users to leverage their Spotify accounts for recommendations, search queries, and home screen content while streaming the actual audio through YouTube Music infrastructure.\n\n## Core Features and Functionality\n- **Dual-Platform Integration:** Uses a user's Spotify account for metadata, playlists, liked songs, and discovery, while utilizing YouTube Music for playback.\n- **No Premium Required:** Operates using Spotify's data APIs rather than streaming directly from Spotify, meaning a free Spotify account is sufficient.\n- **Built-In Authentication:** Connects to Spotify via an in-app WebView login without requiring external developer setups, Client IDs, or manual token management.\n- **Optional Lossless Audio (Qobuz):** Includes an experimental, opt-in feature to route audio through Qobuz FLAC catalogs using ISRC-based or fuzzy track matching, with a silent fallback to YouTube Music.\n\n## Installation and Verification\nOfficial releases of Meld are distributed exclusively through its GitHub repository as `Meld.apk` files. Users must enable installation from unknown sources on their Android devices. To ensure security, users are advised to avoid third-party mirrors and check official project links.\n\n## Platform Policy Considerations\nAs an unofficial third-party client, Meld interacts with platform APIs under specific operational conditions:\n- **Spotify:** Utilizes data APIs in a read-only manner. Because it does not stream audio from Spotify or artificially generate plays, the risk of account action is considered low, though users operate such clients at their own discretion.\n- **YouTube:** Streams audio using underlying YouTube infrastructure. Logging into a Google/YouTube account within the application is optional (primarily for age-restricted or region-locked tracks) but carries a non-zero risk associated with third-party client policies.",
+  "hi_body": "## मेल्ड का परिचय\nमेल्ड (Meld) एंड्रॉइड उपकरणों के लिए एक ओपन-सोर्स म्यूजिक क्लाइंट है जो स्पॉटिफाई की वैयक्तिकृत विशेषताओं और यूट्यूब म्यूजिक के स्ट्रीमिंग कैटलॉग को एक साथ लाता है। यह एप्लिकेशन उपयोगकर्ताओं को स्पॉटिफाई खाते का उपयोग करके सिफारिशें, खोज और होम स्क्रीन सामग्री प्राप्त करने की अनुमति देता है, जबकि ऑडियो स्ट्रीमिंग यूट्यूब म्यूजिक के माध्यम से होती है।\n\n## मुख्य विशेषताدएं और कार्यक्षमता\n- **ड्युअल-प्लेटफॉर्म इंटीग्रेशन:** मेटाडेटा, प्लेलिस्ट और पसंद किए गए गानों के लिए स्पॉटिफाई का उपयोग करता है, जबकि प्लेबैक यूट्यूब म्यूजिक के बुनियादी ढांचे पर निर्भर करता है।\n- **प्रीमियम की आवश्यकता नहीं:** यह स्पॉटिफाई के डेटा एपीआई का उपयोग करता है, इसलिए इसके लिए केवल एक मुफ्त स्पॉटिफाई खाते की आवश्यकता होती है।\n- **इन-बिल्ट प्रमाणीकरण:** किसी बाहरी डेवलपर सेटअप या क्लाइंट आईडी के बिना इन-ऐप लॉगिन के माध्यम से स्पॉटिफाई से जुड़ता है।\n- **वैकल्पिक लॉसलेस ऑडियो (कोबुज़):** आईएसआरसी-आधारित मिलान का उपयोग करके कोबुज़ एफएलएसी कैटलॉग के माध्यम से ऑडियो रूट करने के लिए एक वैकल्पिक सुविधा शामिल है, जिसमें यूट्यूब म्यूजिक पर स्वचालित फॉलबैक मिलता है।\n\n## इंस्टॉलेशन और सत्यापन\nमेल्ड के आधिकारिक रिलीज़ केवल इसके गिटहब रिपॉजिटरी के माध्यम से `Meld.apk` फ़ाइल के रूप में वितरित किए जाते हैं। उपयोगकर्ताओं को सुरक्षा के लिए तीसरे पक्ष के मिरर से बचने की सलाह दी जाती है।\n\n## प्लेटफ़ॉर्म नीति और सावधानियां\nएक अनौपचारिक तीसरे पक्ष के क्लाइंट के रूप में, मेल्ड प्लेटफ़ॉर्म एपीआई के साथ इंटरैक्ट करता है:\n- **स्पॉटिफाई:** डेटा एपीआई का रीड-केवल मोड में उपयोग करता है, जिससे खाते पर असर का जोखिम कम माना जाता है।\n- **यूट्यूब:** यूट्यूब बुनियादी ढांचा का उपयोग करके ऑडियो स्ट्रीम करता है। आयु-प्रतिबंधित गानों के लिए गूगल खाते से लॉगिन करना वैकल्पिक है, लेकिन इसमें तीसरे पक्ष के क्लाइंट नियमों से जुड़े जोखिम हो सकते हैं।",
+  "en_meta": "Discover Meld, an open-source Android music client uniting Spotify personalization and YouTube Music streaming. Learn features, installation, and policies.",
+  "hi_meta": "मेल्ड (Meld) एंड्रॉइड म्यूजिक क्लाइंट के बारे में जानें जो स्पॉटिफाई और यूट्यूब म्यूजिक को मिलाता है। इसकी विशेषताएं और इंस्टॉलेशन जानें।",
+  "en_keywords": [
+    "Meld",
+    "Android music client",
+    "Spotify integration",
+    "YouTube Music",
+    "open source music app"
+  ],
+  "hi_keywords": [
+    "मेल्ड",
+    "एंड्रॉइड म्यूजिक ऐप",
+    "स्पॉटिफाई इंटीग्रेशन",
+    "यूट्यूब म्यूजिक",
+    "ओपन सोर्स"
+  ],
+  "source_published_at": null,
+  "id": "1285f1ac72a8",
+  "source": "https://github.com/FrancescoGrazioso/Meld",
+  "date": "2026-11-03T16:58:36.974747+00:00",
+  "source_title": "FrancescoGrazioso/Meld: YouTube Music client for Android with Spotify integrations - GitHub",
+  "category": "social-media",
+  "image_kind": "conceptual"
+}

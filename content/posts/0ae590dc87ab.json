@@ -1,0 +1,29 @@
+{
+  "en_title": "openGym Launches as Open-Source Routine and Workout Tracker",
+  "hi_title": "ओपनजिम (openGym) ओपन-सोर्स वर्कआउट और रूटीन ट्रैकर के रूप में लॉन्च",
+  "en_body": "## Introducing openGym\n\n**openGym** is a newly released, open-source workout and body-weight tracking platform designed for users who want to manage their fitness data locally or self-hosted. Available via mobile app stores and direct downloads, the project aims to provide modern routine planning without relying on third-party cloud servers, mandatory subscriptions, or telemetry.\n\n## Key Features and Capabilities\n\n* **Self-Hosted or Standalone:** Users can run the platform via Docker on their own infrastructure or use standalone mobile apps locally without creating an external account.\n* **Comprehensive Exercise Library:** Includes thousands of searchable exercises categorized by muscle groups, complete with animated demonstrations and equipment filters.\n* **Routine Planning:** Offers starter plans such as Push/Pull/Legs and 5x5, supports flexible weekly schedules or open rotations, and accommodates advanced training styles like supersets, drop sets, and timed holds.\n* **Data Import and Export:** Allows imports from popular trackers like Strong, Hevy, and FitNotes, alongside Apple Health weight exports, with complete data export options to CSV or JSON formats.\n\n## Smart Tools and Integrations\n\n* **Live Progression Tracking:** Calculates estimated 1RM, tracks volume dynamically, and applies customizable progression rules.\n* **Optional AI Features:** An opt-in AI coach and Model Context Protocol (MCP) server can be configured using a personal provider key (such as Anthropic, OpenAI, or Ollama) to assist with routine drafting.\n* **Wearable Support:** Includes dedicated companion tools for smartwatches and lock-screen widgets for quick set logging.\n\n## Verification and Licensing\n\nSource code and documentation are hosted publicly on GitHub and mirrored on GitLab under the GNU AGPL v3.0 license. Users interested in verifying the original announcement, reviewing installation guides, or inspecting the roadmap can check the official repository and the embedded self-hosting documentation.",
+  "hi_body": "## ओपनजिम का परिचय\n\n**ओपनजिम (openGym)** एक नया ओपन-सोर्स वर्कआउट और बॉडी-वेट ट्रैकिंग प्लेटफ़ॉर्म है जिसे उन उपयोगकर्ताओं के लिए डिज़ाइन किया गया है जो अपने फ़िटनेस डेटा को स्थानीय रूप से या खुद होस्ट करके प्रबंधित करना चाहते हैं। मोबाइल ऐप स्टोर और डायरेक्ट डाउनलोड के माध्यम से उपलब्ध, यह प्रोजेक्ट तृतीय-पक्ष क्लाउड सर्वर, अनिवार्य सदस्यता या टेलीमेट्री पर निर्भरता के बिना आधुनिक रूटीन प्लानिंग प्रदान करने का प्रयास करता है।\n\n## मुख्य विशेषताएं और क्षमताएं\n\n* **सेल्फ़-होस्टेड या स्टैंडअलोन:** उपयोगकर्ता अपने बुनियादी ढांचे पर Docker के माध्यम से प्लेटफ़ॉर्म चला सकते हैं या बाहरी खाता बनाए बिना स्थानीय रूप से स्टैंडअलोन मोबाइल ऐप का उपयोग कर सकते हैं।\n* **व्यापक व्यायाम लाइब्रेरी:** इसमें एनिमेटेड प्रदर्शन और उपकरण फ़िल्टर के साथ मांसपेशियों के समूहों द्वारा वर्गीकृत हजारों खोजने योग्य व्यायाम शामिल हैं।\n* **रूटीन प्लानिंग:** पुश/पुल/लेग्स और 5x5 जैसे शुरुआती प्लान प्रदान करता है, लचीले साप्ताहिक शेड्यूल का समर्थन करता है, और सुपरसेट तथा ड्रॉप सेट जैसी उन्नत प्रशिक्षण शैलियों को समायोजित करता है।\n* **डेटा आयात और निर्यात:** स्ट्रॉन्ग (Strong), हेवी (Hevy), और फिटनोट्स (FitNotes) जैसे लोकप्रिय ट्रैकर्स से आयात की अनुमति देता है, साथ ही CSV या JSON प्रारूपों में पूर्ण डेटा निर्यात विकल्प भी प्रदान करता है।\n\n## स्मार्ट टूल और एकीकरण\n\n* **लाइव प्रगति ट्रैकिंग:** अनुमानित 1RM की गणना करता है, गतिशील रूप से वॉल्यूम को ट्रैक करता है, और अनुकूलन योग्य प्रगति नियमों को लागू करता है।\n* **वैकल्पिक एआई विशेषताएं:** रूटीन ड्राफ्टिंग में सहायता के लिए व्यक्तिगत प्रदाता कुंजी का उपयोग करके एक वैकल्पिक एआई कोच और मॉडल कॉन्टेक्स्ट प्रोटोकॉल (MCP) सर्वर को कॉन्फ़िगर किया जा सकता है।\n* **वेरेबल सपोर्ट:** इसमें स्मार्टवॉच के लिए समर्पित साथी टूल और त्वरित सेट लॉगिंग के लिए लॉक-स्क्रीन विजेट शामिल हैं।\n\n## सत्यापन और लाइसेंसिंग\n\nस्रोत कोड और दस्तावेज़ीकरण सार्वजनिक रूप से GitHub पर होस्ट किए गए हैं और GNU AGPL v3.0 लाइसेंस के तहत GitLab पर मिरर किए गए हैं। मूल घोषणा का सत्यापन करने, इंस्टॉलेशन गाइड की समीक्षा करने या रोडमैप का निरीक्षण करने के इच्छुक उपयोगकर्ता आधिकारिक रिपॉजिटरी की जाँच कर सकते हैं।",
+  "en_meta": "Discover openGym, an open-source workout tracker for self-hosting or standalone mobile use. Plan routines, log sessions, and keep your fitness data private.",
+  "hi_meta": "openGym की खोज करें, सेल्फ़-होस्टिंग या स्टैंडअलोन मोबाइल उपयोग के लिए एक ओपन-सोर्स वर्कआउट ट्रैकर। रूटीन प्लान करें और अपना फ़िटनेस डेटा निजी रखें।",
+  "en_keywords": [
+    "openGym",
+    "workout tracker",
+    "open-source fitness app",
+    "self-hosted gym tracker",
+    "routine planner"
+  ],
+  "hi_keywords": [
+    "openGym",
+    "ओपनजिम",
+    "वर्कआउट ट्रैकर",
+    "ओपन-सोर्स फ़िटनेस ऐप",
+    "जिम ट्रैकर"
+  ],
+  "source_published_at": null,
+  "id": "0ae590dc87ab",
+  "source": "https://github.com/DuarteSantos8/openGym",
+  "date": "2026-11-03T16:58:28.534113+00:00",
+  "source_title": "DuarteSantos8/openGym: Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or use it on the - GitHub",
+  "category": "gadgets",
+  "image_kind": "conceptual"
+}
