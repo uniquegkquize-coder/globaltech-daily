@@ -1,26 +1,41 @@
 {
-  "checked_at": "2026-11-03T22:01:47.765442+00:00",
+  "checked_at": "2026-11-03T22:30:41.992726+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "8e8745dd0414",
-    "31a27c7480fe"
+    "1885a2d1414d",
+    "a4fcd6020999"
   ],
   "results": [
     {
       "id": "8e8745dd0414",
-      "result": "published",
-      "title": "Barcelona 3-0 Aston Villa: Champions League – live"
+      "result": "no_material_change",
+      "title": "Raphinha, Lamal fire Barcelona to 3-0 Champions League win over Aston Villa"
     },
     {
       "id": "31a27c7480fe",
+      "result": "no_material_change",
+      "title": "Spanish transport minister resigns days after deadly train crash"
+    },
+    {
+      "id": "1885a2d1414d",
       "result": "published",
-      "title": "Spanish transport minister resigns after deadly train crash"
+      "title": "ChatGPT has hit roughly 20% of Google Search volume, OpenAI says"
+    },
+    {
+      "id": "2554ba3f6222",
+      "result": "no_material_change",
+      "title": "Trump says US will stop $5.7b in aid to Israel in surprise announcement"
+    },
+    {
+      "id": "a4fcd6020999",
+      "result": "published",
+      "title": "Defying Online Backlash, The Ferrari Luce EV Is Already Sold Out Through 2027"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 6
+      "articles": 5
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
@@ -28,7 +43,7 @@
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 6
+      "articles": 7
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
@@ -36,11 +51,11 @@
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
-      "articles": 19
+      "articles": 21
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
-      "articles": 16
+      "articles": 14
     },
     "https://www.arabnews.com/rss.xml": {
       "status": "unavailable",
@@ -50,71 +65,64 @@
       "status": "ok",
       "articles": 1
     },
-    "https://www.theguardian.com/business/rss": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://feeds.bbci.co.uk/news/business/rss.xml": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://feeds.bloomberg.com/markets/news.rss": {
-      "status": "ok",
-      "articles": 16
-    },
-    "https://feeds.bloomberg.com/economics/news.rss": {
-      "status": "ok",
-      "articles": 1
-    },
-    "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://feeds.npr.org/1006/rss.xml": {
+    "https://www.firstshowing.net/feed/": {
       "status": "ok",
       "articles": 3
     },
-    "https://news.abplive.com/business/feed": {
+    "https://www.comingsoon.net/feed": {
+      "status": "ok",
+      "articles": 20
+    },
+    "https://www.motor1.com/rss/news/all/": {
       "status": "ok",
       "articles": 2
     },
-    "https://www.espn.com/espn/rss/news": {
+    "https://www.carscoops.com/feed/": {
+      "status": "ok",
+      "articles": 9
+    },
+    "https://insideevs.com/rss/news/all/": {
+      "status": "ok",
+      "articles": 3
+    },
+    "https://www.gsmarena.com/rss-news-reviews.php3": {
+      "status": "ok",
+      "articles": 4
+    },
+    "https://www.androidauthority.com/feed/": {
+      "status": "ok",
+      "articles": 14
+    },
+    "https://www.sammobile.com/feed/": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://9to5google.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://variety.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://deadline.com/feed/": {
+      "status": "ok",
+      "articles": 12
+    },
+    "https://www.hollywoodreporter.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml": {
+      "status": "ok",
+      "articles": 2
+    },
+    "https://feeds.npr.org/1004/rss.xml": {
       "status": "ok",
       "articles": 0
-    },
-    "https://www.espn.com/espn/rss/soccer/news": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.espn.com/espn/rss/nba/news": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://feeds.bbci.co.uk/sport/rss.xml": {
-      "status": "ok",
-      "articles": 13
-    },
-    "https://www.theguardian.com/sport/rss": {
-      "status": "ok",
-      "articles": 8
-    },
-    "https://www.france24.com/en/sport/rss": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://news.abplive.com/sports/feed": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://news.abplive.com/auto/feed": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.engadget.com/rss.xml": {
-      "status": "ok",
-      "articles": 17
     }
   },
-  "discovered": 434,
-  "trending_events": 9
+  "discovered": 418,
+  "trending_events": 7,
+  "provider_backoff_seconds": 3600
 }
