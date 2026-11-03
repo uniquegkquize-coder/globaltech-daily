@@ -18,6 +18,7 @@ from official_notices import load_notices
 from directories import CSS as DIRECTORY_CSS, JS as DIRECTORY_JS, render as render_directories
 R=Path(__file__).resolve().parents[1]; OUT=R/'dist'; SITE='https://globewiredaily.org'.rstrip('/'); CONTACT='contact@globewiredaily.org'
 OUT.mkdir(parents=True,exist_ok=True)
+(OUT/'d9e47b8c32a16f5098c7d6e5b4a3210f.txt').write_text('d9e47b8c32a16f5098c7d6e5b4a3210f\n',encoding='utf-8')
 GENERATED_HTML=set()
 (OUT/'googled7fc3627b4add656.html').write_text('google-site-verification: googled7fc3627b4add656.html\n',encoding='utf-8')
 def e(x):return html.escape(str(x or ''),quote=True)
