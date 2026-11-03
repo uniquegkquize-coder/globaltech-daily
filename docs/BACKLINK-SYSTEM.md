@@ -11,7 +11,7 @@ Daily at **01:43 UTC / 07:13 India time** the independent workflow researches at
 most 30 candidates with a 480-second research budget. Mondays also verify imported
 links (180-second budget) and save an immutable ISO-week snapshot. Manual dispatch
 can request weekly verification. Tests also run on implementation pushes; research
-runs only on main for schedule/dispatch. Scheduled runs begin only after merge.
+runs only on main for schedule/dispatch and relevant implementation pushes.\nPR #2 has been merged; the daily schedule is now installed on main.
 GitHub can delay scheduled executions; free-runner availability is not guaranteed.
 
 ```
