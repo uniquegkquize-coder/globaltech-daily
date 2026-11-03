@@ -1,25 +1,25 @@
 {
-  "checked_at": "2026-11-03T18:12:55.681716+00:00",
+  "checked_at": "2026-11-03T19:01:16.445512+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "98d7c391bc50",
-    "b0284974e65b"
+    "b39242fba58f",
+    "b3922c87fbdb"
   ],
   "results": [
     {
-      "id": "cf40debca952",
-      "result": "no_material_change",
-      "title": "Jury Begins Deliberation in Russell Brand’s Rape and Sexual Assault Trial"
+      "id": "2554ba3f6222",
+      "result": "source_unavailable",
+      "title": "U.S. will stop $4B in aid to Israel at the end of the year, Trump says"
     },
     {
-      "id": "98d7c391bc50",
+      "id": "b39242fba58f",
       "result": "published",
-      "title": "Ian McKellen pays emotional tribute to Patrick Stewart at a gala in London - Watch"
+      "title": "The next Elder Scrolls game is officially called Sentinel"
     },
     {
-      "id": "b0284974e65b",
+      "id": "b3922c87fbdb",
       "result": "published",
-      "title": "Nicole Taylor, Country Singer in Triplet Trio Taylor Red, Dies at 35"
+      "title": "Seven flights across Europe targeted by suspected bomb threats"
     }
   ],
   "feeds": {
@@ -33,7 +33,7 @@
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 11
+      "articles": 9
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
@@ -53,73 +53,65 @@
     },
     "https://news.google.com/rss/search?q=site%3Aspa.gov.sa%20when%3A1d&hl=en-US&gl=US&ceid=US%3Aen": {
       "status": "ok",
-      "articles": 0
-    },
-    "https://blog.google/rss/": {
-      "status": "ok",
-      "articles": 5
-    },
-    "https://www.nasa.gov/feed/": {
-      "status": "ok",
-      "articles": 2
-    },
-    "https://www.technologyreview.com/feed/": {
-      "status": "ok",
       "articles": 1
     },
-    "https://www.bleepingcomputer.com/feed/": {
+    "https://rss.dw.com/rdf/rss-en-top": {
       "status": "ok",
-      "articles": 4
+      "articles": 9
     },
-    "https://www.cnet.com/rss/news/": {
-      "status": "ok",
-      "articles": 6
-    },
-    "https://www.techradar.com/feeds.xml": {
-      "status": "ok",
-      "articles": 30
-    },
-    "https://feeds.npr.org/1019/rss.xml": {
+    "https://feeds.skynews.com/feeds/rss/world.xml": {
       "status": "ok",
       "articles": 0
     },
-    "https://variety.com/v/film/feed/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://www.theguardian.com/film/rss": {
-      "status": "ok",
-      "articles": 3
-    },
-    "https://www.theguardian.com/culture/rss": {
-      "status": "ok",
-      "articles": 4
-    },
-    "https://feeds.npr.org/1045/rss.xml": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://ew.com/feed/": {
+    "https://www.cbc.ca/webfeed/rss/rss-world": {
       "status": "unavailable",
       "articles": 0
     },
-    "https://www.rollingstone.com/feed/": {
+    "https://www.abc.net.au/news/feed/51120/rss.xml": {
       "status": "ok",
-      "articles": 10
+      "articles": 18
     },
-    "https://news.abplive.com/entertainment/movies/feed": {
+    "https://timesofindia.indiatimes.com/rssfeedstopstories.cms": {
       "status": "ok",
-      "articles": 4
+      "articles": 26
     },
-    "https://news.abplive.com/entertainment/television/feed": {
+    "https://feeds.nbcnews.com/nbcnews/public/world": {
       "status": "ok",
       "articles": 2
     },
-    "https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms": {
+    "https://rss.nytimes.com/services/xml/rss/nyt/World.xml": {
       "status": "ok",
-      "articles": 16
+      "articles": 11
+    },
+    "https://techcrunch.com/feed/": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://techcrunch.com/category/artificial-intelligence/feed/": {
+      "status": "ok",
+      "articles": 6
+    },
+    "https://www.theverge.com/rss/index.xml": {
+      "status": "ok",
+      "articles": 10
+    },
+    "https://feeds.arstechnica.com/arstechnica/index": {
+      "status": "ok",
+      "articles": 6
+    },
+    "https://www.wired.com/feed/rss": {
+      "status": "ok",
+      "articles": 4
+    },
+    "https://www.wired.com/feed/tag/ai/latest/rss": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://www.engadget.com/rss.xml": {
+      "status": "ok",
+      "articles": 18
     }
   },
-  "discovered": 435,
-  "trending_events": 10
+  "discovered": 468,
+  "trending_events": 9
 }
