@@ -1,26 +1,35 @@
 {
-  "checked_at": "2026-11-03T01:35:03.298751+00:00",
+  "checked_at": "2026-11-03T02:28:48.720627+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "9bcfdc55331d",
-    "c2029f7db0b7"
+    "f2f73bf56802"
   ],
   "results": [
     {
+      "id": "f2f73bf56802",
+      "result": "published",
+      "title": "Man and boy arrested after allegedly attacking One Nation volunteer with baseball bat in Australia"
+    },
+    {
       "id": "9bcfdc55331d",
-      "result": "updated",
-      "title": "Russian bombing of Ukrainian aid centre kills at least 26, Kyiv says"
+      "result": "no_material_change",
+      "title": "Russian bombing kills 26 people at Ukraine aid centre, Kyiv says"
+    },
+    {
+      "id": "57cdcd943aa8",
+      "result": "source_unavailable",
+      "title": "Multiple Russian strikes kill at least 26 at Ukraine aid centre"
     },
     {
       "id": "c2029f7db0b7",
-      "result": "published",
+      "result": "no_material_change",
       "title": "Investigative journalist Kate McClymont gives evidence in Alan Jones indecent assault trial"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 8
+      "articles": 7
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
@@ -36,7 +45,7 @@
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
-      "articles": 16
+      "articles": 17
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
@@ -50,63 +59,67 @@
       "status": "ok",
       "articles": 0
     },
-    "https://rss.dw.com/rdf/rss-en-top": {
+    "https://www.nasa.gov/feed/": {
       "status": "ok",
-      "articles": 4
+      "articles": 2
     },
-    "https://feeds.skynews.com/feeds/rss/world.xml": {
+    "https://www.wired.com/feed/category/science/latest/rss": {
       "status": "ok",
       "articles": 0
     },
-    "https://www.cbc.ca/webfeed/rss/rss-world": {
+    "https://feeds.arstechnica.com/arstechnica/science": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://news.abplive.com/health/feed": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://www.ign.com/rss/articles/feed": {
+      "status": "ok",
+      "articles": 20
+    },
+    "https://www.gamespot.com/feeds/mashup/": {
+      "status": "ok",
+      "articles": 6
+    },
+    "https://www.theguardian.com/environment/rss": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.theguardian.com/travel/rss": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.theguardian.com/education/rss": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.theguardian.com/lifeandstyle/rss": {
+      "status": "ok",
+      "articles": 2
+    },
+    "https://www.apple.com/newsroom/rss-feed.rss": {
+      "status": "ok",
+      "articles": 1
+    },
+    "https://news.samsung.com/global/feed": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.microsoft.com/en-us/research/feed/": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.prnewswire.com/rss/news-releases-list.rss": {
+      "status": "ok",
+      "articles": 20
+    },
+    "https://www.reutersagency.com/feed/": {
       "status": "unavailable",
       "articles": 0
-    },
-    "https://www.abc.net.au/news/feed/51120/rss.xml": {
-      "status": "ok",
-      "articles": 25
-    },
-    "https://timesofindia.indiatimes.com/rssfeedstopstories.cms": {
-      "status": "ok",
-      "articles": 18
-    },
-    "https://feeds.nbcnews.com/nbcnews/public/world": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://rss.nytimes.com/services/xml/rss/nyt/World.xml": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://techcrunch.com/feed/": {
-      "status": "ok",
-      "articles": 8
-    },
-    "https://techcrunch.com/category/artificial-intelligence/feed/": {
-      "status": "ok",
-      "articles": 3
-    },
-    "https://www.theverge.com/rss/index.xml": {
-      "status": "ok",
-      "articles": 8
-    },
-    "https://feeds.arstechnica.com/arstechnica/index": {
-      "status": "ok",
-      "articles": 4
-    },
-    "https://www.wired.com/feed/rss": {
-      "status": "ok",
-      "articles": 4
-    },
-    "https://www.wired.com/feed/tag/ai/latest/rss": {
-      "status": "ok",
-      "articles": 0
-    },
-    "https://www.engadget.com/rss.xml": {
-      "status": "ok",
-      "articles": 7
     }
   },
-  "discovered": 239,
-  "trending_events": 5
+  "discovered": 216,
+  "trending_events": 6
 }
