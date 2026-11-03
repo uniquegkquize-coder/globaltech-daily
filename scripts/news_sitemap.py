@@ -8,7 +8,7 @@ def is_news_article(post):
     return post.get('content_type')!='evergreen_directory_guide' and not post.get('directory_kind')
 
 
-def write_news_sitemap(out, site, posts, article_path, title, now=None):
+def write_news_sitemap(out, site, posts, article_path, title, now=None, languages=None):
     now = now or dt.datetime.now(dt.timezone.utc)
     entries = []
     for post in posts:
@@ -23,7 +23,7 @@ def write_news_sitemap(out, site, posts, article_path, title, now=None):
                 continue
         except (ValueError, KeyError, TypeError):
             continue
-        for lang in ('en', 'hi'):
+        for lang in (languages(post) if languages is not None else ('en', 'hi')):
             entries.append('<url><loc>' + escape(site + article_path(post, lang))
                 + '</loc><news:news><news:publication><news:name>GlobeWire Daily</news:name>'
                 + '<news:language>' + lang + '</news:language></news:publication>'

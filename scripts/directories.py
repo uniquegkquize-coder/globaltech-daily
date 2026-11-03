@@ -244,7 +244,9 @@ def render(out,site,shell,write):
     cards.append(f'<article class="directory-card" data-item {attrs} data-search="{esc((" ".join(row)).lower())}">{thumbnail}<h2><a href="/{lang}/{kind}/{entry_slug(n)}/">{esc(n)}</a></h2>{detail}<p>{tr("Fees, eligibility, placement or product prices: verify with official source.","फीस, पात्रता, प्लेसमेंट या कीमत: आधिकारिक स्रोत से जाँचें।")}</p><a href="{esc(url)}" rel="noopener noreferrer" target="_blank">{tr("Source website","स्रोत वेबसाइट")} ↗</a></article>')
     detail_url=site+'/'+lang+'/'+kind+'/'+entry_slug(n)+'/'
     entry=detailed_profiles().get(kind,{}).get(n,{})
-    page=shell(lang,n,'Source-listed courses and specifications for '+n,detail_url,entry_detail(kind,row,lang,out))
+    desc=(n+' — '+{'colleges':'courses, admissions, eligibility and fee references','cars':'car specifications, variants and price references','phones':'phone specifications, display, battery and price references','bikes':'bike specifications, engine, mileage and price references'}[kind]+'. Read source-linked details where available.') if lang=='en' else n+' की '+{'colleges':'कोर्स, प्रवेश, पात्रता और फीस','cars':'कार स्पेसिफिकेशन, वेरिएंट और कीमत','phones':'फोन स्पेसिफिकेशन, डिस्प्ले, बैटरी और कीमत','bikes':'बाइक स्पेसिफिकेशन, इंजन, माइलेज और कीमत'}[kind]+' की स्रोत सहित उपलब्ध जानकारी देखें।'
+    seo_title=n+(' — '+{'colleges':'Courses, Fees & Admissions','cars':'Specs & Price References','phones':'Specs, Features & Price References','bikes':'Specs, Mileage & Price References'}[kind] if lang=='en' else ' — '+{'colleges':'कोर्स, फीस और प्रवेश','cars':'स्पेसिफिकेशन और कीमत की जानकारी','phones':'फीचर्स, स्पेसिफिकेशन और कीमत','bikes':'स्पेसिफिकेशन, माइलेज और कीमत'}[kind])
+    page=shell(lang,seo_title,desc,detail_url,entry_detail(kind,row,lang,out))
     if meaningful(entry):page=page.replace('</head>',schema(kind,n,entry,detail_url,photo(kind,n,out))+'</head>')
     else:page=page.replace('content="index,follow,max-image-preview:large"','content="noindex,follow,max-image-preview:large"')
     write(out/lang/kind/entry_slug(n)/'index.html',page)

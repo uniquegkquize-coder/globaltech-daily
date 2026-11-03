@@ -1,6 +1,7 @@
 from pathlib import Path
 from news_sitemap import write_news_sitemap, is_news_article
 from seo_text import description as seo_description
+from seo_site import head as seo_head, article_languages, iso_date, json_ld, category_description, write_site_sitemap, related_index, ROBOTS
 from redirect_assets import write_redirects
 from site_ui import MENU_CSS, label
 from news_config import CATEGORIES, memberships
@@ -15,16 +16,18 @@ from official_notices import load_notices
 from directories import CSS as DIRECTORY_CSS, JS as DIRECTORY_JS, render as render_directories
 R=Path(__file__).resolve().parents[1]; OUT=R/'dist'; SITE='https://globewiredaily.org'.rstrip('/'); CONTACT='contact@globewiredaily.org'
 OUT.mkdir(parents=True,exist_ok=True)
+GENERATED_HTML=set()
 (OUT/'googled7fc3627b4add656.html').write_text('google-site-verification: googled7fc3627b4add656.html\n',encoding='utf-8')
 def e(x):return html.escape(str(x or ''),quote=True)
 def write(p,s):
+ if p.name=='index.html':GENERATED_HTML.add(p.relative_to(OUT).as_posix())
  p.parent.mkdir(parents=True,exist_ok=True)
  data=s.encode('utf-8')
  if p.is_file() and p.read_bytes()==data:return
  p.write_bytes(data)
 def title(p,lang):
  raw=str(p.get(lang+'_seo_title') or p.get(lang+'_title') or p.get('en_title') or 'Technology news')
- return re.sub(r'\\s*[—–-]\\s*article featured image\\s*$', '', raw, flags=re.I).strip()
+ return re.sub(r'\s*[—–-]\s*article featured image\s*$', '', raw, flags=re.I).strip()
 TOOLS=[('ChatGPT','Writing, reasoning and coding','https://chatgpt.com/','Assistant'),('Gemini','Multimodal AI assistant','https://gemini.google.com/','Assistant'),('Claude','Writing and analysis','https://claude.ai/','Assistant'),('Perplexity','Research with linked sources','https://www.perplexity.ai/','Research'),('NotebookLM','Research from your own sources','https://notebooklm.google.com/','Research'),('Google AI Studio','Experiment with Gemini models','https://aistudio.google.com/','Developer'),('Hugging Face','Explore models and datasets','https://huggingface.co/','Developer'),('Canva','Visual content design','https://www.canva.com/','Design'),('GitHub Copilot','AI-assisted programming','https://github.com/features/copilot','Developer'),('Adobe Firefly','Creative generative AI','https://firefly.adobe.com/','Design')]
 def category(p):return p.get('category') if p.get('category') in CATEGORIES else 'technology'
 def slug(p):return re.sub('[^a-f0-9]','',str(p.get('id','')))[:32]
@@ -114,6 +117,7 @@ write(OUT/'style.css',CSS + MENU_CSS + HUB_CSS + GLOBAL_CSS + EXAM_CSS)
 JS='''addEventListener('scroll',()=>{let d=document.documentElement;let m=d.scrollHeight-d.clientHeight;let b=document.querySelector('.reading');if(b)b.style.width=(m>0?100*d.scrollTop/m:0)+'%';},{passive:true});'''
 JS += """document.addEventListener('click',async function(ev){const share=ev.target.closest('.native-share');if(share){const data={title:share.dataset.shareTitle,url:share.dataset.shareUrl};if(navigator.share){try{await navigator.share(data)}catch(err){if(err.name!=='AbortError')location.href='https://api.whatsapp.com/send?text='+encodeURIComponent(data.title+' '+data.url)}}else{location.href='https://api.whatsapp.com/send?text='+encodeURIComponent(data.title+' '+data.url)}}const copy=ev.target.closest('.copy-share');if(copy){try{await navigator.clipboard.writeText(copy.dataset.shareUrl);const old=copy.textContent;copy.textContent='✓ Copied';setTimeout(()=>copy.textContent=old,1800)}catch(err){prompt('Copy link:',copy.dataset.shareUrl)}}});"""
 CSS += """.category-pagination{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:30px 0 48px;flex-wrap:wrap}.category-pagination a{display:inline-block;background:#fff;border:1px solid #d9e5f0;border-radius:9px;padding:8px 13px;text-decoration:none}"""
+CSS += """.skip-link{position:absolute;left:12px;top:-100px;z-index:999999;background:white;color:#123;padding:10px}.skip-link:focus{top:10px}.topic-directory{columns:3;column-gap:30px}.topic-directory li{break-inside:avoid;margin:0 0 12px}@media(max-width:700px){.topic-directory{columns:2}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}"""
 CSS += """.breadcrumbs{font-size:13px;line-height:1.6;color:#5b6c83;margin-bottom:14px;overflow-wrap:anywhere}.breadcrumbs a{color:#12588b;text-decoration:none}.breadcrumbs span{color:#667085}"""
 CSS += """.article-tags{margin:26px 0;padding:16px 0;border-top:1px solid #e5ebf3;border-bottom:1px solid #e5ebf3}.article-tags strong{display:block;font-size:14px;margin-bottom:10px}.tag-list{display:flex;gap:8px;flex-wrap:wrap}.tag{font-size:12px;padding:5px 11px;background:#eef4fa;color:#24496a;border:1px solid #dce7f2;border-radius:100px}.related .related-card{padding:0;overflow:hidden;background:#f2f7fc}.related-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}.related-card span:not(.related-placeholder){display:block;padding:12px;font-size:14px;line-height:1.5}.related-placeholder{display:flex;align-items:center;justify-content:center;min-height:120px;background:#e4edf7;color:#49617a;font-size:12px}.trending-news{margin-top:32px;border-top:1px solid #dfe7ef;padding-top:20px}.trending-list{display:grid;gap:12px}.trending-list a{display:flex;align-items:center;gap:14px;background:#f7f9fc;padding:10px;border-radius:10px;text-decoration:none;font-weight:650;line-height:1.5}.trending-list img{width:100px;height:68px;object-fit:cover;border-radius:7px;flex-shrink:0}@media(max-width:560px){.related{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.related-card span:not(.related-placeholder){font-size:12px;padding:9px}.trending-list img{width:82px;height:58px}}"""
 CSS += """.article{max-width:850px;margin:28px auto 50px;padding:clamp(20px,4vw,42px);line-height:1.85}.article h1{font-size:clamp(30px,4vw,46px);line-height:1.2}.article .story{font-size:17px;line-height:1.9}.article .story h2{margin:30px 0 12px;font-size:26px}.article .story h3{margin:24px 0 10px;font-size:21px}.article .story p{margin-bottom:20px}.article .hero{width:100%;height:auto;border-radius:12px}.author-about{margin:32px 0;padding:22px;background:#f5f8fc;border:1px solid #e0e8f1;border-radius:14px}.author-about h2{margin:0 0 8px;font-size:20px}@media(max-width:600px){.article{margin:14px auto 28px;padding:18px}.article .story{font-size:16px;line-height:1.8}.article .story h2{font-size:22px}}"""
@@ -169,12 +173,19 @@ CSS += """/* Category menu is OUTSIDE the scrolling nav, so it cannot be clipped
 """
 write(OUT/'style.css',CSS + MENU_CSS + HUB_CSS + GLOBAL_CSS + EXAM_CSS)
 write(OUT/'site.js',JS + HUB_JS + GLOBAL_JS)
-def shell(lang,t,desc,url,body,extra=''):
+def shell(lang,t,desc,url,body,extra='',*,alternate_urls=None,canonical_url=None,robots=ROBOTS,document_lang=None):
+ desc=seo_description(desc,body,t)
+ page_title=t if 'GlobeWire Daily' in t else t+' | GlobeWire Daily'
+ meta=seo_head(document_lang or lang,page_title,desc,url,extra,site=SITE,alternates=alternate_urls,canonical=canonical_url,robots=robots)
+ target_lang='hi' if lang=='en' else 'en'
+ switch_url=(alternate_urls.get(target_lang) if alternate_urls is not None else url.replace('/en/','/hi/',1) if lang=='en' else url.replace('/hi/','/en/',1)) or f'{SITE}/{target_lang}/'
+ switch_label=('हिन्दी' if lang=='en' else 'English')
+ if alternate_urls is not None and target_lang not in alternate_urls:switch_label+=' Home'
  nav=[('Home','होम',''),('Latest News','ताज़ा खबरें','all-news/'),('Global Topics','वैश्विक विषय','global-topics/'),('Jobs & Exams','नौकरी और परीक्षा','jobs-exams/'),('Tech & AI','टेक और AI','technology/'),('Entertainment','मनोरंजन','movies-entertainment/'),('Jobs & Schemes','नौकरी और योजनाएँ','sarkari-naukri/')]
  links=''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in nav)
  more=[('All Latest News','सभी ताज़ा खबरें','all-news/'),('Jobs & Exam Hub','नौकरी और परीक्षा हब','jobs-exams/'),('Launches & Specs','लॉन्च और स्पेक्स','launches/'),('Freebies & Discounts','फ्रीबीज़ और डिस्काउंट','freebies-deals/'),('Study Abroad Guide','विदेश में पढ़ाई','study-abroad-guide/'),('Jobs Archive','पुराने नोटिस','jobs-archive/'),('AI Tools','AI टूल्स','tools/'),('College Finder','कॉलेज खोजें','colleges/'),('Course Explorer','कोर्स खोजें','courses/'),('Car Explorer','कार खोजें','cars/'),('Phone Explorer','फोन खोजें','phones/'),('Bike Explorer','बाइक खोजें','bikes/')]+[(en,hi,cat+'/') for cat,(en,hi) in CATEGORIES.items()]+[('About','हमारे बारे में','about/'),('Contact','संपर्क','contact/')]
  more_html='<details class="nav-more"><summary>'+('More' if lang=='en' else 'और देखें')+'</summary><div class="nav-more-list">'+''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in more)+'</div></details>'
- return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script><title>{e(t)}</title><meta name="description" content="{e(desc[:160])}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="{e(url)}"><link rel="alternate" hreflang="en" href="{e(url.replace('/hi/','/en/'))}"><link rel="alternate" hreflang="hi" href="{e(url.replace('/en/','/hi/'))}"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css?v={hashlib.sha256((CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS).encode()).hexdigest()[:12]}">{extra}</head><body><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="{e(url.replace('/en/','/hi/',1) if lang=='en' else url.replace('/hi/','/en/',1)) if ('/en/' in url or '/hi/' in url) else '/'+('hi' if lang=='en' else 'en')+'/'}" hreflang="{'hi' if lang=='en' else 'en'}">{'हिन्दी' if lang=='en' else 'English'}</a></nav><div class="category-menu">{more_html}</div></div></header><main>{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>{label("Independent bilingual news and explainers, with clear sourcing, corrections and transparent editorial standards.",lang)}</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{label(s.title(),lang)}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools'])}</div></div></footer><script defer src="/site.js?v={hashlib.sha256((JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS).encode()).hexdigest()[:12]}"></script></body></html>'''
+ return f'''<!doctype html><html lang="{document_lang or lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script>{meta}<meta name="generator" content="GlobeWire SEO v2"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css?v={hashlib.sha256((CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS).encode()).hexdigest()[:12]}"></head><body><a class="skip-link" href="#main-content">{'Skip to content' if lang=='en' else 'मुख्य सामग्री पर जाएँ'}</a><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="{e(switch_url)}" hreflang="{target_lang}">{switch_label}</a></nav><div class="category-menu">{more_html}</div></div></header><main id="main-content">{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>{label("Independent bilingual news and explainers, with clear sourcing, corrections and transparent editorial standards.",lang)}</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{label(s.title(),lang)}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools','site-map'])}</div></div></footer><script defer src="/site.js?v={hashlib.sha256((JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS).encode()).hexdigest()[:12]}"></script></body></html>'''
 @functools.lru_cache(maxsize=None)
 def image_digest(ident):
  try:return hashlib.sha256((OUT/'images'/f'{ident}.jpg').read_bytes()).hexdigest()[:12]
@@ -238,6 +249,12 @@ def image_for(p):
  draw.rectangle((75,610,610,660),fill=(20,66,92))
  draw.text((90,616),'EDITORIAL ILLUSTRATION',font=small_font,fill=(224,239,247))
  canvas.save(dest,'JPEG',quality=88,optimize=True)
+@functools.lru_cache(maxsize=None)
+def image_dimensions(ident):
+ try:
+  with Image.open(OUT/'images'/f'{ident}.jpg') as image:return image.size
+ except (OSError,ValueError):return (1280,720)
+
 def body_html(raw):
  # Render the small, supported Markdown subset without exposing formatting tokens.
  def inline(value):return linked_inline(value)
@@ -379,15 +396,29 @@ def display_date(value):
  except (ValueError,TypeError):return str(value or '')[:10]
 
 def limit_article_words(raw,limit=10000):
- parts=re.findall(r'\\S+',str(raw or ''))
+ parts=re.findall(r'\S+',str(raw or ''))
  if len(parts)<=limit:return str(raw or '')
  return ' '.join(parts[:limit]).rstrip(' ,;:')+'…'
 
+RELATED_POSTS=related_index(POSTS)
+logo=Image.new('RGB',(512,512),(10,20,41));draw=ImageDraw.Draw(logo)
+draw.ellipse((40,40,472,472),outline=(92,224,220),width=12)
+draw.text((140,205),'GW',fill='white',font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',100) if Path('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf').exists() else ImageFont.load_default(size=100))
+logo.save(OUT/'publisher-logo.png')
+social=Image.new('RGB',(1200,630),(10,20,41));draw=ImageDraw.Draw(social)
+font_path=Path('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf')
+font=ImageFont.truetype(str(font_path),68) if font_path.exists() else ImageFont.load_default(size=68)
+small=ImageFont.truetype(str(font_path),30) if font_path.exists() else ImageFont.load_default(size=30)
+draw.text((65,170),'GlobeWire Daily',fill='white',font=font);draw.text((70,295),'News, context and useful explainers',fill=(92,224,220),font=small);draw.text((70,500),'globewiredaily.org',fill='white',font=small)
+social.save(OUT/'social-card.jpg','JPEG',quality=85,optimize=True)
 for p in POSTS:image_for(p)
 for p in POSTS:
  s=slug(p)
  for lang in ('en','hi'):
-  t=title(p,lang);raw=limit_article_words(p.get(lang+'_body') or p.get('en_body',''));url=f'{SITE}{article_path(p,lang)}';desc=seo_description(p.get(lang+'_meta'),raw,t)
+  available=article_languages(p);fallback=lang not in available;content_lang='en' if fallback else lang
+  t=title(p,content_lang);raw=limit_article_words(p.get(content_lang+'_body') or p.get('en_body',''));url=f'{SITE}{article_path(p,lang)}';desc=seo_description(p.get(content_lang+'_meta'),raw,t)
+  canonical_url=f'{SITE}{article_path(p,"en")}' if fallback else url
+  alternate_urls={code:SITE+article_path(p,code) for code in available}
   schema={'@context':'https://schema.org','@type':'NewsArticle' if is_news_article(p) else 'Article','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('updated_at') or p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg?v={image_version(p)}'] if has_featured(p) else []),'author':{'@type':'Organization','name':author_name(p),'url':f'{SITE}/{lang}/author/{author_handle(p)}/'},'publisher':{'@type':'Organization','name':'GlobeWire Daily','url':SITE},'isBasedOn':p['source']}
   if not has_featured(p):schema.pop('image',None)
   schema['breadcrumb']={'@type':'BreadcrumbList','itemListElement':[
@@ -397,14 +428,25 @@ for p in POSTS:
   schema['keywords']=article_keywords(p,lang)
   schema['description']=desc[:160]
   schema['url']=url
-  schema_json=json.dumps(schema,ensure_ascii=False).replace('<',chr(92)+'u003c')
+  crumbs=schema.pop('breadcrumb')
+  schema['@id']=canonical_url+'#article';schema['url']=canonical_url
+  schema['mainEntityOfPage']={'@id':canonical_url+'#webpage'}
+  schema['inLanguage']=content_lang;schema['articleSection']=CATEGORIES[category(p)][content_lang=='hi']
+  schema['publisher']={'@id':SITE+'/#publisher'}
+  for field in ('datePublished','dateModified'):
+   stamp=iso_date(schema.get(field))
+   if stamp:schema[field]=stamp
+   else:schema.pop(field,None)
+  schema_json=json.dumps({'@context':'https://schema.org','@graph':[schema,crumbs]},ensure_ascii=False).replace('<',chr(92)+'u003c')
   extra_keywords='<meta name="keywords" content="'+e(', '.join(article_keywords(p,lang)))+'">'
-  og_image=f'<meta property="og:image" content="{SITE}/images/{s}.jpg?v={image_version(p)}"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta property="og:image:alt" content="{e(image_alt(p,lang))}"><meta name="twitter:image" content="{SITE}/images/{s}.jpg?v={image_version(p)}">' if has_featured(p) else ''
-  extra=f'<meta property="og:type" content="article"><meta property="og:url" content="{e(url)}"><meta property="og:site_name" content="GlobeWire Daily"><meta property="og:locale" content="{"en_US" if lang=="en" else "hi_IN"}"><meta property="og:title" content="{e(t)}"><meta property="og:description" content="{e(desc[:160])}"><meta property="article:published_time" content="{e(p.get("date",""))}"><meta property="article:section" content="{e(CATEGORIES[category(p)][0])}">{og_image}<meta name="twitter:card" content="{"summary_large_image" if has_featured(p) else "summary"}"><meta name="twitter:title" content="{e(t)}"><meta name="twitter:description" content="{e(desc[:160])}"><script type="application/ld+json">{schema_json}</script>'
+  image_width,image_height=image_dimensions(s)
+  og_image=f'<meta property="og:image" content="{SITE}/images/{s}.jpg?v={image_version(p)}"><meta property="og:image:width" content="{image_width}"><meta property="og:image:height" content="{image_height}"><meta property="og:image:alt" content="{e(image_alt(p,lang))}"><meta name="twitter:image" content="{SITE}/images/{s}.jpg?v={image_version(p)}">' if has_featured(p) else ''
+  extra=f'<meta property="og:type" content="article"><meta property="og:url" content="{e(canonical_url)}"><meta property="og:site_name" content="GlobeWire Daily"><meta property="og:locale" content="{"en_US" if lang=="en" else "hi_IN"}"><meta property="og:title" content="{e(t)}"><meta property="og:description" content="{e(desc[:160])}"><meta property="article:published_time" content="{e(p.get("date",""))}"><meta property="article:section" content="{e(CATEGORIES[category(p)][0])}">{og_image}<meta name="twitter:card" content="{"summary_large_image" if has_featured(p) else "summary"}"><meta name="twitter:title" content="{e(t)}"><meta name="twitter:description" content="{e(desc[:160])}"><script type="application/ld+json">{schema_json}</script>'
   extra=extra_keywords+extra
+  if schema.get("dateModified"):extra+='<meta property="article:modified_time" content="'+e(schema["dateModified"])+'">'
   sourcehost=urlparse(p['source']).hostname or 'original source'
-  summary=e(p.get(lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
-  featured_html=(f'<img class="hero" src="/images/{s}.jpg?v={image_version(p)}" width="1280" height="720" fetchpriority="high" alt="{e(image_alt(p,lang))}"><p class="notice">{image_caption_html(p,lang)}</p>' if has_featured(p) else '')
+  summary=e(p.get(content_lang+'_summary') or p.get('en_summary') or re.sub(r'[#\n]+',' ',raw)[:270])
+  featured_html=(f'<img class="hero" src="/images/{s}.jpg?v={image_version(p)}" width="{image_width}" height="{image_height}" fetchpriority="high" alt="{e(image_alt(p,lang))}"><p class="notice">{image_caption_html(p,lang)}</p>' if has_featured(p) else '')
   share_text=('Share this article' if lang=='en' else 'यह खबर शेयर करें')
   copy_text=('Copy link' if lang=='en' else 'लिंक कॉपी करें')
   share_html=(f'<div class="article-share"><strong>{share_text}</strong><div class="share-actions">'
@@ -413,14 +455,12 @@ for p in POSTS:
     f'<a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u={quote(url,safe="")}">Facebook</a>'
     f'<a target="_blank" rel="noopener noreferrer" href="https://t.me/share/url?url={quote(url,safe="")}&text={quote(t)}">Telegram</a>'
     f'<button type="button" class="copy-share" data-share-url="{e(url)}">{copy_text}</button></div></div>')
-  preferred=p.get('related_post_ids',[])
-  related=sorted([q for q in POSTS if slug(q)!=s and has_featured(q) and (category(q)==category(p) or q.get('id') in preferred)],key=lambda q:preferred.index(q['id']) if q.get('id') in preferred else len(preferred))[:4]
-  if len(related)<4:related.extend([q for q in POSTS if slug(q)!=s and slug(q) not in {slug(x) for x in related} and category(q)!=category(p)][:4-len(related)])
+  related=RELATED_POSTS.get(p['id'],[])
   related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg?v={image_version(q)}" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder" aria-hidden="true">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
   trending_html=trending_section(lang,p)
   content=f'''<div class="wrap"><article class="article"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/{lang}/">{'Home' if lang=='en' else 'होम'}</a> › <a href="/{lang}/{category(p)}/">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</a> › <span>{e(t)}</span></nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1><p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> · Source: {e(sourcehost)}</p>{updated_notice(p,lang)}{featured_html}{share_html}{article_note(p,lang)}{article_panel(p,lang)}<div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div><div class="story">{body_html(raw)}</div>{keyword_html}<div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {'AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''
-  write(OUT / article_path(p,lang).lstrip('/') / 'index.html',shell(lang,t,desc,url,content,extra))
+  write(OUT / article_path(p,lang).lstrip('/') / 'index.html',shell(lang,t,desc,url,content,extra,alternate_urls=alternate_urls,canonical_url=canonical_url,robots='noindex,follow,max-image-preview:large' if fallback else ROBOTS,document_lang=content_lang))
 for lang in ('en','hi'):
  h='Worldwide news, movies and technology explained' if lang=='en' else 'दुनियाभर की ताज़ा खबरें, आसान हिंदी में'
  desc=label('Worldwide news, movies, entertainment, technology, business, sports and useful explainers.',lang)
@@ -450,7 +490,7 @@ for lang in ('en','hi'):
  for cat,(en_label,hi_label) in CATEGORIES.items():
   selected=[p for p in POSTS if matches_category(p,cat)]
   heading=en_label if lang=='en' else hi_label
-  intro=('Source-linked reports and explainers. Verify official notices, dates and eligibility with the issuing authority.' if lang=='en' else 'स्रोत सहित समाचार और जानकारी। आधिकारिक नोटिस, तारीख और पात्रता संबंधित विभाग से जरूर जाँचें।')
+  intro=category_description(cat,CATEGORIES[cat],lang)
   cat_pages=max(1,(len(selected)+23)//24)
   for cat_page in range(1,cat_pages+1):
    batch=selected[(cat_page-1)*24:cat_page*24]
@@ -465,7 +505,7 @@ for lang in ('en','hi'):
    notices_html=('<section class="hub-section"><ul>'+notices_html+'</ul></section>' if notices_html else '')
    catbody=f'<div class="wrap"><section class="lead"><h1>{e(heading)}{f" — {cat_page}" if cat_page>1 else ""}</h1><p class="muted">{e(intro)}</p>{telecom_links}</section>{notices_html}<div class="cards">{listing}</div>{pager}</div>'
    cat_path=f'/{lang}/{cat}/' if cat_page==1 else f'/{lang}/{cat}/page/{cat_page}/'
-   write(OUT / cat_path.lstrip('/') / 'index.html',shell(lang,heading+(f' — Page {cat_page}' if cat_page>1 else '')+' | GlobeWire Daily',intro,f'{SITE}{cat_path}',catbody))
+   write(OUT / cat_path.lstrip('/') / 'index.html',shell(lang,heading+(f' — Page {cat_page}' if cat_page>1 else '')+' | GlobeWire Daily',category_description(cat,CATEGORIES[cat],lang,cat_page),f'{SITE}{cat_path}',catbody,robots=ROBOTS if selected or notices_html else 'noindex,follow,max-image-preview:large'))
 
  toolcards=''.join(f'<article class="tool"><span class="pill">{e(label(cat,lang))}</span><h2>{e(n)}</h2><p>{e(label(d,lang))}</p><a href="{e(u)}" target="_blank" rel="noopener noreferrer">Official website ↗</a></article>' for n,d,u,cat in TOOLS)
  tools=f'<div class="wrap"><section class="lead"><div class="eyebrow">AI TOOLS DIRECTORY</div><h1>{"Explore useful AI tools" if lang=="en" else "काम के AI टूल्स खोजें"}</h1><p class="muted">Official links, brief descriptions and categories. Availability and pricing can change; verify on provider websites.</p></section><div class="tools">{toolcards}</div></div>'
@@ -501,7 +541,7 @@ notice_cache=details_cache()
 urls += [notice_path(n,lang) for n in load_notices() if notice_cache.get(n['source'],{}).get('fields') for lang in ('en','hi')]
 urls=list(dict.fromkeys(urls+[f'/{lang}/{cat}/' for lang in ('en','hi') for cat in CATEGORIES]))
 write(OUT/'sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+xml_escape(SITE+u)+'</loc></url>' for u in urls)+'</urlset>')
-write_news_sitemap(OUT,SITE,POSTS,article_path,title)
+write_news_sitemap(OUT,SITE,POSTS,article_path,title,languages=article_languages)
 # Preserve old article URLs as permanent redirects to canonical descriptive URLs.
 redirects=['/ /en/ 301']
 for p in POSTS:
@@ -516,7 +556,7 @@ for old,canonical in DUPLICATE_POSTS:
   if olddir.is_dir():shutil.rmtree(olddir)
 print('SEO_REDIRECTS',write_redirects(OUT,redirects,write,SITE))
 write(OUT/'ads.txt','google.com, pub-1849673109734274, DIRECT, f08c47fec0942fa0\n')
-write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n  Cache-Control: public, max-age=0, must-revalidate\n/style.css\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n')
+write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/\n  Cache-Control: public, max-age=0, must-revalidate\n/*/\n  Cache-Control: public, max-age=0, must-revalidate\n/style.css\n  Cache-Control: public, max-age=3600\n/site.js\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n/seo-audit.json\n  X-Robots-Tag: noindex\n/deployment.json\n  X-Robots-Tag: noindex\n')
 print('Built',len(POSTS),'posts; AI Tools, bilingual pages, news sitemap and responsive layout')
 
 render_hubs(OUT,SITE,POSTS,shell,article_path,title,write)
@@ -530,4 +570,16 @@ write(OUT/'site.js',JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS)
 
 # Let production checks distinguish a stale status badge from a stale deployment.
 from image_rules import pipeline_fingerprint
-write(OUT/'deployment.json',json.dumps({'image_pipeline':pipeline_fingerprint(R),'posts':len(POSTS)},sort_keys=True)+'\n')
+write(OUT/'deployment.json',json.dumps({'image_pipeline':pipeline_fingerprint(R),'posts':len(POSTS),'seo_pipeline':'v2'},sort_keys=True)+'\n')
+
+# Reconcile the sitemap after every page family has rendered, including courses and directory profiles.
+for lang in ('en','hi'):
+ heading='Explore GlobeWire Daily' if lang=='en' else 'GlobeWire Daily की सभी श्रेणियाँ'
+ links=''.join('<li><a href="/'+lang+'/'+key+'/">'+e(names[lang=='hi'])+'</a></li>' for key,names in CATEGORIES.items())
+ extras=[('all-news','Latest news','ताज़ा खबरें'),('jobs-exams','Jobs and exams','नौकरी और परीक्षा'),('colleges','Colleges','कॉलेज'),('courses','Courses','कोर्स'),('cars','Cars','कारें'),('phones','Phones','फोन'),('bikes','Bikes','बाइक'),('tools','AI tools','AI टूल्स')]
+ links+=''.join('<li><a href="/'+lang+'/'+key+'/">'+e(hi if lang=='hi' else en)+'</a></li>' for key,en,hi in extras)
+ body='<div class="wrap"><section class="lead"><h1>'+heading+'</h1><p>'+('Browse news categories, reference directories and useful tools.' if lang=='en' else 'खबरों की श्रेणियाँ, संदर्भ डायरेक्टरी और उपयोगी टूल्स देखें।')+'</p></section><ul class="topic-directory">'+links+'</ul></div>'
+ write(OUT/lang/'site-map/index.html',shell(lang,heading,'News topics and reference directories' if lang=='en' else 'खबरों के विषय और उपयोगी डायरेक्टरी',SITE+'/'+lang+'/site-map/',body))
+count=write_site_sitemap(OUT,SITE,GENERATED_HTML)
+write(OUT/'seo-audit.json',json.dumps({'version':'v2','canonical_indexable_pages':count,'article_records':len(POSTS),'translated_hindi_articles':sum('hi' in article_languages(p) for p in POSTS)},sort_keys=True)+'\n')
+print('SEO_SITEMAP',count,'generated indexable self-canonical pages')
