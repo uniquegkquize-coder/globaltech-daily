@@ -1,38 +1,40 @@
 {
-  "total_posts": 1728,
-  "selected": 12,
+  "total_posts": 1734,
+  "selected": 14,
   "results": {
     "source_photo_saved": 4,
-    "invalid_source_images": 1,
-    "cooldown": 6,
-    "no_source_image": 1
+    "invalid_source_images": 3,
+    "cooldown": 7
   },
-  "still_missing": 132,
+  "still_missing": 134,
   "articles": [
     {
-      "id": "379f2b883e829160548f229b",
-      "source": "https://en.wikipedia.org/wiki/Aprilia_Area_51",
+      "id": "3511f9969942e69695cedff9",
+      "source": "https://en.wikipedia.org/wiki/Suzuki_RM85",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793698275.2941418
+      "retry_after": 1793700562.5448716
     },
     {
-      "id": "4eed4705590797510ab74a0a",
-      "source": "https://en.wikipedia.org/wiki/Lambretta_Model_B",
+      "id": "321e5c98c70d31e8f7e9ee4c",
+      "source": "https://en.wikipedia.org/wiki/KTM_RC16",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793698275.490666
+      "retry_after": 1793700562.6880035
     },
     {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "id": "f50879cdeb553349e62ab6a7",
+      "source": "https://en.wikipedia.org/wiki/Changan_UNI-K",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793700562.7805924
+    },
+    {
+      "id": "6548e415fc086ccec65bbb7c",
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1793698275.6223078
-    },
-    {
-      "id": "a6510273f0889bf4d7684eae",
-      "result": "cooldown"
+      "retry_after": 1793700562.8349895
     },
     {
       "id": "8444aa187e09b377f661fcbf",
@@ -55,25 +57,33 @@
       "result": "cooldown"
     },
     {
-      "id": "989a2779dab608f1a347f3a8",
-      "source": "https://en.wikipedia.org/wiki/%C5%A0koda_Kushaq",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793698275.7382863
-    },
-    {
-      "id": "55762bf991eef5af8f8def42",
-      "source": "https://en.wikipedia.org/wiki/Aznom_Palladium",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793698275.9628325
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "result": "cooldown"
     },
     {
       "id": "ef614dcb4163038685679d1d",
-      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
+      "result": "cooldown"
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
       "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793698276.8810825
+      "result": "invalid_source_images",
+      "retry_after": 1793700563.4226747
+    },
+    {
+      "id": "b00e9b37fc68d865d871998b",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Xcover_7",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793700563.4675858
+    },
+    {
+      "id": "a6510273f0889bf4d7684eae",
+      "source": "https://mua.ac.ke/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793700566.1488254
     }
   ],
   "missing": [
@@ -195,6 +205,13 @@
       "title": "Media and Communications Openings Highlighted Across Central Washington Employers",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-moses-lake-wa",
       "reason": "no_source_image"
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "category": "gadgets",
+      "title": "Nokia Asha 501: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "reason": "invalid_source_images"
     },
     {
       "id": "a9716e8287f2",
@@ -757,6 +774,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "6548e415fc086ccec65bbb7c",
+      "category": "automobiles",
+      "title": "Nissan Frontier: Car Specifications, Facts and Verification Guide",
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "05d3b71dd6e0",
       "category": "private-vacancy",
       "title": "Make Your Own Perfume (MYOP) Seeks Sales Executive in Pune and Pimpri-Chinchwad Area",
@@ -1006,44 +1030,59 @@
     "source_unavailable": 33,
     "source_error": 3,
     "access_denied": 26,
-    "invalid_source_images": 30,
+    "invalid_source_images": 32,
     "no_source_image": 40
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "379f2b883e829160548f229b": {
+    "3511f9969942e69695cedff9": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Aprilia_Area_51",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/Aprilia_Area51_scooter.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Suzuki_RM85",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Suzuki_RM85_01.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "4eed4705590797510ab74a0a": {
+    "321e5c98c70d31e8f7e9ee4c": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Lambretta_Model_B",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/1948_Lambretta_B_scooter_%285957287960%29_cropped.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/KTM_RC16",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/MotoGP_2025_Malaysian_Grand_Prix_-_KTM_Factory_Racing_-_Brad_Binder.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "8f4b17c49d1b2a0c5cb45a53": {
+    "f50879cdeb553349e62ab6a7": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Changan_UNI-K",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Changan_UNI-K_001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "6548e415fc086ccec65bbb7c": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
-      "candidate_count": 6,
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "candidate_count": 20,
       "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/frontier/vehicle-profile-assets/2027/model-2027-frontier-crew-cab-pro-4x-red-alert.png-v2.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue-hybrid/vehicle-profile-assets/2027/model-2027-rogue-hybrid-sr-horizon-blue-pearl-metallic-super-black-two-tone.png.ximg.l_3_m.smart.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue/vehicle-profile-assets/2027/model-2027-rogue-rock-creek-intelligent-awd-baja-storm-metallic.png.ximg.l_3_m.smart.png"
       ]
     },
-    "989a2779dab608f1a347f3a8": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/%C5%A0koda_Kushaq",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/2021_%C5%A0koda_Kushaq_%28India%29_front_view.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "b211f120ea27b93fc925f6b4": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "candidate_count": 8,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/commons/1/1e/Nokia_Asha_501.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/250px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/120px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
     },
-    "55762bf991eef5af8f8def42": {
+    "b00e9b37fc68d865d871998b": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Aznom_Palladium",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/de/Aznom_Palladium_%2853088383672%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Xcover_7",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Samsung_Galaxy_Xcover_7.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "ef614dcb4163038685679d1d": {
-      "reason": "no_source_image",
-      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/"
+    "a6510273f0889bf4d7684eae": {
+      "reason": "invalid_source_images",
+      "source": "https://mua.ac.ke/",
+      "candidate_count": 2,
+      "candidates": [
+        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
+        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png"
+      ]
     }
   },
   "mode": "directory"
