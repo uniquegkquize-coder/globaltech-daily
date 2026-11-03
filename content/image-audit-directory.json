@@ -1,75 +1,63 @@
 {
-  "total_posts": 1877,
-  "selected": 18,
+  "total_posts": 1897,
+  "selected": 19,
   "results": {
     "source_photo_saved": 6,
     "invalid_source_images": 2,
-    "cooldown": 10
+    "source_unavailable": 1,
+    "cooldown": 9,
+    "no_source_image": 1
   },
-  "still_missing": 146,
+  "still_missing": 152,
   "articles": [
     {
-      "id": "29fa77fde8e106e29b70a2b1",
-      "source": "https://en.wikipedia.org/wiki/Ducati_PaulSmart_1000_LE",
+      "id": "837b5d1bc6dbbd7ea060e8a4",
+      "source": "https://en.wikipedia.org/wiki/AJS_Model_D",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793733919.0787175
+      "retry_after": 1793743844.6857538
     },
     {
-      "id": "dcec9c36b9e2529235795e17",
-      "source": "https://en.wikipedia.org/wiki/Suzuki_RGV500",
+      "id": "1bb33d8bdc240838e7b3a804",
+      "source": "https://en.wikipedia.org/wiki/Haima_7X",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793733919.1555288
+      "retry_after": 1793743845.2840416
     },
     {
-      "id": "fb02174a4153d9ff522a899e",
-      "source": "https://en.wikipedia.org/wiki/Kia_EV6",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793733919.595078
-    },
-    {
-      "id": "007acb84538e69bcc14f4f9f",
-      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
+      "id": "4afa4536b18e5a41b30a3497",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1793733919.662194
+      "retry_after": 1793743845.447865
     },
     {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
+      "id": "761cd74659597a56ea04795d",
+      "source": "https://en.wikipedia.org/wiki/Toyota_Yaris_%28XP210%29",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793733919.9302223
+      "result": "source_photo_saved",
+      "retry_after": 1793743845.544584
     },
     {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
+      "id": "004925351cb9d6a0d424e3b3",
+      "source": "https://en.wikipedia.org/wiki/BMW_C600_Sport_and_C650GT",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793743845.8393176
     },
     {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
-    },
-    {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
+      "id": "1161fb76fb10fea6822a08f2",
+      "source": "https://en.wikipedia.org/wiki/Pixel_11_Pro_Fold",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793743845.8732812
     },
     {
       "id": "ab5757b7bde7e5a43128d256",
-      "result": "cooldown"
-    },
-    {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "result": "cooldown"
-    },
-    {
-      "id": "ef614dcb4163038685679d1d",
-      "result": "cooldown"
+      "source": "https://exploitsmw.com/",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793743846.0483134
     },
     {
       "id": "b211f120ea27b93fc925f6b4",
@@ -84,25 +72,49 @@
       "result": "cooldown"
     },
     {
-      "id": "030cdb6402e6ad1144dae6ad",
-      "source": "https://en.wikipedia.org/wiki/Hongqi_E-HS9",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793733920.2638009
+      "id": "007acb84538e69bcc14f4f9f",
+      "result": "cooldown"
     },
     {
-      "id": "86648e67ee699d361cf9e966",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_1020",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793733920.5887482
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "result": "cooldown"
     },
     {
-      "id": "d7d7c14051d880bc24816244",
-      "source": "https://en.wikipedia.org/wiki/Redmi_15C",
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793743846.3837948
+    },
+    {
+      "id": "4f9cd995e22f2282c3a1cc40",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793733920.762818
+      "retry_after": 1793743846.5511394
+    },
+    {
+      "id": "ef614dcb4163038685679d1d",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793743853.2656965
     }
   ],
   "missing": [
@@ -237,7 +249,14 @@
       "category": "private-vacancy",
       "title": "Media and Communications Openings Highlighted Across Central Washington Employers",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-moses-lake-wa",
-      "reason": "no_source_image"
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "eeed1c410282",
+      "category": "ai-news",
+      "title": "Horizon Open-Source Project Offers AI-Powered News Aggregation and Briefing Generation",
+      "source": "https://github.com/Thysrael/Horizon",
+      "reason": "invalid_source_images"
     },
     {
       "id": "b211f120ea27b93fc925f6b4",
@@ -258,14 +277,14 @@
       "category": "private-vacancy",
       "title": "Overview of Current Media and Communications Private Vacancies in the Des Moines Area",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-des-moines-ia",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "090cabc5ee27",
       "category": "private-vacancy",
       "title": "Exploring Private Sector Openings and Academic Vacancies Listed on Professional Networks in India",
       "source": "https://in.linkedin.com/jobs/%E0%A6%B2%E0%A7%87%E0%A6%95%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%BE%E0%A6%B0-jobs",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "9cfed70093fb",
@@ -300,7 +319,7 @@
       "category": "private-vacancy",
       "title": "Overview of Current Administrative and Support Vacancies in Moses Lake, Washington",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-moses-lake-wa",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "75dbda51595c",
@@ -321,7 +340,7 @@
       "category": "private-vacancy",
       "title": "Wordsmith Learning Hub Recruits Senior Digital Marketing Manager for Tamil Edtech Sector",
       "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "f638281840d9",
@@ -373,25 +392,32 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "2d2ee8809ceb",
+      "category": "visas-immigration",
+      "title": "Peerless Immigration Services Lists Business Development Executive Opening in New Delhi",
+      "source": "https://in.linkedin.com/jobs/view/busienss-development-executive-at-peerless-immigration-services-4483857590",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "0bdb0918a8cf",
       "category": "private-vacancy",
       "title": "Credit Saison India Recruits Relationship Manager for Secured Direct Operations in South India",
       "source": "https://in.linkedin.com/jobs/view/relationship-manager-secured-direct-south-ap-ts-tn-at-credit-saison-india-4480041233",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "021c54d7abdb",
       "category": "private-vacancy",
       "title": "Professional Career Openings Listed on LinkedIn for the Jersey Region",
       "source": "https://je.linkedin.com/jobs/Win%20Gaming%20API%20-%20India%20Market%20API%F0%9F%8F%A7TG%40gameapi26-jobs?position=1&pageNum=0",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "ff059456a4ee",
       "category": "private-vacancy",
       "title": "Exploring Community and Social Services Openings Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-phoenix-az",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "c455f726510c",
@@ -419,7 +445,7 @@
       "category": "private-vacancy",
       "title": "Recent Administrative Assistant and Support Openings Listed in the Des Moines, Iowa Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-des-moines-ia",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "e62d34be0421",
@@ -436,11 +462,18 @@
       "reason": "source_unavailable"
     },
     {
+      "id": "7c6f6d44e10c",
+      "category": "visas-immigration",
+      "title": "Peerless Immigration Services Announces Openings for Business Development Associates in New Delhi",
+      "source": "https://in.linkedin.com/jobs/view/business-development-associate-at-peerless-immigration-services-4483846739?position=23&pageNum=0&refId=pdi7GkDzOUAwjOAwZuhD7g%3D%3D&trackingId=99eGWHPhi0lFt1HRUu2RDA%3D%3D",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "0da0ead215c3",
       "category": "private-vacancy",
       "title": "WeMakeScholars Recruits Technical HR Professional Across Multiple Indian Cities",
       "source": "https://in.linkedin.com/jobs/view/technial-hr-recruiter-in-secunderabad-hyderabad-hyderabad-hyderabad-vishakhapatnam-alwal-visakhapatnam-at-wemakescholars-4484295029?position=58&pageNum=0&refId=IYfwluMaDIcsUuazNwoLjw%3D%3D&trackingId=4yed8vCMLTz%2BknFIMv5vzQ%3D%3D",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "7f651ce9d3f0",
@@ -454,7 +487,7 @@
       "category": "private-vacancy",
       "title": "Alok Industries Limited Lists Assistant Manager Opening in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-alok-industries-limited-india-4481052431",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "285dd8d5ec2f",
@@ -468,7 +501,7 @@
       "category": "private-vacancy",
       "title": "EH Jobs Recruits Western Music Teacher for Primary Grades in Tellapur, Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/looking-for-western-music-teacher-primary-1-5-in-tellapur-hyderabad-at-eh-jobs-4481687605",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "8f4b17c49d1b2a0c5cb45a53",
@@ -489,7 +522,7 @@
       "category": "private-vacancy",
       "title": "Phoenix Media and Communications Job Openings Highlighted in Regional Platform Listings",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-phoenix-az",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "38accdd4d36d",
@@ -569,6 +602,13 @@
       "reason": "source_unavailable"
     },
     {
+      "id": "8e77d55e51ba",
+      "category": "government-schemes",
+      "title": "Government Releases 24th Instalment of PM-KISAN, Transferring Over ₹18,690 Crore to 9.34 Crore Farmers",
+      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/oct/doc_10319_20261030_15562701.pdf",
+      "reason": "source_unavailable"
+    },
+    {
       "id": "736ca0bcddb6",
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted in Des Moines Area",
@@ -629,7 +669,7 @@
       "category": "private-vacancy",
       "title": "Overview of Military and Protective Services Openings in the Des Moines Area",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-des-moines-ia",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "91712e374b16",
@@ -643,7 +683,7 @@
       "category": "private-vacancy",
       "title": "The Souled Store Lists Founder's Office Intern Position in Mumbai Focused on GCC Expansion",
       "source": "https://in.linkedin.com/jobs/view/founder-s-office-intern-at-the-souled-store-4483622129",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "0e2fde519d11",
@@ -713,7 +753,7 @@
       "category": "private-vacancy",
       "title": "Fintech Firm FatakPay Announces Search for Compliance Manager in Mumbai",
       "source": "https://in.linkedin.com/jobs/view/compliance-manager-at-fatakpay-4482278882",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "6189652eeaaa",
@@ -748,7 +788,7 @@
       "category": "ai-news",
       "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
       "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "c9e064a48f72",
@@ -940,6 +980,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "4afa4536b18e5a41b30a3497",
+      "category": "education",
+      "title": "Université Officielle de Semuliki: College Admissions, Facts and Verification Guide",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "11663ea645ab",
       "category": "visas-immigration",
       "title": "Canada Extends Open Work Permit Renewals for Eligible Foreign Nationals from Haiti Until December 2027",
@@ -965,7 +1012,7 @@
       "category": "private-vacancy",
       "title": "San Francisco Bay Area Media and Communications Job Listings Highlight Tech and Corporate Sector Demand",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "8444aa187e09b377f661fcbf",
@@ -1000,7 +1047,7 @@
       "category": "private-vacancy",
       "title": "Amrit Skills Development Reports MIS Executive Opening in Delhi",
       "source": "https://in.linkedin.com/jobs/view/mis-executive-at-amrit-skills-development-4480055351",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "b9e7ebed5efd",
@@ -1014,6 +1061,13 @@
       "category": "private-vacancy",
       "title": "Bright Blue Gemstones Announces Client Acquisition Internship in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/client-acquisition-intern-at-bright-blue-gemstones-4471542402",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "4683cd570ef3",
+      "category": "ai-news",
+      "title": "Magpie Integrates Multiple AI Coding Agents and Providers into a Single Local Gateway",
+      "source": "https://github.com/yetone/magpie",
       "reason": "invalid_source_images"
     },
     {
@@ -1049,7 +1103,7 @@
       "category": "private-vacancy",
       "title": "Community and Social Services Openings Highlighted Across Des Moines Area Employers",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-des-moines-ia",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "01a6933a42b8",
@@ -1091,7 +1145,7 @@
       "category": "private-vacancy",
       "title": "Active Administrative Assistant Openings Listed Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-phoenix-az",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "9acdf4deb8ec",
@@ -1119,7 +1173,7 @@
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Boydton Area Listings",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-boydton-va",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "a91a82825e4a",
@@ -1130,59 +1184,70 @@
     }
   ],
   "missing_reasons": {
-    "source_unavailable": 33,
+    "source_unavailable": 34,
     "source_error": 4,
-    "access_denied": 37,
-    "invalid_source_images": 38,
-    "no_source_image": 34
+    "access_denied": 21,
+    "invalid_source_images": 52,
+    "no_source_image": 41
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "29fa77fde8e106e29b70a2b1": {
+    "837b5d1bc6dbbd7ea060e8a4": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ducati_PaulSmart_1000_LE",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/39/PaulSmartLE1000.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/AJS_Model_D",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/AJS_1920_D_1.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "dcec9c36b9e2529235795e17": {
+    "1bb33d8bdc240838e7b3a804": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Suzuki_RGV500",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Suzuki_RGV500_of_Alex_Barros_1993_Eastern_Creek.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Haima_7X",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Haima_7X_005.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "fb02174a4153d9ff522a899e": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Kia_EV6",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/2021_Kia_EV6_GT-Line_S.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "007acb84538e69bcc14f4f9f": {
+    "4afa4536b18e5a41b30a3497": {
       "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
       "candidate_count": 1,
       "candidates": [
-        "https://www.unirank.org/i/screenshots/18606.jpg"
+        "https://www.unirank.org/i/screenshots/18613.jpg"
       ]
     },
-    "9d1f6341eb5fa6644d63ff08": {
+    "761cd74659597a56ea04795d": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Toyota_Yaris_%28XP210%29",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/2020_Toyota_Yaris_Design_HEV_CVT_1.5_Front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "004925351cb9d6a0d424e3b3": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/BMW_C600_Sport_and_C650GT",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Motorroller_BMW_C600_Sport_P2RM0105.jpg/1280px-Motorroller_BMW_C600_Sport_P2RM0105.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+    },
+    "1161fb76fb10fea6822a08f2": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Pixel_11_Pro_Fold",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Pixel_wordmark.svg/1280px-Pixel_wordmark.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+    },
+    "ab5757b7bde7e5a43128d256": {
+      "reason": "source_unavailable",
+      "source": "https://exploitsmw.com/",
+      "status": 200
+    },
+    "8f4b17c49d1b2a0c5cb45a53": {
       "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
-      "candidate_count": 1,
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "candidate_count": 6,
       "candidates": [
-        "https://www.unirank.org/i/screenshots/18615.jpg"
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
       ]
     },
-    "030cdb6402e6ad1144dae6ad": {
+    "4f9cd995e22f2282c3a1cc40": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Hongqi_E-HS9",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Hongqi_E-HS9_IMG_0753_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Samsung_Galaxy_S_III.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "86648e67ee699d361cf9e966": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_1020",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Nokia_Lumia_1020_front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "d7d7c14051d880bc24816244": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Redmi_15C",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Front_of_the_Redmi_15C.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "ef614dcb4163038685679d1d": {
+      "reason": "no_source_image",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/"
     }
   },
   "mode": "directory"
