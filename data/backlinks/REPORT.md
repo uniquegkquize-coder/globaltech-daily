@@ -4,8 +4,8 @@ Checked: 2026-11-03
 
 | Metric | Count |
 |---|---:|
-| prospects discovered | 10 |
-| qualified prospects | 5 |
+| prospects discovered | 26 |
+| qualified prospects | 12 |
 | outreach drafts prepared | 1 |
 | emails sent | 0 |
 | confirmed live backlinks | 0 |
