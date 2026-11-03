@@ -1,0 +1,29 @@
+{
+  "en_title": "Open-Source Tool Hypit Enables Coding Agents to Generate and Clone Videos",
+  "hi_title": "ओपन-सोर्स टूल हाइपिट कोडिंग एजेंटों को वीडियो बनाने और क्लोन करने में सक्षम बनाता है",
+  "en_body": "## Overview of Hypit\n\nHypit is an open-source project designed to provide coding agents, such as Claude Code and Codex, with a system and language for video creation and manipulation. According to the project documentation, users can input an existing video or describe a desired concept, allowing an agent to manage the workflow including footage, captions, B-roll, and effects anchored to words rather than seconds.\n\n## Core Features and Workflow\n\n- **Workflow Automation:** Rather than just generating a script or a single render, the tool creates a complete, editable, and re-runnable composition.\n- **Pluggable Components:** Users can swap elements like narrators, captions, or visual assets independently. Templates and examples are provided for getting started from scratch.\n- **Optional Generation Models:** Workflows can compile captions, motion graphics, and code-rendered visuals without necessarily calling external generation models or incurring related service charges.\n- **Batch Variants:** The system supports producing multiple variants by reusing compositions and altering specific components.\n\n## Use Cases and Applications\n\nThe documentation outlines several potential use cases for the tool, including:\n\n- Creating localized versions of videos across multiple languages.\n- Generating paid social media advertisements and testing variations.\n- Producing podcast clips, split-screen layouts, and talking-head style content.\n- Assembling code-rendered visuals locally without external API calls.\n\n## Licensing and Verification\n\nHypit is distributed under the Hypit Open Source License. The tool itself is free to use, though underlying coding agents, third-party APIs, and model services maintain their own accounts, terms, and usage charges. Users interested in reviewing the software, verifying installation instructions, or examining the source code can access the official GitHub repository at https://github.com/hypit-ai/hypit.",
+  "hi_body": "## हाइपिट का परिचय\n\nहाइपिट एक ओपन-सोर्स प्रोजेक्ट है जिसे क्लाउड कोड और कोडेक्स जैसे कोडिंग एजेंटों को वीडियो निर्माण और संपादन के लिए एक प्रणाली प्रदान करने के लिए डिज़ाइन किया गया है। प्रोजेक्ट दस्तावेज़ के अनुसार, उपयोगकर्ता किसी मौजूदा वीडियो को इनपुट कर सकते हैं या किसी इच्छित कॉन्सेप्ट का वर्णन कर सकते हैं, जिससे एजेंट फुटेज, कैप्शन, बी-रोल और प्रभावों सहित पूरे वर्कफ़्लो को प्रबंधित कर सके।\n\n## मुख्य विशेषताएं और कार्यप्रणाली\n\n- **वर्कफ़्लो स्वचालन:** केवल एक स्क्रिप्ट या सिंगल रेंडर उत्पन्न करने के बजाय, यह टूल एक पूर्ण, संपादन योग्य और पुनः चलाने योग्य रचना बनाता है।\n- **प्लग करने योग्य घटक:** उपयोगकर्ता कथावाचकों, कैप्शन या दृश्य परिसंपत्तियों जैसे तत्वों को स्वतंत्र रूप से बदल सकते हैं।\n- **वैकल्पिक जनरेशन मॉडल:** वर्कफ़्लो बाहरी जनरेशन मॉडल को कॉल किए बिना कैप्शन, मोशन ग्राफिक्स और कोड-रेंडर किए गए दृश्यों को संकलित कर सकता है।\n- **बैच वेरिएंट:** यह प्रणाली रचनाओं का पुनउपयोग करके और विशिष्ट घटकों को बदलकर कई वेरिएंट तैयार करने का समर्थन करती है।\n\n## उपयोग के मामले और अनुप्रयोग\n\nदस्तावेज़ टूल के लिए कई संभावित उपयोग के मामलों को रेखांकित करता है, जिनमें शामिल हैं:\n\n- कई भाषाओं में वीडियो के स्थानीयकृत संस्करण बनाना।\n- भुगतान किए गए सोशल मीडिया विज्ञापनों को उत्पन्न करना और विविधताओं का परीक्षण करना।\n- पॉडकास्ट क्लिप, स्प्लिट-स्क्रीन लेआउट और टॉकिंग-हेड शैली की सामग्री तैयार करना।\n- बाहरी एपीआई कॉल के बिना स्थानीय रूप से कोड-रेंडर किए गए दृश्यों को संयोजित करना।\n\n## लाइसेंसिंग और सत्यापन\n\nहाइपिट को हाइपिट ओपन सोर्स लाइसेंस के तहत वितरित किया गया है। टूल का उपयोग करना स्वतंत्र है, हालांकि अंतર્ગत कोडिंग एजेंट, थर्ड-पार्टी एपीआई और मॉडल सेवाएं अपने स्वयं के खातों, शर्तों और उपयोग शुल्क बनाए रखती हैं। सॉफ्टवेयर की समीक्षा करने, स्थापना निर्देशों को सत्यापित करने या स्रोत कोड की जांच करने के इच्छुक उपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी (https://github.com/hypit-ai/hypit) पर जा सकते हैं।",
+  "en_meta": "Learn about Hypit, an open-source tool enabling coding agents to automate video creation, cloning, and workflow management.",
+  "hi_meta": "हाइपिट के बारे में जानें, जो कोडिंग एजेंटों को वीडियो निर्माण, क्लोनिंग और वर्कफ़्लो प्रबंधन को स्वचालित करने में सक्षम बनाता है।",
+  "en_keywords": [
+    "Hypit",
+    "open-source video tool",
+    "coding agents",
+    "video cloning",
+    "AI video workflow"
+  ],
+  "hi_keywords": [
+    "हाइपिट",
+    "ओपन-सोर्स वीडियो टूल",
+    "कोडिंग एजेंट",
+    "वीडियो क्लोनिंग",
+    "एआई वीडियो वर्कफ़्लो"
+  ],
+  "source_published_at": null,
+  "id": "a61bb70c5a02",
+  "source": "https://github.com/hypit-ai/hypit",
+  "date": "2026-11-03T08:59:05.636505+00:00",
+  "source_title": "hypit-ai/hypit: Clone any viral video with AI agents. Not just a script, the whole workflow: swap the face, the words, the B-roll, ship 100 variants in one command, and get your 100M views. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

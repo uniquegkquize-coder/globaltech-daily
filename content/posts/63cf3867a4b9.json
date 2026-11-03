@@ -1,0 +1,31 @@
+{
+  "en_title": "OpenAI Publishes Lean Formalization Document for Complexity Theory Research",
+  "hi_title": "ओपनएआई ने जटिलता सिद्धांत अनुसंधान के लिए लीन औपचारिकरण दस्तावेज़ प्रकाशित किया",
+  "en_body": "## Overview of the Lean Formalization Document\n\nA recent document added to the OpenAI math repository on GitHub outlines the scope of a Lean formalization connected to a research paper questioning the Exponential Time Hypothesis. The file, designated as document 378 within the repository's Lean documentation, details specific deterministic machine bounds proven within the formal proof assistant.\n\n## Key Formalized Bounds\n\nAccording to the documentation, the Lean formalization establishes results for a fixed $k \\ge 2$ regarding deterministic machines counting satisfying assignments of canonically encoded $k$-CNF formulas on $n$ variables:\n\n* **General Time Bound:** The machine operates in time $(L+1)^{O_k(1)} 2^{O_k(n(\\log\\log n)^2/\\sqrt{\\log n})}$, where $L$ represents the bit length of the encoding.\n* **Tape Cell Limit:** At every step of the computation, the machine has visited at most $(L+1)^{O_k(1)}$ tape cells in total.\n* **Clause-Specific Refinements:** For a formula with $m$ clauses, an October 25 manuscript cited in the notes provides a sharper time bound of $(n+m)^{O_k(1)} 2^{O_k(n\\log\\log n/\\sqrt{\\log n})}$.\n* **Linear Clause Bound:** When $m \\le Dn$ for a fixed constant $D > 0$, this bound further improves to $(n+m)^{O_{k,D}(1)} 2^{O_{k,D}(n/\\sqrt{\\log n})}$.\n\n## Practical Implications and Verification\n\nThis documentation provides researchers with insight into the formalized verification status of computational complexity bounds associated with the manuscript. Because the material is hosted in an active open-source repository, interested parties can review the primary source code and associated documentation directly.\n\nTo verify the original announcement and inspect the formal proofs, users can access the GitHub repository maintained at openai/math under the `lean/docs/378.md` path. As with all ongoing computational mathematics developments, readers should consult the direct repository files and referenced academic manuscripts to confirm precise theorem statements and dependency structures.",
+  "hi_body": "## लीन औपचारिकरण दस्तावेज़ का अवलोकन\n\nगिटहब पर ओपनएआई मैथ रिपॉजिटरी में जोड़े गए एक हालिया दस्तावेज़ में एक्सपोनेंशियल टाइम हाइपोथिसिस पर सवाल उठाने वाले शोध पत्र से जुड़े लीन औपचारिकरण के दायरे को रेखांकित किया गया है। रिपॉजिटरी के लीन दस्तावेज़ के भीतर दस्तावेज़ 378 के रूप में नामित यह फ़ाइल, औपचारिक प्रमाण सहायक के भीतर सिद्ध की गई विशिष्ट नियतात्मक मशीन सीमाओं का विवरण देती है।\n\n## मुख्य औपचारिक सीमाएँ\n\nदस्तावेज़ के अनुसार, लीन औपचारिकरण $n$ चर पर विहित रूप से एनकोडेड $k$-CNF के संतुष्ट करने वाले असाइनमेंट की गणना करने वाली नियतात्मक मशीनों के संबंध में एक निश्चित $k \\ge 2$ के लिए परिणाम स्थापित करता है:\n\n* **सामान्य समय सीमा:** मशीन $(L+1)^{O_k(1)} 2^{O_k(n(\\log\\log n)^2/\\sqrt{\\log n})}$ समय में संचालित होती है, जहाँ $L$ एन्कोडिंग की बिट लंबाई का प्रतिनिधित्व करता है।\n* **टेप सेल सीमा:** गणना के हर चरण में, मशीन ने कुल मिलाकर अधिकतम $(L+1)^{O_k(1)}$ टेप सेल का दौरा किया है।\n* **खंड-विशिष्ट सुधार:** $m$ खंडों वाले एक सूत्र के लिए, नोट्स में उद्धृत 25 अक्टूबर की पांडुलिपि $(n+m)^{O_k(1)} 2^{O_k(n\\log\\log n/\\sqrt{\\log n})}$ की एक तीक्ष्ण समय सीमा देती है।\n* **रैखिक खंड सीमा:** जब एक निश्चित स्थिरांक $D > 0$ के लिए $m \\le Dn$ होता है, तो यह सीमा सुधरकर $(n+m)^{O_{k,D}(1)} 2^{O_{k,D}(n/\\sqrt{\\log n})}$ हो जाती है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nयह दस्तावेज़ीकरण शोधकर्ताओं को पांडुलिपि से जुड़ी कम्प्यूटेशनल जटिलता सीमाओं की औपचारिक सत्यापन स्थिति की जानकारी प्रदान करता है। चूँकि सामग्री एक सक्रिय ओपन-सोर्स रिपॉजिटरी में होस्ट की गई है, इसलिए इच्छुक पक्ष सीधे प्राथमिक स्रोत कोड और संबंधित दस्तावेजों की समीक्षा कर सकते हैं।\n\nमूल घोषणा को सत्यापित करने और औपचारिक प्रमाणों का निरीक्षण करने के लिए, उपयोगकर्ता `lean/docs/378.md` पथ के तहत openai/math पर अनुरक्षित गिटहब रिपॉजिटरी तक पहुँच सकते हैं। सभी चल रहे कम्प्यूटेशनल गणित विकास की तरह, पाठकों को सटीक प्रमेय कथनों और निर्भरता संरचनाओं की पुष्टि करने के लिए सीधे रिपॉजिटरी फ़ाइलों और संदर्भित अकादमिक पांडुलिपियों से परामर्श लेना चाहिए।",
+  "en_meta": "Explore OpenAI's GitHub documentation detailing Lean formalization bounds related to computational complexity research and the Exponential Time Hypothesis.",
+  "hi_meta": "कम्प्यूटेशनल जटिलता अनुसंधान और एक्सपोनेंशियल टाइम हाइपोथिसिस से संबंधित लीन औपचारिकरण सीमाओं का विवरण देने वाले ओपनएआई के गिटहब दस्तावेज़ का अन्वेषण करें।",
+  "en_keywords": [
+    "Lean formalization",
+    "OpenAI math",
+    "Exponential Time Hypothesis",
+    "complexity theory",
+    "deterministic machine",
+    "GitHub repository"
+  ],
+  "hi_keywords": [
+    "लीन औपचारिकरण",
+    "ओपनएआई मैथ",
+    "एक्सपोनेंशियल टाइम हाइपोथिसिस",
+    "जटिलता सिद्धांत",
+    "नियतात्मक मशीन",
+    "गिटहब रिपॉजिटरी"
+  ],
+  "source_published_at": null,
+  "id": "63cf3867a4b9",
+  "source": "https://github.com/openai/math/blob/main/lean/docs/378.md",
+  "date": "2026-11-03T08:59:20.825895+00:00",
+  "source_title": "math/lean/docs/378.md at main · openai/math - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

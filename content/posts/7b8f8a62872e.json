@@ -1,0 +1,29 @@
+{
+  "en_title": "Doop: Open-Source Multiplayer Design Canvas for Humans and AI Agents",
+  "hi_title": "डूप: इंसानों और एआई एजेंटों के लिए ओपन-सोर्स मल्टीप्लेयर डिज़ाइन कैनवास",
+  "en_body": "## Introduction to Doop\nDoop is an open-source, multiplayer design canvas that allows humans and AI agents to collaborate in real time. Designed as an alternative to proprietary platforms, Doop lets teams build and iterate on HTML-rendered artboards directly within the browser while external AI clients and built-in agents stream changes live.\n\n## Key Features\n- **Multiplayer Collaboration**: Features live cursors, presence indicators, threaded comments, and a shared activity feed over a single WebSocket connection.\n- **Real HTML Frames**: Artboards render actual HTML inside sandboxed iframes, enabling interactive and functional designs rather than static images.\n- **MCP Integration**: Includes a built-in Model Context Protocol (MCP) server, allowing external clients like Claude Code, Codex, and Cursor to design directly on the canvas.\n- **Clickable Prototypes**: Wire elements together using triggers such as clicks, hovers, or delays, and test flows instantly in Play mode.\n- **Design Memory**: Pin exemplar frames and let the system propose durable style rules for consistent agent behavior.\n\n## AI Agent Capabilities\nDoop supports two main ways to integrate artificial intelligence:\n1. **External MCP Clients**: Connect your own AI assistant once, and watch it sketch, stream, and self-review designs next to your cursor.\n2. **Built-In Doop Agent**: Queue design cards or @mention specific roles to let the system generate designs autonomously using connected model accounts or server keys.\n\nSupported authentication pathways include ChatGPT subscriptions, OpenAI, Anthropic, Gemini, and OpenRouter API keys, offering flexibility depending on user preference and configuration.\n\n## Self-Hosting and Deployment\nDoop is designed for easy self-hosting:\n- Run locally using `bun run dev` or launch via Docker Compose with zero external configuration required.\n- Utilizes an embedded Postgres database (`PGlite`) by default, with seamless fallback for optional integrations like SMTP or object storage.\n- Provides a hosted alternative (`doop.design`) for users who prefer a managed environment.\n\n## Verification and Practical Implications\nTeams looking to adopt Doop can review the official GitHub repository (`kgoedecke/doop`) to inspect the source code, examine setup instructions, and evaluate self-hosting requirements. Because features such as advanced Figma and Canva imports may be limited to specific cloud offerings, reviewing the open-source documentation is recommended before deployment.",
+  "hi_body": "## डूप का परिचय\nडूप एक ओपन-सोर्स मल्टीप्लेयर डिज़ाइन कैनवास है जो इंसानों और एआई एजेंटों को एक साथ रीयल-टाइम में सहयोग करने की अनुमति देता है। यह प्लेटफ़ॉर्म उपयोगकर्ताओं को ब्राउज़र के भीतर सीधे HTML-रेंडर्ड आर्टबोर्ड पर काम करने की सुविधा देता है, जबकि एआई एजेंट लाइव बदलावों को स्ट्रीम करते हैं।\n\n## मुख्य विशेषताएँ\n- **मल्टीप्लेयर सहयोग**: इसमें लाइव कर्सर, उपस्थिति संकेतक, थ्रेडेड टिप्पणियां और एक साझा गतिविधि फ़ीड शामिल हैं।\n- **वास्तविक HTML फ्रेम**: आर्टबोर्ड सैंडबॉक्स्डिफ़्रेम के भीतर वास्तविक HTML रेंडर करते हैं, जिससे स्थिर छवियों के बजाय कार्यात्मक डिज़ाइन बनते हैं।\n- **MCP इंटीग्रेशन**: इसमें एक अंतर्निहित मॉडल संदर्भ प्रोटोकॉल (MCP) सर्वर शामिल है, जो क्लाउड कोड और अन्य एजेंटों को कैनवास पर सीधे डिज़ाइन करने की अनुमति देता है।\n- **क्लिक करने योग्य प्रोटोटाइप**: क्लिक, होवर या देरी जैसे ट्रिगर्स का उपयोग करके तत्वों को आपस में जोड़ें और प्ले मोड में परीक्षण करें।\n- **डिज़ाइन मेमोरी**: महत्वपूर्ण फ्रेम को पिन करें और सुसंगत एजेंट व्यवहार के लिए टिकाऊ शैली नियमों का प्रस्ताव दें।\n\n## एआई एजेंट क्षमताएं\nडूप एआई को एकीकृत करने के दो मुख्य तरीके प्रदान करता है:\n1. **बाहरी MCP क्लाइंट**: अपने एआई सहायक को कनेक्ट करें और इसे अपने कर्सर के पास डिज़ाइन बनाते हुए देखें।\n2. **अंतर्निहित डूप एजेंट**: डिज़ाइन कार्ड कतारबद्ध करें या भूमिकाओं का उल्लेख करें ताकि सिस्टम स्वायत्त रूप से डिज़ाइन तैयार कर सके।\n\nसमर्थित प्रमाणीकरण विकल्पों में ChatGPT सदस्यता, OpenAI, Anthropic, Gemini, और OpenRouter API कुंजियाँ शामिल हैं।\n\n## सेल्फ-होस्टिंग और तैनाती\nडूप को आसानी से सेल्फ-होस्ट करने के लिए डिज़ाइन किया गया है:\n- शून्य बाहरी कॉन्फ़िगरेशन के साथ `bun run dev` या Docker Compose का उपयोग करके स्थानीय रूप से चलाएं।\n- डिफ़ॉल्ट रूप से एंबेडेड Postgres डेटाबेस (`PGlite`) का उपयोग करता है।\n- प्रबंधित वातावरण पसंद करने वाले उपयोगकर्ताओं के लिए एक होस्टेड विकल्प (`doop.design`) भी उपलब्ध है।\n\n## सत्यापन और व्यावहारिक निहितार्थ\nडूप को अपनाने वाले दल स्रोत कोड की जांच करने, सेटअप निर्देशों का निरीक्षण करने और सेल्फ-होस्टिंग आवश्यकताओं का मूल्यांकन करने के लिए आधिकारिक GitHub रिपॉजिटरी (`kgoedecke/doop`) की समीक्षा कर सकते हैं।",
+  "en_meta": "Discover Doop, an open-source multiplayer design canvas for humans and AI agents with built-in MCP support, real HTML frames, and self-hosting options.",
+  "hi_meta": "डूप (Doop) के बारे में जानें, जो इंसानों और एआई एजेंटों के लिए एक ओपन-सोर्स मल्टीप्लेयर डिज़ाइन कैनवास है जिसमें अंतर्निहित MCP समर्थन है।",
+  "en_keywords": [
+    "Doop",
+    "open-source design tool",
+    "AI design canvas",
+    "Model Context Protocol",
+    "multiplayer workspace"
+  ],
+  "hi_keywords": [
+    "डूप",
+    "ओपन-सोर्स डिज़ाइन टूल",
+    "एआई डिज़ाइन कैनवास",
+    "मॉडल संदर्भ प्रोटोकॉल",
+    "मल्टीप्लेयर कार्यक्षेत्र"
+  ],
+  "source_published_at": null,
+  "id": "7b8f8a62872e",
+  "source": "https://github.com/kgoedecke/doop",
+  "date": "2026-11-03T08:59:16.125860+00:00",
+  "source_title": "kgoedecke/doop: The open-source alternative to Paper.design. A multiplayer design canvas where humans and AI agents design together, live. MCP built in. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

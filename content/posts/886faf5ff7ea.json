@@ -1,0 +1,29 @@
+{
+  "en_title": "Capri: An Open-Source, Cyberpunk-Inspired Desktop Companion Powered by Local AI",
+  "hi_title": "कैपरी: स्थानीय एआई द्वारा संचालित एक ओपन-सोर्स, साइबरपंक-प्रेरित डेस्कटॉप साथी",
+  "en_body": "## Introduction to Capri\n\nCapri is an open-source, cyberpunk-inspired desktop companion designed for Windows environments. Inspired by the visual atmosphere of *Cyberpunk 2077*, the project functions as a lightweight desktop pet featuring an animated character and a compact, terminal-style chat interface. According to the project repository, the goal is to provide a casual companion experience rather than a heavy assistant dashboard.\n\n## Core Architecture and Features\n\nThe application relies on local artificial intelligence models to maintain privacy and offline functionality. Key technical components include:\n\n* **Animated Desktop Character:** Stays on the Windows desktop with idle behaviors such as blinking, sleeping, and waking.\n* **Terminal-Style Chat Window:** A compact, cyberpunk-themed interface for text communication.\n* **Local AI Integration:** Responses are generated locally via Ollama using a custom `capri:latest` model, which uses Gemma 3 4B as its base model.\n* **Streaming Responses:** Text appears progressively as the model generates it.\n* **Externalized Personality:** Capri's persona is configured directly within the Ollama Modelfile rather than being duplicated inside the Python user interface code.\n\n## Planned Features and Privacy Considerations\n\nThe current implementation focuses primarily on local text chat without external API dependencies. However, developers have outlined several features in progress:\n\n* Voice input and spoken replies using local speech-to-text and text-to-speech tools such as `faster-whisper` and `Piper`.\n* More expressive character reactions tied directly to the chat state.\n\n### Security and Verification\n\nWhen deploying AI-driven tools involving local audio or text models, users should independently verify that microphone inputs, transcripts, and generated outputs remain on their local machine and are not inadvertently transmitted to external servers. To inspect the source code, verify setup instructions, or review bug reports, users can visit the official GitHub repository at `https://github.com/Juliowiwiwiwi/Capri-Capricorn-The-Desktop-Construct`.",
+  "hi_body": "## कैप्री का परिचय\n\nकैपरी विंडोज वातावरण के लिए बनाई गई एक ओपन-सोर्स, साइबरपंक-प्रेरित डेस्कटॉप साथी (कंपेनियन) है। *साइबरपंक 2077* के वायुमंडल से प्रेरित यह प्रोजेक्ट एक हल्के डेस्कटॉप पेट के रूप में कार्य करता है, जिसमें एक एनिमेटेड कैरेक्टर और एक कॉम्पैक्ट, टर्मिनल-शैली की चैट विंडो शामिल है। प्रोजेक्ट रिपॉजिटरी के अनुसार, इसका उद्देश्य एक भारी असिस्टेंट डैशबोर्ड के बजाय एक सहज साथी अनुभव प्रदान करना है।\n\n## मुख्य वास्तुकला और विशेषताएं\n\nयह एप्लिकेशन गोपनीयता और ऑफ़लाइन कार्यक्षमता बनाए रखने के लिए स्थानीय आर्टिफिशियल इंटेलिजेंस मॉडल पर निर्भर करता है। मुख्य तकनीकी घटकों में शामिल हैं:\n\n* **एनिमेटेड डेस्कटॉप कैरेक्टर:** पलक झपकाने, सोने और जागने जैसे निष्क्रिय व्यवहारों के साथ विंडोज डेस्कटॉप पर रहता है।\n* **टर्मिनल-शैली की चैट विंडो:** टेक्स्ट संचार के लिए एक कॉम्पैक्ट, साइबरपंक-थीम वाला इंटरफ़ेस।\n* **स्थानीय एआई एकीकरण:** प्रतिक्रियाएं Ollama के माध्यम से स्थानीय रूप से एक कस्टम `capri:latest` मॉडल का उपयोग करके उत्पन्न की जाती हैं, जो अपने आधार मॉडल के रूप में Gemma 3 4B का उपयोग करता है।\n* **स्ट्रीमिंग प्रतिक्रियाएं:** जैसे-जैसे मॉडल टेक्स्ट उत्पन्न करता है, वह स्क्रीन पर दिखाई देता है।\n* **बाहरी व्यक्तित्व:** कैप्री का व्यक्तित्व सीधे Ollama Modelfile के भीतर कॉन्फ़िगर किया गया है, न कि पाइथन यूजर इंटरफेस कोड के अंदर डुप्लीकेट किया गया है।\n\n## नियोजित विशेषताएं और गोपनीयता विचार\n\nवर्तमान कार्यान्वयन मुख्य रूप से बाहरी एपीआई निर्भरता के बिना स्थानीय टेक्स्ट चैट पर केंद्रित है। हालांकि, डेवलपर्स ने प्रगति पर चल रही कई विशेषताओं की रूपरेखा तैयार की है:\n\n* स्थानीय स्पीच-टू-текст और टेक्स्ट-टू-स्पीच टूल जैसे `faster-whisper` और `Piper` का उपयोग करके वॉयस इनपुट और बोली जाने वाली प्रतिक्रियाएं।\n* चैट स्थिति से सीधे जुड़ी हुई अधिक अभिव्यंजक कैरेक्टर प्रतिक्रियाएं।\n\n### सुरक्षा और सत्यापन\n\nस्थानीय ऑडियो या टेक्स्ट मॉडल से जुड़े एआई-संचालित टूल को तैनात करते समय, उपयोगकर्ताओं को स्वतंत्र रूप से यह सत्यापित करना चाहिए कि माइक्रोफ़ोन इनपुट, ट्रांसक्रिप्ट और जनरेटेड आउटपुट उनकी स्थानीय मशीन पर रहें और अनजाने में बाहरी सर्वर पर प्रसारित न हों। सोर्स कोड का निरीक्षण करने, सेटअप निर्देशों को सत्यापित करने या बग रिपोर्ट की समीक्षा करने के लिए, उपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी `https://github.com/Juliowiwiwiwi/Capri-Capricorn-The-Desktop-Construct` पर जा सकते हैं।",
+  "en_meta": "Discover Capri, an open-source cyberpunk desktop companion for Windows powered by local Ollama AI models. Read about features, setup, and privacy.",
+  "hi_meta": "स्थानीय Ollama एआई द्वारा संचालित विंडोज के लिए ओपन-सोर्स साइबरपंक डेस्कटॉप साथी कैप्री के बारे में जानें।",
+  "en_keywords": [
+    "Capri desktop companion",
+    "cyberpunk desktop pet",
+    "Ollama local AI",
+    "open source Windows pet",
+    "Gemma 3 4B model"
+  ],
+  "hi_keywords": [
+    "कैपरी डेस्कटॉप साथी",
+    "साइबरपंक डेस्कटॉप पेट",
+    "Ollama स्थानीय एआई",
+    "विंडोज ओपन सोर्स पेट",
+    "Gemma 3 4B मॉडल"
+  ],
+  "source_published_at": null,
+  "id": "886faf5ff7ea",
+  "source": "https://github.com/Juliowiwiwiwi/Capri-Capricorn-The-Desktop-Construct",
+  "date": "2026-11-03T08:59:11.567208+00:00",
+  "source_title": "Juliowiwiwiwi/Capri-Capricorn-The-Desktop-Construct: Capri is an open-source, Cyberpunk-inspired desktop companion that lives on your Windows desktop. Built with local AI using Ollama, she can hang out and chat with you. Voice interaction and more ani - GitHub",
+  "category": "cyber-security",
+  "image_kind": "conceptual"
+}

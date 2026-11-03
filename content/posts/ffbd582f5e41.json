@@ -1,0 +1,29 @@
+{
+  "en_title": "Juggler Visual Workbench Connects AI Coding Agents Locally and Remotely",
+  "hi_title": "जग्गलर विजुअल वर्कबेंच एआई कोडिंग एजेंटों को स्थानीय और दूरस्थ रूप से जोड़ता है",
+  "en_body": "## Introduction to Juggler\nJuggler is an open-source visual workbench designed for developers working with AI coding agents. Created by Julian Storer, the software aims to provide transparency into model interactions by visualizing context, model calls, and tool execution in real time. It operates as a vendor-neutral tool that connects directly to existing model providers using a user's own subscriptions or API keys.\n\n## Core Architecture and Features\nUnlike traditional linear transcripts, Juggler organizes conversations into persistent, navigable trees stored directly on the user's local disk. Key structural features include:\n\n* **Branching Contexts:** Developers can branch conversations to explore alternative approaches or delegated research without cluttering the main thread.\n* **Detailed Transaction Inspection:** Every LLM transaction can be opened to review inputs, system prompts, tool schemas, token usage, timing, and stop reasons.\n* **Modular Extensions:** Capabilities are built using JavaScript extensions via an Apache-2.0 licensed SDK, allowing custom tools, strategies, and Model Context Protocol (MCP) integrations.\n\n## Vendor Neutrality and Privacy\nJuggler does not proxy model traffic, host proprietary models, or sell token credits. Prompts, code, and API keys are transmitted directly from the user's machine to the chosen provider, which may include Anthropic Claude Code, OpenAI Codex, GitHub Copilot, Google Gemini, Ollama, and other compatible services. No repository data is indexed into a cloud service by the application.\n\n## Deployment Options\nJuggler ships with a native desktop app and a headless command-line server (`juggler`) to support flexible workflows:\n\n* **Local and Remote Sessions:** Run the server on a workstation, dev box, or remote server, and access the same live session from a desktop app or web browser.\n* **Multi-Client Sync:** Multiple browser tabs or desktop views can synchronize with a single server instance.\n* **Network Accessibility:** Local network (LAN) access can be enabled manually with QR code support for mobile viewing.\n\n## Verification and Availability\nThe source code and official releases are available on GitHub and the project website under the GNU Affero General Public License v3.0, while the extension SDK uses the Apache-2.0 license. Developers can verify installation guidelines, security documentation, and build instructions directly within the repository.",
+  "hi_body": "## जग्गलर का परिचय\nजग्गलर एआई कोडिंग एजेंटों के साथ काम करने वाले डेवलपर्स के लिए एक ओपन-सोर्स विजुअल वर्कबेंच है। जूलियन स्टोरर द्वारा निर्मित, यह सॉफ्टवेयर मॉडल इंटरैक्शन में पारदर्शिता प्रदान करने के लिए डिज़ाइन किया गया है। यह एक वेंडर-न्यूट्रल टूल के रूप में काम करता है जो उपयोगकर्ता की अपनी सब्सक्रिप्शन या एपीआई कुंजियों का उपयोग करके सीधे मॉडल प्रदाताओं से जुड़ता है।\n\n## मुख्य वास्तुकला और विशेषताएं\nपारंपरिक रैखिक चैट के विपरीत, जग्गलर वार्ताओं को सीधे उपयोगकर्ता की स्थानीय डिस्क पर संग्रहीत स्थायी, नेविगेट करने योग्य पेड़ों में व्यवस्थित करता है। प्रमुख संरचनात्मक विशेषताओं में शामिल हैं:\n\n* **ब्रांचिंग संदर्भ:** डेवलपर्स मुख्य थ्रेड को अव्यवस्थित किए बिना वैकल्पिक दृष्टिकोणों का पता लगाने के लिए बातचीत को शाखाबद्ध कर सकते हैं।\n* **विस्तृत निरीक्षण:** इनपुट, सिस्टम प्रॉम्प्ट, टूल स्कीमा, टोकन उपयोग और समय की समीक्षा के लिए हर एलएलएम लेनदेन का निरीक्षण किया जा सकता है।\n* **मॉड्यूलर एक्सटेंशन:** क्षमताएं Apache-2.0 लाइसेंस प्राप्त एसडीके का उपयोग करके जावास्क्रिप्ट एक्सटेंशन के माध्यम से बनाई जाती हैं।\n\n## वेंडर तटस्थता और गोपनीयता\nजग्गलर मॉडल ट्रैफ़िक को प्रॉक्सी नहीं करता है और न ही टोकन क्रेडिट बेचता है। संकेत, कोड और एपीआई कुंजियाँ सीधे उपयोगकर्ता की मशीन से चुने गए प्रदाता को भेजी जाती हैं, जिसमें एंथ्रोपिक, ओपनएआई, गूगल जेमिनी, ओलामा और अन्य संगत सेवाएं शामिल हो सकती हैं।\n\n## परिनियोजन विकल्प\nजग्गलर लचीले वर्कफ़्लो का समर्थन करने के लिए एक नेटिव डेस्कटॉप ऐप और एक हेडलेस कमांड-लाइन सर्वर के साथ आता है:\n\n* **स्थानीय और दूरस्थ सत्र:** एक वर्कस्टेशन या सर्वर पर सर्वर चलाएं, और डेस्कटॉप ऐप या वेब ब्राउज़र से उसी लाइव सत्र तक पहुंचें।\n* **मल्टी-क्लाइंट सिंक:** कई ब्राउज़र टैब या डेस्कटॉप दृश्य एक ही सर्वर उदाहरण के साथ सिंक्रोनाइज़ हो सकते हैं।\n\n## सत्यापन और उपलब्धता\nस्रोत कोड और आधिकारिक रिलीज़ जीएनयू एफेरो जनरल पब्लिक लाइसेंस v3.0 के तहत गिटहब पर उपलब्ध हैं, जबकि एक्सटेंशन एसडीके Apache-2.0 लाइसेंस का उपयोग करता है। डेवलपर रिपॉजिटरी के भीतर स्थापना दिशानिर्देशों और सुरक्षा दस्तावेजों को सत्यापित कर सकते हैं।",
+  "en_meta": "Explore Juggler, a vendor-neutral visual workbench for AI coding agents supporting local and remote developer sessions across multiple providers.",
+  "hi_meta": "जग्गलर का परिचय, एक वेंडर-न्यूट्रल विजुअल वर्कबेंच जो कई प्रदाताओं के साथ एआई कोडिंग एजेंट सत्रों को प्रबंधित करता है।",
+  "en_keywords": [
+    "Juggler",
+    "AI coding agent",
+    "visual workbench",
+    "Model Context Protocol",
+    "open source developer tools"
+  ],
+  "hi_keywords": [
+    "जग्गलर",
+    "एआई कोडिंग एजेंट",
+    "विजुअल वर्कबेंच",
+    "ओपन सोर्स",
+    "डेवलपर टूल्स"
+  ],
+  "source_published_at": null,
+  "id": "ffbd582f5e41",
+  "source": "https://github.com/juggler-ai/juggler",
+  "date": "2026-11-03T08:59:11.209228+00:00",
+  "source_title": "juggler-ai/juggler: The Juggler Code Agent - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

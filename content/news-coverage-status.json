@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-03T07:07:30.071556+00:00",
+  "updated_at": "2026-11-03T09:00:15.029992+00:00",
   "categories": {
     "technology": {
-      "discovered": 922,
-      "published": 115,
+      "discovered": 924,
+      "published": 116,
       "sources_configured": 27
     },
     "government-schemes": {
@@ -12,12 +12,12 @@
       "sources_configured": 5
     },
     "sarkari-naukri": {
-      "discovered": 204,
+      "discovered": 203,
       "published": 92,
       "sources_configured": 9
     },
     "private-vacancy": {
-      "discovered": 398,
+      "discovered": 405,
       "published": 50,
       "sources_configured": 7
     },
@@ -27,23 +27,23 @@
       "sources_configured": 17
     },
     "world-news": {
-      "discovered": 4463,
+      "discovered": 4447,
       "published": 150,
       "sources_configured": 30
     },
     "business": {
-      "discovered": 1506,
+      "discovered": 1503,
       "published": 111,
       "sources_configured": 11
     },
     "sports": {
-      "discovered": 600,
+      "discovered": 597,
       "published": 157,
       "sources_configured": 6
     },
     "automobiles": {
-      "discovered": 209,
-      "published": 65,
+      "discovered": 211,
+      "published": 69,
       "sources_configured": 10
     },
     "health-science": {
@@ -52,7 +52,7 @@
       "sources_configured": 6
     },
     "gaming": {
-      "discovered": 608,
+      "discovered": 609,
       "published": 76,
       "sources_configured": 3
     },
@@ -77,27 +77,27 @@
       "sources_configured": 5
     },
     "telecom": {
-      "discovered": 51,
+      "discovered": 52,
       "published": 37,
       "sources_configured": 7
     },
     "ai-news": {
-      "discovered": 592,
-      "published": 116,
+      "discovered": 581,
+      "published": 122,
       "sources_configured": 4
     },
     "cyber-security": {
       "discovered": 96,
-      "published": 13,
+      "published": 14,
       "sources_configured": 2
     },
     "gadgets": {
-      "discovered": 169,
-      "published": 28,
+      "discovered": 171,
+      "published": 30,
       "sources_configured": 3
     },
     "apps-software": {
-      "discovered": 359,
+      "discovered": 357,
       "published": 12,
       "sources_configured": 2
     },
@@ -122,7 +122,7 @@
       "sources_configured": 2
     },
     "admissions": {
-      "discovered": 2,
+      "discovered": 0,
       "published": 1,
       "sources_configured": 2
     },
@@ -152,13 +152,13 @@
       "sources_configured": 3
     },
     "cricket": {
-      "discovered": 271,
+      "discovered": 272,
       "published": 87,
       "sources_configured": 4
     },
     "car-launches": {
-      "discovered": 40,
-      "published": 11,
+      "discovered": 37,
+      "published": 17,
       "sources_configured": 10
     },
     "mobile-launches": {
@@ -167,7 +167,7 @@
       "sources_configured": 10
     },
     "movie-releases": {
-      "discovered": 62,
+      "discovered": 61,
       "published": 5,
       "sources_configured": 6
     },
@@ -177,7 +177,7 @@
       "sources_configured": 3
     },
     "entertainment-rumours": {
-      "discovered": 6,
+      "discovered": 5,
       "published": 6,
       "sources_configured": 3
     },
@@ -187,17 +187,17 @@
       "sources_configured": 6
     },
     "social-media": {
-      "discovered": 73,
+      "discovered": 74,
       "published": 8,
       "sources_configured": 4
     },
     "defence": {
-      "discovered": 268,
+      "discovered": 269,
       "published": 11,
       "sources_configured": 5
     },
     "conflict-news": {
-      "discovered": 141,
+      "discovered": 140,
       "published": 31,
       "sources_configured": 3
     },
@@ -207,7 +207,7 @@
       "sources_configured": 5
     },
     "tourism": {
-      "discovered": 50,
+      "discovered": 51,
       "published": 5,
       "sources_configured": 5
     },
@@ -222,7 +222,7 @@
       "sources_configured": 4
     },
     "visas-immigration": {
-      "discovered": 30,
+      "discovered": 28,
       "published": 22,
       "sources_configured": 4
     },
@@ -242,7 +242,7 @@
       "sources_configured": 4
     }
   },
-  "published_total": 1775,
+  "published_total": 1795,
   "categories_below_minimum": {
     "admissions": 1
   },
@@ -287,7 +287,7 @@
     },
     "abc.net.au": {
       "feed_entries": 25,
-      "queued": 193
+      "queued": 197
     },
     "about.fb.com": {
       "website_candidates": 0,
@@ -311,18 +311,18 @@
     },
     "aljazeera.com": {
       "feed_entries": 25,
-      "queued": 189
+      "queued": 198
     },
     "amarujala.com": {
       "website_candidates": 20,
-      "queued": 213
+      "queued": 230
     },
     "amazon.jobs": {
       "queued": 2
     },
     "androidauthority.com": {
       "feed_entries": 80,
-      "queued": 54
+      "queued": 61
     },
     "androidpolice.com": {
       "website_candidates": 25,
@@ -350,18 +350,19 @@
       "queued": 24
     },
     "assets.publishing.service.gov.uk": {
-      "queued": 1
+      "queued": 1,
+      "attempted": 1
     },
     "au.variety.com": {
       "queued": 9
     },
     "autocarindia.com": {
-      "website_candidates": 13,
-      "queued": 17
+      "website_candidates": 11,
+      "queued": 21
     },
     "bbc.co.uk": {
-      "feed_entries": 178,
-      "queued": 200
+      "feed_entries": 165,
+      "queued": 210
     },
     "bbc.com": {
       "queued": 42
@@ -375,7 +376,7 @@
     },
     "bhaskar.com": {
       "website_candidates": 25,
-      "queued": 125
+      "queued": 133
     },
     "bleepingcomputer.com": {
       "feed_entries": 15,
@@ -393,7 +394,7 @@
     },
     "bloomberg.com": {
       "feed_entries": 40,
-      "queued": 204
+      "queued": 221
     },
     "business-standard.com": {
       "direct_fetch_failed": 1,
@@ -412,7 +413,7 @@
     },
     "cbc.ca": {
       "feed_entries": 20,
-      "queued": 22
+      "queued": 23
     },
     "cnet.com": {
       "feed_entries": 25,
@@ -424,20 +425,24 @@
     "comingsoon.net": {
       "feed_entries": 20,
       "website_candidates": 15,
-      "queued": 130
+      "queued": 133
     },
     "community.openai.com": {
-      "queued": 3
+      "queued": 3,
+      "attempted": 1
     },
     "consumer.ftc.gov": {
       "queued": 17
     },
     "coolztricks.com": {
       "website_candidates": 11,
-      "queued": 7
+      "queued": 9
     },
     "dainikgorakhpur.com": {
       "website_candidates": 7,
+      "queued": 1
+    },
+    "de.ign.com": {
       "queued": 1
     },
     "de.linkedin.com": {
@@ -465,8 +470,8 @@
       "queued": 1
     },
     "diversejobseeker.com": {
-      "website_candidates": 0,
-      "queued": 27
+      "website_candidates": 8,
+      "queued": 32
     },
     "dk.linkedin.com": {
       "queued": 1
@@ -476,7 +481,7 @@
     },
     "dw.com": {
       "feed_entries": 21,
-      "queued": 44
+      "queued": 46
     },
     "educationhub.blog.gov.uk": {
       "queued": 1
@@ -518,7 +523,7 @@
     },
     "france24.com": {
       "feed_entries": 54,
-      "queued": 123
+      "queued": 125
     },
     "freekaamaal.com": {
       "website_candidates": 0
@@ -535,7 +540,7 @@
     },
     "gamerant.com": {
       "website_candidates": 25,
-      "queued": 512
+      "queued": 513
     },
     "gamespot.com": {
       "feed_entries": 15,
@@ -549,9 +554,9 @@
     },
     "github.com": {
       "website_candidates": 16,
-      "queued": 290,
-      "attempted": 14,
-      "published": 10
+      "queued": 280,
+      "attempted": 13,
+      "published": 7
     },
     "global.toyota": {
       "queued": 1
@@ -565,7 +570,7 @@
     "gsmarena.com": {
       "feed_entries": 20,
       "website_candidates": 20,
-      "queued": 23
+      "queued": 24
     },
     "hindi.news18.com": {
       "direct_fetch_failed": 1,
@@ -574,26 +579,24 @@
     },
     "hollywoodreporter.com": {
       "feed_entries": 10,
-      "queued": 57
+      "queued": 59
     },
     "hyundai.news": {
       "queued": 5
     },
     "icc-cricket.com": {
       "website_candidates": 25,
-      "queued": 26
+      "queued": 28
     },
     "ign.com": {
       "feed_entries": 20,
-      "queued": 70
+      "queued": 71
     },
     "in.ign.com": {
       "queued": 1
     },
     "in.linkedin.com": {
-      "queued": 342,
-      "attempted": 1,
-      "published": 1
+      "queued": 341
     },
     "indeed.com": {
       "direct_fetch_failed": 1,
@@ -612,7 +615,7 @@
     },
     "insideevs.com": {
       "feed_entries": 20,
-      "queued": 31,
+      "queued": 32,
       "attempted": 1
     },
     "intrepidtravel.com": {
@@ -684,18 +687,17 @@
       "queued": 1
     },
     "model-spec.openai.com": {
-      "queued": 1
+      "queued": 1,
+      "attempted": 1
     },
     "motor1.com": {
       "feed_entries": 20,
       "direct_fetch_failed": 1,
       "website_candidates": 0,
-      "queued": 24
+      "queued": 27
     },
     "motorsport.hyundai.com": {
-      "queued": 2,
-      "attempted": 1,
-      "published": 1
+      "queued": 1
     },
     "my.tui.com": {
       "queued": 1
@@ -730,7 +732,7 @@
     },
     "news.abplive.com": {
       "feed_entries": 59,
-      "queued": 367
+      "queued": 373
     },
     "news.kent.gov.uk": {
       "queued": 1,
@@ -741,8 +743,8 @@
     },
     "news.samsung.com": {
       "feed_entries": 50,
-      "direct_fetch_failed": 2,
-      "website_candidates": 0,
+      "direct_fetch_failed": 1,
+      "website_candidates": 25,
       "queued": 99
     },
     "news.un.org": {
@@ -760,7 +762,7 @@
       "website_candidates": 0
     },
     "nytimes.com": {
-      "feed_entries": 57,
+      "feed_entries": 56,
       "queued": 22
     },
     "odisha.gov.in": {
@@ -793,7 +795,7 @@
     },
     "prnewswire.com": {
       "feed_entries": 20,
-      "queued": 301
+      "queued": 321
     },
     "pt.ign.com": {
       "queued": 1
@@ -876,11 +878,11 @@
     },
     "teaching-vacancies.service.gov.uk": {
       "queued": 3,
-      "attempted": 1
+      "attempted": 2
     },
     "techcrunch.com": {
       "feed_entries": 40,
-      "queued": 142
+      "queued": 144
     },
     "technologyreview.com": {
       "feed_entries": 10,
@@ -897,8 +899,8 @@
       "queued": 1
     },
     "theguardian.com": {
-      "feed_entries": 285,
-      "queued": 266
+      "feed_entries": 284,
+      "queued": 284
     },
     "thehackernews.com": {
       "website_candidates": 25,
@@ -907,7 +909,7 @@
     },
     "thehindu.com": {
       "website_candidates": 25,
-      "queued": 179
+      "queued": 185
     },
     "theverge.com": {
       "feed_entries": 10,
@@ -915,7 +917,7 @@
     },
     "timesofindia.indiatimes.com": {
       "feed_entries": 67,
-      "queued": 1867,
+      "queued": 1892,
       "attempted": 15
     },
     "tourism.australia.com": {
@@ -929,16 +931,14 @@
     },
     "trai.gov.in": {
       "website_candidates": 25,
-      "queued": 1
+      "queued": 2
     },
     "transcripts.un.org": {
-      "queued": 3,
-      "attempted": 2,
-      "published": 2
+      "queued": 1
     },
     "travel.economictimes.indiatimes.com": {
       "website_candidates": 15,
-      "queued": 55
+      "queued": 56
     },
     "travelnewsdigest.in": {
       "website_candidates": 0
@@ -958,7 +958,7 @@
     "variety.com": {
       "feed_entries": 20,
       "website_candidates": 25,
-      "queued": 518
+      "queued": 527
     },
     "wired.com": {
       "feed_entries": 80,
@@ -966,7 +966,7 @@
     },
     "wsj.com": {
       "feed_entries": 61,
-      "queued": 51
+      "queued": 53
     },
     "www.abc.net.au": {
       "queued": 264
@@ -993,7 +993,7 @@
       "queued": 1
     },
     "www.aljazeera.com": {
-      "queued": 370,
+      "queued": 369,
       "attempted": 1
     },
     "www.altus.af.mil": {
@@ -1006,7 +1006,9 @@
       "queued": 9
     },
     "www.androidauthority.com": {
-      "queued": 71
+      "queued": 71,
+      "attempted": 1,
+      "published": 1
     },
     "www.androidpolice.com": {
       "queued": 15
@@ -1021,9 +1023,9 @@
       "queued": 2
     },
     "www.autocarindia.com": {
-      "queued": 71,
-      "attempted": 5,
-      "published": 1
+      "queued": 70,
+      "attempted": 11,
+      "published": 4
     },
     "www.bbc.co.uk": {
       "queued": 443,
@@ -1049,9 +1051,7 @@
       "queued": 15
     },
     "www.canada.ca": {
-      "queued": 19,
-      "attempted": 3,
-      "published": 3
+      "queued": 16
     },
     "www.cannockchasedc.gov.uk": {
       "queued": 1
@@ -1064,7 +1064,8 @@
     },
     "www.cardekho.com": {
       "queued": 15,
-      "attempted": 1
+      "attempted": 4,
+      "published": 2
     },
     "www.carscoops.com": {
       "queued": 24
@@ -1285,8 +1286,8 @@
       "queued": 1
     },
     "www.nytimes.com": {
-      "queued": 141,
-      "attempted": 16
+      "queued": 137,
+      "attempted": 12
     },
     "www.ons.gov.uk": {
       "queued": 4
@@ -1315,7 +1316,7 @@
     },
     "www.reuters.com": {
       "queued": 92,
-      "attempted": 1
+      "attempted": 2
     },
     "www.rollingstone.com": {
       "queued": 115
@@ -1365,10 +1366,6 @@
     },
     "www.tui.com": {
       "queued": 21
-    },
-    "www.ugc.gov.in": {
-      "queued": 1,
-      "attempted": 1
     },
     "www.un.org": {
       "queued": 7
