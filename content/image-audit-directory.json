@@ -1,56 +1,32 @@
 {
-  "total_posts": 1936,
+  "total_posts": 1968,
   "selected": 19,
   "results": {
     "source_photo_saved": 6,
     "cooldown": 13
   },
-  "still_missing": 155,
+  "still_missing": 157,
   "articles": [
     {
-      "id": "8dab3cfd7a1b34cc7ef85719",
-      "source": "https://en.wikipedia.org/wiki/BSA_B31",
+      "id": "d7734411431f8fa6d0ef0bcf",
+      "source": "https://en.wikipedia.org/wiki/Geely_GX9",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793754934.9735656
+      "retry_after": 1793765126.2880216
     },
     {
-      "id": "d094af5739181877015203ad",
-      "source": "https://en.wikipedia.org/wiki/BSA_Fury",
+      "id": "42c7e587405c5c4a5ac2badd",
+      "source": "https://en.wikipedia.org/wiki/Bajaj_Sunny",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793754935.3118994
+      "retry_after": 1793765126.7309945
     },
     {
-      "id": "f681e126d43c416ed1b73a68",
-      "source": "https://en.wikipedia.org/wiki/Kama_Ruijie",
+      "id": "49055f6981079fcd7c9e4f7b",
+      "source": "https://en.wikipedia.org/wiki/Buell_1125R",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793754935.3987927
-    },
-    {
-      "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "result": "cooldown"
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
-    },
-    {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
-    },
-    {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
+      "retry_after": 1793765127.1089075
     },
     {
       "id": "4afa4536b18e5a41b30a3497",
@@ -81,25 +57,49 @@
       "result": "cooldown"
     },
     {
-      "id": "2f93572d872303f93fcc8cda",
-      "source": "https://en.wikipedia.org/wiki/Hongqi_E-QM5",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793754935.8096342
+      "id": "007acb84538e69bcc14f4f9f",
+      "result": "cooldown"
     },
     {
-      "id": "692686758bd5471e6d32a149",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_625",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793754935.8118675
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "result": "cooldown"
     },
     {
-      "id": "75fb6ac6dbae70d901370e16",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_ZR",
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "612f5f271fbd50da79894c6b",
+      "source": "https://en.wikipedia.org/wiki/HTC_One_Mini",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793754935.959487
+      "retry_after": 1793765127.3008301
+    },
+    {
+      "id": "fd91bddba4a6f1026eccf8c2",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Z1",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793765127.4621058
+    },
+    {
+      "id": "b9a429b3e046c92d3fb8eca0",
+      "source": "https://en.wikipedia.org/wiki/Toyota_bZ4X",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793765127.5036128
     }
   ],
   "missing": [
@@ -116,6 +116,13 @@
       "title": "TRAI Releases Mobile Network Performance Audit for Sonitpur, Assam",
       "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No126of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "bdaee5f4786c",
+      "category": "social-media",
+      "title": "Exploring Social Media Marketing Internship Opportunities Listed on LinkedIn",
+      "source": "https://in.linkedin.com/jobs/view/social-media-marketing-internship-in-delhi-bangalore-hyderabad-mumbai-at-foodstories-4479738162?position=44&pageNum=0&refId=6HZzQVkTvpvkiIYOUZ%2F6vQ%3D%3D&trackingId=jLeQWDCS3GoiLwZtObrHrw%3D%3D",
+      "reason": "invalid_source_images"
     },
     {
       "id": "031f3d5eda5f",
@@ -137,6 +144,13 @@
       "title": "TRAI Releases Independent Mobile Network Performance Audit for Bilaspur and Janjgir-Champa",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No131of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "a99188c62a2d",
+      "category": "social-media",
+      "title": "Divine Hindu Announces On-Site Social Media Internship Opening in Bengaluru",
+      "source": "https://in.linkedin.com/jobs/view/social-media-intern-immediate-joiners-bangalore-at-divine-hindu-4484913408",
+      "reason": "invalid_source_images"
     },
     {
       "id": "37c0e160c49f",
@@ -237,13 +251,6 @@
       "reason": "invalid_source_images"
     },
     {
-      "id": "eeed1c410282",
-      "category": "ai-news",
-      "title": "Horizon Open-Source Project Offers AI-Powered News Aggregation and Briefing Generation",
-      "source": "https://github.com/Thysrael/Horizon",
-      "reason": "invalid_source_images"
-    },
-    {
       "id": "b211f120ea27b93fc925f6b4",
       "category": "gadgets",
       "title": "Nokia Asha 501: Smartphone Specifications, Facts and Verification Guide",
@@ -255,7 +262,7 @@
       "category": "cricket",
       "title": "Latest Cricket Scores and Fixtures Roundup: Multi-Day Matches in Progress",
       "source": "https://www.bbc.co.uk/sport/cricket/scores-fixtures",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "58f11d3687a2",
@@ -944,6 +951,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "222914040e11",
+      "category": "social-media",
+      "title": "The Blue Kite Announces Opening for Social Media Associate Role in Goa via LinkedIn",
+      "source": "https://in.linkedin.com/jobs/view/social-media-associate-at-the-blue-kite-4483449440",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "7548888dfa18",
       "category": "world-news",
       "title": "Kylian Mbappé Loses Major Sponsorship Deals in China Following Mao Zedong Meme Controversy",
@@ -998,6 +1012,13 @@
       "title": "TRAI Releases Mobile Network Performance Audit for Thrissur District",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No133of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "a6ec2cd71bae",
+      "category": "social-media",
+      "title": "Headout Recruits YouTube Scriptwriter in Bengaluru for Search-Driven Travel Content",
+      "source": "https://in.linkedin.com/jobs/view/scriptwriter-youtube-at-headout-4483872792",
+      "reason": "invalid_source_images"
     },
     {
       "id": "122b5649e749",
@@ -1060,13 +1081,6 @@
       "category": "private-vacancy",
       "title": "Bright Blue Gemstones Announces Client Acquisition Internship in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/client-acquisition-intern-at-bright-blue-gemstones-4471542402",
-      "reason": "invalid_source_images"
-    },
-    {
-      "id": "4683cd570ef3",
-      "category": "ai-news",
-      "title": "Magpie Integrates Multiple AI Coding Agents and Providers into a Single Local Gateway",
-      "source": "https://github.com/yetone/magpie",
       "reason": "invalid_source_images"
     },
     {
@@ -1191,43 +1205,43 @@
   ],
   "missing_reasons": {
     "source_unavailable": 34,
+    "invalid_source_images": 54,
     "source_error": 4,
     "access_denied": 21,
-    "invalid_source_images": 53,
-    "no_source_image": 42,
+    "no_source_image": 43,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "8dab3cfd7a1b34cc7ef85719": {
+    "d7734411431f8fa6d0ef0bcf": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/BSA_B31",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/1949_BSA_B31_350cc-OHV_motorcycle_right_side.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Geely_GX9",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Geely_Haoqing_GX9.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "d094af5739181877015203ad": {
+    "42c7e587405c5c4a5ac2badd": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/BSA_Fury",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/83/Prototype_BSA_Fury_motorcycle.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Bajaj_Sunny",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Bajaj_sunny.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "f681e126d43c416ed1b73a68": {
+    "49055f6981079fcd7c9e4f7b": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Kama_Ruijie",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Kama_Ruijie_electric_van_001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Buell_1125R",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Midnight_Black_2009_Buell_1125R.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "2f93572d872303f93fcc8cda": {
+    "612f5f271fbd50da79894c6b": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Hongqi_E-QM5",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0e/2021_FAW_Hongqi_E-QM5_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/HTC_One_Mini",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/HTC_One_mini.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "692686758bd5471e6d32a149": {
+    "fd91bddba4a6f1026eccf8c2": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_625",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Nokia_Lumia_625.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Z1",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/Sony_Xperia_Z1.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "75fb6ac6dbae70d901370e16": {
+    "b9a429b3e046c92d3fb8eca0": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_ZR",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/82/SONY_XPERIA_A_%28docomo_SO-04E%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Toyota_bZ4X",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Toyota_bZ4X_Automesse_Ludwigsburg_2022_1X7A5895.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
