@@ -1,91 +1,79 @@
 {
-  "total_posts": 1696,
+  "total_posts": 1728,
   "selected": 12,
   "results": {
-    "source_photo_saved": 6,
-    "no_source_image": 3,
-    "source_error": 1,
-    "cooldown": 2
+    "source_photo_saved": 4,
+    "invalid_source_images": 1,
+    "cooldown": 6,
+    "no_source_image": 1
   },
-  "still_missing": 127,
+  "still_missing": 132,
   "articles": [
     {
-      "id": "cf8c0a1135223db18323822b",
-      "source": "https://en.wikipedia.org/wiki/BMW_G_310_R",
+      "id": "379f2b883e829160548f229b",
+      "source": "https://en.wikipedia.org/wiki/Aprilia_Area_51",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793690824.8524818
+      "retry_after": 1793698275.2941418
     },
     {
-      "id": "2a0982f916cc8af42b7a82bb",
-      "source": "https://en.wikipedia.org/wiki/Yamaha_FZR400",
+      "id": "4eed4705590797510ab74a0a",
+      "source": "https://en.wikipedia.org/wiki/Lambretta_Model_B",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793690824.9778037
+      "retry_after": 1793698275.490666
     },
     {
-      "id": "a9f98c98db2ccc6d2bcb6136",
-      "source": "https://en.wikipedia.org/wiki/Forthing_T5_Evo",
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793690825.0290844
-    },
-    {
-      "id": "7b52c57e7bab57f266662227",
-      "source": "https://en.wikipedia.org/wiki/Maxus_EV30",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793690825.4578738
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "source": "https://dec.ac.in/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690825.4698958
-    },
-    {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "source": "https://isc-edu.org/",
-      "policy": "93e2ad7deccc",
-      "result": "source_error",
-      "retry_after": 1793690825.6743345
-    },
-    {
-      "id": "3d3292535d51f9488676f5d1",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Mate_60",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793690825.9349694
-    },
-    {
-      "id": "ab5757b7bde7e5a43128d256",
-      "result": "cooldown"
+      "result": "invalid_source_images",
+      "retry_after": 1793698275.6223078
     },
     {
       "id": "a6510273f0889bf4d7684eae",
       "result": "cooldown"
     },
     {
-      "id": "5169192e370b53c0344346ec",
-      "source": "https://en.wikipedia.org/wiki/Redmi_K70",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793690826.1888626
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
     },
     {
       "id": "8af54bb949a0c055391d640a",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793690827.809721
+      "result": "cooldown"
     },
     {
       "id": "fbff6440d68d52399ca212b1",
-      "source": "https://cctu.edu.gh/site/index",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5757b7bde7e5a43128d256",
+      "result": "cooldown"
+    },
+    {
+      "id": "989a2779dab608f1a347f3a8",
+      "source": "https://en.wikipedia.org/wiki/%C5%A0koda_Kushaq",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793698275.7382863
+    },
+    {
+      "id": "55762bf991eef5af8f8def42",
+      "source": "https://en.wikipedia.org/wiki/Aznom_Palladium",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793698275.9628325
+    },
+    {
+      "id": "ef614dcb4163038685679d1d",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
       "policy": "93e2ad7deccc",
       "result": "no_source_image",
-      "retry_after": 1793690830.015588
+      "retry_after": 1793698276.8810825
     }
   ],
   "missing": [
@@ -307,6 +295,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "c3c44629d231",
+      "category": "ai-news",
+      "title": "CareerMaker.ai Announces Bengaluru On-Site Assessment Research Intern Opening",
+      "source": "https://in.linkedin.com/jobs/view/assessment-research-intern-at-careermaker-ai-4483632864",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "0bdb0918a8cf",
       "category": "private-vacancy",
       "title": "Credit Saison India Recruits Relationship Manager for Secured Direct Operations in South India",
@@ -356,6 +351,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "e62d34be0421",
+      "category": "ai-news",
+      "title": "Definitive Healthcare Announces Data Scientist, Applied AI Role to Boost Healthcare‑Focused LLM Solutions",
+      "source": "https://www.linkedin.com/jobs/view/data-scientist-applied-ai-at-definitive-healthcare-4484088856",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "d0f211debf6a",
       "category": "telecom",
       "title": "TRAI Releases Mobile Network Quality Findings for Parts of Kolkata LSA",
@@ -395,6 +397,20 @@
       "category": "private-vacancy",
       "title": "EH Jobs Recruits Western Music Teacher for Primary Grades in Tellapur, Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/looking-for-western-music-teacher-primary-1-5-in-tellapur-hyderabad-at-eh-jobs-4481687605",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "category": "gadgets",
+      "title": "Nokia Lumia 925: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "4ca42dad8d6f",
+      "category": "visas-immigration",
+      "title": "Deloitte Highlights Global Mobility and Immigration Role in Hyderabad",
+      "source": "https://in.linkedin.com/jobs/view/associate-global-mobility-and-immigration-talent-services-tipm-perm-services-hyderabad-at-deloitte-4484168606",
       "reason": "invalid_source_images"
     },
     {
@@ -557,6 +573,13 @@
       "title": "TRAI Releases Independent Drive Test Findings for Mobile Networks in Leh and Ladakh",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No143of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "ef614dcb4163038685679d1d",
+      "category": "gadgets",
+      "title": "Samsung Galaxy F15 5G: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
+      "reason": "no_source_image"
     },
     {
       "id": "9e7d68e39abe",
@@ -983,58 +1006,44 @@
     "source_unavailable": 33,
     "source_error": 3,
     "access_denied": 26,
-    "invalid_source_images": 26,
-    "no_source_image": 39
+    "invalid_source_images": 30,
+    "no_source_image": 40
   },
-  "existing_representatives_preserved": 1,
+  "existing_representatives_preserved": 0,
   "diagnostics": {
-    "cf8c0a1135223db18323822b": {
+    "379f2b883e829160548f229b": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/BMW_G_310_R",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/BMW_G_310_R_-_Akrapovi%C4%8D.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Aprilia_Area_51",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/Aprilia_Area51_scooter.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "2a0982f916cc8af42b7a82bb": {
+    "4eed4705590797510ab74a0a": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Yamaha_FZR400",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Yamaha_FZR_-_Flickr_-_mick_-_Lumix.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Lambretta_Model_B",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/1948_Lambretta_B_scooter_%285957287960%29_cropped.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "a9f98c98db2ccc6d2bcb6136": {
+    "8f4b17c49d1b2a0c5cb45a53": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "candidate_count": 6,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "989a2779dab608f1a347f3a8": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Forthing_T5_Evo",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Forthing_T5_Evo_IMG001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/%C5%A0koda_Kushaq",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/2021_%C5%A0koda_Kushaq_%28India%29_front_view.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "7b52c57e7bab57f266662227": {
+    "55762bf991eef5af8f8def42": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Maxus_EV30",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/df/Maxus_eDeliver_3_1X7A0873.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Aznom_Palladium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/de/Aznom_Palladium_%2853088383672%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "8444aa187e09b377f661fcbf": {
+    "ef614dcb4163038685679d1d": {
       "reason": "no_source_image",
-      "source": "https://dec.ac.in/"
-    },
-    "0a95ccf111c45db4cfb5c9e3": {
-      "reason": "source_error",
-      "source": "https://isc-edu.org/",
-      "error": "ConnectionError"
-    },
-    "3d3292535d51f9488676f5d1": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Mate_60",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Huawei_Mate_60.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "5169192e370b53c0344346ec": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Redmi_K70",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/IPhone_%2854239311561%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "8af54bb949a0c055391d640a": {
-      "reason": "no_source_image",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "existing_representative_preserved": true
-    },
-    "fbff6440d68d52399ca212b1": {
-      "reason": "no_source_image",
-      "source": "https://cctu.edu.gh/site/index"
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/"
     }
   },
   "mode": "directory"
