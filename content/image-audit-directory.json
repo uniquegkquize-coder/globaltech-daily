@@ -1,91 +1,101 @@
 {
-  "total_posts": 1641,
-  "selected": 13,
+  "total_posts": 1696,
+  "selected": 12,
   "results": {
-    "source_photo_saved": 7,
-    "cooldown": 5,
-    "invalid_source_images": 1
+    "source_photo_saved": 6,
+    "no_source_image": 3,
+    "source_error": 1,
+    "cooldown": 2
   },
-  "still_missing": 110,
+  "still_missing": 127,
   "articles": [
     {
-      "id": "51c2f90b67ae461d04b2a46b",
-      "source": "https://www.royalenfield.com/in/en/motorcycles/bullet-650/",
+      "id": "cf8c0a1135223db18323822b",
+      "source": "https://en.wikipedia.org/wiki/BMW_G_310_R",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793678495.9402554
+      "retry_after": 1793690824.8524818
     },
     {
-      "id": "d1b7bc0c3d642fa088cb1331",
-      "source": "https://en.wikipedia.org/wiki/Jinbei_Grand_Haise",
+      "id": "2a0982f916cc8af42b7a82bb",
+      "source": "https://en.wikipedia.org/wiki/Yamaha_FZR400",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793678495.9668796
+      "retry_after": 1793690824.9778037
     },
     {
-      "id": "07281babd0cc42f32067dea8",
-      "source": "https://en.wikipedia.org/wiki/Ducati_Panigale_V2",
+      "id": "a9f98c98db2ccc6d2bcb6136",
+      "source": "https://en.wikipedia.org/wiki/Forthing_T5_Evo",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793678496.0090866
+      "retry_after": 1793690825.0290844
     },
     {
-      "id": "2509b7005616ee1cc772f8df",
-      "source": "https://en.wikipedia.org/wiki/Roewe_iMAX8",
+      "id": "7b52c57e7bab57f266662227",
+      "source": "https://en.wikipedia.org/wiki/Maxus_EV30",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793678496.550936
-    },
-    {
-      "id": "c62cb9cacc2e1c0affc19704",
-      "source": "https://en.wikipedia.org/wiki/Federal_University%2C_Wukari",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793678496.6938205
+      "retry_after": 1793690825.4578738
     },
     {
       "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
+      "source": "https://dec.ac.in/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793690825.4698958
     },
     {
       "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
+      "source": "https://isc-edu.org/",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1793690825.6743345
     },
     {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
+      "id": "3d3292535d51f9488676f5d1",
+      "source": "https://en.wikipedia.org/wiki/Huawei_Mate_60",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793690825.9349694
     },
     {
       "id": "ab5757b7bde7e5a43128d256",
       "result": "cooldown"
     },
     {
-      "id": "3086cb2e3cc8f584c5e5eca3",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_12_Lite",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793678497.1564786
-    },
-    {
-      "id": "ed7f7ae04aced5948723aabc",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_13T",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793678497.8575442
-    },
-    {
       "id": "a6510273f0889bf4d7684eae",
-      "source": "https://mua.ac.ke/",
+      "result": "cooldown"
+    },
+    {
+      "id": "5169192e370b53c0344346ec",
+      "source": "https://en.wikipedia.org/wiki/Redmi_K70",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793678499.4155369
+      "result": "source_photo_saved",
+      "retry_after": 1793690826.1888626
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793690827.809721
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "source": "https://cctu.edu.gh/site/index",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793690830.015588
     }
   ],
   "missing": [
+    {
+      "id": "0346b2c5ec85",
+      "category": "telecom",
+      "title": "TRAI Drive Test Shows Mixed Mobile‑Network Quality in South Andaman and Port Blair‑Havelock Corridor",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No136of2026.pdf",
+      "reason": "source_unavailable"
+    },
     {
       "id": "c4038aa3469b",
       "category": "telecom",
@@ -161,7 +171,7 @@
       "category": "private-vacancy",
       "title": "Recent Administrative Assistant Job Listings Highlight Opportunities Across the San Francisco Bay Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-san-francisco-ca",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "a41b914c9659",
@@ -199,6 +209,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "a9716e8287f2",
+      "category": "cricket",
+      "title": "Latest Cricket Scores and Fixtures Roundup: Multi-Day Matches in Progress",
+      "source": "https://www.bbc.co.uk/sport/cricket/scores-fixtures",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "58f11d3687a2",
       "category": "private-vacancy",
       "title": "Overview of Current Media and Communications Private Vacancies in the Des Moines Area",
@@ -217,6 +234,13 @@
       "category": "sarkari-naukri",
       "title": "7th Pay Commission Salary Calculator Tool Released: Estimating Central Government Emoluments",
       "source": "https://www.sahisarkarijobs.in/salary-calculator/",
+      "reason": "no_source_image"
+    },
+    {
+      "id": "51e45078d38e",
+      "category": "sarkari-naukri",
+      "title": "Understanding Physical Fitness Standards for 2026 Defence and Police Recruitment",
+      "source": "https://www.sahisarkarijobs.in/physical-standards-calculator-defence-police/",
       "reason": "no_source_image"
     },
     {
@@ -252,7 +276,7 @@
       "category": "private-vacancy",
       "title": "Wordsmith Learning Hub Recruits Senior Digital Marketing Manager for Tamil Edtech Sector",
       "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "f638281840d9",
@@ -280,7 +304,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-phoenix-az",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "0bdb0918a8cf",
@@ -329,7 +353,14 @@
       "category": "private-vacancy",
       "title": "Recent Administrative Assistant and Support Openings Listed in the Des Moines, Iowa Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
+    },
+    {
+      "id": "d0f211debf6a",
+      "category": "telecom",
+      "title": "TRAI Releases Mobile Network Quality Findings for Parts of Kolkata LSA",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No137of2026.pdf",
+      "reason": "source_unavailable"
     },
     {
       "id": "0da0ead215c3",
@@ -374,6 +405,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "38accdd4d36d",
+      "category": "telecom",
+      "title": "TRAI Q2‑2026 Telecom Report Shows Steady Growth in Internet Users and Revenue, Wireline Decline Continues",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No135of2026.pdf",
+      "reason": "source_unavailable"
+    },
+    {
       "id": "a5f43758a0b4",
       "category": "ai-news",
       "title": "University of Phoenix White Paper Examines AI Skills Gaps and Workforce Retention in Rural Communities",
@@ -395,6 +433,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "80ca872b27a0",
+      "category": "telecom",
+      "title": "TRAI Releases Draft Guidelines on Responsible AI Use in Telecom Networks",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No145of2026.pdf",
+      "reason": "source_unavailable"
+    },
+    {
       "id": "ef6d4c03dede",
       "category": "business",
       "title": "XPENG Reports Record Monthly Deliveries for October 2026 and Progress in Autonomous Operations",
@@ -406,6 +451,13 @@
       "category": "telecom",
       "title": "India Telecom Sector Sees Steady Growth in August 2026",
       "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No125of2026.pdf",
+      "reason": "source_unavailable"
+    },
+    {
+      "id": "ef84455d3242",
+      "category": "telecom",
+      "title": "TRAI Releases Telecom Subscription Data for September 2026: Broadband and Mobile Base Grow",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No140of2026.pdf",
       "reason": "source_unavailable"
     },
     {
@@ -427,7 +479,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted in Des Moines Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "3570bb7ef821",
@@ -435,6 +487,13 @@
       "title": "UPSC Announces Special Advertisement No. 51/2026 for Principal and Vice-Principal Posts in Delhi Education Department",
       "source": "https://www.upsc.gov.in/sites/default/files/AdvtNo-51-2026-Special-Engl-240726.pdf",
       "reason": "access_denied"
+    },
+    {
+      "id": "b822477903c2",
+      "category": "telecom",
+      "title": "TRAI Extends Deadline for Feedback on Draft DRM Audit Manual for Cable and Broadcasting",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No147of2026_0.pdf",
+      "reason": "source_unavailable"
     },
     {
       "id": "029b646a13ec",
@@ -455,7 +514,7 @@
       "category": "private-vacancy",
       "title": "Skillinabox Recruits Fashion Designer Educator for Noida Operations",
       "source": "https://in.linkedin.com/jobs/view/fashion-designer-educator-at-skillinabox-4483836717",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "1c4f6e29aff4",
@@ -476,7 +535,7 @@
       "category": "private-vacancy",
       "title": "Recent Program and Project Management Openings Highlighted for Boydton and Surrounding Regions",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-boydton-va",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "040dd341f762",
@@ -493,11 +552,25 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "ec8b9639359a",
+      "category": "telecom",
+      "title": "TRAI Releases Independent Drive Test Findings for Mobile Networks in Leh and Ladakh",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No143of2026.pdf",
+      "reason": "source_unavailable"
+    },
+    {
       "id": "9e7d68e39abe",
       "category": "business",
       "title": "G20 Foreign Ministers Address Global Supply Chain Vulnerabilities in Atlanta",
       "source": "https://www.business-standard.com/external-affairs-defence-security/news/secure-supply-chains-resilience-key-for-global-economy-jaishankar-at-g20-126110100012_1.html",
       "reason": "access_denied"
+    },
+    {
+      "id": "5fc7e58715b4",
+      "category": "telecom",
+      "title": "TRAI Releases Mobile Network Quality Assessment Findings for Kachchh Region and Highways",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/Press_release_142_signed_english.pdf",
+      "reason": "source_unavailable"
     },
     {
       "id": "61ab99a70d23",
@@ -556,6 +629,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "4be79532a665",
+      "category": "ai-news",
+      "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
+      "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
+      "reason": "no_source_image"
+    },
+    {
       "id": "52c013755cd0",
       "category": "sarkari-naukri",
       "title": "8th Pay Commission Salary Projection Tools Emerge Amid Anticipation for Official Pay Matrix",
@@ -584,6 +664,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "75ebcc814325",
+      "category": "telecom",
+      "title": "TRAI Releases Mobile Network Quality Assessment Findings for Vijayanagara District",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No139of2026.pdf",
+      "reason": "source_unavailable"
+    },
+    {
       "id": "4eb7b2235122",
       "category": "telecom",
       "title": "TRAI Releases Independent Mobile Network Performance Data for South Delhi Areas",
@@ -595,6 +682,13 @@
       "category": "results",
       "title": "SSC Releases Qualified Candidate List for SI in Delhi Police and CAPF 2025 PST/PET",
       "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_2_29102026.pdf",
+      "reason": "source_unavailable"
+    },
+    {
+      "id": "efeded53a5bb",
+      "category": "telecom",
+      "title": "TRAI Releases New Recommendations for Application-Based Linear Television Distribution Services",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No138of2026.pdf",
       "reason": "source_unavailable"
     },
     {
@@ -689,6 +783,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "ade2cb72b841",
+      "category": "telecom",
+      "title": "TRAI Releases Independent Drive Test Findings for Hyderabad and Adoni-Mantralayam",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No144of2026.pdf",
+      "reason": "source_unavailable"
+    },
+    {
       "id": "ab5757b7bde7e5a43128d256",
       "category": "education",
       "title": "Exploits University: College Admissions, Facts and Verification Guide",
@@ -714,14 +815,14 @@
       "category": "private-vacancy",
       "title": "Ivory Lighthouse Recruitment Services Lists Onboard Sales Associate Vacancy for International Cruise Lines",
       "source": "https://in.linkedin.com/jobs/view/sales-associate-onboard-international-cruise-line-at-ivory-lighthouse-recruitment-services-pvt-ltd-4482589473",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "9e37935bcd6c",
       "category": "private-vacancy",
       "title": "San Francisco Bay Area Media and Communications Job Listings Highlight Tech and Corporate Sector Demand",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "8444aa187e09b377f661fcbf",
@@ -742,21 +843,21 @@
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Cheyenne and Surrounding Region",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "080b28de54ff",
       "category": "private-vacancy",
       "title": "Amrit Skills Development Reports MIS Executive Opening in Delhi",
       "source": "https://in.linkedin.com/jobs/view/mis-executive-at-amrit-skills-development-4480055351",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "b9e7ebed5efd",
       "category": "private-vacancy",
       "title": "Community and Social Services Career Openings Highlight Regional Employment Landscape",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-boydton-va",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "090108930e0d",
@@ -771,6 +872,13 @@
       "title": "Cape Coast Technical University: College Admissions, Facts and Verification Guide",
       "source": "https://cctu.edu.gh/site/index",
       "reason": "no_source_image"
+    },
+    {
+      "id": "1da89144be44",
+      "category": "telecom",
+      "title": "TRAI Releases Mobile Network Quality Assessment Findings for Select Uttar Pradesh Regions",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No141of2026.pdf",
+      "reason": "source_unavailable"
     },
     {
       "id": "021dcf06da61",
@@ -791,7 +899,7 @@
       "category": "private-vacancy",
       "title": "Community and Social Services Openings Highlighted Across Des Moines Area Employers",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "01a6933a42b8",
@@ -799,6 +907,13 @@
       "title": "TRAI Launches Digital Connectivity Rating Platform to Standardize Infrastructure Transparency",
       "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No122of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "9ac2bb5ad6c4",
+      "category": "sarkari-naukri",
+      "title": "Understanding Competitive Exam Cut-Off Marks Calculators: Utility and Limitations",
+      "source": "https://www.sahisarkarijobs.in/cutoff-marks-calculator/",
+      "reason": "no_source_image"
     },
     {
       "id": "731720281d96",
@@ -843,11 +958,18 @@
       "reason": "no_source_image"
     },
     {
+      "id": "d828981e6826",
+      "category": "ai-news",
+      "title": "Claude Code’s New ‘Academic Research Skills’ Suite Aims to Keep Humans in the Loop",
+      "source": "https://github.com/imbad0202/academic-research-skills",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "38138689935d",
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Boydton Area Listings",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-boydton-va",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "a91a82825e4a",
@@ -858,57 +980,61 @@
     }
   ],
   "missing_reasons": {
-    "source_unavailable": 21,
+    "source_unavailable": 33,
     "source_error": 3,
-    "access_denied": 16,
-    "invalid_source_images": 24,
-    "no_source_image": 46
+    "access_denied": 26,
+    "invalid_source_images": 26,
+    "no_source_image": 39
   },
-  "existing_representatives_preserved": 0,
+  "existing_representatives_preserved": 1,
   "diagnostics": {
-    "51c2f90b67ae461d04b2a46b": {
+    "cf8c0a1135223db18323822b": {
       "reason": "source_photo_saved",
-      "source": "https://www.royalenfield.com/in/en/motorcycles/bullet-650/",
-      "image": "https://www.royalenfield.com/content/dam/royal-enfield-revamp/header/shop/configure/bullet-350.webp"
+      "source": "https://en.wikipedia.org/wiki/BMW_G_310_R",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/BMW_G_310_R_-_Akrapovi%C4%8D.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "d1b7bc0c3d642fa088cb1331": {
+    "2a0982f916cc8af42b7a82bb": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Jinbei_Grand_Haise",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Jin_Bei_H2L_Minibus_2011_%2811792018613%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Yamaha_FZR400",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Yamaha_FZR_-_Flickr_-_mick_-_Lumix.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "07281babd0cc42f32067dea8": {
+    "a9f98c98db2ccc6d2bcb6136": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ducati_Panigale_V2",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Ducati_Panigale_V2S_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Forthing_T5_Evo",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Forthing_T5_Evo_IMG001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "2509b7005616ee1cc772f8df": {
+    "7b52c57e7bab57f266662227": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Roewe_iMAX8",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/2021_SAIC_Roewe_iMAX8.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Maxus_EV30",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/df/Maxus_eDeliver_3_1X7A0873.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "c62cb9cacc2e1c0affc19704": {
+    "8444aa187e09b377f661fcbf": {
+      "reason": "no_source_image",
+      "source": "https://dec.ac.in/"
+    },
+    "0a95ccf111c45db4cfb5c9e3": {
+      "reason": "source_error",
+      "source": "https://isc-edu.org/",
+      "error": "ConnectionError"
+    },
+    "3d3292535d51f9488676f5d1": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Federal_University%2C_Wukari",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Federal_University_Wukari_03.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Huawei_Mate_60",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Huawei_Mate_60.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "3086cb2e3cc8f584c5e5eca3": {
+    "5169192e370b53c0344346ec": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_12_Lite",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Xiaomi_12_Lite_front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Redmi_K70",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/IPhone_%2854239311561%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "ed7f7ae04aced5948723aabc": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_13T",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Xiaomi_13T_Series_sample.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "8af54bb949a0c055391d640a": {
+      "reason": "no_source_image",
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "existing_representative_preserved": true
     },
-    "a6510273f0889bf4d7684eae": {
-      "reason": "invalid_source_images",
-      "source": "https://mua.ac.ke/",
-      "candidate_count": 2,
-      "candidates": [
-        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
-        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png"
-      ]
+    "fbff6440d68d52399ca212b1": {
+      "reason": "no_source_image",
+      "source": "https://cctu.edu.gh/site/index"
     }
   },
   "mode": "directory"

@@ -1,20 +1,22 @@
 {
-  "published": 8,
+  "published": 6,
   "updated": 0,
   "target": 8,
-  "missing": {},
+  "missing": {
+    "colleges": 2
+  },
   "categories": {
     "colleges": {
-      "new": 2,
+      "new": 0,
       "updated": 0,
-      "eligible_new": 2,
+      "eligible_new": 0,
       "eligible_updates": 0,
-      "shortfall": 0,
+      "shortfall": 2,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 11,
-        "insufficient verified descriptive fields": 89,
-        "identifier URL is not specification evidence": 200
+        "already_published_unchanged": 13,
+        "insufficient verified descriptive fields": 90,
+        "identifier URL is not specification evidence": 199
       },
       "rejected_count": 289,
       "rejected_sample": [
@@ -148,16 +150,16 @@
     "phones": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 351,
+      "eligible_new": 375,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1835,
-        "already_published_unchanged": 9,
-        "insufficient verified descriptive fields": 86,
-        "identifier URL is not specification evidence": 1389
+        "already_published_unchanged": 11,
+        "insufficient verified descriptive fields": 79,
+        "identifier URL is not specification evidence": 1370
       },
-      "rejected_count": 1475,
+      "rejected_count": 1449,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -289,16 +291,16 @@
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 183,
+      "eligible_new": 203,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 650,
-        "already_published_unchanged": 11,
-        "insufficient verified descriptive fields": 48,
-        "identifier URL is not specification evidence": 408
+        "already_published_unchanged": 13,
+        "insufficient verified descriptive fields": 49,
+        "identifier URL is not specification evidence": 385
       },
-      "rejected_count": 456,
+      "rejected_count": 434,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -430,16 +432,16 @@
     "bikes": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 86,
+      "eligible_new": 85,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 447,
-        "already_published_unchanged": 11,
+        "already_published_unchanged": 13,
         "insufficient verified descriptive fields": 84,
-        "identifier URL is not specification evidence": 266
+        "identifier URL is not specification evidence": 265
       },
-      "rejected_count": 350,
+      "rejected_count": 349,
       "rejected_sample": [
         {
           "name": "Yamaha Gear Ultima",
@@ -569,5 +571,5 @@
       ]
     }
   },
-  "date": "2026-11-02T22:01:30.338306+00:00"
+  "date": "2026-11-03T01:26:53.522821+00:00"
 }
