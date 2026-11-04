@@ -29,6 +29,38 @@ CORE=[
  ('https://www.arabnews.com/rss.xml','world-news','arabnews.com'),
  ('https://news.google.com/rss/search?q=site%3Aspa.gov.sa%20when%3A1d&hl=en-US&gl=US&ceid=US%3Aen','world-news','spa.gov.sa'),
 ]
+# Google Trends RSS supplies trending search terms, not reliable search volumes.
+# Google News RSS provides additional publisher leads; source URLs must still resolve.
+TREND_GEOS=('US','IN','GB','SA','AE')
+NEWS_QUERIES=('breaking news when:6h','world news when:6h','technology news when:6h','sports news when:6h')
+def demand_terms():
+ terms=set();diagnostics={}
+ for geo in TREND_GEOS:
+  url='https://trends.google.com/trending/rss?geo='+geo
+  try:
+   response=requests.get(url,timeout=(3,5),headers={'User-Agent':'Mozilla/5.0'})
+   response.raise_for_status()
+   feed=feedparser.parse(response.content)
+   titles=[clean(entry.get('title','')) for entry in feed.entries[:20]]
+   for title in titles:
+    if len(tokens(title))>=1:terms.add(title.lower())
+   diagnostics[geo]=len(titles)
+  except (requests.RequestException,ValueError):
+   diagnostics[geo]='unavailable'
+ return terms,diagnostics
+
+def demand_bonus(title,terms):
+ words=tokens(title)
+ if not words:return 0
+ best=0
+ for term in terms:
+  query=tokens(term)
+  if not query:continue
+  overlap=len(words & query)
+  if overlap>=min(2,len(query)) and overlap/len(query)>=0.75:
+   best=max(best,4 if len(query)>1 else 2)
+ return best
+
 STOP=set('a an the this that in on at to from for of and or as by with after before amid over into says said say report reports latest live update updates breaking news has have had is are was were be been its it their his her new more'.split())
 CITIES=set('riyadh jeddah abha najran taif tehran beirut kyiv moscow delhi mumbai karachi islamabad london paris washington'.split())
 URGENT=re.compile(r'\b(missile|strike|attack|evacuat\w*|earthquake|tsunami|warning|ceasefire|recall|emergency)\b',re.I)
@@ -78,7 +110,7 @@ def read_feed(item,now=None):
    if 'news.google.com' in (urlparse(url).hostname or ''):
     # Search is discovery only; reporting always uses the resolved publisher URL.
     url=newsroom.resolve_google_news(url)
-   if not newsroom.allowed(url,domain):continue
+   if domain and not newsroom.allowed(url,domain):continue\n   if not domain:\n    domain=(urlparse(url).hostname or '').lower()\n    if not domain or 'google.com' in domain:continue
    rows.append(dict(url=url,title=title,category=newsroom.category_for_url(title,category,url),domain=domain,
                     published=published,summary=clean(entry.get('summary',''))[:2000],author=entry.get('author','')))
   return rows,'ok'
@@ -88,7 +120,7 @@ def discover(now):
  native=newsroom.native_feed_registry()
  offset=(int(now//900)*16)%max(1,len(native))
  rotated=(native[offset:]+native[:offset])[:16]
- feeds=list(dict.fromkeys(CORE+rotated))
+ news_feeds=[('https://news.google.com/rss/search?q='+requests.utils.quote(q)+'&hl=en-US&gl=US&ceid=US%3Aen','world-news','') for q in NEWS_QUERIES]\n feeds=list(dict.fromkeys(CORE+rotated+news_feeds))
  diagnostics={};rows=[]
  with ThreadPoolExecutor(max_workers=8) as pool:
   for item,(found,status) in zip(feeds,pool.map(lambda item:read_feed(item,now),feeds)):
@@ -98,7 +130,7 @@ def discover(now):
  for row in rows:unique.setdefault(newsroom.canonical_lead_key(row['url']),row)
  return list(unique.values()),diagnostics
 
-def clusters(rows,now):
+def clusters(rows,now,search_terms=()):
  groups=[]
  for row in sorted(rows,key=lambda r:r['published'],reverse=True):
   match=next((g for g in groups if same_event(row['title'],g[0]['title'])),None)
@@ -110,7 +142,7 @@ def clusters(rows,now):
   official=any(any(newsroom.allowed(r['url'],domain) for domain in OFFICIAL) and URGENT.search(r['title']) for r in group)
   if len(origins)<2 and not official:continue
   lead=max(group,key=lambda r:(any(newsroom.allowed(r['url'],d) for d in OFFICIAL),r['published']))
-  score=10*len(origins)+max(0,6-(now-lead['published'])/3600)+(3 if URGENT.search(lead['title']) else 0)
+  score=10*len(origins)+max(0,6-(now-lead['published'])/3600)+(3 if URGENT.search(lead['title']) else 0)+demand_bonus(lead['title'],search_terms)
   selected.append(dict(lead=lead,sources=group,score=score,signal='official_alert' if official else 'multiple_publishers'))
  return sorted(selected,key=lambda g:g['score'],reverse=True)
 
@@ -190,16 +222,16 @@ def run(now=None):
   for record in events.values():
    if 'draft' in record:record.pop('retry_after',None)
   state['generation_version']=2
- report=dict(checked_at=dt.datetime.fromtimestamp(now,dt.timezone.utc).isoformat(),signal='publisher coverage, not search-volume data',changed_ids=[],results=[],feeds={})
+ report=dict(checked_at=dt.datetime.fromtimestamp(now,dt.timezone.utc).isoformat(),signal='publisher coverage with Google Trends search-term matching; not search-volume data',changed_ids=[],results=[],feeds={})
  # RSS checks still run during provider cooldown; generation alone is deferred.
- rows,report['feeds']=discover(now)
+ search_terms,report['google_trends']=demand_terms()\n rows,report['feeds']=discover(now)
  # Keep recent feed observations across rotating sources and transient outages.
  observed={newsroom.canonical_lead_key(r['url']):r for r in state.get('observations',[]) if isinstance(r,dict) and r.get('url') and 0<=now-r.get('published',0)<=6*3600}
  for row in rows:observed[newsroom.canonical_lead_key(row['url'])]=row
  rows=sorted(observed.values(),key=lambda r:r['published'],reverse=True)[:600]
  state['observations']=rows
- groups=clusters(rows,now)
- report.update(discovered=len(rows),trending_events=len(groups))
+ groups=clusters(rows,now,search_terms)
+ report.update(discovered=len(rows),trending_events=len(groups),google_trends_terms=len(search_terms))
  posts=read_posts();new_limit=max(0,int(os.getenv('TREND_POSTS_PER_RUN','2')))
  for group in groups:
   if len(report['changed_ids'])>=new_limit or time.monotonic()-started>150:break
