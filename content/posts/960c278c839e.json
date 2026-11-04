@@ -1,0 +1,29 @@
+{
+  "en_title": "dsh-TUI: An Interactive Terminal UI Plugin for DeepSeek Harness",
+  "hi_title": "dsh-TUI: डीपसीक हार्नेस के लिए एक इंटरैक्टिव टर्मिनल यूआई प्लगइन",
+  "en_body": "## Overview\n`dsh-TUI` is an interactive terminal user interface designed for DeepSeek Harness (DSH). It features a pixel-whale header, live work status updates, streaming thinking processes, and terminal-native controls. According to publicly available GitHub documentation, it operates with zero core changes by consuming DSH's public exports.\n\n## Key Features\n- **Terminal-Native UI:** Supports streaming Markdown, tool cards, history search, and bilingual (zh/en) interfaces.\n- **Interactive Visuals:** Includes a pixel-whale startup pet, split diff cards, and Mermaid diagram rendering.\n- **Session Management:** Offers unified session controls, multi-agent import support, and context compaction tracking.\n- **Task Notifications:** Delivers task completion alerts through native terminal protocols and system notifications depending on configuration.\n\n## Installation & Configuration\n- **Quick Install:** Available via npm or through setup binaries provided in repository releases.\n- **Prerequisites:** Requires Node.js and `deepseek-harness`. \n- **Customization:** Settings can be managed through `/settings` with support for profile-backed configurations.\n\n## Verification & Support\nUsers should consult the official GitHub repository and documentation index to verify installation steps, platform compatibility, and troubleshooting guides.",
+  "hi_body": "## अवलोकन\n`dsh-TUI` डीपसीक हार्नेस (DSH) के लिए एक इंटरैक्टिव टर्मिनल यूजर इंटरफेस है। इसमें पिक्सेल-व्हेल हेडर, लाइव कार्य स्थिति अपडेट, स्ट्रीमिंग थिंकिंग और टर्मिनल-नेटिव नियंत्रण शामिल हैं। सार्वजनिक रूप से उपलब्ध गिटहब दस्तावेज़ीकरण के अनुसार, यह DSH के सार्वजनिक निर्यात का उपयोग करके बिना किसी कोर परिवर्तन के काम करता है।\n\n## मुख्य विशेषताएँ\n- **टर्मिनल-नेटिव यूआई:** स्ट्रीमिंग मार्कडाउन, टूल कार्ड, इतिहास खोज और द्विभाषी (zh/en) इंटरफेस का समर्थन करता है।\n- **इंटरैक्टिव विजुअल्स:** इसमें पिक्सेल-व्हेल स्टार्टअप पेट, स्प्लिट डिफ कार्ड और मरमेड आरेख रेंडरिंग शामिल है।\n- **सत्र प्रबंधन:** एकीकृत सत्र नियंत्रण, बहु-एजेंट आयात सहायता और संदर्भ कॉम्पैक्शन ट्रैकिंग प्रदान करता है।\n- **कार्य सूचनाएं:** कॉन्फ़िगरेशन के आधार पर मूल टर्मिनल प्रोटोकॉल और सिस्टम सूचनाओं के माध्यम से कार्य पूरा होने की सूचना देता है।\n\n## स्थापना और कॉन्फ़िगरेशन\n- **त्वरित स्थापना:** npm या रिपॉजिटरी रिलीज में उपलब्ध सेटअप बाइनरी के माध्यम से उपलब्ध है।\n- **पूर्वापेक्षाएँ:** Node.js और `deepseek-harness` आवश्यक हैं।\n- **कस्टमाइज़ेशन:** सेटिंग्स को `/settings` के माध्यम से प्रबंधित किया जा सकता है।\n\n## सत्यापन और सहायता\nउपयोगकर्ताओं को स्थापना चरणों, प्लेटफ़ॉर्म संगतता और समस्या निवारण मार्गदर्शिकाओं को सत्यापित करने के लिए आधिकारिक गिटहब रिपॉजिटरी और दस्तावेज़ सूचकांक से परामर्श करना चाहिए।",
+  "en_meta": "Explore dsh-TUI, an interactive terminal UI for DeepSeek Harness featuring streaming Markdown, session management, and a pixel-whale theme.",
+  "hi_meta": "dsh-TUI के बारे में जानें, जो डीपसीक हार्नेस के लिए एक टर्मिनल यूआई है जिसमें स्ट्रीमिंग मार्कडाउन और सत्र प्रबंधन शामिल है।",
+  "en_keywords": [
+    "dsh-TUI",
+    "DeepSeek Harness",
+    "terminal UI",
+    "CLI tools",
+    "GitHub repository"
+  ],
+  "hi_keywords": [
+    "dsh-TUI",
+    "DeepSeek Harness",
+    "टर्मिनल यूआई",
+    "गिटहब",
+    "विकास उपकरण"
+  ],
+  "source_published_at": null,
+  "id": "960c278c839e",
+  "source": "https://github.com/ccch1mneyyy/dsh-TUI",
+  "date": "2026-11-04T03:58:56.082890+00:00",
+  "source_title": "ccch1mneyyy/dsh-TUI: DSH's officially top-recommended TUI plugin — high performance, low overhead, cute pixel whale, smooth mouse interaction. One-command install via npm. / DSH 官方首推的 TUI 插件，高性能低占用，可爱像素鲸鱼，流畅鼠标交互，npm - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

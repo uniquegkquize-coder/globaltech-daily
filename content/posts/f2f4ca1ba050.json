@@ -1,0 +1,29 @@
+{
+  "en_title": "Canvix Evolves as Open-Source Design Alternative with Accounts and Rendering Updates",
+  "hi_title": "कैनविक्स (Canvix) ओपन-सोर्स डिज़ाइन टूल के रूप में अपडेट और अकाउंट सुविधाओं के साथ उपलब्ध",
+  "en_body": "## Overview of Canvix\nCanvix is an open-source, browser-based graphic design tool positioned as a community-built alternative to Canva. Designed to run on custom infrastructure, it provides a drag-and-drop editor, a template library, and local file exports. The project operates under an MIT license without paywalls or mandatory subscriptions.\n\n## Recent Updates and Infrastructure\nRecent releases detail several software additions aimed at self-hosting capability, rendering efficiency, and user management:\n* **Account System (v0.9.0):** Introduces optional user accounts using username and password authentication with scrypt hashing and HttpOnly session cookies. It features per-design ownership controls and migration options for previously anonymous browser creations.\n* **Database Support (v0.8.0):** Adds Supabase and PostgreSQL compatibility via Prisma migrations, alongside automated database setup scripts and health diagnostic endpoints.\n* **Performance Optimizations (v0.7.0):** Rebuilt canvas rendering architecture incorporating structural state sharing, memoized canvas nodes, split Konva layers for interaction chrome, and an image cache with LRU limits.\n* **Model Context Protocol (v0.6.0):** Implements an MCP server endpoint (`/api/mcp`) allowing AI assistants like Claude Desktop and Cursor to interact with design canvases using standard JSON-RPC protocols.\n* **Collaboration and AI Features (v0.5.0 & v0.4.0):** Includes real-time multi-user editing logs, comment threads, SVG/video export pipelines, and background removal tools powered by browser-side ONNX models.\n\n## Practical Implications and Verification\nCanvix is intended for developers and users seeking a self-hosted design tool with access to source code. Because features like AI background removal or external API integrations may rely on user-configured API keys or server deployments, operational costs depend on individual hosting choices. Interested parties can inspect the repository, review deployment documentation, and verify release notes directly through the official GitHub project page.",
+  "hi_body": "## कैनविक्स का परिचय\nकैनविक्स (Canvix) एक ओपन-सोर्स, ब्राउज़र-आधारित ग्राफिक डिज़ाइन टूल है जिसे कैनवा (Canva) के समुदाय-निर्मित विकल्प के रूप में विकसित किया गया है। यह अपने स्वयं के इन्फ्रास्ट्रक्चर पर चलने के लिए डिज़ाइन किया गया है और इसमें ड्रैग-एंड-ड्रॉप एडिटर, टेम्प्लेट लाइब्रेरी तथा स्थानीय फ़ाइल निर्यात की सुविधा मिलती है। यह प्रोजेक्ट एमआईटी (MIT) लाइसेंस के तहत बिना किसी पेवॉल के उपलब्ध है।\n\n## हालिया अपडेट और तकनीकी विशेषताएं\nहालिया वर्ज़न में सेल्फ-होस्टिंग क्षमता, रेंडरिंग दक्षता और उपयोगकर्ता प्रबंधन से जुड़े कई सुधार जोड़े गए हैं:\n* **अकाउंट सिस्टम (v0.9.0):** यूजरनेम और पासवर्ड प्रमाणीकरण के साथ वैकल्पिक यूजर अकाउंट की सुविधा जोड़ता है, जिसमें सुरक्षित सेशन कुकीज़ और डिज़ाइन-स्वामित्व नियंत्रण शामिल हैं।\n* **डेटाबेस समर्थन (v0.8.0):** प्रिस्मा माइग्रेशन के माध्यम से सुपबेस (Supabase) और पोस्टग्रेएसक्यूएल (PostgreSQL) संगतता प्रदान करता है, साथ ही ऑटोमेटेड सेटअप स्क्रिप्ट्स भी शामिल हैं।\n* **परफॉरमेंस ऑप्टिमाइज़ेशन (v0.7.0):** कैनवास रेंडरिंग आर्किटेक्चर को बेहतर बनाया गया है जिसमें स्ट्रक्चरल स्टेट शेयरिंग और मेमोराइज्ड नोड्स शामिल हैं।\n* **मॉडल कॉंटेक्स्ट प्रोटोकॉल (v0.6.0):** एक एमजेपी सर्वर एंडपॉइंट प्रदान करता है जिससे एआई सहायक (AI assistants) मानक प्रोटोकॉल के माध्यम से डिज़ाइन कैनवास के साथ बातचीत कर सकते हैं।\n* **सहयोग और एआई सुविधाएं (v0.5.0 व v0.4.0):** रीयल-टाइम मल्टी-यूज़र एडिटिंग, कमेंट थ्रेड्स, एसवीजी/वीडियो एक्सपोर्ट और एआई-आधारित बैकग्राउंड रिमूवल टूल्स शामिल हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nकैनविक्स उन डेवलपर्स और उपयोगकर्ताओं के लिए है जो सोर्स कोड तक पहुंच के साथ सेल्फ-होस्टेड डिज़ाइन टूल चाहते हैं। चूँकि एआई इंटीग्रेशन जैसी कुछ विशेषताएं उपयोगकर्ता-कॉन्फ़िगर की गई कुंजियों पर निर्भर हो सकती हैं, इसलिए परिचालन लागत व्यक्तिगत होस्टिंग विकल्पों पर निर्भर करती है। इच्छुक लोग आधिकारिक GitHub पेज के माध्यम से रिपॉजिटरी की जाँच कर सकते हैं।",
+  "en_meta": "Explore Canvix, an open-source graphic design tool featuring self-hosting support, a drag-and-drop editor, and developer-focused collaboration features.",
+  "hi_meta": "कैनविक्स एक ओपन-सोर्स ग्राफिक डिज़ाइन टूल है जो सेल्फ-होस्टिंग, ड्रैग-एंड-ड्रॉप एडिटर और सहयोग सुविधाओं का समर्थन करता है।",
+  "en_keywords": [
+    "Canvix",
+    "open-source design tool",
+    "Canva alternative",
+    "self-hosted software",
+    "graphic editor"
+  ],
+  "hi_keywords": [
+    "कैनविक्स",
+    "ओपन सोर्स डिज़ाइन टूल",
+    "कैनवा विकल्प",
+    "सेल्फ-होस्टेड सॉफ्टवेयर",
+    "ग्राफिक एडिटर"
+  ],
+  "source_published_at": null,
+  "id": "f2f4ca1ba050",
+  "source": "https://github.com/mir-ashiq/canvix",
+  "date": "2026-11-04T03:58:52.162794+00:00",
+  "source_title": "Canvix — Free & open-source graphic design tool. A community-built Canva alternative with a drag-and-drop editor, templates, shapes, text, images & one-click export. Works on desktop, tablet & mobile. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

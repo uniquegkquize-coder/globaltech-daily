@@ -1,0 +1,31 @@
+{
+  "en_title": "CADCraft: Open-Source, Rust-Based 2D and 3D CAD Application Released",
+  "hi_title": "CADCraft: रस्ट में निर्मित ओपन-सोर्स 2D और 3D CAD एप्लिकेशन लॉन्च",
+  "en_body": "## Overview of CADCraft\n\nCADCraft is an open-source, modern two-dimensional and three-dimensional computer-aided design and drafting application developed in pure Rust by the ArtCraft team. Designed to provide a fast and familiar drafting workflow, the application supports core design elements such as command lines, object snaps, layers, dimensions, hatches, blocks, and DXF drawings. \n\n## Platform Support and Architecture\n\nThe software runs natively across multiple operating systems, including macOS (universal binary), Windows, Linux, and FreeBSD. Additionally, a WebAssembly build allows users to run the application directly inside web browsers. Built utilizing pure Rust and the egui framework, CADCraft operates without relying on Electron or web view components. \n\n## File Compatibility and Interoperability\n\nCADCraft reads and writes DXF files natively, supporting both ASCII and binary formats from R12 through 2018. Through the open-source `acadrust` library, DWG files spanning versions R13 through 2018 can also be opened and saved. Furthermore, users can export their work directly to SVG and PNG formats.\n\n- Native DXF and DWG support via open libraries\n- SVG and PNG export capabilities\n- Command-line interface designed for human drafters and automated agents alike\n\n## Automation and Agent Integration\n\nEvery menu item, tool, and prompt within CADCraft is structured as a command. This architecture allows automated agents to interact with the software by typing at the command line, executing commands via JSON, inspecting drawings to verify accuracy, and rendering outputs. These capabilities are accessible over the Model Context Protocol (MCP), a JSON control channel, or the command-line interface.\n\n## Licensing and Availability\n\nCADCraft is distributed under dual licenses—either the MIT License or the Apache-2.0 License, at the user's discretion. The application requires no user accounts or subscriptions. Official builds and checksum verification files are hosted on the project's official GitHub repository.",
+  "hi_body": "## CADCraft का परिचय\n\nCADCraft एक ओपन-सोर्स, आधुनिक टू-डमेंशनल और थ्री-डमेंशनल कंप्यूटर-एडेड डिज़ाइन और ड्राफ्टिंग एप्लिकेशन है जिसे आर्टक्राफ्ट टीम द्वारा शुद्ध रस्ट (Rust) भाषा में विकसित किया गया है। यह सॉफ्टवेयर एक तेज़ और परिचित ड्राफ्टिंग वर्कफ़्लो प्रदान करने के लिएडिज़ाइन किया गया है, जिसमें कमांड लाइन, ऑब्जेक्ट स्नैप, लेयर, आयाम, हैच, ब्लॉक और DXF ड्राइंग जैसी मुख्य विशेषताएं शामिल हैं।\n\n## प्लेटफॉर्म समर्थन और वास्तुकला\n\nयह सॉफ्टवेयर macOS (यूनिवर्सल बाइनरी), Windows, Linux और FreeBSD सहित कई ऑपरेटिंग सिस्टम पर मूल रूप से चलता है। इसके अतिरिक्त, एक WebAssembly बिल्ड उपयोगकर्ताओं को सीधे वेब ब्राउज़र के भीतर एप्लिकेशन का उपयोग करने की अनुमति देता है। शुद्ध रस्ट और egui फ्रेमवर्क का उपयोग करके निर्मित, CADCraft बिना किसी Electron या वेब व्यू घटक के संचालित होता है।\n\n## फ़ाइल संगतता और इंटरऑपरेबिलिटी\n\nCADCraft R12 से 2018 तक के ASCII और बाइनरी दोनों प्रारूपों का समर्थन करते हुए मूल रूप से DXF फ़ाइलों को पढ़ और लिख सकता है। ओपन-सोर्स `acadrust` लाइब्रेरी के माध्यम से, संस्करण R13 से 2018 तक की DWG फ़ाइलों को भी खोला और सहेजा जा सकता है। इसके अलावा, उपयोगकर्ता अपने काम को सीधे SVG और PNG प्रारूपों में निर्यात कर सकते हैं।\n\n- ओपन लाइब्रेरी के माध्यम से मूल DXF और DWG समर्थन\n- SVG और PNG निर्यात क्षमताएं\n- मानव ड्राफ्टर्स और स्वचालित एजेंटों दोनों के लिए डिज़ाइन किया गया कमांड-लाइन इंटरफ़ेस\n\n## स्वचालन और एजेंट एकीकरण\n\nCADCraft के भीतर प्रत्येक मेनू आइटम, टूल और संकेत को एक कमांड के रूप में संरचित किया गया है। यह वास्तुकला स्वचालित एजेंटों को कमांड लाइन पर टाइप करके, JSON के माध्यम से कमांड निष्पादित करके, सटीकता सत्यापित करने के लिए ड्रॉइंग का निरीक्षण करके और आउटपुट रेंडर करके सॉफ्टवेयर के साथ बातचीत करने की अनुमति देती है। ये क्षमताएं मॉडल कॉन्टेक्स्ट प्रोटोकॉल (MCP), एक JSON नियंत्रण चैनल, या कमांड-लाइन इंटरफ़ेस पर उपलब्ध हैं।\n\n## लाइसेंसिंग और उपलब्धता\n\nCADCraft को दोहरे लाइसेंस—MIT लाइसेंस या Apache-2.0 लाइसेंस के तहत वितरित किया जाता है। इस एप्लिकेशन के लिए किसी उपयोगकर्ता खाते या सदस्यता की आवश्यकता नहीं होती है। आधिकारिक बिल्ड और चेकसम सत्यापन फ़ाइलें प्रोजेक्ट के आधिकारिक GitHub रिपॉजिटरी पर होस्ट की जाती हैं।",
+  "en_meta": "Discover CADCraft, an open-source 2D and 3D CAD application built in Rust supporting DXF, DWG, native desktop platforms, and WebAssembly.",
+  "hi_meta": "CADCraft के बारे में जानें, जो रस्ट में निर्मित एक ओपन-सोर्स 2D और 3D CAD एप्लिकेशन है जो DXF, DWG और वेब असेंबली का समर्थन करता है।",
+  "en_keywords": [
+    "CADCraft",
+    "open-source CAD",
+    "Rust programming",
+    "DXF viewer",
+    "DWG support",
+    "WebAssembly CAD"
+  ],
+  "hi_keywords": [
+    "CADCraft",
+    "ओपन-सोर्स CAD",
+    "रस्ट प्रोग्रामिंग",
+    "DXF व्यूअर",
+    "DWG समर्थन",
+    "WebAssembly CAD"
+  ],
+  "source_published_at": null,
+  "id": "90cb4ed5639d",
+  "source": "https://github.com/storytold/cadcraft",
+  "date": "2026-11-04T03:58:51.414894+00:00",
+  "source_title": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,29 @@
+{
+  "en_title": "Enabling Root SSH on BMW iDrive 7 and 8 MGU Head Units via ENET",
+  "hi_title": "ENET के माध्यम से BMW iDrive 7 और 8 MGU हेड यूनिट पर रूट SSH सक्षम करना",
+  "en_body": "## Overview of BMW MGU Head Unit SSH Tool\n\nAn open-source utility titled `cauliflowermossgrape/idrive7-8-ssh-root` has been documented for enabling root Secure Shell (SSH) access on BMW MGU head units. The tool targets iDrive 7 and iDrive 8 systems—specifically MGU ID7, ID8-BDC3, and ID8-BCP variants—utilizing the vehicle's ENET diagnostic interface.\n\nAccording to the release notes, the tool automates flashing a debug image, enrolling the SSH identity, and keeping the service operational permanently without triggering the B7F8E5 \"debugging active\" Diagnostic Trouble Code (DTC).\n\n## Core Features and Operation\n\nThe implementation handles several administrative and diagnostic steps over an Ethernet-based ENET cable linked to a laptop:\n\n* **One-Time Flash and Persistence:** Flashes a debug image (~131 KB, VIN-bound) and configures persistence so SSH runs on every boot with debug mode disabled.\n* **Key Management:** Generates and saves connection keys locally. An advanced, optional flag permits swapping to a unique per-car SSH key by mounting the root file system as read-write temporarily.\n* **Repair and Diagnostics:** Includes commands to check status (`status`), re-enable SSH without reflashing (`enable`), close the service (`close`), revert persistence (`disable`), and fix refused SSH keys (`fix-key`).\n\n## Practical Implications and Risks\n\nModifying automotive head units carries inherent operational risks. Published reports indicate that running flash procedures wipes existing vehicle coding, CAFD definitions, and BMW Digital Key pairings.\n\n* **Coding Backup Required:** Users must back up head unit coding using third-party tools like BimmerCode or official software (ISTA/E-Sys) prior to executing any flashing operations.\n* **Digital Key Reparing:** Digital key pairings stored on smartphones are deleted during a flash and must be re-paired manually.\n* **Exclusively Wired:** Wi-Fi adapters are unsupported; a physical ENET cable is mandatory.\n\n## How to Verify and Access\n\nThe software is available in the public domain under The Unlicense. Users can run the Python script from source (Python 3.9+) or use precompiled standalone Windows executables. Verification involves inspecting port 22 availability and confirming successful root login using generated keys via standard SSH clients on Windows, macOS, Linux, or WSL.",
+  "hi_body": "## BMW MGU हेड यूनिट SSH टूल का परिचय\n\nBMW MGU हेड यूनिट पर रूट सिक्योर शेल (SSH) एक्सेस सक्षम करने के लिए `cauliflowermossgrape/idrive7-8-ssh-root` नामक एक ओपन-सोर्स यूटिलिटी सामने आई है। यह टूल iDrive 7 और iDrive 8 सिस्टम (विशेष रूप से MGU ID7, ID8-BDC3, और ID8-BCP वेरिएंट) को वाहन के ENET डायग्नोस्टिक इंटरफेस के माध्यम से लक्षित करता है।\n\nउपलब्ध विवरण के अनुसार, यह टूल डिबग इमेज फ्लैश करने, SSH पहचान को नामांकित करने और B7F8E5 \"डिबगिंग सक्रिय\" डायग्नोस्टिक ट्रबल कोड (DTC) को ट्रिगर किए बिना सेवा को स्थायी रूप से चालू रखने का काम करता है।\n\n## मुख्य विशेषताएँ और कार्यप्रणाली\n\nयह टूल लैपटॉप से जुड़े ईथरनेट-आधारित ENET केबल के माध्यम से कई प्रशासनिक चरणों को संभालता है:\n\n* **वन-टाइम फ्लैश और निरंतरता:** एक डिबग इमेज (~131 KB, VIN-बाउंड) फ्लैश करता है और निरंतरता कॉन्फ़िगर करता है ताकि डिबग मोड अक्षम होने पर भी हर बूट पर SSH चले।\n* **कुंजी प्रबंधन:** स्थानीय रूप से कनेक्शन कुंजियों को सहेजता है। एक उन्नत वैकल्पिक विकल्प रूट फाइल सिस्टम को अस्थायी रूप से रीड-राइट के रूप में माउंट करके प्रति-कार अद्वितीय SSH कुंजी में बदलने की अनुमति देता है।\n* **सुधार और निदान:** इसमें स्थिति जांचने (`status`), रीफ्लैश किए बिना SSH को पुनः सक्षम करने (`enable`), सेवा बंद करने (`close`), और मना की गई SSH कुंजियों को ठीक करने (`fix-key`) के निर्देश शामिल हैं।\n\n## व्यावहारिक निहितार्थ और जोखिम\n\nऑमोटिव हेड यूनिट में संशोधन करने में जोखिम शामिल हैं। रिपोर्ट बताती है कि फ्लैश प्रक्रिया चलाने से मौजूदा वाहन कोडिंग, CAFD परिभाषाएँ और BMW डिजिटल की युग्मन (pairings) मिट जाते हैं।\n* **कोडिंग बैकअप आवश्यक:** उपयोगकर्ताओं को किसी भी फ्लैशिंग ऑपरेशन को निष्पादित करने से पहले BimmerCode या आधिकारिक सॉफ्टवेयर (ISTA/E-Sys) जैसे टूल का उपयोग करके हेड यूनिट कोडिंग का बैकअप लेना चाहिए।\n* **डिजिटल की री-पेयरिंग:** स्मार्टफोन पर संग्रहीत डिजिटल की फ्लैश के दौरान हट जाती हैं और उन्हें मैन्युअल रूप से फिर से जोड़ना होगा।\n* **केवल वायर्ड कनेक्शन:** वाई-फाई एडेप्टर समर्थित नहीं हैं; भौतिक ENET केबल अनिवार्य है।\n\n## सत्यापन और उपयोग\n\nयह सॉफ्टवेयर द अनलाइसेंस के तहत सार्वजनिक डोमेन में जारी किया गया है। उपयोगकर्ता स्रोत से पायथन स्क्रिप्ट (Python 3.9+) चला सकते हैं या विंडोज निष्पादन योग्य फ़ाइलों का उपयोग कर सकते हैं। सत्यापन में पोर्ट 22 की उपलब्धता की जांच करना और विंडोज, मैकओएस, लिनक्स या WSL पर मानक SSH क्लाइंट का उपयोग करके सफल रूट लॉगिन की पुष्टि करना शामिल है।",
+  "en_meta": "Learn how the cauliflowermossgrape/idrive7-8-ssh-root tool enables persistent root SSH on BMW iDrive 7 and 8 MGU head units over ENET.",
+  "hi_meta": "जानें कि कैसे cauliflowermossgrape/idrive7-8-ssh-root टूल ENET पर BMW iDrive 7 और 8 MGU हेड यूनिट पर रूट SSH सक्षम करता है।",
+  "en_keywords": [
+    "BMW MGU SSH",
+    "iDrive 7 SSH root",
+    "iDrive 8 BDC3",
+    "ENET cable diagnostic",
+    "B7F8E5 DTC fix"
+  ],
+  "hi_keywords": [
+    "BMW MGU SSH",
+    "iDrive 7 रूट SSH",
+    "iDrive 8 BDC3",
+    "ENET केबल निदान",
+    "B7F8E5 DTC समाधान"
+  ],
+  "source_published_at": null,
+  "id": "616c323fe401",
+  "source": "https://github.com/cauliflowermossgrape/idrive7-8-ssh-root",
+  "date": "2026-11-04T03:58:54.887231+00:00",
+  "source_title": "cauliflowermossgrape/idrive7-8-ssh-root: Enable root SSH on BMW MGU head units (iDrive 7 / ID8 BDC3 / ID8 BCP) over ENET - flash the debug image, enroll, persistent SSH with no B7F8E5 DTC, and a unique per-car key. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

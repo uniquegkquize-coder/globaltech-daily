@@ -1,0 +1,31 @@
+{
+  "en_title": "Cloudflare Computer Introduces Virtual Filesystem for Durable Objects and AI Agents",
+  "hi_title": "Cloudflare Computer ने ड्यूरेबल ऑब्जेक्ट्स और एआई एजेंटों के लिए वर्चुअल फाइलसिस्टम पेश किया",
+  "en_body": "Cloudflare has released open-source documentation and packages for **Cloudflare Computer**, a virtual filesystem that operates inside a Durable Object. According to the repository details, the system maintains authoritative state using SQLite and exposes execution surfaces via `workspace.runtime`. \n\n## Core Architecture and Backends\n\nThe repository outlines three primary execution backends that can be registered under stable IDs:\n\n* **Container Backend:** Projects SQLite state into a sandbox container as a real FUSE mount using a daemon called `computerd`. This provides a Linux userland with real binaries and networking, though the documentation labels this specific component as experimental.\n* **Isolate Shell:** Executes bash commands directly within a Dynamic Worker by reaching the authoritative workspace via Workers RPC, avoiding secondary stores or synchronization round-trips.\n* **Isolate JavaScript:** Runs ECMAScript modules in a fresh Dynamic Worker featuring structured inputs and results, durable relative imports, and a workspace-backed Node file system implementation.\n\nDevelopers can also construct a workspace without any backend, utilizing the filesystem standalone. \n\n## Package Status and Implementation\n\nWhile the primary `@cloudflare/computer` package is noted as suitable for production use, various subcomponents—including the container backend, RPC helpers, and specific daemons—are explicitly marked as experimental or work-in-progress. The published specifications under the `docs/` directory represent forward-looking design intent rather than current code guarantees.\n\n## Practical Steps and Verification\n\nTo verify and build with the platform, developers can inspect the repository structure, install the `@cloudflare/computer` package, and review individual package README files. \n\n* **Installation:** Install the package via npm and follow package-specific setup guidelines.\n* **Examples:** The repository includes a diverse `examples/` directory containing runnable workspace scenarios, ranging from basic agent loops and container configurations to asset generation and runtime comparisons.\n* **Contribution:** The project accepts bug reports, feature proposals, and feedback through GitHub issues and discussions, while unsolicited pull requests are not accepted. Collaborators must follow specific guidelines outlined in `CONTRIBUTING.md` and `COLLABORATORS.md`.\n\nFor exact performance benchmarks, developers can consult `docs/19_performance.md`, which details metadata versus sequential I/O performance characteristics.",
+  "hi_body": "क्लाउडफ्लैर (Cloudflare) ने **Cloudflare Computer** के लिए ओपन-सोर्स दस्तावेज़ और पैकेज जारी किए हैं, जो एक वर्चुअल फाइलसिस्टम है और ड्यूरेबल ऑब्जेक्ट (Durable Object) के भीतर काम करता है। रिपॉजिटरी के विवरण के अनुसार, यह सिस्टम SQLite का उपयोग करके आधिकारिक स्थिति बनाए रखता है और `workspace.runtime` के माध्यम से निष्पादन सतह प्रदान करता है।\n\n## मुख्य वास्तुकला और बैकएंड\n\nरिपॉजिटरी तीन प्राथमिक निष्पादन बैकएंड को रेखांकित करती है जिन्हें स्थिर आईडी के तहत पंजीकृत किया जा सकता है:\n\n* **कंटेनर बैकएंड:** SQLite स्थिति को `computerd` नामक एक डेमॉन का उपयोग करके FUSE माउंट के रूप में एक सैंडबॉक्स कंटेनर में प्रोजेक्ट करता है। यह वास्तविक बाइनरी और नेटवर्किंग के साथ एक Linux यूज़रलैंड प्रदान करता है, हालांकि दस्तावेज़ इस विशिष्ट घटक को प्रायोगिक (experimental) के रूप में चिह्नित करते हैं।\n* **आइसोलेट शेल:** वर्कर्स आरपीसी (Workers RPC) के माध्यम से आधिकारिक कार्यक्षेत्र तक पहुंचकर सीधे एक डायनेमिक वर्कर के भीतर बाश कमांड निष्पादित करता है।\n* **आइसोलेट जावास्क्रिप्ट:** संरचित इनपुट, टिकाऊ सापेक्ष आयात और वर्कस्पेस-समर्थित नोड फाइलसिस्टम कार्यान्वयन के साथ एक ताजा डायनेमिक वर्कर में ईसीएमएस्क्रिप्ट (ECMAScript) मॉड्यूल चलाता है।\n\nविकासकर्ता बिना किसी बैकएंड के भी वर्कस्पेस का निर्माण कर सकते हैं, जिससे फाइलसिस्टम का स्वतंत्र रूप से उपयोग किया जा सके।\n\n## पैकेज की स्थिति और कार्यान्वयन\n\nजबकि प्राथमिक `@cloudflare/computer` पैकेज को उत्पादन उपयोग के लिए उपयुक्त माना गया है, कई उप-घटकों—जैसे कंटेनर बैकएंड, आरपीसी सहायक और विशिष्ट डेमॉन—को स्पष्ट रूप से प्रायोगिक या प्रगति पर कार्य के रूप में चिह्नित किया गया है।\n\n## व्यावहारिक कदम और सत्यापन\n\nप्लेटफॉर्म के साथ सत्यापन और निर्माण करने के लिए, विकासकर्ता रिपॉजिटरी संरचना का निरीक्षण कर सकते हैं, `@cloudflare/computer` पैकेज स्थापित कर सकते हैं, और व्यक्तिगत पैकेज README फ़ाइलों की समीक्षा कर सकते हैं।\n\n* **इंस्टॉलेशन:** एनपीएम (npm) के माध्यम से पैकेज स्थापित करें और विशिष्ट सेटअप दिशानिर्देशों का पालन करें।\n* **उदाहरण:** रिपॉजिटरी में एक विविध `examples/` निर्देशिका शामिल है जिसमें चलाने योग्य वर्कस्पेस परिदृश्य हैं, जैसे बुनियादी एजेंट लूप और कंटेनर कॉन्फ़िगरेशन।\n* **योगदान:** यह प्रोजेक्ट GitHub मुद्दों और चर्चाओं के माध्यम से बग रिपोर्ट और सुविधा प्रस्ताव स्वीकार करता है, जबकि unsolicited पुल अनुरोध स्वीकार नहीं किए जाते हैं।\n\nसटीक प्रदर्शन बेंचमार्क के लिए, विकासकर्ता `docs/19_performance.md` देख सकते हैं, जो मेटाडेटा और अनुक्रमिक I/O प्रदर्शन विशेषताओं का विवरण देता है।",
+  "en_meta": "Explore Cloudflare Computer, a virtual filesystem inside Durable Objects supporting container, shell, and JavaScript backends for AI agents.",
+  "hi_meta": "Cloudflare Computer के बारे में जानें, जो एआई एजेंटों के लिए कंटेनर, शेल और जावास्क्रिप्ट बैकएंड का समर्थन करने वाला एक वर्चुअल फाइलसिस्टम है।",
+  "en_keywords": [
+    "Cloudflare Computer",
+    "Virtual Filesystem",
+    "Durable Objects",
+    "AI Agents",
+    "SQLite",
+    "Container Backend"
+  ],
+  "hi_keywords": [
+    "Cloudflare Computer",
+    "वर्चुअल फाइलसिस्टम",
+    "Durable Objects",
+    "एआई एजेंट",
+    "कंटेनर बैकएंड",
+    "क्लाउडफ्लैर"
+  ],
+  "source_published_at": null,
+  "id": "36da1b921f12",
+  "source": "https://github.com/cloudflare/computer",
+  "date": "2026-11-04T03:59:01.844016+00:00",
+  "source_title": "cloudflare/computer: Give your agent a computer - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

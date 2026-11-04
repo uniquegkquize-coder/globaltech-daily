@@ -1,0 +1,30 @@
+{
+  "en_title": "An Overview of Deno: A Modern Runtime for JavaScript, TypeScript, and WebAssembly",
+  "hi_title": "डिनो (Deno) का परिचय: जावास्क्रिप्ट, टाइपस्क्रिप्ट और वेबअसेंबली के लिए एक आधुनिक रनटाइम",
+  "en_body": "## Understanding Deno\nDeno is a runtime environment designed for JavaScript, TypeScript, and WebAssembly. Built upon the V8 engine, Rust, and the Tokio framework, it emphasizes secure defaults and an improved developer experience compared to traditional runtimes.\n\n## Core Features and Architecture\n- **Secure by Default**: Deno prioritizes security, requiring explicit permissions for access to file systems, network, and environment variables.\n- **Built-in Tooling**: The environment includes integrated tools for testing, formatting, and linting, aiming to streamline the development lifecycle.\n- **Broad Language Support**: By natively supporting TypeScript alongside JavaScript, Deno removes the need for separate transpilation steps in many workflows.\n\n## Practical Application\nDeno is frequently utilized for building scalable web servers. By creating a TypeScript file (e.g., `server.ts`) and executing it via the Deno command-line interface, developers can deploy local web servers. The platform also provides an extensive ecosystem including:\n- **Deno Standard Library**: A collection of officially maintained utilities for common programming tasks.\n- **JSR**: An open-source package registry tailored for modern JavaScript and TypeScript development.\n- **Deno Deploy**: A distributed platform for running Deno code at the edge.\n\n## Getting Started\nTo explore the runtime, users are encouraged to visit the official [Deno documentation](https://deno.land). The documentation covers installation methods, build instructions for those compiling from source, and guides for application development. Contributions to the open-source project are welcomed via the documented submission process on the project repository.",
+  "hi_body": "## डिनो क्या है?\nडिनो (Deno) जावास्क्रिप्ट, टाइपस्क्रिप्ट और वेबअसेंबली के लिए एक आधुनिक रनटाइम वातावरण है। इसे V8 इंजन, रस्ट (Rust) और टोकियो (Tokio) फ्रेमवर्क के आधार पर तैयार किया गया है। इसका मुख्य उद्देश्य डेवलपर्स को एक सुरक्षित और बेहतर अनुभव प्रदान करना है।\n\n## मुख्य विशेषताएं\n- **सुरक्षा को प्राथमिकता**: डिनो में सुरक्षा को डिफ़ॉल्ट रूप से शामिल किया गया है। फ़ाइल सिस्टम, नेटवर्क या वातावरण वेरिएबल्स तक पहुँचने के लिए स्पष्ट अनुमति की आवश्यकता होती है।\n- **इन-बिल्ट टूल्स**: इसमें परीक्षण (testing), फॉर्मेटिंग और लिंटिंग के लिए अंतर्निहित उपकरण मिलते हैं, जो विकास प्रक्रिया को सरल बनाते हैं।\n- **टाइपस्क्रिप्ट का समर्थन**: डिनो मूल रूप से टाइपस्क्रिप्ट को सपोर्ट करता है, जिससे कई वर्कफ़्लो में अलग से ट्रांसपाइलेशन की आवश्यकता खत्म हो जाती है।\n\n## व्यावहारिक उपयोग और पारिस्थितिकी तंत्र\nडिनो का उपयोग मुख्य रूप से वेब सर्वर बनाने के लिए किया जाता है। डेवलपर एक टाइपस्क्रिप्ट फ़ाइल बनाकर उसे सीधे कमांड-लाइन इंटरफेस के माध्यम से चला सकते हैं। इसके साथ ही, डिनो का अपना एक समृद्ध पारिस्थितिकी तंत्र है:\n- **डिनो स्टैंडर्ड लाइब्रेरी**: सामान्य प्रोग्रामिंग कार्यों के लिए आधिकारिक तौर पर समर्थित उपयोगिताओं का संग्रह।\n- **JSR**: आधुनिक जावास्क्रिप्ट और टाइपस्क्रिप्ट विकास के लिए एक ओपन-सोर्स पैकेज रजिस्ट्री।\n- **डिनो डिप्लॉय (Deno Deploy)**: कोड को 'एज' (edge) पर चलाने के लिए एक वितरित प्लेटफ़ॉर्म।\n\n## शुरुआत कैसे करें\nडिनो के बारे में अधिक जानने के लिए आधिकारिक [डिनो दस्तावेज़ीकरण](https://deno.land) देखें। वहां इंस्टॉलेशन के तरीके, स्रोत कोड से बिल्डिंग के निर्देश और विकास गाइड उपलब्ध हैं। यदि आप इस ओपन-सोर्स प्रोजेक्ट में योगदान देना चाहते हैं, तो आप रिपॉजिटरी में दिए गए दिशा-निर्देशों का पालन कर सकते हैं।",
+  "en_meta": "Explore the Deno runtime, a secure, modern platform for JavaScript, TypeScript, and WebAssembly built on V8, Rust, and Tokio. Learn how to get started today.",
+  "hi_meta": "डिनो रनटाइम के बारे में जानें, जो जावास्क्रिप्ट, टाइपस्क्रिप्ट और वेबअसेंबली के लिए एक सुरक्षित और आधुनिक प्लेटफ़ॉर्म है। आज ही शुरुआत करें।",
+  "en_keywords": [
+    "Deno",
+    "JavaScript runtime",
+    "TypeScript",
+    "WebAssembly",
+    "V8 engine",
+    "software development"
+  ],
+  "hi_keywords": [
+    "डिनो",
+    "जावास्क्रिप्ट रनटाइम",
+    "टाइपस्क्रिप्ट",
+    "वेबअसेंबली",
+    "सॉफ्टवेयर विकास"
+  ],
+  "source_published_at": null,
+  "id": "0dc082de2306",
+  "source": "https://github.com/denoland/deno",
+  "date": "2026-11-04T04:00:54.316285+00:00",
+  "source_title": "denoland/deno: A modern runtime for JavaScript and TypeScript. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

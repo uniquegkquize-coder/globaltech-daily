@@ -1,0 +1,31 @@
+{
+  "en_title": "DeepSeek Releases DeepInfer: A High-Performance Inference Framework for Large-Scale AI Models",
+  "hi_title": "DeepSeek ने DeepInfer लॉन्च किया: बड़े पैमाने पर AI मॉडल के लिए उच्च-प्रदर्शन इन्फरेंस फ्रेमवर्क",
+  "en_body": "## Overview\nDeepSeek has open-sourced DeepInfer, a high-performance inference framework designed to handle the rigorous demands of large-scale AI service production. The project aims to provide developers with the necessary infrastructure to manage offline inference at scale using optimized kernels and advanced parallelization techniques.\n\n## Key Technical Features\nDeepInfer incorporates several specialized optimizations to enhance performance:\n* **Parallelism Strategies:** Includes support for Attention Data Parallelism (DP), Context Parallelism (CP), and Mixture-of-Experts Expert Parallelism (EP) with load balancing (EPLB).\n* **Optimized Kernels:** The framework leverages a suite of custom kernels including FlashMLA, DeepGEMM, DeepEP, and TileKernels, developed to improve computational efficiency.\n* **DSpark and Verification:** Uses confidence-scheduled verification and draft tokens to accelerate decoding processes.\n* **Asynchronous Scheduling:** Features a zero-overhead batch scheduler that overlaps CPU scheduling with device execution to minimize latency.\n* **Sampling and Structure:** Supports deterministic sampling and structured generation, allowing users to constrain outputs via JSON schemas, regex, or EBNF grammars.\n\n## Implementation and Requirements\nDeepInfer is built for environments using Python 3.12. While the release provides core engine functionality, it remains an infrastructure framework. Users are responsible for managing auxiliary services such as load balancing across replicas and the disaggregation of prefill and decode tasks.\n\n## Getting Started\n* **Model Compatibility:** Designed to work with models like DeepSeek-V4.1-Flash-1017, which is retrieved via Hugging Face cache by default.\n* **Verification:** Developers can verify performance metrics using the provided `run_sweep.sh` scripts, which are benchmarked against specific hardware configurations like NVIDIA SM100 GPUs.\n* **License:** The software is available under the Apache License 2.0.\n\nUsers interested in reviewing the underlying architecture or contributing to the project can visit the official GitHub repository for detailed documentation and code examples.",
+  "hi_body": "## विवरण\nDeepSeek ने अपने 'DeepInfer' फ्रेमवर्क को ओपन-सोर्स कर दिया है, जिसे बड़े पैमाने पर AI सेवाओं की कठोर आवश्यकताओं को संभालने के लिए डिज़ाइन किया गया है। इसका मुख्य उद्देश्य डेवलपर्स को एक ऐसा इंफ्रास्ट्रक्चर प्रदान करना है जो ऑप्टिमाइज़्ड कर्नल्स और उन्नत समानांतर तकनीकों (parallelization techniques) के माध्यम से इन्फरेंस प्रक्रिया को गति दे सके।\n\n## मुख्य तकनीकी विशेषताएं\nDeepInfer में प्रदर्शन को बेहतर बनाने के लिए कई विशेष अनुकूलन शामिल किए गए हैं:\n* **समानांतर रणनीतियाँ:** इसमें अटेंशन डेटा पैरेललिज्म (DP), कॉन्टेक्स्ट पैरेललिज्म (CP) और मिक्सचर-ऑफ़-एक्सपर्ट्स एक्सपर्ट पैरेललिज्म (EP) के लिए समर्थन शामिल है।\n* **अनुकूलित कर्नल्स:** यह FlashMLA, DeepGEMM, DeepEP और TileKernels जैसे कस्टम कर्नल्स का उपयोग करता है जो कम्प्यूटेशनल दक्षता बढ़ाते हैं।\n* **DSpark और सत्यापन:** डिकोडिंग प्रक्रिया को तेज करने के लिए 'कॉन्फिडेंस-शेड्यूल्ड वेरिफिकेशन' और ड्राफ्ट टोकन का उपयोग करता है।\n* **एसिंक्रोनस शेड्यूलिंग:** इसमें एक जीरो-ओवरहेड बैच शेड्यूलर है जो CPU शेड्यूलिंग और डिवाइस निष्पादन को ओवरलैप करके विलंबता (latency) को कम करता है।\n* **संरचित आउटपुट:** यह JSON स्कीमा, रेगुलर एक्सप्रेशन या EBNF व्याकरण के माध्यम से आउटपुट को नियंत्रित करने की अनुमति देता है।\n\n## कार्यान्वयन और आवश्यकताएं\nDeepInfer को Python 3.12 वातावरण के लिए बनाया गया है। हालांकि यह मुख्य इंजन कार्यक्षमता प्रदान करता है, लेकिन इसे चलाने के लिए लोड बैलेंसिंग और प्रीफिल/डिकोड कार्यों के पृथक्करण जैसी सेवाओं को उपयोगकर्ताओं द्वारा प्रबंधित करना आवश्यक है।\n\n## शुरुआत कैसे करें\n* **मॉडल अनुकूलता:** यह फ्रेमवर्क DeepSeek-V4.1-Flash-1017 जैसे मॉडलों के साथ काम करने के लिए डिज़ाइन किया गया है।\n* **परीक्षण:** डेवलपर्स प्रदान की गई `run_sweep.sh` स्क्रिप्ट का उपयोग करके प्रदर्शन के आँकड़ों को सत्यापित कर सकते हैं।\n* **लाइसेंस:** यह सॉफ्टवेयर Apache License 2.0 के तहत उपलब्ध है।\n\nइच्छुक उपयोगकर्ता विस्तृत दस्तावेज़ीकरण और कोड उदाहरणों के लिए आधिकारिक GitHub रिपॉजिटरी पर जा सकते हैं।",
+  "en_meta": "DeepSeek has open-sourced DeepInfer, a high-performance inference framework optimized for large-scale production AI models, featuring advanced kernels and…",
+  "hi_meta": "DeepSeek ने अपना उच्च-प्रदर्शन इन्फरेंस फ्रेमवर्क 'DeepInfer' ओपन-सोर्स किया है, जो बड़े पैमाने पर AI मॉडल चलाने के लिए अनुकूलित कर्नल्स और तकनीक प्रदान करता…",
+  "en_keywords": [
+    "DeepInfer",
+    "DeepSeek",
+    "AI inference",
+    "Large Language Models",
+    "open-source",
+    "machine learning infrastructure"
+  ],
+  "hi_keywords": [
+    "DeepInfer",
+    "DeepSeek",
+    "AI इन्फरेंस",
+    "बड़े भाषा मॉडल",
+    "ओपन-सोर्स",
+    "मशीन लर्निंग"
+  ],
+  "source_published_at": null,
+  "id": "4baf8674d312",
+  "source": "https://github.com/deepseek-ai/deepinfer",
+  "date": "2026-11-04T04:00:50.575640+00:00",
+  "source_title": "DeepInfer: High-performance, large-scale inference framework for DeepSeek models - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

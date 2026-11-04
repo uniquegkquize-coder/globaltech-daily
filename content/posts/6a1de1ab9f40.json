@@ -1,0 +1,33 @@
+{
+  "en_title": "Biome Web Development Toolchain Combines Fast Formatter and Linter",
+  "hi_title": "बायोम वेब डेवलपमेंट टूलचेन में तेज फॉर्मैटर और लिंटर शामिल हैं",
+  "en_body": "## Overview of Biome\nBiome is a performant toolchain designed for web projects, aiming to provide essential developer tools to maintain project health. It unifies functionalities that were previously handled by separate tools, offering a cohesive experience for processing code, displaying errors, parallelizing work, caching, and configuration.\n\n## Core Features and Language Support\nAccording to the project documentation, Biome supports a wide range of modern web development languages, including:\n\n* JavaScript\n* TypeScript\n* JSX\n* JSON\n* CSS\n* GraphQL\n* Markdown\n* YAML\n* SCSS\n\nThe toolchain operates without requiring Node.js to function and is available under either the MIT license or the Apache 2.0 license.\n\n## Formatter and Linter Capabilities\n* **Formatter:** Biome includes a fast formatter that reportedly achieves 97% compatibility with Prettier.\n* **Linter:** The linter features more than 500 rules drawn from ESLint, typescript-eslint, and other sources, providing detailed and contextualized diagnostics.\n* **Interactive Editor Integration:** Designed to be used interactively within an editor, Biome can format and lint malformed code during the writing process.\n* **Language Server Protocol (LSP):** Biome offers first-class LSP support backed by a sophisticated parser with full-fidelity source representation and error recovery.\n\n## Getting Started and Verification\nDevelopers interested in evaluating the software without a local installation can utilize the online playground, which is compiled to WebAssembly.\n\n* **Defaults:** Biome features sane defaults and operates without requiring immediate configuration.\n* **Verification:** Users can review the official homepage, inspect the getting started guide, or examine the source repository on GitHub to verify installation steps and licensing terms.\n\n## Support and Funding\nThe project offers enterprise support options where core contributors can be engaged for company-focused projects, alongside community funding through GitHub Sponsors and Open Collective.",
+  "hi_body": "## बायोम का परिचय\nबायोम वेब प्रोजेक्ट्स کے लिए एक हाई-परफॉरमेंस टूलचेन है, जिसका उद्देश्य प्रोजेक्ट्स के रखरखाव के लिए आवश्यक डेवलपर टूल प्रदान करना है। यह उन सुविधाओं को एकजुट करता है जो पहले अलग-अलग टूल्स द्वारा संभाली जाती थीं, जिससे कोड प्रोसेसिंग, एरर डिस्प्ले, पैरललाइजेशन, कैशिंग और कॉन्फ़िगरेशन के लिए एक एकीकृत अनुभव मिलता है।\n\n## मुख्य विशेषताएँ और भाषा समर्थन\nप्रोजेक्ट दस्तावेज़ के अनुसार, बायोम आधुनिक वेब डेवलपमेंट की कई मुख्य भाषाओं का समर्थन करता है, जिनमें शामिल हैं:\n\n* जावास्क्रिप्ट (JavaScript)\n* टाइपस्क्रिप्ट (TypeScript)\n* जेएसएक्स (JSX)\n* जेएसओएन (JSON)\n* सीएसएस (CSS)\n* ग्राफक्यूएल (GraphQL)\n* मार्कडाउन (Markdown)\n* यामल (YAML)\n* एससीएस्स (SCSS)\n\nयह टूलचेन बिना Node.js के काम कर सकता है और इसे MIT लाइसेंस या Apache 2.0 लाइसेंस के तहत उपलब्ध कराया गया है।\n\n## फॉर्मैटर और लिंटर की क्षमताएं\n* **फॉर्मैटर:** बायोम में एक तेज फॉर्मैटर शामिल है जो Prettier के साथ 97% संगतता (compatibility) का दावा करता है।\n* **लिंटर:** इस लिंटर में ESLint, typescript-eslint और अन्य स्रोतों से 500 से अधिक नियम शामिल हैं, जो विस्तृत डायग्नोस्टिक्स प्रदान करते हैं।\n* **एडिटर इंटीग्रेशन:** इसे एडिटर के भीतर इंटरैक्टिव रूप से उपयोग करने के लिए डिज़ाइन किया गया है, जिससे यह लिखते समय ही कोड को फॉर्मेट और लिंट कर सकता है।\n* **एलएसपी (LSP) समर्थन:** बायोम में प्रथम श्रेणी का LSP समर्थन मिलता है, जिसमें एक परिष्कृत पार्सर और एरर रिकवरी शामिल है।\n\n## शुरुआत कैसे करें और सत्यापन\nजो डेवलपर्स स्थानीय रूप से इंस्टॉल किए बिना इस सॉफ्टवेयर का परीक्षण करना चाहते हैं, वे WebAssembly पर आधारित ऑनलाइन प्लेग्राउंड का उपयोग कर सकते हैं।\n\n* **डिफ़ॉल्ट सेटिंग्स:** बायोम में उचित डिफ़ॉल्ट सेटिंग्स होती हैं और इसके लिए किसी शुरुआती कॉन्फ़िगरेशन की आवश्यकता नहीं होती है।\n* **सत्यापन:** उपयोगकर्ता स्थापना चरणों और लाइसेंसिंग शर्तों को सत्यापित करने के लिए आधिकारिक होमपेज, गेटिंग स्टार्टेड गाइड या GitHub रिपॉजिटरी की जांच कर सकते हैं।\n\n## सहायता और फंडिंग\nप्रोजेक्ट एंटरप्राइज सपोर्ट विकल्प प्रदान करता है जहां कोर योगदानकर्ताओं को काम पर रखा जा सकता है, साथ ही GitHub Sponsors और Open Collective के माध्यम से सामुदायिक फंडिंग का विकल्प भी उपलब्ध है।",
+  "en_meta": "Explore Biome, a performant web development toolchain offering a fast formatter and linter for JavaScript, TypeScript, CSS, and more without Node.js.",
+  "hi_meta": "बायोम एक वेब डेवलपमेंट टूलचेन है जो जावास्क्रिप्ट, टाइपस्क्रिप्ट, सीएसएस और अन्य भाषाओं के लिए तेज फॉर्मैटर और लिंटर प्रदान करता है।",
+  "en_keywords": [
+    "Biome",
+    "web development toolchain",
+    "formatter",
+    "linter",
+    "JavaScript",
+    "TypeScript",
+    "LSP"
+  ],
+  "hi_keywords": [
+    "बायोम",
+    "वेब डेवलपमेंट टूलचेन",
+    "फॉर्मैटर",
+    "लिंटर",
+    "जावास्क्रिप्ट",
+    "टाइपस्क्रिप्ट",
+    "LSP"
+  ],
+  "source_published_at": null,
+  "id": "6a1de1ab9f40",
+  "source": "https://github.com/biomejs/biome",
+  "date": "2026-11-04T03:58:46.354604+00:00",
+  "source_title": "biomejs/biome: A toolchain for web projects, aimed to provide functionalities to maintain them. Biome offers formatter and linter, usable via CLI and LSP. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

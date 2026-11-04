@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Details Copilot Skills for Feedback Loops and Automation Workflows",
+  "hi_title": "GitHub ने फीडबैक लूप और स्वचालन वर्कफ़्लो के लिए Copilot कौशल की जानकारी दी",
+  "en_body": "GitHub has published guidance and tools regarding new Copilot skills aimed at establishing structured feedback loops, setting safety boundaries for delegation, and transitioning repetitive tasks into automated workflows. The release addresses common challenges in agentic coding, particularly the difficulty of defining metrics, noise thresholds, and success criteria for autonomous coding agents.\n\n## Core Concepts of the Release\n\nAccording to the provided documentation, the approach focuses on letting agents evaluate their own output against defined metrics rather than requiring continuous human intervention. Key elements include:\n\n* **Loop Cards:** Diagnostic outputs that define metrics, measurement methods, noise levels, and definitions of success without automatically pushing, filing, or merging code.\n* **Autonomy Levels (L0 to L5):** Configurable settings stored in local or repository configuration files that dictate whether an agent merely proposes changes (L0), gets pull requests green for human merge (L2), or independently lands and releases updates (L5).\n* **Spend Management:** Settings categorized as standard, high, or max that control model tiers, parallel lanes, review depth, and execution frequency.\n\n## Setup and Installation Options\n\nUsers can integrate the plugin via the Copilot app using pre-filled installation links, command-line additions through the marketplace, or manual repository configurations. The framework utilizes a local configuration file (`~/.copilot/lever.yml`) alongside repository-level settings (`.github/lever.yml`), where repository branch protection rules remain the ultimate authority.\n\n## Practical Implications and Verification\n\nFor development teams, the announced utilities offer a structured method to codify recurring corrections and analyze session history to identify automation opportunities. However, organizations should independently verify compatibility with their existing security baselines, review the open-source repository directly on GitHub, and test automations in dry-run modes before granting higher autonomy tiers.",
+  "hi_body": "GitHub ने संरचित फीडबैक लूप स्थापित करने, प्रतिनिधिमंडल के लिए सुरक्षा सीमाएं तय करने और दोहराए जाने वाले कार्यों को स्वचालित वर्कफ़्लो में बदलने के उद्देश्य से नए Copilot कौशल से जुड़े दिशानिर्देश और उपकरण जारी किए हैं। यह रिलीज़ एजेंटिक कोडिंग में आने वाली सामान्य चुनौतियों का समाधान करती है, विशेष रूप से स्वायत्त कोडिंग एजेंटों के लिए मेट्रिक्स, शोर सीमा और सफलता के मानदंडों को परिभाषित करने की कठिनाई को।\n\n## रिलीज़ की मुख्य बातें\n\nप्रदान किए गए दस्तावेज़ के अनुसार, यह दृष्टिकोण इस बात पर केंद्रित है कि एजेंट निरंतर मानवीय हस्तक्षेप की आवश्यकता के बिना परिभाषित मेट्रिक्स के मुकाबले अपने स्वयं के आउटपुट का मूल्यांकन करें। मुख्य तत्वों में शामिल हैं:\n\n* **लूप कार्ड:** नैदानिक आउटपुट जो स्वचालित रूप से कोड को पुश, फ़ाइल या मर्ज किए बिना मेट्रिक्स, माप के तरीके, शोर के स्तर और सफलता की परिभाषा को परिभाषित करते हैं।\n* **स्वायत्तता स्तर (L0 से L5):** स्थानीय या रिपॉजिटरी कॉन्फ़िगरेशन फ़ाइलों में संग्रहीत कॉन्फ़िगर करने योग्य सेटिंग्स जो यह तय करती हैं कि क्या एजेंट केवल परिवर्तन प्रस्तावित करता है (L0), मानव द्वारा मर्ज किए जाने के लिए पुल अनुरोधों को हरा करता है (L2), या स्वतंत्र रूप से अपडेट जारी करता है (L5)।\n* **खर्च प्रबंधन:** मानक, उच्च या अधिकतम के रूप में वर्गीकृत सेटिंग्स जो मॉडल टियर, समानांतर लेन, समीक्षा गहराई और निष्पादन आवृत्ति को नियंत्रित करती हैं।\n\n## सेटअप और स्थापना विकल्प\n\nउपयोगकर्ता पूर्व-स्थापित इंस्टॉलेशन लिंक, मार्केटप्लेस के माध्यम से कमांड-लाइन एडिशन, या मैन्युअल रिपॉजिटरी कॉन्फ़िगरेशन का उपयोग करके Copilot ऐप के माध्यम से प्लगइन को एकीकृत कर सकते हैं। यह ढांचा स्थानीय कॉन्फ़िगरेशन फ़ाइल (`~/.copilot/lever.yml`) और रिपॉजिटरी-स्तरीय सेटिंग्स (`.github/lever.yml`) का उपयोग करता है, जहां रिपॉजिटरी शाखा सुरक्षा नियम सर्वोच्च प्राधिकारी बने रहते हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nविकास टीमों के लिए, घोषित उपयोगिताएँ आवर्ती सुधारों को संहिताबद्ध करने और स्वचालन के अवसरों की पहचान करने के लिए सत्र इतिहास का विश्लेषण करने का एक संरचित तरीका प्रदान करती हैं। हालांकि, संगठनों को अपनी मौजूदा सुरक्षा बेसलाइन के साथ अनुकूलता को स्वतंत्र रूप से सत्यापित करना चाहिए, GitHub पर सीधे ओपन-सोर्स रिपॉजिटरी की समीक्षा करनी चाहिए, और उच्च स्वायत्तता स्तर प्रदान करने से पहले ड्राई-रन मोड में स्वचालन का परीक्षण करना चाहिए।",
+  "en_meta": "GitHub outlines new Copilot skills for feedback loops, safety controls, and automation workflows. Read about autonomy levels and setup.",
+  "hi_meta": "GitHub ने फीडबैक लूप, सुरक्षा नियंत्रण और स्वचालन वर्कफ़्लो के लिए नए Copilot कौशल की रूपरेखा तैयार की है।",
+  "en_keywords": [
+    "GitHub Copilot",
+    "feedback loops",
+    "coding agents",
+    "automation workflows",
+    "autonomy levels"
+  ],
+  "hi_keywords": [
+    "GitHub Copilot",
+    "फीडबैक लूप",
+    "कोडिंग एजेंट",
+    "स्वचालन वर्कफ़्लो",
+    "स्वायत्तता स्तर"
+  ],
+  "source_published_at": null,
+  "id": "a5f70c596565",
+  "source": "https://github.com/github/lever",
+  "date": "2026-11-04T03:59:04.233097+00:00",
+  "source_title": "Copilot skills for building feedback loops, delegating safely, and moving repeatable work into automations. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
