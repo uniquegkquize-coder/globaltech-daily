@@ -136,3 +136,41 @@ jobs:
           echo "::error::News generated but could not be synced safely after four attempts"
           exit 1
 
+      - name: Report run outcome and category coverage
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          lines = ['## GlobalTech Daily publish run']
+          status_path = Path('content/news-run-status.json')
+          if status_path.is_file():
+              s = json.loads(status_path.read_text(encoding='utf-8'))
+              lines += ['- Outcome: %s' % s.get('outcome'),
+                        '- Published: %s of %s target' % (s.get('published'), s.get('target')),
+                        '- AI calls: %s of %s' % (s.get('ai_calls'), s.get('ai_limit'))]
+              by = s.get('by_category') or {}
+              if by:
+                  lines += ['- Per-category published: ' + ', '.join('%s=%s' % kv for kv in sorted(by.items()))]
+              discovered = s.get('discovered_by_category') or {}
+              zero = [c for c, n in discovered.items() if not n]
+              if zero:
+                  lines += ['- Categories with zero discovered leads this run: ' + ', '.join(sorted(zero))]
+          coverage_path = Path('content/news-coverage-status.json')
+          if coverage_path.is_file():
+              c = json.loads(coverage_path.read_text(encoding='utf-8'))
+              below = c.get('categories_below_minimum') or {}
+              if below:
+                  lines += ['- Historical categories below the 2-post minimum: ' + ', '.join('%s=%s' % kv for kv in sorted(below.items()))]
+              providers = c.get('provider_status') or {}
+              if providers.get('configured'):
+                  lines += ['- AI providers configured: ' + ', '.join(providers['configured'])]
+              if providers.get('cooldown'):
+                  lines += ['- Providers cooling down: ' + ', '.join(providers['cooldown'])]
+          summary = os.environ.get('GITHUB_STEP_SUMMARY')
+          if summary:
+              with open(summary, 'a', encoding='utf-8') as out:
+                  out.write('\n'.join(lines) + '\n')
+          print('\n'.join(lines))
+          PY
+
