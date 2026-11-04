@@ -9,6 +9,7 @@ import datetime as dt
 import json
 import os
 from pathlib import Path
+from urllib.error import HTTPError
 from urllib.parse import quote, urlencode
 from urllib.request import Request, urlopen
 from ctr_opportunities import rank
@@ -19,8 +20,22 @@ def request_json(url, payload, token=None):
     headers = {"Content-Type": "application/json" if token else "application/x-www-form-urlencoded"}
     if token:
         headers["Authorization"] = "Bearer " + token
-    with urlopen(Request(url, data=data, headers=headers), timeout=45) as response:
-        return json.load(response)
+    try:
+        with urlopen(Request(url, data=data, headers=headers), timeout=45) as response:
+            return json.load(response)
+    except HTTPError as exc:
+        # Only emit Google error codes/descriptions, never OAuth credentials or tokens.
+        try:
+            error_body = json.loads(exc.read().decode("utf-8"))
+        except (ValueError, UnicodeDecodeError):
+            error_body = {}
+        error_code = error_body.get("error", "unknown")
+        if isinstance(error_code, dict):
+            error_code = error_code.get("status", "unknown")
+        safe_codes = {"invalid_client", "invalid_grant", "unauthorized_client", "access_denied", "invalid_request", "PERMISSION_DENIED", "UNAUTHENTICATED"}
+        safe_code = error_code if isinstance(error_code, str) and error_code in safe_codes else "unknown"
+        endpoint = "OAuth token exchange" if "oauth2.googleapis.com/token" in url else "Search Console API"
+        raise RuntimeError(f"{endpoint} rejected request (HTTP {exc.code}; error={safe_code}). Check OAuth client and refresh token match, or GSC permissions.") from None
 
 
 def access_token():
