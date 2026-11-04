@@ -1,0 +1,33 @@
+{
+  "en_title": "Lean4 Formalization of the Classification of Finite Simple Groups Reaches Near‑24‑Hour Build Milestone",
+  "hi_title": "Lean4 के तहत वित्तीय सरल समूहों की वर्गीकरण का औपचारिककरण, बिल्ड टाइम 24 घंटे के करीब",
+  "en_body": "## Overview\nThe AxiomMath repository on GitHub hosts a Lean4 formalization of the Classification of Finite Simple Groups (CFSG). The project provides a proof that the complete list of finite simple groups is correct, built on the Mathlib library and the TauCeti infrastructure.\n\n## Technical Details\n- Lean4 version: v4.35.0-rc3, using Classical.choice, propext, and Quot.sound axioms (no native_decide).\n- The proof follows the first‑generation CFSG approach.\n- Build process: `lake build` compiles the entire project.\n- Recent optimizations, including changes to Lake and other tweaks, aim to reduce total compilation time to under 24 hours.\n- The statement of CFSG used is the one defined in the TauCeti project.\n\n## Practical Implications\nIf the build time is achieved, the formalization becomes a practical tool for mathematicians who want to verify group‑theoretic results in a machine‑checked environment. It also demonstrates that large, highly complex mathematical libraries can be compiled within a day on standard hardware, encouraging further formalization efforts.\n\n## How to Verify the Announcement\n1. Visit the GitHub repository (https://github.com/AxiomMath/CFSG/).\n2. Check the README for the exact Lean version and build commands.\n3. Look at the CI logs or the `lake build` output to confirm the reported build duration.\n4. Compare the formalized statement with the CFSG statement from TauCeti to ensure they match.\n\n## Open Questions\n- It is not yet clear whether the proof has been fully peer‑reviewed by the broader mathematical community.\n- The long‑term maintenance of the Lean code and its compatibility with future Lean releases remain uncertain.\n\n## Keywords\n[\"Lean4\", \"Classification of Finite Simple Groups\", \"formal verification\", \"Mathlib\", \"TauCeti\", \"build time\", \"GitHub repository\"]",
+  "hi_body": "## अवलोकन\nAxiomMath रिपॉजिटरी में Lean4 (v4.35.0-rc3) में वित्तीय सरल समूहों (CFSG) की वर्गीकरण को औपचारिक रूप से दर्शाया गया है। यह Mathlib और TauCeti के ढांचे पर आधारित एक प्रमाण प्रदान करता है जो सभी वित्तीय सरल समूहों की सही सूची को स्थापित करता है।\n\n## तकनीकी विवरण\n- Lean4 संस्करण: v4.35.0-rc3, Classical.choice, propext और Quot.sound नामक मानक अक्षीयों का उपयोग (native_decide नहीं)।\n- प्रमाण पहली पीढ़ी के CFSG प्रमाण के अनुसार तैयार किया गया है।\n- बिल्ड प्रक्रिया: `lake build` पूरे परियोजना को कंपाइल करता है।\n- recent Lake में बदलाव और अन्य अनुकूलनों से कुल कंपाइल समय 24 घंटे से कम रहने की योजना है।\n- CFSG का बयान TauCeti परियोजना में परिभाषित किया गया है।\n\n## व्यावहारिक प्रभाव\nयदि बिल्ड टाइम 24 घंटे के भीतर प्राप्त हुआ तो यह औपचारिककरण गणितज्ञों के लिए एक उपयोगी उपकरण बन जाएगा, जिससे वे मशीन-चेक की गई समूह सैद्धांतिक परिणामों की पुष्टि कर सकेंगे। यह दर्शाता है कि जटिल गणितीय लाइब्रेरी को मानक हार्डवेयर पर एक दिन के भीतर कंपाइल किया जा सकता है, जिससे आगे के औपचारिककरण प्रयासों को प्रोत्साहन मिलेगा।\n\n## घोषणा की पुष्टि कैसे करें\n1. GitHub रिपॉजिटरी (https://github.com/AxiomMath/CFSG/) पर जाएँ।\n2. README में Lean संस्करण और बिल्ड कमांड की जाँच करें।\n3. CI लॉग या `lake build` आउटपुट को देखें ताकि घोषित बिल्ड अवधि की पुष्टि हो सके।\n4. CFSG बयान को TauCeti परियोजना के बयान से तुलना करें, यह सुनिश्चित करने के लिए कि वे मेल खाते हैं।\n\n## खुले प्रश्न\n- यह स्पष्ट नहीं है कि क्या यह प्रमाण broader गणितीय समुदाय द्वारा पूरी तरह से समीक्षा की गई है।\n- भविष्य के Lean संस्करणों के साथ कोड के रखरखाव और संगतता अभी भी अनिश्चित है।\n\n## कीवर्ड\n[\"Lean4\", \"वित्तीय सरल समूह\", \"वर्गीकरण\", \"Mathlib\", \"TauCeti\", \"बिल्ड टाइम\", \"GitHub\"]",
+  "en_meta": "Lean4 formalization of the Classification of Finite Simple Groups aims for a sub‑24‑hour build, using Mathlib and TauCeti; verification steps provided.",
+  "hi_meta": "Lean4 औपचारिककरण में CFSG, बिल्ड टाइम 24 घंटे, Mathlib व TauCeti उपयोग, पुष्टि के तरीके।",
+  "en_keywords": [
+    "Lean4",
+    "Classification of Finite Simple Groups",
+    "formal verification",
+    "Mathlib",
+    "TauCeti",
+    "build time",
+    "GitHub repository"
+  ],
+  "hi_keywords": [
+    "Lean4",
+    "वित्तीय सरल समूह",
+    "वर्गीकरण",
+    "Mathlib",
+    "TauCeti",
+    "बिल्ड टाइम",
+    "GitHub"
+  ],
+  "source_published_at": null,
+  "id": "6812e44c8231",
+  "source": "https://github.com/AxiomMath/CFSG/",
+  "date": "2026-11-04T01:06:32.345322+00:00",
+  "source_title": "AxiomMath/CFSG: A Lean formalization of the Classification of Finite Simple Groups - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

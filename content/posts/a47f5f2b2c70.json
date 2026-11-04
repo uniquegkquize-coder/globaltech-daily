@@ -1,0 +1,29 @@
+{
+  "en_title": "Open-Source Android App Offers 24 Free PDF Tools and On-Device Scanner Without Ads",
+  "hi_title": "ओपन-सोर्स एंड्रॉइड ऐप बिना विज्ञापनों के 24 मुफ्त पीडीएफ टूल और ऑन-डिवाइस स्कैनर प्रदान करता है",
+  "en_body": "## Overview of the Open-Source Project\nA newly highlighted open-source project hosted on GitHub provides Android users with a collection of 24 free PDF utilities and a built-in document scanner. Developed using Kotlin and Jetpack Compose, the application emphasizes local processing, running entirely on the user's device without requiring accounts, sign-ups, or internet connectivity for its core functions.\n\n## Key Features and Scanner Capabilities\nAccording to the project documentation, the application operates locally with the following features:\n* **Document Scanner:** Features live page-edge detection, support for automatic or manual capture, flash toggling, and front or back camera utilization.\n* **Capture Modes:** Includes specialized modes for documents, books, ID cards, business cards, and whiteboards.\n* **Editing and Organization:** Offers cropping, rotation, filter applications, cleanup brushes, and color pickers. Saved scans can be searched using on-device OCR, which generates an invisible text layer.\n* **Built-In PDF Viewer:** Provides scrolling, zooming, text selection, search highlights, link navigation, page thumbnails, and support for password-protected files.\n* **File Management:** Supports folders, renaming, moving, sharing, and exporting copies as Word or JPEG files.\n\n## Privacy and Synchronization\nThe developer states that the app contains no advertisements, analytics, or trackers. All processing, including OCR and scanning, occurs on the device. An optional two-way synchronization feature allows users to connect the app to their own Google Drive account, restricted specifically to a designated \"PDF Tools\" folder.\n\n## System Requirements and Installation\n* **Android Version:** Requires Android 7.0 or newer. The built-in PDF viewer requires Android 12 with recent system updates.\n* **Distribution:** Available as APK downloads through GitHub releases. The repository notes that side-by-side test installations are supported to prevent overwriting existing data.\n* **Development Stack:** Built with tools including Jetpack Compose, CameraX, OpenCV, and ML Kit. Developers can build the project using JDK 17 and the Android SDK.\n\n## How to Verify\nInterested users and developers can review the source code, privacy policy, and third-party notices directly on the official GitHub repository maintained by the project author.",
+  "hi_body": "## ओपन-सोर्स प्रोजेक्ट का अवलोकन\nगिटहब पर उपलब्ध एक नए ओपन-सोर्स प्रोजेक्ट में एंड्रॉइड उपयोगकर्ताओं के लिए 24 मुफ्त पीडीएफ यूटिलिटीज और एक डॉक्यूमेंट स्कैनर पेश किया गया है। कोट्लिन और जेटपैक कंपोज का उपयोग करके विकसित यह एप्लिकेशन स्थानीय प्रोसेसिंग पर जोर देता है और इसके मुख्य कार्यों के लिए किसी खाते, साइन-अप या इंटरनेट कनेक्टिविटी की आवश्यकता के बिना पूरी तरह से उपयोगकर्ता के डिवाइस पर चलता है।\n\n## मुख्य विशेषताmएं और स्कैनर क्षमताएं\nप्रोजेक्ट दस्तावेज़ के अनुसार, यह एप्लिकेशन निम्नलिखित विशेषताओं के साथ स्थानीय रूप से काम करता है:\n* **डॉक्यूमेंट स्कैनर:** इसमें लाइव पेज-एज डिटेक्शन, ऑटोमैटिक या मैनुअल कैप्चर, फ्लैश और फ्रंट या बैक कैमरे का समर्थन शामिल है।\n* **कैप्चर मोड:** दस्तावेज़ों, किताबों, आईडी कार्ड, बिजनेस कार्ड और व्हाइटबोर्ड के लिए विशेष मोड उपलब्ध हैं।\n* **संपादन और संगठन:** फसल, रोटेशन, फिल्टर, क्लीनअप ब्रश और कलर पिकर प्रदान करता है। सहेजे गए स्कैन को ऑन-डिवाइस ओसीआर का उपयोग करके खोजा जा सकता है।\n* **बिल्ट-इन पीडीएफ व्यूअर:** स्क्रॉलिंग, ज़ूमिंग, टेक्स्ट चयन, खोज हाइलाइट्स और पासवर्ड से सुरक्षित फाइलों के लिए समर्थन प्रदान करता है।\n* **फाइल प्रबंधन:** फ़ोल्डर, नाम बदलना, स्थानांतरित करना, साझा करना और वर्ड या जेपीईजी के रूप में प्रतियां सहेजना समर्थित है।\n\n## गोपनीयता और सिंक्रनाइज़ेशन\nविकासकर्ता का कहना है कि ऐप में कोई विज्ञापन, एनालिटिक्स या ट्रैकर नहीं हैं। ओसीआर और स्कैनिंग सहित सभी प्रोसेसिंग डिवाइस पर होती है। एक वैकल्पिक सिंक्रनाइज़ेशन सुविधा उपयोगकर्ताओं को अपने स्वयं के Google Drive खाते से कनेक्ट करने की अनुमति देती है।\n\n## सिस्टम आवश्यकताएँ और स्थापना\n* **एंड्रॉइड संस्करण:** एंड्रॉइड 7.0 या नए की आवश्यकता है। बिल्ट-इन पीडीएफ व्यूअर के लिए एंड्रॉइड 12 की आवश्यकता होती है।\n* **वितरण:** गिटहब रिलीज़ के माध्यम से एपीके डाउनलोड के रूप में उपलब्ध है।\n* **डेवलपमेंट स्टैक:** जेटपैक कंपोज, कैमराजैक्स, ओपनसीवी और एमएल किट का उपयोग करके बनाया गया है। डेवलपर्स जेडीके 17 और एंड्रॉइड एसडीके का उपयोग करके प्रोजेक्ट बना सकते हैं।\n\n## सत्यापित कैसे करें\nइच्छुक उपयोगकर्ता और डेवलपर प्रोजेक्ट लेखक द्वारा बनाए रखा गया आधिकारिक गिटहब रिपॉजिटरी देख सकते हैं।",
+  "en_meta": "Explore an open-source Android app featuring 24 free PDF tools and an on-device document scanner with no ads, accounts, or tracking.",
+  "hi_meta": "बिना विज्ञापनों और ट्रैकिंग के 24 मुफ्त पीडीएफ टूल और ऑन-डिवाइस स्कैनर वाले ओपन-सोर्स एंड्रॉइड ऐप की जानकारी।",
+  "en_keywords": [
+    "Android PDF tools",
+    "open-source scanner app",
+    "Jetpack Compose",
+    "on-device OCR",
+    "privacy-focused PDF app"
+  ],
+  "hi_keywords": [
+    "एंड्रॉइड पीडीएफ टूल",
+    "ओपन-सोर्स स्कैनर ऐप",
+    "जेटपैक कंपोज",
+    "ऑन-डिवाइस ओसीआर",
+    "गोपनीयता पीडीएफ ऐप"
+  ],
+  "source_published_at": null,
+  "id": "a47f5f2b2c70",
+  "source": "https://github.com/sammyZi/pdf-tools",
+  "date": "2026-11-04T01:02:24.739253+00:00",
+  "source_title": "24 free PDF tools and a document scanner for Android. Kotlin + Jetpack Compose, everything on-device, no ads. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

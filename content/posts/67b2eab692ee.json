@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Project Uses Automation to Print User Profile Pictures",
+  "hi_title": "GitHub प्रोजेक्ट: यूजर प्रोफाइल पिक्चर को प्रिंट करने का अनूठा तरीका",
+  "en_body": "## Overview\nA unique project hosted on GitHub, titled \"print-my-profile-pic,\" has introduced a novel way for developers to interact with the platform. The project, created by developer Andrew Schmelyun, automatically prints the profile picture of any user who \"stars\" the repository using a physical thermal receipt printer.\n\n## How It Works\nThe system relies on a series of automated steps triggered by user activity:\n* **Event Triggering:** The project utilizes GitHub webhooks, which monitor for specific repository events. In this case, the webhook triggers when a user stars the repository.\n* **Data Processing:** When a star occurs, GitHub sends a payload to a Cloudflare tunnel. This tunnel directs the data to a PHP script running on a Raspberry Pi.\n* **Image Rendering:** The script extracts the user's avatar URL and display name from the payload. It then overlays the profile picture onto a digital template resembling a photo frame.\n* **Physical Output:** The Raspberry Pi communicates via USB with an Epson TM-T88IV thermal receipt printer, which renders the image and information onto paper.\n\n## Project Goals and Verification\nThe creator describes the project as an experimental effort designed for fun. Users interested in the technical implementation or the \"Hall of Frame\" gallery can verify the project details directly through the public repository on GitHub. \n\nIt is important to note that this project is a personal side experiment. There are no claims regarding security, privacy, or long-term support for these printed images beyond the creator's stated intent to pin them on a physical wall in their workspace.",
+  "hi_body": "## परिचय\nGitHub पर \"print-my-profile-pic\" नाम का एक प्रोजेक्ट चर्चा में है, जो डेवलपर्स को एक दिलचस्प अनुभव प्रदान करता है। इस प्रोजेक्ट के माध्यम से, यदि कोई यूजर इस रिपॉजिटरी को \"स्टार\" करता है, तो डेवलपर एंड्रयू श्मेल्युन का सिस्टम स्वचालित रूप से उस यूजर की प्रोफाइल पिक्चर को एक थर्मल रसीद प्रिंटर पर प्रिंट कर देता है।\n\n## यह कैसे काम करता है\nयह सिस्टम कई तकनीकी चरणों के माध्यम से काम करता है:\n* **इवेंट ट्रिगरिंग:** यह प्रोजेक्ट GitHub वेबहुक का उपयोग करता है। जैसे ही कोई यूजर रिपॉजिटरी को स्टार करता है, वेबहुक एक संकेत भेजता है।\n* **डेटा प्रोसेसिंग:** यह डेटा एक क्लाउडफ्लेयर टनल के जरिए एक Raspberry Pi में चल रही PHP स्क्रिप्ट तक पहुँचता है।\n* **इमेज रेंडरिंग:** स्क्रिप्ट यूजर के नाम और प्रोफाइल फोटो का उपयोग करके उसे एक डिजिटल फोटो फ्रेम में डालती है।\n* **फिजिकल प्रिंट:** अंत में, Raspberry Pi एक Epson TM-T88IV थर्मल प्रिंटर का उपयोग करके इस फोटो को रसीद के रूप में प्रिंट करता है।\n\n## मुख्य बिंदु और सत्यापन\nडेवलपर के अनुसार, यह प्रोजेक्ट केवल मनोरंजन के लिए शुरू किया गया है। जो लोग इसकी कार्यप्रणाली को समझना चाहते हैं, वे सीधे GitHub पर रिपॉजिटरी को देखकर इसकी जांच कर सकते हैं। \n\nयह ध्यान रखना महत्वपूर्ण है कि यह एक व्यक्तिगत प्रयोग है। यहाँ प्रिंट की गई तस्वीरों के संरक्षण या गोपनीयता को लेकर कोई आधिकारिक दावा नहीं किया गया है। यह प्रोजेक्ट केवल डेवलपर द्वारा अपनी कार्यस्थल की दीवार पर तस्वीरों को प्रदर्शित करने के उद्देश्य से बनाया गया है।",
+  "en_meta": "A look at a GitHub project that uses webhooks, PHP, and a Raspberry Pi to print user profile pictures on a thermal receipt printer.",
+  "hi_meta": "GitHub पर एक अनोखा प्रोजेक्ट जो वेबहुक और Raspberry Pi का उपयोग करके यूजर की प्रोफाइल पिक्चर को थर्मल प्रिंटर पर प्रिंट करता है।",
+  "en_keywords": [
+    "GitHub",
+    "Raspberry Pi",
+    "webhooks",
+    "thermal printer",
+    "automation"
+  ],
+  "hi_keywords": [
+    "GitHub",
+    "Raspberry Pi",
+    "वेबहुक",
+    "थर्मल प्रिंटर",
+    "ऑटोमेशन"
+  ],
+  "source_published_at": null,
+  "id": "67b2eab692ee",
+  "source": "https://github.com/aschmelyun/print-my-profile-pic",
+  "date": "2026-11-04T01:04:29.901356+00:00",
+  "source_title": "aschmelyun/print-my-profile-pic: Say cheese! Star this repo and your profile picture gets printed out on a receipt printer. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

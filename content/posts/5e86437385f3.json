@@ -1,0 +1,33 @@
+{
+  "en_title": "Google Introduces Agent Executor (AX): A New Framework for Agentic Orchestration",
+  "hi_title": "गूगल ने एजेंट एग्जीक्यूटर (AX) पेश किया: एजेंटिक ऑर्केस्ट्रेशन के लिए एक नया फ्रेमवर्क",
+  "en_body": "## Overview of Agent Executor (AX)\nGoogle has introduced Agent Executor (AX), an open-source orchestration runtime designed specifically for managing autonomous agent workloads. Built to function at a massive scale, AX addresses the unique challenges of agentic computing, such as state management, sandbox isolation, and the prevention of runaway API costs.\n\n## Why AX Was Built\nUnlike traditional stateless microservices or simple batch jobs, autonomous agents accumulate state and require persistent monitoring. According to project documentation, AX provides a declarative approach to managing these workloads, drawing design inspiration from Kubernetes to provide a familiar experience for developers and infrastructure engineers.\n\n## Key Features\nAX offers a set of primitives designed to handle the complexities of agent orchestration:\n* **Declarative Manifests:** Tasks are defined using `ax.io/v1alpha1` manifests, allowing for version-controlled, repeatable deployments.\n* **Sandboxed Execution:** AX relies on Agent Substrate to ensure that agent tasks run in isolated, secure environments within a cluster.\n* **Kubernetes-Style CLI:** The AX command-line interface is designed to mimic `kubectl`, supporting commands like `apply`, `get`, `describe`, and `delete`, along with specialized verbs for agent interaction.\n* **Scalability:** The architecture is built to support millions of autonomous tasks per cluster.\n\n## Practical Implications and Setup\nAX is currently under heavy development. Users should expect significant breaking changes as protocols and specifications are refined before a stable release. \n\nTo implement AX, a Kubernetes cluster with Agent Substrate installed is required. Deployment involves:\n* Authenticating with a container registry (using Podman or Docker).\n* Configuring the AX control plane to interface with the Substrate Control API.\n* Deploying the server components via the `ax-system` namespace.\n\nFor those looking to evaluate the framework, a demonstration script is provided in the repository to guide users through the lifecycle of a custom workspace, including readiness checks and task suspension.\n\n## How to Verify\nInterested parties can review the source code, installation guides, and documentation on the [official AX GitHub repository](https://github.com/google/ax). As the project is in early-stage development, users are encouraged to monitor the repository for updates, API changes, and community-reported issues.",
+  "hi_body": "## एजेंट एग्जीक्यूटर (AX) का अवलोकन\nगूगल ने एजेंट एग्जीक्यूटर (AX) पेश किया है, जो एक ओपन-सोर्स ऑर्केस्ट्रेशन रनटाइम है। इसे विशेष रूप से स्वायत्त (autonomous) एजेंट वर्कलोड को प्रबंधित करने के लिए डिज़ाइन किया गया है। बड़े पैमाने पर काम करने के लिए बनाया गया AX, एजेंटिक कंप्यूटिंग की अनूठी चुनौतियों का समाधान करता है, जैसे स्टेट मैनेजमेंट, सैंडबॉक्स आइसोलेशन और रनवे API लागतों को रोकना।\n\n## AX क्यों बनाया गया\nपारंपरिक स्टेटलेस माइक्रोसर्विसेज या बैच जॉब्स के विपरीत, स्वायत्त एजेंट डेटा को संचित करते हैं और निरंतर निगरानी की आवश्यकता रखते हैं। प्रोजेक्ट के अनुसार, AX इन वर्कलोड को प्रबंधित करने के लिए एक घोषणात्मक (declarative) दृष्टिकोण प्रदान करता है। इसका डिज़ाइन कुबेरनेट्स (Kubernetes) से प्रेरित है, जो डेवलपर्स के लिए इसे परिचित बनाता है।\n\n## मुख्य विशेषताएं\nAX एजेंट ऑर्केस्ट्रेशन की जटिलताओं को संभालने के लिए कुछ बुनियादी सुविधाएं प्रदान करता है:\n* **घोषणात्मक मैनिफेस्ट:** कार्यों को `ax.io/v1alpha1` मैनिफेस्ट का उपयोग करके परिभाषित किया जाता है, जिससे डिप्लॉयमेंट को नियंत्रित करना आसान हो जाता है।\n* **सैंडबॉक्स निष्पादन:** AX एजेंट कार्यों को क्लस्टर के भीतर सुरक्षित और अलग वातावरण में चलाने के लिए 'एजेंट सबस्ट्रेट' (Agent Substrate) पर निर्भर करता है।\n* **कुबेरनेट्स-शैली CLI:** AX कमांड-लाइन इंटरफेस को `kubectl` की नकल करने के लिए डिज़ाइन किया गया है।\n* **स्केलेबिलिटी:** यह आर्किटेक्चर प्रति क्लस्टर लाखों स्वायत्त कार्यों का समर्थन करने के लिए बनाया गया है।\n\n## व्यावहारिक निहितार्थ और सेटअप\nAX अभी विकास के शुरुआती चरण में है। स्थिर रिलीज़ से पहले प्रोटोकॉल और विनिर्देशों में बड़े बदलाव होने की संभावना है।\n\nAX को लागू करने के लिए, एजेंट सबस्ट्रेट के साथ एक कुबेरनेट्स क्लस्टर की आवश्यकता होती है। सेटअप प्रक्रिया में शामिल हैं:\n* कंटेनर रजिस्ट्री के साथ प्रमाणीकरण।\n* AX कंट्रोल प्लेन को सबस्ट्रेट कंट्रोल API के साथ कॉन्फ़िगर करना।\n* `ax-system` नेमस्पेस के माध्यम से सर्वर घटकों को तैनात करना।\n\n## कैसे सत्यापित करें\nइच्छुक उपयोगकर्ता [आधिकारिक AX गिटहब रिपॉजिटरी](https://github.com/google/ax) पर सोर्स कोड, इंस्टॉलेशन गाइड और दस्तावेज़ीकरण देख सकते हैं। चूंकि प्रोजेक्ट अभी प्रारंभिक अवस्था में है, इसलिए सलाह दी जाती है कि अपडेट और API परिवर्तनों के लिए नियमित रूप से रिपॉजिटरी पर नज़र रखें।",
+  "en_meta": "Google's Agent Executor (AX) is a new open-source runtime for managing large-scale autonomous agent workloads, utilizing a Kubernetes-inspired declarative…",
+  "hi_meta": "गूगल का एजेंट एग्जीक्यूटर (AX) बड़े पैमाने पर स्वायत्त एजेंट वर्कलोड के प्रबंधन के लिए एक नया ओपन-सोर्स रनटाइम है, जो कुबेरनेट्स से प्रेरित है।",
+  "en_keywords": [
+    "Agent Executor",
+    "AX",
+    "Google",
+    "Agentic AI",
+    "Kubernetes",
+    "Orchestration",
+    "Open Source"
+  ],
+  "hi_keywords": [
+    "एजेंट एग्जीक्यूटर",
+    "AX",
+    "गूगल",
+    "एजेंटिक एआई",
+    "कुबेरनेट्स",
+    "ऑर्केस्ट्रेशन",
+    "ओपन सोर्स"
+  ],
+  "source_published_at": null,
+  "id": "5e86437385f3",
+  "source": "https://github.com/google/ax",
+  "date": "2026-11-04T01:02:45.747181+00:00",
+  "source_title": "Agent Executor (AX) is Google's open agentic orchestration runtime - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

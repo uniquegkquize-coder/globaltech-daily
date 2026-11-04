@@ -1,0 +1,37 @@
+{
+  "en_title": "LightPost: Self‑Hosted Dashboard for Automating Posts Across Multiple Social Platforms",
+  "hi_title": "LightPost: एक स्व-होस्टेड डैशबोर्ड जो कई सोशल प्लेटफ़ॉर्म्स पर पोस्ट ऑटोमेट करता है",
+  "en_body": "## Overview\nLightPost is an open‑source, self‑hosted application that lets users schedule, draft, and publish content to several social networks from a single web dashboard. The project is hosted on GitHub under the repository brainstormity/LightPost.\n\n## Core Capabilities\n- Connect multiple accounts, including several accounts on the same platform, and publish to them simultaneously.\n- Save drafts, edit them, duplicate, schedule for a future time, or publish immediately.\n- Use the browser’s timezone for scheduling inputs and post times.\n- Choose per‑account content type (text only, image only, or both) within each platform’s limits.\n- Upload a single MP4 video to YouTube, set visibility and audience, and schedule delivery; resumable uploads survive restarts.\n- Import public JPEG URLs, reuse images from a saved library, add alt text, and preview the post before sending.\n- Track delivery status per account, retry failed destinations, or cancel further attempts.\n- Maintain a persistent queue so that posts survive app restarts and overdue schedules resume automatically.\n- Manage accounts through verification, reconnection, and disconnection of credentials.\n- Follow device theme preferences or set a custom light or dark theme.\n- Keep credentials encrypted on the server, optionally protect the workspace with a password, and export post history.\n\n## Practical Implications\n- Users can reduce the time spent switching between separate social‑media apps, streamlining content distribution.\n- Because the system runs locally, data remains under the user’s control, which may be preferable for privacy‑focused workflows.\n- The lightweight design, based on a single Python process with SQLite, avoids the need for external databases or heavyweight front‑end tooling.\n- Automatic startup via a systemd service on Linux enables scheduled posts without keeping a browser tab open.\n- Verification of the announcement is possible by reviewing the GitHub README, the setup guide in the sidebar, and the source code itself.\n\n## How to Verify the Original Announcement\n- Visit the GitHub repository (https://github.com/brainstormity/LightPost) and read the README for the project description.\n- Check the “Setup Guide” in the application’s sidebar for platform‑specific instructions and requirements.\n- Review the source code to confirm the claims about Python 3.11+, SQLite, and the absence of external database dependencies.\n- Look for the MIT license notice and the statement that LightPost is an independent project, not affiliated with Post Bridge or any platform.",
+  "hi_body": "## अवलोकन\nLightPost एक ओपन‑सोर्स, स्व-होस्टेड अनुप्रयोग है जो उपयोगकर्ताओं को एक वेब डैशबोर्ड से कई सोशल नेटवर्क पर सामग्री को शेड्यूल, ड्राफ़्ट और प्रकाशित करने की अनुमति देता है। परियोजना GitHub रिपॉजिटरी brainstormity/LightPost के तहत उपलब्ध है।\n\n## मुख्य विशेषताएँ\n- कई खातों को जोड़ें, जिसमें एक ही प्लेटफ़ॉर्म पर कई खाते भी शामिल हैं, और एक साथ उन्हें प्रकाशित करें।\n- ड्राफ़्ट सहेजें, संपादित करें, दोहराएँ, भविष्य के लिए शेड्यूल करें या तुरंत प्रकाशित करें।\n- शेड्यूलिंग के लिए ब्राउज़र के समयक्षेत्र का उपयोग करें।\n- प्रत्येक खाते के लिए पाठ, छवि या दोनों चुनें, प्लेटफ़ॉर्म की सीमाओं के अनुसार।\n- YouTube पर एक एमपी4 वीडियो अपलोड करें, दृश्यता और दर्शक सेट करें, और डिलीवरी शेड्यूल करें; पुनः आरंभ योग्य अपलोड surviving रिस्टार्ट के साथ।\n- सार्वजनिक जेपीईजी यूआरएल आयात करें, सहेजे गए लाइब्रेरी से छवियों को पुनः उपयोग करें, एलेक टेक्स्ट जोड़ें, और पोस्ट को प्रकाशित करने से पहले पूर्वावलोकन देखें।\n- प्रत्येक खाते के अनुसार डिलीवरी परिणाम देखें, असफल गंतव्यों को पुनः प्रयास करें या आगे के प्रयास रद्द करें।\n- पोस्ट को रिस्टार्ट के बाद भी बरकरार रखने वाला स्थायी कतार, ओवरड्यूल शेड्यूल को स्वचालित रूप से पुनः शुरू करता है।\n- खाते प्रबंधित करने के लिए कनेक्शन की पुष्टि, पुनः कनेक्शन और डिस्कनेक्ट करें।\n- डिवाइस के थीम पसंद को फॉलो करें या अपना स्वयं का लाइट या डार्क थीम सेट करें।\n- सर्वर परCredential को एन्क्रिप्टेड रखें, वैकल्पिक पासवर्ड सुरक्षा लागू करें, और पोस्ट इतिहास निर्यात करें।\n\n## व्यावहारिक प्रभाव\n- विभिन्न सोशल‑मीडिया एप्लिकेशन के बीच स्विचिंग कम करके सामग्री वितरण को सरल बनाता है।\n- स्थानीय रूप से चलने के कारण डेटा उपयोगकर्ता के नियंत्रण में रहता है, जो गोपनीयता‑केन्द्रित कार्यप्रवाह के लिये उपयुक्त हो सकता है।\n- हल्के डिज़ाइन, एकल पायथन प्रक्रिया और SQLite पर आधारित, बाहरी डेटाबेस या भारी फ़्रंट‑एंड टूल की आवश्यकता नहीं होती।\n- Linux पर सिस्टमड सेवा के माध्यम से स्वचालित शुरूआत सक्षम करती है, जिससे पोस्ट के शेड्यूल बिना ब्राउज़र टैब खुले रहने की आवश्यकता नहीं होती।\n- घोषणा की पुष्टि GitHub रीडमेम, सेटअप गाइड और स्रोत कोड की समीक्षा करके की जा सकती है।\n\n## घोषणा की पुष्टि कैसे करें\n- GitHub रिपॉजिटरी (https://github.com/brainstormity/LightPost) देखें और रीडमेम में परियोजना विवरण पढ़ें।\n- एप्लिकेशन के साइडबार में \"Setup Guide\" की जाँच करें ताकि प्लेटफ़ॉर्म‑विशिष्ट निर्देश और आवश्यकताएँ मिल सकें।\n- Python 3.11+, SQLite और बाहरी डेटाबेस के अभाव की पुष्टि करने के लिये स्रोत कोड की समीक्षा करें।\n- MIT लाइसेंस नोटिस और स्वतंत्र परियोजना के बारे में बयान की जाँच करें, जिससे पता चलता है कि LightPost पोस्ट ब्रिज या किसी प्लेटफ़ॉर्म से जुड़ा नहीं है.",
+  "en_meta": "LightPost is a self‑hosted, lightweight scheduler that lets you manage multiple social accounts from one dashboard, with scheduling, drafts, and persistent…",
+  "hi_meta": "LightPost एक स्व‑होस्टेड, हल्का शेड्यूलर है जो एक डैशबोर्ड से कई सोशल खातों को प्रबंधित करता है, जिसमें शेड्यूल, ड्राफ़्ट और स्थायी कतार शामिल हैं।",
+  "en_keywords": [
+    "self-hosted",
+    "social media scheduler",
+    "LightPost",
+    "automation",
+    "Python",
+    "SQLite",
+    "multi-account publishing",
+    "privacy",
+    "MIT license"
+  ],
+  "hi_keywords": [
+    "स्व-होस्टेड",
+    "सोशल मीडिया शेड्यूलर",
+    "LightPost",
+    "ऑटोमेशन",
+    "Python",
+    "SQLite",
+    "बहु-खाते प्रकाशन",
+    "गोपनीयता",
+    "MIT लाइसेंस"
+  ],
+  "source_published_at": null,
+  "id": "e7c7fc2a17fc",
+  "source": "https://github.com/brainstormity/LightPost",
+  "date": "2026-11-04T01:08:49.473978+00:00",
+  "source_title": "brainstormity/LightPost: A lightweight system to automate posting to all of your socials from one dashboard - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

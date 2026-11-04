@@ -1,0 +1,31 @@
+{
+  "en_title": "Alibaba Open-Sources Hybrid AI Code Review Tool",
+  "hi_title": "अलीबाबा ने हाइब्रिड एआई कोड समीक्षा टूल किया ओपन-सोर्स",
+  "en_body": "Alibaba Group has publicly released Open Code Review (OCR), an AI-powered command-line interface (CLI) tool designed for code review. Originally developed as an internal assistant within Alibaba over a two-year period, the software is reported to have served tens of thousands of developers and identified millions of code defects prior to its open-source release.\n\n## Hybrid Architecture: Deterministic Pipelines and LLM Agents\n\nOpen Code Review utilizes a hybrid architecture that combines deterministic engineering pipelines with a Large Language Model (LLM) agent. According to the project documentation, this approach addresses common challenges associated with purely language-driven review tools, such as incomplete coverage on large changesets, position drift in line numbers, and fluctuating review quality.\n\n* **Deterministic Engineering:** Handles tasks requiring strict consistency, including precise file selection, smart file bundling for isolated sub-agent contexts, fine-grained rule matching, and external comment positioning modules.\n\n* **LLM Agent:** Focuses on dynamic tasks such as context retrieval and decision-making, utilizing scenario-tuned prompts and a specialized toolset derived from production data analysis.\n\n## Features and Capabilities\n\n* **Line-Level Precision:** Generates structured review comments with specific line-level accuracy.\n\n* **Whole-File Scanning:** Performs full audits on unfamiliar codebases or directories lacking meaningful Git diffs.\n\n* **Built-in Rulesets:** Includes multi-language rules targeting common vulnerabilities such as Null Pointer Exceptions (NPE), thread-safety issues, Cross-Site Scripting (XSS), and SQL injection.\n\n* **Execution Modes:** Supports default OCR-managed review using a configured LLM endpoint, or a delegation mode where existing coding agents perform reviews using their own LLM.\n\n* **Integration Options:** Offers plugins and integrations for various platforms, CI/CD pipelines (including GitHub Actions and GitLab CI), and an interactive session viewer for browsing and managing review results.\n\n## Benchmarking and Verification\n\nThe project references the AACR-Bench dataset, built from 50 open-source repositories and 200 Pull Requests across 10 programming languages, cross-validated by senior engineers. According to comparative claims in the documentation, OCR achieves higher precision and F1 scores while consuming fewer tokens compared to general-purpose agents, though it notes a lower recall rate as a deliberate trade-off to minimize noise.\n\nDevelopers can verify setup instructions, configuration requirements, and documentation by visiting the official GitHub repository at github.com/alibaba/open-code-review or consulting open-codereview.ai.",
+  "hi_body": "अलीबाबा ग्रुप ने ओपन कोड रिव्यू (OCR) नामक एआई-संचालित कमांड-लाइन इंटरफेस (CLI) टूल को सार्वजनिक रूप से जारी कर दिया है। मूल रूप से अलीबाबा के भीतर एक आंतरिक सहायक के रूप में विकसित इस सॉफ्टवेयर ने ओपन-सोर्स होने से पहले हजारों डेवलपर्स को सेवा दी है और लाखों कोड दोषों की पहचान की है।\n\n## हाइब्रिड आर्किटेक्चर: डिटर्मिनिस्टिक पाइपलाइन और एलएलएम एजेंट\n\nओपन कोड रिव्यू एक हाइब्रिड आर्किटेक्चर का उपयोग करता है जो डिटर्मिनिस्टिक इंजीनियरिंग पाइपलाइनों को एक लार्ज लैंग्वेज मॉडल (LLM) एजेंट के साथ जोड़ता है। प्रोजेक्ट दस्तावेज़ के अनुसार, यह दृष्टिकोण पूरी तरह से भाषा-संचालित समीक्षा टूल से जुड़ी सामान्य चुनौतियों का समाधान करता है, जैसे बड़े बदलावों पर अपूर्ण कवरेज और लाइन नंबरों में स्थिति का भटकना।\n\n* **डिटर्मिनिस्टिक इंजीनियरिंग:** सटीक फ़ाइल चयन, अलग उप-एजेंट संदर्भों के लिए स्मार्ट फ़ाइल बंडलिंग, और नियम मिलान जैसे कार्यों को संभालता है।\n* **एलएलएम एजेंट:** संदर्भ पुनर्प्राप्ति और निर्णय लेने जैसे गतिशील कार्यों पर ध्यान केंद्रित करता है।\n\n## मुख्य विशेषताएं और क्षमताएं\n\n* **लाइन-स्तरीय सटीकता:** विशिष्ट लाइन-स्तरीय सटीकता के साथ संरचित समीक्षा टिप्पणियां उत्पन्न करता है।\n* **संपूर्ण-फ़ाइल स्कैनिंग:** अपरिचित कोडबेस पर पूर्ण ऑडिट करता है।\n* **अंतर्निहित नियम:** नल पॉइंटर एक्सेप्शन (NPE), थ्रेड-सुरक्षा, XSS और SQL इंजेक्शन जैसी सामान्य कमियों को लक्षित करने वाले नियम शामिल हैं।\n* **एक्विजिशन मोड:** डिफ़ॉल्ट OCR-प्रबंधित समीक्षा और एक प्रतिनिधिमंडल मोड दोनों का समर्थन करता है।\n* **एकीकरण विकल्प:** विभिन्न प्लेटफार्मों और CI/CD पाइपलाइनों के लिए प्लगइन प्रदान करता है।\n\n## बेंचमार्किंग और सत्यापन\n\nयह प्रोजेक्ट AACR-Bench डेटासेट का हवाला देता है, जिसे 10 प्रोग्रामिंग भाषाओं में 50 ओपन-सोर्स रिपॉजिटरी से बनाया गया है। दस्तावेज़ीकरण के तुलनात्मक दावों के अनुसार, OCR सामान्य-उद्देश्य वाले एजेंटों की तुलना में कम टोकन की खपत करते हुए उच्च सटीकता स्कोर प्राप्त करता है।\n\nडवलपर github.com/alibaba/open-code-review पर जाकर सेटअप निर्देशों और कॉन्फ़िगरेशन आवश्यकताओं को सत्यापित कर सकते हैं।",
+  "en_meta": "Alibaba has open-sourced Open Code Review, a hybrid CLI tool combining deterministic pipelines and LLM agents for precise, line-level code reviews.",
+  "hi_meta": "अलीबाबा ने ओपन कोड रिव्यू लॉन्च किया है, जो सटीक, लाइन-स्तरीय कोड समीक्षा के लिए डिटर्मिनिस्टिक पाइपलाइन और एलएलएम एजेंट को जोड़ता है।",
+  "en_keywords": [
+    "Open Code Review",
+    "Alibaba",
+    "CLI tool",
+    "code review",
+    "LLM agent",
+    "hybrid architecture"
+  ],
+  "hi_keywords": [
+    "ओपन कोड रिव्यू",
+    "अलीबाबा",
+    "कोड समीक्षा",
+    "कमांड-लाइन टूल",
+    "एआई सॉफ्टवेयर",
+    "ओपन-सोर्स"
+  ],
+  "source_published_at": null,
+  "id": "c489e6fb5feb",
+  "source": "https://github.com/alibaba/open-code-review",
+  "date": "2026-11-04T01:02:52.116514+00:00",
+  "source_title": "alibaba/open-code-review: Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), O - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

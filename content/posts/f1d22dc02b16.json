@@ -1,0 +1,30 @@
+{
+  "en_title": "Win11Debloat Script Offers Customization and Removal of Pre-installed Apps for Windows",
+  "hi_title": "Win11Debloat स्क्रिप्ट विंडोज में ऐप्स हटाने और कस्टमाइज़ेशन की देती है सुविधा",
+  "en_body": "Win11Debloat is a lightweight, easy-to-use PowerShell script designed to help users declutter and customize their Windows 10 and Windows 11 environments without requiring installation. The utility aims to simplify the process of managing system settings, pre-installed applications, and interface elements.\n\n## Key Features and Capabilities\n\nAccording to the project documentation, the script provides various configuration options:\n- Removal of pre-installed applications.\n- Disabling telemetry, diagnostic data, activity history, and targeted advertisements.\n- Turning off interface suggestions, tips, and promotional content across Windows, the lock screen, and browsers.\n- Interface modifications, such as restoring the Windows 10-style context menu, customizing the taskbar, and altering File Explorer defaults.\n- Power and update management settings, including options related to automatic restarts, fast start-up, and driver updates.\n- Advanced features for power users, such as command-line parameter support, Windows Audit mode, and the ability to apply changes to other user profiles.\n\n## Practical Implications and Usage\n\nWhile the script provides a centralized method to adjust multiple operating system settings quickly, users should consider the practical implications of modifying system configurations. Automated scripts can alter core behaviors, and changes should be reviewed carefully before execution.\n\n- **Reversibility:** Documentation notes that most changes can be reverted, and many removed apps can be reinstalled via the Microsoft Store.\n- **Risk:** The project is provided under the MIT license for use at one's own risk. Testing in non-production environments is recommended.\n\n## How to Verify and Run\n\nUsers interested in reviewing the code, checking for updates, or verifying instructions should consult the official GitHub repository (`raphire/win11debloat`). Running scripts obtained from the internet requires administrative privileges and careful inspection of the source code to ensure security and alignment with system requirements.",
+  "hi_body": "Win11Debloat एक हल्की और उपयोग में आसान PowerShell स्क्रिप्ट है, जिसे उपयोगकर्ताओं को बिना किसी इंस्टॉलेशन के Windows 10 और Windows 11 वातावरण को कस्टमाइज़ करने में मदद करने के लिए डिज़ाइन किया गया है। यह यूटिलिटी सिस्टम सेटिंग्स, प्री-इंस्टॉल किए गए एप्लिकेशन और इंटरफ़ेस तत्वों के प्रबंधन को सरल बनाती है।\n\n## मुख्य विशेषताएँ और क्षमताएँ\n\nप्रोजेक्ट दस्तावेज़ के अनुसार, यह स्क्रिप्ट विभिन्न कॉन्फ़िगरेशन विकल्प प्रदान करती है:\n- प्री-इंस्टॉल किए गए एप्लिकेशन को हटाना।\n- टेलीमेट्री, डायग्नोस्टिक डेटा, गतिविधि इतिहास और लक्षित विज्ञापनों को अक्षम करना।\n- विंडोज, लॉक स्क्रीन और ब्राउज़र में इंटरफ़ेस सुझावों और प्रचार सामग्री को बंद करना।\n- विंडोज 10-शैली के संदर्भ मेनू को पुनर्स्थापित करना, टास्कबार को कस्टमाइज़ करना और फ़ाइल एक्सप्लोरर डिफ़ॉल्ट को बदलना जैसे इंटरफ़ेस संशोधन।\n- स्वचालित पुनरारंभ, तेज़ स्टार्टअप और ड्राइवर अपडेट से संबंधित विकल्पों सहित पावर और अपडेट प्रबंधन सेटिंग्स।\n- पावर उपयोगकर्ताओं के लिए उन्नत सुविधाएँ, जैसे कमांड-लाइन पैरामीटर समर्थन और अन्य उपयोगकर्ता प्रोफ़ाइल पर परिवर्तन लागू करने की क्षमता।\n\n## व्यावहारिक निहितार्थ और उपयोग\n\nजबकि स्क्रिप्ट कई ऑपरेटिंग सिस्टम सेटिंग्स को जल्दी से समायोजित करने का एक केंद्रीकृत तरीका प्रदान करती है, उपयोगकर्ताओं को सिस्टम कॉन्फ़िगरेशन को संशोधित करने के व्यावहारिक निहितार्थों पर विचार करना चाहिए।\n\n- **परिवर्तनीयता:** दस्तावेज़ नोट करता है कि अधिकांश परिवर्तनों को वापस लिया जा सकता है, और हटाए गए कई ऐप्स को माइक्रोसॉफ्ट स्टोर के माध्यम से पुन: इंस्टॉल किया जा सकता है।\n- **जोखिम:** यह प्रोजेक्ट एमआईटी लाइसेंस के तहत अपने जोखिम पर उपयोग के लिए प्रदान किया गया है।\n\n## कैसे सत्यापित करें और चलाएं\n\nकोड की समीक्षा करने, अपडेट की जांच करने या निर्देशों को सत्यापित करने के इच्छुक उपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी (`raphire/win11debloat`) देख सकते हैं। इंटरनेट से प्राप्त स्क्रिप्ट को चलाने के लिए प्रशासनिक विशेषाधिकारों और सुरक्षा सुनिश्चित करने के लिए स्रोत कोड के सावधानीपूर्वक निरीक्षण की आवश्यकता होती है।",
+  "en_meta": "Learn about Win11Debloat, a PowerShell script for customizing and removing pre-installed apps on Windows 10 and 11. Read features and usage details.",
+  "hi_meta": "Win11Debloat के बारे में जानें, जो Windows 10 और 11 पर प्री-इंस्टॉल ऐप्स हटाने और कस्टमाइज़ करने के लिए एक PowerShell स्क्रिप्ट है।",
+  "en_keywords": [
+    "Win11Debloat",
+    "PowerShell script",
+    "Windows 11 customization",
+    "Windows 10 declutter",
+    "remove pre-installed apps",
+    "disable telemetry"
+  ],
+  "hi_keywords": [
+    "Win11Debloat",
+    "PowerShell स्क्रिप्ट",
+    "Windows 11 कस्टमाइज़ेशन",
+    "प्री-इंस्टॉल ऐप्स हटाएं",
+    "टेलीमेट्री अक्षम करें"
+  ],
+  "source_published_at": null,
+  "id": "f1d22dc02b16",
+  "source": "https://github.com/raphire/win11debloat",
+  "date": "2026-11-04T01:02:30.686185+00:00",
+  "source_title": "A simple, lightweight PowerShell script that allows you to remove pre-installed apps, disable telemetry, as well as perform various other changes to declutter and customize your Windows experience. Win11Debloat works for both Windows 10 and Windows 11. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

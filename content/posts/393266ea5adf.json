@@ -1,0 +1,41 @@
+{
+  "en_title": "AnyPS5: Automatically Port PS5 Executables to Linux and Windows",
+  "hi_title": "AnyPS5: PS5 एक्जीक्यूटेबल्स को Linux और Windows पर स्वचालित रूप से पोर्ट करने का टूल",
+  "en_body": "## Overview\nAnyPS5 is an open‑source utility that automatically converts PS5 executables so they can run on Linux, Windows, and macOS. The project aims to support interoperability, research, preservation, and compatibility without distributing copyrighted material.\n\n## Key Features\n- **Cross‑platform relinker**: A relinker‑only build works on macOS (including Apple silicon) and provides a web converter that keeps files on the user’s device.\n- **Native format conversion**: The included relinker transforms an executable into the target system’s native format and supplies system‑prx libraries for dynamic linking—no emulation or separate runtime is required.\n- **Shader recompiler**: Generates SPIR‑V shaders; validation is optional via Spirv‑Tools when the build flag `ANYPS5_ENABLE_SPIRV_TOOLS` is set.\n- **Controller and input support**: SDL‑mapped game controllers (analog sticks, triggers) are supported. Keyboard and mouse controls can be configured using an `anyps5-input.ini` file.\n- **Community testing**: Per‑game status and test reports are tracked in dedicated “Game bring‑up” discussion threads on GitHub, one thread per title.\n- **Error handling**: Unsupported or unexpected states throw a `std::runtime_error` exception; if uncaught, the error message is printed to `stderr` and the process terminates.\n- **System libraries tracking**: The project logs the percentage of known PS5 system functions (declared in `core/libs/prx`). The total grows as more functions are added.\n- **Licensing**: Distributed under the GNU General Public License v2 only. It is an independent project with no affiliation to Sony Interactive Entertainment.\n\n## Practical Implications\n- Users can run PS5 games on non‑PlayStation systems for research or archival purposes.\n- The tool does not bundle copyrighted software, firmware, keys, or proprietary libraries, placing the legal responsibility on the user to obtain binaries lawfully.\n\n## How to Verify\n- Visit the official repository at https://github.com/boykopovar/AnyPS5.\n- Follow the build instructions and contribution guidelines linked in the repo.\n- Review the “Game bring‑up” discussions for the latest status of specific titles.\n\n## Confirmed Information\n- The relinker works on macOS and Windows.\n- SPIR‑V output is produced by the shader recompiler.\n- Input mapping supports SDL controllers and custom INI files.\n\n## Reported Claims\n- The project aims to preserve PS5 games for future compatibility.\n- No emulation or separate runtime process is involved.\n\n## Unknowns\n- Exact performance impact on different hardware configurations.\n- Future expansion to support additional PS5 system functions.",
+  "hi_body": "## सारांश\nAnyPS5 एक ओपन-सोर्स यूटिलिटी है जो PS5 एक्जीक्यूटेबल्स को Linux, Windows और macOS पर चलाने के लिए स्वचालित रूप से कन्वर्ट करती है। यह इंटरऑपरेबिलिटी, रिसर्च, संरक्षण और संगतता के उद्देश्य से बनाई गई है, बिना कॉपीराइटेड सामग्री को वितरित किए।\n\n## मुख्य विशेषताएँ\n- **क्रॉस-प्लेटफॉर्म रिलिंकर**: एक रिलिंकर-ओनली बिल्ड macOS (एप्पल सिलिकॉन सहित) पर काम करता है और एक वेब कनवर्टर प्रदान करता है जो फ़ाइलों को उपयोगकर्ता के डिवाइस पर रखता है।\n- **नेटिव फ़ॉर्मेट कन्वर्ज़न**: शामिल रिलिंकर एक्जीक्यूटेबल को टार्गेट सिस्टम के नेटिव फ़ॉर्मेट में बदलता है और डायनामिक लिंकिंग के लिए सिस्टम-प्रिक्स लाइब्रेरीज़ प्रदान करता है—बिना एमुलेशन या अलग रनटाइम के।\n- **शेडर रीकंपाइलर**: SPIR-V शेडर्स उत्पन्न करता है; वैलिडेशन वैकल्पिक है, जब बिल्ड फ़्लैग `ANYPS5_ENABLE_SPIRV_TOOLS` सेट होता है।\n- **कंट्रोलर और इनपुट सपोर्ट**: SDL-मैप्ड गेम कंट्रोलर्स (एनालॉग स्टिक्स, ट्रिगर्स) सपोर्टेड हैं। कीबोर्ड और माउस कंट्रोल्स को `anyps5-input.ini` फ़ाइल के ज़रिए कॉन्फ़िगर किया जा सकता है।\n- **कम्युनिटी टेस्टिंग**: प्रति-गेम स्टेटस और टेस्ट रिपोर्ट्स \"गेम ब्रिंग-अप\" डिस्कशन थ्रेड्स में लाइव हैं, एक थ्रेड प्रति टाइटल।\n- **एरर हैंडलिंग**: अनसपोर्टेड या अनएक्सपेक्टेड स्टेट्स C++ एक्सेप्शन (std::runtime_error) फेंकते हैं। यदि कुछ भी नहीं कैच करता है, तो what() stderr पर प्रिंट होता है और प्रोसेस खत्म हो जाती है।\n- **सिस्टम लाइब्रेरीज़ ट्रैकिंग**: प्रोजेक्ट PS5 सिस्टम फ़ंक्शंस के प्रतिशत को ट्रैक करता है (कोर/लाइब्रेरीज़/प्रिक्स में डिक्लेयर्ड)। जैसे-जैसे अधिक फ़ंक्शंस डिक्लेयर्ड होते हैं, कुल संख्या बढ़ती है।\n- **लाइसेंसिंग**: GNU जनरल पब्लिक लाइसेंस v2 के तहत वितरित, केवल स्वतंत्र प्रोजेक्ट, सोनी इंटरएक्टिव एंटरटेनमेंट से संबद्ध नहीं।\n\n## व्यावहारिक प्रभाव\n- उपयोगकर्ता रिसर्च या आर्काइव उद्देश्यों के लिए गैर-PlayStation सिस्टम पर PS5 गेम्स चला सकते हैं।\n- टूल कॉपीराइटेड सॉफ्टवेयर, फ़र्मवेयर, कीज़ या प्रोप्राइटरी लाइब्रेरीज़ को बंडल, वितरित या आवश्यक नहीं करता, जिससे कानूनी ज़िम्मेदारी उपयोगकर्ता पर आती है।\n\n## सत्यापन कैसे करें\n- आधिकारिक रिपॉजिटरी https://github.com/boykopovar/AnyPS5 पर जाएँ।\n- बिल्ड निर्देशों और योगदान दिशानिर्देशों का पालन करें जो रिपॉजिटरी में लिंक किए गए हैं।\n- विशिष्ट टाइटल्स के लिए \"गेम ब्रिंग-अप\" डिस्कशन में नवीनतम स्टेटस की समीक्षा करें।\n\n## पुष्टि की गई जानकारी\n- रिलिंकर macOS और Windows पर काम करता है।\n- शेडर रीकंपाइलर SPIR-V आउटपुट उत्पन्न करता है।\n- इनपुट मैपिंग SDL कंट्रोलर्स और कस्टम INI फ़ाइल्स सपोर्ट करती है।\n\n## रिपोर्ट की गई दावे\n- प्रोजेक्ट PS5 गेम्स के भविष्य के लिए संरक्षण का लक्ष्य रखता है।\n- इसमें एमुलेशन या अलग रनटाइम प्रक्रिया शामिल नहीं है।\n\n## अज्ञात\n- विभिन्न हार्डवेयर कॉन्फ़िगरेशन पर सटीक प्रदर्शन प्रभाव।\n- अतिरिक्त PS5 सिस्टम फ़ंक्शंस के लिए भविष्य का विस्तार।",
+  "en_meta": "AnyPS5: A tool to automatically port PS5 executables to Linux and Windows, supporting macOS and offering a secure web converter.",
+  "hi_meta": "AnyPS5: PS5 एक्जीक्यूटेबल्स को Linux और Windows पर स्वचालित रूप से पोर्ट करने का टूल, macOS पर भी काम करता है और सुरक्षित वेब कनवर्टर प्रदान करता है।",
+  "en_keywords": [
+    "PS5 porting tool",
+    "Linux Windows compatibility",
+    "macOS relinker",
+    "SPIR-V shader recompiler",
+    "game preservation",
+    "open source GPL",
+    "AnyPS5 GitHub",
+    "executable conversion",
+    "system libraries",
+    "dynamic linking",
+    "input mapping"
+  ],
+  "hi_keywords": [
+    "PS5 पोर्टिंग टूल",
+    "Linux Windows संगतता",
+    "macOS रिलिंकर",
+    "SPIR-V शेडर रिकंपाइलर",
+    "गेम संरक्षण",
+    "ओपन सोर्स GPL",
+    "AnyPS5 GitHub",
+    "एक्जीक्यूटेबल रूपांतरण",
+    "सिस्टम लाइब्रेरीज़",
+    "डायनामिक लिंकिंग",
+    "इनपुट मैपिंग"
+  ],
+  "source_published_at": null,
+  "id": "393266ea5adf",
+  "source": "https://github.com/boykopovar/AnyPS5",
+  "date": "2026-11-04T01:08:32.741055+00:00",
+  "source_title": "boykopovar/AnyPS5: Tool for automatic PS5 executables porting to Linux and Windows - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

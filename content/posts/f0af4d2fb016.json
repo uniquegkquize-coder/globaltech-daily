@@ -1,0 +1,29 @@
+{
+  "en_title": "OpenMuse Introduces Personal Agent Framework with Browser and Terminal Integration",
+  "hi_title": "OpenMuse ने ब्राउज़र और टर्मिनल इंटीग्रेशन के साथ पर्सनल एजेंट फ्रेमवर्क पेश किया",
+  "en_body": "## Overview\nOpenMuse is an open-source personal agent application built with CopilotKit and AG-UI, designed to handle ongoing tasks across a browser, terminal, file system, and mobile or web interfaces. The application supports local testing without external model configurations and provides deployment blueprints for platforms like Render.\n\n## Core Capabilities\n- **Multi-Environment Support:** Runs natively on iOS, Android, and web via React Native.\n- **Agent Computer Integration:** Combines persistent Chromium browsing with an optional Linux workspace for executing terminal commands and managing PDFs.\n- **Task and Goal Tracking:** Features built-in workflows for goal tracking, delegated tasks, and simulated local interactions such as drafting form responses and managing mock availability checks.\n\n## Deployment and Configuration\nDeploying OpenMuse involves setting up environment variables, database requirements, and optional workers:\n- **Server Requirements:** Requires Node 24 LTS, pnpm 11.19.0, and a CopilotKit Intelligence project key.\n- **Cloud Deployment:** Configuration files are provided for deploying services including the API, web app, and private browser worker.\n- **Security and Storage:** Uses encrypted credentials at rest and local storage directories for PGlite databases, documents, and signing keys.\n\n## Verification and Resources\nUsers can inspect the source code under the MIT license, review documentation, and test local workflows using documented setup steps and mock demos.",
+  "hi_body": "## अवलोकन\nOpenMuse एक ओपन-सोर्स पर्सनल एजेंट एप्लिकेशन है जिसे CopilotKit और AG-UI के साथ तैयार किया गया है। यह ब्राउज़र, टर्मिनल, फाइल सिस्टम और मोबाइल या वेब इंटरफेस पर लगातार चलने वाले कार्यों को संभालने के लिए डिज़ाइन किया गया है। यह एप्लिकेशन बाहरी मॉडल कॉन्फ़िगरेशन के बिना स्थानीय परीक्षण का समर्थन करता है और Render जैसे प्लेटफ़ॉर्म के लिए डिप्लॉयमेंट ब्लूप्रिंट प्रदान करता है।\n\n## मुख्य विशेषताm\n- **मल्टी-एनवायरनमेंट सपोर्ट:** React Native के माध्यम से iOS, Android और वेब पर मूल रूप से चलता है।\n- **एजेंट कंप्यूटर इंटीग्रेशन:** टर्मिनल कमांड निष्पादित करने और PDF प्रबंधित करने के लिए लगातार Chromium ब्राउज़िंग को एक वैकल्पिक LinuxWORKSPACE के साथ जोड़ता है।\n- **टास्क और गोल ट्रैकिंग:** गोल ट्रैकिंग, प्रत्यायोजित कार्यों और simulated local इंटरैक्शन के लिए अंतर्निहित वर्कफ़्लो की सुविधा देता है।\n\n## डिप्लॉयमेंट और कॉन्फ़िगरेशन\nOpenMuse को तैनात करने में पर्यावरण चर, डेटाबेस आवश्यकताओं और वैकल्पिक वर्कर को सेट करना शामिल है:\n- **सर्वर आवश्यकताएँ:** Node 24 LTS, pnpm 11.19.0, और एक CopilotKit Intelligence प्रोजेक्ट कुंजी की आवश्यकता होती है।\n- **क्लाउड डिप्लॉयमेंट:** API, वेब ऐप और निजी ब्राउज़र वर्कर सहित सेवाओं को तैनात करने के लिए कॉन्फ़िगरेशन फ़ाइलें प्रदान की जाती हैं।\n- **सुरक्षा और भंडारण:** विश्राम के समय एन्क्रिप्टेड क्रेडेंशियल्स और PGlite डेटाबेस, दस्तावेजों और हस्ताक्षर कुंजियों के लिए स्थानीय स्टोरेज निर्देशिकाओं का उपयोग करता है।\n\n## सत्यापन और संसाधन\nउपयोगकर्ता MIT लाइसेंस के तहत स्रोत कोड का निरीक्षण कर सकते हैं, दस्तावेज़ीकरण की समीक्षा कर सकते हैं, और प्रलेखित सेटअप चरणों और मॉक डेमो का उपयोग करके स्थानीय वर्कफ़्लो का परीक्षण कर सकते हैं।",
+  "en_meta": "Explore OpenMuse, an open-source personal agent application built with CopilotKit featuring browser, terminal, and file integration for ongoing tasks.",
+  "hi_meta": "OpenMuse का अन्वेषण करें, जो CopilotKit के साथ निर्मित एक ओपन-सोर्स पर्सनल एजेंट एप्लिकेशन है जो ब्राउज़र और टर्मिनल एकीकरण प्रदान करता है।",
+  "en_keywords": [
+    "OpenMuse",
+    "CopilotKit",
+    "AG-UI",
+    "personal agent",
+    "React Native"
+  ],
+  "hi_keywords": [
+    "OpenMuse",
+    "CopilotKit",
+    "AG-UI",
+    "पर्सनल एजेंट",
+    "React Native"
+  ],
+  "source_published_at": null,
+  "id": "f0af4d2fb016",
+  "source": "https://github.com/CopilotKit/openmuse",
+  "date": "2026-11-04T01:02:27.498496+00:00",
+  "source_title": "A personal agent with a browser, terminal, files, and work that keeps going built with CopilotKit and AG-UI. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

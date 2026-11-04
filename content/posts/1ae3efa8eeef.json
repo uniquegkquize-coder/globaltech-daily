@@ -1,0 +1,29 @@
+{
+  "en_title": "Integrating Voice AI and Agents via Agentring: Documentation Overview",
+  "hi_title": "एजेंटरिंग के माध्यम से वॉयस एआई और एजेंट एकीकरण: दस्तावेज़ विवरण",
+  "en_body": "## Introduction to Agentring Integration\n\nRecent documentation for Agentring outlines methods for connecting AI agents with voice interfaces through Model Context Protocol (MCP) servers and relays. The system supports bidirectional communication, allowing software agents to contact users by phone or letting users consult their agents during a voice call.\n\n## Core Communication Directions\n\n- **Agent to User:** Tools like Claude Code, OpenClaw, n8n, or custom scripts can initiate phone messages, wait for replies, or place calls via voice AI.\n- **User to Agent:** During phone calls, voice AI can interact with configured agents and MCP servers to request assistance.\n\n## MCP Server Implementation\n\nAgentring provides both local and HTTP-based MCP server options:\n\n- **Local MCP:** The `agentring mcp` command runs an MCP server over standard input/output (stdio), compatible with standard client configurations.\n- **Streamable HTTP MCP:** The `agentring mcp-http` command serves tools over HTTP at `/mcp`, using bearer tokens for user authentication against a relay.\n\n## Configuring Agents\n\nAgents are defined within an `agents.yaml` file, specifying command arguments and parameters. The documentation highlights security considerations, advising users to apply strict allowlists and understand that voice AI acts on spoken inputs.\n\n## Verification and Next Steps\n\nTo verify configurations, users can inspect documentation files, test local agents via command line utilities, and review implementation recipes provided in the official repository.",
+  "hi_body": "## एजेंटरिंग एकीकरण का परिचय\n\nएजेंटरिंग के लिए हालिया दस्तावेज़ मॉडल कॉनटेक्स्ट प्रोटोकॉल (MCP) सर्वर और रिले के माध्यम से AI एजेंटों को वॉयस इंटरफेस से जोड़ने के तरीकों की रूपरेखा तैयार करते हैं। यह प्रणाली द्वि-दिशात्मक संचार का समर्थन करती है।\n\n## मुख्य संचार दिशाएँ\n\n- **एजेंट से उपयोगकर्ता:** Claude Code, OpenClaw, n8n या कस्टम स्क्रिप्ट फोन संदेश शुरू कर सकती हैं या वॉयस AI के माध्यम से कॉल कर सकती हैं।\n- **उपयोगकर्ता से एजेंट:** फोन कॉल के दौरान, वॉयस AI सहायता का अनुरोध करने के लिए कॉन्फ़िगर किए गए एजेंटों और MCP सर्वर के साथ बातचीत कर सकता है।\n\n## MCP सर्वर कार्यान्वयन\n\nएजेंटरिंग स्थानीय और HTTP-आधारित MCP सर्वर विकल्प दोनों प्रदान करता है:\n\n- **स्थानीय MCP:** `agentring mcp` कमांड मानक इनपुट/आउटपुट (stdio) पर एक MCP सर्वर चलाती है।\n- **HTTP MCP:** `agentring mcp-http` कमांड `/mcp` पर HTTP के माध्यम से टूल प्रदान करती है।\n\n## एजेंटों को कॉन्फ़िगर करना\n\nएजेंटों को `agents.yaml` फ़ाइल के भीतर परिभाषित किया जाता है। दस्तावेज़ सुरक्षा विचारों पर प्रकाश डालता है, उपयोगकर्ताओं को सख्त अनुमति सूचियों का उपयोग करने की सलाह देता है।\n\n## सत्यापन और अगले चरण\n\nकॉन्फ़िगरेशन को सत्यापित करने के लिए, उपयोगकर्ता आधिकारिक रिपॉजिटरी में प्रदान किए गए दस्तावेज़ों और कमांड-लाइन यूटिलिटीज की समीक्षा कर सकते हैं।",
+  "en_meta": "Overview of Agentring documentation detailing bidirectional voice AI and software agent integration using MCP servers and relays.",
+  "hi_meta": "MCP सर्वर और रिले का उपयोग करके वॉयस AI और सॉफ्टवेयर एजेंट एकीकरण का विवरण देने वाले एजेंटरिंग दस्तावेज़ का अवलोकन।",
+  "en_keywords": [
+    "Agentring",
+    "MCP server",
+    "voice AI",
+    "AI agents",
+    "software integration"
+  ],
+  "hi_keywords": [
+    "एजेंटरिंग",
+    "MCP सर्वर",
+    "वॉयस AI",
+    "AI एजेंट",
+    "सॉफ्टवेयर एकीकरण"
+  ],
+  "source_published_at": null,
+  "id": "1ae3efa8eeef",
+  "source": "https://github.com/mutonby/agentring/blob/main/docs/agents.md",
+  "date": "2026-11-04T01:02:35.580292+00:00",
+  "source_title": "agentring/docs/agents.md at main · mutonby/agentring - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
