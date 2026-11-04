@@ -1,33 +1,32 @@
 {
-  "total_posts": 2084,
-  "selected": 19,
+  "total_posts": 2090,
+  "selected": 20,
   "results": {
-    "source_photo_saved": 5,
-    "invalid_source_images": 1,
-    "cooldown": 13
+    "source_photo_saved": 6,
+    "cooldown": 14
   },
   "still_missing": 168,
   "articles": [
     {
-      "id": "b5ab75d5327595db08f0a800",
-      "source": "https://en.wikipedia.org/wiki/Yamaha_RD500LC",
+      "id": "672c2c21c3252f583da28c12",
+      "source": "https://en.wikipedia.org/wiki/Royal_Enfield_Interceptor_650",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793804005.5791116
+      "retry_after": 1793804391.8254497
     },
     {
-      "id": "c585fe855b5bbd9fc970eef7",
-      "source": "https://en.wikipedia.org/wiki/Roewe_Jing",
+      "id": "7b1c56fec6ace88fbab43be4",
+      "source": "https://en.wikipedia.org/wiki/Haval_Chitu",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793804005.8989372
+      "retry_after": 1793804392.3767207
     },
     {
-      "id": "c176a1dc41c1e122cab45821",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "id": "56a63230fd563fe2b91ae355",
+      "source": "https://en.wikipedia.org/wiki/Nexus_5",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793804006.4579256
+      "result": "source_photo_saved",
+      "retry_after": 1793804392.744777
     },
     {
       "id": "007acb84538e69bcc14f4f9f",
@@ -82,25 +81,29 @@
       "result": "cooldown"
     },
     {
-      "id": "fd0c2e823adc27fc971bea34",
-      "source": "https://en.wikipedia.org/wiki/Ducati_MH900e",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793804006.5326324
+      "id": "c176a1dc41c1e122cab45821",
+      "result": "cooldown"
     },
     {
-      "id": "07a602a6f54ce0a8f61c92ed",
-      "source": "https://en.wikipedia.org/wiki/Wuling_Asta",
+      "id": "97833880b4f9d41b093afada",
+      "source": "https://en.wikipedia.org/wiki/Audi_Q6_e-tron",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793804006.6666808
+      "retry_after": 1793804392.851026
     },
     {
-      "id": "6b0240452c266fe5f9b5a869",
-      "source": "https://en.wikipedia.org/wiki/HTC_One_Max",
+      "id": "bcd617fcfdbeeca5ab3d3235",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_1320",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793804006.9555955
+      "retry_after": 1793804392.9399097
+    },
+    {
+      "id": "07dbc18c9feca28342c0f7e5",
+      "source": "https://en.wikipedia.org/wiki/Piaggio_Free",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793804393.1218076
     }
   ],
   "missing": [
@@ -1291,40 +1294,35 @@
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "b5ab75d5327595db08f0a800": {
+    "672c2c21c3252f583da28c12": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Yamaha_RD500LC",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Yamaha_RD500LC_%281985%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Royal_Enfield_Interceptor_650",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Royal_Enfield_650_02.jpeg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "c585fe855b5bbd9fc970eef7": {
+    "7b1c56fec6ace88fbab43be4": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Roewe_Jing",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/92/Roewe_Whale_009.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Haval_Chitu",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Haval_Chitu_005.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "c176a1dc41c1e122cab45821": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "fd0c2e823adc27fc971bea34": {
+    "56a63230fd563fe2b91ae355": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ducati_MH900e",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/68/Ducati_MHe.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Nexus_5",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Nexus_5_Front_View.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "07a602a6f54ce0a8f61c92ed": {
+    "97833880b4f9d41b093afada": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Wuling_Asta",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/2021_Wuling_Asta_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Audi_Q6_e-tron",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Audi_Q6_e-tron_DSC_7829.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "6b0240452c266fe5f9b5a869": {
+    "bcd617fcfdbeeca5ab3d3235": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/HTC_One_Max",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/HTC_One_Max.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_1320",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Nokia_Lumia_1320.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "07dbc18c9feca28342c0f7e5": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Piaggio_Free",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Piaggio_Free_front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
