@@ -637,6 +637,20 @@ POPULAR_TERMS=('breaking','live','major','record','world cup','election','launch
 def story_priority(item):
  return lead_priority(item,STORY_DATES.get(item[0]))
 
+def fair_publication_order(ordered,saved_draft_ids,pending_ids,historical_counts,min_per_category):
+ """Lift saved single-language drafts and pending records to the front while
+ preserving the round-robin category interleaving built before this sort.
+
+ The previous global sort used story_priority as its final key, which let one
+ hot category's recent stories cluster at the head of the queue: a run then
+ published 20 apps-software posts and left 46 categories empty when the time
+ budget expired. Python's stable sort keeps the per-category rotation intact
+ because each category's rows are already story_priority-sorted upstream.
+ """
+ return sorted(ordered,key=lambda row:(historical_counts.get(row[2],0)>=min_per_category,
+  hashlib.sha256(row[0].encode()).hexdigest()[:12] not in saved_draft_ids,
+  hashlib.sha256(row[0].encode()).hexdigest()[:12] not in pending_ids))
+
 # Website-first discovery: visit publisher home/category pages before RSS fallback.
 # Each website is attempted once per category, with bounded concurrency and timeouts.
 WEBSITE_PATHS={'world-news':'/world','technology':'/technology','business':'/business','sports':'/sport','movies-entertainment':'/entertainment','automobiles':'/auto','health-science':'/science','government-schemes':'/','sarkari-naukri':'/','private-vacancy':'/','gaming':'/gaming','environment':'/environment','travel':'/travel','education':'/education','lifestyle':'/lifeandstyle'}
@@ -1407,7 +1421,7 @@ def main():
  # Previously any empty/failed pending record competed on equal footing.
  single_language_ids={hashlib.sha256(row[0].encode()).hexdigest()[:12] for row in saved_drafts}
  pending_ids={p.stem for p in PENDING.glob('*.json') if not p.name.startswith('_')}
- ordered.sort(key=lambda row:(historical_counts.get(row[2],0)>=MIN_POSTS_PER_CATEGORY,hashlib.sha256(row[0].encode()).hexdigest()[:12] not in single_language_ids,hashlib.sha256(row[0].encode()).hexdigest()[:12] not in pending_ids,story_priority(row)))
+ ordered=fair_publication_order(ordered,single_language_ids,pending_ids,historical_counts,MIN_POSTS_PER_CATEGORY)
  # Keep concurrent provider traffic under free-tier rate limits; unfinished drafts survive.
  article_workers=max(1,min(6,int(os.getenv('ARTICLE_WORKERS','3'))))
  print('Parallel article workers:',article_workers,flush=True)
