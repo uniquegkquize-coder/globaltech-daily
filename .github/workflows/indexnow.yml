@@ -24,12 +24,15 @@ jobs:
           import os, urllib.request, urllib.parse, json, xml.etree.ElementTree as ET, datetime
           host=os.environ['INDEXNOW_HOST']; key=os.environ['INDEXNOW_KEY']
           base='https://'+host
-          with urllib.request.urlopen(base+'/'+key+'.txt',timeout=20) as r:
+          # Cloudflare rejects the default Python urllib User-Agent with 403;
+          # a named bot UA keeps the verification, sitemap and API calls working.
+          headers={'User-Agent':'GlobeWireDaily-IndexNow/1.0 (+'+base+')'}
+          with urllib.request.urlopen(urllib.request.Request(base+'/'+key+'.txt',headers=headers),timeout=20) as r:
               assert r.read().decode().strip()==key, 'IndexNow key not deployed yet'
           urls=[]
-          for path in (['/news-sitemap.xml','/sitemap.xml'] if host=='globewiredaily.org' else ['/sitemap.xml']):
+          for path in (['/news-sitemap.xml','/sitemap.xml'] if host=='globewiredaily.org else ['/sitemap.xml']):
               try:
-                  with urllib.request.urlopen(base+path,timeout=25) as r: root=ET.fromstring(r.read())
+                  with urllib.request.urlopen(urllib.request.Request(base+path,headers=headers),timeout=25) as r: root=ET.fromstring(r.read())
               except Exception as e:
                   print('Could not fetch',path,e); continue
               for el in root.iter():
@@ -49,6 +52,6 @@ jobs:
           if not urls:
               print('No recent URLs to notify'); raise SystemExit(0)
           payload=json.dumps({'host':host,'key':key,'keyLocation':base+'/'+key+'.txt','urlList':urls}).encode()
-          req=urllib.request.Request('https://api.indexnow.org/indexnow',data=payload,headers={'Content-Type':'application/json; charset=utf-8'},method='POST')
+          req=urllib.request.Request('https://api.indexnow.org/indexnow',data=payload,headers={'Content-Type':'application/json; charset=utf-8','User-Agent':headers['User-Agent']},method='POST')
           with urllib.request.urlopen(req,timeout=35) as r: print('IndexNow status',r.status,'URLs',len(urls))
           PY
