@@ -182,12 +182,43 @@ def structured_html(entry,lang):
    elif all(isinstance(row,(str,int,float)) for row in value):result+=table_html(title,[{'value':row} for row in value])
  return result
 
+def _source_offer(entry):
+ """Use only explicit, source-linked selling offers, never guessed list prices."""
+ raw=entry.get('offers')
+ if not isinstance(raw,dict):raw=entry.get('offer')
+ if not isinstance(raw,dict):return None
+ value=raw.get('price')
+ if value is None or isinstance(value,bool):return None
+ price=str(value).strip()
+ currency=str(raw.get('priceCurrency') or '').upper().strip()
+ offer_url=raw.get('url')
+ # Generic specification-page prices are not evidence of an active offer.
+ if not re.fullmatch(r'(?:0|[1-9][0-9]*)(?:\.[0-9]{1,2})?',price):return None
+ if not price.replace('0','').replace('.',''):return None
+ if not re.fullmatch(r'[A-Z]{3}',currency) or not safe_url(offer_url):return None
+ offer={'@type':'Offer','price':price,'priceCurrency':currency,'url':str(offer_url)}
+ if raw.get('availability') in ('https://schema.org/InStock','https://schema.org/OutOfStock','https://schema.org/PreOrder'):
+  offer['availability']=raw['availability']
+ return offer
+
 def schema(kind,name,entry,url,image=None):
- obj={'@context':'https://schema.org','@type':'CollegeOrUniversity' if kind=='colleges' else 'Product','name':name,'url':url}
+ # Google product snippets require an actual offer, review or rating. Most
+ # directory profiles are editorial specification pages, NOT store listings.
+ offer=_source_offer(entry) if kind in ('phones','cars','bikes') else None
+ schema_type='CollegeOrUniversity' if kind=='colleges' else ('Product' if offer else 'WebPage')
+ obj={'@context':'https://schema.org','@type':schema_type,'name':name,'url':url}
  if image:obj['image']=urljoin(url,image['src'])
  if kind=='colleges':
   obj['address']={'@type':'PostalAddress',**{k:entry[v] for k,v in [('addressCountry','country'),('addressRegion','region'),('addressLocality','city')] if entry.get(v)}}
   if entry.get('courses'):obj['hasCourse']=[{'@type':'Course','name':c.get('course','Programme'),'provider':{'@type':'CollegeOrUniversity','name':name},**({'url':c['source_url']} if c.get('source_url') else {})} for c in entry['courses'] if isinstance(c,dict)]
- elif entry.get('manufacturer'):obj['brand']={'@type':'Brand','name':entry['manufacturer']}
- obj['additionalProperty']=[{'@type':'PropertyValue','name':k.replace('_',' '),'value':v} for k,v in entry.items() if isinstance(v,(str,int,float)) and not isinstance(v,bool) and k not in ('source_url','official_url','evidence_url','audit_notes') and not k.endswith('_url')][:35]
+ elif offer:
+  obj['offers']=offer
+  if entry.get('manufacturer'):obj['brand']={'@type':'Brand','name':entry['manufacturer']}
+ else:
+  # Informational specs still have valid structured metadata, without false
+  # Product rich-result eligibility or fabricated stars/reviews/prices.
+  obj['about']={'@type':'Thing','name':name}
+  obj['description']='Source-linked specifications and reference details for '+name+'.'
+ if kind=='colleges' or offer:
+  obj['additionalProperty']=[{'@type':'PropertyValue','name':k.replace('_',' '),'value':v} for k,v in entry.items() if isinstance(v,(str,int,float)) and not isinstance(v,bool) and k not in ('source_url','official_url','evidence_url','audit_notes') and not k.endswith('_url')][:35]
  return '<script type="application/ld+json">'+json.dumps(obj,ensure_ascii=False).replace('<','\\u003c')+'</script>'
