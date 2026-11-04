@@ -110,8 +110,10 @@ def read_feed(item,now=None):
    if 'news.google.com' in (urlparse(url).hostname or ''):
     # Search is discovery only; reporting always uses the resolved publisher URL.
     url=newsroom.resolve_google_news(url)
-   if domain and not newsroom.allowed(url,domain):continue\n   if not domain:\n    domain=(urlparse(url).hostname or '').lower()\n    if not domain or 'google.com' in domain:continue
-   rows.append(dict(url=url,title=title,category=newsroom.category_for_url(title,category,url),domain=domain,
+   publisher_domain=domain or (urlparse(url).hostname or '').lower()
+   if not publisher_domain or 'google.com' in publisher_domain:continue
+   if not newsroom.allowed(url,publisher_domain):continue
+   rows.append(dict(url=url,title=title,category=newsroom.category_for_url(title,category,url),domain=publisher_domain,
                     published=published,summary=clean(entry.get('summary',''))[:2000],author=entry.get('author','')))
   return rows,'ok'
  except (requests.RequestException,ValueError,TypeError,OverflowError):return [],'unavailable'
