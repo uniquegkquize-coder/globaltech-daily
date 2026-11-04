@@ -1,68 +1,174 @@
 {
-  "total_posts": 2180,
-  "selected": 21,
+  "total_posts": 2194,
+  "selected": 175,
   "results": {
-    "source_photo_saved": 5,
-    "cooldown": 15,
-    "invalid_source_images": 1
+    "access_denied": 2,
+    "source_unavailable": 1,
+    "no_source_image": 12,
+    "invalid_source_images": 3,
+    "cooldown": 157
   },
-  "still_missing": 169,
+  "still_missing": 168,
   "articles": [
     {
-      "id": "93524346b413389a9d0267c1",
-      "source": "https://en.wikipedia.org/wiki/Panther_Model_100",
+      "id": "9b3641414312",
+      "source": "https://www.business-standard.com/amp/world-news/iran-warns-of-wider-retaliation-even-as-diplomatic-talks-with-us-progress-126103101346_1.html",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793830283.1261573
+      "result": "access_denied",
+      "retry_after": 1793840823.9668784
     },
     {
-      "id": "9bc443c69d365b438d3ad913",
-      "source": "https://en.wikipedia.org/wiki/Panther_Model_120",
+      "id": "712c404a4a7d",
+      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_2_29102026.pdf",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793830283.6736379
+      "result": "source_unavailable",
+      "retry_after": 1793840827.353986
     },
     {
-      "id": "2a1dc5d55d643041b9bb2344",
-      "source": "https://en.wikipedia.org/wiki/Nokia_X",
+      "id": "7f651ce9d3f0",
+      "source": "https://www.prnewswire.com/news-releases/123net-awarded-86-million-in-federal-bead-funding-for-michigan-broadband-infrastructure-302922523.html",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793830283.7695956
+      "result": "no_source_image",
+      "retry_after": 1793840828.0132315
     },
     {
-      "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
+      "id": "9acdf4deb8ec",
+      "source": "https://www.prnewswire.com/news-releases/pakistaanse-banken-slagen-niet-voor-de-klimaat--en-natuurbeleidstest-omdat-financieringswaarborgen-tekortschieten-302925673.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793840828.09848
     },
     {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "result": "cooldown"
+      "id": "3570bb7ef821",
+      "source": "https://www.upsc.gov.in/sites/default/files/AdvtNo-51-2026-Special-Engl-240726.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793840828.1386414
     },
     {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
+      "id": "05d3b71dd6e0",
+      "source": "https://in.linkedin.com/jobs/view/sales-executive-at-make-your-own-perfume-myop-4484796852",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793840829.4391093
     },
     {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
+      "id": "9bcfb13f35c2",
+      "source": "https://www.prnewswire.com/news-releases/modelbest-and-openbmb-open-source-minicpm-ocr-series-delivering-high-performance-document-parsing-and-ai-powered-quality-control-302925594.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793840830.4354887
     },
     {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
+      "id": "8fb539b04f5d",
+      "source": "https://www.haryana.gov.in/about-haryana/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793840831.0357602
     },
     {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
+      "id": "122b5649e749",
+      "source": "https://in.linkedin.com/jobs/view/sales-associate-onboard-international-cruise-line-at-ivory-lighthouse-recruitment-services-pvt-ltd-4482589473",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793840832.0551863
     },
     {
-      "id": "2f02162d9ab27a8cd5662161",
-      "result": "cooldown"
+      "id": "9cfed70093fb",
+      "source": "https://www.sahisarkarijobs.in/salary-calculator/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793840832.7664766
+    },
+    {
+      "id": "9d72856192eb",
+      "source": "https://www.prnewswire.com/news-releases/navy-mutual-awards-milmos-lacey-langford-with-the-2026-lieutenant-timothy-dix-bolles-excellency-in-education-award-302922401.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793840833.2966743
     },
     {
       "id": "c176a1dc41c1e122cab45821",
       "result": "cooldown"
     },
     {
+      "id": "63616ffbf4c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "dfd16b79fae5",
+      "result": "cooldown"
+    },
+    {
+      "id": "5cf2007cdcba",
+      "result": "cooldown"
+    },
+    {
+      "id": "253e0e4a696b",
+      "result": "cooldown"
+    },
+    {
+      "id": "b7601652de21",
+      "result": "cooldown"
+    },
+    {
+      "id": "3acc30eaefd0",
+      "result": "cooldown"
+    },
+    {
+      "id": "a4fcd6020999",
+      "result": "cooldown"
+    },
+    {
+      "id": "1285f1ac72a8",
+      "result": "cooldown"
+    },
+    {
+      "id": "dd07ef14c72f",
+      "result": "cooldown"
+    },
+    {
+      "id": "89a9f272b95b",
+      "result": "cooldown"
+    },
+    {
       "id": "4afa4536b18e5a41b30a3497",
+      "result": "cooldown"
+    },
+    {
+      "id": "bbfd4d3d5c0a",
+      "result": "cooldown"
+    },
+    {
+      "id": "47e829176cc5",
+      "result": "cooldown"
+    },
+    {
+      "id": "12d3cc56ebe6",
+      "result": "cooldown"
+    },
+    {
+      "id": "75dbda51595c",
+      "result": "cooldown"
+    },
+    {
+      "id": "2e293f23db10",
+      "result": "cooldown"
+    },
+    {
+      "id": "2f1dd8699d58",
+      "result": "cooldown"
+    },
+    {
+      "id": "65c484924118",
+      "result": "cooldown"
+    },
+    {
+      "id": "3a640d951615",
+      "result": "cooldown"
+    },
+    {
+      "id": "600062192bf4",
       "result": "cooldown"
     },
     {
@@ -78,7 +184,39 @@
       "result": "cooldown"
     },
     {
+      "id": "e62d34be0421",
+      "result": "cooldown"
+    },
+    {
+      "id": "4ca42dad8d6f",
+      "result": "cooldown"
+    },
+    {
+      "id": "c3c44629d231",
+      "result": "cooldown"
+    },
+    {
       "id": "ef614dcb4163038685679d1d",
+      "result": "cooldown"
+    },
+    {
+      "id": "b822477903c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "51e45078d38e",
+      "result": "cooldown"
+    },
+    {
+      "id": "38accdd4d36d",
+      "result": "cooldown"
+    },
+    {
+      "id": "0346b2c5ec85",
+      "result": "cooldown"
+    },
+    {
+      "id": "9ac2bb5ad6c4",
       "result": "cooldown"
     },
     {
@@ -86,29 +224,545 @@
       "result": "cooldown"
     },
     {
+      "id": "c9e064a48f72",
+      "result": "cooldown"
+    },
+    {
       "id": "a6510273f0889bf4d7684eae",
       "result": "cooldown"
     },
     {
+      "id": "11663ea645ab",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab1e7f889baf",
+      "result": "cooldown"
+    },
+    {
+      "id": "6189652eeaaa",
+      "result": "cooldown"
+    },
+    {
+      "id": "090108930e0d",
+      "result": "cooldown"
+    },
+    {
+      "id": "029ee2179ac9",
+      "result": "cooldown"
+    },
+    {
+      "id": "05cc9a358c55",
+      "result": "cooldown"
+    },
+    {
+      "id": "0e7392808f2b",
+      "result": "cooldown"
+    },
+    {
+      "id": "0bdb0918a8cf",
+      "result": "cooldown"
+    },
+    {
+      "id": "04bcdc448261",
+      "result": "cooldown"
+    },
+    {
+      "id": "0e2fde519d11",
+      "result": "cooldown"
+    },
+    {
+      "id": "3f437cd6deee",
+      "result": "cooldown"
+    },
+    {
+      "id": "06f842f028fe",
+      "result": "cooldown"
+    },
+    {
+      "id": "00f079e2ba3a",
+      "result": "cooldown"
+    },
+    {
+      "id": "08a83556bce2",
+      "result": "cooldown"
+    },
+    {
+      "id": "040dd341f762",
+      "result": "cooldown"
+    },
+    {
+      "id": "079aeaa0eeef",
+      "result": "cooldown"
+    },
+    {
+      "id": "0b33380de117",
+      "result": "cooldown"
+    },
+    {
+      "id": "0da0ead215c3",
+      "result": "cooldown"
+    },
+    {
+      "id": "080b28de54ff",
+      "result": "cooldown"
+    },
+    {
+      "id": "07f5b24312a4",
+      "result": "cooldown"
+    },
+    {
+      "id": "736ca0bcddb6",
+      "result": "cooldown"
+    },
+    {
+      "id": "07f40dc280d1",
+      "result": "cooldown"
+    },
+    {
+      "id": "2254c016ebd0",
+      "result": "cooldown"
+    },
+    {
+      "id": "0391c4373eca",
+      "result": "cooldown"
+    },
+    {
+      "id": "58f11d3687a2",
+      "result": "cooldown"
+    },
+    {
+      "id": "6ba39bcd4548",
+      "result": "cooldown"
+    },
+    {
+      "id": "37c0e160c49f",
+      "result": "cooldown"
+    },
+    {
+      "id": "92088c2de8c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "c929a77d3cf4",
+      "result": "cooldown"
+    },
+    {
+      "id": "1ad731a65211",
+      "result": "cooldown"
+    },
+    {
+      "id": "35c6b2e75c5a",
+      "result": "cooldown"
+    },
+    {
+      "id": "090cabc5ee27",
+      "result": "cooldown"
+    },
+    {
+      "id": "9e37935bcd6c",
+      "result": "cooldown"
+    },
+    {
+      "id": "aa511d7af8e4",
+      "result": "cooldown"
+    },
+    {
+      "id": "06157d85578b",
+      "result": "cooldown"
+    },
+    {
+      "id": "4002fcf12fa5",
+      "result": "cooldown"
+    },
+    {
+      "id": "38138689935d",
+      "result": "cooldown"
+    },
+    {
+      "id": "b9e7ebed5efd",
+      "result": "cooldown"
+    },
+    {
+      "id": "91712e374b16",
+      "result": "cooldown"
+    },
+    {
+      "id": "43669547d8a9",
+      "result": "cooldown"
+    },
+    {
+      "id": "572d5792fe9b",
+      "result": "cooldown"
+    },
+    {
+      "id": "8c6ddded2bc5",
+      "result": "cooldown"
+    },
+    {
+      "id": "257900039128",
+      "result": "cooldown"
+    },
+    {
+      "id": "d25fe3284c63",
+      "result": "cooldown"
+    },
+    {
+      "id": "7548888dfa18",
+      "result": "cooldown"
+    },
+    {
+      "id": "0983ec5f08f3",
+      "result": "cooldown"
+    },
+    {
+      "id": "6734d0b5d4b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "0f2e549a24cc",
+      "result": "cooldown"
+    },
+    {
+      "id": "ff059456a4ee",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d38ac0228db",
+      "result": "cooldown"
+    },
+    {
+      "id": "021c54d7abdb",
+      "result": "cooldown"
+    },
+    {
+      "id": "9a0aada26bcb",
+      "result": "cooldown"
+    },
+    {
+      "id": "b08f3712a37e",
+      "result": "cooldown"
+    },
+    {
+      "id": "02518f2b343c",
+      "result": "cooldown"
+    },
+    {
+      "id": "285dd8d5ec2f",
+      "result": "cooldown"
+    },
+    {
+      "id": "36fc08c8c68d",
+      "result": "cooldown"
+    },
+    {
+      "id": "074cb06de604",
+      "result": "cooldown"
+    },
+    {
+      "id": "03fdad6de98e",
+      "result": "cooldown"
+    },
+    {
+      "id": "dd54d85ef928",
+      "result": "cooldown"
+    },
+    {
+      "id": "021dcf06da61",
+      "result": "cooldown"
+    },
+    {
+      "id": "040073763955",
+      "result": "cooldown"
+    },
+    {
+      "id": "d113f09eda07",
+      "result": "cooldown"
+    },
+    {
+      "id": "05d05c18d987",
+      "result": "cooldown"
+    },
+    {
+      "id": "09eaa4a8cbc9",
+      "result": "cooldown"
+    },
+    {
+      "id": "036d1e10e017",
+      "result": "cooldown"
+    },
+    {
+      "id": "05bc5a47b19b",
+      "result": "cooldown"
+    },
+    {
+      "id": "1c4f6e29aff4",
+      "result": "cooldown"
+    },
+    {
+      "id": "031f3d5eda5f",
+      "result": "cooldown"
+    },
+    {
       "id": "2a8b92143f14b264d8d27146",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
+      "result": "cooldown"
+    },
+    {
+      "id": "2f02162d9ab27a8cd5662161",
+      "result": "cooldown"
+    },
+    {
+      "id": "bdaee5f4786c",
+      "result": "cooldown"
+    },
+    {
+      "id": "222914040e11",
+      "result": "cooldown"
+    },
+    {
+      "id": "a99188c62a2d",
+      "result": "cooldown"
+    },
+    {
+      "id": "a6ec2cd71bae",
+      "result": "cooldown"
+    },
+    {
+      "id": "8e77d55e51ba",
+      "result": "cooldown"
+    },
+    {
+      "id": "2d2ee8809ceb",
+      "result": "cooldown"
+    },
+    {
+      "id": "007acb84538e69bcc14f4f9f",
+      "result": "cooldown"
+    },
+    {
+      "id": "7c6f6d44e10c",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "result": "cooldown"
+    },
+    {
+      "id": "d47d25fb753a",
+      "result": "cooldown"
+    },
+    {
+      "id": "a9716e8287f2",
+      "result": "cooldown"
+    },
+    {
+      "id": "80ca872b27a0",
+      "result": "cooldown"
+    },
+    {
+      "id": "4be79532a665",
+      "result": "cooldown"
+    },
+    {
+      "id": "5fc7e58715b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "ade2cb72b841",
+      "result": "cooldown"
+    },
+    {
+      "id": "efeded53a5bb",
+      "result": "cooldown"
+    },
+    {
+      "id": "d0f211debf6a",
+      "result": "cooldown"
+    },
+    {
+      "id": "ec8b9639359a",
+      "result": "cooldown"
+    },
+    {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "d15bcc8a3c3b",
+      "result": "cooldown"
+    },
+    {
+      "id": "0493b37f6575",
+      "result": "cooldown"
+    },
+    {
+      "id": "ef84455d3242",
+      "result": "cooldown"
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "9e7d68e39abe",
+      "result": "cooldown"
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "1da89144be44",
+      "result": "cooldown"
+    },
+    {
+      "id": "ef6d4c03dede",
+      "result": "cooldown"
+    },
+    {
+      "id": "75ebcc814325",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "a41b914c9659",
+      "result": "cooldown"
+    },
+    {
+      "id": "3b5a7fa28a88",
+      "result": "cooldown"
+    },
+    {
+      "id": "f638281840d9",
+      "result": "cooldown"
+    },
+    {
+      "id": "06e9199a393c",
+      "result": "cooldown"
+    },
+    {
+      "id": "29f12d5d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "c455f726510c",
+      "result": "cooldown"
+    },
+    {
+      "id": "41e3cf0806d9",
+      "result": "cooldown"
+    },
+    {
+      "id": "ca9ab95087f5",
+      "result": "cooldown"
+    },
+    {
+      "id": "61ab99a70d23",
+      "result": "cooldown"
+    },
+    {
+      "id": "c766ee90465d",
+      "result": "cooldown"
+    },
+    {
+      "id": "01a6933a42b8",
+      "result": "cooldown"
+    },
+    {
+      "id": "a91a82825e4a",
+      "result": "cooldown"
+    },
+    {
+      "id": "c4038aa3469b",
+      "result": "cooldown"
+    },
+    {
+      "id": "fddacd9eaeff",
+      "result": "cooldown"
+    },
+    {
+      "id": "a28e5c356dd7",
+      "result": "cooldown"
+    },
+    {
+      "id": "731720281d96",
+      "result": "cooldown"
+    },
+    {
+      "id": "62f5310583d8",
+      "result": "cooldown"
+    },
+    {
+      "id": "9db43091aef2",
+      "result": "cooldown"
+    },
+    {
+      "id": "4805037fd814",
+      "result": "cooldown"
+    },
+    {
+      "id": "4eb7b2235122",
+      "result": "cooldown"
+    },
+    {
+      "id": "3a99b749f100",
+      "result": "cooldown"
+    },
+    {
+      "id": "948554632b74",
+      "result": "cooldown"
+    },
+    {
+      "id": "ed99df3183ca",
+      "source": "https://apps.apple.com/mx/iphone/apps",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1793830283.906125
+      "retry_after": 1793840834.137615
     },
     {
-      "id": "fc3a445b572a3ac72a74dd84",
-      "source": "https://en.wikipedia.org/wiki/Volkswagen_Talagon",
+      "id": "52c013755cd0",
+      "source": "https://www.sahisarkarijobs.in/8th-pay-commission-calculator/",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793830283.9116201
+      "result": "no_source_image",
+      "retry_after": 1793840834.279752
     },
     {
-      "id": "f5e098c65814172b85380495",
-      "source": "https://en.wikipedia.org/wiki/Lotus_Emira",
+      "id": "cd652bf418a1",
+      "source": "https://www.prnewswire.com/news-releases/cognizant-zet-meer-dan-25-000-professionals-in-voor-de-implementatie-van-openai-oplossingen-nu-ondernemingen-geavanceerde-ai-in-productie-nemen-302925664.html",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793830284.0853066
+      "result": "no_source_image",
+      "retry_after": 1793840835.5986288
+    },
+    {
+      "id": "029b646a13ec",
+      "source": "https://www.prnewswire.com/news-releases/esg-reporting-software-market-worth-4-48-billion-by-2031--report-by-marketsandmarkets-302924789.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793840837.012509
+    },
+    {
+      "id": "07746bc77e63",
+      "source": "https://www.prnewswire.com/news-releases/rcg-ventures-closes-fund-viii-above-target-at-515-million-302919410.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793840838.3241973
+    },
+    {
+      "id": "3b439d483131",
+      "source": "https://www.prnewswire.com/news-releases/ubcf-and-ggp-formerly-brookfield-properties-launch-2026-pink-bag-event-initiative-302925520.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793840839.4708867
+    },
+    {
+      "id": "a5f43758a0b4",
+      "source": "https://www.prnewswire.com/news-releases/white-paper-outlining-strategies-to-address-rural-ai-skills-gaps-and-support-workforce-retention-published-by-the-university-of-phoenix-college-of-doctoral-studies-302924623.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793840840.4692488
     }
   ],
   "missing": [
@@ -418,7 +1072,7 @@
       "category": "visas-immigration",
       "title": "Peerless Immigration Services Lists Business Development Executive Opening in New Delhi",
       "source": "https://in.linkedin.com/jobs/view/busienss-development-executive-at-peerless-immigration-services-4483857590",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "0bdb0918a8cf",
@@ -608,13 +1262,6 @@
       "title": "TRAI Releases Draft Guidelines on Responsible AI Use in Telecom Networks",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No145of2026.pdf",
       "reason": "source_unavailable"
-    },
-    {
-      "id": "0dc082de2306",
-      "category": "apps-software",
-      "title": "An Overview of Deno: A Modern Runtime for JavaScript, TypeScript, and WebAssembly",
-      "source": "https://github.com/denoland/deno",
-      "reason": "invalid_source_images"
     },
     {
       "id": "ef6d4c03dede",
@@ -1301,46 +1948,100 @@
     "invalid_source_images": 56,
     "source_error": 4,
     "no_source_image": 48,
-    "access_denied": 24,
+    "access_denied": 23,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "93524346b413389a9d0267c1": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Panther_Model_100",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Panther_100_600_cc_1936.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "9b3641414312": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/amp/world-news/iran-warns-of-wider-retaliation-even-as-diplomatic-talks-with-us-progress-126103101346_1.html",
+      "status": 403
     },
-    "9bc443c69d365b438d3ad913": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Panther_Model_120",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Phelon_%26_Moore_Panther_Model_120_%28right_side%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "712c404a4a7d": {
+      "reason": "source_unavailable",
+      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_2_29102026.pdf",
+      "status": 200
     },
-    "2a1dc5d55d643041b9bb2344": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nokia_X",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/NokiaX_01.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "7f651ce9d3f0": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/123net-awarded-86-million-in-federal-bead-funding-for-michigan-broadband-infrastructure-302922523.html"
     },
-    "2a8b92143f14b264d8d27146": {
+    "9acdf4deb8ec": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/pakistaanse-banken-slagen-niet-voor-de-klimaat--en-natuurbeleidstest-omdat-financieringswaarborgen-tekortschieten-302925673.html"
+    },
+    "3570bb7ef821": {
+      "reason": "access_denied",
+      "source": "https://www.upsc.gov.in/sites/default/files/AdvtNo-51-2026-Special-Engl-240726.pdf",
+      "status": 403
+    },
+    "05d3b71dd6e0": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
-      "candidate_count": 5,
+      "source": "https://in.linkedin.com/jobs/view/sales-executive-at-make-your-own-perfume-myop-4484796852",
+      "candidate_count": 1,
       "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
       ]
     },
-    "fc3a445b572a3ac72a74dd84": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Volkswagen_Talagon",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/2021_FAW-Volkswagen_Talagon_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "9bcfb13f35c2": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/modelbest-and-openbmb-open-source-minicpm-ocr-series-delivering-high-performance-document-parsing-and-ai-powered-quality-control-302925594.html"
     },
-    "f5e098c65814172b85380495": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Lotus_Emira",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/2025_Lotus_Emira_V6_in_Vivid_Red%2C_front_right.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "8fb539b04f5d": {
+      "reason": "no_source_image",
+      "source": "https://www.haryana.gov.in/about-haryana/"
+    },
+    "122b5649e749": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/sales-associate-onboard-international-cruise-line-at-ivory-lighthouse-recruitment-services-pvt-ltd-4482589473",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "9cfed70093fb": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/salary-calculator/"
+    },
+    "9d72856192eb": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/navy-mutual-awards-milmos-lacey-langford-with-the-2026-lieutenant-timothy-dix-bolles-excellency-in-education-award-302922401.html"
+    },
+    "ed99df3183ca": {
+      "reason": "invalid_source_images",
+      "source": "https://apps.apple.com/mx/iphone/apps",
+      "candidate_count": 12,
+      "candidates": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/82/da/ad/82daad76-c4f3-dfc1-5341-af7d8e622df2/3d8cf7be-5f49-4aa4-a125-f686a82b0203.png/34x48bb.webp",
+        "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/82/da/ad/82daad76-c4f3-dfc1-5341-af7d8e622df2/3d8cf7be-5f49-4aa4-a125-f686a82b0203.png/17x24bb.webp",
+        "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/82/da/ad/82daad76-c4f3-dfc1-5341-af7d8e622df2/3d8cf7be-5f49-4aa4-a125-f686a82b0203.png/34x48bb-60.jpg"
+      ]
+    },
+    "52c013755cd0": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/8th-pay-commission-calculator/"
+    },
+    "cd652bf418a1": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/cognizant-zet-meer-dan-25-000-professionals-in-voor-de-implementatie-van-openai-oplossingen-nu-ondernemingen-geavanceerde-ai-in-productie-nemen-302925664.html"
+    },
+    "029b646a13ec": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/esg-reporting-software-market-worth-4-48-billion-by-2031--report-by-marketsandmarkets-302924789.html"
+    },
+    "07746bc77e63": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/rcg-ventures-closes-fund-viii-above-target-at-515-million-302919410.html"
+    },
+    "3b439d483131": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/ubcf-and-ggp-formerly-brookfield-properties-launch-2026-pink-bag-event-initiative-302925520.html"
+    },
+    "a5f43758a0b4": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/white-paper-outlining-strategies-to-address-rural-ai-skills-gaps-and-support-workforce-retention-published-by-the-university-of-phoenix-college-of-doctoral-studies-302924623.html"
     }
   },
-  "mode": "directory"
+  "mode": "all"
 }
