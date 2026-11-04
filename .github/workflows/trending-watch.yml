@@ -1,8 +1,9 @@
 name: Trending Watch - fresh developments
 on:
   schedule:
-    # Offset from quarter-hour peaks; GitHub may delay scheduled jobs.
-    - cron: '2,17,32,47 * * * *'
+    # Trending discovery runs every 4 hours. It only queues drafts; the
+    # 2-hour publishing workflow ingests them and triggers deployments.
+    - cron: '23 */4 * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -24,6 +25,7 @@ jobs:
       PYTHONUNBUFFERED: '1'
       TREND_STATE_PATH: .cache/trending/state.json
       TREND_POSTS_PER_RUN: '2'
+      TREND_QUEUE_MODE: '1'
       MAX_AI_CALLS_PER_RUN: '6'
       MAX_MODELS_PER_ARTICLE: '2'
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -50,7 +52,9 @@ jobs:
         run: MAX_AI_CALLS_PER_RUN=100 MAX_MODELS_PER_ARTICLE=5 python -m unittest discover -s tests
       - uses: actions/cache/restore@v4
         with:
-          path: .cache/trending
+          path: |
+            .cache/trending
+            .cache/trending-drafts
           key: trending-watch-main-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: trending-watch-main-
       - name: Check fresh coverage and publish only material developments
@@ -64,36 +68,37 @@ jobs:
               out.write('changed='+('true' if report['changed_ids'] else 'false')+'\n')
           PY
       - name: Fetch original source photos for changed articles
-        if: steps.scan.outputs.changed == 'true'
+        # Queue mode: drafts are not live posts yet; the publishing
+        # workflow's image pipeline attaches photos at publish time.
+        if: steps.scan.outputs.changed == 'true' && env.TREND_QUEUE_MODE != '1'
         # Never let an image CDN prevent completed text from being saved.
         continue-on-error: true
         run: timeout 60s python -u scripts/trending_watch.py --photos
-      - name: Build and sync changed news only
+      - name: Queue trending drafts for the next publishing cycle
         if: steps.scan.outputs.changed == 'true'
+        # Queue mode: finished drafts stay in .cache/trending-drafts for the
+        # 2-hour publishing workflow to ingest, build and deploy. No git
+        # commit, no site build and no Cloudflare deployment from trending
+        # discovery alone.
         run: |
-          set -euo pipefail
-          git config user.name 'GlobeWire Trending Watch'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add content/posts content/featured content/trending-watch-status.json
-          git commit -m 'Publish or update source-backed trending developments'
-          # Tests/imports modify legacy tracked bytecode; committed article files are safe.
-          git restore --worktree -- .
-          # Keep latest repository content before generating homepage/sitemaps.
-          for attempt in 1 2 3; do
-            git fetch origin main
-            git rebase -X theirs origin/main || { git rebase --abort; exit 1; }
-            python -u scripts/build.py
-            git add dist
-            if ! git diff --cached --quiet; then git commit -m 'Build trending news, original photos and SEO metadata'; fi
-            git restore --worktree -- .
-            if git push origin HEAD:main; then exit 0; fi
-          done
-          exit 1
-      - name: Persist detector signatures and provider backoff
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=Path('.cache/trending-drafts')
+          drafts=sorted(d.glob('*.json')) if d.is_dir() else []
+          print('Trending drafts queued for the publishing workflow:',len(drafts))
+          for p in drafts:
+              try:post=json.loads(p.read_text(encoding='utf-8'))
+              except (OSError,ValueError):continue
+              print('-',post.get('id'),(post.get('en_title') or '')[:70])
+          PY
+      - name: Persist detector signatures, provider backoff and queued drafts
         if: success()
         uses: actions/cache/save@v4
         with:
-          path: .cache/trending
+          path: |
+            .cache/trending
+            .cache/trending-drafts
           key: trending-watch-main-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Retain detection diagnostics without redeploying on empty checks
         if: always()

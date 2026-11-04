@@ -210,10 +210,24 @@ def generate(group,old,record,now):
  post.update(source=row['url'],source_title=row['title'],source_published_at=dt.datetime.fromtimestamp(row['published'],dt.timezone.utc).isoformat(),
              trend_signal=group['signal'],trend_sources=[r['url'] for r in group['sources']][:8])
  # An incomplete or failed generation never overwrites a live article.
- path=newsroom.POSTS/(post['id']+'.json');tmp=path.with_suffix('.tmp')
- tmp.write_text(json.dumps(post,ensure_ascii=False,indent=2)+'\n');tmp.replace(path)
+ persist_post(post)
  record.clear();record.update(source_hash=source_hash,tokens=[digest(t)[:12] for t in sorted(tokens(text))[:1200]],signature=signature(row),published=post['id'])
  return post,'updated' if old else 'published'
+
+def persist_post(post):
+ """Queue mode (TREND_QUEUE_MODE=1) writes the finished article into the
+ shared trending-draft cache instead of content/posts, so discovery never
+ triggers a Cloudflare deployment on its own; the 2-hour publishing workflow
+ ingests and deploys it. Legacy mode writes posts directly."""
+ if os.getenv('TREND_QUEUE_MODE','').strip()=='1':
+  qdir=Path(os.getenv('TREND_DRAFT_DIR',str(ROOT/'.cache/trending-drafts')))
+  qdir.mkdir(parents=True,exist_ok=True)
+  tmp=qdir/(post['id']+'.tmp')
+  tmp.write_text(json.dumps(post,ensure_ascii=False,indent=2)+'\n')
+  tmp.replace(qdir/(post['id']+'.json'))
+  return
+ path=newsroom.POSTS/(post['id']+'.json');tmp=path.with_suffix('.tmp')
+ tmp.write_text(json.dumps(post,ensure_ascii=False,indent=2)+'\n');tmp.replace(path)
 
 def run(now=None):
  now=now or time.time();started=time.monotonic()

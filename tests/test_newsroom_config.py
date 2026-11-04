@@ -69,7 +69,11 @@ class NewsroomConfigTests(unittest.TestCase):
 
     def test_saved_drafts_are_prioritized_in_both_languages(self):
         code = COLLECT.read_text(encoding="utf-8")
-        self.assertIn("ready_en==ready_hi", code)
+        # Publish-ready bilingual drafts (e.g. trending-queue drafts) and
+        # single-language drafts both get the first AI slots; a draft that is
+        # complete in either language must never be skipped here.
+        self.assertIn("if not (ready_en or ready_hi):continue", code)
+        self.assertNotIn("if ready_en==ready_hi:continue", code)
         self.assertIn("single_language_ids=", code)
         self.assertIn("Recovering missing language from saved source-grounded draft", code)
         self.assertIn("Prioritizing missing English for saved Hindi draft", code)

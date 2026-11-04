@@ -1,7 +1,7 @@
 # AI Session Checkpoint — GlobeWireDaily audit and repair
 
 Is file ka maqsad: koi bhi agla AI session yahan se kaam resume kar sake.
-Last updated: 2026-11-04 (session 2).
+Last updated: 2026-11-04 (session 2, trending queue restructure added).
 
 ## Current branch and commits
 
@@ -14,6 +14,32 @@ Commits (purane se naye):
 4. 44d85183a5 Fix daily IndexNow notification failures caused by Cloudflare UA blocking
 5. a2172742f7 Restore fair per-category rotation in the publication queue
 6. 1dc48b7d25 Report publish outcome and category coverage in the job summary
+7. 1079d23078 Add session checkpoint for AI handoff
+8. (naya) Queue-based trending architecture: discovery deploy trigger nahi karta
+
+## Trending queue restructure (Phase 6, is session me kiya)
+
+- trending-watch.yml cron: 15-min (2,17,32,47) se '23 */4 * * *' (har 4 ghante).
+- trending_watch.py: persist_post() added — TREND_QUEUE_MODE=1 par finished
+  bilingual article content/posts ki jagah .cache/trending-drafts/<id>.json
+  me likhta hai. Trending workflow ab git commit/push/build kuch bhi nahi
+  karta → trending discovery akela Cloudflare deployment trigger NAHI karta.
+- trending-watch.yml cache save/restore ab .cache/trending-drafts bhi
+  cover karta hai (key prefix trending-watch-main-).
+- news-auto.yml (2-hour publishing): cache/restore (restore-keys:
+  trending-watch-main-) + 'Ingest trending drafts' step (scripts/
+  ingest_trending_drafts.py) compileall se pehle.
+- scripts/ingest_trending_drafts.py: update drafts (id live posts me hai)
+  sirf tab overwrite karta hai jab draft.updated_at newer ho; new drafts
+  content/pending/<id>.json me queue hote hain. Idempotent.
+- Post-id consistency verified: trending digest(url)[:12] == collect
+  sha256(url)[:12], isliye pending file direct match hoti hai.
+- collect.py saved_drafts scan: pehle complete bilingual drafts skip hote
+  the (ready_en==ready_hi:continue) — ab ready_en OR ready_hi dono ko
+  first AI slots milte hain. Regression test updated.
+- Tests: tests/test_trending_queue.py (7 tests: queue mode, legacy mode,
+  ingest new/update/stale/invalid, workflow schedule assertions regex se —
+  pyyaml CI me nahi hai isliye).
 
 ## Verified aur fixed bugs
 

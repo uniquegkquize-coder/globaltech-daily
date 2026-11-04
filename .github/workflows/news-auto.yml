@@ -46,6 +46,17 @@ jobs:
         run: |
           pip install 'playwright>=1.55,<2'
           python -m playwright install --with-deps chromium
+      - name: Restore trending drafts queued by the 4-hour discovery workflow
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/trending-drafts
+          key: trending-drafts-main-${{ github.run_id }}-${{ github.run_attempt }}
+          # The discovery workflow saves drafts under the trending-watch-main- prefix.
+          restore-keys: trending-watch-main-
+      - name: Ingest trending drafts into the pending queue
+        # Trending discovery never deploys on its own; its finished drafts
+        # are applied here and shipped with the next 2-hour publishing run.
+        run: python scripts/ingest_trending_drafts.py
       - name: Compile all Python files
         run: python -m compileall -q scripts
       # A single bounded batch per scheduled run: no idle sleeping or queued marathon runs.

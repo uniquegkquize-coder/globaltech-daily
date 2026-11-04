@@ -1363,7 +1363,11 @@ def main():
    if selected and category!=selected:continue
    ready_en=complete_body(draft.get('en_body',''),'en') and bool(draft.get('en_title'))
    ready_hi=complete_body(draft.get('hi_body',''),'hi') and bool(draft.get('hi_title'))
-   if ready_en==ready_hi:continue
+   # Publish-ready drafts (both languages complete, e.g. trending-queue
+   # drafts) and single-language drafts both deserve the first AI slots;
+   # previously complete bilingual drafts were skipped here and could sit
+   # in pending forever when their URL left the discovery queue.
+   if not (ready_en or ready_hi):continue
    row=(source,title,category,urlparse(source).hostname or '')
    if useful_lead(row):saved_drafts.append(row)
   except (OSError,ValueError,TypeError):continue
