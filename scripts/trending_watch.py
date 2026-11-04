@@ -122,7 +122,8 @@ def discover(now):
  native=newsroom.native_feed_registry()
  offset=(int(now//900)*16)%max(1,len(native))
  rotated=(native[offset:]+native[:offset])[:16]
- news_feeds=[('https://news.google.com/rss/search?q='+requests.utils.quote(q)+'&hl=en-US&gl=US&ceid=US%3Aen','world-news','') for q in NEWS_QUERIES]\n feeds=list(dict.fromkeys(CORE+rotated+news_feeds))
+ news_feeds=[('https://news.google.com/rss/search?q='+requests.utils.quote(q)+'&hl=en-US&gl=US&ceid=US%3Aen','world-news','') for q in NEWS_QUERIES]
+ feeds=list(dict.fromkeys(CORE+rotated+news_feeds))
  diagnostics={};rows=[]
  with ThreadPoolExecutor(max_workers=8) as pool:
   for item,(found,status) in zip(feeds,pool.map(lambda item:read_feed(item,now),feeds)):
@@ -226,7 +227,8 @@ def run(now=None):
   state['generation_version']=2
  report=dict(checked_at=dt.datetime.fromtimestamp(now,dt.timezone.utc).isoformat(),signal='publisher coverage with Google Trends search-term matching; not search-volume data',changed_ids=[],results=[],feeds={})
  # RSS checks still run during provider cooldown; generation alone is deferred.
- search_terms,report['google_trends']=demand_terms()\n rows,report['feeds']=discover(now)
+ search_terms,report['google_trends']=demand_terms()
+ rows,report['feeds']=discover(now)
  # Keep recent feed observations across rotating sources and transient outages.
  observed={newsroom.canonical_lead_key(r['url']):r for r in state.get('observations',[]) if isinstance(r,dict) and r.get('url') and 0<=now-r.get('published',0)<=6*3600}
  for row in rows:observed[newsroom.canonical_lead_key(row['url'])]=row
