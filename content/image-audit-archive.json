@@ -1,482 +1,29 @@
 {
-  "total_posts": 2115,
-  "selected": 175,
+  "total_posts": 2121,
+  "selected": 174,
   "results": {
-    "access_denied": 8,
-    "invalid_source_images": 16,
-    "source_photo_saved": 2,
-    "source_unavailable": 25,
-    "source_error": 1,
-    "no_source_image": 20,
-    "cooldown": 103
+    "cooldown": 174
   },
-  "still_missing": 166,
+  "still_missing": 167,
   "articles": [
     {
-      "id": "2d2ee8809ceb",
-      "source": "https://in.linkedin.com/jobs/view/busienss-development-executive-at-peerless-immigration-services-4483857590",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793808856.0424643
-    },
-    {
-      "id": "a99188c62a2d",
-      "source": "https://in.linkedin.com/jobs/view/social-media-intern-immediate-joiners-bangalore-at-divine-hindu-4484913408",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808857.7739499
-    },
-    {
-      "id": "7c6f6d44e10c",
-      "source": "https://in.linkedin.com/jobs/view/business-development-associate-at-peerless-immigration-services-4483846739?position=23&pageNum=0&refId=pdi7GkDzOUAwjOAwZuhD7g%3D%3D&trackingId=99eGWHPhi0lFt1HRUu2RDA%3D%3D",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808857.7783954
-    },
-    {
-      "id": "bdaee5f4786c",
-      "source": "https://in.linkedin.com/jobs/view/social-media-marketing-internship-in-delhi-bangalore-hyderabad-mumbai-at-foodstories-4479738162?position=44&pageNum=0&refId=6HZzQVkTvpvkiIYOUZ%2F6vQ%3D%3D&trackingId=jLeQWDCS3GoiLwZtObrHrw%3D%3D",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808857.779639
-    },
-    {
-      "id": "222914040e11",
-      "source": "https://in.linkedin.com/jobs/view/social-media-associate-at-the-blue-kite-4483449440",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808857.7812185
-    },
-    {
-      "id": "59aa0f58c2e4",
-      "source": "https://github.com/hungry-detective/downloadcraft",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793808857.7953513
-    },
-    {
-      "id": "8583e7aff540",
-      "source": "https://github.com/Mas0nShi/CVE-2026-112445",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793808857.7980368
-    },
-    {
-      "id": "8e77d55e51ba",
-      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/oct/doc_10319_20261030_15562701.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808857.8153982
-    },
-    {
-      "id": "a9716e8287f2",
-      "source": "https://www.bbc.co.uk/sport/cricket/scores-fixtures",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808858.1484795
-    },
-    {
-      "id": "007acb84538e69bcc14f4f9f",
-      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808858.8391194
-    },
-    {
-      "id": "0dc082de2306",
-      "source": "https://github.com/denoland/deno",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808858.9529998
-    },
-    {
-      "id": "a6ec2cd71bae",
-      "source": "https://in.linkedin.com/jobs/view/scriptwriter-youtube-at-headout-4483872792",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808858.9657295
-    },
-    {
-      "id": "d47d25fb753a",
-      "source": "https://in.linkedin.com/jobs/view/vice-president-sap-ai-at-hcltech-4473146204",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808859.0374403
-    },
-    {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808859.0416756
-    },
-    {
-      "id": "80ca872b27a0",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No145of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808861.0923607
-    },
-    {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "source": "https://isc-edu.org/",
-      "policy": "93e2ad7deccc",
-      "result": "source_error",
-      "retry_after": 1793808861.2460933
-    },
-    {
-      "id": "0493b37f6575",
-      "source": "https://www.business-standard.com/companies/news/cci-xavier-niel-vodafone-stake-prosus-navi-aditya-birla-adani-deals-126103100598_1.html",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793808861.3113647
-    },
-    {
-      "id": "4be79532a665",
-      "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808862.9366088
-    },
-    {
-      "id": "9e7d68e39abe",
-      "source": "https://www.business-standard.com/external-affairs-defence-security/news/secure-supply-chains-resilience-key-for-global-economy-jaishankar-at-g20-126110100012_1.html",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793808862.9865823
-    },
-    {
-      "id": "d15bcc8a3c3b",
-      "source": "https://in.linkedin.com/jobs/view/visa-documentation-executve-at-primex-visa-pvt-ltd-4484924300",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808864.1811683
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "source": "https://dec.ac.in/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808864.3365247
-    },
-    {
-      "id": "5fc7e58715b4",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/Press_release_142_signed_english.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808864.8829408
-    },
-    {
-      "id": "d0f211debf6a",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No137of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808866.473526
-    },
-    {
-      "id": "8af54bb949a0c055391d640a",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808867.2947826
-    },
-    {
-      "id": "75ebcc814325",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No139of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808867.5777583
-    },
-    {
-      "id": "efeded53a5bb",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No138of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808867.7579813
-    },
-    {
-      "id": "ef6d4c03dede",
-      "source": "https://www.prnewswire.com/news-releases/xpeng-announces-vehicle-delivery-results-for-october-2026-302925668.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808867.9565852
-    },
-    {
-      "id": "ade2cb72b841",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No144of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808868.6525524
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "source": "https://cctu.edu.gh/site/index",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808869.2347052
-    },
-    {
-      "id": "29f12d5d640a",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No.129_of_2026.pdf.PDF",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808870.8317935
-    },
-    {
-      "id": "ef84455d3242",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No140of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808872.8254812
-    },
-    {
-      "id": "ec8b9639359a",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No143of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808874.3935437
-    },
-    {
-      "id": "ca9ab95087f5",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No127of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808876.0675755
-    },
-    {
-      "id": "a41b914c9659",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No132of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808876.2934573
-    },
-    {
-      "id": "f638281840d9",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No128of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808876.9285138
-    },
-    {
-      "id": "61ab99a70d23",
-      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_3_29102026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808877.5900688
-    },
-    {
-      "id": "3b5a7fa28a88",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No134of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808877.6914504
-    },
-    {
-      "id": "a91a82825e4a",
-      "source": "https://jeemain.nta.nic.in/",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793808878.1593995
-    },
-    {
-      "id": "fddacd9eaeff",
-      "source": "https://www.business-standard.com/amp/world-news/france-protests-turn-violent-again-as-police-brace-for-halloween-unrest-126110100051_1.html",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793808878.2133682
-    },
-    {
-      "id": "41e3cf0806d9",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No131of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808878.4523654
-    },
-    {
-      "id": "62f5310583d8",
-      "source": "https://www.cardekho.com:443/electric-charging-station",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808879.6463373
-    },
-    {
-      "id": "9db43091aef2",
-      "source": "https://www.business-standard.com/world-news/student-enrolment-in-us-computer-science-programs-falls-as-ai-takes-jobs-126102900433_1.html",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793808879.6944685
-    },
-    {
-      "id": "c766ee90465d",
-      "source": "https://www.theguardian.com/football/live",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808879.9764676
-    },
-    {
-      "id": "01a6933a42b8",
-      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No122of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808880.3483832
-    },
-    {
-      "id": "a28e5c356dd7",
-      "source": "https://www.prnewswire.com/news-releases/arctic-wolf-named-a-leader-in-2026-qks-spark-matrix-for-ai-soc-automation-302923421.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808881.3725765
-    },
-    {
-      "id": "731720281d96",
-      "source": "https://www.prnewswire.com/news-releases/tata-communications-to-build-indias-ai-super-highway-302922235.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808882.5450728
-    },
-    {
-      "id": "8fb539b04f5d",
-      "source": "https://www.haryana.gov.in/about-haryana/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808883.6716661
-    },
-    {
-      "id": "9b3641414312",
-      "source": "https://www.business-standard.com/amp/world-news/iran-warns-of-wider-retaliation-even-as-diplomatic-talks-with-us-progress-126103101346_1.html",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793808883.7262595
-    },
-    {
-      "id": "c455f726510c",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No130of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808883.9486737
-    },
-    {
-      "id": "06e9199a393c",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No133of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808884.1945195
-    },
-    {
-      "id": "4805037fd814",
-      "source": "https://www.prnewswire.com/news-releases/tairex-launches-multi-agent-ai-system-to-transform-clinical-collaboration-and-decision-support-302916729.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808885.2404106
-    },
-    {
-      "id": "c4038aa3469b",
-      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No126of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808886.6206698
-    },
-    {
-      "id": "1da89144be44",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No141of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808886.871798
-    },
-    {
-      "id": "7f651ce9d3f0",
-      "source": "https://www.prnewswire.com/news-releases/123net-awarded-86-million-in-federal-bead-funding-for-michigan-broadband-infrastructure-302922523.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808886.9065926
-    },
-    {
-      "id": "9acdf4deb8ec",
-      "source": "https://www.prnewswire.com/news-releases/pakistaanse-banken-slagen-niet-voor-de-klimaat--en-natuurbeleidstest-omdat-financieringswaarborgen-tekortschieten-302925673.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808887.7222018
-    },
-    {
-      "id": "9d72856192eb",
-      "source": "https://www.prnewswire.com/news-releases/navy-mutual-awards-milmos-lacey-langford-with-the-2026-lieutenant-timothy-dix-bolles-excellency-in-education-award-302922401.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808888.1400847
-    },
-    {
-      "id": "52c013755cd0",
-      "source": "https://www.sahisarkarijobs.in/8th-pay-commission-calculator/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808889.6365438
-    },
-    {
-      "id": "712c404a4a7d",
-      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_2_29102026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808889.9161236
-    },
-    {
-      "id": "9bcfb13f35c2",
-      "source": "https://www.prnewswire.com/news-releases/modelbest-and-openbmb-open-source-minicpm-ocr-series-delivering-high-performance-document-parsing-and-ai-powered-quality-control-302925594.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808890.0719829
-    },
-    {
-      "id": "9cfed70093fb",
-      "source": "https://www.sahisarkarijobs.in/salary-calculator/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808890.2623863
-    },
-    {
-      "id": "3570bb7ef821",
-      "source": "https://www.upsc.gov.in/sites/default/files/AdvtNo-51-2026-Special-Engl-240726.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793808890.3250272
-    },
-    {
-      "id": "cd652bf418a1",
-      "source": "https://www.prnewswire.com/news-releases/cognizant-zet-meer-dan-25-000-professionals-in-voor-de-implementatie-van-openai-oplossingen-nu-ondernemingen-geavanceerde-ai-in-productie-nemen-302925664.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808890.524294
-    },
-    {
-      "id": "029b646a13ec",
-      "source": "https://www.prnewswire.com/news-releases/esg-reporting-software-market-worth-4-48-billion-by-2031--report-by-marketsandmarkets-302924789.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808891.3138068
-    },
-    {
-      "id": "05d3b71dd6e0",
-      "source": "https://in.linkedin.com/jobs/view/sales-executive-at-make-your-own-perfume-myop-4484796852",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808891.3951197
-    },
-    {
-      "id": "07746bc77e63",
-      "source": "https://www.prnewswire.com/news-releases/rcg-ventures-closes-fund-viii-above-target-at-515-million-302919410.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808891.5297523
-    },
-    {
-      "id": "a4fcd6020999",
+      "id": "6548e415fc086ccec65bbb7c",
       "result": "cooldown"
     },
     {
-      "id": "ab5757b7bde7e5a43128d256",
+      "id": "1285f1ac72a8",
       "result": "cooldown"
     },
     {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "id": "5cf2007cdcba",
+      "result": "cooldown"
+    },
+    {
+      "id": "2e293f23db10",
+      "result": "cooldown"
+    },
+    {
+      "id": "63616ffbf4c2",
       "result": "cooldown"
     },
     {
@@ -484,7 +31,23 @@
       "result": "cooldown"
     },
     {
-      "id": "3acc30eaefd0",
+      "id": "600062192bf4",
+      "result": "cooldown"
+    },
+    {
+      "id": "2f1dd8699d58",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5757b7bde7e5a43128d256",
+      "result": "cooldown"
+    },
+    {
+      "id": "dfd16b79fae5",
+      "result": "cooldown"
+    },
+    {
+      "id": "65c484924118",
       "result": "cooldown"
     },
     {
@@ -496,27 +59,15 @@
       "result": "cooldown"
     },
     {
-      "id": "dfd16b79fae5",
+      "id": "a4fcd6020999",
       "result": "cooldown"
     },
     {
-      "id": "63616ffbf4c2",
+      "id": "3acc30eaefd0",
       "result": "cooldown"
     },
     {
-      "id": "5cf2007cdcba",
-      "result": "cooldown"
-    },
-    {
-      "id": "1285f1ac72a8",
-      "result": "cooldown"
-    },
-    {
-      "id": "89a9f272b95b",
-      "result": "cooldown"
-    },
-    {
-      "id": "47e829176cc5",
+      "id": "8f4b17c49d1b2a0c5cb45a53",
       "result": "cooldown"
     },
     {
@@ -524,27 +75,15 @@
       "result": "cooldown"
     },
     {
-      "id": "65c484924118",
-      "result": "cooldown"
-    },
-    {
-      "id": "2f1dd8699d58",
-      "result": "cooldown"
-    },
-    {
-      "id": "600062192bf4",
-      "result": "cooldown"
-    },
-    {
-      "id": "2e293f23db10",
-      "result": "cooldown"
-    },
-    {
-      "id": "6548e415fc086ccec65bbb7c",
+      "id": "47e829176cc5",
       "result": "cooldown"
     },
     {
       "id": "b211f120ea27b93fc925f6b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "89a9f272b95b",
       "result": "cooldown"
     },
     {
@@ -880,53 +419,288 @@
       "result": "cooldown"
     },
     {
+      "id": "2d2ee8809ceb",
+      "result": "cooldown"
+    },
+    {
+      "id": "a99188c62a2d",
+      "result": "cooldown"
+    },
+    {
+      "id": "7c6f6d44e10c",
+      "result": "cooldown"
+    },
+    {
+      "id": "bdaee5f4786c",
+      "result": "cooldown"
+    },
+    {
+      "id": "222914040e11",
+      "result": "cooldown"
+    },
+    {
+      "id": "8e77d55e51ba",
+      "result": "cooldown"
+    },
+    {
+      "id": "a9716e8287f2",
+      "result": "cooldown"
+    },
+    {
+      "id": "007acb84538e69bcc14f4f9f",
+      "result": "cooldown"
+    },
+    {
+      "id": "0dc082de2306",
+      "result": "cooldown"
+    },
+    {
+      "id": "a6ec2cd71bae",
+      "result": "cooldown"
+    },
+    {
+      "id": "d47d25fb753a",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "result": "cooldown"
+    },
+    {
+      "id": "80ca872b27a0",
+      "result": "cooldown"
+    },
+    {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "0493b37f6575",
+      "result": "cooldown"
+    },
+    {
+      "id": "4be79532a665",
+      "result": "cooldown"
+    },
+    {
+      "id": "9e7d68e39abe",
+      "result": "cooldown"
+    },
+    {
+      "id": "d15bcc8a3c3b",
+      "result": "cooldown"
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "5fc7e58715b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "d0f211debf6a",
+      "result": "cooldown"
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "75ebcc814325",
+      "result": "cooldown"
+    },
+    {
+      "id": "efeded53a5bb",
+      "result": "cooldown"
+    },
+    {
+      "id": "ef6d4c03dede",
+      "result": "cooldown"
+    },
+    {
+      "id": "ade2cb72b841",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "29f12d5d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "ef84455d3242",
+      "result": "cooldown"
+    },
+    {
+      "id": "ec8b9639359a",
+      "result": "cooldown"
+    },
+    {
+      "id": "ca9ab95087f5",
+      "result": "cooldown"
+    },
+    {
+      "id": "a41b914c9659",
+      "result": "cooldown"
+    },
+    {
+      "id": "f638281840d9",
+      "result": "cooldown"
+    },
+    {
+      "id": "61ab99a70d23",
+      "result": "cooldown"
+    },
+    {
+      "id": "3b5a7fa28a88",
+      "result": "cooldown"
+    },
+    {
+      "id": "a91a82825e4a",
+      "result": "cooldown"
+    },
+    {
+      "id": "fddacd9eaeff",
+      "result": "cooldown"
+    },
+    {
+      "id": "41e3cf0806d9",
+      "result": "cooldown"
+    },
+    {
+      "id": "62f5310583d8",
+      "result": "cooldown"
+    },
+    {
+      "id": "9db43091aef2",
+      "result": "cooldown"
+    },
+    {
+      "id": "c766ee90465d",
+      "result": "cooldown"
+    },
+    {
+      "id": "01a6933a42b8",
+      "result": "cooldown"
+    },
+    {
+      "id": "a28e5c356dd7",
+      "result": "cooldown"
+    },
+    {
+      "id": "731720281d96",
+      "result": "cooldown"
+    },
+    {
+      "id": "8fb539b04f5d",
+      "result": "cooldown"
+    },
+    {
+      "id": "9b3641414312",
+      "result": "cooldown"
+    },
+    {
+      "id": "c455f726510c",
+      "result": "cooldown"
+    },
+    {
+      "id": "06e9199a393c",
+      "result": "cooldown"
+    },
+    {
+      "id": "4805037fd814",
+      "result": "cooldown"
+    },
+    {
+      "id": "c4038aa3469b",
+      "result": "cooldown"
+    },
+    {
+      "id": "1da89144be44",
+      "result": "cooldown"
+    },
+    {
+      "id": "7f651ce9d3f0",
+      "result": "cooldown"
+    },
+    {
+      "id": "9acdf4deb8ec",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d72856192eb",
+      "result": "cooldown"
+    },
+    {
+      "id": "52c013755cd0",
+      "result": "cooldown"
+    },
+    {
+      "id": "712c404a4a7d",
+      "result": "cooldown"
+    },
+    {
+      "id": "9bcfb13f35c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "9cfed70093fb",
+      "result": "cooldown"
+    },
+    {
+      "id": "3570bb7ef821",
+      "result": "cooldown"
+    },
+    {
+      "id": "cd652bf418a1",
+      "result": "cooldown"
+    },
+    {
+      "id": "029b646a13ec",
+      "result": "cooldown"
+    },
+    {
+      "id": "05d3b71dd6e0",
+      "result": "cooldown"
+    },
+    {
+      "id": "07746bc77e63",
+      "result": "cooldown"
+    },
+    {
       "id": "122b5649e749",
-      "source": "https://in.linkedin.com/jobs/view/sales-associate-onboard-international-cruise-line-at-ivory-lighthouse-recruitment-services-pvt-ltd-4482589473",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808891.8470845
+      "result": "cooldown"
     },
     {
       "id": "ed99df3183ca",
-      "source": "https://apps.apple.com/mx/iphone/apps",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793808892.1329157
+      "result": "cooldown"
     },
     {
       "id": "3b439d483131",
-      "source": "https://www.prnewswire.com/news-releases/ubcf-and-ggp-formerly-brookfield-properties-launch-2026-pink-bag-event-initiative-302925520.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808892.1670196
+      "result": "cooldown"
     },
     {
       "id": "a5f43758a0b4",
-      "source": "https://www.prnewswire.com/news-releases/white-paper-outlining-strategies-to-address-rural-ai-skills-gaps-and-support-workforce-retention-published-by-the-university-of-phoenix-college-of-doctoral-studies-302924623.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793808892.3047273
+      "result": "cooldown"
     },
     {
       "id": "948554632b74",
-      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No125of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808895.0092034
+      "result": "cooldown"
     },
     {
       "id": "4eb7b2235122",
-      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No124of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808898.7279913
+      "result": "cooldown"
     },
     {
       "id": "3a99b749f100",
-      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No123of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793808902.4990454
+      "result": "cooldown"
+    },
+    {
+      "id": "2f02162d9ab27a8cd5662161",
+      "result": "cooldown"
     }
   ],
   "missing": [
@@ -1848,6 +1622,13 @@
       "reason": "source_unavailable"
     },
     {
+      "id": "2f02162d9ab27a8cd5662161",
+      "category": "gadgets",
+      "title": "Ubuntu Edge: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "ab5757b7bde7e5a43128d256",
       "category": "education",
       "title": "Exploits University: College Admissions, Facts and Verification Guide",
@@ -2095,412 +1876,13 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "invalid_source_images": 46,
+    "invalid_source_images": 47,
     "source_error": 4,
     "no_source_image": 41,
     "access_denied": 38,
     "restricted_page": 1
   },
-  "existing_representatives_preserved": 1,
-  "diagnostics": {
-    "2d2ee8809ceb": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/view/busienss-development-executive-at-peerless-immigration-services-4483857590",
-      "status": 429
-    },
-    "7c6f6d44e10c": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/business-development-associate-at-peerless-immigration-services-4483846739?position=23&pageNum=0&refId=pdi7GkDzOUAwjOAwZuhD7g%3D%3D&trackingId=99eGWHPhi0lFt1HRUu2RDA%3D%3D",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "a99188c62a2d": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/social-media-intern-immediate-joiners-bangalore-at-divine-hindu-4484913408",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "222914040e11": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/social-media-associate-at-the-blue-kite-4483449440",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "bdaee5f4786c": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/social-media-marketing-internship-in-delhi-bangalore-hyderabad-mumbai-at-foodstories-4479738162?position=44&pageNum=0&refId=6HZzQVkTvpvkiIYOUZ%2F6vQ%3D%3D&trackingId=jLeQWDCS3GoiLwZtObrHrw%3D%3D",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "59aa0f58c2e4": {
-      "reason": "source_photo_saved",
-      "source": "https://github.com/hungry-detective/downloadcraft",
-      "image": "https://opengraph.githubassets.com/c20e8093f3479a0aecf19344b78efaa5cc5102619078866377c01b4595b54eb4/hungry-detective/downloadcraft"
-    },
-    "8583e7aff540": {
-      "reason": "source_photo_saved",
-      "source": "https://github.com/Mas0nShi/CVE-2026-112445",
-      "image": "https://opengraph.githubassets.com/8aefa0b76ab7fe9d202581536d139cca1ce8536d609efc4d411a095809742c3a/Mas0nShi/CVE-2026-112445"
-    },
-    "8e77d55e51ba": {
-      "reason": "source_unavailable",
-      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/oct/doc_10319_20261030_15562701.pdf",
-      "status": 200
-    },
-    "a9716e8287f2": {
-      "reason": "invalid_source_images",
-      "source": "https://www.bbc.co.uk/sport/cricket/scores-fixtures",
-      "candidate_count": 2,
-      "candidates": [
-        "https://static.files.bbci.co.uk/core/website/assets/static/sport/cricket/venue.5fe25b09fa.svg",
-        "https://static.files.bbci.co.uk/core/website/assets/static/sport/cricket/cricket-bat.530a0e6ae8.svg"
-      ]
-    },
-    "007acb84538e69bcc14f4f9f": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18606.jpg"
-      ]
-    },
-    "0dc082de2306": {
-      "reason": "invalid_source_images",
-      "source": "https://github.com/denoland/deno",
-      "candidate_count": 8,
-      "candidates": [
-        "https://opengraph.githubassets.com/49aa0b5f5ba6eb1996bce53294f6f66f633cba098bc16350b9cf590bbfa3acdf/denoland/deno",
-        "https://avatars.githubusercontent.com/u/42048915?s=60&v=4",
-        "https://camo.githubusercontent.com/69dec5f20b91dd7ebfe556ca431485070b59e95fc904691eea61e6a7e36e3256/68747470733a2f2f696d672e736869656c64732e696f2f6372617465732f762f64656e6f2e737667"
-      ]
-    },
-    "a6ec2cd71bae": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/scriptwriter-youtube-at-headout-4483872792",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "9d1f6341eb5fa6644d63ff08": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18615.jpg"
-      ]
-    },
-    "d47d25fb753a": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/vice-president-sap-ai-at-hcltech-4473146204",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "80ca872b27a0": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No145of2026.pdf",
-      "status": 200
-    },
-    "0a95ccf111c45db4cfb5c9e3": {
-      "reason": "source_error",
-      "source": "https://isc-edu.org/",
-      "error": "ConnectionError"
-    },
-    "0493b37f6575": {
-      "reason": "access_denied",
-      "source": "https://www.business-standard.com/companies/news/cci-xavier-niel-vodafone-stake-prosus-navi-aditya-birla-adani-deals-126103100598_1.html",
-      "status": 403
-    },
-    "4be79532a665": {
-      "reason": "no_source_image",
-      "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true"
-    },
-    "9e7d68e39abe": {
-      "reason": "access_denied",
-      "source": "https://www.business-standard.com/external-affairs-defence-security/news/secure-supply-chains-resilience-key-for-global-economy-jaishankar-at-g20-126110100012_1.html",
-      "status": 403
-    },
-    "d15bcc8a3c3b": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/visa-documentation-executve-at-primex-visa-pvt-ltd-4484924300",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "8444aa187e09b377f661fcbf": {
-      "reason": "no_source_image",
-      "source": "https://dec.ac.in/"
-    },
-    "5fc7e58715b4": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/Press_release_142_signed_english.pdf",
-      "status": 200
-    },
-    "d0f211debf6a": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No137of2026.pdf",
-      "status": 200
-    },
-    "8af54bb949a0c055391d640a": {
-      "reason": "no_source_image",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "existing_representative_preserved": true
-    },
-    "75ebcc814325": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No139of2026.pdf",
-      "status": 200
-    },
-    "efeded53a5bb": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No138of2026.pdf",
-      "status": 200
-    },
-    "ef6d4c03dede": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/xpeng-announces-vehicle-delivery-results-for-october-2026-302925668.html"
-    },
-    "ade2cb72b841": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No144of2026.pdf",
-      "status": 200
-    },
-    "fbff6440d68d52399ca212b1": {
-      "reason": "no_source_image",
-      "source": "https://cctu.edu.gh/site/index"
-    },
-    "29f12d5d640a": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No.129_of_2026.pdf.PDF",
-      "status": 200
-    },
-    "ef84455d3242": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No140of2026.pdf",
-      "status": 200
-    },
-    "ec8b9639359a": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No143of2026.pdf",
-      "status": 200
-    },
-    "ca9ab95087f5": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No127of2026.pdf",
-      "status": 200
-    },
-    "a41b914c9659": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No132of2026.pdf",
-      "status": 200
-    },
-    "f638281840d9": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No128of2026.pdf",
-      "status": 200
-    },
-    "61ab99a70d23": {
-      "reason": "source_unavailable",
-      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_3_29102026.pdf",
-      "status": 200
-    },
-    "3b5a7fa28a88": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No134of2026.pdf",
-      "status": 200
-    },
-    "a91a82825e4a": {
-      "reason": "access_denied",
-      "source": "https://jeemain.nta.nic.in/",
-      "status": 403
-    },
-    "fddacd9eaeff": {
-      "reason": "access_denied",
-      "source": "https://www.business-standard.com/amp/world-news/france-protests-turn-violent-again-as-police-brace-for-halloween-unrest-126110100051_1.html",
-      "status": 403
-    },
-    "41e3cf0806d9": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No131of2026.pdf",
-      "status": 200
-    },
-    "62f5310583d8": {
-      "reason": "invalid_source_images",
-      "source": "https://www.cardekho.com:443/electric-charging-station",
-      "candidate_count": 3,
-      "candidates": [
-        "https://www.cardekho.com:443/electric-charging-station",
-        "https://www.cardekho.com:443/true",
-        "https://stimg.cardekho.com/pwa/img/spacer3x2.png"
-      ]
-    },
-    "9db43091aef2": {
-      "reason": "access_denied",
-      "source": "https://www.business-standard.com/world-news/student-enrolment-in-us-computer-science-programs-falls-as-ai-takes-jobs-126102900433_1.html",
-      "status": 403
-    },
-    "c766ee90465d": {
-      "reason": "invalid_source_images",
-      "source": "https://www.theguardian.com/football/live",
-      "candidate_count": 12,
-      "candidates": [
-        "https://i.guim.co.uk/img/sport/football/crests/6422.png?width=20&dpr=2&s=none&crop=none",
-        "https://i.guim.co.uk/img/sport/football/crests/6422.png?width=20&dpr=1&s=none&crop=none",
-        "https://i.guim.co.uk/img/sport/football/crests/26303.png?width=20&dpr=2&s=none&crop=none"
-      ]
-    },
-    "01a6933a42b8": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No122of2026.pdf",
-      "status": 200
-    },
-    "a28e5c356dd7": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/arctic-wolf-named-a-leader-in-2026-qks-spark-matrix-for-ai-soc-automation-302923421.html"
-    },
-    "731720281d96": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/tata-communications-to-build-indias-ai-super-highway-302922235.html"
-    },
-    "8fb539b04f5d": {
-      "reason": "no_source_image",
-      "source": "https://www.haryana.gov.in/about-haryana/"
-    },
-    "9b3641414312": {
-      "reason": "access_denied",
-      "source": "https://www.business-standard.com/amp/world-news/iran-warns-of-wider-retaliation-even-as-diplomatic-talks-with-us-progress-126103101346_1.html",
-      "status": 403
-    },
-    "c455f726510c": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No130of2026.pdf",
-      "status": 200
-    },
-    "06e9199a393c": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No133of2026.pdf",
-      "status": 200
-    },
-    "4805037fd814": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/tairex-launches-multi-agent-ai-system-to-transform-clinical-collaboration-and-decision-support-302916729.html"
-    },
-    "c4038aa3469b": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No126of2026.pdf",
-      "status": 200
-    },
-    "1da89144be44": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No141of2026.pdf",
-      "status": 200
-    },
-    "7f651ce9d3f0": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/123net-awarded-86-million-in-federal-bead-funding-for-michigan-broadband-infrastructure-302922523.html"
-    },
-    "9acdf4deb8ec": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/pakistaanse-banken-slagen-niet-voor-de-klimaat--en-natuurbeleidstest-omdat-financieringswaarborgen-tekortschieten-302925673.html"
-    },
-    "9d72856192eb": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/navy-mutual-awards-milmos-lacey-langford-with-the-2026-lieutenant-timothy-dix-bolles-excellency-in-education-award-302922401.html"
-    },
-    "52c013755cd0": {
-      "reason": "no_source_image",
-      "source": "https://www.sahisarkarijobs.in/8th-pay-commission-calculator/"
-    },
-    "712c404a4a7d": {
-      "reason": "source_unavailable",
-      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_2_29102026.pdf",
-      "status": 200
-    },
-    "9bcfb13f35c2": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/modelbest-and-openbmb-open-source-minicpm-ocr-series-delivering-high-performance-document-parsing-and-ai-powered-quality-control-302925594.html"
-    },
-    "9cfed70093fb": {
-      "reason": "no_source_image",
-      "source": "https://www.sahisarkarijobs.in/salary-calculator/"
-    },
-    "3570bb7ef821": {
-      "reason": "access_denied",
-      "source": "https://www.upsc.gov.in/sites/default/files/AdvtNo-51-2026-Special-Engl-240726.pdf",
-      "status": 403
-    },
-    "cd652bf418a1": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/cognizant-zet-meer-dan-25-000-professionals-in-voor-de-implementatie-van-openai-oplossingen-nu-ondernemingen-geavanceerde-ai-in-productie-nemen-302925664.html"
-    },
-    "029b646a13ec": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/esg-reporting-software-market-worth-4-48-billion-by-2031--report-by-marketsandmarkets-302924789.html"
-    },
-    "05d3b71dd6e0": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/sales-executive-at-make-your-own-perfume-myop-4484796852",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "07746bc77e63": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/rcg-ventures-closes-fund-viii-above-target-at-515-million-302919410.html"
-    },
-    "122b5649e749": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/sales-associate-onboard-international-cruise-line-at-ivory-lighthouse-recruitment-services-pvt-ltd-4482589473",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "ed99df3183ca": {
-      "reason": "invalid_source_images",
-      "source": "https://apps.apple.com/mx/iphone/apps",
-      "candidate_count": 12,
-      "candidates": [
-        "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/82/da/ad/82daad76-c4f3-dfc1-5341-af7d8e622df2/3d8cf7be-5f49-4aa4-a125-f686a82b0203.png/34x48bb.webp",
-        "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/82/da/ad/82daad76-c4f3-dfc1-5341-af7d8e622df2/3d8cf7be-5f49-4aa4-a125-f686a82b0203.png/17x24bb.webp",
-        "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/82/da/ad/82daad76-c4f3-dfc1-5341-af7d8e622df2/3d8cf7be-5f49-4aa4-a125-f686a82b0203.png/34x48bb-60.jpg"
-      ]
-    },
-    "3b439d483131": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/ubcf-and-ggp-formerly-brookfield-properties-launch-2026-pink-bag-event-initiative-302925520.html"
-    },
-    "a5f43758a0b4": {
-      "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/white-paper-outlining-strategies-to-address-rural-ai-skills-gaps-and-support-workforce-retention-published-by-the-university-of-phoenix-college-of-doctoral-studies-302924623.html"
-    },
-    "948554632b74": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No125of2026.pdf",
-      "status": 200
-    },
-    "4eb7b2235122": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No124of2026.pdf",
-      "status": 200
-    },
-    "3a99b749f100": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No123of2026.pdf",
-      "status": 200
-    }
-  },
+  "existing_representatives_preserved": 0,
+  "diagnostics": {},
   "mode": "all"
 }
