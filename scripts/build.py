@@ -606,10 +606,20 @@ count=write_site_sitemap(OUT,SITE,GENERATED_HTML)
 write(OUT/'seo-audit.json',json.dumps({'version':'v2','canonical_indexable_pages':count,'article_records':len(POSTS),'translated_hindi_articles':sum('hi' in article_languages(p) for p in POSTS)},sort_keys=True)+'\n')
 print('SEO_SITEMAP',count,'generated indexable self-canonical pages')
 
-# Cloudflare Pages has a hard 20,000-asset deployment limit.
+# Cloudflare Pages capacity diagnostics: preserve every article and asset.
 from collections import Counter
 asset_files=[p for p in OUT.rglob('*') if p.is_file()]
 asset_counts=Counter(p.suffix.lower() or '[no extension]' for p in asset_files)
+section_counts=Counter(p.relative_to(OUT).parts[0] for p in asset_files)
+redirect_stub_count=0
+for p in asset_files:
+ if p.name!='index.html' or p.stat().st_size>2048: continue
+ try:
+  if '<title>Article moved</title>' in p.read_text(encoding='utf-8'):
+   redirect_stub_count+=1
+ except (OSError, UnicodeError): pass
 print('CLOUDFLARE_ASSET_COUNT',len(asset_files),'BY_TYPE',dict(asset_counts))
+print('CLOUDFLARE_ASSET_SECTIONS',dict(section_counts),'REDIRECT_STUBS',redirect_stub_count)
+print('ARTICLE_SOURCE_JSON_COUNT',len(list((R/'content/posts').glob('*.json'))),'PUBLISHED_POSTS',len(POSTS))
 if len(asset_files)>19000:
- raise RuntimeError(f'Cloudflare Pages output has {len(asset_files)} files; safe threshold is 19000. Preserve articles and investigate excess output before deploying.')
+ raise RuntimeError(f'Cloudflare Pages output has {len(asset_files)} files; safe threshold is 19000. No article or image has been deleted; use the section diagnostics to plan a safe migration.')
