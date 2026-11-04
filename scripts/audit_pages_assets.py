@@ -8,6 +8,7 @@ OUT = ROOT / "dist"
 files = [p for p in OUT.rglob("*") if p.is_file()]
 by_type = Counter(p.suffix.lower() or "[none]" for p in files)
 by_section = Counter(p.relative_to(OUT).parts[0] for p in files)
+by_route = Counter((lambda parts: parts[1] if len(parts)>1 and parts[0] in ("en","hi") else parts[0])(p.relative_to(OUT).parts) for p in files)
 articles = [p for p in files if p.name == "index.html" and "/news/" in p.as_posix()]
 redirect_stubs = []
 for p in articles:
@@ -26,6 +27,9 @@ report = {
     "over_safety_target": max(0, len(files) - 19000),
     "by_type": dict(by_type),
     "by_section": dict(by_section),
+    "by_route": dict(by_route.most_common()),
+    "directory_files": sum(by_route.get(section,0) for section in ("cars","phones","bikes","colleges")),
+    "safe_to_delete_articles": False,
     "news_html_paths": len(articles),
     "generated_redirect_stubs": len(redirect_stubs),
 }
