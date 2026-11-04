@@ -619,6 +619,10 @@ for p in asset_files:
    redirect_stub_count+=1
  except (OSError, UnicodeError): pass
 print('CLOUDFLARE_ASSET_COUNT',len(asset_files),'BY_TYPE',dict(asset_counts))
+# Show the sections responsible for growth; never prune published articles.
+asset_sections=Counter('/'.join(p.relative_to(OUT).parts[:2]) for p in asset_files)
+print('CLOUDFLARE_ASSET_SECTIONS',dict(asset_sections.most_common(30)))
+print('PUBLISHED_ARTICLES_PRESERVED',len(POSTS),'DUPLICATE_REDIRECTS',len(DUPLICATE_POSTS))
 print('CLOUDFLARE_ASSET_SECTIONS',dict(section_counts),'REDIRECT_STUBS',redirect_stub_count)
 print('ARTICLE_SOURCE_JSON_COUNT',len(list((R/'content/posts').glob('*.json'))),'PUBLISHED_POSTS',len(POSTS))
 if len(asset_files)>19000:
