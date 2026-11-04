@@ -14,7 +14,9 @@ from pathlib import Path
 def rank(rows, minimum=20):
     grouped = defaultdict(lambda: {"clicks": 0, "impressions": 0, "weighted_position": 0.0, "queries": []})
     for row in rows:
-        url = str(row.get("page", "")).strip()\n        if url.startswith("https://www.globewiredaily.org/"):\n            url = "https://globewiredaily.org/" + url.split("/", 3)[3]
+        url = str(row.get("page", "")).strip()
+        if url.startswith("https://www.globewiredaily.org/"):
+            url = "https://globewiredaily.org/" + url.split("/", 3)[3]
         if not url.startswith("https://globewiredaily.org/") and not url.startswith("https://www.globewiredaily.org/"):
             continue
         try:
