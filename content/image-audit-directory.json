@@ -1,60 +1,33 @@
 {
-  "total_posts": 2055,
+  "total_posts": 2084,
   "selected": 19,
   "results": {
-    "source_photo_saved": 6,
+    "source_photo_saved": 5,
+    "invalid_source_images": 1,
     "cooldown": 13
   },
-  "still_missing": 172,
+  "still_missing": 168,
   "articles": [
     {
-      "id": "2d31ceac3bd408fde8124409",
-      "source": "https://en.wikipedia.org/wiki/Harley-Davidson_XA",
+      "id": "b5ab75d5327595db08f0a800",
+      "source": "https://en.wikipedia.org/wiki/Yamaha_RD500LC",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793787577.1627955
+      "retry_after": 1793804005.5791116
     },
     {
-      "id": "ecbac06ba1f3567447e9ce90",
-      "source": "https://en.wikipedia.org/wiki/Harley-Davidson_Model_W",
+      "id": "c585fe855b5bbd9fc970eef7",
+      "source": "https://en.wikipedia.org/wiki/Roewe_Jing",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793787577.1674778
+      "retry_after": 1793804005.8989372
     },
     {
-      "id": "dcf0a828b2958d05d8abbc56",
-      "source": "https://en.wikipedia.org/wiki/Ford_Mondeo_Sport",
+      "id": "c176a1dc41c1e122cab45821",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793787577.6459072
-    },
-    {
-      "id": "4afa4536b18e5a41b30a3497",
-      "result": "cooldown"
-    },
-    {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab5757b7bde7e5a43128d256",
-      "result": "cooldown"
-    },
-    {
-      "id": "ef614dcb4163038685679d1d",
-      "result": "cooldown"
-    },
-    {
-      "id": "6548e415fc086ccec65bbb7c",
-      "result": "cooldown"
-    },
-    {
-      "id": "b211f120ea27b93fc925f6b4",
-      "result": "cooldown"
-    },
-    {
-      "id": "a6510273f0889bf4d7684eae",
-      "result": "cooldown"
+      "result": "invalid_source_images",
+      "retry_after": 1793804006.4579256
     },
     {
       "id": "007acb84538e69bcc14f4f9f",
@@ -81,25 +54,53 @@
       "result": "cooldown"
     },
     {
-      "id": "db79ab44ec98c14a4f1d9887",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S4_Active",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793787577.839237
+      "id": "ab5757b7bde7e5a43128d256",
+      "result": "cooldown"
     },
     {
-      "id": "edc3a9e3059eef5348090f4d",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_1520",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793787577.8844213
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "result": "cooldown"
     },
     {
-      "id": "20df888c671c1041e78dd0e8",
-      "source": "https://en.wikipedia.org/wiki/Wey_Mocha",
+      "id": "4afa4536b18e5a41b30a3497",
+      "result": "cooldown"
+    },
+    {
+      "id": "6548e415fc086ccec65bbb7c",
+      "result": "cooldown"
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "ef614dcb4163038685679d1d",
+      "result": "cooldown"
+    },
+    {
+      "id": "a6510273f0889bf4d7684eae",
+      "result": "cooldown"
+    },
+    {
+      "id": "fd0c2e823adc27fc971bea34",
+      "source": "https://en.wikipedia.org/wiki/Ducati_MH900e",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793787577.9082692
+      "retry_after": 1793804006.5326324
+    },
+    {
+      "id": "07a602a6f54ce0a8f61c92ed",
+      "source": "https://en.wikipedia.org/wiki/Wuling_Asta",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793804006.6666808
+    },
+    {
+      "id": "6b0240452c266fe5f9b5a869",
+      "source": "https://en.wikipedia.org/wiki/HTC_One_Max",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793804006.9555955
     }
   ],
   "missing": [
@@ -171,21 +172,28 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted in Cheyenne, Wyoming",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "06f842f028fe",
       "category": "private-vacancy",
       "title": "A Full Renovation – Home Improvement Lists Virtual Assistant Opening in the United States",
       "source": "https://www.linkedin.com/jobs/view/virtual-assistant-at-a-full-renovation-%E2%80%93-home-improvement-4483788958",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0983ec5f08f3",
       "category": "private-vacancy",
       "title": "Exploring Private Sector Job Listings in India: Recent Openings and Roles",
       "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Br%C9%99yl%C9%99r-%2Bonlayn%2Bfikirl%C9%99ri%2Bayr%C4%B1ca%2Binc%C9%99l%C9%99yin.ekq-jobs",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
+    },
+    {
+      "id": "3a640d951615",
+      "category": "sarkari-naukri",
+      "title": "Estimating Annual Salary Increments Under 7th Pay Commission Guidelines",
+      "source": "https://www.sahisarkarijobs.in/increment-calculator/",
+      "reason": "no_source_image"
     },
     {
       "id": "8fb539b04f5d",
@@ -209,13 +217,6 @@
       "reason": "no_source_image"
     },
     {
-      "id": "7b553354eb54",
-      "category": "ai-news",
-      "title": "Open-Source AI Engineering Curriculum Expands with Multi-Language Support and Practical Labs",
-      "source": "https://github.com/rohitg00/ai-engineering-from-scratch",
-      "reason": "invalid_source_images"
-    },
-    {
       "id": "aa511d7af8e4",
       "category": "private-vacancy",
       "title": "Recent Administrative Assistant Job Listings Highlight Opportunities Across the San Francisco Bay Area",
@@ -230,18 +231,11 @@
       "reason": "source_unavailable"
     },
     {
-      "id": "c9fb42dcd164",
-      "category": "apps-software",
-      "title": "Open-Source Windows Download Manager 'Awesome-Downloader' Released in Early Preview",
-      "source": "https://github.com/Ahmadkhattak1/awesome-downloader",
-      "reason": "invalid_source_images"
-    },
-    {
       "id": "6ba39bcd4548",
       "category": "private-vacancy",
       "title": "Recent Program and Project Management Openings Listed on LinkedIn for the San Francisco Bay Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "03fdad6de98e",
@@ -262,7 +256,7 @@
       "category": "private-vacancy",
       "title": "Media and Communications Openings Highlighted Across Central Washington Employers",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-moses-lake-wa",
-      "reason": "no_source_image"
+      "reason": "invalid_source_images"
     },
     {
       "id": "b211f120ea27b93fc925f6b4",
@@ -325,7 +319,7 @@
       "category": "private-vacancy",
       "title": "Overview of Current Administrative and Support Vacancies in Moses Lake, Washington",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-moses-lake-wa",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "75dbda51595c",
@@ -346,7 +340,7 @@
       "category": "private-vacancy",
       "title": "Wordsmith Learning Hub Recruits Senior Digital Marketing Manager for Tamil Edtech Sector",
       "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "f638281840d9",
@@ -388,7 +382,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-phoenix-az",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "47e829176cc5",
@@ -416,7 +410,7 @@
       "category": "private-vacancy",
       "title": "Credit Saison India Recruits Relationship Manager for Secured Direct Operations in South India",
       "source": "https://in.linkedin.com/jobs/view/relationship-manager-secured-direct-south-ap-ts-tn-at-credit-saison-india-4480041233",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "021c54d7abdb",
@@ -507,7 +501,7 @@
       "category": "private-vacancy",
       "title": "Alok Industries Limited Lists Assistant Manager Opening in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-alok-industries-limited-india-4481052431",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "285dd8d5ec2f",
@@ -521,14 +515,7 @@
       "category": "private-vacancy",
       "title": "EH Jobs Recruits Western Music Teacher for Primary Grades in Tellapur, Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/looking-for-western-music-teacher-primary-1-5-in-tellapur-hyderabad-at-eh-jobs-4481687605",
-      "reason": "invalid_source_images"
-    },
-    {
-      "id": "66fbca525730",
-      "category": "apps-software",
-      "title": "Chizu: A Minimal macOS Default Browser That Routes Links to Specific Profiles",
-      "source": "https://github.com/azu/chizu",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "8f4b17c49d1b2a0c5cb45a53",
@@ -650,13 +637,6 @@
       "reason": "source_unavailable"
     },
     {
-      "id": "2ed4c9e50790",
-      "category": "apps-software",
-      "title": "foidfinder: Open‑Source Tool to Identify Anime Characters and Series from Images",
-      "source": "https://github.com/AlpinDale/foidfinder",
-      "reason": "invalid_source_images"
-    },
-    {
       "id": "29f12d5d640a",
       "category": "telecom",
       "title": "TRAI Releases Draft Audit Manual for DRM-Based Digital Addressable Systems",
@@ -675,7 +655,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted in Des Moines Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "3570bb7ef821",
@@ -683,13 +663,6 @@
       "title": "UPSC Announces Special Advertisement No. 51/2026 for Principal and Vice-Principal Posts in Delhi Education Department",
       "source": "https://www.upsc.gov.in/sites/default/files/AdvtNo-51-2026-Special-Engl-240726.pdf",
       "reason": "access_denied"
-    },
-    {
-      "id": "6812e44c8231",
-      "category": "apps-software",
-      "title": "Lean4 Formalization of the Classification of Finite Simple Groups Reaches Near‑24‑Hour Build Milestone",
-      "source": "https://github.com/AxiomMath/CFSG/",
-      "reason": "invalid_source_images"
     },
     {
       "id": "b822477903c2",
@@ -724,7 +697,7 @@
       "category": "private-vacancy",
       "title": "Saatvik Agro Advertises Full-Time Backend Developer Java Opening in Morena",
       "source": "https://in.linkedin.com/jobs/view/backend-developer-java-at-saatvik-agro-4484932211",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0e7392808f2b",
@@ -752,14 +725,14 @@
       "category": "private-vacancy",
       "title": "Recent Program and Project Management Openings Highlighted for Boydton and Surrounding Regions",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-boydton-va",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "040dd341f762",
       "category": "private-vacancy",
       "title": "The Souled Store Lists Founder's Office Intern Position in Mumbai Focused on GCC Expansion",
       "source": "https://in.linkedin.com/jobs/view/founder-s-office-intern-at-the-souled-store-4483622129",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0e2fde519d11",
@@ -836,7 +809,7 @@
       "category": "private-vacancy",
       "title": "Fintech Firm FatakPay Announces Search for Compliance Manager in Mumbai",
       "source": "https://in.linkedin.com/jobs/view/compliance-manager-at-fatakpay-4482278882",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "6189652eeaaa",
@@ -899,7 +872,7 @@
       "category": "private-vacancy",
       "title": "Innow8 Lists Stem Innovation Engineer Role Across Multiple Locations in Northern India",
       "source": "https://in.linkedin.com/jobs/view/stem-innovation-engineer-in-chandigarh-ghaziabad-uttar-pradesh-bulandshahr-noida-punjab-gurgaon-meerut-sangrur-mohali-at-innow8-4472659090",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "0493b37f6575",
@@ -1035,13 +1008,6 @@
       "reason": "access_denied"
     },
     {
-      "id": "fe08f38be8bd",
-      "category": "ai-news",
-      "title": "Switch Brings Open-Source AI Teammates Into Existing Chat Platforms",
-      "source": "https://github.com/sandbox-quantum/switch",
-      "reason": "invalid_source_images"
-    },
-    {
       "id": "222914040e11",
       "category": "social-media",
       "title": "The Blue Kite Announces Opening for Social Media Associate Role in Goa via LinkedIn",
@@ -1123,7 +1089,7 @@
       "category": "private-vacancy",
       "title": "San Francisco Bay Area Media and Communications Job Listings Highlight Tech and Corporate Sector Demand",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "8444aa187e09b377f661fcbf",
@@ -1144,7 +1110,7 @@
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Cheyenne and Surrounding Region",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "2e293f23db10",
@@ -1168,11 +1134,18 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "c176a1dc41c1e122cab45821",
+      "category": "gadgets",
+      "title": "Samsung Galaxy Round: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "b9e7ebed5efd",
       "category": "private-vacancy",
       "title": "Community and Social Services Career Openings Highlight Regional Employment Landscape",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-boydton-va",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "090108930e0d",
@@ -1207,7 +1180,7 @@
       "category": "private-vacancy",
       "title": "WeMakeScholars Recruits Education Finance Officers Across Multiple Indian Regions",
       "source": "https://in.linkedin.com/jobs/view/education-finance-officer-in-nashik-trichey-begumpet-mangalore-solapur-bidar-bhubaneswar-coimbatore-cuttack-kollam-chennai-hyderabad-maharashta-koramangala-andhra-pradesh-at-wemakescholars-4483353601",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "6734d0b5d4b1",
@@ -1256,7 +1229,7 @@
       "category": "private-vacancy",
       "title": "Active Administrative Assistant Openings Listed Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-phoenix-az",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "9acdf4deb8ec",
@@ -1310,43 +1283,48 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "invalid_source_images": 65,
+    "invalid_source_images": 50,
     "source_error": 4,
-    "no_source_image": 46,
-    "access_denied": 20,
+    "no_source_image": 40,
+    "access_denied": 37,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "2d31ceac3bd408fde8124409": {
+    "b5ab75d5327595db08f0a800": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Harley-Davidson_XA",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Xa-600.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Yamaha_RD500LC",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Yamaha_RD500LC_%281985%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "ecbac06ba1f3567447e9ce90": {
+    "c585fe855b5bbd9fc970eef7": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Harley-Davidson_Model_W",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Harley-Davidson_22WJ_600_cc_1922.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Roewe_Jing",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/92/Roewe_Whale_009.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "dcf0a828b2958d05d8abbc56": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ford_Mondeo_Sport",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Ford_Evos_009_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "c176a1dc41c1e122cab45821": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
     },
-    "db79ab44ec98c14a4f1d9887": {
+    "fd0c2e823adc27fc971bea34": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S4_Active",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Galaxy_S4_Active.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ducati_MH900e",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/68/Ducati_MHe.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "edc3a9e3059eef5348090f4d": {
+    "07a602a6f54ce0a8f61c92ed": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_1520",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Nokia_Lumia_1520.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Wuling_Asta",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/2021_Wuling_Asta_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "20df888c671c1041e78dd0e8": {
+    "6b0240452c266fe5f9b5a869": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Wey_Mocha",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Wey_Coffee_01_PHEV_IAA_2021_1X7A0222.jpg/1280px-Wey_Coffee_01_PHEV_IAA_2021_1X7A0222.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+      "source": "https://en.wikipedia.org/wiki/HTC_One_Max",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/HTC_One_Max.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
