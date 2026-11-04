@@ -18,6 +18,21 @@ from official_notices import load_notices
 from directories import CSS as DIRECTORY_CSS, JS as DIRECTORY_JS, render as render_directories
 R=Path(__file__).resolve().parents[1]; OUT=R/'dist'; SITE='https://globewiredaily.org'.rstrip('/'); CONTACT='contact@globewiredaily.org'
 OUT.mkdir(parents=True,exist_ok=True)
+# Remove only obsolete build-generated HTML redirect stubs. Never remove article pages.
+# The redirect generator recreates every currently required stub later in this build.
+def clean_generated_redirect_stubs():
+ count=0
+ for p in OUT.rglob('index.html'):
+  try:
+   if p.stat().st_size > 2048: continue
+   body=p.read_text(encoding='utf-8')
+   if '<title>Article moved</title>' not in body or '<meta http-equiv="refresh"' not in body: continue
+   p.unlink()
+   count+=1
+  except (OSError, UnicodeError): continue
+ print('CLEAN_GENERATED_REDIRECT_STUBS',count)
+clean_generated_redirect_stubs()
+
 (OUT/'d9e47b8c32a16f5098c7d6e5b4a3210f.txt').write_text('d9e47b8c32a16f5098c7d6e5b4a3210f\n',encoding='utf-8')
 GENERATED_HTML=set()
 (OUT/'googled7fc3627b4add656.html').write_text('google-site-verification: googled7fc3627b4add656.html\n',encoding='utf-8')
@@ -590,3 +605,11 @@ for lang in ('en','hi'):
 count=write_site_sitemap(OUT,SITE,GENERATED_HTML)
 write(OUT/'seo-audit.json',json.dumps({'version':'v2','canonical_indexable_pages':count,'article_records':len(POSTS),'translated_hindi_articles':sum('hi' in article_languages(p) for p in POSTS)},sort_keys=True)+'\n')
 print('SEO_SITEMAP',count,'generated indexable self-canonical pages')
+
+# Cloudflare Pages has a hard 20,000-asset deployment limit.
+from collections import Counter
+asset_files=[p for p in OUT.rglob('*') if p.is_file()]
+asset_counts=Counter(p.suffix.lower() or '[no extension]' for p in asset_files)
+print('CLOUDFLARE_ASSET_COUNT',len(asset_files),'BY_TYPE',dict(asset_counts))
+if len(asset_files)>19000:
+ raise RuntimeError(f'Cloudflare Pages output has {len(asset_files)} files; safe threshold is 19000. Preserve articles and investigate excess output before deploying.')
