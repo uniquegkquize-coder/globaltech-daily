@@ -1,56 +1,33 @@
 {
-  "total_posts": 2090,
+  "total_posts": 2121,
   "selected": 20,
   "results": {
-    "source_photo_saved": 6,
+    "source_photo_saved": 5,
+    "invalid_source_images": 1,
     "cooldown": 14
   },
-  "still_missing": 168,
+  "still_missing": 167,
   "articles": [
     {
-      "id": "672c2c21c3252f583da28c12",
-      "source": "https://en.wikipedia.org/wiki/Royal_Enfield_Interceptor_650",
+      "id": "2f172d57a7cbb78ef6c75771",
+      "source": "https://en.wikipedia.org/wiki/ELF_500_ROC",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793804391.8254497
+      "retry_after": 1793809692.4056804
     },
     {
-      "id": "7b1c56fec6ace88fbab43be4",
-      "source": "https://en.wikipedia.org/wiki/Haval_Chitu",
+      "id": "e6a557420a804c9f8577d4be",
+      "source": "https://en.wikipedia.org/wiki/Arcfox_Alpha-S6",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793804392.3767207
+      "retry_after": 1793809693.0371299
     },
     {
-      "id": "56a63230fd563fe2b91ae355",
-      "source": "https://en.wikipedia.org/wiki/Nexus_5",
+      "id": "2f02162d9ab27a8cd5662161",
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793804392.744777
-    },
-    {
-      "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "result": "cooldown"
-    },
-    {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
-    },
-    {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
+      "result": "invalid_source_images",
+      "retry_after": 1793809693.0418262
     },
     {
       "id": "ab5757b7bde7e5a43128d256",
@@ -85,25 +62,49 @@
       "result": "cooldown"
     },
     {
-      "id": "97833880b4f9d41b093afada",
-      "source": "https://en.wikipedia.org/wiki/Audi_Q6_e-tron",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793804392.851026
+      "id": "007acb84538e69bcc14f4f9f",
+      "result": "cooldown"
     },
     {
-      "id": "bcd617fcfdbeeca5ab3d3235",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_1320",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793804392.9399097
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "result": "cooldown"
     },
     {
-      "id": "07dbc18c9feca28342c0f7e5",
-      "source": "https://en.wikipedia.org/wiki/Piaggio_Free",
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "3f348e1ddf400b6ad0b1dfe6",
+      "source": "https://en.wikipedia.org/wiki/BMW_F750GS",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793804393.1218076
+      "retry_after": 1793809693.0921924
+    },
+    {
+      "id": "b72d819f9caee24f8f22ddfd",
+      "source": "https://en.wikipedia.org/wiki/XPeng_P5",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793809693.3594446
+    },
+    {
+      "id": "ea9d7430681892e87ca3961b",
+      "source": "https://en.wikipedia.org/wiki/LG_G_Flex",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793809693.7620761
     }
   ],
   "missing": [
@@ -406,7 +407,7 @@
       "category": "visas-immigration",
       "title": "Peerless Immigration Services Lists Business Development Executive Opening in New Delhi",
       "source": "https://in.linkedin.com/jobs/view/busienss-development-executive-at-peerless-immigration-services-4483857590",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0bdb0918a8cf",
@@ -525,13 +526,6 @@
       "category": "gadgets",
       "title": "Nokia Lumia 925: Smartphone Specifications, Facts and Verification Guide",
       "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
-      "reason": "invalid_source_images"
-    },
-    {
-      "id": "8583e7aff540",
-      "category": "apps-software",
-      "title": "CVE‑2026‑112445: How a Mis‑configured macOS LaunchDaemon Lets Any User Gain Root",
-      "source": "https://github.com/Mas0nShi/CVE-2026-112445",
       "reason": "invalid_source_images"
     },
     {
@@ -847,7 +841,7 @@
       "category": "ai-news",
       "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
       "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "c9e064a48f72",
@@ -918,13 +912,6 @@
       "title": "Cognizant Launches OpenAI Frontier Capability Group, Deploying Over 25,000 Professionals to Accelerate Enterprise AI Adoption",
       "source": "https://www.prnewswire.com/news-releases/cognizant-zet-meer-dan-25-000-professionals-in-voor-de-implementatie-van-openai-oplossingen-nu-ondernemingen-geavanceerde-ai-in-productie-nemen-302925664.html",
       "reason": "no_source_image"
-    },
-    {
-      "id": "59aa0f58c2e4",
-      "category": "apps-software",
-      "title": "DownloadCraft: Rust-Powered Download Manager Offers IDM Alternative with Browser Integration",
-      "source": "https://github.com/hungry-detective/downloadcraft",
-      "reason": "invalid_source_images"
     },
     {
       "id": "05d05c18d987",
@@ -1037,6 +1024,13 @@
       "title": "TRAI Releases Independent Drive Test Findings for Hyderabad and Adoni-Mantralayam",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No144of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "2f02162d9ab27a8cd5662161",
+      "category": "gadgets",
+      "title": "Ubuntu Edge: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "reason": "invalid_source_images"
     },
     {
       "id": "ab5757b7bde7e5a43128d256",
@@ -1286,43 +1280,48 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "invalid_source_images": 50,
+    "invalid_source_images": 47,
     "source_error": 4,
-    "no_source_image": 40,
-    "access_denied": 37,
+    "no_source_image": 41,
+    "access_denied": 38,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "672c2c21c3252f583da28c12": {
+    "2f172d57a7cbb78ef6c75771": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Royal_Enfield_Interceptor_650",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Royal_Enfield_650_02.jpeg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/ELF_500_ROC",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/J%C3%BCrgen_Fuchs_1997_N%C3%BCrburgring.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "7b1c56fec6ace88fbab43be4": {
+    "e6a557420a804c9f8577d4be": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Haval_Chitu",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Haval_Chitu_005.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Arcfox_Alpha-S6",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Arcfox_%CE%B1-S_IMG001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "56a63230fd563fe2b91ae355": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nexus_5",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Nexus_5_Front_View.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "2f02162d9ab27a8cd5662161": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "candidate_count": 10,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled"
+      ]
     },
-    "97833880b4f9d41b093afada": {
+    "3f348e1ddf400b6ad0b1dfe6": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Audi_Q6_e-tron",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Audi_Q6_e-tron_DSC_7829.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/BMW_F750GS",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/BMW_F_750_GS%2C_Baujahr_2018%2C_Farbe_Austin_Yellow_metallic_%282019-04-21%29.JPG/1280px-BMW_F_750_GS%2C_Baujahr_2018%2C_Farbe_Austin_Yellow_metallic_%282019-04-21%29.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
     },
-    "bcd617fcfdbeeca5ab3d3235": {
+    "b72d819f9caee24f8f22ddfd": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_1320",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Nokia_Lumia_1320.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/XPeng_P5",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/2021_XPeng_P5.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "07dbc18c9feca28342c0f7e5": {
+    "ea9d7430681892e87ca3961b": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Piaggio_Free",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Piaggio_Free_front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/LG_G_Flex",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/ba/LG%EC%A0%84%EC%9E%90%2C_%EC%A7%84%EC%A0%95%ED%95%9C_%EC%BB%A4%EB%B8%8C%EB%93%9C_%E2%80%98LG_G_%ED%94%8C%EB%A0%89%EC%8A%A4%E2%80%99_%EA%B3%B5%EA%B0%9C.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
