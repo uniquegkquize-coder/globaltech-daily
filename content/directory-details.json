@@ -9918,20 +9918,24 @@
           "checked_at": "2026-11-02"
         },
         "powertrain": {
-          "url": "https://www.genesis.com/us/en/gv70/previous",
-          "retrieved_at": "2026-11-03T04:08:04.139270+00:00"
+          "url": "https://www.genesis.com/us/en/gv70",
+          "retrieved_at": "2026-11-04T04:15:10.511110+00:00"
         },
         "safety": {
-          "url": "https://www.genesis.com/us/en/gv70/previous",
-          "retrieved_at": "2026-11-03T04:08:04.139272+00:00"
+          "url": "https://www.genesis.com/us/en/gv70",
+          "retrieved_at": "2026-11-04T04:15:10.511113+00:00"
         },
         "manufacturer": {
-          "url": "https://www.genesis.com/us/en/gv70/previous",
-          "retrieved_at": "2026-11-03T04:08:04.139277+00:00"
+          "url": "https://www.genesis.com/us/en/gv70",
+          "retrieved_at": "2026-11-04T04:15:10.511119+00:00"
         },
         "seating_capacity": {
           "url": "https://www.genesis.com/us/en/gv70/previous",
           "retrieved_at": "2026-11-03T04:08:04.139279+00:00"
+        },
+        "torque": {
+          "url": "https://www.genesis.com/us/en/gv70",
+          "retrieved_at": "2026-11-04T04:15:10.511122+00:00"
         }
       },
       "additional_sources": [
@@ -9980,10 +9984,11 @@
         "launch_date",
         "availability"
       ],
-      "powertrain": "2.5L Turbo I4",
-      "safety": "The GV70 delivers the utmost peace-of-mind, covering you and your passengers with a comprehensive suite of driver-assist features, advanced cameras and an array of safety sensors.",
+      "powertrain": "3.5L twin-turbo V6 with 375 hp and 391 lb-ft of torque",
+      "safety": "Confidence comes standard with a comprehensive suite of driver assistance features, advanced cameras, and safety technologies designed to help protect you on every journey.",
       "manufacturer": "Genesis",
-      "seating_capacity": "5"
+      "seating_capacity": "5",
+      "torque": "311 lb-ft @ 1,650-4,000 rpm"
     },
     "Infiniti QX55": {
       "name": "Infiniti QX55",
@@ -178002,6 +178007,1248 @@
         }
       },
       "evidence_url": "https://en.wikipedia.org/wiki/Bestune_T90"
+    },
+    "Alpine A290": {
+      "name": "Alpine A290",
+      "country": "",
+      "introduced": "",
+      "official_url": "https://www.alpine-cars.co.uk/electric-models/a290.html",
+      "region": "",
+      "city": "",
+      "source_url": "https://www.alpine-cars.co.uk/electric-models/a290.html",
+      "source": "Wikidata",
+      "manufacturer": "Alpine",
+      "operator": "",
+      "location": "",
+      "mass": "",
+      "height": "",
+      "width": "",
+      "length": "",
+      "retrieved_at": "2026-11-04",
+      "price": "GBP 30245",
+      "availability": "https://schema.org/InStock",
+      "field_sources": {
+        "price": {
+          "url": "https://www.alpine-cars.co.uk/electric-models/a290.html",
+          "retrieved_at": "2026-11-04T04:15:16.650805+00:00"
+        },
+        "availability": {
+          "url": "https://www.alpine-cars.co.uk/electric-models/a290.html",
+          "retrieved_at": "2026-11-04T04:15:16.650826+00:00"
+        }
+      },
+      "evidence_url": "https://www.alpine-cars.co.uk/electric-models/a290.html"
+    },
+    "SsangYong Chairman": {
+      "name": "SsangYong Chairman",
+      "country": "",
+      "introduced": "",
+      "official_url": "http://www.smotor.com/en/SHOWROOM/chairman_w/index.html",
+      "region": "",
+      "city": "",
+      "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman",
+      "source": "Wikidata",
+      "manufacturer": "SsangYong",
+      "operator": "",
+      "location": "",
+      "mass": "",
+      "height": "",
+      "width": "",
+      "length": "",
+      "retrieved_at": "2026-11-04",
+      "powertrain": "2.3 L M-B M111 I4 2.8 L M-B M104.94x I6 3.2 L M-B M104.99x I6 3.6 L M-B M104.941 I6 (from 2007)",
+      "transmission": "5-speed automatic ( 5G-Tronic )",
+      "dimensions": "Wheelbase: 2,900 mm (114.2 in); Length: 5,055 mm (199.0 in) (1997–2003) 5,135 mm (202.2 in) (2003–2008) 5,110 mm (201.2 in) (2008–2011) 5,050 mm (198.8 in) (2011–2014); Width: 1,825 mm (71.9 in); Height: 1,465 mm (57.7 in); Wheelbase: 2,920 mm (115.0 in) 3,270 mm (128.7 in) (LWB); Length: 5,090 mm (200.4 in) (2008–2011) 5,135 mm (202.2 in) (2011–2017) 5,350 mm (210.6 in) (LWB); Width: 1,895 mm (74.6 in); Height: 1,495 mm (58.9 in) 1,500 mm (59.1 in) (LWB)",
+      "specification_rows": [
+        {
+          "section": "Powertrain",
+          "label": "Engine",
+          "value": "2.3 L M-B M111 I4 2.8 L M-B M104.94x I6 3.2 L M-B M104.99x I6 3.6 L M-B M104.941 I6 (from 2007)",
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "section": "Powertrain",
+          "label": "Transmission",
+          "value": "5-speed automatic ( 5G-Tronic )",
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Wheelbase",
+          "value": "2,900 mm (114.2 in)",
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Length",
+          "value": "5,055 mm (199.0 in) (1997–2003) 5,135 mm (202.2 in) (2003–2008) 5,110 mm (201.2 in) (2008–2011) 5,050 mm (198.8 in) (2011–2014)",
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Width",
+          "value": "1,825 mm (71.9 in)",
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Height",
+          "value": "1,465 mm (57.7 in)",
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "section": "Powertrain",
+          "label": "Engine",
+          "value": "3.2 L M104.99 I6 3.6 L M104.941 I6 5.0 L M113 E50 V8",
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "section": "Powertrain",
+          "label": "Transmission",
+          "value": "7-speed automatic ( 7G-Tronic )",
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Wheelbase",
+          "value": "2,920 mm (115.0 in) 3,270 mm (128.7 in) (LWB)",
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Length",
+          "value": "5,090 mm (200.4 in) (2008–2011) 5,135 mm (202.2 in) (2011–2017) 5,350 mm (210.6 in) (LWB)",
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Width",
+          "value": "1,895 mm (74.6 in)",
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Height",
+          "value": "1,495 mm (58.9 in) 1,500 mm (59.1 in) (LWB)",
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "section": "An affiliate of KG Group",
+          "label": "Engines",
+          "value": "e-XGi e-XGi/2.0L e-XDi",
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        }
+      ],
+      "source_tables": [
+        {
+          "title": "First generation (Chairman H; 1997–2011)",
+          "rows": [
+            [
+              "Chairman H"
+            ],
+            [
+              "Overview"
+            ],
+            [
+              "Also called",
+              "Daewoo Chairman Pyeonghwa Junma/Zumma ( North Korea ) [ 2 ]"
+            ],
+            [
+              "Production",
+              "1997–2014"
+            ],
+            [
+              "Assembly",
+              "South Korea: Pyeongtaek Iran: Topco"
+            ],
+            [
+              "Body and chassis"
+            ],
+            [
+              "Layout",
+              "Front-engine, rear-wheel-drive"
+            ],
+            [
+              "Related",
+              "Mercedes-Benz W124"
+            ],
+            [
+              "Powertrain"
+            ],
+            [
+              "Engine",
+              "2.3 L M-B M111 I4 2.8 L M-B M104.94x I6 3.2 L M-B M104.99x I6 3.6 L M-B M104.941 I6 (from 2007)"
+            ],
+            [
+              "Transmission",
+              "5-speed automatic ( 5G-Tronic )"
+            ],
+            [
+              "Dimensions"
+            ],
+            [
+              "Wheelbase",
+              "2,900 mm (114.2 in)"
+            ],
+            [
+              "Length",
+              "5,055 mm (199.0 in) (1997–2003) 5,135 mm (202.2 in) (2003–2008) 5,110 mm (201.2 in) (2008–2011) 5,050 mm (198.8 in) (2011–2014)"
+            ],
+            [
+              "Width",
+              "1,825 mm (71.9 in)"
+            ],
+            [
+              "Height",
+              "1,465 mm (57.7 in)"
+            ]
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "title": "Second generation (Chairman W; 2008–2017)",
+          "rows": [
+            [
+              "Chairman W"
+            ],
+            [
+              "Overview"
+            ],
+            [
+              "Also called",
+              "Roewe R95 (cancelled)"
+            ],
+            [
+              "Production",
+              "2008–2017"
+            ],
+            [
+              "Model years",
+              "2008–2018"
+            ],
+            [
+              "Body and chassis"
+            ],
+            [
+              "Layout",
+              "FR / F4 layout"
+            ],
+            [
+              "Related",
+              "Mercedes-Benz E-Class (W211)"
+            ],
+            [
+              "Powertrain"
+            ],
+            [
+              "Engine",
+              "3.2 L M104.99 I6 3.6 L M104.941 I6 5.0 L M113 E50 V8"
+            ],
+            [
+              "Transmission",
+              "7-speed automatic ( 7G-Tronic )"
+            ],
+            [
+              "Dimensions"
+            ],
+            [
+              "Wheelbase",
+              "2,920 mm (115.0 in) 3,270 mm (128.7 in) (LWB)"
+            ],
+            [
+              "Length",
+              "5,090 mm (200.4 in) (2008–2011) 5,135 mm (202.2 in) (2011–2017) 5,350 mm (210.6 in) (LWB)"
+            ],
+            [
+              "Width",
+              "1,895 mm (74.6 in)"
+            ],
+            [
+              "Height",
+              "1,495 mm (58.9 in) 1,500 mm (59.1 in) (LWB)"
+            ],
+            [
+              "Chronology"
+            ],
+            [
+              "Successor",
+              "Roewe 950 (for Roewe R95)"
+            ]
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        },
+        {
+          "title": "References",
+          "rows": [
+            [
+              "v t e KG Mobility (SsangYong)"
+            ],
+            [
+              "An affiliate of KG Group"
+            ],
+            [
+              "Current vehicles",
+              "Pickup trucks Musso Musso EV Crossovers/SUVs Actyon Rexton/G4 Tivoli/Tivolan/Luvi/X100 Korando Torres Buses Commercial C Smart series"
+            ],
+            [
+              "Pickup trucks",
+              "Musso Musso EV"
+            ],
+            [
+              "Crossovers/SUVs",
+              "Actyon Rexton/G4 Tivoli/Tivolan/Luvi/X100 Korando Torres"
+            ],
+            [
+              "Buses",
+              "Commercial C Smart series"
+            ],
+            [
+              "Historic vehicles",
+              "Actyon Chairman Family Istana Kallista Korando Korando Family Kyron Musso Musso Sports Rexton Rodius Transstar"
+            ],
+            [
+              "Concepts & prototypes",
+              "Amao CCR-1 C.E.O Chairman Limousine Crossut CRS C200 Aero Eco Hemos La Okean LIV-1/2 SV-R Wz W Coupe W suite XAV XAVL XCT XMT XIV/XLV"
+            ],
+            [
+              "Engines",
+              "e-XGi e-XGi/2.0L e-XDi"
+            ],
+            [
+              "See also",
+              "List of KGM vehicles KGM Commercial"
+            ],
+            [
+              "Category Commons"
+            ]
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+        }
+      ],
+      "field_sources": {
+        "powertrain": {
+          "url": "https://en.wikipedia.org/wiki/SsangYong_Chairman",
+          "retrieved_at": "2026-11-04T04:15:19.819364+00:00"
+        },
+        "transmission": {
+          "url": "https://en.wikipedia.org/wiki/SsangYong_Chairman",
+          "retrieved_at": "2026-11-04T04:15:19.819390+00:00"
+        },
+        "dimensions": {
+          "url": "https://en.wikipedia.org/wiki/SsangYong_Chairman",
+          "retrieved_at": "2026-11-04T04:15:19.819393+00:00"
+        },
+        "manufacturer": {
+          "url": "https://en.wikipedia.org/wiki/SsangYong_Chairman",
+          "retrieved_at": "2026-11-04T04:15:19.819395+00:00"
+        },
+        "specification_rows": {
+          "url": "https://en.wikipedia.org/wiki/SsangYong_Chairman",
+          "retrieved_at": "2026-11-04T04:15:19.819397+00:00"
+        },
+        "source_tables": {
+          "url": "https://en.wikipedia.org/wiki/SsangYong_Chairman",
+          "retrieved_at": "2026-11-04T04:15:19.819399+00:00"
+        }
+      },
+      "evidence_url": "https://en.wikipedia.org/wiki/SsangYong_Chairman"
+    },
+    "Buick Electra E4": {
+      "name": "Buick Electra E4",
+      "country": "",
+      "introduced": "",
+      "official_url": "https://www.buick.com.cn/electra_e4",
+      "region": "",
+      "city": "",
+      "source_url": "https://en.wikipedia.org/wiki/Buick_Electra_E4",
+      "source": "Wikidata",
+      "manufacturer": "SAIC-GM",
+      "operator": "",
+      "location": "",
+      "mass": "",
+      "height": "",
+      "width": "",
+      "length": "",
+      "retrieved_at": "2026-11-04",
+      "dimensions": "Wheelbase: 2,954 mm (116.3 in); Length: 4,818 mm (189.7 in); Width: 1,912 mm (75.3 in); Height: 1,580 mm (62.2 in)",
+      "specification_rows": [
+        {
+          "section": "Powertrain",
+          "label": "Power output",
+          "value": "180–211 kW (245–287 PS; 241–283 hp)",
+          "source_url": "https://en.wikipedia.org/wiki/Buick_Electra_E4"
+        },
+        {
+          "section": "Powertrain",
+          "label": "Battery",
+          "value": "65 kWh Ultium LFP 79.7 kWh Ultium",
+          "source_url": "https://en.wikipedia.org/wiki/Buick_Electra_E4"
+        },
+        {
+          "section": "Powertrain",
+          "label": "Plug-in charging",
+          "value": "11.5 kW ( AC ) 195 kW ( DC )",
+          "source_url": "https://en.wikipedia.org/wiki/Buick_Electra_E4"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Wheelbase",
+          "value": "2,954 mm (116.3 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Buick_Electra_E4"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Length",
+          "value": "4,818 mm (189.7 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Buick_Electra_E4"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Width",
+          "value": "1,912 mm (75.3 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Buick_Electra_E4"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Height",
+          "value": "1,580 mm (62.2 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Buick_Electra_E4"
+        }
+      ],
+      "source_tables": [
+        {
+          "title": "Contents",
+          "rows": [
+            [
+              "Buick Electra E4"
+            ],
+            [
+              "Overview"
+            ],
+            [
+              "Manufacturer",
+              "SAIC-GM"
+            ],
+            [
+              "Model code",
+              "B223 [ 1 ]"
+            ],
+            [
+              "Production",
+              "2023–2025"
+            ],
+            [
+              "Assembly",
+              "China: Wuhan ( SAIC-GM )"
+            ],
+            [
+              "Body and chassis"
+            ],
+            [
+              "Class",
+              "Mid-size crossover SUV"
+            ],
+            [
+              "Body style",
+              "5-door coupe SUV"
+            ],
+            [
+              "Layout",
+              "Front-motor, front-wheel-drive Dual-motor, four-wheel-drive"
+            ],
+            [
+              "Platform",
+              "GM BEV3"
+            ],
+            [
+              "Related",
+              "Cadillac Optiq Buick Electra E5 Chevrolet Equinox EV"
+            ],
+            [
+              "Powertrain"
+            ],
+            [
+              "Electric motor",
+              "Permanent magnet motor"
+            ],
+            [
+              "Power output",
+              "180–211 kW (245–287 PS; 241–283 hp)"
+            ],
+            [
+              "Battery",
+              "65 kWh Ultium LFP 79.7 kWh Ultium"
+            ],
+            [
+              "Electric range",
+              "530–620 km (329–385 mi) (CLTC)"
+            ],
+            [
+              "Plug-in charging",
+              "11.5 kW ( AC ) 195 kW ( DC )"
+            ],
+            [
+              "Dimensions"
+            ],
+            [
+              "Wheelbase",
+              "2,954 mm (116.3 in)"
+            ],
+            [
+              "Length",
+              "4,818 mm (189.7 in)"
+            ],
+            [
+              "Width",
+              "1,912 mm (75.3 in)"
+            ],
+            [
+              "Height",
+              "1,580 mm (62.2 in)"
+            ]
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Buick_Electra_E4"
+        }
+      ],
+      "field_sources": {
+        "dimensions": {
+          "url": "https://en.wikipedia.org/wiki/Buick_Electra_E4",
+          "retrieved_at": "2026-11-04T04:15:20.692608+00:00"
+        },
+        "manufacturer": {
+          "url": "https://en.wikipedia.org/wiki/Buick_Electra_E4",
+          "retrieved_at": "2026-11-04T04:15:20.692631+00:00"
+        },
+        "specification_rows": {
+          "url": "https://en.wikipedia.org/wiki/Buick_Electra_E4",
+          "retrieved_at": "2026-11-04T04:15:20.692633+00:00"
+        },
+        "source_tables": {
+          "url": "https://en.wikipedia.org/wiki/Buick_Electra_E4",
+          "retrieved_at": "2026-11-04T04:15:20.692635+00:00"
+        }
+      },
+      "evidence_url": "https://en.wikipedia.org/wiki/Buick_Electra_E4"
+    },
+    "Ram Rampage": {
+      "name": "Ram Rampage",
+      "country": "",
+      "introduced": "",
+      "official_url": "https://www.ram.com.br/rampage.html",
+      "region": "",
+      "city": "",
+      "source_url": "https://en.wikipedia.org/wiki/Ram_Rampage",
+      "source": "Wikidata",
+      "manufacturer": "Ram Trucks ( Stellantis )",
+      "operator": "",
+      "location": "",
+      "mass": "",
+      "height": "",
+      "width": "",
+      "length": "",
+      "retrieved_at": "2026-11-04",
+      "powertrain": "Gasoline : 2.0 L GME T4 Hurricane I4 turbo Diesel : 2.0 L Multijet II I4 turbo 2.2 L Multijet II I4 turbo",
+      "transmission": "9-speed ZF 948TE automatic",
+      "dimensions": "Wheelbase: 2,994 mm (117.9 in); Length: 5,028 mm (198.0 in); Width: 1,886 mm (74.3 in); Height: 1,780 mm (70.1 in)",
+      "specification_rows": [
+        {
+          "section": "Powertrain",
+          "label": "Engine",
+          "value": "Gasoline : 2.0 L GME T4 Hurricane I4 turbo Diesel : 2.0 L Multijet II I4 turbo 2.2 L Multijet II I4 turbo",
+          "source_url": "https://en.wikipedia.org/wiki/Ram_Rampage"
+        },
+        {
+          "section": "Powertrain",
+          "label": "Power output",
+          "value": "Gasoline: 272 hp (203 kW) Diesel: 200 hp (150 kW)",
+          "source_url": "https://en.wikipedia.org/wiki/Ram_Rampage"
+        },
+        {
+          "section": "Powertrain",
+          "label": "Transmission",
+          "value": "9-speed ZF 948TE automatic",
+          "source_url": "https://en.wikipedia.org/wiki/Ram_Rampage"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Wheelbase",
+          "value": "2,994 mm (117.9 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Ram_Rampage"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Length",
+          "value": "5,028 mm (198.0 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Ram_Rampage"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Width",
+          "value": "1,886 mm (74.3 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Ram_Rampage"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Height",
+          "value": "1,780 mm (70.1 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Ram_Rampage"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Curb weight",
+          "value": "1,906–1,951 kg (4,202–4,301 lb)",
+          "source_url": "https://en.wikipedia.org/wiki/Ram_Rampage"
+        }
+      ],
+      "source_tables": [
+        {
+          "title": "Contents",
+          "rows": [
+            [
+              "Ram Rampage"
+            ],
+            [
+              "Ram Rampage Laramie"
+            ],
+            [
+              "Overview"
+            ],
+            [
+              "Manufacturer",
+              "Ram Trucks ( Stellantis )"
+            ],
+            [
+              "Production",
+              "June 2023 – present"
+            ],
+            [
+              "Model years",
+              "2024–present"
+            ],
+            [
+              "Assembly",
+              "Brazil: Goiana, Pernambuco [ 1 ]"
+            ],
+            [
+              "Body and chassis"
+            ],
+            [
+              "Class",
+              "Compact pickup truck"
+            ],
+            [
+              "Body style",
+              "4-door pickup truck"
+            ],
+            [
+              "Layout",
+              "Front-engine, all-wheel drive"
+            ],
+            [
+              "Platform",
+              "Small Wide 4×4 LWB"
+            ],
+            [
+              "Chassis",
+              "Unibody"
+            ],
+            [
+              "Related",
+              "Jeep Compass (second generation) Jeep Commander/Meridian Fiat Toro"
+            ],
+            [
+              "Powertrain"
+            ],
+            [
+              "Engine",
+              "Gasoline : 2.0 L GME T4 Hurricane I4 turbo Diesel : 2.0 L Multijet II I4 turbo 2.2 L Multijet II I4 turbo"
+            ],
+            [
+              "Power output",
+              "Gasoline: 272 hp (203 kW) Diesel: 200 hp (150 kW)"
+            ],
+            [
+              "Transmission",
+              "9-speed ZF 948TE automatic"
+            ],
+            [
+              "Dimensions"
+            ],
+            [
+              "Wheelbase",
+              "2,994 mm (117.9 in)"
+            ],
+            [
+              "Length",
+              "5,028 mm (198.0 in)"
+            ],
+            [
+              "Width",
+              "1,886 mm (74.3 in)"
+            ],
+            [
+              "Height",
+              "1,780 mm (70.1 in)"
+            ],
+            [
+              "Curb weight",
+              "1,906–1,951 kg (4,202–4,301 lb)"
+            ]
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Ram_Rampage"
+        },
+        {
+          "title": "External links",
+          "rows": [
+            [
+              "v t e Ram Trucks"
+            ],
+            [
+              "A marque of Stellantis"
+            ],
+            [
+              "Trucks",
+              "Current Ram 700 Ram 1000 Ram 1200 Ram 1500 DT Ram Heavy Duty (2500 / 3500 / 4500 / 5500) Rampage Upcoming Ram 1500 REV Ram 1500 TRX Discontinued Dakota"
+            ],
+            [
+              "Current",
+              "Ram 700 Ram 1000 Ram 1200 Ram 1500 DT Ram Heavy Duty (2500 / 3500 / 4500 / 5500) Rampage"
+            ],
+            [
+              "Upcoming",
+              "Ram 1500 REV Ram 1500 TRX"
+            ],
+            [
+              "Discontinued",
+              "Dakota"
+            ],
+            [
+              "Vans",
+              "Current ProMaster ProMaster Rapid Upcoming ProMaster City Discontinued Cargo Van ProMaster City"
+            ],
+            [
+              "Current",
+              "ProMaster ProMaster Rapid"
+            ],
+            [
+              "Upcoming",
+              "ProMaster City"
+            ],
+            [
+              "Discontinued",
+              "Cargo Van ProMaster City"
+            ],
+            [
+              "Category"
+            ]
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Ram_Rampage"
+        }
+      ],
+      "field_sources": {
+        "powertrain": {
+          "url": "https://en.wikipedia.org/wiki/Ram_Rampage",
+          "retrieved_at": "2026-11-04T04:15:22.767553+00:00"
+        },
+        "transmission": {
+          "url": "https://en.wikipedia.org/wiki/Ram_Rampage",
+          "retrieved_at": "2026-11-04T04:15:22.767574+00:00"
+        },
+        "dimensions": {
+          "url": "https://en.wikipedia.org/wiki/Ram_Rampage",
+          "retrieved_at": "2026-11-04T04:15:22.767582+00:00"
+        },
+        "manufacturer": {
+          "url": "https://en.wikipedia.org/wiki/Ram_Rampage",
+          "retrieved_at": "2026-11-04T04:15:22.767586+00:00"
+        },
+        "specification_rows": {
+          "url": "https://en.wikipedia.org/wiki/Ram_Rampage",
+          "retrieved_at": "2026-11-04T04:15:22.767590+00:00"
+        },
+        "source_tables": {
+          "url": "https://en.wikipedia.org/wiki/Ram_Rampage",
+          "retrieved_at": "2026-11-04T04:15:22.767593+00:00"
+        }
+      },
+      "evidence_url": "https://en.wikipedia.org/wiki/Ram_Rampage"
+    },
+    "Leapmotor C01": {
+      "name": "Leapmotor C01",
+      "country": "",
+      "introduced": "",
+      "official_url": "https://en.leapmotor.com/C01-Excellent",
+      "region": "",
+      "city": "",
+      "source_url": "https://en.wikipedia.org/wiki/Leapmotor_C01",
+      "source": "Wikidata",
+      "manufacturer": "Leapmotor",
+      "operator": "",
+      "location": "",
+      "mass": "",
+      "height": "",
+      "width": "",
+      "length": "",
+      "retrieved_at": "2026-11-03",
+      "powertrain": "Petrol: 1.5 L H15R I4 1.5 L SFG15TR turbo I4",
+      "mileage": "1,000–1,077 km (621–669 mi) (EREV, WLTP) 1,176–1,276 km (731–793 mi) (EREV, CLTC)",
+      "transmission": "Single-speed gear reduction",
+      "dimensions": "Wheelbase: 2,930 mm (115.4 in); Length: 5,050 mm (198.8 in); Width: 1,902 mm (74.9 in); Height: 1,509 mm (59.4 in)",
+      "specification_rows": [
+        {
+          "section": "Powertrain",
+          "label": "Engine",
+          "value": "Petrol: 1.5 L H15R I4 1.5 L SFG15TR turbo I4",
+          "source_url": "https://en.wikipedia.org/wiki/Leapmotor_C01"
+        },
+        {
+          "section": "Powertrain",
+          "label": "Transmission",
+          "value": "Single-speed gear reduction",
+          "source_url": "https://en.wikipedia.org/wiki/Leapmotor_C01"
+        },
+        {
+          "section": "Powertrain",
+          "label": "Battery",
+          "value": "REEV 30.1 kWh LFP CALB / Gotion 43.7 kWh NMC CALB EV 62.8 kWh LFP CALB/ Zenergy 78.5 kWh LFP Sunwoda /Zenergy 82.5 kWh NMC",
+          "source_url": "https://en.wikipedia.org/wiki/Leapmotor_C01"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Wheelbase",
+          "value": "2,930 mm (115.4 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Leapmotor_C01"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Length",
+          "value": "5,050 mm (198.8 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Leapmotor_C01"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Width",
+          "value": "1,902 mm (74.9 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Leapmotor_C01"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Height",
+          "value": "1,509 mm (59.4 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Leapmotor_C01"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Curb weight",
+          "value": "1,995–2,145 kg (4,398–4,729 lb)",
+          "source_url": "https://en.wikipedia.org/wiki/Leapmotor_C01"
+        }
+      ],
+      "source_tables": [
+        {
+          "title": "Contents",
+          "rows": [
+            [
+              "Leapmotor C01"
+            ],
+            [
+              "Overview"
+            ],
+            [
+              "Manufacturer",
+              "Leapmotor"
+            ],
+            [
+              "Production",
+              "2022–present"
+            ],
+            [
+              "Model years",
+              "2023–present"
+            ],
+            [
+              "Assembly",
+              "China: Jinhua, Zhejiang"
+            ],
+            [
+              "Body and chassis"
+            ],
+            [
+              "Class",
+              "Mid-size car ( D )"
+            ],
+            [
+              "Body style",
+              "4-door sedan"
+            ],
+            [
+              "Layout",
+              "EV: Rear-motor rear-wheel-drive Dual-motors all-wheel-drive EREV: Front-engine + Rear-motor, rear-wheel-drive"
+            ],
+            [
+              "Related",
+              "Leapmotor C11"
+            ],
+            [
+              "Powertrain"
+            ],
+            [
+              "Engine",
+              "Petrol: 1.5 L H15R I4 1.5 L SFG15TR turbo I4"
+            ],
+            [
+              "Electric motor",
+              "200 kW (RWD), 2×200kW (AWD)"
+            ],
+            [
+              "Transmission",
+              "Single-speed gear reduction"
+            ],
+            [
+              "Hybrid drivetrain",
+              "Plug-in series hybrid (C01 EREV)"
+            ],
+            [
+              "Battery",
+              "REEV 30.1 kWh LFP CALB / Gotion 43.7 kWh NMC CALB EV 62.8 kWh LFP CALB/ Zenergy 78.5 kWh LFP Sunwoda /Zenergy 82.5 kWh NMC"
+            ],
+            [
+              "Range",
+              "1,000–1,077 km (621–669 mi) (EREV, WLTP) 1,176–1,276 km (731–793 mi) (EREV, CLTC)"
+            ],
+            [
+              "Electric range",
+              "148–248 km (92–154 mi) (EREV, WLTP) 216–316 km (134–196 mi) (EREV, CLTC) 525–717 km (326–446 mi) (EV, CLTC)"
+            ],
+            [
+              "Dimensions"
+            ],
+            [
+              "Wheelbase",
+              "2,930 mm (115.4 in)"
+            ],
+            [
+              "Length",
+              "5,050 mm (198.8 in)"
+            ],
+            [
+              "Width",
+              "1,902 mm (74.9 in)"
+            ],
+            [
+              "Height",
+              "1,509 mm (59.4 in)"
+            ],
+            [
+              "Curb weight",
+              "1,995–2,145 kg (4,398–4,729 lb)"
+            ]
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Leapmotor_C01"
+        }
+      ],
+      "field_sources": {
+        "powertrain": {
+          "url": "https://en.wikipedia.org/wiki/Leapmotor_C01",
+          "retrieved_at": "2026-11-04T04:16:31.114242+00:00"
+        },
+        "mileage": {
+          "url": "https://en.wikipedia.org/wiki/Leapmotor_C01",
+          "retrieved_at": "2026-11-04T04:16:31.114259+00:00"
+        },
+        "transmission": {
+          "url": "https://en.wikipedia.org/wiki/Leapmotor_C01",
+          "retrieved_at": "2026-11-04T04:16:31.114262+00:00"
+        },
+        "dimensions": {
+          "url": "https://en.wikipedia.org/wiki/Leapmotor_C01",
+          "retrieved_at": "2026-11-04T04:16:31.114263+00:00"
+        },
+        "manufacturer": {
+          "url": "https://en.wikipedia.org/wiki/Leapmotor_C01",
+          "retrieved_at": "2026-11-04T04:16:31.114265+00:00"
+        },
+        "specification_rows": {
+          "url": "https://en.wikipedia.org/wiki/Leapmotor_C01",
+          "retrieved_at": "2026-11-04T04:16:31.114267+00:00"
+        },
+        "source_tables": {
+          "url": "https://en.wikipedia.org/wiki/Leapmotor_C01",
+          "retrieved_at": "2026-11-04T04:16:31.114269+00:00"
+        }
+      },
+      "evidence_url": "https://en.wikipedia.org/wiki/Leapmotor_C01"
+    },
+    "Volvo EX90": {
+      "name": "Volvo EX90",
+      "country": "",
+      "introduced": "",
+      "official_url": "https://www.volvocars.com.cn/zh-cn/cars/ex90-electric/",
+      "region": "",
+      "city": "",
+      "source_url": "https://en.wikipedia.org/wiki/Volvo_EX90",
+      "source": "Wikidata",
+      "manufacturer": "Volvo Cars",
+      "operator": "",
+      "location": "",
+      "mass": "",
+      "height": "",
+      "width": "",
+      "length": "",
+      "retrieved_at": "2026-11-03",
+      "mileage": "590–600 km (370–370 mi) (claimed) Up to 745 km (460 mi) (NEDC) Up to 627 km (390 mi) (WLTP)",
+      "dimensions": "Wheelbase: 2,984 mm (117.5 in); Length: 5,037 mm (198.3 in); Width: 2,039 mm (80.3 in); Height: 1,747 mm (68.8 in)",
+      "safety": "[ edit ]",
+      "specification_rows": [
+        {
+          "section": "Powertrain",
+          "label": "Power output",
+          "value": "2024-2025 (400V) 208 kW (279 hp; 283 PS) (RWD) 300 kW (402 hp; 408 PS) (AWD) 370 kW (496 hp; 503 PS) (Performance, US) 380 kW (510 hp; 517 PS) (Performance) 2026+ (800V) 245 kW (329 hp; 333 PS) (RWD) 335 kW (449 hp; 455 PS) (AWD) 500 kW (671 hp; 680 PS) (AWD Performance)",
+          "source_url": "https://en.wikipedia.org/wiki/Volvo_EX90"
+        },
+        {
+          "section": "Powertrain",
+          "label": "Battery",
+          "value": "2024-2025 104 kWh (gross), 101 kWh (net) CATL lithium-ion 111 kWh (gross), 107 kWh (net) CATL lithium-ion [ 9 ] 2026+ 92 kWh (nominal) CATL lithium-ion 106 kWh (nominal) CATL lithium-ion",
+          "source_url": "https://en.wikipedia.org/wiki/Volvo_EX90"
+        },
+        {
+          "section": "Powertrain",
+          "label": "Plug-in charging",
+          "value": "11 kW ( AC ) 250 kW ( DC ) (2024-2025) 350 kW ( DC ) (2026+)",
+          "source_url": "https://en.wikipedia.org/wiki/Volvo_EX90"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Wheelbase",
+          "value": "2,984 mm (117.5 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Volvo_EX90"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Length",
+          "value": "5,037 mm (198.3 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Volvo_EX90"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Width",
+          "value": "2,039 mm (80.3 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Volvo_EX90"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Height",
+          "value": "1,747 mm (68.8 in)",
+          "source_url": "https://en.wikipedia.org/wiki/Volvo_EX90"
+        },
+        {
+          "section": "Dimensions",
+          "label": "Kerb weight",
+          "value": "2,818 kg (6,213 lb)",
+          "source_url": "https://en.wikipedia.org/wiki/Volvo_EX90"
+        }
+      ],
+      "source_tables": [
+        {
+          "title": "Contents",
+          "rows": [
+            [
+              "Volvo EX90"
+            ],
+            [
+              "Overview"
+            ],
+            [
+              "Manufacturer",
+              "Volvo Cars"
+            ],
+            [
+              "Model code",
+              "V536 [ 1 ]"
+            ],
+            [
+              "Production",
+              "May 2024 [ 2 ] – present"
+            ],
+            [
+              "Assembly",
+              "China: Chengdu ( ZAMC ) [ 3 ] United States: Ridgeville, South Carolina ( Volvo Car Charleston Plant ) [ 4 ] Malaysia: Shah Alam ( Volvo Car Manufacturing Malaysia ) [ 5 ]"
+            ],
+            [
+              "Designer",
+              "Robin Page (Head of Design)"
+            ],
+            [
+              "Body and chassis"
+            ],
+            [
+              "Class",
+              "Full-size luxury crossover SUV"
+            ],
+            [
+              "Body style",
+              "5-door SUV"
+            ],
+            [
+              "Layout",
+              "Rear-motor, rear-wheel drive Dual-motor, all-wheel-drive"
+            ],
+            [
+              "Platform",
+              "SPA2 (400V) [ 6 ] [ 7 ] (2024-2025) SPA2 (800V) [ 6 ] [ 8 ] (2026+)"
+            ],
+            [
+              "Related",
+              "Polestar 3 Volvo ES90"
+            ],
+            [
+              "Powertrain"
+            ],
+            [
+              "Electric motor",
+              "2× permanent magnet synchronous"
+            ],
+            [
+              "Power output",
+              "2024-2025 (400V) 208 kW (279 hp; 283 PS) (RWD) 300 kW (402 hp; 408 PS) (AWD) 370 kW (496 hp; 503 PS) (Performance, US) 380 kW (510 hp; 517 PS) (Performance) 2026+ (800V) 245 kW (329 hp; 333 PS) (RWD) 335 kW (449 hp; 455 PS) (AWD) 500 kW (671 hp; 680 PS) (AWD Performance)"
+            ],
+            [
+              "Battery",
+              "2024-2025 104 kWh (gross), 101 kWh (net) CATL lithium-ion 111 kWh (gross), 107 kWh (net) CATL lithium-ion [ 9 ] 2026+ 92 kWh (nominal) CATL lithium-ion 106 kWh (nominal) CATL lithium-ion"
+            ],
+            [
+              "Range",
+              "590–600 km (370–370 mi) (claimed) Up to 745 km (460 mi) (NEDC) Up to 627 km (390 mi) (WLTP)"
+            ],
+            [
+              "Plug-in charging",
+              "11 kW ( AC ) 250 kW ( DC ) (2024-2025) 350 kW ( DC ) (2026+)"
+            ],
+            [
+              "Dimensions"
+            ],
+            [
+              "Wheelbase",
+              "2,984 mm (117.5 in)"
+            ],
+            [
+              "Length",
+              "5,037 mm (198.3 in)"
+            ],
+            [
+              "Width",
+              "2,039 mm (80.3 in)"
+            ],
+            [
+              "Height",
+              "1,747 mm (68.8 in)"
+            ],
+            [
+              "Kerb weight",
+              "2,818 kg (6,213 lb)"
+            ]
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Volvo_EX90"
+        },
+        {
+          "title": "ANCAP test results Volvo EX90 (2025, aligned with Euro NCAP ) [ 25 ]",
+          "rows": [
+            [
+              "Test",
+              "Points",
+              "%"
+            ],
+            [
+              "Overall:",
+              ""
+            ],
+            [
+              "Adult occupant:",
+              "36.94",
+              "92%"
+            ],
+            [
+              "Child occupant:",
+              "46.54",
+              "94%"
+            ],
+            [
+              "Pedestrian:",
+              "52.24",
+              "82%"
+            ],
+            [
+              "Safety assist:",
+              "15.25",
+              "84%"
+            ]
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Volvo_EX90"
+        },
+        {
+          "title": "Euro NCAP test results Volvo EX90 Plus (LHD) (2025)",
+          "rows": [
+            [
+              "Test",
+              "Points",
+              "%"
+            ],
+            [
+              "Overall:",
+              ""
+            ],
+            [
+              "Adult occupant:",
+              "36.9",
+              "92%"
+            ],
+            [
+              "Child occupant:",
+              "46.0",
+              "93%"
+            ],
+            [
+              "Pedestrian:",
+              "52.2",
+              "82%"
+            ],
+            [
+              "Safety assist:",
+              "15.6",
+              "86%"
+            ]
+          ],
+          "source_url": "https://en.wikipedia.org/wiki/Volvo_EX90"
+        }
+      ],
+      "field_sources": {
+        "mileage": {
+          "url": "https://en.wikipedia.org/wiki/Volvo_EX90",
+          "retrieved_at": "2026-11-04T04:16:55.447602+00:00"
+        },
+        "dimensions": {
+          "url": "https://en.wikipedia.org/wiki/Volvo_EX90",
+          "retrieved_at": "2026-11-04T04:16:55.447627+00:00"
+        },
+        "safety": {
+          "url": "https://en.wikipedia.org/wiki/Volvo_EX90",
+          "retrieved_at": "2026-11-04T04:16:55.447630+00:00"
+        },
+        "manufacturer": {
+          "url": "https://en.wikipedia.org/wiki/Volvo_EX90",
+          "retrieved_at": "2026-11-04T04:16:55.447633+00:00"
+        },
+        "specification_rows": {
+          "url": "https://en.wikipedia.org/wiki/Volvo_EX90",
+          "retrieved_at": "2026-11-04T04:16:55.447636+00:00"
+        },
+        "source_tables": {
+          "url": "https://en.wikipedia.org/wiki/Volvo_EX90",
+          "retrieved_at": "2026-11-04T04:16:55.447638+00:00"
+        }
+      },
+      "evidence_url": "https://en.wikipedia.org/wiki/Volvo_EX90"
     }
   },
   "bikes": {
@@ -234363,7 +235610,7 @@
             ],
             [
               "Computers",
-              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3 Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
+              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
             ],
             [
               "Tablets",
@@ -234371,7 +235618,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -234425,7 +235672,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -234442,59 +235689,59 @@
       "field_sources": {
         "display": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059710+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.790990+00:00"
         },
         "processor": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059725+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.791021+00:00"
         },
         "battery": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059727+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.791023+00:00"
         },
         "ram": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059729+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.791025+00:00"
         },
         "storage": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059730+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.791027+00:00"
         },
         "cameras": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059732+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.791029+00:00"
         },
         "connectivity": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059734+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.791032+00:00"
         },
         "manufacturer": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059736+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.791034+00:00"
         },
         "os": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059737+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.791036+00:00"
         },
         "front_camera": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059739+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.791038+00:00"
         },
         "weight": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059741+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.791040+00:00"
         },
         "dimensions": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059743+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.791042+00:00"
         },
         "specification_rows": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059744+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.791044+00:00"
         },
         "source_tables": {
           "url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-          "retrieved_at": "2026-11-02T13:29:07.059746+00:00"
+          "retrieved_at": "2026-11-04T04:14:20.791046+00:00"
         }
       },
       "evidence_url": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29"
@@ -240185,7 +241432,7 @@
             ],
             [
               "Computers",
-              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3 Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
+              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
             ],
             [
               "Tablets",
@@ -240193,7 +241440,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -240247,7 +241494,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -240264,23 +241511,23 @@
       "field_sources": {
         "display": {
           "url": "https://en.wikipedia.org/wiki/Nokia_Lumia_730",
-          "retrieved_at": "2026-11-02T13:29:18.092100+00:00"
+          "retrieved_at": "2026-11-04T04:14:27.972889+00:00"
         },
         "cameras": {
           "url": "https://en.wikipedia.org/wiki/Nokia_Lumia_730",
-          "retrieved_at": "2026-11-02T13:29:18.092118+00:00"
+          "retrieved_at": "2026-11-04T04:14:27.972916+00:00"
         },
         "connectivity": {
           "url": "https://en.wikipedia.org/wiki/Nokia_Lumia_730",
-          "retrieved_at": "2026-11-02T13:29:18.092121+00:00"
+          "retrieved_at": "2026-11-04T04:14:27.972920+00:00"
         },
         "specification_rows": {
           "url": "https://en.wikipedia.org/wiki/Nokia_Lumia_730",
-          "retrieved_at": "2026-11-02T13:29:18.092123+00:00"
+          "retrieved_at": "2026-11-04T04:14:27.972923+00:00"
         },
         "source_tables": {
           "url": "https://en.wikipedia.org/wiki/Nokia_Lumia_730",
-          "retrieved_at": "2026-11-02T13:29:18.092124+00:00"
+          "retrieved_at": "2026-11-04T04:14:27.972926+00:00"
         }
       },
       "evidence_url": "https://en.wikipedia.org/wiki/Nokia_Lumia_730"
@@ -240747,7 +241994,7 @@
             ],
             [
               "Computers",
-              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3 Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
+              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
             ],
             [
               "Tablets",
@@ -240755,7 +242002,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -240809,7 +242056,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -240826,59 +242073,59 @@
       "field_sources": {
         "display": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.240988+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418611+00:00"
         },
         "processor": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.241014+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418644+00:00"
         },
         "battery": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.241016+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418647+00:00"
         },
         "ram": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.241018+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418651+00:00"
         },
         "storage": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.241020+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418653+00:00"
         },
         "cameras": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.241022+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418655+00:00"
         },
         "connectivity": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.241024+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418658+00:00"
         },
         "manufacturer": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.241026+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418660+00:00"
         },
         "os": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.241028+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418663+00:00"
         },
         "front_camera": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.241029+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418665+00:00"
         },
         "weight": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.241031+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418667+00:00"
         },
         "dimensions": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.241033+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418670+00:00"
         },
         "specification_rows": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.241035+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418672+00:00"
         },
         "source_tables": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-          "retrieved_at": "2026-11-02T13:29:20.241037+00:00"
+          "retrieved_at": "2026-11-04T04:14:26.418675+00:00"
         }
       },
       "evidence_url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532"
@@ -241580,7 +242827,7 @@
             ],
             [
               "Computers",
-              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3 Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
+              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
             ],
             [
               "Tablets",
@@ -241588,7 +242835,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -241642,7 +242889,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -241659,47 +242906,47 @@
       "field_sources": {
         "display": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435",
-          "retrieved_at": "2026-11-02T13:29:22.023274+00:00"
+          "retrieved_at": "2026-11-04T04:14:28.469262+00:00"
         },
         "processor": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435",
-          "retrieved_at": "2026-11-02T13:29:22.023293+00:00"
+          "retrieved_at": "2026-11-04T04:14:28.469282+00:00"
         },
         "battery": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435",
-          "retrieved_at": "2026-11-02T13:29:22.023295+00:00"
+          "retrieved_at": "2026-11-04T04:14:28.469284+00:00"
         },
         "ram": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435",
-          "retrieved_at": "2026-11-02T13:29:22.023297+00:00"
+          "retrieved_at": "2026-11-04T04:14:28.469285+00:00"
         },
         "storage": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435",
-          "retrieved_at": "2026-11-02T13:29:22.023299+00:00"
+          "retrieved_at": "2026-11-04T04:14:28.469287+00:00"
         },
         "cameras": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435",
-          "retrieved_at": "2026-11-02T13:29:22.023302+00:00"
+          "retrieved_at": "2026-11-04T04:14:28.469289+00:00"
         },
         "manufacturer": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435",
-          "retrieved_at": "2026-11-02T13:29:22.023304+00:00"
+          "retrieved_at": "2026-11-04T04:14:28.469290+00:00"
         },
         "os": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435",
-          "retrieved_at": "2026-11-02T13:29:22.023306+00:00"
+          "retrieved_at": "2026-11-04T04:14:28.469292+00:00"
         },
         "front_camera": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435",
-          "retrieved_at": "2026-11-02T13:29:22.023309+00:00"
+          "retrieved_at": "2026-11-04T04:14:28.469293+00:00"
         },
         "specification_rows": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435",
-          "retrieved_at": "2026-11-02T13:29:22.023311+00:00"
+          "retrieved_at": "2026-11-04T04:14:28.469295+00:00"
         },
         "source_tables": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435",
-          "retrieved_at": "2026-11-02T13:29:22.023313+00:00"
+          "retrieved_at": "2026-11-04T04:14:28.469296+00:00"
         }
       },
       "evidence_url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435"
@@ -241934,7 +243181,7 @@
             ],
             [
               "Computers",
-              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3 Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
+              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
             ],
             [
               "Tablets",
@@ -241942,7 +243189,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -241996,7 +243243,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -242013,59 +243260,59 @@
       "field_sources": {
         "display": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322071+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970635+00:00"
         },
         "processor": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322091+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970667+00:00"
         },
         "battery": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322094+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970669+00:00"
         },
         "ram": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322097+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970671+00:00"
         },
         "storage": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322100+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970673+00:00"
         },
         "cameras": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322103+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970675+00:00"
         },
         "connectivity": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322106+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970677+00:00"
         },
         "manufacturer": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322108+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970679+00:00"
         },
         "os": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322111+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970680+00:00"
         },
         "front_camera": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322114+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970682+00:00"
         },
         "weight": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322117+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970683+00:00"
         },
         "dimensions": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322120+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970685+00:00"
         },
         "specification_rows": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322123+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970686+00:00"
         },
         "source_tables": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640",
-          "retrieved_at": "2026-11-02T13:29:22.322126+00:00"
+          "retrieved_at": "2026-11-04T04:14:30.970687+00:00"
         }
       },
       "evidence_url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_640"
@@ -244103,7 +245350,7 @@
             ],
             [
               "Computers",
-              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3 Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
+              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
             ],
             [
               "Tablets",
@@ -244111,7 +245358,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -244165,7 +245412,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -244182,55 +245429,55 @@
       "field_sources": {
         "display": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-          "retrieved_at": "2026-11-02T16:18:40.660928+00:00"
+          "retrieved_at": "2026-11-04T04:14:34.013633+00:00"
         },
         "processor": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-          "retrieved_at": "2026-11-02T16:18:40.660947+00:00"
+          "retrieved_at": "2026-11-04T04:14:34.013660+00:00"
         },
         "battery": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-          "retrieved_at": "2026-11-02T16:18:40.660950+00:00"
+          "retrieved_at": "2026-11-04T04:14:34.013663+00:00"
         },
         "ram": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-          "retrieved_at": "2026-11-02T16:18:40.660952+00:00"
+          "retrieved_at": "2026-11-04T04:14:34.013665+00:00"
         },
         "storage": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-          "retrieved_at": "2026-11-02T16:18:40.660954+00:00"
+          "retrieved_at": "2026-11-04T04:14:34.013666+00:00"
         },
         "cameras": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-          "retrieved_at": "2026-11-02T16:18:40.660956+00:00"
+          "retrieved_at": "2026-11-04T04:14:34.013668+00:00"
         },
         "manufacturer": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-          "retrieved_at": "2026-11-02T16:18:40.660958+00:00"
+          "retrieved_at": "2026-11-04T04:14:34.013671+00:00"
         },
         "os": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-          "retrieved_at": "2026-11-02T16:18:40.660960+00:00"
+          "retrieved_at": "2026-11-04T04:14:34.013672+00:00"
         },
         "front_camera": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-          "retrieved_at": "2026-11-02T16:18:40.660962+00:00"
+          "retrieved_at": "2026-11-04T04:14:34.013674+00:00"
         },
         "weight": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-          "retrieved_at": "2026-11-02T16:18:40.660964+00:00"
+          "retrieved_at": "2026-11-04T04:14:34.013676+00:00"
         },
         "dimensions": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-          "retrieved_at": "2026-11-02T16:18:40.660966+00:00"
+          "retrieved_at": "2026-11-04T04:14:34.013677+00:00"
         },
         "specification_rows": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-          "retrieved_at": "2026-11-02T16:18:40.660968+00:00"
+          "retrieved_at": "2026-11-04T04:14:34.013679+00:00"
         },
         "source_tables": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-          "retrieved_at": "2026-11-02T16:18:40.660970+00:00"
+          "retrieved_at": "2026-11-04T04:14:34.013681+00:00"
         }
       },
       "evidence_url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430"
@@ -246973,7 +248220,7 @@
             ],
             [
               "Computers",
-              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3 Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
+              "Tablets Surface 2 3 Surface Go 2 3 4 Surface Pro 2 3 4 5th 6 7 7+ X 8 9 10 11th Surface Neo ( n/a ) Laptops Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra Desktops Jazz ( n/a ) MSN Companion Surface Studio 2 2+ Venus ( n/a ) Interactive displays PixelSense Surface Hub 2S 3"
             ],
             [
               "Tablets",
@@ -246981,7 +248228,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -247035,7 +248282,7 @@
             ],
             [
               "Laptops",
-              "Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Book 2 3"
+              "Surface Book 2 3 Surface Laptop original 2 3 4 5 6 7th Surface Laptop Go 2 3 Surface Laptop Studio 2 Surface Laptop SE Surface Laptop Ultra"
             ],
             [
               "Desktops",
@@ -247052,59 +248299,59 @@
       "field_sources": {
         "display": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976762+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617006+00:00"
         },
         "processor": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976782+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617029+00:00"
         },
         "battery": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976785+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617033+00:00"
         },
         "ram": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976788+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617035+00:00"
         },
         "storage": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976791+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617037+00:00"
         },
         "cameras": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976793+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617040+00:00"
         },
         "connectivity": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976796+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617043+00:00"
         },
         "manufacturer": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976799+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617046+00:00"
         },
         "os": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976803+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617048+00:00"
         },
         "front_camera": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976806+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617050+00:00"
         },
         "weight": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976808+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617052+00:00"
         },
         "dimensions": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976811+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617055+00:00"
         },
         "specification_rows": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976813+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617057+00:00"
         },
         "source_tables": {
           "url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
-          "retrieved_at": "2026-11-02T16:18:49.976816+00:00"
+          "retrieved_at": "2026-11-04T04:14:37.617059+00:00"
         }
       },
       "evidence_url": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950"

@@ -1,56 +1,32 @@
 {
-  "total_posts": 2025,
+  "total_posts": 2055,
   "selected": 19,
   "results": {
     "source_photo_saved": 6,
     "cooldown": 13
   },
-  "still_missing": 169,
+  "still_missing": 172,
   "articles": [
     {
-      "id": "b46a358b1f57fe5523f67f95",
-      "source": "https://en.wikipedia.org/wiki/Harley-Davidson_Pan_America",
+      "id": "2d31ceac3bd408fde8124409",
+      "source": "https://en.wikipedia.org/wiki/Harley-Davidson_XA",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793777168.9367642
+      "retry_after": 1793787577.1627955
     },
     {
-      "id": "9e222cac1e7d0c25a9a3a737",
-      "source": "https://en.wikipedia.org/wiki/Zeekr_001",
+      "id": "ecbac06ba1f3567447e9ce90",
+      "source": "https://en.wikipedia.org/wiki/Harley-Davidson_Model_W",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793777168.960859
+      "retry_after": 1793787577.1674778
     },
     {
-      "id": "6f2a53eb2e80c716e56c59a9",
-      "source": "https://en.wikipedia.org/wiki/Ducati_Mach_1",
+      "id": "dcf0a828b2958d05d8abbc56",
+      "source": "https://en.wikipedia.org/wiki/Ford_Mondeo_Sport",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793777169.1023767
-    },
-    {
-      "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "result": "cooldown"
-    },
-    {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
-    },
-    {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
+      "retry_after": 1793787577.6459072
     },
     {
       "id": "4afa4536b18e5a41b30a3497",
@@ -81,25 +57,49 @@
       "result": "cooldown"
     },
     {
-      "id": "89f936fe58989bfd4545e346",
-      "source": "https://en.wikipedia.org/wiki/Wuling_Zhengtu",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793777169.1299772
+      "id": "007acb84538e69bcc14f4f9f",
+      "result": "cooldown"
     },
     {
-      "id": "9ce99b63cb16ed68a510ac5b",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Note_3",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793777169.527817
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "result": "cooldown"
     },
     {
-      "id": "cd834e348c6b3730ca13fdb2",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Ascend_P6",
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "db79ab44ec98c14a4f1d9887",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S4_Active",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793777170.03482
+      "retry_after": 1793787577.839237
+    },
+    {
+      "id": "edc3a9e3059eef5348090f4d",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_1520",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793787577.8844213
+    },
+    {
+      "id": "20df888c671c1041e78dd0e8",
+      "source": "https://en.wikipedia.org/wiki/Wey_Mocha",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793787577.9082692
     }
   ],
   "missing": [
@@ -276,7 +276,7 @@
       "category": "cricket",
       "title": "Latest Cricket Scores and Fixtures Roundup: Multi-Day Matches in Progress",
       "source": "https://www.bbc.co.uk/sport/cricket/scores-fixtures",
-      "reason": "no_source_image"
+      "reason": "invalid_source_images"
     },
     {
       "id": "58f11d3687a2",
@@ -538,6 +538,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "8583e7aff540",
+      "category": "apps-software",
+      "title": "CVE‑2026‑112445: How a Mis‑configured macOS LaunchDaemon Lets Any User Gain Root",
+      "source": "https://github.com/Mas0nShi/CVE-2026-112445",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "4ca42dad8d6f",
       "category": "visas-immigration",
       "title": "Deloitte Highlights Global Mobility and Immigration Role in Hyderabad",
@@ -606,6 +613,13 @@
       "title": "TRAI Releases Draft Guidelines on Responsible AI Use in Telecom Networks",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No145of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "0dc082de2306",
+      "category": "apps-software",
+      "title": "An Overview of Deno: A Modern Runtime for JavaScript, TypeScript, and WebAssembly",
+      "source": "https://github.com/denoland/deno",
+      "reason": "invalid_source_images"
     },
     {
       "id": "ef6d4c03dede",
@@ -857,7 +871,7 @@
       "category": "ai-news",
       "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
       "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
-      "reason": "no_source_image"
+      "reason": "invalid_source_images"
     },
     {
       "id": "c9e064a48f72",
@@ -928,6 +942,13 @@
       "title": "Cognizant Launches OpenAI Frontier Capability Group, Deploying Over 25,000 Professionals to Accelerate Enterprise AI Adoption",
       "source": "https://www.prnewswire.com/news-releases/cognizant-zet-meer-dan-25-000-professionals-in-voor-de-implementatie-van-openai-oplossingen-nu-ondernemingen-geavanceerde-ai-in-productie-nemen-302925664.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "59aa0f58c2e4",
+      "category": "apps-software",
+      "title": "DownloadCraft: Rust-Powered Download Manager Offers IDM Alternative with Browser Integration",
+      "source": "https://github.com/hungry-detective/downloadcraft",
+      "reason": "invalid_source_images"
     },
     {
       "id": "05d05c18d987",
@@ -1289,43 +1310,43 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "invalid_source_images": 60,
+    "invalid_source_images": 65,
     "source_error": 4,
-    "no_source_image": 48,
+    "no_source_image": 46,
     "access_denied": 20,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "b46a358b1f57fe5523f67f95": {
+    "2d31ceac3bd408fde8124409": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Harley-Davidson_Pan_America",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Hamburg_Harley_Days_2022_06.jpg/1280px-Hamburg_Harley_Days_2022_06.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+      "source": "https://en.wikipedia.org/wiki/Harley-Davidson_XA",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Xa-600.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "9e222cac1e7d0c25a9a3a737": {
+    "ecbac06ba1f3567447e9ce90": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Zeekr_001",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/2022_Zeekr_001_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Harley-Davidson_Model_W",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Harley-Davidson_22WJ_600_cc_1922.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "6f2a53eb2e80c716e56c59a9": {
+    "dcf0a828b2958d05d8abbc56": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ducati_Mach_1",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Ducati_250_Mach1_1964.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ford_Mondeo_Sport",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Ford_Evos_009_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "89f936fe58989bfd4545e346": {
+    "db79ab44ec98c14a4f1d9887": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Wuling_Zhengtu",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/35/2021_SAIC-GM-Wuling_Zhengtu_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S4_Active",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Galaxy_S4_Active.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "9ce99b63cb16ed68a510ac5b": {
+    "edc3a9e3059eef5348090f4d": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Note_3",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/38/Samsung_Galaxy_Note_3.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_1520",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Nokia_Lumia_1520.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "cd834e348c6b3730ca13fdb2": {
+    "20df888c671c1041e78dd0e8": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Ascend_P6",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/HUAWEI_Ascend_P6.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Wey_Mocha",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Wey_Coffee_01_PHEV_IAA_2021_1X7A0222.jpg/1280px-Wey_Coffee_01_PHEV_IAA_2021_1X7A0222.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
     }
   },
   "mode": "directory"
