@@ -1,30 +1,20 @@
 {
-  "checked_at": "2026-11-03T23:50:44.206169+00:00",
+  "checked_at": "2026-11-04T04:10:35.528012+00:00",
   "signal": "publisher coverage, not search-volume data",
   "changed_ids": [
-    "89b7edd8b845"
+    "24570a2b8a49"
   ],
   "results": [
     {
-      "id": "89b7edd8b845",
+      "id": "24570a2b8a49",
       "result": "published",
-      "title": "Jennifer Lawrence Cites ‘Hunger Games’ While Encouraging Fans to Vote: “Don’t Forget Who Burns With Us”"
-    },
-    {
-      "id": "31a27c7480fe",
-      "result": "no_material_change",
-      "title": "Spanish transport minister resigns days after deadly train crash"
-    },
-    {
-      "id": "8e8745dd0414",
-      "result": "no_material_change",
-      "title": "Raphinha, Lamal fire Barcelona to 3-0 Champions League win over Aston Villa"
+      "title": "Democrat Annie Andrews flips South Carolina’s Senate seat"
     }
   ],
   "feeds": {
     "https://feeds.bbci.co.uk/news/world/rss.xml": {
       "status": "ok",
-      "articles": 3
+      "articles": 5
     },
     "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml": {
       "status": "ok",
@@ -32,7 +22,7 @@
     },
     "https://www.theguardian.com/world/rss": {
       "status": "ok",
-      "articles": 5
+      "articles": 6
     },
     "https://www.theguardian.com/world/middleeast/rss": {
       "status": "ok",
@@ -40,11 +30,11 @@
     },
     "https://www.aljazeera.com/xml/rss/all.xml": {
       "status": "ok",
-      "articles": 16
+      "articles": 23
     },
     "https://www.france24.com/en/rss": {
       "status": "ok",
-      "articles": 7
+      "articles": 10
     },
     "https://www.arabnews.com/rss.xml": {
       "status": "unavailable",
@@ -52,65 +42,73 @@
     },
     "https://news.google.com/rss/search?q=site%3Aspa.gov.sa%20when%3A1d&hl=en-US&gl=US&ceid=US%3Aen": {
       "status": "ok",
-      "articles": 2
+      "articles": 0
     },
-    "https://www.firstshowing.net/feed/": {
+    "https://blog.google/rss/": {
       "status": "ok",
-      "articles": 3
+      "articles": 0
     },
-    "https://www.comingsoon.net/feed": {
+    "https://www.nasa.gov/feed/": {
       "status": "ok",
-      "articles": 20
+      "articles": 0
     },
-    "https://www.motor1.com/rss/news/all/": {
+    "https://www.technologyreview.com/feed/": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://www.bleepingcomputer.com/feed/": {
       "status": "ok",
       "articles": 1
     },
-    "https://www.carscoops.com/feed/": {
-      "status": "ok",
-      "articles": 8
-    },
-    "https://insideevs.com/rss/news/all/": {
-      "status": "ok",
-      "articles": 2
-    },
-    "https://www.gsmarena.com/rss-news-reviews.php3": {
+    "https://www.cnet.com/rss/news/": {
       "status": "ok",
       "articles": 5
     },
-    "https://www.androidauthority.com/feed/": {
+    "https://www.techradar.com/feeds.xml": {
       "status": "ok",
-      "articles": 8
+      "articles": 17
     },
-    "https://www.sammobile.com/feed/": {
+    "https://feeds.npr.org/1019/rss.xml": {
       "status": "ok",
-      "articles": 2
+      "articles": 0
     },
-    "https://9to5google.com/feed/": {
+    "https://variety.com/v/film/feed/": {
       "status": "ok",
-      "articles": 7
+      "articles": 6
     },
-    "https://variety.com/feed/": {
+    "https://www.theguardian.com/film/rss": {
       "status": "ok",
-      "articles": 10
+      "articles": 0
     },
-    "https://deadline.com/feed/": {
+    "https://www.theguardian.com/culture/rss": {
       "status": "ok",
-      "articles": 12
+      "articles": 0
     },
-    "https://www.hollywoodreporter.com/feed/": {
-      "status": "ok",
-      "articles": 10
-    },
-    "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml": {
+    "https://feeds.npr.org/1045/rss.xml": {
       "status": "ok",
       "articles": 1
     },
-    "https://feeds.npr.org/1004/rss.xml": {
+    "https://ew.com/feed/": {
+      "status": "unavailable",
+      "articles": 0
+    },
+    "https://www.rollingstone.com/feed/": {
+      "status": "ok",
+      "articles": 6
+    },
+    "https://news.abplive.com/entertainment/movies/feed": {
       "status": "ok",
       "articles": 1
+    },
+    "https://news.abplive.com/entertainment/television/feed": {
+      "status": "ok",
+      "articles": 0
+    },
+    "https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms": {
+      "status": "ok",
+      "articles": 18
     }
   },
-  "discovered": 316,
-  "trending_events": 7
+  "discovered": 190,
+  "trending_events": 2
 }
