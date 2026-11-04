@@ -30,6 +30,37 @@ jobs:
         run: python scripts/notice_details.py ${{ github.event_name == 'push' && '200' || '24' }}
       - name: Publish new notice records
         run: |
+          # Ignore refresh timestamps and transient fetch statuses when the published facts did not change.
+          # A timestamp-only refresh must not rebuild thousands of pages or trigger Cloudflare.
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          paths = ('content/official-notice-archive.json', 'content/official-notice-details.json')
+          volatile = {'checked_at', 'facts_checked_at', 'last_fetch_status', 'status', 'reason'}
+          def stable(value):
+              if isinstance(value, dict):
+                  return {k: stable(v) for k, v in value.items() if k not in volatile}
+              if isinstance(value, list):
+                  return [stable(v) for v in value]
+              return value
+
+          changed = False
+          for path in paths:
+              try:
+                  previous = json.loads(subprocess.check_output(['git', 'show', f'HEAD:{path}'], text=True))
+              except (subprocess.CalledProcessError, ValueError):
+                  previous = None
+              current = json.loads(Path(path).read_text())
+              if stable(previous) != stable(current):
+                  changed = True
+                  print(f'Published notice content changed: {path}')
+          if not changed:
+              print('No new or changed notice facts; skipping build, commit and deployment.')
+              Path('/tmp/official-notices-noop').touch()
+          PY
+          if test -f /tmp/official-notices-noop; then exit 0; fi
           if git diff --quiet -- content/official-notice-archive.json content/official-notice-details.json; then exit 0; fi
           cp content/official-notice-archive.json /tmp/official-notices.json
           cp content/official-notice-details.json /tmp/official-notice-details.json
