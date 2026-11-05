@@ -48,8 +48,25 @@ def smoke(origin,package,all_urls=False,changed_keys=()):
         row=routes[path];response=sessions.client.get(origin.rstrip('/')+path,timeout=(5,30),allow_redirects=False)
         if 'redirect' in row:
             if response.status_code!=row['status'] or response.headers.get('Location')!=row['redirect']:raise ValueError('HTTP redirect mismatch: '+path)
-        elif response.status_code!=200 or digest(response.content)!=row['sha256'] or row['type'].split(';')[0] not in response.headers.get('Content-Type',''):
-            raise ValueError('HTTP content/hash/MIME mismatch: '+path)
+        else:
+            actual_hash=digest(response.content)
+            actual_type=response.headers.get('Content-Type','')
+            expected_type=row['type'].split(';')[0]
+            if response.status_code!=200 or actual_hash!=row['sha256'] or expected_type not in actual_type:
+                # No body or secret values in CI logs; distinguish wrong route,
+                # stale cache, encoding, and MIME mismatch before changing delivery.
+                details={
+                    'path':path,'status':response.status_code,
+                    'expected_sha256':row['sha256'],'actual_sha256':actual_hash,
+                    'expected_bytes':row['bytes'],'actual_bytes':len(response.content),
+                    'expected_type':row['type'],'actual_type':actual_type,
+                    'content_encoding':response.headers.get('Content-Encoding',''),
+                    'etag':response.headers.get('ETag',''),
+                    'cf_cache_status':response.headers.get('CF-Cache-Status',''),
+                    'server':response.headers.get('Server',''),
+                    'redirect_location':response.headers.get('Location',''),
+                }
+                raise ValueError('HTTP content/hash/MIME mismatch: '+json.dumps(details,sort_keys=True))
         return path
     workers=max(1,min(12,int(os.environ.get('DELIVERY_HTTP_WORKERS','8'))))
     with ThreadPoolExecutor(max_workers=workers) as pool:
