@@ -26,30 +26,3 @@ def write_redirects(out,lines,write,site,limit=2000):
         write(out/source.lstrip('/')/'index.html',body);fallback+=1
     write(out/'_redirects','\n'.join(server)+'\n')
     return {'server_redirects':len(server),'html_redirects':fallback}
-
-
-def export_bulk_redirects(out, lines, site):
-    """Export legacy mappings for Cloudflare Bulk Redirects without removing fallbacks.
-
-    Import/activate the list at Cloudflare before disabling any legacy HTML stubs.
-    The export is a deployment artifact, not an assertion that Cloudflare rules exist.
-    """
-    import csv
-    import io
-    import json
-    rows = {}
-    for line in lines:
-        source, target, code = line.split()
-        if source == target:
-            continue
-        if not (source.startswith('/') and target.startswith('/') and not source.startswith('//') and not target.startswith('//')):
-            raise ValueError('Unsafe bulk redirect mapping')
-        rows.setdefault(source, (target, int(code)))
-    output = io.StringIO()
-    writer = csv.writer(output)
-    writer.writerow(['source_url', 'target_url', 'status_code'])
-    for source, (target, code) in sorted(rows.items()):
-        writer.writerow([site.rstrip('/') + source, site.rstrip('/') + target, code])
-    (out / 'bulk-redirects.csv').write_text(output.getvalue(), encoding='utf-8')
-    (out / 'bulk-redirects-manifest.json').write_text(json.dumps({'count':len(rows),'requires_cloudflare_activation':True},sort_keys=True)+'\\n',encoding='utf-8')
-    return len(rows)
