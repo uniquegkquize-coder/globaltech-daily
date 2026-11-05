@@ -2,161 +2,232 @@
   "total_posts": 2194,
   "selected": 175,
   "results": {
-    "cooldown": 175
+    "access_denied": 1,
+    "source_unavailable": 6,
+    "restricted_page": 1,
+    "invalid_source_images": 19,
+    "no_source_image": 9,
+    "cooldown": 137,
+    "source_error": 2
   },
   "still_missing": 168,
   "articles": [
     {
-      "id": "2f1dd8699d58",
-      "result": "cooldown"
-    },
-    {
-      "id": "b7601652de21",
-      "result": "cooldown"
-    },
-    {
-      "id": "1285f1ac72a8",
-      "result": "cooldown"
-    },
-    {
-      "id": "c3c44629d231",
-      "result": "cooldown"
-    },
-    {
       "id": "a4fcd6020999",
-      "result": "cooldown"
-    },
-    {
-      "id": "e62d34be0421",
-      "result": "cooldown"
-    },
-    {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "result": "cooldown"
-    },
-    {
-      "id": "2e293f23db10",
-      "result": "cooldown"
-    },
-    {
-      "id": "47e829176cc5",
-      "result": "cooldown"
-    },
-    {
-      "id": "253e0e4a696b",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab5757b7bde7e5a43128d256",
-      "result": "cooldown"
-    },
-    {
-      "id": "65c484924118",
-      "result": "cooldown"
-    },
-    {
-      "id": "63616ffbf4c2",
-      "result": "cooldown"
-    },
-    {
-      "id": "4afa4536b18e5a41b30a3497",
-      "result": "cooldown"
-    },
-    {
-      "id": "5cf2007cdcba",
-      "result": "cooldown"
-    },
-    {
-      "id": "c176a1dc41c1e122cab45821",
-      "result": "cooldown"
-    },
-    {
-      "id": "dfd16b79fae5",
-      "result": "cooldown"
+      "source": "https://insideevs.com/news/814280/ferrari-luce-ev-sold-out-for-2027/",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793927128.7947369
     },
     {
       "id": "3acc30eaefd0",
-      "result": "cooldown"
+      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/may/doc202655863701.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793927129.117291
     },
     {
-      "id": "89a9f272b95b",
-      "result": "cooldown"
+      "id": "1285f1ac72a8",
+      "source": "https://github.com/FrancescoGrazioso/Meld",
+      "policy": "93e2ad7deccc",
+      "result": "restricted_page",
+      "retry_after": 1793927129.5014129
     },
     {
-      "id": "6548e415fc086ccec65bbb7c",
-      "result": "cooldown"
+      "id": "c176a1dc41c1e122cab45821",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927129.504401
+    },
+    {
+      "id": "253e0e4a696b",
+      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/feb/doc202422305301.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793927129.991555
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927130.5139809
+    },
+    {
+      "id": "b7601652de21",
+      "source": "https://readerblogs.navbharattimes.indiatimes.com/BHALI-LAGE-YA-BURI/javed-akhtar-ki-samaaj-sudhar-ki-chunauti/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927130.545538
+    },
+    {
+      "id": "63616ffbf4c2",
+      "source": "https://in.linkedin.com/jobs/view/associate-qa-engineer-software-at-light-wonder-4484455024",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927130.5490372
+    },
+    {
+      "id": "47e829176cc5",
+      "source": "https://in.linkedin.com/jobs/view/visa-sales-executive-location-saket-in-new-delhi-day-shift-at-sharda-consultancy-services-4484921383",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927130.553445
+    },
+    {
+      "id": "2f1dd8699d58",
+      "source": "https://www.un.org/en/property-cards-by-og-global-category/287/6611%209436/join/Join/url%28%22https%3A?page=5",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927130.5565317
+    },
+    {
+      "id": "dfd16b79fae5",
+      "source": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-flex-4472543793",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927130.5580175
+    },
+    {
+      "id": "5cf2007cdcba",
+      "source": "https://in.linkedin.com/jobs/view/analyst-software-engineer-java-at-saatvik-agro-4484805864",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927130.5598786
+    },
+    {
+      "id": "ab5757b7bde7e5a43128d256",
+      "source": "https://exploitsmw.com/",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793927131.301985
     },
     {
       "id": "75dbda51595c",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/view/us-immigration-executive-at-vidlexinfo-llc-4483058702",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927131.315438
+    },
+    {
+      "id": "89a9f272b95b",
+      "source": "https://in.linkedin.com/jobs/view/content-and-social-media-marketing-internship-in-delhi-at-denmonk-4484771273",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927131.5993142
+    },
+    {
+      "id": "4afa4536b18e5a41b30a3497",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927131.6978698
+    },
+    {
+      "id": "c3c44629d231",
+      "source": "https://in.linkedin.com/jobs/view/assessment-research-intern-at-careermaker-ai-4483632864",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927131.8420112
+    },
+    {
+      "id": "e62d34be0421",
+      "source": "https://www.linkedin.com/jobs/view/data-scientist-applied-ai-at-definitive-healthcare-4484088856",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927131.8576128
+    },
+    {
+      "id": "65c484924118",
+      "source": "https://in.linkedin.com/jobs/view/visitor-visa-counselor-at-sky-heaven-immigration-opc-pvt-ltd-4482294678",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927132.22885
+    },
+    {
+      "id": "2e293f23db10",
+      "source": "https://www.un.org/unispal/document-source/united-nations-childrens-fund-unicef/page/36/?wpv_view_count=4164",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927132.390479
     },
     {
       "id": "4ca42dad8d6f",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/view/associate-global-mobility-and-immigration-talent-services-tipm-perm-services-hyderabad-at-deloitte-4484168606",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927132.8123453
     },
     {
       "id": "b211f120ea27b93fc925f6b4",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927133.001317
     },
     {
-      "id": "12d3cc56ebe6",
-      "result": "cooldown"
+      "id": "6548e415fc086ccec65bbb7c",
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927133.6521256
     },
     {
       "id": "b822477903c2",
-      "result": "cooldown"
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No147of2026_0.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793927134.747139
+    },
+    {
+      "id": "12d3cc56ebe6",
+      "source": "https://www.prnewswire.com/news-releases/five-california-nonprofits-receive-500-000-to-restore-habitats-expand-environmental-education-and-strengthen-local-food-systems-302924612.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793927135.9844205
     },
     {
       "id": "bbfd4d3d5c0a",
-      "result": "cooldown"
-    },
-    {
-      "id": "38accdd4d36d",
-      "result": "cooldown"
-    },
-    {
-      "id": "600062192bf4",
-      "result": "cooldown"
-    },
-    {
-      "id": "0346b2c5ec85",
-      "result": "cooldown"
+      "source": "https://www.tui.com/hilfe/flug/verspaetung/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793927136.1715014
     },
     {
       "id": "dd07ef14c72f",
-      "result": "cooldown"
+      "source": "https://www.sahisarkarijobs.in/cgpa-to-percentage-calculator/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793927137.4120448
+    },
+    {
+      "id": "0346b2c5ec85",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No136of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793927137.5083282
     },
     {
       "id": "a6510273f0889bf4d7684eae",
-      "result": "cooldown"
+      "source": "https://mua.ac.ke/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793927137.9520123
     },
     {
       "id": "3a640d951615",
-      "result": "cooldown"
+      "source": "https://www.sahisarkarijobs.in/increment-calculator/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793927138.80339
     },
     {
-      "id": "9ac2bb5ad6c4",
-      "result": "cooldown"
-    },
-    {
-      "id": "51e45078d38e",
-      "result": "cooldown"
-    },
-    {
-      "id": "ef614dcb4163038685679d1d",
-      "result": "cooldown"
-    },
-    {
-      "id": "c9e064a48f72",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab1e7f889baf",
-      "result": "cooldown"
-    },
-    {
-      "id": "11663ea645ab",
-      "result": "cooldown"
+      "id": "600062192bf4",
+      "source": "https://in.linkedin.com/jobs/cad-software-development-engineer-jobs-hyderabad-ts?trk=guest_job_details_jd_jserp_more_jobs_link&f_AL=true",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793927139.9921584
     },
     {
       "id": "3f437cd6deee",
@@ -705,6 +776,55 @@
     {
       "id": "1da89144be44",
       "result": "cooldown"
+    },
+    {
+      "id": "9ac2bb5ad6c4",
+      "source": "https://www.sahisarkarijobs.in/cutoff-marks-calculator/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793927140.0990076
+    },
+    {
+      "id": "51e45078d38e",
+      "source": "https://www.sahisarkarijobs.in/physical-standards-calculator-defence-police/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793927141.1051106
+    },
+    {
+      "id": "38accdd4d36d",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No135of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793927141.3069534
+    },
+    {
+      "id": "ef614dcb4163038685679d1d",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793927145.0101955
+    },
+    {
+      "id": "c9e064a48f72",
+      "source": "https://www.npr.org/series/1082539802/russia-ukraine-invasion-explained",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1793927147.7880223
+    },
+    {
+      "id": "ab1e7f889baf",
+      "source": "https://www.cbc.ca/news/world/binance-hack-north-korea-9.7404502?cmp=rss",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1793927148.090739
+    },
+    {
+      "id": "11663ea645ab",
+      "source": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/public-policies/haiti-immigration-measures-2026.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793927152.37662
     }
   ],
   "missing": [
@@ -1894,6 +2014,253 @@
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
-  "diagnostics": {},
+  "diagnostics": {
+    "a4fcd6020999": {
+      "reason": "access_denied",
+      "source": "https://insideevs.com/news/814280/ferrari-luce-ev-sold-out-for-2027/",
+      "status": 403
+    },
+    "3acc30eaefd0": {
+      "reason": "source_unavailable",
+      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/may/doc202655863701.pdf",
+      "status": 200
+    },
+    "c176a1dc41c1e122cab45821": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "1285f1ac72a8": {
+      "reason": "restricted_page",
+      "source": "https://github.com/FrancescoGrazioso/Meld"
+    },
+    "253e0e4a696b": {
+      "reason": "source_unavailable",
+      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/feb/doc202422305301.pdf",
+      "status": 200
+    },
+    "8f4b17c49d1b2a0c5cb45a53": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "candidate_count": 6,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "b7601652de21": {
+      "reason": "invalid_source_images",
+      "source": "https://readerblogs.navbharattimes.indiatimes.com/BHALI-LAGE-YA-BURI/javed-akhtar-ki-samaaj-sudhar-ki-chunauti/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://readerblogs.navbharattimes.indiatimes.com/BHALI-LAGE-YA-BURI/javed-akhtar-ki-samaaj-sudhar-ki-chunauti/"
+      ]
+    },
+    "63616ffbf4c2": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/associate-qa-engineer-software-at-light-wonder-4484455024",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "47e829176cc5": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/visa-sales-executive-location-saket-in-new-delhi-day-shift-at-sharda-consultancy-services-4484921383",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "5cf2007cdcba": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/analyst-software-engineer-java-at-saatvik-agro-4484805864",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "2f1dd8699d58": {
+      "reason": "invalid_source_images",
+      "source": "https://www.un.org/en/property-cards-by-og-global-category/287/6611%209436/join/Join/url%28%22https%3A?page=5",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.un.org/en/property-cards-by-og-global-category/287/6611%209436/join/Join/url%28%22https%3A?page=5"
+      ]
+    },
+    "dfd16b79fae5": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-flex-4472543793",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "ab5757b7bde7e5a43128d256": {
+      "reason": "source_unavailable",
+      "source": "https://exploitsmw.com/",
+      "status": 200
+    },
+    "75dbda51595c": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/us-immigration-executive-at-vidlexinfo-llc-4483058702",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "89a9f272b95b": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/content-and-social-media-marketing-internship-in-delhi-at-denmonk-4484771273",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "4afa4536b18e5a41b30a3497": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18613.jpg"
+      ]
+    },
+    "c3c44629d231": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/assessment-research-intern-at-careermaker-ai-4483632864",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "e62d34be0421": {
+      "reason": "invalid_source_images",
+      "source": "https://www.linkedin.com/jobs/view/data-scientist-applied-ai-at-definitive-healthcare-4484088856",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "65c484924118": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/visitor-visa-counselor-at-sky-heaven-immigration-opc-pvt-ltd-4482294678",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "2e293f23db10": {
+      "reason": "invalid_source_images",
+      "source": "https://www.un.org/unispal/document-source/united-nations-childrens-fund-unicef/page/36/?wpv_view_count=4164",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.un.org/unispal/wp-content/plugins/wp-views/embedded/res/img/delete.png"
+      ]
+    },
+    "4ca42dad8d6f": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/associate-global-mobility-and-immigration-talent-services-tipm-perm-services-hyderabad-at-deloitte-4484168606",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "b211f120ea27b93fc925f6b4": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "candidate_count": 8,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/commons/1/1e/Nokia_Asha_501.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/250px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/120px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "6548e415fc086ccec65bbb7c": {
+      "reason": "invalid_source_images",
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "candidate_count": 20,
+      "candidates": [
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/frontier/vehicle-profile-assets/2027/model-2027-frontier-crew-cab-pro-4x-red-alert.png-v2.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue-hybrid/vehicle-profile-assets/2027/model-2027-rogue-hybrid-sr-horizon-blue-pearl-metallic-super-black-two-tone.png.ximg.l_3_m.smart.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue/vehicle-profile-assets/2027/model-2027-rogue-rock-creek-intelligent-awd-baja-storm-metallic.png.ximg.l_3_m.smart.png"
+      ]
+    },
+    "b822477903c2": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No147of2026_0.pdf",
+      "status": 200
+    },
+    "12d3cc56ebe6": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/five-california-nonprofits-receive-500-000-to-restore-habitats-expand-environmental-education-and-strengthen-local-food-systems-302924612.html"
+    },
+    "bbfd4d3d5c0a": {
+      "reason": "no_source_image",
+      "source": "https://www.tui.com/hilfe/flug/verspaetung/"
+    },
+    "dd07ef14c72f": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/cgpa-to-percentage-calculator/"
+    },
+    "0346b2c5ec85": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No136of2026.pdf",
+      "status": 200
+    },
+    "a6510273f0889bf4d7684eae": {
+      "reason": "invalid_source_images",
+      "source": "https://mua.ac.ke/",
+      "candidate_count": 2,
+      "candidates": [
+        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
+        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png"
+      ]
+    },
+    "3a640d951615": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/increment-calculator/"
+    },
+    "600062192bf4": {
+      "reason": "no_source_image",
+      "source": "https://in.linkedin.com/jobs/cad-software-development-engineer-jobs-hyderabad-ts?trk=guest_job_details_jd_jserp_more_jobs_link&f_AL=true"
+    },
+    "9ac2bb5ad6c4": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/cutoff-marks-calculator/"
+    },
+    "51e45078d38e": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/physical-standards-calculator-defence-police/"
+    },
+    "38accdd4d36d": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No135of2026.pdf",
+      "status": 200
+    },
+    "ef614dcb4163038685679d1d": {
+      "reason": "no_source_image",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/"
+    },
+    "c9e064a48f72": {
+      "reason": "source_error",
+      "source": "https://www.npr.org/series/1082539802/russia-ukraine-invasion-explained",
+      "error": "ReadTimeout"
+    },
+    "ab1e7f889baf": {
+      "reason": "source_error",
+      "source": "https://www.cbc.ca/news/world/binance-hack-north-korea-9.7404502?cmp=rss",
+      "error": "ReadTimeout"
+    },
+    "11663ea645ab": {
+      "reason": "no_source_image",
+      "source": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/public-policies/haiti-immigration-measures-2026.html"
+    }
+  },
   "mode": "all"
 }
