@@ -53,7 +53,7 @@ jobs:
     needs: verify
     if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && contains(github.event.pull_request.labels.*.name, 'r2-stage-data')
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 120
     env:
       CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
       R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -73,7 +73,7 @@ jobs:
       - run: python scripts/delivery_package.py
       - run: python scripts/verify_delivery.py
       - name: Copy and byte-verify immutable R2 content (no production routing)
-        run: python scripts/r2_sync.py --upload --deep-verify
+        run: python scripts/r2_sync.py --upload --deep-verify --workers 8
       - name: Export verified public assets for connected Cloudflare staging
         run: python scripts/staging_capsule.py
       - uses: actions/upload-artifact@v4

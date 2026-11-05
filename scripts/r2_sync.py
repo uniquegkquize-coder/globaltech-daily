@@ -71,6 +71,7 @@ def sync(client, bucket, root, package, receipt_path, workers=4, deep=False):
         return bool(unchanged)
     if not 1<=workers<=8:raise ValueError('workers must be 1..8')
     statuses=[]
+    reported=0
     with ThreadPoolExecutor(max_workers=workers) as pool:
         pending=set();entries=iter(package['files'])
         try:
@@ -82,6 +83,9 @@ def sync(client, bucket, root, package, receipt_path, workers=4, deep=False):
                 if not pending:break
                 done,pending=wait(pending,return_when=FIRST_COMPLETED)
                 statuses.extend(future.result() for future in done)
+                if len(statuses)-reported>=256 or len(statuses)==len(package['files']):
+                    reported=len(statuses)
+                    print(json.dumps({'verified_objects':reported,'total_objects':len(package['files']),'uploaded':statuses.count(False),'skipped':statuses.count(True)}),flush=True)
         except Exception:
             for future in pending:future.cancel()
             raise
@@ -99,7 +103,7 @@ def sync(client, bucket, root, package, receipt_path, workers=4, deep=False):
 
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--package',default='build/r2-package');ap.add_argument('--upload',action='store_true');ap.add_argument('--deep-verify',action='store_true');a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--package',default='build/r2-package');ap.add_argument('--upload',action='store_true');ap.add_argument('--deep-verify',action='store_true');ap.add_argument('--workers',type=int,choices=range(1,9),default=4);a=ap.parse_args()
     root=Path(a.package);package=json.loads((root/'package.json').read_text())
     print(json.dumps({'release_id':package['release_id'],'objects':len(package['files']),'bytes':package['bytes']}))
     if not a.upload:
@@ -109,6 +113,6 @@ def main():
     client=boto3.client('s3',endpoint_url=f"https://{os.environ['CF_ACCOUNT_ID']}.r2.cloudflarestorage.com",
         aws_access_key_id=os.environ['R2_ACCESS_KEY_ID'],aws_secret_access_key=os.environ['R2_SECRET_ACCESS_KEY'],region_name='auto',
         config=Config(connect_timeout=5,read_timeout=20,max_pool_connections=8,retries={'total_max_attempts':1}))
-    print(json.dumps(sync(client,os.environ.get('R2_BUCKET','globewire-media'),root,package,Path('build/r2-receipt.json'),deep=a.deep_verify)))
+    print(json.dumps(sync(client,os.environ.get('R2_BUCKET','globewire-media'),root,package,Path('build/r2-receipt.json'),workers=a.workers,deep=a.deep_verify)))
 
 if __name__=='__main__':main()
