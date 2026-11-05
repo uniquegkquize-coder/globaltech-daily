@@ -49,26 +49,28 @@ def sync(client, bucket, root, package, receipt_path, workers=4, deep=False):
         prior=verified_index.get(key,{})
         if not deep and prior.get('sha256')==row['sha256'] and prior.get('bytes')==len(data) and objects.get(key)==len(data):
             return True
-        try:head=retry(lambda:client.head_object(Bucket=bucket,Key=key))
-        except Exception as exc:
-            if getattr(exc,'response',{}).get('ResponseMetadata',{}).get('HTTPStatusCode')!=404:raise
-            head=None
-        unchanged=head and head.get('Metadata',{}).get('sha256')==row['sha256'] and head.get('ContentLength')==len(data)
-        if head and not unchanged:
-            # Hash-keyed objects are immutable. Corruption must be investigated, never overwritten silently.
-            raise ValueError('Existing immutable object mismatch: '+key)
-        if not unchanged:
-            mime=row.get('type','application/octet-stream')
-            retry(lambda:client.put_object(Bucket=bucket,Key=key,Body=data,ContentType=mime,
-                  CacheControl='public, max-age=31536000, immutable',Metadata={'sha256':row['sha256']}))
-        verified=head if unchanged else retry(lambda:client.head_object(Bucket=bucket,Key=key))
-        if verified.get('Metadata',{}).get('sha256')!=row['sha256'] or verified.get('ContentLength')!=len(data):
-            raise ValueError('Remote HEAD verification failed: '+key)
-        if deep or not unchanged:
-            remote=retry(lambda:client.get_object(Bucket=bucket,Key=key)['Body'].read())
-            if digest(remote)!=row['sha256']:raise ValueError('Remote bytes differ: '+key)
-        if not unchanged:changed_keys.append(key)
-        return bool(unchanged)
+        absent=key not in objects
+        if absent:
+            # Atomic create-once protects an object created after our bucket listing.
+            # A timeout followed by 412 can mean our first write committed; verify it.
+            try:
+                retry(lambda:client.put_object(Bucket=bucket,Key=key,Body=data,
+                    ContentType=row.get('type','application/octet-stream'),
+                    CacheControl='public, max-age=31536000, immutable',
+                    Metadata={'sha256':row['sha256']},IfNoneMatch='*'))
+            except Exception as exc:
+                if getattr(exc,'response',{}).get('ResponseMetadata',{}).get('HTTPStatusCode')!=412:raise
+        # GET provides metadata, length and bytes together. Never add redundant HEADs
+        # to the initial audit, and never trust an unindexed object's claimed hash.
+        remote=retry(lambda:client.get_object(Bucket=bucket,Key=key))
+        stream=remote['Body']
+        try:
+            if remote.get('Metadata',{}).get('sha256')!=row['sha256'] or remote.get('ContentLength')!=len(data):
+                raise ValueError('Existing immutable object mismatch: '+key)
+            if digest(stream.read())!=row['sha256']:raise ValueError('Remote bytes differ: '+key)
+        finally:stream.close()
+        if absent:changed_keys.append(key)
+        return not absent
     if not 1<=workers<=8:raise ValueError('workers must be 1..8')
     statuses=[]
     reported=0
@@ -96,7 +98,7 @@ def sync(client, bucket, root, package, receipt_path, workers=4, deep=False):
              'inventory_sha256':digest(encoded(package['files'])),
              'changed_keys':sorted(changed_keys),'uploaded':statuses.count(False),'skipped':statuses.count(True),'deep':deep,
              'bucket_bytes_after':storage_after,'bucket_byte_limit':8_000_000_000,
-             'estimated_class_b_ops_upper_bound':1+statuses.count(True)*(2 if deep else 0)+statuses.count(False)*3}
+             'estimated_class_b_ops_upper_bound':1+len(statuses)*3}
     receipt_path.parent.mkdir(parents=True,exist_ok=True)
     temporary=receipt_path.with_suffix('.tmp');temporary.write_bytes(encoded(receipt));temporary.replace(receipt_path)
     return receipt

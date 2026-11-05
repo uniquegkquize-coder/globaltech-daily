@@ -16,6 +16,9 @@ from deploy_delivery import config
 class Missing(Exception):
     response={'ResponseMetadata':{'HTTPStatusCode':404}}
 
+class PreconditionFailed(Exception):
+    response={'ResponseMetadata':{'HTTPStatusCode':412}}
+
 class FakeR2:
     def __init__(self):self.objects={};self.writes=0;self.fail=0;self.corrupt=False
     def get_paginator(self,name):
@@ -28,13 +31,15 @@ class FakeR2:
         data,meta=self.objects[Key]
         return {'ContentLength':len(data),'Metadata':meta}
     def put_object(self,Bucket,Key,Body,Metadata,**kw):
+        if kw.get('IfNoneMatch')=='*' and Key in self.objects:raise PreconditionFailed()
         self.writes+=1
         if self.fail:
             self.fail-=1;raise TimeoutError('transient')
         self.objects[Key]=(Body,Metadata)
     def get_object(self,Bucket,Key):
         if Key not in self.objects:raise Missing()
-        return {'Body':io.BytesIO(b'corrupt' if self.corrupt else self.objects[Key][0])}
+        return {'Body':io.BytesIO(b'corrupt' if self.corrupt else self.objects[Key][0]),
+                'Metadata':self.objects[Key][1],'ContentLength':len(self.objects[Key][0])}
 
 class DeliveryTests(unittest.TestCase):
     def setUp(self):
@@ -84,6 +89,33 @@ class DeliveryTests(unittest.TestCase):
     def test_immutable_remote_mismatch_is_never_overwritten(self):
         p=self.package();client=FakeR2();row=p['files'][0];client.objects[row['key']]=(b'wrong',{})
         with self.assertRaises(ValueError):sync(client,'b',self.output,p,self.root/'r.json')
+    def test_racing_object_cannot_be_overwritten_after_a_negative_listing(self):
+        p=self.package();client=FakeR2();put=client.put_object;first=p['files'][0]
+        def race(**kw):
+            if kw['Key']==first['key']:client.objects[kw['Key']]=(b'concurrent original',{})
+            return put(**kw)
+        with patch.object(client,'put_object',side_effect=race):
+            with self.assertRaisesRegex(ValueError,'immutable object mismatch'):
+                sync(client,'b',self.output,p,self.root/'r.json',workers=1)
+        self.assertEqual(client.objects[first['key']][0],b'concurrent original')
+        self.assertFalse((self.root/'r.json').exists())
+    def test_timeout_after_commit_verifies_existing_bytes_without_overwriting(self):
+        p=self.package();client=FakeR2();put=client.put_object;timed_out=[]
+        def uncertain(**kw):
+            result=put(**kw)
+            if not timed_out and kw['Key']!='delivery/verified-index.json':
+                timed_out.append(kw['Key']);raise TimeoutError('response lost after commit')
+            return result
+        with patch.object(client,'put_object',side_effect=uncertain),patch('r2_sync.retry',side_effect=lambda op:retry(op,pause=lambda _:None)):
+            receipt=sync(client,'b',self.output,p,self.root/'r.json')
+        self.assertTrue(receipt['verified']);self.assertEqual(len(timed_out),1)
+        self.assertEqual(client.writes,len(p['files'])+1)
+    def test_deep_audit_reuses_get_metadata_without_redundant_head_requests(self):
+        p=self.package();client=FakeR2()
+        with patch.object(client,'head_object',side_effect=AssertionError('Redundant HEAD')):
+            first=sync(client,'b',self.output,p,self.root/'r.json',deep=True)
+            second=sync(client,'b',self.output,p,self.root/'r.json',deep=True)
+        self.assertEqual(first['uploaded'],len(p['files']));self.assertEqual(second['uploaded'],0)
     def test_retry_is_bounded_and_succeeds_after_transient_error(self):
         calls=[]
         def op():
