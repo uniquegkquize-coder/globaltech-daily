@@ -19,9 +19,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Python unit tests
         run: python -m unittest discover -s experiments/article-delivery -p 'test_*.py' -v
       - name: Python compile check
         run: python -m py_compile experiments/article-delivery/upload_r2.py
       - name: Worker syntax check
         run: node --check experiments/article-delivery/r2-preview.mjs
+      - name: Worker behavior tests
+        run: node --test experiments/article-delivery/test_r2_preview.mjs
