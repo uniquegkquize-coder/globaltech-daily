@@ -81,6 +81,8 @@ Staging uses `cloudflare-staging`, no production routes, a separate staging Work
 
 Before production promotion, separately obtain owner authorization, verify account-wide free-tier headroom, and configure `cloudflare-production` approval controls. Add `CF_ZONE_ID` as a repository variable and give the production token Zone Workers Routes Edit. Disable Git-triggered **Pages** production builds (the central release workflow replaces them). Do not disable the news/trending GitHub schedules. Capture current Pages/Worker configuration and retain the previous production deployment.
 
+Root CSS, JS and branding must match the current production bytes at cutover. A simultaneous UI-asset change is refused and requires a separate compatible staged asset rollout; normal news/content releases do not change these assets.
+
 Initial promotion requires exhaustive staging verification for the exact release, a matching remote upload receipt, explicit routing authorization in the protected production job, a successful previous Pages rollback target, and no route owned by another Worker. It snapshots rollback state, activates the five scoped routes, deploys the small Pages package, and smoke-tests production. Failure automatically restores the prior Pages deployment and release, or removes only newly added owned routes on a first migration. It never deletes article data, images or R2 objects.
 
 After initial production has passed, set `DELIVERY_INITIAL_VERIFIED=true`, then `DELIVERY_ENABLED=true` to authorize subsequent automatic two-hour releases. Staging stays isolated from production. Do not set these flags merely to get past a failing verification.

@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import requests
 from delivery_package import ROOT, assemble_pages
 from verify_delivery import smoke
 
@@ -32,6 +33,16 @@ def config(release, production=False, asset_origin=None):
     return value
 
 
+def verify_root_assets():
+    # The initial routing cutover cannot atomically update a separate Pages project.
+    # Refuse a simultaneous UI-asset change instead of briefly serving mismatched CSS/JS.
+    for name in ('style.css','site.js','favicon.svg','publisher-logo.png','social-card.jpg'):
+        response=requests.get('https://globewiredaily.org/'+name,timeout=(5,30))
+        response.raise_for_status()
+        if response.content!=(ROOT/'build/rendered'/name).read_bytes():
+            raise ValueError('Root asset differs from production: '+name+'; stage a compatible asset rollout separately before switching HTML delivery')
+
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--production',action='store_true');p.add_argument('--all-urls',action='store_true');a=p.parse_args()
     package=json.loads((ROOT/'build/r2-package/package.json').read_text());receipt=json.loads((ROOT/'build/r2-receipt.json').read_text())
@@ -49,6 +60,7 @@ def main():
         if os.environ.get('PRODUCTION_ROUTING_AUTHORIZED')!='true':
             raise ValueError('Production routing authorization missing')
         from delivery_rollback import capture, restore
+        verify_root_assets()
         snapshot=capture(project)
         (ROOT/'build/rollback.json').write_text(json.dumps(snapshot,indent=2)+'\n')
         def deploy_worker(release):

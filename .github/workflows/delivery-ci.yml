@@ -1,8 +1,6 @@
 name: Delivery architecture CI
 on:
   pull_request:
-  push:
-    branches: [fix/r2-delivery-clean-build]
 permissions:
   contents: read
 concurrency:
