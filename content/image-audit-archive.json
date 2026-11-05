@@ -2,829 +2,1126 @@
   "total_posts": 2194,
   "selected": 175,
   "results": {
-    "access_denied": 1,
-    "invalid_source_images": 20,
-    "source_unavailable": 6,
+    "invalid_source_images": 28,
+    "access_denied": 40,
+    "no_source_image": 32,
+    "source_unavailable": 33,
     "restricted_page": 1,
-    "no_source_image": 8,
-    "cooldown": 137,
-    "source_error": 2
+    "source_error": 3,
+    "cooldown": 38
   },
   "still_missing": 168,
   "articles": [
     {
-      "id": "a4fcd6020999",
-      "source": "https://insideevs.com/news/814280/ferrari-luce-ev-sold-out-for-2027/",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1793872990.349365
-    },
-    {
-      "id": "c176a1dc41c1e122cab45821",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872990.9358325
-    },
-    {
-      "id": "3acc30eaefd0",
-      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/may/doc202655863701.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793872990.938529
-    },
-    {
-      "id": "1285f1ac72a8",
-      "source": "https://github.com/FrancescoGrazioso/Meld",
-      "policy": "93e2ad7deccc",
-      "result": "restricted_page",
-      "retry_after": 1793872990.9530118
-    },
-    {
-      "id": "253e0e4a696b",
-      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/feb/doc202422305301.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793872991.4229982
-    },
-    {
-      "id": "63616ffbf4c2",
-      "source": "https://in.linkedin.com/jobs/view/associate-qa-engineer-software-at-light-wonder-4484455024",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872991.6502771
-    },
-    {
-      "id": "5cf2007cdcba",
-      "source": "https://in.linkedin.com/jobs/view/analyst-software-engineer-java-at-saatvik-agro-4484805864",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872991.652957
-    },
-    {
-      "id": "dfd16b79fae5",
-      "source": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-flex-4472543793",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872991.7895422
-    },
-    {
-      "id": "b7601652de21",
-      "source": "https://readerblogs.navbharattimes.indiatimes.com/BHALI-LAGE-YA-BURI/javed-akhtar-ki-samaaj-sudhar-ki-chunauti/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872991.8040273
-    },
-    {
-      "id": "47e829176cc5",
-      "source": "https://in.linkedin.com/jobs/view/visa-sales-executive-location-saket-in-new-delhi-day-shift-at-sharda-consultancy-services-4484921383",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872992.020408
-    },
-    {
-      "id": "75dbda51595c",
-      "source": "https://in.linkedin.com/jobs/view/us-immigration-executive-at-vidlexinfo-llc-4483058702",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872992.2496955
-    },
-    {
-      "id": "2f1dd8699d58",
-      "source": "https://www.un.org/en/property-cards-by-og-global-category/287/6611%209436/join/Join/url%28%22https%3A?page=5",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872992.3917205
-    },
-    {
-      "id": "89a9f272b95b",
-      "source": "https://in.linkedin.com/jobs/view/content-and-social-media-marketing-internship-in-delhi-at-denmonk-4484771273",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872992.4645689
-    },
-    {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872992.9399972
-    },
-    {
-      "id": "4afa4536b18e5a41b30a3497",
-      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872993.0313408
-    },
-    {
-      "id": "65c484924118",
-      "source": "https://in.linkedin.com/jobs/view/visitor-visa-counselor-at-sky-heaven-immigration-opc-pvt-ltd-4482294678",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872993.1238956
-    },
-    {
-      "id": "2e293f23db10",
-      "source": "https://www.un.org/unispal/document-source/united-nations-childrens-fund-unicef/page/36/?wpv_view_count=4164",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872994.1314018
-    },
-    {
-      "id": "e62d34be0421",
-      "source": "https://www.linkedin.com/jobs/view/data-scientist-applied-ai-at-definitive-healthcare-4484088856",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872994.1507568
-    },
-    {
-      "id": "6548e415fc086ccec65bbb7c",
-      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872994.1868687
-    },
-    {
-      "id": "c3c44629d231",
-      "source": "https://in.linkedin.com/jobs/view/assessment-research-intern-at-careermaker-ai-4483632864",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872994.3496995
-    },
-    {
-      "id": "b211f120ea27b93fc925f6b4",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872994.4856317
-    },
-    {
-      "id": "4ca42dad8d6f",
-      "source": "https://in.linkedin.com/jobs/view/associate-global-mobility-and-immigration-talent-services-tipm-perm-services-hyderabad-at-deloitte-4484168606",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793872994.5342042
-    },
-    {
-      "id": "ab5757b7bde7e5a43128d256",
-      "source": "https://exploitsmw.com/",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793872994.8054044
-    },
-    {
-      "id": "b822477903c2",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No147of2026_0.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793872996.4373822
-    },
-    {
-      "id": "12d3cc56ebe6",
-      "source": "https://www.prnewswire.com/news-releases/five-california-nonprofits-receive-500-000-to-restore-habitats-expand-environmental-education-and-strengthen-local-food-systems-302924612.html",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793872997.3628058
-    },
-    {
-      "id": "bbfd4d3d5c0a",
-      "source": "https://www.tui.com/hilfe/flug/verspaetung/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793872997.8470857
-    },
-    {
-      "id": "38accdd4d36d",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No135of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793872998.870596
-    },
-    {
-      "id": "600062192bf4",
-      "source": "https://in.linkedin.com/jobs/cad-software-development-engineer-jobs-hyderabad-ts?trk=guest_job_details_jd_jserp_more_jobs_link&f_AL=true",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793873000.6838315
-    },
-    {
-      "id": "3a640d951615",
-      "source": "https://www.sahisarkarijobs.in/increment-calculator/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793873001.0004573
-    },
-    {
-      "id": "0346b2c5ec85",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No136of2026.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1793873001.2384672
-    },
-    {
-      "id": "dd07ef14c72f",
-      "source": "https://www.sahisarkarijobs.in/cgpa-to-percentage-calculator/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793873001.5685318
-    },
-    {
       "id": "6189652eeaaa",
-      "result": "cooldown"
-    },
-    {
-      "id": "0bdb0918a8cf",
-      "result": "cooldown"
-    },
-    {
-      "id": "04bcdc448261",
-      "result": "cooldown"
-    },
-    {
-      "id": "05cc9a358c55",
-      "result": "cooldown"
-    },
-    {
-      "id": "090108930e0d",
-      "result": "cooldown"
-    },
-    {
-      "id": "029ee2179ac9",
-      "result": "cooldown"
-    },
-    {
-      "id": "0e7392808f2b",
-      "result": "cooldown"
-    },
-    {
-      "id": "0e2fde519d11",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/university-of-phoenix-associate-dean-to-present-ai-literacy-framework-implementation-at-aacu-conference-on-ai-and-higher-education-302924272.html",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885369.7491784
     },
     {
       "id": "3f437cd6deee",
-      "result": "cooldown"
+      "source": "https://www.nytimes.com/spotlight/lifestyle",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885369.8242857
+    },
+    {
+      "id": "0e7392808f2b",
+      "source": "https://in.linkedin.com/jobs/view/fashion-designer-educator-at-skillinabox-4483836717",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885371.5383768
+    },
+    {
+      "id": "0bdb0918a8cf",
+      "source": "https://in.linkedin.com/jobs/view/relationship-manager-secured-direct-south-ap-ts-tn-at-credit-saison-india-4480041233",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885371.5415256
+    },
+    {
+      "id": "05cc9a358c55",
+      "source": "https://in.linkedin.com/jobs/view/business-development-specialist-at-fanzart-designer-fans-4484908686",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885371.543447
+    },
+    {
+      "id": "0e2fde519d11",
+      "source": "https://in.linkedin.com/jobs/view/growth-vendor-onboarding-intern-surat-textile-market-at-tradetrust-4484792454",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885371.5459943
+    },
+    {
+      "id": "029ee2179ac9",
+      "source": "https://in.linkedin.com/jobs/view/backend-developer-java-at-saatvik-agro-4484932211",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885371.5478902
+    },
+    {
+      "id": "090108930e0d",
+      "source": "https://in.linkedin.com/jobs/view/client-acquisition-intern-at-bright-blue-gemstones-4471542402",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885371.5487761
+    },
+    {
+      "id": "04bcdc448261",
+      "source": "https://in.linkedin.com/jobs/view/material-management-coordinator-at-kone-4484477721?position=46&pageNum=0&refId=7GWgQQ0v3ze9a3w3Q2vwcw%3D%3D&trackingId=BYWzdYE16qmuOI8vgMHtPQ%3D%3D",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885371.5522964
     },
     {
       "id": "08a83556bce2",
-      "result": "cooldown"
-    },
-    {
-      "id": "0b33380de117",
-      "result": "cooldown"
-    },
-    {
-      "id": "06f842f028fe",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/view/education-finance-officer-in-nashik-trichey-begumpet-mangalore-solapur-bidar-bhubaneswar-coimbatore-cuttack-kollam-chennai-hyderabad-maharashta-koramangala-andhra-pradesh-at-wemakescholars-4483353601",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885371.5829496
     },
     {
       "id": "079aeaa0eeef",
-      "result": "cooldown"
-    },
-    {
-      "id": "00f079e2ba3a",
-      "result": "cooldown"
-    },
-    {
-      "id": "040dd341f762",
-      "result": "cooldown"
-    },
-    {
-      "id": "0da0ead215c3",
-      "result": "cooldown"
-    },
-    {
-      "id": "080b28de54ff",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885371.6804175
     },
     {
       "id": "07f5b24312a4",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/view/stem-innovation-engineer-in-chandigarh-ghaziabad-uttar-pradesh-bulandshahr-noida-punjab-gurgaon-meerut-sangrur-mohali-at-innow8-4472659090",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885371.7059882
     },
     {
-      "id": "07f40dc280d1",
-      "result": "cooldown"
+      "id": "06f842f028fe",
+      "source": "https://www.linkedin.com/jobs/view/virtual-assistant-at-a-full-renovation-%E2%80%93-home-improvement-4483788958",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885371.740458
     },
     {
       "id": "c929a77d3cf4",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-phoenix-az",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885371.765403
     },
     {
-      "id": "2254c016ebd0",
-      "result": "cooldown"
+      "id": "07f40dc280d1",
+      "source": "https://in.linkedin.com/jobs/view/looking-for-western-music-teacher-primary-1-5-in-tellapur-hyderabad-at-eh-jobs-4481687605",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885371.7828374
     },
     {
       "id": "736ca0bcddb6",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-des-moines-ia",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885371.8630555
     },
     {
       "id": "58f11d3687a2",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-des-moines-ia",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885371.870596
     },
     {
       "id": "37c0e160c49f",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-cheyenne-wy",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885371.9240296
     },
     {
       "id": "1ad731a65211",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-moses-lake-wa",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885371.933868
     },
     {
       "id": "aa511d7af8e4",
-      "result": "cooldown"
-    },
-    {
-      "id": "4002fcf12fa5",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-san-francisco-ca",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885372.0144928
     },
     {
       "id": "35c6b2e75c5a",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885372.0728433
     },
     {
       "id": "38138689935d",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-boydton-va",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885372.1828241
     },
     {
       "id": "b9e7ebed5efd",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-boydton-va",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885372.308855
     },
     {
       "id": "91712e374b16",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-boydton-va",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885372.4828193
+    },
+    {
+      "id": "040dd341f762",
+      "source": "https://in.linkedin.com/jobs/view/founder-s-office-intern-at-the-souled-store-4483622129",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885372.5018547
     },
     {
       "id": "090cabc5ee27",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/%E0%A6%B2%E0%A7%87%E0%A6%95%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%BE%E0%A6%B0-jobs",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885372.9172914
+    },
+    {
+      "id": "0b33380de117",
+      "source": "https://in.linkedin.com/jobs/view/compliance-manager-at-fatakpay-4482278882",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885373.1119106
+    },
+    {
+      "id": "00f079e2ba3a",
+      "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-alok-industries-limited-india-4481052431",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885373.1214428
     },
     {
       "id": "9e37935bcd6c",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885373.1241264
     },
     {
       "id": "257900039128",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-moses-lake-wa",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885373.12736
     },
     {
-      "id": "43669547d8a9",
-      "result": "cooldown"
+      "id": "080b28de54ff",
+      "source": "https://in.linkedin.com/jobs/view/mis-executive-at-amrit-skills-development-4480055351",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885373.55268
     },
     {
-      "id": "8c6ddded2bc5",
-      "result": "cooldown"
+      "id": "0da0ead215c3",
+      "source": "https://in.linkedin.com/jobs/view/technial-hr-recruiter-in-secunderabad-hyderabad-hyderabad-hyderabad-vishakhapatnam-alwal-visakhapatnam-at-wemakescholars-4484295029?position=58&pageNum=0&refId=IYfwluMaDIcsUuazNwoLjw%3D%3D&trackingId=4yed8vCMLTz%2BknFIMv5vzQ%3D%3D",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885373.5547116
     },
     {
-      "id": "d25fe3284c63",
-      "result": "cooldown"
+      "id": "2254c016ebd0",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-cheyenne-wy",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885373.6781988
     },
     {
-      "id": "572d5792fe9b",
-      "result": "cooldown"
-    },
-    {
-      "id": "0983ec5f08f3",
-      "result": "cooldown"
+      "id": "4002fcf12fa5",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-phoenix-az",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885373.6924648
     },
     {
       "id": "0f2e549a24cc",
-      "result": "cooldown"
-    },
-    {
-      "id": "6734d0b5d4b1",
-      "result": "cooldown"
-    },
-    {
-      "id": "92088c2de8c2",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-moses-lake-wa",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885373.7030342
     },
     {
       "id": "0391c4373eca",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-phoenix-az",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885373.7583206
     },
     {
-      "id": "ff059456a4ee",
-      "result": "cooldown"
+      "id": "0983ec5f08f3",
+      "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Br%C9%99yl%C9%99r-%2Bonlayn%2Bfikirl%C9%99ri%2Bayr%C4%B1ca%2Binc%C9%99l%C9%99yin.ekq-jobs",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885373.7709603
     },
     {
-      "id": "9d38ac0228db",
-      "result": "cooldown"
+      "id": "6734d0b5d4b1",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-des-moines-ia",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885373.7765548
+    },
+    {
+      "id": "92088c2de8c2",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-des-moines-ia",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885373.7920768
     },
     {
       "id": "021c54d7abdb",
-      "result": "cooldown"
+      "source": "https://je.linkedin.com/jobs/Win%20Gaming%20API%20-%20India%20Market%20API%F0%9F%8F%A7TG%40gameapi26-jobs?position=1&pageNum=0",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885373.8509378
     },
     {
-      "id": "7548888dfa18",
-      "result": "cooldown"
+      "id": "9d38ac0228db",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-phoenix-az",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885373.868146
+    },
+    {
+      "id": "ff059456a4ee",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-phoenix-az",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885373.8999617
     },
     {
       "id": "36fc08c8c68d",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-des-moines-ia",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885373.9742317
     },
     {
-      "id": "b08f3712a37e",
-      "result": "cooldown"
+      "id": "43669547d8a9",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28286?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885374.0661395
     },
     {
-      "id": "9a0aada26bcb",
-      "result": "cooldown"
+      "id": "d25fe3284c63",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28302?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885374.0754638
     },
     {
-      "id": "02518f2b343c",
-      "result": "cooldown"
+      "id": "572d5792fe9b",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28297?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885374.115272
     },
     {
       "id": "6ba39bcd4548",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885374.1593645
+    },
+    {
+      "id": "7548888dfa18",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28297?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885374.182296
+    },
+    {
+      "id": "8c6ddded2bc5",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28274?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885374.1882215
+    },
+    {
+      "id": "02518f2b343c",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28297?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885374.3070683
+    },
+    {
+      "id": "b08f3712a37e",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28313?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885374.3546264
+    },
+    {
+      "id": "9a0aada26bcb",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28250?dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue&mm=03%3Fgb%3Dtrue",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885374.4001157
     },
     {
       "id": "285dd8d5ec2f",
-      "result": "cooldown"
-    },
-    {
-      "id": "dd54d85ef928",
-      "result": "cooldown"
-    },
-    {
-      "id": "06157d85578b",
-      "result": "cooldown"
-    },
-    {
-      "id": "074cb06de604",
-      "result": "cooldown"
-    },
-    {
-      "id": "09eaa4a8cbc9",
-      "result": "cooldown"
-    },
-    {
-      "id": "03fdad6de98e",
-      "result": "cooldown"
-    },
-    {
-      "id": "1c4f6e29aff4",
-      "result": "cooldown"
-    },
-    {
-      "id": "021dcf06da61",
-      "result": "cooldown"
+      "source": "https://www.desidime.com/discussions/update-on-applicable-charges-for-2189852",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885375.3105488
     },
     {
       "id": "2a8b92143f14b264d8d27146",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885375.7531276
+    },
+    {
+      "id": "dd54d85ef928",
+      "source": "https://www.sahisarkarijobs.in/photo-resizer/",
+      "policy": "93e2ad7deccc",
+      "result": "restricted_page",
+      "retry_after": 1793885375.882259
     },
     {
       "id": "bdaee5f4786c",
-      "result": "cooldown"
-    },
-    {
-      "id": "2f02162d9ab27a8cd5662161",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/view/social-media-marketing-internship-in-delhi-bangalore-hyderabad-mumbai-at-foodstories-4479738162?position=44&pageNum=0&refId=6HZzQVkTvpvkiIYOUZ%2F6vQ%3D%3D&trackingId=jLeQWDCS3GoiLwZtObrHrw%3D%3D",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885375.9011867
     },
     {
       "id": "222914040e11",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/view/social-media-associate-at-the-blue-kite-4483449440",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885376.0679328
     },
     {
-      "id": "040073763955",
-      "result": "cooldown"
+      "id": "2f02162d9ab27a8cd5662161",
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885376.2897727
     },
     {
       "id": "a6ec2cd71bae",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/view/scriptwriter-youtube-at-headout-4483872792",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885376.3838773
     },
     {
       "id": "a99188c62a2d",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/view/social-media-intern-immediate-joiners-bangalore-at-divine-hindu-4484913408",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885376.46766
     },
     {
-      "id": "05d05c18d987",
-      "result": "cooldown"
+      "id": "074cb06de604",
+      "source": "https://www.prnewswire.com/news-releases/duol-investors-have-opportunity-to-lead-duolingo-inc-securities-fraud-lawsuit-with-sbs-law-302924160.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885379.8278704
     },
     {
       "id": "7c6f6d44e10c",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/view/business-development-associate-at-peerless-immigration-services-4483846739?position=23&pageNum=0&refId=pdi7GkDzOUAwjOAwZuhD7g%3D%3D&trackingId=99eGWHPhi0lFt1HRUu2RDA%3D%3D",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885380.0076807
+    },
+    {
+      "id": "06157d85578b",
+      "source": "https://www.prnewswire.com/news-releases/the-society-for-immunotherapy-of-cancer-announces-late-breaking-abstracts-and-press-briefing-presented-at-sitc-2026-302923852.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885380.0703015
     },
     {
       "id": "8e77d55e51ba",
-      "result": "cooldown"
-    },
-    {
-      "id": "d113f09eda07",
-      "result": "cooldown"
+      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/oct/doc_10319_20261030_15562701.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885380.448026
     },
     {
       "id": "2d2ee8809ceb",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/view/busienss-development-executive-at-peerless-immigration-services-4483857590",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885381.5293136
     },
     {
       "id": "9d1f6341eb5fa6644d63ff08",
-      "result": "cooldown"
+      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885382.3435917
+    },
+    {
+      "id": "03fdad6de98e",
+      "source": "https://www.prnewswire.com/news-releases/all-in-print-china-2026-concludes-successfully-as-ruizhi-machinery-showcases-three-new-machines-302923371.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885383.0286767
+    },
+    {
+      "id": "021dcf06da61",
+      "source": "https://www.prnewswire.com/news-releases/tuhura-biosciences-provides-first-look-at-data-from-its-open-label-study-of-ifx-2-0-as-an-adjunctive-therapy-to-keytruda-in-first-line-treatment-of-patients-with-deep-seated-metastatic-merkel-cell-carcinoma-302918838.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885383.0668893
     },
     {
       "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "d47d25fb753a",
-      "result": "cooldown"
+      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885383.425812
     },
     {
       "id": "a9716e8287f2",
-      "result": "cooldown"
+      "source": "https://www.bbc.co.uk/sport/cricket/scores-fixtures",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885384.792467
     },
     {
-      "id": "036d1e10e017",
-      "result": "cooldown"
+      "id": "d47d25fb753a",
+      "source": "https://in.linkedin.com/jobs/view/vice-president-sap-ai-at-hcltech-4473146204",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885385.1541755
     },
     {
-      "id": "4be79532a665",
-      "result": "cooldown"
-    },
-    {
-      "id": "80ca872b27a0",
-      "result": "cooldown"
+      "id": "1c4f6e29aff4",
+      "source": "https://www.theguardian.com/info/2016/jan/25/content-funding",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885385.3265457
     },
     {
       "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
+      "source": "https://isc-edu.org/",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1793885385.3372543
     },
     {
-      "id": "d15bcc8a3c3b",
-      "result": "cooldown"
+      "id": "040073763955",
+      "source": "https://www.prnewswire.com/news-releases/yeastar-reconoce-la-ia-la-innovacion-tecnica-y-el-exito-de-los-clientes-en-los-yeahs-awards-2026-302917649.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885386.5663757
     },
     {
       "id": "0493b37f6575",
-      "result": "cooldown"
+      "source": "https://www.business-standard.com/companies/news/cci-xavier-niel-vodafone-stake-prosus-navi-aditya-birla-adani-deals-126103100598_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885386.7833338
     },
     {
-      "id": "031f3d5eda5f",
-      "result": "cooldown"
+      "id": "d15bcc8a3c3b",
+      "source": "https://in.linkedin.com/jobs/view/visa-documentation-executve-at-primex-visa-pvt-ltd-4484924300",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885386.8011806
     },
     {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
+      "id": "09eaa4a8cbc9",
+      "source": "https://www.sahisarkarijobs.in/age-calculator/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885387.5962853
     },
     {
       "id": "9e7d68e39abe",
-      "result": "cooldown"
+      "source": "https://www.business-standard.com/external-affairs-defence-security/news/secure-supply-chains-resilience-key-for-global-economy-jaishankar-at-g20-126110100012_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885387.7680933
     },
     {
-      "id": "5fc7e58715b4",
-      "result": "cooldown"
+      "id": "05d05c18d987",
+      "source": "https://www.prnewswire.com/news-releases/dodgen-reports-poe-devolatilization-milestones-across-three-industrial-projects-in-china-302923001.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885388.1099622
     },
     {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
+      "id": "80ca872b27a0",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No145of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885388.6406531
     },
     {
       "id": "ef6d4c03dede",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/xpeng-announces-vehicle-delivery-results-for-october-2026-302925668.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885389.4274318
     },
     {
-      "id": "d0f211debf6a",
-      "result": "cooldown"
+      "id": "036d1e10e017",
+      "source": "https://www.prnewswire.com/news-releases/new-clinical-data-on-lecanemab-to-be-presented-at-ctad-conference-2026-302924707.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885390.553367
     },
     {
-      "id": "ef84455d3242",
-      "result": "cooldown"
+      "id": "d113f09eda07",
+      "source": "https://www.sahisarkarijobs.in/service-length-calculator/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885390.877054
     },
     {
       "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
+      "source": "https://cctu.edu.gh/site/index",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885391.6591098
     },
     {
-      "id": "ade2cb72b841",
-      "result": "cooldown"
+      "id": "8444aa187e09b377f661fcbf",
+      "source": "https://dec.ac.in/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885393.0771835
     },
     {
-      "id": "efeded53a5bb",
-      "result": "cooldown"
+      "id": "4be79532a665",
+      "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885393.4395902
+    },
+    {
+      "id": "5fc7e58715b4",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/Press_release_142_signed_english.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885394.8768926
+    },
+    {
+      "id": "ef84455d3242",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No140of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885396.9267695
+    },
+    {
+      "id": "031f3d5eda5f",
+      "source": "https://news.samsung.com/in/author/malay-anil/page/331",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1793885397.0578053
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1793885398.190384
     },
     {
       "id": "75ebcc814325",
-      "result": "cooldown"
-    },
-    {
-      "id": "ec8b9639359a",
-      "result": "cooldown"
-    },
-    {
-      "id": "f638281840d9",
-      "result": "cooldown"
-    },
-    {
-      "id": "a41b914c9659",
-      "result": "cooldown"
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No139of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885399.5588818
     },
     {
       "id": "29f12d5d640a",
-      "result": "cooldown"
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No.129_of_2026.pdf.PDF",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885399.780738
+    },
+    {
+      "id": "ade2cb72b841",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No144of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885400.288313
     },
     {
       "id": "61ab99a70d23",
-      "result": "cooldown"
+      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_3_29102026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885401.028436
     },
     {
-      "id": "3b5a7fa28a88",
-      "result": "cooldown"
-    },
-    {
-      "id": "06e9199a393c",
-      "result": "cooldown"
-    },
-    {
-      "id": "a91a82825e4a",
-      "result": "cooldown"
+      "id": "efeded53a5bb",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No138of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885401.1363058
     },
     {
       "id": "05bc5a47b19b",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/turner-mason--company-releases-four-fall-energy-market-outlook-reports-302923877.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885401.5061479
     },
     {
       "id": "fddacd9eaeff",
-      "result": "cooldown"
+      "source": "https://www.business-standard.com/amp/world-news/france-protests-turn-violent-again-as-police-brace-for-halloween-unrest-126110100051_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885401.5454175
     },
     {
-      "id": "ca9ab95087f5",
-      "result": "cooldown"
+      "id": "a91a82825e4a",
+      "source": "https://jeemain.nta.nic.in/",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885401.687473
     },
     {
       "id": "a28e5c356dd7",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/arctic-wolf-named-a-leader-in-2026-qks-spark-matrix-for-ai-soc-automation-302923421.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885402.2056456
     },
     {
       "id": "731720281d96",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/tata-communications-to-build-indias-ai-super-highway-302922235.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885402.5771732
     },
     {
       "id": "9db43091aef2",
-      "result": "cooldown"
+      "source": "https://www.business-standard.com/world-news/student-enrolment-in-us-computer-science-programs-falls-as-ai-takes-jobs-126102900433_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885402.744705
     },
     {
       "id": "4805037fd814",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/tairex-launches-multi-agent-ai-system-to-transform-clinical-collaboration-and-decision-support-302916729.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885403.128668
+    },
+    {
+      "id": "d0f211debf6a",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No137of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885403.1994543
+    },
+    {
+      "id": "a41b914c9659",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No132of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885403.6979587
     },
     {
       "id": "c766ee90465d",
-      "result": "cooldown"
-    },
-    {
-      "id": "01a6933a42b8",
-      "result": "cooldown"
-    },
-    {
-      "id": "62f5310583d8",
-      "result": "cooldown"
+      "source": "https://www.theguardian.com/football/live",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885404.1784375
     },
     {
       "id": "9b3641414312",
-      "result": "cooldown"
+      "source": "https://www.business-standard.com/amp/world-news/iran-warns-of-wider-retaliation-even-as-diplomatic-talks-with-us-progress-126103101346_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885404.293032
     },
     {
-      "id": "41e3cf0806d9",
-      "result": "cooldown"
+      "id": "ca9ab95087f5",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No127of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885404.7854016
     },
     {
-      "id": "1da89144be44",
-      "result": "cooldown"
+      "id": "62f5310583d8",
+      "source": "https://www.cardekho.com:443/electric-charging-station",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885405.9777226
     },
     {
       "id": "7f651ce9d3f0",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/123net-awarded-86-million-in-federal-bead-funding-for-michigan-broadband-infrastructure-302922523.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885406.3589792
     },
     {
       "id": "9acdf4deb8ec",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/pakistaanse-banken-slagen-niet-voor-de-klimaat--en-natuurbeleidstest-omdat-financieringswaarborgen-tekortschieten-302925673.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885406.8131537
+    },
+    {
+      "id": "01a6933a42b8",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No122of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885406.8970678
+    },
+    {
+      "id": "f638281840d9",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No128of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885407.2809458
     },
     {
       "id": "3570bb7ef821",
-      "result": "cooldown"
+      "source": "https://www.upsc.gov.in/sites/default/files/AdvtNo-51-2026-Special-Engl-240726.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1793885407.3751793
+    },
+    {
+      "id": "ec8b9639359a",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No143of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885407.654347
     },
     {
       "id": "05d3b71dd6e0",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/view/sales-executive-at-make-your-own-perfume-myop-4484796852",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885407.6909964
     },
     {
-      "id": "712c404a4a7d",
-      "result": "cooldown"
-    },
-    {
-      "id": "122b5649e749",
-      "result": "cooldown"
+      "id": "06e9199a393c",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No133of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885407.821019
     },
     {
       "id": "9bcfb13f35c2",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/modelbest-and-openbmb-open-source-minicpm-ocr-series-delivering-high-performance-document-parsing-and-ai-powered-quality-control-302925594.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885408.2168903
     },
     {
       "id": "8fb539b04f5d",
-      "result": "cooldown"
+      "source": "https://www.haryana.gov.in/about-haryana/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885408.6126866
+    },
+    {
+      "id": "122b5649e749",
+      "source": "https://in.linkedin.com/jobs/view/sales-associate-onboard-international-cruise-line-at-ivory-lighthouse-recruitment-services-pvt-ltd-4482589473",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885408.6615498
+    },
+    {
+      "id": "3b5a7fa28a88",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No134of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885408.6745865
     },
     {
       "id": "9d72856192eb",
-      "result": "cooldown"
-    },
-    {
-      "id": "9cfed70093fb",
-      "result": "cooldown"
-    },
-    {
-      "id": "c455f726510c",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/navy-mutual-awards-milmos-lacey-langford-with-the-2026-lieutenant-timothy-dix-bolles-excellency-in-education-award-302922401.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885408.688807
     },
     {
       "id": "cd652bf418a1",
-      "result": "cooldown"
-    },
-    {
-      "id": "ed99df3183ca",
-      "result": "cooldown"
-    },
-    {
-      "id": "52c013755cd0",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/cognizant-zet-meer-dan-25-000-professionals-in-voor-de-implementatie-van-openai-oplossingen-nu-ondernemingen-geavanceerde-ai-in-productie-nemen-302925664.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885409.096695
     },
     {
       "id": "029b646a13ec",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/esg-reporting-software-market-worth-4-48-billion-by-2031--report-by-marketsandmarkets-302924789.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885409.5164769
     },
     {
-      "id": "c4038aa3469b",
-      "result": "cooldown"
+      "id": "712c404a4a7d",
+      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_2_29102026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885410.886636
     },
     {
       "id": "07746bc77e63",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/rcg-ventures-closes-fund-viii-above-target-at-515-million-302919410.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885411.4060934
+    },
+    {
+      "id": "ed99df3183ca",
+      "source": "https://apps.apple.com/mx/iphone/apps",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793885411.452835
+    },
+    {
+      "id": "9cfed70093fb",
+      "source": "https://www.sahisarkarijobs.in/salary-calculator/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885411.96356
     },
     {
       "id": "a5f43758a0b4",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/white-paper-outlining-strategies-to-address-rural-ai-skills-gaps-and-support-workforce-retention-published-by-the-university-of-phoenix-college-of-doctoral-studies-302924623.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885411.965071
     },
     {
       "id": "3b439d483131",
+      "source": "https://www.prnewswire.com/news-releases/ubcf-and-ggp-formerly-brookfield-properties-launch-2026-pink-bag-event-initiative-302925520.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885412.103873
+    },
+    {
+      "id": "52c013755cd0",
+      "source": "https://www.sahisarkarijobs.in/8th-pay-commission-calculator/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793885412.2418232
+    },
+    {
+      "id": "a4fcd6020999",
       "result": "cooldown"
     },
     {
-      "id": "4eb7b2235122",
+      "id": "c176a1dc41c1e122cab45821",
       "result": "cooldown"
     },
     {
-      "id": "3a99b749f100",
+      "id": "3acc30eaefd0",
       "result": "cooldown"
     },
     {
-      "id": "948554632b74",
+      "id": "1285f1ac72a8",
+      "result": "cooldown"
+    },
+    {
+      "id": "253e0e4a696b",
+      "result": "cooldown"
+    },
+    {
+      "id": "63616ffbf4c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "5cf2007cdcba",
+      "result": "cooldown"
+    },
+    {
+      "id": "dfd16b79fae5",
+      "result": "cooldown"
+    },
+    {
+      "id": "b7601652de21",
+      "result": "cooldown"
+    },
+    {
+      "id": "47e829176cc5",
+      "result": "cooldown"
+    },
+    {
+      "id": "75dbda51595c",
+      "result": "cooldown"
+    },
+    {
+      "id": "2f1dd8699d58",
+      "result": "cooldown"
+    },
+    {
+      "id": "89a9f272b95b",
+      "result": "cooldown"
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "result": "cooldown"
+    },
+    {
+      "id": "4afa4536b18e5a41b30a3497",
+      "result": "cooldown"
+    },
+    {
+      "id": "65c484924118",
+      "result": "cooldown"
+    },
+    {
+      "id": "2e293f23db10",
+      "result": "cooldown"
+    },
+    {
+      "id": "e62d34be0421",
+      "result": "cooldown"
+    },
+    {
+      "id": "6548e415fc086ccec65bbb7c",
+      "result": "cooldown"
+    },
+    {
+      "id": "c3c44629d231",
+      "result": "cooldown"
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "4ca42dad8d6f",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5757b7bde7e5a43128d256",
+      "result": "cooldown"
+    },
+    {
+      "id": "b822477903c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "12d3cc56ebe6",
+      "result": "cooldown"
+    },
+    {
+      "id": "bbfd4d3d5c0a",
+      "result": "cooldown"
+    },
+    {
+      "id": "38accdd4d36d",
+      "result": "cooldown"
+    },
+    {
+      "id": "600062192bf4",
+      "result": "cooldown"
+    },
+    {
+      "id": "3a640d951615",
+      "result": "cooldown"
+    },
+    {
+      "id": "0346b2c5ec85",
+      "result": "cooldown"
+    },
+    {
+      "id": "dd07ef14c72f",
       "result": "cooldown"
     },
     {
       "id": "9ac2bb5ad6c4",
-      "source": "https://www.sahisarkarijobs.in/cutoff-marks-calculator/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793873002.1885684
+      "result": "cooldown"
     },
     {
       "id": "a6510273f0889bf4d7684eae",
-      "source": "https://mua.ac.ke/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1793873003.3221664
+      "result": "cooldown"
     },
     {
       "id": "51e45078d38e",
-      "source": "https://www.sahisarkarijobs.in/physical-standards-calculator-defence-police/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793873005.262863
+      "result": "cooldown"
     },
     {
       "id": "ef614dcb4163038685679d1d",
-      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793873005.8255637
+      "result": "cooldown"
     },
     {
       "id": "c9e064a48f72",
-      "source": "https://www.npr.org/series/1082539802/russia-ukraine-invasion-explained",
-      "policy": "93e2ad7deccc",
-      "result": "source_error",
-      "retry_after": 1793873010.9962492
+      "result": "cooldown"
     },
     {
       "id": "ab1e7f889baf",
-      "source": "https://www.cbc.ca/news/world/binance-hack-north-korea-9.7404502?cmp=rss",
-      "policy": "93e2ad7deccc",
-      "result": "source_error",
-      "retry_after": 1793873011.4283628
+      "result": "cooldown"
     },
     {
       "id": "11663ea645ab",
-      "source": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/public-policies/haiti-immigration-measures-2026.html",
+      "result": "cooldown"
+    },
+    {
+      "id": "41e3cf0806d9",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No131of2026.pdf",
       "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1793873014.5271826
+      "result": "source_unavailable",
+      "retry_after": 1793885412.6676846
+    },
+    {
+      "id": "c4038aa3469b",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No126of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885419.7625837
+    },
+    {
+      "id": "c455f726510c",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No130of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885420.047164
+    },
+    {
+      "id": "1da89144be44",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No141of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885420.4811888
+    },
+    {
+      "id": "4eb7b2235122",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No124of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885420.827847
+    },
+    {
+      "id": "948554632b74",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No125of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885423.4417992
+    },
+    {
+      "id": "3a99b749f100",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No123of2026.pdf",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793885424.0178385
     }
   ],
   "missing": [
@@ -889,21 +1186,21 @@
       "category": "social-media",
       "title": "Divine Hindu Announces On-Site Social Media Internship Opening in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/social-media-intern-immediate-joiners-bangalore-at-divine-hindu-4484913408",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "37c0e160c49f",
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted in Cheyenne, Wyoming",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "06f842f028fe",
       "category": "private-vacancy",
       "title": "A Full Renovation – Home Improvement Lists Virtual Assistant Opening in the United States",
       "source": "https://www.linkedin.com/jobs/view/virtual-assistant-at-a-full-renovation-%E2%80%93-home-improvement-4483788958",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "2a8b92143f14b264d8d27146",
@@ -966,7 +1263,7 @@
       "category": "private-vacancy",
       "title": "Recent Program and Project Management Openings Listed on LinkedIn for the San Francisco Bay Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "03fdad6de98e",
@@ -1008,14 +1305,14 @@
       "category": "private-vacancy",
       "title": "Overview of Current Media and Communications Private Vacancies in the Des Moines Area",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "090cabc5ee27",
       "category": "private-vacancy",
       "title": "Exploring Private Sector Openings and Academic Vacancies Listed on Professional Networks in India",
       "source": "https://in.linkedin.com/jobs/%E0%A6%B2%E0%A7%87%E0%A6%95%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%BE%E0%A6%B0-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "9cfed70093fb",
@@ -1071,7 +1368,7 @@
       "category": "private-vacancy",
       "title": "Wordsmith Learning Hub Recruits Senior Digital Marketing Manager for Tamil Edtech Sector",
       "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "f638281840d9",
@@ -1176,14 +1473,14 @@
       "category": "private-vacancy",
       "title": "Active Hiring Trends for Program and Project Management Roles in the Moses Lake Region",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-moses-lake-wa",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "92088c2de8c2",
       "category": "private-vacancy",
       "title": "Recent Administrative Assistant and Support Openings Listed in the Des Moines, Iowa Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "bbfd4d3d5c0a",
@@ -1246,7 +1543,7 @@
       "category": "private-vacancy",
       "title": "EH Jobs Recruits Western Music Teacher for Primary Grades in Tellapur, Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/looking-for-western-music-teacher-primary-1-5-in-tellapur-hyderabad-at-eh-jobs-4481687605",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "8f4b17c49d1b2a0c5cb45a53",
@@ -1379,7 +1676,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted in Des Moines Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "3570bb7ef821",
@@ -1589,14 +1886,14 @@
       "category": "visas-immigration",
       "title": "Primex Visa Pvt. Ltd. Advertises New Visa Documentation Executive Position in Delhi",
       "source": "https://in.linkedin.com/jobs/view/visa-documentation-executve-at-primex-visa-pvt-ltd-4484924300",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "07f5b24312a4",
       "category": "private-vacancy",
       "title": "Innow8 Lists Stem Innovation Engineer Role Across Multiple Locations in Northern India",
       "source": "https://in.linkedin.com/jobs/view/stem-innovation-engineer-in-chandigarh-ghaziabad-uttar-pradesh-bulandshahr-noida-punjab-gurgaon-meerut-sangrur-mohali-at-innow8-4472659090",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0493b37f6575",
@@ -1687,7 +1984,7 @@
       "category": "private-vacancy",
       "title": "Make Your Own Perfume (MYOP) Seeks Sales Executive in Pune and Pimpri-Chinchwad Area",
       "source": "https://in.linkedin.com/jobs/view/sales-executive-at-make-your-own-perfume-myop-4484796852",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "9db43091aef2",
@@ -1729,7 +2026,7 @@
       "category": "social-media",
       "title": "The Blue Kite Announces Opening for Social Media Associate Role in Goa via LinkedIn",
       "source": "https://in.linkedin.com/jobs/view/social-media-associate-at-the-blue-kite-4483449440",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "7548888dfa18",
@@ -1806,14 +2103,14 @@
       "category": "private-vacancy",
       "title": "Ivory Lighthouse Recruitment Services Lists Onboard Sales Associate Vacancy for International Cruise Lines",
       "source": "https://in.linkedin.com/jobs/view/sales-associate-onboard-international-cruise-line-at-ivory-lighthouse-recruitment-services-pvt-ltd-4482589473",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "9e37935bcd6c",
       "category": "private-vacancy",
       "title": "San Francisco Bay Area Media and Communications Job Listings Highlight Tech and Corporate Sector Demand",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "8444aa187e09b377f661fcbf",
@@ -1834,7 +2131,7 @@
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Cheyenne and Surrounding Region",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "2e293f23db10",
@@ -1953,7 +2250,7 @@
       "category": "private-vacancy",
       "title": "Active Administrative Assistant Openings Listed Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-phoenix-az",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "9acdf4deb8ec",
@@ -1981,7 +2278,7 @@
       "category": "private-vacancy",
       "title": "Military and Protective Services Job Openings Highlighted Across the Greater Phoenix Area",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-phoenix-az",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "38138689935d",
@@ -2007,22 +2304,329 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "access_denied": 28,
+    "access_denied": 40,
     "source_error": 4,
-    "no_source_image": 48,
-    "invalid_source_images": 51,
+    "no_source_image": 39,
+    "invalid_source_images": 48,
     "restricted_page": 1
   },
-  "existing_representatives_preserved": 0,
+  "existing_representatives_preserved": 7,
   "diagnostics": {
-    "a4fcd6020999": {
-      "reason": "access_denied",
-      "source": "https://insideevs.com/news/814280/ferrari-luce-ev-sold-out-for-2027/",
-      "status": 403
-    },
-    "c176a1dc41c1e122cab45821": {
+    "6189652eeaaa": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "source": "https://www.prnewswire.com/news-releases/university-of-phoenix-associate-dean-to-present-ai-literacy-framework-implementation-at-aacu-conference-on-ai-and-higher-education-302924272.html",
+      "candidate_count": 1,
+      "candidates": [
+        "https://mmx.prnewswire.com/media/MS2019772/NTW-2026-infographic-FINAL.jpg?id=OA3036957"
+      ]
+    },
+    "3f437cd6deee": {
+      "reason": "access_denied",
+      "source": "https://www.nytimes.com/spotlight/lifestyle",
+      "status": 403,
+      "existing_representative_preserved": true
+    },
+    "090108930e0d": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/client-acquisition-intern-at-bright-blue-gemstones-4471542402",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "0bdb0918a8cf": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/relationship-manager-secured-direct-south-ap-ts-tn-at-credit-saison-india-4480041233",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "0e7392808f2b": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/fashion-designer-educator-at-skillinabox-4483836717",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "04bcdc448261": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/material-management-coordinator-at-kone-4484477721?position=46&pageNum=0&refId=7GWgQQ0v3ze9a3w3Q2vwcw%3D%3D&trackingId=BYWzdYE16qmuOI8vgMHtPQ%3D%3D",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "029ee2179ac9": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/backend-developer-java-at-saatvik-agro-4484932211",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "0e2fde519d11": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/growth-vendor-onboarding-intern-surat-textile-market-at-tradetrust-4484792454",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "05cc9a358c55": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/business-development-specialist-at-fanzart-designer-fans-4484908686",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "08a83556bce2": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/education-finance-officer-in-nashik-trichey-begumpet-mangalore-solapur-bidar-bhubaneswar-coimbatore-cuttack-kollam-chennai-hyderabad-maharashta-koramangala-andhra-pradesh-at-wemakescholars-4483353601",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "079aeaa0eeef": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
+      "status": 429
+    },
+    "07f5b24312a4": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/stem-innovation-engineer-in-chandigarh-ghaziabad-uttar-pradesh-bulandshahr-noida-punjab-gurgaon-meerut-sangrur-mohali-at-innow8-4472659090",
+      "status": 429
+    },
+    "06f842f028fe": {
+      "reason": "access_denied",
+      "source": "https://www.linkedin.com/jobs/view/virtual-assistant-at-a-full-renovation-%E2%80%93-home-improvement-4483788958",
+      "status": 429
+    },
+    "c929a77d3cf4": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-phoenix-az",
+      "status": 429
+    },
+    "07f40dc280d1": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/looking-for-western-music-teacher-primary-1-5-in-tellapur-hyderabad-at-eh-jobs-4481687605",
+      "status": 429
+    },
+    "736ca0bcddb6": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-des-moines-ia",
+      "status": 429
+    },
+    "58f11d3687a2": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-des-moines-ia",
+      "status": 429
+    },
+    "37c0e160c49f": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-cheyenne-wy",
+      "status": 429
+    },
+    "1ad731a65211": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-moses-lake-wa",
+      "status": 429
+    },
+    "aa511d7af8e4": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-san-francisco-ca",
+      "status": 429
+    },
+    "35c6b2e75c5a": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
+      "status": 429
+    },
+    "38138689935d": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-boydton-va",
+      "status": 429
+    },
+    "b9e7ebed5efd": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-boydton-va",
+      "status": 429
+    },
+    "91712e374b16": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-boydton-va",
+      "status": 429
+    },
+    "040dd341f762": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/founder-s-office-intern-at-the-souled-store-4483622129",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "090cabc5ee27": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/%E0%A6%B2%E0%A7%87%E0%A6%95%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%BE%E0%A6%B0-jobs",
+      "status": 429
+    },
+    "0b33380de117": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/compliance-manager-at-fatakpay-4482278882",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "00f079e2ba3a": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-alok-industries-limited-india-4481052431",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "9e37935bcd6c": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
+      "status": 429
+    },
+    "257900039128": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-moses-lake-wa",
+      "status": 429
+    },
+    "0da0ead215c3": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/technial-hr-recruiter-in-secunderabad-hyderabad-hyderabad-hyderabad-vishakhapatnam-alwal-visakhapatnam-at-wemakescholars-4484295029?position=58&pageNum=0&refId=IYfwluMaDIcsUuazNwoLjw%3D%3D&trackingId=4yed8vCMLTz%2BknFIMv5vzQ%3D%3D",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "080b28de54ff": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/mis-executive-at-amrit-skills-development-4480055351",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "2254c016ebd0": {
+      "reason": "no_source_image",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-cheyenne-wy"
+    },
+    "4002fcf12fa5": {
+      "reason": "no_source_image",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-phoenix-az"
+    },
+    "0f2e549a24cc": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-moses-lake-wa",
+      "status": 429
+    },
+    "0391c4373eca": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-phoenix-az",
+      "status": 429
+    },
+    "0983ec5f08f3": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Br%C9%99yl%C9%99r-%2Bonlayn%2Bfikirl%C9%99ri%2Bayr%C4%B1ca%2Binc%C9%99l%C9%99yin.ekq-jobs",
+      "status": 429
+    },
+    "6734d0b5d4b1": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-des-moines-ia",
+      "status": 429
+    },
+    "92088c2de8c2": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-des-moines-ia",
+      "status": 429
+    },
+    "021c54d7abdb": {
+      "reason": "access_denied",
+      "source": "https://je.linkedin.com/jobs/Win%20Gaming%20API%20-%20India%20Market%20API%F0%9F%8F%A7TG%40gameapi26-jobs?position=1&pageNum=0",
+      "status": 429
+    },
+    "9d38ac0228db": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-phoenix-az",
+      "status": 429
+    },
+    "ff059456a4ee": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-phoenix-az",
+      "status": 429
+    },
+    "36fc08c8c68d": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-des-moines-ia",
+      "status": 429
+    },
+    "43669547d8a9": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28286?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "status": 404,
+      "existing_representative_preserved": true
+    },
+    "d25fe3284c63": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28302?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "status": 404
+    },
+    "572d5792fe9b": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28297?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue",
+      "status": 404,
+      "existing_representative_preserved": true
+    },
+    "6ba39bcd4548": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
+      "status": 429
+    },
+    "7548888dfa18": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28297?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "status": 404
+    },
+    "8c6ddded2bc5": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28274?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "status": 404
+    },
+    "02518f2b343c": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28297?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "status": 404
+    },
+    "b08f3712a37e": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28313?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
+      "status": 404,
+      "existing_representative_preserved": true
+    },
+    "9a0aada26bcb": {
+      "reason": "source_unavailable",
+      "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28250?dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue&mm=03%3Fgb%3Dtrue",
+      "status": 404
+    },
+    "285dd8d5ec2f": {
+      "reason": "invalid_source_images",
+      "source": "https://www.desidime.com/discussions/update-on-applicable-charges-for-2189852",
+      "candidate_count": 1,
+      "candidates": [
+        "https://cdn0.desidime.com/topics/photos/2189852/large/update-on-applicable-charges-for-2189852.png?1793269960"
+      ]
+    },
+    "2a8b92143f14b264d8d27146": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
       "candidate_count": 5,
       "candidates": [
         "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
@@ -2030,240 +2634,437 @@
         "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
       ]
     },
-    "3acc30eaefd0": {
-      "reason": "source_unavailable",
-      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/may/doc202655863701.pdf",
-      "status": 200
-    },
-    "1285f1ac72a8": {
+    "dd54d85ef928": {
       "reason": "restricted_page",
-      "source": "https://github.com/FrancescoGrazioso/Meld"
+      "source": "https://www.sahisarkarijobs.in/photo-resizer/",
+      "existing_representative_preserved": true
     },
-    "253e0e4a696b": {
+    "bdaee5f4786c": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/social-media-marketing-internship-in-delhi-bangalore-hyderabad-mumbai-at-foodstories-4479738162?position=44&pageNum=0&refId=6HZzQVkTvpvkiIYOUZ%2F6vQ%3D%3D&trackingId=jLeQWDCS3GoiLwZtObrHrw%3D%3D",
+      "status": 429
+    },
+    "222914040e11": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/social-media-associate-at-the-blue-kite-4483449440",
+      "status": 429
+    },
+    "2f02162d9ab27a8cd5662161": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "candidate_count": 10,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled"
+      ]
+    },
+    "a6ec2cd71bae": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/scriptwriter-youtube-at-headout-4483872792",
+      "status": 429
+    },
+    "a99188c62a2d": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/social-media-intern-immediate-joiners-bangalore-at-divine-hindu-4484913408",
+      "status": 429
+    },
+    "074cb06de604": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/duol-investors-have-opportunity-to-lead-duolingo-inc-securities-fraud-lawsuit-with-sbs-law-302924160.html"
+    },
+    "7c6f6d44e10c": {
+      "reason": "access_denied",
+      "source": "https://in.linkedin.com/jobs/view/business-development-associate-at-peerless-immigration-services-4483846739?position=23&pageNum=0&refId=pdi7GkDzOUAwjOAwZuhD7g%3D%3D&trackingId=99eGWHPhi0lFt1HRUu2RDA%3D%3D",
+      "status": 429
+    },
+    "06157d85578b": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/the-society-for-immunotherapy-of-cancer-announces-late-breaking-abstracts-and-press-briefing-presented-at-sitc-2026-302923852.html"
+    },
+    "8e77d55e51ba": {
       "reason": "source_unavailable",
-      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/feb/doc202422305301.pdf",
+      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/oct/doc_10319_20261030_15562701.pdf",
       "status": 200
     },
-    "63616ffbf4c2": {
+    "2d2ee8809ceb": {
       "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/associate-qa-engineer-software-at-light-wonder-4484455024",
+      "source": "https://in.linkedin.com/jobs/view/busienss-development-executive-at-peerless-immigration-services-4483857590",
       "candidate_count": 1,
       "candidates": [
         "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
       ]
     },
-    "5cf2007cdcba": {
+    "9d1f6341eb5fa6644d63ff08": {
       "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/analyst-software-engineer-java-at-saatvik-agro-4484805864",
+      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
       "candidate_count": 1,
       "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+        "https://www.unirank.org/i/screenshots/18615.jpg"
       ]
     },
-    "dfd16b79fae5": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-flex-4472543793",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "b7601652de21": {
-      "reason": "invalid_source_images",
-      "source": "https://readerblogs.navbharattimes.indiatimes.com/BHALI-LAGE-YA-BURI/javed-akhtar-ki-samaaj-sudhar-ki-chunauti/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://readerblogs.navbharattimes.indiatimes.com/BHALI-LAGE-YA-BURI/javed-akhtar-ki-samaaj-sudhar-ki-chunauti/"
-      ]
-    },
-    "47e829176cc5": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/visa-sales-executive-location-saket-in-new-delhi-day-shift-at-sharda-consultancy-services-4484921383",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "75dbda51595c": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/us-immigration-executive-at-vidlexinfo-llc-4483058702",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "2f1dd8699d58": {
-      "reason": "invalid_source_images",
-      "source": "https://www.un.org/en/property-cards-by-og-global-category/287/6611%209436/join/Join/url%28%22https%3A?page=5",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.un.org/en/property-cards-by-og-global-category/287/6611%209436/join/Join/url%28%22https%3A?page=5"
-      ]
-    },
-    "89a9f272b95b": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/content-and-social-media-marketing-internship-in-delhi-at-denmonk-4484771273",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "8f4b17c49d1b2a0c5cb45a53": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
-      "candidate_count": 6,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "4afa4536b18e5a41b30a3497": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18613.jpg"
-      ]
-    },
-    "65c484924118": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/visitor-visa-counselor-at-sky-heaven-immigration-opc-pvt-ltd-4482294678",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "2e293f23db10": {
-      "reason": "invalid_source_images",
-      "source": "https://www.un.org/unispal/document-source/united-nations-childrens-fund-unicef/page/36/?wpv_view_count=4164",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.un.org/unispal/wp-content/plugins/wp-views/embedded/res/img/delete.png"
-      ]
-    },
-    "e62d34be0421": {
-      "reason": "invalid_source_images",
-      "source": "https://www.linkedin.com/jobs/view/data-scientist-applied-ai-at-definitive-healthcare-4484088856",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "6548e415fc086ccec65bbb7c": {
-      "reason": "invalid_source_images",
-      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
-      "candidate_count": 20,
-      "candidates": [
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/frontier/vehicle-profile-assets/2027/model-2027-frontier-crew-cab-pro-4x-red-alert.png-v2.png",
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue-hybrid/vehicle-profile-assets/2027/model-2027-rogue-hybrid-sr-horizon-blue-pearl-metallic-super-black-two-tone.png.ximg.l_3_m.smart.png",
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue/vehicle-profile-assets/2027/model-2027-rogue-rock-creek-intelligent-awd-baja-storm-metallic.png.ximg.l_3_m.smart.png"
-      ]
-    },
-    "c3c44629d231": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/assessment-research-intern-at-careermaker-ai-4483632864",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "b211f120ea27b93fc925f6b4": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
-      "candidate_count": 8,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/1/1e/Nokia_Asha_501.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/250px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/120px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "4ca42dad8d6f": {
-      "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/associate-global-mobility-and-immigration-talent-services-tipm-perm-services-hyderabad-at-deloitte-4484168606",
-      "candidate_count": 1,
-      "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
-      ]
-    },
-    "ab5757b7bde7e5a43128d256": {
-      "reason": "source_unavailable",
-      "source": "https://exploitsmw.com/",
-      "status": 200
-    },
-    "b822477903c2": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No147of2026_0.pdf",
-      "status": 200
-    },
-    "12d3cc56ebe6": {
+    "03fdad6de98e": {
       "reason": "no_source_image",
-      "source": "https://www.prnewswire.com/news-releases/five-california-nonprofits-receive-500-000-to-restore-habitats-expand-environmental-education-and-strengthen-local-food-systems-302924612.html"
+      "source": "https://www.prnewswire.com/news-releases/all-in-print-china-2026-concludes-successfully-as-ruizhi-machinery-showcases-three-new-machines-302923371.html"
     },
-    "bbfd4d3d5c0a": {
+    "021dcf06da61": {
       "reason": "no_source_image",
-      "source": "https://www.tui.com/hilfe/flug/verspaetung/"
+      "source": "https://www.prnewswire.com/news-releases/tuhura-biosciences-provides-first-look-at-data-from-its-open-label-study-of-ifx-2-0-as-an-adjunctive-therapy-to-keytruda-in-first-line-treatment-of-patients-with-deep-seated-metastatic-merkel-cell-carcinoma-302918838.html"
     },
-    "38accdd4d36d": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No135of2026.pdf",
-      "status": 200
-    },
-    "600062192bf4": {
+    "007acb84538e69bcc14f4f9f": {
       "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/cad-software-development-engineer-jobs-hyderabad-ts?trk=guest_job_details_jd_jserp_more_jobs_link&f_AL=true",
+      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
       "candidate_count": 1,
       "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/1kxd9keftj1y0os0evez0vt9u"
+        "https://www.unirank.org/i/screenshots/18606.jpg"
       ]
     },
-    "3a640d951615": {
-      "reason": "no_source_image",
-      "source": "https://www.sahisarkarijobs.in/increment-calculator/"
-    },
-    "0346b2c5ec85": {
-      "reason": "source_unavailable",
-      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No136of2026.pdf",
-      "status": 200
-    },
-    "dd07ef14c72f": {
-      "reason": "no_source_image",
-      "source": "https://www.sahisarkarijobs.in/cgpa-to-percentage-calculator/"
-    },
-    "9ac2bb5ad6c4": {
-      "reason": "no_source_image",
-      "source": "https://www.sahisarkarijobs.in/cutoff-marks-calculator/"
-    },
-    "a6510273f0889bf4d7684eae": {
+    "a9716e8287f2": {
       "reason": "invalid_source_images",
-      "source": "https://mua.ac.ke/",
+      "source": "https://www.bbc.co.uk/sport/cricket/scores-fixtures",
       "candidate_count": 2,
       "candidates": [
-        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
-        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png"
+        "https://static.files.bbci.co.uk/core/website/assets/static/sport/cricket/cricket-bat.530a0e6ae8.svg",
+        "https://static.files.bbci.co.uk/core/website/assets/static/sport/cricket/venue.5fe25b09fa.svg"
       ]
     },
-    "51e45078d38e": {
-      "reason": "no_source_image",
-      "source": "https://www.sahisarkarijobs.in/physical-standards-calculator-defence-police/"
+    "d47d25fb753a": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/vice-president-sap-ai-at-hcltech-4473146204",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
     },
-    "ef614dcb4163038685679d1d": {
+    "1c4f6e29aff4": {
       "reason": "no_source_image",
-      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/"
+      "source": "https://www.theguardian.com/info/2016/jan/25/content-funding"
     },
-    "c9e064a48f72": {
+    "0a95ccf111c45db4cfb5c9e3": {
       "reason": "source_error",
-      "source": "https://www.npr.org/series/1082539802/russia-ukraine-invasion-explained",
+      "source": "https://isc-edu.org/",
+      "error": "ConnectionError"
+    },
+    "040073763955": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/yeastar-reconoce-la-ia-la-innovacion-tecnica-y-el-exito-de-los-clientes-en-los-yeahs-awards-2026-302917649.html"
+    },
+    "0493b37f6575": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/companies/news/cci-xavier-niel-vodafone-stake-prosus-navi-aditya-birla-adani-deals-126103100598_1.html",
+      "status": 403
+    },
+    "d15bcc8a3c3b": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/visa-documentation-executve-at-primex-visa-pvt-ltd-4484924300",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "09eaa4a8cbc9": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/age-calculator/"
+    },
+    "9e7d68e39abe": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/external-affairs-defence-security/news/secure-supply-chains-resilience-key-for-global-economy-jaishankar-at-g20-126110100012_1.html",
+      "status": 403
+    },
+    "05d05c18d987": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/dodgen-reports-poe-devolatilization-milestones-across-three-industrial-projects-in-china-302923001.html"
+    },
+    "80ca872b27a0": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No145of2026.pdf",
+      "status": 200
+    },
+    "ef6d4c03dede": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/xpeng-announces-vehicle-delivery-results-for-october-2026-302925668.html"
+    },
+    "036d1e10e017": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/new-clinical-data-on-lecanemab-to-be-presented-at-ctad-conference-2026-302924707.html"
+    },
+    "d113f09eda07": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/service-length-calculator/",
+      "existing_representative_preserved": true
+    },
+    "fbff6440d68d52399ca212b1": {
+      "reason": "no_source_image",
+      "source": "https://cctu.edu.gh/site/index"
+    },
+    "8444aa187e09b377f661fcbf": {
+      "reason": "no_source_image",
+      "source": "https://dec.ac.in/"
+    },
+    "4be79532a665": {
+      "reason": "no_source_image",
+      "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true"
+    },
+    "5fc7e58715b4": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/Press_release_142_signed_english.pdf",
+      "status": 200
+    },
+    "ef84455d3242": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No140of2026.pdf",
+      "status": 200
+    },
+    "031f3d5eda5f": {
+      "reason": "source_error",
+      "source": "https://news.samsung.com/in/author/malay-anil/page/331",
       "error": "ReadTimeout"
     },
-    "ab1e7f889baf": {
+    "8af54bb949a0c055391d640a": {
       "reason": "source_error",
-      "source": "https://www.cbc.ca/news/world/binance-hack-north-korea-9.7404502?cmp=rss",
-      "error": "ReadTimeout"
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "error": "ReadTimeout",
+      "existing_representative_preserved": true
     },
-    "11663ea645ab": {
+    "75ebcc814325": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No139of2026.pdf",
+      "status": 200
+    },
+    "29f12d5d640a": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No.129_of_2026.pdf.PDF",
+      "status": 200
+    },
+    "ade2cb72b841": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No144of2026.pdf",
+      "status": 200
+    },
+    "61ab99a70d23": {
+      "reason": "source_unavailable",
+      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_3_29102026.pdf",
+      "status": 200
+    },
+    "efeded53a5bb": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No138of2026.pdf",
+      "status": 200
+    },
+    "05bc5a47b19b": {
       "reason": "no_source_image",
-      "source": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/public-policies/haiti-immigration-measures-2026.html"
+      "source": "https://www.prnewswire.com/news-releases/turner-mason--company-releases-four-fall-energy-market-outlook-reports-302923877.html"
+    },
+    "fddacd9eaeff": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/amp/world-news/france-protests-turn-violent-again-as-police-brace-for-halloween-unrest-126110100051_1.html",
+      "status": 403
+    },
+    "a91a82825e4a": {
+      "reason": "access_denied",
+      "source": "https://jeemain.nta.nic.in/",
+      "status": 403
+    },
+    "a28e5c356dd7": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/arctic-wolf-named-a-leader-in-2026-qks-spark-matrix-for-ai-soc-automation-302923421.html"
+    },
+    "731720281d96": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/tata-communications-to-build-indias-ai-super-highway-302922235.html"
+    },
+    "9db43091aef2": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/world-news/student-enrolment-in-us-computer-science-programs-falls-as-ai-takes-jobs-126102900433_1.html",
+      "status": 403
+    },
+    "4805037fd814": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/tairex-launches-multi-agent-ai-system-to-transform-clinical-collaboration-and-decision-support-302916729.html"
+    },
+    "d0f211debf6a": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No137of2026.pdf",
+      "status": 200
+    },
+    "a41b914c9659": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No132of2026.pdf",
+      "status": 200
+    },
+    "c766ee90465d": {
+      "reason": "invalid_source_images",
+      "source": "https://www.theguardian.com/football/live",
+      "candidate_count": 12,
+      "candidates": [
+        "https://i.guim.co.uk/img/sport/football/crests/26368.png?width=20&dpr=2&s=none&crop=none",
+        "https://i.guim.co.uk/img/sport/football/crests/26368.png?width=20&dpr=1&s=none&crop=none",
+        "https://i.guim.co.uk/img/sport/football/crests/7016.png?width=20&dpr=2&s=none&crop=none"
+      ]
+    },
+    "9b3641414312": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/amp/world-news/iran-warns-of-wider-retaliation-even-as-diplomatic-talks-with-us-progress-126103101346_1.html",
+      "status": 403
+    },
+    "ca9ab95087f5": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No127of2026.pdf",
+      "status": 200
+    },
+    "62f5310583d8": {
+      "reason": "invalid_source_images",
+      "source": "https://www.cardekho.com:443/electric-charging-station",
+      "candidate_count": 3,
+      "candidates": [
+        "https://www.cardekho.com:443/electric-charging-station",
+        "https://www.cardekho.com:443/true",
+        "https://stimg.cardekho.com/pwa/img/spacer3x2.png"
+      ]
+    },
+    "7f651ce9d3f0": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/123net-awarded-86-million-in-federal-bead-funding-for-michigan-broadband-infrastructure-302922523.html"
+    },
+    "9acdf4deb8ec": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/pakistaanse-banken-slagen-niet-voor-de-klimaat--en-natuurbeleidstest-omdat-financieringswaarborgen-tekortschieten-302925673.html"
+    },
+    "01a6933a42b8": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No122of2026.pdf",
+      "status": 200
+    },
+    "f638281840d9": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No128of2026.pdf",
+      "status": 200
+    },
+    "3570bb7ef821": {
+      "reason": "access_denied",
+      "source": "https://www.upsc.gov.in/sites/default/files/AdvtNo-51-2026-Special-Engl-240726.pdf",
+      "status": 403
+    },
+    "ec8b9639359a": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No143of2026.pdf",
+      "status": 200
+    },
+    "05d3b71dd6e0": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/sales-executive-at-make-your-own-perfume-myop-4484796852",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "06e9199a393c": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No133of2026.pdf",
+      "status": 200
+    },
+    "9bcfb13f35c2": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/modelbest-and-openbmb-open-source-minicpm-ocr-series-delivering-high-performance-document-parsing-and-ai-powered-quality-control-302925594.html"
+    },
+    "8fb539b04f5d": {
+      "reason": "no_source_image",
+      "source": "https://www.haryana.gov.in/about-haryana/"
+    },
+    "122b5649e749": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/sales-associate-onboard-international-cruise-line-at-ivory-lighthouse-recruitment-services-pvt-ltd-4482589473",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "3b5a7fa28a88": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No134of2026.pdf",
+      "status": 200
+    },
+    "9d72856192eb": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/navy-mutual-awards-milmos-lacey-langford-with-the-2026-lieutenant-timothy-dix-bolles-excellency-in-education-award-302922401.html"
+    },
+    "cd652bf418a1": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/cognizant-zet-meer-dan-25-000-professionals-in-voor-de-implementatie-van-openai-oplossingen-nu-ondernemingen-geavanceerde-ai-in-productie-nemen-302925664.html"
+    },
+    "029b646a13ec": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/esg-reporting-software-market-worth-4-48-billion-by-2031--report-by-marketsandmarkets-302924789.html"
+    },
+    "712c404a4a7d": {
+      "reason": "source_unavailable",
+      "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_2_29102026.pdf",
+      "status": 200
+    },
+    "07746bc77e63": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/rcg-ventures-closes-fund-viii-above-target-at-515-million-302919410.html"
+    },
+    "ed99df3183ca": {
+      "reason": "invalid_source_images",
+      "source": "https://apps.apple.com/mx/iphone/apps",
+      "candidate_count": 12,
+      "candidates": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/82/da/ad/82daad76-c4f3-dfc1-5341-af7d8e622df2/3d8cf7be-5f49-4aa4-a125-f686a82b0203.png/34x48bb.webp",
+        "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/82/da/ad/82daad76-c4f3-dfc1-5341-af7d8e622df2/3d8cf7be-5f49-4aa4-a125-f686a82b0203.png/17x24bb.webp",
+        "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/82/da/ad/82daad76-c4f3-dfc1-5341-af7d8e622df2/3d8cf7be-5f49-4aa4-a125-f686a82b0203.png/34x48bb-60.jpg"
+      ]
+    },
+    "a5f43758a0b4": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/white-paper-outlining-strategies-to-address-rural-ai-skills-gaps-and-support-workforce-retention-published-by-the-university-of-phoenix-college-of-doctoral-studies-302924623.html"
+    },
+    "9cfed70093fb": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/salary-calculator/"
+    },
+    "3b439d483131": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/ubcf-and-ggp-formerly-brookfield-properties-launch-2026-pink-bag-event-initiative-302925520.html"
+    },
+    "52c013755cd0": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/8th-pay-commission-calculator/"
+    },
+    "41e3cf0806d9": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No131of2026.pdf",
+      "status": 200
+    },
+    "c4038aa3469b": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No126of2026.pdf",
+      "status": 200
+    },
+    "c455f726510c": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No130of2026.pdf",
+      "status": 200
+    },
+    "1da89144be44": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No141of2026.pdf",
+      "status": 200
+    },
+    "4eb7b2235122": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No124of2026.pdf",
+      "status": 200
+    },
+    "948554632b74": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No125of2026.pdf",
+      "status": 200
+    },
+    "3a99b749f100": {
+      "reason": "source_unavailable",
+      "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No123of2026.pdf",
+      "status": 200
     }
   },
   "mode": "all"
