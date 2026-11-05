@@ -4,7 +4,7 @@ from article_layout import render as render_article, guide_body, excerpt, CSS as
 from news_sitemap import write_news_sitemap, is_news_article
 from seo_text import description as seo_description
 from seo_site import head as seo_head, article_languages, iso_date, json_ld, category_description, write_site_sitemap, related_index, ROBOTS
-from redirect_assets import write_redirects, export_bulk_redirects
+from redirect_assets import write_redirects
 from site_ui import MENU_CSS, label
 from news_config import CATEGORIES, memberships
 from news_hub import HUB_CSS, HUB_JS, render_hubs, recent_priority, news_sort, matches_category, official_notice_rows
@@ -576,7 +576,6 @@ for old,canonical in DUPLICATE_POSTS:
   olddir=OUT/oldpath.lstrip('/')
   if olddir.is_dir():shutil.rmtree(olddir)
 print('SEO_REDIRECTS',write_redirects(OUT,redirects,write,SITE))
-print('BULK_REDIRECTS_EXPORT',export_bulk_redirects(OUT,redirects,SITE),'Cloudflare activation required; existing redirect fallbacks preserved')
 write(OUT/'ads.txt','google.com, pub-1849673109734274, DIRECT, f08c47fec0942fa0\n')
 write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/\n  Cache-Control: public, max-age=0, must-revalidate\n/*/\n  Cache-Control: public, max-age=0, must-revalidate\n/style.css\n  Cache-Control: public, max-age=3600\n/site.js\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n/seo-audit.json\n  X-Robots-Tag: noindex\n/deployment.json\n  X-Robots-Tag: noindex\n')
 print('Built',len(POSTS),'posts; AI Tools, bilingual pages, news sitemap and responsive layout')
