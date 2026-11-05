@@ -79,7 +79,19 @@ def smoke(origin,package,all_urls=False,changed_keys=()):
     h=requests.head(origin.rstrip('/')+'/en/',timeout=20)
     if h.status_code!=200 or h.content:raise ValueError('HEAD behavior failed')
     r=requests.get(origin.rstrip('/')+'/en/',headers={'If-None-Match':h.headers.get('ETag','')},timeout=20)
-    if r.status_code!=304:raise ValueError('Conditional GET failed')
+    if r.status_code!=304:
+        raise ValueError('Conditional GET failed: '+json.dumps({
+            'status':r.status_code,
+            'head_etag':h.headers.get('ETag',''),
+            'get_etag':r.headers.get('ETag',''),
+            'get_cache_status':r.headers.get('CF-Cache-Status',''),
+            'head_cache_status':h.headers.get('CF-Cache-Status',''),
+            'get_content_type':r.headers.get('Content-Type',''),
+            'get_bytes':len(r.content),
+            'expected_sha256':package['url_inventory']['/en/']['sha256'],
+            'actual_sha256':digest(r.content),
+            'vary':r.headers.get('Vary',''),
+        },sort_keys=True))
     return {'http_urls_checked':len(paths),'all_urls':all_urls,'origin':origin}
 
 
