@@ -15,7 +15,8 @@ import unittest
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-REDIRECTS=ROOT/'dist'/'_redirects'
+RENDERED=ROOT/'build/rendered'
+REDIRECTS=RENDERED/'_redirects'
 
 class SyntaxGuardTests(unittest.TestCase):
  """Any syntax damage under scripts/ must fail here, before push."""
@@ -40,18 +41,21 @@ class SyntaxGuardTests(unittest.TestCase):
 class PagesStaticContractTests(unittest.TestCase):
  """dist/ in the checkout must keep the artifacts Pages serves directly."""
  def setUp(self):
-  if not (ROOT/'dist').is_dir():self.skipTest('dist not present on this checkout')
+  if not RENDERED.is_dir():self.skipTest('rendered build not present; CI builds before running this integration check')
  def test_redirect_budget_survives_partial_publishes(self):
   self.assertTrue(REDIRECTS.is_file(),'dist/_redirects is missing')
   lines=REDIRECTS.read_text(encoding='utf-8').strip().splitlines()
-  self.assertGreater(len(lines),10,'dist/_redirects was truncated to a legacy-only stub; full build.py output was lost')
+  self.assertEqual(lines,['/ /en/ 301'])
+  import json
+  aliases=json.loads((ROOT/'build/redirects.json').read_text())
+  self.assertGreater(len(aliases),4000,'Legacy URL map must survive every release')
   self.assertTrue(lines[0].startswith('/ '),'first redirect rule must keep routing the bare homepage')
  def test_required_static_artifacts_exist(self):
   for name in ('404.html','robots.txt','sitemap.xml','news-sitemap.xml','ads.txt','_headers','_redirects'):
-   path=ROOT/'dist'/name
+   path=RENDERED/name
    self.assertTrue(path.is_file() and path.stat().st_size>0,f'{name} missing or empty in dist/')
  def test_seo_head_keeps_analytics_adsense_and_cache_busting(self):
-  html=(ROOT/'dist'/'en'/'index.html').read_text(encoding='utf-8')
+  html=(RENDERED/'en'/'index.html').read_text(encoding='utf-8')
   for token in ('ca-pub-1849673109734274','G-MFZZNMZCWJ','/style.css?v=','/favicon.svg','hreflang'):
    self.assertIn(token,html,f'publishing head lost required token: {token}')
 

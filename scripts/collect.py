@@ -638,18 +638,19 @@ def story_priority(item):
  return lead_priority(item,STORY_DATES.get(item[0]))
 
 def fair_publication_order(ordered,saved_draft_ids,pending_ids,historical_counts,min_per_category):
- """Lift saved single-language drafts and pending records to the front while
- preserving the round-robin category interleaving built before this sort.
-
- The previous global sort used story_priority as its final key, which let one
- hot category's recent stories cluster at the head of the queue: a run then
- published 20 apps-software posts and left 46 categories empty when the time
- budget expired. Python's stable sort keeps the per-category rotation intact
- because each category's rows are already story_priority-sorted upstream.
+ """Finish saved drafts within each category, then rotate fairly across categories.
+ A global draft-first sort starved all other desks when one desk had many saved drafts.
  """
- return sorted(ordered,key=lambda row:(historical_counts.get(row[2],0)>=min_per_category,
-  hashlib.sha256(row[0].encode()).hexdigest()[:12] not in saved_draft_ids,
-  hashlib.sha256(row[0].encode()).hexdigest()[:12] not in pending_ids))
+ grouped={};position={}
+ for index,row in enumerate(ordered):
+  grouped.setdefault(row[2],[]).append(row);position.setdefault(row[2],index)
+ def draft_id(row):return hashlib.sha256(row[0].encode()).hexdigest()[:12]
+ for rows in grouped.values():
+  rows.sort(key=lambda row:(draft_id(row) not in saved_draft_ids,draft_id(row) not in pending_ids))
+ categories=sorted(grouped,key=lambda cat:(historical_counts.get(cat,0)>=min_per_category,
+  not any(draft_id(row) in saved_draft_ids for row in grouped[cat]),position[cat]))
+ return [rows[index] for index in range(max((len(rows) for rows in grouped.values()),default=0))
+         for cat in categories for rows in [grouped[cat]] if index<len(rows)]
 
 # Website-first discovery: visit publisher home/category pages before RSS fallback.
 # Each website is attempted once per category, with bounded concurrency and timeouts.
@@ -1174,6 +1175,10 @@ def duplicate_story(url,title,cat,index):
 
 def write_run_status(outcome,started,counts=None,**extra):
  data={'finished_at':dt.datetime.now(UTC).isoformat(),'outcome':outcome,'duration_seconds':round(time.monotonic()-started,1),'published':sum((counts or {}).values()),'by_category':counts or {},'ai_calls':CALLS,'ai_limit':MAX_CALLS,**extra}
+ selected=os.getenv('NEWS_CATEGORY','').strip()
+ configured=[selected] if selected in CATEGORIES else list(CATEGORIES)
+ data['category_target']=MIN_POSTS_PER_CATEGORY
+ data['category_shortfalls']={cat:MIN_POSTS_PER_CATEGORY-(counts or {}).get(cat,0) for cat in configured if (counts or {}).get(cat,0)<MIN_POSTS_PER_CATEGORY}
  (ROOT/'content/news-run-status.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
  print('RUN_SUMMARY',json.dumps(data),flush=True)
 

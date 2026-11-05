@@ -1,3 +1,4 @@
+from build_clock import now as build_now
 """Accessible bilingual jobs/exams and all-news directories."""
 import datetime as dt
 import html
@@ -22,7 +23,7 @@ def news_sort(post):
     return (-timestamp(post.get('date')),-timestamp(post.get('source_published_at')),-max(PRIORITY.get(c,4) for c in memberships(post)),post.get('id',''))
 
 def recent_priority(posts,limit=8,now=None):
-    now=now or dt.datetime.now(dt.timezone.utc).timestamp()
+    now=now or build_now().timestamp()
     recent=[p for p in posts if 0<=now-timestamp(p.get('source_published_at') or p.get('date'))<=172800]
     return sorted(recent,key=lambda p:(int((now-timestamp(p.get('source_published_at') or p.get('date')))//21600),-max(PRIORITY.get(c,4) for c in memberships(p)),-timestamp(p.get('source_published_at') or p.get('date'))))[:limit]
 
@@ -40,7 +41,7 @@ def matches_category(post,cat):
 def official_notice_rows(cat,lang):
     notices=load_notices()
     rows=[]
-    today=dt.datetime.now(dt.timezone(dt.timedelta(hours=5,minutes=30))).date()
+    today=build_now().astimezone(dt.timezone(dt.timedelta(hours=5,minutes=30))).date()
     for notice in notices:
         if not notice.get('date'):continue
         if notice['category']!=cat or not 0<=(today-dt.date.fromisoformat(notice['date'])).days<=14:continue
@@ -58,7 +59,7 @@ def render_hubs(out,site,posts,shell,article_path,title,write):
         ix=0 if lang=='en' else 1
         name='Jobs & Exam Updates' if lang=='en' else 'नौकरी और परीक्षा अपडेट'
         intro='Latest jobs, results, admit cards, answer keys and admissions in one place. This is an independent news hub, not a government website.' if lang=='en' else 'नई नौकरियां, रिजल्ट, एडमिट कार्ड, आंसर की और एडमिशन की जानकारी एक जगह। यह स्वतंत्र समाचार हब है, सरकारी वेबसाइट नहीं।'
-        generated=dt.datetime.now(dt.timezone(dt.timedelta(hours=5,minutes=30))).strftime('%d %b %Y, %I:%M %p IST')
+        generated=build_now().astimezone(dt.timezone(dt.timedelta(hours=5,minutes=30))).strftime('%d %b %Y, %I:%M %p IST')
         def item(p):
             text=title(p,lang);date=p.get('date','')[:10]
             return '<li class="hub-item" data-search-text="'+e(text)+'"><a href="'+article_path(p,lang)+'">'+e(text)+'</a><time datetime="'+e(p.get('date',''))+'">'+e(date)+'</time></li>'

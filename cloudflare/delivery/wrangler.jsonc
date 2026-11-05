@@ -1,0 +1,8 @@
+{
+  "name": "globewire-delivery-staging",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "r2_buckets": [{"binding": "MEDIA", "bucket_name": "globewire-media"}],
+  "vars": {"RELEASE_ID": "UNCONFIGURED"}
+}

@@ -69,10 +69,6 @@ jobs:
             exit 0
           fi
 
-          if git diff --cached --name-only | grep -q '^content/featured/'; then
-            python -u scripts/build.py
-            git add -A dist
-          fi
           git commit -m "Backfill original source photos for archived news posts"
           git stash push --include-untracked -m 'archive-photo-clean-working-tree' || true
           for attempt in 1 2 3 4; do

@@ -1,15 +1,22 @@
 """Keep Pages redirect rules within its static limit, retaining every old URL."""
 import html
 import re
+import json
 from pathlib import PurePosixPath
 
 
-def write_redirects(out,lines,write,site,limit=2000):
+def write_redirects(out,lines,write,site,limit=2000,external=False):
     rows={}
     for line in lines:
         source,target,code=line.split()
         if source==target:continue
         rows.setdefault(source,(target,code))
+    # A migration render records ALL aliases; the scoped delivery Worker emits real 301s.
+    # No stub is removed from a live deployment until the R2 package is verified.
+    if external:
+        (out.parent/'redirects.json').write_text(json.dumps(rows,sort_keys=True)+'\n')
+        write(out/'_redirects','/ /en/ 301\n')
+        return {'server_redirects':1,'html_redirects':0,'r2_redirects':len(rows)-1}
     # Canonical duplicate URLs and the homepage take priority over legacy ID URLs.
     order=sorted(rows,key=lambda p:bool(re.fullmatch(r'/(en|hi)/news/[a-f0-9]+/',p)))
     server=[];fallback=0

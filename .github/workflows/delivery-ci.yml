@@ -1,0 +1,52 @@
+name: Delivery architecture CI
+on:
+  pull_request:
+  push:
+    branches: [fix/r2-delivery-clean-build]
+permissions:
+  contents: read
+concurrency:
+  group: delivery-ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install -r requirements.txt
+      - name: Build with a reproducible source clock
+        run: |
+          echo "SOURCE_DATE_EPOCH=$(git log -1 --format=%ct)" >> "$GITHUB_ENV"
+      - run: python scripts/check_output_policy.py
+      - run: python scripts/build.py --render-only
+      - run: python -m unittest discover -s tests
+      - run: node --test tests/delivery-worker.test.mjs
+      - run: python scripts/audit_built_seo.py build/rendered
+      - run: python scripts/delivery_package.py
+      - run: python scripts/verify_delivery.py
+      - name: Prove deterministic rebuild and stale-file cleanup
+        run: |
+          cp build/r2-package/package.json /tmp/first-package.json
+          touch build/rendered/stale-cache.log
+          python scripts/build.py --render-only
+          test ! -e build/rendered/stale-cache.log
+          python scripts/delivery_package.py
+          cmp /tmp/first-package.json build/r2-package/package.json
+      - run: python scripts/delivery_monitor.py
+      - name: Save actionable counts and audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: delivery-audit
+          path: |
+            build/output-report.json
+            build/delivery-verification.json
+          retention-days: 7

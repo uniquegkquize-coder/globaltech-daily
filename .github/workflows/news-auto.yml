@@ -113,15 +113,8 @@ jobs:
           python -u scripts/generate_images.py || echo "::warning::Optional photo lookup unavailable"
           echo "::endgroup::"
 
-          python -u scripts/build.py || { echo "::error::Static-site build failed"; exit 1; }
-          for output in dist/en/index.html dist/hi/index.html dist/sitemap.xml; do
-            if ! test -s "$output"; then
-              echo "::error::Required output is missing: $output"
-              exit 1
-            fi
-          done
 
-          git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json dist
+          git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json
           if [ -f content/image-backfill-state.json ]; then git add -A content/image-backfill-state.json; fi
           if git diff --cached --quiet; then
             echo "No new completed posts, images or pending progress to sync"
@@ -160,6 +153,8 @@ jobs:
               lines += ['- Outcome: %s' % s.get('outcome'),
                         '- Published: %s of %s target' % (s.get('published'), s.get('target')),
                         '- AI calls: %s of %s' % (s.get('ai_calls'), s.get('ai_limit'))]
+              shortfalls=s.get('category_shortfalls') or {}
+              if shortfalls:lines += ['- Per-run unmet category targets: '+', '.join('%s: missing %s' % kv for kv in sorted(shortfalls.items()))]
               by = s.get('by_category') or {}
               if by:
                   lines += ['- Per-category published: ' + ', '.join('%s=%s' % kv for kv in sorted(by.items()))]

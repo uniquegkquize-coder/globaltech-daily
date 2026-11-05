@@ -79,3 +79,20 @@ class SiteSeoTests(unittest.TestCase):
         self.assertEqual(related_index(posts)['roman'][0]['id'],'same')
 
 if __name__=='__main__':unittest.main()
+
+class SitemapGrowthTests(unittest.TestCase):
+ def test_large_sitemap_is_sharded_without_losing_urls(self):
+  from seo_site import write_sitemap_tree
+  ns='http://www.sitemaps.org/schemas/sitemap/0.9'
+  root=ET.Element('{'+ns+'}urlset')
+  for i in range(45001):
+   row=ET.SubElement(root,'{'+ns+'}url');ET.SubElement(row,'{'+ns+'}loc').text='https://example.org/en/news/'+str(i)+'/'
+  with tempfile.TemporaryDirectory() as tmp:
+   out=Path(tmp);write_sitemap_tree(out,'https://example.org',root)
+   self.assertTrue(ET.parse(out/'sitemap.xml').getroot().tag.endswith('sitemapindex'))
+   self.assertEqual(sum(len(ET.parse(p).getroot()) for p in out.glob('sitemap-pages-*.xml')),45001)
+ def test_newer_article_does_not_change_old_article_related_links(self):
+  older={'id':'old','category':'science','en_title':'NASA Roman telescope camera','date':'2026-10-01'}
+  first={'id':'first','category':'science','en_title':'NASA Roman telescope launch','date':'2026-09-01'}
+  future={'id':'future','category':'science','en_title':'NASA Roman telescope camera launch','date':'2026-11-01'}
+  self.assertEqual([p['id'] for p in related_index([older,first])['old']],[p['id'] for p in related_index([future,older,first])['old']])

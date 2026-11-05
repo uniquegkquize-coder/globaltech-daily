@@ -75,6 +75,14 @@ class FairOrderTests(unittest.TestCase):
         result = fair_publication_order(ordered, set(), set(), historical, 2)
         self.assertEqual(result[0][2], 'travel', 'category below minimum must lead the queue')
 
+    def test_many_saved_drafts_in_one_category_cannot_starve_other_desks(self):
+        import hashlib
+        rows=[row(f'https://s/cricket-{i}','cricket',i) for i in range(20)]
+        rows += [row('https://s/'+cat,cat,40) for cat in ('sports','business','technology','travel')]
+        saved={hashlib.sha256(r[0].encode()).hexdigest()[:12] for r in rows if r[2]=='cricket'}
+        result=fair_publication_order(rows,saved,set(),{cat:20 for cat in ('cricket','sports','business','technology','travel')},2)
+        self.assertEqual(len({r[2] for r in result[:5]}),5)
+
 
 if __name__ == '__main__':
     unittest.main()

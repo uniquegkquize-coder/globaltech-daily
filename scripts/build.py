@@ -1,3 +1,4 @@
+from build_clock import now as build_now
 from pathlib import Path
 from link_resources import render as render_link_resources
 from article_layout import render as render_article, guide_body, excerpt, CSS as ARTICLE_CSS
@@ -16,33 +17,20 @@ from expanded_hubs import CSS as GLOBAL_CSS, JS as GLOBAL_JS, render_expanded_hu
 from notice_details import CSS as EXAM_CSS, inline as linked_inline, article_panel, render_notices, notice_path, details_cache
 from official_notices import load_notices
 from directories import CSS as DIRECTORY_CSS, JS as DIRECTORY_JS, render as render_directories
-R=Path(__file__).resolve().parents[1]; OUT=R/'dist'; SITE='https://globewiredaily.org'.rstrip('/'); CONTACT='contact@globewiredaily.org'
-OUT.mkdir(parents=True,exist_ok=True)
-# Remove only obsolete build-generated HTML redirect stubs. Never remove article pages.
-# The redirect generator recreates every currently required stub later in this build.
-def clean_generated_redirect_stubs():
- count=0
- for p in OUT.rglob('index.html'):
-  try:
-   if p.stat().st_size > 2048: continue
-   body=p.read_text(encoding='utf-8')
-   if '<title>Article moved</title>' not in body or '<meta http-equiv="refresh"' not in body: continue
-   p.unlink()
-   count+=1
-  except (OSError, UnicodeError): continue
- print('CLEAN_GENERATED_REDIRECT_STUBS',count)
-clean_generated_redirect_stubs()
-
-(OUT/'d9e47b8c32a16f5098c7d6e5b4a3210f.txt').write_text('d9e47b8c32a16f5098c7d6e5b4a3210f\n',encoding='utf-8')
+from build_output import reset_rendered, OutputWriter
+import argparse
+parser=argparse.ArgumentParser()
+parser.add_argument('--render-only',action='store_true',help='Create migration input in build/rendered; never a deployable Pages directory')
+args=parser.parse_args()
+R=Path(__file__).resolve().parents[1]; OUT=reset_rendered(); SITE='https://globewiredaily.org'.rstrip('/'); CONTACT='contact@globewiredaily.org'
 GENERATED_HTML=set()
-(OUT/'googled7fc3627b4add656.html').write_text('google-site-verification: googled7fc3627b4add656.html\n',encoding='utf-8')
+writer=OutputWriter(OUT)
 def e(x):return html.escape(str(x or ''),quote=True)
 def write(p,s):
  if p.name=='index.html':GENERATED_HTML.add(p.relative_to(OUT).as_posix())
- p.parent.mkdir(parents=True,exist_ok=True)
- data=s.encode('utf-8')
- if p.is_file() and p.read_bytes()==data:return
- p.write_bytes(data)
+ writer(p,s)
+write(OUT/'d9e47b8c32a16f5098c7d6e5b4a3210f.txt','d9e47b8c32a16f5098c7d6e5b4a3210f\n')
+write(OUT/'googled7fc3627b4add656.html','google-site-verification: googled7fc3627b4add656.html\n')
 def title(p,lang):
  raw=str(p.get(lang+'_seo_title') or p.get(lang+'_title') or p.get('en_title') or 'Technology news')
  if p.get('directory_name') and p.get('content_type')=='evergreen_directory_guide' and not p.get(lang+'_seo_title'):
@@ -59,6 +47,11 @@ def article_slug(p):
 def article_path(p,lang):
  return f'/{lang}/news/{category(p)}/{article_slug(p)}/'
 
+legacy_images=R/'content/legacy-images'
+if legacy_images.is_dir():
+ for legacy in sorted(legacy_images.glob('*')):
+  if legacy.is_file():
+   dest=OUT/'images'/legacy.name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(legacy,dest)
 POSTS=[]
 for f in sorted((R/'content/posts').glob('*.json')):
  try:
@@ -134,7 +127,6 @@ CSS += """/* Category menu is OUTSIDE the scrolling nav, so it cannot be clipped
  .category-menu .nav-more[open] .nav-more-list{position:absolute!important;right:0!important;top:100%!important;left:auto!important;width:min(340px,90vw)!important;max-height:70vh!important}
 }
 """
-write(OUT/'style.css',CSS + MENU_CSS + HUB_CSS + GLOBAL_CSS + EXAM_CSS)
 JS='''addEventListener('scroll',()=>{let d=document.documentElement;let m=d.scrollHeight-d.clientHeight;let b=document.querySelector('.reading');if(b)b.style.width=(m>0?100*d.scrollTop/m:0)+'%';},{passive:true});'''
 JS += """document.addEventListener('click',async function(ev){const share=ev.target.closest('.native-share');if(share){const data={title:share.dataset.shareTitle,url:share.dataset.shareUrl};if(navigator.share){try{await navigator.share(data)}catch(err){if(err.name!=='AbortError')location.href='https://api.whatsapp.com/send?text='+encodeURIComponent(data.title+' '+data.url)}}else{location.href='https://api.whatsapp.com/send?text='+encodeURIComponent(data.title+' '+data.url)}}const copy=ev.target.closest('.copy-share');if(copy){try{await navigator.clipboard.writeText(copy.dataset.shareUrl);const old=copy.textContent;copy.textContent='✓ Copied';setTimeout(()=>copy.textContent=old,1800)}catch(err){prompt('Copy link:',copy.dataset.shareUrl)}}});"""
 CSS += """.category-pagination{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:30px 0 48px;flex-wrap:wrap}.category-pagination a{display:inline-block;background:#fff;border:1px solid #d9e5f0;border-radius:9px;padding:8px 13px;text-decoration:none}"""
@@ -192,8 +184,6 @@ CSS += """/* Category menu is OUTSIDE the scrolling nav, so it cannot be clipped
  .category-menu .nav-more[open] .nav-more-list{position:absolute!important;right:0!important;top:100%!important;left:auto!important;width:min(340px,90vw)!important;max-height:70vh!important}
 }
 """
-write(OUT/'style.css',CSS + MENU_CSS + HUB_CSS + GLOBAL_CSS + EXAM_CSS)
-write(OUT/'site.js',JS + HUB_JS + GLOBAL_JS)
 def shell(lang,t,desc,url,body,extra='',*,alternate_urls=None,canonical_url=None,robots=ROBOTS,document_lang=None):
  desc=seo_description(desc,body,t)
  page_title=t if 'GlobeWire Daily' in t else t+' | GlobeWire Daily'
@@ -366,10 +356,15 @@ _trending_rank_cache=None
 def trending_posts(exclude=None,limit=6):
  """Editorial trending proxy: recent articles with topical keyword overlap.
  No fabricated traffic, view counts or real-time search popularity."""
+ if exclude is not None:
+  # Archive context is anchored to publication; new headlines don't rewrite every old HTML object.
+  related=list(RELATED_POSTS.get(exclude['id'],[]))
+  older=[q for q in POSTS if q['id']!=exclude['id'] and q.get('date','')<=exclude.get('date','') and category(q)==category(exclude) and q not in related]
+  return (related+older)[:limit]
  global _trending_rank_cache
  if _trending_rank_cache is not None:
   return [p for p in _trending_rank_cache if exclude is None or slug(p)!=slug(exclude)][:limit]
- now=dt.datetime.now(dt.timezone.utc)
+ now=build_now()
  pool=[]
  for p in POSTS:
   try:
@@ -388,8 +383,8 @@ def trending_posts(exclude=None,limit=6):
 def trending_section(lang,exclude=None):
  selected=trending_posts(exclude,6)
  if not selected:return ''
- heading='Trending on GlobeWire Daily' if lang=='en' else 'GlobeWire Daily पर चर्चित खबरें'
- note='Selected from recent coverage and related topics; not live search rankings.' if lang=='en' else 'हालिया खबरों और संबंधित विषयों पर आधारित चयन; लाइव सर्च रैंकिंग नहीं।'
+ heading=('Related coverage' if lang=='en' else 'संबंधित खबरें') if exclude else ('Trending on GlobeWire Daily' if lang=='en' else 'GlobeWire Daily पर चर्चित खबरें')
+ note=(('Related reporting available at publication.' if lang=='en' else 'प्रकाशन के समय उपलब्ध संबंधित रिपोर्ट।') if exclude else ('Selected from recent coverage and related topics; not live search rankings.' if lang=='en' else 'हालिया खबरों और संबंधित विषयों पर आधारित चयन; लाइव सर्च रैंकिंग नहीं।'))
  return '<section class="trending-news trending-feature"><h2>'+heading+'</h2><p class="muted">'+note+'</p><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg?v={image_version(q)}" alt="">' if has_featured(q) else '<span class="related-placeholder">News</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in selected)+'</div></section>'
 
 def display_date(value):
@@ -491,7 +486,6 @@ for lang in ('en','hi'):
  priority_links=''.join('<a href="'+article_path(q,lang)+'">'+e(title(q,lang))+'</a>' for q in recent_priority(POSTS))
  priority_home='<section class="hub-home"><div class="sectiontitle"><h2>'+('Priority updates' if lang=='en' else 'जरूरी अपडेट')+'</h2><a href="/'+lang+'/all-news/">'+('All latest news →' if lang=='en' else 'सभी ताज़ा खबरें →')+'</a></div><p class="muted">'+('Selected from the last 48 hours by freshness and editorial topic priority.' if lang=='en' else 'पिछले 48 घंटों की खबरों में से ताज़गी और उपयोगिता के आधार पर चयन।')+'</p><div class="hub-announcement">'+priority_links+'</div><div class="hub-topics"><a href="/'+lang+'/jobs-exams/">'+('Jobs & Exam Hub' if lang=='en' else 'नौकरी और परीक्षा हब')+'</a><a href="/'+lang+'/telecom/">Jio · Airtel · Vi · BSNL</a></div></section>'
  home=f'<div class="wrap"><section class="lead"><div class="eyebrow">{label("WORLDWIDE NEWS & EXPLAINERS",lang)}</div><h1>{h}</h1><p class="muted">{desc}</p></section><div class="sectiontitle"><h2>{"Latest stories" if lang=="en" else "नई खबरें"}</h2><a href="/{lang}/tools/">{"AI Tools" if lang=="en" else "AI टूल्स"} →</a></div><div class="layout"><div class="cards">{latest}</div>{sidebar}</div>{priority_home}{focus_html}{trending_section(lang)}{tools_home}</div>'
- write(OUT/lang/'index.html',shell(lang,h+' | GlobeWire Daily',desc,f'{SITE}/{lang}/',home))
  page_size=24
  total_pages=max(1,(len(POSTS)+page_size-1)//page_size)
  def page_nav(page):
@@ -561,7 +555,6 @@ urls=[f'/{lang}/{path}' for lang in ('en','hi') for path in ('','colleges/','cou
 notice_cache=details_cache()
 urls += [notice_path(n,lang) for n in load_notices() if notice_cache.get(n['source'],{}).get('fields') for lang in ('en','hi')]
 urls=list(dict.fromkeys(urls+[f'/{lang}/{cat}/' for lang in ('en','hi') for cat in CATEGORIES]))
-write(OUT/'sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+xml_escape(SITE+u)+'</loc></url>' for u in urls)+'</urlset>')
 write_news_sitemap(OUT,SITE,POSTS,article_path,title,languages=article_languages)
 # Preserve old article URLs as permanent redirects to canonical descriptive URLs.
 redirects=['/ /en/ 301']
@@ -575,18 +568,24 @@ for old,canonical in DUPLICATE_POSTS:
   redirects.append(f'/{lang}/news/{slug(old)}/ {article_path(canonical,lang)} 301')
   olddir=OUT/oldpath.lstrip('/')
   if olddir.is_dir():shutil.rmtree(olddir)
-print('SEO_REDIRECTS',write_redirects(OUT,redirects,write,SITE))
+print('SEO_REDIRECTS',write_redirects(OUT,redirects,write,SITE,external=args.render_only))
 write(OUT/'ads.txt','google.com, pub-1849673109734274, DIRECT, f08c47fec0942fa0\n')
 write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/\n  Cache-Control: public, max-age=0, must-revalidate\n/*/\n  Cache-Control: public, max-age=0, must-revalidate\n/style.css\n  Cache-Control: public, max-age=3600\n/site.js\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n/seo-audit.json\n  X-Robots-Tag: noindex\n/deployment.json\n  X-Robots-Tag: noindex\n')
 print('Built',len(POSTS),'posts; AI Tools, bilingual pages, news sitemap and responsive layout')
 
+writer.owner='render_hubs'
 render_hubs(OUT,SITE,POSTS,shell,article_path,title,write)
 
+writer.owner='render_expanded_hubs'
 render_expanded_hubs(OUT,SITE,POSTS,shell,article_path,title,write)
 
+writer.owner='render_notices'
 render_notices(OUT,SITE,shell,write)
+writer.owner='render_directories'
 render_directories(OUT,SITE,shell,write)
+writer.owner='render_link_resources'
 render_link_resources(OUT,SITE,POSTS,shell,article_path,title,write)
+writer.owner='assets'
 write(OUT/'style.css',CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS+ARTICLE_CSS)
 write(OUT/'site.js',JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS)
 
@@ -606,24 +605,14 @@ count=write_site_sitemap(OUT,SITE,GENERATED_HTML)
 write(OUT/'seo-audit.json',json.dumps({'version':'v2','canonical_indexable_pages':count,'article_records':len(POSTS),'translated_hindi_articles':sum('hi' in article_languages(p) for p in POSTS)},sort_keys=True)+'\n')
 print('SEO_SITEMAP',count,'generated indexable self-canonical pages')
 
-# Cloudflare Pages capacity diagnostics: preserve every article and asset.
-from collections import Counter
-asset_files=[p for p in OUT.rglob('*') if p.is_file()]
-asset_counts=Counter(p.suffix.lower() or '[no extension]' for p in asset_files)
-section_counts=Counter(p.relative_to(OUT).parts[0] for p in asset_files)
-redirect_stub_count=0
-for p in asset_files:
- if p.name!='index.html' or p.stat().st_size>2048: continue
- try:
-  if '<title>Article moved</title>' in p.read_text(encoding='utf-8'):
-   redirect_stub_count+=1
- except (OSError, UnicodeError): pass
-print('CLOUDFLARE_ASSET_COUNT',len(asset_files),'BY_TYPE',dict(asset_counts))
-# Show the sections responsible for growth; never prune published articles.
-asset_sections=Counter('/'.join(p.relative_to(OUT).parts[:2]) for p in asset_files)
-print('CLOUDFLARE_ASSET_SECTIONS',dict(asset_sections.most_common(30)))
-print('PUBLISHED_ARTICLES_PRESERVED',len(POSTS),'DUPLICATE_REDIRECTS',len(DUPLICATE_POSTS))
-print('CLOUDFLARE_ASSET_SECTIONS',dict(section_counts),'REDIRECT_STUBS',redirect_stub_count)
-print('ARTICLE_SOURCE_JSON_COUNT',len(list((R/'content/posts').glob('*.json'))),'PUBLISHED_POSTS',len(POSTS))
-if len(asset_files)>19000:
- raise RuntimeError(f'Cloudflare Pages output has {len(asset_files)} files; safe threshold is 19000. No article or image has been deleted; use the section diagnostics to plan a safe migration.')
+# Preserve the eight demonstrated historical profile URLs as explicit source inputs.
+writer.owner='historical_pages'
+for saved in sorted((R/'content/historical-pages').rglob('index.html')):
+ relative=saved.relative_to(R/'content/historical-pages')
+ if not (OUT/relative).exists():write(OUT/relative,saved.read_text(encoding='utf-8'))
+# Only freshly generated HTML is eligible. Historical preservation is audited separately.
+report=writer.report()
+print('BUILD_OUTPUT',json.dumps({k:v for k,v in report.items() if k!='duplicate_groups'},sort_keys=True))
+if not args.render_only:
+ from delivery_package import publish_static
+ publish_static(OUT,R/'dist')
