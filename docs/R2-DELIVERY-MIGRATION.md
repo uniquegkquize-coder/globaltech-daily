@@ -102,3 +102,10 @@ Offline preservation checks cover every one of the 24,057 baseline scoped URLs, 
 Actual staging upload, exhaustive HTTP validation, mobile/browser rendering, Cloudflare account usage, production deployment duration, live rollback, live propagation and a future provider-backed publishing run still require connected Cloudflare/GitHub Actions access. File-count projections or mock receipts are never reported as a verified production deployment.
 
 Local validation completed: 210 Python tests ran (209 passed, one existing Chromium integration test skipped because the optional browser is not installed), 10 Node Worker tests passed, 7,785 canonical pages passed the SEO audit, all 24,057 baseline scoped URLs passed preservation checks, and two renders with the same source clock produced byte-identical release packages. The measured clean render took 46.382 seconds on this workspace. Baseline and real deployment durations were not measured.
+
+
+## Connected Cloudflare staging handoff
+
+A connected Cloudflare session can deploy the staging Worker and Pages preview without exporting its OAuth credential to GitHub. Label `r2-stage-data` enables a bounded preparation job only after architecture CI passes. It uses the existing R2 S3 secrets to copy and byte-verify immutable content, then publishes one immutable, checksum-checked capsule containing the 17 public Pages files and a compressed URL/checksum inventory. Nothing in the capsule is a credential. Original R2 images and source files remain intact; no route or production release is activated by this job.
+
+The connected API can retrieve this capsule and provision a preview deployment. Full public URL checks then run against that exact release. This is an interactive migration handoff; unattended Wrangler deployment still requires the separately scoped GitHub deployment secret described above. The old one-off access diagnostic is retired once connected account access has been verified.

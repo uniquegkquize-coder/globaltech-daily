@@ -5,6 +5,8 @@ import hashlib
 import json
 from pathlib import Path
 import requests
+import threading
+import os
 from delivery_package import ROOT, digest
 
 
@@ -40,14 +42,20 @@ def smoke(origin,package,all_urls=False,changed_keys=()):
         ordered=sorted(routes);step=max(1,len(ordered)//48)
         paths=sorted(set(paths+['/en/','/hi/']+ordered[::step][:48]+[p for p,r in routes.items() if 'redirect' in r][:12]))
         if len(paths)>40000:raise ValueError('Changed-URL verification exceeds safe daily Worker test budget; explicit rollout planning required')
+    sessions=threading.local()
     def check(path):
-        row=routes[path];response=requests.get(origin.rstrip('/')+path,timeout=(5,30),allow_redirects=False)
+        if not hasattr(sessions,'client'):sessions.client=requests.Session()
+        row=routes[path];response=sessions.client.get(origin.rstrip('/')+path,timeout=(5,30),allow_redirects=False)
         if 'redirect' in row:
             if response.status_code!=row['status'] or response.headers.get('Location')!=row['redirect']:raise ValueError('HTTP redirect mismatch: '+path)
         elif response.status_code!=200 or digest(response.content)!=row['sha256'] or row['type'].split(';')[0] not in response.headers.get('Content-Type',''):
             raise ValueError('HTTP content/hash/MIME mismatch: '+path)
         return path
-    with ThreadPoolExecutor(max_workers=4) as pool:list(pool.map(check,paths))
+    workers=max(1,min(12,int(os.environ.get('DELIVERY_HTTP_WORKERS','8'))))
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        for start in range(0,len(paths),256):
+            list(pool.map(check,paths[start:start+256]))
+            if start%1024==0:print('HTTP_VERIFIED',min(start+256,len(paths)),'/',len(paths),flush=True)
     for path in ('/en/news/definitely-missing-check/','/images/definitely-missing-check.jpg'):
         if requests.get(origin.rstrip('/')+path,timeout=20).status_code!=404:raise ValueError('Unknown URL is not 404')
     if requests.post(origin.rstrip('/')+'/en/',timeout=20).status_code!=405:raise ValueError('POST must be 405')

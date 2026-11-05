@@ -49,68 +49,39 @@ jobs:
             build/delivery-verification.json
           retention-days: 7
 
-  access-check:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && contains(github.event.pull_request.labels.*.name, 'r2-access-check')
+  prepare-staging-data:
+    needs: verify
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && contains(github.event.pull_request.labels.*.name, 'r2-stage-data')
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 35
     env:
       CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
       R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_PAGES_PROJECT: ${{ vars.CLOUDFLARE_PAGES_PROJECT }}
+      R2_BUCKET: globewire-media
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install 'boto3>=1.35,<2'
-      - name: Read-only credentials and bucket audit
-        run: |
-          python - <<'PY'
-          import json, os, re, urllib.request, urllib.error
-          import boto3
-          from botocore.config import Config
-          required=['CF_ACCOUNT_ID','R2_ACCESS_KEY_ID','R2_SECRET_ACCESS_KEY','CLOUDFLARE_API_TOKEN','CLOUDFLARE_PAGES_PROJECT']
-          missing=[key for key in required if not os.environ.get(key)]
-          lines=['## Read-only Cloudflare access check','']
-          for key in required:
-              lines.append('- '+key+': '+('configured' if os.environ.get(key) else 'MISSING'))
-          account=os.environ.get('CF_ACCOUNT_ID','')
-          if account and not re.fullmatch('[a-fA-F0-9]{32}',account):
-              raise SystemExit('Account ID format invalid; no requests made')
-          if all(os.environ.get(key) for key in required[:3]):
-              client=boto3.client('s3',endpoint_url='https://'+account+'.r2.cloudflarestorage.com',
-                  aws_access_key_id=os.environ['R2_ACCESS_KEY_ID'],
-                  aws_secret_access_key=os.environ['R2_SECRET_ACCESS_KEY'],region_name='auto',
-                  config=Config(connect_timeout=5,read_timeout=20,retries={'total_max_attempts':2}))
-              count=size=images=0
-              try:
-                  for index,page in enumerate(client.get_paginator('list_objects_v2').paginate(Bucket='globewire-media')):
-                      if index>=100:raise ValueError('Read-only list budget reached')
-                      for row in page.get('Contents',[]):
-                          count+=1;size+=row['Size'];images+=row['Key'].startswith('images/')
-                  lines+=['- R2 read access: verified','- Bucket objects: '+str(count),'- Bucket bytes: '+str(size),'- Existing image-prefix objects: '+str(images)]
-              except Exception as exc:
-                  # Never print request headers, credentials, signed URLs or complete exception payloads.
-                  code=getattr(exc,'response',{}).get('Error',{}).get('Code',type(exc).__name__)
-                  lines.append('- R2 read access: failed ('+str(code)+')')
-          if account and os.environ.get('CLOUDFLARE_API_TOKEN'):
-              request=urllib.request.Request('https://api.cloudflare.com/client/v4/accounts/'+account+'/pages/projects',
-                  headers={'Authorization':'Bearer '+os.environ['CLOUDFLARE_API_TOKEN']})
-              try:
-                  with urllib.request.urlopen(request,timeout=20) as response:data=json.load(response)
-                  if not data.get('success'):raise ValueError('API rejected access')
-                  projects=data.get('result',[])
-                  candidates=[p['name'] for p in projects if p.get('source',{}).get('config',{}).get('repo_name')=='globaltech-daily']
-                  lines.append('- Pages read access: verified')
-                  lines.append('- Matching Pages projects: '+(', '.join(candidates) or 'none'))
-              except Exception as exc:
-                  code=getattr(exc,'code',type(exc).__name__)
-                  lines.append('- Pages read access: failed ('+str(code)+')')
-          lines+=['','No uploads, deletes, deployments, route edits, or paid-plan changes were performed.',
-                  'Account-wide free-tier usage and production routing are NOT verified by this access check.']
-          text='\n'.join(lines)+'\n'
-          print(text)
-          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:out.write(text)
-          if missing:raise SystemExit('Deployment blocked. Missing settings: '+', '.join(missing))
-          PY
+          cache: pip
+      - run: pip install -r requirements.txt -r requirements-delivery.txt
+      - run: echo "SOURCE_DATE_EPOCH=$(git log -1 --format=%ct)" >> "$GITHUB_ENV"
+      - run: python scripts/build.py --render-only
+      - run: python scripts/delivery_package.py
+      - run: python scripts/verify_delivery.py
+      - name: Copy and byte-verify immutable R2 content (no production routing)
+        run: python scripts/r2_sync.py --upload --deep-verify
+      - name: Export verified public assets for connected Cloudflare staging
+        run: python scripts/staging_capsule.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: staging-data-receipts
+          path: |
+            build/r2-receipt.json
+            build/capsule-receipt.json
+            build/delivery-verification.json
+          retention-days: 7
