@@ -53,6 +53,8 @@ test('legacy images retain path, bytes, MIME and version query compatibility',as
 });
 test('HEAD and conditional GET avoid response body',async()=>{
   const f=await fixture();const r=await f.request('/en/',{method:'HEAD'});assert.equal(r.status,200);assert.equal(await r.text(),'');
+  assert.match(r.headers.get('Cache-Control')||'',/no-transform/);
+  assert.match(r.headers.get('ETag')||'',/^"[a-f0-9]{64}"$/);
   assert.equal((await f.request('/en/',{headers:{'If-None-Match':r.headers.get('ETag')}})).status,304);
 });
 test('cache hits avoid R2 reads and release change selects rollback snapshot',async()=>{
