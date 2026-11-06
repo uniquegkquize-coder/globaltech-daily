@@ -220,11 +220,30 @@ def adsterra_slot(position, lang):
     return f'<div data-adsterra-slot="{position}" aria-label="{label}" style="text-align:center;overflow:hidden">{fallback}</div>'
 
 
-def article_ad_scripts():
-    return r'''
+def article_ad_scripts(lang):
+    if lang == 'hi':
+        notice = 'Adsterra और Infolinks विज्ञापन दिखाने और मापने के लिए कुकी या इसी तरह की तकनीक इस्तेमाल कर सकते हैं।'
+        accept, reject, change = 'विज्ञापन स्वीकार करें', 'अस्वीकार करें', 'विज्ञापन की पसंद बदलें'
+    else:
+        notice = 'Adsterra and Infolinks may use cookies or similar technologies to serve and measure ads.'
+        accept, reject, change = 'Accept advertising', 'Reject advertising', 'Change advertising choice'
+
+    return (
+        '<div class="wrap" id="article-ad-consent" hidden>'
+        f'<p>{notice} <a href="/{lang}/privacy/">{"Privacy policy" if lang == "en" else "गोपनीयता नीति"}</a></p>'
+        f'<button type="button" data-ad-accept>{accept}</button> '
+        f'<button type="button" data-ad-reject>{reject}</button></div>'
+        f'<div class="wrap"><button type="button" id="article-ad-change" hidden>{change}</button></div>'
+    ) + r'''
 <script>
 (() => {
   if (navigator.globalPrivacyControl) return;
+  const prompt = document.getElementById("article-ad-consent");
+  const change = document.getElementById("article-ad-change");
+  const key = "globewire-article-ad-consent-v1";
+  let choice;
+  let adsStarted = false;
+  try { choice = localStorage.getItem(key); } catch {}
 
   function mount(slot) {
     if (slot.querySelector('iframe')) return;
@@ -251,25 +270,52 @@ def article_ad_scripts():
     slot.replaceChildren(frame);
   }
 
+  function startAds() {
+    if (adsStarted) return;
+    adsStarted = true;
+    let adsterraDisabled = false;
+    try { adsterraDisabled = sessionStorage.getItem("globewire-adsterra") === "no"; } catch {}
+    if (!adsterraDisabled) {
+      document.querySelectorAll("[data-adsterra-slot]").forEach(mount);
+    }
+    window.infolinks_pid = 3449361;
+    window.infolinks_wsid = 0;
+    const tag = document.createElement("script");
+    tag.src = "https://resources.infolinks.com/js/infolinks_main.js";
+    tag.async = true;
+    document.body.appendChild(tag);
+  }
+
+  function decide(value) {
+    choice = value;
+    try { localStorage.setItem(key, value); } catch {}
+    prompt.hidden = true;
+    change.hidden = false;
+    if (value === "yes") startAds();
+    else if (adsStarted) location.reload();
+  }
+
+  function requireConsent() {
+    const title = document.querySelector('[data-adsterra-slot="title"]');
+    if (title) title.before(prompt);
+    prompt.querySelector("[data-ad-accept]").addEventListener("click", () => decide("yes"));
+    prompt.querySelector("[data-ad-reject]").addEventListener("click", () => decide("no"));
+    change.addEventListener("click", () => {
+      prompt.hidden = false;
+      prompt.querySelector("[data-ad-accept]").focus();
+    });
+    if (choice === "yes") startAds();
+    if (choice === "yes" || choice === "no") change.hidden = false;
+    else prompt.hidden = false;
+  }
+
   fetch("/cdn-cgi/trace", {cache: "no-store", credentials: "omit"})
     .then(response => response.ok ? response.text() : "")
+    .catch(() => "")
     .then(trace => {
-      if (!/^loc=IN\r?$/m.test(trace)) return;
-
-      let adsterraDisabled = false;
-      try { adsterraDisabled = sessionStorage.getItem("globewire-adsterra") === "no"; } catch {}
-      if (!adsterraDisabled) {
-        document.querySelectorAll("[data-adsterra-slot]").forEach(mount);
-      }
-
-      window.infolinks_pid = 3449361;
-      window.infolinks_wsid = 0;
-      const tag = document.createElement("script");
-      tag.src = "https://resources.infolinks.com/js/infolinks_main.js";
-      tag.async = true;
-      document.body.appendChild(tag);
-    })
-    .catch(() => {});
+      if (/^loc=IN\r?$/m.test(trace)) startAds();
+      else requireConsent();
+    });
 })();
 </script>'''
 
@@ -555,7 +601,7 @@ for p in POSTS:
   content=f'''<div class="wrap"><article class="article readable-article" data-article-layout="v3"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/{lang}/">{'Home' if lang=='en' else 'होम'}</a> › <a href="/{lang}/{category(p)}/">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</a> › <span>{e(t)}</span></nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1>{title_ad}<p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> · Source: {e(sourcehost)}</p>{reading_html}{updated_notice(p,lang)}<div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div>{featured_html}{guide_notice}{article_note(p,lang)}{article_panel(p,lang)}{toc_html}<div class="story">{story_html}</div>{share_html}{keyword_html}<div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {'AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''
   page=shell(lang,t,desc,url,content,extra,alternate_urls=alternate_urls,canonical_url=canonical_url,robots='noindex,follow,max-image-preview:large' if fallback else ROBOTS,document_lang=content_lang)
   if show_ads:
-   page=page.removesuffix('</body></html>')+article_ad_scripts()+'</body></html>'
+   page=page.removesuffix('</body></html>')+article_ad_scripts(lang)+'</body></html>'
   write(OUT / article_path(p,lang).lstrip('/') / 'index.html',page)
 for lang in ('en','hi'):
  h='Worldwide news, movies and technology explained' if lang=='en' else 'दुनियाभर की ताज़ा खबरें, आसान हिंदी में'
@@ -610,7 +656,7 @@ for lang in ('en','hi'):
  'about':('About GlobeWire Daily','GlobeWire Daily is an independent bilingual technology publication focused on useful explainers and news. We use AI-assisted drafting and translation, link to source materials, and welcome corrections. We do not claim to independently verify every publisher statement.'),
  'editorial':('Editorial Policy','Our articles are based on attributed source material. We prioritize official announcements, documentation and credible reporting. AI may assist drafting and translation. We require useful source-supported context, practical implications, clear distinctions between confirmed facts and uncertainty, and transparent attribution. We prohibit fabricated quotes, unsupported claims, misleading headlines, and unattributed copying. When a claim cannot be confirmed, we label uncertainty or do not publish it. Readers can request corrections.'),
  'corrections':('Corrections Policy','Report factual errors, misleading headlines, inaccurate translations, or rights concerns to contact@globewiredaily.org with the article URL and supporting evidence. Substantive corrections should be reflected in the article with an updated date.'),
- 'privacy':('Privacy Policy','GlobeWire Daily publishes static news and informational pages. Hosting providers may process IP addresses, device information and technical request logs for security and delivery. We use Google AdSense advertising technology, which may use cookies or similar identifiers to serve and measure ads, subject to applicable consent requirements and Google policies. You can learn how Google uses data from partner sites at https://policies.google.com/technologies/partner-sites and manage Google ad preferences at https://myadcenter.google.com/. On news articles, Adsterra and Infolinks ads may load automatically for visitors whose connection is identified as being in India. These providers may use cookies or similar technologies to serve and measure ads. Third-party websites linked from our articles have separate privacy practices. We do not operate reader accounts or a newsletter. For privacy or data requests, contact contact@globewiredaily.org.'),
+ 'privacy':('Privacy Policy','GlobeWire Daily publishes static news and informational pages. Hosting providers may process IP addresses, device information and technical request logs for security and delivery. We use Google AdSense advertising technology, which may use cookies or similar identifiers to serve and measure ads, subject to applicable consent requirements and Google policies. You can learn how Google uses data from partner sites at https://policies.google.com/technologies/partner-sites and manage Google ad preferences at https://myadcenter.google.com/. On news articles, Adsterra and Infolinks ads may load automatically for visitors whose connection is identified as being in India. Other visitors can accept or reject advertising and revisit their decision using Change advertising choice. These providers may use cookies or similar technologies to serve and measure ads. Third-party websites linked from our articles have separate privacy practices. We do not operate reader accounts or a newsletter. For privacy or data requests, contact contact@globewiredaily.org.'),
  'contact':('Contact GlobeWire Daily','For news tips, corrections, image rights requests, privacy matters or editorial feedback, email contact@globewiredaily.org. Do not include sensitive personal information.'),
  'affiliate':('Affiliate Disclosure','Our AI Tools directory currently contains informational links. If affiliate partnerships or paid placements are introduced, they will be clearly identified. We do not claim that editorial recommendations are paid placements.')}
  for s,(t,d) in pages.items():
