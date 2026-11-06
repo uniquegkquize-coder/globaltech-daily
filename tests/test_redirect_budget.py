@@ -21,4 +21,14 @@ class RedirectBudgetTests(unittest.TestCase):
    write_redirects(root,['/en/news/abcdef/ /en/news/business/canonical/ 301','/en/news/business/duplicate/ /en/news/business/canonical/ 301'],write,'https://example.com',limit=1)
    self.assertTrue((root/'_redirects').read_text().startswith('/en/news/business/duplicate/'))
    self.assertTrue((root/'en/news/abcdef/index.html').exists())
+ def test_migration_redirects_never_generate_per_url_html(self):
+  import json
+  with tempfile.TemporaryDirectory() as tmp:
+   root=Path(tmp)/'rendered';root.mkdir()
+   def write(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(v)
+   rows=['/ /en/ 301']+[f'/en/news/{i:012x}/ /en/news/science/article-{i}/ 301' for i in range(5000)]
+   result=write_redirects(root,rows,write,'https://example.com',external=True)
+   self.assertEqual(result['html_redirects'],0)
+   self.assertEqual(len(list(root.rglob('*.html'))),0)
+   self.assertEqual(len(json.loads((root.parent/'redirects.json').read_text())),5001)
 if __name__=='__main__':unittest.main()

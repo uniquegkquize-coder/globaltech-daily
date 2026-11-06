@@ -9,10 +9,21 @@ import xml.etree.ElementTree as ET
 
 def audit(out,site='https://globewiredaily.org'):
     out=Path(out);ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
-    urls=[x.text for x in ET.parse(out/'sitemap.xml').getroot().findall('s:url/s:loc',ns)]
+    def sitemap_urls(name):
+        tree=ET.parse(out/name).getroot()
+        if tree.tag.endswith('sitemapindex'):
+            result=[]
+            for child in tree.findall('s:sitemap/s:loc',ns):
+                rel=urlparse(child.text).path.lstrip('/')
+                if '/' in rel or '..' in rel:raise ValueError('Unsafe sitemap shard')
+                result.extend(sitemap_urls(rel))
+            return result
+        rows=[x.text for x in tree.findall('s:url/s:loc',ns)]
+        if len(rows)>50000:raise ValueError('Sitemap shard exceeds 50,000 URLs')
+        return rows
+    urls=sitemap_urls('sitemap.xml')
     errors=[];checked=0;article_count=0;alternates=0
     if len(urls)!=len(set(urls)):errors.append('Duplicate canonical sitemap URLs')
-    if len(urls)>50000:errors.append('Normal sitemap exceeds 50,000 URLs')
     missing=out/'404.html'
     if not missing.is_file() or 'noindex' not in missing.read_text(encoding='utf-8').split('</head>',1)[0]:errors.append('Missing noindex 404 document')
     redirects={line.split()[0] for line in (out/'_redirects').read_text().splitlines() if line.strip() and not line.startswith('#')}

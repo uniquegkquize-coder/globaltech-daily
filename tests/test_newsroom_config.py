@@ -63,7 +63,10 @@ class NewsroomConfigTests(unittest.TestCase):
         self.assertIn("MAX_MODELS_PER_ARTICLE: '5'", workflow)
         self.assertIn("MAX_LICENSED_PHOTOS_PER_RUN: '100'", workflow)
         self.assertIn("python -u scripts/generate_images.py", workflow)
-        self.assertIn("python -u scripts/build.py", workflow)
+        self.assertNotIn("scripts/build.py", workflow)
+        delivery=(ROOT/'.github/workflows/delivery-release.yml').read_text()
+        self.assertIn("python scripts/build.py --render-only",delivery)
+        self.assertIn("python scripts/r2_sync.py --upload",delivery)
         self.assertIn("git rebase -X theirs origin/main", workflow)
         self.assertNotIn("sleep 300", workflow)
 

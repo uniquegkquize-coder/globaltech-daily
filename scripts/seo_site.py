@@ -120,8 +120,22 @@ def write_site_sitemap(out,site,generated_paths):
         seen.add(expected);row=ET.SubElement(root,'{'+ns+'}url');ET.SubElement(row,'{'+ns+'}loc').text=expected
         dates=[x for x in head.dates if x]
         if dates:ET.SubElement(row,'{'+ns+'}lastmod').text=max(dates)
-    ET.ElementTree(root).write(Path(out)/'sitemap.xml',encoding='utf-8',xml_declaration=True)
+    write_sitemap_tree(out,site,root)
     return len(seen)
+
+def write_sitemap_tree(out,site,root,chunk_size=45000):
+    # The sitemap and each shard stay below Google's 50,000 URL ceiling.
+    out=Path(out);ns='http://www.sitemaps.org/schemas/sitemap/0.9'
+    if len(root)<=chunk_size:
+        ET.ElementTree(root).write(out/'sitemap.xml',encoding='utf-8',xml_declaration=True)
+        return
+    index=ET.Element('{'+ns+'}sitemapindex')
+    for start in range(0,len(root),chunk_size):
+        name=f'sitemap-pages-{start//chunk_size+1:03d}.xml'
+        shard=ET.Element('{'+ns+'}urlset');shard.extend(list(root)[start:start+chunk_size])
+        ET.ElementTree(shard).write(out/name,encoding='utf-8',xml_declaration=True)
+        row=ET.SubElement(index,'{'+ns+'}sitemap');ET.SubElement(row,'{'+ns+'}loc').text=site+'/'+name
+    ET.ElementTree(index).write(out/'sitemap.xml',encoding='utf-8',xml_declaration=True)
 
 def related_index(posts,limit=4):
     """Prefer explicit editorial choices, then topical overlap, then the same desk."""
@@ -138,6 +152,8 @@ def related_index(posts,limit=4):
         candidates=set(groups.get(p.get('category'),[]))
         for token in tokens[ident]:candidates.update(by_token[token])
         candidates.discard(ident)
+        stamp=str(p.get('date',''))
+        candidates={other for other in candidates if not stamp or str(by_id[other].get('date',''))<=stamp}
         def score(other):
             shared=len(tokens[ident]&tokens[other]);same=p.get('category')==by_id[other].get('category')
             return (shared>=2,shared,same,str(by_id[other].get('date','')),other)

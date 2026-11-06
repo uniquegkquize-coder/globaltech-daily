@@ -1,0 +1,87 @@
+name: Delivery architecture CI
+on:
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: delivery-ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install -r requirements.txt
+      - name: Build with a reproducible source clock
+        run: |
+          echo "SOURCE_DATE_EPOCH=$(git log -1 --format=%ct)" >> "$GITHUB_ENV"
+      - run: python scripts/check_output_policy.py
+      - run: python scripts/build.py --render-only
+      - run: python -m unittest discover -s tests
+      - run: node --test tests/delivery-worker.test.mjs
+      - run: python scripts/audit_built_seo.py build/rendered
+      - run: python scripts/delivery_package.py
+      - run: python scripts/verify_delivery.py
+      - name: Prove deterministic rebuild and stale-file cleanup
+        run: |
+          cp build/r2-package/package.json /tmp/first-package.json
+          touch build/rendered/stale-cache.log
+          python scripts/build.py --render-only
+          test ! -e build/rendered/stale-cache.log
+          python scripts/delivery_package.py
+          cmp /tmp/first-package.json build/r2-package/package.json
+      - run: python scripts/delivery_monitor.py
+      - name: Save actionable counts and audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: delivery-audit
+          path: |
+            build/output-report.json
+            build/delivery-verification.json
+          retention-days: 7
+
+  prepare-staging-data:
+    needs: verify
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && contains(github.event.pull_request.labels.*.name, 'r2-stage-data')
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: globewire-media
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt -r requirements-delivery.txt
+      - run: echo "SOURCE_DATE_EPOCH=$(git log -1 --format=%ct)" >> "$GITHUB_ENV"
+      - run: python scripts/build.py --render-only
+      - run: python scripts/delivery_package.py
+      - run: python scripts/verify_delivery.py
+      - name: Copy and byte-verify immutable R2 content (no production routing)
+        run: python scripts/r2_sync.py --upload --deep-verify --workers 8
+      - name: Export verified public assets for connected Cloudflare staging
+        run: python scripts/staging_capsule.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: staging-data-receipts
+          path: |
+            build/r2-receipt.json
+            build/capsule-receipt.json
+            build/delivery-verification.json
+          retention-days: 7

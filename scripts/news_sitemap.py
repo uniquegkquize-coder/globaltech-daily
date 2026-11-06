@@ -1,3 +1,4 @@
+from build_clock import now as build_now
 """Generate bounded Google News sitemaps without dropping recent articles."""
 import datetime as dt
 from xml.sax.saxutils import escape
@@ -9,7 +10,7 @@ def is_news_article(post):
 
 
 def write_news_sitemap(out, site, posts, article_path, title, now=None, languages=None):
-    now = now or dt.datetime.now(dt.timezone.utc)
+    now = now or build_now()
     entries = []
     for post in posts:
         if not is_news_article(post):
