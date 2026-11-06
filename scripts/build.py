@@ -209,7 +209,15 @@ def shell(lang,t,desc,url,body,extra='',*,alternate_urls=None,canonical_url=None
  return f'''<!doctype html><html lang="{document_lang or lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script>{meta}<script async src="https://www.googletagmanager.com/gtag/js?id=G-MFZZNMZCWJ"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag("js",new Date());gtag("config","G-MFZZNMZCWJ");</script><meta name="generator" content="GlobeWire SEO v2"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css?v={hashlib.sha256((CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS+ARTICLE_CSS).encode()).hexdigest()[:12]}"></head><body><a class="skip-link" href="#main-content">{'Skip to content' if lang=='en' else 'मुख्य सामग्री पर जाएँ'}</a><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="{e(switch_url)}" hreflang="{target_lang}">{switch_label}</a></nav><div class="category-menu">{more_html}</div></div></header><main id="main-content">{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>{label("Independent bilingual news and explainers, with clear sourcing, corrections and transparent editorial standards.",lang)}</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{label(s.title(),lang)}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools','resources','site-map'])}</div></div></footer><script defer src="/site.js?v={hashlib.sha256((JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS).encode()).hexdigest()[:12]}"></script></body></html>'''
 def adsterra_slot(position, lang):
     label = 'विज्ञापन' if lang == 'hi' else 'Advertisement'
-    return f'<div data-adsterra-slot="{position}" aria-label="{label}" style="text-align:center;overflow:hidden"></div>'
+    fallback = ''
+    if position == 'title':
+        invitation = 'GlobeWire Daily पर विज्ञापन दें' if lang == 'hi' else 'Advertise on GlobeWire Daily'
+        fallback = (
+            '<div style="max-width:728px;margin:12px auto;padding:8px 12px;'
+            'border:1px solid #dce5f1;border-radius:8px;background:#f5f8fc">'
+            f'<small>{label}</small><br><a href="/{lang}/contact/">{invitation}</a></div>'
+        )
+    return f'<div data-adsterra-slot="{position}" aria-label="{label}" style="text-align:center;overflow:hidden">{fallback}</div>'
 
 
 def article_ad_scripts():
@@ -219,7 +227,7 @@ def article_ad_scripts():
   if (navigator.globalPrivacyControl) return;
 
   function mount(slot) {
-    if (slot.firstElementChild) return;
+    if (slot.querySelector('iframe')) return;
     const available = slot.clientWidth;
     const [width, height, key] = slot.dataset.adsterraSlot === "inline"
       ? [300, 250, "52835a675f1767f1a04f1936910f50fc"]
@@ -240,7 +248,7 @@ def article_ad_scripts():
     // Keep document.write and per-banner options in this frame.
     frame.srcdoc = '<body style="margin:0;overflow:hidden"><script>window.atOptions=' + options
       + ';<' + '/script><script src="https://bicea.org/22/' + key + '"><' + '/script></body>';
-    slot.appendChild(frame);
+    slot.replaceChildren(frame);
   }
 
   fetch("/cdn-cgi/trace", {cache: "no-store", credentials: "omit"})
