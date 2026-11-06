@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Build, verify, and promote a loopback Oracle preview, with nginx rollback."""
+"""Build, verify, and promote the Oracle origin, with nginx rollback."""
+import filecmp
 import fcntl
 import hashlib
 import http.client
@@ -24,6 +25,9 @@ CANDIDATE = Path("/etc/nginx/conf.d/zz-globewire-oracle-candidate.conf")
 RELEASES = Path("/var/www/globewire-oracle-releases")
 PREVIEW = 8081
 TEST = 8082
+LIVE_HOST = "globewiredaily.org"
+WWW_HOST = "www.globewiredaily.org"
+CONFIG_VERSION = "2"
 SAFE_PATH = re.compile(r"/[A-Za-z0-9._~/%-]*")
 
 
@@ -96,18 +100,30 @@ def read_routes(build):
 
 def config(port, release, site, redirects):
     name = f"globewire_oracle_{port}"
+    robots = f"{name}_robots"
     rows = "\n".join(f'    "{source}" "{target}";' for source, (target, _) in redirects.items())
     return f'''map $uri ${name} {{
     default "";
 {rows}
+}}
+map "$host:$uri" ${robots} {{
+    default "noindex";
+    ~^globewiredaily[.]org:/(?:deployment[.]json|seo-audit[.]json)$ "noindex";
+    ~^globewiredaily[.]org: "";
 }}
 server {{
     listen 127.0.0.1:{port};
     root {site};
     index index.html;
     absolute_redirect off;
-    add_header X-Robots-Tag "noindex" always;
+    add_header X-Robots-Tag ${robots} always;
     add_header X-GlobeWire-Release "{release}" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    if ($host = {WWW_HOST}) {{
+        return 301 https://{LIVE_HOST}$request_uri;
+    }}
     if (${name} != "") {{
         return 301 ${name}$is_args$args;
     }}
@@ -118,8 +134,8 @@ server {{
 '''.encode()
 
 
-def fetch(conn, path):
-    conn.request("GET", quote(path, safe="/%?=&"))
+def fetch(conn, path, host=None):
+    conn.request("GET", quote(path, safe="/%?=&"), headers={"Host": host} if host else {})
     response = conn.getresponse()
     return response.status, response.getheader("Location"), response.getheaders(), response.read()
 
@@ -170,9 +186,36 @@ def check_candidate(release, site, files, redirects):
             raise RuntimeError("Candidate redirect lost its query string")
         if fetch(conn, "/missing-oracle-deploy-check")[0] != 404:
             raise RuntimeError("Candidate did not return 404 for an unknown path")
+        for path in ("/en/", "/hi/", "/sitemap.xml", "/news-sitemap.xml"):
+            status, _, headers, body = fetch(conn, path, LIVE_HOST)
+            if status != 200 or body != (site / files[path]).read_bytes():
+                raise RuntimeError(f"Production host failed: {path}")
+            if any(key.lower() == "x-robots-tag" and "noindex" in value.lower() for key, value in headers):
+                raise RuntimeError(f"Production host inherits preview noindex: {path}")
+        status, location, _, _ = fetch(conn, "/hi/?preview=1", WWW_HOST)
+        if (status, location) != (301, f"https://{LIVE_HOST}/hi/?preview=1"):
+            raise RuntimeError("Canonical www redirect failed")
     finally:
         conn.close()
     print(f"CANDIDATE PASSED: {len(files)} files, {len(redirects)} redirects", flush=True)
+    print("PRODUCTION HOST CHECK PASSED: indexable pages and canonical www", flush=True)
+
+
+def prior_release(config_text):
+    match = re.search(rb"^    root (/var/www/globewire-oracle-releases/[a-f0-9]{20}-[a-z0-9_]+/site);$", config_text, re.M)
+    return Path(os.fsdecode(match[1])) if match else None
+
+
+def copy_site(source, destination, previous):
+    def copy_or_link(src, dst):
+        if previous is not None:
+            old = previous / Path(src).relative_to(source)
+            if old.is_file() and filecmp.cmp(src, old, shallow=False):
+                os.link(old, dst)
+                return dst
+        return shutil.copy2(src, dst)
+
+    shutil.copytree(source, destination, copy_function=copy_or_link)
 
 
 def main():
@@ -185,10 +228,14 @@ def main():
     if old[0] != 200 or CANDIDATE.exists():
         raise SystemExit("Expected a working preview and an unused candidate configuration")
     old_urls, old_redirects = read_routes(HOME / "globewire-latest/build")
+    previous = prior_release(original)
+    previous_urls = set()
+    if previous is not None and (previous.parent / "urls.json").is_file():
+        previous_urls = set(json.loads((previous.parent / "urls.json").read_text()))
     git(CHECKOUT, "-c", "pack.threads=1", "fetch", "--depth=40", REPO, "refs/heads/main")
     source = git(CHECKOUT, "rev-parse", "FETCH_HEAD", capture=True).strip()
     git(CHECKOUT, "cat-file", "-e", f"{MIGRATION}^{{commit}}")
-    release = hashlib.sha256(f"{source}:{MIGRATION}".encode()).hexdigest()[:20]
+    release = hashlib.sha256(f"{source}:{MIGRATION}:{CONFIG_VERSION}".encode()).hexdigest()[:20]
     if release_header(old) == release:
         print(f"PREVIEW ALREADY CURRENT: {release}", flush=True)
         return
@@ -201,14 +248,17 @@ def main():
         run("env", f"SOURCE_DATE_EPOCH={epoch}", PYTHON, "scripts/build.py", "--render-only", user=True, cwd=work)
         files, redirects = read_routes(work / "build")
         baseline = json.loads((work / "content/published-url-inventory.json").read_text())["urls"]
-        missing = (old_urls.keys() | old_redirects.keys() | set(baseline)) - (files.keys() | redirects.keys())
+        urls = files.keys() | redirects.keys()
+        missing = (old_urls.keys() | old_redirects.keys() | set(baseline) | previous_urls) - urls
         if missing:
             raise RuntimeError(f"Build lost {len(missing)} old URLs: {sorted(missing)[:10]}")
         RELEASES.mkdir(mode=0o755, exist_ok=True)
         directory = Path(tempfile.mkdtemp(prefix=f"{release}-", dir=RELEASES))
         directory.chmod(0o755)
         site = directory / "site"
-        shutil.copytree(work / "build/rendered", site)
+        copy_site(work / "build/rendered", site, previous)
+        atomic_write(directory / "urls.json", json.dumps(sorted(urls)).encode())
+        atomic_write(directory / "previous-nginx.conf", original)
     finally:
         if (work / ".git").is_file():
             git(CHECKOUT, "worktree", "remove", "--force", work)
@@ -225,14 +275,6 @@ def main():
         reload_nginx()
         await_page(TEST, is_new)
         check_candidate(release, site, files, redirects)
-
-        atomic_write(ACTIVE, config(PREVIEW, release, site, redirects))
-        reload_nginx()
-        await_page(PREVIEW, is_new)
-        atomic_write(ACTIVE, original)
-        reload_nginx()
-        await_page(PREVIEW, lambda response: same_page(response, old))
-        print("ROLLBACK CHECK PASSED", flush=True)
 
         atomic_write(ACTIVE, config(PREVIEW, release, site, redirects))
         CANDIDATE.unlink()
