@@ -5,6 +5,8 @@ import hashlib
 import json
 from pathlib import Path
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 import threading
 import os
 from delivery_package import ROOT, digest
@@ -43,8 +45,17 @@ def smoke(origin,package,all_urls=False,changed_keys=()):
         paths=sorted(set(paths+['/en/','/hi/']+ordered[::step][:48]+[p for p,r in routes.items() if 'redirect' in r][:12]))
         if len(paths)>40000:raise ValueError('Changed-URL verification exceeds safe daily Worker test budget; explicit rollout planning required')
     sessions=threading.local()
+    def http_client():
+        client=requests.Session()
+        retry=Retry(total=4,connect=4,read=4,status=4,backoff_factor=0.6,
+                    status_forcelist=(429,500,502,503,504),
+                    allowed_methods=frozenset(('GET','HEAD')),
+                    respect_retry_after_header=True)
+        adapter=HTTPAdapter(max_retries=retry,pool_connections=4,pool_maxsize=4)
+        client.mount('https://',adapter)
+        return client
     def check(path):
-        if not hasattr(sessions,'client'):sessions.client=requests.Session()
+        if not hasattr(sessions,'client'):sessions.client=http_client()
         row=routes[path];response=sessions.client.get(origin.rstrip('/')+path,timeout=(5,30),allow_redirects=False)
         if 'redirect' in row:
             if response.status_code!=row['status'] or response.headers.get('Location')!=row['redirect']:raise ValueError('HTTP redirect mismatch: '+path)
@@ -68,7 +79,7 @@ def smoke(origin,package,all_urls=False,changed_keys=()):
                 }
                 raise ValueError('HTTP content/hash/MIME mismatch: '+json.dumps(details,sort_keys=True))
         return path
-    workers=max(1,min(12,int(os.environ.get('DELIVERY_HTTP_WORKERS','8'))))
+    workers=max(1,min(8,int(os.environ.get('DELIVERY_HTTP_WORKERS','4'))))
     with ThreadPoolExecutor(max_workers=workers) as pool:
         for start in range(0,len(paths),256):
             list(pool.map(check,paths[start:start+256]))
