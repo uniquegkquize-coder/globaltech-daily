@@ -65,7 +65,7 @@ export default {
         if (!object) return error(503,'Content temporarily unavailable');
         if (object.size !== row.bytes || object.customMetadata?.sha256 !== row.sha256) return error(503,'Content verification failed');
         response = new Response(object.body,{headers:{...headers,'Content-Type':row.type,'Content-Length':String(row.bytes),ETag:'"'+row.sha256+'"',
-          'Cache-Control':row.type.startsWith('image/')?'public, max-age=86400':'public, max-age=60, s-maxage=300'}});
+          'Cache-Control':row.type.startsWith('image/')?'public, max-age=86400':'public, max-age=60, s-maxage=300, no-transform'}});
         ctx.waitUntil(cache.put(key,response.clone()));
       }
       if (normalized !== path) return new Response(null,{status:301,headers:{Location:normalized+url.search,...headers}});
