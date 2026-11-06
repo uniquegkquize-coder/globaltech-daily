@@ -1,39 +1,40 @@
 {
-  "total_posts": 2256,
+  "total_posts": 2276,
   "selected": 23,
   "results": {
-    "source_photo_saved": 6,
-    "cooldown": 17
+    "source_photo_saved": 5,
+    "cooldown": 17,
+    "invalid_source_images": 1
   },
-  "still_missing": 178,
+  "still_missing": 182,
   "articles": [
     {
-      "id": "ab709faa12f7b00daf05bf7f",
-      "source": "https://en.wikipedia.org/wiki/Velocette_Thruxton",
+      "id": "1dc083a46eb5e4bd1bd78281",
+      "source": "https://en.wikipedia.org/wiki/Velocette_Viper",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794002729.892137
+      "retry_after": 1794013894.6234252
     },
     {
-      "id": "5e94b322de1935c00f7f399b",
-      "source": "https://en.wikipedia.org/wiki/Chery_QQ6",
+      "id": "93c1d05c134c0ecb9f1562ad",
+      "source": "https://en.wikipedia.org/wiki/Yamaha_FZS600_Fazer",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794002730.0040715
+      "retry_after": 1794013894.667256
     },
     {
-      "id": "4b2127c3661348264d657135",
-      "source": "https://en.wikipedia.org/wiki/Velocette_Venom",
+      "id": "bb95d118a3ef83248832fbfa",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Express",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794002730.0357955
+      "retry_after": 1794013894.8358955
     },
     {
-      "id": "e21f0c9303189bff05b728a0",
+      "id": "2a8b92143f14b264d8d27146",
       "result": "cooldown"
     },
     {
-      "id": "ab5757b7bde7e5a43128d256",
+      "id": "e21f0c9303189bff05b728a0",
       "result": "cooldown"
     },
     {
@@ -41,11 +42,23 @@
       "result": "cooldown"
     },
     {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "id": "2f02162d9ab27a8cd5662161",
       "result": "cooldown"
     },
     {
       "id": "4afa4536b18e5a41b30a3497",
+      "result": "cooldown"
+    },
+    {
+      "id": "007acb84538e69bcc14f4f9f",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "result": "cooldown"
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
       "result": "cooldown"
     },
     {
@@ -57,15 +70,11 @@
       "result": "cooldown"
     },
     {
-      "id": "a6510273f0889bf4d7684eae",
-      "result": "cooldown"
-    },
-    {
       "id": "ef614dcb4163038685679d1d",
       "result": "cooldown"
     },
     {
-      "id": "2a8b92143f14b264d8d27146",
+      "id": "ab5757b7bde7e5a43128d256",
       "result": "cooldown"
     },
     {
@@ -73,15 +82,11 @@
       "result": "cooldown"
     },
     {
-      "id": "9d1f6341eb5fa6644d63ff08",
+      "id": "fbff6440d68d52399ca212b1",
       "result": "cooldown"
     },
     {
-      "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "2f02162d9ab27a8cd5662161",
+      "id": "a6510273f0889bf4d7684eae",
       "result": "cooldown"
     },
     {
@@ -89,33 +94,29 @@
       "result": "cooldown"
     },
     {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
-    },
-    {
       "id": "8af54bb949a0c055391d640a",
       "result": "cooldown"
     },
     {
-      "id": "fb2356c240441b4a9d7e6463",
-      "source": "https://en.wikipedia.org/wiki/Fiat_Pulse",
+      "id": "8ede6684d4cf14febb863aad",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794002730.4925108
+      "result": "invalid_source_images",
+      "retry_after": 1794013894.9981
     },
     {
-      "id": "1ffb5b85820b9112feb48792",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S5",
+      "id": "81420436354986a508008103",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Colorado",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794002730.5036366
+      "retry_after": 1794013895.1648445
     },
     {
-      "id": "4456f9f112448d5c8f763c4c",
-      "source": "https://en.wikipedia.org/wiki/Asus_PadFone",
+      "id": "78c227a8cd6b388845904ea0",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_3",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794002730.5523295
+      "retry_after": 1794013895.1767113
     }
   ],
   "missing": [
@@ -138,7 +139,7 @@
       "category": "social-media",
       "title": "Exploring Social Media Marketing Internship Opportunities Listed on LinkedIn",
       "source": "https://in.linkedin.com/jobs/view/social-media-marketing-internship-in-delhi-bangalore-hyderabad-mumbai-at-foodstories-4479738162?position=44&pageNum=0&refId=6HZzQVkTvpvkiIYOUZ%2F6vQ%3D%3D&trackingId=jLeQWDCS3GoiLwZtObrHrw%3D%3D",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "253e0e4a696b",
@@ -180,7 +181,7 @@
       "category": "social-media",
       "title": "Divine Hindu Announces On-Site Social Media Internship Opening in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/social-media-intern-immediate-joiners-bangalore-at-divine-hindu-4484913408",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "37c0e160c49f",
@@ -208,7 +209,7 @@
       "category": "private-vacancy",
       "title": "Exploring Private Sector Job Listings in India: Recent Openings and Roles",
       "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Br%C9%99yl%C9%99r-%2Bonlayn%2Bfikirl%C9%99ri%2Bayr%C4%B1ca%2Binc%C9%99l%C9%99yin.ekq-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "3a640d951615",
@@ -348,7 +349,7 @@
       "category": "private-vacancy",
       "title": "Overview of Current Administrative and Support Vacancies in Moses Lake, Washington",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-moses-lake-wa",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "75dbda51595c",
@@ -432,7 +433,7 @@
       "category": "visas-immigration",
       "title": "LinkedIn Job Postings Highlight Openings for Visa Sales Executives in New Delhi",
       "source": "https://in.linkedin.com/jobs/view/visa-sales-executive-location-saket-in-new-delhi-day-shift-at-sharda-consultancy-services-4484921383",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "c3c44629d231",
@@ -446,7 +447,7 @@
       "category": "visas-immigration",
       "title": "Peerless Immigration Services Lists Business Development Executive Opening in New Delhi",
       "source": "https://in.linkedin.com/jobs/view/busienss-development-executive-at-peerless-immigration-services-4483857590",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "0bdb0918a8cf",
@@ -467,7 +468,7 @@
       "category": "private-vacancy",
       "title": "Exploring Community and Social Services Openings Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-phoenix-az",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "c455f726510c",
@@ -533,6 +534,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "79cbda730083",
+      "category": "private-vacancy",
+      "title": "Overview of Gaming and Customer Support Openings Reported on Professional Networks in India",
+      "source": "https://in.linkedin.com/jobs/%E6%96%B0%E7%9B%9B%E8%B5%8C%E5%9C%BA%E6%B8%B8%E6%88%8F%E5%AE%A2%E6%9C%8D15508830630.cnv-jobs",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "7f651ce9d3f0",
       "category": "telecom",
       "title": "123NET Awarded $86 Million in Federal BEAD Funding to Expand Michigan Fiber Infrastructure",
@@ -558,7 +566,7 @@
       "category": "private-vacancy",
       "title": "EH Jobs Recruits Western Music Teacher for Primary Grades in Tellapur, Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/looking-for-western-music-teacher-primary-1-5-in-tellapur-hyderabad-at-eh-jobs-4481687605",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "8f4b17c49d1b2a0c5cb45a53",
@@ -694,6 +702,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "8ede6684d4cf14febb863aad",
+      "category": "gadgets",
+      "title": "Xiaomi Mi 2A: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "29f12d5d640a",
       "category": "telecom",
       "title": "TRAI Releases Draft Audit Manual for DRM-Based Digital Addressable Systems",
@@ -712,7 +727,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted in Des Moines Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "3570bb7ef821",
@@ -734,6 +749,13 @@
       "title": "Université Notre Dame de Lomami: College Admissions, Facts and Verification Guide",
       "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "23dc6e8075b4",
+      "category": "sarkari-naukri",
+      "title": "Understanding MACP Pay Fixation Under the 7th Pay Commission",
+      "source": "https://www.sahisarkarijobs.in/macp-calculator/",
+      "reason": "no_source_image"
     },
     {
       "id": "12d3cc56ebe6",
@@ -838,7 +860,7 @@
       "category": "apps-software",
       "title": "Saatvik Agro Announces Hiring for Analyst Software Engineer (Java) in Morena",
       "source": "https://in.linkedin.com/jobs/view/analyst-software-engineer-java-at-saatvik-agro-4484805864",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "61ab99a70d23",
@@ -908,7 +930,7 @@
       "category": "ai-news",
       "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
       "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "c9e064a48f72",
@@ -929,14 +951,14 @@
       "category": "visas-immigration",
       "title": "Primex Visa Pvt. Ltd. Advertises New Visa Documentation Executive Position in Delhi",
       "source": "https://in.linkedin.com/jobs/view/visa-documentation-executve-at-primex-visa-pvt-ltd-4484924300",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "07f5b24312a4",
       "category": "private-vacancy",
       "title": "Innow8 Lists Stem Innovation Engineer Role Across Multiple Locations in Northern India",
       "source": "https://in.linkedin.com/jobs/view/stem-innovation-engineer-in-chandigarh-ghaziabad-uttar-pradesh-bulandshahr-noida-punjab-gurgaon-meerut-sangrur-mohali-at-innow8-4472659090",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "0493b37f6575",
@@ -1027,7 +1049,7 @@
       "category": "private-vacancy",
       "title": "Make Your Own Perfume (MYOP) Seeks Sales Executive in Pune and Pimpri-Chinchwad Area",
       "source": "https://in.linkedin.com/jobs/view/sales-executive-at-make-your-own-perfume-myop-4484796852",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "9db43091aef2",
@@ -1069,7 +1091,7 @@
       "category": "social-media",
       "title": "The Blue Kite Announces Opening for Social Media Associate Role in Goa via LinkedIn",
       "source": "https://in.linkedin.com/jobs/view/social-media-associate-at-the-blue-kite-4483449440",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "7548888dfa18",
@@ -1114,6 +1136,13 @@
       "reason": "source_unavailable"
     },
     {
+      "id": "dfccb93a8259",
+      "category": "travel-packages",
+      "title": "Understanding TUI's Flexible Booking and Cancellation Policies",
+      "source": "https://www.tui.com/hilfe/kostenlos-stornieren/",
+      "reason": "no_source_image"
+    },
+    {
       "id": "09eaa4a8cbc9",
       "category": "sarkari-naukri",
       "title": "New Official Age Eligibility Calculator Launched for Government Job Aspirants",
@@ -1139,7 +1168,7 @@
       "category": "private-vacancy",
       "title": "Overview of Current Job Openings and Professional Roles Across India",
       "source": "https://in.linkedin.com/jobs/nexbirlik%2Bistifad%C9%99%C3%A7i%2Bt%C9%99cr%C3%BCb%C9%99si-%2Bm%C3%BCxt%C9%99lif%2Bm%C9%99nb%C9%99l%C9%99rd%C9%99%2Bfikirl%C9%99ri%2Boxuyun.uew-jobs",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "06e9199a393c",
@@ -1153,21 +1182,21 @@
       "category": "social-media",
       "title": "Headout Recruits YouTube Scriptwriter in Bengaluru for Search-Driven Travel Content",
       "source": "https://in.linkedin.com/jobs/view/scriptwriter-youtube-at-headout-4483872792",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "122b5649e749",
       "category": "private-vacancy",
       "title": "Ivory Lighthouse Recruitment Services Lists Onboard Sales Associate Vacancy for International Cruise Lines",
       "source": "https://in.linkedin.com/jobs/view/sales-associate-onboard-international-cruise-line-at-ivory-lighthouse-recruitment-services-pvt-ltd-4482589473",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "9e37935bcd6c",
       "category": "private-vacancy",
       "title": "San Francisco Bay Area Media and Communications Job Listings Highlight Tech and Corporate Sector Demand",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "8444aa187e09b377f661fcbf",
@@ -1202,7 +1231,7 @@
       "category": "apps-software",
       "title": "Tech Hiring Surges in Chennai as Flex Opens Associate Software Engineer Roles",
       "source": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-flex-4472543793",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "080b28de54ff",
@@ -1223,7 +1252,7 @@
       "category": "private-vacancy",
       "title": "Community and Social Services Career Openings Highlight Regional Employment Landscape",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-boydton-va",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "090108930e0d",
@@ -1342,14 +1371,14 @@
       "category": "private-vacancy",
       "title": "Military and Protective Services Job Openings Highlighted Across the Greater Phoenix Area",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-phoenix-az",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "38138689935d",
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Boydton Area Listings",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-boydton-va",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "a91a82825e4a",
@@ -1363,48 +1392,53 @@
       "category": "apps-software",
       "title": "Associate QA Engineer – Software at Light & Wonder, Bengaluru – Join the Gaming Quality Team",
       "source": "https://in.linkedin.com/jobs/view/associate-qa-engineer-software-at-light-wonder-4484455024",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     }
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "access_denied": 50,
+    "invalid_source_images": 47,
     "source_error": 4,
-    "no_source_image": 45,
-    "invalid_source_images": 42,
+    "no_source_image": 54,
+    "access_denied": 40,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "ab709faa12f7b00daf05bf7f": {
+    "1dc083a46eb5e4bd1bd78281": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Velocette_Thruxton",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Velocette_Thruxton_500_cc_1965.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Velocette_Viper",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Flickr_-_ronsaunders47_-_VELOCETTE_VIPER-WITH_ENGINE_FAIRING.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "5e94b322de1935c00f7f399b": {
+    "93c1d05c134c0ecb9f1562ad": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chery_QQ6",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Chery_QQ6_China_2016-04-08.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Yamaha_FZS600_Fazer",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cf/FazerFZS600.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "4b2127c3661348264d657135": {
+    "bb95d118a3ef83248832fbfa": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Velocette_Venom",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Flickr_-_ronsaunders47_-_VELOCETTE_VENOM._500CC_SINGLE.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Express",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/2021_Chevrolet_Express_2500_WT_Cargo_in_Summit_White%2C_Front_Left%2C_05-22-2022.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "fb2356c240441b4a9d7e6463": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Fiat_Pulse",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/2023_Fiat_Pulse_Impetus_%28Colombia%29_front_view_01.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "8ede6684d4cf14febb863aad": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
     },
-    "1ffb5b85820b9112feb48792": {
+    "81420436354986a508008103": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S5",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Samsung_Galaxy_S5.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Colorado",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fb/2024_Chevrolet_Colorado_Z71%2C_front_left%2C_09-28-2024.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "4456f9f112448d5c8f763c4c": {
+    "78c227a8cd6b388845904ea0": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Asus_PadFone",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/ASUS_PadFone_1.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_3",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Xiaomi_Mi_3.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
