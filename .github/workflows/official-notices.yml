@@ -73,8 +73,7 @@ jobs:
             python scripts/official_notices.py --merge /tmp/official-notices.json
             python scripts/notice_details.py --merge /tmp/official-notice-details.json
             if git diff --quiet -- content/official-notice-archive.json content/official-notice-details.json; then exit 0; fi
-            SITE_URL=https://globewiredaily.org python scripts/build.py
-            git add content/official-notice-archive.json content/official-notice-details.json dist
+            git add content/official-notice-archive.json content/official-notice-details.json
             git commit -m 'Update official notice index and archive'
             if git push origin HEAD:main; then exit 0; fi
           done

@@ -70,11 +70,7 @@ jobs:
             if (( before == 0 )); then echo "No drafts remain"; echo "::endgroup::"; break; fi
             python -u scripts/collect.py || echo "::warning::Collector stopped; keeping saved progress"
             python -u scripts/generate_images.py || echo "::warning::Optional image lookup unavailable"
-            python -u scripts/build.py
-            for output in dist/en/index.html dist/hi/index.html dist/sitemap.xml; do
-              test -s "$output" || { echo "::error::Missing $output"; exit 1; }
-            done
-            git add -A content/posts content/pending content/featured dist
+            git add -A content/posts content/pending content/featured
             for f in content/news-run-status.json content/news-coverage-status.json content/image-backfill-state.json; do
               if test -f "$f"; then git add -A "$f"; fi
             done
