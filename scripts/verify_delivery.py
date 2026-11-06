@@ -79,11 +79,7 @@ def smoke(origin,package,all_urls=False,changed_keys=()):
                 }
                 raise ValueError('HTTP content/hash/MIME mismatch: '+json.dumps(details,sort_keys=True))
         return path
-    workers=max(1,min(8,int(os.environ.get('DELIVERY_HTTP_WORKERS','4'))))
-    with ThreadPoolExecutor(max_workers=workers) as pool:
-        for start in range(0,len(paths),256):
-            list(pool.map(check,paths[start:start+256]))
-            if start%1024==0:print('HTTP_VERIFIED',min(start+256,len(paths)),'/',len(paths),flush=True)
+    # Fail fast on HTTP protocol regressions before the expensive full URL sweep.
     for path in ('/en/news/definitely-missing-check/','/images/definitely-missing-check.jpg'):
         if requests.get(origin.rstrip('/')+path,timeout=20).status_code!=404:raise ValueError('Unknown URL is not 404')
     if requests.post(origin.rstrip('/')+'/en/',timeout=20).status_code!=405:raise ValueError('POST must be 405')
@@ -103,6 +99,11 @@ def smoke(origin,package,all_urls=False,changed_keys=()):
             'actual_sha256':digest(r.content),
             'vary':r.headers.get('Vary',''),
         },sort_keys=True))
+    workers=max(1,min(8,int(os.environ.get('DELIVERY_HTTP_WORKERS','4'))))
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        for start in range(0,len(paths),256):
+            list(pool.map(check,paths[start:start+256]))
+            if start%1024==0:print('HTTP_VERIFIED',min(start+256,len(paths)),'/',len(paths),flush=True)
     return {'http_urls_checked':len(paths),'all_urls':all_urls,'origin':origin}
 
 
