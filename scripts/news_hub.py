@@ -80,4 +80,10 @@ def render_hubs(out,site,posts,shell,article_path,title,write):
         nav=''.join(hub_link(lang,c,n[ix]) for c,n in CATEGORIES.items())
         rows=''.join(item(p) for p in posts)
         body='<div class="wrap" data-news-hub data-search-language="'+lang+'"><section class="hub-hero"><h1>'+label+'</h1><p>'+('Newest published reports first, across every category.' if lang=='en' else 'सभी श्रेणियों की प्रकाशित खबरें, सबसे नई पहले।')+'</p><label for="all-news-search">'+search_label+'</label><input id="all-news-search" class="hub-search" type="search" data-news-search placeholder="Jio, SSC, AI…"></section><div class="hub-topics">'+hub_link(lang,'jobs-exams',name)+nav+'</div><p role="status" aria-live="polite" data-search-status></p><ul class="hub-news-list">'+rows+'</ul></div>'
-        write(out/lang/'all-news'/'index.html',shell(lang,label+' | GlobeWire Daily',label,site+'/'+lang+'/all-news/',body))
+        page_title = 'Latest News Across All Topics' if lang == 'en' else 'ताज़ा खबरें और सभी श्रेणियों के अपडेट'
+        description = (
+            'Browse the latest GlobeWire Daily articles on world news, technology, business, sports, jobs and entertainment. Search headlines or explore by topic.'
+            if lang == 'en' else
+            'दुनिया, टेक्नोलॉजी, कारोबार, खेल, सरकारी नौकरियों और मनोरंजन की खबरें पढ़ें। शीर्षक खोजें या अपनी पसंद की श्रेणी चुनें।'
+        )
+        write(out/lang/'all-news'/'index.html',shell(lang,page_title+' | GlobeWire Daily',description,site+'/'+lang+'/all-news/',body))
