@@ -1,33 +1,33 @@
 {
-  "total_posts": 2276,
-  "selected": 23,
+  "total_posts": 2298,
+  "selected": 24,
   "results": {
-    "source_photo_saved": 5,
-    "cooldown": 17,
-    "invalid_source_images": 1
+    "invalid_source_images": 2,
+    "source_photo_saved": 4,
+    "cooldown": 18
   },
-  "still_missing": 182,
+  "still_missing": 186,
   "articles": [
     {
-      "id": "1dc083a46eb5e4bd1bd78281",
-      "source": "https://en.wikipedia.org/wiki/Velocette_Viper",
+      "id": "ab5161457cb0ef816db211ff",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794013894.6234252
+      "result": "invalid_source_images",
+      "retry_after": 1794023983.2615676
     },
     {
-      "id": "93c1d05c134c0ecb9f1562ad",
-      "source": "https://en.wikipedia.org/wiki/Yamaha_FZS600_Fazer",
+      "id": "554edbfdaee926ed82007433",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794013894.667256
+      "result": "invalid_source_images",
+      "retry_after": 1794023983.5549793
     },
     {
-      "id": "bb95d118a3ef83248832fbfa",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Express",
+      "id": "875d59a9f005295f478ad199",
+      "source": "https://en.wikipedia.org/wiki/Yamaha_TD2",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794013894.8358955
+      "retry_after": 1794023983.5717113
     },
     {
       "id": "2a8b92143f14b264d8d27146",
@@ -99,24 +99,28 @@
     },
     {
       "id": "8ede6684d4cf14febb863aad",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794013894.9981
+      "result": "cooldown"
     },
     {
-      "id": "81420436354986a508008103",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Colorado",
+      "id": "c37e65f4d32ad1248cfd5271",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_630",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794013895.1648445
+      "retry_after": 1794023983.8414211
     },
     {
-      "id": "78c227a8cd6b388845904ea0",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_3",
+      "id": "f07c7b8b61329c4d05174d0e",
+      "source": "https://en.wikipedia.org/wiki/Voyah_Free",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794013895.1767113
+      "retry_after": 1794023983.969845
+    },
+    {
+      "id": "ee136af6e8270cb877f46300",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Equinox",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794023984.4022765
     }
   ],
   "missing": [
@@ -240,6 +244,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "8d6069082faf",
+      "category": "private-vacancy",
+      "title": "LinkedIn Job Listings in India: Overview of Recent Roles and Application Channels",
+      "source": "https://in.linkedin.com/jobs/is+novaluxia+legit+before+signing+up.mbi-jobs",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "aa511d7af8e4",
       "category": "private-vacancy",
       "title": "Recent Administrative Assistant Job Listings Highlight Opportunities Across the San Francisco Bay Area",
@@ -303,11 +314,25 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "ca998fc9670d",
+      "category": "private-vacancy",
+      "title": "Current Private Sector Job Openings and Roles Listed Across India",
+      "source": "https://in.linkedin.com/jobs/Note+novaluxia.com+Reviews+platform+updates.xcv-jobs",
+      "reason": "no_source_image"
+    },
+    {
       "id": "58f11d3687a2",
       "category": "private-vacancy",
       "title": "Overview of Current Media and Communications Private Vacancies in the Des Moines Area",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-des-moines-ia",
       "reason": "access_denied"
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
+      "category": "automobiles",
+      "title": "MV Agusta RVS#1: Motorcycle Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "reason": "invalid_source_images"
     },
     {
       "id": "090cabc5ee27",
@@ -405,7 +430,7 @@
       "category": "private-vacancy",
       "title": "Professional Listings and Job Openings Reported Across India on Professional Platforms",
       "source": "https://in.linkedin.com/jobs/Nexbirlik+haqq%C4%B1nda+m%C9%99nfi+r%C9%99yl%C9%99r+%E2%80%94+%C5%9Firk%C9%99t+yenilikl%C9%99rini+d%C9%99y%C9%99rl%C9%99ndirin.whx-jobs",
-      "reason": "no_source_image"
+      "reason": "invalid_source_images"
     },
     {
       "id": "04bcdc448261",
@@ -1381,6 +1406,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "554edbfdaee926ed82007433",
+      "category": "gadgets",
+      "title": "Xiaomi Mi 2S: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "a91a82825e4a",
       "category": "syllabus",
       "title": "National Testing Agency Opens Application Process for JEE (Main) 2027 Session 1",
@@ -1397,7 +1429,7 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "invalid_source_images": 47,
+    "invalid_source_images": 51,
     "source_error": 4,
     "no_source_image": 54,
     "access_denied": 40,
@@ -1405,24 +1437,19 @@
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "1dc083a46eb5e4bd1bd78281": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Velocette_Viper",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Flickr_-_ronsaunders47_-_VELOCETTE_VIPER-WITH_ENGINE_FAIRING.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "93c1d05c134c0ecb9f1562ad": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Yamaha_FZS600_Fazer",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cf/FazerFZS600.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "bb95d118a3ef83248832fbfa": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Express",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/2021_Chevrolet_Express_2500_WT_Cargo_in_Summit_White%2C_Front_Left%2C_05-22-2022.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "8ede6684d4cf14febb863aad": {
+    "ab5161457cb0ef816db211ff": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "554edbfdaee926ed82007433": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
       "candidate_count": 9,
       "candidates": [
         "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
@@ -1430,15 +1457,25 @@
         "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
       ]
     },
-    "81420436354986a508008103": {
+    "875d59a9f005295f478ad199": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Colorado",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fb/2024_Chevrolet_Colorado_Z71%2C_front_left%2C_09-28-2024.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Yamaha_TD2",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/dc/1969_Yamaha_TD2.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "78c227a8cd6b388845904ea0": {
+    "c37e65f4d32ad1248cfd5271": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_3",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Xiaomi_Mi_3.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_630",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/LUMIA_630.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "f07c7b8b61329c4d05174d0e": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Voyah_Free",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/%28CHN-Shanghai%29_Showcar_Voyah_Free%2B_No-plate_2025-12-21.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "ee136af6e8270cb877f46300": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Equinox",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
