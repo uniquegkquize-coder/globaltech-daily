@@ -118,3 +118,28 @@ jobs:
             content/directory-*-state.json
             content/directory-details.json
             content/directory-records.json
+
+  prune-fetch-cache:
+    name: Keep the three newest directory fetch caches
+    needs: publish
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      actions: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Remove superseded directory fetch caches
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          endpoint="repos/$GITHUB_REPOSITORY/actions/caches"
+          ids="$(gh api --method GET --paginate "$endpoint" \
+            -f ref=refs/heads/main -f key=directory-fetch-v2-Linux- \
+            -f sort=created_at -f direction=desc -F per_page=100 \
+            --jq '.actions_caches[].id')"
+          while IFS= read -r cache_id; do
+            [[ -n "$cache_id" ]] || continue
+            gh api --method DELETE "$endpoint/$cache_id"
+          done < <(printf '%s\n' "$ids" | tail -n +4)
