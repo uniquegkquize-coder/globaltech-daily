@@ -1,0 +1,31 @@
+name: Audit Oracle article photos
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/oracle-photo-audit.yml'
+      - 'scripts/check_oracle_photos.py'
+  schedule:
+    # Runs after the hourly Oracle deployment window, every three hours.
+    - cron: '55 */3 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: oracle-photo-audit
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 60
+          sparse-checkout: scripts
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4 pillow
+      - run: python scripts/check_oracle_photos.py
