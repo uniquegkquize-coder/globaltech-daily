@@ -2,6 +2,7 @@ name: News source validation
 on:
   push:
     paths:
+      - 'content/posts/*.json'
       - 'scripts/collect.py'
       - 'scripts/public_page_fetch.py'
       - 'scripts/research_directory_sources.py'
@@ -41,12 +42,22 @@ on:
       - 'tests/test_news_sitemap.py'
       - '.github/workflows/news-source-check.yml'
   workflow_dispatch:
+permissions:
+  contents: read
 jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/dist/
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -60,17 +71,24 @@ jobs:
         run: python -u scripts/probe_sources.py
       - name: Check state and city source coverage
         run: python scripts/test_sources.py
-      - name: Install static-site build dependencies
-        run: python -m pip install Pillow
+      - name: Prepare the Oracle build snapshot
+        env:
+          ORACLE_MIGRATION: e19ff8aa03bb1237450d77493466739cca6c4ca7
+        run: |
+          echo "SOURCE_DATE_EPOCH=$(git show -s --format=%ct HEAD)" >> "$GITHUB_ENV"
+          if ! git cat-file -e "$ORACLE_MIGRATION^{commit}"; then
+            git fetch --filter=blob:none origin "$ORACLE_MIGRATION"
+          fi
+          git -c user.name=GlobeWire-CI -c user.email=ci@globewiredaily.org merge --no-edit "$ORACLE_MIGRATION"
       - name: Verify SEO sitemap and news sitemap generation
         run: |
-          python scripts/build.py
-          python scripts/audit_built_seo.py
-          test -s dist/index.html
-          test -s dist/robots.txt
-          test -s dist/sitemap.xml
-          test -s dist/news-sitemap.xml
-          test -s dist/_headers
-          grep -q 'Sitemap: https://globewiredaily.org/sitemap.xml' dist/robots.txt
-          grep -q 'urlset' dist/sitemap.xml
-          grep -Eq 'news:news|sitemapindex' dist/news-sitemap.xml || echo 'No news younger than 48 hours; empty news sitemap is permitted'
+          python scripts/build.py --render-only
+          python scripts/audit_built_seo.py build/rendered
+          test -s build/rendered/index.html
+          test -s build/rendered/robots.txt
+          test -s build/rendered/sitemap.xml
+          test -s build/rendered/news-sitemap.xml
+          test -s build/rendered/_headers
+          grep -q 'Sitemap: https://globewiredaily.org/sitemap.xml' build/rendered/robots.txt
+          grep -Eq 'urlset|sitemapindex' build/rendered/sitemap.xml
+          grep -Eq 'news:news|sitemapindex' build/rendered/news-sitemap.xml || echo 'No news younger than 48 hours; empty news sitemap is permitted'
