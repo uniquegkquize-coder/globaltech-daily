@@ -215,14 +215,14 @@ def adsterra_slot(position, lang):
 def adsterra_preferences(lang):
     if lang == 'hi':
         heading = 'Adsterra विज्ञापन की पसंद'
-        notice = 'Adsterra इस टैब में विज्ञापन दिखाने और मापने के लिए कुकी या इसी तरह की तकनीक इस्तेमाल कर सकता है।'
+        notice = 'भारत में Adsterra बैनर अपने आप लोड हो सकते हैं। Adsterra विज्ञापन दिखाने और मापने के लिए कुकी इस्तेमाल कर सकता है।'
         allow, disable = 'Adsterra चालू करें', 'Adsterra बंद करें'
     else:
         heading = 'Adsterra preferences'
-        notice = 'Adsterra may use cookies or similar technologies to serve and measure ads in this tab.'
+        notice = 'Adsterra banners may load automatically in India. Adsterra may use cookies or similar technologies to serve and measure ads.'
         allow, disable = 'Enable Adsterra', 'Disable Adsterra'
 
-    return f'<details class="wrap" id="adsterra-preferences"><summary>{heading}</summary><p>{notice}</p><button type="button" data-enable-adsterra>{allow}</button> <button type="button" data-disable-adsterra hidden>{disable}</button></details>' + '''
+    return f'<details class="wrap" id="adsterra-preferences"><summary>{heading}</summary><p>{notice}</p><button type="button" data-enable-adsterra>{allow}</button> <button type="button" data-disable-adsterra hidden>{disable}</button></details>' + r'''
 <script>
 (() => {
   const preferences = document.getElementById("adsterra-preferences");
@@ -230,6 +230,13 @@ def adsterra_preferences(lang):
   const disable = preferences.querySelector("[data-disable-adsterra]");
   const storageKey = "globewire-adsterra";
   const slots = document.querySelectorAll("[data-adsterra-slot]");
+  let preference;
+  try { preference = sessionStorage.getItem(storageKey); } catch {}
+
+  function savePreference(value) {
+    preference = value;
+    try { sessionStorage.setItem(storageKey, value); } catch {}
+  }
 
   function mount(slot) {
     if (slot.firstElementChild) return;
@@ -262,20 +269,27 @@ def adsterra_preferences(lang):
   }
 
   enable.addEventListener("click", () => {
-    try { sessionStorage.setItem(storageKey, "yes"); } catch {}
+    savePreference("yes");
     startAds();
     disable.focus();
   });
   disable.addEventListener("click", () => {
-    try { sessionStorage.removeItem(storageKey); } catch {}
+    savePreference("no");
     slots.forEach(slot => slot.replaceChildren());
     disable.hidden = true;
     enable.hidden = false;
     enable.focus();
   });
-  try {
-    if (sessionStorage.getItem(storageKey) === "yes") startAds();
-  } catch {}
+  if (preference === "yes") {
+    startAds();
+  } else if (preference !== "no" && !navigator.globalPrivacyControl) {
+    fetch("/cdn-cgi/trace", {cache: "no-store", credentials: "omit"})
+      .then(response => response.ok ? response.text() : "")
+      .then(trace => {
+        if (!preference && /^loc=IN\r?$/m.test(trace)) startAds();
+      })
+      .catch(() => {});
+  }
 })();
 </script>'''
 
@@ -660,7 +674,7 @@ for lang in ('en','hi'):
  'about':('About GlobeWire Daily','GlobeWire Daily is an independent bilingual technology publication focused on useful explainers and news. We use AI-assisted drafting and translation, link to source materials, and welcome corrections. We do not claim to independently verify every publisher statement.'),
  'editorial':('Editorial Policy','Our articles are based on attributed source material. We prioritize official announcements, documentation and credible reporting. AI may assist drafting and translation. We require useful source-supported context, practical implications, clear distinctions between confirmed facts and uncertainty, and transparent attribution. We prohibit fabricated quotes, unsupported claims, misleading headlines, and unattributed copying. When a claim cannot be confirmed, we label uncertainty or do not publish it. Readers can request corrections.'),
  'corrections':('Corrections Policy','Report factual errors, misleading headlines, inaccurate translations, or rights concerns to contact@globewiredaily.org with the article URL and supporting evidence. Substantive corrections should be reflected in the article with an updated date.'),
- 'privacy':('Privacy Policy','GlobeWire Daily publishes static news and informational pages. Hosting providers may process IP addresses, device information and technical request logs for security and delivery. We use Google AdSense advertising technology, which may use cookies or similar identifiers to serve and measure ads, subject to applicable consent requirements and Google policies. You can learn how Google uses data from partner sites at https://policies.google.com/technologies/partner-sites and manage Google ad preferences at https://myadcenter.google.com/. On news articles, readers can choose to enable Infolinks advertising for the current browser tab. Infolinks may use cookies or similar technologies to serve and measure ads. Readers can turn this off under Advertising preferences. Adsterra banner ads are optional per browser tab and have a separate control under Adsterra preferences. Adsterra may use cookies or similar technologies to serve and measure ads. Third-party websites linked from our articles have separate privacy practices. We do not operate reader accounts or a newsletter. For privacy or data requests, contact contact@globewiredaily.org.'),
+ 'privacy':('Privacy Policy','GlobeWire Daily publishes static news and informational pages. Hosting providers may process IP addresses, device information and technical request logs for security and delivery. We use Google AdSense advertising technology, which may use cookies or similar identifiers to serve and measure ads, subject to applicable consent requirements and Google policies. You can learn how Google uses data from partner sites at https://policies.google.com/technologies/partner-sites and manage Google ad preferences at https://myadcenter.google.com/. On news articles, readers can choose to enable Infolinks advertising for the current browser tab. Infolinks may use cookies or similar technologies to serve and measure ads. Readers can turn this off under Advertising preferences. Adsterra banners may load automatically for visitors whose connection is identified as being in India. Elsewhere, readers can enable them for their current browser tab. Readers can turn them off in Adsterra preferences. Adsterra may use cookies or similar technologies to serve and measure ads. Third-party websites linked from our articles have separate privacy practices. We do not operate reader accounts or a newsletter. For privacy or data requests, contact contact@globewiredaily.org.'),
  'contact':('Contact GlobeWire Daily','For news tips, corrections, image rights requests, privacy matters or editorial feedback, email contact@globewiredaily.org. Do not include sensitive personal information.'),
  'affiliate':('Affiliate Disclosure','Our AI Tools directory currently contains informational links. If affiliate partnerships or paid placements are introduced, they will be clearly identified. We do not claim that editorial recommendations are paid placements.')}
  for s,(t,d) in pages.items():
