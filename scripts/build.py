@@ -254,10 +254,11 @@ def adsterra_preferences(lang):
     frame.height = height;
     frame.loading = "lazy";
     frame.style.cssText = "display:block;border:0;margin:12px auto;max-width:100%";
-    frame.setAttribute("sandbox", "allow-scripts allow-popups allow-popups-to-escape-sandbox");
+    // Adsterra uses document.cookie in its supplied loader and needs a real origin.
+    frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox");
     const options = JSON.stringify({key, format: "iframe", height, width, params: {}});
-    // Separate globals and document.write calls from the article and other units.
-    frame.srcdoc = '<body style="margin:0"><script>window.atOptions=' + options
+    // Keep document.write and per-banner options in this frame.
+    frame.srcdoc = '<body style="margin:0;overflow:hidden"><script>window.atOptions=' + options
       + ';<' + '/script><script src="https://bicea.org/22/' + key + '"><' + '/script></body>';
     slot.appendChild(frame);
   }
