@@ -1,6 +1,6 @@
 {
   "published": 6,
-  "updated": 0,
+  "updated": 1,
   "target": 8,
   "missing": {
     "colleges": 2
@@ -8,13 +8,13 @@
   "categories": {
     "colleges": {
       "new": 0,
-      "updated": 0,
+      "updated": 1,
       "eligible_new": 0,
-      "eligible_updates": 0,
+      "eligible_updates": 1,
       "shortfall": 2,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 16,
+        "already_published_unchanged": 15,
         "insufficient verified descriptive fields": 87,
         "identifier URL is not specification evidence": 199
       },
@@ -150,12 +150,12 @@
     "phones": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 559,
+      "eligible_new": 557,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1839,
-        "already_published_unchanged": 41,
+        "already_published_unchanged": 43,
         "insufficient verified descriptive fields": 86,
         "identifier URL is not specification evidence": 1153
       },
@@ -291,12 +291,12 @@
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 502,
+      "eligible_new": 500,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 4396,
-        "already_published_unchanged": 43,
+        "already_published_unchanged": 45,
         "insufficient verified descriptive fields": 434,
         "identifier URL is not specification evidence": 3417
       },
@@ -432,12 +432,12 @@
     "bikes": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 57,
+      "eligible_new": 55,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 447,
-        "already_published_unchanged": 43,
+        "already_published_unchanged": 45,
         "insufficient verified descriptive fields": 84,
         "identifier URL is not specification evidence": 263
       },
@@ -571,5 +571,5 @@
       ]
     }
   },
-  "date": "2026-11-06T12:51:16.828348+00:00"
+  "date": "2026-11-06T13:27:31.845093+00:00"
 }
