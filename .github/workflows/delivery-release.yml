@@ -72,9 +72,11 @@ jobs:
         run: |
           source_sha=09720564d89f18f934caa049b3e26d373beda886
           cp scripts/deploy_delivery.py scripts/delivery_rollback.py "$RUNNER_TEMP/"
+          cp tests/test_delivery_architecture.py "$RUNNER_TEMP/"
           git fetch --depth=1 origin "$source_sha"
           git switch --detach "$source_sha"
           cp "$RUNNER_TEMP/deploy_delivery.py" "$RUNNER_TEMP/delivery_rollback.py" scripts/
+          cp "$RUNNER_TEMP/test_delivery_architecture.py" tests/
           echo "EXPECTED_RELEASE_ID=3fbd782b585522eaa5313712f7e2379e848a812eee72c2781dae8d866f055dcb" >> "$GITHUB_ENV"
           echo "EXPECTED_INVENTORY_SHA256=5f4207c7b160774b2fe95e95bd6fc36a8ec1f74b5c951e409f450f9dda7ce52a" >> "$GITHUB_ENV"
       - name: Pin the build clock to the selected source
