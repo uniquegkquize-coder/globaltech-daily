@@ -54,11 +54,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          filter: blob:none
-          sparse-checkout-cone-mode: false
-          sparse-checkout: |
-            /*
-            !/dist/
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
@@ -79,7 +74,7 @@ jobs:
         run: |
           echo "SOURCE_DATE_EPOCH=$(git show -s --format=%ct HEAD)" >> "$GITHUB_ENV"
           if ! git cat-file -e "$ORACLE_MIGRATION^{commit}"; then
-            git fetch --filter=blob:none origin "$ORACLE_MIGRATION"
+            git fetch origin "$ORACLE_MIGRATION"
           fi
           git -c user.name=GlobeWire-CI -c user.email=ci@globewiredaily.org merge --no-edit "$ORACLE_MIGRATION"
       - name: Verify SEO sitemap and news sitemap generation
