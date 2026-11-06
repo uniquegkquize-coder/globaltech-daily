@@ -207,6 +207,79 @@ def shell(lang,t,desc,url,body,extra='',*,alternate_urls=None,canonical_url=None
  more=[('All Latest News','सभी ताज़ा खबरें','all-news/'),('Jobs & Exam Hub','नौकरी और परीक्षा हब','jobs-exams/'),('Launches & Specs','लॉन्च और स्पेक्स','launches/'),('Freebies & Discounts','फ्रीबीज़ और डिस्काउंट','freebies-deals/'),('Study Abroad Guide','विदेश में पढ़ाई','study-abroad-guide/'),('Jobs Archive','पुराने नोटिस','jobs-archive/'),('AI Tools','AI टूल्स','tools/'),('College Finder','कॉलेज खोजें','colleges/'),('Course Explorer','कोर्स खोजें','courses/'),('Car Explorer','कार खोजें','cars/'),('Phone Explorer','फोन खोजें','phones/'),('Bike Explorer','बाइक खोजें','bikes/')]+[(en,hi,cat+'/') for cat,(en,hi) in CATEGORIES.items()]+[('About','हमारे बारे में','about/'),('Contact','संपर्क','contact/')]
  more_html='<details class="nav-more"><summary>'+('More' if lang=='en' else 'और देखें')+'</summary><div class="nav-more-list">'+''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in more)+'</div></details>'
  return f'''<!doctype html><html lang="{document_lang or lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script>{meta}<script async src="https://www.googletagmanager.com/gtag/js?id=G-MFZZNMZCWJ"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag("js",new Date());gtag("config","G-MFZZNMZCWJ");</script><meta name="generator" content="GlobeWire SEO v2"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css?v={hashlib.sha256((CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS+ARTICLE_CSS).encode()).hexdigest()[:12]}"></head><body><a class="skip-link" href="#main-content">{'Skip to content' if lang=='en' else 'मुख्य सामग्री पर जाएँ'}</a><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="{e(switch_url)}" hreflang="{target_lang}">{switch_label}</a></nav><div class="category-menu">{more_html}</div></div></header><main id="main-content">{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>{label("Independent bilingual news and explainers, with clear sourcing, corrections and transparent editorial standards.",lang)}</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{label(s.title(),lang)}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools','resources','site-map'])}</div></div></footer><script defer src="/site.js?v={hashlib.sha256((JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS).encode()).hexdigest()[:12]}"></script></body></html>'''
+def adsterra_slot(position, lang):
+    label = 'विज्ञापन' if lang == 'hi' else 'Advertisement'
+    return f'<div data-adsterra-slot="{position}" aria-label="{label}" style="text-align:center;overflow:hidden"></div>'
+
+
+def adsterra_preferences(lang):
+    if lang == 'hi':
+        heading = 'Adsterra विज्ञापन की पसंद'
+        notice = 'Adsterra इस टैब में विज्ञापन दिखाने और मापने के लिए कुकी या इसी तरह की तकनीक इस्तेमाल कर सकता है।'
+        allow, disable = 'Adsterra चालू करें', 'Adsterra बंद करें'
+    else:
+        heading = 'Adsterra preferences'
+        notice = 'Adsterra may use cookies or similar technologies to serve and measure ads in this tab.'
+        allow, disable = 'Enable Adsterra', 'Disable Adsterra'
+
+    return f'<details class="wrap" id="adsterra-preferences"><summary>{heading}</summary><p>{notice}</p><button type="button" data-enable-adsterra>{allow}</button> <button type="button" data-disable-adsterra hidden>{disable}</button></details>' + '''
+<script>
+(() => {
+  const preferences = document.getElementById("adsterra-preferences");
+  const enable = preferences.querySelector("[data-enable-adsterra]");
+  const disable = preferences.querySelector("[data-disable-adsterra]");
+  const storageKey = "globewire-adsterra";
+  const slots = document.querySelectorAll("[data-adsterra-slot]");
+
+  function mount(slot) {
+    if (slot.firstElementChild) return;
+    const available = slot.clientWidth;
+    const [width, height, key] = slot.dataset.adsterraSlot === "inline"
+      ? [300, 250, "52835a675f1767f1a04f1936910f50fc"]
+      : available >= 728
+        ? [728, 90, "ea1d474556632d121d26679ad3ab397a"]
+        : [320, 50, "d5df9465701fdd4db6592b1b19550468"];
+    if (available < width) return;
+
+    const frame = document.createElement("iframe");
+    frame.title = slot.getAttribute("aria-label");
+    frame.width = width;
+    frame.height = height;
+    frame.loading = "lazy";
+    frame.style.cssText = "display:block;border:0;margin:12px auto;max-width:100%";
+    frame.setAttribute("sandbox", "allow-scripts allow-popups allow-popups-to-escape-sandbox");
+    const options = JSON.stringify({key, format: "iframe", height, width, params: {}});
+    // Separate globals and document.write calls from the article and other units.
+    frame.srcdoc = '<body style="margin:0"><script>window.atOptions=' + options
+      + ';<' + '/script><script src="https://bicea.org/22/' + key + '"><' + '/script></body>';
+    slot.appendChild(frame);
+  }
+
+  function startAds() {
+    enable.hidden = true;
+    disable.hidden = false;
+    slots.forEach(mount);
+  }
+
+  enable.addEventListener("click", () => {
+    try { sessionStorage.setItem(storageKey, "yes"); } catch {}
+    startAds();
+    disable.focus();
+  });
+  disable.addEventListener("click", () => {
+    try { sessionStorage.removeItem(storageKey); } catch {}
+    slots.forEach(slot => slot.replaceChildren());
+    disable.hidden = true;
+    enable.hidden = false;
+    enable.focus();
+  });
+  try {
+    if (sessionStorage.getItem(storageKey) === "yes") startAds();
+  } catch {}
+})();
+</script>'''
+
+
 def infolinks_preferences(lang):
     if lang == 'hi':
         heading = 'विज्ञापन की पसंद'
@@ -517,14 +590,22 @@ for p in POSTS:
   # Offer relevant next steps at a section boundary without interrupting prose.
   boundaries=list(re.finditer(r'<h2 id=',story_html))
   split=boundaries[2].start() if len(boundaries)>2 else len(story_html)
+  show_ads=not fallback and is_news_article(p)
   story_html=story_html[:split]+context_html+story_html[split:]
+  if show_ads:
+   if len(boundaries)<=2:
+    paragraphs=[m.end() for m in re.finditer(r"<blockquote>.*?</blockquote>|(</p>)",story_html,re.S) if m[1]]
+    if len(paragraphs)>1:split=paragraphs[(len(paragraphs)-1)//2]
+   if len(boundaries)>2 or len(paragraphs)>1:
+    story_html=story_html[:split]+adsterra_slot("inline",lang)+story_html[split:]
+  title_ad=adsterra_slot("title",lang) if show_ads else ""
   reading_html='<p class="reading-meta">'+(f'{reading_minutes} min read' if content_lang=='en' else f'{reading_minutes} मिनट में पढ़ें')+'</p>'
   guide_notice=('<p class="guide-context">'+('Reference guide • Source-listed details may cover multiple variants. Check the exact model and market before buying.' if content_lang=='en' else 'संदर्भ गाइड • स्रोत में कई वेरिएंट का विवरण हो सकता है। खरीदने से पहले सही मॉडल और बाजार की जानकारी जाँचें।')+'</p>') if p.get('directory_kind') in ('phones','cars','bikes') else ''
   trending_html=trending_section(lang,p)
-  content=f'''<div class="wrap"><article class="article readable-article" data-article-layout="v3"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/{lang}/">{'Home' if lang=='en' else 'होम'}</a> › <a href="/{lang}/{category(p)}/">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</a> › <span>{e(t)}</span></nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1><p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> · Source: {e(sourcehost)}</p>{reading_html}{updated_notice(p,lang)}<div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div>{featured_html}{guide_notice}{article_note(p,lang)}{article_panel(p,lang)}{toc_html}<div class="story">{story_html}</div>{share_html}{keyword_html}<div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {'AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''
+  content=f'''<div class="wrap"><article class="article readable-article" data-article-layout="v3"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/{lang}/">{'Home' if lang=='en' else 'होम'}</a> › <a href="/{lang}/{category(p)}/">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</a> › <span>{e(t)}</span></nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1>{title_ad}<p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> · Source: {e(sourcehost)}</p>{reading_html}{updated_notice(p,lang)}<div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div>{featured_html}{guide_notice}{article_note(p,lang)}{article_panel(p,lang)}{toc_html}<div class="story">{story_html}</div>{share_html}{keyword_html}<div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {'AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''
   page=shell(lang,t,desc,url,content,extra,alternate_urls=alternate_urls,canonical_url=canonical_url,robots='noindex,follow,max-image-preview:large' if fallback else ROBOTS,document_lang=content_lang)
-  if not fallback and is_news_article(p):
-   page=page.removesuffix('</body></html>')+infolinks_preferences(lang)+'</body></html>'
+  if show_ads:
+   page=page.removesuffix('</body></html>')+infolinks_preferences(lang)+adsterra_preferences(lang)+'</body></html>'
   write(OUT / article_path(p,lang).lstrip('/') / 'index.html',page)
 for lang in ('en','hi'):
  h='Worldwide news, movies and technology explained' if lang=='en' else 'दुनियाभर की ताज़ा खबरें, आसान हिंदी में'
@@ -579,7 +660,7 @@ for lang in ('en','hi'):
  'about':('About GlobeWire Daily','GlobeWire Daily is an independent bilingual technology publication focused on useful explainers and news. We use AI-assisted drafting and translation, link to source materials, and welcome corrections. We do not claim to independently verify every publisher statement.'),
  'editorial':('Editorial Policy','Our articles are based on attributed source material. We prioritize official announcements, documentation and credible reporting. AI may assist drafting and translation. We require useful source-supported context, practical implications, clear distinctions between confirmed facts and uncertainty, and transparent attribution. We prohibit fabricated quotes, unsupported claims, misleading headlines, and unattributed copying. When a claim cannot be confirmed, we label uncertainty or do not publish it. Readers can request corrections.'),
  'corrections':('Corrections Policy','Report factual errors, misleading headlines, inaccurate translations, or rights concerns to contact@globewiredaily.org with the article URL and supporting evidence. Substantive corrections should be reflected in the article with an updated date.'),
- 'privacy':('Privacy Policy','GlobeWire Daily publishes static news and informational pages. Hosting providers may process IP addresses, device information and technical request logs for security and delivery. We use Google AdSense advertising technology, which may use cookies or similar identifiers to serve and measure ads, subject to applicable consent requirements and Google policies. You can learn how Google uses data from partner sites at https://policies.google.com/technologies/partner-sites and manage Google ad preferences at https://myadcenter.google.com/. On news articles, readers can choose to enable Infolinks advertising for the current browser tab. Infolinks may use cookies or similar technologies to serve and measure ads. Readers can turn this off under Advertising preferences. Third-party websites linked from our articles have separate privacy practices. We do not operate reader accounts or a newsletter. For privacy or data requests, contact contact@globewiredaily.org.'),
+ 'privacy':('Privacy Policy','GlobeWire Daily publishes static news and informational pages. Hosting providers may process IP addresses, device information and technical request logs for security and delivery. We use Google AdSense advertising technology, which may use cookies or similar identifiers to serve and measure ads, subject to applicable consent requirements and Google policies. You can learn how Google uses data from partner sites at https://policies.google.com/technologies/partner-sites and manage Google ad preferences at https://myadcenter.google.com/. On news articles, readers can choose to enable Infolinks advertising for the current browser tab. Infolinks may use cookies or similar technologies to serve and measure ads. Readers can turn this off under Advertising preferences. Adsterra banner ads are optional per browser tab and have a separate control under Adsterra preferences. Adsterra may use cookies or similar technologies to serve and measure ads. Third-party websites linked from our articles have separate privacy practices. We do not operate reader accounts or a newsletter. For privacy or data requests, contact contact@globewiredaily.org.'),
  'contact':('Contact GlobeWire Daily','For news tips, corrections, image rights requests, privacy matters or editorial feedback, email contact@globewiredaily.org. Do not include sensitive personal information.'),
  'affiliate':('Affiliate Disclosure','Our AI Tools directory currently contains informational links. If affiliate partnerships or paid placements are introduced, they will be clearly identified. We do not claim that editorial recommendations are paid placements.')}
  for s,(t,d) in pages.items():
