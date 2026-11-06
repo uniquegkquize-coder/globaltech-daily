@@ -113,15 +113,7 @@ jobs:
           python -u scripts/generate_images.py || echo "::warning::Optional photo lookup unavailable"
           echo "::endgroup::"
 
-          python -u scripts/build.py || { echo "::error::Static-site build failed"; exit 1; }
-          for output in dist/en/index.html dist/hi/index.html dist/sitemap.xml; do
-            if ! test -s "$output"; then
-              echo "::error::Required output is missing: $output"
-              exit 1
-            fi
-          done
-
-          git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json dist
+          git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json
           if [ -f content/image-backfill-state.json ]; then git add -A content/image-backfill-state.json; fi
           if git diff --cached --quiet; then
             echo "No new completed posts, images or pending progress to sync"

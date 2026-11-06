@@ -88,8 +88,7 @@ jobs:
             python scripts/publish_directory_guides.py
             timeout 130s python -u scripts/directory_photos.py || echo '::warning::Remaining directory photos will retry next run'
             python scripts/generate_images.py
-            python scripts/build.py
-            git add content/posts/ content/directory-records.json content/directory-details.json content/directory-guide-status.json content/directory-*-state.json content/directory-research-status.json content/featured/ content/image-backfill-state.json content/image-audit-status.json content/image-audit-directory.json dist/
+            git add content/posts/ content/directory-records.json content/directory-details.json content/directory-guide-status.json content/directory-*-state.json content/directory-research-status.json content/featured/ content/image-backfill-state.json content/image-audit-status.json content/image-audit-directory.json
             if git diff --cached --quiet; then
               echo 'No new guides generated'
               exit 0
@@ -122,7 +121,7 @@ jobs:
   prune-fetch-cache:
     name: Keep the three newest directory fetch caches
     needs: publish
-    if: github.ref == 'refs/heads/main'
+    if: ${{ !cancelled() && github.ref == 'refs/heads/main' }}
     permissions:
       actions: write
     runs-on: ubuntu-latest
