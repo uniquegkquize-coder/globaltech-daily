@@ -69,7 +69,8 @@ def main():
     if not re.fullmatch('[a-z0-9-]+',project):raise ValueError('Invalid Pages project')
     pages=ROOT/'build/pages'
     assemble_pages(ROOT/'build/rendered',package,receipt,pages)
-    if os.environ.get('INITIAL_RELEASE_REPLAY')=='true':
+    initial_replay=os.environ.get('INITIAL_RELEASE_REPLAY')=='true'
+    if initial_replay:
         # The deployment URL is immutable. A branch alias could point at a later build.
         verify_pages('https://44f04ee0.globaltech-daily.pages.dev',pages)
     path=ROOT/'build/wrangler-delivery.json'
@@ -85,6 +86,8 @@ def main():
         from delivery_rollback import capture, restore
         verify_root_assets()
         snapshot=capture(project)
+        if initial_replay != (snapshot['worker_version'] is None):
+            raise ValueError('Production route state disagrees with the requested initial or recurring release')
         (ROOT/'build/rollback.json').write_text(json.dumps(snapshot,indent=2)+'\n')
         def deploy_worker(release):
             path.write_text(json.dumps(config(release,True)))

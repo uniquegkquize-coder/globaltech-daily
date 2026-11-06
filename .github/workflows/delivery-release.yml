@@ -44,7 +44,7 @@ jobs:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_PAGES_PROJECT: ${{ vars.CLOUDFLARE_PAGES_PROJECT }}
       DELIVERY_INITIAL_VERIFIED: ${{ vars.DELIVERY_INITIAL_VERIFIED }}
-      INITIAL_RELEASE_REPLAY: ${{ (inputs.target == 'production' && vars.DELIVERY_INITIAL_VERIFIED != 'true') || (inputs.target == 'staging' && inputs.replay_initial_release) }}
+      INITIAL_RELEASE_REPLAY: ${{ (inputs.target == 'production' && vars.DELIVERY_INITIAL_VERIFIED != 'true') || (inputs.target == 'staging' && inputs.replay_initial_release) || (github.event_name == 'pull_request' && github.event.pull_request.number == 7) }}
       PRODUCTION_TARGET: ${{ inputs.target == 'production' || (github.event_name != 'workflow_dispatch' && github.event_name != 'pull_request') }}
     steps:
       - uses: actions/checkout@v4
