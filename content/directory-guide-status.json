@@ -8,13 +8,13 @@
   "categories": {
     "colleges": {
       "new": 0,
-      "updated": 1,
+      "updated": 0,
       "eligible_new": 0,
-      "eligible_updates": 1,
+      "eligible_updates": 0,
       "shortfall": 2,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 15,
+        "already_published_unchanged": 16,
         "insufficient verified descriptive fields": 87,
         "identifier URL is not specification evidence": 199
       },
@@ -149,17 +149,17 @@
     },
     "phones": {
       "new": 2,
-      "updated": 0,
-      "eligible_new": 557,
-      "eligible_updates": 0,
+      "updated": 1,
+      "eligible_new": 556,
+      "eligible_updates": 1,
       "shortfall": 0,
       "reasons": {
-        "considered": 1839,
-        "already_published_unchanged": 43,
-        "insufficient verified descriptive fields": 86,
-        "identifier URL is not specification evidence": 1153
+        "considered": 1847,
+        "already_published_unchanged": 44,
+        "insufficient verified descriptive fields": 85,
+        "identifier URL is not specification evidence": 1161
       },
-      "rejected_count": 1239,
+      "rejected_count": 1246,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -215,11 +215,6 @@
           "name": "iPhone",
           "reason": "insufficient verified descriptive fields",
           "source": "https://www.apple.com/iphone-16/specs/"
-        },
-        {
-          "name": "Redmi 7A",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://en.wikipedia.org/wiki/Redmi_7A"
         },
         {
           "name": "Asus ZenFone Go (ZC500TG)",
@@ -285,27 +280,32 @@
           "name": "Sony Ericsson P990",
           "reason": "insufficient verified descriptive fields",
           "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_P990"
+        },
+        {
+          "name": "Lenovo Vibe X",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://en.wikipedia.org/wiki/Lenovo_Vibe_X"
         }
       ]
     },
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 500,
+      "eligible_new": 498,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 4396,
-        "already_published_unchanged": 45,
-        "insufficient verified descriptive fields": 434,
-        "identifier URL is not specification evidence": 3417
+        "considered": 4474,
+        "already_published_unchanged": 47,
+        "insufficient verified descriptive fields": 441,
+        "identifier URL is not specification evidence": 3488
       },
-      "rejected_count": 3851,
+      "rejected_count": 3929,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
           "reason": "insufficient verified descriptive fields",
-          "source": "https://www.hyundai.com/be/fr/modeles/bayon.html"
+          "source": "https://www.hyundai.com/it/it/models/hyundai-bayon.html"
         },
         {
           "name": "Cadillac XTS",
@@ -432,12 +432,12 @@
     "bikes": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 55,
+      "eligible_new": 53,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 447,
-        "already_published_unchanged": 45,
+        "already_published_unchanged": 47,
         "insufficient verified descriptive fields": 84,
         "identifier URL is not specification evidence": 263
       },
@@ -571,5 +571,5 @@
       ]
     }
   },
-  "date": "2026-11-06T13:27:31.845093+00:00"
+  "date": "2026-11-06T16:05:27.322092+00:00"
 }

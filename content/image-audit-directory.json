@@ -1,32 +1,32 @@
 {
-  "total_posts": 2225,
+  "total_posts": 2256,
   "selected": 23,
   "results": {
     "source_photo_saved": 6,
     "cooldown": 17
   },
-  "still_missing": 170,
+  "still_missing": 178,
   "articles": [
     {
-      "id": "fa453217d4359dd987dec7e5",
-      "source": "https://en.wikipedia.org/wiki/Chery_A5",
+      "id": "ab709faa12f7b00daf05bf7f",
+      "source": "https://en.wikipedia.org/wiki/Velocette_Thruxton",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793993255.6317396
+      "retry_after": 1794002729.892137
     },
     {
-      "id": "377535dc550ac6235d398d25",
-      "source": "https://en.wikipedia.org/wiki/Royal_Enfield_WD/RE",
+      "id": "5e94b322de1935c00f7f399b",
+      "source": "https://en.wikipedia.org/wiki/Chery_QQ6",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793993255.6744213
+      "retry_after": 1794002730.0040715
     },
     {
-      "id": "32517e21fcc6df98dda0681e",
-      "source": "https://en.wikipedia.org/wiki/Nissan_Teana",
+      "id": "4b2127c3661348264d657135",
+      "source": "https://en.wikipedia.org/wiki/Velocette_Venom",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793993255.7564876
+      "retry_after": 1794002730.0357955
     },
     {
       "id": "e21f0c9303189bff05b728a0",
@@ -97,25 +97,25 @@
       "result": "cooldown"
     },
     {
-      "id": "bd1ee9c9405dab4656fb2b81",
-      "source": "https://en.wikipedia.org/wiki/Velocette_LE",
+      "id": "fb2356c240441b4a9d7e6463",
+      "source": "https://en.wikipedia.org/wiki/Fiat_Pulse",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793993255.949082
+      "retry_after": 1794002730.4925108
     },
     {
-      "id": "6051044195b1220ba255a237",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_II",
+      "id": "1ffb5b85820b9112feb48792",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S5",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793993256.428565
+      "retry_after": 1794002730.5036366
     },
     {
-      "id": "1afae1bea8e25fcce509d7ba",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Tipo",
+      "id": "4456f9f112448d5c8f763c4c",
+      "source": "https://en.wikipedia.org/wiki/Asus_PadFone",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793993256.6626315
+      "retry_after": 1794002730.5523295
     }
   ],
   "missing": [
@@ -260,6 +260,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "89c13c75752a",
+      "category": "sarkari-naukri",
+      "title": "Understanding Leave Encashment Calculations for Government Retirees",
+      "source": "https://www.sahisarkarijobs.in/leave-encashment-calculator/",
+      "reason": "no_source_image"
+    },
+    {
       "id": "03fdad6de98e",
       "category": "business",
       "title": "Ruizhi Machinery Unveils Three New Paper Bag Machines at All in Print China 2026",
@@ -391,6 +398,13 @@
       "title": "Université Pédagogique de Kananga: College Admissions, Facts and Verification Guide",
       "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "3e80b8837374",
+      "category": "private-vacancy",
+      "title": "Professional Listings and Job Openings Reported Across India on Professional Platforms",
+      "source": "https://in.linkedin.com/jobs/Nexbirlik+haqq%C4%B1nda+m%C9%99nfi+r%C9%99yl%C9%99r+%E2%80%94+%C5%9Firk%C9%99t+yenilikl%C9%99rini+d%C9%99y%C9%99rl%C9%99ndirin.whx-jobs",
+      "reason": "no_source_image"
     },
     {
       "id": "04bcdc448261",
@@ -554,6 +568,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "ee768c0612fa",
+      "category": "telecom",
+      "title": "Jio Platforms Makes Strong Stock Market Debut, Reshaping Telecom and Market Capitalisation Rankings",
+      "source": "https://www.business-standard.com/markets/ipo/jio-platforms-soars-on-debut-recasting-market-capitalisation-leaderboard-126102801887_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "4ca42dad8d6f",
       "category": "visas-immigration",
       "title": "Deloitte Highlights Global Mobility and Immigration Role in Hyderabad",
@@ -624,6 +645,13 @@
       "reason": "source_unavailable"
     },
     {
+      "id": "3c4a8542ae9d",
+      "category": "telecom",
+      "title": "Jio Platforms Reports 13.7% Rise in Q2 Net Profit Following Market Debut",
+      "source": "https://www.business-standard.com/amp/companies/quarterly-results/jio-platforms-q2-profit-up-13-7-in-first-results-since-blockbuster-debut-126103001560_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "ef6d4c03dede",
       "category": "business",
       "title": "XPENG Reports Record Monthly Deliveries for October 2026 and Progress in Autonomous Operations",
@@ -650,6 +678,13 @@
       "title": "Russian IT Specialist Sentenced for Financing Ukraine War Effort via Binance Data",
       "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28274?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "55a27b954943",
+      "category": "telecom",
+      "title": "Jio Platforms IPO Closes With 22.19x Subscription Driven by Institutional Demand",
+      "source": "https://www.business-standard.com/markets/news/jio-platforms-ipo-rides-institutional-demand-to-22-19-times-subscription-126102301595_1.html",
+      "reason": "access_denied"
     },
     {
       "id": "dd07ef14c72f",
@@ -862,6 +897,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "450e4f272b75",
+      "category": "telecom",
+      "title": "Jio Platforms Debuts with 21% Premium, Secures Second Place in Indian Market Cap",
+      "source": "https://www.business-standard.com/markets/news/jio-platforms-share-price-listing-21-premium-becomes-india-s-2nd-most-valuable-firm-126102800274_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "4be79532a665",
       "category": "ai-news",
       "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
@@ -1042,6 +1084,13 @@
       "title": "Weekend Football Roundup: Notable Results Across Women’s English Leagues",
       "source": "https://www.theguardian.com/football/live",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "537dca555153",
+      "category": "telecom",
+      "title": "Jio Platforms Marks Blockbuster Stock Market Debut with Employee Bonuses and Nationwide Festivities",
+      "source": "https://www.business-standard.com/companies/news/jio-ipo-windfall-brings-mega-party-early-salaries-and-bonus-bonanza-126102801713_1.html",
+      "reason": "access_denied"
     },
     {
       "id": "ade2cb72b841",
@@ -1240,6 +1289,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "7b264efafcbb",
+      "category": "telecom",
+      "title": "Jio Platforms Shares Extend Gains Post-Listing, Crossing ₹13.7 Trillion Market Cap",
+      "source": "https://www.business-standard.com/markets/news/jio-platforms-shares-extend-listing-day-gains-jump-5-m-cap-at-13-70-trn-126102900257_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "ca9ab95087f5",
       "category": "telecom",
       "title": "TRAI Releases 2025-26 Performance Report on Indian Telecom and Broadcasting Services",
@@ -1312,43 +1368,43 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "access_denied": 44,
+    "access_denied": 50,
     "source_error": 4,
-    "no_source_image": 43,
+    "no_source_image": 45,
     "invalid_source_images": 42,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "fa453217d4359dd987dec7e5": {
+    "ab709faa12f7b00daf05bf7f": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chery_A5",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Chery_A5_China_2012-05-01.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Velocette_Thruxton",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Velocette_Thruxton_500_cc_1965.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "377535dc550ac6235d398d25": {
+    "5e94b322de1935c00f7f399b": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Royal_Enfield_WD/RE",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/RE_%22Flying_Flea%22_%281943%29_-_15297706043.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Chery_QQ6",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Chery_QQ6_China_2016-04-08.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "32517e21fcc6df98dda0681e": {
+    "4b2127c3661348264d657135": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nissan_Teana",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/de/2008_Nissan_Teana_01.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Velocette_Venom",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Flickr_-_ronsaunders47_-_VELOCETTE_VENOM._500CC_SINGLE.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "bd1ee9c9405dab4656fb2b81": {
+    "fb2356c240441b4a9d7e6463": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Velocette_LE",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Velocette_LE_Police_Motorcycle_%22Noddy_Bike%22_-_Flickr_-_mick_-_Lumix.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Fiat_Pulse",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/2023_Fiat_Pulse_Impetus_%28Colombia%29_front_view_01.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "6051044195b1220ba255a237": {
+    "1ffb5b85820b9112feb48792": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_II",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Samsung_Galaxy_S_II.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S5",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Samsung_Galaxy_S5.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled"
     },
-    "1afae1bea8e25fcce509d7ba": {
+    "4456f9f112448d5c8f763c4c": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Tipo",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/Xperia_tipo_red.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Asus_PadFone",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/ASUS_PadFone_1.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
