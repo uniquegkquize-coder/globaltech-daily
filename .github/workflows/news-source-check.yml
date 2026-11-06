@@ -48,6 +48,8 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      PYTHONPYCACHEPREFIX: /tmp/globewire-validation-pycache
     steps:
       - uses: actions/checkout@v4
         with:
