@@ -2,7 +2,7 @@ name: GlobalTech Daily Auto News
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/news-auto.yml']
+    paths: ['.github/workflows/news-auto.yml', 'tests/test_newsroom_config.py']
   schedule:
     # Run every two hours, UTC.
     - cron: '7 */2 * * *'
@@ -113,6 +113,7 @@ jobs:
           python -u scripts/generate_images.py || echo "::warning::Optional photo lookup unavailable"
           echo "::endgroup::"
 
+
           git add -A content/posts content/pending content/featured content/news-run-status.json content/news-coverage-status.json
           if [ -f content/image-backfill-state.json ]; then git add -A content/image-backfill-state.json; fi
           if git diff --cached --quiet; then
@@ -152,6 +153,8 @@ jobs:
               lines += ['- Outcome: %s' % s.get('outcome'),
                         '- Published: %s of %s target' % (s.get('published'), s.get('target')),
                         '- AI calls: %s of %s' % (s.get('ai_calls'), s.get('ai_limit'))]
+              shortfalls=s.get('category_shortfalls') or {}
+              if shortfalls:lines += ['- Per-run unmet category targets: '+', '.join('%s: missing %s' % kv for kv in sorted(shortfalls.items()))]
               by = s.get('by_category') or {}
               if by:
                   lines += ['- Per-category published: ' + ', '.join('%s=%s' % kv for kv in sorted(by.items()))]

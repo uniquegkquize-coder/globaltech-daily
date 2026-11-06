@@ -55,6 +55,26 @@ class NewsroomConfigTests(unittest.TestCase):
 
     def test_workflow_targets(self):
         workflow = WORKFLOW.read_text(encoding="utf-8")
+        required = (
+            "cron: '7 */2 * * *'",
+            "POSTS_PER_RUN: '100'",
+            "MIN_POSTS_PER_CATEGORY: '2'",
+            "MAX_AI_CALLS_PER_RUN: '100'",
+            "AI_PROVIDER_ORDER: gemini,openrouter,groq,openai",
+            "MAX_MODELS_PER_ARTICLE: '5'",
+            "MAX_LICENSED_PHOTOS_PER_RUN: '100'",
+            "python -u scripts/generate_images.py",
+            "git rebase -X theirs origin/main",
+        )
+        for target in required:
+            self.assertIn(target, workflow)
+        for obsolete in ("scripts/build.py", "sleep 300"):
+            self.assertNotIn(obsolete, workflow)
+
+    def test_optional_r2_delivery_workflow(self):
+        if not (ROOT / ".github/workflows/delivery-release.yml").is_file():
+            self.skipTest("R2 delivery workflow is not installed")
+        workflow = WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("cron: '7 */2 * * *'", workflow)
         self.assertIn("POSTS_PER_RUN: '100'", workflow)
         self.assertIn("MIN_POSTS_PER_CATEGORY: '2'", workflow)
@@ -63,7 +83,10 @@ class NewsroomConfigTests(unittest.TestCase):
         self.assertIn("MAX_MODELS_PER_ARTICLE: '5'", workflow)
         self.assertIn("MAX_LICENSED_PHOTOS_PER_RUN: '100'", workflow)
         self.assertIn("python -u scripts/generate_images.py", workflow)
-        self.assertIn("python -u scripts/build.py", workflow)
+        self.assertNotIn("scripts/build.py", workflow)
+        delivery=(ROOT/'.github/workflows/delivery-release.yml').read_text()
+        self.assertIn("python scripts/build.py --render-only",delivery)
+        self.assertIn("python scripts/r2_sync.py --upload",delivery)
         self.assertIn("git rebase -X theirs origin/main", workflow)
         self.assertNotIn("sleep 300", workflow)
 
