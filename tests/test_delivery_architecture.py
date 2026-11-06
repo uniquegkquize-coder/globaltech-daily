@@ -168,22 +168,48 @@ class UploadFailureTests(unittest.TestCase):
         self.assertEqual(client.writes,0)
 
 class RollbackTests(unittest.TestCase):
-    def test_failed_first_cutover_restores_pages_and_only_new_owned_routes(self):
+    def test_first_cutover_removes_owned_routes_even_if_pages_rollback_fails(self):
         import delivery_rollback as rollback
-        calls=[]
         rows=[{'id':'new','pattern':'globewiredaily.org/en/*','script':'globewire-delivery'},
-              {'id':'other','pattern':'globewiredaily.org/api/*','script':'other'},
-              {'id':'old','pattern':'globewiredaily.org/hi/*','script':'globewire-delivery'}]
-        def api(method,path,**kw):
-            calls.append((method,path));return rows if method=='GET' else {}
+              {'id':'other','pattern':'globewiredaily.org/api/*','script':'other'}]
+        calls=[]
+        def api(method,path,**kwargs):
+            calls.append((method,path))
+            if method=='POST':
+                raise RuntimeError('Pages API unavailable')
+            if method=='DELETE':
+                rows.pop(0)
+            if path.endswith('/routes'):
+                return rows
+            return {'canonical_deployment':{'id':'new-pages'}}
+        snapshot={'project':'globaltech-daily','pages_deployment':'abcd-1234','routes':[],
+                  'release_id':None,'worker_version':None}
         with patch.object(rollback,'api',side_effect=api),patch.dict('os.environ',{'CF_ACCOUNT_ID':'account','CF_ZONE_ID':'zone'}):
-            result=rollback.restore({'project':'globaltech-daily','pages_deployment':'abcd-1234','routes':[{'id':'old'}],'release_id':None},lambda _:self.fail('initial cutover must remove routes, not deploy an unknown release'))
-        self.assertEqual(calls[0][0],'POST');self.assertEqual([p for m,p in calls if m=='DELETE'],['zones/zone/workers/routes/new']);self.assertEqual(result['rollback'],'restored')
-    def test_existing_release_rollback_reuses_immutable_release_without_deleting_objects(self):
+            result=rollback.restore(snapshot)
+        self.assertEqual([path for method,path in calls if method=='DELETE'],['zones/zone/workers/routes/new'])
+        self.assertEqual(rows[0]['script'],'other')
+        self.assertEqual(result['rollback'],'failed')
+        self.assertIn('Pages API unavailable',result['errors'][0])
+
+    def test_existing_release_rollback_restores_exact_worker_version(self):
         import delivery_rollback as rollback
-        worker=[]
-        with patch.object(rollback,'api',return_value={}) as call,patch.dict('os.environ',{'CF_ACCOUNT_ID':'account','CF_ZONE_ID':'zone'}):
-            rollback.restore({'project':'globaltech-daily','pages_deployment':'abcd-1234','routes':[],'release_id':'a'*64},worker.append)
-        self.assertEqual(worker,['a'*64]);self.assertEqual(call.call_count,1)
+        active={'pages':'new-pages','worker':'new-worker'}
+        routes=[{'id':'existing','pattern':'globewiredaily.org/en/*','script':'globewire-delivery'}]
+        def api(method,path,body=None):
+            if path.endswith('/rollback'):
+                active['pages']='abcd-1234'
+            elif path.endswith('/routes'):
+                return routes
+            elif path.endswith('/deployments'):
+                if method=='POST':
+                    active['worker']=body['versions'][0]['version_id']
+                return {'deployments':[{'versions':[{'version_id':active['worker'],'percentage':100}]}]}
+            return {'canonical_deployment':{'id':active['pages'],'environment':'production','latest_stage':{'status':'success'}}}
+        snapshot={'project':'globaltech-daily','pages_deployment':'abcd-1234','routes':routes,
+                  'release_id':'a'*64,'worker_version':'old-worker'}
+        with patch.object(rollback,'api',side_effect=api),patch.dict('os.environ',{'CF_ACCOUNT_ID':'account','CF_ZONE_ID':'zone'}):
+            result=rollback.restore(snapshot)
+        self.assertEqual(active,{'pages':'abcd-1234','worker':'old-worker'})
+        self.assertEqual(result['rollback'],'restored')
 
 if __name__=='__main__':unittest.main()

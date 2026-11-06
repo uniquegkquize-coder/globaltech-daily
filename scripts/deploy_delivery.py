@@ -8,11 +8,13 @@ import os
 from pathlib import Path
 import re
 import subprocess
+from urllib.parse import urljoin
 import requests
 from delivery_package import ROOT, assemble_pages
 from verify_delivery import smoke
 
 WRANGLER=['npx','--yes','wrangler@4.45.0']
+PRODUCTION_ORIGIN='https://globewiredaily.org'
 
 def command(args):
     result=subprocess.run(WRANGLER+args,cwd=ROOT,env={**os.environ,'CLOUDFLARE_ACCOUNT_ID':os.environ['CF_ACCOUNT_ID']},text=True,capture_output=True)
@@ -37,10 +39,27 @@ def verify_root_assets():
     # The initial routing cutover cannot atomically update a separate Pages project.
     # Refuse a simultaneous UI-asset change instead of briefly serving mismatched CSS/JS.
     for name in ('style.css','site.js','favicon.svg','publisher-logo.png','social-card.jpg'):
-        response=requests.get('https://globewiredaily.org/'+name,timeout=(5,30))
+        response=requests.get(PRODUCTION_ORIGIN+'/'+name,timeout=(5,30))
         response.raise_for_status()
         if response.content!=(ROOT/'build/rendered'/name).read_bytes():
             raise ValueError('Root asset differs from production: '+name+'; stage a compatible asset rollout separately before switching HTML delivery')
+
+
+def verify_pages(origin, directory):
+    for file in sorted(directory.iterdir()):
+        if file.name in {'_headers','_redirects','index.html','404.html'}:
+            continue
+        response=requests.get(origin+'/'+file.name,timeout=(5,30),allow_redirects=False)
+        if response.status_code!=200 or response.content!=file.read_bytes():
+            raise ValueError('Pages root asset mismatch: '+file.name)
+    redirects={'/':'/en/'}
+    for name in ('news-sitemap-1.xml','news-sitemap-2.xml'):
+        if not (directory/name).exists():
+            redirects['/'+name]='/news-sitemap.xml'
+    for source,target in redirects.items():
+        response=requests.get(origin+source,timeout=(5,30),allow_redirects=False)
+        if response.status_code!=301 or urljoin(origin+source,response.headers.get('Location',''))!=origin+target:
+            raise ValueError('Pages redirect mismatch: '+source)
 
 
 def main():
@@ -48,7 +67,11 @@ def main():
     package=json.loads((ROOT/'build/r2-package/package.json').read_text());receipt=json.loads((ROOT/'build/r2-receipt.json').read_text())
     project=os.environ['CLOUDFLARE_PAGES_PROJECT']
     if not re.fullmatch('[a-z0-9-]+',project):raise ValueError('Invalid Pages project')
-    assemble_pages(ROOT/'build/rendered',package,receipt,ROOT/'build/pages')
+    pages=ROOT/'build/pages'
+    assemble_pages(ROOT/'build/rendered',package,receipt,pages)
+    if os.environ.get('INITIAL_RELEASE_REPLAY')=='true':
+        # The deployment URL is immutable. A branch alias could point at a later build.
+        verify_pages('https://44f04ee0.globaltech-daily.pages.dev',pages)
     path=ROOT/'build/wrangler-delivery.json'
     if a.production:
         verified=json.loads((ROOT/'build/delivery-verification.json').read_text())
@@ -69,17 +92,26 @@ def main():
         try:
             deploy_worker(package['release_id'])
             command(['pages','deploy','build/pages','--project-name',project,'--branch','main','--commit-dirty=true'])
-            result=smoke('https://globewiredaily.org',package,all_urls=a.all_urls,changed_keys=receipt.get('changed_keys',[]))
-        except Exception:
+            verify_pages(PRODUCTION_ORIGIN,pages)
+            result=smoke(PRODUCTION_ORIGIN,package,all_urls=a.all_urls,changed_keys=receipt.get('changed_keys',[]))
+            active=capture(project)
+            if active['release_id']!=package['release_id'] or active['pages_deployment']==snapshot['pages_deployment']:
+                raise RuntimeError('Production does not report the expected Worker release and new Pages deployment')
+            result['pages_deployment']=active['pages_deployment']
+            result['worker_version']=active['worker_version']
+        except Exception as error:
             # Keep the original failure visible, and preserve rollback diagnostics as an artifact.
-            restored=restore(snapshot,deploy_worker)
+            restored=restore(snapshot)
             (ROOT/'build/rollback-result.json').write_text(json.dumps(restored,indent=2)+'\n')
+            if restored['rollback']!='restored':
+                raise RuntimeError('Production verification failed and rollback was incomplete: '+json.dumps(restored)) from error
             raise
     else:
         result=command(['pages','deploy','build/pages','--project-name',project,'--branch','r2-staging','--commit-dirty=true'])
         origins=re.findall(r'https://[a-z0-9.-]+\.pages\.dev',result)
         if not origins:raise RuntimeError('Pages preview URL missing')
         preview=origins[-1]
+        verify_pages(preview,pages)
         path.write_text(json.dumps(config(package['release_id'],asset_origin=preview)))
         result=command(['deploy','--config',str(path)])
         origins=re.findall(r'https://[a-z0-9.-]+\.workers\.dev',result)

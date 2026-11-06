@@ -13,6 +13,10 @@ on:
         description: Verify every public page, redirect and image (required for initial migration)
         type: boolean
         default: true
+      replay_initial_release:
+        description: Reproduce the verified initial release from run 42144102275 in staging
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths: ['scripts/**', 'cloudflare/**', 'content/**', '.github/workflows/delivery-*.yml']
@@ -27,7 +31,7 @@ concurrency:
 jobs:
   release:
     # Automatic releases remain OFF until the owner approves the first migration.
-    if: (github.event_name == 'pull_request' && github.event.label.name == 'r2-stage-approved' && github.event.pull_request.head.repo.full_name == github.repository) || github.event_name == 'workflow_dispatch' || (github.event_name != 'pull_request' && vars.DELIVERY_ENABLED == 'true' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'))
+    if: (github.event_name == 'pull_request' && github.event.label.name == 'r2-stage-approved' && github.event.pull_request.head.repo.full_name == github.repository) || (github.event_name == 'workflow_dispatch' && (inputs.target != 'production' || github.ref == 'refs/heads/main')) || (github.event_name != 'pull_request' && github.event_name != 'workflow_dispatch' && vars.DELIVERY_ENABLED == 'true' && vars.DELIVERY_INITIAL_VERIFIED == 'true' && (github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')))
     environment: ${{ (inputs.target == 'production' || (github.event_name != 'workflow_dispatch' && github.event_name != 'pull_request' && vars.DELIVERY_ENABLED == 'true')) && 'cloudflare-production' || 'cloudflare-staging' }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
@@ -40,6 +44,8 @@ jobs:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_PAGES_PROJECT: ${{ vars.CLOUDFLARE_PAGES_PROJECT }}
       DELIVERY_INITIAL_VERIFIED: ${{ vars.DELIVERY_INITIAL_VERIFIED }}
+      INITIAL_RELEASE_REPLAY: ${{ (inputs.target == 'production' && vars.DELIVERY_INITIAL_VERIFIED != 'true') || (inputs.target == 'staging' && inputs.replay_initial_release) }}
+      PRODUCTION_TARGET: ${{ inputs.target == 'production' || (github.event_name != 'workflow_dispatch' && github.event_name != 'pull_request') }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -56,9 +62,23 @@ jobs:
           python - <<'PY'
           import os
           required=['CF_ACCOUNT_ID','R2_ACCESS_KEY_ID','R2_SECRET_ACCESS_KEY','CLOUDFLARE_API_TOKEN','CLOUDFLARE_PAGES_PROJECT']
+          if os.environ['PRODUCTION_TARGET'] == 'true':
+              required.append('CF_ZONE_ID')
           missing=[key for key in required if not os.environ.get(key)]
           if missing:raise SystemExit('Missing GitHub secrets/variables: '+', '.join(missing))
           PY
+      - name: Select the source snapshot verified by run 42144102275
+        if: env.INITIAL_RELEASE_REPLAY == 'true'
+        run: |
+          source_sha=09720564d89f18f934caa049b3e26d373beda886
+          cp scripts/deploy_delivery.py scripts/delivery_rollback.py "$RUNNER_TEMP/"
+          git fetch --depth=1 origin "$source_sha"
+          git switch --detach "$source_sha"
+          cp "$RUNNER_TEMP/deploy_delivery.py" "$RUNNER_TEMP/delivery_rollback.py" scripts/
+          echo "EXPECTED_RELEASE_ID=3fbd782b585522eaa5313712f7e2379e848a812eee72c2781dae8d866f055dcb" >> "$GITHUB_ENV"
+          echo "EXPECTED_INVENTORY_SHA256=5f4207c7b160774b2fe95e95bd6fc36a8ec1f74b5c951e409f450f9dda7ce52a" >> "$GITHUB_ENV"
+      - name: Pin the build clock to the selected source
+        run: |
           echo "SOURCE_DATE_EPOCH=$(git log -1 --format=%ct)" >> "$GITHUB_ENV"
       - run: pip install -r requirements.txt -r requirements-delivery.txt
       - uses: actions/cache/restore@v4
@@ -73,17 +93,29 @@ jobs:
       - run: python scripts/audit_built_seo.py build/rendered
       - run: python scripts/delivery_package.py
       - run: python scripts/verify_delivery.py
+      - name: Check the initial release and object inventory before any upload
+        if: env.INITIAL_RELEASE_REPLAY == 'true'
+        run: |
+          PYTHONPATH=scripts python - <<'PY'
+          import json, os
+          from pathlib import Path
+          from delivery_package import digest, encoded
+          package = json.loads(Path('build/r2-package/package.json').read_text())
+          if (package['release_id'] != os.environ['EXPECTED_RELEASE_ID'] or
+                  digest(encoded(package['files'])) != os.environ['EXPECTED_INVENTORY_SHA256']):
+              raise SystemExit('Rebuild differs from verified staging run 42144102275')
+          PY
       - name: Upload only absent immutable objects and verify R2
         run: python scripts/r2_sync.py --upload
       - name: Stage and verify exact release
         env:
-          EXHAUSTIVE: ${{ github.event_name == 'pull_request' && 'true' || inputs.exhaustive }}
+          EXHAUSTIVE: ${{ github.event_name == 'pull_request' || inputs.exhaustive || env.INITIAL_RELEASE_REPLAY == 'true' }}
         run: |
           args=()
           if [ "$EXHAUSTIVE" = 'true' ]; then args+=(--all-urls); fi
           python scripts/deploy_delivery.py "${args[@]}"
       - name: Authorized production promotion
-        if: inputs.target == 'production' || (github.event_name != 'workflow_dispatch' && github.event_name != 'pull_request' && vars.DELIVERY_ENABLED == 'true')
+        if: env.PRODUCTION_TARGET == 'true'
         env:
           PRODUCTION_ROUTING_AUTHORIZED: 'true'
         run: python scripts/deploy_delivery.py --production
