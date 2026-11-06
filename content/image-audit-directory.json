@@ -1,114 +1,168 @@
 {
-  "total_posts": 2180,
-  "selected": 21,
+  "total_posts": 2200,
+  "selected": 22,
   "results": {
     "source_photo_saved": 5,
-    "cooldown": 15,
-    "invalid_source_images": 1
+    "invalid_source_images": 11,
+    "source_unavailable": 1,
+    "source_error": 1,
+    "no_source_image": 4
   },
   "still_missing": 169,
   "articles": [
     {
-      "id": "93524346b413389a9d0267c1",
-      "source": "https://en.wikipedia.org/wiki/Panther_Model_100",
+      "id": "0c82d1568ebb94ae689c672b",
+      "source": "https://en.wikipedia.org/wiki/Sok%C3%B3%C5%82_1000",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793830283.1261573
+      "retry_after": 1793991081.7047184
     },
     {
-      "id": "9bc443c69d365b438d3ad913",
-      "source": "https://en.wikipedia.org/wiki/Panther_Model_120",
+      "id": "c7d4d78f34610ba8c3e51d32",
+      "source": "https://en.wikipedia.org/wiki/Slippery_Sam",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793830283.6736379
+      "retry_after": 1793991081.7704835
     },
     {
-      "id": "2a1dc5d55d643041b9bb2344",
-      "source": "https://en.wikipedia.org/wiki/Nokia_X",
+      "id": "c5a2ef0a2c36d4533175b976",
+      "source": "https://en.wikipedia.org/wiki/Sehol_E10X",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1793830283.7695956
+      "retry_after": 1793991082.1425705
     },
     {
-      "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "result": "cooldown"
-    },
-    {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
-    },
-    {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
-    },
-    {
-      "id": "2f02162d9ab27a8cd5662161",
-      "result": "cooldown"
-    },
-    {
-      "id": "c176a1dc41c1e122cab45821",
-      "result": "cooldown"
-    },
-    {
-      "id": "4afa4536b18e5a41b30a3497",
-      "result": "cooldown"
+      "id": "cd83aa2e1447512b708900e6",
+      "source": "https://en.wikipedia.org/wiki/Rolls-Royce_Wraith_%282013%29",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793991082.1822171
     },
     {
       "id": "8f4b17c49d1b2a0c5cb45a53",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793991082.4104106
     },
     {
-      "id": "6548e415fc086ccec65bbb7c",
-      "result": "cooldown"
+      "id": "c176a1dc41c1e122cab45821",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793991082.5600257
     },
     {
-      "id": "b211f120ea27b93fc925f6b4",
-      "result": "cooldown"
-    },
-    {
-      "id": "ef614dcb4163038685679d1d",
-      "result": "cooldown"
+      "id": "b7921f95fde847447cbab242",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Core",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1793991082.688893
     },
     {
       "id": "ab5757b7bde7e5a43128d256",
-      "result": "cooldown"
+      "source": "https://exploitsmw.com/",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1793991082.7203896
     },
     {
-      "id": "a6510273f0889bf4d7684eae",
-      "result": "cooldown"
+      "id": "e21f0c9303189bff05b728a0",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793991082.7770524
+    },
+    {
+      "id": "4afa4536b18e5a41b30a3497",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793991083.1724772
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793991083.4476578
+    },
+    {
+      "id": "6548e415fc086ccec65bbb7c",
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793991083.5609052
     },
     {
       "id": "2a8b92143f14b264d8d27146",
       "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1793830283.906125
+      "retry_after": 1793991083.7159047
     },
     {
-      "id": "fc3a445b572a3ac72a74dd84",
-      "source": "https://en.wikipedia.org/wiki/Volkswagen_Talagon",
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793830283.9116201
+      "result": "invalid_source_images",
+      "retry_after": 1793991084.0202627
     },
     {
-      "id": "f5e098c65814172b85380495",
-      "source": "https://en.wikipedia.org/wiki/Lotus_Emira",
+      "id": "007acb84538e69bcc14f4f9f",
+      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1793830284.0853066
+      "result": "invalid_source_images",
+      "retry_after": 1793991084.1312454
+    },
+    {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "source": "https://isc-edu.org/",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1793991084.1779416
+    },
+    {
+      "id": "2f02162d9ab27a8cd5662161",
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793991084.6608868
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "source": "https://dec.ac.in/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793991084.9538655
+    },
+    {
+      "id": "a6510273f0889bf4d7684eae",
+      "source": "https://mua.ac.ke/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1793991086.3494256
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793991086.8895361
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "source": "https://cctu.edu.gh/site/index",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793991087.2594883
+    },
+    {
+      "id": "ef614dcb4163038685679d1d",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1793991088.881161
     }
   ],
   "missing": [
@@ -131,7 +185,7 @@
       "category": "social-media",
       "title": "Exploring Social Media Marketing Internship Opportunities Listed on LinkedIn",
       "source": "https://in.linkedin.com/jobs/view/social-media-marketing-internship-in-delhi-bangalore-hyderabad-mumbai-at-foodstories-4479738162?position=44&pageNum=0&refId=6HZzQVkTvpvkiIYOUZ%2F6vQ%3D%3D&trackingId=jLeQWDCS3GoiLwZtObrHrw%3D%3D",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "253e0e4a696b",
@@ -152,7 +206,7 @@
       "category": "private-vacancy",
       "title": "Community and Social Services Openings Highlight Diverse Employment Landscape in Cheyenne, WY",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "41e3cf0806d9",
@@ -173,14 +227,14 @@
       "category": "social-media",
       "title": "Divine Hindu Announces On-Site Social Media Internship Opening in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/social-media-intern-immediate-joiners-bangalore-at-divine-hindu-4484913408",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "37c0e160c49f",
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted in Cheyenne, Wyoming",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "06f842f028fe",
@@ -236,7 +290,7 @@
       "category": "private-vacancy",
       "title": "Recent Administrative Assistant Job Listings Highlight Opportunities Across the San Francisco Bay Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-san-francisco-ca",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "a41b914c9659",
@@ -250,7 +304,7 @@
       "category": "private-vacancy",
       "title": "Recent Program and Project Management Openings Listed on LinkedIn for the San Francisco Bay Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "03fdad6de98e",
@@ -299,7 +353,7 @@
       "category": "private-vacancy",
       "title": "Exploring Private Sector Openings and Academic Vacancies Listed on Professional Networks in India",
       "source": "https://in.linkedin.com/jobs/%E0%A6%B2%E0%A7%87%E0%A6%95%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%BE%E0%A6%B0-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "9cfed70093fb",
@@ -355,7 +409,7 @@
       "category": "private-vacancy",
       "title": "Wordsmith Learning Hub Recruits Senior Digital Marketing Manager for Tamil Edtech Sector",
       "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "f638281840d9",
@@ -398,6 +452,13 @@
       "title": "Program and Project Management Job Openings Highlighted Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-phoenix-az",
       "reason": "access_denied"
+    },
+    {
+      "id": "e21f0c9303189bff05b728a0",
+      "category": "gadgets",
+      "title": "Sony Xperia C: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "reason": "invalid_source_images"
     },
     {
       "id": "47e829176cc5",
@@ -460,14 +521,14 @@
       "category": "private-vacancy",
       "title": "Active Hiring Trends for Program and Project Management Roles in the Moses Lake Region",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-moses-lake-wa",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "92088c2de8c2",
       "category": "private-vacancy",
       "title": "Recent Administrative Assistant and Support Openings Listed in the Des Moines, Iowa Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "bbfd4d3d5c0a",
@@ -495,14 +556,14 @@
       "category": "visas-immigration",
       "title": "Peerless Immigration Services Announces Openings for Business Development Associates in New Delhi",
       "source": "https://in.linkedin.com/jobs/view/business-development-associate-at-peerless-immigration-services-4483846739?position=23&pageNum=0&refId=pdi7GkDzOUAwjOAwZuhD7g%3D%3D&trackingId=99eGWHPhi0lFt1HRUu2RDA%3D%3D",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0da0ead215c3",
       "category": "private-vacancy",
       "title": "WeMakeScholars Recruits Technical HR Professional Across Multiple Indian Cities",
       "source": "https://in.linkedin.com/jobs/view/technial-hr-recruiter-in-secunderabad-hyderabad-hyderabad-hyderabad-vishakhapatnam-alwal-visakhapatnam-at-wemakescholars-4484295029?position=58&pageNum=0&refId=IYfwluMaDIcsUuazNwoLjw%3D%3D&trackingId=4yed8vCMLTz%2BknFIMv5vzQ%3D%3D",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "7f651ce9d3f0",
@@ -610,13 +671,6 @@
       "reason": "source_unavailable"
     },
     {
-      "id": "0dc082de2306",
-      "category": "apps-software",
-      "title": "An Overview of Deno: A Modern Runtime for JavaScript, TypeScript, and WebAssembly",
-      "source": "https://github.com/denoland/deno",
-      "reason": "invalid_source_images"
-    },
-    {
       "id": "ef6d4c03dede",
       "category": "business",
       "title": "XPENG Reports Record Monthly Deliveries for October 2026 and Progress in Autonomous Operations",
@@ -712,7 +766,7 @@
       "category": "private-vacancy",
       "title": "Saatvik Agro Advertises Full-Time Backend Developer Java Opening in Morena",
       "source": "https://in.linkedin.com/jobs/view/backend-developer-java-at-saatvik-agro-4484932211",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0e7392808f2b",
@@ -733,14 +787,14 @@
       "category": "private-vacancy",
       "title": "Overview of Military and Protective Services Openings in the Des Moines Area",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "91712e374b16",
       "category": "private-vacancy",
       "title": "Recent Program and Project Management Openings Highlighted for Boydton and Surrounding Regions",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-boydton-va",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "040dd341f762",
@@ -789,7 +843,7 @@
       "category": "ai-news",
       "title": "HCLTech Advertises Vice President Role for SAP AI in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/vice-president-sap-ai-at-hcltech-4473146204",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "5cf2007cdcba",
@@ -824,14 +878,14 @@
       "category": "private-vacancy",
       "title": "Fintech Firm FatakPay Announces Search for Compliance Manager in Mumbai",
       "source": "https://in.linkedin.com/jobs/view/compliance-manager-at-fatakpay-4482278882",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "6189652eeaaa",
       "category": "education",
       "title": "University of Phoenix Associate Dean to Present AI Literacy Framework at AAC&U Conference",
       "source": "https://www.prnewswire.com/news-releases/university-of-phoenix-associate-dean-to-present-ai-literacy-framework-implementation-at-aacu-conference-on-ai-and-higher-education-302924272.html",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "02518f2b343c",
@@ -859,7 +913,7 @@
       "category": "ai-news",
       "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
       "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "c9e064a48f72",
@@ -880,7 +934,7 @@
       "category": "visas-immigration",
       "title": "Primex Visa Pvt. Ltd. Advertises New Visa Documentation Executive Position in Delhi",
       "source": "https://in.linkedin.com/jobs/view/visa-documentation-executve-at-primex-visa-pvt-ltd-4484924300",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "07f5b24312a4",
@@ -1020,7 +1074,7 @@
       "category": "social-media",
       "title": "The Blue Kite Announces Opening for Social Media Associate Role in Goa via LinkedIn",
       "source": "https://in.linkedin.com/jobs/view/social-media-associate-at-the-blue-kite-4483449440",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "7548888dfa18",
@@ -1090,7 +1144,7 @@
       "category": "social-media",
       "title": "Headout Recruits YouTube Scriptwriter in Bengaluru for Search-Driven Travel Content",
       "source": "https://in.linkedin.com/jobs/view/scriptwriter-youtube-at-headout-4483872792",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "122b5649e749",
@@ -1104,7 +1158,7 @@
       "category": "private-vacancy",
       "title": "San Francisco Bay Area Media and Communications Job Listings Highlight Tech and Corporate Sector Demand",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "8444aa187e09b377f661fcbf",
@@ -1125,7 +1179,7 @@
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Cheyenne and Surrounding Region",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "2e293f23db10",
@@ -1146,7 +1200,7 @@
       "category": "private-vacancy",
       "title": "Amrit Skills Development Reports MIS Executive Opening in Delhi",
       "source": "https://in.linkedin.com/jobs/view/mis-executive-at-amrit-skills-development-4480055351",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "c176a1dc41c1e122cab45821",
@@ -1160,7 +1214,7 @@
       "category": "private-vacancy",
       "title": "Community and Social Services Career Openings Highlight Regional Employment Landscape",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-boydton-va",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "090108930e0d",
@@ -1279,7 +1333,7 @@
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Boydton Area Listings",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-boydton-va",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "a91a82825e4a",
@@ -1298,28 +1352,101 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "invalid_source_images": 56,
+    "access_denied": 44,
     "source_error": 4,
-    "no_source_image": 48,
-    "access_denied": 24,
+    "invalid_source_images": 43,
+    "no_source_image": 41,
     "restricted_page": 1
   },
-  "existing_representatives_preserved": 0,
+  "existing_representatives_preserved": 1,
   "diagnostics": {
-    "93524346b413389a9d0267c1": {
+    "0c82d1568ebb94ae689c672b": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Panther_Model_100",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Panther_100_600_cc_1936.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Sok%C3%B3%C5%82_1000",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Sok%C3%B3%C5%821000.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "9bc443c69d365b438d3ad913": {
+    "c7d4d78f34610ba8c3e51d32": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Panther_Model_120",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Phelon_%26_Moore_Panther_Model_120_%28right_side%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Slippery_Sam",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/df/Slippery_Sam_Triumph_Trident_cropped.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "2a1dc5d55d643041b9bb2344": {
+    "c5a2ef0a2c36d4533175b976": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nokia_X",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/NokiaX_01.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Sehol_E10X",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/2021_JAC_Sehol_E10X_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "cd83aa2e1447512b708900e6": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Rolls-Royce_Wraith_%282013%29",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/35/2019_Rolls-Royce_Wraith_V12_Automatic_6.6.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "8f4b17c49d1b2a0c5cb45a53": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "candidate_count": 6,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "c176a1dc41c1e122cab45821": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "b7921f95fde847447cbab242": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Core",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Samsung_Galaxy_Core_GT-I8262.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "ab5757b7bde7e5a43128d256": {
+      "reason": "source_unavailable",
+      "source": "https://exploitsmw.com/",
+      "status": 200
+    },
+    "e21f0c9303189bff05b728a0": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "4afa4536b18e5a41b30a3497": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18613.jpg"
+      ]
+    },
+    "b211f120ea27b93fc925f6b4": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "candidate_count": 8,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/commons/1/1e/Nokia_Asha_501.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/250px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/120px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "6548e415fc086ccec65bbb7c": {
+      "reason": "invalid_source_images",
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "candidate_count": 20,
+      "candidates": [
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/frontier/vehicle-profile-assets/2027/model-2027-frontier-crew-cab-pro-4x-red-alert.png-v2.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue-hybrid/vehicle-profile-assets/2027/model-2027-rogue-hybrid-sr-horizon-blue-pearl-metallic-super-black-two-tone.png.ximg.l_3_m.smart.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue/vehicle-profile-assets/2027/model-2027-rogue-rock-creek-intelligent-awd-baja-storm-metallic.png.ximg.l_3_m.smart.png"
+      ]
     },
     "2a8b92143f14b264d8d27146": {
       "reason": "invalid_source_images",
@@ -1331,15 +1458,62 @@
         "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
       ]
     },
-    "fc3a445b572a3ac72a74dd84": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Volkswagen_Talagon",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/2021_FAW-Volkswagen_Talagon_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "9d1f6341eb5fa6644d63ff08": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18615.jpg"
+      ]
     },
-    "f5e098c65814172b85380495": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Lotus_Emira",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/2025_Lotus_Emira_V6_in_Vivid_Red%2C_front_right.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "007acb84538e69bcc14f4f9f": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18606.jpg"
+      ]
+    },
+    "0a95ccf111c45db4cfb5c9e3": {
+      "reason": "source_error",
+      "source": "https://isc-edu.org/",
+      "error": "ConnectionError"
+    },
+    "2f02162d9ab27a8cd5662161": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "candidate_count": 10,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled"
+      ]
+    },
+    "8444aa187e09b377f661fcbf": {
+      "reason": "no_source_image",
+      "source": "https://dec.ac.in/"
+    },
+    "a6510273f0889bf4d7684eae": {
+      "reason": "invalid_source_images",
+      "source": "https://mua.ac.ke/",
+      "candidate_count": 2,
+      "candidates": [
+        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
+        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png"
+      ]
+    },
+    "8af54bb949a0c055391d640a": {
+      "reason": "no_source_image",
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "existing_representative_preserved": true
+    },
+    "fbff6440d68d52399ca212b1": {
+      "reason": "no_source_image",
+      "source": "https://cctu.edu.gh/site/index"
+    },
+    "ef614dcb4163038685679d1d": {
+      "reason": "no_source_image",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/"
     }
   },
   "mode": "directory"
