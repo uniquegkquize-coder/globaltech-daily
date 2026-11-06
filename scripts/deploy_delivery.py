@@ -49,9 +49,15 @@ def verify_pages(origin, directory):
     for file in sorted(directory.iterdir()):
         if file.name in {'_headers','_redirects','index.html','404.html'}:
             continue
-        response=requests.get(origin+'/'+file.name,timeout=(5,30),allow_redirects=False)
+        url=origin+'/'+file.name
+        response=requests.get(url,timeout=(5,30),allow_redirects=False)
+        if file.suffix=='.html' and response.status_code in (301,302,307,308):
+            canonical=origin+'/'+file.stem
+            if urljoin(url,response.headers.get('Location',''))!=canonical:
+                raise ValueError('Unexpected Pages HTML redirect: '+file.name)
+            response=requests.get(canonical,timeout=(5,30),allow_redirects=False)
         if response.status_code!=200 or response.content!=file.read_bytes():
-            raise ValueError('Pages root asset mismatch: '+file.name)
+            raise ValueError(f'Pages root asset mismatch: {file.name} (HTTP {response.status_code})')
     redirects={'/':'/en/'}
     for name in ('news-sitemap-1.xml','news-sitemap-2.xml'):
         if not (directory/name).exists():

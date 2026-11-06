@@ -11,7 +11,7 @@ import delivery_package as dp
 from build_output import OutputWriter
 from r2_sync import sync, retry
 from check_output_policy import check
-from deploy_delivery import config
+from deploy_delivery import config, verify_pages
 
 class Missing(Exception):
     response={'ResponseMetadata':{'HTTPStatusCode':404}}
@@ -166,6 +166,31 @@ class UploadFailureTests(unittest.TestCase):
         with patch.object(client,'get_paginator',return_value=Paginator()):
             with self.assertRaisesRegex(ValueError,'budget'):sync(client,'bucket',self.output,package,self.root/'r.json')
         self.assertEqual(client.writes,0)
+
+class PagesVerificationTests(unittest.TestCase):
+    def test_verification_file_can_redirect_only_to_same_origin_extensionless_path(self):
+        from types import SimpleNamespace
+        origin='https://preview.example'
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            (root/'googleverify.html').write_bytes(b'google verification')
+            responses={
+                '/googleverify.html':(308,'/googleverify',b''),
+                '/googleverify':(200,'',b'google verification'),
+                '/':(301,'/en/',b''),
+                '/news-sitemap-1.xml':(301,'/news-sitemap.xml',b''),
+                '/news-sitemap-2.xml':(301,'/news-sitemap.xml',b''),
+            }
+            def fetch(url,**kwargs):
+                self.assertFalse(kwargs['allow_redirects'])
+                status, location, body=responses[url.removeprefix(origin)]
+                return SimpleNamespace(status_code=status,headers={'Location':location},content=body)
+            with patch('deploy_delivery.requests.get',side_effect=fetch):
+                verify_pages(origin,root)
+                responses['/googleverify.html']=(308,'https://elsewhere.example/googleverify',b'')
+                with self.assertRaisesRegex(ValueError,'Unexpected Pages HTML redirect'):
+                    verify_pages(origin,root)
+
 
 class RollbackTests(unittest.TestCase):
     def test_first_cutover_removes_owned_routes_even_if_pages_rollback_fails(self):
