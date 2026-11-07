@@ -1,172 +1,245 @@
 {
-  "total_posts": 3133,
+  "total_posts": 3136,
   "selected": 280,
   "results": {
-    "cooldown": 278,
-    "invalid_source_images": 1,
-    "no_source_image": 1
+    "access_denied": 11,
+    "source_photo_saved": 1,
+    "no_source_image": 23,
+    "source_error": 5,
+    "cooldown": 240
   },
-  "still_missing": 273,
+  "still_missing": 272,
   "articles": [
     {
-      "id": "579dc10cba05",
-      "result": "cooldown"
+      "id": "991285850af2",
+      "source": "https://www.business-standard.com/amp/industry/banking/finmin-sets-up-high-level-panel-to-review-banking-sector-suggest-reforms-126103001851_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794088106.0740085
     },
     {
       "id": "65aa4d8015ae",
-      "result": "cooldown"
+      "source": "https://www.business-standard.com/finance/news/currency-in-circulation-growth-hits-five-year-high-says-rbi-report-126102301578_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794088106.0844188
     },
     {
       "id": "22fc7fedf182",
-      "result": "cooldown"
-    },
-    {
-      "id": "55b7bdd7b1e2",
-      "result": "cooldown"
-    },
-    {
-      "id": "d041bb37a69d",
-      "result": "cooldown"
-    },
-    {
-      "id": "977751fba066",
-      "result": "cooldown"
-    },
-    {
-      "id": "991285850af2",
-      "result": "cooldown"
-    },
-    {
-      "id": "987ad601818f",
-      "result": "cooldown"
-    },
-    {
-      "id": "4c8bdfb15977",
-      "result": "cooldown"
-    },
-    {
-      "id": "e2045453ce2b",
-      "result": "cooldown"
-    },
-    {
-      "id": "6ad27c2bc1ad",
-      "result": "cooldown"
-    },
-    {
-      "id": "999cbc82f86a",
-      "result": "cooldown"
+      "source": "https://www.business-standard.com/economy/news/expenditure-quality-key-to-states-long-term-fiscal-health-rbi-governor-126102701642_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794088106.1323614
     },
     {
       "id": "716f81e31e0d",
-      "result": "cooldown"
+      "source": "https://www.business-standard.com/markets/news/nifty-it-index-slips-4-infosys-tcs-coforge-tank-up-to-5-here-s-why-126102800478_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794088106.1388078
     },
     {
-      "id": "1fffe6df1fe9",
-      "result": "cooldown"
+      "id": "6ad27c2bc1ad",
+      "source": "https://www.business-standard.com/markets/news/equitas-sfb-share-price-tanks-17-as-ceo-exit-mars-q2-show-down-27-in-2-days-126103000283_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794088106.161203
+    },
+    {
+      "id": "579dc10cba05",
+      "source": "https://www.business-standard.com/industry/banking/rbi-steps-up-scrutiny-of-banks-cyber-defences-amid-rising-ai-led-attacks-126103000695_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794088106.3903952
+    },
+    {
+      "id": "55b7bdd7b1e2",
+      "source": "https://www.aljazeera.com/news/2026/10/29/what-we-know-about-spains-second-high-speed-rail-tragedy-this-year",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794088106.7852035
     },
     {
       "id": "a5d18f9e9d23",
-      "result": "cooldown"
+      "source": "https://www.business-standard.com/markets/news/nse-ai-cybersecurity-network-vulnerabilities-ashishkumar-chauhan-126102400408_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794088106.876686
     },
     {
       "id": "1a8ca0e906ec",
-      "result": "cooldown"
+      "source": "https://www.business-standard.com/markets/news/nse-flags-broker-lapses-in-margin-trading-client-funds-and-cybersecurity-126102901449_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794088106.958563
     },
     {
-      "id": "b884520e4af2",
-      "result": "cooldown"
+      "id": "d041bb37a69d",
+      "source": "https://www.prnewswire.com/news-releases/athens-networking-event-strengthens-greek---serbian-business-and-tourism-ties-ahead-of-expo-2027-302924705.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088107.8599303
+    },
+    {
+      "id": "4c8bdfb15977",
+      "source": "https://www.prnewswire.com/news-releases/best-reddit-marketing-agency-for-b2b-saas--software-companies-nicely-network-recognized-by-software-experts-302923548.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088107.923303
+    },
+    {
+      "id": "999cbc82f86a",
+      "source": "https://www.prnewswire.com/news-releases/defense-moves-to-free-career-air-force-officer-from-pretrial-jail-judge-to-hear-arguments-november-17-302924913.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088108.8737028
     },
     {
       "id": "ecdc2ef2ac86",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/proposed-class-action-settlement-provides-cash-payments-and-other-benefits-to-individuals-impacted-by-the-merchant-of-tennis-cybersecurity-incident-302924392.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088109.5353975
     },
     {
       "id": "31e9404aeaf3",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/newcore-wins-2026-cyber-top-innovator-for-bringing-human-accountability-to-ai-agents-302923998.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088110.0196881
     },
     {
       "id": "3611b527f6b7",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/cognizant-setzt-mehr-als-25-000-fachkrafte-fur-die-umsetzung-von-openai-losungen-ein-wahrend-unternehmen-bahnbrechende-ki-technologien-in-die-produktion-uberfuhren-302925415.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088110.695744
     },
     {
       "id": "c97657ff60c5",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/cognizant-commits-more-than-25-000-professionals-to-openai-delivery-as-enterprises-move-frontier-ai-into-production-302924550.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088111.2028253
     },
     {
       "id": "18058afab0cf",
-      "result": "cooldown"
-    },
-    {
-      "id": "e26a9ba6438e",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/cloudkeeper-makes-aillm-cost-tracking-easier-for-businesses-with-full-stack-finops-for-ai-302924168.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088111.7653995
     },
     {
       "id": "1ea4c06fbe1f",
-      "result": "cooldown"
-    },
-    {
-      "id": "ac43b931abf9",
-      "result": "cooldown"
+      "source": "https://www.prnewswire.com/news-releases/check-point-secures-ai-scale-traffic-for-neoclouds-sovereign-ai-and-the-enterprise-with-new-maestro-hyperscale-orchestrator-302923480.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088112.5234895
     },
     {
       "id": "8c34cb11fa0d",
-      "result": "cooldown"
+      "source": "https://www.business-standard.com/world-news/big-tech-s-750-billion-ai-bet-faces-strain-with-slowing-core-growth-126103000106_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794088112.615847
     },
     {
       "id": "08e244f09bc8",
-      "result": "cooldown"
+      "source": "https://www.business-standard.com/specials/bs-events/bfsi-insight-summit-2026-oil-ai-play-weigh-on-funding-and-markets-126102601583_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794088112.6934252
     },
     {
-      "id": "40de10a52a3c",
-      "result": "cooldown"
+      "id": "ac43b931abf9",
+      "source": "https://www.prnewswire.com/news-releases/bloomberg-law-connects-dockets-and-litigation-intelligence-with-claude-302923890.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088113.2285566
     },
     {
       "id": "25f02743e934",
-      "result": "cooldown"
+      "source": "https://www.business-standard.com/markets/news/retail-investors-tap-234-mn-in-margin-funding-to-trade-jio-on-debut-day-126103000526_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794088113.2993782
+    },
+    {
+      "id": "40de10a52a3c",
+      "source": "https://www.prnewswire.com/news-releases/best-creative-ai-software-2026-capcut-recognized-for-bringing-video-image-and-content-creation-into-one-platform-by-software-experts-302924470.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088114.3650281
+    },
+    {
+      "id": "e26a9ba6438e",
+      "source": "https://in.linkedin.com/jobs/%E7%A6%8F%E5%B8%83%E6%96%AF%E8%B5%8C%E5%9C%BA%E5%BC%80%E6%88%B7%E7%94%B5%E8%AF%9D%E5%BE%AEAA5211917.smy-jobs",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088114.4541972
     },
     {
       "id": "ee28a6d6e51d",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/Nexbirlik+haqq%C4%B1nda+m%C9%99nfi+r%C9%99yl%C9%99r+%E2%80%94+%C5%9Firk%C9%99t+b%C3%B6lm%C9%99l%C9%99rini+tan%C4%B1y%C4%B1n.vkz-jobs",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088115.0210128
     },
     {
       "id": "8d6069082faf",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/is+novaluxia+legit+before+signing+up.mbi-jobs",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088115.904548
     },
     {
-      "id": "d37c02648def",
-      "result": "cooldown"
+      "id": "977751fba066",
+      "source": "https://www.npr.org/2026/10/30/g-s1-150889/up-first-newsletter-midterm-elections-iran-war-veteran-affairs-loans",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794088116.2702208
+    },
+    {
+      "id": "e2045453ce2b",
+      "source": "https://www.npr.org/2026/10/06/nx-s1-5991899/elon-musk-palmer-luckey-pentagon-drones-ai",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794088116.2846177
+    },
+    {
+      "id": "987ad601818f",
+      "source": "https://www.cbc.ca/news/politics/uae-canada-share-partnership-details-9.7397661",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794088116.3630438
+    },
+    {
+      "id": "1fffe6df1fe9",
+      "source": "https://www.npr.org/2026/10/27/nx-s1-6010370/el-nino-floods-nairobi-green-army",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794088116.4540317
     },
     {
       "id": "70f76f450795",
-      "result": "cooldown"
+      "source": "https://in.linkedin.com/jobs/Nexbirlik+istifad%C9%99%C3%A7i+t%C9%99cr%C3%BCb%C9%99si%3A+m%C3%BCxt%C9%99lif+izahlara+n%C9%99z%C9%99r+sal%C4%B1n.whn-jobs",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088116.618692
     },
     {
-      "id": "2c1d9963406e",
-      "result": "cooldown"
+      "id": "d37c02648def",
+      "source": "https://www.sahisarkarijobs.in/retirement-calculator/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088116.7556713
     },
     {
-      "id": "dfccb93a8259",
-      "result": "cooldown"
-    },
-    {
-      "id": "ca998fc9670d",
-      "result": "cooldown"
-    },
-    {
-      "id": "79cbda730083",
-      "result": "cooldown"
-    },
-    {
-      "id": "b927adfec00b",
-      "result": "cooldown"
-    },
-    {
-      "id": "23dc6e8075b4",
-      "result": "cooldown"
-    },
-    {
-      "id": "dd07ef14c72f",
-      "result": "cooldown"
+      "id": "b884520e4af2",
+      "source": "https://www.npr.org/2026/10/27/nx-s1-6019612/why-ukraine-and-russia-agreed-to-a-ceasefire-in-just-one-city",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794088116.9973433
     },
     {
       "id": "a4fcd6020999",
@@ -1122,17 +1195,60 @@
     },
     {
       "id": "e8fc748d4c8dffaa2212a1cf",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794079457.2041602
+      "result": "cooldown"
     },
     {
       "id": "8af54bb949a0c055391d640a",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "result": "cooldown"
+    },
+    {
+      "id": "dfccb93a8259",
+      "source": "https://www.tui.com/hilfe/kostenlos-stornieren/",
       "policy": "93e2ad7deccc",
       "result": "no_source_image",
-      "retry_after": 1794079458.4509892
+      "retry_after": 1794088117.134669
+    },
+    {
+      "id": "ca998fc9670d",
+      "source": "https://in.linkedin.com/jobs/Note+novaluxia.com+Reviews+platform+updates.xcv-jobs",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088118.0103426
+    },
+    {
+      "id": "b927adfec00b",
+      "source": "https://in.linkedin.com/jobs/nexbirlik%2Bistifad%C9%99%C3%A7i%2Bt%C9%99cr%C3%BCb%C9%99si-%2Bm%C3%BCxt%C9%99lif%2Bm%C9%99nb%C9%99l%C9%99rd%C9%99%2Bfikirl%C9%99ri%2Boxuyun.uew-jobs",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088118.286726
+    },
+    {
+      "id": "79cbda730083",
+      "source": "https://in.linkedin.com/jobs/%E6%96%B0%E7%9B%9B%E8%B5%8C%E5%9C%BA%E6%B8%B8%E6%88%8F%E5%AE%A2%E6%9C%8D15508830630.cnv-jobs",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088118.3183558
+    },
+    {
+      "id": "2c1d9963406e",
+      "source": "https://www.sahisarkarijobs.in/psu-salary-calculator-ida-pattern/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088118.3282304
+    },
+    {
+      "id": "23dc6e8075b4",
+      "source": "https://www.sahisarkarijobs.in/macp-calculator/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088118.8022413
+    },
+    {
+      "id": "dd07ef14c72f",
+      "source": "https://www.sahisarkarijobs.in/cgpa-to-percentage-calculator/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794088119.1452186
     }
   ],
   "missing": [
@@ -2131,13 +2247,6 @@
       "reason": "invalid_source_images"
     },
     {
-      "id": "55b7bdd7b1e2",
-      "category": "conflict-news",
-      "title": "Spain Mourns Following Deadly High-Speed Train Collision Near Toledo",
-      "source": "https://www.aljazeera.com/news/2026/10/29/what-we-know-about-spains-second-high-speed-rail-tragedy-this-year",
-      "reason": "no_source_image"
-    },
-    {
       "id": "23dc6e8075b4",
       "category": "sarkari-naukri",
       "title": "Understanding MACP Pay Fixation Under the 7th Pay Commission",
@@ -3050,28 +3159,190 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "no_source_image": 102,
+    "no_source_image": 101,
     "invalid_source_images": 55,
     "source_error": 17,
     "access_denied": 62,
     "restricted_page": 1
   },
-  "existing_representatives_preserved": 1,
+  "existing_representatives_preserved": 0,
   "diagnostics": {
-    "e8fc748d4c8dffaa2212a1cf": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/120px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/60px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
+    "991285850af2": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/amp/industry/banking/finmin-sets-up-high-level-panel-to-review-banking-sector-suggest-reforms-126103001851_1.html",
+      "status": 403
     },
-    "8af54bb949a0c055391d640a": {
+    "65aa4d8015ae": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/finance/news/currency-in-circulation-growth-hits-five-year-high-says-rbi-report-126102301578_1.html",
+      "status": 403
+    },
+    "22fc7fedf182": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/economy/news/expenditure-quality-key-to-states-long-term-fiscal-health-rbi-governor-126102701642_1.html",
+      "status": 403
+    },
+    "6ad27c2bc1ad": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/markets/news/equitas-sfb-share-price-tanks-17-as-ceo-exit-mars-q2-show-down-27-in-2-days-126103000283_1.html",
+      "status": 403
+    },
+    "716f81e31e0d": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/markets/news/nifty-it-index-slips-4-infosys-tcs-coforge-tank-up-to-5-here-s-why-126102800478_1.html",
+      "status": 403
+    },
+    "579dc10cba05": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/industry/banking/rbi-steps-up-scrutiny-of-banks-cyber-defences-amid-rising-ai-led-attacks-126103000695_1.html",
+      "status": 403
+    },
+    "55b7bdd7b1e2": {
+      "reason": "source_photo_saved",
+      "source": "https://www.aljazeera.com/news/2026/10/29/what-we-know-about-spains-second-high-speed-rail-tragedy-this-year",
+      "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/AFP__20261029__D4RJ6E9__v1__HighRes__SpainTrainAccidentTransport-1793265937.jpg?resize=1920%2C1440"
+    },
+    "a5d18f9e9d23": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/markets/news/nse-ai-cybersecurity-network-vulnerabilities-ashishkumar-chauhan-126102400408_1.html",
+      "status": 403
+    },
+    "1a8ca0e906ec": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/markets/news/nse-flags-broker-lapses-in-margin-trading-client-funds-and-cybersecurity-126102901449_1.html",
+      "status": 403
+    },
+    "d041bb37a69d": {
       "reason": "no_source_image",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "existing_representative_preserved": true
+      "source": "https://www.prnewswire.com/news-releases/athens-networking-event-strengthens-greek---serbian-business-and-tourism-ties-ahead-of-expo-2027-302924705.html"
+    },
+    "4c8bdfb15977": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/best-reddit-marketing-agency-for-b2b-saas--software-companies-nicely-network-recognized-by-software-experts-302923548.html"
+    },
+    "999cbc82f86a": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/defense-moves-to-free-career-air-force-officer-from-pretrial-jail-judge-to-hear-arguments-november-17-302924913.html"
+    },
+    "ecdc2ef2ac86": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/proposed-class-action-settlement-provides-cash-payments-and-other-benefits-to-individuals-impacted-by-the-merchant-of-tennis-cybersecurity-incident-302924392.html"
+    },
+    "31e9404aeaf3": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/newcore-wins-2026-cyber-top-innovator-for-bringing-human-accountability-to-ai-agents-302923998.html"
+    },
+    "3611b527f6b7": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/cognizant-setzt-mehr-als-25-000-fachkrafte-fur-die-umsetzung-von-openai-losungen-ein-wahrend-unternehmen-bahnbrechende-ki-technologien-in-die-produktion-uberfuhren-302925415.html"
+    },
+    "c97657ff60c5": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/cognizant-commits-more-than-25-000-professionals-to-openai-delivery-as-enterprises-move-frontier-ai-into-production-302924550.html"
+    },
+    "18058afab0cf": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/cloudkeeper-makes-aillm-cost-tracking-easier-for-businesses-with-full-stack-finops-for-ai-302924168.html"
+    },
+    "1ea4c06fbe1f": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/check-point-secures-ai-scale-traffic-for-neoclouds-sovereign-ai-and-the-enterprise-with-new-maestro-hyperscale-orchestrator-302923480.html"
+    },
+    "8c34cb11fa0d": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/world-news/big-tech-s-750-billion-ai-bet-faces-strain-with-slowing-core-growth-126103000106_1.html",
+      "status": 403
+    },
+    "08e244f09bc8": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/specials/bs-events/bfsi-insight-summit-2026-oil-ai-play-weigh-on-funding-and-markets-126102601583_1.html",
+      "status": 403
+    },
+    "ac43b931abf9": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/bloomberg-law-connects-dockets-and-litigation-intelligence-with-claude-302923890.html"
+    },
+    "25f02743e934": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/markets/news/retail-investors-tap-234-mn-in-margin-funding-to-trade-jio-on-debut-day-126103000526_1.html",
+      "status": 403
+    },
+    "40de10a52a3c": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/best-creative-ai-software-2026-capcut-recognized-for-bringing-video-image-and-content-creation-into-one-platform-by-software-experts-302924470.html"
+    },
+    "e26a9ba6438e": {
+      "reason": "no_source_image",
+      "source": "https://in.linkedin.com/jobs/%E7%A6%8F%E5%B8%83%E6%96%AF%E8%B5%8C%E5%9C%BA%E5%BC%80%E6%88%B7%E7%94%B5%E8%AF%9D%E5%BE%AEAA5211917.smy-jobs"
+    },
+    "ee28a6d6e51d": {
+      "reason": "no_source_image",
+      "source": "https://in.linkedin.com/jobs/Nexbirlik+haqq%C4%B1nda+m%C9%99nfi+r%C9%99yl%C9%99r+%E2%80%94+%C5%9Firk%C9%99t+b%C3%B6lm%C9%99l%C9%99rini+tan%C4%B1y%C4%B1n.vkz-jobs"
+    },
+    "8d6069082faf": {
+      "reason": "no_source_image",
+      "source": "https://in.linkedin.com/jobs/is+novaluxia+legit+before+signing+up.mbi-jobs"
+    },
+    "977751fba066": {
+      "reason": "source_error",
+      "source": "https://www.npr.org/2026/10/30/g-s1-150889/up-first-newsletter-midterm-elections-iran-war-veteran-affairs-loans",
+      "error": "ReadTimeout"
+    },
+    "e2045453ce2b": {
+      "reason": "source_error",
+      "source": "https://www.npr.org/2026/10/06/nx-s1-5991899/elon-musk-palmer-luckey-pentagon-drones-ai",
+      "error": "ReadTimeout"
+    },
+    "987ad601818f": {
+      "reason": "source_error",
+      "source": "https://www.cbc.ca/news/politics/uae-canada-share-partnership-details-9.7397661",
+      "error": "ReadTimeout"
+    },
+    "1fffe6df1fe9": {
+      "reason": "source_error",
+      "source": "https://www.npr.org/2026/10/27/nx-s1-6010370/el-nino-floods-nairobi-green-army",
+      "error": "ReadTimeout"
+    },
+    "70f76f450795": {
+      "reason": "no_source_image",
+      "source": "https://in.linkedin.com/jobs/Nexbirlik+istifad%C9%99%C3%A7i+t%C9%99cr%C3%BCb%C9%99si%3A+m%C3%BCxt%C9%99lif+izahlara+n%C9%99z%C9%99r+sal%C4%B1n.whn-jobs"
+    },
+    "d37c02648def": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/retirement-calculator/"
+    },
+    "b884520e4af2": {
+      "reason": "source_error",
+      "source": "https://www.npr.org/2026/10/27/nx-s1-6019612/why-ukraine-and-russia-agreed-to-a-ceasefire-in-just-one-city",
+      "error": "ReadTimeout"
+    },
+    "dfccb93a8259": {
+      "reason": "no_source_image",
+      "source": "https://www.tui.com/hilfe/kostenlos-stornieren/"
+    },
+    "ca998fc9670d": {
+      "reason": "no_source_image",
+      "source": "https://in.linkedin.com/jobs/Note+novaluxia.com+Reviews+platform+updates.xcv-jobs"
+    },
+    "b927adfec00b": {
+      "reason": "no_source_image",
+      "source": "https://in.linkedin.com/jobs/nexbirlik%2Bistifad%C9%99%C3%A7i%2Bt%C9%99cr%C3%BCb%C9%99si-%2Bm%C3%BCxt%C9%99lif%2Bm%C9%99nb%C9%99l%C9%99rd%C9%99%2Bfikirl%C9%99ri%2Boxuyun.uew-jobs"
+    },
+    "79cbda730083": {
+      "reason": "no_source_image",
+      "source": "https://in.linkedin.com/jobs/%E6%96%B0%E7%9B%9B%E8%B5%8C%E5%9C%BA%E6%B8%B8%E6%88%8F%E5%AE%A2%E6%9C%8D15508830630.cnv-jobs"
+    },
+    "2c1d9963406e": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/psu-salary-calculator-ida-pattern/"
+    },
+    "23dc6e8075b4": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/macp-calculator/"
+    },
+    "dd07ef14c72f": {
+      "reason": "no_source_image",
+      "source": "https://www.sahisarkarijobs.in/cgpa-to-percentage-calculator/"
     }
   },
   "mode": "all"
