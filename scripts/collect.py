@@ -1227,33 +1227,20 @@ def candidates():
 
 # Detect the same news event syndicated under different publisher URLs.
 # Keep all existing articles; block only near-identical NEW stories.
-DUPLICATE_STOPWORDS={'the','and','for','with','from','this','that','after','over','into','says','said','news','latest','update','updates','today','india','indian','a','an','of','to','in','on','at','is','are','as','by','has','have'}
-def story_tokens(value):
- normalized=re.sub(r'[^a-z0-9\\s]',' ',str(value or '').casefold())
- return {w for w in normalized.split() if len(w)>2 and w not in DUPLICATE_STOPWORDS}
-def same_story(a,b):
- x,y=story_tokens(a),story_tokens(b)
- if len(x)<4 or len(y)<4:return False
- common=len(x & y)
- return common>=4 and (common/min(len(x),len(y))>=0.86 or common/len(x | y)>=0.72)
+from story_identity import canonical_lead_key, story_tokens, same_story
 def published_story_index():
  index=[]
  for path in POSTS.glob('*.json'):
   try:
    p=json.loads(path.read_text(encoding='utf-8'))
    if isinstance(p,dict):
-    index.append((str(p.get('source','')).rstrip('/'),str(p.get('source_title') or p.get('en_title') or ''),str(p.get('category') or '')))
+    for headline in (p.get('source_title'),p.get('en_title'),p.get('hi_title')):
+     if headline:index.append((str(p.get('source','')).rstrip('/'),str(headline),str(p.get('category') or '')))
     for previous in p.get('source_history',[]):
      if isinstance(previous,dict) and previous.get('url'):
       index.append((str(previous['url']).rstrip('/'),str(previous.get('title') or p.get('en_title') or ''),str(p.get('category') or '')))
   except (OSError,ValueError,TypeError):continue
  return index
-@lru_cache(maxsize=8192)
-def canonical_lead_key(url):
- parsed=urlparse(str(url))
- query=[(k,v) for k,v in parse_qsl(parsed.query,keep_blank_values=True) if not (k.lower().startswith('utm_') or k.lower() in {'fbclid','gclid','at_medium','at_campaign'})]
- return urlunparse((parsed.scheme,parsed.netloc.lower().removeprefix('www.'),parsed.path.rstrip('/'),parsed.params,urlencode(query),''))
-
 def unique_leads(rows):
  result=[];seen=set()
  for row in rows:
@@ -1266,7 +1253,7 @@ def duplicate_story(url,title,cat,index):
  target=canonical_lead_key(url)
  for old_url,old_title,old_cat in index:
   if target and target==canonical_lead_key(old_url):return True
-  if cat==old_cat and same_story(title,old_title):return True
+  if same_story(title,old_title):return True
  return False
 
 def write_run_status(outcome,started,counts=None,**extra):
@@ -1404,7 +1391,7 @@ def main():
    # Prevent one prolific source category from consuming the whole run.
    # A verified story may remain as a draft for the next scheduled run.
    with publication_lock:
-    if duplicate_story(url,title,cat,published_index):
+    if any(duplicate_story(url,headline,cat,published_index) for headline in (title,state.get('en_title',''),state.get('hi_title',''))):
      save_state(pending,state)
      print('Concurrent duplicate retained as draft:',post_id,flush=True)
      return None
@@ -1413,7 +1400,8 @@ def main():
      print('Category publication cap reached; retaining draft:',cat,post_id,flush=True)
      return None
     category_reserved[cat]+=1
-    published_index.append((url.rstrip('/'),title,cat))
+    for headline in (title,state.get('en_title',''),state.get('hi_title','')):
+     if headline:published_index.append((url.rstrip('/'),headline,cat))
    article={k:state.get(k,'') for k in ('en_title','hi_title','en_body','hi_body','en_meta','hi_meta','en_keywords','hi_keywords')}
    for lang in ('en','hi'):
     article[lang+'_meta']=seo_description(article.get(lang+'_meta'),article.get(lang+'_body'),article.get(lang+'_title'))
