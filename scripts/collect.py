@@ -1,9 +1,9 @@
 from seo_text import description as seo_description
 """Quota-capped, source-first bilingual publishing. No external AI calls on import."""
-from news_config import CATEGORIES, EXAM_CATEGORIES, EXTRA_FEEDS, DIRECT_EXTRA, classify, lead_priority, timestamp, PRIORITY
+from news_config import CATEGORIES, EXAM_CATEGORIES, EXTRA_FEEDS, DIRECT_EXTRA, classify, lead_priority, timestamp, PRIORITY, search_feed
 from verticals import requirements, TRUSTED_ENTERTAINMENT, TRUSTED_CONTROVERSY
 from official_notices import official_url
-from focused_sources import NATIVE_FEEDS, PAGES as FOCUSED_PAGES, structured_article_data, content_candidates
+from focused_sources import NATIVE_FEEDS, PAGES as FOCUSED_PAGES, SEARCH_SOURCES as FOCUSED_SEARCH, structured_article_data, content_candidates
 import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time, threading
 from functools import lru_cache
 from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
@@ -151,6 +151,7 @@ FEEDS=[
  ('https://www.theguardian.com/lifeandstyle/rss', 'lifestyle', 'theguardian.com'),
 ]
 FEEDS.extend(EXTRA_FEEDS)
+FEEDS.extend(search_feed(domain,category,query) for domain,category,query in FOCUSED_SEARCH)
 
 
 # Additional public discovery feeds. These are leads, not permission to republish text or images.
