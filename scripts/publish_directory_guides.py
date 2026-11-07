@@ -186,7 +186,8 @@ def main():
     counts={};published=0;updated=0
     for kind in KINDS:
         fresh=items[kind][:limit]
-        changed=updates[kind][:max(1,int(os.getenv('DIRECTORY_UPDATES_PER_CATEGORY','10')))]
+        update_limit=max(0,int(os.getenv('DIRECTORY_UPDATES_PER_CATEGORY','0')))
+        changed=updates[kind][:update_limit] if update_limit else updates[kind]
         for key,post in fresh+changed:
             (POSTS/(key+'.json')).write_text(json.dumps(post,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
         counts[kind]={'new':len(fresh),'updated':len(changed),'eligible_new':len(items[kind]),

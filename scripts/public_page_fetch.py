@@ -36,7 +36,8 @@ def fetch_public_html(url, session=None, timeout=(5,12), max_bytes=2000000, rend
     try:
         saved = json.loads(cache.read_text())
         retry_shell=bool(saved['html']) and os.getenv('ENABLE_PUBLIC_BROWSER_FALLBACK','0')=='1' and needs_render(saved['html']) and 'browser' not in saved['method']
-        if not retry_shell and time.time()-saved['time'] < (21600 if saved['html'] else 3600):
+        ttl=int(os.getenv('PUBLIC_FETCH_SUCCESS_TTL_SECONDS','21600') if saved['html'] else os.getenv('PUBLIC_FETCH_FAILURE_TTL_SECONDS','3600'))
+        if not retry_shell and time.time()-saved['time'] < max(0,ttl):
             return saved['html'], saved['url'], 'cached-'+saved['method']
     except (OSError, ValueError, KeyError): pass
     def done(html, final, method):

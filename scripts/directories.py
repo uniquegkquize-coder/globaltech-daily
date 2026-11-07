@@ -168,6 +168,8 @@ def extra_detail(kind,name,lang):
   provenance=details.get('field_sources',{}).get(k,{})
   evidence=provenance.get('url','') if isinstance(provenance,dict) else ''
   citation=(' <a class="fact-source" href="'+esc(evidence)+'" target="_blank" rel="noopener noreferrer">'+('स्रोत' if lang=='hi' else 'Source')+'</a>') if evidence.startswith(('https://','http://')) else ''
+  if k in ('price','fees','mrp_inr','secondary_selling_price_inr') and isinstance(provenance,dict) and provenance.get('retrieved_at'):
+   citation+=' <small>'+('जाँच: ' if lang=='hi' else 'Checked: ')+esc(str(provenance['retrieved_at'])[:10])+'</small>'
   rows.append('<tr><th>'+esc(label[1] if lang=='hi' else label[0])+'</th><td>'+esc(v)+citation+'</td></tr>')
  sources=''.join('<a target="_blank" rel="noopener noreferrer" href="'+esc(details[k])+'">'+('Source reference' if k=='source_url' else 'Manufacturer / institution')+'</a> ' for k in ('source_url','official_url') if details.get(k))
  return '<section class="directory-card directory-wide"><h2>'+('विस्तृत जानकारी' if lang=='hi' else 'Detailed specifications and information')+'</h2><table class="directory-specs">'+''.join(rows)+'</table><p>'+sources+'</p><small>'+('कीमतें और जानकारी स्रोत की तारीख के अनुसार बदल सकती हैं।' if lang=='hi' else 'Prices and specifications may change by market and date.')+'</small></section>'+structured_html(details,lang)
