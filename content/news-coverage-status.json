@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T12:49:56.166895+00:00",
+  "updated_at": "2026-11-07T13:22:19.071043+00:00",
   "categories": {
     "technology": {
       "discovered": 700,
@@ -7,12 +7,12 @@
       "sources_configured": 28
     },
     "government-schemes": {
-      "discovered": 153,
-      "published": 154,
-      "sources_configured": 118
+      "discovered": 165,
+      "published": 165,
+      "sources_configured": 128
     },
     "sarkari-naukri": {
-      "discovered": 119,
+      "discovered": 118,
       "published": 172,
       "sources_configured": 9
     },
@@ -37,7 +37,7 @@
       "sources_configured": 11
     },
     "sports": {
-      "discovered": 424,
+      "discovered": 419,
       "published": 215,
       "sources_configured": 6
     },
@@ -82,8 +82,8 @@
       "sources_configured": 7
     },
     "ai-news": {
-      "discovered": 319,
-      "published": 307,
+      "discovered": 310,
+      "published": 316,
       "sources_configured": 4
     },
     "cyber-security": {
@@ -92,8 +92,8 @@
       "sources_configured": 2
     },
     "gadgets": {
-      "discovered": 81,
-      "published": 93,
+      "discovered": 60,
+      "published": 97,
       "sources_configured": 3
     },
     "apps-software": {
@@ -132,7 +132,7 @@
       "sources_configured": 2
     },
     "banking-finance": {
-      "discovered": 10,
+      "discovered": 9,
       "published": 19,
       "sources_configured": 1
     },
@@ -147,7 +147,7 @@
       "sources_configured": 2
     },
     "india-news": {
-      "discovered": 76,
+      "discovered": 81,
       "published": 41,
       "sources_configured": 15
     },
@@ -157,7 +157,7 @@
       "sources_configured": 4
     },
     "car-launches": {
-      "discovered": 9,
+      "discovered": 8,
       "published": 34,
       "sources_configured": 10
     },
@@ -187,17 +187,17 @@
       "sources_configured": 6
     },
     "social-media": {
-      "discovered": 40,
-      "published": 31,
+      "discovered": 35,
+      "published": 34,
       "sources_configured": 4
     },
     "defence": {
-      "discovered": 136,
-      "published": 69,
+      "discovered": 88,
+      "published": 73,
       "sources_configured": 5
     },
     "conflict-news": {
-      "discovered": 38,
+      "discovered": 42,
       "published": 114,
       "sources_configured": 3
     },
@@ -212,7 +212,7 @@
       "sources_configured": 5
     },
     "travel-packages": {
-      "discovered": 1,
+      "discovered": 0,
       "published": 21,
       "sources_configured": 3
     },
@@ -242,7 +242,7 @@
       "sources_configured": 4
     }
   },
-  "published_total": 3096,
+  "published_total": 3127,
   "categories_below_minimum": {
     "admissions": 1
   },
@@ -253,12 +253,17 @@
       "groq"
     ],
     "cooldown": [
-      "groq"
+      "groq",
+      "openrouter"
     ],
     "unavailable_models": [
       {
         "provider": "gemini",
         "model": "gemini-2.5-flash-lite"
+      },
+      {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite"
       },
       {
         "provider": "gemini",
@@ -286,7 +291,7 @@
     },
     "9to5google.com": {
       "feed_entries": 0,
-      "queued": 87
+      "queued": 88
     },
     "abc.net.au": {
       "feed_entries": 0,
@@ -306,22 +311,18 @@
       "queued": 2
     },
     "ada.rajasthan.gov.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "adaagra.org.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "adaamritsar.gov.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "adaazamgarh.in": {
       "feed_entries": 0
     },
     "adaligarh.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "advantagenews.com": {
@@ -336,7 +337,6 @@
       "queued": 1
     },
     "aidcltd.assam.gov.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "airtel.in": {
@@ -346,12 +346,12 @@
     },
     "aljazeera.com": {
       "feed_entries": 0,
-      "queued": 164
+      "queued": 168
     },
     "amarujala.com": {
       "website_candidates": 0,
       "feed_entries": 0,
-      "queued": 1067
+      "queued": 1081
     },
     "amazon.jobs": {
       "feed_entries": 0,
@@ -373,7 +373,6 @@
       "feed_entries": 0
     },
     "aphwcl.nic.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "apnews.com": {
@@ -402,7 +401,6 @@
       "queued": 27
     },
     "ashb.assam.gov.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "au.variety.com": {
@@ -420,25 +418,21 @@
       "queued": 42
     },
     "ayodhyada.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "bangkokpost.com": {
       "feed_entries": 0
     },
     "bbc.co.uk": {
-      "queued": 413
+      "queued": 414
     },
     "bbc.com": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "bbkdabaghpat.org": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "bda.rajasthan.gov.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "bdabanda.in": {
@@ -448,7 +442,6 @@
       "feed_entries": 0
     },
     "bdabathinda.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "bdabulandshahar.in": {
@@ -458,7 +451,6 @@
       "feed_entries": 0
     },
     "bdakarnataka.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "bestcolleges.indiatoday.in": {
@@ -474,11 +466,9 @@
       "queued": 120
     },
     "bhda.rajasthan.gov.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "biadabihar.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "bikewale.com": {
@@ -508,10 +498,9 @@
       "queued": 2
     },
     "britannica.com": {
-      "queued": 2
+      "queued": 3
     },
     "bshb.bihar.gov.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "business-standard.com": {
@@ -522,7 +511,6 @@
       "queued": 1
     },
     "businesswire.com": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "canada.ca": {
@@ -559,25 +547,31 @@
       "feed_entries": 0,
       "queued": 40
     },
+    "cbda.in": {
+      "feed_entries": 0
+    },
+    "cghb.cg.nic.in": {
+      "feed_entries": 0
+    },
     "cghb.gov.in": {
+      "feed_entries": 0
+    },
+    "cgswc.cg.gov.in": {
       "feed_entries": 0
     },
     "channelafrica.co.za": {
       "queued": 1
     },
     "chbonline.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "chitrakoot.nic.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "chosun.com": {
       "queued": 1
     },
     "cidco.maharashtra.gov.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "cnbc.com": {
@@ -606,10 +600,15 @@
       "queued": 8
     },
     "crda.ap.gov.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "cricbuzz.com": {
+      "feed_entries": 0
+    },
+    "crrid.res.in": {
+      "feed_entries": 0
+    },
+    "csidc.in": {
       "feed_entries": 0
     },
     "cz.linkedin.com": {
@@ -623,11 +622,16 @@
       "feed_entries": 0,
       "queued": 5
     },
+    "dataportuaria.com": {
+      "queued": 1
+    },
     "dawn.com": {
       "feed_entries": 0
     },
+    "dchfcdelhi.nic.in": {
+      "feed_entries": 0
+    },
     "dda.gov.in": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "de.ign.com": {
@@ -645,7 +649,6 @@
       "feed_entries": 0
     },
     "defensenews.com": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "deltanews.tv": {
@@ -657,6 +660,9 @@
     "desidime.com": {
       "website_candidates": 0,
       "feed_entries": 0
+    },
+    "devdiscourse.com": {
+      "queued": 1
     },
     "diversejobseeker.com": {
       "website_candidates": 0,
@@ -713,8 +719,10 @@
     "engadget.com": {
       "queued": 54
     },
+    "english.ratopati.com": {
+      "queued": 1
+    },
     "epicgames.com": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "es.ign.com": {
@@ -737,6 +745,9 @@
     },
     "fa.mvdapms.com": {
       "feed_entries": 0
+    },
+    "fbcnews.com.fj": {
+      "queued": 1
     },
     "fijitimes.com.fj": {
       "queued": 1
@@ -817,14 +828,12 @@
     "github.blog": {
       "website_candidates": 0,
       "feed_entries": 0,
-      "queued": 60,
-      "attempted": 1
+      "queued": 59
     },
     "github.com": {
       "website_candidates": 0,
       "feed_entries": 0,
-      "queued": 178,
-      "attempted": 2
+      "queued": 178
     },
     "glada.gov.in": {
       "feed_entries": 0
@@ -862,6 +871,9 @@
       "feed_entries": 0,
       "queued": 42
     },
+    "gsuda.org": {
+      "feed_entries": 0
+    },
     "gtfc.co.uk": {
       "queued": 1
     },
@@ -869,6 +881,9 @@
       "queued": 1
     },
     "gujarathousingboard.gujarat.gov.in": {
+      "feed_entries": 0
+    },
+    "gujrera.gujarat.gov.in": {
       "feed_entries": 0
     },
     "guyanachronicle.com": {
@@ -911,7 +926,6 @@
       "queued": 1
     },
     "hyundai.com": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "hyundai.news": {
@@ -939,8 +953,7 @@
       "feed_entries": 0
     },
     "in.linkedin.com": {
-      "queued": 315,
-      "attempted": 1
+      "queued": 315
     },
     "indeed.com": {
       "website_candidates": 0,
@@ -998,9 +1011,6 @@
     "jdaup.in": {
       "feed_entries": 0
     },
-    "jfcnaples.nato.int": {
-      "queued": 1
-    },
     "jio.com": {
       "website_candidates": 0,
       "feed_entries": 0
@@ -1009,7 +1019,7 @@
       "feed_entries": 0
     },
     "jobs.apple.com": {
-      "queued": 9
+      "queued": 7
     },
     "jobs.careers.microsoft.com": {
       "queued": 2
@@ -1075,7 +1085,7 @@
     "livehindustan.com": {
       "website_candidates": 0,
       "feed_entries": 0,
-      "queued": 3897
+      "queued": 3898
     },
     "livemint.com": {
       "feed_entries": 0
@@ -1088,7 +1098,8 @@
       "queued": 3
     },
     "m.govtschemes.in": {
-      "queued": 1
+      "queued": 1,
+      "attempted": 1
     },
     "mahud.mn.gov.in": {
       "feed_entries": 0
@@ -1103,13 +1114,15 @@
       "feed_entries": 0
     },
     "mdamoradabad.up.gov.in": {
-      "feed_entries": 0
+      "feed_entries": 0,
+      "queued": 13
     },
     "mdamuzaffarnagar.com": {
       "feed_entries": 0
     },
     "mddaonline.in": {
-      "feed_entries": 0
+      "feed_entries": 0,
+      "queued": 11
     },
     "me.ign.com": {
       "queued": 3
@@ -1118,13 +1131,14 @@
       "feed_entries": 0
     },
     "megurban.gov.in": {
-      "feed_entries": 0
+      "feed_entries": 0,
+      "queued": 20
     },
     "mhada.gov.in": {
-      "feed_entries": 0
+      "feed_entries": 0,
+      "queued": 26
     },
     "microsoft.com": {
-      "website_candidates": 0,
       "queued": 8
     },
     "mmrda.maharashtra.gov.in": {
@@ -1154,12 +1168,15 @@
       "feed_entries": 0
     },
     "mudashillong.org.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "muzaffarnagar.nic.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "mvdamirzapur.com": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "myvi.in": {
@@ -1187,8 +1204,9 @@
     "navbharattimes.indiatimes.com": {
       "website_candidates": 0,
       "feed_entries": 0,
-      "queued": 426,
-      "attempted": 3
+      "queued": 424,
+      "attempted": 28,
+      "published": 11
     },
     "navy.mil": {
       "feed_entries": 0
@@ -1205,8 +1223,10 @@
       "feed_entries": 0
     },
     "news.abplive.com": {
-      "queued": 395,
-      "attempted": 6
+      "queued": 395
+    },
+    "news.bloomberglaw.com": {
+      "queued": 1
     },
     "news.microsoft.com": {
       "queued": 6
@@ -1214,7 +1234,7 @@
     "news.samsung.com": {
       "website_candidates": 0,
       "feed_entries": 0,
-      "queued": 94
+      "queued": 92
     },
     "news.un.org": {
       "queued": 7
@@ -1230,6 +1250,9 @@
       "feed_entries": 0,
       "queued": 1
     },
+    "nine.com.au": {
+      "queued": 1
+    },
     "nitnagpur.org": {
       "feed_entries": 0
     },
@@ -1240,10 +1263,12 @@
       "feed_entries": 0
     },
     "npr.org": {
-      "queued": 52
+      "queued": 53
     },
     "npwd.nagaland.gov.in": {
-      "feed_entries": 0
+      "website_candidates": 0,
+      "feed_entries": 0,
+      "queued": 4
     },
     "nta.ac.in": {
       "website_candidates": 0,
@@ -1253,12 +1278,16 @@
       "queued": 69
     },
     "odaorai.com": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "officialsarkarinaukri.com": {
       "website_candidates": 0,
       "feed_entries": 0,
       "queued": 11
+    },
+    "on3.com": {
+      "queued": 1
     },
     "onmanorama.com": {
       "feed_entries": 0
@@ -1268,6 +1297,11 @@
       "queued": 39
     },
     "oshb.org": {
+      "website_candidates": 0,
+      "feed_entries": 0
+    },
+    "panchayat.gujarat.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "patch.com": {
@@ -1277,9 +1311,11 @@
       "feed_entries": 0
     },
     "pdapatiala.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "pdaprayagraj.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "people.com": {
@@ -1291,7 +1327,8 @@
     },
     "pib.gov.in": {
       "feed_entries": 0,
-      "queued": 1
+      "queued": 2,
+      "attempted": 1
     },
     "pmrda.gov.in": {
       "feed_entries": 0
@@ -1306,9 +1343,8 @@
       "feed_entries": 0
     },
     "prnewswire.com": {
-      "website_candidates": 0,
       "feed_entries": 0,
-      "queued": 236
+      "queued": 238
     },
     "puda.gov.in": {
       "feed_entries": 0
@@ -1320,12 +1356,18 @@
       "feed_entries": 0
     },
     "rdarampur.com": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "rdaup.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "reddit.com": {
+      "feed_entries": 0
+    },
+    "rera.goa.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "resilience.esa.int": {
@@ -1334,10 +1376,8 @@
     "reuters.com": {
       "feed_entries": 0
     },
-    "reutersagency.com": {
-      "website_candidates": 0
-    },
     "rhb.rajasthan.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "rnz.co.nz": {
@@ -1364,7 +1404,8 @@
     "sarkarikyp.com": {
       "website_candidates": 0,
       "feed_entries": 0,
-      "queued": 11
+      "queued": 11,
+      "attempted": 10
     },
     "sarkariresult.com": {
       "website_candidates": 0,
@@ -1393,6 +1434,7 @@
       "queued": 1
     },
     "sdasaharanpur.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "sea.ign.com": {
@@ -1402,6 +1444,7 @@
       "queued": 6
     },
     "sidajaunpur.com": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "skysports.com": {
@@ -1422,12 +1465,14 @@
       "queued": 107
     },
     "ssada.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "ssc.gov.in": {
       "website_candidates": 0,
       "feed_entries": 0,
-      "queued": 1
+      "queued": 1,
+      "attempted": 1
     },
     "sscnr.nic.in": {
       "website_candidates": 0,
@@ -1450,6 +1495,7 @@
       "feed_entries": 0
     },
     "tcpd.py.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "teaching-vacancies.service.gov.uk": {
@@ -1465,20 +1511,20 @@
       "queued": 11
     },
     "techradar.com": {
-      "queued": 153
+      "queued": 155
     },
     "telecomtalk.info": {
       "feed_entries": 0,
       "queued": 2
     },
     "tesla.com": {
-      "website_candidates": 0,
       "feed_entries": 0
     },
     "testingpwaucr1.cardekho.com": {
       "queued": 1
     },
     "tghb.telangana.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "thedailystar.net": {
@@ -1486,7 +1532,7 @@
     },
     "theguardian.com": {
       "feed_entries": 0,
-      "queued": 457
+      "queued": 458
     },
     "thehackernews.com": {
       "website_candidates": 0,
@@ -1500,28 +1546,29 @@
       "queued": 135
     },
     "thenewsherald.com": {
-      "queued": 1
+      "queued": 2
     },
     "theverge.com": {
-      "website_candidates": 0,
       "feed_entries": 0,
-      "queued": 58
+      "queued": 59
     },
     "timeshighereducation.com": {
       "feed_entries": 0
     },
     "timesofindia.indiatimes.com": {
       "feed_entries": 0,
-      "queued": 1712,
-      "attempted": 1
+      "queued": 1721,
+      "attempted": 2
     },
     "tnhb.tn.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "tourism.australia.com": {
       "feed_entries": 0
     },
     "tpmanipur.mn.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "trai.gov.in": {
@@ -1532,8 +1579,7 @@
     "travel.economictimes.indiatimes.com": {
       "website_candidates": 0,
       "feed_entries": 0,
-      "queued": 66,
-      "attempted": 1
+      "queued": 66
     },
     "travel.state.gov": {
       "feed_entries": 0
@@ -1546,39 +1592,46 @@
       "feed_entries": 0
     },
     "tuda.tripura.ind.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "tui.com": {
       "feed_entries": 0
     },
     "turbo.gadgets360.com": {
-      "queued": 11
+      "queued": 10
     },
     "ucanr.edu": {
       "queued": 1
     },
     "ud.nagaland.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "uda.rajasthan.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "udarunachal.gov.in": {
       "feed_entries": 0
     },
     "udd.sikkim.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "udpa.mizoram.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "ugc.gov.in": {
       "feed_entries": 0
     },
     "uhuda.uk.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "uit.rajasthan.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "un.org": {
@@ -1591,18 +1644,22 @@
       "feed_entries": 0
     },
     "upavp.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "upsc.gov.in": {
       "feed_entries": 0
     },
     "upsida.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "uptownplanning.gov.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "usdaunnao.in": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "variety.com": {
@@ -1612,6 +1669,7 @@
       "attempted": 1
     },
     "vdavns.com": {
+      "website_candidates": 0,
       "feed_entries": 0
     },
     "venturebeat.com": {
@@ -1642,7 +1700,6 @@
       "feed_entries": 0
     },
     "wired.com": {
-      "website_candidates": 0,
       "feed_entries": 0,
       "queued": 85
     },
@@ -1661,15 +1718,12 @@
     "www.abc.net.au": {
       "queued": 247
     },
-    "www.afmc.af.mil": {
-      "queued": 1
-    },
     "www.airtel.in": {
       "queued": 2
     },
     "www.aljazeera.com": {
-      "queued": 284,
-      "attempted": 4
+      "queued": 287,
+      "attempted": 7
     },
     "www.amarujala.com": {
       "queued": 494
@@ -1678,7 +1732,7 @@
       "queued": 9
     },
     "www.androidauthority.com": {
-      "queued": 58
+      "queued": 56
     },
     "www.androidpolice.com": {
       "queued": 11
@@ -1698,16 +1752,14 @@
     },
     "www.bbc.co.uk": {
       "queued": 378,
-      "attempted": 40
+      "attempted": 3
     },
     "www.bbc.com": {
       "queued": 144,
-      "attempted": 2
+      "attempted": 28
     },
     "www.bhaskar.com": {
-      "queued": 165,
-      "attempted": 1,
-      "published": 1
+      "queued": 164
     },
     "www.bleepingcomputer.com": {
       "queued": 30,
@@ -1786,7 +1838,7 @@
       "queued": 1
     },
     "www.engadget.com": {
-      "queued": 89
+      "queued": 88
     },
     "www.epicgames.com": {
       "queued": 1
@@ -1795,7 +1847,8 @@
       "queued": 16
     },
     "www.espn.com": {
-      "queued": 4
+      "queued": 4,
+      "attempted": 1
     },
     "www.firstshowing.net": {
       "queued": 6
@@ -1804,39 +1857,38 @@
       "queued": 37
     },
     "www.freejobalert.com": {
-      "queued": 23
+      "queued": 23,
+      "attempted": 1
     },
     "www.gadgets360.com": {
-      "queued": 22
+      "queued": 13
     },
     "www.gamespot.com": {
       "queued": 21
     },
     "www.gov.uk": {
-      "queued": 74
+      "queued": 72
     },
     "www.govtschemes.in": {
-      "queued": 4
-    },
-    "www.grandforks.af.mil": {
-      "queued": 1
+      "queued": 4,
+      "attempted": 1
     },
     "www.gsmarena.com": {
-      "queued": 43,
+      "queued": 42,
       "attempted": 1
     },
     "www.hollywoodreporter.com": {
       "queued": 141
     },
     "www.hyundai.com": {
-      "queued": 11,
-      "attempted": 1
+      "queued": 10
     },
     "www.hyundai.news": {
       "queued": 2
     },
     "www.icc-cricket.com": {
-      "queued": 10
+      "queued": 10,
+      "attempted": 5
     },
     "www.ign.com": {
       "queued": 161
@@ -1849,10 +1901,11 @@
       "queued": 1
     },
     "www.indiasarkarinaukri.com": {
-      "queued": 17
+      "queued": 17,
+      "attempted": 15
     },
     "www.indiatoday.in": {
-      "queued": 476,
+      "queued": 475,
       "attempted": 3
     },
     "www.inextlive.com": {
@@ -1860,7 +1913,7 @@
     },
     "www.jagranjosh.com": {
       "queued": 20,
-      "attempted": 2
+      "attempted": 7
     },
     "www.jpl.nasa.gov": {
       "queued": 1
@@ -1891,7 +1944,7 @@
       "queued": 2
     },
     "www.nato.int": {
-      "queued": 21
+      "queued": 9
     },
     "www.naukri.com": {
       "queued": 15
@@ -1914,11 +1967,8 @@
     "www.npr.org": {
       "queued": 117
     },
-    "www.nspa.nato.int": {
-      "queued": 1
-    },
     "www.nytimes.com": {
-      "queued": 103
+      "queued": 102
     },
     "www.ons.gov.uk": {
       "queued": 1
@@ -1927,20 +1977,20 @@
       "queued": 10
     },
     "www.pib.gov.in": {
-      "queued": 156,
-      "attempted": 26
+      "queued": 138,
+      "attempted": 8
     },
     "www.prnewswire.com": {
-      "queued": 953
+      "queued": 949
     },
     "www.rbi.org.in": {
       "queued": 1
     },
     "www.reddit.com": {
-      "queued": 33
+      "queued": 32
     },
     "www.reuters.com": {
-      "queued": 43
+      "queued": 42
     },
     "www.rollingstone.com": {
       "queued": 114
@@ -1949,7 +1999,7 @@
       "queued": 3
     },
     "www.sammobile.com": {
-      "queued": 11
+      "queued": 10
     },
     "www.sarkariresult.com": {
       "queued": 2
@@ -1966,21 +2016,18 @@
     "www.space.com": {
       "queued": 25
     },
-    "www.sto.nato.int": {
-      "queued": 1
-    },
     "www.technologyreview.com": {
       "queued": 15
     },
     "www.techradar.com": {
-      "queued": 183
+      "queued": 181
     },
     "www.theguardian.com": {
-      "queued": 587,
-      "attempted": 2
+      "queued": 586,
+      "attempted": 3
     },
     "www.thehindu.com": {
-      "queued": 447,
+      "queued": 446,
       "attempted": 1
     },
     "www.theverge.com": {
@@ -1988,10 +2035,6 @@
     },
     "www.timeshighereducation.com": {
       "queued": 7
-    },
-    "www.tui.com": {
-      "queued": 1,
-      "attempted": 1
     },
     "www.un.org": {
       "queued": 3,
