@@ -172,7 +172,7 @@ def read_feed(item,now=None):
    publisher_domain=domain or matched_publisher(source_url,url)
    if not publisher_domain or 'google.com' in publisher_domain:continue
    if not newsroom.allowed(url,publisher_domain):continue
-   rows.append(dict(url=url,title=title,category=category if local else newsroom.category_for_url(title,category,url),domain=publisher_domain,
+   rows.append(dict(url=url,title=title,category=newsroom.category_for_url(title,category,url),domain=publisher_domain,
                     published=published,summary=clean(entry.get('summary',''))[:2000],author=entry.get('author',''),local_report=local))
   return rows,'ok'
  except (requests.RequestException,ValueError,TypeError,OverflowError):return [],'unavailable'

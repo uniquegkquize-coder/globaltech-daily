@@ -137,7 +137,7 @@ class LocalNewsTests(unittest.TestCase):
    def raise_for_status(self):pass
    def iter_content(self,size):yield xml.encode()
    def close(self):pass
-  with patch.object(w.requests,'get',return_value=Response()),patch.object(n,'category_for_url',return_value='cricket'):
+  with patch.object(w.requests,'get',return_value=Response()):
    rows,status=w.read_feed(('https://localpaper.example/rss','india-news','localpaper.example','local'),NOW)
    ordinary,_=w.read_feed(('https://localpaper.example/rss','world-news','localpaper.example'),NOW)
   self.assertEqual(status,'ok')

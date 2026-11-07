@@ -44,8 +44,8 @@ TOPIC_PATTERNS={
 PRIORITY={'telecom':10,'sarkari-naukri':10,'results':10,'admit-cards':10,'answer-keys':9,'ai-news':9,'cyber-security':9,'gadgets':8,'government-schemes':8,'banking-finance':8,'consumer-alerts':8,'apps-software':7,'education':7,'scholarships':7,'sports':7,'india-news':7}
 
 SPORT_CONTEXT = re.compile(r'\b(?:sports?|cricket|football|soccer|rugby|tennis|badminton|hockey|basketball|baseball|boxing|golf|athletics|olympics?|paralympics?|fifa|uefa|ipl|bcci|icc|wicket|batsman|bowler|goalkeeper|grand prix|formula ?1|f1|wnba|nba|nfl|wrestling|volleyball|kabaddi|sangakkara|mbapp[eé])\b|क्रिकेट|फुटबॉल|खिलाड़ी|ओलंपिक|विकेट', re.I)
-CIVIC_CONTEXT = re.compile(r'\b(?:supreme court|high court|bail|murder|molestation|mla|chief minister|union minister|elections?|electoral|voters?|opposition|bjp|jdu|jd\(u\)|india bloc|cec)\b|सुप्रीम कोर्ट|जमानत|हत्याकांड|विधायक|मुख्यमंत्री|चुनाव', re.I)
-INDIA_CONTEXT = re.compile(r'\b(?:india|indian|bihar|patna|mokama|anant singh|yogi|uttarakhand|bengaluru|delhi|kashmir|bjp|jdu|jd\(u\)|kharge|giriraj|supreme court)\b|भारत|बिहार|अनंत सिंह|सुप्रीम कोर्ट', re.I)
+CIVIC_CONTEXT = re.compile(r'\b(?:supreme court|high court|bail|murder|molestation|demolitions?|police|arrested|mla|chief minister|union minister|elections?|electoral|voters?|opposition|bjp|jdu|jd\(u\)|india bloc|cec)\b|सुप्रीम कोर्ट|जमानत|हत्याकांड|विधायक|मुख्यमंत्री|चुनाव', re.I)
+INDIA_CONTEXT = re.compile(r'\b(?:india|indian|bihar|patna|mokama|anant singh|yogi|uttarakhand|uttar pradesh|prayagraj|gorakhpur|bengaluru|delhi|kashmir|bjp|jdu|jd\(u\)|kharge|giriraj|supreme court)\b|भारत|बिहार|अनंत सिंह|सुप्रीम कोर्ट', re.I)
 
 def sports_correction(title, default, url=''):
     """A section page can link to unrelated news; its label is only a hint."""
@@ -92,12 +92,100 @@ def classify(title, default='technology'):
     return default
 
 def memberships(post):
-    base=post.get('category','technology')
-    base=sports_correction(post.get('en_title','')+' '+post.get('source_title',''),base,post.get('source',''))
-    topic=classify(str(post.get('en_title',''))+' '+str(post.get('hi_title','')),base)
-    if base in {'sports','cricket'} and sports_correction(post.get('en_title',''),base)!=base:
-        topic=base
-    return {base,topic}
+    original=post.get('category','technology')
+    if post.get('directory_kind') or post.get('content_type') == 'evergreen_directory_guide':
+        return {original}
+    topic=route_category(post.get('en_title') or post.get('source_title',''),original,post.get('source',''))
+    # Only related parent sections may share a story. A discovery-page label
+    # must not keep a court report in Sports after its primary topic is fixed.
+    parents={'technology':{'telecom','ai-news','cyber-security','gadgets','apps-software','mobile-launches'},
+             'sports':{'cricket'}, 'automobiles':{'car-launches','ev-clean-energy'},
+             'movies-entertainment':{'movie-releases','celebrity-news','entertainment-rumours'}}
+    return {topic,original} if topic in parents.get(original,set()) else {topic}
+
+
+@lru_cache(maxsize=16384)
+def route_category(title, default='technology', url=''):
+    """Route the article itself, rather than the page which discovered it.
+
+    Use explicit headline subjects first, then the source's section. Ambiguous
+    headlines retain the existing category; article body boilerplate is excluded.
+    """
+    text=str(title)
+    parsed=urlparse(str(url))
+    parts=set(parsed.path.lower().strip('/').split('/')[:-1])
+    def has(pattern):
+        return re.search(pattern,text,re.I) is not None
+    if parts & {'bike-news','bikes'} or (parsed.hostname or '').removeprefix('www.') == 'bikewale.com':
+        return 'automobiles'
+    if has(r'\b(?:car|suv|motorcycle|scooter)\b') and has(r'\b(?:launch|launched|specifications|variant|mileage|pricing|engine)\b'):
+        return classify(text,'automobiles') if not has(r'\b(?:motorcycle|scooter)\b') else 'automobiles'
+    cricket=has(r'\b(?:cricket|cricketer|ipl|bcci|wicket|batsman|bowler|batting|bowling|innings|t20i?|odi|hong kong sixes)\b|क्रिकेट|विकेट')
+    cricket = cricket or 'cricket' in re.split(r'[/_-]',parsed.path.lower())
+    sport=SPORT_CONTEXT.search(text) or has(r'\b(?:odi|t20i?|innings|squad|hamstring|sixers|cricketer)\b')
+    civic=CIVIC_CONTEXT.search(text)
+    # A financial "tank", the Shark Tank show and software armor are not weapons.
+    if has(r'\bshark tank\b'):
+        return 'movies-entertainment'
+    if has(r'\b(?:share price|stock market|stock price|shares? (?:fall|falls|slump|tank|tumble)|nifty|sensex|quarterly (?:earnings|profit))\b'):
+        return 'business'
+    if has(r'\b(?:open.source|github|software)\b') and not has(r'\b(?:military|army|navy|weapon|fighter jet)\b'):
+        return classify(text,'technology')
+    # Vacancy / exam notices take precedence over the recruiting organisation.
+    if not sport and default != 'private-vacancy' and (INDIA_CONTEXT.search(text) or default in EXAM_CATEGORIES or has(r'\b(?:ssc|upsc|rrb|hpsc|bel|ibps|sbi|railway|intelligence bureau)\b')) and has(r'\b(?:recruitment|vacanc(?:y|ies)|admit card|answer key|exam syllabus|exam date|exam result)\b|भर्ती|प्रवेश पत्र|उत्तर कुंजी'):
+        exam=next((c for c in ('admit-cards','answer-keys','results','syllabus') if re.search(TOPIC_PATTERNS[c],text,re.I)), 'sarkari-naukri')
+        return exam if not has(r'\b(?:paper leak|recruitment scam)\b') else ('india-news' if INDIA_CONTEXT.search(text) else 'world-news')
+    if cricket or ('cricket' in parts and not civic):
+        return 'cricket'
+    if default == 'cricket' and sport and not has(r'\b(?:football|soccer|rugby|tennis|basketball|boxing|ufc|premier league|carabao cup)\b'):
+        return 'cricket'
+    sport_section=bool(parts & {'sport','sports','football','soccer','tennis','rugby','basketball'})
+    if sport_section and (sport or not civic or default in {'sports','cricket'}):
+        return 'sports'
+    if sport and not civic:
+        return 'sports'
+    if has(r'\b(?:AI|chatgpt|gemini|claude|openai|artificial intelligence)\b'):
+        return classify(text,'technology')
+    if has(r'\b(?:army|navy|air force|air chief marshal|air marshal|armed forces|pentagon|nato|military|fighter jets?|warships?|corvettes?)\b') and not sport:
+        return classify(text,'defence')
+    if has(GLOBAL_PATTERNS['conflict-news']) and not sport:
+        return 'conflict-news'
+    if has(r'\b(?:scheme|yojana|subsidy|beneficiary|beneficiaries)\b|योजना|सब्सिडी') and not sport:
+        return 'government-schemes'
+    if civic and not sport and not has(r'\b(?:education|university|school|college|job aspirants|age relaxation|scheme|yojana|subsidy)\b'):
+        return 'india-news' if INDIA_CONTEXT.search(text) or parts & {'india','india-news','national','cities','city','state','states'} else 'world-news'
+    # Specific source sections outrank broad discovery labels. Do not examine
+    # the slug: unrelated uses of words like "tank" occur there too.
+    sections=[
+        ('government-schemes',{'government-schemes','schemes','yojana'}),
+        ('cyber-security',{'cyber-security','cybersecurity'}),
+        ('gaming',{'gaming','video-games','games'}),
+        ('movies-entertainment',{'entertainment','movies','television','tv','tv-news','bollywood','hollywood'}),
+        ('business',{'business','markets','economy','finance'}),
+        ('health-science',{'health','science'}),
+        ('education',{'education'}),
+        ('automobiles',{'auto','automobiles','car-news','bike-news','bikes','cars'}),
+        ('technology',{'technology','tech','gadgets','software','apps'}),
+        ('environment',{'environment','climate'}),
+        ('travel',{'travel'}),
+        ('india-news',{'india','india-news','national','cities','city','state','states'}),
+        ('world-news',{'world','international','world-news'}),
+    ]
+    base=default if default in CATEGORIES else 'technology'
+    for section, markers in sections:
+        if parts & markers:
+            children={'technology':{'telecom','ai-news','cyber-security','gadgets','apps-software','mobile-launches','deals-offers','gaming'},
+                      'automobiles':{'car-launches','ev-clean-energy'},
+                      'movies-entertainment':{'movie-releases','celebrity-news','entertainment-rumours'},
+                      'education':EXAM_CATEGORIES | {'study-abroad'}}
+            base=default if default in children.get(section,set()) or (section in {'india-news','world-news'} and default not in {'sports','cricket','india-news','world-news','technology'}) else section
+            break
+    # Overseas / domestic politics often comes from an opaque source URL.
+    if base in {'government-schemes','sports','cricket'} and has(r'\b(?:election|elections|demolition|demolitions|police|arrested|murder|court)\b') and not sport:
+        base='india-news' if INDIA_CONTEXT.search(text) else 'world-news'
+    if base in {'technology','gadgets','mobile-launches','deals-offers','gaming'} and has(r'\b(?:deals?|discount|on sale|all.time low price)\b'):
+        return 'deals-offers'
+    return classify(text,base)
 
 def timestamp(value):
     try:

@@ -1,6 +1,6 @@
 from seo_text import description as seo_description
 """Quota-capped, source-first bilingual publishing. No external AI calls on import."""
-from news_config import CATEGORIES, EXAM_CATEGORIES, EXTRA_FEEDS, DIRECT_EXTRA, classify, lead_priority, timestamp, PRIORITY, search_feed, sports_correction
+from news_config import CATEGORIES, EXAM_CATEGORIES, EXTRA_FEEDS, DIRECT_EXTRA, classify, lead_priority, timestamp, PRIORITY, search_feed, sports_correction, route_category
 from verticals import requirements, TRUSTED_ENTERTAINMENT, TRUSTED_CONTROVERSY
 from official_notices import official_url
 from authority_sources import authority_boards, authority_stories, authority_url, authority_category, registry_urls, host as authority_host, UPDATE as AUTHORITY_UPDATE, save_board_evidence, board_evidence
@@ -334,11 +334,7 @@ def category(title, default):
 def category_for_url(title,default,url):
  if authority_url(url) and AUTHORITY_UPDATE.search(title):
   return authority_category(title)
- corrected=sports_correction(title,default,url)
- if corrected!=default:return corrected
- # Keep genuine sports court/dispute reports in their publisher's sports section.
- if default in ('sports','cricket') and sports_correction(title,default)!=default:return default
- actual=category(title,default)
+ actual=route_category(title,default,url)
  if actual=='car-launches' and ((urlparse(url).hostname or '').removeprefix('www.')=='bikewale.com' or '/bike-news/' in urlparse(url).path.lower()):
   return 'automobiles'
  # Film release searches also return television episode announcements.

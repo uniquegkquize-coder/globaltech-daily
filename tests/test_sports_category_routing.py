@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import unittest
 
-from scripts.news_config import classify, memberships, sports_correction
+from scripts.news_config import classify, memberships, sports_correction, route_category
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -43,7 +43,7 @@ class SportsRoutingTests(unittest.TestCase):
         functions = [n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name in {'category', 'category_for_url'}]
         from urllib.parse import urlparse
         from authority_sources import authority_url, authority_category, UPDATE
-        namespace = dict(classify=classify, sports_correction=sports_correction, urlparse=urlparse,
+        namespace = dict(classify=classify, sports_correction=sports_correction, route_category=route_category, urlparse=urlparse,
                          authority_url=authority_url, authority_category=authority_category, AUTHORITY_UPDATE=UPDATE)
         exec(compile(ast.Module(body=functions, type_ignores=[]), '<router>', 'exec'), namespace)
         route = namespace['category_for_url']

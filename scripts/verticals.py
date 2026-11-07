@@ -23,7 +23,7 @@ PATTERNS={
  'celebrity-news':r'\b(?:actor|actress|celebrity|celebrities|bollywood|hollywood star)\b|अभिनेता|अभिनेत्री|सेलिब्रिटी',
  'controversies':r'controversy|controversial|backlash|public dispute|lawsuit|allegations?|विवाद|विवादित|आरोप',
  'social-media':r'\b(?:tiktok|instagram|facebook|youtube|threads|snapchat|social media|creator economy)\b|टिकटॉक|इंस्टाग्राम',
- 'military-tech':r'\b(?:armou?r|tank|fighter jet|warship|military vehicle|missile defence|air defence|naval ship)\b|सैन्य वाहन|लड़ाकू विमान|युद्धपोत',
+ 'military-tech':r'\b(?:armou?red (?:vehicle|tank)|battle tank|fighter jets?|warships?|military vehicles?|missile defence|air defence|naval ships?)\b|सैन्य वाहन|लड़ाकू विमान|युद्धपोत',
  'conflict-news':r'\b(?:ceasefire|invasion|conflict|war zone|peace talks|airstrike|battlefield)\b|युद्ध|संघर्ष|युद्धविराम',
  'defence':r'\b(?:defence|defense|army|navy|air force|armed forces|pentagon|nato)\b|सेना|नौसेना|रक्षा मंत्रालय',
  'study-abroad':r'study abroad|international students?|student visa|overseas education|विदेश.*पढ़ाई|विदेश.*शिक्षा',

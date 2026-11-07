@@ -134,6 +134,8 @@ jobs:
           python -u scripts/publish_news_batch.py || echo "::warning::Target incomplete; progress retained in news-run-status.json"
           echo "::endgroup::"
 
+          python scripts/repair_categories.py --write
+
           # Locate the real picture published with the source article first,
           # including older posts. Store source/rights metadata. If unavailable,
           # build.py supplies an explicitly labelled editorial illustration.

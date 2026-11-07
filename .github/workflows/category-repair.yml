@@ -1,0 +1,53 @@
+name: Repair article categories and preserve old links
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/category-repair.yml'
+      - 'scripts/repair_categories.py'
+      - 'scripts/news_config.py'
+      - 'scripts/verticals.py'
+      - 'tests/test_category_subjects.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: article-category-repair
+  cancel-in-progress: false
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Verify category routing and URL preservation
+        run: python -m unittest tests.test_category_subjects tests.test_sports_category_routing tests.test_source_pipeline tests.test_news_priority tests.test_expansion
+      - name: Repair existing articles against the latest main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'GlobeWire Category Bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4; do
+            # This disposable CI checkout contains only our reproducible repairs.
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/repair_categories.py --write
+            git add content/posts
+            if git diff --cached --quiet; then
+              echo 'All article categories already current'
+              exit 0
+            fi
+            git commit -m 'Repair article categories and retain previous URL redirects'
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Concurrent publisher push; recomputing repairs ($attempt/4)"
+          done
+          echo 'Could not sync repairs after four attempts'
+          exit 1
