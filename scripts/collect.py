@@ -522,14 +522,52 @@ def provider_order():
  # One generation attempt per language; no repeated model probing.
  order=os.getenv('AI_PROVIDER_ORDER','gemini,groq,openrouter').lower().split(',')
  return [p.strip() for p in order if p.strip() in ('groq','gemini','openrouter','openai')]
-# Disable a rate-limited provider for the remainder of this run.
+# Authentication failures stay disabled; temporary failures use timed backoff.
 PROVIDER_LOCK=threading.RLock()
 PROVIDER_COOLDOWNS=set()
 UNAVAILABLE_MODELS=set()
+MODEL_RETRY_AT={}
+PROVIDER_RETRY_AT={}
+MODEL_FAILURES={}
+
+def retry_seconds(response,default=60):
+ delay=float(default)
+ headers=getattr(response,'headers',{}) or {}
+ value=headers.get('retry-after') or headers.get('Retry-After')
+ if value:
+  try:delay=max(delay,float(value))
+  except (ValueError,TypeError):
+   try:
+    from email.utils import parsedate_to_datetime
+    delay=max(delay,parsedate_to_datetime(str(value)).timestamp()-time.time())
+   except (ValueError,TypeError,OverflowError):pass
+ try:
+  error=response.json().get('error',{})
+  for detail in error.get('details',[]):
+   value=detail.get('retryDelay','')
+   if isinstance(value,str) and re.fullmatch(r'\d+(?:\.\d+)?s',value):
+    delay=max(delay,float(value[:-1]))
+ except (ValueError,TypeError,AttributeError):pass
+ return max(1,delay)
+
+def daily_quota_exhausted(response):
+ try:error=response.json().get('error',{})
+ except (ValueError,TypeError,AttributeError):return False
+ text=str(error.get('message','')).lower()
+ return bool(re.search(r'per.?day|daily|insufficient_quota|limit:\s*0\b',text))
+
+def provider_retry_delay():
+ now=time.monotonic()
+ keys={'gemini':'GEMINI_API_KEY','groq':'GROQ_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}
+ with PROVIDER_LOCK:
+  waits=[max(0,PROVIDER_RETRY_AT[p]-now) for p in provider_order()
+         if p not in PROVIDER_COOLDOWNS and os.getenv(keys[p],'').strip() and p in PROVIDER_RETRY_AT]
+ return min(waits) if waits else None
+
 def providers_ready():
  keys={'gemini':'GEMINI_API_KEY','groq':'GROQ_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}
  with PROVIDER_LOCK:
-  return any(provider not in PROVIDER_COOLDOWNS and os.getenv(keys[provider],'').strip() for provider in provider_order())
+  return any(provider not in PROVIDER_COOLDOWNS and PROVIDER_RETRY_AT.get(provider,0)<=time.monotonic() and os.getenv(keys[provider],'').strip() for provider in provider_order())
 
 def call_provider(prompt):
  global CALLS
@@ -538,7 +576,7 @@ def call_provider(prompt):
   if RUN_DEADLINE and time.monotonic()>=RUN_DEADLINE:return None,last
   with PROVIDER_LOCK:
    if CALLS>=MAX_CALLS:break
-   if provider in PROVIDER_COOLDOWNS:continue
+   if provider in PROVIDER_COOLDOWNS or PROVIDER_RETRY_AT.get(provider,0)>time.monotonic():continue
   key=os.getenv({'groq':'GROQ_API_KEY','gemini':'GEMINI_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}[provider],'').strip()
   if not key:continue
   models=gemini_models(key) if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else (os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free'))]
@@ -547,7 +585,7 @@ def call_provider(prompt):
   for model in list(dict.fromkeys(models))[:MODELS_PER_PROVIDER]:
    if RUN_DEADLINE and time.monotonic()>=RUN_DEADLINE:return None,last
    with PROVIDER_LOCK:
-    if (provider,model) in UNAVAILABLE_MODELS:continue
+    if (provider,model) in UNAVAILABLE_MODELS or MODEL_RETRY_AT.get((provider,model),0)>time.monotonic():continue
    if CALLS>=MAX_CALLS:break
    with PROVIDER_LOCK:
     if CALLS>=MAX_CALLS:break
@@ -564,28 +602,45 @@ def call_provider(prompt):
      raw=r.json()['choices'][0]['message']['content'] if r.ok else ''
     if not r.ok:
      print('Provider',provider,'model',model,'HTTP',r.status_code,flush=True)
-     if r.status_code in (401,402,403,429):
-      with PROVIDER_LOCK:
-       if provider=='gemini' and r.status_code==429:
-        UNAVAILABLE_MODELS.add((provider,model))
-       else:
-        PROVIDER_COOLDOWNS.add(provider)
-      if provider=='gemini' and r.status_code==429:continue
+     if r.status_code in (401,402,403):
+      with PROVIDER_LOCK:PROVIDER_COOLDOWNS.add(provider)
       break
-     if r.status_code in (404,503):
-      # Avoid repeatedly spending requests on unavailable or overloaded models.
+     if r.status_code==404:
       with PROVIDER_LOCK:UNAVAILABLE_MODELS.add((provider,model))
+      continue
+     if r.status_code==429 and daily_quota_exhausted(r):
+      with PROVIDER_LOCK:
+       if provider=='gemini':UNAVAILABLE_MODELS.add((provider,model))
+       else:PROVIDER_COOLDOWNS.add(provider)
+      if provider=='gemini':continue
+      break
+     if r.status_code==429 or r.status_code>=500:
+      with PROVIDER_LOCK:
+       failure=MODEL_FAILURES.get((provider,model),0)+1
+       MODEL_FAILURES[(provider,model)]=failure
+       delay=retry_seconds(r,min(300,30*2**min(failure-1,4)))
+       MODEL_RETRY_AT[(provider,model)]=time.monotonic()+delay
+       if provider!='gemini':PROVIDER_RETRY_AT[provider]=time.monotonic()+delay
+      print('Provider temporary backoff:',provider,'model',model,'seconds',round(delay),flush=True)
+      if provider!='gemini':break
       continue
      continue
     data=json_object(raw)
     if isinstance(data,dict) and (data.get('unchanged') is True or data.get('body') or any(isinstance(data.get(lang),dict) and data[lang].get('body') for lang in ('en','hi','english','hindi')) or any(data.get(lang+'_body') for lang in ('en','hi'))):
+     with PROVIDER_LOCK:
+      MODEL_FAILURES.pop((provider,model),None)
+      MODEL_RETRY_AT.pop((provider,model),None)
      print('Provider success:',provider,'model',model,flush=True)
      return data,provider
     print('Provider',provider,'returned unusable JSON; trying next option',flush=True)
    except (requests.RequestException,ValueError,KeyError,IndexError,TypeError) as exc:
     print('Provider',provider,'error',type(exc).__name__,flush=True)
-  if models and all((provider,model) in UNAVAILABLE_MODELS for model in list(dict.fromkeys(models))[:MODELS_PER_PROVIDER]):
-   with PROVIDER_LOCK:PROVIDER_COOLDOWNS.add(provider)
+  considered=[(provider,model) for model in list(dict.fromkeys(models))[:MODELS_PER_PROVIDER]]
+  with PROVIDER_LOCK:
+   if considered and all(item in UNAVAILABLE_MODELS for item in considered):
+    PROVIDER_COOLDOWNS.add(provider)
+   elif considered and all(item in UNAVAILABLE_MODELS or MODEL_RETRY_AT.get(item,0)>time.monotonic() for item in considered):
+    PROVIDER_RETRY_AT[provider]=min(MODEL_RETRY_AT[item] for item in considered if item not in UNAVAILABLE_MODELS)
  return None,last
 
 def language_payloads(data):
@@ -1303,7 +1358,7 @@ def main():
    print('Resuming Hindi from saved source-grounded English draft:',post_id,flush=True)
   if (not text.strip() or words(text)<65) and not all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    # Preserve completed language drafts even if the publisher temporarily blocks scraping.
-   state.update({'source':url,'source_title':title,'category':cat,'status':'source_unavailable','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(hours=12)).isoformat(),'source_words':words(text)})
+   state.update({'source':url,'source_title':title,'category':cat,'status':'source_unavailable','blocked_until':(dt.datetime.now(UTC)+dt.timedelta(minutes=720 if SOURCE_HTTP_BLOCKS.get(domain) in (401,403) else 15)).isoformat(),'source_words':words(text)})
    save_state(pending,state)
    print('Skipping source before AI:',title[:65],'words',words(text),flush=True)
    return None
@@ -1324,7 +1379,7 @@ def main():
      print('Draft ready:',lang,'words',words(body),'via',provider,flush=True)
     else:print('Draft unusable:',lang,'words',words(body),'via',provider,flush=True)
    if not complete_body(state.get(lang+'_body',''),lang):
-    state['blocked_until']=(dt.datetime.now(UTC)+dt.timedelta(minutes=30)).isoformat()
+    state['blocked_until']=(dt.datetime.now(UTC)+dt.timedelta(minutes=2)).isoformat()
    save_state(pending,state)
   if all(complete_body(state.get(lang+'_body',''),lang) for lang in ('en','hi')):
    # Prevent one prolific source category from consuming the whole run.
@@ -1349,6 +1404,22 @@ def main():
    print('Published',post_id,cat,flush=True)
   else:save_state(pending,state)
   return cat if (POSTS/(post_id+'.json')).exists() else None
+
+ # Completed source-backed drafts can publish before any AI request.
+ # Provider cooldowns must not strand already finished trending articles.
+ for path in sorted(PENDING.glob('*.json')):
+  if published>=remaining or time.monotonic()>=deadline:break
+  if path.name.startswith('_'):continue
+  try:record=json.loads(path.read_text(encoding='utf-8'))
+  except (OSError,ValueError):continue
+  if not all(complete_body(record.get(lang+'_body',''),lang) and record.get(lang+'_title') for lang in ('en','hi')):continue
+  cat=record.get('category','')
+  if selected and cat!=selected:continue
+  source=record.get('source','')
+  if not source or not record.get('source_title'):continue
+  result=process_story((source,record['source_title'],cat,urlparse(source).hostname or ''))
+  if result:
+   published+=1;category_published[result]=category_published.get(result,0)+1
 
  bulk_pending=os.getenv('BULK_PENDING_ONLY','').lower()=='true'
  backlog=[] if bulk_pending else load_discovery_queue()
@@ -1427,6 +1498,10 @@ def main():
  # Give categories with the fewest existing published stories first access to
  # limited AI calls; retain all other categories as eligible afterward.
  historical_counts=published_categories()
+ try:session_counts=json.loads(os.getenv('NEWS_BATCH_CATEGORY_COUNTS','{}'))
+ except ValueError:session_counts={}
+ if isinstance(session_counts,dict) and session_counts:
+  historical_counts={cat:int(session_counts.get(cat,0)) for cat in CATEGORIES}
  for rows in grouped.values():rows.sort(key=story_priority)
  categories=sorted(grouped,key=lambda cat:(historical_counts.get(cat,0)>=MIN_POSTS_PER_CATEGORY,historical_counts.get(cat,0),story_priority(grouped[cat][0]),cat))
  missing_candidates=sorted(set(c for _,c,_ in FEEDS)-set(grouped))
@@ -1491,7 +1566,7 @@ def main():
   except (OSError,ValueError):continue
  category_published=dict(actual_counts);published=sum(actual_counts.values())
  outcome='target_reached' if published>=remaining else (stop_reason or ('ai_limit_reached' if CALLS>=MAX_CALLS else ('time_limit_reached' if time.monotonic()>=deadline else 'queue_exhausted')))
- write_run_status(outcome,started,category_published,target=remaining,discovered_by_category=dict(discovered_by_category))
+ write_run_status(outcome,started,category_published,target=remaining,discovered_by_category=dict(discovered_by_category),retry_after_seconds=provider_retry_delay())
  total_category_counts=published_categories()
  coverage={'updated_at':dt.datetime.now(UTC).isoformat(),
            'categories':{cat:{'discovered':discovered_by_category.get(cat,0),'published':total_category_counts.get(cat,0),

@@ -90,7 +90,11 @@ def fetch_public_html(url, session=None, timeout=(5,12), max_bytes=2000000, rend
                     response=page.goto(url,wait_until='domcontentloaded',timeout=20000)
                     if response and response.status in DENIED:
                         return done('',page.url,'access-denied-'+str(response.status))
-                    page.wait_for_timeout(1200)
+                    if render:
+                        try:
+                            page.wait_for_function("document.body && document.body.innerText.length > 700", timeout=6000)
+                        except Exception:pass
+                    else:page.wait_for_timeout(1200)
                     rendered=page.content()
                     if restricted(rendered): return done('',page.url,'challenge-or-restricted')
                     if len(rendered.encode())>max_bytes: return done('',page.url,'oversized')

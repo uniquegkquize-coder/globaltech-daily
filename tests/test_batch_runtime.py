@@ -9,6 +9,10 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 import collect
 
 class BatchRuntimeTests(unittest.TestCase):
+ def setUp(self):
+  for name in ('MODEL_RETRY_AT','PROVIDER_RETRY_AT','MODEL_FAILURES'):
+   scope=patch.object(collect,name,{})
+   scope.start();self.addCleanup(scope.stop)
  def test_expired_batch_never_calls_provider(self):
   with patch.object(collect,'RUN_DEADLINE',1),patch.object(collect.time,'monotonic',return_value=2),patch.object(collect.requests,'post') as request:
    self.assertEqual(collect.call_provider('test'),(None,None))
@@ -72,4 +76,28 @@ class BatchRuntimeTests(unittest.TestCase):
    collect.call_provider('test')
    self.assertIn('/two:generateContent',request.call_args.args[0])
    self.assertEqual(request.call_count,1)
+
+ def test_temporary_503_model_is_retried_after_cooldown(self):
+  class Response:
+   status_code=503;ok=False;headers={'Retry-After':'2'}
+   def json(self):return {'error':{'message':'Temporarily overloaded'}}
+  with patch.dict(os.environ,{'GEMINI_API_KEY':'test-placeholder'},clear=True),patch.object(collect,'RUN_DEADLINE',0),patch.object(collect,'CALLS',0),patch.object(collect,'MAX_CALLS',100),patch.object(collect,'MODELS_PER_PROVIDER',1),patch.object(collect,'PROVIDER_COOLDOWNS',set()),patch.object(collect,'UNAVAILABLE_MODELS',set()),patch.object(collect,'provider_order',return_value=['gemini']),patch.object(collect,'gemini_models',return_value=['temporary-model']),patch.object(collect.time,'monotonic',return_value=100),patch.object(collect.requests,'post',return_value=Response()) as request:
+   collect.call_provider('test')
+   self.assertNotIn(('gemini','temporary-model'),collect.UNAVAILABLE_MODELS)
+   self.assertFalse(collect.providers_ready())
+   self.assertEqual(request.call_count,1)
+   collect.call_provider('test')
+   self.assertEqual(request.call_count,1)
+  with patch.dict(os.environ,{'GEMINI_API_KEY':'test-placeholder'},clear=True),patch.object(collect,'PROVIDER_COOLDOWNS',set()),patch.object(collect,'provider_order',return_value=['gemini']),patch.object(collect.time,'monotonic',return_value=200):
+   self.assertTrue(collect.providers_ready())
+ def test_retry_after_and_daily_quota_are_distinguished(self):
+  class Response:
+   headers={'retry-after':'90'}
+   def json(self):return {'error':{'message':'Too many requests per minute','details':[{'retryDelay':'120s'}]}}
+  self.assertEqual(collect.retry_seconds(Response()),120)
+  self.assertFalse(collect.daily_quota_exhausted(Response()))
+  class Daily(Response):
+   def json(self):return {'error':{'message':'Requests per day quota exhausted'}}
+  self.assertTrue(collect.daily_quota_exhausted(Daily()))
+
 if __name__=='__main__':unittest.main()

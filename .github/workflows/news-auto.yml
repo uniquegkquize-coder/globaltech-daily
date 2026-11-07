@@ -77,7 +77,7 @@ jobs:
         run: python scripts/ingest_trending_drafts.py
       - name: Compile all Python files
         run: python -m compileall -q scripts
-      # A single bounded batch per scheduled run: no idle sleeping or queued marathon runs.
+      # Resume a single target over at most five bounded passes.
       # Keep the existing 48 category routes and featured image provenance intact.
       - name: Publish news in short cycles
         shell: bash
@@ -104,7 +104,9 @@ jobs:
           MAX_LICENSED_PHOTOS_PER_RUN: '100'
           IMAGE_BACKFILL_MODE: new
           IMAGE_BACKFILL_SECONDS: '150'
-          ARTICLE_WORKERS: '5'
+          ARTICLE_WORKERS: '2'
+          PUBLISH_MAX_PASSES: '5'
+          PUBLISH_BATCH_SECONDS: '1950'
           MAX_NEW_IMAGES: '0'
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: openai/gpt-oss-120b
@@ -119,9 +121,8 @@ jobs:
           git config user.name 'GlobalTech News Bot'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           echo "::group::Collect and complete bilingual news drafts"
-          # One bounded attempt toward the 100-post target. Saved drafts and
-          # unused discoveries carry forward; never restart 100-post batches here.
-          python -u scripts/collect.py || echo "::warning::Target incomplete; progress retained in news-run-status.json"
+          # Each pass resumes only the remaining part of this 100-post target.
+          python -u scripts/publish_news_batch.py || echo "::warning::Target incomplete; progress retained in news-run-status.json"
           echo "::endgroup::"
 
           # Locate the real picture published with the source article first,

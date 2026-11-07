@@ -64,6 +64,7 @@ class NewsroomConfigTests(unittest.TestCase):
             "MAX_MODELS_PER_ARTICLE: '5'",
             "MAX_LICENSED_PHOTOS_PER_RUN: '100'",
             "python -u scripts/generate_images.py",
+            "python -u scripts/publish_news_batch.py",
             "git rebase -X theirs origin/main",
         )
         for target in required:
