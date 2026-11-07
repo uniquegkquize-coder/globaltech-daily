@@ -1,0 +1,33 @@
+{
+  "en_title": "Cisco Addresses Actively Exploited VPN Vulnerability in ASA and FTD Firewalls",
+  "hi_title": "सिस्को ने ASA और FTD फायरवॉल में सक्रिय रूप से शोषित VPN खामी के लिए पैच जारी किए",
+  "en_body": "## Critical Vulnerability Identified\nCisco has issued security patches for a high-severity vulnerability, tracked as CVE-2026-76418, affecting its Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) software. The flaw, which has a CVSS score of 8.6, is currently being exploited in the wild.\n\n## Impact and Technical Details\nThe vulnerability resides within the Remote Access SSL VPN service. It is triggered by a logic error when secondary authentication is configured on a tunnel group. An unauthenticated remote attacker can exploit this by sending a crafted request during an SSL VPN connection, forcing the affected device to reload and resulting in a denial-of-service (DoS) condition.\n\n### Vulnerable Configurations\nDevices are at risk if:\n* They run a vulnerable software version.\n* The SSL remote access VPN service is enabled and reachable.\n* Secondary authentication is configured in the tunnel group scope.\n\n## Remediation and Mitigation\nCisco has released updates for affected versions of ASA (e.g., 9.16.4.104, 9.24.10.1) and FTD (e.g., 7.7.14, 10.1.1). Administrators should verify their configurations:\n* **Check Tunnel Groups:** Inspect all tunnel groups, including the default `DefaultWEBVPNGroup`, for the `secondary-authentication-server-group` setting.\n* **Temporary Mitigations:** If patching is not immediately possible, consider disabling secondary authentication on relevant tunnel groups or disabling the tunnel group list if the default group does not utilize secondary authentication.\n\nUsers should consult the official [Cisco Security Advisory](https://www.cisco.com) to verify specific software versions and confirm implementation steps for their environment. This disclosure follows recent reports of separate advanced persistent threat activity targeting other Cisco infrastructure, underscoring the importance of timely patch management.",
+  "hi_body": "## गंभीर सुरक्षा खामी की पहचान\nसिस्को ने अपनी सिक्योर फायरवॉल एडेप्टिव सिक्योरिटी अप्लायंस (ASA) और सिक्योर फायरवॉल थ्रेट डिफेंस (FTD) सॉफ्टवेयर को प्रभावित करने वाली एक उच्च-गंभीरता वाली भेद्यता (CVE-2026-76418) के लिए सुरक्षा पैच जारी किए हैं। CVSS स्कोर 8.6 वाली यह खामी वर्तमान में सक्रिय रूप से शोषित (exploited) की जा रही है।\n\n## प्रभाव और तकनीकी विवरण\nयह भेद्यता रिमोट एक्सेस SSL VPN सेवा में मौजूद है। यह तब उत्पन्न होती है जब टनल समूह पर द्वितीयक प्रमाणीकरण (secondary authentication) कॉन्फ़िगर किया जाता है। एक अनधिकृत रिमोट हमलावर SSL VPN कनेक्शन के दौरान एक विशेष रूप से तैयार किया गया अनुरोध भेजकर डिवाइस को अचानक रीलोड करने के लिए मजबूर कर सकता है, जिसके परिणामस्वरूप सेवा की अस्वीकृति (DoS) की स्थिति पैदा हो जाती है।\n\n### प्रभावित कॉन्फ़िगरेशन\nयदि निम्नलिखित शर्तें पूरी होती हैं, तो डिवाइस जोखिम में हैं:\n* वे कमजोर सॉफ्टवेयर संस्करण चला रहे हैं।\n* SSL रिमोट एक्सेस VPN सेवा सुलभ है।\n* टनल समूह के दायरे में द्वितीयक प्रमाणीकरण कॉन्फ़िगर है।\n\n## समाधान और उपाय\nसिस्को ने ASA और FTD के प्रभावित संस्करणों के लिए अपडेट जारी कर दिए हैं। प्रशासकों को निम्नलिखित कदम उठाने चाहिए:\n* **टनल समूहों की जांच करें:** सभी टनल समूहों की जांच करें, जिसमें डिफ़ॉल्ट `DefaultWEBVPNGroup` भी शामिल है, कि क्या उसमें `secondary-authentication-server-group` सेटिंग सक्षम है।\n* **अस्थायी उपाय:** यदि पैचिंग तुरंत संभव नहीं है, तो संबंधित टनल समूहों पर द्वितीयक प्रमाणीकरण को अक्षम करने पर विचार करें।\n\nउपयोगकर्ता विशिष्ट सॉफ्टवेयर संस्करणों को सत्यापित करने और अपने वातावरण के लिए कार्यान्वयन चरणों की पुष्टि करने के लिए आधिकारिक [सिस्को सुरक्षा सलाह](https://www.cisco.com) देखें। यह खुलासा हाल ही में अन्य सिस्को बुनियादी ढांचे को लक्षित करने वाली उन्नत लगातार खतरे (APT) गतिविधियों की रिपोर्ट के बाद आया है, जो समय पर पैच प्रबंधन के महत्व को रेखांकित करता है।",
+  "en_meta": "Cisco has released patches for an actively exploited vulnerability (CVE-2026-76418) in ASA and FTD firewalls that can cause a denial-of-service condition.",
+  "hi_meta": "सिस्को ने ASA और FTD फायरवॉल में एक सक्रिय रूप से शोषित भेद्यता (CVE-2026-76418) के लिए पैच जारी किए हैं, जो डिवाइस को क्रैश कर सकती है।",
+  "en_keywords": [
+    "Cisco",
+    "Cybersecurity",
+    "VPN",
+    "CVE-2026-76418",
+    "Firewall",
+    "Denial of Service",
+    "Patch"
+  ],
+  "hi_keywords": [
+    "सिस्को",
+    "साइबर सुरक्षा",
+    "VPN",
+    "CVE-2026-76418",
+    "फायरवॉल",
+    "DoS",
+    "पैच"
+  ],
+  "source_published_at": "2026-10-29T16:14:00+05:30",
+  "id": "7d482c1bcf9f",
+  "source": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html",
+  "date": "2026-11-07T07:02:02.578462+00:00",
+  "source_title": "Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls - The Hacker News",
+  "category": "cyber-security",
+  "image_kind": "conceptual"
+}

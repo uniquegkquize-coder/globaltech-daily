@@ -1,25 +1,96 @@
 {
-  "finished_at": "2026-11-07T05:12:24.572312+00:00",
-  "outcome": "target_reached",
-  "duration_seconds": 196.2,
-  "published": 12,
+  "finished_at": "2026-11-07T07:12:55.805057+00:00",
+  "outcome": "providers_unavailable",
+  "duration_seconds": 1105.5,
+  "published": 68,
   "by_category": {
-    "india-news": 12
+    "movie-releases": 12,
+    "cyber-security": 26,
+    "ai-news": 12,
+    "conflict-news": 7,
+    "travel-packages": 2,
+    "visas-immigration": 3,
+    "government-schemes": 2,
+    "cricket": 2,
+    "private-vacancy": 1,
+    "car-launches": 1
   },
-  "ai_calls": 17,
-  "ai_limit": 100,
-  "target": 12,
+  "ai_calls": 229,
+  "ai_limit": 400,
+  "target": 200,
   "discovered_by_category": {
-    "india-news": 2413
+    "ai-news": 404,
+    "cyber-security": 44,
+    "cricket": 87,
+    "visas-immigration": 14,
+    "sarkari-naukri": 110,
+    "conflict-news": 57,
+    "car-launches": 8,
+    "movies-entertainment": 1223,
+    "ev-clean-energy": 26,
+    "government-schemes": 229,
+    "gaming": 558,
+    "sports": 491,
+    "world-news": 4167,
+    "business": 1375,
+    "automobiles": 154,
+    "mobile-launches": 6,
+    "technology": 701,
+    "defence": 250,
+    "celebrity-news": 201,
+    "social-media": 57,
+    "private-vacancy": 385,
+    "military-tech": 38,
+    "apps-software": 284,
+    "gadgets": 126,
+    "controversies": 252,
+    "tourism": 46,
+    "deals-offers": 68,
+    "movie-releases": 27,
+    "india-news": 1055,
+    "space-news": 93,
+    "freebies": 30,
+    "travel-packages": 4,
+    "consumer-alerts": 13,
+    "lifestyle": 78,
+    "travel": 46,
+    "education": 14,
+    "banking-finance": 26,
+    "environment": 22,
+    "health-science": 54,
+    "telecom": 8,
+    "entertainment-rumours": 5,
+    "scholarships": 1
   },
   "retry_after_seconds": null,
   "attempts": [
     {
       "pass": 1,
       "exit_code": 0,
-      "published": 12,
-      "ai_calls": 17,
-      "outcome": "target_reached"
+      "published": 16,
+      "ai_calls": 55,
+      "outcome": "providers_unavailable"
+    },
+    {
+      "pass": 2,
+      "exit_code": 0,
+      "published": 41,
+      "ai_calls": 100,
+      "outcome": "ai_limit_reached"
+    },
+    {
+      "pass": 3,
+      "exit_code": 0,
+      "published": 7,
+      "ai_calls": 55,
+      "outcome": "providers_unavailable"
+    },
+    {
+      "pass": 4,
+      "exit_code": 0,
+      "published": 4,
+      "ai_calls": 19,
+      "outcome": "providers_unavailable"
     }
   ]
 }

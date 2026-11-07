@@ -1,0 +1,29 @@
+{
+  "en_title": "CyberStrikeAI and Other AI-Driven Campaigns Target Global Infrastructure",
+  "hi_title": "CyberStrikeAI और अन्य AI-संचालित अभियानों ने वैश्विक बुनियादी ढांचे को बनाया निशाना",
+  "en_body": "## Escalating AI-Integrated Cyber Threats\nCybersecurity researchers have identified multiple recent campaigns where threat actors are deploying agentic AI to automate various stages of the cyberattack lifecycle. Among the most notable findings is the use of 'CyberStrikeAI,' a framework that utilizes a swarm of 44 AI agents to handle tasks ranging from reconnaissance to data exfiltration and automated reporting.\n\n### Key Findings\n* **Automated Workflow:** In attacks targeting Japan, CyberStrikeAI was observed managing the entire attack lifecycle, including generating Japanese-language phishing pages and fake login portals.\n* **Diverse Tactics:** While some attackers use fully automated agentic systems, others rely on Large Language Models (LLMs) to accelerate manual tasks like script writing and reconnaissance.\n* **Global Reach:** These campaigns are not localized; while Japanese entities were prime targets in recent incidents, similar methodologies have been observed impacting organizations in the U.K., France, Italy, Taiwan, Hong Kong, and across Latin America.\n* **Industrialized Attacks:** AI is being used to industrialize existing methods, such as brute-forcing credentials, scanning for vulnerabilities in edge devices (e.g., Cisco, Citrix), and exploiting misconfigured cloud services.\n\n### Practical Implications\nAccording to industry reports, the time between the discovery of a vulnerability and its weaponization has significantly decreased, in some cases falling below 24 hours. The integration of AI allows bad actors to operate with greater speed, scale, and autonomy, effectively acting as a 'force multiplier.'\n\nSecurity teams are encouraged to prioritize the hardening of edge devices, the rotation of API tokens, and the continuous monitoring of cloud-based AI inference services to mitigate the risks posed by these autonomous toolsets. Organizations should verify the integrity of their network logs and ensure that administrative access remains strictly controlled.",
+  "hi_body": "## एआई-एकीकृत साइबर खतरों में वृद्धि\nसाइबर सुरक्षा शोधकर्ताओं ने कई ऐसे हालिया अभियानों की पहचान की है जहां खतरा पैदा करने वाले तत्व (threat actors) साइबर हमले के विभिन्न चरणों को स्वचालित करने के लिए 'एजेंटिक एआई' (agentic AI) का उपयोग कर रहे हैं। सबसे महत्वपूर्ण निष्कर्षों में 'CyberStrikeAI' का उपयोग है, जो 44 एआई एजेंटों के एक समूह का उपयोग करता है ताकि टोही (reconnaissance) से लेकर डेटा चोरी और स्वचालित रिपोर्टिंग तक के कार्य किए जा सकें।\n\n### मुख्य निष्कर्ष\n* **स्वचालित कार्यप्रवाह:** जापान को लक्षित करने वाले हमलों में, CyberStrikeAI को पूरे हमले के जीवनचक्र का प्रबंधन करते देखा गया, जिसमें जापानी भाषा में फिशिंग पेज और नकली लॉगिन पोर्टल तैयार करना शामिल है।\n* **विविध रणनीतियाँ:** जहां कुछ हमलावर पूरी तरह से स्वचालित प्रणालियों का उपयोग करते हैं, वहीं अन्य लोग स्क्रिप्ट लिखने और टोही जैसे कार्यों में तेजी लाने के लिए लार्ज लैंग्वेज मॉडल (LLM) पर निर्भर हैं।\n* **वैश्विक प्रभाव:** ये हमले केवल एक क्षेत्र तक सीमित नहीं हैं। हाल की घटनाओं में जहां जापानी संस्थाएं मुख्य लक्ष्य थीं, वहीं ऐसी ही कार्यप्रणाली यू.के., फ्रांस, इटली, ताइवान, हांगकांग और लैटिन अमेरिका में भी देखी गई है।\n* **औद्योगिक हमले:** एआई का उपयोग मौजूदा तरीकों को बड़े पैमाने पर लागू करने के लिए किया जा रहा है, जैसे कि क्रेडेंशियल्स को क्रैक करना, एज डिवाइस (जैसे सिस्को, सिट्रिक्स) में कमजोरियों की तलाश करना और गलत तरीके से कॉन्फ़िगर की गई क्लाउड सेवाओं का फायदा उठाना।\n\n### व्यावहारिक निहितार्थ\nउद्योग रिपोर्टों के अनुसार, किसी भेद्यता (vulnerability) की खोज और उसके हथियार बनाने के बीच का समय काफी कम हो गया है, जो कुछ मामलों में 24 घंटे से भी कम है। एआई का एकीकरण हमलावरों को अधिक गति, पैमाने और स्वायत्तता के साथ काम करने की अनुमति देता है, जो प्रभावी रूप से एक 'फोर्स मल्टीप्लायर' के रूप में कार्य करता है।\n\nसुरक्षा टीमों को सलाह दी जाती है कि वे एज डिवाइसेस की सुरक्षा को प्राथमिकता दें, एपीआई टोकन को नियमित रूप से बदलें, और क्लाउड-आधारित एआई इंफरेंस सेवाओं की निरंतर निगरानी करें ताकि इन स्वायत्त टूलसेट्स से उत्पन्न जोखिमों को कम किया जा सके। संगठनों को अपने नेटवर्क लॉग की अखंडता की पुष्टि करनी चाहिए और यह सुनिश्चित करना चाहिए कि प्रशासनिक पहुंच सख्ती से नियंत्रित हो।",
+  "en_meta": "Researchers warn of AI-driven cyberattack campaigns utilizing autonomous agent swarms to automate reconnaissance, exploitation, and data theft globally.",
+  "hi_meta": "शोधकर्ताओं ने चेतावनी दी है कि एआई-संचालित साइबर हमलों में स्वायत्त एजेंट समूहों का उपयोग किया जा रहा है, जो वैश्विक स्तर पर डेटा चोरी और घुसपैठ को तेज कर रहे…",
+  "en_keywords": [
+    "CyberStrikeAI",
+    "AI-driven cyberattacks",
+    "autonomous agents",
+    "cybersecurity",
+    "threat intelligence"
+  ],
+  "hi_keywords": [
+    "CyberStrikeAI",
+    "एआई साइबर हमले",
+    "स्वायत्त एजेंट",
+    "साइबर सुरक्षा",
+    "खतरा खुफिया"
+  ],
+  "source_published_at": "2026-10-27T23:56:00+05:30",
+  "id": "3f1af19eb7d0",
+  "source": "https://thehackernews.com/2026/10/cyberstrikeai-uses-44-ai-agents-to.html",
+  "date": "2026-11-07T07:02:32.745618+00:00",
+  "source_title": "CyberStrikeAI Uses 44 AI Agents to Automate Hacking Operations Against Japan Targets - The Hacker News",
+  "category": "cyber-security",
+  "image_kind": "conceptual"
+}

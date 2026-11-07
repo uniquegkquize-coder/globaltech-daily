@@ -1,0 +1,31 @@
+{
+  "en_title": "Hackers Exploit Cisco SD-WAN Vulnerability to Deploy Custom KeyDrift Malware",
+  "hi_title": "हैकरों ने कस्टम कीड्रिफ्ट मालवेयर तैनात करने के लिए सिस्को एसडी-वैन खामी का फायदा उठाया",
+  "en_body": "## Overview of Cisco SD-WAN Exploitation\n\nSecurity researchers have reported that an advanced persistent threat (APT) group tracked as UAT-11473 has been exploiting a maximum-severity authentication-bypass vulnerability in Cisco Catalyst SD-WAN Controllers. The security flaw, designated as CVE-2026-20127, allows remote attackers to secure privileged access to affected controllers and managers, enabling them to add rogue peers.\n\nAccording to findings published by Cisco Talos and Lumen, historical exploitation linked to this vulnerability dates back to at least 2023. Reports indicate potential overlaps between the activity and the state-sponsored hacking group known as Volt Typhoon, specifically regarding a covert access network framework referred to as \"Silent Train.\"\n\n## Targeted Sectors and KeyDrift Malware\n\nObservations from security analysts indicate that the campaign targeted specific high-profile sectors, including:\n* Space and satellite services\n* Defense and aerospace technology\n* Policy research organizations\n\nTo maintain operations within compromised environments, attackers deployed a custom malware framework named **KeyDrift**. Cisco Talos assesses with high confidence that KeyDrift is engineered for long-term persistence and automated data exfiltration.\n\n### Core Components of KeyDrift\n\nThe malware framework primarily consists of two components:\n* **PolyFlame:** Operates within legitimate `vdaemon` processes using modified service startup scripts. It facilitates command execution, file management, and communications relay between command-and-control (C2) servers and peers.\n* **LittleFilch:** Intercepts control sessions by hooking `SSL_read` to inspect decrypted control-plane traffic. It targets cryptographic material, such as AES-256 IPsec data-plane keys, encrypts the stolen data via RSA, and stages it locally before transmission over UDP.\n\n## Mitigation and Verification\n\nCisco has urged system administrators to apply the official security updates released for CVE-2026-20127. Additionally, organizations managing Cisco Catalyst SD-WAN infrastructure are advised to consult official vendor guidance and hardening documentation to verify system integrity and protect control planes from unauthorized access.",
+  "hi_body": "## सिस्को एसडी-वैन शोषण का विवरण\n\nसुरक्षा शोधकर्ताओं की रिपोर्ट के अनुसार, UAT-11473 के रूप में ट्रैक किए गए एक उन्नत लगातार खतरे (APT) समूह ने सिस्को कैटलिस्ट एसडी-वैन कंट्रोलर्स में एक अधिकतम-गंभीरता वाली प्रमाणीकरण-बाइपास कमजोरी का फायदा उठाया है। इस सुरक्षा खामी, जिसे CVE-2026-20127 नामित किया गया है, के जरिए दूरस्थ हमलावर प्रभावित कंट्रोलर्स तक विशेषाधिकार प्राप्त पहुंच हासिल कर सकते हैं।\n\nसिस्को टैलोस और ल्यूमेन द्वारा प्रकाशित निष्कर्षों के अनुसार, इस कमजोरी से जुड़ा पुराना शोषण कम से कम 2023 से हो रहा है। रिपोर्टों में इस गतिविधि और 'वोल्ट टाइफून' नामक राज्य-प्रायोजित हैकिंग समूह के बीच संभावित ओवरलैप का संकेत मिलता है, विशेष रूप से 'साइलेंट ट्रेन' नामक गुप्त पहुंच नेटवर्क ढांचे के संदर्भ में।\n\n## लक्षित क्षेत्र और कीड्रिफ्ट मालवेयर\n\nसुरक्षा विश्लेषकों के अवलोकनों से पता चलता है कि इस अभियान ने विशिष्ट उच्च-प्रोफाइल क्षेत्रों को निशाना बनाया, जिनमें शामिल हैं:\n* अंतरिक्ष और उपग्रह सेवाएं\n* रक्षा और एयरोस्पेस तकनीक\n* नीति अनुसंधान संगठन\n\nसमझौता किए गए वातावरण के भीतर संचालन बनाए रखने के लिए, हमलावरों ने **KeyDrift** नामक एक कस्टम मालवेयर फ्रेमवर्क तैनात किया। सिस्को टैलोस का आकलन है कि कीड्रिफ्ट दीर्घकालिक निरंतरता और स्वचालित डेटा निष्कर्षण के लिए डिज़ाइन किया गया है।\n\n### कीड्रिफ्ट के मुख्य घटक\n\nइस मालवेयर फ्रेमवर्क में मुख्य रूप से दो घटक शामिल हैं:\n* **PolyFlame:** संशोधित सेवा स्टार्टअप स्क्रिप्ट का उपयोग करके वैध `vdaemon` प्रक्रियाओं के भीतर संचालित होता है। यह कमांड-एंड-कंट्रोल सर्वर और सहपाठियों के बीच कमांड निष्पादन और संचार रिले को सुविधाजनक बनाता है।\n* **LittleFilch:** डिक्रिप्ट किए गए नियंत्रण-विमान ट्रैफ़िक का निरीक्षण करने के लिए `SSL_read` को हुक करके नियंत्रण सत्रों को रोकता है। यह क्रिप्टोग्राफिक सामग्री को लक्षित करता है, आरएसए के माध्यम से चोरी किए गए डेटा को एन्क्रिप्ट करता है, और इसे यूडीपी पर प्रसारित करने से पहले स्थानीय रूप से संग्रहीत करता है।\n\n## समाधान और सत्यापन\n\nसिस्को ने सिस्टम प्रशासकों से CVE-2026-20127 के लिए जारी आधिकारिक सुरक्षा अपडेट लागू करने का आग्रह किया है। इसके अलावा, सिस्को कैटलिस्ट एसडी-वैन बुनियादी ढांचे का प्रबंधन करने वाले संगठनों को सिस्टम अखंडता को सत्यापित करने के लिए आधिकारिक विक्रेता मार्गदर्शन से परामर्श करने की सलाह दी जाती है।",
+  "en_meta": "Discover how threat actors exploit CVE-2026-20127 in Cisco SD-WAN controllers to deploy KeyDrift malware. Learn mitigation steps and affected sectors.",
+  "hi_meta": "जानें कि कैसे हमलावर सिस्को एसडी-वैन कंट्रोलर्स में CVE-2026-20127 का फायदा उठाकर KeyDrift मालवेयर तैनात कर रहे हैं। सुरक्षा उपाय और प्रभावित क्षेत्र देखें।",
+  "en_keywords": [
+    "Cisco SD-WAN",
+    "CVE-2026-20127",
+    "KeyDrift malware",
+    "Volt Typhoon",
+    "Cisco Talos",
+    "cyber security"
+  ],
+  "hi_keywords": [
+    "सिस्को एसडी-वैन",
+    "CVE-2026-20127",
+    "KeyDrift मालवेयर",
+    "वोल्ट टाइफून",
+    "सिस्को टैलोस",
+    "साइबर सुरक्षा"
+  ],
+  "source_published_at": "2026-10-29T14:38:26-04:00",
+  "id": "45dcc2eb64d3",
+  "source": "https://www.bleepingcomputer.com/news/security/hackers-exploit-cisco-sd-wan-flaw-to-deploy-custom-keydrift-malware/",
+  "date": "2026-11-07T07:03:35.846738+00:00",
+  "source_title": "Hackers exploit Cisco SD-WAN flaw to deploy custom KeyDrift malware",
+  "category": "cyber-security",
+  "image_kind": "conceptual"
+}
