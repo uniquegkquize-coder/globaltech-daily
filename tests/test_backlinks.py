@@ -65,12 +65,8 @@ class BacklinkTests(unittest.TestCase):
   common.save('backlinks.json',[{'status':'inaccessible','first_seen':'2026-01-01','target_url':common.SITE+'/en/a/'}])
   result=report.run(True); self.assertEqual(result['confirmed_live_backlinks'],0); self.assertEqual(result['lost_backlinks'],0)
   paths=list((common.DATA/'history').glob('*.json')); before=paths[0].read_bytes(); report.run(True); self.assertEqual(before,paths[0].read_bytes())
- @unittest.skipUnless(yaml, "PyYAML validated by dedicated workflow")
- def test_yaml_safe_scope(self):
-  if not (common.ROOT/'.github/workflows/backlink-automation.yml').exists():
-   self.skipTest('Backlink automation was removed by the owner')
-  raw=(common.ROOT/'.github/workflows/backlink-automation.yml').read_text(); doc=yaml.safe_load(raw)
-  self.assertEqual(doc['permissions']['contents'],'read'); self.assertIn('HEAD:backlink-data',raw); self.assertNotIn('HEAD:main',raw)
+ def test_removed_backlink_automation_cannot_reappear(self):
+  self.assertFalse((common.ROOT/'.github/workflows/backlink-automation.yml').exists())
  def test_csv_formula_escape(self):
   common.save('prospects.json',[{'name':'=HYPERLINK("bad")'}]); report.run()
   self.assertIn("'=HYPERLINK",(common.DATA/'prospects.csv').read_text())
