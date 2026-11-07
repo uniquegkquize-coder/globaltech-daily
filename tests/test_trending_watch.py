@@ -120,8 +120,8 @@ class LocalNewsTests(unittest.TestCase):
   countries=set()
   for cycle in range(4):
    feeds=w.local_feeds(cycle*4*3600)
-   self.assertEqual(len(feeds),8)
-   queries=[parse_qs(urlparse(item[0]).query) for item in feeds]
+   self.assertGreaterEqual(len(feeds),20)
+   queries=[parse_qs(urlparse(item[0]).query) for item in feeds if 'news.google.com' in item[0]]
    self.assertEqual([q['gl'][0] for q in queries[:2]],['IN','IN'])
    self.assertIn('झगड़ा',queries[0]['q'][0])
    countries.update(q['gl'][0] for q in queries)

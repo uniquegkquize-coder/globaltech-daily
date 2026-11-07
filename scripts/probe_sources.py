@@ -4,7 +4,7 @@ import json
 from collections import Counter
 from collect import native_feed_stories,website_stories,source_text,words,STORY_DATES,category_for_url
 from focused_sources import PAGES,NATIVE_FEEDS
-TARGETS={'car-launches','mobile-launches','movie-releases','controversies'}
+TARGETS={'car-launches','mobile-launches','movie-releases','controversies','automobiles','india-news','world-news'}
 
 def main():
     leads=list(native_feed_stories(NATIVE_FEEDS))
@@ -15,7 +15,7 @@ def main():
         leads.extend(rows)
     unique={row[0]:(row[0],row[1],category_for_url(row[1],row[2],row[0]),row[3]) for row in leads};counts=Counter(row[2] for row in unique.values())
     selected=[];domains=set();per_category=Counter()
-    for row in sorted(unique.values(),key=lambda r:(r[2] not in TARGETS,not bool(STORY_DATES.get(r[0])))):
+    for row in sorted(unique.values(),key=lambda r:(r[3]!='bikewale.com',r[2] not in TARGETS,not bool(STORY_DATES.get(r[0])))):
         if row[2] not in TARGETS or per_category[row[2]]>=3 or row[3] in domains:continue
         selected.append(row);domains.add(row[3]);per_category[row[2]]+=1
     def check(row):

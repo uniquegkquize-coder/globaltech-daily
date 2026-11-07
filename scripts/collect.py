@@ -3,7 +3,7 @@ from seo_text import description as seo_description
 from news_config import CATEGORIES, EXAM_CATEGORIES, EXTRA_FEEDS, DIRECT_EXTRA, classify, lead_priority, timestamp, PRIORITY
 from verticals import requirements, TRUSTED_ENTERTAINMENT, TRUSTED_CONTROVERSY
 from official_notices import official_url
-from focused_sources import NATIVE_FEEDS, structured_article_data, content_candidates
+from focused_sources import NATIVE_FEEDS, PAGES as FOCUSED_PAGES, structured_article_data, content_candidates
 import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time, threading
 from functools import lru_cache
 from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
@@ -11,7 +11,7 @@ import requests, feedparser
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from bs4 import BeautifulSoup
-from public_page_fetch import fetch_public_html
+from public_page_fetch import fetch_public_html, restricted
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 POSTS=ROOT/'content/posts'; PENDING=ROOT/'content/pending'
 POSTS.mkdir(parents=True,exist_ok=True); PENDING.mkdir(parents=True,exist_ok=True)
@@ -213,6 +213,7 @@ DIRECT_SOURCES=[
  ("https://freekaamaal.com/","lifestyle","freekaamaal.com"),
 ]
 DIRECT_SOURCES.extend(DIRECT_EXTRA)
+DIRECT_SOURCES.extend(row for row in FOCUSED_PAGES if row not in DIRECT_SOURCES)
 for direct_url,direct_cat,direct_domain in DIRECT_SOURCES:
  if not any(c==direct_cat and d==direct_domain for _,c,d in FEEDS):
   FEEDS.append((direct_url,direct_cat,direct_domain))
@@ -322,6 +323,8 @@ def category(title, default):
 
 def category_for_url(title,default,url):
  actual=category(title,default)
+ if (urlparse(url).hostname or '').removeprefix('www.')=='bikewale.com' and actual=='car-launches':
+  return 'automobiles'
  # Film release searches also return television episode announcements.
  if actual=='movie-releases' and any(part in urlparse(url).path.lower() for part in ('/tv/','/television/','/tv-news/')):
   return 'movies-entertainment'
@@ -342,7 +345,11 @@ def source_text(url,domain):
   if not allowed(url,domain) or (RUN_DEADLINE and time.monotonic()>=RUN_DEADLINE):return ''
   with SOURCE_HTTP_LOCK:
    if domain in SOURCE_HTTP_BLOCKS:return ''
-  r=requests.get(url,timeout=(8,18),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobalTechDaily/1.0)','Accept':'text/html,application/xhtml+xml'})
+  headers={'User-Agent':'Mozilla/5.0 (compatible; GlobalTechDaily/1.0)','Accept':'text/html,application/xhtml+xml'}
+  try:r=requests.get(url,timeout=(8,18),headers=headers)
+  except (requests.Timeout,requests.ConnectionError):
+   if RUN_DEADLINE and time.monotonic()>=RUN_DEADLINE-15:raise
+   r=requests.get(url,timeout=(4,8),headers=headers)
   r.raise_for_status()
   if not allowed(r.url,domain):return ''
   content_type=r.headers.get('content-type','').lower()
@@ -355,6 +362,8 @@ def source_text(url,domain):
     return '\n'.join((page.extract_text() or '') for page in list(reader.pages)[:10])[:24000]
    except Exception:return ''
   if 'html' not in content_type:return ''
+  if restricted(r.text):
+   print('SOURCE_FETCH_FAILED',domain,'status challenge-or-restricted',flush=True);return ''
   soup=BeautifulSoup(r.text[:1800000],'html.parser')
   candidates=[]
   bodies,dates=structured_article_data(soup)
@@ -382,24 +391,6 @@ def source_text(url,domain):
        if key in obj:visit(obj[key])
     visit(data)
    except (ValueError,TypeError,RecursionError):pass
-  for tag in soup(['script','style','nav','footer','aside','form','header','noscript']):tag.decompose()
-  candidates.extend(content_candidates(soup,clean))
-  selectors=('[itemprop="articleBody"]','[class*="article-body"]','[class*="articleBody"]','[class*="story-body"]','[data-testid*="article"]','article','main')
-  for selector in selectors:
-   for node in soup.select(selector)[:4]:
-    paras=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['h2','h3','p','li'])]
-    paras=[p for p in paras if len(p)>40]
-    if paras:candidates.append('\n'.join(paras))
-  # Universal extraction fallback: OpenGraph/JSON-LD + common CMS article containers.
-  for node in soup.select('.article-content, .article-body, .story-body, .story-detail, .content-body, .news-content, .post-body, .td-post-content, .single-post-content, [class*="articleContent"], [class*="storyContent"], [itemprop="mainEntityOfPage"]')[:8]:
-   paragraphs=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['p','h2','h3','li'])]
-   paragraphs=[p for p in paragraphs if len(p)>45]
-   if len(paragraphs)>=2:candidates.append('\n'.join(paragraphs))
-  # Prefer article content; never treat navigation or paywall previews as full reporting.
-  for node in soup.select('[data-component="text-block"], [data-testid="paragraph"], .article__content, .entry-content, .post-content, .story-content')[:6]:
-   paragraphs=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['p','h2','h3'])]
-   paragraphs=[p for p in paragraphs if len(p)>40]
-   if paragraphs:candidates.append(' '.join(paragraphs))
   # Recover factual text from publisher-rendered JSON state without executing JS.
   # Only accept explicit article-body/content fields, not arbitrary page scripts.
   for script in soup.select('script[type="application/json"], script#__NEXT_DATA__, script#__NUXT_DATA__')[:8]:
@@ -418,6 +409,24 @@ def source_text(url,domain):
     walk(data)
     candidates.extend(extracted)
    except (ValueError,TypeError,RecursionError):pass
+  for tag in soup(['script','style','nav','footer','aside','form','header','noscript']):tag.decompose()
+  candidates.extend(content_candidates(soup,clean))
+  selectors=('[itemprop="articleBody"]','[class*="article-body"]','[class*="articleBody"]','[class*="story-body"]','[data-testid*="article"]','article','main')
+  for selector in selectors:
+   for node in soup.select(selector)[:4]:
+    paras=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['h2','h3','p','li'])]
+    paras=[p for p in paras if len(p)>40]
+    if paras:candidates.append('\n'.join(paras))
+  # Universal extraction fallback: OpenGraph/JSON-LD + common CMS article containers.
+  for node in soup.select('.article-content, .article-body, .story-body, .story-detail, .content-body, .news-content, .post-body, .td-post-content, .single-post-content, [class*="articleContent"], [class*="storyContent"], [itemprop="mainEntityOfPage"]')[:8]:
+   paragraphs=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['p','h2','h3','li'])]
+   paragraphs=[p for p in paragraphs if len(p)>45]
+   if len(paragraphs)>=2:candidates.append('\n'.join(paragraphs))
+  # Prefer article content; never treat navigation or paywall previews as full reporting.
+  for node in soup.select('[data-component="text-block"], [data-testid="paragraph"], .article__content, .entry-content, .post-content, .story-content')[:6]:
+   paragraphs=[clean(p.get_text(' ',strip=True)) for p in node.find_all(['p','h2','h3'])]
+   paragraphs=[p for p in paragraphs if len(p)>40]
+   if paragraphs:candidates.append(' '.join(paragraphs))
   # Accessible AMP pages can provide server-rendered article text when the
   # canonical page contains only a JavaScript shell.
   if max((words(x) for x in candidates),default=0)<65:
@@ -435,6 +444,18 @@ def source_text(url,domain):
         paragraphs=[p for p in paragraphs if len(p)>40]
         if paragraphs:candidates.append(' '.join(paragraphs))
      except requests.RequestException:pass
+  # A successful public HTML shell can be rendered at the same URL.
+  # Rejected/challenged responses return above and never enter this fallback.
+  if max((words(x) for x in candidates),default=0)<65 and os.getenv('ENABLE_PUBLIC_BROWSER_FALLBACK','0')=='1' and (not RUN_DEADLINE or time.monotonic()<RUN_DEADLINE-25):
+   rendered,final,method=fetch_public_html(url,render=True,timeout=(4,8),max_bytes=1800000)
+   if rendered and allowed(final,domain):
+    rendered_soup=BeautifulSoup(rendered,'html.parser')
+    rendered_bodies,rendered_dates=structured_article_data(rendered_soup)
+    candidates.extend(clean(body) for body in rendered_bodies)
+    candidates.extend(content_candidates(rendered_soup,clean))
+    for date in rendered_dates:
+     if timestamp(date):STORY_DATES[url]=date;break
+    print('SOURCE_RENDER_RESULT',domain,method,'words',max((words(x) for x in candidates),default=0),flush=True)
   # Reject short navigation snippets rather than manufacture 300 words.
   best=max(candidates,key=words,default='')[:24000]
   if words(best)<65:print('EXTRACTION_INSUFFICIENT',domain,url[:130],'words',words(best),flush=True)

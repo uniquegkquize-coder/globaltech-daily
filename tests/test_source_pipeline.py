@@ -60,4 +60,61 @@ class SourcePipelineTests(unittest.TestCase):
         source=(ROOT/'scripts/collect.py').read_text()
         body=source[source.index('def candidates():'):]
         self.assertLess(body.index('native_feed_stories()'),body.index('google_news_stories'))
+
+    def test_embedded_json_survives_article_cleanup(self):
+        import json
+        text=' '.join('sourcefact'+str(i) for i in range(90))
+        markup='<title>News</title><script id="__NEXT_DATA__" type="application/json">'+json.dumps({'props':{'articleBody':text}})+'</script>'
+        class Response:
+            url='https://embedded.example/news/story'
+            headers={'content-type':'text/html'}
+            text=markup
+            def raise_for_status(self):pass
+        collect.source_text.cache_clear()
+        with patch.object(collect.requests,'get',return_value=Response()),patch.dict('os.environ',{'ENABLE_PUBLIC_BROWSER_FALLBACK':'0'}):
+            self.assertEqual(collect.source_text(Response.url,'embedded.example'),text)
+    def test_successful_html_shell_can_use_same_url_renderer(self):
+        text=' '.join('sourcefact'+str(i) for i in range(90))
+        class Response:
+            url='https://rendered.example/news/story'
+            headers={'content-type':'text/html'}
+            text='<title>Public article</title><div id="app"></div>'
+            def raise_for_status(self):pass
+        collect.source_text.cache_clear()
+        with patch.object(collect.requests,'get',return_value=Response()),patch.object(collect,'fetch_public_html',return_value=('<article><p>'+text+'</p></article>',Response.url,'browser')) as render,patch.dict('os.environ',{'ENABLE_PUBLIC_BROWSER_FALLBACK':'1'}):
+            self.assertEqual(collect.source_text(Response.url,'rendered.example'),text)
+            self.assertEqual(render.call_args.args[0],Response.url)
+            self.assertTrue(render.call_args.kwargs['render'])
+    def test_rejected_article_is_not_sent_to_renderer(self):
+        import requests
+        collect.source_text.cache_clear()
+        error=requests.HTTPError(response=requests.Response())
+        error.response.status_code=403
+        with patch.object(collect.requests,'get',side_effect=error),patch.object(collect,'fetch_public_html') as render,patch.dict('os.environ',{'ENABLE_PUBLIC_BROWSER_FALLBACK':'1'}):
+            self.assertEqual(collect.source_text('https://blocked-source.example/news/story','blocked-source.example'),'')
+            render.assert_not_called()
+    def test_focused_sources_are_used_by_the_publisher(self):
+        from focused_sources import PAGES,NATIVE_FEEDS,LOCAL_FEEDS,LOCAL_SEARCH_SOURCES
+        self.assertIn(('https://www.bikewale.com/news/','automobiles','bikewale.com'),collect.DIRECT_SOURCES)
+        self.assertTrue(all(item in collect.DIRECT_SOURCES for item in PAGES))
+        self.assertTrue(all(item in NATIVE_FEEDS for item in LOCAL_FEEDS))
+        self.assertGreaterEqual(len(LOCAL_SEARCH_SOURCES),40)
+        self.assertEqual(collect.category_for_url('Hero Xtreme 125R Stealth Edition Launched at Rs 116250','automobiles','https://www.bikewale.com/news/hero-xtreme/'),'automobiles')
+
+
+    def test_transient_connection_failure_gets_one_bounded_retry(self):
+        import requests
+        text=' '.join('sourcefact'+str(i) for i in range(90))
+        class Response:
+            url='https://retry-source.example/news/story'
+            headers={'content-type':'text/html'}
+            def raise_for_status(self):pass
+        response=Response()
+        response.text='<article><p>'+text+'</p></article>'
+        collect.source_text.cache_clear()
+        with patch.object(collect.requests,'get',side_effect=[requests.ReadTimeout(),response]) as fetch:
+            self.assertEqual(collect.source_text(Response.url,'retry-source.example'),text)
+            self.assertEqual(fetch.call_count,2)
+            self.assertEqual(fetch.call_args.kwargs['timeout'],(4,8))
+
 if __name__=='__main__':unittest.main()

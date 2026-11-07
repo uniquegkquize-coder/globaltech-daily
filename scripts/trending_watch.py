@@ -15,6 +15,7 @@ import time
 import requests
 import feedparser
 import collect as newsroom
+from focused_sources import LOCAL_FEEDS, LOCAL_SEARCH_SOURCES
 
 ROOT=Path(__file__).resolve().parents[1]
 STATE=Path(os.getenv('TREND_STATE_PATH',str(ROOT/'.cache/trending/state.json')))
@@ -71,7 +72,20 @@ def local_feeds(now):
   params=urlencode(dict(q=query,hl=language,gl=country,ceid=country+':'+edition))
   feeds.append(('https://news.google.com/rss/search?'+params,
                 'india-news' if country=='IN' else 'world-news','','local'))
- return feeds
+ # Keep Gorakhpur in every scan; rotate neighboring districts and global feeds.
+ india=[feed for feed in LOCAL_FEEDS if feed[1]=='india-news']
+ abroad=[feed for feed in LOCAL_FEEDS if feed[1]=='world-news']
+ cycle=int(now//(4*3600))
+ feeds.append((*india[0],'local'))
+ feeds.extend((*india[(cycle*2+i)%len(india)],'local') for i in range(2))
+ feeds.extend((*abroad[(cycle*4+i)%len(abroad)],'local') for i in range(4))
+ for i in range(6):
+  domain,country,language,edition=LOCAL_SEARCH_SOURCES[(cycle*6+i)%len(LOCAL_SEARCH_SOURCES)]
+  query=LOCAL_QUERIES.get(language.split('-')[0],LOCAL_QUERIES['en'])
+  params=urlencode(dict(q='site:'+domain+' '+query,hl=language,gl=country,ceid=country+':'+edition))
+  feeds.append(('https://news.google.com/rss/search?'+params,
+                'india-news' if country=='IN' else 'world-news',domain,'local'))
+ return list(dict.fromkeys(feeds))
 
 def demand_terms():
  terms=set();diagnostics={}

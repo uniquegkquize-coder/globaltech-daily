@@ -2,6 +2,8 @@
 Sources supply leads for original reporting, never permission to copy articles.
 """
 NATIVE_FEEDS=[
+ ('https://www.apple.com/newsroom/rss-feed.rss','technology','apple.com'),
+ ('https://news.samsung.com/global/feed','technology','news.samsung.com'),
  ('https://www.firstshowing.net/feed/','movies-entertainment','firstshowing.net'),
  ('https://www.comingsoon.net/feed','movies-entertainment','comingsoon.net'),
  ('https://www.motor1.com/rss/news/all/','automobiles','motor1.com'),
@@ -16,13 +18,87 @@ NATIVE_FEEDS=[
  ('https://www.hollywoodreporter.com/feed/','movies-entertainment','hollywoodreporter.com'),
  ('https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml','movies-entertainment','bbc.co.uk'),
 ]
+
+# Regional RSS and named local publishers supplement broad search discovery.
+LOCAL_FEEDS=[
+ ("https://www.amarujala.com/rss/gorakhpur.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/kushinagar.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/deoria.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/basti.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/sant-kabir-nagar.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/maharajganj.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/lucknow.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/varanasi.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/kanpur.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/uttar-pradesh.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/uttarakhand.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/bihar.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/madhya-pradesh.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/rajasthan.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/haryana.xml","india-news","amarujala.com"),
+ ("https://www.amarujala.com/rss/punjab.xml","india-news","amarujala.com"),
+ ("https://feeds.bbci.co.uk/news/england/rss.xml","world-news","bbc.co.uk"),
+ ("https://feeds.bbci.co.uk/news/scotland/rss.xml","world-news","bbc.co.uk"),
+ ("https://feeds.bbci.co.uk/news/wales/rss.xml","world-news","bbc.co.uk"),
+ ("https://feeds.bbci.co.uk/news/northern_ireland/rss.xml","world-news","bbc.co.uk"),
+ ("https://www.theguardian.com/uk-news/rss","world-news","theguardian.com"),
+ ("https://www.theguardian.com/us-news/rss","world-news","theguardian.com"),
+ ("https://www.theguardian.com/australia-news/rss","world-news","theguardian.com"),
+ ("https://www.aljazeera.com/xml/rss/all.xml","world-news","aljazeera.com"),
+]
+LOCAL_SEARCH_SOURCES=[
+ ("livehindustan.com","IN","hi","hi"),
+ ("jagran.com","IN","hi","hi"),
+ ("bhaskar.com","IN","hi","hi"),
+ ("hindi.news18.com","IN","hi","hi"),
+ ("inextlive.com","IN","hi","hi"),
+ ("dainikgorakhpur.com","IN","hi","hi"),
+ ("indianexpress.com","IN","en-IN","en"),
+ ("hindustantimes.com","IN","en-IN","en"),
+ ("thehindu.com","IN","en-IN","en"),
+ ("deccanherald.com","IN","en-IN","en"),
+ ("onmanorama.com","IN","en-IN","en"),
+ ("newindianexpress.com","IN","en-IN","en"),
+ ("patch.com","US","en-US","en"),
+ ("apnews.com","US","en-US","en"),
+ ("bbc.com","GB","en-GB","en"),
+ ("theguardian.com","GB","en-GB","en"),
+ ("cbc.ca","CA","en-CA","en"),
+ ("abc.net.au","AU","en-AU","en"),
+ ("rnz.co.nz","NZ","en-NZ","en"),
+ ("stuff.co.nz","NZ","en-NZ","en"),
+ ("groundup.org.za","ZA","en-ZA","en"),
+ ("news24.com","ZA","en-ZA","en"),
+ ("nation.africa","KE","en-KE","en"),
+ ("standardmedia.co.ke","KE","en-KE","en"),
+ ("premiumtimesng.com","NG","en-NG","en"),
+ ("ghanaweb.com","GH","en-GH","en"),
+ ("dawn.com","PK","en-PK","en"),
+ ("thedailystar.net","BD","en-BD","en"),
+ ("kathmandupost.com","IN","en-IN","en"),
+ ("rappler.com","PH","en-PH","en"),
+ ("inquirer.net","PH","en-PH","en"),
+ ("malaymail.com","MY","en-MY","en"),
+ ("antaranews.com","ID","id","id"),
+ ("kompas.com","ID","id","id"),
+ ("bangkokpost.com","TH","en","en"),
+ ("france24.com","FR","fr","fr"),
+ ("dw.com","DE","de","de"),
+ ("elpais.com","ES","es","es"),
+ ("g1.globo.com","BR","pt-BR","pt-419"),
+ ("japantimes.co.jp","JP","en","en"),
+]
+NATIVE_FEEDS.extend(LOCAL_FEEDS)
+
 # CarDekho and IMDb returned 403 in verification. Keep them in search
 # discovery only; do not repeatedly fetch their blocked listing pages.
 PAGES=[
+ ('https://www.bikewale.com/news/','automobiles','bikewale.com'),
+ ('https://www.autocarindia.com/bike-news','automobiles','autocarindia.com'),
  ('https://www.androidpolice.com/','technology','androidpolice.com'),
  ('https://www.firstshowing.net/','movies-entertainment','firstshowing.net'),
  ('https://www.comingsoon.net/hub/movie-news','movies-entertainment','comingsoon.net'),
- ('https://about.netflix.com/en/news','movies-entertainment','about.netflix.com'),
+ ('https://about.netflix.com/en/newsroom','movies-entertainment','about.netflix.com'),
  ('https://www.autocarindia.com/car-news','automobiles','autocarindia.com'),
  ('https://www.carscoops.com/','automobiles','carscoops.com'),
  ('https://www.motor1.com/news/','automobiles','motor1.com'),
@@ -37,6 +113,7 @@ PAGES=[
  ('https://apnews.com/hub/entertainment','movies-entertainment','apnews.com'),
 ]
 SEARCH_SOURCES=[
+ ('bikewale.com','automobiles','motorcycle scooter launch specifications price'),
  ('phonearena.com','mobile-launches','smartphone launch specifications price'),
  ('androidpolice.com','mobile-launches','new phone launch specifications'),
  ('cardekho.com','car-launches','new car launch price mileage'),
@@ -60,6 +137,7 @@ SEARCH_SOURCES=[
 # Publishers expose article copy through different containers. No login,
 # paywall, CAPTCHA, blocked-response or alternate-route bypass is attempted.
 ARTICLE_SELECTORS=(
+ '[itemprop="articleBody"]', 'article',
  '.content_text', '.content-text', '.news-text', '#review-body', '.review-body', '.entry', '.postContent', '.post-content',
  '.article__body', '.article-body', '.article__content', '.article-content',
  '.story_details', '.story__content', '.entry-content',
