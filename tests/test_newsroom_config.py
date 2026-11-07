@@ -57,7 +57,7 @@ class NewsroomConfigTests(unittest.TestCase):
         workflow = WORKFLOW.read_text(encoding="utf-8")
         required = (
             "cron: '7 */2 * * *'",
-            "POSTS_PER_RUN: '100'",
+            "default: '100'",
             "MIN_POSTS_PER_CATEGORY: '2'",
             "MAX_AI_CALLS_PER_RUN: '100'",
             "AI_PROVIDER_ORDER: gemini,openrouter,groq,openai",
@@ -77,7 +77,7 @@ class NewsroomConfigTests(unittest.TestCase):
             self.skipTest("R2 delivery workflow is not installed")
         workflow = WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("cron: '7 */2 * * *'", workflow)
-        self.assertIn("POSTS_PER_RUN: '100'", workflow)
+        self.assertIn("default: '100'", workflow)
         self.assertIn("MIN_POSTS_PER_CATEGORY: '2'", workflow)
         self.assertIn("MAX_AI_CALLS_PER_RUN: '100'", workflow)
         self.assertIn("AI_PROVIDER_ORDER: gemini,openrouter,groq,openai", workflow)
@@ -96,7 +96,7 @@ class NewsroomConfigTests(unittest.TestCase):
         # Publish-ready bilingual drafts (e.g. trending-queue drafts) and
         # single-language drafts both get the first AI slots; a draft that is
         # complete in either language must never be skipped here.
-        self.assertIn("if not (ready_en or ready_hi):continue", code)
+        self.assertIn("if not (ready_en or ready_hi or requested):continue", code)
         self.assertNotIn("if ready_en==ready_hi:continue", code)
         self.assertIn("single_language_ids=", code)
         self.assertIn("Recovering missing language from saved source-grounded draft", code)
