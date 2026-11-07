@@ -1,61 +1,40 @@
 {
-  "total_posts": 3159,
-  "selected": 33,
+  "total_posts": 3168,
+  "selected": 36,
   "results": {
-    "invalid_source_images": 6,
-    "source_photo_saved": 4,
-    "cooldown": 23
+    "source_photo_saved": 6,
+    "cooldown": 29,
+    "invalid_source_images": 1
   },
-  "still_missing": 277,
+  "still_missing": 276,
   "articles": [
     {
-      "id": "33686a761fa5d097afc337dc",
-      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794093352.8737116
-    },
-    {
-      "id": "a941ae3553703f8fd24d4d17",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794093353.8137553
-    },
-    {
-      "id": "8a85d098f9540dd1afd91559",
-      "source": "https://en.wikipedia.org/wiki/Lexus_GS",
+      "id": "3a08d64d31ecb5ccbb35ea5c",
+      "source": "https://en.wikipedia.org/wiki/Chrysler_PT_Cruiser",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794093354.1348147
+      "retry_after": 1794099921.3766828
     },
     {
-      "id": "4d0f4be898d4ad285cdab7f4",
-      "source": "https://en.wikipedia.org/wiki/Ducati_Deluxe",
+      "id": "aa673499e85de8ca257a26b2",
+      "source": "https://en.wikipedia.org/wiki/KTM_790_Adventure",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794093354.2587419
+      "retry_after": 1794099921.617463
     },
     {
-      "id": "e29671465d334ab904ec8234",
-      "source": "https://en.wikipedia.org/wiki/Honda_Fit_%28second_generation%29",
+      "id": "e1503728e4d942a9aa263bc9",
+      "source": "https://en.wikipedia.org/wiki/Jeep_Grand_Cherokee_%28WL%29",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794093354.5630393
+      "retry_after": 1794099921.834783
     },
     {
-      "id": "fb6dd420a2fc44c8f8340751",
-      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "id": "6f1cfc9a8128d411231e878c",
+      "source": "https://en.wikipedia.org/wiki/Ducati_Vento",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794093354.598263
-    },
-    {
-      "id": "611527df4de7f3170a99cfde",
-      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794093354.6587718
+      "result": "source_photo_saved",
+      "retry_after": 1794099921.8427372
     },
     {
       "id": "0d093f1b1d8b95e0ce3c5ba1",
@@ -150,25 +129,49 @@
       "result": "cooldown"
     },
     {
-      "id": "aa2e419173a68abb3417ae1c",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Z3_Compact",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794093355.2614372
+      "id": "33686a761fa5d097afc337dc",
+      "result": "cooldown"
+    },
+    {
+      "id": "a941ae3553703f8fd24d4d17",
+      "result": "cooldown"
+    },
+    {
+      "id": "fb6dd420a2fc44c8f8340751",
+      "result": "cooldown"
+    },
+    {
+      "id": "611527df4de7f3170a99cfde",
+      "result": "cooldown"
     },
     {
       "id": "554edbfdaee926ed82007433",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794093355.338894
+      "result": "cooldown"
     },
     {
       "id": "ab5161457cb0ef816db211ff",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "result": "cooldown"
+    },
+    {
+      "id": "743f353afdc3ce2311a2dba1",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-mweka/map/index.htm",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794099922.0155478
+    },
+    {
+      "id": "fab6501205ba27e38dac785c",
+      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794093355.3797414
+      "retry_after": 1794099922.0162404
+    },
+    {
+      "id": "ab948115c34716ef2412d051",
+      "source": "https://en.wikipedia.org/wiki/Nexus_6",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794099922.7217362
     }
   ],
   "missing": [
@@ -268,7 +271,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted in Cheyenne, Wyoming",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "7fcd04ef9a5e",
@@ -282,7 +285,7 @@
       "category": "private-vacancy",
       "title": "A Full Renovation – Home Improvement Lists Virtual Assistant Opening in the United States",
       "source": "https://www.linkedin.com/jobs/view/virtual-assistant-at-a-full-renovation-%E2%80%93-home-improvement-4483788958",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "2a8b92143f14b264d8d27146",
@@ -366,7 +369,7 @@
       "category": "private-vacancy",
       "title": "Recent Administrative Assistant Job Listings Highlight Opportunities Across the San Francisco Bay Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-san-francisco-ca",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "9f067ea024c5",
@@ -492,13 +495,20 @@
       "category": "private-vacancy",
       "title": "Overview of Current Media and Communications Private Vacancies in the Des Moines Area",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "ab5161457cb0ef816db211ff",
       "category": "automobiles",
       "title": "MV Agusta RVS#1: Motorcycle Specifications, Facts and Verification Guide",
       "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "fab6501205ba27e38dac785c",
+      "category": "gadgets",
+      "title": "Isai VL LGV31: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
       "reason": "invalid_source_images"
     },
     {
@@ -548,7 +558,7 @@
       "category": "private-vacancy",
       "title": "Overview of Current Administrative and Support Vacancies in Moses Lake, Washington",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-moses-lake-wa",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "75dbda51595c",
@@ -558,18 +568,11 @@
       "reason": "access_denied"
     },
     {
-      "id": "3b439d483131",
-      "category": "business",
-      "title": "UBCF and GGP Launch 2026 Pink Bag Initiative to Distribute Over 13,500 Care Packages Nationwide",
-      "source": "https://www.prnewswire.com/news-releases/ubcf-and-ggp-formerly-brookfield-properties-launch-2026-pink-bag-event-initiative-302925520.html",
-      "reason": "no_source_image"
-    },
-    {
       "id": "079aeaa0eeef",
       "category": "private-vacancy",
       "title": "Wordsmith Learning Hub Recruits Senior Digital Marketing Manager for Tamil Edtech Sector",
       "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "f638281840d9",
@@ -723,7 +726,7 @@
       "category": "private-vacancy",
       "title": "Professional Career Openings Listed on LinkedIn for the Jersey Region",
       "source": "https://je.linkedin.com/jobs/Win%20Gaming%20API%20-%20India%20Market%20API%F0%9F%8F%A7TG%40gameapi26-jobs?position=1&pageNum=0",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "08e244f09bc8",
@@ -751,7 +754,7 @@
       "category": "private-vacancy",
       "title": "Exploring Community and Social Services Openings Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-phoenix-az",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "c455f726510c",
@@ -772,7 +775,7 @@
       "category": "private-vacancy",
       "title": "Active Hiring Trends for Program and Project Management Roles in the Moses Lake Region",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-moses-lake-wa",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "92088c2de8c2",
@@ -933,7 +936,7 @@
       "category": "private-vacancy",
       "title": "Phoenix Media and Communications Job Openings Highlighted in Regional Platform Listings",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-phoenix-az",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "8c34cb11fa0d",
@@ -955,13 +958,6 @@
       "title": "Meld: Android Music Client Unifying Spotify and YouTube Music",
       "source": "https://github.com/FrancescoGrazioso/Meld",
       "reason": "restricted_page"
-    },
-    {
-      "id": "a5f43758a0b4",
-      "category": "ai-news",
-      "title": "University of Phoenix White Paper Examines AI Skills Gaps and Workforce Retention in Rural Communities",
-      "source": "https://www.prnewswire.com/news-releases/white-paper-outlining-strategies-to-address-rural-ai-skills-gaps-and-support-workforce-retention-published-by-the-university-of-phoenix-college-of-doctoral-studies-302924623.html",
-      "reason": "no_source_image"
     },
     {
       "id": "600062192bf4",
@@ -1143,7 +1139,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted in Des Moines Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "3570bb7ef821",
@@ -1255,7 +1251,7 @@
       "category": "defence",
       "title": "Overview of Military and Protective Services Openings in the Des Moines Area",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "91712e374b16",
@@ -1269,7 +1265,7 @@
       "category": "private-vacancy",
       "title": "The Souled Store Lists Founder's Office Intern Position in Mumbai Focused on GCC Expansion",
       "source": "https://in.linkedin.com/jobs/view/founder-s-office-intern-at-the-souled-store-4483622129",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "1ea4c06fbe1f",
@@ -1647,7 +1643,7 @@
       "category": "private-vacancy",
       "title": "Fanzart Seeks Business Development Specialist for On-Site Role in Ranchi",
       "source": "https://in.linkedin.com/jobs/view/business-development-specialist-at-fanzart-designer-fans-4484908686",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "276998767be1",
@@ -1815,7 +1811,7 @@
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Cheyenne and Surrounding Region",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "b884520e4af2",
@@ -1948,7 +1944,7 @@
       "category": "private-vacancy",
       "title": "Community and Social Services Openings Highlighted Across Des Moines Area Employers",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "fcf325b6c08e",
@@ -2053,14 +2049,14 @@
       "category": "defence",
       "title": "Military and Protective Services Job Openings Highlighted Across the Greater Phoenix Area",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-phoenix-az",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "38138689935d",
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Boydton Area Listings",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-boydton-va",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "554edbfdaee926ed82007433",
@@ -2114,93 +2110,53 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "no_source_image": 99,
-    "invalid_source_images": 55,
+    "no_source_image": 88,
+    "invalid_source_images": 59,
     "source_error": 17,
-    "access_denied": 69,
+    "access_denied": 75,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "33686a761fa5d097afc337dc": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "a941ae3553703f8fd24d4d17": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
-      "candidate_count": 7,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/120px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/60px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "8a85d098f9540dd1afd91559": {
+    "3a08d64d31ecb5ccbb35ea5c": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Lexus_GS",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/Lexus_GS_450h_F_Sport_%E2%80%93_Frontansicht%2C_17._Juni_2012%2C_D%C3%BCsseldorf.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Chrysler_PT_Cruiser",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1b/2006-2009_Chrysler_PT_Cruiser.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "4d0f4be898d4ad285cdab7f4": {
+    "aa673499e85de8ca257a26b2": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ducati_Deluxe",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Ducati_Deluxe_250_4T_2012_520.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/KTM_790_Adventure",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/KTM_790_Adventure.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "e29671465d334ab904ec8234": {
+    "e1503728e4d942a9aa263bc9": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Honda_Fit_%28second_generation%29",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/2008-2010_Honda_Jazz_%28GE%29_hatchback_%282011-10-25%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Jeep_Grand_Cherokee_%28WL%29",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/2022_Jeep_Grand_Cherokee_Summit_Reserve_4x4_in_Bright_White%2C_Front_Left%2C_01-16-2022.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "fb6dd420a2fc44c8f8340751": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/JXD_P861",
-      "candidate_count": 7,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/120px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "611527df4de7f3170a99cfde": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "aa2e419173a68abb3417ae1c": {
+    "6f1cfc9a8128d411231e878c": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Z3_Compact",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Z3_Compact.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ducati_Vento",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Ducati_Vento_350_1979_b.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "554edbfdaee926ed82007433": {
+    "fab6501205ba27e38dac785c": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "candidate_count": 9,
+      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
+      "candidate_count": 5,
       "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
       ]
     },
-    "ab5161457cb0ef816db211ff": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
+    "743f353afdc3ce2311a2dba1": {
+      "reason": "source_photo_saved",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-mweka/map/index.htm#map",
+      "image": "https://www.unirank.org/i/flags/top-universities-congo-dr-high-resolution.png"
+    },
+    "ab948115c34716ef2412d051": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Nexus_6",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/40/Nexus_6.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"

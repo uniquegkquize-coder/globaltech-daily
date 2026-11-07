@@ -1,30 +1,25 @@
 {
-  "published": 6,
-  "updated": 3,
+  "published": 7,
+  "updated": 1,
   "target": 8,
   "missing": {
-    "colleges": 2
+    "colleges": 1
   },
   "categories": {
     "colleges": {
-      "new": 0,
-      "updated": 2,
-      "eligible_new": 0,
-      "eligible_updates": 2,
-      "shortfall": 2,
+      "new": 1,
+      "updated": 0,
+      "eligible_new": 1,
+      "eligible_updates": 0,
+      "shortfall": 1,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 15,
-        "insufficient verified descriptive fields": 86,
+        "already_published_unchanged": 17,
+        "insufficient verified descriptive fields": 85,
         "identifier URL is not specification evidence": 199
       },
-      "rejected_count": 285,
+      "rejected_count": 284,
       "rejected_sample": [
-        {
-          "name": "Universit\u00e9 Officielle de Mweka",
-          "reason": "insufficient verified descriptive fields",
-          "source": "https://www.unirank.org/cd/uni/universite-officielle-de-mweka/map/index.htm#map"
-        },
         {
           "name": "Bryant University",
           "reason": "insufficient verified descriptive fields",
@@ -144,22 +139,27 @@
           "name": "Zamfara State University",
           "reason": "insufficient verified descriptive fields",
           "source": "https://en.wikipedia.org/wiki/Zamfara_State_University"
+        },
+        {
+          "name": "Rwanda Tourism University College",
+          "reason": "insufficient verified descriptive fields",
+          "source": "https://www.iata.org/en/training/courses/partner-network/rwanda-tourism-university-college/145816/"
         }
       ]
     },
     "phones": {
       "new": 2,
-      "updated": 1,
-      "eligible_new": 559,
-      "eligible_updates": 1,
+      "updated": 0,
+      "eligible_new": 617,
+      "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 68,
-        "insufficient verified descriptive fields": 86,
-        "identifier URL is not specification evidence": 1167
+        "already_published_unchanged": 71,
+        "insufficient verified descriptive fields": 90,
+        "identifier URL is not specification evidence": 1103
       },
-      "rejected_count": 1253,
+      "rejected_count": 1193,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -290,17 +290,17 @@
     },
     "cars": {
       "new": 2,
-      "updated": 0,
-      "eligible_new": 474,
-      "eligible_updates": 0,
+      "updated": 1,
+      "eligible_new": 512,
+      "eligible_updates": 1,
       "shortfall": 0,
       "reasons": {
-        "considered": 5749,
-        "already_published_unchanged": 71,
-        "insufficient verified descriptive fields": 534,
-        "identifier URL is not specification evidence": 4670
+        "considered": 5835,
+        "already_published_unchanged": 72,
+        "insufficient verified descriptive fields": 546,
+        "identifier URL is not specification evidence": 4704
       },
-      "rejected_count": 5204,
+      "rejected_count": 5250,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -432,12 +432,12 @@
     "bikes": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 29,
+      "eligible_new": 27,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 447,
-        "already_published_unchanged": 71,
+        "already_published_unchanged": 73,
         "insufficient verified descriptive fields": 84,
         "identifier URL is not specification evidence": 263
       },
@@ -571,5 +571,5 @@
       ]
     }
   },
-  "date": "2026-11-07T17:15:47.147876+00:00"
+  "date": "2026-11-07T19:05:16.175064+00:00"
 }
