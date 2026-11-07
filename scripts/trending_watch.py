@@ -17,6 +17,7 @@ import feedparser
 import collect as newsroom
 from focused_sources import LOCAL_FEEDS, LOCAL_SEARCH_SOURCES
 from district_sources import district_feeds,district_search_feeds,world_city_feeds
+from world_local_sources import matched_publisher, registry_stats
 
 ROOT=Path(__file__).resolve().parents[1]
 STATE=Path(os.getenv('TREND_STATE_PATH',str(ROOT/'.cache/trending/state.json')))
@@ -60,7 +61,7 @@ LOCAL_QUERIES={
  'ko':'(마을 OR 군) (사망 OR 사고 OR 화재 OR 살인) when:1d',
 }
 LOCAL_INCIDENT=re.compile(
- r'\b(clash\w*|fight\w*|brawl\w*|riot\w*|violence|died|fatal|crash\w*|collision\w*|kill\w*|death\w*|dead|murder\w*|accident\w*|fire|flood\w*|shoot\w*|stab\w*|assault\w*|dispute\w*|drown\w*|Streit|getötet|Unfall|Brand|bagarre|mort\w*|incendie|pelea|muert\w*|accidente|incendio|briga|morto|acidente|incêndio|bentrokan|tewas|kecelakaan|kebakaran)\b|झगड़|मारपीट|विवाद|लड़ाई|गोली|टक्कर|डूब|हत्या|मौत|हादस|आग|死亡|事故|火災|殺人|사망|사고|화재|살인',
+ r'\b(clash\w*|fight\w*|brawl\w*|riot\w*|violence|died|fatal|crash\w*|collision\w*|kill\w*|death\w*|dead|murder\w*|accident\w*|fire|flood\w*|shoot\w*|stab\w*|assault\w*|dispute\w*|drown\w*|Streit|getötet|Unfall|Brand|bagarre|mort\w*|incendie|pelea|muert\w*|accidente|incendio|briga|morto|acidente|incêndio|bentrokan|tewas|kecelakaan|kebakaran)\b|झगड़|मारपीट|विवाद|लड़ाई|गोली|टक्कर|डूब|हत्या|मौत|हादस|आग|死亡|事故|火災|殺人|사망|사고|화재|살인|قتل|قتيل|وفاة|حادث|حريق|اشتباك|کشته|تصادف|لاش|ہلاک|погиб|убийств|авари|пожар|загин|вбив|নিহত|মৃত্যু|খুন|অগ্নিকাণ্ড|ölüm|öldür|yangın|kazada|chết|tai nạn|hỏa hoạn|เสียชีวิต|อุบัติเหตุ|ไฟไหม้|הרוג|נהרג|שריפה|νεκρ|πυρκαγ|zgin|wypadek|mord|terbunuh|mapatay',
  re.I,
 )
 def local_feeds(now):
@@ -86,7 +87,7 @@ def local_feeds(now):
   params=urlencode(dict(q='site:'+domain+' '+query,hl=language,gl=country,ceid=country+':'+edition))
   feeds.append(('https://news.google.com/rss/search?'+params,
                 'india-news' if country=='IN' else 'world-news',domain,'local'))
- feeds.extend((*feed,'local') for feed in district_feeds(ROOT,now,6,refresh=False)+district_search_feeds(newsroom.INDIA_REGIONS,now,10)+world_city_feeds(LOCAL_SEARCH_SOURCES,now,6))
+ feeds.extend((*feed,'local') for feed in district_feeds(ROOT,now,6,refresh=False)+district_search_feeds(newsroom.INDIA_REGIONS,now,10)+world_city_feeds(LOCAL_SEARCH_SOURCES,now,12,period=14400))
  return list(dict.fromkeys(feeds))
 
 def demand_terms():
@@ -166,7 +167,9 @@ def read_feed(item,now=None):
    if 'news.google.com' in (urlparse(url).hostname or ''):
     # Search is discovery only; reporting always uses the resolved publisher URL.
     url=newsroom.resolve_google_news(url)
-   publisher_domain=domain or (urlparse(url).hostname or '').lower()
+   source=entry.get('source',{})
+   source_url=source.get('href','') if isinstance(source,dict) else ''
+   publisher_domain=domain or matched_publisher(source_url,url)
    if not publisher_domain or 'google.com' in publisher_domain:continue
    if not newsroom.allowed(url,publisher_domain):continue
    rows.append(dict(url=url,title=title,category=category if local else newsroom.category_for_url(title,category,url),domain=publisher_domain,
@@ -305,7 +308,7 @@ def run(now=None):
   for record in events.values():
    if 'draft' in record:record.pop('retry_after',None)
   state['generation_version']=2
- report=dict(checked_at=dt.datetime.fromtimestamp(now,dt.timezone.utc).isoformat(),signal='publisher coverage and local incident reports with Google Trends search-term matching; not search-volume data',changed_ids=[],results=[],feeds={})
+ report=dict(world_local_registry=registry_stats(),checked_at=dt.datetime.fromtimestamp(now,dt.timezone.utc).isoformat(),signal='publisher coverage and local incident reports with Google Trends search-term matching; not search-volume data',changed_ids=[],results=[],feeds={})
  # RSS checks still run during provider cooldown; generation alone is deferred.
  search_terms,report['google_trends']=demand_terms()
  rows,report['feeds']=discover(now)

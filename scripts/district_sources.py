@@ -69,41 +69,5 @@ def district_search_feeds(regions,now=None,limit=16):
   rows.append(('https://news.google.com/rss/search?'+params,'india-news',domain))
  return rows
 
-# City names narrow worldwide publisher discovery; this is a rotating seed list,
-# not a complete list of every municipality or a guarantee of news coverage.
-WORLD_CITIES={
- 'US':('New York','Los Angeles','Chicago','Phoenix','Amherst','Fresno'),
- 'GB':('London','Manchester','Leeds','Sunderland','Bradford','Cornwall'),
- 'CA':('Toronto','Vancouver','Winnipeg','Halifax'),
- 'AU':('Sydney','Melbourne','Perth','Ballarat'),
- 'NZ':('Auckland','Wellington','Christchurch','Hamilton'),
- 'ZA':('Johannesburg','Cape Town','Durban','Mthatha'),
- 'KE':('Nairobi','Mombasa','Kisumu','Nakuru'),
- 'NG':('Lagos','Abuja','Kano','Ibadan'),
- 'GH':('Accra','Kumasi','Tamale','Cape Coast'),
- 'PK':('Karachi','Lahore','Peshawar','Multan'),
- 'BD':('Dhaka','Chattogram','Sylhet','Khulna'),
- 'PH':('Manila','Cebu','Davao','Iloilo'),
- 'MY':('Kuala Lumpur','Johor Bahru','Ipoh','Kuching'),
- 'ID':('Jakarta','Surabaya','Bandung','Yogyakarta'),
- 'TH':('Bangkok','Chiang Mai','Phuket','Khon Kaen'),
- 'FR':('Paris','Marseille','Lyon','Lille'),
- 'DE':('Berlin','Hamburg','Munich','Dresden'),
- 'ES':('Madrid','Barcelona','Valencia','Seville'),
- 'BR':('São Paulo','Rio de Janeiro','Recife','Manaus'),
- 'JP':('Tokyo','Osaka','Fukuoka','Sendai'),
-}
-def world_city_feeds(publishers,now=None,limit=12):
- now=now if now is not None else dt.datetime.now(dt.timezone.utc).timestamp()
- pairs=[(domain,country,language,edition,city)
-        for domain,country,language,edition in publishers
-        for city in WORLD_CITIES.get(country,())]
- if not pairs:return []
- count=min(max(0,limit),len(pairs));start=(int(now//14400)*max(1,count))%len(pairs)
- rows=[]
- for i in range(count):
-  domain,country,language,edition,city=pairs[(start+i)%len(pairs)]
-  params=urlencode({'q':'site:'+domain+' "'+city+'" when:1d',
-                    'hl':language,'gl':country,'ceid':country+':'+edition})
-  rows.append(('https://news.google.com/rss/search?'+params,'world-news',domain))
- return rows
+# Full GeoNames-backed worldwide registry, shared by publisher and trending scans.
+from world_local_sources import world_city_feeds

@@ -40,19 +40,12 @@ class DistrictSourcesTests(unittest.TestCase):
 
 
  def test_worldwide_city_search_is_bounded_and_rotates(self):
-  from urllib.parse import unquote_plus
-  publishers=[('bbc.com','GB','en-GB','en'),('patch.com','US','en-US','en')]
-  first=d.world_city_feeds(publishers,now=14400,limit=4)
-  second=d.world_city_feeds(publishers,now=28800,limit=4)
+  first=d.world_city_feeds([],now=14400,limit=4)
+  second=d.world_city_feeds([],now=28800,limit=4)
   self.assertEqual(len(first),4)
   self.assertNotEqual(first,second)
-  self.assertTrue(all(row[1]=='world-news' for row in first+second))
-  covered=set()
-  for cycle in range(3):
-   covered.update(row[0] for row in d.world_city_feeds(publishers,now=cycle*14400,limit=4))
-  self.assertEqual(len(covered),12)
-  self.assertTrue(any('Amherst' in unquote_plus(url) for url in covered))
-  self.assertEqual(d.world_city_feeds([],now=14400),[])
+  self.assertTrue(all(row[1] in ('world-news','india-news') for row in first+second))
+  self.assertTrue(all(row[2]=='' for row in first+second))
 
  def test_world_local_publishers_pass_main_source_guard(self):
   for domain in ('patch.com','groundup.org.za','nation.africa','antaranews.com','japantimes.co.jp'):

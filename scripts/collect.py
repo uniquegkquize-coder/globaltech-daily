@@ -14,6 +14,7 @@ from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from bs4 import BeautifulSoup
 from public_page_fetch import fetch_public_html, restricted
+from world_local_sources import public_publisher_host, matched_publisher, load_local_publishers, save_local_publishers, registry_stats
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 POSTS=ROOT/'content/posts'; PENDING=ROOT/'content/pending'
 POSTS.mkdir(parents=True,exist_ok=True); PENDING.mkdir(parents=True,exist_ok=True)
@@ -279,8 +280,7 @@ def rotating_local_feeds():
  if cities and remaining:
   start=(day*remaining)%len(cities)
   selected.extend(cities[(start+i)%len(cities)] for i in range(remaining))
- world=world_city_feeds(LOCAL_SEARCH_SOURCES) if os.getenv('NEWS_CATEGORY','') in ('','world-news') else []
- return list(dict.fromkeys(district_search_feeds(INDIA_REGIONS)+world+selected))
+ return list(dict.fromkeys(district_search_feeds(INDIA_REGIONS)+selected))
 # Keep direct primary and regional media domains eligible for original-link verification.
 for domain in LOCAL_PUBLISHERS+LOCAL_PRIMARY_DOMAINS:
  FEEDS.append(local_news_feed('site:'+domain+' India latest',domain))
@@ -896,7 +896,7 @@ def google_news_stories(cat):
    target=resolve_google_news(link)
    host=(urlparse(target).hostname or '').lower()
    if not target or host.endswith('google.com') or host.endswith('googleusercontent.com'):return None
-   if not (any(allowed(target,d) for _,_,d in FEEDS) or any(allowed(target,d) for d in REGIONAL_PORTALS.get(cat,()))):return None
+   if not approved_news_publisher(target,cat):return None
    if stamp:STORY_DATES[target]=stamp.isoformat()
    headline=clean(entry.get('title',''))
    return target,headline,category_for_url(headline,cat,target),host
@@ -971,15 +971,17 @@ def bing_search_stories(cat):
 
 SOURCE_DIAGNOSTICS=Counter()
 SOURCE_DIAGNOSTICS_LOCK=threading.Lock()
-def discovery_map(fn,items,workers,fallback=None):
+def discovery_map(fn,items,workers,fallback=None,deadline=None):
  """Keep result order, but stop scheduling discovery when its budget expires."""
  items=list(items)
  results=[fallback(item) if fallback else [] for item in items]
- if DISCOVERY_DEADLINE and time.monotonic()>=DISCOVERY_DEADLINE:return results
+ stops=[value for value in (DISCOVERY_DEADLINE,deadline) if value]
+ stop_at=min(stops) if stops else 0
+ if stop_at and time.monotonic()>=stop_at:return results
  pool=ThreadPoolExecutor(max_workers=workers)
  futures={pool.submit(fn,item):index for index,item in enumerate(items)}
  try:
-  timeout=max(0.001,DISCOVERY_DEADLINE-time.monotonic()) if DISCOVERY_DEADLINE else None
+  timeout=max(0.001,stop_at-time.monotonic()) if stop_at else None
   for future in as_completed(futures,timeout=timeout):
    try:results[futures[future]]=future.result()
    except Exception as exc:print('DISCOVERY_WORKER_FAILED',type(exc).__name__,flush=True)
@@ -992,15 +994,21 @@ def discovery_map(fn,items,workers,fallback=None):
 def source_metric(domain,metric,amount=1):
  with SOURCE_DIAGNOSTICS_LOCK: SOURCE_DIAGNOSTICS[(domain,metric)]+=amount
 
+DISCOVERED_LOCAL_DOMAINS=load_local_publishers(ROOT)
 QUEUE_FILE=PENDING/'_discovery_queue.json'
 QUEUE_MAX_AGE_HOURS=max(1,int(os.getenv('QUEUE_MAX_AGE_HOURS','87600')))
 QUEUE_LIMIT=max(30,int(os.getenv('QUEUE_LIMIT','120')))
+def approved_news_publisher(url,cat):
+ return (any(allowed(url,d) for _,_,d in FEEDS)
+         or any(allowed(url,d) for d in REGIONAL_PORTALS.get(cat,()))
+         or any(allowed(url,d) for d in tuple(DISCOVERED_LOCAL_DOMAINS.copy())))
+
 def useful_lead(row):
  if not isinstance(row,(list,tuple)) or len(row)!=4 or not all(isinstance(x,str) for x in row):return False
  url,title,cat,domain=row
  if len(title)<24 or not allowed(url,domain) or len(url)>500:return False
  if any(part in urlparse(url).path.lower() for part in ('/taxonomy/','/complain/','/submission/','/articlelist/','/category/','/tag/','/topic/','/forum/','/deals/','/collections/')):return False
- if not (any(allowed(url,d) for _,_,d in FEEDS) or any(allowed(url,d) for d in REGIONAL_PORTALS.get(cat,()))):return False
+ if not approved_news_publisher(url,cat):return False
  if (POSTS/(hashlib.sha256(url.encode()).hexdigest()[:12]+'.json')).exists():return False
  pending=PENDING/(hashlib.sha256(url.encode()).hexdigest()[:12]+'.json')
  if pending.exists():
@@ -1092,6 +1100,55 @@ def native_feed_stories(feeds=None):
   for rows in results:
    if index<len(rows):yield rows[index]
 
+def resolve_rss_story(row):
+ url,title,cat,domain,source_url=row
+ original=url
+ if 'news.google.com' in (urlparse(url).hostname or ''):
+  url=resolve_google_news(url)
+ if not domain:
+  domain=matched_publisher(source_url,url)
+  if not domain:return None
+  with SOURCE_DIAGNOSTICS_LOCK:DISCOVERED_LOCAL_DOMAINS.add(domain)
+ if original in STORY_DATES:STORY_DATES[url]=STORY_DATES[original]
+ return url,title,cat,domain
+
+def worldwide_local_stories():
+ selected=os.getenv('NEWS_CATEGORY','')
+ if selected not in ('','world-news','india-news'):return []
+ feeds=world_city_feeds(LOCAL_SEARCH_SOURCES,limit=max(1,min(64,int(os.getenv('WORLD_LOCAL_FEEDS_PER_RUN','32')))))
+ if selected:feeds=[row for row in feeds if row[1]==selected]
+ deadline=time.monotonic()+25
+ if DISCOVERY_DEADLINE:deadline=min(deadline,DISCOVERY_DEADLINE)
+ def read(item):
+  feed,cat,domain=item
+  try:
+   response=requests.get(feed,timeout=(3,6),headers={'User-Agent':'Mozilla/5.0 (compatible; GlobeWireDaily/1.0)'})
+   response.raise_for_status()
+   if len(response.content)>2_500_000:return []
+   rows=[];now=dt.datetime.now(UTC)
+   for entry in feedparser.parse(response.content).entries[:2]:
+    stamp=entry.get('published_parsed') or entry.get('updated_parsed')
+    if not stamp:continue
+    published=dt.datetime(*stamp[:6],tzinfo=UTC)
+    if not 0<=(now-published).total_seconds()<=48*3600:continue
+    url=entry.get('link','').strip();title=clean(entry.get('title',''))
+    source=entry.get('source',{})
+    source_url=source.get('href','') if isinstance(source,dict) else ''
+    if len(title)<24 or not url:continue
+    if not domain and not public_publisher_host(source_url):continue
+    STORY_DATES[url]=published.isoformat()
+    rows.append((url,title,cat,domain,source_url))
+   return rows
+  except (requests.RequestException,ValueError,TypeError,OverflowError):return []
+ batches=discovery_map(read,feeds,16,deadline=deadline)
+ eligible=[row for batch in batches for row in batch]
+ resolved=discovery_map(resolve_rss_story,eligible,12,lambda row:None,deadline=deadline)
+ with SOURCE_DIAGNOSTICS_LOCK:publishers=tuple(DISCOVERED_LOCAL_DOMAINS)
+ save_local_publishers(ROOT,publishers)
+ result=[row for row in resolved if row and allowed(row[0],row[3])]
+ print('WORLD_LOCAL_DISCOVERY',registry_stats(),'feeds',len(feeds),'original_articles',len(result),'learned_publishers',len(publishers),flush=True)
+ return result
+
 def candidates():
  seen=set()
  counts=published_categories()
@@ -1114,7 +1171,7 @@ def candidates():
    url=record.get('source',''); title=record.get('source_title','')
    domain=urlparse(url).hostname or ''
    if record.get('blocked_until','')>dt.datetime.now(UTC).isoformat() and not any(complete_body(record.get(lang+'_body',''),lang) for lang in ('en','hi')):continue
-   if title and record.get('category') in {c for _,c,_ in FEEDS} and (any(allowed(url,d) for _,_,d in FEEDS) or any(allowed(url,d) for d in REGIONAL_PORTALS.get(record.get('category'),()))) and url not in seen:
+   if title and record.get('category') in {c for _,c,_ in FEEDS} and approved_news_publisher(url,record.get('category')) and url not in seen:
     seen.add(url)
     yield url,title,record.get('category','technology'),domain
   except (OSError,ValueError):pass
@@ -1128,6 +1185,10 @@ def candidates():
    for story in rows:
     if story[0] not in seen and (not os.getenv('NEWS_CATEGORY') or story[2]==os.getenv('NEWS_CATEGORY')):
      seen.add(story[0]);yield story
+ # Reserve a bounded pass for every country before broad publisher/search discovery.
+ for story in worldwide_local_stories():
+  if story[0] not in seen:
+   seen.add(story[0]);yield story
  # Native RSS is independent of opaque Google News redirects and runs first.
  for story in native_feed_stories(district_feeds(ROOT) if os.getenv('NEWS_CATEGORY','') in ('','india-news') else []):
   if story[0] not in seen:
@@ -1217,15 +1278,14 @@ def candidates():
    except (TypeError,ValueError):continue
    try:STORY_DATES[url]=dt.datetime(*published[:6],tzinfo=UTC).isoformat()
    except (TypeError,ValueError):pass
-   eligible.append((url,title,cat,domain))
- def resolve_eligible(row):
-  url,title,cat,domain=row
-  original=url
-  if 'news.google.com' in (urlparse(url).hostname or ''):
-   url=resolve_google_news(url)
-  if original in STORY_DATES:STORY_DATES[url]=STORY_DATES[original]
-  return url,title,cat,domain
- resolved=discovery_map(resolve_eligible,eligible,16,lambda item:None)
+   source=e.get('source',{})
+   source_url=source.get('href','') if isinstance(source,dict) else ''
+   if not domain and not public_publisher_host(source_url):continue
+   eligible.append((url,title,cat,domain,source_url))
+ resolved=discovery_map(resolve_rss_story,eligible,16,lambda item:None)
+ with SOURCE_DIAGNOSTICS_LOCK:local_publishers=tuple(DISCOVERED_LOCAL_DOMAINS)
+ save_local_publishers(ROOT,local_publishers)
+ print('WORLD_LOCAL_REGISTRY',registry_stats(),'observed_publishers',len(DISCOVERED_LOCAL_DOMAINS),flush=True)
  for row in resolved:
    if row is None:continue
    url,title,cat,domain=row
