@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - '.github/workflows/indexnow.yml'
       - 'content/posts/**'
       - 'content/directory-records.json'
   schedule:
@@ -30,7 +31,7 @@ jobs:
           with urllib.request.urlopen(urllib.request.Request(base+'/'+key+'.txt',headers=headers),timeout=20) as r:
               assert r.read().decode().strip()==key, 'IndexNow key not deployed yet'
           urls=[]
-          for path in (['/news-sitemap.xml','/sitemap.xml'] if host=='globewiredaily.org else ['/sitemap.xml']):
+          for path in (['/news-sitemap.xml','/sitemap.xml'] if host=='globewiredaily.org' else ['/sitemap.xml']):
               try:
                   with urllib.request.urlopen(urllib.request.Request(base+path,headers=headers),timeout=25) as r: root=ET.fromstring(r.read())
               except Exception as e:
