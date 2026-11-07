@@ -1,0 +1,31 @@
+{
+  "en_title": "CELUS Introduces AI Agent Workflow for Electronics Design Architecture",
+  "hi_title": "सेलस (CELUS) ने इलेक्ट्रॉनिक्स डिज़ाइन आर्किटेक्चर के लिए एआई एजेंट वर्कफ़्लो पेश किया",
+  "en_body": "CELUS has announced the launch of an agentic workflow for its Design Assistant, a tool designed to help hardware engineers plan architecture and component selection at the earliest stages of electronics design. According to the company, the new workflow aims to reduce manual data sheet searches and lower revision rounds by structuring early planning before any schematic capture takes place.\n\n## Key Features of the Agentic Workflow\n\n* **Intent Capture:** Engineers describe the desired product, while the assistant prompts for specifications like interfaces, power budgets, costs, and compliance, compiling these into a step-by-step plan.\n* **Human-in-the-Loop Approval:** The assistant does not execute tasks automatically; engineers must review and approve the plan before execution and retain the ability to stop or edit the process.\n* **Architecture Generation:** The system produces a block diagram and researches suitable components, providing direct citations to underlying datasheets.\n* **Self-Review and Alternatives:** The tool checks designs against initial requirements, flags discrepancies, and ranks substitute parts based on cost, lead time, or preferred suppliers.\n* **Tool Integration:** Outputs can be exported to standard industry tools such as Altium Designer, KiCad, Siemens EDA, and Autodesk Fusion.\n\n## Practical Implications and Verification\n\nThe reported workflow addresses common challenges in electronics engineering, such as managing compressed schedules and component shortages early in a project cycle. However, users should note that multi-step agentic requests take longer to process than traditional single-prompt queries as the system plans and verifies its work.\n\nEngineering teams interested in evaluating the beta release can access it directly through the CELUS platform at app.celus.io. Independent verification of platform capabilities, compatibility, and component library accuracy can be conducted by testing sample projects against established EDA toolchains and comparing AI-suggested part availability directly with manufacturer datasheets.",
+  "hi_body": "सेलस (CELUS) ने अपने डिज़ाइन असिस्टेंट के लिए एक नए एजेंटिक वर्कफ़्लो की घोषणा की है। यह टूल हार्डवेयर इंजीनियरों को इलेक्ट्रॉनिक्स डिज़ाइन के शुरुआती चरणों में आर्किटेक्चर और कंपोनेंट चयन की योजना बनाने में मदद करने के लिए डिज़ाइन किया गया है। कंपनी के अनुसार, इस नए वर्कफ़्लो का उद्देश्य स्केमैटिक कैप्चर से पहले शुरुआती योजना को संरचित करके मैनुअल डेटाशीट खोज को कम करना और डिज़ाइन सुधार के फेरों को घटाना है।\n\n## एजेंटिक वर्कफ़्लो की मुख्य विशेषताएँ\n\n* **इरादा कैप्चर करना:** इंजीनियर डिज़ाइन किए जाने वाले उत्पाद का वर्णन करते हैं, और असिस्टेंट इंटरफ़ेस, पावर बजट, लागत तथा अनुपालन जैसे विवरण मांगता है, जिन्हें एक चरण-दर-चरण योजना में दर्ज किया जाता है।\n* **मानव अनुमोदन:** असिस्टेंट बिना अनुमति के कार्य नहीं करता है; निष्पादन से पहले इंजीनियरों को योजना की समीक्षा और अनुमोदन करना होता है, साथ ही प्रक्रिया को रोकने या संपादित करने का विकल्प भी रहता है।\n* **आर्किटेक्चर निर्माण:** यह प्रणाली एक ब्लॉक आरेख तैयार करती है और उपयुक्त घटकों पर शोध करती है, जिसमें प्रत्येक सिफ़ारिश के लिए संबंधित डेटाशीट का हवाला दिया जाता है।\n* **स्व-समीक्षा और विकल्प:** यह टूल प्रारंभिक आवश्यकताओं के विरुद्ध डिज़ाइन की जाँच करता है, विसंगतियों को चिह्नित करता है, और लागत या लीड समय के आधार पर वैकल्पिक भागों को रैंक करता है।\n* **टूल एकीकरण:** आउटपुट को अल्टियस डिज़ाइनर, कीकैड (KiCad), सीमेंस ईडीए और ऑटोडेस्क फ्यूजन जैसे मानक उद्योग टूल में निर्यात किया जा सकता है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nयह रिपोर्ट किया गया वर्कफ़्लो इलेक्ट्रॉनिक्स इंजीनियरिंग में आने वाली आम चुनौतियों का समाधान करता है, जैसे कि कम समय-सीमा का प्रबंधन और प्रोजेक्ट चक्र की शुरुआत में घटकों की कमी से निपटना। हालाँकि, उपयोगकर्ताओं को यह ध्यान रखना चाहिए कि पारंपरिक सिंगल-प्रॉम्प्ट प्रश्नों की तुलना में बहु-चरणीय एजेंटिक अनुरोधों को संसाधित होने में अधिक समय लगता है क्योंकि सिस्टम पहले अपनी योजना बनाता और जाँचता है।\n\nबीटा संस्करण का मूल्यांकन करने के इच्छुक इंजीनियरिंग दल app.celus.io पर CELUS प्लेटफ़ॉर्म के माध्यम से इस तक पहुँच सकते हैं। प्लेटफ़ॉर्म की क्षमताओं, अनुकूलता और घटक लाइब्रेरी की सटीकता का स्वतंत्र सत्यापन, स्थापित ईडीए टूल्चेन के खिलाफ नमूना परियोजनाओं का परीक्षण करके और निर्माता डेटाशीट के साथ एआई-सुझाए गए भागों की उपलब्धता की तुलना करके किया जा सकता है।",
+  "en_meta": "CELUS has launched an agentic workflow for its Design Assistant to help hardware engineers plan electronics architecture and component selection.",
+  "hi_meta": "CELUS ने अपने Design Assistant के लिए एक एजेंटिक वर्कफ़्लो लॉन्च किया है जो हार्डवेयर इंजीनियरों को इलेक्ट्रॉनिक्स डिज़ाइन आर्किटेक्चर की योजना बनाने में मदद…",
+  "en_keywords": [
+    "CELUS",
+    "AI agents",
+    "electronics design",
+    "Design Assistant",
+    "hardware engineering",
+    "component selection"
+  ],
+  "hi_keywords": [
+    "सेलस",
+    "एआई एजेंट",
+    "इलेक्ट्रॉनिक्स डिज़ाइन",
+    "डिज़ाइन असिस्टेंट",
+    "हार्डवेयर इंजीनियरिंग",
+    "घटक चयन"
+  ],
+  "source_published_at": "2026-10-29T13:00:00Z",
+  "id": "56814376dfe4",
+  "source": "https://www.prnewswire.com/news-releases/celus-brings-ai-agents-to-architecture-and-component-decisions-in-electronics-design-302923121.html",
+  "date": "2026-11-07T08:55:38.282202+00:00",
+  "source_title": "CELUS Brings AI Agents to Architecture and Component Decisions in Electronics Design - PR Newswire",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

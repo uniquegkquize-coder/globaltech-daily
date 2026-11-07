@@ -1,0 +1,29 @@
+{
+  "en_title": "Developer Preview: Technical Talks Highlighted for GitHub Universe 2026",
+  "hi_title": "डेलवेलपर पूर्वावलोकन: गिटहब यूनिवर्स 2026 के लिए तकनीकी सत्रों की मुख्य बातें",
+  "en_body": "## Overview of Selected Sessions\n\nAs developers prepare for GitHub Universe 2026, scheduled for October 28–29, community discussions are focusing on practical workflows, security, and agent-driven tooling. A recent overview published by GitHub highlights several technical talks addressing everyday engineering challenges—ranging from dependency security and AI model evaluations to offline-first application development.\n\n## Key Technical Focus Areas\n\n### Supply Chain and Dependencies\n* **Understanding `npm install`:** A session featuring GitHub speakers explores the processes, permissions, and security controls behind package distribution, examining what tools like `npm audit` might miss and where package provenance fits in.\n* **Securing GitHub Actions:** Security engineers plan to map supply chain attack techniques against GitHub Actions controls, focusing on runner infrastructure and workflow surfaces.\n\n### AI Agents, Memory, and Evaluations\n* **Agent Memory and Context:** Researchers discuss findings on how accumulated context impacts model performance, exploring research into agent memory and what context to omit.\n* **Production Model Evaluations:** Microsoft and GitHub representatives examine how Copilot evaluates models in production, contrasting standard benchmarks with real-world developer experience.\n* **Deterministic Code and LLMs:** Architectural sessions highlight separating deterministic signal collection from language model narration to handle tasks like automated root cause analysis safely.\n\n### Tooling and Infrastructure\n* **JavaScript Toolchain Migration:** Discussions feature open-source tooling like Vite+ to evaluate the consolidation of building, testing, linting, and formatting tasks.\n* **Low-Connectivity Development:** Real-world case studies explore building software for communities with unreliable internet access, featuring practical offline demonstrations.\n\n## Practical Implications and Verification\n\nAttendees and interested developers are encouraged to review the official GitHub Universe schedule to build personalized agendas. Because conference lineups and session details are subject to change, readers should verify dates, registration options, and session availability directly on the official GitHub blog or event registration portal.",
+  "hi_body": "## चयनित सत्रों का अवलोकन\n\nचूंकि डेवलपर्स 28-29 अक्टूबर को होने वाले गिटहब यूनिवर्स 2026 की तैयारी कर रहे हैं, इसलिए चर्चाएं व्यावहारिक वर्कफ़्लो, सुरक्षा और एआई-संचालित टूलिंग पर केंद्रित हैं। गिटहब द्वारा प्रकाशित एक हालिया समीक्षा में कई तकनीकी सत्रों को रेखांकित किया गया है जो दैनिक इंजीनियरिंग चुनौतियों का समाधान करते हैं—जिनमें डिपेंडेंसी सुरक्षा, एआई मॉडल मूल्यांकन और ऑफ़लाइन-प्रथम एप्लिकेशन विकास शामिल हैं।\n\n## मुख्य तकनीकी फोकस क्षेत्र\n\n### सप्लाई चेन और डिपेंडेंसी\n* **`npm install` को समझना:** गिटहब के वक्ता पैकेज वितरण के पीछे की प्रक्रियाओं, अनुमतियों और सुरक्षा नियंत्रणों का पता लगाते हैं, और यह जांचते हैं कि कौन सी बातें छूट सकती हैं।\n* **गिटहब एक्शन की सुरक्षा:** सुरक्षा इंजीनियर रनर बुनियादी ढांचे और वर्कफ़्लो सतहों पर ध्यान केंद्रित करते हुए सप्लाई चेन हमलों की तकनीकों का मानचित्रण करेंगे।\n\n### एआई एजेंट, मेमोरी और मूल्यांकन\n* **एजेंट मेमोरी और संदर्भ:** शोधकर्ता इस बात पर चर्चा करते हैं कि संचित संदर्भ मॉडल के प्रदर्शन को कैसे प्रभावित करता है।\n* **उत्पादन मॉडल मूल्यांकन:** माइक्रोसॉफ्ट और गिटहब के प्रतिनिधि यह जांचते हैं कि कॉपायलट उत्पादन में मॉडल का मूल्यांकन कैसे करता है।\n* **deterministic कोड और एलएलएम:** वास्तुकला सत्र स्वचालित मूल कारण विश्लेषण जैसी साफ़-सुथरी ज़िम्मेदारियों को उजागर करते हैं।\n\n### टूलिंग और बुनियादी ढांचा\n* **जावास्क्रिप्ट टूलचेन माइग्रेशन:** चर्चाएं निर्माण, परीक्षण और फॉर्मेटिंग कार्यों के समेकन का मूल्यांकन करने के लिए ओपन-सोर्स टूलिंग को शामिल करती हैं।\n* **कम कनेक्टिविटी वाला विकास:** वास्तविक दुनिया के मामले उन समुदायों के लिए सॉफ़्टवेयर बनाने का पता लगाते हैं जहाँ इंटरनेट एक्सेस अविश्वसनीय है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nउपस्थित लोगों और इच्छुक डेवलपर्स को व्यक्तिगत एजेंडा बनाने के लिए आधिकारिक गिटहब यूनिवर्स शेड्यूल की समीक्षा करने के लिए प्रोत्साहित किया जाता है। चूंकि सत्र विवरण परिवर्तन के अधीन हैं, इसलिए पाठकों को आधिकारिक गिटहब ब्लॉग या इवेंट पोर्टल पर सीधे तिथियों और पंजीकरण विकल्पों को सत्यापित करना चाहिए।",
+  "en_meta": "Explore selected technical talks for GitHub Universe 2026, covering AI agents, supply chain security, JavaScript tooling, and low-connectivity development.",
+  "hi_meta": "गिटहब यूनिवर्स 2026 के लिए चयनित तकनीकी सत्रों का अन्वेषण करें, जिसमें एआई एजेंट, सप्लाई चेन सुरक्षा और जावास्क्रिप्ट टूलिंग शामिल हैं।",
+  "en_keywords": [
+    "GitHub Universe 2026",
+    "developer tools",
+    "AI agents",
+    "supply chain security",
+    "JavaScript tooling"
+  ],
+  "hi_keywords": [
+    "गिटहब यूनिवर्स 2026",
+    "डेवलपर टूल",
+    "एआई एजेंट",
+    "सप्लाई चेन सुरक्षा",
+    "तकनीकी सत्र"
+  ],
+  "source_published_at": "2026-10-01T15:07:16+00:00",
+  "id": "a0c03d16e725",
+  "source": "https://github.blog/news-insights/company-news/10-technical-talks-im-excited-about-at-github-universe-2026/",
+  "date": "2026-11-07T09:13:57.788756+00:00",
+  "source_title": "10 technical talks I’m excited about at GitHub Universe 2026",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

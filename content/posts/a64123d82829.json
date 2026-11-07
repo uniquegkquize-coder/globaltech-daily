@@ -1,0 +1,29 @@
+{
+  "en_title": "Brotli Decoder Vulnerability Impacts Node.js, Bun, Python, .NET, and Other Software",
+  "hi_title": "ब्रोटली डिकोडर खामी का Node.js, Bun, Python और .NET जैसे सॉफ्टवेयर पर प्रभाव",
+  "en_body": "## Overview of CVE-2026-111497\n\nA memory-corruption vulnerability in Google's Brotli compression decoder (tracked as CVE-2026-111497) affects multiple software ecosystems, including Node.js, Bun, Microsoft's .NET, Python packages, Envoy proxies, FFmpeg, ClickHouse, and Apache Arrow. The flaw arises from how the C code unpacks Brotli streams. If a program decodes attacker-controlled Brotli-compressed data, crafted payloads can cause a buffer overflow, potentially resulting in crashes, memory leaks, or remote code execution.\n\nOpenAI's Codex Security team reported the issue, and Google assigned a CVSS score of 9.2 (critical). Other maintainers, including Red Hat and Microsoft, rate it between 8.1 (high) and important. According to available assessments, no in-the-wild exploitation has been publicly confirmed.\n\n## Affected Software and Exposure Vectors\n\nBecause various platforms bundle or reference their own copies of Google's decoder, they must be updated independently:\n\n* **Node.js and Bun:** Exposed when built-in `fetch()` clients read Brotli responses (`Content-Encoding: br`) or when request-body parsers (such as Express 5) unpack incoming uploads.\n* **Python:** Packages like `Brotli` and `brotlicffi` leave HTTP clients (`requests`, `httpx`, `urllib3`, `aiohttp`) vulnerable upon installation, even if an application never explicitly imports Brotli.\n* **.NET:** Microsoft released out-of-band updates on October 25 for .NET 8, 9, and 10. Apps are exposed only if they use explicit Brotli APIs (`BrotliStream`) or enable automatic decompression.\n* **Other Systems:** JFrog research identified vectors in FFmpeg (via libjxl metadata parsing), ClickHouse (handling HTTP requests, `.br` files, and Parquet data), and Apache Arrow.\n\n## Mitigation and Verification\n\nSecurity advisories recommend the following verification and remediation steps:\n\n* **Update Runtimes and Libraries:** Apply patches provided by vendors (such as updating Node.js, .NET runtimes, or Linux distribution packages). Restart running services and rebuild container images, as active processes retain the old decoder in memory.\n* **Disable Untrusted Decoding:** Where updates are not yet available, reject incoming requests with `Content-Encoding: br` at the network edge, disable automatic client decompression, or uninstall unused Python Brotli bindings.\n* **Review Security Scanners:** Automated dependency checkers may lag behind CVE records for Python packages or bundled libraries; administrators should manually verify installed versions.",
+  "hi_body": "## CVE-2026-111497 का परिचय\n\nगूगल के ब्रोटली (Brotli) कम्प्रेशन डिकोडर में एक मेमोरी-करप्शन खामी पाई गई है, जिसे CVE-2026-111497 के रूप में ट्रैक किया गया है। यह समस्या Node.js, Bun, माइक्रोसॉफ्ट .NET, पाइथन पैकेजेस, Envoy प्रॉक्सी, FFmpeg, ClickHouse और Apache Arrow को प्रभावित करती है। यह बग तब सामने आता है जब कोई प्रोग्राम हमलावर द्वारा नियंत्रित ब्रोटली-संपीड़ित डेटा को डिकोड करता है, जिससे बफर ओवरफ्लो और संभावित रूप से कोड निष्पादन या क्रैश हो सकता है।\n\nइस खामी को ओपनएआई की कोडेक्स सिक्योरिटी टीम ने रिपोर्ट किया था। गूगल ने इसे सीवीएसएस (CVSS) स्कोर 9.2 (गंभीर) दिया है, जबकि अन्य वेंडर्स ने इसे उच्च (high) श्रेणी में रखा है। उपलब्ध रिपोर्टों के अनुसार, वास्तविक दुनिया में इस खामी के शोषण (exploitation) का कोई पुख्ता मामला सामने नहीं आया है।\n\n## प्रभावित सॉफ्टवेयर और जोखिम के दायरे\n\nचूंकि विभिन्न प्लेटफॉर्म ब्रोटली डिकोडर की अपनी प्रतियों का उपयोग करते हैं, इसलिए प्रत्येक को अलग से अपडेट करना आवश्यक है:\n\n* **Node.js और Bun:** अंतर्निहित `fetch()` या अनुरोध निकायों (जैसे Express) द्वारा ब्रोटली प्रतिक्रियाओं को डिकोड करते समय जोखिम हो सकता है।\n* **Python:** `Brotli` या `brotlicffi` पैकेजेस स्थापित होने पर HTTP क्लाइंट (जैसे requests और httpx) स्वतः ब्रोटली प्रतिक्रियाओं को डिकोड करते हैं।\n* **.NET:** माइक्रोसॉफ्ट ने .NET 8, 9 और 10 के लिए सुरक्षा अपडेट जारी किए हैं। ऐप्स तभी जोखिम में आते हैं जब वे स्पष्ट रूप से ब्रोटली एपीआई या ऑटोमैटिक डीकंप्रेसन का उपयोग करते हैं।\n* **अन्य सॉफ्टवेयर:** शोधकर्ताओं ने FFmpeg, ClickHouse और Apache Arrow में भी इसी तरह के मार्ग पहचाने हैं।\n\n## बचाव और सत्यापन के उपाय\n\nविशेषज्ञों और वेंडर्स द्वारा निम्नलिखित सुरक्षा कदम उठाने की सलाह दी गई है:\n\n* **रंटाइम्स और लाइब्रेरी अपडेट करें:** वेंडर द्वारा जारी पैच लागू करें और अपनी सेवाओं को रीस्टार्ट करें, क्योंकि सक्रिय प्रक्रियाएं पुरानी लाइब्रेरी को मेमोरी में बनाए रखती हैं।\n* **अविश्वसनीय डिकोडिंग बंद करें:** जहां अपडेट उपलब्ध नहीं है, वहां नेटवर्क स्तर पर `Content-Encoding: br` अनुरोधों को अस्वीकार करें या क्लाइंट में स्वचालित डीकंप्रेसन अक्षम करें।\n* **मैन्युअल जांच करें:** चूंकि स्वचालित स्कैनर हर बार बंडल किए गए या पाइथन पैकेजेस को तुरंत चिह्नित नहीं कर सकते, इसलिए स्थापित संस्करणों की मैन्युअल रूप से जांच करें।",
+  "en_meta": "Learn about CVE-2026-111497, a critical Brotli decoder flaw affecting Node.js, Bun, Python, .NET, and other software, with details on fixes and mitigations.",
+  "hi_meta": "CVE-2026-111497 ब्रोटली डिकोडर खामी के बारे में जानें जो Node.js, Python, और .NET को प्रभावित करती है। पैच और सुरक्षा उपायों की जानकारी पढ़ें।",
+  "en_keywords": [
+    "Brotli vulnerability",
+    "CVE-2026-111497",
+    "Node.js security",
+    ".NET patch",
+    "Python Brotli flaw"
+  ],
+  "hi_keywords": [
+    "ब्रोटली खामी",
+    "CVE-2026-111497",
+    "Node.js सुरक्षा",
+    "पाइथन ब्रोटली बग",
+    "माइक्रोसॉफ्ट पैच"
+  ],
+  "source_published_at": "2026-10-24T16:39:00+05:30",
+  "id": "a64123d82829",
+  "source": "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html",
+  "date": "2026-11-07T09:17:31.748677+00:00",
+  "source_title": "Brotli Decoder Flaw Behind Node.js RCE Also Affects Bun, Python and Other Widely Used Software",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,31 @@
+{
+  "en_title": "PHP2Shell Exploit Attempts Hit Millions Amid Mirai Malware Deployment Efforts",
+  "hi_title": "Mirai मैलवेयर के प्रयासों के बीच PHP2Shell exploit के लाखों प्रयास दर्ज",
+  "en_body": "Security researchers and telemetry providers have observed millions of automated scanning and exploit attempts targeting recently disclosed PHP2Shell vulnerabilities (CVE-2026-109618 and CVE-2026-109619). While malicious actors have rapidly weaponized the flaws to attempt deployments of a Mirai botnet variant known as Potassium, threat intelligence firms note that achieving reliable remote code execution (RCE) remains difficult due to protections such as Address Space Layout Randomization (ASLR).\n\n## Overview of the PHP2Shell Flaws\n\n* **Affected Components:** Unauthenticated remote code execution flaws in the PHP engine, impacting versions prior to the patched releases.\n* **Patched Versions:** Fixed in PHP versions 8.5.12, 8.4.27, 8.3.36, and 8.2.35.\n* **Origin:** The underlying vulnerable code dates back to PHP 5.4, meaning applications running on unsupported PHP branches without engine updates remain exposed regardless of clean application-level code.\n\n## Attack Activity and Botnet Campaigns\n\n* **Volume:** Cloudflare reported that scanning and exploitation attempts surged from tens of thousands shortly after public disclosure to millions by October 22, 2026.\n* **Payloads:** Observed campaigns attempt to rope infected systems into the Potassium botnet variant, utilizing downloader capabilities, C2 infrastructure, and DDoS functionalities.\n* **Tooling:** Security firms like SOCRadar identified exposed attacker servers hosting Python exploit tooling (such as `aslr_exploit.py`) and screening scripts designed to check live websites for prerequisites.\n\n## Practical Implications and Verification\n\n* **Precautionary Outages:** Out of an abundance of caution, various government, educational, and healthcare websites across Asia, Europe, and North America initiated temporary shutdowns while applying updates.\n* **Mitigation:** Organizations running supported versions are advised to apply official patches immediately. Those on unsupported branches (such as PHP 7.4, 8.0, or 8.1) should migrate to a supported branch or utilize distribution backports.\n* **Verification:** Organizations can verify exposure by checking their PHP engine versions against official vendor bulletins and reviewing server access logs for anomalous unauthenticated HTTP requests targeting session handlers.",
+  "hi_body": "सुरक्षा शोधकर्ताओं और टेलीमेट्री प्रदाताओं ने हाल ही में सामने आई PHP2Shell कमज़ोरियों (CVE-2026-109618 और CVE-2026-109619) को लक्षित करने वाले लाखों स्वचालित स्कैनिंग और exploit प्रयासों को दर्ज किया है। हालांकि हमलावरों ने Potassium नामक Mirai बॉట్‌नेट वेरिएंट को तैनात करने के लिए इन कमज़ोरियों का तेजी से उपयोग करने का प्रयास किया है, लेकिन खतरे की खुफिया कंपनियों का कहना है कि एड्रेस स्पेस लेआउट रैंडमराइजेशन (ASLR) जैसी सुरक्षा प्रणालियों के कारण विश्वसनीय रिमोट कोड निष्पादन (RCE) प्राप्त करना अभी भी कठिन बना हुआ है।\n\n## PHP2Shell कमज़ोरियों का अवलोकन\n\n* **प्रभावित घटक:** PHP इंजन में अप्रमाणित रिमोट कोड निष्पादन की कमज़ोरियां, जो पैच किए गए संस्करणों से पहले के वर्जन्स को प्रभावित करती हैं।\n* **पैच किए गए संस्करण:** PHP संस्करण 8.5.12, 8.4.27, 8.3.36 और 8.2.35 में ठीक किया गया है।\n* **मूल:** अंतर्निहित कमज़ोर कोड PHP 5.4 जितना पुराना है, जिसका अर्थ है कि बिना इंजन अपडेट के असमर्थित PHP शाखाओं पर चलने वाले अनुप्रयोग अभी भी असुरक्षित हैं।\n\n## हमला गतिविधि और बॉట్‌नेट अभियान\n\n* **मात्रा:** Cloudflare ने बताया कि सार्वजनिक खुलासे के तुरंत बाद स्कैनिंग और exploit के प्रयास दसियों हज़ारों से बढ़कर लाखों तक पहुंच गए।\n* **पेलोड:** देखे गए अभियानों में संक्रमित प्रणालियों को Potassium बॉట్‌नेट वेरिएंट में शामिल करने का प्रयास किया जा रहा है, जिसमें डाउनलोडर क्षमताओं और डीडीओएस कार्यक्षमताओं का उपयोग किया जाता है।\n* **टूल्स:** SOCRadar जैसी सुरक्षा फर्मों ने ऐसे सर्वर की पहचान की है जो पायथन exploit टूल्स और लाइव वेबसाइटों की जांच करने वाली स्क्रिप्ट की मेजबानी कर रहे हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\n* **एहतियाती शटडाउन:** सावधानी के तौर पर, एशिया, यूरोप और उत्तरी अमेरिका में विभिन्न सरकारी, शैक्षणिक और स्वास्थ्य सेवा वेबसाइटों ने अपडेट लागू करते समय अस्थायी शटडाउन शुरू किया।\n* **बचाव उपाय:** समर्थित संस्करणों को चलाने वाले संगठनों को तुरंत आधिकारिक पैच लागू करने की सलाह दी जाती है। असमर्थित शाखाओं (जैसे PHP 7.4, 8.0, या 8.1) पर मौजूद लोगों को समर्थित शाखा में माइग्रेट करना चाहिए।\n* **सत्यापन:** संगठन आधिकारिक विक्रेता विसंगतियों के खिलाफ अपने PHP इंजन संस्करणों की जांच करके और सत्र हैंडलर को लक्षित करने वाले असामान्य HTTP अनुरोधों के लिए सर्वर लॉग की समीक्षा करके अपनी स्थिति सत्यापित कर सकते हैं।",
+  "en_meta": "Read about PHP2Shell exploit attempts hitting millions, Mirai malware variants, mitigation steps, and the status of CVE-2026-109618 and CVE-2026-109619.",
+  "hi_meta": "PHP2Shell exploit के लाखों प्रयासों, Mirai मैलवेयर और CVE-2026-109618 व CVE-2026-109619 से जुड़ी जानकारी और बचाव के उपायों को पढ़ें।",
+  "en_keywords": [
+    "PHP2Shell",
+    "Mirai malware",
+    "CVE-2026-109618",
+    "CVE-2026-109619",
+    "cybersecurity",
+    "remote code execution"
+  ],
+  "hi_keywords": [
+    "PHP2Shell",
+    "Mirai malware",
+    "CVE-2026-109618",
+    "CVE-2026-109619",
+    "साइबर सुरक्षा",
+    "रिमोट कोड निष्पादन"
+  ],
+  "source_published_at": "2026-10-23T13:10:00+05:30",
+  "id": "9d0cfa945b25",
+  "source": "https://thehackernews.com/2026/10/php2shell-exploit-attempts-hit-millions.html",
+  "date": "2026-11-07T08:59:44.685949+00:00",
+  "source_title": "PHP2Shell Exploit Attempts Hit Millions as Attackers Try to Deploy Mirai Malware - The Hacker News",
+  "category": "cyber-security",
+  "image_kind": "conceptual"
+}

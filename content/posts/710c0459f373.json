@@ -1,0 +1,31 @@
+{
+  "en_title": "Agent Merge Brings Automated Pull Request Fixes to GitHub Cloud",
+  "hi_title": "Agent Merge गिटहब क्लाउड पर पुल रिक्वेस्ट को स्वचालित रूप से ठीक करता है",
+  "en_body": "## Overview of Agent Merge\n\nA new feature called Agent Merge has been integrated into pull requests on GitHub, designed to help developers resolve blockers automatically. According to the official GitHub announcement, the tool uses GitHub Copilot to watch pull requests and address issues that prevent merging, such as failing Actions workflows and merge conflicts.\n\nPreviously available in the GitHub Copilot app and Visual Studio Code, this capability now operates directly within pull requests on the GitHub platform. \n\n## Key Capabilities and How It Works\n\nWhen enabled, Agent Merge performs tasks in a cloud development environment. According to the release documentation, developers can utilize the feature through several steps:\n\n* **Manual Activation:** Select **Watch and fix** within the pull request merge box.\n* **Customizable Options:** Choose whether Copilot should address failing Actions workflows, resolve merge conflicts, or handle both.\n* **Default Configuration:** Enable Agent Merge by default for all new pull requests via the Copilot settings menu.\n* **Workflow Integration:** Combine the tool with GitHub's auto-merge feature so that once Copilot prepares the pull request, GitHub merges it automatically upon meeting all requirements.\n\n## Availability and Verification\n\nGitHub states that Agent Merge in the cloud is available to users with a paid Copilot plan, subject to applicable organization and enterprise policies.\n\nUsers interested in verifying details, reviewing documentation, or sharing feedback can consult official resources:\n\n* Read the original changelog and documentation on the **GitHub Blog** and **GitHub Docs**.\n* Participate in community discussions through the official **GitHub Community discussion** channels.\n* Subscribe to the biweekly developer newsletter for technical guides and best practices.",
+  "hi_body": "## एजेंट मर्ज का परिचय\n\nगिटहब पर पुल रिक्वेस्ट में 'एजेंट मर्ज' नामक एक नई सुविधा को जोड़ा गया है, जिसे डेवलपर्स को रुकावटों को स्वचालित रूप से हल करने में मदद करने के लिए डिज़ाइन किया गया है। आधिकारिक गिटहब घोषणा के अनुसार, यह टूल गिटहब कोपायलट का उपयोग करके पुल रिक्वेस्ट पर नज़र रखता है और उन समस्याओं को ठीक करता है जो मर्ज होने से रोकती हैं, जैसे कि विफल होने वाले एक्शन वर्कफ़्लो और मर्ज संघर्ष।\n\nयह सुविधा पहले गिटहब कोपायलट ऐप और विजुअल स्टूडियो कोड में उपलब्ध थी, और अब सीधे गिटहब प्लेटफ़ॉर्म पर पुल रिक्वेस्ट के भीतर काम करती है।\n\n## मुख्य क्षमताएं और यह कैसे काम करता है\n\nसक्रिय होने पर, एजेंट मर्ज एक क्लाउड डेवलपमेंट वातावरण में कार्य करता है। रिलीज़ दस्तावेज़ के अनुसार, डेवलपर इन चरणों के माध्यम से इस सुविधा का उपयोग कर सकते हैं:\n\n* **मैनुअल सक्रियण:** पुल रिक्वेस्ट मर्ज बॉक्स के भीतर **Watch and fix** का चयन करें।\n* **अनुकूलन योग्य विकल्प:** चुनें कि क्या कोपायलट को विफल एक्शन वर्कफ़्लो को ठीक करना चाहिए, मर्ज संघर्षों को हल करना चाहिए, या दोनों को संभालना चाहिए।\n* **डिफ़ॉल्ट कॉन्फ़िगरेशन:** कोपायलट सेटिंग मेनू के माध्यम से सभी नई पुल रिक्वेस्ट के लिए डिफ़ॉल्ट रूप से एजेंट मर्ज सक्षम करें।\n* **वर्कफ़्लो एकीकरण:** इस टूल को गिटहब की ऑटो-मर्ज सुविधा के साथ संयोजित करें ताकि एक बार कोपायलट पुल रिक्वेस्ट तैयार कर ले, तो सभी आवश्यकताएं पूरी होने पर गिटहब उसे स्वचालित रूप से मर्ज कर दे।\n\n## उपलब्धता और सत्यापन\n\nगिटहब का कहना है कि क्लाउड में एजेंट मर्ज सशुल्क कोपायलट योजना वाले उपयोगकर्ताओं के लिए उपलब्ध है, जो लागू संगठन और उद्यम नीतियों के अधीन है।\n\nविवरण सत्यापित करने, दस्तावेज़ीकरण की समीक्षा کرنے, या प्रतिक्रिया साझा करने के इच्छुक उपयोगकर्ता आधिकारिक संसाधनों का संदर्भ ले सकते हैं:\n\n* **गिटहब ब्लॉग** और **गिटहब डॉक्स** पर मूल चेंजलॉग और दस्तावेज़ पढ़ें।\n* आधिकारिक **गिटहब कम्युनिटी डिस्कशन** चैनलों के माध्यम से समुदाय चर्चाओं में भाग लें।\n* तकनीकी गाइड और सर्वोत्तम प्रथाओं के लिए द्विसाप्ताहिक डेवलपर न्यूज़लेटर की सदस्यता लें।",
+  "en_meta": "Agent Merge uses GitHub Copilot to automatically fix failing Actions workflows and merge conflicts in cloud development environments.",
+  "hi_meta": "एजेंट मर्ज गिटहब कोपायलट का उपयोग करके क्लाउड में विफल एक्शन वर्कफ़्लो और मर्ज संघर्षों को स्वचालित रूप से ठीक करता है।",
+  "en_keywords": [
+    "Agent Merge",
+    "GitHub Copilot",
+    "pull requests",
+    "merge conflicts",
+    "Actions workflows",
+    "GitHub cloud"
+  ],
+  "hi_keywords": [
+    "Agent Merge",
+    "GitHub Copilot",
+    "पुल रिक्वेस्ट",
+    "मर्ज संघर्ष",
+    "Actions workflows",
+    "GitHub cloud"
+  ],
+  "source_published_at": "2026-10-28T15:30:00+00:00",
+  "id": "710c0459f373",
+  "source": "https://github.blog/changelog/2026-10-28-agent-merge-watches-and-fixes-pull-requests-in-the-cloud/",
+  "date": "2026-11-07T09:15:02.595516+00:00",
+  "source_title": "Agent Merge watches and fixes pull requests in the cloud - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

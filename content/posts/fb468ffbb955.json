@@ -1,0 +1,31 @@
+{
+  "en_title": "De-Armor Open-Source Release Focuses on Task-Oriented AI Response Calibration",
+  "hi_title": "डी-आर्मर ओपन-सोर्स प्रोजेक्ट एआई प्रतिक्रिया कैलिब्रेशन पर केंद्रित",
+  "en_body": "## Overview of De-Armor\n\nThe open-source project **de-armor** (ninetyhe-90/de-armor) has been released as a task-oriented response calibration skill designed to improve AI output utility. Rather than relying on rigid banned-word lists or arbitrary scoring thresholds, the framework aims to preserve essential facts, conditions, uncertainties, and permission boundaries while stripping away conversational padding and social filler.\n\nAccording to the project documentation, the tool is packaged as a portable `SKILL.md` file rather than a vendor-specific plugin, making it compatible with various AI agents and system prompts without requiring external runtime dependencies or proprietary APIs.\n\n## Core Architecture and Version 2 Updates\n\nThe recently deployed version 2 framework shifts from numerical scoring to a task-oriented audit approach. Key updates include:\n\n* **Task-Oriented Audits:** Evaluates whether an AI response retains critical facts, conditions, and boundaries while delivering the requested artifact.\n* **Schema and Contract Changes:** Utilizes `schema_version: 2` and supports information contracts to flag missing anchors or unauthorized claims.\n* **Offline Machine Check:** Includes an optional Python-based script (`armor_lint.py`) that operates locally using the standard library, requiring no network access or third-party packages.\n* **Interactive Lab:** Provides an offline HTML lab (`assets/de-armor-demo.html`) backed by a reproducible dataset (`assets/cases.json`) to demonstrate calibration scenarios.\n\n## Practical Implications and Verification\n\nThe project emphasizes that automated checks serve as a secondary validation layer rather than a definitive guarantee of semantic or factual correctness. Human review remains necessary to verify domain-specific accuracy. \n\n* **Integration Flexibility:** Can be integrated via a skills directory, appended to system prompts, or prepended to conversation contexts.\n* **Safety and Constraints:** The documentation notes that the skill does not override host instructions, safety limits, or authorization protocols.\n\n### How to Verify\n\nUsers and developers interested in auditing or deploying the utility can review the official repository on GitHub (`ninetyhe-90/de-armor`). All specifications, offline scripts, and scenario datasets are publicly accessible for independent inspection.",
+  "hi_body": "## डी-आर्मर का परिचय\n\nओपन-सोर्स प्रोजेक्ट **de-armor** (ninetyhe-90/de-armor) को एआई आउटपुट की उपयोगिता में सुधार के लिए एक कार्य-उन्मुख (task-oriented) प्रतिक्रिया कैलिब्रेशन स्किल के रूप में जारी किया गया है। कठोर प्रतिबंधित-शब्द सूचियों या मनमाने स्कोरिंग थ्रेशोल्ड पर निर्भर रहने के बजाय, यह फ्रेमवर्क आवश्यक तथ्यों, शर्तों, अनिश्चितताओं और अनुमति सीमाओं को सुरक्षित रखते हुए अनावश्यक बातचीत और पैडिंग को हटाने का प्रयास करता है।\n\nप्रोजेक्ट दस्तावेज़ के अनुसार, यह टूल किसी विशिष्ट वेंडर प्लगइन के बजाय एक पोर्टेबल `SKILL.md` फ़ाइल के रूप में पैक किया गया है। यह बाहरी रनटाइम निर्भरता या मालिकाना एपीआई की आवश्यकता के बिना विभिन्न एआई एजेंटों और सिस्टम संकेतों के साथ संगत है।\n\n## मुख्य आर्किटेक्चर और संस्करण 2 अपडेट\n\nहाल ही में जारी संस्करण 2 फ्रेमवर्क संख्यात्मक स्कोरिंग से हटकर कार्य-उन्मुख ऑडिट दृष्टिकोण अपनाता है। प्रमुख अपडेट में शामिल हैं:\n\n* **कार्य-उन्मुख ऑडिट:** यह मूल्यांकन करता है कि क्या एआई प्रतिक्रिया अनुरोधित आर्टिफ़ैक्ट प्रदान करते हुए महत्वपूर्ण तथ्यों और सीमाओं को बनाए रखती है।\n* **स्कीमा और अनुबंध परिवर्तन:** इसमें `schema_version: 2` का उपयोग किया गया है और लापता एंकरों या अनधिकृत दावों को चिह्नित करने के लिए सूचना अनुबंधों का समर्थन किया जाता है।\n* **ऑफ़लाइन मशीन चेक:** इसमें एक वैकल्पिक पाइथन-आधारित स्क्रिप्ट (`armor_lint.py`) शामिल है जो मानक लाइब्रेरी का उपयोग करके स्थानीय रूप से संचालित होती है।\n* **इंटरैक्टिव लैब:** प्रदर्शन परिदृश्यों को प्रदर्शित करने के लिए एक पुनरुत्पादित डेटासेट (`assets/cases.json`) द्वारा समर्थित ऑफ़लाइन एचटीएमएल लैब (`assets/de-armor-demo.html`) प्रदान करता है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nप्रोजेक्ट इस बात पर जोर देता है कि स्वचालित जांच सिमेंटिक या तथ्यात्मक शुद्धता की निश्चित गारंटी के बजाय एक द्वितीयक सत्यापन परत के रूप में कार्य करती है।\n\n* **एकीकरण लचीलापन:** इसे स्किल निर्देशिका के माध्यम से एकीकृत किया जा सकता है, सिस्टम संकेतों में जोड़ा जा सकता है, या वार्तालाप संदर्भ में जोड़ा जा सकता है।\n* **सुरक्षा और सीमाएं:** दस्तावेज़ में उल्लेख किया गया है कि यह स्किल होस्ट निर्देशों, सुरक्षा सीमाओं या प्राधिकरण प्रोटोकॉल को ओवरराइड नहीं करती है।\n\n### कैसे सत्यापित करें\n\nऑडिट या उपयोग करने के इच्छुक उपयोगकर्ता GitHub पर आधिकारिक रिपॉजिटरी (`ninetyhe-90/de-armor`) की समीक्षा कर सकते हैं। सभी विनिर्देश, ऑफ़लाइन स्क्रिप्ट और परिदृश्य डेटासेट स्वतंत्र निरीक्षण के लिए सार्वजनिक रूप से उपलब्ध हैं।",
+  "en_meta": "Explore de-armor, an open-source task-oriented AI response calibration skill designed to preserve facts and reduce filler without vendor dependencies.",
+  "hi_meta": "de-armor ओपन-सोर्स एआई प्रतिक्रिया कैलिब्रेशन स्किल के बारे में जानें जो तथ्यों को सुरक्षित रखने और पैडिंग को कम करने के लिए डिज़ाइन किया गया है।",
+  "en_keywords": [
+    "de-armor",
+    "AI response calibration",
+    "open source",
+    "SKILL.md",
+    "task-oriented audit",
+    "ninetyhe-90"
+  ],
+  "hi_keywords": [
+    "de-armor",
+    "एआई कैलिब्रेशन",
+    "ओपन सोर्स",
+    "SKILL.md",
+    "कार्य-उन्मुख ऑडिट",
+    "ninetyhe-90"
+  ],
+  "source_published_at": null,
+  "id": "fb468ffbb955",
+  "source": "https://github.com/ninetyhe-90/de-armor",
+  "date": "2026-11-07T09:21:51.745448+00:00",
+  "source_title": "ninetyhe-90/de-armor: 破甲 / De-Armor：任务导向的回复校准，保住事实与条件，减少无效防御，补齐真正交付。 - GitHub",
+  "category": "military-tech",
+  "image_kind": "conceptual"
+}
