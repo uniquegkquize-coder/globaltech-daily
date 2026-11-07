@@ -14,8 +14,8 @@ on:
 permissions:
   contents: write
 concurrency:
-  # Serialize article writes with the regular 100-post publisher and image repair.
-  group: globaltech-news-publish
+  # Queue-only discovery has its own lock; it never writes published posts.
+  group: globaltech-trending-queue
   cancel-in-progress: false
 jobs:
   watch:

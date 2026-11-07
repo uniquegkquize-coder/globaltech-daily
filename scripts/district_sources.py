@@ -33,8 +33,8 @@ def district_feeds(root,now=None,limit=24,refresh=True):
  path=Path(root)/'content/pending/_district_sources.json'
  try:cache=json.loads(path.read_text(encoding='utf-8'))
  except (OSError,ValueError):cache={}
- urls=sorted(set(SEEDS+catalog_feeds(''.join('<a href="'+u+'"></a>' for u in cache.get('feeds',[]) if isinstance(u,str)))))
  if not isinstance(cache,dict):cache={}
+ urls=sorted(set(SEEDS+catalog_feeds(''.join('<a href="'+u+'"></a>' for u in cache.get('feeds',[]) if isinstance(u,str)))))
  try:checked_at=float(cache.get('checked_at',0))
  except (ValueError,TypeError):checked_at=0
  if refresh and now-checked_at>86400:
