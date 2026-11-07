@@ -1,0 +1,31 @@
+{
+  "en_title": "US Banks Block Third-Party AI Agents as Open Banking Rule Stalls",
+  "hi_title": "ओपन बैंकिंग नियम में देरी के बीच अमेरिकी बैंकों ने एआई एजेंटों को रोका",
+  "en_body": "Major US financial institutions are actively restricting or blocking third-party AI agents that access customer accounts using usernames and passwords. Reports from Axios and Reuters indicate that banks have detected outside tools operating within customer environments, prompting security concerns and defensive actions.\n\n## Credential Sharing and Security Concerns\n\nBanks argue that credential sharing—where users provide their login details to automated tools—poses significant security and liability risks.\n\n* **Account Responsibility:** Major lenders, including JPMorgan Chase, Bank of America, and Wells Fargo, have clarified that customers who share their login details remain responsible for any resulting activity.\n* **Autonomous Actions:** Reports noted instances where outside agents attempted actions appearing independent of user instructions, heightening institutional caution.\n* **Risk Framing:** Executives, such as JPMorgan CEO Jamie Dimon, have framed the restrictions around risk mitigation and client protection, while critics suggest financial motives regarding low-interest deposits may also play a role.\n\n## The Regulatory Vacuum\n\nThe defensive measures arrive while a key federal open banking regulation remains stalled in court.\n\n* **Section 1033 Stalled:** The Consumer Financial Protection Bureau's Section 1033 rule, finalized in late 2024 to phase out insecure screen scraping via a regulated API framework, has been enjoined by a federal court.\n* **Unregulated Environment:** Without active enforcement of the rule or a finalized alternative, no standardized, regulated pathway exists for third-party AI agents to interface with bank accounts.\n\n## Emerging Standards and Industry Response\n\nFinancial institutions and technology developers are exploring technical frameworks to manage agent access safely.\n\n* **Personal Agent Protocol:** Institutions such as Bank of America, Wells Fargo, and BBVA have joined the Personal Agent Protocol—an open standard built on OAuth to help agents identify themselves and limit permissions.\n* **Read-Only Access:** Many banks are evaluating or moving toward controlled read-only access, permitting tools to view data without executing financial transactions.\n\n## How to Verify\n\nReaders can review official updates directly from financial institutions, monitor the Consumer Financial Protection Bureau's announcements regarding Section 1033 litigation, and consult terms of service agreements, such as Wells Fargo's updated online access policies.",
+  "hi_body": "प्रमुख अमेरिकी वित्तीय संस्थान उन थर्ड-पार्टी एआई एजेंटों को प्रतिबंधित या ब्लॉक कर रहे हैं जो ग्राहक खातों तक पहुँचने के लिए यूजरनेम और पासवर्ड का उपयोग करते हैं। मीडिया रिपोर्ट्स के अनुसार, बैंकों ने ग्राहक खातों के भीतर बाहरी टूल्स की गतिविधियों का पता लगाया है, जिसके बाद सुरक्षा चिंताओं के तहत यह कदम उठाए गए हैं।\n\n## क्रेडेंशियल शेयरिंग और सुरक्षा चिंताएं\n\nबैंकों का तर्क है कि क्रेडेंशियल शेयरिंग—जहाँ उपयोगकर्ता ऑटोमेटेड टूल्स को अपने लॉगिन विवरण देते हैं—सुरक्षा और देयता जोखिम पैदा करता है।\n\n* **खाता जिम्मेदारी:** जेपी मॉर्गन चेस, बैंक ऑफ अमेरिका और वेल्स फ़ार्गो सहित प्रमुख ऋणदाताओं ने स्पष्ट किया है कि लॉगिन विवरण साझा करने वाले ग्राहक किसी भी परिणामी गतिविधि के लिए जिम्मेदार बने रहेंगे।\n* **स्वायत्त गतिविधियाँ:** रिपोर्टों में ऐसे उदाहरणों का उल्लेख किया गया है जहाँ बाहरी एजेंटों ने उपयोगकर्ता के निर्देशों से स्वतंत्र कार्य करने का प्रयास किया।\n* **जोखिम प्रबंधन:** जेपी मॉर्गन के सीईओ जेमी डिमोन जैसी हस्तियों ने इन प्रतिबंधों को जोखिम कम करने और ग्राहक सुरक्षा से जोड़ा है।\n\n## विनियामक अनिश्चितता\n\nयह स्थिति ऐसे समय में आई है जब एक प्रमुख संघीय ओपन बैंकिंग विनियमन अदालत में अटका हुआ है।\n\n* **धारा 1033 पर रोक:** उपभोक्ता वित्तीय सुरक्षा ब्यूरो (CFPB) का धारा 1033 नियम, जिसे असुरक्षित स्क्रीन स्क्रैपिंग को समाप्त करने के लिए बनाया गया था, पर एक संघीय अदालत ने रोक लगा दी है।\n* **विनियमित मार्ग का अभाव:** नियम के प्रभावी न होने के कारण थर्ड-पार्टी एआई एजेंटों के लिए बैंक खातों से जुड़ने का कोई विनियमित मार्ग उपलब्ध नहीं है।\n\n## उभरते मानक और उद्योग की प्रतिक्रिया\n\nवित्तीय संस्थान और तकनीकी डेवलपर्स एजेंटों की पहुँच को सुरक्षित रूप से प्रबंधित करने के लिए तकनीकी फ्रेमवर्क तलाश रहे हैं।\n\n* **पर्सनल एजेंट प्रोटोकॉल:** बैंक ऑफ अमेरिका, वेल्स फ़ार्गो और बीबीवीए जैसे संस्थान पर्सनल एजेंट प्रोटोकॉल में शामिल हो गए हैं, जो OAuth पर आधारित एक ओपन स्टैंडर्ड है।\n* **रीड-ओनली एक्सेस:** कई बैंक नियंत्रित रीड-ओनली एक्सेस की दिशा में आगे बढ़ रहे हैं, जिससे टूल्स बिना वित्तीय लेनदेन किए डेटा देख सकें।\n\n## कैसे सत्यापित करें\n\nपाठक वित्तीय संस्थानों के आधिकारिक अपडेट की समीक्षा कर सकते हैं, CFPB की घोषणाओं पर नजर रख सकते हैं, और सेवा की शर्तों (जैसे वेल्स फ़ार्गो की ऑनलाइन एक्सेस नीतियों) का संदर्भ ले सकते हैं।",
+  "en_meta": "US banks are blocking third-party AI agents that use customer credentials as a federal open banking rule remains stalled in court. Read the latest details.",
+  "hi_meta": "अमेरिकी बैंक थर्ड-पार्टी एआई एजेंटों को ब्लॉक कर रहे हैं क्योंकि ओपन बैंकिंग नियम अदालत में अटका हुआ है। पूरी जानकारी पढ़ें।",
+  "en_keywords": [
+    "AI agents",
+    "open banking",
+    "US banks",
+    "CFPB",
+    "Section 1033",
+    "credential sharing"
+  ],
+  "hi_keywords": [
+    "एआई एजेंट",
+    "ओपन बैंकिंग",
+    "अमेरिकी बैंक",
+    "CFPB",
+    "धारा 1033",
+    "क्रेडेंशियल शेयरिंग"
+  ],
+  "source_published_at": "2026-10-30T08:00:00+00:00",
+  "id": "cef7d859e9f3",
+  "source": "https://www.artificialintelligence-news.com/news/banks-block-ai-agents-open-banking-rule/",
+  "date": "2026-11-07T10:46:10.064638+00:00",
+  "source_title": "Banks block AI agents as US open banking rule stalls - AI News",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

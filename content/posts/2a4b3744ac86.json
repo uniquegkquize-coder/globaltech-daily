@@ -1,0 +1,33 @@
+{
+  "en_title": "FADU Proposes Moving File Systems Inside SSDs to Bypass AI Storage CPUs",
+  "hi_title": "एआई स्टोरेज सीपीयू को दरकिनार करने के लिए FADU ने एसएसडी के भीतर फाइल सिस्टम जोड़ने का प्रस्ताव रखा",
+  "en_body": "South Korean controller designer FADU has introduced a File-Semantic SSD (FS-SSD) designed to handle file lookups, permission checks, and address translations directly within the drive's firmware rather than relying on a host CPU.\n\n## How the File-Semantic SSD Operates\n\nUnveiled at the OCP Global Summit, the FS-SSD embeds Network File System version 3 (NFSv3) requests inside standard NVMe commands. According to the company, this allows GPUs, DPUs, and network cards to access files without needing a host file system, block layer, or storage-server CPU in the data path.\n\nKey structural details include:\n- **Direct Mapping:** Combines traditional file-to-block and block-to-flash translations into a single file layer based on F2FS, a Linux file system tailored for flash memory.\n- **DRAM Allocation:** Uses standard DRAM capacity while leaving approximately 95% free for caching frequently accessed file details.\n- **Unified Cleanup:** Manages garbage collection internally to reduce duplicate cleanup cycles between the host and the drive.\n\n## Testing Claims and Limitations\n\nFADU reported benchmark results indicating that remote file throughput remained stable at approximately 460,000 operations per second when scaling a server from 16 cores down to one. The company also cited a simulated 63% reduction in write amplification compared to host-based F2FS, alongside projected power and cost reductions.\n\nHowever, independent verification is currently limited:\n- **Simulation-Based Data:** The write-amplification figures stem from simulated tests using NVMeVirt rather than a physical drive.\n- **Hardware Constraints:** Initial demonstrations ran on a PCIe 5.0 host platform, capping sequential reads near 14.1 GB/s despite the controller being designed for PCIe 6.0.\n- **Ecosystem Support:** The command set lacks an open industry standard, meaning clients currently rely on proprietary software from FADU.\n\n## Future Roadmap\n\nPartner samples are not anticipated until the third quarter of 2027, with PCIe 6.0 benchmark results promised by the first quarter of 2027. While industry stakeholders acknowledge that host CPU overhead remains a significant storage bottleneck for AI workloads, practical proof of FADU's approach will depend on future hardware delivery and independent testing.",
+  "hi_body": "दक्षिण कोरियाई नियंत्रक डिजाइनर FADU ने एक फाइल-सिमेंटिक एसएसडी (FS-SSD) पेश किया है, जिसे होस्ट सीपीयू पर निर्भर रहने के बजाय सीधे ड्राइव के फर्मवेयर के भीतर फाइल लुकअप, अनुमति जांच और एड्रेस ट्रांसलेशन को संभालने के लिए डिजाइन किया गया है।\n\n## फाइल-सिमेंटिक एसएसडी कैसे काम करता है\n\nओसीपी ग्लोबल समिट में अनावरण किया गया, FS-SSD मानक NVMe कमांड के भीतर नेटवर्क फाइल सिस्टम संस्करण 3 (NFSv3) अनुरोधों को एम्बेड करता है। कंपनी के अनुसार, यह जीपीयू, डीपीयू और नेटवर्क कार्ड को डेटा पथ में होस्ट फाइल सिस्टम, ब्लॉक लेयर या स्टोरेज-सर्वर सीपीयू की आवश्यकता के बिना फाइलों तक पहुंचने की अनुमति देता है।\n\nमुख्य संरचनात्मक विवरणों में शामिल हैं:\n- **प्रत्यक्ष मैपिंग:** पारंपरिक फाइल-टू-ब्लॉक और ब्लॉक-टू-फ्लैश ट्रांसलेशन को फ्लैश मेमोरी के लिए तैयार किए गए F2FS लिनक्स फाइल सिस्टम पर आधारित एक ही फाइल लेयर में जोड़ता है।\n- **DRAM आवंटन:** अक्सर एक्सेस किए जाने वाले फाइल विवरणों को कैश करने के लिए लगभग 95% खाली छोड़ते हुए मानक DRAM क्षमता का उपयोग करता है।\n- **एकीकृत सफाई:** होस्ट और ड्राइव के बीच डुप्लिकेट सफाई चक्र को कम करने के लिए कचरा संग्रहण को आंतरिक रूप से प्रबंधित करता है।\n\n## परीक्षण के दावे और सीमाएं\n\nFADU ने बेंचमार्क परिणाम रिपोर्ट किए हैं जो दर्शाते हैं कि जब सर्वर को 16 कोर से घटाकर एक किया गया, तो रिमोट फाइल थ्रूपुट लगभग 460,000 संचालन प्रति सेकंड पर स्थिर रहा। कंपनी ने होस्ट-आधारित F2FS की तुलना में राइट एम्प्लीफिकेशन में 63% की सिम्युलेटेड कमी का भी हवाला दिया।\n\nहालांकि, स्वतंत्र सत्यापन वर्तमान में सीमित है:\n- **सिमुलेशन-आधारित डेटा:** राइट एम्प्लीफिकेशन के आंकड़े वास्तविक ड्राइव के बजाय NVMeVirt का उपयोग करके सिम्युलेटेड परीक्षणों से आए हैं।\n- **हार्डवेयर बाधाएं:** शुरुआती प्रदर्शन एक PCIe 5.0 होस्ट प्लेटफॉर्म पर चलाए गए, जिससे नियंत्रक को PCIe 6.0 के लिए डिज़ाइन किए जाने के बावजूद अनुक्रमिक पठन लगभग 14.1 GB/s तक सीमित रहा।\n- **पारिस्थितिकी तंत्र समर्थन:** कमांड सेट में एक खुले उद्योग मानक का अभाव है, जिसका अर्थ है कि ग्राहक वर्तमान में FADU के मालिकाना सॉफ्टवेयर पर निर्भर हैं।\n\n## भविष्य का रोडमैप\n\nसाझेदार नमूने 2027 की तीसरी तिमाही तक अपेक्षित नहीं हैं, और PCIe 6.0 बेंचमार्क परिणाम 2027 की पहली तिमाही तक आने का वादा किया गया है। जबकि उद्योग हितधारक स्वीकार करते हैं कि होस्ट सीपीयू ओवरहेड एआई वर्कलोड के लिए एक महत्वपूर्ण स्टोरेज बाधा बना हुआ है, FADU के दृष्टिकोण का व्यावहारिक प्रमाण भविष्य के हार्डवेयर वितरण और स्वतंत्र परीक्षण पर निर्भर करेगा।",
+  "en_meta": "FADU has unveiled a File-Semantic SSD designed to handle file operations inside firmware to reduce CPU bottlenecks, with partner samples expected by late 2027.",
+  "hi_meta": "FADU ने सीपीयू बाधाओं को कम करने के लिए फर्मवेयर के भीतर फाइल संचालन को संभालने के लिए एक फाइल-सिमेंटिक एसएसडी का अनावरण किया है।",
+  "en_keywords": [
+    "FADU",
+    "FS-SSD",
+    "AI storage",
+    "solid-state drive",
+    "NVMe",
+    "NFSv3",
+    "CPU bottleneck"
+  ],
+  "hi_keywords": [
+    "FADU",
+    "FS-SSD",
+    "एआई स्टोरेज",
+    "एसएसडी",
+    "NVMe",
+    "NFSv3",
+    "सीपीयू बाधा"
+  ],
+  "source_published_at": "2026-10-29T04:00:00+00:00",
+  "id": "2a4b3744ac86",
+  "source": "https://www.techradar.com/pro/fadu-wants-to-take-the-cpu-out-of-ai-storage-by-putting-the-file-system-inside-the-ssd-but-the-proof-wont-arrive-until-2027",
+  "date": "2026-11-07T10:47:40.007945+00:00",
+  "source_title": "FADU wants to take the CPU out of AI storage by putting the file system inside the SSD, but the proof won't arrive until 2027",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

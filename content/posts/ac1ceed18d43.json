@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Updates Copilot Automations with Outcome-Based Self-Improvement",
+  "hi_title": "GitHub ने Copilot Automations में परिणाम-आधारित स्व-सुधार क्षमता जोड़ी",
+  "en_body": "## Overview of New Self-Improvement Features\n\nAccording to an official announcement on the GitHub Blog, Copilot Automations have introduced a new self-improvement capability designed to learn from real outcomes on the platform. The update aims to reduce the manual effort required to refine prompts and maintain consistent results from automated workflows.\n\nWhile creating an automation is generally straightforward, manually reviewing outputs and tuning prompts takes considerable time. The newly announced functionality uses operational signals from GitHub to propose adjustments automatically.\n\n## How Signal-Based Learning Works\n\nAutomations generate various signals on GitHub that reflect their effectiveness. Based on the documentation, examples include:\n\n* **Issue Triage:** Learning from whether users modify labels applied by the automation.\n* **Code Review:** Learning from whether developers accept or address review comments.\n* **Performance Optimization:** Learning from whether maintainers merge pull requests opened by the optimization workflow.\n\nUsing these feedback loops, the system analyzes performance and suggests refinements to the underlying prompts, tools, or triggers.\n\n## Multi-Automation Setup and User Control\n\nReports indicate that Copilot can set up a collaborative group of workflows to manage this process. For instance, a custom code reviewer setup might involve:\n\n* **Primary Automation:** Runs on pull request creation, reviews changes, and posts comments.\n* **Improvement Automation:** Runs weekly to analyze developer responses and propose prompt refinements.\n\nGitHub notifies users when a change is proposed. Crucially, the system requires human review; all suggested updates must be explicitly accepted or rejected before implementation.\n\n## Availability and Verification\n\nAccording to the changelog entry, this feature is available for users subscribed to Copilot Pro, Pro+, Max, Business, and Enterprise plans.\n\nTo verify these details, check the original announcement on the GitHub Blog or review the official documentation regarding Copilot Automations. Users can also engage in discussions through the GitHub Community platform.",
+  "hi_body": "## नए स्व-सुधार फीचर का परिचय\n\nGitHub ब्लॉग पर प्रकाशित एक आधिकारिक घोषणा के अनुसार, Copilot Automations में एक नया स्व-सुधार फीचर जोड़ा गया है जो प्लेटफ़ॉर्म पर मिलने वाले वास्तविक परिणामों से सीखता है। इस अपडेट का उद्देश्य प्रॉम्प्ट्स को बेहतर बनाने और स्वचालित वर्कफ़्लो से लगातार अच्छे परिणाम प्राप्त करने के लिए किए जाने वाले मैन्युअल प्रयासों को कम करना है।\n\nस्वचालन (automation) सेट करना आसान हो सकता है, लेकिन इसके परिणामों की समीक्षा करना और प्रॉम्प्ट्स को हाथ से सुधारना समय लेता है। नया फीचर स्वचालित रूप से बदलाव सुझाने के लिए GitHub के सिग्नल्स का उपयोग करता है।\n\n## सिग्नल-आधारित लर्निंग कैसे काम करती है\n\nऑटोमेशन GitHub पर ऐसे कई सिग्नल छोड़ते हैं जो उनकी कार्यकुशलता दर्शाते हैं। रिपोर्ट किए गए उदाहरणों में शामिल हैं:\n\n* **इशू ट्राइएज:** यह सीखना कि क्या उपयोगकर्ता ऑटोमेशन द्वारा जोड़े गए लेबल्स बदलते हैं।\n* **कोड रिव्यू:** यह सीखना कि क्या डेवलपर्स टिप्पणियों को स्वीकार करते हैं।\n* **परफॉरमेंस ऑप्टिमाइज़ेशन:** यह सीखना कि क्या मेंटेनर ऑटोमेशन द्वारा खोली गई पुल रिक्वेस्ट को मर्ज करते हैं।\n\nइन फीडबैक लूप्स का उपयोग करके, सिस्टम प्रॉम्प्ट्स, टूल्स या ट्रिगर्स में सुधार का सुझाव देता है।\n\n## यूजर कंट्रोल और समीक्षा प्रक्रिया\n\nरिपोर्ट के अनुसार, Copilot इस प्रक्रिया को प्रबंधित करने के लिए संबंधित वर्कफ़्लो का एक समूह बना सकता है। उदाहरण के लिए, एक कस्टम कोड रिव्यूअर सेटअप में शामिल हो सकता है:\n\n* **मुख्य ऑटोमेशन:** पुल रिक्वेस्ट खुलने पर रन होता है, बदलावों की समीक्षा करता है और टिप्पणियां पोस्ट करता है।\n* **सुधार ऑटोमेशन:** डेवलपर्स की प्रतिक्रिया का विश्लेषण करने और प्रॉम्प्ट में सुधार सुझाने के लिए साप्ताहिक रूप से चलता है।\n\nजब कोई बदलाव सुझाया जाता है, तो GitHub उपयोगकर्ताओं को सूचित करता है। किसी भी बदलाव को लागू करने से पहले उपयोगकर्ता की अनुमति आवश्यक होती है; सभी सुझावों को समीक्षा के बाद ही स्वीकार या अस्वीकार किया जा सकता है।\n\n## उपलब्धता और सत्यापन\n\nचेंजलॉग प्रविष्टि के अनुसार, यह फीचर Copilot Pro, Pro+, Max, Business और Enterprise प्लान के उपयोगकर्ताओं के लिए उपलब्ध है।\n\nइन विवरणों को सत्यापित करने के लिए, GitHub ब्लॉग पर मूल घोषणा देखें या Copilot Automations से संबंधित आधिकारिक दस्तावेज़ पढ़ें। उपयोगकर्ता GitHub कम्युनिटी के माध्यम से चर्चा में भी भाग ले सकते हैं।",
+  "en_meta": "GitHub updates Copilot Automations with self-improvement tools that learn from platform outcomes, requiring user review before applying changes.",
+  "hi_meta": "GitHub ने Copilot Automations में स्व-सुधार सुविधा जोड़ी है जो परिणामों से सीखती है। परिवर्तन लागू करने से पहले उपयोगकर्ता की समीक्षा आवश्यक है।",
+  "en_keywords": [
+    "Copilot Automations",
+    "GitHub Blog",
+    "self-improving AI",
+    "developer tools",
+    "code review automation"
+  ],
+  "hi_keywords": [
+    "Copilot Automations",
+    "GitHub ब्लॉग",
+    "AI स्व-सुधार",
+    "डेवलपर टूल",
+    "कोड रिव्यू"
+  ],
+  "source_published_at": "2026-10-28T15:30:00+00:00",
+  "id": "ac1ceed18d43",
+  "source": "https://github.blog/changelog/2026-10-28-copilot-automations-now-learn-from-outcomes-and-self-improve/",
+  "date": "2026-11-07T11:02:03.298652+00:00",
+  "source_title": "Copilot Automations now learn from outcomes and self-improve - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

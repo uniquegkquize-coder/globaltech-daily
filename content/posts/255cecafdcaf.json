@@ -1,0 +1,29 @@
+{
+  "en_title": "Cloud-Based Copilot Automations Now Available in Visual Studio Code",
+  "hi_title": "विजुअल स्टूडियो कोड में क्लाउड-आधारित कोपायलट ऑटोमेशन अब उपलब्ध हैं",
+  "en_body": "## Introduction to Copilot Automations in the Cloud\n\nAccording to an official GitHub announcement, developers can now run Copilot Automations directly in the cloud using Visual Studio Code. This feature allows users to create and manage cloud automations entirely from the Agents window within their editor without needing to switch contexts.\n\nBy combining prompts, triggers, and tools, workflows can be designed around specific development practices. Users configure when an automation runs and its permitted actions, and then provide a prompt instructing Copilot on task completion.\n\n## Key Capabilities of Cloud Automations\n\nWhile Visual Studio Code previously supported local personal automations running on a schedule, the new cloud infrastructure introduces several distinct capabilities:\n\n* **Background Execution:** Personal scheduled automations continue to run even when the editor is closed, or when the computer is asleep or powered off, ensuring recurring tasks do not rely on local machine availability.\n* **Event-Driven Triggers:** Personal automations can be configured to respond automatically to repository activities on GitHub, such as an issue assignment or a newly opened pull request.\n* **Team Collaboration:** Teams can build shared workflows in the cloud that are visible to any repository member and authorized to act as Copilot.\n\n## Getting Started and Requirements\n\nTo begin using cloud automations, the official documentation outlines specific prerequisites:\n\n* Update Visual Studio Code to version 1.144 or later.\n* Enable the `chat.automations.cloud.enabled` setting.\n* Access the Automations tab located within the Agents window.\n\n## Availability and Verification\n\nThe announcement notes that Copilot Automations are included with Copilot Pro, Pro+, Max, Business, and Enterprise plans. Developers seeking further details, technical guides, or best practices are advised to consult the official documentation titled \"Create and manage agent automations\" on the Visual Studio Code website or participate in discussions on the GitHub Community platform.",
+  "hi_body": "## क्लाउड में कोपायलट ऑटोमेशन का परिचय\n\nगिटहब की एक आधिकारिक घोषणा के अनुसार, डेवलपर्स अब विजुअल स्टूडियो कोड का उपयोग करके सीधे क्लाउड में कोपायलट ऑटोमेशन चला सकते हैं। यह सुविधा उपयोगकर्ताओं को अपने एडिटर को छोड़े बिना एजेंट्स विंडो से क्लाउड ऑटोमेशन बनाने और प्रबंधित करने की अनुमति देती है।\n\nप्रॉम्प्ट, ट्रिगर और टूल को संयोजित करके, वर्कफ़्लो को विशिष्ट विकास प्रथाओं के अनुसार डिज़ाइन किया जा सकता है। उपयोगकर्ता यह तय करते हैं कि ऑटोमेशन कब चलना चाहिए और इसकी अनुमत गतिविधियाँ क्या हैं, और फिर कोपायलट को कार्य पूरा करने का निर्देश देने के लिए एक प्रॉम्प्ट लिखते हैं।\n* **बैकग्राउंड निष्पादन:** व्यक्तिगत शेड्यूल किए गए ऑटोमेशन तब भी चलते रहते हैं जब एडिटर बंद होता है, या कंप्यूटर स्लीप मोड में या बंद होता है, जिससे यह सुनिश्चित होता है कि आवर्ती कार्य स्थानीय मशीन की उपलब्धता पर निर्भर न रहें।\n* **इवेंट-संचालित ट्रिगर:** व्यक्तिगत ऑटोमेशन को गिटहब पर रिपॉजिटरी गतिविधियों, जैसे कि किसी इश्यू का असाइन किया जाना या नई पुल रिक्वेस्ट का खुलना, पर स्वचालित रूप से प्रतिक्रिया करने के लिए सेट किया जा सकता है।\n* **टीम सहयोग:** टीमें क्लाउड में साझा वर्कफ़्लो बना सकती हैं जो रिपॉजिटरी एक्सेस वाले सभी लोगों को दिखाई देते हैं और कोपायलट के रूप में कार्य कर सकते हैं।\n\n## शुरुआत कैसे करें और आवश्यकताएँ\n\nक्लाउड ऑटोमेशन का उपयोग शुरू करने के लिए, आधिकारिक दस्तावेज विशिष्ट पूर्वापेक्षाएँ रेखांकित करते हैं:\n\n* विजुअल स्टूडियो कोड को संस्करण 1.144 या बाद के संस्करण में अपडेट करें।\n* `chat.automations.cloud.enabled` सेटिंग को सक्षम करें।\n* एजेंट्स विंडो के भीतर स्थित ऑटोमेशन टैब तक पहुँचें।\n\n## उपलब्धता और सत्यापन\n\nघोषणा में उल्लेख किया गया है कि कोपायलट ऑटोमेशन, कोपायलट प्रो, प्रो+, मैक्स, बिजनेस और एंटरप्राइज प्लान के साथ उपलब्ध हैं। अधिक विवरण, तकनीकी गाइड या सर्वोत्तम प्रथाओं की तलाश करने वाले डेवलपर्स को विजुअल स्टूडियो कोड वेबसाइट पर \"Create and manage agent automations\" नामक आधिकारिक दस्तावेज़ देखने या गिटहब कम्युनिटी प्लेटफॉर्म पर चर्चाओं में शामिल होने की सलाह दी जाती है।",
+  "en_meta": "Learn how to create and manage cloud-based Copilot Automations in Visual Studio Code with background execution, event triggers, and team workflows.",
+  "hi_meta": "विजुअल स्टूडियो कोड में क्लाउड-आधारित कोपायलट ऑटोमेशन बनाने और प्रबंधित करने का तरीका जानें।",
+  "en_keywords": [
+    "Visual Studio Code",
+    "Copilot Automations",
+    "cloud workflows",
+    "GitHub Copilot",
+    "developer tools"
+  ],
+  "hi_keywords": [
+    "विजुअल स्टूडियो कोड",
+    "कोपायलट ऑटोमेशन",
+    "क्लाउड वर्कफ़्लो",
+    "गिटहब कोपायलट",
+    "डेवलपर टूल"
+  ],
+  "source_published_at": "2026-10-28T15:30:00+00:00",
+  "id": "255cecafdcaf",
+  "source": "https://github.blog/changelog/2026-10-28-create-and-manage-copilot-automations-in-visual-studio-code/",
+  "date": "2026-11-07T11:02:11.567625+00:00",
+  "source_title": "Create and manage Copilot Automations in Visual Studio Code - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

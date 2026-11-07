@@ -1,0 +1,31 @@
+{
+  "en_title": "Openjutsu Brings Local One-Click Video Character and Object Swapping to ComfyUI",
+  "hi_title": "Openjutsu: ComfyUI और MiniMax H3 पर आधारित लोकल वीडियो कैरेक्टर और ऑब्जेक्ट स्वैप टूल",
+  "en_body": "## Overview of Openjutsu\n\nOpenjutsu is an open-source, local application designed for video character and object swaps, functioning as an alternative built on top of ComfyUI and MiniMax H3. Running entirely on local hardware using open weights, the software combines multiple machine learning models to track subjects, describe frames, and process video generation.\n\n## Core Architecture and Components\n\nThe application utilizes a Next.js front end paired with a ComfyUI workflow via the `@comfyorg/sdk` and `comfy-api-proxy`. It relies on several key models:\n\n* **MiniMax H3:** Handles the primary video generation and motion transfer.\n* **SAM 3.1 (Segment Anything Model):** Tracks people and specific objects within video frames.\n* **Qwen3-VL (such as the 8B INT8 variant):** Acts as the vision-language model to describe pictures, video frames, and generate descriptive prompts.\n\n## Key Features and Capabilities\n\n* **Simple and Advanced Motion Transfer:** Users can swap a single prominent person or manage up to four distinct characters across shots with assigned roles.\n* **Object Swap & Relighting:** Modify specific tracked elements like clothing, hair, or backgrounds, or apply lighting adjustments during the generation pass.\n* **Post-Processing Tools:** Includes utilities to fix distorted faces by redrawing close-ups and to adjust harsh color grading using contrast and tone mappers.\n\n## Hardware and Setup Requirements\n\nAccording to the project documentation, running Openjutsu locally requires specific technical prerequisites:\n\n* **GPU:** An NVIDIA GPU is required. Testing notes indicate functionality on an RTX 4060 Ti (16 GB VRAM) alongside adequate system RAM to stream int8 models.\n* **Software:** ComfyUI (version 0.41.2 or newer) and Node.js (version 22.6 or newer).\n* **Dependencies:** Custom nodes and proxy tools managed through ComfyUI and local installation scripts.\n\n## Practical Verification\n\nUsers interested in reviewing the complete codebase, installation instructions, and workflow templates can visit the official [GitHub Repository](https://github.com/D3voz/openjutsu). Verifying setup guides and ensuring compatible hardware configurations are recommended before initiating local rendering tasks.",
+  "hi_body": "## Openjutsu का परिचय\n\nOpenjutsu एक ओपन-सोर्स और लोकल एप्लिकेशन है जिसे वीडियो में कैरेक्टर और ऑब्जेक्ट बदलने के लिए डिज़ाइन किया गया है। यह ComfyUI और MiniMax H3 पर आधारित एक लोकल विकल्प के रूप में काम करता है। यह सॉफ्टवेयर पूरी तरह से लोकल हार्डवेयर पर ओपन वेट्स का उपयोग करके चलता है और विषयों को ट्रैक करने, फ्रेम का वर्णन करने तथा वीडियो जनरेशन के लिए कई मशीन लर्निंग मॉडल को जोड़ता है।\n\n## मुख्य आर्किटेक्चर और घटक\n\nयह एप्लिकेशन `@comfyorg/sdk` और `comfy-api-proxy` के माध्यम से ComfyUI वर्कफ़्लो के साथ एक Next.js फ्रंटएंड का उपयोग करता है। यह मुख्य रूप से निम्नलिखित मॉडलों पर निर्भर करता है:\n\n* **MiniMax H3:** प्राथमिक वीडियो जनरेशन और मोशन ट्रांसफर को संभालता है।\n* **SAM 3.1:** वीडियो फ्रेम के भीतर लोगों और विशिष्ट वस्तुओं को ट्रैक करता है।\n* **Qwen3-VL:** तस्वीरों, वीडियो फ्रेम का वर्णन करने और डिस्क्रिप्टिव प्रॉम्ट लिखने के लिए विजन-भाषा मॉडल के रूप में कार्य करता है।\n\n## मुख्य विशेषताएं और क्षमताएं\n\n* **सिंपल और एडवांस्ड मोशन ट्रांसफर:** उपयोगकर्ता एक प्रमुख व्यक्ति को बदल सकते हैं या विभिन्न शॉट्स में नियत भूमिकाओं के साथ अधिकतम चार अलग-अलग कैरेक्टर प्रबंधित कर सकते हैं।\n* **ऑब्जेक्ट स्वैप और रिलाइटिंग:** कपड़े, बाल या पृष्ठभूमि जैसे ट्रैक किए गए तत्वों को संशोधित करें, या जनरेशन पास के दौरान लाइटिंग समायोजन लागू करें।\n* **पोस्ट-प्रोकिसिंग टूल्स:** क्लोज़-अप को दोबारा बनाकर विकृत चेहरों को ठीक करने और कंट्रास्ट तथा टोन मैपर का उपयोग करके कठोर कलर ग्रेडिंग को समायोजित करने की सुविधाएं शामिल हैं।\n\n## हार्डवेयर और सेटअप आवश्यकताएं\n\nप्रोजेक्ट दस्तावेज़ीकरण के अनुसार, Openjutsu को लोकल रूप से चलाने के लिए कुछ तकनीकी पूर्वापेक्षाओं की आवश्यकता होती है:\n\n* **GPU:** एक NVIDIA GPU आवश्यक है। परीक्षण नोट्स int8 मॉडल को स्ट्रीम करने के लिए पर्याप्त सिस्टम रैम के साथ RTX 4060 Ti (16 GB VRAM) पर कार्यक्षमता का संकेत देते हैं।\n* **सॉफ्टवेयर:** ComfyUI (संस्करण 0.41.2 या नया) और Node.js (संस्करण 22.6 या नया)।\n* **डिपेंडेंसी:** ComfyUI और लोकल इंस्टॉलेशन स्क्रिप्ट के माध्यम से प्रबंधित कस्टम नोड्स और प्रॉक्सी टूल।\n\n## व्यावहारिक सत्यापन\n\nपूर्ण कोडबेस, इंस्टॉलेशन निर्देश और वर्कफ़्लो टेम्पलेट देखने के इच्छुक उपयोगकर्ता आधिकारिक [GitHub रिपॉजिटरी](https://github.com/D3voz/openjutsu) पर जा सकते हैं। लोकल रेंडरिंग कार्य शुरू करने से पहले सेटअप गाइड की पुष्टि करना और संगत हार्डवेयर कॉन्फ़िगरेशन सुनिश्चित करना उचित है।",
+  "en_meta": "Explore Openjutsu, an open-source local video character and object swapping tool built on ComfyUI and MiniMax H3. Learn features, requirements, and setup.",
+  "hi_meta": "ComfyUI और MiniMax H3 पर आधारित ओपन-सोर्स लोकल वीडियो कैरेक्टर और ऑब्जेक्ट स्वैप टूल Openjutsu के बारे में जानें।",
+  "en_keywords": [
+    "Openjutsu",
+    "ComfyUI",
+    "MiniMax H3",
+    "video character swap",
+    "open source AI",
+    "SAM 3.1"
+  ],
+  "hi_keywords": [
+    "Openjutsu",
+    "ComfyUI",
+    "MiniMax H3",
+    "वीडियो कैरेक्टर स्वैप",
+    "ओपन सोर्स AI",
+    "SAM 3.1"
+  ],
+  "source_published_at": null,
+  "id": "89d51bd26463",
+  "source": "https://github.com/D3voz/openjutsu",
+  "date": "2026-11-07T11:02:32.638389+00:00",
+  "source_title": "D3voz/openjutsu: One-click character swap for videos: an open-source, local Higgsfield Genjutsu alternative built on ComfyUI and MiniMax H3. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

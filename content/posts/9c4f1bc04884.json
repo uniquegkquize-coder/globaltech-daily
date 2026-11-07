@@ -1,0 +1,29 @@
+{
+  "en_title": "Critical Microsoft Authenticator Flaw Allowed Android Apps to Steal Session Tokens",
+  "hi_title": "माइक्रोसॉफ्ट ऑथेंटिकेटर की गंभीर कमियों से एंड्रॉइड ऐप्स चुरा सकते थे सेशन टोकन",
+  "en_body": "## Overview of the Microsoft Authenticator Vulnerability\n\nSecurity researchers discovered a critical vulnerability in the Microsoft Authenticator app for Android, tracked as CVE-2026-80097. The flaw allowed unprivileged malicious Android apps to impersonate trusted Microsoft applications and acquire session tokens without requiring user interaction, extensive permissions, or stolen login credentials.\n\nAccording to reports from Enclave researchers, the vulnerability enabled rogue apps to request and receive access tokens by simply presenting correct package names, client IDs, and redirect URIs. The Authenticator app verified the supplied data parameters but failed to validate the identity of the requesting application itself. Consequently, any app could masquerade as a trusted service like Microsoft Teams in the background without triggering user notifications or consent prompts.\n\n## Potential Impact and Scope\n\n* Unauthorized access to emails, calendars, and files.\n* Ability to read and send Microsoft Teams chat messages.\n* Modification of certain authentication methods, including passkey creation and deletion.\n\nResearchers noted that this method bypassed typical warning signs of malicious software because no dangerous permissions were requested. However, investigators emphasized that the demonstration was conducted in a controlled environment, and there was no confirmed evidence of active exploitation in the wild prior to the patch release.\n\n## Verification and Recommended Actions\n\nMicrosoft has addressed the security issue and urged all Android users to update their software immediately. \n\n* **Affected Versions:** Microsoft Authenticator for Android versions earlier than 6.2606.4246.\n* **Resolution:** Update to version 6.2606.4246 or later via the official Google Play Store.\n* **Prevention:** Refrain from downloading unverified APK files from third-party app stores to reduce the risk of malicious software installation on mobile devices.",
+  "hi_body": "## माइक्रोसॉफ्ट ऑथेंटिकेटर कमज़ोरी का विवरण\n\nसुरक्षा शोधकर्ताओं ने एंड्रॉइड के लिए माइक्रोसॉफ्ट ऑथेंटिकेटर ऐप में एक गंभीर कमज़ोरी का पता लगाया है, जिसे CVE-2026-80097 के रूप में ट्रैक किया गया है। इस खामी के कारण बिना किसी विशेष अनुमति, उपयोगकर्ता की सहभागिता या लॉगिन क्रेडेंशियल के, दुर्भावनापूर्ण एंड्रॉइड ऐप्स विश्वसनीय माइक्रोसॉफ्ट ऐप्स का रूप धारण करके सेशन टोकन प्राप्त करने में सक्षम थे।\n\nएनक्लेव (Enclave) के शोधकर्ताओं की रिपोर्ट के अनुसार, यह कमज़ोरी फर्जी ऐप्स को केवल सही पैकेज नाम, क्लाइंट आईडी और रीडायरेक्ट यूआरआई प्रस्तुत करके एक्सेस टोकन का अनुरोध करने और प्राप्त करने की अनुमति देती थी। ऑथेंटिकेटर ऐप ने केवल प्रदान किए गए डेटा मापदंडों की जांच की, लेकिन अनुरोध करने वाले ऐप की वास्तविक पहचान का सत्यापन नहीं किया। परिणामस्वरूप, कोई भी ऐप पृष्ठभूमि में उपयोगकर्ता को सचेत किए बिना माइक्रोसॉफ्ट टीम्स जैसी विश्वसनीय सेवा के रूप में खुद को पेश कर सकता था।\n\n## संभावित प्रभाव और दायरा\n\n* ईमेल, कैलेंडर और फ़ाइलों तक अनधिकृत पहुंच।\n* माइक्रोसॉफ्ट टीम्स चैट संदेशों को पढ़ने और भेजने की क्षमता।\n* पास-की निर्माण और विलोपन सहित कुछ प्रमाणीकरण विधियों में संशोधन।\n\nशोधकर्ताओं ने उल्लेख किया कि इस पद्धति ने मैलवेयर के सामान्य चेतावनी संकेतों को दरकिनार कर दिया क्योंकि इसके लिए किसी खतरनाक अनुमति की आवश्यकता नहीं थी। हालांकि, जांचकर्ताओं ने इस बात पर जोर दिया कि यह परीक्षण एक नियंत्रित वातावरण में किया गया था और पैच जारी होने से पहले वास्तविक दुनिया में इसके सक्रिय शोषण का कोई पुख्ता सबूत नहीं मिला है।\n\n## सत्यापन और अनुशंसित कदम\n\nमाइक्रोसॉफ्ट ने इस सुरक्षा समस्या का समाधान कर लिया है और सभी एंड्रॉइड उपयोगकर्ताओं से तुरंत अपना सॉफ्टवेयर अपडेट करने का आग्रह किया है।\n\n* **प्रभावित संस्करण:** 6.2606.4246 से पहले के माइक्रोसॉफ्ट ऑथेंटिकेटर एंड्रॉइड संस्करण।\n* **समाधान:** आधिकारिक गूगल प्ले स्टोर के माध्यम से संस्करण 6.2606.4246 या बाद के संस्करण में अपडेट करें।\n* **बचाव:** मोबाइल उपकरणों पर दुर्भावनापूर्ण सॉफ्टवेयर के जोखिम को कम करने के लिए तृतीय-पक्ष ऐप स्टोर से अज्ञात एपीके (APK) फ़ाइलें डाउनलोड करने से बचें।",
+  "en_meta": "Discover how a critical Microsoft Authenticator flaw for Android allowed rogue apps to steal session tokens, and learn how to update your app safely.",
+  "hi_meta": "जानें कैसे माइक्रोसॉफ्ट ऑथेंटिकेटर की एंड्रॉइड कमज़ोरी से सेशन टोकन चोरी हो सकते थे और ऐप को सुरक्षित रूप से कैसे अपडेट करें।",
+  "en_keywords": [
+    "Microsoft Authenticator",
+    "Android vulnerability",
+    "CVE-2026-80097",
+    "session tokens",
+    "cybersecurity"
+  ],
+  "hi_keywords": [
+    "माइक्रोसॉफ्ट ऑथेंटिकेटर",
+    "एंड्रॉइड वल्नरेबिलिटी",
+    "CVE-2026-80097",
+    "सेशन टोकन",
+    "साइबर सुरक्षा"
+  ],
+  "source_published_at": "2026-10-27T15:20:00+00:00",
+  "id": "9c4f1bc04884",
+  "source": "https://www.techradar.com/pro/security/critical-microsoft-authenticator-flaw-let-malicious-android-apps-steal-access-to-your-precious-accounts",
+  "date": "2026-11-07T11:02:12.100442+00:00",
+  "source_title": "Critical Microsoft Authenticator flaw let malicious Android apps steal access to your precious accounts",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
