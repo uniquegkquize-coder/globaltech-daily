@@ -7,6 +7,15 @@ on:
     # Run every two hours, UTC.
     - cron: '7 */2 * * *'
   workflow_dispatch:
+    inputs:
+      category:
+        description: 'Optional category (empty means all)'
+        type: string
+        default: ''
+      posts:
+        description: 'Total target across resumable passes'
+        type: string
+        default: '100'
 permissions:
   contents: write
 concurrency:
@@ -88,8 +97,8 @@ jobs:
           PYTHONUNBUFFERED: '1'
           ENABLE_PUBLIC_BROWSER_FALLBACK: '1'
           BROWSER_ATTEMPTS_PER_RUN: '6'
-          NEWS_CATEGORY: ''
-          POSTS_PER_RUN: '100'
+          NEWS_CATEGORY: ${{ inputs.category || (github.event_name == 'push' && contains(github.event.head_commit.message, '[local-news]') && 'india-news') || '' }}
+          POSTS_PER_RUN: ${{ inputs.posts || (github.event_name == 'push' && contains(github.event.head_commit.message, '[local-news]') && '12') || '100' }}
           MIN_POSTS_PER_CATEGORY: '2'
           CATEGORY_PUBLISH_CAP: '0'
           MAX_MODELS_PER_ARTICLE: '5'

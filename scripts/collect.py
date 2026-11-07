@@ -3,6 +3,7 @@ from seo_text import description as seo_description
 from news_config import CATEGORIES, EXAM_CATEGORIES, EXTRA_FEEDS, DIRECT_EXTRA, classify, lead_priority, timestamp, PRIORITY, search_feed
 from verticals import requirements, TRUSTED_ENTERTAINMENT, TRUSTED_CONTROVERSY
 from official_notices import official_url
+from district_sources import district_feeds, district_search_feeds, PUBLIC_PAGES as DISTRICT_PAGES
 from focused_sources import NATIVE_FEEDS, PAGES as FOCUSED_PAGES, SEARCH_SOURCES as FOCUSED_SEARCH, structured_article_data, content_candidates
 import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time, threading
 from functools import lru_cache
@@ -215,6 +216,7 @@ DIRECT_SOURCES=[
 ]
 DIRECT_SOURCES.extend(DIRECT_EXTRA)
 DIRECT_SOURCES.extend(row for row in FOCUSED_PAGES if row not in DIRECT_SOURCES)
+FEEDS.extend(row for row in DISTRICT_PAGES if row not in FEEDS)
 for direct_url,direct_cat,direct_domain in DIRECT_SOURCES:
  if not any(c==direct_cat and d==direct_domain for _,c,d in FEEDS):
   FEEDS.append((direct_url,direct_cat,direct_domain))
@@ -275,7 +277,7 @@ def rotating_local_feeds():
  if cities and remaining:
   start=(day*remaining)%len(cities)
   selected.extend(cities[(start+i)%len(cities)] for i in range(remaining))
- return selected
+ return list(dict.fromkeys(district_search_feeds(INDIA_REGIONS)+selected))
 # Keep direct primary and regional media domains eligible for original-link verification.
 for domain in LOCAL_PUBLISHERS+LOCAL_PRIMARY_DOMAINS:
  FEEDS.append(local_news_feed('site:'+domain+' India latest',domain))
@@ -713,6 +715,10 @@ def published_categories():
 # discovery transport, never a reason to rank an independent blog above major news.
 MAJOR_PUBLISHERS=('bbc.co.uk','theguardian.com','npr.org','aljazeera.com','dw.com','france24.com','skynews.com','cbc.ca','abc.net.au','nbcnews.com','nytimes.com','bloomberg.com','wsj.com','espn.com','variety.com','deadline.com','hollywoodreporter.com','technologyreview.com','nasa.gov','pib.gov.in','upsc.gov.in','ssc.gov.in')
 POPULAR_TERMS=('breaking','live','major','record','world cup','election','launch','release','trailer','box office','ai','google','apple','microsoft','nvidia','openai','recruitment','scheme','योजना','भर्ती')
+def is_requested_draft(record,now=None):
+ stamp=timestamp(record.get('requested_at'))
+ return bool(stamp and 0<=(now if now is not None else time.time())-stamp<172800)
+
 def story_priority(item):
  return lead_priority(item,STORY_DATES.get(item[0]))
 
@@ -754,7 +760,7 @@ def rotating_publisher_websites():
 def website_stories(item):
  feed,cat,domain=item
  from urllib.parse import urljoin
- base=feed if item in DIRECT_SOURCES else 'https://'+domain+WEBSITE_PATHS.get(cat,'/')
+ base=feed if item in DIRECT_SOURCES or item in DISTRICT_PAGES else 'https://'+domain+WEBSITE_PATHS.get(cat,'/')
  try:
   page_html,page_url,method=fetch_public_html(base,timeout=(5,10),max_bytes=1000000)
   if not page_html:
@@ -1097,11 +1103,14 @@ def candidates():
     yield url,title,record.get('category','technology'),domain
   except (OSError,ValueError):pass
  # Native RSS is independent of opaque Google News redirects and runs first.
+ for story in native_feed_stories(district_feeds(ROOT) if os.getenv('NEWS_CATEGORY','') in ('','india-news') else []):
+  if story[0] not in seen:
+   seen.add(story[0]);yield story
  for story in native_feed_stories():
   if story[0] not in seen:
    seen.add(story[0]);yield story
  # Check explicit source pages ahead of broad search engines.
- direct_results=discovery_map(website_stories,DIRECT_SOURCES,10,lambda item:(item,[]))
+ direct_results=discovery_map(website_stories,([row for row in DISTRICT_PAGES if not os.getenv('NEWS_CATEGORY') or row[1]==os.getenv('NEWS_CATEGORY')]+DIRECT_SOURCES),10,lambda item:(item,[]))
  direct_groups={}
  for (feed,cat,domain),items in direct_results:
   print('Direct source',domain,'category',cat,'candidates',len(items),flush=True)
@@ -1449,7 +1458,7 @@ def main():
   stories=backlog
  # Explicitly pull resumable pending drafts to the front of the processing queue.
  # This avoids a large fresh-news discovery list burying years of saved work.
- saved_drafts=[]
+ saved_drafts=[];requested_ids=set()
  for draft_path in PENDING.glob('*.json'):
   if draft_path.name.startswith('_') or draft_path==QUEUE_FILE:continue
   try:
@@ -1462,7 +1471,9 @@ def main():
    # drafts) and single-language drafts both deserve the first AI slots;
    # previously complete bilingual drafts were skipped here and could sit
    # in pending forever when their URL left the discovery queue.
-   if not (ready_en or ready_hi):continue
+   requested=is_requested_draft(draft)
+   if not (ready_en or ready_hi or requested):continue
+   if requested:requested_ids.add(draft_path.stem)
    row=(source,title,category,urlparse(source).hostname or '')
    if useful_lead(row):saved_drafts.append(row)
   except (OSError,ValueError,TypeError):continue
@@ -1525,6 +1536,7 @@ def main():
  single_language_ids={hashlib.sha256(row[0].encode()).hexdigest()[:12] for row in saved_drafts}
  pending_ids={p.stem for p in PENDING.glob('*.json') if not p.name.startswith('_')}
  ordered=fair_publication_order(ordered,single_language_ids,pending_ids,historical_counts,MIN_POSTS_PER_CATEGORY)
+ ordered.sort(key=lambda row:hashlib.sha256(row[0].encode()).hexdigest()[:12] not in requested_ids)
  # Keep concurrent provider traffic under free-tier rate limits; unfinished drafts survive.
  article_workers=max(1,min(6,int(os.getenv('ARTICLE_WORKERS','3'))))
  print('Parallel article workers:',article_workers,flush=True)
