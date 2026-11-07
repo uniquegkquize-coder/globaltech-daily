@@ -9,10 +9,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from bs4 import BeautifulSoup
 import research_directory_sources as research
 import publish_directory_guides as publisher
-from directory_refresh import refresh_sources, protect_reviewed, merge_rows
+from directory_refresh import refresh_sources, protect_reviewed, merge_rows, course_fee_summary
 
 
 class DirectoryRefreshTests(unittest.TestCase):
+    def test_fees_from_different_courses_do_not_become_one_universal_fee(self):
+        summary=course_fee_summary([{'course':'BPharm','duration':'4 years','fee':'180000 per annum'},
+                                    {'course':'BTech IT','duration':'4 years','annual_fee_inr':195000}])
+        self.assertIn('BPharm (4 years) — fee: 180000 per annum',summary)
+        self.assertIn('BTech IT (4 years) — annual fee inr: 195000',summary)
     def test_official_store_can_omit_brand_but_not_change_model_number(self):
         html='<title>X Fold5 16GB+512GB Titanium Grey</title><table><tr><td>Price</td><td>INR 149999</td></tr><tr><td>RAM</td><td>16 GB</td></tr></table>'
         record={'manufacturer':'vivo','official_url':'https://www.vivo.com/in/products/param/x-fold5'}

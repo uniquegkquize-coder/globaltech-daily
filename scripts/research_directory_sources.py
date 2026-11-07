@@ -16,7 +16,7 @@ import requests
 from bs4 import BeautifulSoup
 from public_page_fetch import fetch_public_html
 from directory_facts import source_tables,specification_rows,framework_pairs,label,FOCUS,programme_cards,pdf_page,model_scope,embedded_model_rows
-from directory_refresh import MUTABLE, refresh_fields, refresh_sources, protect_reviewed, merge_rows
+from directory_refresh import MUTABLE, refresh_fields, refresh_sources, protect_reviewed, merge_rows, course_fee_summary
 
 DOMAINS={
  'colleges':('collegedekho.com','shiksha.com','careers360.com','topuniversities.com','timeshighereducation.com','studyportals.com','universityadmissions.se','ucas.com','niche.com','usnews.com'),
@@ -260,7 +260,7 @@ def enrich(kind,name,record,session,url=None):
    if courses:
     output['courses']=courses
     for field,labels in {'programmes':('course','courses','programme','programmes'),
-                         'duration':('duration',),'fees':('fees',),
+                         'duration':('duration',),'fees':('fee','tuition'),
                          'eligibility':('eligibility',),'admissions':('selection',)}.items():
      values=[]
      for row in courses:
@@ -343,6 +343,12 @@ def main():
   try:return json.loads(path.read_text(encoding='utf-8'))
   except (OSError,ValueError):return {}
  records=read(RECORDS);details=read(TARGET);state_path=ROOT/'content/directory-research-state.json';state=read(state_path);report={}
+ # Rebuild summaries from the retained per-course evidence even if this run's
+ # network cooldown prevents fetching that institution again.
+ for entry in details.get('colleges',{}).values():
+  summary=course_fee_summary(entry.get('courses',[]))
+  if summary:entry['fees']=summary
+ save(TARGET,details)
  limit=max(1,int(os.getenv('DIRECTORY_RESEARCH_LIMIT','120')));budget=max(1,int(os.getenv('DIRECTORY_RESEARCH_SECONDS','480')));workers=max(1,min(6,int(os.getenv('DIRECTORY_RESEARCH_WORKERS','4'))))
  for kind in FIELDS:
   end=time.monotonic()+budget/len(FIELDS);details.setdefault(kind,{})
@@ -386,6 +392,12 @@ def main():
     protect_reviewed(existing,additions)
     for field in ('courses','variants'):
      if isinstance(additions.get(field),list):additions[field]=merge_rows(existing.get(field,[]),additions[field])
+    if kind=='colleges' and additions.get('courses'):
+     summary=course_fee_summary(additions['courses'])
+     if summary:
+      additions['fees']=summary
+      additions.setdefault('field_sources',{})['fees']={'url':base.get('official_url') or evidence_source(base),'retrieved_at':dt.datetime.now(dt.timezone.utc).isoformat(),
+       'urls':sorted({r['source_url'] for r in additions['courses'] if isinstance(r,dict) and r.get('source_url')})}
     changes={k:v for k,v in additions.items() if (k in FIELDS[kind] or k in ('courses','source_tables','specification_rows')) and v!=existing.get(k)}
     return name,base,existing,additions,changes
    finally:session.close()

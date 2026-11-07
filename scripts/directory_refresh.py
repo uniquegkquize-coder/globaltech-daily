@@ -1,8 +1,24 @@
 """Refresh mutable directory facts independently of static specifications."""
 from urllib.parse import urlparse
+import re
 
 MUTABLE = {'price', 'fees', 'courses', 'variants', 'price_basis', 'price_valid_until', 'availability',
            'mrp_inr', 'secondary_selling_price_inr', 'secondary_price_basis'}
+
+
+def course_fee_summary(courses):
+    rows=[]
+    for row in courses:
+        if not isinstance(row,dict):continue
+        course=next((str(row[k]) for k in ('course','courses','programme','programmes') if row.get(k)), '')
+        if not course:continue
+        amounts=[k.replace('_',' ') + ': ' + str(v) for k,v in row.items()
+                 if ('fee' in k.lower() or 'tuition' in k.lower())
+                 and not any(t in k.lower() for t in ('basis','disclaimer','note')) and re.search(r'\d',str(v))]
+        if amounts:
+            context='; '.join(str(row[k]) for k in ('entry_mode','duration','academic_year') if row.get(k))
+            rows.append(course+(' ('+context+')' if context else '')+' — '+'; '.join(amounts))
+    return '; '.join(dict.fromkeys(rows))
 
 
 def refresh_fields(kind):
