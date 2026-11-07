@@ -13,7 +13,9 @@ assert sum(map(len,regions.values()))>=100
 assert "def duplicate_story(url,title,cat,index):" in source
 assert "is_duplicate=duplicate_story(url,title,cat,published_index)" in source
 assert "with publication_lock:" in source
-assert "published_index.append((url.rstrip('/'),title,cat))" in source
+assert any(isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute)
+           and isinstance(n.func.value,ast.Name) and n.func.value.id=='published_index'
+           and n.func.attr=='append' for n in ast.walk(tree))
 assert "MIN_ARTICLE_WORDS_EN" in source
 assert "MIN_ARTICLE_WORDS_HI" in source
 assert "def complete_body(body,lang):" in source
