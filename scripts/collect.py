@@ -1,6 +1,6 @@
 from seo_text import description as seo_description
 """Quota-capped, source-first bilingual publishing. No external AI calls on import."""
-from news_config import CATEGORIES, EXAM_CATEGORIES, EXTRA_FEEDS, DIRECT_EXTRA, classify, lead_priority, timestamp, PRIORITY, search_feed
+from news_config import CATEGORIES, EXAM_CATEGORIES, EXTRA_FEEDS, DIRECT_EXTRA, classify, lead_priority, timestamp, PRIORITY, search_feed, sports_correction
 from verticals import requirements, TRUSTED_ENTERTAINMENT, TRUSTED_CONTROVERSY
 from official_notices import official_url
 from district_sources import district_feeds, district_search_feeds, world_city_feeds, PUBLIC_PAGES as DISTRICT_PAGES
@@ -330,6 +330,10 @@ def category(title, default):
  return default
 
 def category_for_url(title,default,url):
+ corrected=sports_correction(title,default,url)
+ if corrected!=default:return corrected
+ # Keep genuine sports court/dispute reports in their publisher's sports section.
+ if default in ('sports','cricket') and sports_correction(title,default)!=default:return default
  actual=category(title,default)
  if actual=='car-launches' and ((urlparse(url).hostname or '').removeprefix('www.')=='bikewale.com' or '/bike-news/' in urlparse(url).path.lower()):
   return 'automobiles'
@@ -1210,7 +1214,7 @@ def candidates():
    url,title,cat,domain=row
    if not allowed(url,domain) or url in seen:continue
    seen.add(url)
-   actual_cat=os.getenv('NEWS_CATEGORY','').strip() or category_for_url(title,cat,url)
+   actual_cat=category_for_url(title,os.getenv('NEWS_CATEGORY','').strip() or cat,url)
    if actual_cat not in groups:continue
    groups[actual_cat].append((url,title,actual_cat,domain))
    source_metric(domain,'feed_candidates')
@@ -1300,6 +1304,7 @@ def main():
  publication_lock=threading.RLock()
  def process_story(story):
   url,title,cat,domain=story
+  cat=category_for_url(title,cat,url)
   if time.monotonic()>=deadline:return None
   if cat not in ({c for _,c,_ in FEEDS}|set(REGIONAL_PORTALS)):return None
   post_id=hashlib.sha256(url.encode()).hexdigest()[:12]
@@ -1507,7 +1512,7 @@ def main():
  # Prioritize two verified articles per category before filling additional slots.
  grouped={}
  for story in stories:
-   story=(story[0],story[1],selected or category_for_url(story[1],story[2],story[0]),story[3])
+   story=(story[0],story[1],category_for_url(story[1],selected or story[2],story[0]),story[3])
    grouped.setdefault(story[2],[]).append(story)
    source_metric(story[3],'queued')
  ordered=[]

@@ -2,7 +2,7 @@
 import datetime as dt
 import re
 from functools import lru_cache
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 try:
     from .verticals import CATEGORIES as GLOBAL_CATEGORIES, PATTERNS as GLOBAL_PATTERNS, SCOPES, SOURCES, DIRECT, unconfirmed_story
 except ImportError:
@@ -43,9 +43,39 @@ TOPIC_PATTERNS={
 }
 PRIORITY={'telecom':10,'sarkari-naukri':10,'results':10,'admit-cards':10,'answer-keys':9,'ai-news':9,'cyber-security':9,'gadgets':8,'government-schemes':8,'banking-finance':8,'consumer-alerts':8,'apps-software':7,'education':7,'scholarships':7,'sports':7,'india-news':7}
 
+SPORT_CONTEXT = re.compile(r'\b(?:sports?|cricket|football|soccer|rugby|tennis|badminton|hockey|basketball|baseball|boxing|golf|athletics|olympics?|paralympics?|fifa|uefa|ipl|bcci|icc|wicket|batsman|bowler|goalkeeper|grand prix|formula ?1|f1|wnba|nba|nfl|wrestling|volleyball|kabaddi|sangakkara|mbapp[eé])\b|क्रिकेट|फुटबॉल|खिलाड़ी|ओलंपिक|विकेट', re.I)
+CIVIC_CONTEXT = re.compile(r'\b(?:supreme court|high court|bail|murder|molestation|mla|chief minister|union minister|elections?|electoral|voters?|opposition|bjp|jdu|jd\(u\)|india bloc|cec)\b|सुप्रीम कोर्ट|जमानत|हत्याकांड|विधायक|मुख्यमंत्री|चुनाव', re.I)
+INDIA_CONTEXT = re.compile(r'\b(?:india|indian|bihar|patna|mokama|anant singh|yogi|uttarakhand|bengaluru|delhi|kashmir|bjp|jdu|jd\(u\)|kharge|giriraj|supreme court)\b|भारत|बिहार|अनंत सिंह|सुप्रीम कोर्ट', re.I)
+
+def sports_correction(title, default, url=''):
+    """A section page can link to unrelated news; its label is only a hint."""
+    if default not in {'sports', 'cricket'}:
+        return default
+    parsed = urlparse(str(url))
+    parts = parsed.path.lower().strip('/').split('/')
+    # The article's own sports section is stronger than a generic legal word.
+    if any(p in {'sport', 'sports', 'football', 'cricket', 'rugby-union', 'rugby-league'} for p in parts[:-1]):
+        return default
+    if SPORT_CONTEXT.search(str(title)) or re.search(r'\b(?:odi|t20i?|test match|century|innings|hamstring|squad|sixers|cricketer)\b',str(title),re.I):
+        return default
+    if 'world' in parts[:-1] or 'international' in parts[:-1]:
+        return 'world-news'
+    if 'india' in parts[:-1] or 'india' in parsed.path.lower().split('/')[-1].split('-'):
+        return 'india-news'
+    if re.search(r'\b(?:singapore|serbia|iran|britain|british|uk parliament|chancellor)\b',str(title),re.I):
+        return 'world-news'
+    if CIVIC_CONTEXT.search(str(title)):
+        return 'india-news' if INDIA_CONTEXT.search(str(title)) else 'world-news'
+    # ABP /sports pages also contain /news and /videos/news recommendations.
+    if parsed.hostname and parsed.hostname.endswith('abplive.com') and 'news' in parts[:-1]:
+        return 'india-news' if INDIA_CONTEXT.search(str(title)) else 'world-news'
+    return default
+
 @lru_cache(maxsize=8192)
 def classify(title, default='technology'):
     text=str(title).lower()
+    corrected=sports_correction(text,default)
+    if corrected!=default:return corrected
     if default in {'technology','gadgets','mobile-launches'} and re.search(r'\b(?:deals?|discount|on sale|all.time low price)\b',text):
         return 'deals-offers'
     for topic,pattern in sorted(GLOBAL_PATTERNS.items(),key=lambda x:x[0]!='controversies'):
@@ -63,7 +93,10 @@ def classify(title, default='technology'):
 
 def memberships(post):
     base=post.get('category','technology')
+    base=sports_correction(post.get('en_title','')+' '+post.get('source_title',''),base,post.get('source',''))
     topic=classify(str(post.get('en_title',''))+' '+str(post.get('hi_title','')),base)
+    if base in {'sports','cricket'} and sports_correction(post.get('en_title',''),base)!=base:
+        topic=base
     return {base,topic}
 
 def timestamp(value):

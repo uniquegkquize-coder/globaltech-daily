@@ -631,6 +631,9 @@ redirects=['/ /en/ 301']
 for p in POSTS:
  for lang in ('en','hi'):
   redirects.append(f'/{lang}/news/{slug(p)}/ {article_path(p,lang)} 301')
+  for previous in p.get('previous_categories',[]):
+   if previous in CATEGORIES and previous!=category(p):
+    redirects.append(f'/{lang}/news/{previous}/{article_slug(p)}/ {article_path(p,lang)} 301')
 for old,canonical in DUPLICATE_POSTS:
  for lang in ('en','hi'):
   oldpath=article_path(old,lang)
