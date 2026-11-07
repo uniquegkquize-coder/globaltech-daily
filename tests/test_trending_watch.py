@@ -63,6 +63,9 @@ class TrendRunTests(unittest.TestCase):
    discover.assert_called_once();generate.assert_not_called();self.assertEqual(report['results'][0]['result'],'cooldown')
 
 class UpdateIntegrityTests(unittest.TestCase):
+ def setUp(self):
+  mode=patch.dict(w.os.environ,{'TREND_QUEUE_MODE':'0'})
+  mode.start();self.addCleanup(mode.stop)
  def old(self):return dict(id='abcdef123456',date='2026-11-01T12:00:00+00:00',category='world-news',source='https://bbc.co.uk/news/original',source_title=TITLE,en_title='Original stable English headline',hi_title='पुराना स्थायी हिन्दी शीर्षक',en_body='Original report.',hi_body='पुरानी खबर।')
  def evidence(self):return ' '.join('fact'+str(i) for i in range(90))
  def test_material_update_retains_url_id_and_publication_date(self):
