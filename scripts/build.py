@@ -630,6 +630,11 @@ for old,canonical in DUPLICATE_POSTS:
   oldpath=article_path(old,lang)
   redirects.append(f'{oldpath} {article_path(canonical,lang)} 301')
   redirects.append(f'/{lang}/news/{slug(old)}/ {article_path(canonical,lang)} 301')
+  # A duplicate can also have moved categories. Keep all of its formerly
+  # published URLs, not only the duplicate's current-category path.
+  for previous in old.get('previous_categories',[]):
+   if previous in CATEGORIES and previous!=category(old):
+    redirects.append(f'/{lang}/news/{previous}/{article_slug(old)}/ {article_path(canonical,lang)} 301')
   olddir=OUT/oldpath.lstrip('/')
   if olddir.is_dir():shutil.rmtree(olddir)
 print('SEO_REDIRECTS',write_redirects(OUT,redirects,write,SITE))
