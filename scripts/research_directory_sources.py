@@ -182,6 +182,7 @@ def enrich(kind,name,record,session,url=None):
    soup=BeautifulSoup(html,'html.parser')
   def words(value):
    value=unicodedata.normalize('NFKD',value.replace('+',' plus ')).encode('ascii','ignore').decode().lower()
+   value=re.sub(r'(?<=[a-z])(?=\d)|(?<=\d)(?=[a-z])',' ',value)
    return re.findall(r'[a-z0-9]+',value)
   tokens=words(name.replace('IIT ','Indian Institute of Technology '))
   headings=' '.join(t.get_text(' ',strip=True) for t in soup.select('title,h1'))
@@ -191,9 +192,14 @@ def enrich(kind,name,record,session,url=None):
   # identity in the page text only on that institution's known official host.
   official_host=(urlparse(record.get('official_url','')).hostname or '').removeprefix('www.')
   page_host=(urlparse(final_url).hostname or '').removeprefix('www.')
+  official=official_host and (page_host==official_host or page_host.endswith('.'+official_host))
+  if official and kind!='colleges':
+   brand=set(words(str(record.get('manufacturer',''))))
+   model=[t for t in required if t not in brand]
+   if model:required=model
   if kind=='colleges' and official_host and (page_host==official_host or page_host.endswith('.'+official_host)):
    heading_words.update(words(soup.get_text(' ',strip=True)[:100000]))
-  if required and not (all(t in heading_words for t in required) or ''.join(required) in ''.join(words(headings))):
+  if required and not (all(t in heading_words for t in required) or (set(t for t in required if t.isdigit()) <= heading_words and ''.join(required) in ''.join(words(headings)))):
    print('SOURCE_FAILURE',json.dumps({'url':url,'reason':'entity title mismatch','name':name}),flush=True)
    return {}
   h=soup.find('h1')
@@ -341,12 +347,14 @@ def main():
  for kind in FIELDS:
   end=time.monotonic()+budget/len(FIELDS);details.setdefault(kind,{})
   entries=[{'name':name,**entry} for name,entry in details[kind].items() if isinstance(entry,dict)]+[r for r in records.get(kind,[]) if isinstance(r,dict) and r.get('name') not in details[kind]]
+  if os.getenv('DIRECTORY_RESEARCH_FOCUS_ONLY')=='1':entries=[r for r in entries if r.get('name') in FOCUS.get(kind,[])]
   published={p.get('directory_name') for path in (ROOT/'content/posts').glob('*.json') if (p:=read(path)).get('directory_kind')==kind}
   entries.sort(key=lambda r:(r.get('name') not in FOCUS.get(kind,[]),r.get('name') not in published,state.get(kind+':'+r.get('name',''),{}).get('attempted',0)))
   counts=Counter();failures=[];eligible=[]
   for record in entries:
    if not record.get('name'):continue
-   if state.get(kind+':'+record['name'],{}).get('refresh_version')==2 and state.get(kind+':'+record['name'],{}).get('retry_after',0)>time.time():counts['cooldown']+=1
+   missing_focus_price=record['name'] in FOCUS.get(kind,[]) and not record.get('fees' if kind=='colleges' else 'price')
+   if not missing_focus_price and state.get(kind+':'+record['name'],{}).get('refresh_version')==2 and state.get(kind+':'+record['name'],{}).get('retry_after',0)>time.time():counts['cooldown']+=1
    else:eligible.append(record)
   def process(record):
    if time.monotonic()>=end:return None

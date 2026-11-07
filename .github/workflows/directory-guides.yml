@@ -55,6 +55,7 @@ jobs:
           DIRECTORY_PAGES_PER_RUN: '2'
           DIRECTORY_PRICE_PAGES_PER_ENTITY: '6'
           DIRECTORY_PRICE_REFRESH_SECONDS: '10800'
+          DIRECTORY_RESEARCH_FOCUS_ONLY: ${{ github.event_name == 'push' && '1' || '0' }}
           DIRECTORY_FETCH_TIMEOUT_SECONDS: '20'
           PUBLIC_FETCH_SUCCESS_TTL_SECONDS: '10800'
           PUBLIC_FETCH_FAILURE_TTL_SECONDS: '900'
@@ -75,7 +76,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           python -m compileall -q scripts
           python -m unittest discover -s tests -p 'test_directory*.py' -v
-          python scripts/refresh_directories.py
+          if [ "$GITHUB_EVENT_NAME" != "push" ]; then python scripts/refresh_directories.py; fi
           python scripts/research_directory_sources.py
           # Retain research outside the checkout across concurrent-push retries.
           cp content/directory-details.json /tmp/directory-details.json

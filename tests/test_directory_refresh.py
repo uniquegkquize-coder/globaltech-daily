@@ -13,6 +13,15 @@ from directory_refresh import refresh_sources, protect_reviewed, merge_rows
 
 
 class DirectoryRefreshTests(unittest.TestCase):
+    def test_official_store_can_omit_brand_but_not_change_model_number(self):
+        html='<title>X Fold5 16GB+512GB Titanium Grey</title><table><tr><td>Price</td><td>INR 149999</td></tr><tr><td>RAM</td><td>16 GB</td></tr></table>'
+        record={'manufacturer':'vivo','official_url':'https://www.vivo.com/in/products/param/x-fold5'}
+        with patch.object(research,'fetch_public_html',return_value=(html,'https://shop.vivo.com/in/product/10316','browser')):
+            facts=research.enrich('phones','Vivo X Fold 5',record,Mock(),'https://shop.vivo.com/in/product/10316')
+        self.assertEqual(facts['price'],'INR 149999')
+        with patch.object(research,'fetch_public_html',return_value=(html.replace('Fold5','Fold50'),'https://shop.vivo.com/in/product/10316','browser')):
+            self.assertEqual(research.enrich('phones','Vivo X Fold 5',record,Mock(),'https://shop.vivo.com/in/product/10316'),{})
+
     def test_recheck_prices_and_each_course_not_only_static_pdf(self):
         entry = {'official_url': 'https://college.example/', 'source_url': 'https://college.example/brochure.pdf',
                  'field_sources': {'fees': {'url': 'https://college.example/fees'}},
