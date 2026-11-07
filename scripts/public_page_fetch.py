@@ -22,7 +22,7 @@ def restricted(html):
 def needs_render(html):
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(html, 'html.parser')
-    if soup.select_one('table,dl,script[type="application/ld+json"]'):
+    if soup.select_one('table,dl'):
         return False
     for node in soup.select('script,style,noscript'): node.decompose()
     return len(soup.get_text(' ', strip=True)) < 700

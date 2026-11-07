@@ -323,7 +323,7 @@ def category(title, default):
 
 def category_for_url(title,default,url):
  actual=category(title,default)
- if (urlparse(url).hostname or '').removeprefix('www.')=='bikewale.com' and actual=='car-launches':
+ if actual=='car-launches' and ((urlparse(url).hostname or '').removeprefix('www.')=='bikewale.com' or '/bike-news/' in urlparse(url).path.lower()):
   return 'automobiles'
  # Film release searches also return television episode announcements.
  if actual=='movie-releases' and any(part in urlparse(url).path.lower() for part in ('/tv/','/television/','/tv-news/')):

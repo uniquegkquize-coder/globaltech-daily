@@ -117,4 +117,12 @@ class SourcePipelineTests(unittest.TestCase):
             self.assertEqual(fetch.call_count,2)
             self.assertEqual(fetch.call_args.kwargs['timeout'],(4,8))
 
+
+    def test_bike_news_route_stays_out_of_car_launches(self):
+        self.assertEqual(collect.category_for_url('BMW F 450 GS Sport variant launched in India','automobiles','https://www.autocarindia.com/bike-news/bmw-f-450-gs-441276'),'automobiles')
+    def test_metadata_schema_alone_does_not_disable_rendering(self):
+        from public_page_fetch import needs_render
+        self.assertTrue(needs_render('<title>Newsroom</title><script type="application/ld+json">{"@type":"WebSite","name":"Newsroom"}</script><div id="app"></div>'))
+        self.assertFalse(needs_render('<table><tr><td>Engine</td><td>125 cc</td></tr></table>'))
+
 if __name__=='__main__':unittest.main()
