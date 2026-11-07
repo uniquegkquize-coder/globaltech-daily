@@ -1,40 +1,43 @@
 {
-  "total_posts": 2298,
-  "selected": 24,
+  "total_posts": 2314,
+  "selected": 26,
   "results": {
-    "invalid_source_images": 2,
-    "source_photo_saved": 4,
-    "cooldown": 18
+    "source_photo_saved": 6,
+    "cooldown": 20
   },
-  "still_missing": 186,
+  "still_missing": 188,
   "articles": [
     {
-      "id": "ab5161457cb0ef816db211ff",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794023983.2615676
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794023983.5549793
-    },
-    {
-      "id": "875d59a9f005295f478ad199",
-      "source": "https://en.wikipedia.org/wiki/Yamaha_TD2",
+      "id": "8ee5a2ec4e187aa560052cb9",
+      "source": "https://en.wikipedia.org/wiki/SHL_M11",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794023983.5717113
+      "retry_after": 1794036137.9185221
     },
     {
-      "id": "2a8b92143f14b264d8d27146",
+      "id": "e99189cc5b5897502ed9c3cc",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_S-10",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794036138.013503
+    },
+    {
+      "id": "3468d6407927f524772fb358",
+      "source": "https://en.wikipedia.org/wiki/BSA_B25",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794036138.3156915
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
       "result": "cooldown"
     },
     {
-      "id": "e21f0c9303189bff05b728a0",
+      "id": "554edbfdaee926ed82007433",
+      "result": "cooldown"
+    },
+    {
+      "id": "2a8b92143f14b264d8d27146",
       "result": "cooldown"
     },
     {
@@ -43,6 +46,10 @@
     },
     {
       "id": "2f02162d9ab27a8cd5662161",
+      "result": "cooldown"
+    },
+    {
+      "id": "e21f0c9303189bff05b728a0",
       "result": "cooldown"
     },
     {
@@ -86,10 +93,6 @@
       "result": "cooldown"
     },
     {
-      "id": "a6510273f0889bf4d7684eae",
-      "result": "cooldown"
-    },
-    {
       "id": "8444aa187e09b377f661fcbf",
       "result": "cooldown"
     },
@@ -98,29 +101,33 @@
       "result": "cooldown"
     },
     {
+      "id": "a6510273f0889bf4d7684eae",
+      "result": "cooldown"
+    },
+    {
       "id": "8ede6684d4cf14febb863aad",
       "result": "cooldown"
     },
     {
-      "id": "c37e65f4d32ad1248cfd5271",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_630",
+      "id": "c485f35edd261d86a6d75624",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_E1",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794023983.8414211
+      "retry_after": 1794036138.465082
     },
     {
-      "id": "f07c7b8b61329c4d05174d0e",
-      "source": "https://en.wikipedia.org/wiki/Voyah_Free",
+      "id": "9a1b3d0a912e2dfdc48853e4",
+      "source": "https://en.wikipedia.org/wiki/HTC_One_%28M8%29",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794023983.969845
+      "retry_after": 1794036138.480291
     },
     {
-      "id": "ee136af6e8270cb877f46300",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Equinox",
+      "id": "047e4420c4246aaec5442552",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Trax",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794023984.4022765
+      "retry_after": 1794036138.613892
     }
   ],
   "missing": [
@@ -269,7 +276,7 @@
       "category": "private-vacancy",
       "title": "Recent Program and Project Management Openings Listed on LinkedIn for the San Francisco Bay Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "89c13c75752a",
@@ -395,7 +402,7 @@
       "category": "private-vacancy",
       "title": "Wordsmith Learning Hub Recruits Senior Digital Marketing Manager for Tamil Edtech Sector",
       "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "f638281840d9",
@@ -403,6 +410,13 @@
       "title": "TRAI Releases Drive Test Performance Report for Balasore, Odisha",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No128of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "ecf6b0469322",
+      "category": "private-vacancy",
+      "title": "Overview of Recent Job Openings Across Various Sectors in India",
+      "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Bm%C9%99nfi%2Br%C9%99yl%C9%99r%2B%E2%80%94%2B%C3%BCzvl%C3%BCk%2Bt%C9%99qdimat%C4%B1n%C4%B1%2B%C3%B6yr%C9%99nin.wam-jobs",
+      "reason": "no_source_image"
     },
     {
       "id": "3acc30eaefd0",
@@ -444,7 +458,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-phoenix-az",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "e21f0c9303189bff05b728a0",
@@ -472,7 +486,7 @@
       "category": "visas-immigration",
       "title": "Peerless Immigration Services Lists Business Development Executive Opening in New Delhi",
       "source": "https://in.linkedin.com/jobs/view/busienss-development-executive-at-peerless-immigration-services-4483857590",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0bdb0918a8cf",
@@ -521,7 +535,7 @@
       "category": "private-vacancy",
       "title": "Recent Administrative Assistant and Support Openings Listed in the Des Moines, Iowa Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-des-moines-ia",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "bbfd4d3d5c0a",
@@ -556,7 +570,7 @@
       "category": "private-vacancy",
       "title": "WeMakeScholars Recruits Technical HR Professional Across Multiple Indian Cities",
       "source": "https://in.linkedin.com/jobs/view/technial-hr-recruiter-in-secunderabad-hyderabad-hyderabad-hyderabad-vishakhapatnam-alwal-visakhapatnam-at-wemakescholars-4484295029?position=58&pageNum=0&refId=IYfwluMaDIcsUuazNwoLjw%3D%3D&trackingId=4yed8vCMLTz%2BknFIMv5vzQ%3D%3D",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "79cbda730083",
@@ -577,7 +591,7 @@
       "category": "private-vacancy",
       "title": "Alok Industries Limited Lists Assistant Manager Opening in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-alok-industries-limited-india-4481052431",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "285dd8d5ec2f",
@@ -647,14 +661,14 @@
       "category": "apps-software",
       "title": "Exploring CAD and Software Development Engineer Job Listings in Hyderabad",
       "source": "https://in.linkedin.com/jobs/cad-software-development-engineer-jobs-hyderabad-ts?trk=guest_job_details_jd_jserp_more_jobs_link&f_AL=true",
-      "reason": "no_source_image"
+      "reason": "invalid_source_images"
     },
     {
       "id": "65c484924118",
       "category": "visas-immigration",
       "title": "Sky Heaven Immigration Announces Recruitment for Visitor Visa Counselor in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/visitor-visa-counselor-at-sky-heaven-immigration-opc-pvt-ltd-4482294678",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "d25fe3284c63",
@@ -822,7 +836,7 @@
       "category": "private-vacancy",
       "title": "Overview of Military and Protective Services Openings in the Des Moines Area",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-des-moines-ia",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "91712e374b16",
@@ -836,7 +850,7 @@
       "category": "private-vacancy",
       "title": "The Souled Store Lists Founder's Office Intern Position in Mumbai Focused on GCC Expansion",
       "source": "https://in.linkedin.com/jobs/view/founder-s-office-intern-at-the-souled-store-4483622129",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0e2fde519d11",
@@ -885,7 +899,7 @@
       "category": "apps-software",
       "title": "Saatvik Agro Announces Hiring for Analyst Software Engineer (Java) in Morena",
       "source": "https://in.linkedin.com/jobs/view/analyst-software-engineer-java-at-saatvik-agro-4484805864",
-      "reason": "no_source_image"
+      "reason": "invalid_source_images"
     },
     {
       "id": "61ab99a70d23",
@@ -913,7 +927,7 @@
       "category": "private-vacancy",
       "title": "Fintech Firm FatakPay Announces Search for Compliance Manager in Mumbai",
       "source": "https://in.linkedin.com/jobs/view/compliance-manager-at-fatakpay-4482278882",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "6189652eeaaa",
@@ -955,7 +969,7 @@
       "category": "ai-news",
       "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
       "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
-      "reason": "no_source_image"
+      "reason": "invalid_source_images"
     },
     {
       "id": "c9e064a48f72",
@@ -1098,6 +1112,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "ef94d73f2eea",
+      "category": "private-vacancy",
+      "title": "Professional Career Opportunities Listed Across India via Professional Platforms",
+      "source": "https://in.linkedin.com/jobs/Find+Novaluxia+Reviews+among+your+reading+options.zqi-jobs",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "05cc9a358c55",
       "category": "private-vacancy",
       "title": "Fanzart Seeks Business Development Specialist for On-Site Role in Ranchi",
@@ -1221,7 +1242,7 @@
       "category": "private-vacancy",
       "title": "San Francisco Bay Area Media and Communications Job Listings Highlight Tech and Corporate Sector Demand",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-francisco-ca",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "8444aa187e09b377f661fcbf",
@@ -1242,7 +1263,7 @@
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Cheyenne and Surrounding Region",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "2e293f23db10",
@@ -1256,7 +1277,7 @@
       "category": "apps-software",
       "title": "Tech Hiring Surges in Chennai as Flex Opens Associate Software Engineer Roles",
       "source": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-flex-4472543793",
-      "reason": "no_source_image"
+      "reason": "invalid_source_images"
     },
     {
       "id": "080b28de54ff",
@@ -1277,7 +1298,7 @@
       "category": "private-vacancy",
       "title": "Community and Social Services Career Openings Highlight Regional Employment Landscape",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-boydton-va",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "090108930e0d",
@@ -1429,53 +1450,43 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "invalid_source_images": 51,
+    "invalid_source_images": 52,
     "source_error": 4,
-    "no_source_image": 54,
+    "no_source_image": 55,
     "access_denied": 40,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "ab5161457cb0ef816db211ff": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "554edbfdaee926ed82007433": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "875d59a9f005295f478ad199": {
+    "8ee5a2ec4e187aa560052cb9": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Yamaha_TD2",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/dc/1969_Yamaha_TD2.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/SHL_M11",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/SHL_M11.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "c37e65f4d32ad1248cfd5271": {
+    "e99189cc5b5897502ed9c3cc": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_630",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/LUMIA_630.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_S-10",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/04/98-04_Chevrolet_S-10.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "f07c7b8b61329c4d05174d0e": {
+    "3468d6407927f524772fb358": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Voyah_Free",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/%28CHN-Shanghai%29_Showcar_Voyah_Free%2B_No-plate_2025-12-21.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/BSA_B25",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/BSA_Starfire_250cc_%281969%29_-_29927122245.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "ee136af6e8270cb877f46300": {
+    "c485f35edd261d86a6d75624": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Equinox",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_E1",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Sony_Xperia_E1.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "9a1b3d0a912e2dfdc48853e4": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/HTC_One_%28M8%29",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Htc_One_%282014%29.svg/960px-Htc_One_%282014%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+    },
+    "047e4420c4246aaec5442552": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Trax",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/39/2024_Chevrolet_Trax_2RS%2C_front_left%2C_12-10-2023.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
