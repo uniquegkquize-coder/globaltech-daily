@@ -1,0 +1,31 @@
+{
+  "en_title": "OpenAI Adopts Unified Signal for Website AI Training Preferences",
+  "hi_title": "ओपनएआई ने वेबसाइटों के एआई प्रशिक्षण वरीयताओं के लिए एक साझा संकेत अपनाया",
+  "en_body": "## Simplifying Content Management for Web Publishers\n\nOpenAI has announced that it will begin honoring a standardized signal within `robots.txt` files to help website operators manage how their content is used for training generative AI models. This initiative is designed to streamline the communication of preferences across multiple AI service providers simultaneously.\n\n### Key Changes and Benefits\n\nPreviously, website administrators were required to identify individual crawlers and manually maintain specific exclusion rules for every AI company. The introduction of this unified signal aims to:\n\n*   **Reduce Administrative Burden:** Operators can now express a consistent preference that multiple participating AI providers can recognize.\n*   **Maintain Existing Controls:** This new signal serves as an additional layer and will not replace the existing granular crawler controls that OpenAI currently respects.\n*   **Support Industry Standardization:** The effort is aligned with the ongoing work of the Internet Engineering Task Force’s (IETF) AI Preferences working group.\n\n### Future Implementation\n\nOpenAI states that it plans to implement this new signal in the coming months. The company intends to share further technical details once the rollout is finalized. This move is presented as part of a broader commitment to evolving AI practices in alignment with standards discussions and web transparency.\n\n### How to Verify and Stay Informed\n\nPublishers interested in managing their AI preferences are encouraged to monitor updates from the IETF working group and official OpenAI announcements. Existing instructions for `robots.txt` configurations remain valid and active during this transition period. OpenAI has indicated it will continue to adapt its operational practices as industry standards for AI data usage evolve.",
+  "hi_body": "## वेब प्रकाशकों के लिए सामग्री प्रबंधन को आसान बनाना\n\nओपनएआई ने घोषणा की है कि वह `robots.txt` फ़ाइलों में एक मानकीकृत संकेत का सम्मान करना शुरू करेगा, ताकि वेबसाइट संचालक यह प्रबंधित कर सकें कि उनकी सामग्री का उपयोग जेनेरेटिव एआई मॉडल के प्रशिक्षण के लिए कैसे किया जाए। यह पहल एक साथ कई एआई सेवा प्रदाताओं तक वरीयताओं को संप्रेषित करने की प्रक्रिया को सरल बनाने के लिए डिज़ाइन की गई है।\n\n### मुख्य परिवर्तन और लाभ\n\nपहले, वेबसाइट प्रशासकों को अलग-अलग क्रॉलर्स की पहचान करनी पड़ती थी और प्रत्येक एआई कंपनी के लिए मैन्युअल रूप से विशिष्ट बहिष्करण नियम बनाए रखने पड़ते थे। इस एकीकृत संकेत का उद्देश्य निम्नलिखित है:\n\n*   **प्रशासनिक बोझ कम करना:** संचालक अब एक सुसंगत वरीयता व्यक्त कर सकते हैं जिसे कई प्रतिभागी एआई प्रदाता पहचान सकेंगे।\n*   **मौजूदा नियंत्रण बरकरार रखना:** यह नया संकेत एक अतिरिक्त परत के रूप में कार्य करेगा और उन मौजूदा दानेदार क्रॉलर नियंत्रणों को प्रतिस्थापित नहीं करेगा जिनका ओपनएआई वर्तमान में सम्मान करता है।\n*   **उद्योग मानकीकरण का समर्थन:** यह प्रयास इंटरनेट इंजीनियरिंग टास्क फोर्स (IETF) के एआई प्रेफरेंस वर्किंग ग्रुप के चल रहे काम के साथ संरेखित है।\n\n### भविष्य का कार्यान्वयन\n\nओपनएआई का कहना है कि वह आने वाले महीनों में इस नए संकेत को लागू करने की योजना बना रहा है। कंपनी का इरादा रोलआउट पूरा होने पर आगे का तकनीकी विवरण साझा करने का है। यह कदम एआई प्रथाओं को मानक चर्चाओं और वेब पारदर्शिता के अनुरूप विकसित करने की प्रतिबद्धता का हिस्सा है।\n\n### सत्यापन कैसे करें\n\nअपनी एआई वरीयताओं को प्रबंधित करने के इच्छुक प्रकाशकों को IETF वर्किंग ग्रुप के अपडेट और आधिकारिक ओपनएआई घोषणाओं पर नज़र रखने के लिए प्रोत्साहित किया जाता है। `robots.txt` कॉन्फ़िगरेशन के लिए मौजूदा निर्देश इस संक्रमण अवधि के दौरान मान्य और सक्रिय रहेंगे। ओपनएआई ने संकेत दिया है कि जैसे-जैसे एआई डेटा उपयोग के लिए उद्योग के मानक विकसित होंगे, वह अपनी परिचालन प्रथाओं को अनुकूलित करना जारी रखेगा।",
+  "en_meta": "OpenAI announces support for a unified robots.txt signal to help website operators manage AI training preferences across multiple providers more efficiently.",
+  "hi_meta": "ओपनएआई ने वेबसाइट ऑपरेटरों के लिए एआई प्रशिक्षण वरीयताओं को साझा करने हेतु एक एकीकृत robots.txt संकेत को अपनाने की घोषणा की है।",
+  "en_keywords": [
+    "OpenAI",
+    "robots.txt",
+    "AI training",
+    "web publishers",
+    "IETF",
+    "data privacy"
+  ],
+  "hi_keywords": [
+    "ओपनएआई",
+    "robots.txt",
+    "एआई प्रशिक्षण",
+    "वेब प्रकाशक",
+    "IETF",
+    "डेटा गोपनीयता"
+  ],
+  "source_published_at": "2026-11-05T17:00:00Z",
+  "id": "f50b895c7bf6",
+  "source": "https://openai.com/index/helping-websites-express-ai-training-preferences/",
+  "date": "2026-11-07T14:46:30.178036+00:00",
+  "source_title": "Making it easier for websites to express AI training preferences - OpenAI",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
