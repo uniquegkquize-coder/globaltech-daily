@@ -1,0 +1,31 @@
+{
+  "en_title": "AI Startup Cathedral Claims It Used Autonomous Agents to Breach Anthropic Systems",
+  "hi_title": "एआई स्टार्टअप कैथेड्रल ने एंथ्रोपिक सिस्टम को भेदने का दावा किया",
+  "en_body": "An AI startup named Cathedral reported that it used autonomous agents to breach Anthropic's systems within 12 hours by exploiting vulnerabilities in third-party business software. According to published reports, the incident exposed limited internal data.\n\n## What Happened\n* **The Attack Method:** Cathedral stated its human researchers initially struggled for days before deploying AI agents, which found an entry point in under 12 hours.\n* **Data Accessed:** Anthropic confirmed that a limited set of human resources, sales, and IT systems were accessed, compromising basic user account records and contact information for certain customers and partners.\n* **What Remained Safe:** Anthropic reported that source code, AI model weights, and employee conversations with Claude were not exposed during the incident.\n\n## Response and Controversy\nAnthropic stated that its monitoring systems flagged some of Cathedral’s activities before the startup officially reported them through the HackerOne bug bounty program, and access was reportedly shut off on the same day.\n\nHowever, reports indicate that Anthropic accused Cathedral of violating the program rules by failing to fully disclose the extent of its activities. Industry observers noted that the incident underscores ongoing security risks associated with third-party software integrations.\n\n## Verification and Next Steps\nBecause this event is based on reported disclosures and statements from the involved parties, readers should consult official announcements from Anthropic and updates via HackerOne to verify the status of the bug bounty and security mitigations.",
+  "hi_body": "कैटेड्रल नामक एक एआई स्टार्टअप ने रिपोर्ट किया है कि उसने थर्ड-पार्टी बिजनेस सॉफ्टवेयर की कमज़ोरियों का फायदा उठाकर 12 घंटे के भीतर ऑटोनॉमस एजेंटों की मदद से एंथ्रोपिक के सिस्टम में सेंध लगाई। प्रकाशित रिपोर्टों के अनुसार, इस घटना में सीमित आंतरिक डेटा उजागर हुआ।\n\n## क्या हुआ\n* **हमले का तरीका:** कैटेट्रल ने बताया कि उसके मानव शोधकर्ताओं को शुरुआती संघर्ष के बाद जब एआई एजेंटों को तैनात किया गया, तो उन्होंने 12 घंटे से कम समय में प्रवेश का रास्ता ढूंढ लिया।\n* **एक्सेस किया गया डेटा:** एंथ्रोपिक ने पुष्टि की कि मानव संसाधन, बिक्री और आईटी प्रणालियों के एक सीमित सेट तक पहुंच बनाई गई, जिससे कुछ ग्राहकों और भागीदारों के बुनियादी उपयोगकर्ता खाता रिकॉर्ड और संपर्क जानकारी प्रभावित हुई।\n* **क्या सुरक्षित रहा:** एंथ्रोपिक ने बताया कि इस घटना के दौरान सोर्स कोड, एआई मॉडल वेट और क्लाउड के साथ कर्मचारियों की बातचीत उजागर नहीं हुई।\n\n## प्रतिक्रिया और विवाद\nएंथ्रोपिक ने कहा कि उसके मॉनिटरिंग सिस्टम ने हैकरवन (HackerOne) बग बाउंस प्रोग्राम के तहत स्टार्टअप द्वारा आधिकारिक रूप से रिपोर्ट करने से पहले ही कैटेट्रल की कुछ गतिविधियों को चिह्नित कर लिया था, और उसी दिन एक्सेस बंद कर दी गई थी।\n\nहालांकि, रिपोर्टों से पता चलता है कि एंथ्रोपिक ने कैटेट्रल पर अपनी गतिविधियों की पूरी सीमा का खुलासा करने में विफल रहने पर कार्यक्रम के नियमों का उल्लंघन करने का आरोप लगाया। उद्योग के विश्लेषकों ने नोट किया कि यह घटना थर्ड-पार्टी सॉफ्टवेयर एकीकरण से जुड़े चल रहे सुरक्षा जोखिमों को रेखांकित करती है।\n\n## सत्यापन और अगले चरण\nचूंकि यह घटना शामिल पक्षों के खुलासों और बनों पर आधारित है, इसलिए पाठकों को बग बाउंड और सुरक्षा उपायों की स्थिति को सत्यापित करने के लिए एंथ्रोपिक की आधिकारिक घोषणाओं और हैकरवन के अपडेट की जांच करनी चाहिए।",
+  "en_meta": "AI startup Cathedral claims autonomous agents breached Anthropic systems via third-party software. Read about the reported data access and responses.",
+  "hi_meta": "एआई स्टार्टअप कैथेड्रल ने थर्ड-पार्टी सॉफ्टवेयर के जरिए एंथ्रोपिक सिस्टम को भेदने का दावा किया। जानिए पूरी रिपोर्ट और प्रतिक्रियाएं।",
+  "en_keywords": [
+    "Anthropic",
+    "Cathedral",
+    "AI agents",
+    "cybersecurity",
+    "data breach",
+    "bug bounty"
+  ],
+  "hi_keywords": [
+    "एंथ्रोपिक",
+    "कैटेड्रल",
+    "एआई एजेंट",
+    "साइबर सुरक्षा",
+    "डेटा उल्लंघन",
+    "बग बाउंड"
+  ],
+  "source_published_at": "2026-10-28T15:25:00+00:00",
+  "id": "f46a9946b5f5",
+  "source": "https://www.techradar.com/pro/security/ai-startup-claims-it-hacked-anthropic-in-12-hours-gains-access-to-employee-details-and-internal-messages",
+  "date": "2026-11-07T04:56:03.715735+00:00",
+  "source_title": "AI startup claims it hacked Anthropic in 12 hours, gains access to employee details and internal messages",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

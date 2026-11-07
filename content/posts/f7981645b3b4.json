@@ -1,0 +1,31 @@
+{
+  "en_title": "GitHub Announces Public Preview of AI Scan for Entire Repositories",
+  "hi_title": "GitHub ने संपूर्ण रिपॉजिटरी के लिए AI स्कैन का सार्वजनिक पूर्वावलोकन जारी किया",
+  "en_body": "## Overview of AI Scan\n\nGitHub has announced the public preview of AI Scan for repositories, expanding vulnerability detection across an entire codebase rather than limiting analysis to pull request changes. According to the announcement, the feature utilizes an agentic code scanner designed to explore repositories and target code sections most likely to contain security vulnerabilities.\n\nThe system is intended to complement existing tools like CodeQL. It supports languages and frameworks not currently covered by CodeQL and aims to identify issues that rule-based analysis might miss in supported languages.\n\n## Key Features and Integration\n\n* **Unified Alerts:** Findings from AI Scan appear directly in the standard GitHub code scanning alert list alongside CodeQL alerts.\n* **Duplicate Prevention:** When both AI Scan and CodeQL operate on the same repository, AI Scan is designed to skip issues already reported by CodeQL.\n* **Workflow Compatibility:** Alerts integrate into existing code scanning workflows, supporting assignees, linked pull requests, and security campaigns.\n* **Autofix Support:** Developers can address findings using agentic autofix capabilities.\n\n## Activation and Availability\n\nAccess to AI Scan depends on account type and tier:\n\n* **Enterprise and Organizations:** Available on github.com and GitHub Enterprise Cloud with data residency for public, private, and internal repositories, provided the organization utilizes GitHub Code Security or GitHub Advanced Security. Enterprise administrators must enable the policy first.\n* **Personal Accounts:** Available for public repositories only; private personal repositories are not supported.\n\nUsage of the feature consumes Code Security AI credits, which are tracked in enterprise billing sections. A GitHub Copilot license is not required to use AI Scan.\n\n## Verification and Next Steps\n\nUsers with write access to code scanning can initiate scans from the Code scanning page once enabled. Unlike some automated checks, AI Scan alerts do not automatically close upon merging a fix; developers must run a new scan to verify and close resolved alerts.\n\nTo verify these details and read the official announcement, consult the GitHub Changelog or participate in discussions on the GitHub Community platform.",
+  "hi_body": "## AI स्कैन का परिचय\n\nGitHub ने रिपॉजिटरी के लिए AI स्कैन (AI Scan) का सार्वजनिक पूर्वावलोकन (public preview) शुरू करने की घोषणा की है। यह सुविधा केवल पुल रिक्वेस्ट (pull request) परिवर्तनों तक सीमित न रहकर पूरे कोडबेस में कमजोरियों का पता लगाने में मदद करती है। रिपोर्ट के अनुसार, यह टूल एक एजेंटिक कोड स्कैनर का उपयोग करता है जो रिपॉजिटरी का पता लगाता है और उन हिस्सों पर ध्यान केंद्रित करता है जिनमें सुरक्षा कमजोरियां होने की सबसे अधिक संभावना होती है।\n\nयह प्रणाली CodeQL जैसे मौजूदा उपकरणों की पूरक है। यह उन भाषाओं और फ्रेमवर्क का समर्थन करती है जो वर्तमान में CodeQL द्वारा कवर नहीं किए जाते हैं।\n\n## मुख्य विशेषताएं और एकीकरण\n\n* **एकीकृत अलर्ट:** AI स्कैन से मिलने वाले परिणाम CodeQL अलर्ट के साथ मानक GitHub कोड स्कैनिंग अलर्ट सूची में दिखाई देते हैं।\n* **डुप्लीकेट रोकथाम:** जब AI स्कैन और CodeQL दोनों एक ही रिपॉजिटरी को स्कैन करते हैं, तो AI स्कैन उन मुद्दों को छोड़ देता है जिनकी रिपोर्ट CodeQL पहले ही कर चुका है।\n* **वर्कफ़्लो संगतता:** अलर्ट मौजूदा कोड स्कैनिंग वर्कफ़्लो के साथ एकीकृत होते हैं, जिसमें assignee और linked pull requests शामिल हैं।\n\n## उपलब्धता और सक्रियण\n\nइस सुविधा का उपयोग खाता प्रकार पर निर्भर करता है:\n\n* **एंटरप्राइज़ और संगठन:** सार्वजनिक, निजी और आंतरिक रिपॉजिटरी के लिए उपलब्ध है, बशर्ते संगठन GitHub Code Security या GitHub Advanced Security का उपयोग कर रहा हो।\n* **व्यक्तिगत खाते:** केवल सार्वजनिक रिपॉजिटरी के लिए उपलब्ध; व्यक्तिगत निजी रिपॉजिटरी समर्थित नहीं हैं।\n\nइस सुविधा के उपयोग से Code Security AI क्रेडिट की खपत होती है। इसका उपयोग करने के लिए GitHub Copilot लाइसेंस अनिवार्य नहीं है।\n\n## सत्यापन और आगे के कदम\n\nकोड स्कैनिंग तक राइट एक्सेस रखने वाले उपयोगकर्ता स्कैन शुरू कर सकते हैं। फिक्स मर्ज होने पर AI स्कैन अलर्ट स्वतः बंद नहीं होते हैं; हल किए गए अलर्ट को सत्यापित करने और बंद करने के लिए एक नया स्कैन चलाना आवश्यक है।\n\nमूल घोषणा की पुष्टि करने के लिए GitHub Changelog और आधिकारिक प्रलेखन देखें।",
+  "en_meta": "GitHub introduces public preview of AI Scan for entire repositories, complementing CodeQL with agentic vulnerability detection.",
+  "hi_meta": "GitHub ने संपूर्ण रिपॉजिटरी के लिए AI स्कैन का सार्वजनिक पूर्वावलोकन घोषित किया, जो CodeQL के साथ सुरक्षा कमजोरियों की जांच करता है।",
+  "en_keywords": [
+    "GitHub",
+    "AI Scan",
+    "CodeQL",
+    "vulnerability detection",
+    "code security",
+    "public preview"
+  ],
+  "hi_keywords": [
+    "गिटहब",
+    "एआई स्कैन",
+    "कोडक्यूएल",
+    "सुरक्षा जांच",
+    "सार्वजनिक पूर्वावलोकन",
+    "सॉफ्टवेयर सुरक्षा"
+  ],
+  "source_published_at": "2026-10-28T15:30:00+00:00",
+  "id": "f7981645b3b4",
+  "source": "https://github.blog/changelog/2026-10-28-ai-scan-for-repositories-in-public-preview/",
+  "date": "2026-11-07T04:56:04.548470+00:00",
+  "source_title": "AI Scan for repositories in public preview - The GitHub Blog",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,31 @@
+{
+  "en_title": "Anterior Releases Open-Source Framework to Improve Healthcare AI Consistency and Audibility",
+  "hi_title": "एंटिरियर ने हेल्थकेयर एआई की स्थिरता और ऑडिटेबिलिटी सुधारने के लिए ओपन-सर्स फ्रेमवर्क लॉन्च किया",
+  "en_body": "## Introduction to Symbolic-Reasoning\n\nAnterior, a clinician-led artificial intelligence company, announced the open-source release of **symbolic-reasoning**, a framework designed to help AI systems consistently apply complex clinical policies. Built on Symbolic Reasoning Graphs (SRGs), the framework aims to make AI reasoning more transparent and auditable for healthcare administrative and clinical workflows.\n\n## Addressing Consistency and Transparency in Healthcare AI\n\nA central challenge in deploying AI within healthcare is ensuring that systems apply clinical guidelines reliably and at scale. While large language models can process large volumes of medical records, they can sometimes overlook specific requirements or interpret ambiguous policies inconsistently. In clinical settings, these discrepancies can potentially lead to delayed care, increased administrative friction, or errors in coverage determinations.\n\nAccording to Anterior, traditional AI approaches often interpret policies dynamically during each case review. In contrast, the SRG framework converts medical policies into structured, executable rules that clinical experts can review and validate in advance. A deterministic system then applies the established policy logic to the findings extracted from patient records, aiming to minimize variability and generate an auditable record of the decision-making process.\n\n## Key Components of the Open-Source Release\n\nThe released framework is available as a research preview and includes:\n\n* A version of Anterior's symbolic reasoning library\n* A dedicated language named `srg-lang` for representing complex policies\n* A Model Context Protocol (MCP) server\n\nWhile developed primarily for healthcare use cases such as prior authorization, quality measurement, and claims checks, the developers note that the underlying principles could potentially apply to other regulated sectors like finance and legal services.\n\n## How to Verify the Announcement\n\nInterested developers and researchers can review the source code and documentation directly through the official [GitHub repository](https://github.com/anteriorai/symbolic-reasoning). Further details regarding the company's platform and background can be found on the [Anterior Website](https://www.anterior.com).",
+  "hi_body": "## सिम्बॉलिक-रीजनिंग का परिचय\n\nचिकित्सकों द्वारा संचालित एआई कंपनी एंटिरियर ने **सिम्बॉलिक-रीजनिंग** (symbolic-reasoning) नामक एक नए ओपन-सर्स फ्रेमवर्क को जारी करने की घोषणा की है। यह फ्रेमवर्क सिम्बॉलिक रीजनिंग ग्राफ्स (SRGs) पर आधारित है और इसका उद्देश्य एआई प्रणालियों को जटिल चिकित्सीय नीतियों का लगातार पालन करने और उनके तर्कों को पारदर्शी तथा ऑडिट योग्य बनाने में मदद करना है।\n\n## हेल्थकेयर एआई में स्थिरता और पारदर्शिता की चुनौती\n\nस्वास्थ्य सेवा में एआई को तैनात करने की एक मुख्य चुनौती यह सुनिश्चित करना है कि सिस्टम नैदानिक दिशा-निर्देशों को विश्वसनीय रूप से और बड़े पैमाने पर लागू करें। हालांकि बड़े भाषा मॉडल चिकित्सा रिकॉर्ड का विश्लेषण कर सकते हैं, लेकिन वे कभी-कभी विशिष्ट आवश्यकताओं को छोड़ सकते हैं या अस्पष्ट नीतियों की अलग-अलग व्याख्या कर सकते हैं।\n\nएंटिरियर के अनुसार, पारंपरिक एआई दृष्टिकोण अक्सर प्रत्येक मामले की समीक्षा के दौरान नीतियों की व्याख्या करते हैं। इसके विपरीत, एसआरजी फ्रेमवर्क नीतियों को संरचित, निष्पादित नियमों में परिवर्तित करता है जिनकी नैदानिक विशेषज्ञों द्वारा पहले से समीक्षा की जा सकती है। एक नियतात्मक प्रणाली तब स्थापित नीति तर्क को लागू करती है, जिससे परिवर्तनशीलता को कम करने और निर्णय लेने की प्रक्रिया का एक ऑडिट योग्य रिकॉर्ड तैयार करने में मदद मिलती है।\n\n## ओपन-सर्स रिलीज के मुख्य घटक\n\nजारी किया गया फ्रेमवर्क अनुसंधान पूर्वावलोकन के रूप में उपलब्ध है और इसमें शामिल हैं:\n\n* एंटिरियर के सिम्बॉलिक रीजनिंग पुस्तकालय का एक संस्करण\n* जटिल नीतियों का प्रतिनिधित्व करने के लिए `srg-lang` नामक एक समर्पित भाषा\n* एक मॉडल संदर्भ प्रोटोकॉल (MCP) सर्वर\n\n## मूल घोषणा को कैसे सत्यापित करें\n\nइच्छुक डेवलपर्स और शोधकर्ता आधिकारिक [गिटहब रिपॉजिटरी](https://github.com/anteriorai/symbolic-reasoning) के माध्यम से स्रोत कोड और प्रलेखन की समीक्षा कर सकते हैं। कंपनी के प्लेटफॉर्म और पृष्ठभूमि के बारे में अधिक जानकारी [एंटिरियर वेबसाइट](https://www.anterior.com) पर देखी जा सकती है।",
+  "en_meta": "Anterior has open-sourced a symbolic-reasoning framework built on SRGs to make healthcare AI policies more consistent, transparent, and auditable.",
+  "hi_meta": "एंटिरियर ने हेल्थकेयर एआई नीतियों को अधिक सुसंगत और पारदर्शी बनाने के लिए SRGs पर आधारित सिम्बॉलिक-रीजनिंग ओपन-सर्स फ्रेमवर्क लॉन्च किया है।",
+  "en_keywords": [
+    "healthcare AI",
+    "open-source framework",
+    "symbolic reasoning",
+    "Anterior",
+    "clinical policies",
+    "prior authorization"
+  ],
+  "hi_keywords": [
+    "हेल्थकेयर एआई",
+    "ओपन-सर्स फ्रेमवर्क",
+    "सिम्बॉलिक रीजनिंग",
+    "एंटिरियर",
+    "क्लिनिकल नीतियां",
+    "प्रयार ऑथराइजेशन"
+  ],
+  "source_published_at": "2026-10-29T13:00:00Z",
+  "id": "aa02daecd2a4",
+  "source": "https://www.prnewswire.com/news-releases/anterior-launches-open-source-framework-to-make-healthcare-ai-more-consistent-and-auditable-302923084.html",
+  "date": "2026-11-07T04:56:56.680448+00:00",
+  "source_title": "Anterior Launches Open-Source Framework to Make Healthcare AI More Consistent and Auditable - PR Newswire",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,31 @@
+{
+  "en_title": "AI-Generated Code Security Shows First Major Improvement, But Risks Remain",
+  "hi_title": "एआई-निर्मित कोड की सुरक्षा में पहला बड़ा सुधार, लेकिन जोखिम अभी भी बरकरार",
+  "en_body": "## Security Rates Improve\nAccording to a new report by Veracode, AI-generated code security has seen its first significant improvement in a year. The overall security score for code produced by large language models rose from 56% to 62%, while estimated vulnerability rates dropped from 44% to 38%.\n\nLeading models such as Anthropic's Claude Opus 5.5 and OpenAI's GPT-6-Sol reached the top of the leaderboard with a 73% security pass rate, surpassing previous benchmarks. Ten models now score above 60%, compared to just four in the previous evaluation.\n\n## Where AI Excels and Struggles\nResearchers noted that the primary driver behind the security gains was better handling of cross-site scripting (XSS), which relies heavily on pattern recognition—an area where large language models excel. However, models continue to struggle with complex security reasoning and data-flow analysis across multiple functions, such as log injection vulnerabilities.\n\n* **Top Performers:** Claude Opus 5.5 and GPT-6-Sol lead at 73%.\n* **Common Flaws Addressed:** Better prevention seen in basic categories like XSS.\n* **Persistent Issues:** Complex reasoning across multiple functions remains a weak point.\n\n## Practical Implications and Verification\nExperts emphasize that despite the progress, top-tier models still fail on more than one in four security tasks. Furthermore, higher-performing models generally cost more to operate at scale, but simply using a costly model does not guarantee complete security.\n\nVeracode advises organizations not to rely solely on frontier models. Instead, combining mid-tier models with independent, continuous security scanning remains a more cost-effective and scalable approach.\n\nTo review the original findings, readers can access the official GenAI Code Security Report published by Veracode.",
+  "hi_body": "## सुरक्षा दरों में सुधार\nवेराकोड (Veracode) की एक नई रिपोर्ट के अनुसार, एआई-निर्मित कोड की सुरक्षा में एक साल में पहली बार महत्वपूर्ण सुधार देखा गया है। बड़े भाषा मॉडल द्वारा उत्पादित कोड के लिए समग्र सुरक्षा स्कोर 56% से बढ़कर 62% हो गया है, जबकि अनुमानित कमज़ोरी दर 44% से घटकर 38% रह गई है।\n\nएंथ्रोपिक का Claude Opus 5.5 और ओपनएआई का GPT-6-Sol जैसे प्रमुख मॉडल 73% सुरक्षा पास दर के साथ लीडरबोर्ड में सबसे ऊपर पहुंच गए हैं। पिछले मूल्यांकन में केवल चार की तुलना में अब दस मॉडल 60% से अधिक स्कोर कर रहे हैं।\n\n## एआई कहाँ बेहतर है और कहाँ संघर्ष करता है\nशोधकर्ताओं ने बताया कि सुरक्षा में सुधार का मुख्य कारण क्रॉस-साइट स्क्रिप्टिंग (XSS) को बेहतर ढंग से संभालना था, जो पैटर्न पहचान पर बहुत अधिक निर्भर करता है - एक ऐसा क्षेत्र जहाँ बड़े भाषा मॉडल उत्कृष्ट हैं। हालाँकि, मॉडल अभी भी जटिल सुरक्षा तर्क और कई कार्यों में डेटा-प्रवाह विश्लेषण के साथ संघर्ष करते हैं।\n\n* **शीर्ष प्रदर्शन करने वाले:** Claude Opus 5.5 और GPT-6-Sol 73% के साथ सबसे आगे हैं।\n* **हल की गई सामान्य कमियाँ:** XSS जैसी बुनियादी श्रेणियों में बेहतर रोकथाम देखी गई।\n* **निरंतर समस्याएं:** कई कार्यों में जटिल तर्क एक कमज़ोर बिंदु बना हुआ है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nविशेषज्ञों का जोर है कि प्रगति के बावजूद, शीर्ष स्तरीय मॉडल अभी भी चार में से एक से अधिक सुरक्षा कार्यों में विफल होते हैं। इसके अलावा, उच्च प्रदर्शन वाले मॉडल को बड़े पैमाने पर संचालित करने में आमतौर पर अधिक लागत आती है, लेकिन केवल एक महंगे मॉडल का उपयोग करने से पूर्ण सुरक्षा की गारंटी नहीं मिलती है।\n\nवेराकोड संगठनों को सलाह देता है कि वे पूरी तरह से फ्रंटियर मॉडल पर भरोसा न करें। इसके बजाय, मिड-टियर मॉडल को स्वतंत्र, निरंतर सुरक्षा स्कैनिंग के साथ जोड़ना अधिक लागत प्रभावी और स्केलेबल दृष्टिकोण बना हुआ है।\n\nमूल निष्कर्षों की समीक्षा करने के लिए, पाठक वेराकोड द्वारा प्रकाशित आधिकारिक GenAI कोड सुरक्षा रिपोर्ट देख सकते हैं।",
+  "en_meta": "A new Veracode report reveals AI-generated code security has improved to 62%, though models still struggle with complex reasoning and require independent…",
+  "hi_meta": "वेराकोड की नई रिपोर्ट से पता चलता है कि एआई-निर्मित कोड सुरक्षा सुधरकर 62% हो गई है, हालांकि मॉडलों को अभी भी स्वतंत्र परीक्षण की आवश्यकता है।",
+  "en_keywords": [
+    "AI code security",
+    "Veracode report",
+    "Claude Opus 5.5",
+    "GPT-6-Sol",
+    "vulnerability rates",
+    "cross-site scripting"
+  ],
+  "hi_keywords": [
+    "एआई कोड सुरक्षा",
+    "वेराकोड रिपोर्ट",
+    "Claude Opus 5.5",
+    "GPT-6-Sol",
+    "कमज़ोरी दर",
+    "क्रॉस-साइट स्क्रिप्टिंग"
+  ],
+  "source_published_at": "2026-10-30T18:10:00+00:00",
+  "id": "dad78a8249f0",
+  "source": "https://www.techradar.com/pro/security/ai-generated-code-is-still-frequently-failing-security-checks-with-claude-and-gpt-6-topping-the-leader-board",
+  "date": "2026-11-07T04:56:13.801629+00:00",
+  "source_title": "AI-generated code is still frequently failing security checks — with Claude and GPT-6 topping the leader board",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
