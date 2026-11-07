@@ -91,3 +91,65 @@ class UpdateIntegrityTests(unittest.TestCase):
    old=self.old();old['source_history']=[{'url':'https://bbc.co.uk/news/older','title':'Previous headline'}]
    (Path(temp)/'abcdef.json').write_text(json.dumps(old));index=n.published_story_index()
    self.assertTrue(n.duplicate_story('https://bbc.co.uk/news/older','Previous headline','world-news',index))
+
+class LocalNewsTests(unittest.TestCase):
+ def local(self,title='Village dispute leaves two injured in Rampur district'):
+  item=row('localpaper.example',title=title)
+  item.update(local_report=True,category='india-news')
+  return item
+ def test_single_local_publisher_is_labelled_as_local_report(self):
+  groups=w.clusters([self.local()],NOW)
+  self.assertEqual(len(groups),1)
+  self.assertEqual(groups[0]['signal'],'local_report')
+  self.assertEqual(w.clusters([row('localpaper.example',title=self.local()['title'])],NOW),[])
+ def test_local_non_incident_has_no_single_publisher_signal(self):
+  self.assertEqual(w.clusters([self.local('Village school opens library in Rampur district')],NOW),[])
+ def test_different_villages_do_not_merge_or_update_each_other(self):
+  first=self.local()
+  other=self.local(first['title'].replace('Rampur','Sitapur'))
+  other['url']='https://otherpaper.example/another-incident'
+  groups=w.clusters([first,other],NOW)
+  self.assertEqual(len(groups),2)
+  old=dict(id='existing',source=first['url'],source_title=first['title'])
+  self.assertIsNone(w.find_existing(dict(sources=[other]),[old]))
+ def test_local_editions_cover_india_and_all_rotating_markets(self):
+  from urllib.parse import parse_qs,urlparse
+  countries=set()
+  for cycle in range(4):
+   feeds=w.local_feeds(cycle*4*3600)
+   self.assertEqual(len(feeds),8)
+   queries=[parse_qs(urlparse(item[0]).query) for item in feeds]
+   self.assertEqual([q['gl'][0] for q in queries[:2]],['IN','IN'])
+   self.assertIn('झगड़ा',queries[0]['q'][0])
+   countries.update(q['gl'][0] for q in queries)
+  self.assertEqual(countries,{'IN'}|{market[0] for market in w.LOCAL_MARKETS})
+ def test_hindi_tokens_and_incidents_are_supported(self):
+  title='गांव में मारपीट के बाद युवक की मौत पुलिस कर रही जांच'
+  self.assertIn('मारपीट',w.tokens(title))
+  self.assertTrue(w.LOCAL_INCIDENT.search(title))
+ def test_local_feed_keeps_twelve_hour_report_and_local_category(self):
+  published=dt.datetime.fromtimestamp(NOW-12*3600,dt.timezone.utc)
+  xml='<rss><channel><item><title>Village dispute leaves two injured in Rampur district</title><link>https://localpaper.example/story</link><pubDate>'+published.strftime('%a, %d %b %Y %H:%M:%S GMT')+'</pubDate></item></channel></rss>'
+  class Response:
+   def raise_for_status(self):pass
+   def iter_content(self,size):yield xml.encode()
+   def close(self):pass
+  with patch.object(w.requests,'get',return_value=Response()),patch.object(n,'category_for_url',return_value='cricket'):
+   rows,status=w.read_feed(('https://localpaper.example/rss','india-news','localpaper.example','local'),NOW)
+   ordinary,_=w.read_feed(('https://localpaper.example/rss','world-news','localpaper.example'),NOW)
+  self.assertEqual(status,'ok')
+  self.assertEqual(rows[0]['category'],'india-news')
+  self.assertTrue(rows[0]['local_report'])
+  self.assertEqual(ordinary,[])
+ def test_local_slot_survives_high_scoring_global_signals(self):
+  ordinary=w.clusters(pair(),NOW)[0]
+  second=dict(ordinary,lead=row(title='Another major global story with enough detail'))
+  local=w.clusters([self.local()],NOW)[0]
+  with tempfile.TemporaryDirectory() as temp,patch.object(w,'STATE',Path(temp)/'state.json'),patch.object(w,'REPORT',Path(temp)/'report.json'),patch.object(w,'demand_terms',return_value=(set(),{})),patch.object(w,'discover',return_value=([],{})),patch.object(w,'clusters',return_value=[ordinary,second,local]),patch.object(w,'read_posts',return_value=[]),patch.object(w,'generate',side_effect=[({'id':'global'},'published'),({'id':'local'},'published')]) as generate,patch.object(n,'providers_ready',return_value=True),patch.dict(w.os.environ,{'TREND_POSTS_PER_RUN':'2'}):
+   report=w.run(NOW)
+  self.assertEqual([call.args[0]['signal'] for call in generate.call_args_list],['multiple_publishers','local_report'])
+  self.assertEqual(report['changed_ids'],['global','local'])
+ def test_local_reporting_prompt_requires_location_and_attribution(self):
+  prompt=n.article_prompt('en','Reported village incident','https://localpaper.example/story','Police reported injuries.','india-news')
+  self.assertIn('Separate the incident date from the reporting date',prompt)
+  self.assertIn('retain terms such as alleged and suspected',prompt)

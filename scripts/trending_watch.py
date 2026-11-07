@@ -3,7 +3,7 @@ This measures publisher coverage, not Google Trends, traffic or independently ve
 """
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlencode
 import argparse
 import datetime as dt
 import hashlib
@@ -33,6 +33,46 @@ CORE=[
 # Google News RSS provides additional publisher leads; source URLs must still resolve.
 TREND_GEOS=('US','IN','GB','SA','AE')
 NEWS_QUERIES=('breaking news when:6h','world news when:6h','technology news when:6h','sports news when:6h')
+# Search regional editions in rotation; local reports have a 24-hour discovery
+# window so villages and small towns are not dependent on global trend volume.
+LOCAL_MARKETS=(
+ ('US','en-US','en'),('GB','en-GB','en'),('CA','en-CA','en'),
+ ('AU','en-AU','en'),('NZ','en-NZ','en'),('ZA','en-ZA','en'),
+ ('NG','en-NG','en'),('KE','en-KE','en'),('GH','en-GH','en'),
+ ('PK','en-PK','en'),('BD','en-BD','en'),('LK','en-LK','en'),
+ ('PH','en-PH','en'),('MY','en-MY','en'),('SG','en-SG','en'),
+ ('DE','de','de'),('FR','fr','fr'),('ES','es','es'),
+ ('MX','es-419','es-419'),('BR','pt-BR','pt-419'),
+ ('AR','es-419','es-419'),('ID','id','id'),('JP','ja','ja'),
+ ('KR','ko','ko'),
+)
+LOCAL_QUERIES={
+ 'en':'(village OR town OR district OR county OR rural) (clash OR fight OR killed OR death OR accident OR fire OR flood) when:1d',
+ 'hi':'(गांव OR गाँव OR कस्बा OR जिला) (झगड़ा OR मारपीट OR हत्या OR मौत OR हादसा OR आग) when:1d',
+ 'de':'(Dorf OR Kleinstadt OR Landkreis) (Streit OR getötet OR Unfall OR Brand) when:1d',
+ 'fr':'(village OR commune) (bagarre OR mort OR accident OR incendie) when:1d',
+ 'es':'(pueblo OR municipio) (pelea OR muerto OR accidente OR incendio) when:1d',
+ 'pt':'(vila OR município) (briga OR morto OR acidente OR incêndio) when:1d',
+ 'id':'(desa OR kecamatan) (bentrokan OR tewas OR kecelakaan OR kebakaran) when:1d',
+ 'ja':'(村 OR 町) (死亡 OR 事故 OR 火災 OR 殺人) when:1d',
+ 'ko':'(마을 OR 군) (사망 OR 사고 OR 화재 OR 살인) when:1d',
+}
+LOCAL_INCIDENT=re.compile(
+ r'\b(clash\w*|fight\w*|brawl\w*|riot\w*|violence|died|fatal|crash\w*|collision\w*|kill\w*|death\w*|dead|murder\w*|accident\w*|fire|flood\w*|shoot\w*|stab\w*|assault\w*|dispute\w*|drown\w*|Streit|getötet|Unfall|Brand|bagarre|mort\w*|incendie|pelea|muert\w*|accidente|incendio|briga|morto|acidente|incêndio|bentrokan|tewas|kecelakaan|kebakaran)\b|झगड़|मारपीट|विवाद|लड़ाई|गोली|टक्कर|डूब|हत्या|मौत|हादस|आग|死亡|事故|火災|殺人|사망|사고|화재|살인',
+ re.I,
+)
+def local_feeds(now):
+ offset=(int(now//(4*3600))*6)%len(LOCAL_MARKETS)
+ markets=[('IN','hi','hi'),('IN','en-IN','en')]
+ markets += [LOCAL_MARKETS[(offset+i)%len(LOCAL_MARKETS)] for i in range(6)]
+ feeds=[]
+ for country,language,edition in markets:
+  query=LOCAL_QUERIES.get(language.split('-')[0],LOCAL_QUERIES['en'])
+  params=urlencode(dict(q=query,hl=language,gl=country,ceid=country+':'+edition))
+  feeds.append(('https://news.google.com/rss/search?'+params,
+                'india-news' if country=='IN' else 'world-news','','local'))
+ return feeds
+
 def demand_terms():
  terms=set();diagnostics={}
  for geo in TREND_GEOS:
@@ -67,7 +107,7 @@ URGENT=re.compile(r'\b(missile|strike|attack|evacuat\w*|earthquake|tsunami|warni
 OFFICIAL=('spa.gov.sa','pib.gov.in','nasa.gov','noaa.gov','who.int','gov.uk')
 
 def digest(value):return hashlib.sha256(value.encode()).hexdigest()
-def tokens(value):return set(re.findall(r'[a-z0-9]{3,}',html.unescape(value).lower()))-STOP
+def tokens(value):return {word for word in re.findall(r'[^\W_][\w\u0900-\u097f]*',html.unescape(value).lower()) if len(word)>=3}-STOP
 def clean(value):return re.sub(r'\s+',' ',re.sub('<[^>]+>',' ',html.unescape(str(value)))).strip()
 def stamp(value):
  try:return dt.datetime.fromisoformat(value.replace('Z','+00:00')).timestamp()
@@ -89,7 +129,7 @@ def origin(row):
  return row['domain']
 
 def read_feed(item,now=None):
- feed,category,domain=item;now=now or time.time()
+ feed,category,domain=item[:3];local=len(item)>3 and item[3]=='local';now=now or time.time()
  try:
   response=requests.get(feed,timeout=(4,9),headers={'User-Agent':'GlobeWireDaily/1.0 (contact@globewiredaily.org)'},stream=True)
   try:
@@ -104,17 +144,17 @@ def read_feed(item,now=None):
    parsed=entry.get('updated_parsed') or entry.get('published_parsed')
    if not parsed:continue
    published=dt.datetime(*parsed[:6],tzinfo=dt.timezone.utc).timestamp()
-   if not 0<=now-published<=6*3600:continue
+   if not 0<=now-published<=(24 if local else 6)*3600:continue
    title=clean(entry.get('title',''));url=entry.get('link','').strip()
-   if len(title)<24:continue
+   if len(title)<24 or (local and not LOCAL_INCIDENT.search(title)):continue
    if 'news.google.com' in (urlparse(url).hostname or ''):
     # Search is discovery only; reporting always uses the resolved publisher URL.
     url=newsroom.resolve_google_news(url)
    publisher_domain=domain or (urlparse(url).hostname or '').lower()
    if not publisher_domain or 'google.com' in publisher_domain:continue
    if not newsroom.allowed(url,publisher_domain):continue
-   rows.append(dict(url=url,title=title,category=newsroom.category_for_url(title,category,url),domain=publisher_domain,
-                    published=published,summary=clean(entry.get('summary',''))[:2000],author=entry.get('author','')))
+   rows.append(dict(url=url,title=title,category=category if local else newsroom.category_for_url(title,category,url),domain=publisher_domain,
+                    published=published,summary=clean(entry.get('summary',''))[:2000],author=entry.get('author',''),local_report=local))
   return rows,'ok'
  except (requests.RequestException,ValueError,TypeError,OverflowError):return [],'unavailable'
 
@@ -123,30 +163,37 @@ def discover(now):
  offset=(int(now//900)*16)%max(1,len(native))
  rotated=(native[offset:]+native[:offset])[:16]
  news_feeds=[('https://news.google.com/rss/search?q='+requests.utils.quote(q)+'&hl=en-US&gl=US&ceid=US%3Aen','world-news','') for q in NEWS_QUERIES]
- feeds=list(dict.fromkeys(CORE+rotated+news_feeds))
+ feeds=list(dict.fromkeys(CORE+rotated+news_feeds+local_feeds(now)))
  diagnostics={};rows=[]
  with ThreadPoolExecutor(max_workers=8) as pool:
   for item,(found,status) in zip(feeds,pool.map(lambda item:read_feed(item,now),feeds)):
    diagnostics[item[0]]=dict(status=status,articles=len(found));rows.extend(found)
  # Exact publisher URLs cannot contribute more than once via multiple feeds.
  unique={}
- for row in rows:unique.setdefault(newsroom.canonical_lead_key(row['url']),row)
+ for row in rows:
+  key=newsroom.canonical_lead_key(row['url'])
+  if key not in unique or row.get('local_report'):unique[key]=row
  return list(unique.values()),diagnostics
 
 def clusters(rows,now,search_terms=()):
  groups=[]
  for row in sorted(rows,key=lambda r:r['published'],reverse=True):
-  match=next((g for g in groups if same_event(row['title'],g[0]['title'])),None)
+  # Keep different villages separate when generic incident wording matches.
+  match=next((g for g in groups if
+   (clean(row['title']).casefold()==clean(g[0]['title']).casefold()
+    if row.get('local_report') or g[0].get('local_report')
+    else same_event(row['title'],g[0]['title']))),None)
   if match is None:groups.append([row])
   else:match.append(row)
  selected=[]
  for group in groups:
   origins={origin(r) for r in group}
   official=any(any(newsroom.allowed(r['url'],domain) for domain in OFFICIAL) and URGENT.search(r['title']) for r in group)
-  if len(origins)<2 and not official:continue
+  local=any(r.get('local_report') and LOCAL_INCIDENT.search(r['title']) for r in group)
+  if len(origins)<2 and not official and not local:continue
   lead=max(group,key=lambda r:(any(newsroom.allowed(r['url'],d) for d in OFFICIAL),r['published']))
   score=10*len(origins)+max(0,6-(now-lead['published'])/3600)+(3 if URGENT.search(lead['title']) else 0)+demand_bonus(lead['title'],search_terms)
-  selected.append(dict(lead=lead,sources=group,score=score,signal='official_alert' if official else 'multiple_publishers'))
+  selected.append(dict(lead=lead,sources=group,score=score,signal='official_alert' if official else ('local_report' if local else 'multiple_publishers')))
  return sorted(selected,key=lambda g:g['score'],reverse=True)
 
 def read_posts():
@@ -163,7 +210,10 @@ def find_existing(group,posts):
   urls=[post.get('source','')]+[r.get('url','') for r in post.get('source_history',[]) if isinstance(r,dict)]
   for row in group['sources']:
    if any(newsroom.canonical_lead_key(row['url'])==newsroom.canonical_lead_key(url) for url in urls if url):return post
-   if same_event(row['title'],post.get('source_title') or post.get('en_title','')):return post
+   headline=post.get('source_title') or post.get('en_title','')
+   if row.get('local_report'):
+    if clean(row['title']).casefold()==clean(headline).casefold():return post
+   elif same_event(row['title'],headline):return post
  return None
 
 def material_change(previous,text):
@@ -239,18 +289,23 @@ def run(now=None):
   for record in events.values():
    if 'draft' in record:record.pop('retry_after',None)
   state['generation_version']=2
- report=dict(checked_at=dt.datetime.fromtimestamp(now,dt.timezone.utc).isoformat(),signal='publisher coverage with Google Trends search-term matching; not search-volume data',changed_ids=[],results=[],feeds={})
+ report=dict(checked_at=dt.datetime.fromtimestamp(now,dt.timezone.utc).isoformat(),signal='publisher coverage and local incident reports with Google Trends search-term matching; not search-volume data',changed_ids=[],results=[],feeds={})
  # RSS checks still run during provider cooldown; generation alone is deferred.
  search_terms,report['google_trends']=demand_terms()
  rows,report['feeds']=discover(now)
  # Keep recent feed observations across rotating sources and transient outages.
- observed={newsroom.canonical_lead_key(r['url']):r for r in state.get('observations',[]) if isinstance(r,dict) and r.get('url') and 0<=now-r.get('published',0)<=6*3600}
+ observed={newsroom.canonical_lead_key(r['url']):r for r in state.get('observations',[]) if isinstance(r,dict) and r.get('url') and 0<=now-r.get('published',0)<=(24 if r.get('local_report') else 6)*3600}
  for row in rows:observed[newsroom.canonical_lead_key(row['url'])]=row
  rows=sorted(observed.values(),key=lambda r:r['published'],reverse=True)[:600]
  state['observations']=rows
  groups=clusters(rows,now,search_terms)
- report.update(discovered=len(rows),trending_events=len(groups),google_trends_terms=len(search_terms))
+ report.update(discovered=len(rows),trending_events=len(groups),google_trends_terms=len(search_terms),local_reports=sum(bool(row.get('local_report')) for row in rows),local_events=sum(group['signal']=='local_report' for group in groups))
  posts=read_posts();new_limit=max(0,int(os.getenv('TREND_POSTS_PER_RUN','2')))
+ # Reserve a chance for local reporting within the existing two-draft budget.
+ # Empty local coverage leaves the ordinary trend ordering unchanged.
+ local_groups=[group for group in groups if group['signal']=='local_report']
+ if local_groups and new_limit>1 and groups[0] is not local_groups[0]:
+  groups=[groups[0],local_groups[0]]+[group for group in groups[1:] if group is not local_groups[0]]
  for group in groups:
   if len(report['changed_ids'])>=new_limit or time.monotonic()-started>150:break
   old=find_existing(group,posts);row=group['lead']
