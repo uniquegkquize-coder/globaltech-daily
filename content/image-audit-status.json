@@ -1,33 +1,40 @@
 {
-  "total_posts": 3142,
-  "selected": 30,
+  "total_posts": 3153,
+  "selected": 32,
   "results": {
-    "invalid_source_images": 1,
+    "invalid_source_images": 2,
     "source_photo_saved": 5,
-    "cooldown": 24
+    "cooldown": 25
   },
-  "still_missing": 273,
+  "still_missing": 275,
   "articles": [
     {
-      "id": "2d100db342cdd6c9c517a807",
-      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
+      "id": "d5ff9974453f739276c8eb9f",
+      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794088611.9062912
+      "retry_after": 1794092894.153712
     },
     {
-      "id": "86f2868b0ab2a09885f59fb1",
-      "source": "https://en.wikipedia.org/wiki/Ducati_125_Scrambler",
+      "id": "2a493538add90ea8e515db6e",
+      "source": "https://en.wikipedia.org/wiki/Dodge_Nitro",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794088612.6909273
+      "retry_after": 1794092894.270388
     },
     {
-      "id": "8d56de0808cdbbdc4a8065f2",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Note_4",
+      "id": "e2d04e1911479d43562a1acb",
+      "source": "https://en.wikipedia.org/wiki/Soueast_DX5",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794088612.710321
+      "retry_after": 1794092894.693474
+    },
+    {
+      "id": "ff28f504e8e3f011fe2acd9b",
+      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794092894.9037418
     },
     {
       "id": "fb6dd420a2fc44c8f8340751",
@@ -126,25 +133,29 @@
       "result": "cooldown"
     },
     {
-      "id": "7f42efa5803a8a11037e4efc",
-      "source": "https://en.wikipedia.org/wiki/Ducati_24_Horas",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794088612.8075914
+      "id": "2d100db342cdd6c9c517a807",
+      "result": "cooldown"
     },
     {
-      "id": "5955aa2819dc5d74712a1ada",
-      "source": "https://en.wikipedia.org/wiki/Buick_GL8",
+      "id": "cdf2b11b7dd29c7671afa9fd",
+      "source": "https://en.wikipedia.org/wiki/Ducati_450_R/T",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794088613.3738596
+      "retry_after": 1794092894.91049
     },
     {
-      "id": "c1f699ad1aec6eba2645fdbc",
-      "source": "https://en.wikipedia.org/wiki/Moto_X_%282nd_generation%29",
+      "id": "03bd7d740861e531c4ea9d1a",
+      "source": "https://en.wikipedia.org/wiki/Moto_G_%282nd_generation%29",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794088614.2159977
+      "retry_after": 1794092895.2123108
+    },
+    {
+      "id": "4f6a3a884c95796bda5249a1",
+      "source": "https://en.wikipedia.org/wiki/Meizu_MX4",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794092895.459307
     }
   ],
   "missing": [
@@ -304,7 +315,7 @@
     },
     {
       "id": "074cb06de604",
-      "category": "business",
+      "category": "controversies",
       "title": "Duolingo Faces Securities Class Action Lawsuit: What Investors Should Know",
       "source": "https://www.prnewswire.com/news-releases/duol-investors-have-opportunity-to-lead-duolingo-inc-securities-fraud-lawsuit-with-sbs-law-302924160.html",
       "reason": "no_source_image"
@@ -507,7 +518,7 @@
     },
     {
       "id": "040073763955",
-      "category": "business",
+      "category": "ai-news",
       "title": "Yeastar Announces Yeahs Awards 2026 Winners Highlighting AI and Partner Innovations",
       "source": "https://www.prnewswire.com/news-releases/yeastar-reconoce-la-ia-la-innovacion-tecnica-y-el-exito-de-los-clientes-en-los-yeahs-awards-2026-302917649.html",
       "reason": "no_source_image"
@@ -531,7 +542,7 @@
       "category": "visas-immigration",
       "title": "US Immigration Executive Roles Highlight Growing Corporate Mobility Sector in Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/us-immigration-executive-at-vidlexinfo-llc-4483058702",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "3b439d483131",
@@ -678,7 +689,7 @@
       "category": "ai-news",
       "title": "CareerMaker.ai Announces Bengaluru On-Site Assessment Research Intern Opening",
       "source": "https://in.linkedin.com/jobs/view/assessment-research-intern-at-careermaker-ai-4483632864",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "2d2ee8809ceb",
@@ -769,7 +780,7 @@
       "category": "ai-news",
       "title": "Definitive Healthcare Announces Data Scientist, Applied AI Role to Boost Healthcare‑Focused LLM Solutions",
       "source": "https://www.linkedin.com/jobs/view/data-scientist-applied-ai-at-definitive-healthcare-4484088856",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "d0f211debf6a",
@@ -783,7 +794,7 @@
       "category": "visas-immigration",
       "title": "Peerless Immigration Services Announces Openings for Business Development Associates in New Delhi",
       "source": "https://in.linkedin.com/jobs/view/business-development-associate-at-peerless-immigration-services-4483846739?position=23&pageNum=0&refId=pdi7GkDzOUAwjOAwZuhD7g%3D%3D&trackingId=99eGWHPhi0lFt1HRUu2RDA%3D%3D",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0da0ead215c3",
@@ -801,7 +812,7 @@
     },
     {
       "id": "7ba9e85f5ffa",
-      "category": "ai-news",
+      "category": "cyber-security",
       "title": "AI Discovery and Code Leaks Trigger Cybersecurity Concerns Over PHP2SHELL",
       "source": "https://www.npr.org/2026/10/24/nx-s1-6012327/ai-found-the-flaw-hackers-found-the-leak-the-race-to-save-php2shell",
       "reason": "source_error"
@@ -864,7 +875,7 @@
     },
     {
       "id": "6ad27c2bc1ad",
-      "category": "military-tech",
+      "category": "business",
       "title": "Equitas SFB Shares Fall 27% Over Two Days as CEO Exit Overshadows Strong Q2 Earnings",
       "source": "https://www.business-standard.com/markets/news/equitas-sfb-share-price-tanks-17-as-ceo-exit-mars-q2-show-down-27-in-2-days-126103000283_1.html",
       "reason": "access_denied"
@@ -885,7 +896,7 @@
     },
     {
       "id": "ee768c0612fa",
-      "category": "telecom",
+      "category": "business",
       "title": "Jio Platforms Makes Strong Stock Market Debut, Reshaping Telecom and Market Capitalisation Rankings",
       "source": "https://www.business-standard.com/markets/ipo/jio-platforms-soars-on-debut-recasting-market-capitalisation-leaderboard-126102801887_1.html",
       "reason": "access_denied"
@@ -899,7 +910,7 @@
     },
     {
       "id": "6cc0de62842b",
-      "category": "car-launches",
+      "category": "apps-software",
       "title": "Ford Fathom Electric Pickup Pricing and Software Strategy Detailed",
       "source": "https://insideevs.com/news/813746/ford-fathom-pricing-high-30k/",
       "reason": "access_denied"
@@ -958,11 +969,11 @@
       "category": "visas-immigration",
       "title": "Sky Heaven Immigration Announces Recruitment for Visitor Visa Counselor in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/visitor-visa-counselor-at-sky-heaven-immigration-opc-pvt-ltd-4482294678",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "d25fe3284c63",
-      "category": "world-news",
+      "category": "controversies",
       "title": "US Health Secretary Criticized Over Controversial Remarks on Arab Contributions",
       "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28302?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
       "reason": "source_unavailable"
@@ -1150,6 +1161,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "d5ff9974453f739276c8eb9f",
+      "category": "automobiles",
+      "title": "Ducati 100 Scrambler: Motorcycle Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "23dc6e8075b4",
       "category": "sarkari-naukri",
       "title": "Understanding MACP Pay Fixation Under the 7th Pay Commission",
@@ -1172,7 +1190,7 @@
     },
     {
       "id": "029b646a13ec",
-      "category": "business",
+      "category": "apps-software",
       "title": "Global ESG Reporting Software Market Projected to Reach $4.48 Billion by 2031, Driven by Integrated Disclosures",
       "source": "https://www.prnewswire.com/news-releases/esg-reporting-software-market-worth-4-48-billion-by-2031--report-by-marketsandmarkets-302924789.html",
       "reason": "no_source_image"
@@ -1214,7 +1232,7 @@
     },
     {
       "id": "36fc08c8c68d",
-      "category": "private-vacancy",
+      "category": "defence",
       "title": "Overview of Military and Protective Services Openings in the Des Moines Area",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-des-moines-ia",
       "reason": "no_source_image"
@@ -1294,7 +1312,7 @@
       "category": "ai-news",
       "title": "HCLTech Advertises Vice President Role for SAP AI in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/vice-president-sap-ai-at-hcltech-4473146204",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "5cf2007cdcba",
@@ -1305,7 +1323,7 @@
     },
     {
       "id": "61ab99a70d23",
-      "category": "sarkari-naukri",
+      "category": "india-news",
       "title": "Staff Selection Commission Releases With-Held Candidate List for SI in Delhi Police and CAPFs Exam 2025",
       "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_3_29102026.pdf",
       "reason": "source_unavailable"
@@ -1347,7 +1365,7 @@
     },
     {
       "id": "6189652eeaaa",
-      "category": "education",
+      "category": "ai-news",
       "title": "University of Phoenix Associate Dean to Present AI Literacy Framework at AAC&U Conference",
       "source": "https://www.prnewswire.com/news-releases/university-of-phoenix-associate-dean-to-present-ai-literacy-framework-implementation-at-aacu-conference-on-ai-and-higher-education-302924272.html",
       "reason": "no_source_image"
@@ -1382,7 +1400,7 @@
     },
     {
       "id": "ecdc2ef2ac86",
-      "category": "cyber-security",
+      "category": "sports",
       "title": "Proposed Class Action Settlement Offered Over The Merchant of Tennis Data Incident",
       "source": "https://www.prnewswire.com/news-releases/proposed-class-action-settlement-provides-cash-payments-and-other-benefits-to-individuals-impacted-by-the-merchant-of-tennis-cybersecurity-incident-302924392.html",
       "reason": "no_source_image"
@@ -1406,7 +1424,7 @@
       "category": "ai-news",
       "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
       "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "c9e064a48f72",
@@ -1434,7 +1452,7 @@
       "category": "visas-immigration",
       "title": "Primex Visa Pvt. Ltd. Advertises New Visa Documentation Executive Position in Delhi",
       "source": "https://in.linkedin.com/jobs/view/visa-documentation-executve-at-primex-visa-pvt-ltd-4484924300",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "07f5b24312a4",
@@ -1473,7 +1491,7 @@
     },
     {
       "id": "712c404a4a7d",
-      "category": "results",
+      "category": "india-news",
       "title": "SSC Releases Qualified Candidate List for SI in Delhi Police and CAPF 2025 PST/PET",
       "source": "https://ssc.gov.in/api/attachment/uploads/masterData/Results/LIST_2_29102026.pdf",
       "reason": "source_unavailable"
@@ -1543,7 +1561,7 @@
     },
     {
       "id": "d97adad0f0a5",
-      "category": "cyber-security",
+      "category": "apps-software",
       "title": "Navigating Potential Uninstallation Hurdles with Potentially Unwanted Software",
       "source": "https://www.bleepingcomputer.com/forums/t/819764/anytech365-panda-under-the-hood-turned-off-defender-and-made-uninstall-a-trap/",
       "reason": "invalid_source_images"
@@ -1634,7 +1652,7 @@
     },
     {
       "id": "7548888dfa18",
-      "category": "world-news",
+      "category": "sports",
       "title": "Kylian Mbappé Loses Major Sponsorship Deals in China Following Mao Zedong Meme Controversy",
       "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2025/page/28297?utm_source=openai%3Fgb%3Dtrue&mm=03&dd=09%3Fgb%3Dtrue%3Fgb%3Dtrue%3Fgb%3Dtrue",
       "reason": "source_unavailable"
@@ -1648,7 +1666,7 @@
     },
     {
       "id": "537dca555153",
-      "category": "telecom",
+      "category": "business",
       "title": "Jio Platforms Marks Blockbuster Stock Market Debut with Employee Bonuses and Nationwide Festivities",
       "source": "https://www.business-standard.com/companies/news/jio-ipo-windfall-brings-mega-party-early-salaries-and-bonus-bonanza-126102801713_1.html",
       "reason": "access_denied"
@@ -1735,7 +1753,7 @@
       "category": "social-media",
       "title": "Headout Recruits YouTube Scriptwriter in Bengaluru for Search-Driven Travel Content",
       "source": "https://in.linkedin.com/jobs/view/scriptwriter-youtube-at-headout-4483872792",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "122b5649e749",
@@ -1753,7 +1771,7 @@
     },
     {
       "id": "716f81e31e0d",
-      "category": "military-tech",
+      "category": "business",
       "title": "Nifty IT Index Slips 4% as Infosys Faces Downgrades and Weakened Outlook",
       "source": "https://www.business-standard.com/markets/news/nifty-it-index-slips-4-infosys-tcs-coforge-tank-up-to-5-here-s-why-126102800478_1.html",
       "reason": "access_denied"
@@ -1928,7 +1946,7 @@
     },
     {
       "id": "9ac2bb5ad6c4",
-      "category": "sarkari-naukri",
+      "category": "results",
       "title": "Understanding Competitive Exam Cut-Off Marks Calculators: Utility and Limitations",
       "source": "https://www.sahisarkarijobs.in/cutoff-marks-calculator/",
       "reason": "no_source_image"
@@ -2005,7 +2023,7 @@
     },
     {
       "id": "0391c4373eca",
-      "category": "private-vacancy",
+      "category": "defence",
       "title": "Military and Protective Services Job Openings Highlighted Across the Greater Phoenix Area",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-phoenix-az",
       "reason": "access_denied"
@@ -2022,6 +2040,13 @@
       "category": "gadgets",
       "title": "Xiaomi Mi 2S: Smartphone Specifications, Facts and Verification Guide",
       "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "ff28f504e8e3f011fe2acd9b",
+      "category": "education",
+      "title": "Université Patrice Emery Lumumba de Wembo-Nyama: College Admissions, Facts and Verification Guide",
+      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
       "reason": "invalid_source_images"
     },
     {
@@ -2062,48 +2087,56 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "no_source_image": 101,
-    "invalid_source_images": 56,
+    "no_source_image": 99,
+    "invalid_source_images": 53,
     "source_error": 17,
-    "access_denied": 62,
+    "access_denied": 69,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "2d100db342cdd6c9c517a807": {
+    "d5ff9974453f739276c8eb9f": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
-      "candidate_count": 9,
+      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
+      "candidate_count": 3,
       "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/0/0e/1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/1280px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/960px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
       ]
     },
-    "86f2868b0ab2a09885f59fb1": {
+    "2a493538add90ea8e515db6e": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ducati_125_Scrambler",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Hochgurgl-Top_Mountain_Motorcycle_Museum-Ducati_125_Scrambler-1963-124ccm-02ESD.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Dodge_Nitro",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Dodge_Nitro_.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "8d56de0808cdbbdc4a8065f2": {
+    "e2d04e1911479d43562a1acb": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Note_4",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Samsung_Galaxy_Note_4.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Soueast_DX5",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/37/Soueast_DX5_IMG001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "7f42efa5803a8a11037e4efc": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ducati_24_Horas",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Ducati_Mototrans_24H_250cc_1973.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "ff28f504e8e3f011fe2acd9b": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18614.jpg"
+      ]
     },
-    "5955aa2819dc5d74712a1ada": {
+    "cdf2b11b7dd29c7671afa9fd": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Buick_GL8",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/2023_SAIC-GM_Buick_GL8_Century.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ducati_450_R/T",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/Ducati_450RT_%2812405079454%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "c1f699ad1aec6eba2645fdbc": {
+    "03bd7d740861e531c4ea9d1a": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Moto_X_%282nd_generation%29",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Motorola_Moto_X_%2815697321143%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Moto_G_%282nd_generation%29",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Motorola_Moto_G2.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "4f6a3a884c95796bda5249a1": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Meizu_MX4",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Meizu_MX4.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"

@@ -1,24 +1,24 @@
 {
-  "published": 6,
-  "updated": 1,
+  "published": 7,
+  "updated": 15,
   "target": 8,
   "missing": {
-    "colleges": 2
+    "colleges": 1
   },
   "categories": {
     "colleges": {
-      "new": 0,
+      "new": 1,
       "updated": 1,
-      "eligible_new": 0,
+      "eligible_new": 1,
       "eligible_updates": 1,
-      "shortfall": 2,
+      "shortfall": 1,
       "reasons": {
         "considered": 302,
         "already_published_unchanged": 15,
-        "insufficient verified descriptive fields": 87,
+        "insufficient verified descriptive fields": 86,
         "identifier URL is not specification evidence": 199
       },
-      "rejected_count": 286,
+      "rejected_count": 285,
       "rejected_sample": [
         {
           "name": "Universit\u00e9 Officielle de Mweka",
@@ -149,17 +149,17 @@
     },
     "phones": {
       "new": 2,
-      "updated": 0,
-      "eligible_new": 536,
-      "eligible_updates": 0,
+      "updated": 7,
+      "eligible_new": 561,
+      "eligible_updates": 7,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 65,
+        "already_published_unchanged": 60,
         "insufficient verified descriptive fields": 86,
-        "identifier URL is not specification evidence": 1194
+        "identifier URL is not specification evidence": 1167
       },
-      "rejected_count": 1280,
+      "rejected_count": 1253,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -290,17 +290,17 @@
     },
     "cars": {
       "new": 2,
-      "updated": 0,
-      "eligible_new": 478,
-      "eligible_updates": 0,
+      "updated": 4,
+      "eligible_new": 476,
+      "eligible_updates": 4,
       "shortfall": 0,
       "reasons": {
-        "considered": 5438,
-        "already_published_unchanged": 67,
-        "insufficient verified descriptive fields": 504,
-        "identifier URL is not specification evidence": 4389
+        "considered": 5749,
+        "already_published_unchanged": 65,
+        "insufficient verified descriptive fields": 534,
+        "identifier URL is not specification evidence": 4670
       },
-      "rejected_count": 4893,
+      "rejected_count": 5204,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -431,13 +431,13 @@
     },
     "bikes": {
       "new": 2,
-      "updated": 0,
-      "eligible_new": 33,
-      "eligible_updates": 0,
+      "updated": 3,
+      "eligible_new": 31,
+      "eligible_updates": 3,
       "shortfall": 0,
       "reasons": {
         "considered": 447,
-        "already_published_unchanged": 67,
+        "already_published_unchanged": 66,
         "insufficient verified descriptive fields": 84,
         "identifier URL is not specification evidence": 263
       },
@@ -571,5 +571,5 @@
       ]
     }
   },
-  "date": "2026-11-07T15:56:46.080240+00:00"
+  "date": "2026-11-07T17:08:09.115660+00:00"
 }
