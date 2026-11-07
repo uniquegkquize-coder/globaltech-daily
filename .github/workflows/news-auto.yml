@@ -2,7 +2,7 @@ name: GlobalTech Daily Auto News
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/news-auto.yml', 'tests/test_newsroom_config.py', 'scripts/authority_sources.py', 'tests/test_authority_sources.py']
+    paths: ['.github/workflows/news-auto.yml', 'tests/test_newsroom_config.py', 'scripts/authority_sources.py', 'scripts/authority_registry.py', 'tests/test_authority_sources.py']
   schedule:
     # Run every two hours, UTC.
     - cron: '7 */2 * * *'

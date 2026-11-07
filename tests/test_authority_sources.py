@@ -8,6 +8,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import authority_sources as a
 import collect
+from authority_registry import STATE_UT_CODES, NATIONAL_CATALOGS, REGIONAL_BOARDS
 from official_notices import official_url
 
 
@@ -76,6 +77,63 @@ class AuthoritySourcesTests(unittest.TestCase):
         prompt = collect.article_prompt('hi', 'Flat registration', 'https://gdagkp.in/notice/12.pdf', 'Official details', 'government-schemes')
         self.assertIn('EMD/security deposit', prompt)
         self.assertIn('Do not describe an expired or undated notice as registration open', prompt)
+
+    def test_all_state_ut_directories_and_regional_registry(self):
+        self.assertEqual(len(STATE_UT_CODES), 36)
+        self.assertEqual(len(set(STATE_UT_CODES)), 36)
+        for code in STATE_UT_CODES:
+            self.assertIn('https://igod.gov.in/sg/' + code + '/E011/organizations', NATIONAL_CATALOGS)
+        for urls in REGIONAL_BOARDS.values():
+            self.assertTrue(all(a.public_url(u) for u in urls))
+
+    def test_rotation_eventually_checks_every_board_with_fixed_schedule(self):
+        with tempfile.TemporaryDirectory() as root:
+            expected = set(a.registry_urls(root)); seen = set()
+            for _ in range(len(expected)):
+                rows = a.authority_boards(None, root, now=1000000, limit=14, refresh=False)
+                seen.update(row[0] for row in rows)
+                if seen == expected:
+                    break
+            self.assertEqual(seen, expected)
+
+    def test_catalog_graph_handles_regions_details_and_pagination(self):
+        base = 'https://igod.gov.in/sg/UP/E011/organizations'
+        markup = '''<a href="/sg/KA/categories">Karnataka</a>
+        <a href="/sg/UP/E003/organizations">Departments</a>
+        <li>Housing Board <a href="/organization/abc/details">Details</a></li>
+        <div class="pagination"><a href="?page=2">Next</a></div>
+        <a href="/sg/UP/E042/organizations">Districts</a>
+        <a href="https://evil.example/sg/UP/categories">Next</a>'''
+        links = a.catalog_links(markup, base)
+        self.assertEqual(len(links), 4)
+        self.assertIn(base + '?page=2', links)
+        self.assertIn('https://igod.gov.in/organization/abc/details', links)
+
+    def test_failed_catalogs_do_not_starve_other_states(self):
+        calls = []
+        def unavailable(url, **kwargs):
+            calls.append(url)
+            return '', url, 'unavailable'
+        with tempfile.TemporaryDirectory() as root:
+            first = a.refresh_catalogs(unavailable, {}, root, 1000000, budget=3)
+            second = a.refresh_catalogs(unavailable, first, root, 1000001, budget=3)
+            self.assertEqual(len(set(calls)), 6)
+            self.assertEqual(len(second['catalog_checks']), 6)
+
+    def test_generic_notice_board_is_followed_and_child_failure_keeps_rows(self):
+        def fetch(url, **kwargs):
+            if url.endswith('/broken'):
+                raise TimeoutError()
+            if url.endswith('/notices'):
+                return '<a href="/docs/12.pdf">Housing flats registration deadline extended to November 2026</a>', url, 'http'
+            return '<nav><a href="/notices">Public notices</a><a href="/broken">Tenders</a><a href="https://evil.example/news">News</a></nav>', url, 'http'
+        rows = a.authority_stories(('https://gdagkp.in/', 'government-schemes', 'gdagkp.in'), fetch)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0][0], 'https://gdagkp.in/docs/12.pdf')
+
+    def test_shared_state_portal_does_not_become_property_only(self):
+        self.assertTrue(a.authority_url('https://ladakh.gov.in/housing-and-urban-development/'))
+        self.assertFalse(a.authority_url('https://ladakh.gov.in/health/notification/'))
 
 
 if __name__ == '__main__':

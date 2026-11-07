@@ -4,12 +4,14 @@ Catalogs expand the registry nationwide. GDA/GIDA are checked every pass;
 other authorities rotate to keep the existing publisher's HTTP budget bounded.
 """
 import datetime as dt
+from concurrent.futures import ThreadPoolExecutor
 import ipaddress
 import json
 from pathlib import Path
 import re
 from urllib.parse import urljoin, urlparse, urlunparse
 from bs4 import BeautifulSoup
+from authority_registry import REGIONAL_BOARDS, NATIONAL_CATALOGS, SCOPED_HOSTS
 
 ROOT = Path(__file__).resolve().parents[1]
 BOARD_EVIDENCE = {}
@@ -41,7 +43,7 @@ SEEDS = (
     'https://hbh.gov.in/e-Auction', 'https://hbh.gov.in/BookingForNewSchemes',
     'https://rhb.rajasthan.gov.in/',
 )
-AUTHORITY = re.compile(r'housing|development authority|improvement trust|industrial development|आवास|विकास प्राधिकरण', re.I)
+AUTHORITY = re.compile(r'housing|development authority|improvement trust|industrial(?: areas?| infrastructure)? development|urban (?:development|affairs)|town(?: and country)? planning|real estate regulatory|आवास|विकास प्राधिकरण', re.I)
 UPDATE = re.compile(r'\b(?:flats?|plots?|housing|allotment|auction|lottery|registration|tenders?|corrigendum|notification|public notice|press release|land acquisition|master plan|scheme|brochure|EOI|RFP|NIT)\b|फ्लैट|भूख[णं]्ड|भूखण्ड|भूखंड|आवास|पंजीकरण|निविदा|नीलामी|आवंटन|लाटरी|लॉटरी|अधिसूचना|संशोधन|सूचना|योजना|विज्ञप्ति', re.I)
 TENDER = re.compile(r'\b(?:tender|corrigendum|EOI|RFP|NIT)\b|निविदा', re.I)
 GENERIC = re.compile(r'^(?:home|view(?: all| more)?|click here|read more|news|news and events|tenders?|public notices?|registration|online registration|lottery results?|contact us|about us|login|schemes?|हिंदी|होम)$', re.I)
@@ -78,10 +80,14 @@ def saved_registry(root=ROOT):
         return {}
 
 def registry_urls(root=ROOT):
-    return sorted(set(SEEDS) | {u for u in saved_registry(root).get('urls', []) if isinstance(u, str) and public_url(u)})
+    regional = {u for urls in REGIONAL_BOARDS.values() for u in urls}
+    return sorted(set(SEEDS) | regional | {u for u in saved_registry(root).get('urls', []) if isinstance(u, str) and public_url(u)})
 
 def authority_url(url, root=ROOT):
-    return bool(public_url(url)) and host(url) in {host(u) for u in registry_urls(root)}
+    if not public_url(url) or host(url) not in {host(u) for u in registry_urls(root)}:
+        return False
+    scopes = SCOPED_HOSTS.get(host(url))
+    return not scopes or any(urlparse(url).path.startswith(prefix) for prefix in scopes)
 
 def catalog_urls(markup, base):
     """Only authority rows in a named official directory can add external hosts."""
@@ -89,37 +95,78 @@ def catalog_urls(markup, base):
     for a in BeautifulSoup(markup, 'html.parser').select('a[href]'):
         target = public_url(urljoin(base, a['href']))
         row = a.find_parent('tr') or a.find_parent('li') or a.parent
-        text = row.get_text(' ', strip=True)
+        text = ' '.join((a.get_text(' ', strip=True), a.get('title', ''), row.get_text(' ', strip=True)))
         # Awas Bandhu's authority table uses city names and a 'View' label.
         relevant = bool(AUTHORITY.search(text)) or (host(base) == 'awasbandhu.in' and row.name == 'tr')
         if target and relevant and host(target) != host(base):
             found.add(target)
     return sorted(found)
 
+def catalog_links(markup, base):
+    """Follow only links actually published by IGOD: regions, lists and pagination."""
+    if host(base) != 'igod.gov.in':
+        return []
+    found = set()
+    current = urlparse(base).path.removeprefix('/index.php')
+    for a in BeautifulSoup(markup, 'html.parser').select('a[href]'):
+        url = public_url(urljoin(base, a['href']))
+        if not url or host(url) != 'igod.gov.in':
+            continue
+        path = urlparse(url).path.removeprefix('/index.php')
+        row = a.find_parent('li') or a.find_parent('tr') or a.parent
+        text = row.get_text(' ', strip=True)
+        region = re.fullmatch(r'/sg/[A-Za-z]{2}/(?:categories|(?:E003|E011|E051)/organizations)/?', path)
+        detail = path.startswith('/organization/') and AUTHORITY.search(text)
+        pagination = path == current and url != base and (a.get('rel') or a.find_parent(class_=re.compile('pagin', re.I)) or re.fullmatch(r'\d+|next|»|›', a.get_text(strip=True), re.I))
+        if region or detail or pagination:
+            found.add(url)
+    return sorted(found)
+
+def refresh_catalogs(fetch, cache, root, now, budget=6):
+    urls = set(registry_urls(root))
+    known = set(CATALOGS) | set(NATIONAL_CATALOGS) | set(cache.get('catalog_urls', []))
+    checks = dict(cache.get('catalog_checks', {}))
+    due = [u for u in known if now - checks.get(u, {}).get('checked_at', 0) > (86400 if checks.get(u, {}).get('status') == 'ok' else 3600)]
+    # Oldest/unseen first. A failing catalog advances rather than starving all
+    # other states; its published sources remain available during the outage.
+    due.sort(key=lambda u: (checks.get(u, {}).get('checked_at', 0), u not in CATALOGS, u))
+    def read(catalog):
+        status = 'unavailable'; added = 0
+        discovered = []; links = []
+        try:
+            markup, final, _ = fetch(catalog, timeout=(3, 6), max_bytes=1_000_000)
+            if markup and host(final) == host(catalog):
+                discovered = catalog_urls(markup, final)
+                added = len(discovered)
+                links = catalog_links(markup, final)
+                status = 'ok'
+        except Exception as exc:
+            print('AUTHORITY_CATALOG_UNAVAILABLE', host(catalog), type(exc).__name__, flush=True)
+        return catalog, status, added, discovered, links
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        for catalog, status, added, discovered, links in pool.map(read, due[:max(0, budget)]):
+            urls.update(discovered)
+            known.update(links)
+            checks[catalog] = {'checked_at': now, 'status': status, 'discovered': added}
+    return dict(cache, checked_at=now, urls=sorted(urls), catalog_urls=sorted(known), catalog_checks=checks)
+
 def authority_boards(fetch, root=ROOT, now=None, limit=14, refresh=True):
     now = dt.datetime.now(dt.timezone.utc).timestamp() if now is None else now
     cache = saved_registry(root)
-    urls = set(registry_urls(root))
-    try:
-        checked = float(cache.get('checked_at', 0))
-    except (ValueError, TypeError):
-        checked = 0
-    if refresh and now - checked > 86400:
-        for catalog in CATALOGS:
-            try:
-                markup, final, _ = fetch(catalog, timeout=(3, 6), max_bytes=1_000_000)
-                if host(final) == host(catalog):
-                    urls.update(catalog_urls(markup, catalog))
-            except Exception as exc:
-                print('AUTHORITY_CATALOG_UNAVAILABLE', host(catalog), type(exc).__name__, flush=True)
-        path = cache_path(root)
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps({'checked_at': now, 'urls': sorted(urls)}, indent=2) + '\n', encoding='utf-8')
+    if refresh:
+        cache = refresh_catalogs(fetch, cache, root, now)
+    urls = set(registry_urls(root)) | set(cache.get('urls', []))
     pinned = list(SEEDS[:2])[:max(0, limit)]
     rest = sorted(urls - set(pinned))
     count = min(max(0, limit - len(pinned)), len(rest))
-    start = (int(now // 3600) * max(1, count)) % max(1, len(rest))
+    # Persist progress; wall-clock strides could permanently skip boards when
+    # the scheduled interval and registry length shared a common divisor.
+    start = int(cache.get('board_cursor', 0)) % max(1, len(rest))
     chosen = pinned + [rest[(start + i) % len(rest)] for i in range(count)]
+    cache.update(urls=sorted(urls), board_cursor=(start + count) % max(1, len(rest)))
+    path = cache_path(root)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(cache, indent=2) + '\n', encoding='utf-8')
     print('AUTHORITY_SOURCE_REGISTRY', len(urls), 'boards;', len(chosen), 'selected', flush=True)
     return [(u, 'government-schemes', host(u)) for u in chosen]
 
@@ -193,6 +240,29 @@ def authority_stories(item, fetch):
     try:
         markup, final, _ = fetch(item[0], timeout=(4, 8), max_bytes=1_000_000)
         rows = parse_authority_board(markup, final) if host(final) == item[2] else []
+        # Some homepages contain only generic links to their real notice boards.
+        # Follow published same-host section URLs, never invent /news endpoints.
+        if markup and host(final) == item[2] and len(rows) < 8:
+            children = []
+            for a in BeautifulSoup(markup, 'html.parser').select('a[href]')[:1000]:
+                url = public_url(urljoin(final, a['href']))
+                label = a.get_text(' ', strip=True)
+                if not url or host(url) != item[2] or url == final or url in children:
+                    continue
+                if re.search(r'\.(?:pdf|jpg|jpeg|png|zip)$|/(?:login|contact|about|privacy)(?:/|$)', urlparse(url).path, re.I):
+                    continue
+                if len(label) <= 70 and re.search(r'notice|news|tender|press|scheme|auction|notification|circular|whats.?new|निविदा|सूचना|समाचार|योजना', label, re.I):
+                    children.append(url)
+                if len(children) == 2:
+                    break
+            for child in children:
+                try:
+                    child_html, child_final, _ = fetch(child, timeout=(3, 6), max_bytes=1_000_000)
+                    if host(child_final) == item[2]:
+                        rows.extend(parse_authority_board(child_html, child_final))
+                except Exception as exc:
+                    print('AUTHORITY_SECTION_UNAVAILABLE', item[2], type(exc).__name__, flush=True)
+            rows = list({row[0]: row for row in rows}.values())[:20]
         print('AUTHORITY_BOARD', item[2], len(rows), 'candidates', flush=True)
         return rows
     except Exception as exc:
