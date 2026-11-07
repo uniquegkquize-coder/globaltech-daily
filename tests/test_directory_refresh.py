@@ -89,7 +89,7 @@ class DirectoryRefreshTests(unittest.TestCase):
                 if url == price:
                     return {'price': 'INR 25999', 'field_sources': {'price': {'url': price, 'retrieved_at': '2026-11-07'}}}
                 return {'battery': '5000mAh', 'field_sources': {'battery': {'url': source}}}
-            with patch.object(research, 'ROOT', root), patch.object(research, 'TARGET', target), patch.object(research, 'RECORDS', records), patch.object(research, 'enrich', side_effect=enrich), patch.object(research, 'discover', return_value=[]):
+            with patch.dict(research.os.environ, {'DIRECTORY_RESEARCH_FOCUS_ONLY':'0'}), patch.object(research, 'ROOT', root), patch.object(research, 'TARGET', target), patch.object(research, 'RECORDS', records), patch.object(research, 'enrich', side_effect=enrich), patch.object(research, 'discover', return_value=[]):
                 research.main()
             updated = json.loads(target.read_text())['phones']['Example Phone']
             self.assertEqual(updated['price'], 'INR 25999')
