@@ -3,6 +3,7 @@ from seo_text import description as seo_description
 from news_config import CATEGORIES, EXAM_CATEGORIES, EXTRA_FEEDS, DIRECT_EXTRA, classify, lead_priority, timestamp, PRIORITY, search_feed, sports_correction
 from verticals import requirements, TRUSTED_ENTERTAINMENT, TRUSTED_CONTROVERSY
 from official_notices import official_url
+from authority_sources import authority_boards, authority_stories, authority_url, authority_category, registry_urls, host as authority_host, UPDATE as AUTHORITY_UPDATE, save_board_evidence, board_evidence
 from district_sources import district_feeds, district_search_feeds, world_city_feeds, PUBLIC_PAGES as DISTRICT_PAGES
 from focused_sources import NATIVE_FEEDS, LOCAL_SEARCH_SOURCES, PAGES as FOCUSED_PAGES, SEARCH_SOURCES as FOCUSED_SEARCH, structured_article_data, content_candidates
 import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time, threading
@@ -215,6 +216,7 @@ DIRECT_SOURCES=[
  ("https://freekaamaal.com/","lifestyle","freekaamaal.com"),
 ]
 DIRECT_SOURCES.extend(DIRECT_EXTRA)
+FEEDS.extend((u,'government-schemes',authority_host(u)) for u in registry_urls())
 DIRECT_SOURCES.extend(row for row in FOCUSED_PAGES if row not in DIRECT_SOURCES)
 FEEDS.extend(row for row in DISTRICT_PAGES if row not in FEEDS)
 for direct_url,direct_cat,direct_domain in DIRECT_SOURCES:
@@ -330,6 +332,8 @@ def category(title, default):
  return default
 
 def category_for_url(title,default,url):
+ if authority_url(url) and AUTHORITY_UPDATE.search(title):
+  return authority_category(title)
  corrected=sports_correction(title,default,url)
  if corrected!=default:return corrected
  # Keep genuine sports court/dispute reports in their publisher's sports section.
@@ -371,8 +375,9 @@ def source_text(url,domain):
     from pypdf import PdfReader
     from io import BytesIO
     reader=PdfReader(BytesIO(r.content))
-    return '\n'.join((page.extract_text() or '') for page in list(reader.pages)[:10])[:24000]
-   except Exception:return ''
+    text='\n'.join((page.extract_text() or '') for page in list(reader.pages)[:10])[:24000]
+    return text if words(text)>=65 else board_evidence(url) or text
+   except Exception:return board_evidence(url)
   if 'html' not in content_type:return ''
   if restricted(r.text):
    print('SOURCE_FETCH_FAILED',domain,'status challenge-or-restricted',flush=True);return ''
@@ -701,6 +706,8 @@ def generate_story_languages(state,title,url,text,cat,languages):
 def article_prompt(lang,title,source,source_material,cat):
  language='English' if lang=='en' else 'Hindi (Devanagari)'
  guidance=requirements(cat)
+ if authority_url(source):
+  guidance += ' This is an official development authority / housing board update. State the issuing authority, city/district and scheme or tender name. Report plot/flat type, location, area, price, EMD/security deposit, eligibility, registration dates, lottery/e-auction/tender dates and amendments only where explicitly stated. Distinguish publication date, registration deadline and auction date. Do not describe an expired or undated notice as registration open. Include the exact official notice and verified application link; mark missing details Not specified. A sports city housing project is property news. Do not reproduce applicant lists or personal records.'
  if cat in EXAM_CATEGORIES:
   guidance += ' Identify the issuing authority and notification ID, posts/exam, eligibility, age cut-off date, vacancies, fees, application dates, selection stages, and relevant result/admit-card/answer-key status. Link the official notice and application only when verified. Mark missing fields Not specified. Clearly label historical or closed notices. Do not reproduce candidate lists, personal roll numbers or private records.'
  if cat in ('india-news','world-news'):
@@ -1111,6 +1118,16 @@ def candidates():
     seen.add(url)
     yield url,title,record.get('category','technology'),domain
   except (OSError,ValueError):pass
+ # Official property/tender boards seldom expose RSS. Check a bounded
+ # rotating selection before broad publisher and search discovery.
+ if os.getenv('NEWS_CATEGORY','') in ('','government-schemes','india-news'):
+  boards=authority_boards(fetch_public_html,ROOT)
+  authority_results=discovery_map(lambda item:authority_stories(item,fetch_public_html),boards,6,lambda item:[])
+  save_board_evidence(ROOT)
+  for rows in authority_results:
+   for story in rows:
+    if story[0] not in seen and (not os.getenv('NEWS_CATEGORY') or story[2]==os.getenv('NEWS_CATEGORY')):
+     seen.add(story[0]);yield story
  # Native RSS is independent of opaque Google News redirects and runs first.
  for story in native_feed_stories(district_feeds(ROOT) if os.getenv('NEWS_CATEGORY','') in ('','india-news') else []):
   if story[0] not in seen:

@@ -42,7 +42,9 @@ class SportsRoutingTests(unittest.TestCase):
         tree = ast.parse((ROOT/'scripts/collect.py').read_text())
         functions = [n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name in {'category', 'category_for_url'}]
         from urllib.parse import urlparse
-        namespace = dict(classify=classify, sports_correction=sports_correction, urlparse=urlparse)
+        from authority_sources import authority_url, authority_category, UPDATE
+        namespace = dict(classify=classify, sports_correction=sports_correction, urlparse=urlparse,
+                         authority_url=authority_url, authority_category=authority_category, AUTHORITY_UPDATE=UPDATE)
         exec(compile(ast.Module(body=functions, type_ignores=[]), '<router>', 'exec'), namespace)
         route = namespace['category_for_url']
         self.assertEqual(route('Supreme Court to hear Anant Singh bail plea', 'sports', 'https://news.abplive.com/news/india/court-123'), 'india-news')

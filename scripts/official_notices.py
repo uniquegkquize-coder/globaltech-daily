@@ -21,8 +21,9 @@ SOURCES=[
 ]
 
 def official_url(url):
+    from authority_sources import authority_url
     host=(urlparse(url).hostname or '').lower()
-    return url.startswith('https://') and (host.endswith(('.gov.in','.nic.in','.ac.in','.edu.in')) or host in {'ibps.in','www.ibps.in'})
+    return url.startswith('https://') and (host.endswith(('.gov.in','.nic.in','.ac.in','.edu.in')) or host in {'ibps.in','www.ibps.in'} or authority_url(url))
 
 class BoardParser(HTMLParser):
     def __init__(self):

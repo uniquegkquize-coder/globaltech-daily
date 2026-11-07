@@ -67,6 +67,8 @@ class BacklinkTests(unittest.TestCase):
   paths=list((common.DATA/'history').glob('*.json')); before=paths[0].read_bytes(); report.run(True); self.assertEqual(before,paths[0].read_bytes())
  @unittest.skipUnless(yaml, "PyYAML validated by dedicated workflow")
  def test_yaml_safe_scope(self):
+  if not (common.ROOT/'.github/workflows/backlink-automation.yml').exists():
+   self.skipTest('Backlink automation was removed by the owner')
   raw=(common.ROOT/'.github/workflows/backlink-automation.yml').read_text(); doc=yaml.safe_load(raw)
   self.assertEqual(doc['permissions']['contents'],'read'); self.assertIn('HEAD:backlink-data',raw); self.assertNotIn('HEAD:main',raw)
  def test_csv_formula_escape(self):
