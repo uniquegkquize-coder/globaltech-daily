@@ -1,32 +1,26 @@
 {
-  "total_posts": 2379,
-  "selected": 26,
+  "total_posts": 2385,
+  "selected": 25,
   "results": {
-    "source_photo_saved": 6,
-    "cooldown": 20
+    "source_photo_saved": 4,
+    "cooldown": 20,
+    "invalid_source_images": 1
   },
-  "still_missing": 193,
+  "still_missing": 194,
   "articles": [
     {
-      "id": "f5eea3b6e8847a8a28372995",
-      "source": "https://en.wikipedia.org/wiki/Chery_QQme",
+      "id": "3d8f71b18e7be6f91a0f441b",
+      "source": "https://en.wikipedia.org/wiki/Hero_Honda_Pleasure",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794043220.9848824
+      "retry_after": 1794045543.7380471
     },
     {
-      "id": "c8ad3da6721af4debae6f69f",
-      "source": "https://en.wikipedia.org/wiki/Aprilia_RS457",
+      "id": "1a9f72eee2dd9356f16e5918",
+      "source": "https://en.wikipedia.org/wiki/Suzuki_Gixxer",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794043221.3109581
-    },
-    {
-      "id": "def393dcb232cfd28bcc23f0",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_H2R",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794043221.502064
+      "retry_after": 1794045543.9308126
     },
     {
       "id": "ab5161457cb0ef816db211ff",
@@ -109,25 +103,25 @@
       "result": "cooldown"
     },
     {
-      "id": "18ac1165d54b2e898cb24aaf",
-      "source": "https://en.wikipedia.org/wiki/HTC_Desire_610",
+      "id": "fb6dd420a2fc44c8f8340751",
+      "source": "https://en.wikipedia.org/wiki/JXD_P861",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794043221.5876353
+      "result": "invalid_source_images",
+      "retry_after": 1794045543.9823778
     },
     {
-      "id": "26773cba9c75732ecd92e448",
-      "source": "https://en.wikipedia.org/wiki/BlackBerry_Z30",
+      "id": "3f67ddda9b539d091b09f9fc",
+      "source": "https://en.wikipedia.org/wiki/Blackphone",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794043221.664785
+      "retry_after": 1794045544.2579758
     },
     {
-      "id": "71f330ba585d8223cf944d8d",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Traverse",
+      "id": "afc49c0b0d2ead7b5603746c",
+      "source": "https://en.wikipedia.org/wiki/Ferrari_296",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794043221.742155
+      "retry_after": 1794045544.3777428
     }
   ],
   "missing": [
@@ -1119,6 +1113,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "fb6dd420a2fc44c8f8340751",
+      "category": "gadgets",
+      "title": "JXD P861: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "9db43091aef2",
       "category": "ai-news",
       "title": "US Computer Science Enrolment Declines Amid AI Industry Shifts",
@@ -1485,7 +1486,7 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "invalid_source_images": 52,
+    "invalid_source_images": 53,
     "source_error": 4,
     "no_source_image": 59,
     "access_denied": 41,
@@ -1493,35 +1494,35 @@
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "f5eea3b6e8847a8a28372995": {
+    "3d8f71b18e7be6f91a0f441b": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chery_QQme",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Chery_QQme_01_China_2012-08-07.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Hero_Honda_Pleasure",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Hero_Honda_Pleasure_%28side_view%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "c8ad3da6721af4debae6f69f": {
+    "1a9f72eee2dd9356f16e5918": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Aprilia_RS457",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Aprilia_RS_457.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Suzuki_Gixxer",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Osaka_Motor_Show_2015_%28136%29_-_Suzuki_GIXXER.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "def393dcb232cfd28bcc23f0": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_H2R",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d4/1972_Kawasaki_H2R_KGTW.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "fb6dd420a2fc44c8f8340751": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/120px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
     },
-    "18ac1165d54b2e898cb24aaf": {
+    "3f67ddda9b539d091b09f9fc": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/HTC_Desire_610",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/52/HTC_Desire_610_Android_Smartphone.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Blackphone",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Blackphone_BP1_security.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "26773cba9c75732ecd92e448": {
+    "afc49c0b0d2ead7b5603746c": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/BlackBerry_Z30",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/BlackBerry_Z30_2.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "71f330ba585d8223cf944d8d": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Traverse",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/00/2023_Chevrolet_Traverse_LT_3.6_V6_in_Sterling_Gray_Metallic%2C_front_left.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ferrari_296",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/2022_Ferrari_296_%28cropped%29.jpg/1280px-2022_Ferrari_296_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
     }
   },
   "mode": "directory"
