@@ -1,34 +1,47 @@
 {
-  "total_posts": 2385,
-  "selected": 25,
+  "total_posts": 2391,
+  "selected": 27,
   "results": {
-    "source_photo_saved": 4,
-    "cooldown": 20,
-    "invalid_source_images": 1
+    "source_photo_saved": 5,
+    "invalid_source_images": 3,
+    "cooldown": 19
   },
-  "still_missing": 194,
+  "still_missing": 195,
   "articles": [
     {
-      "id": "3d8f71b18e7be6f91a0f441b",
-      "source": "https://en.wikipedia.org/wiki/Hero_Honda_Pleasure",
+      "id": "05c9760acda9ab537f358337",
+      "source": "https://en.wikipedia.org/wiki/Ack_Attack",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794045543.7380471
+      "retry_after": 1794046083.2630446
     },
     {
-      "id": "1a9f72eee2dd9356f16e5918",
-      "source": "https://en.wikipedia.org/wiki/Suzuki_Gixxer",
+      "id": "cbcd494fd3fe3f0731890f86",
+      "source": "https://en.wikipedia.org/wiki/Sehol_E20X",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794045543.9308126
+      "retry_after": 1794046083.2639787
     },
     {
-      "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
+      "id": "9a2584b51c7ac17c4eb14c76",
+      "source": "https://en.wikipedia.org/wiki/Foton_View",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794046083.3514094
     },
     {
-      "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
+      "id": "ddffff80a8d86c01558b63c8",
+      "source": "https://en.wikipedia.org/wiki/Urban_S",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794046083.381387
+    },
+    {
+      "id": "611527df4de7f3170a99cfde",
+      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794046083.4542239
     },
     {
       "id": "2a8b92143f14b264d8d27146",
@@ -104,24 +117,28 @@
     },
     {
       "id": "fb6dd420a2fc44c8f8340751",
-      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794045543.9823778
+      "retry_after": 1794046083.9378471
     },
     {
-      "id": "3f67ddda9b539d091b09f9fc",
-      "source": "https://en.wikipedia.org/wiki/Blackphone",
+      "id": "554edbfdaee926ed82007433",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794045544.2579758
+      "result": "invalid_source_images",
+      "retry_after": 1794046084.0672803
     },
     {
-      "id": "afc49c0b0d2ead7b5603746c",
-      "source": "https://en.wikipedia.org/wiki/Ferrari_296",
+      "id": "8d6e53e7a8895eeba11053ce",
+      "source": "https://en.wikipedia.org/wiki/Fire_Phone",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794045544.3777428
+      "retry_after": 1794046084.4912922
     }
   ],
   "missing": [
@@ -494,6 +511,13 @@
       "category": "visas-immigration",
       "title": "LinkedIn Job Postings Highlight Openings for Visa Sales Executives in New Delhi",
       "source": "https://in.linkedin.com/jobs/view/visa-sales-executive-location-saket-in-new-delhi-day-shift-at-sharda-consultancy-services-4484921383",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "611527df4de7f3170a99cfde",
+      "category": "gadgets",
+      "title": "Ninetology Black Pearl II: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
       "reason": "invalid_source_images"
     },
     {
@@ -1486,7 +1510,7 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "invalid_source_images": 53,
+    "invalid_source_images": 54,
     "source_error": 4,
     "no_source_image": 59,
     "access_denied": 41,
@@ -1494,35 +1518,60 @@
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "3d8f71b18e7be6f91a0f441b": {
+    "05c9760acda9ab537f358337": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Hero_Honda_Pleasure",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Hero_Honda_Pleasure_%28side_view%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ack_Attack",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Mike_Akatiff_with_the_Top_1_Ack_Attack.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "1a9f72eee2dd9356f16e5918": {
+    "cbcd494fd3fe3f0731890f86": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Suzuki_Gixxer",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Osaka_Motor_Show_2015_%28136%29_-_Suzuki_GIXXER.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Sehol_E20X",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Sehol_E20X_2022072101.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "fb6dd420a2fc44c8f8340751": {
+    "9a2584b51c7ac17c4eb14c76": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Foton_View",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/82/Foton_View_G7_IMG001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "ddffff80a8d86c01558b63c8": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Urban_S",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/2018_Urban_S_.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "611527df4de7f3170a99cfde": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/JXD_P861",
-      "candidate_count": 7,
+      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
+      "candidate_count": 3,
       "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/120px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
       ]
     },
-    "3f67ddda9b539d091b09f9fc": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Blackphone",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Blackphone_BP1_security.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "ab5161457cb0ef816db211ff": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
     },
-    "afc49c0b0d2ead7b5603746c": {
+    "554edbfdaee926ed82007433": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "8d6e53e7a8895eeba11053ce": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ferrari_296",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/2022_Ferrari_296_%28cropped%29.jpg/1280px-2022_Ferrari_296_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+      "source": "https://en.wikipedia.org/wiki/Fire_Phone",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Fire_Phone.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
