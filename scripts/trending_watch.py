@@ -16,7 +16,7 @@ import requests
 import feedparser
 import collect as newsroom
 from focused_sources import LOCAL_FEEDS, LOCAL_SEARCH_SOURCES
-from district_sources import district_feeds,district_search_feeds
+from district_sources import district_feeds,district_search_feeds,world_city_feeds
 
 ROOT=Path(__file__).resolve().parents[1]
 STATE=Path(os.getenv('TREND_STATE_PATH',str(ROOT/'.cache/trending/state.json')))
@@ -86,7 +86,7 @@ def local_feeds(now):
   params=urlencode(dict(q='site:'+domain+' '+query,hl=language,gl=country,ceid=country+':'+edition))
   feeds.append(('https://news.google.com/rss/search?'+params,
                 'india-news' if country=='IN' else 'world-news',domain,'local'))
- feeds.extend((*feed,'local') for feed in district_feeds(ROOT,now,6,refresh=False)+district_search_feeds(newsroom.INDIA_REGIONS,now,10))
+ feeds.extend((*feed,'local') for feed in district_feeds(ROOT,now,6,refresh=False)+district_search_feeds(newsroom.INDIA_REGIONS,now,10)+world_city_feeds(LOCAL_SEARCH_SOURCES,now,6))
  return list(dict.fromkeys(feeds))
 
 def demand_terms():

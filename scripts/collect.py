@@ -3,8 +3,8 @@ from seo_text import description as seo_description
 from news_config import CATEGORIES, EXAM_CATEGORIES, EXTRA_FEEDS, DIRECT_EXTRA, classify, lead_priority, timestamp, PRIORITY, search_feed
 from verticals import requirements, TRUSTED_ENTERTAINMENT, TRUSTED_CONTROVERSY
 from official_notices import official_url
-from district_sources import district_feeds, district_search_feeds, PUBLIC_PAGES as DISTRICT_PAGES
-from focused_sources import NATIVE_FEEDS, PAGES as FOCUSED_PAGES, SEARCH_SOURCES as FOCUSED_SEARCH, structured_article_data, content_candidates
+from district_sources import district_feeds, district_search_feeds, world_city_feeds, PUBLIC_PAGES as DISTRICT_PAGES
+from focused_sources import NATIVE_FEEDS, LOCAL_SEARCH_SOURCES, PAGES as FOCUSED_PAGES, SEARCH_SOURCES as FOCUSED_SEARCH, structured_article_data, content_candidates
 import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time, threading
 from functools import lru_cache
 from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
@@ -29,7 +29,7 @@ def complete_body(body,lang):
              and len(re.findall(r'\S+',text))>=minimum
              and len(re.findall(r'[.!?।]',text))>=2)
 MAX_CALLS=min(100,max(0,int(os.getenv('MAX_AI_CALLS_PER_RUN','60'))))
-POSTS_PER_RUN=max(1,int(os.getenv('POSTS_PER_RUN','100')))
+POSTS_PER_RUN=max(1,int(os.getenv('POSTS_PER_RUN','200')))
 MIN_POSTS_PER_CATEGORY=max(1,int(os.getenv('MIN_POSTS_PER_CATEGORY','2')))
 MIN_SOURCE_WORDS=0
 OFFICIAL_JOB_DOMAINS=('upsc.gov.in','ssc.gov.in','rrbcdg.gov.in','indianrailways.gov.in','employmentnews.gov.in','nta.ac.in','gov.in','nic.in')
@@ -277,10 +277,15 @@ def rotating_local_feeds():
  if cities and remaining:
   start=(day*remaining)%len(cities)
   selected.extend(cities[(start+i)%len(cities)] for i in range(remaining))
- return list(dict.fromkeys(district_search_feeds(INDIA_REGIONS)+selected))
+ world=world_city_feeds(LOCAL_SEARCH_SOURCES) if os.getenv('NEWS_CATEGORY','') in ('','world-news') else []
+ return list(dict.fromkeys(district_search_feeds(INDIA_REGIONS)+world+selected))
 # Keep direct primary and regional media domains eligible for original-link verification.
 for domain in LOCAL_PUBLISHERS+LOCAL_PRIMARY_DOMAINS:
  FEEDS.append(local_news_feed('site:'+domain+' India latest',domain))
+# The worldwide local-source registry must be eligible in the main publisher too.
+for domain,country,language,edition in LOCAL_SEARCH_SOURCES:
+ params=urlencode(dict(q='site:'+domain+' when:2d',hl=language,gl=country,ceid=country+':'+edition))
+ FEEDS.append(('https://news.google.com/rss/search?'+params,'india-news' if country=='IN' else 'world-news',domain))
 
 # Social-platform news leads without scraping, login bypass or paid APIs.
 # Discover publisher reports referring to public X/Facebook announcements and

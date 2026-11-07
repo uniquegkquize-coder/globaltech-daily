@@ -37,7 +37,7 @@ def save_summary(target,before,attempts,started,outcome,latest):
  return data
 
 def main():
- target=max(1,int(os.getenv('POSTS_PER_RUN','100')))
+ target=max(1,int(os.getenv('POSTS_PER_RUN','200')))
  passes=max(1,min(5,int(os.getenv('PUBLISH_MAX_PASSES','5'))))
  budget=max(180,min(1950,int(os.getenv('PUBLISH_BATCH_SECONDS','1950'))))
  started=time.monotonic();deadline=started+budget

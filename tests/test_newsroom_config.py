@@ -57,12 +57,12 @@ class NewsroomConfigTests(unittest.TestCase):
         workflow = WORKFLOW.read_text(encoding="utf-8")
         required = (
             "cron: '7 */2 * * *'",
-            "default: '100'",
+            "default: '200'",
             "MIN_POSTS_PER_CATEGORY: '2'",
             "MAX_AI_CALLS_PER_RUN: '100'",
             "AI_PROVIDER_ORDER: gemini,openrouter,groq,openai",
             "MAX_MODELS_PER_ARTICLE: '5'",
-            "MAX_LICENSED_PHOTOS_PER_RUN: '100'",
+            "MAX_LICENSED_PHOTOS_PER_RUN: '200'",
             "python -u scripts/generate_images.py",
             "python -u scripts/publish_news_batch.py",
             "git rebase -X theirs origin/main",
@@ -77,12 +77,12 @@ class NewsroomConfigTests(unittest.TestCase):
             self.skipTest("R2 delivery workflow is not installed")
         workflow = WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("cron: '7 */2 * * *'", workflow)
-        self.assertIn("default: '100'", workflow)
+        self.assertIn("default: '200'", workflow)
         self.assertIn("MIN_POSTS_PER_CATEGORY: '2'", workflow)
         self.assertIn("MAX_AI_CALLS_PER_RUN: '100'", workflow)
         self.assertIn("AI_PROVIDER_ORDER: gemini,openrouter,groq,openai", workflow)
         self.assertIn("MAX_MODELS_PER_ARTICLE: '5'", workflow)
-        self.assertIn("MAX_LICENSED_PHOTOS_PER_RUN: '100'", workflow)
+        self.assertIn("MAX_LICENSED_PHOTOS_PER_RUN: '200'", workflow)
         self.assertIn("python -u scripts/generate_images.py", workflow)
         self.assertNotIn("scripts/build.py", workflow)
         delivery=(ROOT/'.github/workflows/delivery-release.yml').read_text()

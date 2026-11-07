@@ -52,3 +52,20 @@ class PublishBatchTests(unittest.TestCase):
    with patch.object(batch,'ROOT',root),patch.dict(os.environ,{'POSTS_PER_RUN':'2'}),patch.object(batch.subprocess,'run',side_effect=run),patch.object(batch.time,'sleep'):
     batch.main()
    self.assertEqual(seen,[{}, {'cricket':1}])
+
+ def test_default_target_resumes_to_200_posts(self):
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);posts=root/'content/posts';posts.mkdir(parents=True)
+   targets=[]
+   def run(*args,**kwargs):
+    targets.append(kwargs['env']['POSTS_PER_RUN'])
+    for index in range(100):
+     (posts/(str(len(list(posts.glob('*.json'))))+'.json')).write_text(json.dumps({'category':'world-news'}))
+    (root/'content/news-run-status.json').write_text(json.dumps({'outcome':'ai_limit_reached','ai_calls':100,'pass':len(targets)}))
+    return type('Completed',(),{'returncode':0})()
+   with patch.object(batch,'ROOT',root),patch.dict(os.environ,{},clear=True),patch.object(batch.subprocess,'run',side_effect=run),patch.object(batch.time,'sleep'):
+    self.assertEqual(batch.main(),0)
+   report=json.loads((root/'content/news-run-status.json').read_text())
+   self.assertEqual(targets,['200','100'])
+   self.assertEqual(report['published'],200)
+   self.assertEqual(report['outcome'],'target_reached')
