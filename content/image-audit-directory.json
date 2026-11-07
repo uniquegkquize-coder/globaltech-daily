@@ -1,56 +1,61 @@
 {
-  "total_posts": 3153,
-  "selected": 32,
+  "total_posts": 3159,
+  "selected": 33,
   "results": {
-    "invalid_source_images": 2,
-    "source_photo_saved": 5,
-    "cooldown": 25
+    "invalid_source_images": 6,
+    "source_photo_saved": 4,
+    "cooldown": 23
   },
-  "still_missing": 275,
+  "still_missing": 277,
   "articles": [
     {
-      "id": "d5ff9974453f739276c8eb9f",
-      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
+      "id": "33686a761fa5d097afc337dc",
+      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794092894.153712
+      "retry_after": 1794093352.8737116
     },
     {
-      "id": "2a493538add90ea8e515db6e",
-      "source": "https://en.wikipedia.org/wiki/Dodge_Nitro",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794092894.270388
-    },
-    {
-      "id": "e2d04e1911479d43562a1acb",
-      "source": "https://en.wikipedia.org/wiki/Soueast_DX5",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794092894.693474
-    },
-    {
-      "id": "ff28f504e8e3f011fe2acd9b",
-      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
+      "id": "a941ae3553703f8fd24d4d17",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794092894.9037418
+      "retry_after": 1794093353.8137553
+    },
+    {
+      "id": "8a85d098f9540dd1afd91559",
+      "source": "https://en.wikipedia.org/wiki/Lexus_GS",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794093354.1348147
+    },
+    {
+      "id": "4d0f4be898d4ad285cdab7f4",
+      "source": "https://en.wikipedia.org/wiki/Ducati_Deluxe",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794093354.2587419
+    },
+    {
+      "id": "e29671465d334ab904ec8234",
+      "source": "https://en.wikipedia.org/wiki/Honda_Fit_%28second_generation%29",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794093354.5630393
     },
     {
       "id": "fb6dd420a2fc44c8f8340751",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794093354.598263
     },
     {
       "id": "611527df4de7f3170a99cfde",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794093354.6587718
     },
     {
       "id": "0d093f1b1d8b95e0ce3c5ba1",
@@ -137,25 +142,33 @@
       "result": "cooldown"
     },
     {
-      "id": "cdf2b11b7dd29c7671afa9fd",
-      "source": "https://en.wikipedia.org/wiki/Ducati_450_R/T",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794092894.91049
+      "id": "d5ff9974453f739276c8eb9f",
+      "result": "cooldown"
     },
     {
-      "id": "03bd7d740861e531c4ea9d1a",
-      "source": "https://en.wikipedia.org/wiki/Moto_G_%282nd_generation%29",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794092895.2123108
+      "id": "ff28f504e8e3f011fe2acd9b",
+      "result": "cooldown"
     },
     {
-      "id": "4f6a3a884c95796bda5249a1",
-      "source": "https://en.wikipedia.org/wiki/Meizu_MX4",
+      "id": "aa2e419173a68abb3417ae1c",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Z3_Compact",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794092895.459307
+      "retry_after": 1794093355.2614372
+    },
+    {
+      "id": "554edbfdaee926ed82007433",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794093355.338894
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794093355.3797414
     }
   ],
   "missing": [
@@ -991,6 +1004,13 @@
       "title": "TRAI Releases Draft Guidelines on Responsible AI Use in Telecom Networks",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No145of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "a941ae3553703f8fd24d4d17",
+      "category": "gadgets",
+      "title": "Sony Xperia TX: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
+      "reason": "invalid_source_images"
     },
     {
       "id": "4961c8fd51e0",
@@ -1840,6 +1860,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "33686a761fa5d097afc337dc",
+      "category": "automobiles",
+      "title": "Ducati 50 Scrambler: Motorcycle Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "dfd16b79fae5",
       "category": "apps-software",
       "title": "Tech Hiring Surges in Chennai as Flex Opens Associate Software Engineer Roles",
@@ -2088,16 +2115,16 @@
   "missing_reasons": {
     "source_unavailable": 36,
     "no_source_image": 99,
-    "invalid_source_images": 53,
+    "invalid_source_images": 55,
     "source_error": 17,
     "access_denied": 69,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "d5ff9974453f739276c8eb9f": {
+    "33686a761fa5d097afc337dc": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
+      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
       "candidate_count": 3,
       "candidates": [
         "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
@@ -2105,38 +2132,75 @@
         "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
       ]
     },
-    "2a493538add90ea8e515db6e": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Dodge_Nitro",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Dodge_Nitro_.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "e2d04e1911479d43562a1acb": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Soueast_DX5",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/37/Soueast_DX5_IMG001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "ff28f504e8e3f011fe2acd9b": {
+    "a941ae3553703f8fd24d4d17": {
       "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
-      "candidate_count": 1,
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
+      "candidate_count": 7,
       "candidates": [
-        "https://www.unirank.org/i/screenshots/18614.jpg"
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/120px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/60px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
       ]
     },
-    "cdf2b11b7dd29c7671afa9fd": {
+    "8a85d098f9540dd1afd91559": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ducati_450_R/T",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/Ducati_450RT_%2812405079454%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Lexus_GS",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/Lexus_GS_450h_F_Sport_%E2%80%93_Frontansicht%2C_17._Juni_2012%2C_D%C3%BCsseldorf.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "03bd7d740861e531c4ea9d1a": {
+    "4d0f4be898d4ad285cdab7f4": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Moto_G_%282nd_generation%29",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Motorola_Moto_G2.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ducati_Deluxe",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Ducati_Deluxe_250_4T_2012_520.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "4f6a3a884c95796bda5249a1": {
+    "e29671465d334ab904ec8234": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Meizu_MX4",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Meizu_MX4.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Honda_Fit_%28second_generation%29",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/2008-2010_Honda_Jazz_%28GE%29_hatchback_%282011-10-25%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "fb6dd420a2fc44c8f8340751": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/120px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "611527df4de7f3170a99cfde": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "aa2e419173a68abb3417ae1c": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Z3_Compact",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Z3_Compact.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "554edbfdaee926ed82007433": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "ab5161457cb0ef816db211ff": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
     }
   },
   "mode": "directory"

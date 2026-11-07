@@ -1,17 +1,17 @@
 {
-  "published": 7,
-  "updated": 15,
+  "published": 6,
+  "updated": 3,
   "target": 8,
   "missing": {
-    "colleges": 1
+    "colleges": 2
   },
   "categories": {
     "colleges": {
-      "new": 1,
-      "updated": 1,
-      "eligible_new": 1,
-      "eligible_updates": 1,
-      "shortfall": 1,
+      "new": 0,
+      "updated": 2,
+      "eligible_new": 0,
+      "eligible_updates": 2,
+      "shortfall": 2,
       "reasons": {
         "considered": 302,
         "already_published_unchanged": 15,
@@ -149,13 +149,13 @@
     },
     "phones": {
       "new": 2,
-      "updated": 7,
-      "eligible_new": 561,
-      "eligible_updates": 7,
+      "updated": 1,
+      "eligible_new": 559,
+      "eligible_updates": 1,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 60,
+        "already_published_unchanged": 68,
         "insufficient verified descriptive fields": 86,
         "identifier URL is not specification evidence": 1167
       },
@@ -290,13 +290,13 @@
     },
     "cars": {
       "new": 2,
-      "updated": 4,
-      "eligible_new": 476,
-      "eligible_updates": 4,
+      "updated": 0,
+      "eligible_new": 474,
+      "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 5749,
-        "already_published_unchanged": 65,
+        "already_published_unchanged": 71,
         "insufficient verified descriptive fields": 534,
         "identifier URL is not specification evidence": 4670
       },
@@ -431,13 +431,13 @@
     },
     "bikes": {
       "new": 2,
-      "updated": 3,
-      "eligible_new": 31,
-      "eligible_updates": 3,
+      "updated": 0,
+      "eligible_new": 29,
+      "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 447,
-        "already_published_unchanged": 66,
+        "already_published_unchanged": 71,
         "insufficient verified descriptive fields": 84,
         "identifier URL is not specification evidence": 263
       },
@@ -571,5 +571,5 @@
       ]
     }
   },
-  "date": "2026-11-07T17:08:09.115660+00:00"
+  "date": "2026-11-07T17:15:47.147876+00:00"
 }

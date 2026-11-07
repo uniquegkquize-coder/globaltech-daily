@@ -105,7 +105,7 @@
           "source_url": "https://www.paruluniversity.ac.in/program/btech-information-technology/"
         }
       ],
-      "fees": "1,95,000/- Per Annum",
+      "fees": "BBA (3 years) — annual fee inr: 175000; BBA (Hons.) (4 years) — annual fee inr: 175000; MBA (2 years) — annual fee inr: 225000; M.Tech (2 years) — annual fee inr: 130000; Bachelor of Pharmacy (4 years regular program; 4 years) — fee: 1,80,000/- Per Annum; Bachelor of Pharmacy (3 years lateral entry; 3 years) — fee: 1,80,000/- Per Annum; Bachelor of Technology in Information Technology (4 years regular program; 4 years) — fee: 1,95,000/- Per Annum; Bachelor of Technology in Information Technology (3 years lateral entry program; 3 Years) — fee: 1,95,000/- Per Annum",
       "fee_disclaimer": "Published tuition/programme fees vary by qualifying country/state and programme. Hostel, mess, transport and one-off charges require a separate current quote.",
       "admissions": "Use the official programme's eligibility and admissions portal; entrance and merit routes vary by course.",
       "placement": "Programme-specific NIRF figures below are median salaries of placed graduates, not university-wide averages or placement guarantees.",
@@ -1997,7 +1997,8 @@
         "cameras",
         "launch_date",
         "availability"
-      ]
+      ],
+      "fees": "Bachelor of Business Administration (4 years) — fees: General 2026/27 undergraduate rate: MWK 685,000 per semester; exact course applicability needs confirmation.; Bachelor of Community Development (4 years) — fees: General 2026/27 undergraduate rate: MWK 685,000 per semester; exact course applicability needs confirmation.; Bachelor of Logistics and Supply Chain Management (4 years) — fees: General 2026/27 undergraduate rate: MWK 685,000 per semester; exact course applicability needs confirmation.; Bachelor of Science in Information Technology (4 years) — fees: General 2026/27 undergraduate rate: MWK 685,000 per semester; exact course applicability needs confirmation.; Bachelor of Human Resource Management (4 years) — fees: General 2026/27 undergraduate rate: MWK 685,000 per semester; exact course applicability needs confirmation.; Bachelor of Arts in Health Systems Management (4 years) — fees: General 2026/27 undergraduate rate: MWK 685,000 per semester; exact course applicability needs confirmation.; Bachelor of Marketing (4 years) — fees: General 2026/27 undergraduate rate: MWK 685,000 per semester; exact course applicability needs confirmation.; Master of Business Administration (2 years) — fees: Official form lists MWK 1,300,000 without a billing period; cannot label annual or semester fee.; Master of Human Resource Management (2 years) — fees: Official form lists MWK 1,300,000 without a billing period; cannot label annual or semester fee.; Master of Logistics and Supply Chain Management (2 years) — fees: Official form lists MWK 1,300,000 without a billing period; cannot label annual or semester fee."
     },
     "Université Notre Dame de Lomami": {
       "name": "Université Notre Dame de Lomami",
@@ -230299,6 +230300,7 @@
   },
   "phones": {
     "Vivo X Fold 5": {
+      "name": "Vivo X Fold 5",
       "country": "India",
       "manufacturer": "vivo",
       "official_url": "https://www.vivo.com/in/products/param/x-fold5",
@@ -230320,7 +230322,7 @@
       "fingerprint_sensor": "Side-mounted capacitive",
       "color": "Titanium Gray",
       "mrp_inr": 159999,
-      "price_basis": "Official India shop displayed MRP including taxes, checked 2026-11-02",
+      "price_basis": "price; source-listed amount; market and variant as described by the source",
       "secondary_selling_price_inr": 139999,
       "secondary_price_basis": "Gadgets360 Amazon-linked lowest price dated 2026-11-01; marked out of stock/currently unavailable",
       "release": "25 June 2025, secondary catalogue launch date",
@@ -230422,7 +230424,7 @@
         },
         "price_basis": {
           "url": "https://shop.vivo.com/in/product/10316",
-          "retrieved_at": "2026-11-02"
+          "retrieved_at": "2026-11-07T17:15:41.745474+00:00"
         },
         "secondary_selling_price_inr": {
           "url": "https://www.gadgets360.com/vivo-x-fold-5-price-in-india-133304",
@@ -230439,6 +230441,14 @@
         "variants": {
           "url": "https://www.vivo.com/in/products/param/x-fold5",
           "retrieved_at": "2026-11-02"
+        },
+        "price": {
+          "url": "https://shop.vivo.com/in/product/10316",
+          "retrieved_at": "2026-11-07T17:15:41.745472+00:00"
+        },
+        "availability": {
+          "url": "https://shop.vivo.com/in/product/10316",
+          "retrieved_at": "2026-11-07T17:15:41.745477+00:00"
         }
       },
       "evidence_url": "https://www.vivo.com/in/products/param/x-fold5",
@@ -230483,7 +230493,9 @@
         "launch_date",
         "availability"
       ],
-      "source_image_url": "https://vivonewsroom.b-cdn.net/wp-content/uploads/2025/07/X-fold-5-16.8.jpg"
+      "source_image_url": "https://vivonewsroom.b-cdn.net/wp-content/uploads/2025/07/X-fold-5-16.8.jpg",
+      "price": "INR 149999",
+      "availability": "https://schema.org/OutOfStock"
     },
     "Samsung Galaxy S24": {
       "name": "Samsung Galaxy S24",
