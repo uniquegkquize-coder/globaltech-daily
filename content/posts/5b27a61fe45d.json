@@ -1,0 +1,31 @@
+{
+  "en_title": "Malicious Anthropic Claude Extension Targets Thousands of Cursor Users",
+  "hi_title": "मैलिशियस एंथ्रोपिक क्लोड एक्सटेंशन ने हजारों कर्सर उपयोगकर्ताओं को बनाया निशाना",
+  "en_body": "## Supply Chain Attack Affects Cursor Marketplace\n\nA malicious version of an Anthropic Claude Code extension was discovered on the Cursor integrated development environment extension marketplace. According to reports, the rogue software was available for roughly 11 hours on Thursday across Windows, macOS, and Linux platforms.\n\nCursor, a platform owned by SpaceX, stated that the tainted extension was downloaded by \"at most 5,000 users.\" Following the discovery, the company temporarily shut down its extension marketplace to investigate the incident, reporting that no other extensions were impacted.\n\n## Nature of the Threat and Technical Impact\n\nSecurity researchers and company statements highlighted the potential risks of the incident:\n\n* **Backdoor Implant:** The malicious extension was designed with a backdoor intended to give attackers unauthorized access to victim devices.\n* **Design Flaw:** Security experts noted that a flaw in the malware's design prevented it from fully establishing itself on the vast majority of targeted systems.\n* **Expert Assessment:** Calum Hall, cofounder and CEO of detection firm Phorion—which first spotted the extension on a customer's Mac—described it as a potentially dangerous foothold.\n\n## Investigation and Official Responses\n\nQuestions remain regarding how the malicious software was uploaded to the marketplace. Initial speculation suggested a potential compromise of Anthropic systems, but both Cursor and Anthropic representatives have clarified the situation.\n\n* **Anthropic Clarification:** Felix Rieseberg and David Dworken, members of Anthropic's technical staff, stated on X that the incident did not involve a compromise of Anthropic's systems, networks, or employee laptops.\n* **Marketplace Access:** According to Anthropic, a malicious actor utilized access to Cursor's marketplace to publish a tampered copy of the extension, which Anthropic did not build, host, or publish.\n* **Official Channels:** Anthropic emphasized that versions distributed through official channels remain unaffected and that the issue is strictly limited to Cursor users.\n\n## Practical Implications and Verification\n\nUsers who utilized the affected platform during the brief window are advised to review security alerts and remediation steps published directly by Cursor. Independent verification of similar software supply chain incidents relies on consulting official security advisories issued by platform operators and checking system logs for unauthorized extensions.",
+  "hi_body": "## सप्लाई चेन अटैक ने कर्सर मार्केटप्लेस को किया प्रभावित\n\nकर्सर इंटीग्रेटेड डेवलपमेंट एनवायरनमेंट एक्सटेंशन मार्केटप्लेस पर एंथ्रोपिक क्लोड कोड एक्सटेंशन का एक मैलिशियस संस्करण पाया गया। रिपोर्ट के अनुसार, यह संदिग्ध सॉफ्टवेयर विंडोज, मैकोएस और लिनक्स प्लेटफॉर्म पर गुरुवार को लगभग 11 घंटे तक उपलब्ध रहा।\n\nस्पेसएक्स के स्वामित्व वाले कर्सर प्लेटफॉर्म ने बताया कि इस दूषित एक्सटेंशन को \"अधिक से अधिक 5,000 उपयोगकर्ताओं\" द्वारा डाउनलोड किया गया था। इस घटना के सामने आने के बाद, कंपनी ने स्थिति की जांच के लिए अपने एक्सटेंशन मार्केटप्लेस को अस्थायी रूप से बंद कर दिया और कहा कि अन्य कोई एक्सटेंशन प्रभावित नहीं हुआ है।\n\n## खतरे की प्रकृति और तकनीकी प्रभाव\n\nसुरक्षा शोधकर्ताओं और कंपनी के बवालों ने इस घटना से जुड़े संभावित जोखिमों पर प्रकाश डाला:\n\n* **बैकडोर इम्प्लांट:** मैलिशियस एक्सटेंशन को एक बैकडोर के साथ डिजाइन किया गया था ताकि हमलावरों को पीड़ित उपकरणों तक अनधिकृत पहुंच मिल सके।\n* **डिजाइन में खामी:** सुरक्षा विशेषज्ञों ने उल्लेख किया कि मैलिशियस सॉफ्टवेयर के डिजाइन में एक तकनीकी खामी थी, जिसने इसे अधिकांश लक्षित प्रणालियों पर पूरी तरह से स्थापित होने से रोक दिया।\n* **विशेषज्ञ की राय:** डिटेक्शन फर्मोरियन के सह-संस्थापक और सीईओ कालुम हॉल ने इसे हमलावरों के लिए एक संभावित खतरनाक शुरुआती बिंदु बताया।\n\n## जांच और आधिकारिक प्रतिक्रियाएं\n\nयह अभी स्पष्ट नहीं है कि मैलिशियस सॉफ्टवेयर मार्केटप्लेस पर कैसे अपलोड हुआ। शुरुआती अनुमानों में एंथ्रोपिक प्रणालियों से छेड़छाड़ की आशंका जताई गई थी, लेकिन कर्सर और एंथ्रोपिक दोनों के प्रतिनिधियों ने स्थिति स्पष्ट कर दी है।\n\n* **एंथ्रोपिक का स्पष्टीकरण:** एंथ्रोपिक के तकनीकी कर्मचारियों ने एक्स (पूर्व में ट्विटर) पर स्पष्ट किया कि इस घटना में एंथ्रोपिक के सिस्टम या कर्मचारियों के लैपटॉप से कोई समझौता नहीं किया गया है।\n* **मार्केटप्लेस एक्सेस:** एंथ्रोपिक के अनुसार, एक मैलिशियस एक्टर ने कर्सर के मार्केटप्लेस तक पहुंच का उपयोग करके एक्सटेंशन की एक छेड़छाड़ की गई प्रति प्रकाशित की थी, जिसे एंथ्रोपिक ने न तो बनाया था और न ही प्रकाशित किया था।\n* **आधिकारिक चैनल:** एंथ्रोपिक ने जोर देकर कहा कि उनके आधिकारिक चैनलों के माध्यम से वितरित संस्करण प्रभावित नहीं हैं और यह समस्या केवल कर्सर उपयोगकर्ताओं तक सीमित है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nप्रभावित अवधि के दौरान प्लेटफॉर्म का उपयोग करने वाले उपयोगकर्ताओं को कर्सर द्वारा सीधे प्रकाशित सुरक्षा चेतावनियों और उपचारात्मक चरणों की समीक्षा करने की सलाह दी जाती है। इस प्रकार की घटनाओं के स्वतंत्र सत्यापन के लिए प्लेटफॉर्म संचालकों द्वारा जारी आधिकारिक सुरक्षा सलाहकारों की जांच करनी चाहिए।",
+  "en_meta": "A malicious Anthropic Claude extension briefly affected Cursor users via a supply chain attack. Learn about the impact, technical details, and official…",
+  "hi_meta": "एक मैलिशियस एंथ्रोपिक क्लोड एक्सटेंशन ने सप्लाई चेन अटैक के माध्यम से कर्सर उपयोगकर्ताओं को प्रभावित किया। जानिए तकनीकी विवरण और आधिकारिक प्रतिक्रियाएं।",
+  "en_keywords": [
+    "Cursor",
+    "Anthropic",
+    "Claude Code",
+    "supply chain attack",
+    "malware",
+    "extension marketplace"
+  ],
+  "hi_keywords": [
+    "कर्सर",
+    "एंथ्रोपिक",
+    "क्लोड कोड",
+    "सप्लाई चेन अटैक",
+    "मैलवेयर",
+    "एक्सटेंशन मार्केटप्लेस"
+  ],
+  "source_published_at": "2026-10-30T16:38:46.195-04:00",
+  "id": "5b27a61fe45d",
+  "source": "https://www.wired.com/story/trojan-malware-targets-thousands-of-anthropic-claude-developer-systems/",
+  "date": "2026-11-07T04:10:03.530648+00:00",
+  "source_title": "A Supply Chain Attack Put Malicious Anthropic Claude Extensions on Thousands of Devices",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

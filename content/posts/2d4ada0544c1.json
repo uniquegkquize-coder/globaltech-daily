@@ -1,0 +1,37 @@
+{
+  "en_title": "New Cybercrime Campaign Spreads Cryptojacking Malware via Fake AI Apps and SEO Poisoning",
+  "hi_title": "नकली AI ऐप्स और SEO पॉइज़निंग के ज़रिए क्रिपटो जैकिंग मालवेयर फैलाने का नया साइबर अपराध अभियान",
+  "en_body": "Security researchers have uncovered a new cybercrime campaign that leverages public interest in emerging artificial intelligence tools to distribute malware. According to reports from Check Point Research (CPR), anonymous threat actors have created fake downloadable clients for prominent AI products—including GPT-5.6 Sol, GPT-6 Astra, and Claude Opus—and hosted them on GitHub.\n\n## How the SEO Poisoning Attack Works\n\nUnlike campaigns that artificially inflate GitHub metrics with fake stars, forks, and comments to manufacture credibility, this operation relies heavily on Search Engine Optimization (SEO) poisoning to capture victim traffic.\n\n* **Dark Web Promotion:** Attackers allegedly purchase hundreds or thousands of low-quality articles, blog posts, and social media mentions across the dark web.\n* **Search Manipulation:** These distributed links point back to the malicious GitHub repositories, signaling to search engines that the pages are relevant and popular.\n* **Top Search Placement:** As a result, the fraudulent download pages appear near the top of Google search results for specific keywords.\n\n## Anatomy of the Yoba Malware Infection\n\nWhen unsuspecting users visit the poisoned GitHub pages and download the executable files, they inadvertently install a malware strain identified as Yoba.\n\n* **System Persistence:** The malware automatically configures itself to launch upon system reboot, masking its presence as legitimate Windows software.\n* **Evasion Techniques:** Yoba includes checks to detect sandbox environments and security analysis tools. It can delay execution for up to two weeks and inspects system keyboard layouts to bypass devices located in specific regions.\n* **Cryptomining Payload:** After communicating with a command-and-control (C2) server, the malware downloads its final payload: XMRig, an open-source Monero cryptominer.\n\n## Practical Implications and Verification\n\nVictims of this campaign typically experience degraded system performance and inflated electricity bills as their computing resources are hijacked to generate privacy-focused cryptocurrency for third parties. Cybersecurity analysts recommend verifying software downloads through official vendor websites, maintaining updated endpoint protection, and exercising caution when searching for newly announced or unreleased technology products online.",
+  "hi_body": "सुरक्षा शोधकर्ताओं ने एक नए साइबर अपराध अभियान का खुलासा किया है जो मालवेयर वितरित करने के लिए उभरते कृत्रिम बुद्धिमत्ता (AI) उपकरणों में जनता की रुचि का लाभ उठा रहा है। चेक पॉइंट रिसर्च (CPR) की रिपोर्ट के अनुसार, अज्ञात हमलावरों ने GPT-5.6 Sol, GPT-6 Astra और Claude Opus जैसे प्रमुख AI उत्पादों के लिए नकली डाउनलोड करने योग्य क्लाइंट बनाए हैं और उन्हें GitHub पर होस्ट किया है।\n\n## SEO पॉइज़निंग हमला कैसे काम करता है\n\nउन अभियानों के विपरीत जो विश्वसनीयता पैदा करने के लिए नकली स्टार, फोर्क और टिप्पणियों के साथ GitHub मेट्रिक्स को कृत्रिम रूप से बढ़ाते हैं, यह ऑपरेशन पीड़ित ट्रैफिक को कैप्चर करने के लिए सर्च इंजन ऑप्टिमाइजेशन (SEO) पॉइज़निंग पर बहुत अधिक निर्भर करता है।\n\n* **डार्क वेब प्रचार:** हमलावर कथित तौर पर डार्क वेब पर सैकड़ों या हज़ारों कम गुणवत्ता वाले लेख, ब्लॉग पोस्ट और सोशल मीडिया उल्लेख खरीदते हैं।\n* **सर्च हेरफेर:** ये वितरित लिंक दुर्भावनापूर्ण GitHub रिपॉजिटरी की ओर इशारा करते हैं, जो सर्च इंजन को संकेत देते हैं कि पेज प्रासंगिक और लोकप्रिय हैं।\n* **शीर्ष खोज स्थान:** परिणामस्वरूप, धोखाधड़ी वाले डाउनलोड पेज विशिष्ट कीवर्ड के लिए Google खोज परिणामों के शीर्ष के पास दिखाई देते हैं।\n\n## योबा (Yoba) मालवेयर संक्रमण की संरचना\n\nजब unsuspecting उपयोगकर्ता poisoned GitHub पेज पर जाते हैं और निष्पादित फाइलों को डाउनलोड करते हैं, तो वे अनजाने में Yoba नामक मालवेयर स्ट्रेन स्थापित कर लेते हैं।\n* **सिस्टम निरंतरता:** मालवेयर सिस्टम रीबूट होने पर स्वचालित रूप से लॉन्च होने के लिए खुद को कॉन्फ़िगर करता है, और वैध विंडोज सॉफ्टवेयर के रूप में अपनी उपस्थिति छुपाता है।\n* **बचाव तकनीक:** Yoba में सैनबॉक्स वातावरण और सुरक्षा विश्लेषण उपकरणों का पता लगाने के लिए जाँच शामिल है। यह दो सप्ताह तक निष्पादन में देरी कर सकता है और विशिष्ट क्षेत्रों में स्थित उपकरणों को बायपास करने के लिए सिस्टम कीबोर्ड लेआउट का निरीक्षण करता है।\n* **क्रिप्टोमाइनिंग पेलोड:** कमांड-एंड-कंट्रोल (C2) सर्वर के साथ संवाद करने के बाद, मालवेयर अपना अंतिम पेलोड डाउनलोड करता है: XMRig, जो एक ओपन-सोर्स Monero क्रिप्टोमिनर है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nइस अभियान के पीड़ितों को आमतौर पर खराब सिस्टम प्रदर्शन और बढ़े हुए बिजली बिलों का अनुभव होता है क्योंकि तीसरे पक्ष के लिए गोपनीयता-केंद्रित क्रिप्टोकरेंसी उत्पन्न करने के लिए उनके कंप्यूटिंग संसाधनों का अपहरण किया जाता है। साइबर सुरक्षा विश्लेषक आधिकारिक विक्रेता वेबसाइटों के माध्यम से सॉफ्टवेयर डाउनलोड को सत्यापित करने, अद्यतन सुरक्षा बनाए रखने और ऑनलाइन नई तकनीक उत्पादों की खोज करते समय सावधानी बरतने की सलाह देते हैं।",
+  "en_meta": "Discover how a new cybercrime campaign uses fake AI apps, SEO poisoning, and GitHub to distribute Yoba malware and XMRig cryptominers.",
+  "hi_meta": "जानिए कैसे एक नया साइबर अपराध अभियान योबा मालवेयर और एक्सएमआरिग क्रिप्टोमिनर फैलाने के लिए नकली AI ऐप्स, SEO पॉइज़निंग और गिटहब का उपयोग करता है।",
+  "en_keywords": [
+    "cybersecurity",
+    "malware",
+    "cryptojacking",
+    "AI apps",
+    "SEO poisoning",
+    "GitHub",
+    "Yoba malware",
+    "XMRig",
+    "Check Point Research"
+  ],
+  "hi_keywords": [
+    "साइबर सुरक्षा",
+    "मालवेयर",
+    "क्रिप्टोजैकिंग",
+    "AI ऐप्स",
+    "एसईओ पॉइज़निंग",
+    "गिटहब",
+    "योबा मालवेयर",
+    "XMRig",
+    "चेक पॉइंट रिसर्च"
+  ],
+  "source_published_at": "2026-10-29T18:05:00+00:00",
+  "id": "2d4ada0544c1",
+  "source": "https://www.techradar.com/pro/security/a-new-cybercrime-campaign-uses-fake-ai-apps-with-real-sounding-names-to-infect-people-curious-to-try-the-newest-tools",
+  "date": "2026-11-07T04:09:58.972183+00:00",
+  "source_title": "A new cybercrime campaign uses fake AI apps with real-sounding names to infect people curious to try the newest tools",
+  "category": "cyber-security",
+  "image_kind": "conceptual"
+}

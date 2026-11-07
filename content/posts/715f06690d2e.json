@@ -1,0 +1,31 @@
+{
+  "en_title": "Hackers Target High-Stakes Online Poker Players with Screen-Viewing Malware",
+  "hi_title": "हैकरों ने स्क्रीन-व्यूइंग मैलवेयर से हाई-स्टेक ऑनलाइन पोकर खिलाड़ियों को बनाया निशाना",
+  "en_body": "## A Sophisticated Online Poker Breach\n\nSecurity researchers and professional online poker players have uncovered a multi-year cyberattack campaign targeting high-stakes players. The threat actor allegedly utilized remote-access malware, identified as MeshAgent, to covertly capture player screens, thereby exposing opponents' cards and compromising game integrity across multiple major online platforms.\n\n## How the Attack Was Executed\n\nUnlike traditional financially motivated attacks that quickly drain cryptocurrency wallets or local assets, this hacker conducted extensive reconnaissance over a long period. According to cybersecurity professionals, the malicious code was distributed via compromised software supply chains for popular multi-table utilities:\n\n* **Software Updates:** Attackers compromised the developer update mechanism for Jurojin, pushing the backdoor to existing users.\n* **Compromised Builds:** A test machine running Intuitive Tables was also infected, leading to an official, signed update containing malicious code being published for public download.\n* **Targeted Activation:** The malware cross-referenced local usernames against a hard-coded list supplied by the attacker's infrastructure, deploying backdoor tools only to targeted high-stakes participants.\n\n## Discovery and Industry Response\n\nAn artificial intelligence agent initially flagged suspicious background processes on a player's machine, prompting a broader investigation by cybersecurity analysts and the high-stakes poker community. While some platforms like CoinPoker and ClubWPT Gold acted proactively by banning suspicious accounts, investigating anomalies, and issuing refunds, other major operators faced severe criticism from players for allegedly ignoring early warnings and reports.\n\n## Practical Implications and Verification\n\n* **Developer Tools:** Both Jurojin and Intuitive Tables have released diagnostic utilities to help users check their machines for signs of the MeshAgent backdoor.\n* **Open-Source Detection:** Security groups affiliated with A5 Labs introduced open-source detection tools to spot potential superuser anomalies on poker platforms.\n* **Official Announcements:** Players can verify platform security fixes and policy updates directly through official corporate blogs and security advisories issued by the respective poker operators.",
+  "hi_body": "## एक परिष्कृत ऑनलाइन पोकर सुरक्षा उल्लंघन\n\nसुरक्षा शोधकर्ताओं और पेशेवर ऑनलाइन पोकर खिलाड़ियों ने हाई-स्टेक खिलाड़ियों को निशाना बनाने वाले कई वर्षों पुराने साइबर हमले के अभियान का खुलासा किया है। खतरे के इस अभिनेता ने कथित तौर पर स्क्रीन को गुप्त रूप से कैप्चर करने के लिए 'मेशएजेंट' (MeshAgent) नामक रिमोट-एक्सेस मैलवेयर का उपयोग किया, जिससे प्रतिद्वंद्वियों के कार्ड उजागर हुए और कई प्रमुख ऑनलाइन प्लेटफार्मों पर खेल की अखंडता से समझौता हुआ।\n\n## हमले को कैसे अंजाम दिया गया\n\nपारंपरिक वित्तीय रूप से प्रेरित हमलों के विपरीत जो क्रिप्टोकरेंसी वॉलेट या स्थानीय संपत्तियों को जल्दी से खाली कर देते हैं, इस हैकर ने लंबी अवधि तक व्यापक टोह ली। साइबर सुरक्षा पेशेवरों के अनुसार, दुर्भावनापूर्ण कोड को लोकप्रिय मल्टी-टेबल यूटिलिटीज के लिए समझौता किए गए सॉफ्टवेयर आपूर्ति श्रृंखलाओं के माध्यम से वितरित किया गया था:\n\n* **सॉफ्टवेयर अपडेट:** हमलावरों ने जुरोजिन (Jurojin) के लिए डेवलपर अपडेट तंत्र से समझौता किया, जिससे मौजूदा उपयोगकर्ताओं तक बैकडोर पहुंच गया।\n* **समझौता किए गए बिल्ड:** इंटुएटिव टेबल्स चलाने वाली एक परीक्षण मशीन भी संक्रमित हो गई, जिससे सार्वजनिक डाउनलोड के लिए दुर्भावनापूर्ण कोड युक्त एक आधिकारिक, हस्ताक्षरित अपडेट प्रकाशित हुआ।\n* **लक्षित सक्रियण:** मैलवेयर ने हमलावर के बुनियादी ढांचे द्वारा आपूर्ति की गई हार्ड-कोडित सूची के मुकाबले स्थानीय उपयोगकर्ता नामों का मिलान किया, और केवल लक्षित उच्च-दांव वाले प्रतिभागियों को बैकडोर टूल वितरित किए।\n\n## खोज और उद्योग की प्रतिक्रिया\n\nएक आर्टिफिशियल इंटेलिजेंस एजेंट ने शुरू में एक खिलाड़ी की मशीन पर संदिग्ध पृष्ठभूमि प्रक्रियाओं को चिह्नित किया, जिससे साइबर सुरक्षा विश्लेषकों और उच्च-दांव वाले पोकर समुदाय द्वारा व्यापक जांच को बढ़ावा मिला। जबकि CoinPoker और ClubWPT Gold जैसे कुछ प्लेटफार्मों ने संदिग्ध खातों पर प्रतिबंध लगाकर, विसंगतियों की जांच करके और रिफंड जारी करके सक्रिय रूप से कार्रवाई की, अन्य प्रमुख ऑपरेटरों को शुरुआती चेतावनियों और रिपोर्टों की उपेक्षा करने के लिए खिलाड़ियों से गंभीर आलोचना का सामना करना पड़ा।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\n* **डेवलपर टूल्स:** Jurojin और Intuitive Tables दोनों ने उपयोगकर्ताओं को यह जांचने में मदद करने के लिए डायग्नोस्टिक यूटिलिटीज जारी की हैं कि उनकी मशीनें प्रभावित हुई हैं या नहीं।\n* **ओपन-सोर्स डिटेक्शन:** सुरक्षा समूहों ने पोकर प्लेटफार्मों पर संभावित सुपरयूजर विसंगतियों का पता लगाने के लिए ओपन-सोर्स डिटेक्शन टूल पेश किए हैं।\n* **आधिकारिक घोषणाएं:** खिलाड़ी संबंधित पोकर ऑपरेटरों द्वारा जारी आधिकारिक कॉर्पोरेट ब्लॉग और सुरक्षा सलाह के माध्यम से प्लेटफॉर्म सुरक्षा सुधारों और नीति अपडेट को सत्यापित कर सकते हैं।",
+  "en_meta": "Discover how hackers targeted high-stakes online poker players using screen-viewing malware, third-party tool compromises, and industry reactions.",
+  "hi_meta": "जानें कैसे हैकरों ने स्क्रीन-व्यूइंग मैलवेयर और थर्ड-पक्ष टूल के जरिए हाई-स्टेक ऑनलाइन पोकर खिलाड़ियों को निशाना बनाया।",
+  "en_keywords": [
+    "online poker",
+    "cybersecurity",
+    "malware",
+    "MeshAgent",
+    "high-stakes poker",
+    "data breach"
+  ],
+  "hi_keywords": [
+    "ऑनलाइन पोकर",
+    "साइबर सुरक्षा",
+    "मैलवेयर",
+    "मेशएजेंट",
+    "हाई-स्टेक पोकर",
+    "डेटा उल्लंघन"
+  ],
+  "source_published_at": "2026-10-29T06:30:00.000-04:00",
+  "id": "715f06690d2e",
+  "source": "https://www.wired.com/story/a-hacker-targeted-high-stakes-poker-players-with-malware-that-exposed-their-cards/",
+  "date": "2026-11-07T04:09:51.640779+00:00",
+  "source_title": "A Hacker Targeted High-Stakes Poker Players With Malware That Exposed Their Cards",
+  "category": "cyber-security",
+  "image_kind": "conceptual"
+}
