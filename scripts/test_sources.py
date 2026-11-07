@@ -26,5 +26,5 @@ assert any(n.args and isinstance(n.args[0],ast.Name) and n.args[0].id=='read_fee
 assert 'rotating_social_feeds()' in source
 assert "if not allowed(url,domain) or url in seen:continue" in source
 assert "if not url or not title:continue" in source
-assert any(n.args and isinstance(n.args[0],ast.Name) and n.args[0].id=='resolve_eligible' for n in discovery_calls)
+assert any(n.args and isinstance(n.args[0],ast.Name) and n.args[0].id=='resolve_rss_story' for n in discovery_calls)
 print(f"Source validation OK: {len(regions)} states/UTs, {sum(map(len,regions.values()))} cities")
