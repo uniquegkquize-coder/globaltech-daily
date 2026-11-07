@@ -1,48 +1,33 @@
 {
-  "total_posts": 2884,
+  "total_posts": 3102,
   "selected": 29,
   "results": {
-    "source_photo_saved": 6,
+    "source_photo_saved": 5,
+    "invalid_source_images": 1,
     "cooldown": 23
   },
-  "still_missing": 251,
+  "still_missing": 272,
   "articles": [
     {
-      "id": "b97db78a7e2d222c5da771ba",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Ninja_H2",
+      "id": "3951afca1c2f2eb548a2fc5f",
+      "source": "https://en.wikipedia.org/wiki/GWM_Tank_300",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794067478.2936442
+      "retry_after": 1794078757.578338
     },
     {
-      "id": "9aeb4691c6a050e232415bf5",
-      "source": "https://en.wikipedia.org/wiki/Buick_Excelle",
+      "id": "e8fc748d4c8dffaa2212a1cf",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794078757.7340994
+    },
+    {
+      "id": "c90de9ae7bfc6cac7561f6c7",
+      "source": "https://en.wikipedia.org/wiki/Ducati_350_Scrambler",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794067478.5057025
-    },
-    {
-      "id": "4cf3468cb0d751293e3ee1e3",
-      "source": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794067478.937533
-    },
-    {
-      "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
-    },
-    {
-      "id": "611527df4de7f3170a99cfde",
-      "result": "cooldown"
-    },
-    {
-      "id": "fb6dd420a2fc44c8f8340751",
-      "result": "cooldown"
+      "retry_after": 1794078757.739285
     },
     {
       "id": "0d093f1b1d8b95e0ce3c5ba1",
@@ -121,25 +106,41 @@
       "result": "cooldown"
     },
     {
-      "id": "f232d9434be493b495a1651d",
-      "source": "https://en.wikipedia.org/wiki/BlackBerry_Passport",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794067478.9993079
+      "id": "fb6dd420a2fc44c8f8340751",
+      "result": "cooldown"
     },
     {
-      "id": "62a7cf90aa7aefe3a6e923a7",
-      "source": "https://en.wikipedia.org/wiki/Ducati_Sebring",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794067479.026683
+      "id": "611527df4de7f3170a99cfde",
+      "result": "cooldown"
     },
     {
-      "id": "294bad6e63f32cecc64f2c16",
-      "source": "https://en.wikipedia.org/wiki/Buick_Regal",
+      "id": "ab5161457cb0ef816db211ff",
+      "result": "cooldown"
+    },
+    {
+      "id": "554edbfdaee926ed82007433",
+      "result": "cooldown"
+    },
+    {
+      "id": "87c48357e2d76ad201339d21",
+      "source": "https://en.wikipedia.org/wiki/Maserati_Grecale",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794067479.09684
+      "retry_after": 1794078758.2681215
+    },
+    {
+      "id": "f2817da9b4ee0685ac948b00",
+      "source": "https://en.wikipedia.org/wiki/Ducati_450_Scrambler",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794078758.3409216
+    },
+    {
+      "id": "fb41509eeea2ffa02d854db4",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Note_Edge",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794078758.8758135
     }
   ],
   "missing": [
@@ -214,6 +215,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "ddfa4e186cef",
+      "category": "ai-news",
+      "title": "Fired OpenAI Employees Raise Safety Concerns Amid Dismissal Dispute",
+      "source": "https://www.npr.org/2026/10/09/nx-s1-5996890/openai-safety-firings",
+      "reason": "source_error"
+    },
+    {
       "id": "b7601652de21",
       "category": "government-schemes",
       "title": "The Debate on Reform Within the Muslim Community: Perspectives and Challenges",
@@ -277,6 +285,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "e8fc748d4c8dffaa2212a1cf",
+      "category": "gadgets",
+      "title": "Sony Xperia C3: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "8fb539b04f5d",
       "category": "results",
       "title": "Historical and Cultural Overview of Haryana: A Gateway to North India",
@@ -326,6 +341,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "9f067ea024c5",
+      "category": "ai-news",
+      "title": "Glance Releases Practical Guide for AI-to-Human Customer Service Transitions",
+      "source": "https://www.prnewswire.com/news-releases/glance-releases-practical-guide-for-ai-to-human-customer-service-302925380.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "a41b914c9659",
       "category": "telecom",
       "title": "TRAI Releases Mobile Network Performance Audit for Kathgodam-Dehradun Railway Route",
@@ -345,6 +367,13 @@
       "title": "Recent Program and Project Management Openings Listed on LinkedIn for the San Francisco Bay Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
       "reason": "access_denied"
+    },
+    {
+      "id": "08b09f878bad",
+      "category": "ai-news",
+      "title": "Foxconn Showcases Next-Gen AI Infrastructure and Token Factory Solutions at Hon Hai Tech Day 2026",
+      "source": "https://www.prnewswire.com/news-releases/foxconn-ecosystem-enabling-token-factory-for-ai-in-spotlight-at-hon-hai-tech-day-2026-302924468.html",
+      "reason": "no_source_image"
     },
     {
       "id": "89c13c75752a",
@@ -394,6 +423,13 @@
       "title": "Nokia Asha 501: Smartphone Specifications, Facts and Verification Guide",
       "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "377c4c6071d8",
+      "category": "ai-news",
+      "title": "How AI Drones Are Influencing the Ukraine War",
+      "source": "https://www.npr.org/2026/10/29/g-s1-147496/ukraine-ai-drones-war-russia",
+      "reason": "source_error"
     },
     {
       "id": "22fc7fedf182",
@@ -662,6 +698,20 @@
       "reason": "access_denied"
     },
     {
+      "id": "c268010f138d",
+      "category": "banking-finance",
+      "title": "India's Growth Momentum Remains Resilient Amid Global Shocks, Says RBI Deputy Governor Poonam Gupta",
+      "source": "https://www.business-standard.com/specials/bs-events/growth-momentum-holds-despite-shocks-rbi-deputy-governor-poonam-gupta-126102701521_1.html",
+      "reason": "access_denied"
+    },
+    {
+      "id": "aa47671a9f72",
+      "category": "ai-news",
+      "title": "Stamford Health Launches Pilot Integrating ECG-Based AI for Structural Heart Screening",
+      "source": "https://www.prnewswire.com/news-releases/egnite-pathway-labs-and-stamford-health-launch-first-of-its-kind-pilot-using-ecg-based-ai-to-help-clinicians-identify-and-manage-structural-heart-patients-302923889.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "ff059456a4ee",
       "category": "private-vacancy",
       "title": "Exploring Community and Social Services Openings Across the Phoenix Metropolitan Area",
@@ -760,6 +810,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "f4c763533019",
+      "category": "ai-news",
+      "title": "Fired OpenAI Safety Researchers Question Independence of AI Audits",
+      "source": "https://www.npr.org/2026/10/23/nx-s1-6012235/fired-openai-researchers-say-independent-safety-audits-arent-going-well",
+      "reason": "source_error"
+    },
+    {
       "id": "00f079e2ba3a",
       "category": "private-vacancy",
       "title": "Alok Industries Limited Lists Assistant Manager Opening in Ahmedabad",
@@ -786,6 +843,13 @@
       "title": "Nairobi Deploys 'Green Army' to Mitigate Anticipated El Niño Flooding",
       "source": "https://www.npr.org/2026/10/27/nx-s1-6010370/el-nino-floods-nairobi-green-army",
       "reason": "source_error"
+    },
+    {
+      "id": "c1c8149f92de",
+      "category": "government-schemes",
+      "title": "Understanding the Commuted Pension Calculator and Lump Sum Estimates",
+      "source": "https://www.sahisarkarijobs.in/commuted-pension-calculator/",
+      "reason": "no_source_image"
     },
     {
       "id": "6ad27c2bc1ad",
@@ -942,6 +1006,13 @@
       "reason": "source_unavailable"
     },
     {
+      "id": "12533696a787",
+      "category": "banking-finance",
+      "title": "India's Oil Imports and External Finance Remain Key Challenges, Says RBI Dy Governor",
+      "source": "https://www.business-standard.com/specials/bs-events/india-oil-imports-external-finance-challenges-rbi-dy-guv-poonam-gupta-126102701012_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "5c8eaf8f5c76",
       "category": "ai-news",
       "title": "Anthropic Files for US IPO Amid Rapid Growth and Surging AI Costs",
@@ -975,6 +1046,13 @@
       "title": "Tech Stocks Slip as AI Infrastructure Spending Surges and PC Demand Softens",
       "source": "https://www.business-standard.com/world-news/amazon-burns-cash-intel-flags-weak-pc-demand-as-ai-boom-strains-markets-126103000077_1.html",
       "reason": "access_denied"
+    },
+    {
+      "id": "07bc3bf8fade",
+      "category": "defence",
+      "title": "Understanding Council Tax Reductions, Discounts, and Exemptions",
+      "source": "https://www.cannockchasedc.gov.uk/residents/council-tax/how-can-i-reduce-my-council-tax-bill",
+      "reason": "no_source_image"
     },
     {
       "id": "3611b527f6b7",
@@ -1031,6 +1109,13 @@
       "title": "UPSC Announces Special Advertisement No. 51/2026 for Principal and Vice-Principal Posts in Delhi Education Department",
       "source": "https://www.upsc.gov.in/sites/default/files/AdvtNo-51-2026-Special-Engl-240726.pdf",
       "reason": "access_denied"
+    },
+    {
+      "id": "34cde08363f7",
+      "category": "business",
+      "title": "Shareholder Investigation Announced Regarding ADT Inc. Proposed Sale to Thrive Holdings",
+      "source": "https://www.prnewswire.com/news-releases/hareholder-alert-the-ma-class-action-firm-announces-an-investigation-of-adt-inc-nyse-adt-302925281.html",
+      "reason": "no_source_image"
     },
     {
       "id": "31e9404aeaf3",
@@ -1285,6 +1370,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "e180ffaaaf45",
+      "category": "banking-finance",
+      "title": "India's Net FDI Inflows Rise to $13.8 Billion in April-August FY27: RBI Data",
+      "source": "https://www.business-standard.com/economy/news/india-s-net-fdi-inflows-rise-to-13-8-billion-in-april-august-fy27-rbi-126102301599_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "ecdc2ef2ac86",
       "category": "cyber-security",
       "title": "Proposed Class Action Settlement Offered Over The Merchant of Tennis Data Incident",
@@ -1509,6 +1601,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "276998767be1",
+      "category": "visas-immigration",
+      "title": "Canada Announces Open Work Permit Renewal Policy for Sudanese Nationals and Family Members",
+      "source": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/public-policies/sudan-immigration-measures-2026.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "9b3641414312",
       "category": "defence",
       "title": "Iran Prepares Military Options While Continuing Diplomatic Talks",
@@ -1549,6 +1648,13 @@
       "title": "TRAI Releases Independent Drive Test Findings for Hyderabad and Adoni-Mantralayam",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No144of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "223fe80c75c8",
+      "category": "defence",
+      "title": "Jordan Strikes Militant Targets in Syria Following Deadly Church Attack",
+      "source": "https://www.cbc.ca/news/world/jordan-church-attack-arrests-9.7395806",
+      "reason": "source_error"
     },
     {
       "id": "2f02162d9ab27a8cd5662161",
@@ -1597,6 +1703,13 @@
       "category": "private-vacancy",
       "title": "Overview of Current Job Openings and Professional Roles Across India",
       "source": "https://in.linkedin.com/jobs/nexbirlik%2Bistifad%C9%99%C3%A7i%2Bt%C9%99cr%C3%BCb%C9%99si-%2Bm%C3%BCxt%C9%99lif%2Bm%C9%99nb%C9%99l%C9%99rd%C9%99%2Bfikirl%C9%99ri%2Boxuyun.uew-jobs",
+      "reason": "no_source_image"
+    },
+    {
+      "id": "9f52dfa8072c",
+      "category": "ai-news",
+      "title": "Entangled 2026 Summit Brings AI, Quantum Computing and Biotech Leaders Together in Cambridge",
+      "source": "https://www.prnewswire.com/news-releases/entangled-2026-summit-unites-leaders-in-quantum-computing-ai-and-biotech-to-explore-what-makes-the-next-life-sciences-breakthrough-possible-302924118.html",
       "reason": "no_source_image"
     },
     {
@@ -1677,6 +1790,20 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "143c112cc93f",
+      "category": "tourism",
+      "title": "Exploring Career Opportunities in International Holiday Sales and Destination Expertise",
+      "source": "https://in.linkedin.com/jobs/view/sales-executive-%E2%80%93-destination-expert-international-holidays-at-catch-a-trip-4483426182",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "83501d275446",
+      "category": "ai-news",
+      "title": "Data Security Council Launches India-Specific Guide on Agentic AI Liability",
+      "source": "https://www.business-standard.com/companies/news/data-security-council-unveils-ai-liability-guide-for-indian-enterprises-126103001647_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "579dc10cba05",
       "category": "cyber-security",
       "title": "RBI Increases Scrutiny of Bank Cyber Defences Amid Rising AI-Driven Threats",
@@ -1719,6 +1846,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "818ffc8cc59c",
+      "category": "tourism",
+      "title": "US Emerges as Major FDI Destination for Indian Investments Amid Global Shifts",
+      "source": "https://www.business-standard.com/economy/news/datanomics-will-us-replace-singapore-as-india-s-top-fdi-destination-126102901062_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "fbff6440d68d52399ca212b1",
       "category": "education",
       "title": "Cape Coast Technical University: College Admissions, Facts and Verification Guide",
@@ -1759,6 +1893,13 @@
       "title": "Community and Social Services Openings Highlighted Across Des Moines Area Employers",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-des-moines-ia",
       "reason": "no_source_image"
+    },
+    {
+      "id": "fcf325b6c08e",
+      "category": "ai-news",
+      "title": "India Unveils Proposed Framework to Democratize AI Data Training",
+      "source": "https://www.business-standard.com/technology/artificial-intelligence/india-proposes-framework-to-unlock-data-for-ai-training-protect-privacy-126103001392_1.html",
+      "reason": "access_denied"
     },
     {
       "id": "f390d4af3452",
@@ -1829,6 +1970,13 @@
       "title": "NSE Highlights Broker Lapses in Margin Trading, Client Funds, and Cybersecurity",
       "source": "https://www.business-standard.com/markets/news/nse-flags-broker-lapses-in-margin-trading-client-funds-and-cybersecurity-126102901449_1.html",
       "reason": "access_denied"
+    },
+    {
+      "id": "e46d29680afe",
+      "category": "ai-news",
+      "title": "Google Expands AI Search Ads Globally as Core Advertising Growth Decelerates",
+      "source": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/",
+      "reason": "invalid_source_images"
     },
     {
       "id": "036d1e10e017",
@@ -1903,43 +2051,48 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "no_source_image": 94,
-    "invalid_source_images": 51,
-    "source_error": 13,
-    "access_denied": 56,
+    "no_source_image": 102,
+    "invalid_source_images": 54,
+    "source_error": 17,
+    "access_denied": 62,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "b97db78a7e2d222c5da771ba": {
+    "3951afca1c2f2eb548a2fc5f": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Ninja_H2",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Kawasaki_Ninja_H2.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/GWM_Tank_300",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e9/TANK_300_IMG006.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "9aeb4691c6a050e232415bf5": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Buick_Excelle",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/Buick_Excelle_II_001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "e8fc748d4c8dffaa2212a1cf": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/120px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/60px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
     },
-    "4cf3468cb0d751293e3ee1e3": {
+    "c90de9ae7bfc6cac7561f6c7": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nokia_X2_%282014%29",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nokia_X2_Android_%2814309420090%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ducati_350_Scrambler",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Ducati_350_Scrambler_1972.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "f232d9434be493b495a1651d": {
+    "87c48357e2d76ad201339d21": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/BlackBerry_Passport",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Blackberry_Passport_%28extract%29.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Maserati_Grecale",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/57/Maserati_Grecale_GT_1X7A6371.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "62a7cf90aa7aefe3a6e923a7": {
+    "f2817da9b4ee0685ac948b00": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ducati_Sebring",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Ducati_Sebring_350_%281972%29_-_15149507497.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ducati_450_Scrambler",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Paris_-_Bonhams_2016_-_Ducati_450_Scrambler_-_1972_-_001.jpg/1280px-Paris_-_Bonhams_2016_-_Ducati_450_Scrambler_-_1972_-_001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
     },
-    "294bad6e63f32cecc64f2c16": {
+    "fb41509eeea2ffa02d854db4": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Buick_Regal",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c4/2020_Buick_Regal_Sportback_%28United_States%29_front_view_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Note_Edge",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Motorola_DynaTAC_and_Samsung_Galaxy_Note_Edge.jpg/1280px-Motorola_DynaTAC_and_Samsung_Galaxy_Note_Edge.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
     }
   },
   "mode": "directory"
