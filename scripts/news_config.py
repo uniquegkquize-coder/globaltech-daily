@@ -154,6 +154,10 @@ def route_category(title, default='technology', url=''):
         return 'government-schemes'
     if civic and not sport and not has(r'\b(?:education|university|school|college|job aspirants|age relaxation|scheme|yojana|subsidy)\b'):
         return 'india-news' if INDIA_CONTEXT.search(text) or parts & {'india','india-news','national','cities','city','state','states'} else 'world-news'
+    # Viral human-interest reports are not government benefit announcements.
+    # A passing reference to a social platform is not platform-policy news.
+    if parts & {'viral','viral-news','human-interest','pets'}:
+        return 'lifestyle'
     # Specific source sections outrank broad discovery labels. Do not examine
     # the slug: unrelated uses of words like "tank" occur there too.
     sections=[
@@ -168,12 +172,15 @@ def route_category(title, default='technology', url=''):
         ('technology',{'technology','tech','gadgets','software','apps'}),
         ('environment',{'environment','climate'}),
         ('travel',{'travel'}),
+        ('lifestyle',{'lifestyle'}),
         ('india-news',{'india','india-news','national','cities','city','state','states'}),
         ('world-news',{'world','international','world-news'}),
     ]
     base=default if default in CATEGORIES else 'technology'
     for section, markers in sections:
         if parts & markers:
+            if section == 'lifestyle' and default not in {'government-schemes','world-news','india-news','technology','lifestyle'}:
+                continue
             children={'technology':{'telecom','ai-news','cyber-security','gadgets','apps-software','mobile-launches','deals-offers','gaming'},
                       'automobiles':{'car-launches','ev-clean-energy'},
                       'movies-entertainment':{'movie-releases','celebrity-news','entertainment-rumours'},

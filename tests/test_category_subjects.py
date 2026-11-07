@@ -10,6 +10,8 @@ from scripts.repair_categories import repair
 class CategorySubjectsTests(unittest.TestCase):
     def test_real_cross_section_and_ambiguous_keywords(self):
         cases = [
+            ('A Heartwarming Bond: Man Cares for Orphaned Monkey Like His Own Child', 'government-schemes', '/viral/viral-news/man-monkey/articleshow/123.cms', 'lifestyle'),
+            ('Man and pet monkey win hearts on Instagram', 'government-schemes', '/viral/viral-news/man-monkey/articleshow/123.cms', 'lifestyle'),
             ('Equitas SFB Shares Fall 27% as CEO Exit Overshadows Q2 Earnings', 'military-tech', '/markets/news/equitas', 'business'),
             ('Nifty IT Index Slips as Infosys Faces Downgrades', 'military-tech', '/markets/news/nifty', 'business'),
             ('Shark Tank Reality Series Returns to ABC', 'military-tech', '/tv/sharktank', 'movies-entertainment'),
