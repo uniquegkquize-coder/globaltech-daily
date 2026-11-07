@@ -102,6 +102,30 @@ class SourcePipelineTests(unittest.TestCase):
         self.assertEqual(collect.category_for_url('Hero Xtreme 125R Stealth Edition Launched at Rs 116250','automobiles','https://www.bikewale.com/news/hero-xtreme/'),'automobiles')
 
 
+    def test_requested_publishers_and_mobile_identity(self):
+        from focused_sources import PAGES, SEARCH_SOURCES
+        from story_identity import canonical_lead_key
+        for domain in ('carwale.com', 'gsmarena.com', '91mobiles.com'):
+            self.assertTrue(any(row[2] == domain for row in PAGES))
+            self.assertTrue(any(row[0] == domain for row in SEARCH_SOURCES))
+        self.assertEqual(canonical_lead_key('https://m.gsmarena.com/example-news-123.php'),
+                         canonical_lead_key('https://www.gsmarena.com/example-news-123.php'))
+
+    def test_publisher_body_wins_over_longer_related_stories(self):
+        text = ' '.join('launchfact'+str(i) for i in range(90))
+        for domain, container in [('carwale.com', 'articleContent'),
+                                  ('91mobiles.com', 'td-post-content'),
+                                  ('gsmarena.com', 'news-text')]:
+            class Response:
+                url = 'https://' + domain + '/news/test-article'
+                headers = {'content-type': 'text/html'}
+                def raise_for_status(self): pass
+            response = Response()
+            response.text = '<main><div class="'+container+'"><p>'+text+'</p></div><p>'+('Related clutter. '*300)+'</p></main>'
+            collect.source_text.cache_clear()
+            with patch.object(collect.requests, 'get', return_value=response):
+                self.assertEqual(collect.source_text(response.url, domain), text)
+
     def test_transient_connection_failure_gets_one_bounded_retry(self):
         import requests
         text=' '.join('sourcefact'+str(i) for i in range(90))

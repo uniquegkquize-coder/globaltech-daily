@@ -247,6 +247,16 @@ def article_ad_scripts():
   tag.src = "https://resources.infolinks.com/js/infolinks_main.js";
   tag.async = true;
   document.body.appendChild(tag);
+  [
+    "https://pl32241467.profitableratecpmnetwork.com/71/0c/35/710c35f89fe0ef60b2ac15b62561477d.js",
+    "https://pl32241468.profitableratecpmnetwork.com/0f/37/59/0f3759706a504e520244852954ae166c.js"
+  ].forEach(src => {
+    if (Array.from(document.scripts).some(script => script.src === src)) return;
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = true;
+    document.body.appendChild(script);
+  });
 })();
 </script>'''
 

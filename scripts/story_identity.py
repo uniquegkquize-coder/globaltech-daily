@@ -13,6 +13,8 @@ def canonical_lead_key(url):
     parsed = urlsplit(str(url))
     host = parsed.netloc.lower().removeprefix('www.')
     # BBC uses the same article identifiers on its domestic and global domains.
+    if host == 'm.gsmarena.com':
+        host = 'gsmarena.com'
     if host == 'bbc.co.uk':
         host = 'bbc.com'
     path = re.sub(r'/amp/?$', '', parsed.path).rstrip('/')

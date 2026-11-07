@@ -93,6 +93,9 @@ NATIVE_FEEDS.extend(LOCAL_FEEDS)
 # CarDekho and IMDb returned 403 in verification. Keep them in search
 # discovery only; do not repeatedly fetch their blocked listing pages.
 PAGES=[
+ ('https://www.carwale.com/news/','automobiles','carwale.com'),
+ ('https://m.gsmarena.com/','technology','gsmarena.com'),
+ ('https://www.91mobiles.com/hub/','technology','91mobiles.com'),
  ('https://www.bikewale.com/news/','automobiles','bikewale.com'),
  ('https://www.autocarindia.com/bike-news','automobiles','autocarindia.com'),
  ('https://www.androidpolice.com/','technology','androidpolice.com'),
@@ -113,6 +116,9 @@ PAGES=[
  ('https://apnews.com/hub/entertainment','movies-entertainment','apnews.com'),
 ]
 SEARCH_SOURCES=[
+ ('carwale.com','car-launches','new car launch price specifications mileage'),
+ ('gsmarena.com','mobile-launches','smartphone launch price specifications'),
+ ('91mobiles.com','mobile-launches','smartphone launch India price specifications'),
  ('bikewale.com','automobiles','motorcycle scooter launch specifications price'),
  ('phonearena.com','mobile-launches','smartphone launch specifications price'),
  ('androidpolice.com','mobile-launches','new phone launch specifications'),
@@ -180,3 +186,28 @@ def content_candidates(soup,clean):
         paragraphs=list(dict.fromkeys(p for p in paragraphs if len(p)>60))[:25]
         if paragraphs:values.append('\n'.join(paragraphs))
     return values
+
+
+PUBLISHER_BODY_SELECTORS = {
+    'carwale.com': '.first-article-html, .articleContent',
+    'gsmarena.com': '#review-body, .review-body, .news-text',
+    '91mobiles.com': '.td-post-content',
+}
+
+def publisher_content(soup, clean, domain):
+    """Prefer the publisher's body over longer page-wide recommendations."""
+    selector = PUBLISHER_BODY_SELECTORS.get(domain)
+    if not selector:
+        return ''
+    candidates = []
+    for original in soup.select(selector)[:4]:
+        # Work on a copy so generic and structured fallbacks remain available.
+        from bs4 import BeautifulSoup
+        node = BeautifulSoup(str(original), 'html.parser')
+        for junk in node.select('script, style, nav, aside, form, .related-articles, .related-news, .td-related-title, .td-a-ad, .comments, .social-share'):
+            junk.decompose()
+        paragraphs = [clean(p.get_text(' ', strip=True)) for p in node.find_all(['p', 'h2', 'h3', 'li', 'tr'])]
+        paragraphs = list(dict.fromkeys(p for p in paragraphs if len(p) > 35))
+        if paragraphs:
+            candidates.append('\n'.join(paragraphs))
+    return max(candidates, key=lambda text: len(text.split()), default='')

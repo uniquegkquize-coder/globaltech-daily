@@ -5,7 +5,7 @@ from verticals import requirements, TRUSTED_ENTERTAINMENT, TRUSTED_CONTROVERSY
 from official_notices import official_url
 from authority_sources import authority_boards, authority_stories, authority_url, authority_category, registry_urls, host as authority_host, UPDATE as AUTHORITY_UPDATE, save_board_evidence, board_evidence
 from district_sources import district_feeds, district_search_feeds, world_city_feeds, PUBLIC_PAGES as DISTRICT_PAGES
-from focused_sources import NATIVE_FEEDS, LOCAL_SEARCH_SOURCES, PAGES as FOCUSED_PAGES, SEARCH_SOURCES as FOCUSED_SEARCH, structured_article_data, content_candidates
+from focused_sources import NATIVE_FEEDS, LOCAL_SEARCH_SOURCES, PAGES as FOCUSED_PAGES, SEARCH_SOURCES as FOCUSED_SEARCH, structured_article_data, content_candidates, publisher_content
 import os, sys, json, hashlib, datetime as dt, pathlib, re, html, time, threading
 from functools import lru_cache
 from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
@@ -427,6 +427,7 @@ def source_text(url,domain):
     candidates.extend(extracted)
    except (ValueError,TypeError,RecursionError):pass
   for tag in soup(['script','style','nav','footer','aside','form','header','noscript']):tag.decompose()
+  publisher_body=publisher_content(soup,clean,domain)
   candidates.extend(content_candidates(soup,clean))
   selectors=('[itemprop="articleBody"]','[class*="article-body"]','[class*="articleBody"]','[class*="story-body"]','[data-testid*="article"]','article','main')
   for selector in selectors:
@@ -469,12 +470,14 @@ def source_text(url,domain):
     rendered_soup=BeautifulSoup(rendered,'html.parser')
     rendered_bodies,rendered_dates=structured_article_data(rendered_soup)
     candidates.extend(clean(body) for body in rendered_bodies)
+    rendered_body=publisher_content(rendered_soup,clean,domain)
+    if words(rendered_body)>words(publisher_body):publisher_body=rendered_body
     candidates.extend(content_candidates(rendered_soup,clean))
     for date in rendered_dates:
      if timestamp(date):STORY_DATES[url]=date;break
     print('SOURCE_RENDER_RESULT',domain,method,'words',max((words(x) for x in candidates),default=0),flush=True)
   # Reject short navigation snippets rather than manufacture 300 words.
-  best=max(candidates,key=words,default='')[:24000]
+  best=(publisher_body if words(publisher_body)>=65 else max(candidates,key=words,default=''))[:24000]
   if words(best)<65:print('EXTRACTION_INSUFFICIENT',domain,url[:130],'words',words(best),flush=True)
   return best
  except requests.RequestException as exc:
