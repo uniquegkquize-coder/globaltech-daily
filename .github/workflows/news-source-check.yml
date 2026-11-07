@@ -2,6 +2,14 @@ name: News source validation
 on:
   push:
     paths:
+      - 'scripts/district_sources.py'
+      - 'scripts/world_local_sources.py'
+      - 'scripts/build_world_localities.py'
+      - 'data/world_localities.json.gz'
+      - 'data/world_localities.SOURCES.md'
+      - 'tests/test_world_local_sources.py'
+      - 'tests/test_district_sources.py'
+      - 'tests/test_backlinks.py'
       - 'content/posts/*.json'
       - 'scripts/collect.py'
       - 'scripts/public_page_fetch.py'
