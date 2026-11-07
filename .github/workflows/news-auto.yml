@@ -28,7 +28,7 @@ jobs:
     # A deliberate [publish-now] commit is an auditable manual publishing trigger.
     if: github.event_name != 'push' || contains(github.event.head_commit.message, '[publish-now]')
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -42,10 +42,28 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Install optional public-page browser
+      - name: Install optional public-page browser package
+        id: playwright-version
         run: |
           pip install 'playwright>=1.55,<2'
-          python -m playwright install --with-deps chromium
+          python -c "from importlib.metadata import version; print('version=' + version('playwright'))" >> "$GITHUB_OUTPUT"
+      - name: Restore public-page browser
+        id: playwright-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-${{ runner.arch }}-chromium-${{ steps.playwright-version.outputs.version }}
+      - name: Install public-page browser system dependencies
+        run: python -m playwright install-deps chromium
+      - name: Download public-page browser on cache miss
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: python -m playwright install chromium
+      - name: Save public-page browser
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ steps.playwright-cache.outputs.cache-primary-key }}
       - name: Restore trending drafts queued by the 4-hour discovery workflow
         uses: actions/cache/restore@v4
         with:
