@@ -1,0 +1,33 @@
+{
+  "en_title": "Rivvor Debuts Valen™ Edge Series: Wireless Blade Interconnect for AI Inference",
+  "hi_title": "रिव्वोर ने Valen™ एज सीरीज का अनावरण किया: एआई इन्फरेंस के लिए वायरलेस ब्लेड इंटरकनेक्ट",
+  "en_body": "## Overview\nAt the 2026 OCP Global Summit, deep-tech startup Rivvor unveiled the Valen™ Edge Series, a contactless modular compute system designed to replace traditional cable-based interconnects within server racks using mmWave wireless technology. Developed in 11 months, the system aims to simplify data center topology by replacing physical cables between blades with software-defined wireless corridors.\n\n## Key Features of Valen™ Edge\nRivvor’s design focuses on addressing the physical constraints of scaling AI infrastructure, where cable density often conflicts with power and cooling requirements. Features include:\n\n* **Software-Defined Topology:** Connections between blades can be adjusted via software to align with specific inference workloads.\n* **Reduced Latency:** The system has demonstrated an application-to-application memory latency of 250 ns, an improvement over the 1,600 ns measured in earlier testing.\n* **Flexible Integration:** Designed to function alongside existing copper and optical infrastructures, providing additional bandwidth when cabled paths reach saturation.\n* **Reliability:** By eliminating physical connectors, the system aims to mitigate points of failure associated with connector wear, dust, and vibration.\n\n## Roadmap: From mmWave to Sub-THz\nWhile current demonstrations utilize mmWave technology, Rivvor plans to transition to sub-THz Bounded Electromagnetic Corridors (BEC). This future architecture, operating in the 100 to 500 GHz range on proprietary ASICs, is targeted at scaling to 400+ Gbps per link. The company presented this roadmap at the OCP Future Technologies Symposium.\n\n## Practical Implications\nRivvor suggests this \"wire-free\" architecture could be particularly relevant for:\n* **Physical AI and Robotics:** Facilitating easier module replacement by robots.\n* **Space and Orbital Compute:** Reducing launch mass by eliminating cabling and avoiding potential failures of mated connectors in orbit.\n* **Expeditionary Edge Computing:** Improving durability in environments exposed to extreme vibration or environmental contaminants.\n\n## Verification\nPublic demonstrations of the Valen technology are scheduled to continue at a Demo Night event on November 12, 2026, at the TBS Design Gallery in Santa Clara. Further information is available on the company's official website at rivvor.com/events.",
+  "hi_body": "## अवलोकन\n2026 ओसीपी ग्लोबल समिट में, डीप-टेक स्टार्टअप रिव्वोर (Rivvor) ने Valen™ एज सीरीज का अनावरण किया। यह एक कॉन्टैक्टलेस मॉड्यूलर कंप्यूट सिस्टम है जिसे सर्वर रैक के भीतर पारंपरिक केबल-आधारित इंटरकनेक्ट्स को mmWave वायरलेस तकनीक से बदलने के लिए डिज़ाइन किया गया है। 11 महीनों में विकसित, यह सिस्टम ब्लेड के बीच के फिजिकल केबल को सॉफ्टवेयर-डिफाइंड वायरलेस कॉरिडोर से बदलकर डेटा सेंटर की संरचना को सरल बनाने का लक्ष्य रखता है।\n\n## Valen™ एज की मुख्य विशेषताएं\nरिव्वोर का डिज़ाइन एआई इन्फ्रास्ट्रक्चर को स्केल करने की भौतिक बाधाओं को दूर करने पर केंद्रित है, जहाँ केबल की अधिकता अक्सर बिजली और कूलिंग की जरूरतों में बाधा डालती है। इसकी विशेषताएं इस प्रकार हैं:\n\n* **सॉफ्टवेयर-डिफाइंड टोपोलॉजी:** ब्लेड के बीच के कनेक्शन को विशिष्ट इन्फरेंस वर्कलोड के अनुसार सॉफ्टवेयर के माध्यम से बदला जा सकता है।\n* **कम विलंबता (Latency):** इस सिस्टम ने 250 नैनोसेकंड (ns) की एप्लिकेशन-टू-एप्लिकेशन मेमोरी लेटेंसी का प्रदर्शन किया है, जो पहले के परीक्षणों की तुलना में काफी सुधार है।\n* **लचीला एकीकरण:** इसे मौजूदा कॉपर और ऑप्टिकल इन्फ्रास्ट्रक्चर के साथ काम करने के लिए डिज़ाइन किया गया है, ताकि केबल क्षमता खत्म होने पर अतिरिक्त बैंडविड्थ मिल सके।\n* **विश्वसनीयता:** फिजिकल कनेक्टर को हटाकर, कंपनी का लक्ष्य कनेक्टर के घिसने, धूल और कंपन से होने वाली विफलताओं को कम करना है।\n\n## रोडमैप: mmWave से सब-THz की ओर\nयद्यपि वर्तमान प्रदर्शन mmWave तकनीक का उपयोग करते हैं, रिव्वोर की योजना भविष्य में सब-THz बाउंडेड इलेक्ट्रोमैग्नेटिक कॉरिडोर (BEC) की ओर बढ़ने की है। यह भविष्य का आर्किटेक्चर, जो 100 से 500 GHz रेंज में अपने स्वयं के ASIC पर आधारित होगा, प्रति लिंक 400+ Gbps तक स्केल करने के लिए डिज़ाइन किया गया है। कंपनी ने ओसीपी फ्यूचर टेक्नोलॉजीज संगोष्ठी में इस रोडमैप को प्रस्तुत किया।\n\n## व्यावहारिक निहितार्थ\nरिव्वोर का मानना है कि यह \"वायर-फ्री\" आर्किटेक्चर निम्नलिखित क्षेत्रों के लिए विशेष रूप से प्रासंगिक हो सकता है:\n* **फिजिकल एआई और रोबोटिक्स:** रोबोट द्वारा मॉड्यूल बदलने की प्रक्रिया को आसान बनाना।\n* **अंतरिक्ष और ऑर्बिटल कंप्यूट:** केबलिंग को खत्म करके लॉन्च मास को कम करना और कक्षा में कनेक्टर विफलता को रोकना।\n* **रग्ड और एक्सपेडिशनरी एज कंप्यूटिंग:** कंपन या पर्यावरणीय प्रदूषकों के संपर्क वाले क्षेत्रों में स्थायित्व में सुधार।\n\n## सत्यापन\nValen तकनीक का सार्वजनिक प्रदर्शन 12 नवंबर, 2026 को सांता क्लारा की TBS डिज़ाइन गैलरी में होने वाले 'डेमो नाइट' कार्यक्रम में जारी रहेगा। अधिक जानकारी कंपनी की आधिकारिक वेबसाइट rivvor.com/events पर देखी जा सकती है।",
+  "en_meta": "Rivvor debuts the Valen Edge Series, a wireless, cable-free rack system for AI inference using mmWave technology, with plans to move to sub-THz in the future.",
+  "hi_meta": "रिव्वोर ने Valen एज सीरीज पेश की, जो एआई इन्फरेंस के लिए mmWave वायरलेस तकनीक का उपयोग करने वाला एक केबल-मुक्त रैक सिस्टम है। भविष्य में सब-THz तक विस्तार की…",
+  "en_keywords": [
+    "Rivvor",
+    "Valen Edge Series",
+    "AI inference",
+    "OCP 2026",
+    "mmWave",
+    "wireless interconnect",
+    "data center"
+  ],
+  "hi_keywords": [
+    "रिव्वोर",
+    "Valen एज सीरीज",
+    "एआई इन्फरेंस",
+    "ओसीपी 2026",
+    "mmWave",
+    "वायरलेस इंटरकनेक्ट",
+    "डेटा सेंटर"
+  ],
+  "source_published_at": "2026-10-29T13:35:00Z",
+  "id": "082621f18245",
+  "source": "https://www.prnewswire.com/news-releases/rivvor-debuts-valen-edge-series-wireless-wire-free-compute-for-ai-inference-at-ocp-2026-302923236.html",
+  "date": "2026-11-08T16:59:37.874151+00:00",
+  "source_title": "Rivvor Debuts Valen™ Edge Series: Wireless, Wire-Free Compute for AI Inference at OCP 2026 - PR Newswire",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
