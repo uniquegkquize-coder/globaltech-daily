@@ -1,0 +1,31 @@
+{
+  "en_title": "Hugging Face Transitions Tokenizers Library Toward Version 1.0.0",
+  "hi_title": "हगिंग फेस टोकनाइजर्स लाइब्रेरी v1.0.0 की ओर अग्रसर",
+  "en_body": "## Overview of the v1.0.0 Transition\nThe Hugging Face `tokenizers` library, widely used for high-performance natural language processing, is currently undergoing a significant transition from version 0.23 to v1.0.0. This development phase aims to establish the library as an industry-standard engine. During this migration, some features are being reorganized or reintroduced to optimize production performance and dependency management.\n\n## Key Architectural Changes\nTo improve modularity and reduce binary sizes, the developers have moved toward a decoupled architecture:\n* **Training vs. Inference:** Training functionalities are now opt-in, allowing production servers to serve models without linking to large training dependencies.\n* **Modernized Encoding:** The project is re-implementing the Python API for better compatibility with current transformer workflows, including batch encoding with zero-copy views and DLPack support for PyTorch, JAX, and NumPy interoperability.\n* **Hardware Optimization:** New exploratory work, such as `tk-devices`, targets GPU-based encoding to keep text and IDs on device memory, aiming for better throughput in large-batch scenarios.\n* **Performance and Unicode:** The library uses an algorithmic approach for Unicode tag classification that eliminates runtime dependencies on heavy Unicode tables, relying instead on pre-computed sparse tables compiled via `bitcannon`.\n\n## Developer Guidance\nUsers transitioning to v1.0.0 are advised to monitor the official feature documentation, as some breaking changes have been introduced. The library remains portable, supporting various architectures including aarch64 and x86_64, with runtime dispatch for x86_64 to maintain compatibility with older CPUs. For Rust developers, specific features can be toggled via `Cargo.toml` to build minimized binaries.\n\nTo verify updates or check specific feature status, developers should consult the official GitHub repository for the latest `tokenizer.json` configuration specifications and migration blogs.",
+  "hi_body": "## v1.0.0 ट्रांजिशन का अवलोकन\nहगिंग फेस (Hugging Face) अपनी `tokenizers` लाइब्रेरी को संस्करण 0.23 से v1.0.0 पर ले जाने की प्रक्रिया में है। इस लाइब्रेरी का लक्ष्य नेचुरल लैंग्वेज प्रोसेसिंग (NLP) के लिए एक मानक टोकनाइजेशन इंजन प्रदान करना है। इस माइग्रेशन के दौरान, लाइब्रेरी को अधिक कुशल बनाने के लिए कुछ फीचर्स को पुनर्गठित और फिर से पेश किया जा रहा है।\n\n## प्रमुख संरचनात्मक बदलाव\nप्रोडक्शन सेटिंग्स में बाइनरी साइज को कम करने और मॉड्यूलरिटी बढ़ाने के लिए डेवलपर्स ने लाइब्रेरी को कई भागों में विभाजित किया है:\n* **ट्रेनिंग बनाम इन्फरेंस:** अब ट्रेनिंग फीचर्स को वैकल्पिक (opt-in) बना दिया गया है, जिससे प्रोडक्शन सर्वर पर बिना किसी भारी ट्रेनिंग निर्भरता के मॉडल को सर्व करना आसान हो गया है।\n* **आधुनिक एनकोडिंग:** ट्रांसफार्मर वर्कफ़्लो के साथ बेहतर तालमेल के लिए पायथन API को फिर से तैयार किया जा रहा है, जिसमें ज़ीरो-कॉपी व्यू और PyTorch, JAX, और NumPy के लिए DLPack सपोर्ट शामिल है।\n* **हार्डवेयर ऑप्टिमाइजेशन:** `tk-devices` जैसे नए प्रयोगों के माध्यम से GPU-आधारित एनकोडिंग पर ध्यान दिया जा रहा है ताकि बड़े बैचों के लिए बेहतर थ्रूपुट प्राप्त किया जा सके।\n* **यूनिकोड और प्रदर्शन:** लाइब्रेरी अब भारी यूनिकोड तालिकाओं पर निर्भर नहीं रहती है, बल्कि `bitcannon` के माध्यम से संकलित पूर्व-गणना (pre-computed) तालिकाओं का उपयोग करती है।\n\n## डेवलपर्स के लिए निर्देश\nv1.0.0 में जाने वाले डेवलपर्स को आधिकारिक फीचर डॉक्यूमेंटेशन पर ध्यान देने की सलाह दी जाती है, क्योंकि इसमें कुछ महत्वपूर्ण बदलाव किए गए हैं। लाइब्रेरी को पोर्टेबल रखा गया है और यह aarch64 तथा x86_64 आर्किटेक्चर का समर्थन करती है। रस्ट (Rust) डेवलपर्स `Cargo.toml` के माध्यम से फीचर्स को चुनकर छोटी बाइनरी बना सकते हैं।\n\nनवीनतम अपडेट्स और फीचर स्थिति की पुष्टि करने के लिए, डेवलपर्स को लाइब्रेरी के आधिकारिक GitHub रिपॉजिटरी और माइग्रेशन ब्लॉग्स को देखना चाहिए।",
+  "en_meta": "Hugging Face is migrating its tokenizers library to v1.0.0, focusing on modularity, improved performance, and optimized dependency management for production.",
+  "hi_meta": "हगिंग फेस अपनी टोकनाइजर्स लाइब्रेरी को v1.0.0 में बदल रहा है, जिसमें बेहतर प्रदर्शन, मॉड्यूलरिटी और प्रोडक्शन के लिए अनुकूलित निर्भरता प्रबंधन पर जोर दिया गया…",
+  "en_keywords": [
+    "Hugging Face",
+    "tokenizers",
+    "NLP",
+    "Rust",
+    "machine learning",
+    "v1.0.0"
+  ],
+  "hi_keywords": [
+    "हगिंग फेस",
+    "टोकनाइजर्स",
+    "NLP",
+    "रस्ट",
+    "मशीन लर्निंग",
+    "v1.0.0"
+  ],
+  "source_published_at": null,
+  "id": "724d1d467232",
+  "source": "https://github.com/huggingface/tokenizers",
+  "date": "2026-11-08T16:21:16.143029+00:00",
+  "source_title": "huggingface/tokenizers: 💥 Fast State-of-the-Art Tokenizers optimized for Research and Production - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

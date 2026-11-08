@@ -1,0 +1,31 @@
+{
+  "en_title": "Forza Motorsport 4 Static Recompilation Project Adds New Features and Mod Support",
+  "hi_title": "Forza Motorsport 4 स्टेटिक रीकम्पाइलेशन प्रोजेक्ट में नए फीचर्स और मॉड सपोर्ट जोड़ा गया",
+  "en_body": "## Overview\nThe Forza Motorsport 4 static recompilation project, hosted on GitHub as i2kiselev/fm4-static-recomp, provides an unofficial method to run the Xbox 360 title natively on Windows. By utilizing the ShiftGlue SDK, the game's original PowerPC code is translated into C++ and compiled for x86-64 architectures, using a native Vulkan renderer.\n\n## Updates in Version 0.3.1\nThe latest update introduces several key enhancements:\n* **Project Forza Plus 4 Support:** Users can now install this car, career, and physics mod directly through the launcher.\n* **Disc Compatibility:** Improved support for Rev 1 (1.1) Disc 1 releases.\n* **Gameplay Enhancements:** Added support for Alt+Enter windowed mode, FSR 1 for 1080p upscaling, and career importing from Xenia Canary.\n\n## Technical Requirements\nThis is an experimental project that requires users to provide their own legally obtained game files. Key requirements include:\n* **Hardware:** Windows 10 (build 19041) or newer, 64-bit; XInput-compatible controller or keyboard.\n* **Storage:** Approximately 10–20 GB of free space depending on the configuration (vanilla vs. modded).\n* **Setup:** An internet connection is required for the initial 10-minute setup process to download necessary Microsoft build tools.\n\n## Important Considerations\nUsers should note that this project contains no game assets or executables. The build process runs on the user's local machine, compiling shaders upon the first launch. As an unofficial fan project, it is not affiliated with Microsoft, Xbox Game Studios, or Turn 10 Studios. Further details on supported discs and troubleshooting can be found in the repository’s documentation and the 'Common problems' section.",
+  "hi_body": "## अवलोकन\nForza Motorsport 4 स्टेटिक रीकम्पाइलेशन प्रोजेक्ट, जो GitHub पर i2kiselev/fm4-static-recomp के रूप में उपलब्ध है, Xbox 360 के इस गेम को विंडोज पर नेटिव रूप से चलाने का एक अनौपचारिक तरीका प्रदान करता है। ShiftGlue SDK का उपयोग करके, गेम के मूल PowerPC कोड को C++ में अनुवादित किया जाता है और x86-64 आर्किटेक्चर के लिए कंपाइल किया जाता है, जिसके लिए एक नेटिव Vulkan रेंडरर का उपयोग होता है।\n\n## वर्जन 0.3.1 में अपडेट\nनवीनतम अपडेट में कई महत्वपूर्ण सुधार किए गए हैं:\n* **Project Forza Plus 4 सपोर्ट:** उपयोगकर्ता अब इस कार, करियर और फिजिक्स मॉड को सीधे लॉन्चर के माध्यम से इंस्टॉल कर सकते हैं।\n* **डिस्क संगतता:** Rev 1 (1.1) डिस्क 1 रिलीज के लिए बेहतर सपोर्ट।\n* **गेमप्ले सुधार:** Alt+Enter विंडो मोड, 1080p अपस्केलिंग के लिए FSR 1 और Xenia Canary से करियर इंपोर्ट करने की सुविधा जोड़ी गई है।\n\n## तकनीकी आवश्यकताएं\nयह एक प्रायोगिक प्रोजेक्ट है जिसमें उपयोगकर्ताओं को अपनी कानूनी रूप से प्राप्त गेम फाइलों का उपयोग करना आवश्यक है। मुख्य आवश्यकताओं में शामिल हैं:\n* **हार्डवेयर:** विंडोज 10 (बिल्ड 19041) या उससे नया, 64-बिट; XInput-संगत कंट्रोलर या कीबोर्ड।\n* **स्टोरेज:** कॉन्फ़िगरेशन (वैनिला या मॉडडेड) के आधार पर लगभग 10-20 GB खाली जगह।\n* **सेटअप:** आवश्यक माइक्रोसॉफ्ट बिल्ड टूल्स डाउनलोड करने के लिए प्रारंभिक 10-मिनट के सेटअप के दौरान इंटरनेट कनेक्शन आवश्यक है।\n\n## महत्वपूर्ण बातें\nउपयोगकर्ताओं को ध्यान देना चाहिए कि इस प्रोजेक्ट में कोई गेम एसेट या निष्पादन योग्य फाइल (executable) शामिल नहीं है। बिल्ड प्रक्रिया उपयोगकर्ता के स्थानीय कंप्यूटर पर चलती है और पहले लॉन्च पर शेडर्स को कंपाइल करती है। यह एक अनौपचारिक फैन प्रोजेक्ट है और इसका Microsoft, Xbox Game Studios, या Turn 10 Studios से कोई संबंध नहीं है। समर्थित डिस्क और समस्या निवारण के बारे में अधिक जानकारी रिपॉजिटरी के दस्तावेज़ों और 'Common problems' सेक्शन में देखी जा सकती है।",
+  "en_meta": "Learn about the latest updates to the unofficial Forza Motorsport 4 static recompilation project for Windows, including new mod support and performance…",
+  "hi_meta": "विंडोज के लिए अनौपचारिक Forza Motorsport 4 स्टेटिक रीकम्पाइलेशन प्रोजेक्ट के नवीनतम अपडेट, नए मॉड सपोर्ट और परफॉरमेंस फीचर्स के बारे में जानें।",
+  "en_keywords": [
+    "Forza Motorsport 4",
+    "static recompilation",
+    "ShiftGlue",
+    "Xbox 360",
+    "PC gaming",
+    "modding"
+  ],
+  "hi_keywords": [
+    "Forza Motorsport 4",
+    "स्टेटिक रीकम्पाइलेशन",
+    "ShiftGlue",
+    "Xbox 360",
+    "PC गेमिंग",
+    "मॉडिंग"
+  ],
+  "source_published_at": null,
+  "id": "504f7df1cb11",
+  "source": "https://github.com/i2kiselev/fm4-static-recomp",
+  "date": "2026-11-08T16:21:47.674093+00:00",
+  "source_title": "i2kiselev/fm4-static-recomp: Forza Motorsport 4 recompilation based on ShiftGlue - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,29 @@
+{
+  "en_title": "How to Transition GitHub Copilot Sessions to Visual Studio Code",
+  "hi_title": "GitHub Copilot सेशन को Visual Studio Code में कैसे स्थानांतरित करें",
+  "en_body": "GitHub users can now transition work from the standalone GitHub Copilot app directly into Visual Studio Code, allowing developers to maintain session context while performing manual code reviews and local testing. This integration ensures that the task history, conversation, and worktree remain intact during the handoff.\n\n## Seamless Transition Steps\n* **Initiate Handoff:** While in an active session within the GitHub Copilot app, select the \"Open in VS Code\" option. The editor will automatically open the project, mirroring the session's worktree and conversation history.\n* **Review Changes:** Utilize the VS Code Source Control view to inspect diffs. Because the session context is preserved, you can continue prompting Copilot within the sidebar to ask questions about specific implementation choices without re-explaining the task.\n* **Manual Refinement:** Once the agent completes the bulk of the work, developers can perform hands-on editing directly in the editor. This is ideal for repository-specific refinements or complex adjustments that require human oversight.\n* **Validation and Testing:** Use the integrated terminal to run local validation workflows, such as testing scripts or starting development servers. \n* **Finalizing Contributions:** After refining the code, push changes directly to the associated pull request. The connection to the original branch eliminates the need to manually transfer files or recreate work environments.\n\nBy leveraging this workflow, developers can use Copilot to manage repetitive or large-scale tasks while retaining the ability to move into a full IDE for granular control and final verification. Users should treat agent-generated code as they would peer-reviewed code, ensuring all tests pass and implementation conventions are followed before merging.",
+  "hi_body": "GitHub उपयोगकर्ता अब अपने काम को GitHub Copilot ऐप से सीधे Visual Studio Code (VS Code) में स्थानांतरित कर सकते हैं। यह सुविधा डेवलपर्स को मैन्युअल कोड समीक्षा और स्थानीय परीक्षण करते समय सत्र के संदर्भ (context) को बनाए रखने की अनुमति देती है। इस एकीकरण से यह सुनिश्चित होता है कि कार्य का इतिहास, बातचीत और वर्कट्री (worktree) हस्तांतरण के दौरान बरकरार रहें।\n\n## सुचारू स्थानांतरण के चरण\n* **हैंडऑफ शुरू करें:** GitHub Copilot ऐप में सक्रिय सत्र के दौरान, \"Open in VS Code\" विकल्प चुनें। एडिटर स्वचालित रूप से प्रोजेक्ट खोल देगा, जिसमें सत्र का वर्कट्री और बातचीत का इतिहास शामिल होगा।\n* **बदलावों की समीक्षा:** डिफ (diffs) की जांच करने के लिए VS Code के सोर्स कंट्रोल व्यू का उपयोग करें। चूंकि सत्र का संदर्भ सुरक्षित रहता है, इसलिए आप साइडबार में Copilot को प्रॉम्प्ट करना जारी रख सकते हैं और कार्यान्वयन संबंधी विकल्पों पर प्रश्न पूछ सकते हैं।\n* **मैन्युअल सुधार:** जब एजेंट अपना काम पूरा कर ले, तो डेवलपर सीधे एडिटर में सुधार कर सकते हैं। यह रिपॉजिटरी-विशिष्ट नियमों या जटिल बदलावों के लिए उपयुक्त है जिनमें मानवीय हस्तक्षेप की आवश्यकता होती है।\n* **सत्यापन और परीक्षण:** स्थानीय सत्यापन वर्कफ़्लो चलाने के लिए एकीकृत टर्मिनल का उपयोग करें, जैसे कि परीक्षण स्क्रिप्ट चलाना या डेवलपमेंट सर्वर शुरू करना।\n* **योगदान को अंतिम रूप देना:** कोड को रिफाइन करने के बाद, बदलावों को सीधे संबंधित पुल रिक्वेस्ट (pull request) पर पुश करें। मूल ब्रांच से जुड़ाव होने के कारण फाइलों को मैन्युअल रूप से स्थानांतरित करने की आवश्यकता नहीं होती है।\n\nइस वर्कफ़्लो का उपयोग करके, डेवलपर्स दोहराव वाले कार्यों के लिए Copilot का लाभ उठा सकते हैं, साथ ही बारीक नियंत्रण और अंतिम सत्यापन के लिए पूर्ण IDE में जा सकते हैं। उपयोगकर्ताओं को यह ध्यान रखना चाहिए कि एजेंट द्वारा उत्पन्न कोड की समीक्षा उसी तरह करें जैसे कि सहकर्मी द्वारा लिखे गए कोड की की जाती है, ताकि यह सुनिश्चित हो सके कि मर्ज करने से पहले सभी परीक्षण सही हों।",
+  "en_meta": "Learn how to transfer your GitHub Copilot app sessions to VS Code to continue coding, reviewing, and testing your projects with full context preserved.",
+  "hi_meta": "जानें कि कैसे अपने GitHub Copilot ऐप सेशन को VS Code में ट्रांसफर करें ताकि आप पूरे संदर्भ के साथ कोडिंग और परीक्षण जारी रख सकें।",
+  "en_keywords": [
+    "GitHub Copilot",
+    "VS Code",
+    "developer tools",
+    "AI coding assistant",
+    "workflow integration"
+  ],
+  "hi_keywords": [
+    "GitHub Copilot",
+    "VS Code",
+    "डेवलपर टूल्स",
+    "AI कोडिंग असिस्टेंट",
+    "वर्कफ़्लो इंटीग्रेशन"
+  ],
+  "source_published_at": "2026-10-19T18:47:22+00:00",
+  "id": "5e09805dda87",
+  "source": "https://github.blog/ai-and-ml/github-copilot/how-to-continue-a-github-copilot-app-session-in-vs-code/",
+  "date": "2026-11-08T16:21:02.399769+00:00",
+  "source_title": "How to continue a GitHub Copilot app session in VS Code",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,32 @@
+{
+  "en_title": "Herdr: A Dedicated Runtime Environment for AI Coding Agents",
+  "hi_title": "हर्ड (Herdr): एआई कोडिंग एजेंट्स के लिए एक समर्पित रनटाइम वातावरण",
+  "en_body": "## Overview of Herdr\nHerdr is a software utility designed to act as a runtime environment specifically for AI coding agents. The project aims to provide a stable, persistent background layer for tools like Claude Code, Cursor, and various CLI-based agents. Unlike standard terminal multiplexers, Herdr is built to maintain session states for automated processes, allowing them to continue their workflow even if the primary client connection is lost or the SSH link is dropped.\n\n## Core Functionality\nHerdr is built using Rust and is designed to operate as a standalone binary rather than an Electron-based application, aiming for a lightweight footprint. Key features include:\n\n* **Session Persistence:** Provides a way to detach from a task without terminating the process, allowing for recovery after machine restarts.\n* **Cross-Machine Aggregation:** Users can view and manage agents running across multiple local and remote machines from a single unified window.\n* **Agent-Native Control:** Agents interact with Herdr via CLI and socket APIs, enabling them to spawn panes, prompt other agents, and monitor execution statuses.\n* **Terminal Integration:** It integrates with existing terminal workflows, supporting both mouse interactions and tmux-style keyboard shortcuts.\n* **Operational Transparency:** Each pane displays real-time status indicators (working, blocked, or idle), helping developers identify where an agent requires human input.\n\n## Implementation and Availability\nHerdr does not replace or wrap coding agents; instead, it provides a persistent environment where these agents operate. It supports popular coding agents including Codex, OpenCode, and Grok. Users can install the tool via Homebrew, mise, or a Windows PowerShell installation script. The project is open-source under the Apache License 2.0. Users are encouraged to consult the official documentation at herdr.dev for configuration details and API specifications.",
+  "hi_body": "## हर्ड (Herdr) का अवलोकन\nहर्ड (Herdr) एक सॉफ्टवेयर उपयोगिता है जिसे विशेष रूप से एआई कोडिंग एजेंट्स के लिए रनटाइम वातावरण के रूप में काम करने के लिए डिज़ाइन किया गया है। इस प्रोजेक्ट का उद्देश्य क्लॉड कोड (Claude Code), कर्सर (Cursor) और विभिन्न सीएलआई-आधारित एजेंट्स जैसे टूल्स के लिए एक स्थिर और स्थायी बैकग्राउंड लेयर प्रदान करना है। मानक टर्मिनल मल्टीप्लेक्सर्स के विपरीत, हर्ड को स्वचालित प्रक्रियाओं के लिए सेशन स्टेट बनाए रखने के लिए बनाया गया है, जिससे वे अपना काम जारी रख सकते हैं, भले ही प्राथमिक क्लाइंट कनेक्शन टूट जाए या एसएसएच (SSH) लिंक बंद हो जाए।\n\n## मुख्य कार्यक्षमता\nहर्ड को रस्ट (Rust) का उपयोग करके बनाया गया है और यह एक इलेक्ट्रॉन-आधारित एप्लिकेशन के बजाय एक स्टैंडअलोन बाइनरी के रूप में काम करने के लिए डिज़ाइन किया गया है। इसकी प्रमुख विशेषताओं में शामिल हैं:\n\n* **सेशन परसिस्टेंस:** यह किसी कार्य को समाप्त किए बिना उससे अलग होने का तरीका प्रदान करता है, जिससे मशीन रीस्टार्ट होने के बाद भी काम को रिकवर किया जा सकता है।\n* **मल्टी-मशीन एकीकरण:** उपयोगकर्ता एक ही विंडो से कई लोकल और रिमोट मशीनों पर चल रहे एजेंट्स को देख और प्रबंधित कर सकते हैं।\n* **एजेंट-नेटिव कंट्रोल:** एजेंट्स सीएलआई और सॉकेट एपीआई के माध्यम से हर्ड के साथ बातचीत करते हैं, जिससे वे पेन (panes) उत्पन्न कर सकते हैं, एक-दूसरे को प्रॉम्प्ट दे सकते हैं और निष्पादन की स्थिति की निगरानी कर सकते हैं।\n* **टर्मिनल एकीकरण:** यह मौजूदा टर्मिनल वर्कफ़्लो के साथ एकीकृत होता है, और माउस इंटरैक्शन व टीएमयूएक्स (tmux)-शैली के कीबोर्ड शॉर्टकट्स दोनों का समर्थन करता है।\n* **परिचालन पारदर्शिता:** प्रत्येक पेन वास्तविक समय की स्थिति (working, blocked, या idle) प्रदर्शित करता है, जिससे डेवलपर्स को यह पहचानने में मदद मिलती है कि किस एजेंट को मानवीय इनपुट की आवश्यकता है।\n\n## कार्यान्वयन और उपलब्धता\nहर्ड कोडिंग एजेंट्स को बदलता या रैप नहीं करता है; बल्कि, यह एक स्थायी वातावरण प्रदान करता है जहाँ ये एजेंट्स संचालित होते हैं। यह कोडेक्स (Codex), ओपनकोड (OpenCode), और ग्रोक (Grok) सहित लोकप्रिय कोडिंग एजेंट्स का समर्थन करता है। उपयोगकर्ता इस टूल को होमब्रू (Homebrew), माईज़ (mise), या विंडोज पावरशेल इंस्टॉलेशन स्क्रिप्ट के माध्यम से इंस्टॉल कर सकते हैं। यह प्रोजेक्ट अपाचे लाइसेंस 2.0 के तहत ओपन-सोर्स है। उपयोगकर्ता कॉन्फ़िगरेशन विवरण और एपीआई विनिर्देशों के लिए herdr.dev पर आधिकारिक दस्तावेज़ देख सकते हैं।",
+  "en_meta": "Herdr is an open-source Rust-based runtime environment that manages persistent sessions for AI coding agents across local and remote machines.",
+  "hi_meta": "हर्ड (Herdr) एक ओपन-सोर्स रस्ट-आधारित रनटाइम है जो लोकल और रिमोट मशीनों पर एआई कोडिंग एजेंट्स के लिए स्थायी सेशन प्रबंधित करता है।",
+  "en_keywords": [
+    "Herdr",
+    "AI coding agents",
+    "terminal multiplexer",
+    "session persistence",
+    "Rust software"
+  ],
+  "hi_keywords": [
+    "हर्ड",
+    "एआई कोडिंग एजेंट्स",
+    "टर्मिनल मल्टीप्लेक्सर",
+    "सेशन परसिस्टेंस",
+    "रस्ट सॉफ्टवेयर"
+  ],
+  "source_published_at": null,
+  "id": "576c6507cbdd",
+  "source": "https://github.com/herdrdev/herdr",
+  "date": "2026-11-08T16:16:34.626444+00:00",
+  "source_title": "herdrdev/herdr: the runtime your coding agents live on - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}
