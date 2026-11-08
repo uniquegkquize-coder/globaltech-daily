@@ -545,6 +545,51 @@ UNAVAILABLE_MODELS=set()
 MODEL_RETRY_AT={}
 PROVIDER_RETRY_AT={}
 MODEL_FAILURES={}
+PROVIDER_NEXT_REQUEST={}
+
+def load_provider_state():
+ # Shared only by subprocesses in the same batch/host. Never store API keys.
+ path=os.getenv('NEWS_PROVIDER_STATE_PATH','')
+ if not path:return
+ try:
+  data=json.loads(pathlib.Path(path).read_text(encoding='utf-8'))
+  PROVIDER_COOLDOWNS.update(data.get('disabled',[]))
+  UNAVAILABLE_MODELS.update(tuple(item) for item in data.get('unavailable',[]))
+  PROVIDER_RETRY_AT.update(data.get('retry_at',{}))
+  PROVIDER_NEXT_REQUEST.update(data.get('next_request',{}))
+  MODEL_RETRY_AT.update((tuple(item[:2]),item[2]) for item in data.get('models',[]))
+ except (OSError,ValueError,TypeError):pass
+
+def save_provider_state():
+ path=os.getenv('NEWS_PROVIDER_STATE_PATH','')
+ if not path:return
+ with PROVIDER_LOCK:
+  data={'disabled':sorted(PROVIDER_COOLDOWNS),'unavailable':sorted(UNAVAILABLE_MODELS),
+        'retry_at':PROVIDER_RETRY_AT,'next_request':PROVIDER_NEXT_REQUEST,
+        'models':[[p,m,stamp] for (p,m),stamp in MODEL_RETRY_AT.items()]}
+  dest=pathlib.Path(path);temp=dest.with_suffix('.tmp')
+  temp.write_text(json.dumps(data),encoding='utf-8');temp.replace(dest)
+
+load_provider_state()
+
+def reserve_provider_request(provider,model):
+ # Reserve and count requests atomically across article workers. Long waits
+ # remain visible and stop at the collector deadline rather than overshooting it.
+ global CALLS
+ interval=max(0,float(os.getenv('AI_REQUEST_INTERVAL_SECONDS','0')))
+ while True:
+  with PROVIDER_LOCK:
+   now=time.monotonic()
+   if CALLS>=MAX_CALLS or provider in PROVIDER_COOLDOWNS or (provider,model) in UNAVAILABLE_MODELS:return False
+   if PROVIDER_RETRY_AT.get(provider,0)>now or MODEL_RETRY_AT.get((provider,model),0)>now:return False
+   delay=max(0,PROVIDER_NEXT_REQUEST.get(provider,0)-now) if interval else 0
+   if RUN_DEADLINE and now+delay+1>=RUN_DEADLINE:return False
+   if not delay:
+    CALLS+=1
+    if interval:PROVIDER_NEXT_REQUEST[provider]=now+interval
+    return True
+  print('AI_REQUEST_PACING',provider,round(delay,1),'seconds',flush=True)
+  time.sleep(min(60,delay))
 
 def retry_seconds(response,default=60):
  delay=float(default)
@@ -569,8 +614,8 @@ def retry_seconds(response,default=60):
 def daily_quota_exhausted(response):
  try:error=response.json().get('error',{})
  except (ValueError,TypeError,AttributeError):return False
- text=str(error.get('message','')).lower()
- return bool(re.search(r'per.?day|daily|insufficient_quota|limit:\s*0\b',text))
+ text=str(error.get('message','')).lower()+' '+str(error.get('code','')).lower()
+ return bool(re.search(r'per.?day|daily|\b[rt]pd\b|insufficient_quota|limit:\s*0\b',text))
 
 def provider_retry_delay():
  now=time.monotonic()
@@ -597,6 +642,10 @@ def wait_for_provider(deadline):
  return True
 
 def call_provider(prompt):
+ try:return _call_provider(prompt)
+ finally:save_provider_state()
+
+def _call_provider(prompt):
  global CALLS
  last=None
  for provider in provider_order():
@@ -606,7 +655,7 @@ def call_provider(prompt):
    if provider in PROVIDER_COOLDOWNS or PROVIDER_RETRY_AT.get(provider,0)>time.monotonic():continue
   key=os.getenv({'groq':'GROQ_API_KEY','gemini':'GEMINI_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}[provider],'').strip()
   if not key:continue
-  models=gemini_models(key) if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else (os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free'))]
+  models=gemini_models(key) if provider=='gemini' else ([m.strip() for m in os.getenv('GROQ_MODELS',os.getenv('GROQ_MODEL','openai/gpt-oss-120b')).split(',') if m.strip()] if provider=='groq' else [os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free')])
   preferred=os.getenv('GEMINI_MODEL','').removeprefix('models/').strip() if provider=='gemini' else ''
   if preferred in models:models=[preferred]+[model for model in models if model!=preferred]
   # Retry malformed output once on the same model. HTTP cooldowns still skip
@@ -616,9 +665,7 @@ def call_provider(prompt):
    with PROVIDER_LOCK:
     if (provider,model) in UNAVAILABLE_MODELS or MODEL_RETRY_AT.get((provider,model),0)>time.monotonic():continue
    if CALLS>=MAX_CALLS:break
-   with PROVIDER_LOCK:
-    if CALLS>=MAX_CALLS:break
-    CALLS+=1
+   if not reserve_provider_request(provider,model):continue
    last=provider
    try:
     response_timeout=min(55,max(1,RUN_DEADLINE-time.monotonic())) if RUN_DEADLINE else 55
@@ -630,7 +677,11 @@ def call_provider(prompt):
      raw=''.join(p.get('text','') for p in r.json()['candidates'][0]['content']['parts']) if r.ok else ''
     else:
      url=('https://api.groq.com/openai/v1/chat/completions' if provider=='groq' else ('https://api.openai.com/v1/chat/completions' if provider=='openai' else 'https://openrouter.ai/api/v1/chat/completions'))
-     r=requests.post(url,headers={'Authorization':'Bearer '+key},json={'model':model,'messages':[{'role':'user','content':request_prompt}],'max_tokens':8192,'temperature':0.2},timeout=(min(7,response_timeout),response_timeout))
+     payload={'model':model,'messages':[{'role':'user','content':request_prompt}],'max_tokens':8192,'temperature':0.2}
+     if provider=='groq':
+      payload['response_format']={'type':'json_object'}
+      if model in ('openai/gpt-oss-120b','openai/gpt-oss-20b'):payload['reasoning_effort']='low'
+     r=requests.post(url,headers={'Authorization':'Bearer '+key},json=payload,timeout=(min(7,response_timeout),response_timeout))
      raw=r.json()['choices'][0]['message']['content'] if r.ok else ''
     if not r.ok:
      print('Provider',provider,'model',model,'HTTP',r.status_code,flush=True)
@@ -641,10 +692,11 @@ def call_provider(prompt):
       with PROVIDER_LOCK:UNAVAILABLE_MODELS.add((provider,model))
       continue
      if r.status_code==429 and daily_quota_exhausted(r):
+      print('Provider daily quota exhausted:',provider,'model',model,flush=True)
       with PROVIDER_LOCK:
-       if provider=='gemini':UNAVAILABLE_MODELS.add((provider,model))
+       if provider in ('gemini','groq'):UNAVAILABLE_MODELS.add((provider,model))
        else:PROVIDER_COOLDOWNS.add(provider)
-      if provider=='gemini':continue
+      if provider in ('gemini','groq'):continue
       break
      if r.status_code==429 or r.status_code>=500:
       with PROVIDER_LOCK:
@@ -652,9 +704,9 @@ def call_provider(prompt):
        MODEL_FAILURES[(provider,model)]=failure
        delay=retry_seconds(r,min(300,30*2**min(failure-1,4)))
        MODEL_RETRY_AT[(provider,model)]=time.monotonic()+delay
-       if provider!='gemini':PROVIDER_RETRY_AT[provider]=time.monotonic()+delay
+       if provider not in ('gemini','groq'):PROVIDER_RETRY_AT[provider]=time.monotonic()+delay
       print('Provider temporary backoff:',provider,'model',model,'seconds',round(delay),flush=True)
-      if provider!='gemini':break
+      if provider not in ('gemini','groq'):break
       continue
      continue
     data=json_object(raw)
