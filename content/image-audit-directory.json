@@ -1,99 +1,68 @@
 {
-  "total_posts": 3189,
+  "total_posts": 3217,
   "selected": 37,
   "results": {
-    "source_photo_saved": 6,
-    "invalid_source_images": 9,
-    "cooldown": 22
+    "invalid_source_images": 1,
+    "source_photo_saved": 5,
+    "cooldown": 31
   },
-  "still_missing": 277,
+  "still_missing": 281,
   "articles": [
     {
-      "id": "b7f4cfb88eb283054004fa2a",
-      "source": "https://en.wikipedia.org/wiki/Curtiss_V-8_motorcycle",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794123013.4702163
-    },
-    {
-      "id": "05f61d16581aa6a7da678772",
-      "source": "https://en.wikipedia.org/wiki/Ducati_DesertX",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794123013.5495324
-    },
-    {
-      "id": "97656a6dd769649409d64fb1",
-      "source": "https://en.wikipedia.org/wiki/Beijing_X7",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794123014.12002
-    },
-    {
-      "id": "d5ff9974453f739276c8eb9f",
-      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
+      "id": "02364f4d79f5caac07cae019",
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794123014.2688446
+      "retry_after": 1794132694.5106153
     },
     {
-      "id": "3e9d8416aafc0a7198e25a6e",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Core_2",
+      "id": "3ad30a746edb4de5929a4fe0",
+      "source": "https://en.wikipedia.org/wiki/Huanghai_Plutus",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794123014.5024426
+      "retry_after": 1794132694.866052
+    },
+    {
+      "id": "a054ee93505cf0f0ae9c15e5",
+      "source": "https://en.wikipedia.org/wiki/Suzuki_TS_series",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794132694.8710725
     },
     {
       "id": "33686a761fa5d097afc337dc",
-      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794123014.6615565
+      "result": "cooldown"
     },
     {
       "id": "a941ae3553703f8fd24d4d17",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794123015.056683
+      "result": "cooldown"
+    },
+    {
+      "id": "fab6501205ba27e38dac785c",
+      "result": "cooldown"
+    },
+    {
+      "id": "d5ff9974453f739276c8eb9f",
+      "result": "cooldown"
     },
     {
       "id": "ff28f504e8e3f011fe2acd9b",
-      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794123015.2562456
-    },
-    {
-      "id": "fb6dd420a2fc44c8f8340751",
-      "source": "https://en.wikipedia.org/wiki/JXD_P861",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794123015.3695195
+      "result": "cooldown"
     },
     {
       "id": "611527df4de7f3170a99cfde",
-      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794123015.4947724
+      "result": "cooldown"
     },
     {
-      "id": "d788ce14432418e6bd9d449b",
-      "source": "https://en.wikipedia.org/wiki/Bedford_HC",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794123015.8743305
+      "id": "fb6dd420a2fc44c8f8340751",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
+      "result": "cooldown"
     },
     {
       "id": "554edbfdaee926ed82007433",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794123015.9272027
-    },
-    {
-      "id": "e8fc748d4c8dffaa2212a1cf",
       "result": "cooldown"
     },
     {
@@ -101,7 +70,7 @@
       "result": "cooldown"
     },
     {
-      "id": "8ede6684d4cf14febb863aad",
+      "id": "e8fc748d4c8dffaa2212a1cf",
       "result": "cooldown"
     },
     {
@@ -109,7 +78,7 @@
       "result": "cooldown"
     },
     {
-      "id": "e21f0c9303189bff05b728a0",
+      "id": "8ede6684d4cf14febb863aad",
       "result": "cooldown"
     },
     {
@@ -117,7 +86,7 @@
       "result": "cooldown"
     },
     {
-      "id": "2f02162d9ab27a8cd5662161",
+      "id": "e21f0c9303189bff05b728a0",
       "result": "cooldown"
     },
     {
@@ -125,11 +94,15 @@
       "result": "cooldown"
     },
     {
-      "id": "007acb84538e69bcc14f4f9f",
+      "id": "9d1f6341eb5fa6644d63ff08",
       "result": "cooldown"
     },
     {
-      "id": "9d1f6341eb5fa6644d63ff08",
+      "id": "2f02162d9ab27a8cd5662161",
+      "result": "cooldown"
+    },
+    {
+      "id": "007acb84538e69bcc14f4f9f",
       "result": "cooldown"
     },
     {
@@ -141,11 +114,11 @@
       "result": "cooldown"
     },
     {
-      "id": "6548e415fc086ccec65bbb7c",
+      "id": "ab5757b7bde7e5a43128d256",
       "result": "cooldown"
     },
     {
-      "id": "ab5757b7bde7e5a43128d256",
+      "id": "6548e415fc086ccec65bbb7c",
       "result": "cooldown"
     },
     {
@@ -157,7 +130,7 @@
       "result": "cooldown"
     },
     {
-      "id": "8af54bb949a0c055391d640a",
+      "id": "ef614dcb4163038685679d1d",
       "result": "cooldown"
     },
     {
@@ -169,7 +142,7 @@
       "result": "cooldown"
     },
     {
-      "id": "ef614dcb4163038685679d1d",
+      "id": "8af54bb949a0c055391d640a",
       "result": "cooldown"
     },
     {
@@ -181,25 +154,25 @@
       "result": "cooldown"
     },
     {
-      "id": "ab5161457cb0ef816db211ff",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794123015.943706
-    },
-    {
-      "id": "fab6501205ba27e38dac785c",
-      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794123016.3714304
-    },
-    {
-      "id": "f4d626d54780e228589e1ddf",
-      "source": "https://en.wikipedia.org/wiki/HTC_Desire_Eye",
+      "id": "0604efc38b41a23d8764b42a",
+      "source": "https://en.wikipedia.org/wiki/HTC_One_M9",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794123016.4667735
+      "retry_after": 1794132695.1998668
+    },
+    {
+      "id": "12334cba0cbfc099f0064125",
+      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794132695.3684921
+    },
+    {
+      "id": "8de2562ec8d30ebfef5aa8bc",
+      "source": "https://en.wikipedia.org/wiki/JAC_V7",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794132695.3955817
     }
   ],
   "missing": [
@@ -229,7 +202,7 @@
       "category": "social-media",
       "title": "Exploring Social Media Marketing Internship Opportunities Listed on LinkedIn",
       "source": "https://in.linkedin.com/jobs/view/social-media-marketing-internship-in-delhi-bangalore-hyderabad-mumbai-at-foodstories-4479738162?position=44&pageNum=0&refId=6HZzQVkTvpvkiIYOUZ%2F6vQ%3D%3D&trackingId=jLeQWDCS3GoiLwZtObrHrw%3D%3D",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "253e0e4a696b",
@@ -257,7 +230,7 @@
       "category": "private-vacancy",
       "title": "Community and Social Services Openings Highlight Diverse Employment Landscape in Cheyenne, WY",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "41e3cf0806d9",
@@ -292,7 +265,7 @@
       "category": "social-media",
       "title": "Divine Hindu Announces On-Site Social Media Internship Opening in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/social-media-intern-immediate-joiners-bangalore-at-divine-hindu-4484913408",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "37c0e160c49f",
@@ -313,7 +286,7 @@
       "category": "private-vacancy",
       "title": "A Full Renovation – Home Improvement Lists Virtual Assistant Opening in the United States",
       "source": "https://www.linkedin.com/jobs/view/virtual-assistant-at-a-full-renovation-%E2%80%93-home-improvement-4483788958",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "2a8b92143f14b264d8d27146",
@@ -327,7 +300,7 @@
       "category": "private-vacancy",
       "title": "Exploring Private Sector Job Listings in India: Recent Openings and Roles",
       "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Br%C9%99yl%C9%99r-%2Bonlayn%2Bfikirl%C9%99ri%2Bayr%C4%B1ca%2Binc%C9%99l%C9%99yin.ekq-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "991285850af2",
@@ -456,6 +429,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "02364f4d79f5caac07cae019",
+      "category": "automobiles",
+      "title": "Kawasaki Versys-X 250/300: Motorcycle Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "03fdad6de98e",
       "category": "business",
       "title": "Ruizhi Machinery Unveils Three New Paper Bag Machines at All in Print China 2026",
@@ -544,7 +524,7 @@
       "category": "private-vacancy",
       "title": "Exploring Private Sector Openings and Academic Vacancies Listed on Professional Networks in India",
       "source": "https://in.linkedin.com/jobs/%E0%A6%B2%E0%A7%87%E0%A6%95%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%BE%E0%A6%B0-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "9cfed70093fb",
@@ -575,6 +555,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "a07b9eac5f39",
+      "category": "ai-news",
+      "title": "Microsoft's Strong Cash Flow and Azure Growth Ease AI Spending Concerns",
+      "source": "https://www.business-standard.com/world-news/microsoft-s-cloud-growth-cash-flow-offer-respite-from-ai-spending-fears-126102901904_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "ee28a6d6e51d",
       "category": "private-vacancy",
       "title": "Current Private Job Openings Listed Across India on Professional Networks",
@@ -593,14 +580,14 @@
       "category": "visas-immigration",
       "title": "US Immigration Executive Roles Highlight Growing Corporate Mobility Sector in Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/us-immigration-executive-at-vidlexinfo-llc-4483058702",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "079aeaa0eeef",
       "category": "private-vacancy",
       "title": "Wordsmith Learning Hub Recruits Senior Digital Marketing Manager for Tamil Edtech Sector",
       "source": "https://in.linkedin.com/jobs/view/senior-digital-marketing-manager-tamil-edtech-industry-at-wordsmith-learning-hub-4483638147",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "f638281840d9",
@@ -650,6 +637,13 @@
       "title": "KONE Advertises Private Sector Vacancy for Material Management Coordinator in Chennai",
       "source": "https://in.linkedin.com/jobs/view/material-management-coordinator-at-kone-4484477721?position=46&pageNum=0&refId=7GWgQQ0v3ze9a3w3Q2vwcw%3D%3D&trackingId=BYWzdYE16qmuOI8vgMHtPQ%3D%3D",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "1a65058bc25d",
+      "category": "private-vacancy",
+      "title": "LinkedIn Shows Over 53,000 Research‑Related Job Openings Across India – From Pharma Labs to University Labs",
+      "source": "https://in.linkedin.com/jobs/Research+first%3A+Novaluxia+reviews.edu-jobs?f_AL=true",
+      "reason": "no_source_image"
     },
     {
       "id": "9d38ac0228db",
@@ -782,7 +776,7 @@
       "category": "private-vacancy",
       "title": "Exploring Community and Social Services Openings Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-phoenix-az",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "c455f726510c",
@@ -803,14 +797,14 @@
       "category": "private-vacancy",
       "title": "Active Hiring Trends for Program and Project Management Roles in the Moses Lake Region",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-moses-lake-wa",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "92088c2de8c2",
       "category": "private-vacancy",
       "title": "Recent Administrative Assistant and Support Openings Listed in the Des Moines, Iowa Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "bbfd4d3d5c0a",
@@ -838,7 +832,7 @@
       "category": "visas-immigration",
       "title": "Peerless Immigration Services Announces Openings for Business Development Associates in New Delhi",
       "source": "https://in.linkedin.com/jobs/view/business-development-associate-at-peerless-immigration-services-4483846739?position=23&pageNum=0&refId=pdi7GkDzOUAwjOAwZuhD7g%3D%3D&trackingId=99eGWHPhi0lFt1HRUu2RDA%3D%3D",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "0da0ead215c3",
@@ -1006,7 +1000,7 @@
       "category": "visas-immigration",
       "title": "Sky Heaven Immigration Announces Recruitment for Visitor Visa Counselor in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/visitor-visa-counselor-at-sky-heaven-immigration-opc-pvt-ltd-4482294678",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "d25fe3284c63",
@@ -1286,7 +1280,7 @@
       "category": "private-vacancy",
       "title": "Recent Program and Project Management Openings Highlighted for Boydton and Surrounding Regions",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-boydton-va",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "040dd341f762",
@@ -1387,6 +1381,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "ee5f46eec1e1",
+      "category": "private-vacancy",
+      "title": "Professional Career Listings and Private Sector Job Openings Reported Across India",
+      "source": "https://in.linkedin.com/jobs/Nexbirlik+istifad%C9%99%C3%A7i+t%C9%99cr%C3%BCb%C9%99si%3A+%C4%B0nternetd%C9%99+%C5%9F%C9%99rhl%C9%99ri+indi+oxuyun.thv-jobs",
+      "reason": "no_source_image"
+    },
+    {
       "id": "9bcfb13f35c2",
       "category": "ai-news",
       "title": "ModelBest and OpenBMB Release MiniCPM-OCR Series for Efficient Document Parsing and Quality Control",
@@ -1412,7 +1413,7 @@
       "category": "private-vacancy",
       "title": "Private Sector Job Openings Reported Across Multiple Roles and Locations in India",
       "source": "https://in.linkedin.com/jobs/novaluxia+is+legit%3A+check+the+items.lca-jobs?f_AL=true",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "6189652eeaaa",
@@ -1475,7 +1476,7 @@
       "category": "ai-news",
       "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
       "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "c9e064a48f72",
@@ -1503,7 +1504,7 @@
       "category": "visas-immigration",
       "title": "Primex Visa Pvt. Ltd. Advertises New Visa Documentation Executive Position in Delhi",
       "source": "https://in.linkedin.com/jobs/view/visa-documentation-executve-at-primex-visa-pvt-ltd-4484924300",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "07f5b24312a4",
@@ -1678,7 +1679,7 @@
       "category": "private-vacancy",
       "title": "Fanzart Seeks Business Development Specialist for On-Site Role in Ranchi",
       "source": "https://in.linkedin.com/jobs/view/business-development-specialist-at-fanzart-designer-fans-4484908686",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "276998767be1",
@@ -1902,7 +1903,7 @@
       "category": "apps-software",
       "title": "Tech Hiring Surges in Chennai as Flex Opens Associate Software Engineer Roles",
       "source": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-flex-4472543793",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "080b28de54ff",
@@ -2042,7 +2043,7 @@
       "category": "private-vacancy",
       "title": "Active Administrative Assistant Openings Listed Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-phoenix-az",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "9acdf4deb8ec",
@@ -2077,21 +2078,21 @@
       "category": "social-media",
       "title": "Exploring Content and Social Media Marketing Internship Opportunities in Delhi",
       "source": "https://in.linkedin.com/jobs/view/content-and-social-media-marketing-internship-in-delhi-at-denmonk-4484771273",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0391c4373eca",
       "category": "defence",
       "title": "Military and Protective Services Job Openings Highlighted Across the Greater Phoenix Area",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-phoenix-az",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "38138689935d",
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Boydton Area Listings",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-boydton-va",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "554edbfdaee926ed82007433",
@@ -2126,7 +2127,7 @@
       "category": "apps-software",
       "title": "Associate QA Engineer – Software at Light & Wonder, Bengaluru – Join the Gaming Quality Team",
       "source": "https://in.linkedin.com/jobs/view/associate-qa-engineer-software-at-light-wonder-4484455024",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "977751fba066",
@@ -2146,130 +2147,47 @@
   "missing_reasons": {
     "source_unavailable": 36,
     "no_source_image": 86,
-    "invalid_source_images": 59,
+    "access_denied": 83,
     "source_error": 17,
-    "access_denied": 78,
+    "invalid_source_images": 58,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "b7f4cfb88eb283054004fa2a": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Curtiss_V-8_motorcycle",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Glenn_Curtiss_on_his_V-8_motorcycle%2C_Ormond_Beach%2C_Florida_1907.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "05f61d16581aa6a7da678772": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ducati_DesertX",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/Ducati_DesertX_in_Barcelona_%28edited%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "97656a6dd769649409d64fb1": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Beijing_X7",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Beijing_X7_IMG001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "d5ff9974453f739276c8eb9f": {
+    "02364f4d79f5caac07cae019": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "3e9d8416aafc0a7198e25a6e": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Core_2",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/46/Samsung_Galaxy_Core_2.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "33686a761fa5d097afc337dc": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "a941ae3553703f8fd24d4d17": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
       "candidate_count": 7,
       "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/120px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/60px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/1280px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/500px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
       ]
     },
-    "ff28f504e8e3f011fe2acd9b": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18614.jpg"
-      ]
-    },
-    "fb6dd420a2fc44c8f8340751": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/JXD_P861",
-      "candidate_count": 7,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/120px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "611527df4de7f3170a99cfde": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "d788ce14432418e6bd9d449b": {
+    "3ad30a746edb4de5929a4fe0": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Bedford_HC",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Bedford_5-6_cwt_HC_Van_%281948%29_%2816006040965%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Huanghai_Plutus",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Huanghai_Dachaishen_01_China_2014-04-16.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "554edbfdaee926ed82007433": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "ab5161457cb0ef816db211ff": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "fab6501205ba27e38dac785c": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "f4d626d54780e228589e1ddf": {
+    "a054ee93505cf0f0ae9c15e5": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/HTC_Desire_Eye",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/HTC_Desire_Eye_smartphone_%2815355721999%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Suzuki_TS_series",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Suzuki_TS185_HDR_%284591933037%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "0604efc38b41a23d8764b42a": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/HTC_One_M9",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bf/HTC_One_M9.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "12334cba0cbfc099f0064125": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Zellos_Lumia_532_A.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "8de2562ec8d30ebfef5aa8bc": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/JAC_V7",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9b/2018_JAC_V7%2C_front_8.7.18.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"

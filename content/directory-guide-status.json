@@ -1,6 +1,6 @@
 {
   "published": 6,
-  "updated": 4,
+  "updated": 0,
   "target": 8,
   "missing": {
     "colleges": 2
@@ -8,13 +8,13 @@
   "categories": {
     "colleges": {
       "new": 0,
-      "updated": 1,
+      "updated": 0,
       "eligible_new": 0,
-      "eligible_updates": 1,
+      "eligible_updates": 0,
       "shortfall": 2,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 17,
+        "already_published_unchanged": 18,
         "insufficient verified descriptive fields": 85,
         "identifier URL is not specification evidence": 199
       },
@@ -149,17 +149,17 @@
     },
     "phones": {
       "new": 2,
-      "updated": 2,
-      "eligible_new": 695,
-      "eligible_updates": 2,
+      "updated": 0,
+      "eligible_new": 754,
+      "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 73,
-        "insufficient verified descriptive fields": 92,
-        "identifier URL is not specification evidence": 1019
+        "already_published_unchanged": 77,
+        "insufficient verified descriptive fields": 97,
+        "identifier URL is not specification evidence": 953
       },
-      "rejected_count": 1111,
+      "rejected_count": 1050,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -290,17 +290,17 @@
     },
     "cars": {
       "new": 2,
-      "updated": 1,
-      "eligible_new": 568,
-      "eligible_updates": 1,
+      "updated": 0,
+      "eligible_new": 615,
+      "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 5835,
-        "already_published_unchanged": 76,
-        "insufficient verified descriptive fields": 555,
-        "identifier URL is not specification evidence": 4635
+        "already_published_unchanged": 79,
+        "insufficient verified descriptive fields": 562,
+        "identifier URL is not specification evidence": 4579
       },
-      "rejected_count": 5190,
+      "rejected_count": 5141,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -432,12 +432,12 @@
     "bikes": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 24,
+      "eligible_new": 22,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 447,
-        "already_published_unchanged": 77,
+        "already_published_unchanged": 79,
         "insufficient verified descriptive fields": 84,
         "identifier URL is not specification evidence": 262
       },
@@ -571,5 +571,5 @@
       ]
     }
   },
-  "date": "2026-11-08T01:30:05.815560+00:00"
+  "date": "2026-11-08T04:11:30.553162+00:00"
 }
