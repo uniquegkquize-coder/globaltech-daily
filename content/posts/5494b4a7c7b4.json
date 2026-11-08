@@ -1,0 +1,35 @@
+{
+  "en_title": "Report Claims DeepSeek and Moonshot AI Used OpenAI’s GPT-6 Astra Outputs to Train New Models",
+  "hi_title": "रिपोर्ट का दावा, दीपसीक और मूनशॉट एआई ने ओपनएआई के जीपीटी-6 एस्ट्रा के आउटपुट का उपयोग किया",
+  "en_body": "## Reported claims about model distillation\n\nA report by The Information, citing people with direct knowledge of the matter, has claimed that two Chinese AI developers—DeepSeek and Moonshot AI—relied on outputs from OpenAI’s GPT-6 Astra to build their latest systems. Specifically, the report says Moonshot AI’s Kimi K3.1 Pro and DeepSeek’s V4.1-Flash 1017, launched on October 17, drew on distilled data derived from GPT-6 Astra. OpenAI described GPT-6 Astra in September as its “world’s most intelligent and aligned model.”\n\nThese are reported claims, not independently confirmed findings in this article.\n\n## OpenAI’s earlier warning\n\nOpenAI said in a September 30 blog post that it had traced a core part of a broad distillation operation, running since July, to individuals affiliated with Moonshot AI. The source material does not include the full evidence behind that tracing.\n\n## Industry context\n\nModel distillation refers to training a smaller or newer system on the outputs of a larger model. American tech companies have argued that systematically extracting synthetic responses lets competitors replicate advanced capabilities faster and at lower cost than training foundation models from scratch. Frontier AI labs including OpenAI, Anthropic, and Alphabet have warned about unauthorized distillation.\n\nAnthropic disclosed earlier this month that it deployed defensive countermeasures against attempts to replicate capabilities from its Claude model family. According to Anthropic, those protections reduced data harvested through distillation attempts by approximately 90% to 99%.\n\n## Practical implications\n\n- If distillation claims are substantiated, it could intensify US-China AI competition and legal scrutiny over training data.\n- Developers may face pressure to strengthen technical guardrails against automated extraction.\n- Users and enterprises should treat performance claims about new models with caution until independent benchmarks or disclosures are available.\n\n## How to verify\n\n- Read The Information’s original report for sourcing details.\n- Review OpenAI’s September 30 blog post on unauthorized scraping.\n- Check Anthropic’s public disclosure on Claude countermeasures.\n- Look for statements from DeepSeek and Moonshot AI responding to the allegations.\n\nThis is based on published reports; this article does not claim firsthand reporting or independent verification of the distillation allegations.",
+  "hi_body": "## रिपोर्ट में क्या दावा किया गया है\n\nद इंफॉर्मेशन की एक रिपोर्ट में, मामले की सीधी जानकारी रखने वाले लोगों के हवाले से दावा किया गया है कि दो चीनी एआई डेवलपर—दीपसीक और मूनशॉट एआई—ने अपने नवीनतम सिस्टम बनाने के लिए ओपनएआई के जीपीटी-6 एस्ट्रा के आउटपुट पर निर्भरता दिखाई। रिपोर्ट के अनुसार, मूनशॉट एआई का किमी के3.1 प्रो और दीपसीक का वी4.1-फ्लैश 1017, जो 17 अक्टूबर को लॉन्च हुआ, जीपीटी-6 एस्ट्रा से प्राप्त डिस्टिल्ड डेटा पर आधारित थे। ओपनएआई ने सितंबर में जीपीटी-6 एस्ट्रा को अपना “दुनिया का सबसे बुद्धिमान और संरेखित मॉडल” बताया था।\n\nयह रिपोर्ट में लगाए गए आरोप हैं, इस लेख में स्वतंत्र रूप से पुष्टि किए गए निष्कर्ष नहीं।\n\n## ओपनएआई की पहले की चेतावनी\n\nओपनएआई ने 30 सितंबर को अपने ब्लॉग पोस्ट में कहा था कि उसने जुलाई से चल रहे एक बड़े डिस्टिलेशन ऑपरेशन के मुख्य हिस्से का पता मूनशॉट एआई से जुड़े व्यक्तियों तक लगाया है। स्रोत सामग्री में इस पता लगाने के पीछे पूरा सबूत प्रकाशित नहीं किया गया है।\n\n## उद्योग संदर्भ\n\nमॉडल डिस्टिलेशन का अर्थ है किसी बड़े मॉडल के आउटपुट पर छोटे या नए सिस्टम को प्रशिक्षित करना। अमेरिकी तकनीकी कंपनियों का तर्क है कि कृत्रिम प्रतिक्रियाओं का व्यवस्थित निष्कर्षण प्रतिस्पर्धियों को फाउंडेशन मॉडल को शून्य से प्रशिक्षित करने की तुलना में तेजी से और कम लागत में उन्नत क्षमताओं को दोहराने की अनुमति देता है। ओपनएआई, एंथ्रोपिक और अल्फाबेट जैसी सीमांत एआई प्रयोगशालाओं ने अनधिकृत डिस्टिलेशन के बारे में चेतावनी दी है।\n\nएंथ्रोपिक ने इस महीने की शुरुआत में खुलासा किया कि उसने अपने क्लॉड मॉडल परिवार की क्षमताओं को दोहराने के प्रयासों को रोकने के लिए रक्षात्मक काउंटरमेज़र्स तैनात किए हैं। एंथ्रोपिक के अनुसार, इन सुरक्षाओं ने डिस्टिलेशन प्रयासों के माध्यम से एकत्र किए गए डेटा को लगभग 90% से 99% तक कम कर दिया है।\n\n## व्यावहारिक प्रभाव\n\n- यदि डिस्टिलेशन के दावे साबित होते हैं, तो यह अमेरिका-चीन एआई प्रतिस्पर्धा और प्रशिक्षण डेटा पर कानूनी जांच को तेज कर सकता है।\n- डेवलपर्स पर स्वचालित निष्कर्षण के खिलाफ तकनीकी सुरक्षा बढ़ाने का दबाव बढ़ सकता है।\n- उपयोगकर्ताओं और उद्यमों को स्वतंत्र बेंचमार्क या प्रकटीकरण उपलब्ध होने तक नए मॉडलों के प्रदर्शन दावों पर सावधानी बरतनी चाहिए।\n\n## मूल घोषणा कैसे सत्यापित करें\n\n- स्रोत विवरण के लिए द इंफॉर्मेशन की मूल रिपोर्ट पढ़ें।\n- अनधिकृत स्क्रैपिंग पर ओपनएआई के 30 सितंबर के ब्लॉग पोस्ट की समीक्षा करें।\n- क्लॉड काउंटरमेज़र्स पर एंथ्रोपिक के सार्वजनिक खुलासे की जांच करें।\n- आरोपों पर दीपसीक और मूनशॉट एआई के बयानों की तलाश करें।\n\nयह प्रकाशित रिपोर्टों पर आधारित है; यह लेख डिस्टिलेशन आरोपों की प्रत्यक्ष रिपोर्टिंग या स्वतंत्र सत्यापन का दावा नहीं करता है।",
+  "en_meta": "Report claims DeepSeek and Moonshot AI distilled OpenAI’s GPT-6 Astra outputs; includes OpenAI warning and verification steps.",
+  "hi_meta": "रिपोर्ट का दावा है कि दीपसीक और मूनशॉट एआई ने ओपनएआई के जीपीटी-6 एस्ट्रा आउटपुट का डिस्टिलेशन किया; सत्यापन के तरीके शामिल हैं।",
+  "en_keywords": [
+    "GPT-6 Astra",
+    "DeepSeek",
+    "Moonshot AI",
+    "model distillation",
+    "The Information report",
+    "OpenAI",
+    "Anthropic Claude",
+    "AI training data"
+  ],
+  "hi_keywords": [
+    "जीपीटी-6 एस्ट्रा",
+    "दीपसीक",
+    "मूनशॉट एआई",
+    "मॉडल डिस्टिलेशन",
+    "द इंफॉर्मेशन रिपोर्ट",
+    "ओपनएआई",
+    "एंथ्रोपिक क्लॉड",
+    "एआई प्रशिक्षण डेटा"
+  ],
+  "source_published_at": "2026-10-29T19:30:00+05:30",
+  "id": "5494b4a7c7b4",
+  "source": "https://timesofindia.indiatimes.com/technology/tech-news/months-after-release-of-gpt-6-astra-report-says-two-top-chinese-ai-companies-copied-what-openai-called-worlds-most-intelligent-and-aligned-model/articleshow/135318341.cms",
+  "date": "2026-11-08T03:15:40.019041+00:00",
+  "source_title": "Months after release of GPT-6 Astra, report says two top Chinese AI companies ‘copied’ what OpenAI called - The Times of India",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
