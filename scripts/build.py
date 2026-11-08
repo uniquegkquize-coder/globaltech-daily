@@ -18,7 +18,10 @@ from expanded_hubs import CSS as GLOBAL_CSS, JS as GLOBAL_JS, render_expanded_hu
 from notice_details import CSS as EXAM_CSS, inline as linked_inline, article_panel, render_notices, notice_path, details_cache
 from official_notices import load_notices
 from directories import CSS as DIRECTORY_CSS, JS as DIRECTORY_JS, render as render_directories
-R=Path(__file__).resolve().parents[1]; OUT=R/'dist'; SITE='https://globewiredaily.org'.rstrip('/'); CONTACT='contact@globewiredaily.org'
+from oracle_render import output_directory
+import sys
+RENDER_ONLY = '--render-only' in sys.argv[1:]
+R=Path(__file__).resolve().parents[1]; OUT=output_directory(R, RENDER_ONLY); SITE='https://globewiredaily.org'.rstrip('/'); CONTACT='contact@globewiredaily.org'
 OUT.mkdir(parents=True,exist_ok=True)
 # Remove only obsolete build-generated HTML redirect stubs. Never remove article pages.
 # The redirect generator recreates every currently required stub later in this build.
@@ -643,7 +646,7 @@ for old,canonical in DUPLICATE_POSTS:
     redirects.append(f'/{lang}/news/{previous}/{article_slug(old)}/ {article_path(canonical,lang)} 301')
   olddir=OUT/oldpath.lstrip('/')
   if olddir.is_dir():shutil.rmtree(olddir)
-print('SEO_REDIRECTS',write_redirects(OUT,redirects,write,SITE))
+print('SEO_REDIRECTS',write_redirects(OUT,redirects,write,SITE,external=RENDER_ONLY))
 write(OUT/'ads.txt','google.com, pub-1849673109734274, DIRECT, f08c47fec0942fa0\n')
 write(OUT/'_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/\n  Cache-Control: public, max-age=0, must-revalidate\n/*/\n  Cache-Control: public, max-age=0, must-revalidate\n/style.css\n  Cache-Control: public, max-age=3600\n/site.js\n  Cache-Control: public, max-age=3600\n/images/*\n  Cache-Control: public, max-age=86400\n/seo-audit.json\n  X-Robots-Tag: noindex\n/deployment.json\n  X-Robots-Tag: noindex\n')
 print('Built',len(POSTS),'posts; AI Tools, bilingual pages, news sitemap and responsive layout')
@@ -693,5 +696,5 @@ print('CLOUDFLARE_ASSET_SECTIONS',dict(asset_sections.most_common(30)))
 print('PUBLISHED_ARTICLES_PRESERVED',len(POSTS),'DUPLICATE_REDIRECTS',len(DUPLICATE_POSTS))
 print('CLOUDFLARE_ASSET_SECTIONS',dict(section_counts),'REDIRECT_STUBS',redirect_stub_count)
 print('ARTICLE_SOURCE_JSON_COUNT',len(list((R/'content/posts').glob('*.json'))),'PUBLISHED_POSTS',len(POSTS))
-if len(asset_files)>19000:
+if not RENDER_ONLY and len(asset_files)>19000:
  raise RuntimeError(f'Cloudflare Pages output has {len(asset_files)} files; safe threshold is 19000. No article or image has been deleted; use the section diagnostics to plan a safe migration.')
