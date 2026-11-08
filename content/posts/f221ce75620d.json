@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Addresses Incident Involving Incorrectly Deleted Enterprise Managed User Accounts",
+  "hi_title": "गिटहब ने गलती से हटाए गए एंटरप्राइज मैनेज्ड यूजर खातों से जुड़ी घटना का समाधान किया",
+  "en_body": "A technical incident between June 1 and June 13, 2026, resulted in approximately 12,285 Enterprise Managed User (EMU) accounts being incorrectly deleted instead of being suspended and obfuscated during SCIM deprovisioning. According to GitHub's engineering disclosure, the issue stemmed from a routing change enabled on June 1, 2026, which failed to correctly identify EMU accounts through the new deprovisioning path. Consequently, affected accounts appeared as ghost users in audit logs, pull requests, and issues instead of maintaining their expected suspended records.\n\n## Incident Details and Scope\n- **Timeline:** The affected routing path was active from June 1, 2026, to June 13, 2026, when GitHub contained the issue by disabling the path.\n- **Impact:** Approximately 12,285 accounts across multiple enterprises experienced incorrect deletions.\n- **Account Status Breakdown:** Most affected accounts had previously been suspended and hard-deprovisioned by design and could not be reprovisioned. However, a smaller subset of 76 accounts were active at the time of deletion.\n\n## Resolution and Restoration\nGitHub reported that code changes have been implemented to prevent recurrence. Furthermore, affected user records were restored in October 2026. This restoration process returned the impacted accounts to their expected suspended and obfuscated states, maintaining audit history and traceability within enterprises.\n\n## Practical Implications and Verification\nEnterprise administrators do not need to take any action regarding the restoration. Organizations can verify whether they were impacted by reviewing their enterprise audit logs:\n- **Verification Steps:** Check audit logs for any `user.delete` events associated with Enterprise Managed User accounts during the June 1 to June 13, 2026 window.\n- **No Impact Confirmation:** If no such events appear in the specified date range, the enterprise was not affected.\n- **Action Required:** None. GitHub handles the account restoration automatically, and hard-deprovisioned accounts remain unable to be reprovisioned by design.",
+  "hi_body": "1 जून और 13 जून, 2026 के बीच एक तकनीकी घटना के कारण लगभग 12,285 एंटरप्राइज मैनेज्ड यूजर (EMU) खातों को SCIM डीप्रोविज़निंग के दौरान निलंबित और अस्पष्ट (obfuscated) करने के बजाय गलती से हटा दिया गया था। गिटहब के तकनीकी खुलासे के अनुसार, यह समस्या 1 जून, 2026 को सक्षम किए गए एक रूटिंग परिवर्तन के कारण हुई, जो नए डीप्रोविज़निंग पथ के माध्यम से EMU खातों की सही पहचान करने में विफल रहा। परिणामस्वरूप, प्रभावित खाते अपेक्षित निलंबित रिकॉर्ड बनाए रखने के बजाय ऑडिट लॉग, पुल अनुरोधों और मुद्दों में घोस्ट यूजर के रूप में दिखाई दिए।\n\n## घटना का विवरण और दायरा\n- **समयावधि:** प्रभावित रूटिंग पथ 1 जून, 2026 से 13 जून, 2026 तक सक्रिय रहा, जब गिटहब ने उस पथ को अक्षम करके इस समस्या को नियंत्रित किया।\n- **प्रभाव:** कई उद्यमों के लगभग 12,285 खाते गलत तरीके से हटाए गए।\n- **खाता स्थिति का विवरण:** अधिकांश प्रभावित खातों को डिज़ाइन के अनुसार पहले ही निलंबित और हार्ड-डीप्रोविज़न कर दिया गया था और उन्हें दोबारा प्रोविज़न नहीं किया जा सकता था। हालांकि, हटाने के समय 76 खातों का एक छोटा समूह सक्रिय था।\n\n## समाधान और बहाली\nगिटहब ने बताया कि इस तरह की पुनरावृत्ति को रोकने के लिए कोड में बदलाव किए गए हैं। इसके अलावा, अक्टूबर 2026 में प्रभावित यूजर रिकॉर्ड को बहाल कर दिया गया। इस बहाली प्रक्रिया ने प्रभावित खातों को उनकी अपेक्षित निलंबित और अस्पष्ट स्थिति में लौटा दिया, जिससे उद्यमों के भीतर ऑडिट इतिहास और ट्रैसेबिलिटी बनी रही।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nएंटरप्राइज प्रशासकों को बहाली के संबंध में कोई कार्रवाई करने की आवश्यकता नहीं है। संगठन अपने एंटरप्राइज ऑडिट लॉग की समीक्षा करके यह सत्यापित कर सकते हैं कि वे प्रभावित हुए थे या नहीं:\n- **सत्यापन चरण:** 1 जून से 13 जून, 2026 की अवधि के दौरान एंटरप्राइज मैनेज्ड यूजर खातों से जुड़े किसी भी `user.delete` इवेंट के लिए ऑडिट लॉग की जाँच करें।\n- **कोई प्रभाव नहीं होने की पुष्टि:** यदि निर्दिष्ट तिथि सीमा में ऐसा कोई इवेंट दिखाई नहीं देता है, तो एंटरप्राइज प्रभावित नहीं हुआ था।\n- **आवश्यक कार्रवाई:** कोई नहीं। गिटहब स्वचालित रूप से खाता बहाली को संभालता है, और हार्ड-डीप्रोविज़न किए गए खाते डिज़ाइन के अनुसार दोबारा प्रोविज़न नहीं किए जा सकते हैं।",
+  "en_meta": "Learn about the GitHub incident involving incorrectly deleted Enterprise Managed User accounts between June 1 and June 13, 2026, and the subsequent restoration.",
+  "hi_meta": "1 जून से 13 जून, 2026 के बीच गलती से हटाए गए एंटरप्राइज मैनेज्ड यूजर खातों और गिटहब द्वारा उनकी बहाली के बारे में जानें।",
+  "en_keywords": [
+    "GitHub",
+    "Enterprise Managed User",
+    "SCIM deprovisioning",
+    "account deletion",
+    "audit logs"
+  ],
+  "hi_keywords": [
+    "गिटहब",
+    "एंटरप्राइज मैनेज्ड यूजर",
+    "SCIM डीप्रोविज़निंग",
+    "खाता हटाना",
+    "ऑडिट लॉग"
+  ],
+  "source_published_at": "2026-10-23T18:56:18+00:00",
+  "id": "f221ce75620d",
+  "source": "https://github.blog/changelog/2026-10-23-emu-deletions-fix/",
+  "date": "2026-11-08T09:49:23.999526+00:00",
+  "source_title": "EMU deletions fix - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

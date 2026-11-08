@@ -1,0 +1,29 @@
+{
+  "en_title": "Eight eMudhra CA Keys Compromised, Triggering Emergency Fixes Across Browsers and Software",
+  "hi_title": "आठ eMudhra सीए कुंजियाँ प्रभावित, ब्राउज़र और सॉफ्टवेयर में आपातकालीन सुधार जारी",
+  "en_body": "Private keys for eight eMudhra intermediate certificate authority certificates were compromised due to low randomness during an April 2025 ceremony, prompting emergency revocations and patches across major browsers, programming languages, and operating systems in October 2026.\n\n## Incident Overview and Cause\nMozilla and Google's Chrome Root Program confirmed the compromise on October 20, 2026, after a researcher reported the issue on the evening of October 17. According to Google and eMudhra, the keys were not stolen via an infrastructure breach; instead, a flaw in a key wrap and unwrap step during an April 30, 2025, generation ceremony produced a weak second set of keys alongside the intended ones. Security researchers demonstrated that the weak private keys could be easily computed from the public certificates in seconds.\n\n## Browser and Software Responses\nMajor browsers and software ecosystems moved quickly to mitigate the risk:\n* **Chrome and Firefox:** Applied automated revocation lists (CRLSets and OneCRL) within hours of receiving the report on October 17.\n* **Operating Systems & Packages:** Debian, Ubuntu, Canonical, Red Hat, and various Linux distributions released or prepared updates dropping affected root certificates, such as `emSign ECC Root CA - G3` and Sectigo's `AAA Certificate Services` root.\n* **Go Language:** Released urgent security updates containing the eight compromised key hashes in its standard library to block untrusted chains.\n* **Node.js and Cloudflare:** Issued updates and patched client software to protect ecosystems relying on static certificate bundles.\n\n## Practical Implications and Verification\nWhile automated browsers handled the updates seamlessly, many applications relying on static certificate bundles (such as Python's certifi, curl, or custom containers) do not check revocation lists. Consequently, removing affected roots can break legitimate websites chaining to those roots until administrators transition to alternative hierarchies. Administrators and developers should verify whether their software environments utilize updated trust bundles, check vendor advisories from CERT-In or Red Hat, and monitor official eMudhra and browser security channels for ongoing remediation steps.",
+  "hi_body": "अक्टूबर 2026 में, अप्रैल 2025 के एक समारोह के दौरान कम यादृच्छिकता (low randomness) के कारण आठ eMudhra मध्यवर्ती प्रमाण पत्र प्राधिकरण (CA) प्रमाणपत्रों की निजी कुंजियाँ से संबंधित कमज़ोरी सामने आई, जिसके चलते प्रमुख ब्राउज़रों, प्रोग्रामिंग भाषाओं और ऑपरेटिंग सिस्टम में आपातकालीन निरस्तीकरण और पैच जारी किए गए।\n\n## घटना का अवलोकन और कारण\nमोज़िला और गूगल के क्रोम रूट प्रोग्राम ने 20 अक्टूबर 2026 को इस समस्या की पुष्टि की, जब एक शोधकर्ता ने 17 अक्टूबर की शाम को इसकी सूचना दी थी। गूगल और eMudhra के अनुसार, बुनियादी ढाँचे में सेंध लगाकर कुंजियाँ चुराई नहीं गई थीं; बल्कि 30 अप्रैल, 2025 को कुंजी निर्माण समारोह के दौरान एक खामी के कारण मूल कुंजियों के साथ-साथ कमज़ोर कुंजियों का एक दूसरा सेट भी बन गया था। सुरक्षा शोधकर्ताओं ने प्रदर्शित किया कि इन कमज़ोर निजी कुंजियों को सार्वजनिक प्रमाणपत्रों से कुछ ही सेकंड में आसानी से गणना करके निकाला जा सकता है।\n\n## ब्राउज़र और सॉफ्टवेयर की प्रतिक्रियाएँ\nप्रमुख ब्राउज़रों और सॉफ्टवेयर पारिस्थितिक तंत्रों ने जोखिम को कम करने के लिए त्वरित कदम उठाए:\n* **क्रोम और फ़ायरफ़ॉक्स:** 17 अक्टूबर को रिपोर्ट मिलने के कुछ ही घंटों के भीतर स्वचालित निरस्तीकरण सूचियों (CRLSets और OneCRL) को लागू किया गया।\n* **ऑपरेटिंग सिस्टम और पैकेज:** डेबियन, उबंटू, कैनोनिकल, रेड हैट और विभिन्न लिनक्स वितरणों ने `emSign ECC Root CA - G3` और सेक्टिगो के `AAA Certificate Services` रूट जैसे प्रभावित रूट प्रमाणपत्रों को हटाने के लिए अपडेट जारी किए।\n* **गो (Go) भाषा:** अविश्वसनीय श्रृंखलाओं को ब्लॉक करने के लिए अपनी मानक लाइब्रेरी में आठ समझौता की गई कुंजी हैश वाले तत्काल सुरक्षा अपडेट जारी किए।\n* **नोड.जेडएस और क्लाउडफ्लेयर:** स्थिर प्रमाणपत्र बंडलों पर निर्भर पारिस्थितिक तंत्र की सुरक्षा के लिए अपडेट जारी किए गए।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nहालाँकि स्वचालित ब्राउज़रों ने अपडेट को सहजता से संभाल लिया, लेकिन स्थिर प्रमाणपत्र बंडलों पर निर्भर कई एप्लिकेशन (जैसे पायथन का सर्टिफ़ी, कर्ल या कस्टम कंटेनर) निरस्तीकरण सूचियों की जाँच नहीं करते हैं। परिणामस्वरूप, प्रभावित रूट हटाने से वैध वेबसाइटों तक पहुँच बाधित हो सकती है जब तक कि प्रशासक वैकल्पिक पदानुक्रमों पर स्विच नहीं कर लेते। प्रशासकों और डेवलपर्स को यह सत्यापित करना चाहिए कि उनके सॉफ्टवेयर वातावरण अद्यतन ट्रस्ट बंडलों का उपयोग कर रहे हैं या नहीं।",
+  "en_meta": "Major browsers and software ecosystems apply emergency fixes after eight eMudhra intermediate certificate authority keys are found to be compromised.",
+  "hi_meta": "आठ eMudhra मध्यवर्ती सीए कुंजियों के प्रभावित होने के बाद प्रमुख ब्राउज़र और सॉफ्टवेयर प्लेटफार्मों ने आपातकालीन सुधार लागू किए हैं।",
+  "en_keywords": [
+    "eMudhra",
+    "certificate authority",
+    "CA compromise",
+    "browser security",
+    "TLS certificates"
+  ],
+  "hi_keywords": [
+    "eMudhra",
+    "प्रमाण पत्र प्राधिकरण",
+    "सीए समझौता",
+    "ब्राउज़र सुरक्षा",
+    "टीएलएस प्रमाणपत्र"
+  ],
+  "source_published_at": "2026-10-20T22:39:00+05:30",
+  "id": "1e26274c4cd9",
+  "source": "https://thehackernews.com/2026/10/eight-emudhra-ca-keys-compromised.html",
+  "date": "2026-11-08T09:48:34.046745+00:00",
+  "source_title": "Eight eMudhra CA Keys Compromised, Triggering Emergency Fixes Across Browsers and Software",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,35 @@
+{
+  "en_title": "OpenScreen: Open-Source Screen Recorder and Demo Tool Expands to Windows, macOS, and Linux",
+  "hi_title": "ओपनस्क्रीन: विंडोज, मैकओएस और लिनक्स के लिए ओपन-सोर स्क्रीन रिकॉर्डर और डेमो टूल",
+  "en_body": "OpenScreen is a free, open-source desktop application designed for recording screens and turning raw captures into polished product demos and walkthroughs. The project serves as a community-maintained continuation following the archiving of the original repository by its creator, Siddharth Vaddem, continuing under the same MIT license with official releases hosted on GitHub.\n\n## Core Features and Capabilities\n\nOpenScreen offers a range of recording and editing tools designed for content creators, developers, and teams:\n\n* **Recording Options:** Capture a specific window or your entire screen with webcam support, including picture-in-picture overlays, adjustable roundness, and mirroring.\n* **Editing and Zooms:** Utilize manual or automatic zooms, custom cursor smoothing, click effects, and timeline controls for cropping, trimming, and per-segment speed adjustments.\n* **AI and Transcription:** Access offline, on-device automatic transcriptions for voiceovers and an optional AI editing assistant compatible with endpoints like Claude, OpenAI, Gemini, and Mistral.\n* **Export Options:** Export projects to MP4 or GIF formats in multiple aspect ratios and resolutions, leveraging GPU-accelerated rendering on supported platforms.\n\n## Platform Support and System Requirements\n\nOpenScreen is available for Windows, macOS, and Linux, with specific installation routes and system requirements for each operating system:\n\n* **Windows:** Available via the Microsoft Store or as standalone .exe installers for x64 and ARM64 from GitHub Releases. Minimum requirements include Windows 1903+ with Intel 8th Gen or AMD Ryzen 2000 series processors or newer.\n* **macOS:** Available via a signed and notarized .dmg installer requiring macOS 13 (Ventura) or later to utilize ScreenCaptureKit for native capture.\n* **Linux:** Distributed in formats compatible with various distros, utilizing PipeWire and xdg-desktop-portal for native capture and system audio support.\n\n## Practical Implications and Verification\n\nUsers should verify all downloads by obtaining installers exclusively from the official GitHub Releases page or the Microsoft Store to ensure software integrity. The application is provided under the MIT License without warranties, and users are advised to review platform-specific permission prompts for screen recording and accessibility during initial setup.",
+  "hi_body": "ओपनस्क्रीन एक फ्री और ओपन-सोर्स डेस्कटॉप एप्लिकेशन है जिसे स्क्रीन रिकॉर्ड करने और रॉ कैप्चर को बेहतरीन प्रोडक्ट डेमो तथा वॉकथ्रू में बदलने के लिए डिज़ाइन किया गया है। यह प्रोजेक्ट इसके मूल निर्माता सिद्धार्थ वडडेम द्वारा मूल रिपॉजिटरी को आर्काइव किए जाने के बाद समुदाय द्वारा संचालित निरंतरता के रूप में कार्य करता है, और यह समान एमआईटी लाइसेंस के तहत गिटहब पर उपलब्ध है।\n\n## मुख्य विशेषताएं और क्षमताएं\n\nओपनस्क्रीन सामग्री निर्माताओं, डेवलपर्स और टीमों के लिए डिज़ाइन किए गए कई रिकॉर्डिंग और संपादन टूल प्रदान करता है:\n\n* **रिकॉर्डिंग विकल्प:** पिक्चर-इन-पिक्चर ओवरले, समायोज्य गोलाई और मिररिंग के साथ वेबकैम समर्थन के साथ एक विशिष्ट विंडो या अपनी पूरी स्क्रीन कैप्चर करें।\n* **संपादन और ज़ूम:** क्रॉपिंग, ट्रिमिंग और प्रति-खंड गति समायोजन के लिए मैन्युअल या स्वचालित ज़ूम, कस्टम कर्सर स्मूथिंग, क्लिक प्रभाव और टाइमलाइन नियंत्रण का उपयोग करें।\n* **एआई और ट्रांसक्रिप्शन:** वॉयसओवर के लिए ऑफ़लाइन, ऑन-डिफ़ाइस स्वचालित ट्रांसक्रिप्शन और क्लाउड, ओपनएआई, जेमिनी और मिस्ट्रल जैसे एंडपॉइंट्स के साथ संगत एक वैकल्पिक एआई संपादन सहायक तक पहुंचें।\n* **निर्यात विकल्प:** समर्थित प्लेटफार्मों पर जीपीयू-एक्सेलेरेटेड रेंडरिंग का लाभ उठाते हुए, कई आस्पेक्ट रेशियो और रिज़ॉल्यूशन में प्रोजेक्ट्स को MP4 या GIF प्रारूपों में निर्यात करें।\n\n## प्लेटफ़ॉर्म समर्थन और सिस्टम आवश्यकताएं\n\nओपनस्क्रीन विंडोज, मैकओएस और लिनक्स के लिए उपलब्ध है, जिसमें प्रत्येक ऑपरेटिंग सिस्टम के लिए विशिष्ट इंस्टॉलेशन मार्ग और सिस्टम आवश्यकताएं शामिल हैं:\n\n* **विंडोज:** माइक्रोसॉफ्ट स्टोर के माध्यम से या गिटहब रिलीज़ से x64 और ARM64 के लिए स्वतंत्र .exe इंस्टॉलर्स के रूप में उपलब्ध है। न्यूनतम आवश्यकताओं में इंटेल 8वीं जनरेशन या एएमडी Ryzen 2000 सीरीज प्रोसेसर या नए के साथ विंडोज 1903+ शामिल है।\n* **मैकओएस:** मूल कैप्चर के लिए ScreenCaptureKit का उपयोग करने हेतु मैकओएस 13 (वेंचुरा) या बाद के संस्करण की आवश्यकता वाले हस्ताक्षरित .dmg इंस्टॉलर के माध्यम से उपलब्ध है।\n* **लिनक्स:** विभिन्न डिस्ट्रो के साथ संगत प्रारूपों में वितरित, मूल कैप्चर और सिस्टम ऑडियो समर्थन के लिए PipeWire और xdg-desktop-portal का उपयोग करता है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nउपयोगकर्ताओं को सॉफ्टवेयर अखंडता सुनिश्चित करने के लिए केवल आधिकारिक गिटहब रिलीज़ पेज या माइक्रोसॉफ्ट स्टोर से इंस्टॉलर प्राप्त करके सभी डाउनलोड सत्यापित करने चाहिए। यह एप्लिकेशन बिना किसी वारंटी के एमआईटी लाइसेंस के तहत प्रदान किया जाता है, और उपयोगकर्ताओं को प्रारंभिक सेटअप के दौरान स्क्रीन रिकॉर्डिंग और एक्सेसिबिलिटी के लिए प्लेटफ़ॉर्म-विशिष्ट अनुमति संकेतों की समीक्षा करने की सलाह दी जाती है।",
+  "en_meta": "Discover OpenScreen, a free, open-source desktop app for recording screens and creating product demos with GPU acceleration on Windows, macOS, and Linux.",
+  "hi_meta": "ओपनस्क्रीन के बारे में जानें, जो विंडोज, मैकओएस और लिनक्स पर स्क्रीन रिकॉर्ड करने और जीपीयू एक्सेलेरेशन के साथ प्रोडक्ट डेमो बनाने के लिए एक फ्री और ओपन-सोर्स…",
+  "en_keywords": [
+    "OpenScreen",
+    "screen recorder",
+    "open-source software",
+    "product demos",
+    "GPU-accelerated",
+    "Windows",
+    "macOS",
+    "Linux"
+  ],
+  "hi_keywords": [
+    "ओपनस्क्रीन",
+    "स्क्रीन रिकॉर्डर",
+    "ओपन-सोर्स सॉफ्टवेयर",
+    "प्रोडक्ट डेमो",
+    "जीपीयू-एक्सेलेरेटेड",
+    "विंडोज",
+    "मैकओएस",
+    "लिनक्स"
+  ],
+  "source_published_at": null,
+  "id": "f8b2fb836d36",
+  "source": "https://github.com/getopenscreen/openscreen",
+  "date": "2026-11-08T09:52:03.647960+00:00",
+  "source_title": "getopenscreen/openscreen: Record your screen, ship a demo. Free and open-source, GPU-accelerated, no watermarks, no subscriptions. Windows, macOS, Linux. Actively maintained. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

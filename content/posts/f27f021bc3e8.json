@@ -1,0 +1,31 @@
+{
+  "en_title": "Enterprise Installations for GitHub Apps Generally Available",
+  "hi_title": "GitHub Apps के लिए एंटरप्राइज़ इंस्टॉल अब सामान्य रूप से उपलब्ध",
+  "en_body": "GitHub has announced the general availability of enterprise installations for GitHub Apps, allowing organizations to expand their automation capabilities and replace classic personal access tokens (PATs).\n\nAccording to the official announcement, this release introduces expanded API support focused on governance, security, and administrative settings at the enterprise level, alongside closing two organization-level gaps.\n\n## Key Capabilities and Permissions\n\n* **Governance:** Administrators can manage enterprise-level repository policies and rulesets, as well as read delegated bypass requests.\n* **Security:** Teams can configure two-factor authentication (2FA) requirements, verify domains, manage IP allowlists, and control enterprise access restrictions.\n* **Administration:** Users can update enterprise profiles and manage member privileges and repository access settings across the enterprise.\n\n## Getting Started and Availability\n\nTo begin using the updated features, administrators can select the required permissions for their GitHub App within their settings. These updates are scheduled to be available in GitHub Enterprise Server (GHES) version 3.24.\n\nDevelopers and administrators looking to utilize GraphQL with a GitHub App can consult the official documentation on managing an enterprise account with GraphQL. Additional details on setting up these installations are available in the GitHub documentation on installing a GitHub App on an enterprise.\n\n## Verification and Best Practices\n\nUsers should verify the original announcement directly on the GitHub Blog (changelog dated October 23, 2026) to review the exact API support details and ensure compatibility with their existing automation workflows before migration.",
+  "hi_body": "GitHub ने घोषणा की है कि GitHub Apps के लिए एंटरप्राइज़ इंस्टॉल अब सामान्य रूप से उपलब्ध हैं, जिससे संगठन अपनी स्वचालन (automation) क्षमताओं का विस्तार कर सकते हैं और क्लासिक पर्सनल एक्सेस टोकन (PATs) को बदल सकते हैं।\n\nआधिकारिक घोषणा के अनुसार, इस रिलीज़ में एंटरप्राइज़ स्तर पर गवर्नेंस, सुरक्षा और प्रशासनिक सेटिंग्स पर केंद्रित विस्तारित एपीआई समर्थन पेश किया गया है, साथ ही संगठन स्तर के दो अंतराल भी बंद किए गए हैं।\n\n## मुख्य क्षमताएं और अनुमतियां\n\n* **गवर्नेंस (Governance):** प्रशासक एंटरप्राइज़-स्तरीय रिपॉजिटरी नीतियों और रूलसेट का प्रबंधन कर सकते हैं, साथ ही प्रतिनिधिバイपास (bypass) अनुरोधों को पढ़ सकते हैं।\n* **सुरक्षा (Security):** टीमें दो-कारक प्रमाणीकरण (2FA) आवश्यकताओं को कॉन्फ़िगर कर सकती हैं, डोमेन सत्यापित कर सकती हैं, आईपी अनुमति सूचियों का प्रबंधन कर सकती हैं, और एंटरप्राइज़ एक्सेस प्रतिबंधों को नियंत्रित कर सकती हैं।\n* **प्रशासन (Administration):** उपयोगकर्ता एंटरप्राइज़ प्रोफाइल को अपडेट कर सकते हैं और पूरे एंटरप्राइज़ में सदस्य विशेषाधिकारों और रिपॉजिटरी एक्सेस सेटिंग्स का प्रबंधन कर सकते हैं।\n\n## शुरुआत कैसे करें और उपलब्धता\n\nअद्यतन सुविधाओं का उपयोग शुरू करने के लिए, प्रशासक अपनी सेटिंग्स के भीतर अपने GitHub ऐप के लिए आवश्यक अनुमतियां चुन सकते हैं। ये अपडेट GitHub एंटरप्राइज़ सर्वर (GHES) संस्करण 3.24 में उपलब्ध होने वाले हैं।\n\nजो डेवलपर्स और प्रशासक GitHub ऐप के साथ GraphQL का उपयोग करना चाहते हैं, वे GraphQL के साथ एंटरप्राइज़ खाता प्रबंधित करने पर आधिकारिक दस्तावेज़ देख सकते हैं। इन इंस्टॉल को सेट अप करने के बारे में अतिरिक्त विवरण एंटरप्राइज़ पर GitHub ऐप इंस्टॉल करने से संबंधित दस्तावेज़ में उपलब्ध हैं।\n\n## सत्यापन और सर्वोत्तम अभ्यास\n\nमाइग्रेशन से पहले अपनी मौजूदा स्वचालन कार्यप्रवाहों के साथ संगतता सुनिश्चित करने और सटीक एपीआई समर्थन विवरण की समीक्षा करने के लिए उपयोगकर्ताओं को सीधे GitHub ब्लॉग (23 अक्टूबर 2026 के चेंजलॉग) पर मूल घोषणा का सत्यापन करना चाहिए।",
+  "en_meta": "GitHub Apps enterprise installations are now generally available, offering expanded API support for governance, security, and administration in GHES 3.24.",
+  "hi_meta": "GitHub Apps के एंटरप्राइज़ इंस्टॉल अब उपलब्ध हैं, जो GHES 3.24 में गवर्नेंस, सुरक्षा और प्रशासन के लिए विस्तारित एपीआई समर्थन प्रदान करते हैं।",
+  "en_keywords": [
+    "GitHub Apps",
+    "Enterprise Installations",
+    "API Support",
+    "GitHub Enterprise Server",
+    "GHES 3.24",
+    "Automation"
+  ],
+  "hi_keywords": [
+    "GitHub Apps",
+    "एंटरप्राइज़ इंस्टॉल",
+    "API समर्थन",
+    "GitHub Enterprise Server",
+    "GHES 3.24",
+    "ऑटोमेशन"
+  ],
+  "source_published_at": "2026-10-23T15:03:30+00:00",
+  "id": "f27f021bc3e8",
+  "source": "https://github.blog/changelog/2026-10-23-enterprise-installations-for-github-apps-generally-available/",
+  "date": "2026-11-08T09:49:32.076650+00:00",
+  "source_title": "Enterprise installations for GitHub Apps generally available - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

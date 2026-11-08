@@ -1,0 +1,31 @@
+{
+  "en_title": "GitHub Copilot Introduces Built-in Natural Language Image Generation and Editing in Public Preview",
+  "hi_title": "GitHub Copilot ने प्राकृतिक भाषा के माध्यम से सीधे इमेज बनाने और संपादित करने का सार्वजनिक पूर्वावलोकन पेश किया",
+  "en_body": "GitHub has announced a public preview update that allows users to generate and edit images directly within GitHub Copilot using natural language prompts. According to the announcement, the feature utilizes a dedicated image-generation tool powered by GPT Image 2.5 Flare when invoked by a selected reasoning model.\n\nPreviously, developers needed to switch contexts to external tools to create visual assets and manually import them into their projects. The new integration aims to streamline this workflow by previewing generated images inline within the chat interface and saving them straight to the workspace.\n\n## Key Features and Workflow\n* **Conversational Creation:** Describe desired images using natural language in any Copilot chat session.\n* **Inline Integration:** View generated image previews directly in the chat and save them automatically to the project workspace.\n* **Editing Capabilities:** Modify existing visuals conversationally alongside regular coding tasks.\n\n## Availability and Access Requirements\n* **Supported Interfaces:** Accessible via VS Code, the GitHub Copilot app, and the Copilot CLI.\n* **Access Tier:** Currently available in public preview for Copilot Pro, Copilot Pro+, Copilot Business, and Copilot Enterprise subscribers.\n* **Billing Details:** Billed separately from standard chat models, utilizing image tokens that count toward a plan's AI credits.\n\n## Administrative Controls and Customization\n* **Enterprise Policies:** Organization and enterprise owners retain the ability to disable image generation by turning off the underlying model through Copilot model policies.\n* **Watermarking Options:** Users can optionally opt in to apply a visible \"Made with AI\" watermark to generated and edited images, which is disabled by default.\n\n## Practical Implications and Verification\nThis update reduces context switching for developers needing visual assets during software projects. Users should review their organization's specific plan details, billing terms, and administrative policies regarding image tokens and model usage before deployment. To verify the announcement and check for future updates, developers can consult the official GitHub Blog changelog and join discussions in the GitHub Community.",
+  "hi_body": "GitHub ने एक सार्वजनिक पूर्वावलोकन अपडेट की घोषणा की है जो उपयोगकर्ताओं को प्राकृतिक भाषा संकेतों का उपयोग करके सीधे GitHub Copilot के भीतर इमेज जनरेट और एडिट करने की अनुमति देता है। घोषणा के अनुसार, यह सुविधा एक समर्पित इमेज-जनरेशन टूल का उपयोग करती है जो चयनित रीज़निंग मॉडल द्वारा कॉल किए जाने पर GPT Image 2.5 Flare द्वारा संचालित होती है।\n\nपहले, डेवलपर्स को विजुअल एसेट्स बनाने और उन्हें अपने प्रोजेक्ट्स में मैन्युअली आयात करने के लिए बाहरी टूल्स पर जाना पड़ता था। इस नए एकीकरण का उद्देश्य चैट इंटरफेस के भीतर सीधे इमेज का पूर्वावलोकन करके और उन्हें सीधे वर्कस्पेस में सहेजकर इस वर्कफ़्लो को सुव्यवस्थित करना है।\n\n## मुख्य विशेषताएं और वर्कफ़्लो\n* **संवादात्मक निर्माण:** किसी भी Copilot चैट सत्र में प्राकृतिक भाषा का उपयोग करके वांछित इमेज का वर्णन करें।\n* **इनलाइन एकीकरण:** चैट में सीधे जनरेट की गई इमेज का पूर्वावलोकन देखें और उन्हें स्वचालित रूप से प्रोजेक्ट वर्कस्पेस में सहेजें।\n* **संपादन क्षमताएं:** नियमित कोडिंग कार्यों के साथ-साथ संवादात्मक रूप से मौजूदा विजुअल्स को संशोधित करें।\n\n## उपलब्धता और पहुंच आवश्यकताएं\n* **समर्थित इंटरफेस:** VS Code, GitHub Copilot ऐप और Copilot CLI के माध्यम से सुलभ।\n* **एक्सेस टियर:** वर्तमान में Copilot Pro, Copilot Pro+, Copilot Business और Copilot Enterprise ग्राहकों के लिए सार्वजनिक पूर्वावलोकन में उपलब्ध है।\n* **बिलिंग विवरण:** मानक चैट मॉडल से अलग बिल किया जाता है, जिसमें इमेज टोकन का उपयोग होता है जो योजना के AI क्रेडिट्स में गिने जाते हैं।\n\n## प्रशासनिक नियंत्रण और अनुकूलन\n* **एंटरप्राइज नीतियां:** संगठन और एंटरप्राइज मालिक Copilot मॉडल नीतियों के माध्यम से इमेज जनरेशन मॉडल को अक्षम करके इमेज जनरेशन को बंद कर सकते हैं।\n* **वाटरमार्किंग विकल्प:** उपयोगकर्ता वैकल्पिक रूप से जनरेट और संपादित इमेज पर एक दृश्य \"Made with AI\" वाटरमार्क चुन सकते हैं, जो डिफ़ॉल्ट रूप से बंद होता है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nयह अपडेट सॉफ्टवेयर प्रोजेक्ट्स के दौरान विजुअल एसेट्स की आवश्यकता वाले डेवलपर्स के लिए कॉन्टेक्स्ट स्विच को कम करता है। उपयोगकर्ताओं को तैनाती से पहले इमेज टोकन और मॉडल उपयोग के संबंध में अपने संगठन के विशिष्ट योजना विवरण, बिलिंग शर्तों और प्रशासनिक नीतियों की समीक्षा करनी चाहिए। घोषणा को सत्यापित करने और भविष्य के अपडेट की जांच करने के लिए, डेवलपर्स आधिकारिक GitHub Blog चेंजलॉग से परामर्श कर सकते हैं और GitHub Community में चर्चाओं में शामिल हो सकते हैं।",
+  "en_meta": "GitHub Copilot now supports public preview image generation and editing using natural language prompts powered by GPT Image 2.5 Flare.",
+  "hi_meta": "GitHub Copilot अब GPT Image 2.5 Flare द्वारा संचालित प्राकृतिक भाषा संकेतों का उपयोग करके सार्वजनिक पूर्वावलोकन इमेज जनरेशन का समर्थन करता है।",
+  "en_keywords": [
+    "GitHub Copilot",
+    "image generation",
+    "GPT Image 2.5 Flare",
+    "natural language",
+    "public preview",
+    "VS Code"
+  ],
+  "hi_keywords": [
+    "GitHub Copilot",
+    "इमेज जनरेशन",
+    "GPT Image 2.5 Flare",
+    "प्राकृतिक भाषा",
+    "सार्वजनिक पूर्वावलोकन",
+    "VS Code"
+  ],
+  "source_published_at": "2026-10-28T15:30:55+00:00",
+  "id": "f9960837f649",
+  "source": "https://github.blog/changelog/2026-10-28-generate-and-edit-images-directly-in-copilot/",
+  "date": "2026-11-08T09:51:47.316312+00:00",
+  "source_title": "Generate and edit images directly in Copilot - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

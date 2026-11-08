@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Copilot App Introduces Projects and Computer Use in Public Preview",
+  "hi_title": "GitHub Copilot ऐप ने पब्लिक प्रीव्यू में प्रोजेक्ट्स और कंप्यूटर यूज़ पेश किए",
+  "en_body": "GitHub has announced new features for the GitHub Copilot app, including Copilot Projects and a computer use capability, both currently available in public preview. These updates are designed to help developers manage multi-repository work, connect external tools, and automate desktop applications.\n\n### Copilot Projects\n\nWork often spans multiple repositories, design assets, and communication channels. Copilot Projects provide a unified workspace to keep context, agents, and results together:\n\n* **Unified Context:** Combine repositories, design mockups, Slack threads, and meeting notes in one place.\n* **Agent Coordination:** Copilot runs multiple background agents as needed and returns deliverables, such as pull requests, for user review.\n* **Automations:** Set up repeatable workflows, like generating promotional videos when a feature is completed.\n\nFor focused tasks within a single repository, users can still initiate direct sessions.\n\n### Computer Use on macOS and Windows\n\nAnnounced in public preview, the computer use feature allows Copilot to interact with desktop applications on macOS and Windows, including apps that lack an API, command-line interface, or MCP integration.\n\n* **Capabilities:** Copilot can read app content, click controls, enter or edit text, and navigate across apps to handle workflows like expense reports.\n* **Safety and Controls:** Copilot requests user approval prior to controlling an application. Organizations can also disable this feature via managed settings.\n* **Configuration:** Users can enable the feature by navigating to Settings > Computer Use in the app. macOS users must additionally grant Accessibility and Screen Recording permissions.\n\n### Additional Integrations and Verification\n\nThe app also supports context from tools like Slack and Figma for research and drafting specifications, alongside natural language image generation and editing in chat.\n\nDevelopers can review the official GitHub blog changelog and documentation to verify release details, check prerequisites, and join community discussions.",
+  "hi_body": "GitHub ने GitHub Copilot ऐप के लिए नए फीचर्स की घोषणा की है, जिसमें Copilot Projects और कंप्यूटर यूज़ की क्षमता शामिल है। ये दोनों वर्तमान में पब्लिक प्रीव्यू में उपलब्ध हैं। ये अपडेट्स डेवलपर्स को मल्टी-रिपॉजिटरी कार्य प्रबंधित करने, बाहरी टूल जोड़ने और डेस्कटॉप एप्लिकेशन को स्वचालित करने में मदद करने के लिए डिज़ाइन किए गए हैं।\n\n### Copilot Projects\n\nकाम अक्सर कई रिपॉजिटरी, डिज़ाइन एसेट्स और संचार चैनलों में फैला होता है। Copilot Projects संदर्भ, एजेंटों और परिणामों को एक साथ रखने के लिए एक एकीकृत कार्यक्षेत्र प्रदान करता है:\n\n* **एकीकृत संदर्भ:** रिपॉजिटरी, डिज़ाइन मॉकअप, Slack धागे और मीटिंग नोट्स को एक ही स्थान पर संयोजित करें।\n* **एजेंट समन्वय:** Copilot आवश्यकतानुसार कई पृष्ठभूमि एजेंट चलाता है और उपयोगकर्ता की समीक्षा के लिए पुल अनुरोध जैसे परिणाम वापस लाता है।\n* **ऑटोमेशन:** किसी सुविधा के पूरा होने पर प्रचार वीडियो जेनरेट करने जैसे दोहराए जाने वाले वर्कफ़्लो सेट अप करें।\n\nएक ही रिपॉजिटरी के भीतर केंद्रित कार्यों के लिए, उपयोगकर्ता अभी भी सीधे सत्र शुरू कर सकते हैं।\n\n### macOS और Windows पर कंप्यूटर यूज़\n\nपब्लिक प्रीव्यू में घोषित, कंप्यूटर यूज़ फ़ीचर Copilot को macOS और Windows पर डेस्कटॉप अनुप्रयोगों के साथ बातचीत करने की अनुमति देता है, जिसमें वे ऐप्स भी शामिल हैं जिनमें API, कमांड-लाइन इंटरफ़ेस या MCP integración का अभाव है।\n\n* **क्षमताएं:** Copilot ऐप सामग्री पढ़ सकता है, नियंत्रणों पर क्लिक कर सकता है, टेक्स्ट दर्ज या संपादित कर सकता है, और खर्च रिपोर्ट जैसे वर्कफ़्लो को संभालने के लिए ऐप्स में नेविगेट कर सकता है।\n* **सुरक्षा और नियंत्रण:** Copilot किसी एप्लिकेशन को नियंत्रित करने से पहले उपयोगकर्ता की स्वीकृति मांगता है। संगठन प्रबंधित सेटिंग्स के माध्यम से इस सुविधा को अक्षम भी कर सकते हैं।\n* **कॉन्फ़िगरेशन:** उपयोगकर्ता ऐप में Settings > Computer Use पर जाकर इस सुविधा को सक्षम कर सकते हैं। macOS उपयोगकर्ताओं को अतिरिक्त रूप से एक्सेसिबिलिटी और स्क्रीन रिकॉर्डिंग अनुमति देनी होगी।\n\n### अतिरिक्त एकीकरण और सत्यापन\n\nऐप शोध और ड्राफ्टिंग विशिष्टताओं के लिए Slack और Figma जैसे टूल से संदर्भ का भी समर्थन करता है, साथ ही चैट में प्राकृतिक भाषा छवि निर्माण और संपादन का समर्थन करता है।\n\nडवलपर रिलीज़ विवरण सत्यापित करने, पूर्वापेक्षाओं की जाँच करने और सामुदायिक चर्चाओं में शामिल होने के लिए आधिकारिक GitHub ब्लॉग चैंजलॉग और दस्तावेज़ की समीक्षा कर सकते हैं।",
+  "en_meta": "GitHub Copilot app releases public previews for Projects and Computer Use, enabling multi-repository workflows and desktop app automation.",
+  "hi_meta": "GitHub Copilot ऐप ने मल्टी-रिपॉजिटरी वर्कफ़्लो और डेस्कटॉप ऐप ऑटोमेशन के लिए प्रोजेक्ट्स और कंप्यूटर यूज़ के पब्लिक प्रीव्यू जारी किए।",
+  "en_keywords": [
+    "GitHub Copilot app",
+    "Copilot Projects",
+    "Computer Use",
+    "public preview",
+    "developer tools"
+  ],
+  "hi_keywords": [
+    "GitHub Copilot ऐप",
+    "Copilot Projects",
+    "कंप्यूटर यूज़",
+    "पब्लिक प्रीव्यू",
+    "डेवलपर टूल्स"
+  ],
+  "source_published_at": "2026-10-28T15:55:00+00:00",
+  "id": "515b47292221",
+  "source": "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases",
+  "date": "2026-11-08T09:52:50.889701+00:00",
+  "source_title": "GitHub Copilot app, Universe releases",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

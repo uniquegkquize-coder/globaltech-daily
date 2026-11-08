@@ -1,0 +1,31 @@
+{
+  "en_title": "GitHub Details Infrastructure Progress, Regional Migrations, and Recent Outages in Availability Report",
+  "hi_title": "GitHub ने उपलब्धता रिपोर्ट में बुनियादी ढांचे की प्रगति, क्षेत्रीय प्रवासन और हालिया आउटेज का विवरण दिया",
+  "en_body": "GitHub published its availability report covering August and September 2026, detailing infrastructure updates, workload migrations to Azure, and operational incidents that affected users.\n\nAccording to the report, GitHub addressed shared-database pressure, introduced overload controls, expanded failure containment for pull requests, and migrated more production workloads to Azure. By October 7, 120 of 160 production services were deployed in Central US, and 13 of 51 primary MySQL databases had moved. Deployments in Central US were temporarily paused on September 11 due to uneven capacity across availability zones, and a missed migration target means work continues toward a goal of unlocking all available capacity by the end of October.\n\n## Database and Performance Improvements\n- **Reduced Database Load:** Migrating 24 authentication-core tables off GitHub's oldest shared database removed approximately one million queries per second from its replicas.\n- **Storage Cleanup:** The database cluster supporting issues and pull requests removed approximately 980 million unnecessary edit-history rows, creating an estimated 1.8 terabytes of recoverable storage.\n- **Reduced Deadlocks:** Weekly deadlocks fell approximately 77% from their June peak.\n- **Actions Optimization:** Production changes reduced measured Redis operations by approximately 28% and relative CPU by approximately 30%. An infrastructure cache reduced Redis bandwidth by 84% and average response time by 66%.\n\n## Notable Incidents\n- **September 13 (1 hour, 28 minutes):** A background data-cleanup job increased load on a shared database. A safeguard failed to account for incoming load on the primary server, causing it to reach its connection limit. Lack of quick timeouts and a retry loop for token creation delayed recovery.\n- **September 28 (52 minutes):** A change to the Copilot code review service sent limited copies instead of full review results to some customers. The issue went undetected until reviews remained incomplete for more than 30 minutes, triggering alerts before the change was reverted.\n\n## Practical Implications and Verification\nUsers and organizations relying on GitHub's core services, Actions, and Copilot features experienced intermittent disruptions during these incidents. GitHub stated that its guiding principle remains \"availability, then capacity, then features.\"\n\nTo verify updates or check real-time status changes, readers should consult the official GitHub Status page and review the engineering section on the GitHub Blog.",
+  "hi_body": "GitHub ने अगस्त और सितंबर 2026 को कवर करते हुए अपनी उपलब्धता रिपोर्ट प्रकाशित की है, जिसमें बुनियादी ढांचे के अपडेट, Azure पर वर्कलोड माइग्रेशन और उपयोगकर्ताओं को प्रभावित करने वाली परिचालन घटनाओं का विवरण दिया गया है।\n\nरिपोर्ट के अनुसार, GitHub ने साझा-डेटाबेस दबाव को कम किया, ओवरलोड नियंत्रण जोड़े, पुल अनुरोधों के लिए विफलता रोकथाम का विस्तार किया, और अधिक उत्पादन वर्कलोड को Azure पर स्थानांतरित किया। 7 अक्टूबर तक, 160 में से 120 उत्पादन सेवाओं को सेंट्रल यूएस में तैनात किया गया था, और 51 प्राथमिक MySQL डेटाबेस में से 13 स्थानांतरित हो चुके थे। उपलब्धता क्षेत्रों में असमान क्षमता के कारण सेंट्रल यूएस में तैनाती को 11 सितंबर को अस्थायी रूप से रोक दिया गया था, और एक छूटे हुए प्रवासन लक्ष्य का मतलब है कि अक्टूबर के अंत तक सभी उपलब्ध क्षमता को अनलॉक करने के लक्ष्य की दिशा में काम जारी है।\n\n## डेटाबेस और प्रदर्शन सुधार\n- **डेटाबेस लोड में कमी:** GitHub के सबसे पुराने साझा डेटाबेस से 24 प्रमाणीकरण-कोर टेबल को हटाने से इसकी प्रतिकृतियों (replicas) से प्रति सेकंड लगभग दस लाख क्वेरी कम हो गईं।\n- **भंडारण सफाई:** मुद्दों और पुल अनुरोधों का समर्थन करने वाले डेटाबेस क्लस्टर ने लगभग 980 मिलियन अनावश्यक संपादन-इतिहास पंक्तियों को हटा दिया, जिससे अनुमानित 1.8 टेराबाइट पुनर्प्राप्त करने योग्य स्टोरेज तैयार हुआ।\n- **डेडlock में कमी:** साप्ताहिक डेडlock अपने जून के चरम से लगभग 77% गिर गए।\n- **एक्शन ऑप्टिमाइजेशन:** उत्पादन परिवर्तनों से मापा गया Redis संचालन लगभग 28% और सापेक्ष CPU लगभग 30% कम हो गया।\n\n## उल्लेखनीय घटनाएं\n- **13 सितंबर (1 घंटा, 28 मिनट):** एक पृष्ठभूमि डेटा-सफाई जॉब ने साझा डेटाबेस पर लोड बढ़ा दिया। एक सुरक्षा उपाय प्राथमिक सर्वर पर आने वाले लोड को ध्यान में रखने में विफल रहा, जिससे यह अपनी कनेक्शन सीमा तक पहुंच गया।\n- **28 सितंबर (52 मिनट):** Copilot कोड समीक्षा सेवा में एक बदलाव ने कुछ ग्राहकों को पूर्ण समीक्षा परिणामों के बजाय सीमित प्रतियां भेजीं। जब तक समीक्षाएं अधूरी रहीं, तब तक इस समस्या का पता नहीं चला, जिससे परिवर्तन को वापस लेने से पहले अलर्ट ट्रिगर हो गए।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nGitHub की सेवाओं, एक्शन और Copilot सुविधाओं पर निर्भर उपयोगकर्ताओं और संगठनों को इन घटनाओं के दौरान रुकावटों का सामना करना पड़ा। GitHub ने कहा कि इसका मार्गदर्शक सिद्धांत \"उपलब्धता, फिर क्षमता, फिर विशेषताएं\" बना हुआ है।\n\nअपडेट सत्यापित करने या वास्तविक समय की स्थिति की जांच करने के लिए, पाठक आधिकारिक GitHub स्टेटस पेज देख सकते हैं और GitHub ब्लॉग पर इंजीनियरिंग अनुभाग की समीक्षा कर सकते हैं।",
+  "en_meta": "GitHub's availability report for August and September 2026 details Azure migrations, database cleanups, and incident reviews.",
+  "hi_meta": "अगस्त और सितंबर 2026 के लिए GitHub की उपलब्धता रिपोर्ट Azure माइग्रेशन, डेटाबेस सफाई और घटना समीक्षा का विवरण देती है।",
+  "en_keywords": [
+    "GitHub availability report",
+    "Azure migration",
+    "GitHub actions",
+    "database optimization",
+    "Copilot code review",
+    "infrastructure updates"
+  ],
+  "hi_keywords": [
+    "GitHub उपलब्धता रिपोर्ट",
+    "Azure प्रवासन",
+    "GitHub actions",
+    "डेटाबेस अनुकूलन",
+    "Copilot कोड समीक्षा",
+    "बुनियादी ढांचा अपडेट"
+  ],
+  "source_published_at": "2026-10-14T20:01:35+00:00",
+  "id": "3cbafd433803",
+  "source": "https://github.blog/news-insights/company-news/github-availability-report-september-2026/",
+  "date": "2026-11-08T09:52:35.503145+00:00",
+  "source_title": "GitHub availability report: September 2026",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
