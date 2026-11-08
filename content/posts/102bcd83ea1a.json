@@ -1,0 +1,32 @@
+{
+  "en_title": "Open Data Project Encodes US Individual Income Tax Forms Line by Line",
+  "hi_title": "ओपन डेटा प्रोजेक्ट ने अमेरिकी व्यक्तिगत आयकर फॉर्मों को पंक्तिबद्ध तरीके से एन्कोड किया",
+  "en_body": "## Overview\n\nA software project on GitHub named `emmilco/us-tax-model` encodes the Internal Revenue Service's individual income tax forms and instructions as open data. Every encoded line includes citations linking back to archived IRS pages. The repository implements tax forms and logic up to the 2024 tax year, while the underlying calculation engine remains active for other IRS tools.\n\n## Structure and Verification\n\nThe project models tax calculations through a stack of layers designed to verify computations and trace data back to original sources:\n\n* **Fact Graph:** A declarative knowledge graph written in Scala that tracks known and unknown variables.\n* **Operations:** Calculations rely on a closed list of approximately twenty discrete operations, such as addition, subtraction, rounding, and table lookups, implemented without floating-point arithmetic.\n* **Proof and Testing:** The engine uses two independent evaluators and formal properties proved in Lean 4 to check mathematical consistency.\n* **Independent Evidence:** To address the challenge of reading accuracy, the project uses cross-validation through independent transcriptions, model reviews, and comparisons against third-party tax engines.\n\n## Limitations and Practical Implications\n\nThe repository operates strictly as an independent analysis and verification tool rather than an official filing service. It does not file tax returns; instead, it generates a values sheet and explicitly refuses to process returns that fall outside its supported scope. Users and developers can inspect the open-source repository on GitHub to review how specific instructions and formulas have been transcribed and tested.",
+  "hi_body": "## अवलोकन\n\nGitHub पर `emmilco/us-tax-model` नामक एक सॉफ्टवेयर प्रोजेक्ट आंतरिक राजस्व सेवा (IRS) के व्यक्तिगत आयकर फॉर्मों और निर्देशों को ओपन डेटा के रूप में एन्कोड करता है। एन्कोड की गई प्रत्येक पंक्ति में संग्रहीत IRS पृष्ठों के लिंक वाले संदर्भ शामिल हैं। यह रिपॉजिटरी 2024 कर वर्ष तक के कर फॉर्मों और तर्क को लागू करती है, जबकि इसके अंतर्निहित गणना इंजन अन्य IRS टूल के लिए सक्रिय हैं।\n\n## संरचना और सत्यापन\n\nयह प्रोजेक्ट गणनाओं को सत्यापित करने और मूल स्रोतों तक डेटा का पता लगाने के लिए डिज़ाइन की गई परतों के माध्यम से कर गणनाओं का मॉडल तैयार करता है:\n\n* **फैक्ट ग्राफ:** Scala में लिखा गया एक घोषणात्मक ज्ञान ग्राफ जो ज्ञात और अज्ञात चर को ट्रैक करता है।\n* **संचालन:** गणनाएं लगभग बीस असत संचालन की एक बंद सूची पर निर्भर करती हैं, जैसे कि जोड़, घटाव, पूर्णांकन और तालिका लुकअप, जिन्हें फ़्लोटिंग-पॉइंट अंकगणित के बिना कार्यान्वित किया जाता है।\n* **प्रमाण और परीक्षण:** इंजन गणितीय स्थिरता की जांच के लिए दो स्वतंत्र मूल्यांकनकर्ताओं और Lean 4 में सिद्ध औपचारिक गुणों का उपयोग करता है।\n* **स्वतंत्र साक्ष्य:** पढ़ने की सटीकता की चुनौती से निपटने के लिए, प्रोजेक्ट स्वतंत्र प्रलेखन, मॉडल समीक्षाओं और तृतीय-पक्ष कर इंजनों के साथ तुलना के माध्यम से क्रॉस-वैलिडेशन का उपयोग करता है।\n\n## सीमाएं और व्यावहारिक प्रभाव\n\nयह रिपॉजिटरी आधिकारिक फाइलिंग सेवा के बजाय पूरी तरह से एक स्वतंत्र विश्लेषण और सत्यापन टूल के रूप में कार्य करती है। यह कर रिटर्न दाखिल नहीं करता है; इसके बजाय, यह एक वैल्यू शीट तैयार करता है और उन रिटर्न को प्रोसेस करने से स्पष्ट रूप से मना करता है जो इसके समर्थित दायरे से बाहर आते हैं। उपयोगकर्ता और डेवलपर यह देखने के लिए GitHub पर ओपन-सोर्स रिपॉजिटरी का निरीक्षण कर सकते हैं कि विशिष्ट निर्देशों और सूत्रों को कैसे एन्कोड और परीक्षण किया गया है।",
+  "en_meta": "An open data GitHub project encodes IRS individual income tax forms and instructions line by line with verifiable citations and formal logic checks.",
+  "hi_meta": "एक ओपन डेटा GitHub प्रोजेक्ट सत्यापन योग्य साक्ष्यों के साथ IRS व्यक्तिगत आयकर फॉर्मों को पंक्ति-दर-पंक्ति एन्कोड करता है।",
+  "en_keywords": [
+    "US tax model",
+    "IRS forms",
+    "open data tax project",
+    "Fact Graph",
+    "tax calculation software"
+  ],
+  "hi_keywords": [
+    "अमेरिकी कर मॉडल",
+    "IRS फॉर्म",
+    "ओपन डेटा कर प्रोजेक्ट",
+    "फैक्ट ग्राफ",
+    "कर गणना सॉफ्टवेयर"
+  ],
+  "source_published_at": null,
+  "id": "102bcd83ea1a",
+  "source": "https://github.com/emmilco/us-tax-model",
+  "date": "2026-11-08T11:42:14.407730+00:00",
+  "source_title": "emmilco/us-tax-model: US federal income tax forms and instructions as cited, executable, machine-checkable data. - GitHub",
+  "category": "banking-finance",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

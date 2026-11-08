@@ -1,0 +1,32 @@
+{
+  "en_title": "EffectCraft: Open-Source Motion Graphics and Compositing Tool Written in Rust",
+  "hi_title": "EffectCraft: रस्ट में लिखा गया ओपन-सोर्स मोशन ग्राफिक्स और कंपोजिटिंग टूल",
+  "en_body": "EffectCraft is an open-source motion graphics and visual effects studio written from scratch in pure Rust. It is currently in alpha and is designed for animated titles, motion graphics, and compositing work, featuring a range of tools including layers, keyframes, 308 effects, 3D cameras and lights, and a dedicated render queue.\n\n## Core Features and Architecture\n\n* **Pure Rust Codecs:** Encodes and decodes video and audio natively without relying on FFmpeg, utilizing custom and shared codecs.\n* **Scriptable Interface:** Supports command-line execution, a JSON control channel, and Model Context Protocol (MCP) integration.\n* **Comprehensive Layer System:** Offers solids, shapes, text, footage, nested compositions, nulls, adjustment layers, cameras, and lights with various blend modes and motion blur.\n* **Standard Compatibility:** Includes native Lottie import and export, alongside versioned JSON project files (.ecproj).\n\n## Platform Availability and Current Status\n\nEffectCraft is available across macOS, Windows, Linux, and via a web build. The developers note that the software is young—having started development in late 2026—and is not yet recommended for production client work. macOS is currently the most tested platform, while Linux and Windows users may encounter basic interaction bugs.\n\n## Practical Implications and Verification\n\nUsers interested in trying the tool can download installers from the project's official GitHub releases or via getartcraft.com. Because the software is in an alpha stage with ongoing evaluations for fidelity and AI models like MobileSAM and MediaPipe Face Landmarker, users are encouraged to report visual discrepancies and bugs to help improve stability.",
+  "hi_body": "EffectCraft एक ओपन-सोर्स मोशन ग्राफिक्स और विजुअल इफेक्ट्स स्टूडियो है जिसे पूरी तरह से शुद्ध रस्ट (Rust) भाषा में लिखा गया है। यह वर्तमान में अल्फा चरण में है और इसे एनिमेटेड टाइटल्स, मोशन ग्राफिक्स और कंपोजिटिंग कार्य के लिए डिज़ाइन किया गया है। इसमें लेयर्स, कीफ्रेम्स, 308 इफेक्ट्स, 3डी कैमरे और लाइट्स, और एक समर्पित रेंडर कतार शामिल है।\n\n## मुख्य विशेषताएँ और वास्तुकला\n\n* **शुद्ध रस्ट कोडेक्स:** यह एफएफएमपीईजी (FFmpeg) पर निर्भर रहने के बजाय मूल रूप से वीडियो और ऑडियो को एन्कोड और डिकोड करता है।\n* **स्क्रिप्टेबल इंटरफ़ेस:** यह कमांड-लाइन निष्पादन, एक JSON नियंत्रण चैनल और मॉडल संदर्भ प्रोटोकॉल (MCP) एकीकरण का समर्थन करता है।\n* **व्यापक लेयर सिस्टम:** इसमें सॉलिड्स, शेप्स, टेक्स्ट, फुटेज, नेस्टेड कंपोजिशन और लाइट्स जैसे विकल्प मिलते हैं।\n* **मानक अनुकूलता:** इसमें नेटिव Lottie आयात और निर्यात के साथ-साथ संस्करणित JSON प्रोजेक्ट फ़ाइलें (.ecproj) शामिल हैं।\n\n## प्लेटफ़ॉर्म उपलब्धता और वर्तमान स्थिति\n\nEffectCraft macOS, Windows, Linux और वेब बिल्ड पर उपलब्ध है। डेवलपर्स का कहना है कि यह सॉफ्टवेयर अभी नया है और इसे अभी पूर्ण प्रोडक्शन क्लाइंट कार्य के लिए अनुशंसित नहीं किया गया है। वर्तमान में macOS सबसे अधिक परीक्षण किया गया प्लेटफ़ॉर्म है, जबकि अन्य प्लेटफ़ॉर्म पर बुनियादी बग सामने आ सकते हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nजो उपयोगकर्ता इस टूल को आजमाना चाहते हैं, वे आधिकारिक GitHub रिलीज़ या getartcraft.com से इंस्टॉलर्स डाउनलोड कर सकते हैं। चूंकि सॉफ्टवेयर अल्फा चरण में है, इसलिए उपयोगकर्ताओं को स्थिरता में सुधार के लिए किसी भी विसंगति या बग की रिपोर्ट करने के लिए प्रोत्साहित किया जाता है।",
+  "en_meta": "Discover EffectCraft, an open-source motion graphics and compositing tool written in pure Rust. Learn about its features, alpha status, and availability.",
+  "hi_meta": "EffectCraft के बारे में जानें, जो शुद्ध रस्ट में लिखा गया एक ओपन-सोर्स मोशन ग्राफिक्स और कंपोजिटिंग टूल है। इसकी विशेषताओं और स्थिति की जानकारी देखें।",
+  "en_keywords": [
+    "EffectCraft",
+    "motion graphics",
+    "compositing tool",
+    "open-source Rust",
+    "VFX software"
+  ],
+  "hi_keywords": [
+    "इफेक्टक्राफ्ट",
+    "मोशन ग्राफिक्स",
+    "कंपोजिटिंग टूल",
+    "ओपन-सोर्स रस्ट",
+    "वीएफएक्स सॉफ्टवेयर"
+  ],
+  "source_published_at": null,
+  "id": "de8d45623f19",
+  "source": "https://github.com/storytold/effectcraft",
+  "date": "2026-11-08T11:41:40.987774+00:00",
+  "source_title": "EffectCraft: An open-source motion graphics and compositing tool written by scratch in pure Rust - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

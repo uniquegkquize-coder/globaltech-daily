@@ -1,0 +1,32 @@
+{
+  "en_title": "OBLITERATUS Toolkit Explores Open-Source Language Model Alignment and Refusal Removal",
+  "hi_title": "ओब्लिस्ट्रेटस टूलकिट ओपन-सोर्स भाषा मॉडल एलाइनमेंट और रिफ्यूजल रिमूवल की खोज करता है",
+  "en_body": "OBLITERATUS is an open-source toolkit designed to study, map, and remove content refusal behaviors from large language models without requiring retraining or fine-tuning. The project implements abliteration techniques to identify and modify internal representations associated with model refusals while attempting to preserve core language capabilities.\n\n## Overview and Objectives\n\n- **Research Focus:** The toolkit functions as both an intervention instrument and a distributed research experiment, collecting anonymous benchmark data when telemetry is enabled during runs.\n- **Methodology:** It utilizes extraction strategies such as Principal Component Analysis (PCA), mean-difference, sparse autoencoder decomposition, and whitened SVD to locate and adjust refusal directions.\n- **Scope:** The software aims to provide transparent mechanisms for researchers and developers examining transformer architecture alignment and safety behaviors.\n\n## Usage Interfaces and Pipelines\n\nOBLITERATUS provides multiple ways to interact with models depending on technical requirements:\n\n- **HuggingFace Spaces:** A Gradio-based web interface allows users to run models without local setup, utilizing ZeroGPU resources with default telemetry.\n- **Local Hardware:** Users can run the identical interface locally on their own GPU hardware using Python 3.11 or newer.\n- **CLI and Python API:** Command-line tools and programmatic interfaces support automation, custom pipelines, and integration into existing evaluation workflows.\n\n## Verification and Safety Considerations\n\nThe software includes analysis modules to examine model geometry, check collateral impacts on general capabilities, and verify outputs against baseline metrics. Documentation emphasizes that models processed with weight-level interventions have safety guardrails removed, placing full responsibility for usage and outputs on the operator. Users should consult the official repository and documentation to verify setup instructions, dependency requirements, and current operational constraints.",
+  "hi_body": "ओब्लिस्ट्रेटस (OBLITERATUS) एक ओपन-सोर्स टूलकिट है जिसे बिना रीट्रेनिंग या फाइन-ट्यूनिंग के बड़े भाषा मॉडल से सामग्री अस्वीकृति (रिफ्यूजल) व्यवहारों का अध्ययन करने, उनका मानचित्रण करने और उन्हें हटाने के लिए डिज़ाइन किया गया है। यह प्रोजेक्ट मॉडल अस्वीकृति से जुड़ी आंतरिक प्रस्तुतियों की पहचान करने और उनमें संशोधन करने के लिए एब्लिप्रेशन तकनीकों को लागू करता है, साथ ही मुख्य भाषा क्षमताओं को संरक्षित करने का प्रयास करता है।\n\n## अवलोकन और उद्देश्य\n\n- **शोध फोकस:** यह टूलकिट एक हस्तक्षेप उपकरण और एक वितरित अनुसंधान प्रयोग दोनों के रूप में कार्य करता है, जो रन के दौरान टेलीमेट्री सक्षम होने पर अज्ञात बेंचमार्क डेटा एकत्र करता है।\n- **कार्यप्रणाली:** यह अस्वीकृति दिशाओं का पता लगाने और उन्हें समायोजित करने के लिए प्रिंसिपल कंपोनेंट एनालिसिस (PCA), मीन-डिफ़रेंस, स्पार्स ऑटोएन्कोडर डीकंपोज़िशन और व्हिटेंड SVD जैसी निष्कर्षण रणनीतियों का उपयोग करता है।\n- **दायरा:** इस सॉफ्टवेयर का उद्देश्य ट्रांसफार्मर आर्किटेक्चर एलाइनमेंट और सुरक्षा व्यवहारों की जांच करने वाले शोधकर्ताओं और डेवलपर्स के लिए पारदर्शी तंत्र प्रदान करना है।\n\n## उपयोग इंटरफेस और पाइपलाइन\n\nओब्लिस्ट्रेटस तकनीकी आवश्यकताओं के आधार पर मॉडल के साथ बातचीत करने के कई तरीके प्रदान करता है:\n\n- **हगिंगफेस स्पेसेस:** एक ग्रेडियो-आधारित वेब इंटरफेस उपयोगकर्ताओं को डिफ़ॉल्ट टेलीमेट्री के साथ ZeroGPU संसाधनों का उपयोग करके स्थानीय सेटअप के बिना मॉडल चलाने की अनुमति देता है।\n- **स्थानीय हार्डवेयर:** उपयोगकर्ता Python 3.11 या नए संस्करण का उपयोग करके अपने स्वयं के GPU हार्डवेयर पर स्थानीय रूप से समान इंटरफ़ेस चला सकते हैं।\n- **CLI और Python API:** कमांड-लाइन टूल और प्रोग्रामेटिक इंटरफेस स्वचालन, कस्टम पाइपलाइन और मौजूदा मूल्यांकन वर्कफ़्लो में एकीकरण का समर्थन करते हैं।\n\n## सत्यापन और सुरक्षा विचार\n\nसॉफ्टवेयर में मॉडल ज्यामिति की जांच करने, सामान्य क्षमताओं पर संपार्श्विक प्रभावों की जांच करने और बेसलाइन मेट्रिक्स के खिलाफ आउटपुट को सत्यापित करने के लिए विश्लेषण मॉड्यूल शामिल हैं। दस्तावेज़ीकरण इस बात पर जोर देता है कि वजन-स्तर के हस्तक्षेप के साथ संसाधित मॉडल से सुरक्षा गार्डरेल हटा दिए जाते हैं, जिससे उपयोग और आउटपुट के लिए पूरी जिम्मेदारी ऑपरेटर पर आ जाती है। उपयोगकर्ताओं को सेटअप निर्देशों, निर्भरता आवश्यकताओं और वर्तमान परिचालन बाधाओं को सत्यापित करने के लिए आधिकारिक रिपॉजिटरी और दस्तावेज़ीकरण से परामर्श करना चाहिए।",
+  "en_meta": "Explore OBLITERATUS, an open-source research toolkit for analyzing and removing refusal behaviors in transformer-based language models.",
+  "hi_meta": "ओब्लिस्ट्रेटस की खोज करें, जो ट्रांसफार्मर-आधारित भाषा मॉडल में अस्वीकृति व्यवहार का विश्लेषण करने के लिए एक ओपन-सोर्स अनुसंधान टूलकिट है।",
+  "en_keywords": [
+    "OBLITERATUS",
+    "abliteration",
+    "language models",
+    "AI safety",
+    "open-source toolkit"
+  ],
+  "hi_keywords": [
+    "ओब्लिस्ट्रेटस",
+    "एब्लिप्रेशन",
+    "भाषा मॉडल",
+    "AI सुरक्षा",
+    "ओपन-सोर्स टूलकिट"
+  ],
+  "source_published_at": null,
+  "id": "ed0e57b2dc07",
+  "source": "https://github.com/elder-plinius/OBLITERATUS",
+  "date": "2026-11-08T11:41:49.402047+00:00",
+  "source_title": "elder-plinius/OBLITERATUS: OBLITERATE THE CHAINS THAT BIND YOU - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

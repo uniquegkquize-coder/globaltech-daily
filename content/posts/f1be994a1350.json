@@ -1,0 +1,33 @@
+{
+  "en_title": "Floci: An Open-Source Local AWS Emulator",
+  "hi_title": "फ्लोसी: एक ओपन-सोर्स लोकल एडब्ल्यूएस एमुलेटर",
+  "en_body": "Floci is a free, open-source local AWS emulator designed for development, testing, and continuous integration (CI) workflows. It provides AWS-shaped services directly on a local machine without requiring a cloud account, an authentication token, or paid feature gates. Users can point standard AWS clients, SDKs, CLIs, Terraform, CDK, OpenTofu, or test suites at http://localhost:4566 while keeping their existing workflows.\n\nAccording to the project documentation, Floci serves as a drop-in replacement for LocalStack community setups, allowing users to swap the image and continue operating. The project offers broad service coverage, including application services, data services, eventing, identity, infrastructure, billing, and container-backed workloads. For stateful databases and complex runtimes, Floci utilizes real Docker-backed execution rather than shallow mocks.\n\n## Getting Started and Quick Start\n\nThe fastest way to run Floci is by using Docker Compose or the official command-line interface (CLI). Each release also ships as a standalone `floci-aws` binary for Linux, macOS, and Windows for environments without Docker.\n\n* Start the emulator locally using Docker Compose or the CLI.\n* Export the local AWS environment variables.\n* Direct your standard AWS tooling to `http://localhost:4566`.\n\n## Key Architecture and Features\n\n* **Storage Flexibility:** Configure storage modes such as in-memory, persistent, hybrid, or write-ahead logs depending on durability requirements.\n* **Multi-Account Isolation:** Floci supports per-account resource isolation. If `AWS_ACCESS_KEY_ID` is exactly 12 digits, it is treated as the account ID, ensuring resources created by one account remain invisible to another.\n* **Web Console:** Floci includes a browser console accessible at `http://localhost:4566/_floci/ui` for inspecting local resources through a sidecar container.\n* **Testcontainers Integration:** Dedicated modules allow developers to start isolated instances directly from tests to avoid shared state and port conflicts.\n\n## Compatibility and Release Channels\n\nFloci translates LocalStack environment variables automatically and maintains compatibility endpoints to support existing migration paths. Stable releases are scheduled on the 15th and the last day of each month, while nightly tags track the main branch for development builds.\n\nUsers can verify original installation instructions, compatibility matrices, and storage configurations directly on the official GitHub repository at `https://github.com/floci-io/floci`.",
+  "hi_body": "फ्लोसी (Floci) एक निःशुल्क और ओपन-सोर्स लोकल एडब्ल्यूएस (AWS) एमुलेटर है जिसे विकास, परीक्षण और निरंतर एकीकरण (CI) वर्कफ़्लो के लिए डिज़ाइन किया गया है। यह किसी क्लाउड खाते, प्रमाणीकरण टोकन या सशुल्क फ़ीचर गेट की आवश्यकता के बिना स्थानीय मशीन पर एडब्ल्यूएस-जैसी सेवाएँ प्रदान करता है। उपयोगकर्ता अपने मौजूदा वर्कफ़्लो को बनाए रखते हुए मानक एडब्ल्यूएस क्लाइंट, एसडीके, सीएलआई, टेराफ़ॉर्म, सीडीके या टेस्ट सूट को http://localhost:4566 पर इंगित कर सकते हैं।\n\nपरियोजना दस्तावेज़ के अनुसार, फ्लोसी को लोकलस्टैक कम्युनिटी सेटअप के विकल्प के रूप में उपयोग किया जा सकता है, जिससे उपयोगकर्ता केवल इमेज बदलकर काम जारी रख सकते हैं। यह प्रोजेक्ट एप्लीकेशन सेवाओं, डेटा सेवाओं, इवेंटिंग, पहचान और बुनियादी ढाँचे सहित व्यापक कवरेज प्रदान करता है।\n\n## शुरुआत कैसे करें\n\nफ्लोसी चलाने का सबसे तेज़ तरीका Docker Compose या आधिकारिक कमांड-लाइन इंटरफ़ेस (CLI) का उपयोग करना है। डॉकर के बिना वातावरण के लिए प्रत्येक रिलीज़ लिनक्स, मैकओएस और विंडोज के लिए एक स्टैंडअलोन बाइनरी के रूप में भी उपलब्ध है।\n\n* डॉकर कंपोज़ या सीएलआई का उपयोग करके स्थानीय स्तर पर एमुलेटर शुरू करें।\n* स्थानीय एडब्ल्यूएस पर्यावरण चर (environment variables) निर्यात करें।\n* अपने मानक एडब्ल्यूएस टूल को `http://localhost:4566` पर निर्देशित करें।\n\n## मुख्य वास्तुकला और विशेषताएँ\n\n* **भंडारण लचीलापन:** आवश्यकतानुसार इन-मेमोरी, लगातार, हाइब्रिड या राइट-अहेड लॉग स्टोरेज मोड कॉन्फ़िगर करें।\n* **मल्टी-अकाउंट आइसोलेशन:** फ्लोसी प्रति-खाता संसाधन आइसोलेशन का समर्थन करता है। यदि `AWS_ACCESS_KEY_ID` ठीक 12 अंकों का है, तो इसे खाता आईडी माना जाता है।\n* **वेब कंसोल:** स्थानीय संसाधनों का निरीक्षण करने के लिए `http://localhost:4566/_floci/ui` पर एक ब्राउज़र कंसोल उपलब्ध है।\n* **टेस्टकंटेनर्स इंटीग्रेशन:** समर्पित मॉड्यूल डेवलपर्स को साझा अवस्था और पोर्ट संघर्षों से बचने के लिए परीक्षणों से सीधे अलग किए गए उदाहरण शुरू करने की अनुमति देते हैं।\n\n## अनुकूलता और रिलीज चैनल\n\nफ्लोसी स्वचालित रूप से लोकलस्टैक पर्यावरण चर का अनुवाद करता है। स्थिर रिलीज़ महीने की 15 तारीख और अंतिम दिन निर्धारित की जाती हैं, जबकि नाइटली टैग मुख्य शाखा को ट्रैक करते हैं।\n\nमूल स्थापना निर्देशों, अनुकूलता मैट्रिक्स और स्टोरेज कॉन्फ़िगरेशन को सत्यापित करने के लिए आधिकारिक GitHub रिपॉजिटरी `https://github.com/floci-io/floci` देखें।",
+  "en_meta": "Discover Floci, a free and open-source local AWS emulator offering Docker-backed services, multi-account isolation, and compatibility with standard AWS tools.",
+  "hi_meta": "फ्लोसी (Floci) एक निःशुल्क लोकल एडब्ल्यूएस एमुलेटर है जो बिना क्लाउड अकाउंट के स्थानीय विकास और परीक्षण में सहायता करता है।",
+  "en_keywords": [
+    "Floci",
+    "AWS emulator",
+    "local development",
+    "LocalStack alternative",
+    "Docker Compose",
+    "Testcontainers"
+  ],
+  "hi_keywords": [
+    "फ्लोसी",
+    "एडब्ल्यूएस एमुलेटर",
+    "लोकल डेवलपमेंट",
+    "लोकलस्टैक विकल्प",
+    "डॉकर कंपोज़"
+  ],
+  "source_published_at": null,
+  "id": "f1be994a1350",
+  "source": "https://github.com/floci-io/floci",
+  "date": "2026-11-08T11:43:01.970808+00:00",
+  "source_title": "floci-io/floci: Light, fluffy, and always free - The AWS Local Emulator alternative - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

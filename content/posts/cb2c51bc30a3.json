@@ -1,0 +1,34 @@
+{
+  "en_title": "OpenSEO Positions Itself as an Open-Source Alternative to Semrush and Ahrefs",
+  "hi_title": "OpenSEO ने Semrush और Ahrefs के ओपन-सोर्स विकल्प के रूप में खुद को पेश किया",
+  "en_body": "OpenSEO has been introduced as an open-source, pay-as-you-go SEO tool designed as an alternative to platforms like Semrush and Ahrefs. According to project documentation, the software aims to provide focused workflows rather than a complex SEO suite, featuring compatibility with AI agents through a Model Context Protocol (MCP) server. ## Core Features and AI Integration OpenSEO allows users to connect with AI agents such as Claude Code, OpenClaw, and Hermes. The project includes pre-built skills and enables users to build custom workflows. Key operational details include: * **API Integration:** Users bring their own DataForSEO API key to fetch SEO data directly. * **MCP Support:** An MCP server exposes SEO data so AI agents can use it directly. * **UI Design:** The platform features a modern, simple interface aimed at specific workflows. ## Self-Hosting and Deployment Options The project supports multiple self-hosting pathways, utilizing email and password accounts where the first visitor establishes the admin account: * **Docker:** Ready-to-use images supporting Compose-based platforms like Coolify, Portainer, and Dokploy. * **Cloudflare:** Deployment directly onto a user's Cloudflare account using a single deploy command. Advanced security configurations permit bypassing built-in sign-ins when running behind Tailscale, private networks, or authenticating proxies, as well as integrating Cloudflare Access. ## Pricing and Verification Pricing details indicate that the core software is available to self-host, requiring users to pay DataForSEO directly for API usage. A hosted subscription option is listed at $10 per month, while the hosted service charges a 28% markup on DataForSEO requests compared to self-hosting costs. Interested parties can review the official GitHub repository at github.com/every-app/open-seo or visit openseo.so to verify details, inspect documentation, and test the software.",
+  "hi_body": "OpenSEO को Semrush और Ahrefs जैसे प्लेटफार्मों के विकल्प के रूप में एक ओपन-सोर्स, पे-एज़-यू-गो SEO टूल के रूप में पेश किया गया है। प्रोजेक्ट दस्तावेज़ के अनुसार, यह सॉफ़्टवेयर जटिल SEO सुइट के बजाय केंद्रित वर्कफ़्लो प्रदान करने का लक्ष्य रखता है, और मॉडल कॉन्टेक्स्ट प्रोटोकॉल (MCP) सर्वर के माध्यम से AI एजेंटों के साथ संगतता प्रदान करता है। ## मुख्य विशेषताएँ और AI एकीकरण OpenSEO उपयोगकर्ताओं को Claude Code, OpenClaw और Hermes जैसे AI एजेंटों से जुड़ने की अनुमति देता है। इस प्रोजेक्ट में पहले से निर्मित स्किल्स शामिल हैं और उपयोगकर्ता अपनी कस्टम ज़रूरत के अनुसार वर्कफ़्लो बना सकते हैं। मुख्य परिचालन विवरण: * **API एकीकरण:** उपयोगकर्ता SEO डेटा प्राप्त करने के लिए अपनी खुद की DataForSEO API कुंजी का उपयोग करते हैं। * **MCP समर्थन:** एक MCP सर्वर SEO डेटा को उजागर करता है ताकि AI एजेंट इसका सीधे उपयोग कर सकें। * **यूआई डिज़ाइन:** प्लेटफ़ॉर्म में विशिष्ट वर्कफ़्लो के लिए एक आधुनिक, सरल इंटरफ़ेस है। ## सेल्फ-होस्टिंग और डिप्लॉयमेंट विकल्प यह प्रोजेक्ट कई सेल्फ-होस्टिंग रास्तों का समर्थन करता है, जिसमें ईमेल और पासवर्ड खातों का उपयोग किया जाता है जहाँ पहला आगंतुक व्यवस्थापक खाता बनाता है: * **Docker:** Coolify, Portainer और Dokploy जैसे Compose-आधारित प्लेटफ़ॉर्म का समर्थन करने वाली रेडी-टू-यूज़ इमेज। * **Cloudflare:** एक सिंगल डिप्लॉय कमांड का उपयोग करके सीधे उपयोगकर्ता के Cloudflare खाते पर डिप्लॉयमेंट। उन्नत सुरक्षा कॉन्फ़िगरेशन Tailscale, प्राइवेट नेटवर्क या प्रमाणीकरण प्रॉक्सी के पीछे चलने पर अंतर्निहित साइन-इन को बायपास करने की अनुमति देते हैं। ## मूल्य निर्धारण और सत्यापन मूल्य निर्धारण विवरण इंगित करते हैं कि मुख्य सॉफ़्टवेयर सेल्फ-होस्टिंग के लिए उपलब्ध है, जिसमें उपयोगकर्ताओं को API उपयोग के लिए सीधे DataForSEO को भुगतान करना होता है। होस्टेड सब्सक्रिप्शन विकल्प $10 प्रति माह सूचीबद्ध है, जबकि होस्टेड सेवा सेल्फ-होस्टिंग लागत की तुलना में DataForSEO अनुरोधों पर 28% अतिरिक्त शुल्क लेती है। इच्छुक पक्ष विवरण सत्यापित करने, दस्तावेज़ीकरण देखने और सॉफ़्टवेयर का परीक्षण करने के लिए github.com/every-app/open-seo पर आधिकारिक GitHub रिपॉजिटरी की समीक्षा कर सकते हैं या openseo.so पर जा सकते हैं।",
+  "en_meta": "Explore OpenSEO, an open-source SEO tool alternative to Semrush and Ahrefs with AI agent integration and self-hosting options.",
+  "hi_meta": "OpenSEO के बारे में जानें, जो AI एजेंट एकीकरण और सेल्फ-होस्टिंग विकल्पों के साथ Semrush और Ahrefs का एक ओपन-सोर्स SEO टूल विकल्प है।",
+  "en_keywords": [
+    "OpenSEO",
+    "open-source SEO tool",
+    "Semrush alternative",
+    "Ahrefs alternative",
+    "DataForSEO API",
+    "AI agent SEO"
+  ],
+  "hi_keywords": [
+    "OpenSEO",
+    "ओपन-सोर्स SEO टूल",
+    "Semrush विकल्प",
+    "Ahrefs विकल्प",
+    "DataForSEO API",
+    "AI एजेंट SEO"
+  ],
+  "source_published_at": null,
+  "id": "cb2c51bc30a3",
+  "source": "https://github.com/every-app/open-seo",
+  "date": "2026-11-08T11:42:29.234244+00:00",
+  "source_title": "every-app/open-seo: Open source alternative to Semrush and Ahrefs - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "en_title": "Paseo Open-Source Agentic Development Environment Announced on GitHub",
+  "hi_title": "GitHub पर Paseo ओपन-सोर्स एजेंटिक डेवलपमेंट एनवायरनमेंट की घोषणा",
+  "en_body": "Paseo is an open-source agentic development environment designed to orchestrate multiple coding agents across desktop, mobile, web, and command-line interfaces. According to the project documentation available on GitHub, the software aims to provide a single interface for managing various coding agents such as Claude Code, Codex, Copilot, OpenCode, Pi, Antigravity, and Muse Code.\n\nProject materials state that Paseo operates via a self-hosted model, running locally on a user's machine where the local server, known as a daemon, manages agent processes. Clients including desktop, mobile, web, and CLI applications connect to this daemon. Users must ensure they have at least one agent command-line interface installed and configured with their credentials.\n\n## Core Features and Architecture\n\n* **Parallel Agents and Worktrees:** Run multiple agents simultaneously, with each agent operating in its own worktree on one or multiple machines.\n* **Built-in Orchestration:** Agents can create worktrees, launch other agents, and communicate across different providers.\n* **Multi-Provider Support:** Switch between supported coding agents within the same interface to select models based on specific tasks.\n* **Cross-Device Access:** Native applications are available for iOS and Android, alongside desktop, web, and CLI options.\n* **Privacy-First Design:** The documentation notes an absence of forced log-ins, telemetry, or tracking by default.\n* **Voice Control:** Dictate tasks or discuss problems using a voice mode.\n\n## Setup and Verification\n\nDevelopers can download Paseo from the official GitHub releases page or paseo.sh. For remote servers or virtual machines without the desktop app, the CLI can be installed to start the daemon. When starting, Paseo prompts users to enable an end-to-end encrypted relay for device pairing, though direct connections via TCP, Tailscale, or other VPNs are also supported.\n\nContainerized deployments are supported via Docker, running a local server and web UI at localhost:6767, allowing users to extend base images with necessary agent CLIs and persistent volumes. To verify the software, users should consult the official GitHub repository, review the documentation at paseo.sh, and inspect the codebase directly before deployment.",
+  "hi_body": "Paseo एक ओपन-सोर्स एजेंटिक डेवलपमेंट एनवायरनमेंट है जिसे डेस्कटॉप, मोबाइल, वेब और कमांड-लाइन इंटरफेस पर कई कोडिंग एजेंटों को व्यवस्थित करने के लिए डिज़ाइन किया गया है। GitHub पर उपलब्ध प्रोजेक्ट दस्तावेज़ के अनुसार, इस सॉफ़्टवेयर का उद्देश्य Claude Code, Codex, Copilot, OpenCode, Pi, Antigravity और Muse Code जैसे विभिन्न कोडिंग एजेंटों को प्रबंधित करने के लिए एक एकल इंटरफेस प्रदान करना है।\n\nप्रोजेक्ट सामग्री बताती है कि Paseo एक स्व-होर्स्टेड मॉडल के माध्यम से संचालित होता है, जो उपयोगकर्ता की मशीन पर स्थानीय रूप से चलता है जहाँ 'डेमन' नामक स्थानीय सर्वर एजेंट प्रक्रियाओं का प्रबंधन करता है। डेस्कटॉप, मोबाइल, वेब और CLI एप्लिकेशन सहित क्लाइंट इस डेमन से कनेक्ट होते हैं। उपयोगकर्ताओं को यह सुनिश्चित करना होगा कि उनके पास कम से कम एक एजेंट कमांड-लाइन इंटरफेस स्थापित और उनकी क्रेडेंशियल्स के साथ कॉन्फ़िगर किया गया हो।\n\n## मुख्य विशेषताएँ और वास्तुकला\n\n* **समानांतर एजेंट और वर्कट्री:** एक साथ कई एजेंट चलाएं, जिसमें प्रत्येक एजेंट एक मशीन या कई मशीनों पर अपनी खुद की वर्कट्री में काम करता है।\n* **अंतर्निहित ऑर्केस्ट्रेशन:** Paseo में एजेंट वर्कट्री बना सकते हैं, अन्य एजेंट लॉन्च कर सकते हैं और विभिन्न प्रदाताओं में संवाद कर सकते हैं।\n* **मल्टी-प्रोवाइडेड सपोर्ट:** विशिष्ट कार्यों के आधार पर मॉडल चुनने के लिए एक ही इंटरफेस के भीतर समर्थित कोडिंग एजेंटों के बीच स्विच करें।\n* **क्रॉस-डिवाइस एक्सेस:** डेस्कटॉप, वेब और CLI विकल्पों के साथ-साथ iOS और Android के लिए मूल एप्लिकेशन उपलब्ध हैं।\n* **गोपनीयता-प्रथम डिज़ाइन:** दस्तावेज़ में डिफ़ॉल्ट रूप से किसी भी जबरन लॉगिन, टेलीमेट्री या ट्रैकिंग की अनुपस्थिति का उल्लेख है।\n* **वॉइस कंट्रोल:** वॉइस मोड का उपयोग करके कार्यों को बोलकर निर्देश दें या समस्याओं पर चर्चा करें।\n\n## सेटअप और सत्यापन\n\nडेवलपर आधिकारिक GitHub रिलीज़ पेज या paseo.sh से Paseo डाउनलोड कर सकते हैं। डेस्कटॉप ऐप के बिना दूरस्थ सर्वर या वर्चुअल मशीनों के लिए, डेमन शुरू करने के लिए CLI स्थापित किया जा सकता है। शुरू करते समय, Paseo उपयोगकर्ताओं को डिवाइस पेयरिंग के लिए एंड-टू-एंड एन्क्रिप्टेड रिले सक्षम करने के लिए कहता है, हालांकि TCP, Tailscale या अन्य VPN के माध्यम से सीधे कनेक्शन भी समर्थित हैं।\n\nकंटेनरीकृत तैनाती Docker के माध्यम से समर्थित हैं, जो localhost:6767 पर एक स्थानीय सर्वर और वेब UI चलाती हैं, जिससे उपयोगकर्ताओं को आवश्यक एजेंट CLI और लगातार वॉल्यूम के साथ बेस इमेज का विस्तार करने की अनुमति मिलती है। सॉफ़्टवेयर को सत्यापित करने के लिए, उपयोगकर्ताओं को आधिकारिक GitHub रिपॉजिटरी से परामर्श करना चाहिए, paseo.sh पर दस्तावेज़ की समीक्षा करनी चाहिए और तैनाती से पहले सीधे कोडबेस का निरीक्षण करना चाहिए।",
+  "en_meta": "Explore Paseo, an open-source agentic development environment to orchestrate multiple coding agents across desktop, mobile, and CLI. Learn features and setup.",
+  "hi_meta": "Paseo के बारे में जानें, जो डेस्कटॉप, मोबाइल और CLI पर कई कोडिंग एजेंटों को व्यवस्थित करने के लिए एक ओपन-सोर्स एजेंटिक डेवलपमेंट एनवायरनमेंट है।",
+  "en_keywords": [
+    "Paseo",
+    "coding agents",
+    "open-source development environment",
+    "AI orchestration",
+    "developer tools"
+  ],
+  "hi_keywords": [
+    "Paseo",
+    "कोडिंग एजेंट",
+    "ओपन-सोर्स डेवलपमेंट एनवायरनमेंट",
+    "AI ऑर्केस्ट्रेशन",
+    "डेवलपर टूल"
+  ],
+  "source_published_at": null,
+  "id": "c9a81d0b635f",
+  "source": "https://github.com/getpaseo/paseo",
+  "date": "2026-11-08T11:45:07.767993+00:00",
+  "source_title": "getpaseo/paseo: Orchestrate multiple coding agents from desktop and mobile - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

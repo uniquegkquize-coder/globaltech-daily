@@ -1,0 +1,32 @@
+{
+  "en_title": "Rakazo Offers Open-Source, Self-Hosted AI Agent Alternative in Beta",
+  "hi_title": "रकाजो (Rakazo) बीटा में ओपन-सोर्स, सेल्फ-होस्टेड एआई एजेंट विकल्प पेश करता है",
+  "en_body": "Rakazo is introduced as an open-source, self-hosted AI agent platform designed for persistent teammates and autonomous tasks. Currently available in beta, the project functions as a self-hosted alternative to tools like Grok Bot, Meta Muse, and Claude Duet, allowing users to run the complete stack locally or across web, Electron desktop, and mobile environments.\n\n## Core Architecture and Features\n\n* **Persistent Operation:** Maintains dedicated conversations, memory, and routine histories.\n* **Voice Capabilities:** Supports speech output, dictation, and voice calls using keys from providers like ElevenLabs, OpenAI, Cartesia, and Fish Audio, or native Mac server voices.\n* **Sandboxing & Environments:** Operates across Docker, E2B, Daytona, CreateOS, Boat, and local machines, providing isolated private computers or shared team infrastructure.\n* **Integrations:** Connects via Composio, Pipedream Connect, MCP, and OpenAPI tool sources.\n\n## Setup Requirements and Installation\n\nDeploying Rakazo locally requires Docker Engine, the Compose plugin, curl, and OpenSSL. Basic setup involves running an installer script that downloads required Compose configurations, generates secure random secrets in a `.env` file, and initializes the application stack.\n\n1. Run the bootstrap configuration and start the container environment.\n2. Access `http://127.0.0.1:5173` in a web browser.\n3. Create an account, connect a preferred model provider (such as OpenRouter or custom API credentials), and configure the initial bot.\n\n## Practical Implications and Verification\n\nBecause Rakazo is currently in beta, administrators should review official documentation regarding production hardening, Caddy reverse-proxy configurations for HTTPS, and database migration prerequisites. Security guidelines, contribution workflows, and licensing terms under the Apache License 2.0 can be verified directly on the official GitHub repository and rakazo.com.",
+  "hi_body": "रकाजो (Rakazo) को एक ओपन-सोर्स, सेल्फ-होस्टेड एआई एजेंट प्लेटफॉर्म के रूप में पेश किया गया है, जिसे लगातार काम करने वाले सहयोगियों और स्वतंत्र कार्यों के लिए डिज़ाइन किया गया है। वर्तमान में बीटा चरण में उपलब्ध यह प्रोजेक्ट ग्रोक बॉट (Grok Bot), मेटा म्यूज (Meta Muse) और क्लाउड ड्यूएट (Claude Duet) जैसे टूल्स का सेल्फ-होस्टेड विकल्प प्रदान करता है, जिससे उपयोगकर्ता इसे स्थानीय स्तर पर या वेब, इलेक्ट्रॉन डेस्कटॉप और मोबाइल वातावरण में चला सकते हैं।\n\n## मुख्य वास्तुकला और विशेषताएँ\n\n* **निरंतर संचालन:** समर्पित बातचीत, मेमोरी, रूटीन और इतिहास को बनाए रखता है।\n* **वॉइस मोड:** एलेवेन लैब्स (ElevenLabs), ओपनएआई (OpenAI), कार्टेशिया (Cartesia) या फिश ऑडियो (Fish Audio) के प्रदाताओं से कुंजियों का उपयोग करके आवाज, श्रुतलेख और कॉल का समर्थन करता है।\n* **सैंडबॉक्स और वातावरण:** डॉकर (Docker), E2B, डेटोना (Daytona), क्रिएटओएस (CreateOS), बोट और स्थानीय मशीनों पर काम करता है।\n* **एकीकरण:** कम्पोसियो (Composio), पाइस्ट्रीम कनेक्ट (Pipedream Connect), MCP और ओपनएपीआई टूल स्रोतों के माध्यम से जुड़ता है।\n\n## सेटअप आवश्यकताएँ और स्थापना\n\nरकाजो को स्थानीय रूप से तैनात करने के लिए डॉकर इंजन, कंपोज प्लगइन, कर्ल (curl) और ओपनएसएसएल (OpenSSL) की आवश्यकता होती है। बुनियादी सेटअप में एक इंस्टॉलर स्क्रिप्ट चलाना शामिल है जो आवश्यक कंपोज कॉन्फ़िगरेशन डाउनलोड करती है, `.env` फ़ाइल में सुरक्षित यादृच्छिक गुप्त बातें बनाती है, और एप्लिकेशन स्टैक को आरंभ करती है।\n\n1. बूटस्ट्रैप कॉन्फ़िगरेशन चलाएँ और कंटेनर वातावरण शुरू करें।\n2. वेब ब्राउज़र में `http127.0.0.15173` पर जाएँ।\n3. खाता बनाएँ, एक पसंदीदा मॉडल प्रदाता (जैसे ओपनरोटर या कस्टम एपीआई क्रेडेंशियल) कनेक्ट करें, और पहला बॉट कॉन्फ़िगर करें।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nचूंकि रकाजो वर्तमान में बीटा में है, इसलिए प्रशासकों को उत्पादन सख्त करने, HTTPS के लिए Caddy रिवर्स-प्रॉक्सी कॉन्फ़िगरेशन और डेटाबेस माइग्रेशन पूर्वापेक्षाओं के संबंध में आधिकारिक दस्तावेजों की समीक्षा करनी चाहिए। सुरक्षा दिशानिर्देश, योगदान वर्कफ़्लो और Apache License 2.0 के तहत लाइसेंसिंग शर्तों को आधिकारिक GitHub रिपॉजिटरी और rakazo.com पर सत्यापित किया जा सकता है।",
+  "en_meta": "Discover Rakazo, an open-source, self-hosted AI agent platform in beta. Learn about its features, self-hosting requirements, and setup instructions.",
+  "hi_meta": "बीटा में उपलब्ध ओपन-सोर्स, सेल्फ-होस्टेड एआई एजेंट प्लेटफॉर्म रकाजो (Rakazo) के बारे में जानें। इसकी विशेषताओं और सेटअप निर्देशों की जानकारी प्राप्त करें।",
+  "en_keywords": [
+    "Rakazo",
+    "open-source AI agent",
+    "self-hosted AI",
+    "Grok Bot alternative",
+    "Docker AI assistant"
+  ],
+  "hi_keywords": [
+    "रकाजो",
+    "Rakazo",
+    "ओपन-सोर्स एआई",
+    "सेल्फ-होस्टेड एआई",
+    "एआई एजेंट"
+  ],
+  "source_published_at": null,
+  "id": "f7d22c75b9c0",
+  "source": "https://github.com/elie222/rakazo",
+  "date": "2026-11-08T11:42:05.713750+00:00",
+  "source_title": "elie222/rakazo: Open-source Grok Bot alternative. Choose your own model and sandbox. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

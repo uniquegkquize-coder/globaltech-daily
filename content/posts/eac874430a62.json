@@ -1,0 +1,31 @@
+{
+  "en_title": "Shepherdr 3.1.20 Released as Mission Control for Herdr-Core Coding Agents",
+  "hi_title": "हरडर-कोर कोडिंग एजेंटों के लिए शेफर्डआर 3.1.20 जारी",
+  "en_body": "Shepherdr 3.1.20 has been released as an open-source MIT-licensed plugin that serves as a mission control layout for the Herdr desktop application and herdr-core engine. The tool is designed to help users manage multiple coding agents across machines from a phone, tablet, or desktop interface without requiring hosted cloud services.\n\n## Core Architecture and Operation\n\nThe software operates by organizing projects into spaces within a sidebar, each equipped with its own Assistant. When a user provides natural language instructions to an Assistant, the system converts the input into individual tasks. \n\n- **Worktree Isolation:** Every task runs as a standard herdr-core agent within its own isolated git worktree and branch, ensuring changes remain outside the primary checkout until explicitly merged.\n- **Task Status Panels:** The interface categorizes tasks by operational states, including *Needs you*, *Ready*, *Merging*, *Working*, *Queued*, *Scheduled*, *To do*, and *Done*.\n- **Interactive Cards:** Agents prompt users with decision cards when permissions or choices are required.\n\n## Customization and Add-Ons\n\nShepherdr is constructed using modular Herdr add-ons. Users can toggle features such as Artifacts, Voice, Reactions, Task browsing, Autopilot, and web app synchronization directly through the Shepherdr settings menu. Custom mods and themes remain untouched during updates, with the system preserving backups of replaced files.\n\n## System Requirements and Verification\n\nRunning Shepherdr requires a terminal-compatible setup on macOS or Linux. Prerequisites include:\n\n- Herdr app version 0.1.12 or newer\n- herdr-core version 0.1.17 or newer\n- Python 3.8+\n- Git\n- An installed and signed-in agent command-line interface such as Claude Code or Codex\n\nOptional integrations include GitHub CLI (`gh`), `agent-browser`, Chrome, and an ElevenLabs API key for voice features. A validation utility, `shepherdr doctor`, is provided to check installed files, helper links, and program dependencies.",
+  "hi_body": "शेफर्डआर 3.1.20 को एक ओपन-सोर्स एमआईटी-लाइसेंस प्राप्त प्लगइन के रूप में जारी किया गया है, जो हरडर डेस्कटॉप एप्लिकेशन और हरडर-कोर इंजन के लिए मिशन कंट्रोल लेआउट के रूप में कार्य करता है। यह उपकरण उपयोगकर्ताओं को होस्टेड क्लाउड सेवाओं की आवश्यकता के बिना फोन, टैबलेट या डेस्कटॉप इंटरफेस से कई मशीनों पर कोडिंग एजेंटों को प्रबंधित करने में मदद करने के लिए डिज़ाइन किया गया है।\n\n## मुख्य वास्तुकला और संचालन\n\nयह सॉफ्टवेयर साइडबार के भीतर स्पेस में परियोजनाओं को व्यवस्थित करके संचालित होता है, जिनमें से प्रत्येक अपना खुद का असिस्टेंट रखता है। जब कोई उपयोगकर्ता किसी असिस्टेंट को प्राकृतिक भाषा के निर्देश देता है, तो सिस्टम इनपुट को व्यक्तिगत कार्यों में बदल देता है।\n\n- **वर्कट्री आइसोलेशन:** प्रत्येक कार्य अपने स्वयं के अलग गिट वर्कट्री और शाखा के भीतर एक मानक हरडर-कोर एजेंट के रूप में चलता है, यह सुनिश्चित करते हुए कि परिवर्तन स्पष्ट रूप से मर्ज होने तक प्राथमिक चेकआउट से बाहर रहें।\n- **टास्क स्टेटस पैनल:** इंटरफ़ेस कार्यों को परिचालन स्थितियों के आधार पर वर्गीकृत करता है, जिसमें *Needs you*, *Ready*, *Merging*, *Working*, *Queued*, *Scheduled*, *To do* और *Done* शामिल हैं।\n- **इंटरएक्टिव कार्ड:** जब अनुमति या विकल्पों की आवश्यकता होती है, तो एजेंट उपयोगकर्ताओं को निर्णय कार्ड के साथ संकेत देते हैं।\n\n## अनुकूलन और एड-ऑन\n\nशेफर्डआर मॉड्यूलर हरडर एड-ऑन का उपयोग करके बनाया गया है। उपयोगकर्ता सीधे शेफर्डआर सेटिंग्स मेनू के माध्यम से आर्टिफ़ैक्ट्स, वॉयस, रिएक्शन, टास्क ब्राउज़िंग, ऑटोपायलट और वेब ऐप सिंक्रोनाइज़ेशन जैसी सुविधाओं को चालू या बंद कर सकते हैं।\n\n## सिस्टम आवश्यकताएँ और सत्यापन\n\nशेफर्डआर चलाने के लिए macOS या Linux पर टर्मिनल-संगत सेटअप की आवश्यकता होती है। पूर्व-आवश्यकताओं में शामिल हैं:\n\n- हरडर ऐप संस्करण 0.1.12 या नया\n- हरडर-कोर संस्करण 0.1.17 या नया\n- पायथन 3.8+\n- गिट\n- क्लाउड कोड या कोडेक्स जैसे एजेंट कमांड-लाइन इंटरफेस\n\nवैकल्पिक एकीकरण में गिटहब सीएलआई (`gh`), `agent-browser`, क्रोम और वॉयस सुविधाओं के लिए इलेवनलैब्स एपीआई कुंजी शामिल हैं। स्थापित फाइलों, सहायक लिंक और प्रोग्राम निर्भरता की जांच के लिए एक सत्यापन यूटिलिटी, `shepherdr doctor`, प्रदान की गई है।",
+  "en_meta": "Shepherdr 3.1.20 is an open-source MIT plugin for the Herdr app, managing coding agents across machines locally without hosted cloud services.",
+  "hi_meta": "शेफर्डआर 3.1.20 हरडर ऐप के लिए एक ओपन-सोर्स एमआईटी प्लगइन है, जो होस्टेड क्लाउड सेवाओं के बिना स्थानीय रूप से मशीनों पर कोडिंग एजेंटों का प्रबंधन करता है।",
+  "en_keywords": [
+    "Shepherdr",
+    "Herdr",
+    "herdr-core",
+    "coding agents",
+    "developer tools",
+    "MIT license"
+  ],
+  "hi_keywords": [
+    "Shepherdr",
+    "Herdr",
+    "herdr-core",
+    "कोडिंग एजेंट",
+    "डेलॉपर टूल्स",
+    "MIT license"
+  ],
+  "source_published_at": "2026-10-30T09:47:21+00:00",
+  "id": "eac874430a62",
+  "source": "https://github.com/eliasstravik/shepherdr",
+  "date": "2026-11-08T11:41:58.017492+00:00",
+  "source_title": "eliasstravik/shepherdr: Run many coding agents across machines from a phone, tablet or desktop. A herdr plugin. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Enterprise Now Includes Access to GitHub Copilot for Managed Accounts",
+  "hi_title": "GitHub Enterprise में प्रबंधित खातों के लिए अब GitHub Copilot शामिल है",
+  "en_body": "GitHub has announced that enterprises working with a GitHub or Microsoft account team can now get GitHub Copilot included with GitHub Enterprise for every licensed user. According to the announcement, this integration changes how organizations manage their AI assistant resources.\n\nPreviously, administrators had to manage separate seat counts for Copilot and track individual AI usage allowances. Under the new model, usage is metered directly against the enterprise budget from the first request, utilizing existing policies, alerts, and attribution tools. There is no included usage allowance to track or top up.\n\n## Availability and Rollout Status\n\n- **Managed Accounts:** Available now for GitHub Enterprise Cloud customers working with a GitHub or Microsoft account team.\n- **Self-Serve Subscriptions:** Currently unavailable. GitHub stated that self-serve availability is coming in stages, and current self-serve subscriptions remain unaffected. Specific dates will be shared in the coming weeks.\n- **Alternative Tiers:** Copilot Business and Copilot Enterprise remain available to purchase for new and existing enterprises.\n- **Standalone Option:** Users without a GitHub Enterprise license can access Copilot through Copilot Standalone at $10 per user per month.\n\n## Feature Behavior Under Budget Limits\n\nGitHub outlined how different features behave when an enterprise budget is depleted or unavailable:\n\n- **Active Without Budget:** Code completion and next edit suggestions continue to function even if no budget is available.\n- **Requires Budget:** Copilot Chat, Copilot code review, and Copilot in the cloud require available budget to operate.\n- **Access Retention:** An exhausted budget does not remove user seats or features that do not require a budget.\n\n## Practical Implications and Verification\n\nOrganizations considering this model should review their current enterprise agreements and consult with their sales team regarding new accounts or transitions. To verify the original announcement, review the updated documentation on Copilot billing for enterprises and join the discussion within the GitHub Community.",
+  "hi_body": "GitHub ने घोषणा की है कि GitHub या Microsoft खाता टीम के साथ काम करने वाले उद्यम अब प्रत्येक लाइसेंस प्राप्त उपयोगकर्ता के लिए GitHub Enterprise के साथ Copilot प्राप्त कर सकते हैं। घोषणा के अनुसार, यह एकीकरण संगठनों के AI सहायक संसाधनों के प्रबंधन के तरीके को बदलता है।\n\nपहले, प्रशासकों को Copilot के लिए अलग से सीटों की संख्या प्रबंधित करनी होती थी और व्यक्तिगत AI उपयोग भत्ते को ट्रैक करना होता था। नए मॉडल के तहत, उपयोग सीधे पहले अनुरोध से उद्यम बजट के विरुद्ध मापा जाता है, जिसमें मौजूदा नीतियों, अलर्ट और एट्रिब्यूशन टूल का उपयोग किया जाता है। ट्रैक करने या टॉप अप करने के लिए कोई शामिल उपयोग भत्ता नहीं है।\n\n## उपलब्धता और रोलआउट स्थिति\n\n- **प्रबंधित खाते:** GitHub या Microsoft खाता टीम के साथ काम करने वाले GitHub Enterprise Cloud ग्राहकों के लिए अब उपलब्ध है।\n- **सेल्फ-सर्व सब्सक्रिप्शन:** वर्तमान में उपलब्ध नहीं है। GitHub ने बताया कि सेल्फ-सर्व उपलब्धता चरणों में आ रही है और वर्तमान सेल्फ-सर्व सब्सक्रिप्शन प्रभावित नहीं हैं। आने वाले हफ्तों में विशिष्ट तिथियां साझा की जाएंगी।\n- **वैकल्पिक श्रेणियां:** Copilot Business और Copilot Enterprise नए और मौजूदा उद्यमों के लिए खरीदने के लिए उपलब्ध हैं।\n- **स्टैंडअलोन विकल्प:** जिन उपयोगकर्ताओं के पास GitHub Enterprise लाइसेंस नहीं है, वे प्रति उपयोगकर्ता $10 प्रति माह की दर से Copilot Standalone के माध्यम से Copilot का उपयोग कर सकते हैं।\n\n## बजट सीमाओं के तहत सुविधा व्यवहार\n\nGitHub ने रेखांकित किया है कि उद्यम बजट समाप्त होने या उपलब्ध न होने पर विभिन्न सुविधाएं कैसे कार्य करती हैं:\n\n- **बजट के बिना सक्रिय:** कोड पूर्णता और अगले संपादन सुझाव तब भी काम करते रहना जारी रखते हैं जब कोई बजट उपलब्ध न हो।\n- **बजट की आवश्यकता:** Copilot Chat, Copilot code review, और क्लाउड में Copilot का उपयोग करने के लिए उपलब्ध बजट की आवश्यकता होती है।\n- **पहुँच बनाए रखना:** समाप्त हुआ बजट उपयोगकर्ता सीटों या उन सुविधाओं को नहीं हटाता है जिनके लिए बजट की आवश्यकता नहीं होती है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nइस मॉडल पर विचार करने वाले संगठनों को अपने वर्तमान उद्यम समझौतों की समीक्षा करनी चाहिए और नए खातों या संक्रमणों के संबंध में अपनी बिक्री टीम से परामर्श करना चाहिए। मूल घोषणा को सत्यापित करने के लिए, उद्यमों के लिए Copilot बिलिंग पर अपडेटेड दस्तावेज़ की समीक्षा करें और GitHub Community के भीतर चर्चा में शामिल हों।",
+  "en_meta": "GitHub Enterprise now includes Copilot for managed accounts, changing billing and feature usage. Check availability, pricing, and budget rules.",
+  "hi_meta": "प्र प्रबंधित खातों के लिए GitHub Enterprise में अब Copilot शामिल है। उपलब्धता, मूल्य निर्धारण और बजट नियमों की जाँच करें।",
+  "en_keywords": [
+    "GitHub Enterprise",
+    "GitHub Copilot",
+    "AI billing",
+    "developer tools",
+    "enterprise software"
+  ],
+  "hi_keywords": [
+    "GitHub Enterprise",
+    "GitHub Copilot",
+    "AI बिलिंग",
+    "डेवलपर टूल्स",
+    "एंटरप्राइज सॉफ्टवेयर"
+  ],
+  "source_published_at": "2026-10-28T15:50:00+00:00",
+  "id": "9084abaaec71",
+  "source": "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot",
+  "date": "2026-11-08T11:45:31.354123+00:00",
+  "source_title": "GitHub Enterprise now includes access to GitHub Copilot",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

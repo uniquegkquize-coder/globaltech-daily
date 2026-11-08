@@ -1,0 +1,31 @@
+{
+  "en_title": "nesformer Compiles an NES CPU Directly into Qwen3.5 Model Weights",
+  "hi_title": "nesformer ने स्टॉक Qwen3.5 मॉडल के वजनों में NES CPU को किया संकलित",
+  "en_body": "An open-source project named nesformer demonstrates running an NES 6502 CPU, 2 KB of RAM, and cartridge program ROM directly inside a stock Qwen3.5 model checkpoint. Building on previous work like Qwenputer, the system uses a compiler to compute the model weights without retraining, leveraging the Gated DeltaNet state mechanism to store machine memory.\n\n## How It Works\n\nThe compiler maps machine components into specific layers and heads within the Qwen3.5 model architecture. During execution, a host program manages peripherals by drawing frames, reading controller inputs, and handling interrupts, while the model predicts the CPU execution log token by token.\n\n* **Memory Management:** DeltaNet state matrices act as memory cells, holding the cartridge, registers, and RAM.\n* **Execution Speed:** The default Numba-compiled engine runs significantly slower than real hardware, taking roughly 1 to 6 seconds per frame.\n* **Compatibility:** The current implementation supports NROM cartridges (iNES mapper 0) running official opcodes, with certain limitations regarding custom mappers, audio, and mid-scanline PPU effects.\n\n## Practical Usage and Verification\n\nThe repository provides a command-line interface to run tests, check weight integrity using SHA256 hashes, and output animated GIFs of supported games like *Thwaite*. Users can verify the installation and test suites locally by following documentation provided in the repository.",
+  "hi_body": "nesformer नामक एक ओपन-सोर्स प्रोजेक्ट ने दिखाया है कि कैसे एक NES 6502 CPU, 2 KB रैम और कार्ट्रिज प्रोग्राम ROM को सीधे स्टॉक Qwen3.5 मॉडल चेकपॉइंट के भीतर चलाया जा सकता है। Qwenputer के पिछले काम पर आधारित यह प्रोजेक्ट बिना पुनः प्रशिक्षण के मॉडल के वजन की गणना करने के लिए एक कंपाइलर का उपयोग करता है।\n\n## यह कैसे काम करता है\n\nकंपाइलर मशीन के घटकों को Qwen3.5 मॉडल वास्तुकला के भीतर विशिष्ट परतों और हेड में मैप करता है। निष्पादन के दौरान, एक होस्ट प्रोग्राम फ्रेम बनाकर, कंट्रोलर इनपुट पढ़कर और रुकावटों को संभालकर बाह्य उपकरणों का प्रबंधन करता है, जबकि मॉडल टोकन द्वारा टोकन CPU निष्पादन लॉग का अनुमान लगाता है।\n\n* **मेमोरी प्रबंधन:** DeltaNet स्टेट मैट्रिक्स मेमोरी सेल के रूप में कार्य करते हैं, जिसमें कार्ट्रिज, रजिस्टर और रैम सुरक्षित रहते हैं।\n* **निष्पादन गति:** वास्तविक हार्डवेयर की तुलना में यह काफी धीमी गति से काम करता है, जिसमें प्रति फ्रेम लगभग 1 से 6 सेकंड लगते हैं।\n* **संगतता:** वर्तमान संस्करण NROM कार्ट्रिज (iNES मैपर 0) और आधिकारिक ओपकोड का समर्थन करता है, जिसमें कस्टम मैपर और ऑडियो को लेकर कुछ सीमाएं हैं।\n\n## व्यावहारिक उपयोग और सत्यापन\n\nयह प्रोजेक्ट परीक्षण चलाने, SHA256 हैश का उपयोग करके वजन की अखंडता की जांच करने और समर्थित गेम के एनिमेटेड GIF आउटपुट करने के लिए एक कमांड-लाइन इंटरफ़ेस प्रदान करता है।",
+  "en_meta": "Explore nesformer, a project that compiles an NES CPU, RAM, and ROM into stock Qwen3.5 model weights using DeltaNet states.",
+  "hi_meta": "जानें nesformer के बारे में, जो DeltaNet स्टेट्स का उपयोग करके NES CPU, RAM और ROM को Qwen3.5 मॉडल वजनों में संकलित करता है।",
+  "en_keywords": [
+    "nesformer",
+    "Qwen3.5",
+    "NES CPU",
+    "machine learning",
+    "emulator",
+    "DeltaNet"
+  ],
+  "hi_keywords": [
+    "nesformer",
+    "Qwen3.5",
+    "NES CPU",
+    "मशीन लर्निंग",
+    "एम्यूलेटर",
+    "DeltaNet"
+  ],
+  "source_published_at": null,
+  "id": "44da56d320b4",
+  "source": "https://github.com/dbreunig/nesformer",
+  "date": "2026-11-08T11:41:16.340837+00:00",
+  "source_title": "dbreunig/nesformer: An NES CPU compiled into the weights of a stock Qwen3.5 model - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

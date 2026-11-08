@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Copilot in Visual Studio September 2026 Update Introduces Git Agent and BYOM Changes",
+  "hi_title": "विजुअल स्टूडियो के लिए सितंबर 2026 गिटहब कोपायलट अपडेट में गिट एजेंट और BYOM बदलाव शामिल",
+  "en_body": "The September 2026 update for GitHub Copilot in Visual Studio introduces new features including a Git agent for pull requests, updates to Bring Your Own Model (BYOM), and NuGet vulnerability fixing directly from the Error List.\n\nAccording to the GitHub Blog announcement published on October 22, 2026, users can access these updates across all GitHub Copilot plans, including Free, Student, Pro, Pro+, Max, Business, and Enterprise editions.\n\n## Key New Features\n\n* **Explore Pull Requests with the Git Agent:** Users can now open GitHub Copilot Chat, select the Git agent, and attach a pull request from the Git Repository window to receive a summary with navigable links. This requires connecting Git provider Model Context Protocol (MCP) servers, with GitHub and Azure DevOps currently supported.\n* **Bring Your Own Model (BYOM) Updates:** Available in preview, BYOM allows teams to use preferred models through GitHub Copilot or custom deployments. It is enabled by default in Community, Professional, and Enterprise editions. A notable breaking change requires updating to the new Agent (Preview) powered by the GitHub Copilot SDK harness, as previous Ask and Agent modes no longer support BYOM. Supported providers include Microsoft Foundry, OpenAI, Anthropic, and Ollama.\n* **Fix NuGet Vulnerabilities:** NuGet Audit warnings within the Error List now feature a direct fixer action that opens Copilot Chat in agent mode to resolve vulnerable packages using the NuGet MCP server.\n\n## Practical Implications and Verification\n\nDevelopers can experience these features by downloading Visual Studio 2026 and checking the Insiders channel for the latest releases. To verify official announcements, users should consult the Visual Studio blog, official release notes, and documentation regarding MCP server configurations.",
+  "hi_body": "विजुअल स्टूडियो में गिटहब कोपायलट के लिए सितंबर 2026 के अपडेट में पुल रिक्वेस्ट के लिए गिट एजेंट, ब्रिंग योर ओन मॉडल (BYOM) में अपडेट, और एरर लिस्ट से सीधे न्यूगेट (NuGet) vulnerabilites को ठीक करने जैसी नई सुविधाएं पेश की गई हैं।\n\n22 अक्टूबर 2026 को प्रकाशित गिटहब ब्लॉग घोषणा के अनुसार, उपयोगकर्ता फ्री, स्टूडेंट, प्रो, प्रो+, मैक्स, बिजनेस और एंटरप्राइज सहित सभी गिटहब कोपायलट प्लान्स में इन अपडेट का उपयोग कर सकते हैं।\n\n## मुख्य नई विशेषताएं\n\n* **गिट एजेंट के साथ पुल रिक्वेस्ट खोजें:** उपयोगकर्ता अब गिटहब कोपायलट चैट खोल सकते हैं, गिट एजेंट का चयन कर सकते हैं, और नेविगेट करने योग्य लिंक के साथ सारांश प्राप्त करने के लिए गिट रिपॉजिटरी विंडो से पुल रिक्वेस्ट संलग्न कर सकते हैं। इसके लिए गिट प्रदाता मॉडल कॉन्टेक्स्ट प्रोटोकॉल (MCP) सर्वर को कनेक्ट करना आवश्यक है, जिसमें वर्तमान में गिटहब और एज्योर DevOps समर्थित हैं।\n* **ब्रिंग योर ओन मॉडल (BYOM) अपडेट:** पूर्वावलोकन (preview) में उपलब्ध, BYOM टीमों को गिटहब कोपायलट या कस्टम तैनाती के माध्यम से पसंदीदा मॉडल का उपयोग करने की अनुमति देता है। यह कम्युनिटी, प्रोफेशनल और एंटरप्राइज संस्करणों में डिफ़ॉल्ट रूप से सक्षम है। इसमें एक बड़ा बदलाव यह है कि अब गिटहब कोपायलट एसडीके-संचालित हार्नेस पर निर्मित नए एजेंट (पूर्वावलोकन) की आवश्यकता होती है, क्योंकि पिछले आस्क और एजेंट मोड अब BYOM का समर्थन नहीं करते हैं। समर्थित प्रदाताओं में माइक्रोसॉफ्ट फाउंड्री, ओपनएआई, एंथ्रोपिक और ओलामा शामिल हैं।\n* **न्यूगेट कमजोरियों को ठीक करें:** एरर लिस्ट के भीतर न्यूगेट ऑडिट चेतावनियों में अब एक सीधा fixer action शामिल है जो न्यूगेट MCP सर्वर का उपयोग करके असुरक्षित पैकेजों को हल करने के लिए एजेंट मोड में कोपायलट चैट खोलता है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nडेटा डेवलपर विजुअल स्टूडियो 2026 डाउनलोड करके और नवीनतम रिलीज़ के लिए इनसाइडर्स चैनल की जाँच करके इन सुविधाओं का अनुभव कर सकते हैं। आधिकारिक घोषणाओं को सत्यापित करने के लिए, उपयोगकर्ताओं को विजुअल स्टूडियो ब्लॉग, आधिकारिक रिलीज़ नोट्स और MCP सर्वर कॉन्फ़िगरेशन से संबंधित दस्तावेज़ों को देखना चाहिए।",
+  "en_meta": "Explore the September 2026 update for GitHub Copilot in Visual Studio, featuring a Git agent, BYOM updates, and NuGet vulnerability fixes.",
+  "hi_meta": "विजुअल स्टूडियो में गिटहब कोपायलट के सितंबर 2026 अपडेट की जानकारी, जिसमें गिट एजेंट, BYOM अपडेट और न्यूगेट सुरक्षा सुधार शामिल हैं।",
+  "en_keywords": [
+    "GitHub Copilot",
+    "Visual Studio 2026",
+    "Git agent",
+    "Bring Your Own Model",
+    "NuGet vulnerabilities"
+  ],
+  "hi_keywords": [
+    "गिटहब कोपायलट",
+    "विजुअल स्टूडियो 2026",
+    "गिट एजेंट",
+    "BYOM",
+    "न्यूगेट कमजोरियां"
+  ],
+  "source_published_at": "2026-10-23T00:17:51+00:00",
+  "id": "3a4bb834544e",
+  "source": "https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2/",
+  "date": "2026-11-08T11:45:24.869441+00:00",
+  "source_title": "GitHub Copilot in Visual Studio — September update - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
