@@ -32,9 +32,11 @@ def get(url):
 
 def deployed_source(release):
     for sha in git("log", "-60", "--format=%H", "--first-parent").decode().splitlines():
-        release_key = f"{sha}:{MIGRATION}:{CONFIG_VERSION}".encode()
-        if hashlib.sha256(release_key).hexdigest()[:20] == release:
-            return sha
+        # Native Oracle builds and pre-migration releases use different keys.
+        for mode in ("native-main-v1", MIGRATION):
+            release_key = f"{sha}:{mode}:{CONFIG_VERSION}".encode()
+            if hashlib.sha256(release_key).hexdigest()[:20] == release:
+                return sha
     raise RuntimeError(f"Oracle release {release!r} does not match recent main history")
 
 
