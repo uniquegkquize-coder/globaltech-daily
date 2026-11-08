@@ -37,7 +37,7 @@ jobs:
     # A deliberate [publish-now] commit is an auditable manual publishing trigger.
     if: github.event_name != 'push' || contains(github.event.head_commit.message, '[publish-now]')
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    timeout-minutes: 115
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -86,10 +86,11 @@ jobs:
         run: python scripts/ingest_trending_drafts.py
       - name: Compile all Python files
         run: python -m compileall -q scripts
-      # Resume one target for up to an hour; temporary provider limits wait
+      # Resume one target for up to 105 minutes; temporary provider limits wait
       # inside the current pass so discovery need not restart after each 429.
       # Keep the existing 48 category routes and featured image provenance intact.
       - name: Publish news in short cycles
+        id: publish
         shell: bash
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -114,13 +115,17 @@ jobs:
           MAX_LICENSED_PHOTOS_PER_RUN: '200'
           IMAGE_BACKFILL_MODE: new
           IMAGE_BACKFILL_SECONDS: '150'
-          ARTICLE_WORKERS: '2'
-          PUBLISH_MAX_PASSES: '12'
-          PUBLISH_BATCH_SECONDS: '3600'
+          ARTICLE_WORKERS: '1'
+          AI_REQUEST_INTERVAL_SECONDS: '8'
+          PUBLISH_MAX_PASSES: '40'
+          PUBLISH_POSTS_PER_PASS: '20'
+          PUBLISH_MAX_AI_CALLS: '1200'
+          PUBLISH_BATCH_SECONDS: '6300'
           MAX_NEW_IMAGES: '0'
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: openai/gpt-oss-120b
-          AI_PROVIDER_ORDER: gemini,openrouter,groq,openai
+          GROQ_MODELS: openai/gpt-oss-120b,llama-3.3-70b-versatile,openai/gpt-oss-20b
+          AI_PROVIDER_ORDER: gemini,groq,openrouter
           GEMINI_MODEL: gemini-flash-lite-latest
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -132,7 +137,12 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           echo "::group::Collect and complete bilingual news drafts"
           # Each pass resumes only the remaining part of this 200-post target.
-          python -u scripts/publish_news_batch.py || echo "::warning::Target incomplete; progress retained in news-run-status.json"
+          publish_result=0
+          python -u scripts/publish_news_batch.py || publish_result=$?
+          echo "publish_result=$publish_result" >> "$GITHUB_OUTPUT"
+          if [ "$publish_result" -ne 0 ]; then
+            echo "::warning::200-post target incomplete; retaining and syncing partial progress"
+          fi
           echo "::endgroup::"
 
           python scripts/repair_categories.py --write
@@ -183,7 +193,8 @@ jobs:
               s = json.loads(status_path.read_text(encoding='utf-8'))
               lines += ['- Outcome: %s' % s.get('outcome'),
                         '- Published: %s of %s target' % (s.get('published'), s.get('target')),
-                        '- AI calls: %s of %s' % (s.get('ai_calls'), s.get('ai_limit'))]
+                        '- AI calls: %s of %s' % (s.get('ai_calls'), s.get('ai_limit')),
+                        '- Target shortfall: %s posts' % s.get('shortfall', max(0, s.get('target', 0)-s.get('published', 0)))]
               shortfalls=s.get('category_shortfalls') or {}
               if shortfalls:lines += ['- Per-run unmet category targets: '+', '.join('%s: missing %s' % kv for kv in sorted(shortfalls.items()))]
               by = s.get('by_category') or {}
@@ -211,3 +222,8 @@ jobs:
           print('\n'.join(lines))
           PY
 
+      - name: Check the full publishing target after saving progress
+        if: steps.publish.outputs.publish_result != '' && steps.publish.outputs.publish_result != '0'
+        run: |
+          echo "::error::Publishing target was not reached. Partial articles and drafts were saved; see the run summary for provider limits and shortfall."
+          exit 1

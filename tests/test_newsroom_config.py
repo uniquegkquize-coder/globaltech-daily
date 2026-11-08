@@ -60,7 +60,7 @@ class NewsroomConfigTests(unittest.TestCase):
             "default: '200'",
             "MIN_POSTS_PER_CATEGORY: '2'",
             "MAX_AI_CALLS_PER_RUN: '100'",
-            "AI_PROVIDER_ORDER: gemini,openrouter,groq,openai",
+            "AI_PROVIDER_ORDER: gemini,groq,openrouter",
             "MAX_MODELS_PER_ARTICLE: '5'",
             "MAX_LICENSED_PHOTOS_PER_RUN: '200'",
             "python -u scripts/generate_images.py",
@@ -80,7 +80,7 @@ class NewsroomConfigTests(unittest.TestCase):
         self.assertIn("default: '200'", workflow)
         self.assertIn("MIN_POSTS_PER_CATEGORY: '2'", workflow)
         self.assertIn("MAX_AI_CALLS_PER_RUN: '100'", workflow)
-        self.assertIn("AI_PROVIDER_ORDER: gemini,openrouter,groq,openai", workflow)
+        self.assertIn("AI_PROVIDER_ORDER: gemini,groq,openrouter", workflow)
         self.assertIn("MAX_MODELS_PER_ARTICLE: '5'", workflow)
         self.assertIn("MAX_LICENSED_PHOTOS_PER_RUN: '200'", workflow)
         self.assertIn("python -u scripts/generate_images.py", workflow)
