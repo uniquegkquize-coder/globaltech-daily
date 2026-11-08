@@ -135,3 +135,53 @@ class BatchRuntimeTests(unittest.TestCase):
    self.assertEqual(request.call_count,1)
 
 if __name__=='__main__':unittest.main()
+
+class ProviderPacingTests(unittest.TestCase):
+ def setUp(self):
+  for name,value in [('PROVIDER_NEXT_REQUEST',{}),('MODEL_RETRY_AT',{}),('PROVIDER_RETRY_AT',{}),('MODEL_FAILURES',{}),('PROVIDER_COOLDOWNS',set()),('UNAVAILABLE_MODELS',set()),('CALLS',0),('MAX_CALLS',100),('RUN_DEADLINE',0)]:
+   scope=patch.object(collect,name,value);scope.start();self.addCleanup(scope.stop)
+
+ def test_pacing_reserves_slots_and_obeys_deadline(self):
+  clock=[100.0]
+  with patch.dict(os.environ,{'AI_REQUEST_INTERVAL_SECONDS':'8'},clear=True),patch.object(collect.time,'monotonic',side_effect=lambda:clock[0]),patch.object(collect.time,'sleep',side_effect=lambda delay:clock.__setitem__(0,clock[0]+delay)) as sleep:
+   self.assertTrue(collect.reserve_provider_request('groq','test'))
+   self.assertTrue(collect.reserve_provider_request('groq','test'))
+   sleep.assert_called_once_with(8)
+   self.assertEqual(collect.CALLS,2)
+   with patch.object(collect,'RUN_DEADLINE',110):
+    self.assertFalse(collect.reserve_provider_request('groq','test'))
+   self.assertEqual(collect.CALLS,2)
+
+ def test_daily_groq_model_limit_preserves_other_model_and_enforces_json(self):
+  class Response:
+   def __init__(self,status):self.status_code=status;self.ok=status==200
+   def json(self):
+    if not self.ok:return {'error':{'message':'Tokens per day (TPD) exhausted'}}
+    return {'choices':[{'message':{'content':'{"body":"Source-backed story."}'}}]}
+  with patch.dict(os.environ,{'GROQ_API_KEY':'placeholder','GROQ_MODELS':'openai/gpt-oss-120b,openai/gpt-oss-20b'},clear=True),patch.object(collect,'provider_order',return_value=['groq']),patch.object(collect.requests,'post',side_effect=[Response(429),Response(200)]) as request:
+   data,provider=collect.call_provider('Return JSON based on source')
+   self.assertEqual(data['body'],'Source-backed story.');self.assertEqual(provider,'groq')
+   self.assertNotIn('groq',collect.PROVIDER_COOLDOWNS)
+   self.assertIn(('groq','openai/gpt-oss-120b'),collect.UNAVAILABLE_MODELS)
+   self.assertEqual(request.call_args.kwargs['json']['response_format'],{'type':'json_object'})
+   self.assertEqual(request.call_args.kwargs['json']['reasoning_effort'],'low')
+
+ def test_state_reuses_backoff_without_storing_credentials(self):
+  with tempfile.TemporaryDirectory() as temp:
+   path=Path(temp)/'providers.json'
+   with patch.dict(os.environ,{'NEWS_PROVIDER_STATE_PATH':str(path),'GROQ_API_KEY':'secret-not-to-be-saved'},clear=True):
+    collect.PROVIDER_COOLDOWNS.add('openrouter')
+    collect.UNAVAILABLE_MODELS.add(('groq','daily-model'))
+    collect.PROVIDER_RETRY_AT['gemini']=1234
+    collect.MODEL_RETRY_AT[('groq','temp-model')]=1300
+    collect.PROVIDER_NEXT_REQUEST['groq']=1400
+    collect.save_provider_state()
+    self.assertNotIn('secret-not-to-be-saved',path.read_text())
+    collect.PROVIDER_COOLDOWNS.clear();collect.UNAVAILABLE_MODELS.clear()
+    collect.PROVIDER_RETRY_AT.clear();collect.MODEL_RETRY_AT.clear();collect.PROVIDER_NEXT_REQUEST.clear()
+    collect.load_provider_state()
+   self.assertIn('openrouter',collect.PROVIDER_COOLDOWNS)
+   self.assertIn(('groq','daily-model'),collect.UNAVAILABLE_MODELS)
+   self.assertEqual(collect.PROVIDER_RETRY_AT['gemini'],1234)
+   self.assertEqual(collect.MODEL_RETRY_AT[('groq','temp-model')],1300)
+   self.assertEqual(collect.PROVIDER_NEXT_REQUEST['groq'],1400)
