@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+import tempfile
 import time
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -28,7 +29,9 @@ def save_summary(target,before,attempts,started,outcome,latest):
        'outcome':outcome,'duration_seconds':round(time.monotonic()-started,1),
        'target':target,'published':sum(counts.values()),'by_category':dict(counts),
        'ai_calls':sum(row.get('ai_calls',0) for row in attempts),
-       'ai_limit':100*len(attempts),'attempts':attempts}
+       'ai_limit':sum(row.get('ai_limit',100) for row in attempts),
+       'shortfall':max(0,target-sum(counts.values())),
+       'target_met':sum(counts.values())>=target,'attempts':attempts}
  path=ROOT/'content/news-run-status.json'
  temp=path.with_suffix('.tmp')
  temp.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
@@ -36,20 +39,26 @@ def save_summary(target,before,attempts,started,outcome,latest):
  print('PUBLISH_BATCH_SUMMARY',json.dumps(data),flush=True)
  return data
 
-def main():
+def run_batch(provider_state):
  target=max(1,int(os.getenv('POSTS_PER_RUN','200')))
- passes=max(1,min(12,int(os.getenv('PUBLISH_MAX_PASSES','12'))))
- budget=max(180,min(3600,int(os.getenv('PUBLISH_BATCH_SECONDS','3600'))))
+ passes=max(1,min(60,int(os.getenv('PUBLISH_MAX_PASSES','12'))))
+ budget=max(180,min(6300,int(os.getenv('PUBLISH_BATCH_SECONDS','3600'))))
+ batch_size=max(1,int(os.getenv('PUBLISH_POSTS_PER_PASS',str(target))))
+ call_budget=max(1,min(6000,int(os.getenv('PUBLISH_MAX_AI_CALLS','1200'))))
  started=time.monotonic();deadline=started+budget
  before={p.name for p in (ROOT/'content/posts').glob('*.json')}
  attempts=[];latest={};outcome='attempt_limit_reached'
  for number in range(1,passes+1):
   counts=new_counts(before);remaining=target-sum(counts.values())
   if remaining<=0:outcome='target_reached';break
+  calls_left=call_budget-sum(row.get('ai_calls',0) for row in attempts)
+  if calls_left<=0:outcome='ai_limit_reached';break
   seconds=min(600,int(deadline-time.monotonic()-60))
   if seconds<120:outcome='time_limit_reached';break
   env=os.environ.copy()
-  env.update(POSTS_PER_RUN=str(remaining),COLLECT_SECONDS=str(seconds),
+  env.update(POSTS_PER_RUN=str(min(remaining,batch_size)),COLLECT_SECONDS=str(seconds),
+             MAX_AI_CALLS_PER_RUN=str(min(100,calls_left)),
+             NEWS_PROVIDER_STATE_PATH=str(provider_state),
              DISCOVERY_SECONDS='90' if number==1 else '30',
              NEWS_BATCH_CATEGORY_COUNTS=json.dumps(dict(counts)))
   # Each pass retains the existing 100-call guard and saved source-backed drafts.
@@ -64,8 +73,9 @@ def main():
   if latest==previous:
    latest={'outcome':'collector_failed','ai_calls':0,'retry_after_seconds':60}
   attempts.append({'pass':number,'exit_code':code,'published':max(0,sum(new_counts(before).values())-sum(counts.values())),
-                   'ai_calls':latest.get('ai_calls',0),'outcome':latest.get('outcome')})
+                   'ai_calls':latest.get('ai_calls',0),'ai_limit':int(env['MAX_AI_CALLS_PER_RUN']),'outcome':latest.get('outcome')})
   outcome='target_reached' if sum(new_counts(before).values())>=target else str(latest.get('outcome') or 'collector_failed')
+  if outcome=='target_reached' and sum(new_counts(before).values())<target:outcome='batch_completed'
   report=save_summary(target,before,attempts,started,outcome,latest)
   if outcome=='target_reached' or number==passes:break
   if outcome in ('disabled','no_provider'):break
@@ -80,6 +90,12 @@ def main():
  if attempts and outcome!='target_reached' and len(attempts)==passes:
   outcome='attempt_limit_reached' if outcome not in ('disabled','no_provider','providers_unavailable') else outcome
  report=save_summary(target,before,attempts,started,outcome,latest)
- return 0 if report['published'] else 2
+ return 0 if report['target_met'] else 2
+
+def main():
+ # Carry temporary cooldowns and model-specific hard blocks across passes.
+ # A later scheduled run gets a fresh state, so daily resets can be retried.
+ with tempfile.TemporaryDirectory(prefix='news-provider-state-') as temp:
+  return run_batch(Path(temp)/'providers.json')
 
 if __name__=='__main__':sys.exit(main())
