@@ -100,4 +100,38 @@ class BatchRuntimeTests(unittest.TestCase):
    def json(self):return {'error':{'message':'Requests per day quota exhausted'}}
   self.assertTrue(collect.daily_quota_exhausted(Daily()))
 
+ def test_temporary_cooldown_resumes_without_restarting_collector(self):
+  clock=[100.0]
+  def advance(seconds):clock[0]+=seconds
+  with patch.object(collect,'providers_ready',side_effect=lambda:clock[0]>=190),patch.object(collect,'provider_retry_delay',side_effect=lambda:max(0,190-clock[0])),patch.object(collect.time,'monotonic',side_effect=lambda:clock[0]),patch.object(collect.time,'sleep',side_effect=advance) as sleep:
+   self.assertTrue(collect.wait_for_provider(300))
+   self.assertEqual([c.args[0] for c in sleep.call_args_list],[60,30])
+
+ def test_hard_block_or_insufficient_time_never_waits(self):
+  for delay in (None,120):
+   with self.subTest(delay=delay),patch.object(collect,'providers_ready',return_value=False),patch.object(collect,'provider_retry_delay',return_value=delay),patch.object(collect.time,'monotonic',return_value=100),patch.object(collect.time,'sleep') as sleep:
+    self.assertFalse(collect.wait_for_provider(200))
+    sleep.assert_not_called()
+
+ def test_malformed_output_retried_and_charged_to_call_budget(self):
+  class Response:
+   ok=True
+   def __init__(self,raw):self.raw=raw
+   def json(self):return {'choices':[{'message':{'content':self.raw}}]}
+  responses=[Response('{"body": "truncated'),Response('{"body":"Complete source-backed article."}')]
+  with patch.dict(os.environ,{'GROQ_API_KEY':'placeholder'},clear=True),patch.object(collect,'provider_order',return_value=['groq']),patch.object(collect,'PROVIDER_COOLDOWNS',set()),patch.object(collect,'UNAVAILABLE_MODELS',set()),patch.object(collect,'CALLS',0),patch.object(collect,'MAX_CALLS',2),patch.object(collect,'RUN_DEADLINE',0),patch.object(collect.requests,'post',side_effect=responses) as request:
+   data,provider=collect.call_provider('Source evidence')
+   self.assertEqual(provider,'groq')
+   self.assertEqual(data['body'],'Complete source-backed article.')
+   self.assertEqual(collect.CALLS,2)
+   self.assertIn('OUTPUT RETRY',request.call_args.kwargs['json']['messages'][0]['content'])
+
+ def test_malformed_output_cannot_exceed_call_budget(self):
+  class Response:
+   ok=True
+   def json(self):return {'choices':[{'message':{'content':'invalid'}}]}
+  with patch.dict(os.environ,{'GROQ_API_KEY':'placeholder'},clear=True),patch.object(collect,'provider_order',return_value=['groq']),patch.object(collect,'PROVIDER_COOLDOWNS',set()),patch.object(collect,'UNAVAILABLE_MODELS',set()),patch.object(collect,'CALLS',0),patch.object(collect,'MAX_CALLS',1),patch.object(collect,'RUN_DEADLINE',0),patch.object(collect.requests,'post',return_value=Response()) as request:
+   self.assertEqual(collect.call_provider('Source evidence'),(None,'groq'))
+   self.assertEqual(request.call_count,1)
+
 if __name__=='__main__':unittest.main()

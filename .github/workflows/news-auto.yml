@@ -2,7 +2,7 @@ name: GlobalTech Daily Auto News
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/news-auto.yml', 'tests/test_newsroom_config.py', 'scripts/authority_sources.py', 'scripts/authority_registry.py', 'tests/test_authority_sources.py']
+    paths: ['.github/workflows/news-auto.yml', 'scripts/collect.py', 'scripts/publish_news_batch.py', 'tests/test_batch_runtime.py', 'tests/test_publish_news_batch.py', 'tests/test_newsroom_config.py', 'scripts/authority_sources.py', 'scripts/authority_registry.py', 'tests/test_authority_sources.py']
   schedule:
     # Run every two hours, UTC.
     - cron: '7 */2 * * *'
@@ -37,7 +37,7 @@ jobs:
     # A deliberate [publish-now] commit is an auditable manual publishing trigger.
     if: github.event_name != 'push' || contains(github.event.head_commit.message, '[publish-now]')
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 75
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -86,7 +86,8 @@ jobs:
         run: python scripts/ingest_trending_drafts.py
       - name: Compile all Python files
         run: python -m compileall -q scripts
-      # Resume a single target over at most five bounded passes.
+      # Resume one target for up to an hour; temporary provider limits wait
+      # inside the current pass so discovery need not restart after each 429.
       # Keep the existing 48 category routes and featured image provenance intact.
       - name: Publish news in short cycles
         shell: bash
@@ -114,8 +115,8 @@ jobs:
           IMAGE_BACKFILL_MODE: new
           IMAGE_BACKFILL_SECONDS: '150'
           ARTICLE_WORKERS: '2'
-          PUBLISH_MAX_PASSES: '5'
-          PUBLISH_BATCH_SECONDS: '1950'
+          PUBLISH_MAX_PASSES: '12'
+          PUBLISH_BATCH_SECONDS: '3600'
           MAX_NEW_IMAGES: '0'
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: openai/gpt-oss-120b

@@ -38,15 +38,15 @@ def save_summary(target,before,attempts,started,outcome,latest):
 
 def main():
  target=max(1,int(os.getenv('POSTS_PER_RUN','200')))
- passes=max(1,min(5,int(os.getenv('PUBLISH_MAX_PASSES','5'))))
- budget=max(180,min(1950,int(os.getenv('PUBLISH_BATCH_SECONDS','1950'))))
+ passes=max(1,min(12,int(os.getenv('PUBLISH_MAX_PASSES','12'))))
+ budget=max(180,min(3600,int(os.getenv('PUBLISH_BATCH_SECONDS','3600'))))
  started=time.monotonic();deadline=started+budget
  before={p.name for p in (ROOT/'content/posts').glob('*.json')}
  attempts=[];latest={};outcome='attempt_limit_reached'
  for number in range(1,passes+1):
   counts=new_counts(before);remaining=target-sum(counts.values())
   if remaining<=0:outcome='target_reached';break
-  seconds=min(400,int(deadline-time.monotonic()-60))
+  seconds=min(600,int(deadline-time.monotonic()-60))
   if seconds<120:outcome='time_limit_reached';break
   env=os.environ.copy()
   env.update(POSTS_PER_RUN=str(remaining),COLLECT_SECONDS=str(seconds),
@@ -72,10 +72,14 @@ def main():
   delay=latest.get('retry_after_seconds')
   if outcome=='providers_unavailable' and delay is None:break
   delay=max(30,float(delay or 60))
-  if delay+180>deadline-time.monotonic():break
+  if delay+180>deadline-time.monotonic():outcome='time_limit_reached';break
   print('PUBLISH_BATCH_RETRY_AFTER',round(delay),'seconds',flush=True)
-  time.sleep(delay)
- if not attempts:report=save_summary(target,before,attempts,started,outcome,latest)
+  # Log long waits in short intervals so a rate limit is visible in Actions.
+  while delay>0:
+   step=min(60,delay);time.sleep(step);delay-=step
+ if attempts and outcome!='target_reached' and len(attempts)==passes:
+  outcome='attempt_limit_reached' if outcome not in ('disabled','no_provider','providers_unavailable') else outcome
+ report=save_summary(target,before,attempts,started,outcome,latest)
  return 0 if report['published'] else 2
 
 if __name__=='__main__':sys.exit(main())

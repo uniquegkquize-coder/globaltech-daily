@@ -69,3 +69,27 @@ class PublishBatchTests(unittest.TestCase):
    self.assertEqual(targets,['200','100'])
    self.assertEqual(report['published'],200)
    self.assertEqual(report['outcome'],'target_reached')
+
+ def test_repeat_mode_can_continue_after_five_passes(self):
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);posts=root/'content/posts';posts.mkdir(parents=True)
+   def run(*args,**kwargs):
+    index=len(list(posts.glob('*.json')))
+    (posts/(str(index)+'.json')).write_text(json.dumps({'category':'world-news'}))
+    (root/'content/news-run-status.json').write_text(json.dumps({'outcome':'time_limit_reached','cycle':index}))
+    return type('Completed',(),{'returncode':0})()
+   with patch.object(batch,'ROOT',root),patch.dict(os.environ,{'POSTS_PER_RUN':'6'},clear=True),patch.object(batch.subprocess,'run',side_effect=run) as request,patch.object(batch.time,'sleep'):
+    self.assertEqual(batch.main(),0)
+   self.assertEqual(request.call_count,6)
+   self.assertEqual(json.loads((root/'content/news-run-status.json').read_text())['published'],6)
+
+ def test_final_summary_records_deadline_instead_of_stale_pass_outcome(self):
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);(root/'content/posts').mkdir(parents=True)
+   def run(*args,**kwargs):
+    (root/'content/news-run-status.json').write_text(json.dumps({'outcome':'ai_limit_reached','retry_after_seconds':300}))
+    return type('Completed',(),{'returncode':2})()
+   with patch.object(batch,'ROOT',root),patch.dict(os.environ,{'PUBLISH_BATCH_SECONDS':'240'}),patch.object(batch.subprocess,'run',side_effect=run),patch.object(batch.time,'sleep') as sleep:
+    self.assertEqual(batch.main(),2)
+   sleep.assert_not_called()
+   self.assertEqual(json.loads((root/'content/news-run-status.json').read_text())['outcome'],'time_limit_reached')

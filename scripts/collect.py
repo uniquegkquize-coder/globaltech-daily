@@ -584,6 +584,17 @@ def providers_ready():
  with PROVIDER_LOCK:
   return any(provider not in PROVIDER_COOLDOWNS and PROVIDER_RETRY_AT.get(provider,0)<=time.monotonic() and os.getenv(keys[provider],'').strip() for provider in provider_order())
 
+def wait_for_provider(deadline):
+ # Keep the current source queue and model cooldowns instead of restarting
+ # discovery (and probing rate-limited models again) after a temporary block.
+ while not providers_ready():
+  delay=provider_retry_delay()
+  if delay is None or time.monotonic()+delay+15>=deadline:return False
+  seconds=min(60,max(1,delay))
+  print('AI_REPEAT_WAIT',round(seconds),'seconds; resuming saved queue after cooldown',flush=True)
+  time.sleep(seconds)
+ return True
+
 def call_provider(prompt):
  global CALLS
  last=None
@@ -597,7 +608,9 @@ def call_provider(prompt):
   models=gemini_models(key) if provider=='gemini' else [os.getenv('GROQ_MODEL','openai/gpt-oss-120b') if provider=='groq' else (os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free'))]
   preferred=os.getenv('GEMINI_MODEL','').removeprefix('models/').strip() if provider=='gemini' else ''
   if preferred in models:models=[preferred]+[model for model in models if model!=preferred]
-  for model in list(dict.fromkeys(models))[:MODELS_PER_PROVIDER]:
+  # Retry malformed output once on the same model. HTTP cooldowns still skip
+  # the repeated entry, and both requests count against the AI call budget.
+  for model,output_attempt in [(m,n) for m in list(dict.fromkeys(models))[:MODELS_PER_PROVIDER] for n in range(2)]:
    if RUN_DEADLINE and time.monotonic()>=RUN_DEADLINE:return None,last
    with PROVIDER_LOCK:
     if (provider,model) in UNAVAILABLE_MODELS or MODEL_RETRY_AT.get((provider,model),0)>time.monotonic():continue
@@ -608,12 +621,15 @@ def call_provider(prompt):
    last=provider
    try:
     response_timeout=min(55,max(1,RUN_DEADLINE-time.monotonic())) if RUN_DEADLINE else 55
+    request_prompt=prompt
+    if output_attempt:
+     request_prompt+='\nOUTPUT RETRY: Return a complete valid JSON object only. Escape newlines inside JSON strings. Use concise, complete articles grounded in the source; avoid long introductions and padding.'
     if provider=='gemini':
-     r=requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',headers={'x-goog-api-key':key},json={'contents':[{'parts':[{'text':prompt}]}],'generationConfig':{'responseMimeType':'application/json','maxOutputTokens':8192}},timeout=(min(7,response_timeout),response_timeout))
+     r=requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',headers={'x-goog-api-key':key},json={'contents':[{'parts':[{'text':request_prompt}]}],'generationConfig':{'responseMimeType':'application/json','maxOutputTokens':8192}},timeout=(min(7,response_timeout),response_timeout))
      raw=''.join(p.get('text','') for p in r.json()['candidates'][0]['content']['parts']) if r.ok else ''
     else:
      url=('https://api.groq.com/openai/v1/chat/completions' if provider=='groq' else ('https://api.openai.com/v1/chat/completions' if provider=='openai' else 'https://openrouter.ai/api/v1/chat/completions'))
-     r=requests.post(url,headers={'Authorization':'Bearer '+key},json={'model':model,'messages':[{'role':'user','content':prompt}],'max_tokens':8192,'temperature':0.2},timeout=(min(7,response_timeout),response_timeout))
+     r=requests.post(url,headers={'Authorization':'Bearer '+key},json={'model':model,'messages':[{'role':'user','content':request_prompt}],'max_tokens':8192,'temperature':0.2},timeout=(min(7,response_timeout),response_timeout))
      raw=r.json()['choices'][0]['message']['content'] if r.ok else ''
     if not r.ok:
      print('Provider',provider,'model',model,'HTTP',r.status_code,flush=True)
@@ -647,7 +663,7 @@ def call_provider(prompt):
       MODEL_RETRY_AT.pop((provider,model),None)
      print('Provider success:',provider,'model',model,flush=True)
      return data,provider
-    print('Provider',provider,'returned unusable JSON; trying next option',flush=True)
+    print('Provider',provider,'model',model,'returned unusable JSON; output attempt',output_attempt+1,flush=True)
    except (requests.RequestException,ValueError,KeyError,IndexError,TypeError) as exc:
     print('Provider',provider,'error',type(exc).__name__,flush=True)
   considered=[(provider,model) for model in list(dict.fromkeys(models))[:MODELS_PER_PROVIDER]]
@@ -1620,6 +1636,7 @@ def main():
   stop_reason=None
   while time.monotonic()<deadline and published<remaining and CALLS<MAX_CALLS:
    if not providers_ready() and not futures:
+    if wait_for_provider(deadline):continue
     stop_reason='providers_unavailable'
     print('All configured providers unavailable; saving progress without further source scans',flush=True)
     break
