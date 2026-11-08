@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T05:20:09.219874+00:00",
+  "updated_at": "2026-11-08T07:04:19.016996+00:00",
   "categories": {
     "technology": {
       "discovered": 700,
@@ -7,9 +7,9 @@
       "sources_configured": 28
     },
     "government-schemes": {
-      "discovered": 249,
+      "discovered": 229,
       "published": 105,
-      "sources_configured": 166
+      "sources_configured": 171
     },
     "sarkari-naukri": {
       "discovered": 151,
@@ -27,17 +27,17 @@
       "sources_configured": 17
     },
     "world-news": {
-      "discovered": 4192,
+      "discovered": 4197,
       "published": 148,
       "sources_configured": 51
     },
     "business": {
-      "discovered": 1374,
+      "discovered": 1373,
       "published": 117,
       "sources_configured": 11
     },
     "sports": {
-      "discovered": 419,
+      "discovered": 420,
       "published": 337,
       "sources_configured": 6
     },
@@ -72,7 +72,7 @@
       "sources_configured": 3
     },
     "lifestyle": {
-      "discovered": 81,
+      "discovered": 79,
       "published": 63,
       "sources_configured": 5
     },
@@ -82,12 +82,12 @@
       "sources_configured": 7
     },
     "ai-news": {
-      "discovered": 304,
+      "discovered": 303,
       "published": 400,
       "sources_configured": 4
     },
     "cyber-security": {
-      "discovered": 22,
+      "discovered": 23,
       "published": 72,
       "sources_configured": 2
     },
@@ -97,7 +97,7 @@
       "sources_configured": 3
     },
     "apps-software": {
-      "discovered": 267,
+      "discovered": 268,
       "published": 76,
       "sources_configured": 2
     },
@@ -137,7 +137,7 @@
       "sources_configured": 1
     },
     "consumer-alerts": {
-      "discovered": 8,
+      "discovered": 6,
       "published": 3,
       "sources_configured": 2
     },
@@ -147,13 +147,13 @@
       "sources_configured": 2
     },
     "india-news": {
-      "discovered": 1079,
+      "discovered": 943,
       "published": 77,
       "sources_configured": 15
     },
     "cricket": {
-      "discovered": 114,
-      "published": 197,
+      "discovered": 113,
+      "published": 202,
       "sources_configured": 4
     },
     "car-launches": {
@@ -182,12 +182,12 @@
       "sources_configured": 3
     },
     "controversies": {
-      "discovered": 241,
+      "discovered": 232,
       "published": 31,
       "sources_configured": 6
     },
     "social-media": {
-      "discovered": 42,
+      "discovered": 39,
       "published": 33,
       "sources_configured": 4
     },
@@ -197,7 +197,7 @@
       "sources_configured": 5
     },
     "conflict-news": {
-      "discovered": 66,
+      "discovered": 67,
       "published": 82,
       "sources_configured": 3
     },
@@ -207,7 +207,7 @@
       "sources_configured": 5
     },
     "tourism": {
-      "discovered": 33,
+      "discovered": 34,
       "published": 33,
       "sources_configured": 5
     },
@@ -242,7 +242,7 @@
       "sources_configured": 4
     }
   },
-  "published_total": 3222,
+  "published_total": 3227,
   "categories_below_minimum": {},
   "provider_status": {
     "configured": [
@@ -341,7 +341,7 @@
       "queued": 174
     },
     "amarujala.com": {
-      "feed_entries": 320,
+      "feed_entries": 560,
       "queued": 1339
     },
     "amazon.jobs": {
@@ -401,7 +401,7 @@
       "queued": 1
     },
     "auroradesio.it": {
-      "queued": 2
+      "queued": 3
     },
     "autocarindia.com": {
       "queued": 35
@@ -504,6 +504,9 @@
     "channelafrica.co.za": {
       "queued": 1
     },
+    "chaoszine.net": {
+      "queued": 1
+    },
     "chosun.com": {
       "queued": 1
     },
@@ -569,6 +572,9 @@
       "queued": 1
     },
     "dailyadvance.com": {
+      "queued": 1
+    },
+    "dailybeirut.com": {
       "queued": 1
     },
     "dailytarheel.com": {
@@ -823,7 +829,8 @@
       "queued": 1
     },
     "hindi.news18.com": {
-      "queued": 42
+      "queued": 42,
+      "attempted": 1
     },
     "hollywoodreporter.com": {
       "feed_entries": 10,
@@ -909,6 +916,9 @@
     "ised-isde.canada.ca": {
       "queued": 1
     },
+    "jamaicaobserver.com": {
+      "queued": 1
+    },
     "jamaicaplaingazette.com": {
       "queued": 1
     },
@@ -951,6 +961,9 @@
     "kiripost.com": {
       "queued": 1
     },
+    "kln.gov.my": {
+      "queued": 1
+    },
     "kompas.com": {
       "queued": 2
     },
@@ -969,9 +982,12 @@
     "ldalucknow.in": {
       "queued": 20
     },
+    "libyaupdate.com": {
+      "queued": 1
+    },
     "livehindustan.com": {
       "feed_entries": 1200,
-      "queued": 8896
+      "queued": 8901
     },
     "local10.com": {
       "queued": 4
@@ -1152,7 +1168,8 @@
       "queued": 1
     },
     "nordic.ign.com": {
-      "queued": 1
+      "queued": 1,
+      "attempted": 1
     },
     "northcountrynow.com": {
       "queued": 1
@@ -1187,6 +1204,9 @@
     "openai.com": {
       "queued": 37,
       "attempted": 1
+    },
+    "oshb.org": {
+      "queued": 16
     },
     "outlooknewspapers.com": {
       "queued": 1
@@ -1267,7 +1287,7 @@
     },
     "sarkariresult.com.cm": {
       "queued": 81,
-      "attempted": 2
+      "attempted": 3
     },
     "science.nasa.gov": {
       "queued": 46
@@ -1303,7 +1323,9 @@
       "queued": 1
     },
     "sportstar.thehindu.com": {
-      "queued": 107
+      "queued": 107,
+      "attempted": 1,
+      "published": 1
     },
     "spzh.eu": {
       "queued": 1
@@ -1347,6 +1369,9 @@
       "queued": 1
     },
     "tampabay28.com": {
+      "queued": 1
+    },
+    "tapinto.net": {
       "queued": 1
     },
     "teaching-vacancies.service.gov.uk": {
@@ -1420,9 +1445,9 @@
       "queued": 2
     },
     "timesofindia.indiatimes.com": {
-      "queued": 1715,
-      "attempted": 4,
-      "published": 1
+      "queued": 1714,
+      "attempted": 8,
+      "published": 4
     },
     "timesofisrael.com": {
       "queued": 1
@@ -1520,7 +1545,7 @@
       "queued": 1
     },
     "volcanodiscovery.com": {
-      "queued": 8
+      "queued": 9
     },
     "von.gov.ng": {
       "queued": 1
@@ -1541,6 +1566,9 @@
       "queued": 1
     },
     "wearetech.africa": {
+      "queued": 1
+    },
+    "westlinntidings.com": {
       "queued": 1
     },
     "wftv.com": {
@@ -1630,7 +1658,7 @@
     },
     "www.bbc.co.uk": {
       "queued": 378,
-      "attempted": 3
+      "attempted": 4
     },
     "www.bbc.com": {
       "queued": 151,
@@ -1780,12 +1808,11 @@
     },
     "www.indiasarkarinaukri.com": {
       "queued": 38,
-      "attempted": 2
+      "attempted": 4
     },
     "www.indiatoday.in": {
-      "queued": 473,
-      "attempted": 4,
-      "published": 1
+      "queued": 472,
+      "attempted": 3
     },
     "www.inextlive.com": {
       "queued": 269
@@ -1879,7 +1906,8 @@
       "queued": 10
     },
     "www.pib.gov.in": {
-      "queued": 242
+      "queued": 242,
+      "attempted": 1
     },
     "www.prnewswire.com": {
       "queued": 949,
