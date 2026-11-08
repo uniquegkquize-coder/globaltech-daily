@@ -1,0 +1,31 @@
+{
+  "en_title": "CleanYourTV: Debloat Android and Google TVs Over Wi‑Fi for an Apple‑TV‑Style Home",
+  "hi_title": "CleanYourTV: वाई‑फाई के ज़रिए एंड्रॉइड और गूगल टीवी को डिब्लोट करें, एप्पल‑टीवी जैसा होम पेज पाएं",
+  "en_body": "\n## What CleanYourTV Does\nCleanYourTV is an open‑source project that lets you remove unwanted apps and services from Android‑TV and Google‑TV devices without rooting or flashing firmware. By enabling USB debugging and using wireless ADB, a computer can run scripts that:\n- Detect the list of pre‑installed “bloat” packages on a specific TV model.\n- Disable those packages safely, leaving the system functional.\n- Install a lightweight launcher that mimics the Apple‑TV home screen.\n- Provide a restore script that re‑enables every disabled package.\n\nThe process requires only a computer on the same Wi‑Fi network, Python 3, a JDK (17‑22), and the Android SDK platform 34. No cable, no root, no app store installation.\n\n## How It Works\n1. **Enable Wireless Debugging** – Turn on USB debugging and Wireless debugging in the TV’s developer options.\n2. **Run the Debloat Script** – The script connects via ADB, backs up the current state, disables the identified bloat packages, builds the new launcher, and installs it.\n3. **Optional Themes** – Users can add a rotating wallpaper by placing images in a folder and running a theme script.\n4. **Restore** – A single command restores the TV to its original state.\n\nThe project ships with over 450 TV models in its `examples/` directory, covering brands such as Sony, Philips, TCL, and many others. If your model isn’t listed, the script can discover the bloat automatically and you can add a custom list.\n\n## Practical Implications\n- **Privacy** – Disables analytics and advertising services that send data to manufacturers.\n- **Performance** – Removes unused apps, freeing RAM and storage.\n- **User Experience** – Provides a clean, distraction‑free home screen.\n\n## How to Verify\n- After running the script, check the TV’s *Settings → Apps* to confirm disabled packages.\n- Use the restore script if the TV fails to start.\n- Firmware updates are unaffected; the updater remains enabled unless explicitly disabled.\n\n## Caveats\n- The project does not modify system partitions; it only disables user‑level packages.\n- Some TVs may require re‑enabling the stock launcher if the setup wizard takes over the HOME intent.\n- Users should be aware that disabling certain system apps could affect TV functionality.\n\n## Community and Licensing\nCleanYourTV is maintained under the MIT license. Contributions are welcome via the `CONTRIBUTING.md` guide. The project is independent and not affiliated with any TV manufacturer.\n",
+  "hi_body": "\n## CleanYourTV क्या करता है\nCleanYourTV एक ओपन‑सोर्स प्रोजेक्ट है जो आपको एंड्रॉइड‑टीवी और गूगल‑टीवी डिवाइस से अनचाहे ऐप्स और सेवाओं को रूट या फ़र्मवेयर फ्लैश किए बिना हटाने देता है। USB डिबगिंग सक्षम करके और वायरलेस ADB का उपयोग करके, एक कंप्यूटर निम्नलिखित स्क्रिप्ट चला सकता है:\n- किसी विशेष टीवी मॉडल पर प्री‑इंस्टॉल्ड “बloat” पैकेजों की सूची पहचानें।\n- उन पैकेजों को सुरक्षित रूप से डिसेबल करें, सिस्टम को कार्यशील रखें।\n- एक हल्का लॉन्चर इंस्टॉल करें जो एप्पल‑टीवी होम स्क्रीन जैसा दिखे।\n- एक रिस्टोर स्क्रिप्ट जो हर डिसेबल्ड पैकेज को फिर से सक्षम करती है।\n\nइस प्रक्रिया के लिए केवल उसी Wi‑Fi नेटवर्क पर एक कंप्यूटर, Python 3, JDK (17‑22) और Android SDK प्लेटफ़ॉर्म 34 की आवश्यकता है। कोई केबल, रूट या ऐप स्टोर इंस्टॉलेशन नहीं।\n\n## यह कैसे काम करता है\n1. **वायरलेस डिबगिंग सक्षम करें** – टीवी के डेवलपर विकल्पों में USB डिबगिंग और वायरलेस डिबगिंग चालू करें।\n2. **डिब्लोट स्क्रिप्ट चलाएँ** – स्क्रिप्ट ADB के माध्यम से कनेक्ट होती है, वर्तमान स्थिति का बैकअप लेती है, पहचाने गए बloat पैकेजों को डिसेबल करती है, नया लॉन्चर बनाती है और इंस्टॉल करती है।\n3. **वैकल्पिक थीम** – उपयोगकर्ता एक फ़ोल्डर में छवियाँ रखकर रोटेटिंग वॉलपेपर जोड़ सकते हैं।\n4. **रिस्टोर** – एक कमांड से टीवी को मूल स्थिति में लौटाया जा सकता है।\n\nप्रोजेक्ट में `examples/` डायरेक्टरी में 450 से अधिक टीवी मॉडल शामिल हैं, जिनमें Sony, Philips, TCL और अन्य ब्रांड शामिल हैं। यदि आपका मॉडल सूचीबद्ध नहीं है, तो स्क्रिप्ट स्वचालित रूप से बloat का पता लगा सकती है और आप एक कस्टम सूची जोड़ सकते हैं।\n\n## व्यावहारिक प्रभाव\n- **गोपनीयता** – एनालिटिक्स और विज्ञापन सेवाओं को डिसेबल करता है जो डेटा निर्माता को भेजती हैं।\n- **प्रदर्शन** – अनयूज़्ड ऐप्स हटाकर RAM और स्टोरेज मुक्त करता है।\n- **उपयोगकर्ता अनुभव** – एक साफ़, बिना विचलन वाला होम स्क्रीन प्रदान करता है।\n\n## कैसे सत्यापित करें\n- स्क्रिप्ट चलाने के बाद, टीवी के *Settings → Apps* में डिसेबल्ड पैकेजों की जाँच करें।\n- यदि टीवी सही से शुरू नहीं होता, तो रिस्टोर स्क्रिप्ट का उपयोग करें।\n- फ़र्मवेयर अपडेट प्रभावित नहीं होते; अपडेटर डिफ़ॉल्ट रूप से सक्षम रहता है जब तक कि स्पष्ट रूप से डिसेबल न किया जाए।\n\n## सीमाएँ\n- प्रोजेक्ट सिस्टम पार्टिशन को संशोधित नहीं करता; केवल यूज़र‑लेवल पैकेजों को डिसेबल करता है।\n- कुछ टीवी पर सेटअप विज़ार्ड HOME इंटेंट ले सकता है, इसलिए स्टॉक लॉन्चर को फिर से सक्षम करना पड़ सकता है।\n- कुछ सिस्टम ऐप्स को डिसेबल करने से टीवी की कार्यक्षमता प्रभावित हो सकती है।\n\n## समुदाय और लाइसेंस\nCleanYourTV MIT लाइसेंस के तहत रखरखाव किया जाता है। योगदान `CONTRIBUTING.md` गाइड के अनुसार स्वागत हैं। प्रोजेक्ट स्वतंत्र है और किसी टीवी निर्माता से संबद्ध नहीं है।\n",
+  "en_meta": "CleanYourTV lets you debloat Android and Google TVs over Wi‑Fi, installing a lightweight Apple‑TV‑style launcher without rooting.",
+  "hi_meta": "CleanYourTV वाई‑फाई के ज़रिए एंड्रॉइड और गूगल टीवी को डिब्लोट करता है, एप्पल‑टीवी जैसा हल्का लॉन्चर इंस्टॉल करता है, बिना रूट के।",
+  "en_keywords": [
+    "Android TV",
+    "Google TV",
+    "debloat",
+    "wireless ADB",
+    "open source",
+    "Apple TV launcher"
+  ],
+  "hi_keywords": [
+    "एंड्रॉइड टीवी",
+    "गूगल टीवी",
+    "डिब्लोट",
+    "वायरलेस ADB",
+    "ओपन सोर्स",
+    "एप्पल टीवी लॉन्चर"
+  ],
+  "source_published_at": null,
+  "id": "4bef08f5f83b",
+  "source": "https://github.com/Gathin23/cleanyourtv",
+  "date": "2026-11-08T14:00:43.627526+00:00",
+  "source_title": "Gathin23/cleanyourtv: Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

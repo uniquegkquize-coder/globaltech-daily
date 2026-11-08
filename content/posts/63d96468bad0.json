@@ -1,0 +1,31 @@
+{
+  "en_title": "Android's Private DNS Protocol Discrepancy Creates Stability Issues for Ad Blockers",
+  "hi_title": "Android का 'Private DNS' प्रोटोकॉल एड-ब्लॉकर्स के लिए स्थिरता संबंधी समस्याएँ पैदा कर रहा है",
+  "en_body": "Users relying on third-party ad-blocking DNS providers via Android's 'Private DNS' setting often face connectivity issues on restricted networks. While Google’s own DNS services benefit from a secondary communication path, other providers are limited to more fragile connection methods.\n\n## The Technical Divide: DoT vs. DoH3\nAndroid implements two distinct protocols for private DNS resolution:\n* **DNS-over-TLS (DoT):** Used by most providers like AdGuard, NextDNS, and Quad9. It operates on TCP port 853, which is frequently blocked by public Wi-Fi, hotels, and corporate firewalls.\n* **DNS-over-HTTP/3 (DoH3):** A faster, more resilient protocol that utilizes UDP port 443—the same port used for standard web traffic. This makes it significantly harder for networks to block.\n\n## Why Google's DNS Has an Advantage\nAs of current Android system implementations, the DoH3 protocol is restricted to a hard-coded list of 'well-known' resolvers, primarily Google’s own services and Cloudflare. When a user sets `dns.google` as their provider, Android attempts both DoT and DoH3. If the DoT connection fails, the device silently switches to the HTTP/3 path, maintaining internet connectivity without user intervention.\n\nIn contrast, if a user specifies a provider like AdGuard, the device relies exclusively on DoT. If port 853 is blocked, the 'strict mode' nature of Android's Private DNS prevents the phone from failing over to the network's default DNS settings, resulting in a total loss of internet access.\n\n## Practical Implications and Workarounds\nBecause Android's Private DNS operates in a strict, non-failover mode for most providers, users face a difficult trade-off:\n* **Manual Switching:** Users can set Private DNS to 'Automatic' mode when joining public networks. This allows fallback to plain DNS but sacrifices encryption and ad-blocking capabilities.\n* **Dedicated Apps:** Using an application-based DNS solution (such as RethinkDNS or official provider apps) allows traffic to be routed through a local VPN tunnel. This sends DNS queries over HTTPS (port 443), which reliably bypasses firewalls. Note that this occupies the phone's single available VPN slot.\n\nTo verify your current configuration, check the **Settings > Network & internet > Private DNS** menu on your Android device. Experts suggest that broadening DoH3 support to all user-entered hostnames or implementing broader resolver discovery protocols could resolve this imbalance.",
+  "hi_body": "जो उपयोगकर्ता Android की 'Private DNS' सेटिंग के माध्यम से तृतीय-पक्ष (third-party) एड-ब्लॉकिंग DNS का उपयोग करते हैं, उन्हें अक्सर प्रतिबंधित नेटवर्क पर कनेक्टिविटी की समस्याओं का सामना करना पड़ता है। जहाँ Google की अपनी DNS सेवाओं को एक अतिरिक्त संचार मार्ग का लाभ मिलता है, वहीं अन्य प्रदाताओं को अधिक सीमित और नाजुक कनेक्शन विधियों तक ही सीमित रखा गया है।\n\n## तकनीकी अंतर: DoT बनाम DoH3\nAndroid निजी DNS रिज़ॉल्यूशन के लिए दो अलग-अलग प्रोटोकॉल का उपयोग करता है:\n* **DNS-over-TLS (DoT):** इसका उपयोग AdGuard, NextDNS और Quad9 जैसे अधिकांश प्रदाता करते हैं। यह TCP पोर्ट 853 पर काम करता है, जिसे अक्सर सार्वजनिक वाई-फाई, होटल और कॉर्पोरेट फायरवॉल द्वारा ब्लॉक कर दिया जाता है।\n* **DNS-over-HTTP/3 (DoH3):** यह एक तेज़ और अधिक लचीला प्रोटोकॉल है जो UDP पोर्ट 443 का उपयोग करता है—वही पोर्ट जिसका उपयोग सामान्य वेब ट्रैफ़िक के लिए किया जाता है। इसे नेटवर्क द्वारा ब्लॉक करना काफी कठिन होता है।\n\n## Google का DNS बेहतर क्यों काम करता है?\nवर्तमान Android सिस्टम के अनुसार, DoH3 प्रोटोकॉल केवल 'प्रसिद्ध' (well-known) सर्वरों तक ही सीमित है, जिसमें मुख्य रूप से Google की अपनी सेवाएँ और Cloudflare शामिल हैं। जब कोई उपयोगकर्ता अपने प्रदाता के रूप में `dns.google` सेट करता है, तो Android DoT और DoH3 दोनों का प्रयास करता है। यदि DoT कनेक्शन विफल हो जाता है, तो डिवाइस चुपचाप HTTP/3 मार्ग पर स्विच हो जाता है, जिससे इंटरनेट कनेक्शन बना रहता है।\n\nइसके विपरीत, यदि कोई उपयोगकर्ता AdGuard जैसा प्रदाता चुनता है, तो डिवाइस केवल DoT पर निर्भर रहता है। यदि पोर्ट 853 ब्लॉक है, तो Android का 'स्ट्रिक्ट मोड' फोन को सामान्य DNS सेटिंग्स पर वापस जाने से रोकता है, जिसके परिणामस्वरूप इंटरनेट पूरी तरह से बंद हो जाता है।\n\n## व्यावहारिक उपाय\nचूंकि अधिकांश प्रदाताओं के लिए Android का Private DNS 'स्ट्रिक्ट मोड' में काम करता है, इसलिए उपयोगकर्ताओं को अक्सर समझौता करना पड़ता है:\n* **मैनुअल स्विचिंग:** सार्वजनिक नेटवर्क से जुड़ते समय उपयोगकर्ता Private DNS को 'Automatic' मोड पर सेट कर सकते हैं। यह साधारण DNS पर वापस जाने की अनुमति देता है, लेकिन इससे एन्क्रिप्शन और एड-ब्लॉकिंग की सुविधा खत्म हो जाती है।\n* **डेडिकेटेड ऐप्स:** RethinkDNS या संबंधित प्रदाता के आधिकारिक ऐप्स का उपयोग करना एक विकल्प है, जो ट्रैफ़िक को स्थानीय VPN टनल के माध्यम से भेजते हैं। यह DNS क्वेरी को HTTPS (पोर्ट 443) पर भेजता है, जो फायरवॉल को आसानी से बायपास कर देता है। ध्यान दें कि यह फोन के एकमात्र उपलब्ध VPN स्लॉट का उपयोग करता है।\n\nअपनी वर्तमान सेटिंग्स की जांच करने के लिए, अपने Android डिवाइस पर **Settings > Network & internet > Private DNS** मेनू देखें। विशेषज्ञों का सुझाव है कि यदि DoH3 का समर्थन सभी होस्टनेम तक बढ़ाया जाए, तो यह समस्या हल हो सकती है।",
+  "en_meta": "Android's Private DNS forces many ad-blocking services to use restricted ports, while Google's DNS gets a more stable connection method. Here is why this…",
+  "hi_meta": "Android का Private DNS एड-ब्लॉकिंग सेवाओं को प्रतिबंधित पोर्ट्स पर मजबूर करता है, जबकि Google के DNS को स्थिर कनेक्शन मिलता है। जानें इसके कारण।",
+  "en_keywords": [
+    "Android Private DNS",
+    "DNS-over-HTTP/3",
+    "DNS-over-TLS",
+    "network filtering",
+    "ad blockers",
+    "internet connectivity"
+  ],
+  "hi_keywords": [
+    "Android निजी DNS",
+    "DNS-over-HTTP/3",
+    "DNS-over-TLS",
+    "नेटवर्क फ़िल्टरिंग",
+    "एड ब्लॉकर",
+    "इंटरनेट कनेक्टिविटी"
+  ],
+  "source_published_at": "2026-10-31T12:00:10Z",
+  "id": "63d96468bad0",
+  "source": "https://www.androidpolice.com/googles-dns-gets-hidden-backup-path-that-my-ad-blocker-never-gets-on-android/",
+  "date": "2026-11-08T14:02:58.666123+00:00",
+  "source_title": "Google's DNS gets a hidden backup path that my ad blocker never gets on Android",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

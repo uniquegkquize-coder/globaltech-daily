@@ -1,0 +1,31 @@
+{
+  "en_title": "Security Researchers Warn of Hackers Targeting Camera Management Software",
+  "hi_title": "सुरक्षा शोधकर्ताओं ने कैमरा मैनेजमेंट सॉफ्टवेयर को निशाना बनाने वाले हैकर्स को लेकर चेतावनी दी",
+  "en_body": "## Overview of the Threat\nSecurity researchers at Huntress have identified an ongoing campaign where attackers are exploiting vulnerabilities in camera management software to gain unauthorized access to company networks. Between September and October 2026, analysts observed incidents where threat actors used these management systems as a gateway to establish persistence within business infrastructure.\n\n## Attack Methodology\n*   **Initial Access:** Attackers leverage legitimate, yet currently unidentified, camera management software to gain a foothold.\n*   **Reverse Shell:** Once inside, a file named rs.win32.exe is executed to create a reverse shell, connecting the system to an external IP address.\n*   **DLL Sideloading:** Threat actors deploy WpcMon.exe—a legitimate Windows utility—to load malicious DLL files (IPHLPAPI.DLL and samcli.dll). These libraries are designed to communicate with external command-and-control servers.\n*   **Persistence:** The attackers modify the Windows Registry's 'Run' key, ensuring the malicious processes restart automatically whenever a user logs in.\n\n## Uncertainties\nInvestigators have not yet confirmed the specific name or vendor of the exploited software. While strings within the executables suggest a potential link to the Korean company 3R Global, researchers could not definitively confirm the source of the downloads. Due to the lack of identifying version information in the files, the full scale of the campaign remains unknown.\n\n## Defensive Recommendations\nExperts urge IT administrators to:\n*   Maintain a strict inventory of all camera management software currently in use.\n*   Restrict network access for camera systems, treating them as high-security assets.\n*   Implement application control to block unauthorized executables from running in user-accessible paths.\n*   Monitor for abnormal outbound connections, especially those originating from unexpected processes like WpcMon.exe.",
+  "hi_body": "## खतरे का विवरण\nHuntress के सुरक्षा शोधकर्ताओं ने एक चल रहे अभियान की पहचान की है, जिसमें हमलावर कंपनी नेटवर्क तक अनधिकृत पहुंच प्राप्त करने के लिए कैमरा मैनेजमेंट सॉफ्टवेयर की कमजोरियों का फायदा उठा रहे हैं। सितंबर और अक्टूबर 2026 के बीच, विश्लेषकों ने ऐसी घटनाएं देखीं जहां खतरा फैलाने वाले तत्वों ने व्यावसायिक बुनियादी ढांचे में पैठ बनाने के लिए इन प्रबंधन प्रणालियों का उपयोग किया।\n\n## हमले की कार्यप्रणाली\n*   **प्रारंभिक पहुंच:** हमलावर नेटवर्क में प्रवेश करने के लिए वैध, लेकिन अभी तक अज्ञात, कैमरा मैनेजमेंट सॉफ्टवेयर का उपयोग करते हैं।\n*   **रिवर्स शेल:** सिस्टम के अंदर जाने के बाद, वे rs.win32.exe नामक फाइल निष्पादित करते हैं ताकि एक रिवर्स शेल बनाया जा सके, जो सिस्टम को बाहरी आईपी पते से जोड़ता है।\n*   **DLL साइडलोडिंग:** हमलावर WpcMon.exe नामक एक वैध विंडोज यूटिलिटी का उपयोग दुर्भावनापूर्ण DLL फाइलों (IPHLPAPI.DLL और samcli.dll) को लोड करने के लिए करते हैं। ये फाइलें बाहरी कमांड-एंड-कंट्रोल सर्वर से संपर्क करने के लिए डिज़ाइन की गई हैं।\n*   **निरंतरता:** हमलावर विंडोज रजिस्ट्री की 'Run' कुंजी को संशोधित करते हैं, जिससे यह सुनिश्चित होता है कि जब भी उपयोगकर्ता लॉगिन करता है, तो दुर्भावनापूर्ण प्रक्रियाएं स्वचालित रूप से पुनरारंभ हो जाती हैं।\n\n## अनिश्चितताएं\nजांचकर्ताओं ने अभी तक उस सॉफ्टवेयर के विशिष्ट नाम या विक्रेता की पुष्टि नहीं की है जिसका उपयोग किया जा रहा है। हालांकि निष्पादन योग्य फाइलों में मौजूद स्ट्रिंग्स से कोरियाई कंपनी 3R Global से संभावित जुड़ाव का संकेत मिलता है, लेकिन शोधकर्ता अभी तक डाउनलोड के स्रोत की पुष्टि नहीं कर पाए हैं। फाइलों में वर्जन की जानकारी न होने के कारण, इस अभियान का वास्तविक दायरा अज्ञात है।\n\n## रक्षात्मक सुझाव\nविशेषज्ञों ने आईटी प्रशासकों को निम्नलिखित सुझाव दिए हैं:\n*   वर्तमान में उपयोग किए जा रहे सभी कैमरा मैनेजमेंट सॉफ्टवेयर की सख्त सूची बनाए रखें।\n*   कैमरा सिस्टम की नेटवर्क पहुंच को प्रतिबंधित करें और उन्हें उच्च-सुरक्षा वाली संपत्ति मानें।\n*   उपयोगकर्ता-सुलभ पथों में अनधिकृत फाइलों को चलने से रोकने के लिए एप्लिकेशन कंट्रोल लागू करें।\n*   असामान्य आउटबाउंड कनेक्शन की निगरानी करें, विशेष रूप से उन कनेक्शनों की जो WpcMon.exe जैसी अप्रत्याशित प्रक्रियाओं से उत्पन्न होते हैं।",
+  "en_meta": "Security researchers have identified a campaign using camera management software to breach company networks via DLL sideloading and reverse shells.",
+  "hi_meta": "सुरक्षा शोधकर्ताओं ने एक अभियान की पहचान की है जो DLL साइडलोडिंग के जरिए कैमरा मैनेजमेंट सॉफ्टवेयर का उपयोग करके कंपनी नेटवर्क को हैक कर रहे हैं।",
+  "en_keywords": [
+    "cybersecurity",
+    "DLL sideloading",
+    "Huntress",
+    "network security",
+    "camera management software",
+    "data breach"
+  ],
+  "hi_keywords": [
+    "साइबर सुरक्षा",
+    "DLL साइडलोडिंग",
+    "नेटवर्क सुरक्षा",
+    "कैमरा मैनेजमेंट सॉफ्टवेयर",
+    "डेटा उल्लंघन",
+    "हैकर्स"
+  ],
+  "source_published_at": "2026-10-29T16:05:00+00:00",
+  "id": "7d210615a92a",
+  "source": "https://www.techradar.com/pro/security/hackers-are-breaking-into-company-networks-via-hacked-cctv-camera-software",
+  "date": "2026-11-08T14:04:31.149929+00:00",
+  "source_title": "Hackers are breaking into company networks via hacked CCTV camera software",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,34 @@
+{
+  "en_title": "GridCraft: An Open-Source, Rust-Based Spreadsheet Application",
+  "hi_title": "GridCraft: रस्ट (Rust) में निर्मित एक ओपन-सोर्स स्प्रेडशीट एप्लिकेशन",
+  "en_body": "GridCraft is an open-source, high-performance spreadsheet application built entirely in Rust. Developed by the ArtCraft team, it aims to provide a clean-room implementation of modern spreadsheet workflows, supporting native execution on macOS, Windows, Linux, BSD, and web browsers via WebAssembly.\n\n## Key Features\n* **Familiar Interface**: Designed with a ribbon, formula bar, and keyboard shortcuts to match standard spreadsheet expectations.\n* **High Compatibility**: Uses XLSX as its native format, supporting conditional formatting, pivot tables, and dynamic arrays. It also imports CSV, TSV, and legacy XLS/ODS files.\n* **Performance**: Features a dependency-graph calculation engine, incremental recalculation, and a copy-on-write system for efficient undo functionality.\n* **Agent Support**: Built with programmatic control in mind, allowing agents to interact via an MCP server, CLI, or JSON control channel.\n\n## Current Status\nGridCraft is currently in an alpha development stage. While the core workflow is functional, the developers note that depth and feature fidelity are still evolving. The project currently estimates roughly 50% readiness for real-world heavy-duty work. Users can verify the current progress and roadmap through the official repository on GitHub.\n\n## Technical Implementation\nThe application avoids external dependencies where possible and does not utilize telemetry or subscription models. It uses an engine-first architecture with a separated UI layer, allowing for potential frontend swaps. Troubleshooting is supported via localized log files stored in standard platform-specific directories.",
+  "hi_body": "GridCraft पूरी तरह से रस्ट (Rust) प्रोग्रामिंग भाषा में तैयार किया गया एक उच्च-प्रदर्शन वाला ओपन-सोर्स स्प्रेडशीट एप्लिकेशन है। ArtCraft टीम द्वारा विकसित, यह आधुनिक स्प्रेडशीट वर्कफ़्लो का एक स्वच्छ और कुशल विकल्प प्रदान करता है, जो macOS, Windows, Linux, BSD और वेब ब्राउज़र पर चलता है।\n\n## प्रमुख विशेषताएँ\n* **परिचित इंटरफ़ेस**: इसमें रिबन, फॉर्मूला बार और कीबोर्ड शॉर्टकट्स दिए गए हैं, जो मानक स्प्रेडशीट के अनुरूप हैं।\n* **उच्च संगतता**: यह XLSX को अपने मूल प्रारूप के रूप में उपयोग करता है और इसमें पिवट टेबल, कंडीशनल फॉर्मेटिंग और डायनेमिक एरे जैसी सुविधाएं उपलब्ध हैं। यह CSV, TSV और पुराने XLS/ODS फ़ाइलों को भी सपोर्ट करता है।\n* **प्रदर्शन**: इसमें एक डिपेंडेंसी-ग्राफ कैलकुलेशन इंजन है जो इंक्रीमेंटल रिकैलकुलेशन और तेज़ 'अनडू' (undo) की सुविधा देता है।\n* **एजेंट सपोर्ट**: इसे प्रोग्रामेटिक नियंत्रण के लिए बनाया गया है, जिससे एजेंट MCP सर्वर या CLI के माध्यम से इसे संचालित कर सकते हैं।\n\n## वर्तमान स्थिति\nGridCraft अभी अल्फा विकास चरण में है। डेवलपर्स का मानना है कि इसका मुख्य वर्कफ़्लो पूरी तरह से काम कर रहा है, लेकिन फीचर्स की गहराई और फ़ाइल संगतता पर अभी काम जारी है। वर्तमान में, इसे वास्तविक व्यावसायिक कार्यों के लिए लगभग 50% तैयार माना जा रहा है। प्रगति और रोडमैप की जानकारी के लिए आधिकारिक GitHub रिपॉजिटरी देखें।\n\n## तकनीकी विवरण\nयह एप्लिकेशन बिना किसी टेलीमेट्री या सब्सक्रिप्शन मॉडल के चलता है। इसका आर्किटेक्चर इंजन-प्रथम (engine-first) है, जिसमें यूजर इंटरफेस को अलग रखा गया है। तकनीकी समस्याओं के निवारण के लिए एप्लिकेशन संबंधित सिस्टम डायरेक्टरी में लॉग फाइलें बनाता है।",
+  "en_meta": "GridCraft is an open-source, Rust-based spreadsheet app offering XLSX compatibility and agent-ready automation. Currently in alpha development.",
+  "hi_meta": "GridCraft एक ओपन-सोर्स, रस्ट-आधारित स्प्रेडशीट ऐप है जो XLSX संगतता प्रदान करता है। यह वर्तमान में अल्फा चरण में है।",
+  "en_keywords": [
+    "GridCraft",
+    "Rust",
+    "Open-source",
+    "Spreadsheet",
+    "XLSX",
+    "Alpha software"
+  ],
+  "hi_keywords": [
+    "GridCraft",
+    "रस्ट",
+    "ओपन-सोर्स",
+    "स्प्रेडशीट",
+    "XLSX",
+    "अल्फा सॉफ्टवेयर"
+  ],
+  "source_published_at": null,
+  "id": "747cd70460a7",
+  "source": "https://github.com/storytold/gridcraft",
+  "date": "2026-11-08T14:03:58.609235+00:00",
+  "source_title": "GridCraft: an open-source, clean-room spreadsheet (Microsoft Excel-style) in pure Rust. By ArtCraft. - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

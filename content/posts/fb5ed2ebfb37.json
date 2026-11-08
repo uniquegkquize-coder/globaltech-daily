@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Implements New Global Default Policy for Copilot Features",
+  "hi_title": "GitHub ने Copilot फीचर्स के लिए नई ग्लोबल डिफ़ॉल्ट पॉलिसी लागू की",
+  "en_body": "GitHub has initiated the gradual rollout of a new global default policy for generally available Copilot features, specifically impacting Copilot Business and Copilot Enterprise plans. This rollout, which began on October 22, 2026, is expected to continue through October 26, 2026, with implementation times varying across different organizations.\n\n## How the Policy Works\n\nThe policy aims to streamline management for eligible features that currently remain in an \"Unconfigured\" state. Key aspects of the implementation include:\n\n* **Automated Assignment:** Features currently set to \"Unconfigured\" will be updated to match the organization's selected global default (Enabled, Disabled, or Let organizations decide).\n* **Preservation of Custom Settings:** Any explicit choices previously made by administrators for individual features will remain unchanged. The system will not overwrite manual configurations.\n* **One-Time Adjustment:** This is a single-event policy application. Future changes to the global default policy will not retroactively alter the status of individual features.\n* **Preview Feature Handling:** Features currently in preview remain opt-in. The new policy only applies once a feature transitions to general availability and remains unconfigured.\n\n## Management and Configuration\n\nAdministrators can manage these settings by navigating to **AI Controls → Copilot → Default policy for new features**. This dashboard allows for continuous oversight and manual adjustments for specific features if necessary.\n\n## Verification and Resources\n\nTo ensure compliance and understanding of the new defaults, users are encouraged to:\n\n* Consult the official GitHub documentation regarding feature eligibility and policy exceptions.\n* Review current organization settings within the GitHub interface.\n* Engage with the GitHub Community discussion board for peer guidance or to raise specific implementation concerns.",
+  "hi_body": "GitHub ने Copilot Business और Copilot Enterprise प्लान के लिए सामान्य रूप से उपलब्ध (generally available) Copilot फीचर्स के लिए एक नई ग्लोबल डिफ़ॉल्ट पॉलिसी का चरणबद्ध रोलआउट शुरू कर दिया है। यह प्रक्रिया 22 अक्टूबर 2026 को शुरू हुई और 26 अक्टूबर 2026 तक जारी रहने की उम्मीद है, जिसमें विभिन्न संगठनों के लिए कार्यान्वयन का समय अलग-अलग हो सकता है।\n\n## पॉलिसी कैसे काम करती है\n\nयह पॉलिसी उन फीचर्स के प्रबंधन को सरल बनाने के लिए है जो वर्तमान में \"Unconfigured\" (कॉन्फ़िगर नहीं) स्थिति में हैं। कार्यान्वयन के मुख्य बिंदु इस प्रकार हैं:\n\n* **स्वचालित असाइनमेंट:** \"Unconfigured\" छोड़े गए फीचर्स को संगठन द्वारा चुने गए ग्लोबल डिफ़ॉल्ट (Enabled, Disabled, या Let organizations decide) के अनुसार सेट किया जाएगा।\n* **कस्टम सेटिंग्स का संरक्षण:** प्रशासकों द्वारा व्यक्तिगत फीचर्स के लिए पहले से किए गए स्पष्ट विकल्प अपरिवर्तित रहेंगे। सिस्टम मैन्युअल कॉन्फ़िगरेशन को ओवरराइट नहीं करेगा।\n* **एकमुश्त समायोजन:** यह केवल एक बार होने वाला बदलाव है। भविष्य में ग्लोबल डिफ़ॉल्ट पॉलिसी में बदलाव करने पर पहले से सेट फीचर्स की स्थिति नहीं बदलेगी।\n* **प्रीव्यू फीचर्स:** प्रीव्यू में मौजूद फीचर्स पहले की तरह ही रहेंगे। नई पॉलिसी केवल तभी लागू होगी जब कोई फीचर सामान्य रूप से उपलब्ध (generally available) हो जाए और उसे अनकॉन्फ़िगर छोड़ दिया गया हो।\n\n## प्रबंधन और कॉन्फ़िगरेशन\n\nप्रशासक इन सेटिंग्स को **AI Controls → Copilot → Default policy for new features** पर जाकर प्रबंधित कर सकते हैं। यह डैशबोर्ड आवश्यकतानुसार विशिष्ट फीचर्स के लिए निरंतर निगरानी और मैन्युअल समायोजन की अनुमति देता है।\n\n## सत्यापन और संसाधन\n\nपॉलिसी के अनुपालन और नई सेटिंग्स को समझने के लिए, उपयोगकर्ताओं को निम्नलिखित सुझाव दिए जाते हैं:\n\n* फीचर पात्रता और पॉलिसी अपवादों के संबंध में आधिकारिक GitHub दस्तावेज़ देखें।\n* GitHub इंटरफ़ेस के भीतर अपनी वर्तमान संगठन सेटिंग्स की समीक्षा करें।\n* साथी उपयोगकर्ताओं से सलाह लेने या कार्यान्वयन संबंधी चिंताओं के लिए GitHub कम्युनिटी डिस्कशन बोर्ड पर जाएं।",
+  "en_meta": "GitHub is rolling out a new global default policy for Copilot Business and Enterprise features, impacting unconfigured settings through October 26, 2026.",
+  "hi_meta": "GitHub, Copilot Business और Enterprise फीचर्स के लिए एक नई ग्लोबल डिफ़ॉल्ट पॉलिसी पेश कर रहा है, जो 26 अक्टूबर 2026 तक लागू होगी।",
+  "en_keywords": [
+    "GitHub Copilot",
+    "Copilot Business",
+    "Copilot Enterprise",
+    "AI administration",
+    "software policy"
+  ],
+  "hi_keywords": [
+    "GitHub Copilot",
+    "Copilot Business",
+    "Copilot Enterprise",
+    "एआई प्रशासन",
+    "सॉफ्टवेयर पॉलिसी"
+  ],
+  "source_published_at": "2026-10-22T20:44:28+00:00",
+  "id": "fb5ed2ebfb37",
+  "source": "https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available/",
+  "date": "2026-11-08T14:01:09.169364+00:00",
+  "source_title": "Global default for Copilot features generally available - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

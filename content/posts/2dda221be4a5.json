@@ -1,0 +1,35 @@
+{
+  "en_title": "James Pond 2: Codename RoboCod Recompiled to Native C++ with SDL3 – Widescreen, Smooth Motion, and Modern Features",
+  "hi_title": "जेम्स पोंड 2: कोडनेम रोबोकॉड का C++ में पुनः संकलन – वाइडस्क्रीन, स्मूद मोशन और आधुनिक फीचर्स",
+  "en_body": "James Pond 2: Codename RoboCod, the 1991 Amiga classic by Chris Sorrell, has been fully recompiled from its original 68000 assembly into modern C++ using SDL3. The result is a standalone application that runs on Windows, macOS, Linux, Android, Steam Deck, and PlayStation 5 without an emulator.\n\nKey enhancements:\n- **Widescreen rendering** – the game’s graphics are redrawn to a 16:9 aspect ratio instead of being stretched, with score and lives moved to screen corners.\n- **Smooth motion** – the original 50 fps logic is preserved, but intermediate frames are interpolated to match the display’s refresh rate (60, 90, 120 Hz+), eliminating the classic 50‑fps stutter.\n- **Modern audio** – four Amiga sound channels are routed through a model of the Amiga 500’s filter (or the 1200’s), with optional stereo narrowing for headphones.\n- **Pause menu & saves** – a full pause menu allows quick‑save, three save slots with thumbnails, and level selection.\n- **Controller support** – Xbox, PlayStation, Nintendo, and Steam Deck controllers are mapped automatically, with rumble for hits, explosions, and screen shakes.\n- **Optional CRT filter** – a soft or classic CRT scan‑line effect can be toggled.\n\nThe project requires a legal copy of the game: an Amiga disk image (.adf, .adz, or .zip). No game data is included in the repository. Installation steps differ per platform but generally involve downloading the release archive, extracting it, and launching the executable. The first run will prompt for the disk image; the image is then copied into the application folder.\n\nBecause the recompiler generates C++ code from the disk image on the user’s machine, the binary is unique to each copy of the game. This ensures that the original game logic remains intact while providing modern conveniences.\n\nThe project is released under the GNU GPL v3.0 and is not affiliated with the original rights holders.",
+  "hi_body": "जेम्स पोंड 2: कोडनेम रोबोकॉड, 1991 का अमिगा क्लासिक, को 68000 असेंबली से पूरी तरह C++ में पुनः संकलित किया गया है, जिसमें SDL3 का उपयोग किया गया है। यह एक स्टैंडअलोन एप्लिकेशन है जो विंडोज़, मैकओएस, लिनक्स, एंड्रॉइड, स्ट्रीम डेक और प्लेस्टेशन 5 पर बिना एमुलेटर के चल सकता है।\n\nमुख्य सुधार:\n- **वाइडस्क्रीन रेंडरिंग** – ग्राफ़िक्स को 16:9 आस्पेक्ट रेशियो में फिर से ड्रॉ किया गया है, स्कोर और लाइफ़ को स्क्रीन के कोनों में स्थानांतरित किया गया है।\n- **स्मूद मोशन** – मूल 50 fps लॉजिक को बरकरार रखते हुए, मध्यवर्ती फ्रेम्स को डिस्प्ले के रिफ्रेश रेट (60, 90, 120 Hz+) के अनुसार इंटरपोलेट किया जाता है, जिससे क्लासिक 50‑fps जर्क हट जाता है।\n- **आधुनिक ऑडियो** – चार अमिगा साउंड चैनल्स को अमिगा 500 के फ़िल्टर (या 1200 के) के मॉडल के माध्यम से रूट किया गया है, हेडफ़ोन के लिए वैकल्पिक स्टीरियो नॉरमिंग के साथ।\n- **पॉज़ मेनू और सेव्स** – पूर्ण पॉज़ मेनू में क्विक‑सेव, तीन सेव स्लॉट्स (थंबनेल के साथ) और लेवल चयन उपलब्ध है।\n- **कंट्रोलर सपोर्ट** – Xbox, PlayStation, Nintendo और Steam Deck कंट्रोलर्स को स्वतः मैप किया गया है, साथ ही हिट, विस्फोट और स्क्रीन शेक के लिए रंबल।\n- **वैकल्पिक CRT फ़िल्टर** – सॉफ्ट या क्लासिक CRT स्कैन‑लाइन इफ़ेक्ट टॉगल किया जा सकता है।\n\nयह प्रोजेक्ट एक वैध गेम कॉपी की आवश्यकता रखता है: एक अमिगा डिस्क इमेज (.adf, .adz, या .zip)। रिपॉज़िटरी में कोई गेम डेटा शामिल नहीं है। इंस्टॉलेशन चरण प्लेटफ़ॉर्म के अनुसार भिन्न होते हैं, लेकिन आम तौर पर रिलीज़ आर्काइव डाउनलोड करके एक्सट्रैक्ट करना और एक्ज़िक्यूटेबल चलाना शामिल है। पहली बार चलने पर गेम डिस्क इमेज के लिए पूछेगा; इमेज को एप्लिकेशन फ़ोल्डर में कॉपी किया जाता है।\n\nक्योंकि रीकम्पाइलर उपयोगकर्ता के मशीन पर डिस्क इमेज से C++ कोड जेनरेट करता है, बाइनरी प्रत्येक गेम कॉपी के लिए अनूठा होता है। इससे मूल गेम लॉजिक बरकरार रहता है जबकि आधुनिक सुविधाएँ मिलती हैं।\n\nप्रोजेक्ट GNU GPL v3.0 के तहत जारी किया गया है और मूल अधिकार धारकों से संबद्ध नहीं है।",
+  "en_meta": "James Pond 2 recompiled to native C++ with SDL3 – widescreen, smooth motion, Amiga sound, pause menu, and controller support on Windows, macOS, Linux…",
+  "hi_meta": "जेम्स पोंड 2 का C++ में पुनः संकलन – वाइडस्क्रीन, स्मूद मोशन, अमिगा साउंड, पॉज़ मेनू और कंट्रोलर सपोर्ट विंडोज़, मैकओएस, लिनक्स, एंड्रॉइड, स्ट्रीम डेक और PS5…",
+  "en_keywords": [
+    "James Pond 2",
+    "recompiler",
+    "SDL3",
+    "widescreen",
+    "smooth motion",
+    "Amiga sound",
+    "pause menu",
+    "controller support"
+  ],
+  "hi_keywords": [
+    "जेम्स पोंड 2",
+    "रीकम्पाइलर",
+    "SDL3",
+    "वाइडस्क्रीन",
+    "स्मूद मोशन",
+    "अमिगा साउंड",
+    "पॉज़ मेनू",
+    "कंट्रोलर सपोर्ट"
+  ],
+  "source_published_at": null,
+  "id": "2dda221be4a5",
+  "source": "https://github.com/griches/JamesPond2RobocodRecomp",
+  "date": "2026-11-08T14:03:45.468840+00:00",
+  "source_title": "griches/JamesPond2RobocodRecomp: Static recompilation of James Pond 2: Codename RoboCod (Amiga) to C++ with SDL3: widescreen, smooth motion, Amiga 500 sound, pause menu. Bring your own disk image. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

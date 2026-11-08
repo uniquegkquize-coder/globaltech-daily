@@ -1,0 +1,38 @@
+{
+  "en_title": "GBrain: Garry Tan’s Open‑Source AI Memory Engine",
+  "hi_title": "GBrain: गार्री टैन का ओपन‑स्रोत AI मेमोरी इंजन",
+  "en_body": "## Overview\nGBrain is an MIT‑licensed, self‑hostable memory layer for AI agents, created by Garry Tan, President and CEO of Y Combinator. It stores explicit facts with provenance, supports corrections and withdrawals, and shares the same memory across multiple agents.\n\n## Key Features\n- **Explicit, source‑backed facts** – every claim is linked to a source page.\n- **Correction & withdrawal** – facts can be updated or removed.\n- **Cross‑agent sharing** – a single brain can be used by many agents.\n- **Keyword & semantic retrieval** – fast keyword search plus vector‑based semantic search.\n- **Synthesis layer** – generates a concise answer with citations and a gap analysis.\n- **Typed knowledge graph** – supports graph traversal for relationship queries.\n- **Hosted option** – gbrain.io offers a paid, managed hosting service.\n- **Local deployment** – install with Bun (≥ 1.4.4) and run 24/7 for continuous ingestion.\n\n## How It Works\n1. **Setup** – run `gbrain setup` to configure the brain and connect it to your chosen AI harness (Claude, Codex, ChatGPT, etc.).\n2. **Ingestion** – ingest meetings, emails, tweets, voice calls, and other documents. The brain enriches and consolidates data overnight.\n3. **Retrieval** – agents query the brain via keyword search (`gbrain search`) or synthesis (`gbrain think`).\n4. **Enrichment** – background jobs deduplicate, fix citations, score salience, and detect contradictions.\n5. **Sharing** – authorized users can publish skills and share the brain with teams.\n\n## Practical Implications\n- **Personal agents**: keep a persistent memory of your interactions and knowledge, improving over time.\n- **Team brains**: create a shared institutional memory that respects source and operation grants.\n- **Verification**: the brain’s gap analysis tells you what it doesn’t know, guiding follow‑up questions.\n\n## Getting Started\n```bash\n# Install via Bun\nbun install -g github:garrytan/gbrain#stable\n# Initialize a keyless brain\ngbrain setup\n# Expose over Tailscale for remote use\ngbrain mcp expose\n```\n\n## Verification\n- Check the brain’s readiness with `gbrain search --ready`.\n- Inspect source pages with `gbrain sources inspect`.\n- Use the hosted service at gbrain.io for a zero‑install experience.\n\n## Conclusion\nGBrain offers a robust, open‑source foundation for building AI agents that remember, reason, and grow. Its explicit memory model and synthesis capabilities make it a powerful tool for both individuals and teams.\n",
+  "hi_body": "## अवलोकन\nGBrain एक MIT‑लाइसेंस वाला, स्वयं‑होस्ट करने योग्य मेमोरी लेयर है, जिसे Y Combinator के अध्यक्ष और CEO गार्री टैन ने बनाया है। यह स्पष्ट तथ्यों को स्रोत के साथ संग्रहीत करता है, सुधार और हटाने का समर्थन करता है, और एक ही मेमोरी को कई एजेंटों के बीच साझा करता है।\n\n## प्रमुख विशेषताएँ\n- **स्पष्ट, स्रोत‑आधारित तथ्य** – हर दावे का स्रोत पृष्ठ से लिंक होता है।\n- **सुधार एवं हटाना** – तथ्य को अपडेट या हटाया जा सकता है।\n- **क्रॉस‑एजेंट साझा** – एक ही ब्रेन को कई एजेंट उपयोग कर सकते हैं।\n- **कीवर्ड एवं सैमांटिक खोज** – तेज़ कीवर्ड खोज के साथ वेक्टर‑आधारित सैमांटिक खोज।\n- **सिंथेसिस लेयर** – उद्धरणों के साथ संक्षिप्त उत्तर और गैप विश्लेषण उत्पन्न करता है।\n- **टाइप्ड नॉलेज ग्राफ** – संबंध प्रश्नों के लिए ग्राफ ट्रैवर्सल का समर्थन।\n- **होस्टेड विकल्प** – gbrain.io एक पेड, प्रबंधित होस्टिंग सेवा प्रदान करता है।\n- **स्थानीय डिप्लॉयमेंट** – Bun (≥ 1.4.4) के साथ इंस्टॉल करें और 24/7 चलाएँ।\n\n## यह कैसे काम करता है\n1. **सेटअप** – `gbrain setup` चलाकर ब्रेन कॉन्फ़िगर करें और अपने चुने हुए AI हार्नेस (Claude, Codex, ChatGPT, आदि) से कनेक्ट करें।\n2. **इंजेशन** – मीटिंग्स, ईमेल, ट्वीट्स, वॉयस कॉल और अन्य दस्तावेज़ों को इंजेस्ट करें। ब्रेन रात में डेटा को समृद्ध और समेकित करता है।\n3. **रिट्रीवल** – एजेंट `gbrain search` (कीवर्ड) या `gbrain think` (सिंथेसिस) के माध्यम से क्वेरी करते हैं।\n4. **समृद्धि** – बैकग्राउंड जॉब्स डुप्लिकेट हटाते हैं, उद्धरण ठीक करते हैं, महत्व स्कोर करते हैं, और विरोधाभासों का पता लगाते हैं।\n5. **शेयरिंग** – अधिकृत उपयोगकर्ता कौशल प्रकाशित कर सकते हैं और टीमों के साथ ब्रेन साझा कर सकते हैं।\n\n## व्यावहारिक प्रभाव\n- **व्यक्तिगत एजेंट**: अपनी बातचीत और ज्ञान की एक स्थायी मेमोरी रखें, समय के साथ बेहतर होते हुए।\n- **टीम ब्रेन**: स्रोत और ऑपरेशन ग्रांट्स का सम्मान करते हुए एक साझा संस्थागत मेमोरी बनाएं।\n- **सत्यापन**: ब्रेन का गैप विश्लेषण बताता है कि वह क्या नहीं जानता, जिससे फॉलो‑अप प्रश्नों का मार्गदर्शन होता है।\n\n## शुरूआत कैसे करें\n```bash\n# Bun के माध्यम से इंस्टॉल करें\nbun install -g github:garrytan/gbrain#stable\n# एक कीलेस ब्रेन प्रारंभ करें\ngbrain setup\n# रिमोट उपयोग के लिए Tailscale पर एक्सपोज़ करें\ngbrain mcp expose\n```\n\n## सत्यापन\n- `gbrain search --ready` के साथ ब्रेन की तैयार स्थिति जांचें।\n- `gbrain sources inspect` के साथ स्रोत पृष्ठों की जाँच करें।\n- शून्य‑इंस्टॉल अनुभव के लिए होस्टेड सेवा gbrain.io का उपयोग करें।\n\n## निष्कर्ष\nGBrain AI एजेंटों के लिए एक मजबूत, ओपन‑स्रोत आधार प्रदान करता है जो याद रखता है, तर्क करता है, और बढ़ता है। इसका स्पष्ट मेमोरी मॉडल और सिंथेसिस क्षमताएँ इसे व्यक्तिगत और टीम दोनों के लिए एक शक्तिशाली उपकरण बनाती हैं।\n",
+  "en_meta": "GBrain is an MIT‑licensed, self‑hostable memory engine for AI agents, created by Garry Tan. It stores source‑backed facts, supports corrections, and offers…",
+  "hi_meta": "GBrain एक MIT‑लाइसेंस वाला, स्वयं‑होस्ट करने योग्य AI मेमोरी इंजन है, जिसे गार्री टैन ने बनाया है। यह स्रोत‑आधारित तथ्य संग्रहीत करता है, सुधार का समर्थन करता…",
+  "en_keywords": [
+    "GBrain",
+    "Garry Tan",
+    "AI memory engine",
+    "open source",
+    "self-hostable",
+    "knowledge graph",
+    "synthesis layer",
+    "semantic search"
+  ],
+  "hi_keywords": [
+    "GBrain",
+    "गार्री टैन",
+    "AI मेमोरी इंजन",
+    "ओपन सोर्स",
+    "स्वयं‑होस्टेबल",
+    "नॉलेज ग्राफ",
+    "सिंथेसिस लेयर",
+    "सैमांटिक खोज"
+  ],
+  "source_published_at": null,
+  "id": "31b3468471ca",
+  "source": "https://github.com/garrytan/gbrain",
+  "date": "2026-11-08T13:59:59.484502+00:00",
+  "source_title": "garrytan/gbrain: Garry's Opinionated OpenClaw/Hermes Agent Brain - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

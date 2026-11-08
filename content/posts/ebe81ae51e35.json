@@ -1,0 +1,33 @@
+{
+  "en_title": "HaGeZi DNS Blocklists: A Comprehensive Toolkit for Cleaner, Safer Internet",
+  "hi_title": "HaGeZi DNS ब्लॉकलिस्ट्स: साफ़ और सुरक्षित इंटरनेट के लिए व्यापक टूलकिट",
+  "en_body": "HaGeZi’s DNS‑blocklists aim to make the web safer by filtering out ads, trackers, malware, phishing, scams, and other unwanted domains at the network level.\n\n## What the Project Offers\n- **Five tiers of protection** – Light, Normal, Pro, Pro++, and Ultimate – each progressively more aggressive.\n- **Add‑ons** – Threat Intelligence Feeds (TIF), Newly Registered Domains (NRD/DGA), Dynamic DNS, Badware Hoster, Most Abused TLDs, DNS Rebind Protection, DoH/VPN/Tor/Proxy Bypass, Safesearch, Gambling, Social Networks, Native Tracker.\n- **Formats** – All lists are available in the common formats used by popular DNS servers, ad blockers, and content blockers.\n- **Direct Link Generator** – Build download links for your chosen tier and add‑ons with a single click.\n- **Blocklist Lookup** – Verify whether a domain or IP is blocked and by which list.\n\n## How It Works\nThe blocklists are compiled from reputable sources such as Umbrella, Cloudflare, Tranco, and others. Each tier builds on the previous one, so you can choose a level that balances privacy with functionality. For example, the Light tier blocks only the most common ad domains, while the Ultimate tier blocks a wide range of trackers and even some legitimate services that may be used for malicious purposes.\n\n## Practical Implications\n- **Network‑wide protection** – Works on any DNS server, making it ideal for homes, offices, or public Wi‑Fi.\n- **Compatibility** – Supports DNS over HTTPS, VPN, Tor, and proxy setups.\n- **Performance** – Smaller tiers are suitable for devices with limited RAM; larger tiers may require more memory.\n- **Maintenance** – Lists are updated regularly; the repository includes a build mirror and mirrors on jsDelivr, GitHub, GitLab, and Codeberg.\n\n## How to Verify\n1. Clone the repository or use the mirror: https://github.com/hagezi/dns-blocklists.\n2. Choose a tier and add‑ons via the Direct Link Generator.\n3. Download the list in your preferred format.\n4. Configure your DNS server or ad blocker to use the list.\n5. Use the Blocklist Lookup to confirm that domains you care about are blocked.\n\n## Community and Support\n- Star the project on GitHub to help it grow.\n- Refer to the FAQ for setup guidance and troubleshooting.\n- Report issues or suggest improvements via the repository’s issue tracker.\n\n## Conclusion\nHaGeZi’s DNS‑blocklists provide a flexible, open‑source solution for anyone looking to reduce unwanted content and enhance privacy across their network. By selecting the appropriate tier and add‑ons, users can tailor protection to their needs while maintaining essential functionality.\n",
+  "hi_body": "HaGeZi की DNS‑ब्लॉकलिस्ट्स का उद्देश्य नेटवर्क स्तर पर विज्ञापनों, ट्रैकर्स, मैलवेयर, फ़िशिंग, धोखाधड़ी और अन्य अवांछित डोमेन को फ़िल्टर करके वेब को सुरक्षित बनाना है।\n\n## परियोजना क्या प्रदान करती है\n- **पाँच स्तर की सुरक्षा** – Light, Normal, Pro, Pro++, और Ultimate – प्रत्येक स्तर अधिक आक्रामक।\n- **ऐड‑ऑन** – Threat Intelligence Feeds (TIF), Newly Registered Domains (NRD/DGA), Dynamic DNS, Badware Hoster, Most Abused TLDs, DNS Rebind Protection, DoH/VPN/Tor/Proxy Bypass, Safesearch, Gambling, Social Networks, Native Tracker।\n- **फ़ॉर्मेट** – सभी सूचियाँ सामान्य फ़ॉर्मेट में उपलब्ध हैं, जो लोकप्रिय DNS सर्वर, विज्ञापन ब्लॉकर और कंटेंट ब्लॉकर द्वारा उपयोग किए जाते हैं।\n- **डायरेक्ट लिंक जेनरेटर** – एक ही क्लिक में अपने चुने हुए स्तर और ऐड‑ऑन के लिए डाउनलोड लिंक बनाता है।\n- **ब्लॉकलिस्ट लुकअप** – जाँचें कि कोई डोमेन या IP ब्लॉक है या नहीं और किस सूची द्वारा।\n\n## यह कैसे काम करता है\nब्लॉकलिस्ट्स विश्वसनीय स्रोतों जैसे Umbrella, Cloudflare, Tranco आदि से संकलित की जाती हैं। प्रत्येक स्तर पिछले स्तर पर आधारित होता है, जिससे आप गोपनीयता और कार्यक्षमता के बीच संतुलन बना सकते हैं। उदाहरण के लिए, Light स्तर केवल सबसे सामान्य विज्ञापन डोमेन को ब्लॉक करता है, जबकि Ultimate स्तर ट्रैकर्स और कुछ वैध सेवाओं को भी ब्लॉक करता है।\n\n## व्यावहारिक प्रभाव\n- **नेटवर्क‑व्यापी सुरक्षा** – किसी भी DNS सर्वर पर काम करता है, जिससे यह घर, कार्यालय या सार्वजनिक Wi‑Fi के लिए उपयुक्त है।\n- **संगतता** – DNS over HTTPS, VPN, Tor, और प्रॉक्सी सेटअप का समर्थन करता है।\n- **प्रदर्शन** – छोटे स्तर सीमित RAM वाले उपकरणों के लिए उपयुक्त हैं; बड़े स्तर अधिक मेमोरी की आवश्यकता हो सकती है।\n- **रखरखाव** – सूचियाँ नियमित रूप से अपडेट की जाती हैं; रिपॉजिटरी में बिल्ड मिरर और jsDelivr, GitHub, GitLab, Codeberg पर मिरर शामिल हैं।\n\n## सत्यापन कैसे करें\n1. रिपॉजिटरी को क्लोन करें या मिरर का उपयोग करें: https://github.com/hagezi/dns-blocklists।\n2. डायरेक्ट लिंक जेनरेटर के माध्यम से एक स्तर और ऐड‑ऑन चुनें।\n3. अपनी पसंद के फ़ॉर्मेट में सूची डाउनलोड करें।\n4. अपने DNS सर्वर या विज्ञापन ब्लॉकर को इस सूची का उपयोग करने के लिए कॉन्फ़िगर करें।\n5. ब्लॉकलिस्ट लुकअप का उपयोग करके पुष्टि करें कि आपके लिए महत्वपूर्ण डोमेन ब्लॉक हैं।\n\n## समुदाय और समर्थन\n- GitHub पर प्रोजेक्ट को स्टार दें ताकि यह बढ़े।\n- सेटअप मार्गदर्शन और समस्या निवारण के लिए FAQ देखें।\n- रिपॉजिटरी के इश्यू ट्रैकर के माध्यम से समस्याएँ रिपोर्ट करें या सुधार सुझाएँ।\n\n## निष्कर्ष\nHaGeZi की DNS‑ब्लॉकलिस्ट्स किसी भी व्यक्ति के लिए एक लचीला, ओपन‑सोर्स समाधान प्रदान करती हैं जो अपने नेटवर्क पर अवांछित सामग्री को कम करना और गोपनीयता बढ़ाना चाहते हैं। उपयुक्त स्तर और ऐड‑ऑन चुनकर, उपयोगकर्ता अपनी आवश्यकताओं के अनुसार सुरक्षा को अनुकूलित कर सकते हैं जबकि आवश्यक कार्यक्षमता बनाए रख सकते हैं।",
+  "en_meta": "HaGeZi offers five tiers of DNS blocklists—Light to Ultimate—plus add‑ons like Threat Intelligence Feeds and NRD/DGA, enabling network‑wide ad, tracker, and…",
+  "hi_meta": "HaGeZi पाँच स्तरों की DNS ब्लॉकलिस्ट—Light से Ultimate—और Threat Intelligence Feeds तथा NRD/DGA जैसे ऐड‑ऑन प्रदान करता है, जिससे नेटवर्क‑व्यापी विज्ञापन…",
+  "en_keywords": [
+    "DNS blocklists",
+    "HaGeZi",
+    "ad blocking",
+    "tracker protection",
+    "malware filtering",
+    "network security",
+    "open source"
+  ],
+  "hi_keywords": [
+    "DNS ब्लॉकलिस्ट",
+    "HaGeZi",
+    "विज्ञापन ब्लॉकिंग",
+    "ट्रैकर सुरक्षा",
+    "मैलवेयर फ़िल्टरिंग",
+    "नेटवर्क सुरक्षा",
+    "ओपन सोर्स"
+  ],
+  "source_published_at": null,
+  "id": "ebe81ae51e35",
+  "source": "https://github.com/hagezi/dns-blocklists",
+  "date": "2026-11-08T14:05:05.298340+00:00",
+  "source_title": "hagezi/dns-blocklists: DNS-Blocklists: For a better internet - keep the internet clean! - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

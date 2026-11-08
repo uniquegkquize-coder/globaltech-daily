@@ -1,0 +1,29 @@
+{
+  "en_title": "herdr‑core: Persistent Terminals for Coding Agents",
+  "hi_title": "herdr‑core: कोडिंग एजेंट्स के लिए स्थायी टर्मिनल्स",
+  "en_body": "herdr‑core is a lightweight runtime that lets coding agents run in long‑lived terminals. The core itself draws no UI; it can be invoked from a shell, another agent, or a custom application.\n\n## Key Features\n- **Persistent Terminals** – Terminals stay alive after you detach, and agents can spawn child agents that report back via `hc send` and `hc wait`.\n- **Cross‑Platform Builds** – Static Linux builds for x86_64 and aarch64, macOS builds, and Windows x86_64 builds that require a POSIX shell (e.g., Git for Windows).\n- **Graceful Updates** – `hc update` keeps the environment from the previous core; settings survive a restart for up to three minutes on Linux/macOS, longer on Windows.\n- **Background Execution** – `hc run --bg` starts the machine’s default shell; `hc run --keep` preserves a terminal even if its program exits.\n- **Agent Skill System** – `hc --skill` exposes an agent’s documentation, including delegation, waiting, reporting, and cleanup.\n- **Program Status Protocol** – Agents can report status via OSC 7501; the core stores these reports.\n- **API and Events** – `hc schema` outputs an OpenRPC schema; `hc events` and `hc get review` let you monitor changes.\n- **Security** – Access control, state signing, and update verification are documented in the repository.\n\n## Practical Implications\nDevelopers can run long‑running build or test agents that survive network interruptions. The ability to attach to any terminal means debugging can happen from any machine. The agent skill system encourages modular, reusable code.\n\n## How to Verify\nClone the repository, run `just install`, and start the core with `hc run`. Use `hc --help` for command references. The source code and CI configuration are publicly available on GitHub.\n\n## Further Reading\n- [herdr‑core GitHub Repository](https://github.com/herdrdev/herdr-core)\n- [CONTRIBUTING.md](https://github.com/herdrdev/herdr-core/blob/main/CONTRIBUTING.md)\n- [License](https://github.com/herdrdev/herdr-core/blob/main/LICENSE)\n",
+  "hi_body": "herdr‑core एक हल्का रनटाइम है जो कोडिंग एजेंट्स को लंबे समय तक चलने वाले टर्मिनल्स में चलने देता है। स्वयं कोर कोई UI नहीं बनाता; इसे शेल, किसी अन्य एजेंट, या कस्टम एप्लिकेशन से बुलाया जा सकता है।\n\n## मुख्य विशेषताएँ\n- **स्थायी टर्मिनल्स** – टर्मिनल्स अलग होने के बाद भी जीवित रहते हैं, और एजेंट्स `hc send` व `hc wait` के माध्यम से रिपोर्ट कर सकते हैं।\n- **क्रॉस‑प्लेटफ़ॉर्म बिल्ड्स** – x86_64 और aarch64 के लिए स्थैतिक Linux बिल्ड्स, macOS बिल्ड्स, और Windows x86_64 बिल्ड्स जिनके लिए POSIX शेल (जैसे Git for Windows) आवश्यक है।\n- **सुगम अपडेट्स** – `hc update` पिछले कोर का वातावरण रखता है; सेटिंग्स Linux/macOS पर तीन मिनट तक, Windows पर अधिक समय तक रीस्टार्ट पर बनी रहती हैं।\n- **बैकग्राउंड निष्पादन** – `hc run --bg` मशीन का डिफ़ॉल्ट शेल शुरू करता है; `hc run --keep` टर्मिनल को उसके प्रोग्राम के समाप्त होने पर भी रखता है।\n- **एजेंट स्किल सिस्टम** – `hc --skill` एजेंट के दस्तावेज़ दिखाता है, जिसमें डेलीगेशन, प्रतीक्षा, रिपोर्टिंग और क्लीनअप शामिल हैं।\n- **प्रोग्राम स्टेटस प्रोटोकॉल** – एजेंट्स OSC 7501 के माध्यम से स्थिति रिपोर्ट कर सकते हैं; कोर इन रिपोर्टों को संग्रहीत करता है।\n- **API और इवेंट्स** – `hc schema` OpenRPC स्कीमा आउटपुट करता है; `hc events` व `hc get review` परिवर्तनों की निगरानी करते हैं।\n- **सुरक्षा** – एक्सेस नियंत्रण, स्टेट साइनिंग, और अपडेट सत्यापन रिपॉज़िटरी में दस्तावेज़ित हैं।\n\n## व्यावहारिक प्रभाव\nडेवलपर्स लंबे समय तक चलने वाले बिल्ड या टेस्ट एजेंट्स चला सकते हैं जो नेटवर्क व्यवधानों को सहन करते हैं। किसी भी मशीन से किसी भी टर्मिनल से जुड़ने की क्षमता डिबगिंग को आसान बनाती है। एजेंट स्किल सिस्टम मॉड्यूलर, पुन: प्रयोज्य कोड को प्रोत्साहित करता है।\n\n## सत्यापन कैसे करें\nरिपॉज़िटरी क्लोन करें, `just install` चलाएँ, और `hc run` से कोर शुरू करें। कमांड संदर्भ के लिए `hc --help` का उपयोग करें। स्रोत कोड और CI कॉन्फ़िगरेशन GitHub पर सार्वजनिक रूप से उपलब्ध हैं।\n\n## आगे पढ़ें\n- [herdr‑core GitHub रिपॉज़िटरी](https://github.com/herdrdev/herdr-core)\n- [CONTRIBUTING.md](https://github.com/herdrdev/herdr-core/blob/main/CONTRIBUTING.md)\n- [लाइसेंस](https://github.com/herdrdev/herdr-core/blob/main/LICENSE)\n",
+  "en_meta": "herdr‑core provides persistent terminals for coding agents, supporting cross‑platform builds, graceful updates, and a robust agent skill system.",
+  "hi_meta": "herdr‑core स्थायी टर्मिनल्स के साथ कोडिंग एजेंट्स का समर्थन करता है, क्रॉस‑प्लेटफ़ॉर्म बिल्ड्स, सुगम अपडेट्स, और मजबूत एजेंट स्किल सिस्टम के साथ।",
+  "en_keywords": [
+    "herdr‑core",
+    "persistent terminals",
+    "coding agents",
+    "cross‑platform",
+    "agent skill system"
+  ],
+  "hi_keywords": [
+    "herdr‑core",
+    "स्थायी टर्मिनल्स",
+    "कोडिंग एजेंट्स",
+    "क्रॉस‑प्लेटफ़ॉर्म",
+    "एजेंट स्किल सिस्टम"
+  ],
+  "source_published_at": null,
+  "id": "2decdab424eb",
+  "source": "https://github.com/herdrdev/herdr-core",
+  "date": "2026-11-08T14:05:13.046718+00:00",
+  "source_title": "herdr-core: terminals for coding agents - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
