@@ -9,8 +9,10 @@ from pathlib import Path
 
 try:
     from .news_config import route_category
+    from .editorial_quality import normalize_post
 except ImportError:
     from news_config import route_category
+    from editorial_quality import normalize_post
 
 
 def repair(posts_dir, write=False):
@@ -20,17 +22,16 @@ def repair(posts_dir, write=False):
         if post.get('directory_kind') or post.get('content_type') == 'evergreen_directory_guide':
             continue
         old = post.get('category', 'technology')
-        new = route_category(post.get('en_title') or post.get('source_title', ''), old, post.get('source', ''))
-        if new == old:
+        updated = normalize_post(post)
+        new = updated.get('category', old)
+        if updated == post:
             continue
         # Refuse oscillating rules rather than moving an article on every run.
         if route_category(post.get('en_title') or post.get('source_title', ''), new, post.get('source', '')) != new:
             raise ValueError(f'Unstable category routing: {path.name}: {old} -> {new}')
         changes.append({'id': post['id'], 'from': old, 'to': new, 'title': post.get('en_title', '')})
         if write:
-            post['previous_categories'] = sorted(set(post.get('previous_categories', [])) | {old})
-            post['category'] = new
-            path.write_text(json.dumps(post, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+            path.write_text(json.dumps(updated, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return changes
 
 

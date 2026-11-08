@@ -5,6 +5,7 @@ import json
 import re
 from pathlib import Path
 from official_notices import load_notices
+from news_sitemap import is_news_article
 from notice_details import notice_path
 from news_config import CATEGORIES, EXAM_CATEGORIES, OFFICIAL_LINKS, memberships, classify, PRIORITY, timestamp
 
@@ -23,7 +24,7 @@ def news_sort(post):
 
 def recent_priority(posts,limit=8,now=None):
     now=now or dt.datetime.now(dt.timezone.utc).timestamp()
-    recent=[p for p in posts if 0<=now-timestamp(p.get('source_published_at') or p.get('date'))<=172800]
+    recent=[p for p in posts if is_news_article(p) and 0<=now-timestamp(p.get('source_published_at') or p.get('date'))<=172800]
     return sorted(recent,key=lambda p:(int((now-timestamp(p.get('source_published_at') or p.get('date')))//21600),-max(PRIORITY.get(c,4) for c in memberships(p)),-timestamp(p.get('source_published_at') or p.get('date'))))[:limit]
 
 def exam_bucket(post):

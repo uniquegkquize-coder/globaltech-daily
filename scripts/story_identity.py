@@ -33,6 +33,20 @@ def story_tokens(value):
     return frozenset(w for w in headline_key(value).split() if len(w) > 2 and w not in STOPWORDS)
 
 def same_story(a, b):
+    # Syndicated workforce offers often replace "staff" with "workers" or
+    # "employees" and rearrange the same count. Limit this to the same named
+    # employer, offer action and exact headcount; acceptances/results stay new.
+    def workforce_offer(value):
+        value = str(value).casefold().replace('’', "'")
+        match = re.match(r'^(.{2,50}?)\s+(?:reportedly\s+)?(?:offers?|offered|extends?|extended)\b', value)
+        if not match or not re.search(r'\bbuyouts?\b', value):return None
+        if re.search(r'\b(?:accept|accepted|reject|rejected|cancel|cancelled|ends|ended|results?)\b', value):return None
+        counts = re.findall(r'\b\d[\d,]*\b', value)
+        counts = [int(n.replace(',', '')) for n in counts]
+        counts = [n for n in counts if n >= 10000]
+        return (headline_key(match[1]), counts[0]) if len(counts)==1 else None
+    offer_a, offer_b = workforce_offer(a), workforce_offer(b)
+    if offer_a and offer_a == offer_b:return True
     x, y = story_tokens(a), story_tokens(b)
     if min(len(x), len(y)) < 4 or min(len(x), len(y)) / max(len(x), len(y)) < .7:
         return False

@@ -8,6 +8,7 @@ from seo_site import head as seo_head, article_languages, iso_date, json_ld, cat
 from redirect_assets import write_redirects
 from site_ui import MENU_CSS, label
 from news_config import CATEGORIES, memberships
+from editorial_quality import normalize_post
 from news_hub import HUB_CSS, HUB_JS, render_hubs, recent_priority, news_sort, matches_category, official_notice_rows
 from xml.sax.saxutils import escape as xml_escape
 from urllib.parse import urlparse, quote
@@ -63,7 +64,7 @@ def article_path(p,lang):
 POSTS=[]
 for f in sorted((R/'content/posts').glob('*.json')):
  try:
-  p=json.loads(f.read_text(encoding='utf-8'))
+  p=normalize_post(json.loads(f.read_text(encoding='utf-8')))
   if slug(p) and str(p.get('source','')).startswith('https://') and len(p.get('en_body',''))>=150:POSTS.append(p)
  except (OSError,ValueError,TypeError):pass
 # Use the same source identity as the publisher, including BBC domain aliases.
@@ -418,6 +419,7 @@ def trending_posts(exclude=None,limit=6):
  now=dt.datetime.now(dt.timezone.utc)
  pool=[]
  for p in POSTS:
+  if not is_news_article(p):continue
   try:
    published=dt.datetime.fromisoformat(str(p.get('date','')).replace('Z','+00:00'))
    if published.tzinfo is None:published=published.replace(tzinfo=dt.timezone.utc)
@@ -498,6 +500,7 @@ for p in POSTS:
   if schema.get("dateModified"):extra+='<meta property="article:modified_time" content="'+e(schema["dateModified"])+'">'
   sourcehost=urlparse(p['source']).hostname or 'original source'
   summary=e(excerpt(raw,p.get(content_lang+'_summary') or ''))
+  summary_html=('<div class="summary"><strong>'+('Key takeaways' if content_lang=='en' else 'मुख्य बातें')+'</strong>'+summary+'</div>') if summary else ''
   featured_html=(f'<img class="hero" src="/images/{s}.jpg?v={image_version(p)}" width="{image_width}" height="{image_height}" fetchpriority="high" alt="{e(image_alt(p,lang))}"><p class="notice">{image_caption_html(p,lang)}</p>' if has_featured(p) else '')
   share_text=('Share this article' if lang=='en' else 'यह खबर शेयर करें')
   copy_text=('Copy link' if lang=='en' else 'लिंक कॉपी करें')
@@ -529,7 +532,7 @@ for p in POSTS:
   reading_html='<p class="reading-meta">'+(f'{reading_minutes} min read' if content_lang=='en' else f'{reading_minutes} मिनट में पढ़ें')+'</p>'
   guide_notice=('<p class="guide-context">'+('Reference guide • Source-listed details may cover multiple variants. Check the exact model and market before buying.' if content_lang=='en' else 'संदर्भ गाइड • स्रोत में कई वेरिएंट का विवरण हो सकता है। खरीदने से पहले सही मॉडल और बाजार की जानकारी जाँचें।')+'</p>') if p.get('directory_kind') in ('phones','cars','bikes') else ''
   trending_html=trending_section(lang,p)
-  content=f'''<div class="wrap"><article class="article readable-article" data-article-layout="v3"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/{lang}/">{'Home' if lang=='en' else 'होम'}</a> › <a href="/{lang}/{category(p)}/">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</a> › <span>{e(t)}</span></nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1>{title_ad}<p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> · Source: {e(sourcehost)}</p>{reading_html}{updated_notice(p,lang)}<div class="summary"><strong>{'Key takeaways' if lang=='en' else 'मुख्य बातें'}</strong>{summary}</div>{featured_html}{guide_notice}{article_note(p,lang)}{article_panel(p,lang)}{toc_html}<div class="story">{story_html}</div>{share_html}{keyword_html}<div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {'AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''
+  content=f'''<div class="wrap"><article class="article readable-article" data-article-layout="v3"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/{lang}/">{'Home' if lang=='en' else 'होम'}</a> › <a href="/{lang}/{category(p)}/">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</a> › <span>{e(t)}</span></nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1>{title_ad}<p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> · Source: {e(sourcehost)}</p>{reading_html}{updated_notice(p,lang)}{summary_html}{featured_html}{guide_notice}{article_note(p,lang)}{article_panel(p,lang)}{toc_html}<div class="story">{story_html}</div>{share_html}{keyword_html}<div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {'AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''
   page=shell(lang,t,desc,url,content,extra,alternate_urls=alternate_urls,canonical_url=canonical_url,robots='noindex,follow,max-image-preview:large' if fallback else ROBOTS,document_lang=content_lang)
   page=page.removesuffix('</body></html>')+article_ad_scripts()+'</body></html>'
   write(OUT / article_path(p,lang).lstrip('/') / 'index.html',page)
@@ -583,13 +586,16 @@ for lang in ('en','hi'):
  tools=f'<div class="wrap"><section class="lead"><div class="eyebrow">AI TOOLS DIRECTORY</div><h1>{"Explore useful AI tools" if lang=="en" else "काम के AI टूल्स खोजें"}</h1><p class="muted">Official links, brief descriptions and categories. Availability and pricing can change; verify on provider websites.</p></section><div class="tools">{toolcards}</div></div>'
  write(OUT/lang/'tools/index.html',shell(lang,'AI Tools Directory | GlobeWire Daily','Explore popular AI assistants, research, coding and design tools.',f'{SITE}/{lang}/tools/',tools))
  pages={
- 'about':('About GlobeWire Daily','GlobeWire Daily is an independent bilingual technology publication focused on useful explainers and news. We use AI-assisted drafting and translation, link to source materials, and welcome corrections. We do not claim to independently verify every publisher statement.'),
+ 'about':('About GlobeWire Daily','GlobeWire Daily publishes independent news and reference guides in English and Hindi, covering world and India news, technology, business, entertainment, sports, education and automobiles. Articles identify their sources and editorial desk. AI assists drafting and translation; it does not replace source evidence. Report errors or request corrections at contact@globewiredaily.org. We do not claim firsthand reporting or independent verification of every source claim.'),
  'editorial':('Editorial Policy','Our articles are based on attributed source material. We prioritize official announcements, documentation and credible reporting. AI may assist drafting and translation. We require useful source-supported context, practical implications, clear distinctions between confirmed facts and uncertainty, and transparent attribution. We prohibit fabricated quotes, unsupported claims, misleading headlines, and unattributed copying. When a claim cannot be confirmed, we label uncertainty or do not publish it. Readers can request corrections.'),
  'corrections':('Corrections Policy','Report factual errors, misleading headlines, inaccurate translations, or rights concerns to contact@globewiredaily.org with the article URL and supporting evidence. Substantive corrections should be reflected in the article with an updated date.'),
  'privacy':('Privacy Policy','GlobeWire Daily publishes static news and informational pages. Hosting providers may process IP addresses, device information and technical request logs for security and delivery. We use Google AdSense advertising technology, which may use cookies or similar identifiers to serve and measure ads, subject to applicable consent requirements and Google policies. You can learn how Google uses data from partner sites at https://policies.google.com/technologies/partner-sites and manage Google ad preferences at https://myadcenter.google.com/. Adsterra and Infolinks ads may load automatically on article pages. The site respects the browser’s Global Privacy Control signal for these networks. These providers may use cookies or similar technologies to serve and measure ads. Third-party websites linked from our articles have separate privacy practices. We do not operate reader accounts or a newsletter. For privacy or data requests, contact contact@globewiredaily.org.'),
  'contact':('Contact GlobeWire Daily','For news tips, corrections, image rights requests, privacy matters or editorial feedback, email contact@globewiredaily.org. Do not include sensitive personal information.'),
  'affiliate':('Affiliate Disclosure','Our AI Tools directory currently contains informational links. If affiliate partnerships or paid placements are introduced, they will be clearly identified. We do not claim that editorial recommendations are paid placements.')}
  for s,(t,d) in pages.items():
+  if s=='about' and lang=='hi':
+   t='GlobeWire Daily के बारे में'
+   d='GlobeWire Daily हिंदी और अंग्रेजी में विश्व और भारत की खबरें, टेक्नोलॉजी, बिज़नेस, मनोरंजन, खेल, शिक्षा और ऑटोमोबाइल की जानकारी प्रकाशित करता है। लेखों में मूल स्रोत और जिम्मेदार संपादकीय डेस्क का उल्लेख होता है। लेखन और अनुवाद में AI की सहायता ली जाती है; तथ्य स्रोतों पर आधारित होने चाहिए। गलती बताने या सुधार का अनुरोध करने के लिए contact@globewiredaily.org पर संपर्क करें। हम प्रत्यक्ष रिपोर्टिंग या स्रोत के हर दावे की स्वतंत्र पुष्टि का दावा नहीं करते।'
   content=f'<div class="wrap"><article class="article"><div class="eyebrow">GLOBEWIRE DAILY</div><h1>{e(t)}</h1><div class="story"><p>{e(label(d,lang))}</p></div><p>Contact: <a href="mailto:{CONTACT}">{CONTACT}</a></p></article></div>'
   write(OUT/lang/s/'index.html',shell(lang,t,d,f'{SITE}/{lang}/{s}/',content))
 for lang in ('en','hi'):

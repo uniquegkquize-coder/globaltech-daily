@@ -1,6 +1,7 @@
 """Static, source-first directories. Facts are deliberately not invented."""
 import html
 import json
+import math
 from pathlib import Path
 from functools import lru_cache
 from directory_facts import structured_html,media_html,meaningful,photo,schema
@@ -115,7 +116,33 @@ CSS="""
 @media(max-width:650px){.directory-grid{grid-template-columns:1fr}.directory-controls input,.directory-controls select{flex-basis:100%}}
 """
 JS="""
-document.querySelectorAll('[data-directory]').forEach(root=>{
+
+document.querySelectorAll('[data-directory-index]').forEach(root=>{
+ const input=root.querySelector('[data-search]'),country=root.querySelector('[data-country]'),region=root.querySelector('[data-region]'),city=root.querySelector('[data-city]');
+ const grid=root.querySelector('.directory-grid'),status=root.querySelector('[data-count]');
+ const originalGrid=grid.innerHTML,originalStatus=status.textContent,staticPages=root.querySelector('[data-directory-pages]');
+ const hi=root.dataset.language==='hi',size=48;let indexPromise,page=1,revision=0,timer;
+ const pages=document.createElement('nav');pages.className='directory-links';pages.setAttribute('aria-label',hi?'खोज परिणाम पेज':'Search result pages');root.append(pages);
+ function load(){if(!indexPromise)indexPromise=fetch(root.dataset.directoryIndex).then(r=>{if(!r.ok)throw Error('index');return r.json()}).catch(e=>{indexPromise=null;throw e});return indexPromise}
+ function options(select,field,rows){if(!select)return;const old=select.value;select.replaceChildren(new Option(hi?'सभी':'All '+field+'s',''));[...new Set(rows.map(r=>r[field]).filter(Boolean))].sort().forEach(v=>select.add(new Option(v,v)));select.value=[...select.options].some(o=>o.value===old)?old:''}
+ async function update(reset=true){const current=++revision;if(reset)page=1;
+  if(!input.value.trim()&&!country?.value&&!region?.value&&!city?.value){grid.innerHTML=originalGrid;status.textContent=originalStatus;pages.replaceChildren();if(staticPages)staticPages.hidden=false;return}
+  status.textContent=hi?'खोज रहे हैं…':'Searching…';
+  try {const all=await load();if(current!==revision)return;
+   const regional=all.filter(r=>!country?.value||r.country===country.value);options(region,'region',regional);options(city,'city',regional.filter(r=>!region?.value||r.region===region.value));
+   const q=input.value.trim().toLocaleLowerCase(),rows=all.filter(r=>(r.name+' '+r.area+' '+r.country+' '+r.region+' '+r.city).toLocaleLowerCase().includes(q)&&(!country?.value||r.country===country.value)&&(!region?.value||r.region===region.value)&&(!city?.value||r.city===city.value));
+   const total=Math.max(1,Math.ceil(rows.length/size));page=Math.min(page,total);grid.replaceChildren();pages.replaceChildren();if(staticPages)staticPages.hidden=true;
+   rows.slice((page-1)*size,page*size).forEach(r=>{const card=document.createElement('article');card.className='directory-card';const h=document.createElement('h2'),a=document.createElement('a'),p=document.createElement('p');a.href=r.path;a.textContent=r.name;h.append(a);p.textContent=[r.country,r.region,r.city,r.area].filter(Boolean).join(' · ');card.append(h,p);grid.append(card)});
+   status.textContent=hi?rows.length+' परिणाम · पेज '+page+'/'+total:rows.length+' results · page '+page+'/'+total;
+   [[hi?'पिछला':'Previous',page-1],[hi?'अगला':'Next',page+1]].forEach(([label,target])=>{if(target<1||target>total)return;const b=document.createElement('button');b.type='button';b.textContent=label;b.addEventListener('click',()=>{page=target;update(false)});pages.append(b)});
+  }catch(e){if(current===revision)status.textContent=hi?'खोज उपलब्ध नहीं है। नीचे दिए पेज लिंक से देखें।':'Search is unavailable. Browse using the page links below.'}
+ }
+ input.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>update(),180)});
+ [country,region,city].filter(Boolean).forEach(select=>select.addEventListener('change',()=>update()));
+ [region,city].filter(Boolean).forEach(select=>select.addEventListener('focus',async()=>{try{const rows=(await load()).filter(r=>(!country?.value||r.country===country.value)&&(!region?.value||select===region||r.region===region.value));options(select,select===region?'region':'city',rows)}catch(e){} }));
+});
+
+document.querySelectorAll('[data-directory]:not([data-directory-index])').forEach(root=>{
  const search=root.querySelector('[data-search]'),country=root.querySelector('[data-country]'),region=root.querySelector('[data-region]'),city=root.querySelector('[data-city]'),count=root.querySelector('[data-count]');
  const cards=[...root.querySelectorAll('[data-item]')];
  function update(){
@@ -199,6 +226,24 @@ def entry_detail(kind,row,lang,out=None):
  note=tr('Source-listed reference profile. Prices, fees and availability depend on the market, programme, version and source date.','स्रोत आधारित विवरण। कीमत, फीस और उपलब्धता बाजार, कोर्स, वर्जन और स्रोत की तारीख पर निर्भर हैं।')
  return '<div class="wrap">'+(media_html(kind,name,out) if out else '')+'<section class="directory-hero"><h1>'+esc(name)+'</h1><p class="directory-note">'+esc(note)+'</p><ul>'+facts_html+'</ul><p><a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+tr('Open source','स्रोत खोलें')+'</a></p></section><div class="directory-grid">'+sections_html+'</div><p><a href="/'+lang+'/'+kind+'/">'+tr('Back to directory','डायरेक्टरी पर वापस')+'</a></p></div>'
 
+PAGE_SIZE = 48
+
+
+def listing_path(lang, kind, page=1):
+ return f'/{lang}/{kind}/' if page == 1 else f'/{lang}/{kind}/page/{page}/'
+
+
+def pagination(lang, kind, page, total):
+ if total <= 1:return ''
+ pages = sorted({1, total, *range(max(1, page-2), min(total, page+2)+1)})
+ links = []
+ if page > 1:links.append(f'<a rel="prev" href="{listing_path(lang,kind,page-1)}">'+('पिछला' if lang=='hi' else 'Previous')+'</a>')
+ for n in pages:
+  links.append(f'<span aria-current="page">{n}</span>' if n==page else f'<a href="{listing_path(lang,kind,n)}">{n}</a>')
+ if page < total:links.append(f'<a rel="next" href="{listing_path(lang,kind,page+1)}">'+('अगला' if lang=='hi' else 'Next')+'</a>')
+ return '<nav class="directory-links" data-directory-pages aria-label="'+('डायरेक्टरी पेज' if lang=='hi' else 'Directory pages')+'">'+' '.join(links)+'</nav>'
+
+
 def render(out,site,shell,write):
  for lang in ('en','hi'):
   ishi=lang=='hi'
@@ -230,6 +275,7 @@ def render(out,site,shell,write):
     controls+='<select data-region aria-label="State or region"><option value="">All regions</option></select><select data-city aria-label="City"><option value="">All cities</option></select>'
    controls+='</div><p data-count role="status"></p>'
    cards=[]
+   search_rows=[]
    seen_slugs=set()
    for row in items:
     profile_slug=entry_slug(row[0])
@@ -242,8 +288,11 @@ def render(out,site,shell,write):
     else:
      n,c,area,url=row;attrs=f'data-country="{esc(c)}"'
      detail=f'<p>{esc(c)} · {esc(area)}</p>'
+    search_rows.append({'name':n,'country':c,'region':r if kind=='colleges' else '',
+                        'city':city if kind=='colleges' else '', 'area':area,
+                        'path':f'/{lang}/{kind}/{entry_slug(n)}/'})
     thumbnail=media_html(kind,n,out) if n in detailed_profiles().get(kind,{}) else ''
-    cards.append(f'<article class="directory-card" data-item {attrs} data-search="{esc((" ".join(row)).lower())}">{thumbnail}<h2><a href="/{lang}/{kind}/{entry_slug(n)}/">{esc(n)}</a></h2>{detail}<p>{tr("Fees, eligibility, placement or product prices: verify with official source.","फीस, पात्रता, प्लेसमेंट या कीमत: आधिकारिक स्रोत से जाँचें।")}</p><a href="{esc(url)}" rel="noopener noreferrer" target="_blank">{tr("Source website","स्रोत वेबसाइट")} ↗</a></article>')
+    cards.append(f'<article class="directory-card" data-item {attrs} data-search="{esc((" ".join(row)).lower())}">{thumbnail}<h2><a href="/{lang}/{kind}/{entry_slug(n)}/">{esc(n)}</a></h2>{detail}<p>{tr("Verify course eligibility, current fees and admissions with the institution." if kind=="colleges" else "Check model, market, specifications and current price with the manufacturer.","कोर्स की पात्रता, वर्तमान फीस और प्रवेश संस्थान से जाँचें।" if kind=="colleges" else "मॉडल, बाजार, स्पेसिफिकेशन और वर्तमान कीमत निर्माता से जाँचें।")}</p><a href="{esc(url)}" rel="noopener noreferrer" target="_blank">{tr("Source website","स्रोत वेबसाइट")} ↗</a></article>')
     detail_url=site+'/'+lang+'/'+kind+'/'+entry_slug(n)+'/'
     entry=detailed_profiles().get(kind,{}).get(n,{})
     desc=(n+' — '+{'colleges':'courses, admissions, eligibility and fee references','cars':'car specifications, variants and price references','phones':'phone specifications, display, battery and price references','bikes':'bike specifications, engine, mileage and price references'}[kind]+'. Read source-linked details where available.') if lang=='en' else n+' की '+{'colleges':'कोर्स, प्रवेश, पात्रता और फीस','cars':'कार स्पेसिफिकेशन, वेरिएंट और कीमत','phones':'फोन स्पेसिफिकेशन, डिस्प्ले, बैटरी और कीमत','bikes':'बाइक स्पेसिफिकेशन, इंजन, माइलेज और कीमत'}[kind]+' की स्रोत सहित उपलब्ध जानकारी देखें।'
@@ -252,9 +301,16 @@ def render(out,site,shell,write):
     if meaningful(entry):page=page.replace('</head>',schema(kind,n,entry,detail_url,photo(kind,n,out))+'</head>')
     else:page=page.replace('content="index,follow,max-image-preview:large"','content="noindex,follow,max-image-preview:large"')
     write(out/lang/kind/entry_slug(n)/'index.html',page)
-   note=tr('Growing directory sourced from official websites and Wikidata; not an exhaustive global database. We do not invent fees, admissions, placements, prices or specifications. Official sites are the source of truth.','यह शुरुआती डायरेक्टरी है, पूरी विश्व सूची नहीं। फीस, एडमिशन, प्लेसमेंट, कीमत या स्पेसिफिकेशन बिना सत्यापन के नहीं दिए जाते।')
-   body=f'<div class="wrap"><section class="directory-hero"><h1>{esc(tr(*name))}</h1><p class="directory-note">{esc(note)}</p>{links}</section><section data-directory>{controls}<div class="directory-grid">{"".join(cards)}</div></section></div>'
-   write(out/lang/kind/'index.html',shell(lang,tr(*name),note,site+'/'+lang+'/'+kind+'/',body))
+   note=tr('Browse source-linked '+kind+' profiles. '+('Check courses, fees and admission dates with each institution.' if kind=='colleges' else 'Check regional models, specifications and dated prices with the manufacturer.'), 'स्रोत सहित '+{'colleges':'कॉलेज','cars':'कार','phones':'फोन','bikes':'बाइक'}[kind]+' की जानकारी देखें। '+('कोर्स, फीस और प्रवेश की तारीख संस्थान से जाँचें।' if kind=='colleges' else 'क्षेत्रीय मॉडल, स्पेसिफिकेशन और तारीख वाली कीमत निर्माता से जाँचें।'))
+   write(out/lang/kind/'search.json',json.dumps(search_rows,ensure_ascii=False,separators=(',',':')))
+   total=max(1,math.ceil(len(cards)/PAGE_SIZE))
+   for page in range(1,total+1):
+    first=(page-1)*PAGE_SIZE; last=min(first+PAGE_SIZE,len(cards))
+    count=tr(f'Showing {first+1 if cards else 0}–{last} of {len(cards)} entries. Search covers all entries.',f'कुल {len(cards)} में से {first+1 if cards else 0}–{last} प्रविष्टियाँ। खोज सभी प्रविष्टियों में होगी।')
+    page_controls=controls.replace('<p data-count role="status"></p>','<p data-count role="status">'+esc(count)+'</p>')
+    body=f'<div class="wrap"><section class="directory-hero"><h1>{esc(tr(*name))}</h1><p class="directory-note">{esc(note)}</p>{links}</section><section data-directory data-directory-index="/{lang}/{kind}/search.json" data-language="{lang}">{page_controls}<div class="directory-grid">{"".join(cards[first:last])}</div>{pagination(lang,kind,page,total)}</section></div>'
+    heading=tr(*name)+(tr(f' — Page {page}',f' — पेज {page}') if page>1 else '')
+    write(out/listing_path(lang,kind,page).lstrip('/')/'index.html',shell(lang,heading,note+tr(f' Page {page}.',f' पेज {page}।'),site+listing_path(lang,kind,page),body))
   cards=[]
   for n,d in COURSES:
    slugname=entry_slug(n)

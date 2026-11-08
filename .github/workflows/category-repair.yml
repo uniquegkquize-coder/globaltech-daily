@@ -6,6 +6,8 @@ on:
       - '.github/workflows/category-repair.yml'
       - 'scripts/repair_categories.py'
       - 'scripts/news_config.py'
+      - 'scripts/editorial_quality.py'
+      - 'tests/test_editorial_quality.py'
       - 'scripts/verticals.py'
       - 'tests/test_category_subjects.py'
   workflow_dispatch:
@@ -28,7 +30,7 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - name: Verify category routing and URL preservation
-        run: python -m unittest tests.test_category_subjects tests.test_sports_category_routing tests.test_source_pipeline tests.test_news_priority tests.test_expansion
+        run: python -m unittest tests.test_category_subjects tests.test_sports_category_routing tests.test_source_pipeline tests.test_news_priority tests.test_expansion tests.test_editorial_quality
       - name: Repair existing articles against the latest main
         shell: bash
         run: |

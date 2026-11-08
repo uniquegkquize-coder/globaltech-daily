@@ -116,6 +116,12 @@ def route_category(title, default='technology', url=''):
     parts=set(parsed.path.lower().strip('/').split('/')[:-1])
     def has(pattern):
         return re.search(pattern,text,re.I) is not None
+    # Model comparisons may lack a literal "motorcycle" and arrive via a
+    # broad automotive page. Never file an explicit bike under Car Launches.
+    bike = has(r'\b(?:motorcycles?|scooters?|sport.?bikes?|motorbikes?|bikes?|bajaj pulsar|ktm(?: \d+)? duke|royal enfield)\b|मोटरसाइकिल|स्कूटर|बाइक')
+    product = default in {'automobiles','car-launches','ev-clean-energy'} or has(r'\b(?:specifications|variants?|mileage|pricing|price|engine|comparison)\b')
+    if bike and product and not CIVIC_CONTEXT.search(text) and not has(r'\b(?:bicycle|cycling|mountain bike)\b'):
+        return 'automobiles'
     if parts & {'bike-news','bikes'} or (parsed.hostname or '').removeprefix('www.') == 'bikewale.com':
         return 'automobiles'
     if has(r'\b(?:car|suv|motorcycle|scooter)\b') and has(r'\b(?:launch|launched|specifications|variant|mileage|pricing|engine)\b'):

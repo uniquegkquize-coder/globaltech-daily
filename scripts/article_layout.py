@@ -12,11 +12,15 @@ def plain(text):
 
 def excerpt(raw, provided=''):
     """Use prose only; never cut through Markdown or a specification row."""
-    candidates = [provided] if provided else re.split(r'\n\s*\n', str(raw))
+    # A bad supplied summary must not hide usable prose or bullet facts.
+    candidates = ([provided] if provided else []) + str(raw).splitlines()
     for value in candidates:
-        if not value or re.match(r'^\s*(?:#|[-*] |\d+\. |\|)', value):
+        if not value or re.match(r'^\s*(?:#|\||[-*_]{3,}\s*$|>)', value):
             continue
-        value = plain(value)
+        value = re.sub(r'^\s*(?:[-*]\s+|\d+\.\s+)', '', value)
+        value = plain(re.sub(r'^\s*[-*_]{3,}\s*', '', value))
+        if len(value) < 12 or re.match(r'^(?:all data above|this article is based|AI-assisted reporting|यह लेख|AI की सहायता)', value, re.I):
+            continue
         if len(value) > 360:
             value = value[:357].rsplit(' ', 1)[0].rstrip('.,;:') + '…'
         return value
