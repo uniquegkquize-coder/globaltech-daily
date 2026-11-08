@@ -1,33 +1,32 @@
 {
-  "total_posts": 3217,
-  "selected": 37,
+  "total_posts": 3233,
+  "selected": 38,
   "results": {
-    "invalid_source_images": 1,
-    "source_photo_saved": 5,
-    "cooldown": 31
+    "source_photo_saved": 6,
+    "cooldown": 32
   },
   "still_missing": 281,
   "articles": [
     {
-      "id": "02364f4d79f5caac07cae019",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794132694.5106153
-    },
-    {
-      "id": "3ad30a746edb4de5929a4fe0",
-      "source": "https://en.wikipedia.org/wiki/Huanghai_Plutus",
+      "id": "85b58464cd44d7ced61e0672",
+      "source": "https://en.wikipedia.org/wiki/Huanghai_Major",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794132694.866052
+      "retry_after": 1794144207.9686415
     },
     {
-      "id": "a054ee93505cf0f0ae9c15e5",
-      "source": "https://en.wikipedia.org/wiki/Suzuki_TS_series",
+      "id": "30af75e88ae40784377c8c8b",
+      "source": "https://en.wikipedia.org/wiki/Ducati_Desmosedici_RR",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794132694.8710725
+      "retry_after": 1794144208.1595569
+    },
+    {
+      "id": "2d763d8ca9222e2f2732d04e",
+      "source": "https://en.wikipedia.org/wiki/CFMoto_650",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794144208.1681395
     },
     {
       "id": "33686a761fa5d097afc337dc",
@@ -154,25 +153,29 @@
       "result": "cooldown"
     },
     {
-      "id": "0604efc38b41a23d8764b42a",
-      "source": "https://en.wikipedia.org/wiki/HTC_One_M9",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794132695.1998668
+      "id": "02364f4d79f5caac07cae019",
+      "result": "cooldown"
     },
     {
-      "id": "12334cba0cbfc099f0064125",
-      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
+      "id": "fe30c88e4bee398b193e7541",
+      "source": "https://en.wikipedia.org/wiki/Dongfeng_Junfeng",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794132695.3684921
+      "retry_after": 1794144208.5380332
     },
     {
-      "id": "8de2562ec8d30ebfef5aa8bc",
-      "source": "https://en.wikipedia.org/wiki/JAC_V7",
+      "id": "3b6b941d5d80258cd5f7fb93",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S6",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794132695.3955817
+      "retry_after": 1794144208.7449381
+    },
+    {
+      "id": "20956b2649a31fa54ef6aab2",
+      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794144208.8116357
     }
   ],
   "missing": [
@@ -244,7 +247,7 @@
       "category": "private-vacancy",
       "title": "Overview of Recent Professional Job Openings Listed on LinkedIn India",
       "source": "https://in.linkedin.com/jobs/Nexbirlik+istifad%C9%99%C3%A7i+t%C9%99cr%C3%BCb%C9%99si%3A+m%C3%BCxt%C9%99lif+izahlara+n%C9%99z%C9%99r+sal%C4%B1n.whn-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "ddfa4e186cef",
@@ -860,7 +863,7 @@
       "category": "private-vacancy",
       "title": "Overview of Gaming and Customer Support Openings Reported on Professional Networks in India",
       "source": "https://in.linkedin.com/jobs/%E6%96%B0%E7%9B%9B%E8%B5%8C%E5%9C%BA%E6%B8%B8%E6%88%8F%E5%AE%A2%E6%9C%8D15508830630.cnv-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "7f651ce9d3f0",
@@ -1784,7 +1787,7 @@
       "category": "private-vacancy",
       "title": "Overview of Current Job Openings and Professional Roles Across India",
       "source": "https://in.linkedin.com/jobs/nexbirlik%2Bistifad%C9%99%C3%A7i%2Bt%C9%99cr%C3%BCb%C9%99si-%2Bm%C3%BCxt%C9%99lif%2Bm%C9%99nb%C9%99l%C9%99rd%C9%99%2Bfikirl%C9%99ri%2Boxuyun.uew-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "9f52dfa8072c",
@@ -2146,48 +2149,43 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "no_source_image": 86,
-    "access_denied": 83,
+    "no_source_image": 87,
+    "access_denied": 82,
     "source_error": 17,
     "invalid_source_images": 58,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "02364f4d79f5caac07cae019": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
-      "candidate_count": 7,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/1280px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/500px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "3ad30a746edb4de5929a4fe0": {
+    "85b58464cd44d7ced61e0672": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Huanghai_Plutus",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Huanghai_Dachaishen_01_China_2014-04-16.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Huanghai_Major",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Huanghai_DD1023_02_China_2017-03-19.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "a054ee93505cf0f0ae9c15e5": {
+    "30af75e88ae40784377c8c8b": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Suzuki_TS_series",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Suzuki_TS185_HDR_%284591933037%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ducati_Desmosedici_RR",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Ducati_Desmosedici_RR.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "0604efc38b41a23d8764b42a": {
+    "2d763d8ca9222e2f2732d04e": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/HTC_One_M9",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bf/HTC_One_M9.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/CFMoto_650",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/CF_Moto_650MT_-_Shad.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "12334cba0cbfc099f0064125": {
+    "fe30c88e4bee398b193e7541": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_532",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Zellos_Lumia_532_A.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Dongfeng_Junfeng",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/2014_Dongfeng_%28Zhengzhou-Nissan%29_Junfeng_CV03%2C_front_8.3.18.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "8de2562ec8d30ebfef5aa8bc": {
+    "3b6b941d5d80258cd5f7fb93": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/JAC_V7",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9b/2018_JAC_V7%2C_front_8.7.18.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S6",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/86/Samsung_Galaxy_S6_S6_Edge_and_S6_Edge_Plus.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "20956b2649a31fa54ef6aab2": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_435",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/Microsoft_Lumia_435_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
