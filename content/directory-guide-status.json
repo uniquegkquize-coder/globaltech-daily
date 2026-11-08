@@ -1,6 +1,6 @@
 {
   "published": 6,
-  "updated": 1,
+  "updated": 0,
   "target": 8,
   "missing": {
     "colleges": 2
@@ -8,13 +8,13 @@
   "categories": {
     "colleges": {
       "new": 0,
-      "updated": 1,
+      "updated": 0,
       "eligible_new": 0,
-      "eligible_updates": 1,
+      "eligible_updates": 0,
       "shortfall": 2,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 17,
+        "already_published_unchanged": 18,
         "insufficient verified descriptive fields": 85,
         "identifier URL is not specification evidence": 199
       },
@@ -150,16 +150,16 @@
     "phones": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 808,
+      "eligible_new": 842,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 79,
-        "insufficient verified descriptive fields": 99,
-        "identifier URL is not specification evidence": 895
+        "already_published_unchanged": 81,
+        "insufficient verified descriptive fields": 100,
+        "identifier URL is not specification evidence": 858
       },
-      "rejected_count": 994,
+      "rejected_count": 958,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -291,16 +291,16 @@
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 629,
+      "eligible_new": 638,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 6000,
-        "already_published_unchanged": 81,
-        "insufficient verified descriptive fields": 585,
-        "identifier URL is not specification evidence": 4705
+        "considered": 6313,
+        "already_published_unchanged": 83,
+        "insufficient verified descriptive fields": 606,
+        "identifier URL is not specification evidence": 4986
       },
-      "rejected_count": 5290,
+      "rejected_count": 5592,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -432,12 +432,12 @@
     "bikes": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 20,
+      "eligible_new": 18,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 447,
-        "already_published_unchanged": 81,
+        "already_published_unchanged": 83,
         "insufficient verified descriptive fields": 84,
         "identifier URL is not specification evidence": 262
       },
@@ -571,5 +571,5 @@
       ]
     }
   },
-  "date": "2026-11-08T07:23:22.300064+00:00"
+  "date": "2026-11-08T10:06:36.451132+00:00"
 }
