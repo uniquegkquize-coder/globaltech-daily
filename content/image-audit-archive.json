@@ -1,141 +1,84 @@
 {
-  "total_posts": 3784,
-  "selected": 337,
+  "total_posts": 3834,
+  "selected": 343,
   "results": {
-    "access_denied": 6,
-    "invalid_source_images": 4,
-    "source_unavailable": 2,
-    "cooldown": 321,
+    "invalid_source_images": 11,
+    "source_error": 1,
+    "source_unavailable": 1,
+    "cooldown": 326,
     "no_source_image": 4
   },
-  "still_missing": 330,
+  "still_missing": 336,
   "articles": [
     {
-      "id": "dfd16b79fae5",
-      "source": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-flex-4472543793",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1794170105.8503025
-    },
-    {
-      "id": "600062192bf4",
-      "source": "https://in.linkedin.com/jobs/cad-software-development-engineer-jobs-hyderabad-ts?trk=guest_job_details_jd_jserp_more_jobs_link&f_AL=true",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1794170105.9077792
-    },
-    {
-      "id": "63616ffbf4c2",
-      "source": "https://in.linkedin.com/jobs/view/associate-qa-engineer-software-at-light-wonder-4484455024",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1794170106.018563
-    },
-    {
-      "id": "a4fcd6020999",
-      "source": "https://insideevs.com/news/814280/ferrari-luce-ev-sold-out-for-2027/",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1794170106.1281772
-    },
-    {
-      "id": "b73ac57f1ef5ed96390ec4f0",
-      "source": "https://en.wikipedia.org/wiki/Bridgestone_350_GTR",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794170106.1358137
-    },
-    {
-      "id": "3acc30eaefd0",
-      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/may/doc202655863701.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1794170106.3565125
-    },
-    {
-      "id": "253e0e4a696b",
-      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/feb/doc202422305301.pdf",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1794170106.4043207
-    },
-    {
-      "id": "a6ec2cd71bae",
-      "source": "https://in.linkedin.com/jobs/view/scriptwriter-youtube-at-headout-4483872792",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794170106.9022102
-    },
-    {
-      "id": "bdaee5f4786c",
-      "source": "https://in.linkedin.com/jobs/view/social-media-marketing-internship-in-delhi-bangalore-hyderabad-mumbai-at-foodstories-4479738162?position=44&pageNum=0&refId=6HZzQVkTvpvkiIYOUZ%2F6vQ%3D%3D&trackingId=jLeQWDCS3GoiLwZtObrHrw%3D%3D",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1794170107.0076623
-    },
-    {
       "id": "2a8b92143f14b264d8d27146",
-      "result": "cooldown"
-    },
-    {
-      "id": "c176a1dc41c1e122cab45821",
-      "result": "cooldown"
-    },
-    {
-      "id": "4afa4536b18e5a41b30a3497",
-      "result": "cooldown"
-    },
-    {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "result": "cooldown"
-    },
-    {
-      "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "result": "cooldown"
-    },
-    {
-      "id": "2f02162d9ab27a8cd5662161",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794176654.2620227
     },
     {
       "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
+      "source": "https://isc-edu.org/",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794176654.317636
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794176654.3271458
+    },
+    {
+      "id": "c176a1dc41c1e122cab45821",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794176654.335207
+    },
+    {
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794176654.378928
+    },
+    {
+      "id": "4afa4536b18e5a41b30a3497",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794176654.4787552
+    },
+    {
+      "id": "007acb84538e69bcc14f4f9f",
+      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794176654.488948
+    },
+    {
+      "id": "d5adbd5f7c0ee6e635219a5c",
+      "source": "https://en.wikipedia.org/wiki/Concept_F_450_GS",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794176654.6156173
     },
     {
       "id": "ab5757b7bde7e5a43128d256",
-      "result": "cooldown"
+      "source": "https://exploitsmw.com/",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1794176654.854452
     },
     {
-      "id": "b211f120ea27b93fc925f6b4",
-      "result": "cooldown"
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
-    },
-    {
-      "id": "6548e415fc086ccec65bbb7c",
-      "result": "cooldown"
-    },
-    {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
-    },
-    {
-      "id": "a6510273f0889bf4d7684eae",
-      "result": "cooldown"
-    },
-    {
-      "id": "ef614dcb4163038685679d1d",
-      "result": "cooldown"
+      "id": "2f02162d9ab27a8cd5662161",
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794176654.881352
     },
     {
       "id": "81021699ab33",
@@ -1358,53 +1301,137 @@
       "result": "cooldown"
     },
     {
+      "id": "dfd16b79fae5",
+      "result": "cooldown"
+    },
+    {
+      "id": "600062192bf4",
+      "result": "cooldown"
+    },
+    {
+      "id": "63616ffbf4c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "a4fcd6020999",
+      "result": "cooldown"
+    },
+    {
+      "id": "b73ac57f1ef5ed96390ec4f0",
+      "result": "cooldown"
+    },
+    {
+      "id": "3acc30eaefd0",
+      "result": "cooldown"
+    },
+    {
+      "id": "253e0e4a696b",
+      "result": "cooldown"
+    },
+    {
+      "id": "a6ec2cd71bae",
+      "result": "cooldown"
+    },
+    {
+      "id": "bdaee5f4786c",
+      "result": "cooldown"
+    },
+    {
       "id": "a99188c62a2d",
-      "source": "https://in.linkedin.com/jobs/view/social-media-intern-immediate-joiners-bangalore-at-divine-hindu-4484913408",
-      "policy": "93e2ad7deccc",
-      "result": "access_denied",
-      "retry_after": 1794170107.020596
+      "result": "cooldown"
     },
     {
       "id": "222914040e11",
-      "source": "https://in.linkedin.com/jobs/view/social-media-associate-at-the-blue-kite-4483449440",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794170107.1935742
+      "result": "cooldown"
     },
     {
       "id": "b7601652de21",
-      "source": "https://readerblogs.navbharattimes.indiatimes.com/BHALI-LAGE-YA-BURI/javed-akhtar-ki-samaaj-sudhar-ki-chunauti/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794170107.2838402
+      "result": "cooldown"
     },
     {
       "id": "bbfd4d3d5c0a",
-      "source": "https://www.tui.com/hilfe/flug/verspaetung/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1794170109.4920027
+      "result": "cooldown"
     },
     {
       "id": "3a640d951615",
-      "source": "https://www.sahisarkarijobs.in/increment-calculator/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1794170109.9072523
+      "result": "cooldown"
     },
     {
       "id": "dd07ef14c72f",
-      "source": "https://www.sahisarkarijobs.in/cgpa-to-percentage-calculator/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1794170110.6874068
+      "result": "cooldown"
     },
     {
       "id": "5cf2007cdcba",
-      "source": "https://in.linkedin.com/jobs/view/analyst-software-engineer-java-at-saatvik-agro-4484805864",
+      "result": "cooldown"
+    },
+    {
+      "id": "c39bb59142e8",
+      "result": "cooldown"
+    },
+    {
+      "id": "30adb0ee402d",
+      "result": "cooldown"
+    },
+    {
+      "id": "12518e969a95",
+      "result": "cooldown"
+    },
+    {
+      "id": "dc7366da5e5a",
+      "result": "cooldown"
+    },
+    {
+      "id": "e0af7576fb9d",
+      "result": "cooldown"
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794176655.4545515
+    },
+    {
+      "id": "6548e415fc086ccec65bbb7c",
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794176655.9869978
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "source": "https://dec.ac.in/",
       "policy": "93e2ad7deccc",
       "result": "no_source_image",
-      "retry_after": 1794170111.6589506
+      "retry_after": 1794176657.8758845
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "source": "https://cctu.edu.gh/site/index",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794176657.9430766
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794176658.0861657
+    },
+    {
+      "id": "a6510273f0889bf4d7684eae",
+      "source": "https://mua.ac.ke/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794176659.1771765
+    },
+    {
+      "id": "ef614dcb4163038685679d1d",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794176663.6109684
     }
   ],
   "missing": [
@@ -1675,6 +1702,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "30adb0ee402d",
+      "category": "cricket",
+      "title": "Pakistan Defeats India in 2026 Hong Kong Sixes Group C Clash",
+      "source": "https://www.business-standard.com/cricket/news/krunal-conceds-5-sixes-in-an-over-as-pak-beat-ind-in-2026-hong-kong-sixes-126103000734_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "a41b914c9659",
       "category": "telecom",
       "title": "TRAI Releases Mobile Network Performance Audit for Kathgodam-Dehradun Railway Route",
@@ -1687,6 +1721,13 @@
       "title": "AI Inference Software Market Projected to Reach USD 545.33 Billion by 2034",
       "source": "https://www.prnewswire.com/news-releases/ai-inference-software-market-to-reach-usd-545-33-billion-by-2034-as-enterprises-move-ai-from-pilots-to-production-302923824.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "d5adbd5f7c0ee6e635219a5c",
+      "category": "automobiles",
+      "title": "Concept F 450 GS: Motorcycle Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Concept_F_450_GS",
+      "reason": "invalid_source_images"
     },
     {
       "id": "880129981de7",
@@ -1785,6 +1826,13 @@
       "title": "How AI Drones Are Influencing the Ukraine War",
       "source": "https://www.npr.org/2026/10/29/g-s1-147496/ukraine-ai-drones-war-russia",
       "reason": "source_error"
+    },
+    {
+      "id": "c39bb59142e8",
+      "category": "sports",
+      "title": "Chandigarh University Announces Opening for Assistant Director of Sports",
+      "source": "https://in.linkedin.com/jobs/view/assistant-director-sports-at-chandigarh-university-4483311308",
+      "reason": "invalid_source_images"
     },
     {
       "id": "22fc7fedf182",
@@ -2050,6 +2098,13 @@
       "category": "gadgets",
       "title": "Samsung Galaxy A08 Announced with IP64 Rating and Long-Term Software Support",
       "source": "https://news.samsung.com/my/built-to-go-the-distance-how-the-samsung-galaxy-a08-redefines-long-term-reliability-for-malaysians",
+      "reason": "source_error"
+    },
+    {
+      "id": "e0af7576fb9d",
+      "category": "defence",
+      "title": "Ukraine Disputes Elon Musk's Claims Regarding Starlink Use in Military Operations",
+      "source": "https://www.cbc.ca/news/world/ukraine-disputes-elon-musk-claim-starlink-starshield-9.7395412?cmp=rss",
       "reason": "source_error"
     },
     {
@@ -2816,6 +2871,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "12518e969a95",
+      "category": "sports",
+      "title": "Chinese Brands Sever Ties with Kylian Mbappe Following Controversial Comments",
+      "source": "https://www.cbc.ca/sports/soccer/mbappe-china-dictator-meme-brands-9.7397640?cmp=rss",
+      "reason": "source_error"
+    },
+    {
       "id": "61ab99a70d23",
       "category": "india-news",
       "title": "Staff Selection Commission Releases With-Held Candidate List for SI in Delhi Police and CAPFs Exam 2025",
@@ -2856,6 +2918,13 @@
       "title": "Norton Nomad: Motorcycle Specifications, Facts and Verification Guide",
       "source": "https://en.wikipedia.org/wiki/Norton_Nomad",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "dc7366da5e5a",
+      "category": "sports",
+      "title": "Chinese Brands Sever Ties With Kylian Mbappé Following Controversial Remarks",
+      "source": "https://www.cbc.ca/sports/soccer/mbappe-china-dictator-meme-brands-9.7397640",
+      "reason": "source_error"
     },
     {
       "id": "9bcfb13f35c2",
@@ -3722,101 +3791,141 @@
   "missing_reasons": {
     "source_unavailable": 36,
     "no_source_image": 102,
-    "access_denied": 96,
-    "source_error": 32,
-    "invalid_source_images": 64
+    "access_denied": 97,
+    "source_error": 35,
+    "invalid_source_images": 66
   },
-  "existing_representatives_preserved": 0,
+  "existing_representatives_preserved": 1,
   "diagnostics": {
-    "dfd16b79fae5": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-flex-4472543793",
-      "status": 429
-    },
-    "600062192bf4": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/cad-software-development-engineer-jobs-hyderabad-ts?trk=guest_job_details_jd_jserp_more_jobs_link&f_AL=true",
-      "status": 429
-    },
-    "63616ffbf4c2": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/view/associate-qa-engineer-software-at-light-wonder-4484455024",
-      "status": 429
-    },
-    "a4fcd6020999": {
-      "reason": "access_denied",
-      "source": "https://insideevs.com/news/814280/ferrari-luce-ev-sold-out-for-2027/",
-      "status": 403
-    },
-    "b73ac57f1ef5ed96390ec4f0": {
+    "2a8b92143f14b264d8d27146": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Bridgestone_350_GTR",
-      "candidate_count": 3,
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
+      "candidate_count": 5,
       "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
       ]
     },
-    "3acc30eaefd0": {
+    "0a95ccf111c45db4cfb5c9e3": {
+      "reason": "source_error",
+      "source": "https://isc-edu.org/",
+      "error": "ConnectionError"
+    },
+    "8f4b17c49d1b2a0c5cb45a53": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "candidate_count": 6,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "c176a1dc41c1e122cab45821": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "9d1f6341eb5fa6644d63ff08": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18615.jpg"
+      ]
+    },
+    "4afa4536b18e5a41b30a3497": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18613.jpg"
+      ]
+    },
+    "007acb84538e69bcc14f4f9f": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18606.jpg"
+      ]
+    },
+    "d5adbd5f7c0ee6e635219a5c": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Concept_F_450_GS",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Robot_Not.svg/120px-Robot_Not.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Robot_Not.svg/60px-Robot_Not.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "ab5757b7bde7e5a43128d256": {
       "reason": "source_unavailable",
-      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/may/doc202655863701.pdf",
+      "source": "https://exploitsmw.com/",
       "status": 200
     },
-    "253e0e4a696b": {
-      "reason": "source_unavailable",
-      "source": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/feb/doc202422305301.pdf",
-      "status": 200
-    },
-    "a6ec2cd71bae": {
+    "2f02162d9ab27a8cd5662161": {
       "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/scriptwriter-youtube-at-headout-4483872792",
-      "candidate_count": 1,
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "candidate_count": 10,
       "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled"
       ]
     },
-    "bdaee5f4786c": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/view/social-media-marketing-internship-in-delhi-bangalore-hyderabad-mumbai-at-foodstories-4479738162?position=44&pageNum=0&refId=6HZzQVkTvpvkiIYOUZ%2F6vQ%3D%3D&trackingId=jLeQWDCS3GoiLwZtObrHrw%3D%3D",
-      "status": 429
-    },
-    "a99188c62a2d": {
-      "reason": "access_denied",
-      "source": "https://in.linkedin.com/jobs/view/social-media-intern-immediate-joiners-bangalore-at-divine-hindu-4484913408",
-      "status": 429
-    },
-    "222914040e11": {
+    "b211f120ea27b93fc925f6b4": {
       "reason": "invalid_source_images",
-      "source": "https://in.linkedin.com/jobs/view/social-media-associate-at-the-blue-kite-4483449440",
-      "candidate_count": 1,
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "candidate_count": 8,
       "candidates": [
-        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+        "https://upload.wikimedia.org/wikipedia/commons/1/1e/Nokia_Asha_501.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/250px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/120px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
       ]
     },
-    "b7601652de21": {
+    "6548e415fc086ccec65bbb7c": {
       "reason": "invalid_source_images",
-      "source": "https://readerblogs.navbharattimes.indiatimes.com/BHALI-LAGE-YA-BURI/javed-akhtar-ki-samaaj-sudhar-ki-chunauti/",
-      "candidate_count": 1,
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "candidate_count": 20,
       "candidates": [
-        "https://readerblogs.navbharattimes.indiatimes.com/BHALI-LAGE-YA-BURI/javed-akhtar-ki-samaaj-sudhar-ki-chunauti/"
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/frontier/vehicle-profile-assets/2027/model-2027-frontier-crew-cab-pro-4x-red-alert.png-v2.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue-hybrid/vehicle-profile-assets/2027/model-2027-rogue-hybrid-sr-horizon-blue-pearl-metallic-super-black-two-tone.png.ximg.l_3_m.smart.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue/vehicle-profile-assets/2027/model-2027-rogue-rock-creek-intelligent-awd-baja-storm-metallic.png.ximg.l_3_m.smart.png"
       ]
     },
-    "bbfd4d3d5c0a": {
+    "8444aa187e09b377f661fcbf": {
       "reason": "no_source_image",
-      "source": "https://www.tui.com/hilfe/flug/verspaetung/"
+      "source": "https://dec.ac.in/"
     },
-    "3a640d951615": {
+    "fbff6440d68d52399ca212b1": {
       "reason": "no_source_image",
-      "source": "https://www.sahisarkarijobs.in/increment-calculator/"
+      "source": "https://cctu.edu.gh/site/index"
     },
-    "dd07ef14c72f": {
+    "8af54bb949a0c055391d640a": {
       "reason": "no_source_image",
-      "source": "https://www.sahisarkarijobs.in/cgpa-to-percentage-calculator/"
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "existing_representative_preserved": true
     },
-    "5cf2007cdcba": {
+    "a6510273f0889bf4d7684eae": {
+      "reason": "invalid_source_images",
+      "source": "https://mua.ac.ke/",
+      "candidate_count": 2,
+      "candidates": [
+        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
+        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png"
+      ]
+    },
+    "ef614dcb4163038685679d1d": {
       "reason": "no_source_image",
-      "source": "https://in.linkedin.com/jobs/view/analyst-software-engineer-java-at-saatvik-agro-4484805864"
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/"
     }
   },
   "mode": "all"
