@@ -1,76 +1,96 @@
 {
-  "total_posts": 3180,
-  "selected": 36,
+  "total_posts": 3189,
+  "selected": 37,
   "results": {
-    "source_photo_saved": 5,
-    "cooldown": 29,
-    "invalid_source_images": 2
+    "source_photo_saved": 6,
+    "invalid_source_images": 9,
+    "cooldown": 22
   },
   "still_missing": 277,
   "articles": [
     {
-      "id": "34051eb40924fd8bb4aaf95b",
-      "source": "https://en.wikipedia.org/wiki/Laverda_1200",
+      "id": "b7f4cfb88eb283054004fa2a",
+      "source": "https://en.wikipedia.org/wiki/Curtiss_V-8_motorcycle",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794110277.2817528
+      "retry_after": 1794123013.4702163
     },
     {
-      "id": "5d3b543c277c4eb2655a020d",
-      "source": "https://en.wikipedia.org/wiki/KTM_890_Adventure",
+      "id": "05f61d16581aa6a7da678772",
+      "source": "https://en.wikipedia.org/wiki/Ducati_DesertX",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794110277.4163039
+      "retry_after": 1794123013.5495324
     },
     {
-      "id": "0d9054a533b2afe93972442d",
-      "source": "https://en.wikipedia.org/wiki/Hyundai_Custo",
+      "id": "97656a6dd769649409d64fb1",
+      "source": "https://en.wikipedia.org/wiki/Beijing_X7",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794110277.7226167
-    },
-    {
-      "id": "ce8282ab6f78b491f583c5c2",
-      "source": "https://en.wikipedia.org/wiki/Exeed_LX",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794110277.924281
+      "retry_after": 1794123014.12002
     },
     {
       "id": "d5ff9974453f739276c8eb9f",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794123014.2688446
     },
     {
-      "id": "ff28f504e8e3f011fe2acd9b",
-      "result": "cooldown"
+      "id": "3e9d8416aafc0a7198e25a6e",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Core_2",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794123014.5024426
     },
     {
       "id": "33686a761fa5d097afc337dc",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794123014.6615565
     },
     {
       "id": "a941ae3553703f8fd24d4d17",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794123015.056683
+    },
+    {
+      "id": "ff28f504e8e3f011fe2acd9b",
+      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794123015.2562456
     },
     {
       "id": "fb6dd420a2fc44c8f8340751",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794123015.3695195
     },
     {
       "id": "611527df4de7f3170a99cfde",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794123015.4947724
+    },
+    {
+      "id": "d788ce14432418e6bd9d449b",
+      "source": "https://en.wikipedia.org/wiki/Bedford_HC",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794123015.8743305
     },
     {
       "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
-    },
-    {
-      "id": "fab6501205ba27e38dac785c",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794123015.9272027
     },
     {
       "id": "e8fc748d4c8dffaa2212a1cf",
@@ -154,24 +174,32 @@
     },
     {
       "id": "2d100db342cdd6c9c517a807",
-      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794110278.1865892
-    },
-    {
-      "id": "9107cbef768ac5e06cf40dfa",
-      "source": "https://en.wikipedia.org/wiki/HTC_HD2",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794110278.4276545
+      "result": "cooldown"
     },
     {
       "id": "9e59804909cc110131739d58",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III_Neo",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794110278.998045
+      "retry_after": 1794123015.943706
+    },
+    {
+      "id": "fab6501205ba27e38dac785c",
+      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794123016.3714304
+    },
+    {
+      "id": "f4d626d54780e228589e1ddf",
+      "source": "https://en.wikipedia.org/wiki/HTC_Desire_Eye",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794123016.4667735
     }
   ],
   "missing": [
@@ -243,7 +271,7 @@
       "category": "private-vacancy",
       "title": "Overview of Recent Professional Job Openings Listed on LinkedIn India",
       "source": "https://in.linkedin.com/jobs/Nexbirlik+istifad%C9%99%C3%A7i+t%C9%99cr%C3%BCb%C9%99si%3A+m%C3%BCxt%C9%99lif+izahlara+n%C9%99z%C9%99r+sal%C4%B1n.whn-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "ddfa4e186cef",
@@ -838,7 +866,7 @@
       "category": "private-vacancy",
       "title": "Overview of Gaming and Customer Support Openings Reported on Professional Networks in India",
       "source": "https://in.linkedin.com/jobs/%E6%96%B0%E7%9B%9B%E8%B5%8C%E5%9C%BA%E6%B8%B8%E6%88%8F%E5%AE%A2%E6%9C%8D15508830630.cnv-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "7f651ce9d3f0",
@@ -2117,58 +2145,131 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "no_source_image": 88,
+    "no_source_image": 86,
     "invalid_source_images": 59,
     "source_error": 17,
-    "access_denied": 76,
+    "access_denied": 78,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "34051eb40924fd8bb4aaf95b": {
+    "b7f4cfb88eb283054004fa2a": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Laverda_1200",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Laverda_1200_Mirage.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Curtiss_V-8_motorcycle",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Glenn_Curtiss_on_his_V-8_motorcycle%2C_Ormond_Beach%2C_Florida_1907.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "5d3b543c277c4eb2655a020d": {
+    "05f61d16581aa6a7da678772": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/KTM_890_Adventure",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/37/KTM_890_Adventure.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ducati_DesertX",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/77/Ducati_DesertX_in_Barcelona_%28edited%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "0d9054a533b2afe93972442d": {
+    "97656a6dd769649409d64fb1": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Hyundai_Custo",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f9/HYUNDAI_CUSTO_China_%2810%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Beijing_X7",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Beijing_X7_IMG001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "ce8282ab6f78b491f583c5c2": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Exeed_LX",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Exeed_LX_IMG001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "2d100db342cdd6c9c517a807": {
+    "d5ff9974453f739276c8eb9f": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
-      "candidate_count": 9,
+      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
+      "candidate_count": 3,
       "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/0/0e/1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/1280px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/960px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
       ]
     },
-    "9107cbef768ac5e06cf40dfa": {
+    "3e9d8416aafc0a7198e25a6e": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/HTC_HD2",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Htc-hd2.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Core_2",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/46/Samsung_Galaxy_Core_2.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "9e59804909cc110131739d58": {
+    "33686a761fa5d097afc337dc": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III_Neo",
-      "candidate_count": 9,
+      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
+      "candidate_count": 3,
       "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Samsung_Galaxy_S_III.png/500px-Samsung_Galaxy_S_III.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Samsung_Galaxy_S_III.png/250px-Samsung_Galaxy_S_III.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "a941ae3553703f8fd24d4d17": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/120px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/60px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
         "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
       ]
+    },
+    "ff28f504e8e3f011fe2acd9b": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18614.jpg"
+      ]
+    },
+    "fb6dd420a2fc44c8f8340751": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/120px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "611527df4de7f3170a99cfde": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "d788ce14432418e6bd9d449b": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Bedford_HC",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Bedford_5-6_cwt_HC_Van_%281948%29_%2816006040965%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "554edbfdaee926ed82007433": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "ab5161457cb0ef816db211ff": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "fab6501205ba27e38dac785c": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "f4d626d54780e228589e1ddf": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/HTC_Desire_Eye",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/HTC_Desire_Eye_smartphone_%2815355721999%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
