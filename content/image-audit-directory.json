@@ -1,101 +1,32 @@
 {
-  "total_posts": 3939,
-  "selected": 42,
+  "total_posts": 3990,
+  "selected": 44,
   "results": {
-    "invalid_source_images": 2,
-    "source_photo_saved": 4,
-    "cooldown": 36
+    "source_photo_saved": 6,
+    "cooldown": 38
   },
-  "still_missing": 342,
+  "still_missing": 346,
   "articles": [
     {
-      "id": "635e4aa01fc60223a6fea284",
-      "source": "https://en.wikipedia.org/wiki/Borgward_BX3",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794219419.2543283
-    },
-    {
-      "id": "65376a33dcb452bc39a1397a",
-      "source": "https://en.wikipedia.org/wiki/Silver_Bird_%28streamliner%29",
+      "id": "fa56a6eef9cd9add61feaaad",
+      "source": "https://en.wikipedia.org/wiki/Norton_Model_7_Dominator",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794219419.4312782
+      "retry_after": 1794232283.4729397
     },
     {
-      "id": "621876f7976249840df47ac9",
-      "source": "https://en.wikipedia.org/wiki/Honda_SH50",
+      "id": "da06e3d22ba722ba3010c8d4",
+      "source": "https://en.wikipedia.org/wiki/Ariel_Leader",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794219419.4685783
+      "retry_after": 1794232283.4768212
     },
     {
-      "id": "2a8b92143f14b264d8d27146",
-      "result": "cooldown"
-    },
-    {
-      "id": "d5adbd5f7c0ee6e635219a5c",
-      "result": "cooldown"
-    },
-    {
-      "id": "2f02162d9ab27a8cd5662161",
-      "result": "cooldown"
-    },
-    {
-      "id": "c176a1dc41c1e122cab45821",
-      "result": "cooldown"
-    },
-    {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
-    },
-    {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "result": "cooldown"
-    },
-    {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab5757b7bde7e5a43128d256",
-      "result": "cooldown"
-    },
-    {
-      "id": "4afa4536b18e5a41b30a3497",
-      "result": "cooldown"
-    },
-    {
-      "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
-    },
-    {
-      "id": "b211f120ea27b93fc925f6b4",
-      "result": "cooldown"
-    },
-    {
-      "id": "6548e415fc086ccec65bbb7c",
-      "result": "cooldown"
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
-    },
-    {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
-    },
-    {
-      "id": "a6510273f0889bf4d7684eae",
-      "result": "cooldown"
-    },
-    {
-      "id": "ef614dcb4163038685679d1d",
-      "result": "cooldown"
+      "id": "03808bb286fbb9d14ba8510a",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Z5_Compact",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794232283.9268486
     },
     {
       "id": "b1e668b9c10e7cfe7e4acd5a",
@@ -174,25 +105,101 @@
       "result": "cooldown"
     },
     {
+      "id": "635e4aa01fc60223a6fea284",
+      "result": "cooldown"
+    },
+    {
       "id": "b0979abba345525f23d6b27e",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_M5",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794219419.713567
+      "result": "cooldown"
     },
     {
-      "id": "c9bc62bdb8fc7862cb438f0e",
-      "source": "https://en.wikipedia.org/wiki/Dongfeng_Huashen_Tianlai",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794219419.7153635
+      "id": "d5adbd5f7c0ee6e635219a5c",
+      "result": "cooldown"
     },
     {
-      "id": "040e8456326aa592661edef3",
-      "source": "https://en.wikipedia.org/wiki/Moto_G_%283rd_generation%29",
+      "id": "2a8b92143f14b264d8d27146",
+      "result": "cooldown"
+    },
+    {
+      "id": "2f02162d9ab27a8cd5662161",
+      "result": "cooldown"
+    },
+    {
+      "id": "c176a1dc41c1e122cab45821",
+      "result": "cooldown"
+    },
+    {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5757b7bde7e5a43128d256",
+      "result": "cooldown"
+    },
+    {
+      "id": "007acb84538e69bcc14f4f9f",
+      "result": "cooldown"
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "result": "cooldown"
+    },
+    {
+      "id": "4afa4536b18e5a41b30a3497",
+      "result": "cooldown"
+    },
+    {
+      "id": "6548e415fc086ccec65bbb7c",
+      "result": "cooldown"
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "ef614dcb4163038685679d1d",
+      "result": "cooldown"
+    },
+    {
+      "id": "a6510273f0889bf4d7684eae",
+      "result": "cooldown"
+    },
+    {
+      "id": "c789fa4dd1d7ae0a58674b3b",
+      "source": "https://en.wikipedia.org/wiki/BYD_Song_Pro",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794219420.0234246
+      "retry_after": 1794232283.9961734
+    },
+    {
+      "id": "948f354a0d18bfdbf96f934f",
+      "source": "https://en.wikipedia.org/wiki/Nexus_5X",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794232284.1447613
+    },
+    {
+      "id": "500eadf90954204a98ac3997",
+      "source": "https://en.wikipedia.org/wiki/Lagonda_V12",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794232284.3665793
     }
   ],
   "missing": [
@@ -1240,6 +1247,13 @@
       "reason": "restricted_page"
     },
     {
+      "id": "a3b36cdedd63",
+      "category": "ai-news",
+      "title": "TaxDome Launches Public API and MCP Server for AI Agents and Developers",
+      "source": "https://www.prnewswire.com/news-releases/taxdome-releases-public-api-and-mcp-server-for-ai-agents-and-developers-302923194.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "600062192bf4",
       "category": "apps-software",
       "title": "Exploring CAD and Software Development Engineer Job Listings in Hyderabad",
@@ -1539,6 +1553,13 @@
       "title": "Brammo Enertia: Motorcycle Specifications, Facts and Verification Guide",
       "source": "https://en.wikipedia.org/wiki/Brammo_Enertia",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "89eb457e7ce1",
+      "category": "cricket",
+      "title": "Rashid Khan Becomes First Bowler to Claim 200 T20I Wickets in Afghanistan's Win Over Zimbabwe",
+      "source": "https://www.business-standard.com/cricket/news/rashid-khan-scripts-history-becomes-first-bowler-to-take-200-t20i-wickets-126103000332_1.html",
+      "reason": "access_denied"
     },
     {
       "id": "1c4f6e29aff4",
@@ -1870,6 +1891,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "188292cc9d0e",
+      "category": "ai-news",
+      "title": "Biological Computing Co. Unveils TBC mischief 1: World’s First Public Neuron‑Derived AI Video Model",
+      "source": "https://www.prnewswire.com/news-releases/the-biological-computing-co-launches-worlds-first-publicly-available-neuron-derived-ai-video-model-302924399.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "81021699ab33",
       "category": "apps-software",
       "title": "Accenture in India Lists Multiple Technology Architect and Software Engineering Roles in Pune",
@@ -1903,6 +1931,13 @@
       "title": "TRAI Releases Mobile Network Quality Assessment Findings for Vijayanagara District",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No139of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "6680f703dce8",
+      "category": "ai-news",
+      "title": "Samsung’s Global “The Brief” Tour Shows AI‑Powered Appliances Tailored to Every Region",
+      "source": "https://news.samsung.com/my/tailored-for-every-home-samsung-the-brief-goes-global-with-ai-powered-home-appliances",
+      "reason": "source_error"
     },
     {
       "id": "4eb7b2235122",
@@ -2594,52 +2629,42 @@
   "missing_reasons": {
     "source_unavailable": 36,
     "invalid_source_images": 80,
-    "access_denied": 75,
-    "no_source_image": 116,
-    "source_error": 34,
+    "access_denied": 76,
+    "no_source_image": 118,
+    "source_error": 35,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "635e4aa01fc60223a6fea284": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Borgward_BX3",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "65376a33dcb452bc39a1397a": {
+    "fa56a6eef9cd9add61feaaad": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Silver_Bird_%28streamliner%29",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/A_PB_Vesco-Kawasaki05.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Norton_Model_7_Dominator",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Norton_mod_7.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "621876f7976249840df47ac9": {
+    "da06e3d22ba722ba3010c8d4": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Honda_SH50",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7b/ScooterC.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ariel_Leader",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ariel_Leader_left_side.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "b0979abba345525f23d6b27e": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_M5",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "c9bc62bdb8fc7862cb438f0e": {
+    "03808bb286fbb9d14ba8510a": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Dongfeng_Huashen_Tianlai",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Dongfeng_Huashen_Tianlai_001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Z5_Compact",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Sony_Xperia_Z5_Compact_PSD_%E9%BB%84.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "040e8456326aa592661edef3": {
+    "c789fa4dd1d7ae0a58674b3b": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Moto_G_%283rd_generation%29",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Moto_G_3rd_Generation.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/BYD_Song_Pro",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/BYD_Song_Pro_DM-i_2023_facelift_001_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "948f354a0d18bfdbf96f934f": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Nexus_5X",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/40/Nexus_5X_%28White%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "500eadf90954204a98ac3997": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Lagonda_V12",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/1940_Lagonda_V12_DHC.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
