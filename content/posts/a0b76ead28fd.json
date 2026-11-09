@@ -1,0 +1,32 @@
+{
+  "en_title": "Kaze Announced as a macOS and Windows Browser Featuring an Integrated AI Agent",
+  "hi_title": "Kaze को macOS और Windows के लिए एक नए ब्राउज़र के रूप में पेश किया गया है जिसमें इनबिल्ट AI एजेंट है",
+  "en_body": "Kaze is an application designed as a web browser for macOS and Windows that includes a built-in AI agent meant to operate within separate browser tabs. According to available project documentation, the software aims to combine everyday browsing functions with an agent workspace.\n\n## Core Features and Operation\n\n* **Tab Management:** The built-in agent performs tasks in its own tabs alongside user tabs, displaying steps visually while allowing users to take control at any point.\n* **Safety Prompts:** The agent requests user confirmation before executing actions such as paying, sending, or deleting data.\n* **Data Import:** During initial setup, users can import tabs, logins, bookmarks, history, and extensions from browsers such as Chrome, Arc, Edge, Brave, and Safari.\n* **Model Selection:** Users can sign in with ChatGPT, supply a personal API key, or configure an OpenAI-compatible endpoint.\n\n## External Agent Integration\n\nDocumentation states that Kaze can connect with other tools—such as Claude Code, Codex, Cursor, Claude Desktop, Gemini CLI, and DeepSeek Harness—via an MCP server. This allows external agents to interact with the browser environment using BrowserMCP, an open-source engine.\n\n## Practical Implications and Verification\n\nUsers evaluating the software should review installation requirements, noting that Windows builds currently require bypassing unsigned installer prompts via SmartScreen. Because this project is distributed via GitHub, users can verify updates, inspect issues, and check source files directly on the official repository. Verification of claims regarding model compatibility requires testing custom OpenAI-compatible endpoints directly within the application settings.",
+  "hi_body": "Kaze एक ऐसा एप्लिकेशन है जिसे macOS और Windows के लिए एक वेब ब्राउज़र के रूप में डिज़ाइन किया गया है, जिसमें अलग-अलग टैब में काम करने वाला एक इनबिल्ट AI एजेंट शामिल है। उपलब्ध प्रोजेक्ट दस्तावेज़ों के अनुसार, इस सॉफ़्टवेयर का उद्देश्य दैनिक ब्राउज़िंग कार्यों को एक एजेंट कार्यक्षेत्र के साथ संयोजित करना है।\n\n## मुख्य विशेषताएँ और संचालन\n\n* **टैब प्रबंधन:** इनबिल्ट एजेंट उपयोगकर्ता के टैब के बगल में अपने स्वयं के टैब में कार्य करता है, चरणों को दृश्य रूप से प्रदर्शित करता है और उपयोगकर्ताओं को किसी भी समय नियंत्रण लेने की अनुमति देता है।\n* **सुरक्षा संकेत:** एजेंट भुगतान करने, भेजने या डेटा हटाने जैसे कार्य करने से पहले उपयोगकर्ता की पुष्टि मांगता है।\n* **डेटा आयात:** प्रारंभिक सेटअप के दौरान, उपयोगकर्ता Chrome, Arc, Edge, Brave और Safari जैसे ब्राउज़र से टैब, लॉगिन, बुकमार्क, इतिहास और एक्सटेंशन आयात कर सकते हैं।\n* **मॉडल चयन:** उपयोगकर्ता ChatGPT के साथ साइन इन कर सकते हैं, व्यक्तिगत API कुंजी जोड़ सकते हैं, या किसी OpenAI-संगत एंडपॉइंट को कॉन्फ़िगर कर सकते हैं।\n\n## बाहरी एजेंट एकीकरण\n\nदस्तावेज़ बताते हैं कि Kaze MCP सर्वर के माध्यम से अन्य टूल—जैसे Claude Code, Codex, Cursor, Claude Desktop, Gemini CLI, और DeepSeek Harness—से जुड़ सकता है। यह बाहरी एजेंटों को ओपन-सोर्स इंजन BrowserMCP का उपयोग करके ब्राउज़र वातावरण के साथ बातचीत करने की अनुमति देता है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nसॉफ़्टवेयर का मूल्यांकन करने वाले उपयोगकर्ताओं को स्थापना आवश्यकताओं की समीक्षा करनी चाहिए, यह ध्यान रखते हुए कि Windows बिल्ड को वर्तमान में SmartScreen के माध्यम से अनसाइन किए गए इंस्टॉलर संकेतों को दरकिनार करने की आवश्यकता होती है। चूँकि इस प्रोजेक्ट को GitHub के माध्यम से वितरित किया जाता है, इसलिए उपयोगकर्ता आधिकारिक रिपॉजिटरी पर सीधे अपडेट सत्यापित कर सकते हैं, समस्याओं का निरीक्षण कर सकते हैं और स्रोत फ़ाइलों की जांच कर सकते हैं।",
+  "en_meta": "Explore Kaze, a browser for macOS and Windows featuring an integrated AI agent, tab management, data import, and external agent connectivity.",
+  "hi_meta": "Kaze के बारे में जानें, जो macOS और Windows के लिए एक ब्राउज़र है जिसमें इनबिल्ट AI एजेंट और टैब प्रबंधन की सुविधा है।",
+  "en_keywords": [
+    "Kaze browser",
+    "AI agent browser",
+    "macOS browser",
+    "Windows browser",
+    "BrowserMCP"
+  ],
+  "hi_keywords": [
+    "Kaze ब्राउज़र",
+    "AI एजेंट ब्राउज़र",
+    "macOS ब्राउज़र",
+    "Windows ब्राउज़र",
+    "BrowserMCP"
+  ],
+  "source_published_at": null,
+  "id": "a0b76ead28fd",
+  "source": "https://github.com/jackwener/Kaze",
+  "date": "2026-11-09T09:59:19.750848+00:00",
+  "source_title": "jackwener/Kaze: A calm, quick browser for macOS, with an agent that works in your tabs. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

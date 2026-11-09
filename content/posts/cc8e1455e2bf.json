@@ -1,0 +1,29 @@
+{
+  "en_title": "The PHP Meltdown Shows How AI Makes Bugs More Exploitable",
+  "hi_title": "पीएचपी मेल्टडाउन दिखाता है कि कैसे एआई बग्स को अधिक शोषणीय बनाता है",
+  "en_body": "Security researchers and analysts have reported that recent PHP vulnerabilities, collectively dubbed PHP2Shell, highlight how advanced artificial intelligence tools can accelerate the process of turning historic software bugs into active exploitation risks. Following the public disclosure of the flaws, Cloudflare analysis indicated that millions of exploitation attempts occurred within hours. However, the PHP Foundation reported that it has not seen successful exploitations of the bugs, and many circulating potential exploits appeared ineffective.\n\n## Discovery and AI Involvement\n\n* **Calif and Patch the Planet:** Researchers at security firm Calif initially identified the PHP2Shell vulnerabilities and created exploits in early August, partly using frontier AI tools through OpenAI's Patch the Planet program alongside human PHP expertise.\n* **Independent Findings:** Researchers at OpenAI and Google-owned Wiz independently discovered PHP2Shell flaws using AI models.\n* **Historic Issues:** Some underlying issues had been known for years but were previously considered too complex for human attackers to practically leverage.\n\n## Practical Implications and Outlook\n\nWhile AI models have demonstrated the capability to help researchers analyze and find pathways to exploit long-standing vulnerabilities, experts emphasize that human expertise remains critical. Security researchers note that AI does not fundamentally change vulnerability dynamics, but rather magnifies existing discovery and disclosure trends. IT teams and administrators continue to face heavy workloads in patching systems, while experts suggest that the pool of easily reachable, widely exposed historic bugs may be limited. Observers recommend verifying security updates directly through official vendor channels and the PHP Foundation.",
+  "hi_body": "सुरक्षा शोधकर्ताओं और विश्लेषकों ने बताया है कि हाल की पीएचपी कमजोरियां, जिन्हें सामूहिक रूप से 'PHP2Shell' कहा गया है, यह उजागर करती हैं कि उन्नत कृत्रिम बुद्धिमत्ता (AI) उपकरण ऐतिहासिक सॉफ्टवेयर बग्स को सक्रिय शोषण जोखिमों में बदलने की प्रक्रिया को तेज कर सकते हैं। कमियों के सार्वजनिक खुलासे के बाद, क्लाउडफ्लाईर (Cloudflare) के विश्लेषण ने संकेत दिया कि घंटों के भीतर लाखों शोषण के प्रयास हुए। हालांकि, पीएचपी फाउंडेशन ने बताया कि उसने बग्स का कोई सफल शोषण नहीं देखा है, और प्रसारित होने वाले कई संभावित शोषण प्रभावहीन प्रतीत हुए।\n\n## खोज और एआई की भागीदारी\n\n* **कैलिफ़ और पैच द प्लैनेट:** सुरक्षा फर्म कैलिफ़ के शोधकर्ताओं ने शुरुआती अगस्त में पीएचपी2शेल कमजोरियों की पहचान की और शोषण बनाए, जिसमें आंशिक रूप से ओपनएआई के पैच द प्लैनेट कार्यक्रम के तहत फ्रंटियर एआई उपकरणों का उपयोग किया गया।\n* **स्वतंत्र खोजें:** ओपनएआई और गूगल के स्वामित्व वाली विज़ (Wiz) के शोधकर्ताओं ने एआई मॉडल का उपयोग करके स्वतंत्र रूप से पीएचपी2शेल कमियों की खोज की।\n* **ऐतिहासिक मुद्दे:** कुछ अंतर्निहित मुद्दे वर्षों से ज्ञात थे लेकिन पहले मानव हमलावरों के लिए व्यावहारिक रूप से फायदा उठाने के लिए बहुत जटिल माने गए थे।\n\n## व्यावहारिक निहितार्थ और दृष्टिकोण\n\nजबकि एआई मॉडल ने शोधकर्ताओं को लंबे समय से चली आ रही कमजोरियों का विश्लेषण करने और उनका फायदा उठाने के रास्ते खोजने में मदद करने की क्षमता का प्रदर्शन किया है, विशेषज्ञों ने जोर दिया है कि मानव विशेषज्ञता महत्वपूर्ण बनी हुई है। सुरक्षा शोधकर्ताओं का कहना है कि एआई मौलिक रूप से भेद्यता गतिकी को नहीं बदलता है, बल्कि मौजूदा खोज और खुलासे के रुझानों को बढ़ाता है। आईटी टीमों और प्रशासकों को सिस्टम पैच करने में भारी काम का सामना करना पड़ रहा है, जबकि विशेषज्ञों का सुझाव है कि आसानी से पहुंचने योग्य ऐतिहासिक बगों का दायरा सीमित हो सकता है। पर्यवेक्षक आधिकारिक विक्रेता चैनलों और पीएचपी फाउंडेशन के माध्यम से सीधे सुरक्षा अपडेट सत्यापित करने की सलाह देते हैं।",
+  "en_meta": "Recent PHP2Shell vulnerabilities demonstrate how artificial intelligence tools can help researchers uncover practical exploits for historic software bugs.",
+  "hi_meta": "हाल की पीएचपी2शेल कमजोरियां प्रदर्शित करती हैं कि कैसे कृत्रिम बुद्धिमत्ता उपकरण शोधकर्ताओं को ऐतिहासिक सॉफ्टवेयर बग के लिए व्यावहारिक शोषण खोजने में मदद कर…",
+  "en_keywords": [
+    "PHP2Shell",
+    "AI cybersecurity",
+    "PHP Foundation",
+    "vulnerability disclosure",
+    "Cloudflare"
+  ],
+  "hi_keywords": [
+    "पीएचपी2शेल",
+    "एआई साइबर सुरक्षा",
+    "पीएचपी फाउंडेशन",
+    "कमजोरी का खुलासा",
+    "क्लाउडफ्लाईर"
+  ],
+  "source_published_at": "2026-10-24T08:00:00.000-04:00",
+  "id": "cc8e1455e2bf",
+  "source": "https://www.wired.com/story/kernel-panic-the-php-meltdown-shows-how-ai-makes-bugs-more-exploitable/",
+  "date": "2026-11-09T09:27:54.039535+00:00",
+  "source_title": "The PHP Meltdown Shows How AI Makes Bugs More Exploitable",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

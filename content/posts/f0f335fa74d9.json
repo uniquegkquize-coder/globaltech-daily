@@ -1,0 +1,29 @@
+{
+  "en_title": "007: Everything or Nothing Recompilation Brings Unofficial Native PC Port Project",
+  "hi_title": "007: एवरीथिंग या नथिंग रीकम्पीलेशन प्रोजेक्ट ने अनौपचारिक नेटिव पीसी पोर्ट की घोषणा की",
+  "en_body": "## Overview\n\nA new open-source project called `007eon-recomp` provides an unofficial native PC port of the original Xbox action game *007: Everything or Nothing*. Developed using the Xbox XBE Recomp tool, the project statically recompiles the game's x86 code into Windows executables while reimplementing Xbox graphics, sound, and system libraries for Windows using Direct3D 12 or 11, XAudio2, and SDL. \n\nReports indicate that the project functions as a recompilation effort rather than an emulator. It requires users to supply their own legally acquired game files, supporting both European (PAL) and USA (NTSC) Xbox releases. \n\n## Key Features and Enhancements\n\nThe recompilation introduces several modern enhancements while preserving the core gameplay:\n- **Display Options:** Supports widescreen, ultrawide (21:9 or wider), and custom resolutions with adjustable Field of View (FOV).\n- **Performance:** Includes options for 60 FPS driving missions, Vsync, frame rate caps, and a shader cache to reduce stuttering.\n- **Controls:** Features remappable keyboard and mouse support with modern button prompts, alongside controller compatibility for Xbox, PlayStation, and Nintendo Switch pads.\n- **Visuals:** Offers render scaling, MSAA, FXAA, SMAA, anisotropic filtering, sharpening filters, and sharp 2D text rendering.\n- **Additional Options:** Includes achievements, a HUD hide toggle for screenshots, and a settings window accessible via the F1 key.\n\n## Installation and Verification\n\nPlayers can compile the game from source using Visual Studio and Git, or utilize the simplified `EoNLauncher.exe` utility, which automates package handling and building without requiring administrative rights or a command-line setup. Users must verify their setup using legally sourced disc images or folder files corresponding to the supported release identifiers. \n\n*Note: Technical details, build logs, and troubleshooting steps for platforms like Linux and Steam Deck are documented within the official GitHub repository.*",
+  "hi_body": "## अवलोकन\n\n`007eon-recomp` नामक एक नए ओपन-सोर्स प्रोजेक्ट के तहत मूल एक्सबॉक्स (Xbox) एक्शन गेम *007: एवरीथिंग या नथिंग* का एक अनौपचारिक नेटिव पीसी पोर्ट तैयार किया गया है। एक्सबॉक्स एक्सबीई रीकम्प (Xbox XBE Recomp) टूल का उपयोग करके विकसित यह प्रोजेक्ट गेम के x86 कोड को विंडोज निष्पादन योग्य फाइलों में स्टेटिक रूप से रीकम्पाइल करता है, और विंडोज के लिए Direct3D 12 या 11, XAudio2 और SDL का उपयोग करके एक्सबॉक्स के ग्राफिक्स व साउंड को रीइम्प्लीमेंट करता है।\n\nरिपोर्ट्स के अनुसार, यह प्रोजेक्ट एक एम्युलेटर के बजाय रीकम्पीलेशन पद्धति पर काम करता है। इसके लिए उपयोगकर्ताओं को अपने स्वयं के कानूनी रूप से प्राप्त गेम डेटा और डिस्क फाइलों को प्रदान करना आवश्यक होता है, जिसमें यूरोपीय (PAL) और यूएसए (NTSC) दोनों एक्सबॉक्स संस्करण समर्थित हैं।\n\n## मुख्य विशेषताएँ और संवर्द्धन\n\nयह रीकम्पीलेशन मूल गेमप्ले को बनाए रखते हुए कई आधुनिक सुविधाएँ जोड़ता है:\n- **डिस्प्ले विकल्प:** वाइडस्क्रीन, अल्ट्रावाइड (21:9 या उससे अधिक), और समायोज्य फील्ड ऑफ व्यू (FOV) के साथ कस्टम रिज़ॉल्यूशन का समर्थन।\n- **प्रदर्शन:** ड्राइविंग मिशन के लिए 60 एफपीएस, वीसिंक, फ्रेम रेट कैप, और हकलाहट (stuttering) को कम करने के लिए शेडर कैश शामिल है।\n- **नियंत्रण:** आधुनिक बटन संकेतों के साथ रीमैप करने योग्य कीबोर्ड और माउस समर्थन, साथ ही एक्सबॉक्स, प्लेस्टेशन और स्विच कंट्रोलर की संगतता।\n- **दृश्य:** रेंडर स्केलिंग, MSAA, FXAA, SMAA, एनिसोट्रॉपिक फ़िल्टरिंग और शार्पनिंग फ़िल्टर उपलब्ध हैं।\n- **अतिरिक्त विकल्प:** अचीवमेंट्स, स्क्रीनशॉट के लिए HUD छिपाने का विकल्प, और F1 कुंजी के माध्यम से खुलने वाली सेटिंग्स विंडो शामिल हैं।\n\n## स्थापना और सत्यापन\n\nखिलाड़ी विजुअल स्टूडियो और गिट (Git) का उपयोग करके सोर्स से गेम को कंपाइल कर सकते हैं, या सरलीकृत `EoNLauncher.exe` यूटिलिटी का उपयोग कर सकते हैं जो बिना व्यवस्थापक अधिकारों के पैकेज निर्माण को स्वचालित करती है। उपयोगकर्ताओं को समर्थित डिस्क छवियों का उपयोग करके अपनी सेटअप फाइलों को सत्यापित करना होगा।\n\n*नोट: लिनक्स और स्टीम डेक जैसे प्लेटफार्मों के लिए तकनीकी विवरण और समस्या निवारण चरण आधिकारिक गिटहब रिपॉजिटरी में उपलब्ध हैं।*",
+  "en_meta": "Discover the unofficial native PC port project for 007: Everything or Nothing via recompilation, featuring enhanced graphics, controls, and launcher options.",
+  "hi_meta": "007 एवरीथिंग या नथिंग के अनौपचारिक नेटिव पीसी पोर्ट प्रोजेक्ट और रीकम्पीलेशन विवरण की जानकारी, जिसमें ग्राफिक्स और नियंत्रण शामिल हैं।",
+  "en_keywords": [
+    "007 Everything or Nothing",
+    "native PC port",
+    "Xbox XBE Recomp",
+    "recompilation project",
+    "pc port enhancements"
+  ],
+  "hi_keywords": [
+    "007 एवरीथिंग या नथिंग",
+    "नेटिव पीसी पोर्ट",
+    "रीकम्पीलेशन प्रोजेक्ट",
+    "एक्सबॉक्स रीकम्प",
+    "पीसी पोर्ट अपडेट"
+  ],
+  "source_published_at": null,
+  "id": "f0f335fa74d9",
+  "source": "https://github.com/hk21x/007eon-recomp",
+  "date": "2026-11-09T09:58:00.600234+00:00",
+  "source_title": "hk21x/007eon-recomp: 007 Everything or Nothing recompilation for a native PC port. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

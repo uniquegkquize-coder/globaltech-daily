@@ -1,0 +1,29 @@
+{
+  "en_title": "Hermes WebUI Brings Browser and Mobile Access to Hermes Agent",
+  "hi_title": "Hermes WebUI ने Hermes Agent के लिए ब्राउज़र और मोबाइल एक्सेस पेश किया",
+  "en_body": "Hermes WebUI is a lightweight, dark-themed browser interface designed to interact with the Hermes Agent. It aims to provide parity with the command-line interface (CLI) experience using Python and vanilla JavaScript, without requiring complex build steps or heavy frameworks.\n\n## Core Architecture and Layout\n\nThe interface features a three-panel layout:\n* **Left Sidebar:** Manages sessions, navigation, and access to the Hermes Control Center.\n* **Center Area:** Dedicated to the chat interface.\n* **Right Sidebar:** Provides workspace file browsing capabilities.\n\nControls for models, profiles, and workspaces remain visible in the composer footer during message composition, accompanied by a circular context ring indicating token usage.\n\n## Key Features and Capabilities\n\n* **Persistent Memory:** Retains context across sessions and supports a skills system that saves reusable procedures.\n* **Self-Hosted Scheduling:** Runs cron jobs offline and delivers notifications to platforms such as Telegram, Discord, Slack, and email.\n* **Multi-Provider Support:** Compatible with OpenAI, Anthropic, Google, DeepSeek, OpenRouter, and custom endpoints.\n* **Workspace Management:** Offers directory trees, inline previews, file editing, and Git branch detection.\n* **Voice Integration:** Includes microphone support via the Web Speech API for live interim transcription.\n\n## Setup and Verification\n\nUsers can run the setup locally using provided scripts or Docker containers. To verify installation, check local server logs or use the health check endpoint as documented in the official repository. Native Windows is not directly supported by the primary bootstrap script, though community guides exist for alternative configurations.",
+  "hi_body": "Hermes WebUI एक हल्की, डार्क-थीम वाली ब्राउज़र इंटरफ़ेस है जिसे Hermes Agent के साथ इंटरैक्ट करने के लिए डिज़ाइन किया गया है। इसका उद्देश्य पाइथन (Python) और वैनिला जावास्क्रिप्ट का उपयोग करके कमांड-लाइन इंटरफ़ेस (CLI) के समान अनुभव प्रदान करना है, जिसमें किसी जटिल बिल्ड चरण या भारी फ्रेमवर्क की आवश्यकता नहीं होती है।\n\n## मुख्य वास्तुकला और लेआउट\n\nइंटरफ़ेस में तीन-पैनल लेआउट है:\n* **बायां साइडबार:** सत्रों, नेविगेशन और Hermes Control Center तक पहुंच का प्रबंधन करता है।\n* **मध्य क्षेत्र:** चैट इंटरफ़ेस के लिए समर्पित है।\n* **दायां साइडबार:** वर्कस्पेस फ़ाइल ब्राउज़िंग क्षमताएं प्रदान करता है।\n\nसंदेश रचना के दौरान मॉडल, प्रोफ़ाइल और वर्कस्पेस के लिए नियंत्रण संगीतकार फुटर में दिखाई देते हैं, साथ ही टोकन उपयोग को दर्शाने वाला एक गोलाकार संदर्भ रिंग भी होता है।\n\n## मुख्य विशेषताएं और क्षमताएं\n\n* **निरंतर मेमोरी:** सत्रों में संदर्भ बनाए रखती है और पुन: प्रयोज्य प्रक्रियाओं को सहेजने वाली कौशल प्रणाली का समर्थन करती है।\n* **स्व-होर्स्टेड शेड्यूलिंग:** ऑफ़लाइन रहते हुए क्रॉन जॉब्स चलाती है और टेलीग्राम, डिस्कॉर्ड, स्लैक और ईमेल जैसे प्लेटफार्मों पर सूचनाएं भेजती है।\n* **बहु-प्रदाता समर्थन:** OpenAI, Anthropic, Google, DeepSeek, OpenRouter और कस्टमएंडपॉइंट्स के साथ संगत।\n* **वर्कस्पेस प्रबंधन:** निर्देशिका पेड़, इनलाइन पूर्वावलोकन, फ़ाइल संपादन और Git शाखा पहचान प्रदान करता है।\n* **वॉइस इंटीग्रेशन:** लाइव इंटरिम ट्रांसक्रिप्शन के लिए Web Speech API के माध्यम से माइक्रोफ़ोन समर्थन शामिल है।\n\n## सेटअप और सत्यापन\n\nउपयोगकर्ता प्रदान की गई स्क्रिप्ट या Docker कंटेनर का उपयोग करके स्थानीय रूप से सेटअप चला सकते हैं। स्थापना को सत्यापित करने के लिए, आधिकारिक भंडार में प्रलेखित रूप से स्थानीय सर्वर लॉग की जांच करें या स्वास्थ्य जांच समापन बिंदु का उपयोग करें। मुख्य बूटस्ट्रैक स्क्रिप्ट द्वारा मूल विंडोज सीधे समर्थित नहीं है, हालांकि वैकल्पिकConfigurations के लिए सामुदायिक गाइड मौजूद हैं।",
+  "en_meta": "Explore Hermes WebUI, a lightweight, dark-themed browser interface for Hermes Agent featuring persistent memory, multi-provider support, and a three-panel…",
+  "hi_meta": "Hermes WebUI की खोज करें, जो निरंतर मेमोरी, बहु-प्रदाता समर्थन और तीन-पैनल लेआउट के साथ Hermes Agent के लिए एक हल्की, डार्क-थीम वाली ब्राउज़र इंटरफ़ेस है।",
+  "en_keywords": [
+    "Hermes WebUI",
+    "Hermes Agent",
+    "AI assistant interface",
+    "self-hosted AI",
+    "Python web app"
+  ],
+  "hi_keywords": [
+    "Hermes WebUI",
+    "Hermes Agent",
+    "AI सहायक इंटरफ़ेस",
+    "सेल्फ-होस्टेड AI",
+    "पाइथन वेब ऐप"
+  ],
+  "source_published_at": null,
+  "id": "485c98a3c8d0",
+  "source": "https://github.com/nesquena/hermes-webui",
+  "date": "2026-11-09T09:57:51.811933+00:00",
+  "source_title": "Hermes WebUI: The best way to use Hermes Agent from the web or from your phone! - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

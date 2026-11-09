@@ -1,0 +1,29 @@
+{
+  "en_title": "Tracking Ongoing Development and Open Issues for SkyboundTotk Project",
+  "hi_title": "SkyboundTotk प्रोजेक्ट के लिए चल रहे विकास और ओपन इश्यूज़ की ट्रैकिंग",
+  "en_body": "Publicly available issue tracking data from the GitHub repository for NotRexed/SkyboundTotk highlights several reported rendering investigations, hardware-specific memory concerns, and feature requests. The repository currently serves as a hub where contributors and users log bug reports, platform inquiries, and proposals for future enhancements.\n\n## Reported Rendering and Visual Anomalies\n\nIssue reports filed by project contributors describe various graphical and rendering challenges under investigation:\n\n* Terrain spikes and camera-dependent disappearing geometry.\n* Corrupt material textures alongside visual effects alignment queries.\n* Game hangs occurring during Continue and Quit sequences after a Game Over state while rendering continues in the background.\n\n## Hardware, Memory, and Platform Inquiries\n\nUsers have also documented specific hardware interactions and platform support questions:\n\n* Linux and NVIDIA configurations involving an 8 GB RTX 2080 where GPU memory fills and buffer allocation failures cause process aborts.\n* Crashes linked to specific item interactions, such as a burning torch combined with a specific button input, pointing to a jump table truncation issue.\n* Performance optimization requests targeting Intel Arc graphics hardware.\n* Inquiries regarding potential CPU AVX2 requirements and requests for macOS support.\n* Questions concerning release availability and the location of official builds.\n\n## Proposed Features and Enhancements\n\nCommunity members have submitted feature proposals to expand functionality:\n\n* Dynamic mod detection and custom user interface toggles, including ideas for Challenge Mode support via a local `/mods/` folder.\n\n## Verification and Next Steps\n\nReaders interested in tracking the status of these items can review the primary source repository directly on GitHub under the `NotRexed/SkyboundTotk` issues page. Because these entries represent user-submitted bug logs and feature requests rather than official release notes, interested parties should check individual issue threads for ongoing updates and developer responses.",
+  "hi_body": "NotRexed/SkyboundTotk के लिए GitHub रिपॉजिटरी से सार्वजनिक रूप से उपलब्ध इश्यू ट्रैकिंग डेटा कई रिपोर्ट की गई रेंडरिंग जांच, हार्डवेयर-विशिष्ट मेमोरी चिंताओं और फीचर अनुरोधों को उजागर करता है। यह रिपॉजिटरी वर्तमान में एक ऐसे केंद्र के रूप में कार्य करती है जहाँ योगदानकर्ता और उपयोगकर्ता बग रिपोर्ट, प्लेटफ़ॉर्म पूछताछ और भविष्य के संवर्द्धन के प्रस्ताव दर्ज करते हैं।\n\n## रिपोर्ट की गई रेंडरिंग और विजुअल विसंगतियां\n\nप्रोजेक्ट योगदानकर्ताओं द्वारा दायर किए गए इश्यू रिपोर्ट में विभिन्न ग्राफिकल और रेंडरिंग चुनौतियों का वर्णन किया गया है जिनकी जांच की जा रही है:\n* टेरेन स्पाइक्स और कैमरे पर निर्भर गायब होने वाली जियोमेट्री।\n* विजुअल इफेक्ट्स एलाइनमेंट प्रश्नों के साथ भ्रष्ट मटेरियल टेक्सचर।\n* गेम ओवर स्थिति के बाद 'कंटिन्यू' और 'क्विट' अनुक्रमों के दौरान होने वाले गेम हैंग, जबकि पृष्ठभूमि में रेंडरिंग जारी रहती है।\n\n## हार्डवेयर, मेमोरी और प्लेटफ़ॉर्म पूछताछ\n\nउपयोगकर्ताओं ने विशिष्ट हार्डवेयर इंटरैक्शन और प्लेटफ़ॉर्म समर्थन प्रश्नों को भी प्रलेखित किया है:\n* 8 GB RTX 2080 से जुड़े Linux और NVIDIA कॉन्फ़िगरेशन जहाँ GPU मेमोरी भर जाती है और बफर एलोकेशन विफलता के कारण प्रक्रिया समाप्त हो जाती है।\n* विशिष्ट आइटम इंटरैक्शन से जुड़े क्रैश, जैसे कि जलती हुई मशाल के साथ एक विशिष्ट बटन इनपुट, जो जंप टेबल ट्रंकेशन समस्या की ओर इशारा करता है।\n* Intel Arc ग्राफिक्स हार्डवेयर को लक्षित करने वाले प्रदर्शन अनुकूलन अनुरोध।\n* संभावित CPU AVX2 आवश्यकताओं और macOS समर्थन के अनुरोधों के संबंध में पूछताछ।\n* रिलीज़ की उपलब्धता और आधिकारिक बिल्ड के स्थान से संबंधित प्रश्न।\n\n## प्रस्तावित सुविधाएँ और संवर्द्धन\n\nसमुदाय के सदस्यों ने कार्यक्षमता का विस्तार करने के लिए फीचर प्रस्ताव प्रस्तुत किए हैं:\n* स्थानीय `/mods/` फ़ोल्डर के माध्यम से चैलेंज मोड समर्थन के विचारों सहित गतिशील मॉड पहचान और कस्टम यूजर इंटरफेस टॉगल।\n\n## सत्यापन और अगले चरण\n\nइन मदों की स्थिति को ट्रैक करने में रुचि रखने वाले पाठक GitHub पर `NotRexed/SkyboundTotk` इश्यू पेज के तहत प्राथमिक स्रोत रिपॉजिटरी की सीधे समीक्षा कर सकते हैं। चूँकि ये प्रविष्टियाँ आधिकारिक रिलीज़ नोट्स के बजाय उपयोगकर्ता-प्रस्तुत बग लॉग और फीचर अनुरोधों का प्रतिनिधित्व करती हैं, इसलिए इच्छुक पक्षों को चल रहे अपडेट और डेवलपर प्रतिक्रियाओं के लिए व्यक्तिगत इश्यू थ्रेड की जांच करनी चाहिए।",
+  "en_meta": "Explore reported issues, rendering investigations, and feature requests for the NotRexed/SkyboundTotk project based on public GitHub repository data.",
+  "hi_meta": "सार्वजनिक GitHub रिपॉजिटरी डेटा के आधार पर NotRexed/SkyboundTotk प्रोजेक्ट के लिए रिपोर्ट किए गए इश्यूज़, रेंडरिंग जांच और फीचर अनुरोधों का पता लगाएं।",
+  "en_keywords": [
+    "SkyboundTotk",
+    "GitHub issues",
+    "rendering bugs",
+    "NotRexed",
+    "software development"
+  ],
+  "hi_keywords": [
+    "SkyboundTotk",
+    "GitHub issues",
+    "रेंडरिंग बग",
+    "NotRexed",
+    "सॉफ़्टवेयर विकास"
+  ],
+  "source_published_at": null,
+  "id": "ed15a657ac55",
+  "source": "https://github.com/NotRexed/SkyboundTotk/issues",
+  "date": "2026-11-09T09:59:12.228728+00:00",
+  "source_title": "Issues · NotRexed/SkyboundTotk - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,31 @@
+{
+  "en_title": "GitHub Introduces Public Preview for Issue Artifacts",
+  "hi_title": "GitHub ने इश्यू आर्टिफ़ेक्ट्स के लिए पब्लिक प्रीव्यू की घोषणा की",
+  "en_body": "GitHub has announced the public preview of issue artifacts, a new feature designed to attach agent-generated outputs and other important context directly to an issue. According to the official announcement, the capability aims to keep plans, research, links, and visualizations alongside active work to provide coding agents with richer context and teams with a durable record.\n\n### Key Features and Capabilities\n* **Markdown Files:** Support for plans, research, root cause analyses, and related documents.\n* **External Resources:** Links to Slack or Microsoft Teams threads, prototypes, and other references.\n* **Interactive Visualizations:** HTML files for flowcharts and diagrams with toggles between rendered previews and source views.\n* **GitHub App Integration:** Artifacts generated during GitHub App sessions attach automatically, and users can prompt sessions to build specific documents like implementation plans.\n* **GitHub CLI Support:** The new `gh issue artifact` command allows users to create, edit, list, view, download, and delete artifacts directly from the terminal.\n* **Web Management:** Capabilities to create, edit, and delete artifacts on github.com while maintaining version history.\n\n### Practical Implications and Verification\nTeams evaluating the public preview can manage artifacts through web interfaces or command-line tools to maintain a shared source of truth as coding projects evolve. GitHub notes that support for creating and viewing HTML artifacts in the GitHub App is scheduled to arrive soon.\n\nTo verify these features and check for updates, users can consult the official GitHub Blog changelog or review the official documentation for the `gh issue artifact` commands.",
+  "hi_body": "GitHub ने इश्यू आर्टिफ़ेक्ट्स के पब्लिक प्रीव्यू की घोषणा की है, जो एजेंट-जनरेटेड आउटपुट और अन्य महत्वपूर्ण संदर्भ को सीधे किसी इश्यू से जोड़ने के लिए डिज़ाइन किया गया एक नया फ़ीचर है। आधिकारिक घोषणा के अनुसार, इस क्षमता का उद्देश्य कोडिंग एजेंटों को समृद्ध संदर्भ और टीमों को एक स्थायी रिकॉर्ड प्रदान करने के लिए योजनाओं, शोध, लिंक और विज़ुअलाइज़ेशन को सक्रिय कार्य के साथ रखना है।\n\n### मुख्य विशेषताएँ और क्षमताएँ\n* **मार्कडाउन फ़ाइलें:** योजनाओं, शोध, मूल कारण विश्लेषण और संबंधित दस्तावेजों के लिए समर्थन।\n* **बाहरी संसाधन:** स्लैक या माइक्रोसॉफ्ट टीम्स थ्रेड, प्रोटोटाइप और अन्य संदर्भों के लिंक।\n* **इंटरैक्टिव विज़ुअलाइज़ेशन:** प्रस्तुत पूर्वावलोकन (rendered preview) और स्रोत दृश्यों के बीच टॉगल करने की क्षमता के साथ फ़्लोचार्ट और आरेखों के लिए HTML फ़ाइलें।\n* **GitHub ऐप इंटीग्रेशन:** GitHub ऐप सत्रों के दौरान बनाए गए आर्टिफ़ेक्ट्स स्वचालित रूप से जुड़ जाते हैं, और उपयोगकर्ता सत्रों को विशिष्ट दस्तावेज़ बनाने के लिए कह सकते हैं।\n* **GitHub CLI समर्थन:** नया `gh issue artifact` कमांड उपयोगकर्ताओं को सीधे टर्मिनल से आर्टिफ़ेक्ट्स बनाने, संपादित करने, सूचीबद्ध करने, देखने, डाउनलोड करने और हटाने की अनुमति देता है।\n* **वेब प्रबंधन:** संस्करण इतिहास बनाए रखते हुए github.com पर आर्टिफ़ेक्ट्स को प्रबंधित करने की क्षमताएँ।\n\n### व्यावहारिक निहितार्थ और सत्यापन\nपब्लिक प्रीव्यू का मूल्यांकन करने वाली टीमें कोडिंग प्रोजेक्ट्स के विकास के साथ एक साझा स्रोत बनाए रखने के लिए वेब इंटरफेस या कमांड-लाइन टूल के माध्यम से आर्टिफ़ेक्ट्स का प्रबंधन कर सकती हैं। GitHub ने उल्लेख किया है कि GitHub ऐप में HTML आर्टिफ़ेक्ट्स बनाने और देखने का समर्थन जल्द ही आने वाला है।\n\nइन फ़ीचर को सत्यापित करने और अपडेट की जाँच करने के लिए, उपयोगकर्ता आधिकारिक GitHub ब्लॉग चेंजlog या `gh issue artifact` कमांड के लिए आधिकारिक दस्तावेज़ देख सकते हैं।",
+  "en_meta": "GitHub announces the public preview of issue artifacts, attaching agent outputs, Markdown plans, and interactive HTML to issues via CLI and web.",
+  "hi_meta": "GitHub ने इश्यू आर्टिफ़ेक्ट्स के पब्लिक प्रीव्यू की घोषणा की, जिससे एजेंट आउटपुट और मार्कडाउन योजनाएं सीधे इश्यू से जुड़ती हैं।",
+  "en_keywords": [
+    "GitHub",
+    "issue artifacts",
+    "public preview",
+    "coding agents",
+    "GitHub CLI",
+    "developer tools"
+  ],
+  "hi_keywords": [
+    "GitHub",
+    "इश्यू आर्टिफ़ेक्ट्स",
+    "पब्लिक प्रीव्यू",
+    "कोडिंग एजेंट",
+    "GitHub CLI",
+    "डेवलपर टूल"
+  ],
+  "source_published_at": "2026-10-28T15:30:00+00:00",
+  "id": "3ede09ff4858",
+  "source": "https://github.blog/changelog/2026-10-28-issue-artifacts-are-now-in-public-preview/",
+  "date": "2026-11-09T09:59:03.417046+00:00",
+  "source_title": "Issue artifacts are now in public preview - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,31 @@
+{
+  "en_title": "Raitchi Version 0.0.2 Released as an Experimental Android Emulator and Shared Runtime",
+  "hi_title": "Raitchi संस्करण 0.0.2 एक प्रायोगिक एंड्रॉइड एमुलेटर और साझा रनटाइम के रूप में जारी",
+  "en_body": "Raitchi version 0.0.2 has been released as an experimental Android launcher and shared runtime for ARM64 Nintendo Switch games, utilizing an NVN-to-Vulkan graphics translation layer. The project builds upon upstream efforts including the Recomp lineage and an Android frontend derived from Eden.\n\n## Update and Compatibility Overview\n\nVersion 0.0.2 introduces fixes for package preparation, keyboard input, driver downloads, and Android packaging, according to the official repository release notes. The software utilizes continuous native execution (NCE) to run original CPU code without requiring per-game generated C code for the default path. \n\nDevelopers emphasize that this is early compatibility work rather than a universal guarantee of playability. Users must supply their own compatible game packages, keys, firmware, saves, and shader codes, as these assets are not included in the distribution.\n\n## Performance and Testing Observations\n\nBounded launch observations on AYN Thor hardware—using specific driver and runtime combinations—recorded varying initial states, such as visible boot screens, menus, or intro scenes. \n\n* **Shader Preparation:** The runtime prepares shader and pipeline recipes using bundled metadata catalogs, which include observed records for specific titles. Initial cache generation can involve processing delays, while cached runs execute faster.\n* **Optimizations:** A targeted Fire Emblem shader local-memory optimization improved specific demo performance from approximately 5–6 frames per second to 30 frames per second under documented proof conditions.\n* **Known Limitations:** Missing graphics, audio, services, unsupported package layouts, and startup failures still occur across various titles.\n\n## Attribution and Verification\n\nRaitchi incorporates components and references from upstream projects, including LASRecomp, Eden, and various open-source libraries such as SDL, FFmpeg, and Vulkan utilities. Trademark owners retain all rights, and Raitchi is not affiliated with or endorsed by Nintendo or upstream maintainers.\n\nTo verify original announcements, check the official GitHub repository for release notes, source code, and integration documentation.",
+  "hi_body": "Raitchi संस्करण 0.0.2 को ARM64 निनटेंडो स्विच गेम के लिए एक प्रायोगिक एंड्रॉइड लॉन्चर और साझा रनटाइम के रूप में जारी किया गया है, जो NVN से Vulkan ग्राफिक्स ट्रांसलेशन लेयर का उपयोग करता है। यह प्रोजेक्ट रीकंप वंशावली और ईडन से प्राप्त एंड्रॉइड फ्रंटएंड सहित अपस्ट्रीम प्रयासों पर आधारित है।\n\n## अपडेट और संगतता अवलोकन\n\nआधिकारिक रिपॉजिटरी रिलीज़ नोट्स के अनुसार, संस्करण 0.0.2 पैकेज तैयारी, कीबोर्ड इनपुट, ड्राइवर डाउनलोड और एंड्रॉइड पैकेजिंग के लिए सुधार पेश करता है। सॉफ्टवेयर डिफ़ॉल्ट पथ के लिए प्रति-गेम जनरेटेड सी कोड की आवश्यकता के बिना मूल सीपीयू कोड चलाने के लिए निरंतर मूल निष्पादन (NCE) का उपयोग करता है।\n\nडेवलपर्स इस बात पर जोर देते हैं कि यह सार्वभौमिक प्रयोज्यता का दावा करने के बजाय शुरुआती संगतता कार्य है। उपयोगकर्ताओं को अपने स्वयं के संगत गेम पैकेज, कुंजियाँ, फर्मवेयर, सेव और शेडर कोड स्वयं उपलब्ध कराने होंगे, क्योंकि ये संपत्ति वितरण में शामिल नहीं हैं।\n\n## प्रदर्शन और परीक्षण अवलोकन\n\nविशिष्ट ड्राइवर और रनटाइम संयोजनों का उपयोग करके AYN Thor हार्डवेयर पर सीमित लॉन्च अवलोकनों ने शुरुआती राज्यों जैसे कि दृश्यमान बूट स्क्रीन, मेनू या इंट्रो दृश्यों को रिकॉर्ड किया।\n\n* **शेडर तैयारी:** रनटाइम बंडल किए गए मेटाडेटा कैटलॉग का उपयोग करके शेडर और पाइपलाइन रेसिपी तैयार करता है, जिसमें विशिष्ट शीर्षकों के लिए देखे गए रिकॉर्ड शामिल हैं।\n* **ऑप्टिमाइज़ेशन:** एक लक्षित फायर एम्ब्लेम शेडर लोकल-मेमोरी ऑप्टिमाइज़ेशन ने प्रलेखित प्रमाण शर्तों के तहत विशिष्ट डेमो प्रदर्शन को लगभग 5–6 फ्रेम प्रति सेकंड से सुधार कर 30 फ्रेम प्रति सेकंड किया।\n* **ज्ञात सीमाएं:** विभिन्न शीर्षकों में गायब ग्राफिक्स, ऑडियो, सेवाएं, असमर्थित पैकेज लेआउट और स्टार्टअप विफलताएं अभी भी मौजूद हैं।\n\n## एट्रिब्यूशन और सत्यापन\n\nRaitchi में LASRecomp, Eden, और SDL, FFmpeg, और Vulkan यूटिलिटीज जैसी विभिन्न ओपन-सोर्स लाइब्रेरी सहित अपस्ट्रीम प्रोजेक्ट्स के घटक और संदर्भ शामिल हैं। ट्रेडमार्क मालिक सभी अधिकार सुरक्षित रखते हैं, और Raitchi निनटेंडो या अपस्ट्रीम डेवलपर्स से संबद्ध नहीं है।\n\nमूल घोषणाओं को सत्यापित करने के लिए, रिलीज़ नोट्स, सोर्स कोड और एकीकरण प्रलेखन के लिए आधिकारिक गिटहब रिपॉजिटरी की जाँच करें।",
+  "en_meta": "Raitchi version 0.0.2 launches as an experimental Android emulator and shared runtime utilizing NVN-to-Vulkan graphics for ARM64 games.",
+  "hi_meta": "Raitchi संस्करण 0.0.2 ARM64 गेम के लिए NVN-से-Vulkan ग्राफिक्स का उपयोग करने वाले एंड्रॉइड एमुलेटर के रूप में जारी हुआ।",
+  "en_keywords": [
+    "Raitchi",
+    "Android emulator",
+    "Nintendo Switch",
+    "NVN layer",
+    "Recomp project",
+    "NCE"
+  ],
+  "hi_keywords": [
+    "Raitchi",
+    "एंड्रॉइड एमुलेटर",
+    "निनटेंडो स्विच",
+    "NVN लेयर",
+    "रीकंप प्रोजेक्ट",
+    "NCE"
+  ],
+  "source_published_at": null,
+  "id": "d41651cc1738",
+  "source": "https://github.com/igawa6/Raitchi",
+  "date": "2026-11-09T09:58:08.470133+00:00",
+  "source_title": "igawa6/Raitchi: Emulator Based on Shared Runtime of Recomp Project that run Natively using NVN Layer - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

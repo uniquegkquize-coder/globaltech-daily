@@ -1,0 +1,31 @@
+{
+  "en_title": "Herdr Desktop App Introduces Terminals and Coding Agent Management for Linux, macOS, and Windows",
+  "hi_title": "हर्ड डेस्कटॉप ऐप लिनक्स, मैकओएस और विंडोज के लिए टर्मिनल और कोडिंग एजेंट प्रबंधन पेश करता है",
+  "en_body": "Herdr is a desktop application designed for managing terminals and coding agents across Linux, macOS, and Windows systems. According to public documentation, the software organizes work into spaces, lets users track agent status, and keeps background terminals running even when application windows are closed.\n\n## Platform Requirements and Installation\n\n* **Linux:** Requires a desktop session and a working Vulkan driver. Builds are offered for x86-64 and ARM64 architectures.\n* **macOS:** Official builds support Apple Silicon, while Intel Mac users can build the application from source code.\n* **Windows:** Compatible with Windows 10 1803 or newer on x64 systems, utilizing PowerShell installations with curl and tar.\n\nInstallers typically add the application to system menus and place relevant commands in user paths, such as `~/.local/bin` on Linux or `~/Applications/Herdr.app` on macOS. Alternatively, Homebrew is supported for Apple Silicon macOS users.\n\n## Core Features and Workspace Management\n\nHerdr structures work using spaces, where each space typically corresponds to a repository and contains multiple tabs. Tabs can be split into panes to display terminals or modification panels side by side. The application includes an agents sidebar that lists active workers, indicating whether they are done or idle. Clicking an agent opens its interface, and remote SSH machines can be added via settings to run terminals on external infrastructure.\n\n## Customization and Updates\n\nUsers can modify preferences, fonts, colors, and sounds through the settings menu or command palette. Built-in layouts include Herdr, Terminals, and Herdr 98, and custom JavaScript modifications can be added. Pre-built releases check for updates in the background, downloading new versions to apply when the application is restarted. Usage telemetry is enabled by default in official releases but can be disabled via the privacy settings.\n\n## Development and Verification\n\nFor developers building from source, the repository requires Rust 1.95.0 and Zig 0.16.0, matching CI workflows. Documentation checks utilize Bun, and benchmarking scripts compare drawing performance across platforms using automated Python fixtures. Users should review official GitHub documentation and security advisories before running third-party mods or installation scripts.",
+  "hi_body": "हर्ड (Herdr) एक डेस्कटॉप एप्लिकेशन है जिसे लिनक्स, मैकओएस और विंडोज सिस्टम पर टर्मिनलों और कोडिंग एजेंटों को प्रबंधित करने के लिए डिज़ाइन किया गया है। सार्वजनिक दस्तावेज़ीकरण के अनुसार, यह सॉफ्टवेयर काम को स्पेस में व्यवस्थित करता है, उपयोगकर्ताओं को एजेंट की स्थिति ट्रैक करने देता है, और एप्लिकेशन विंडो बंद होने पर भी बैकग्राउंड टर्मिनलों को चालू रखता है।\n\n## प्लेटफ़ॉर्म आवश्यकताएँ और स्थापना\n\n* **लिनक्स:** इसके लिए एक डेस्कटॉप सत्र और एक काम करने वाले वुकन (Vulkan) ड्राइवर की आवश्यकता होती है। बिल्ड x86-64 और ARM64 आर्किटेक्चर के लिए उपलब्ध हैं।\n* **मैकओएस:** आधिकारिक बिल्ड Apple Silicon का समर्थन करते हैं, जबकि Intel Mac उपयोगकर्ता सोर्स कोड से ऐप बना सकते हैं।\n* **विंडोज:** x64 सिस्टम पर विंडोज 10 1803 या नए संस्करण के साथ संगत है, जिसमें curl और tar का उपयोग करके PowerShell इंस्टॉलेशन किया जाता है।\n\nइंस्टॉलर आमतौर पर एप्लिकेशन को सिस्टम मेनू में जोड़ते हैं और प्रासंगिक कमांड को उपयोगकर्ता पथ में रखते हैं, जैसे लिनक्स पर `~/.local/bin` या मैकओएस पर `~/Applications/Herdr.app`। इसके अलावा, Apple Silicon मैकओएस उपयोगकर्ताओं के लिए होमब्रू (Homebrew) समर्थित है।\n\n## मुख्य विशेषताएँ और कार्यक्षेत्र प्रबंधन\n\nहर्ड स्पेस का उपयोग करके काम को व्यवस्थित करता है, जहाँ प्रत्येक स्पेस आम तौर पर एक रिपॉजिटरी से मेल खाता है और इसमें कई टैब होते हैं। टर्मिनलों या मॉडिफिकेशन पैनल को अगल-बगल प्रदर्शित करने के लिए टैब को पेन में विभाजित किया जा सकता है। एप्लिकेशन में एक एजेंट साइडबार शामिल है जो सक्रिय वर्करों को सूचीबद्ध करता है, यह दर्शाता है कि वे पूर्ण हो चुके हैं या निष्क्रिय हैं।\n\n## अनुकूलन और अपडेट\n\nउपयोगकर्ता सेटिंग्स मेनू या कमांड पैलेट के माध्यम से प्राथमिकताओं, फोंट, रंगों और ध्वनियों को संशोधित कर सकते हैं। अंतर्निहित लेआउट में हर्ड, टर्मिनल्स और हर्ड 98 शामिल हैं। प्री-बिल्ट रिलीज़ बैकग्राउंड में अपडेट की जाँच करती हैं और एप्लिकेशन पुनरारंभ होने पर नए संस्करण डाउनलोड करती हैं। आधिकारिक रिलीज़ में उपयोग टेलीमेट्री डिफ़ॉल्ट रूप से सक्षम होती है जिसे गोपनीयता सेटिंग्स के माध्यम से अक्षम किया जा सकता है।\n\n## विकास और सत्यापन\n\nसोर्स से निर्माण करने वाले डेवलपर्स के लिए, रिपॉजिटरी को CI वर्कफ़्लो से मेल खाते हुए Rust 1.95.0 और Zig 0.16.0 की आवश्यकता होती है। दस्तावेज़ीकरण जाँच के लिए Bun का उपयोग किया जाता है। उपयोगकर्ताओं को तृतीय-पक्ष मॉड या इंस्टॉलेशन स्क्रिप्ट चलाने से पहले आधिकारिक GitHub दस्तावेज़ और सुरक्षा सलाह की समीक्षा करनी चाहिए।",
+  "en_meta": "Learn about Herdr, a desktop app for terminals and coding agents across Linux, macOS, and Windows, featuring workspace management and installation details.",
+  "hi_meta": "हर्ड डेस्कटॉप ऐप के बारे में जानें, जो लिनक्स, मैकओएस और विंडोज पर टर्मिनल और कोडिंग एजेंटों के प्रबंधन के लिए है।",
+  "en_keywords": [
+    "Herdr desktop app",
+    "terminal manager",
+    "coding agents",
+    "Linux Vulkan",
+    "macOS Apple Silicon",
+    "Windows development tools"
+  ],
+  "hi_keywords": [
+    "हर्ड डेस्कटॉप ऐप",
+    "टर्मिनल प्रबंधक",
+    "कोडिंग एजेंट",
+    "लिनक्स वुकन",
+    "मैकओएस ऐप",
+    "विंडोज डेवलपमेंट"
+  ],
+  "source_published_at": null,
+  "id": "8dff2cf2a458",
+  "source": "https://github.com/herdrdev/herdr-app",
+  "date": "2026-11-09T09:57:44.476228+00:00",
+  "source_title": "herdrdev/herdr-app: herdr desktop app - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

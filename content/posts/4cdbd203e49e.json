@@ -1,0 +1,31 @@
+{
+  "en_title": "inclusionAI/IDM: Official Inference Code and Methodology for Intrinsic Distribution Matching",
+  "hi_title": "inclusionAI/IDM: इंट्रिंसिक डिस्ट्रीब्यूशन मैचिंग (IDM) के लिए आधिकारिक इन्फर्ब्रेंस कोड और कार्यप्रणाली",
+  "en_body": "Official inference code for Intrinsic Distribution Matching (IDM) has been published on GitHub by researchers from Inclusion AI, Westlake University, Tsinghua University, Zhejiang University, Shanghai Innovation Institute, and MBZUAI. The repository provides the official inference setup while noting that model weights are coming soon.\n\nIDM is designed to improve one-step and few-step text-to-image generation by combining internal distribution matching distillation (DMD) with moment matching in the generator's own Exponential Moving Average (EMA) feature space without requiring an external feature encoder. According to the repository documentation and paper summaries, a single trained checkpoint supports both 1-NFE and 2-NFE sampling.\n\n## Performance Highlights and Reported Metrics\n\n* **Long-Text Rendering:** The paper reports 94.25% on LongText-CN and 90.20% on LongText-EN at 2 NFE.\n* **Speed:** Full-parameter IDM (Z-Image) takes 0.25 seconds at 1 NFE and 0.30 seconds at 2 NFE, while IDM (Qwen-Image) takes 0.35 seconds and 0.44 seconds respectively on a single A100 GPU in BF16.\n* **Ablations:** Adding EMA feature-moment matching to the internal DMD control reportedly improves aggregate metrics, offering results close to those achieved with DINOv2 features.\n\n## Inference Setup and Requirements\n\nThe repository outlines standard requirements and usage patterns for the upcoming weights:\n\n* **Environment:** Requires Python 3.10 or newer and a CUDA-compatible machine with adequate memory, depending on the backbone size (e.g., the 20B backbone requires substantially more memory than the 6B model).\n* **Dependencies:** Uses PyTorch and pinned Diffusers versions. FlashAttention and FSDP are not required for inference.\n* **Arguments:** The script supports parameters such as `--model`, `--steps` (1 or 2), `--device`, `--prompt-file`, and `--local-files-only`.\n\n## Verification and Licensing\n\nUsers can review the official repository at [GitHub - inclusionAI/IDM](https://github.com/inclusionAI/IDM) to inspect the codebase, verify argument lists, and check for future weight releases. The code is distributed under the Apache 2.0 license, while base-model and future IDM checkpoint weights will be subject to separate licenses.",
+  "hi_body": "इनक्लूजन एआई, वेस्टलेक यूनिवर्सिटी, त्सिगुआ यूनिवर्सिटी, झेजियांग यूनिवर्सिटी, शंघाई इनोवेशन इंस्टीट्यूट और MBZUAI के शोधकर्ताओं द्वारा इंट्रिंसिक डिस्ट्रीब्यूशन मैचिंग (IDM) के लिए आधिकारिक इन्फेरेंस कोड GitHub पर प्रकाशित किया गया है। यह रिपॉजिटरी आधिकारिक इन्फेरेंस सेटअप प्रदान करती है और यह उल्लेख करती है कि मॉडल के वेट जल्द ही आने वाले हैं।\n\nIDM को एक बाहरी फीचर एनकोडर की आवश्यकता के बिना, जनरेटर के अपने एक्सपोनेंशियल मूविंग एवरेज (EMA) फीचर स्पेस में मोमेंट मैचिंग के साथ इंटरनल डिस्ट्रीब्यूशन मैचिंग डिस्टिलेशन (DMD) को संयोजित करके एक-चरण और कुछ-चरण वाले टेक्स्ट-टू-इमेज जनरेशन में सुधार करने के लिए डिज़ाइन किया गया है। रिपॉजिटरी दस्तावेज़ और पेपर सारांश के अनुसार, एक प्रशिक्षित चेकपॉइंट 1-NFE और 2-NFE दोनों तरह के नमूने (sampling) का समर्थन करता है।\n\n## प्रदर्शन मुख्य बातें और रिपोर्ट किए गए मेट्रिक्स\n\n* **लॉन्ग-टेक्स्ट रेंडरिंग:** पेपर में 2 NFE पर LongText-CN पर 94.25% और LongText-EN पर 90.20% दर्ज किया गया है।\n* **गति:** BF16 में एक सिंगल A100 GPU पर फुल-पैरामीटर IDM (Z-Image) 1 NFE पर 0.25 सेकंड और 2 NFE पर 0.30 सेकंड लेता है, जबकि IDM (Qwen-Image) क्रमशः 0.35 सेकंड और 0.44 सेकंड लेता है।\n* **एब्लेशन:** इंटरनल DMD कंट्रोल में EMA फीचर-मोमेंट मैचिंग जोड़ने से एग्रीगेट मेट्रिक्स में सुधार होता है, जो DINOv2 फीचर्स के साथ प्राप्त परिणामों के करीब परिणाम देता है।\n\n## इन्फेरेंस सेटअप और आवश्यकताएं\n\nरिपॉजिटरी आगामी वेट के लिए मानक आवश्यकताओं और उपयोग के तरीकों को रेखांकित करती है:\n\n* **पर्यावरण:** इसके लिए Python 3.10 या नया संस्करण और बैकबोन आकार के आधार पर पर्याप्त मेमोरी वाली CUDA-संगत मशीन की आवश्यकता होती है।\n* **डिपेंडेंसी:** PyTorch और पिन किए गए Diffusers संस्करणों का उपयोग करता है। इन्फेरेंस के लिए FlashAttention और FSDP की आवश्यकता नहीं है।\n* **आर्गुमेंट्स:** यह स्क्रिप्ट `--model`, `--steps` (1 या 2), `--device`, `--prompt-file`, और `--local-files-only` जैसे मापदंडों का समर्थन करती है।\n\n## सत्यापन और लाइसेंसिंग\n\nउपयोगकर्ता कोडबेस का निरीक्षण करने, आर्गुमेंट सूचियों को सत्यापित करने और भविष्य के वेट रिलीज़ की जाँच करने के लिए [GitHub - inclusionAI/IDM](https://github.com/inclusionAI/IDM) पर आधिकारिक रिपॉजिटरी देख सकते हैं। कोड Apache 2.0 लाइसेंस के तहत वितरित किया जाता है, जबकि बेस-मॉडल और भविष्य के IDM चेकपॉइंट वेट अलग-अलग लाइसेंस के अधीन होंगे।",
+  "en_meta": "Explore the official inference code and methodology for Intrinsic Distribution Matching (IDM) on GitHub. Review reported text-to-image metrics and setup…",
+  "hi_meta": "GitHub पर Intrinsic Distribution Matching (IDM) के आधिकारिक इन्फेरेंस कोड और कार्यप्रणाली की खोज करें। रिपोर्ट किए गए मेट्रिक्स और सेटअप आवश्यकताओं की समीक्षा…",
+  "en_keywords": [
+    "IDM",
+    "Intrinsic Distribution Matching",
+    "text-to-image",
+    "inclusionAI",
+    "inference code",
+    "GitHub"
+  ],
+  "hi_keywords": [
+    "IDM",
+    "इंट्रिंसिक डिस्ट्रीब्यूशन मैचिंग",
+    "टेक्स्ट-टू-इमेज",
+    "इन्फेरेंस कोड",
+    "inclusionAI",
+    "GitHub"
+  ],
+  "source_published_at": null,
+  "id": "4cdbd203e49e",
+  "source": "https://github.com/inclusionAI/IDM",
+  "date": "2026-11-09T09:58:16.505361+00:00",
+  "source_title": "inclusionAI/IDM: Official inference code for Intrinsic Distribution Matching (IDM). Model weights: coming soon. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

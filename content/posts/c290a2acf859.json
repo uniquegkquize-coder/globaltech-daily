@@ -1,0 +1,31 @@
+{
+  "en_title": "Turn Any Codebase Into a Queryable Knowledge Graph With Graphify",
+  "hi_title": "ग्राफिफाई के साथ किसी भी कोडबेस को क्वेरी करने योग्य नॉलेज ग्राफ में बदलें",
+  "en_body": "Graphify is an open-source tool designed to map codebases, documentation, SQL schemas, configurations, and PDFs into a queryable knowledge graph. Instead of relying on vector embeddings or grep searches, the tool parses code locally using tree-sitter AST to build a deterministic graph representation.\n\n## Core Features and Operation\n\n- **Local AST Parsing:** Code is processed locally without sending data to external servers, requiring no API key for code-only corpora.\n- **Explained Edges:** Every connection is tagged as either `EXTRACTED` (explicit in the source) or `INFERRED` (resolved by graphify), providing clear provenance.\n- **Multi-Assistant Support:** Integrates with tools like Claude Code, Cursor, Codex, and Gemini CLI through a simple installation command.\n- **Semantic Pass:** Documentation, PDFs, images, and media can be processed via an optional semantic pass using supported AI backends or local options like Ollama.\n\n## Installation and Quick Start\n\nGraphify requires Python 3.10+ and a package runner such as `uv` or `pipx`. The official PyPI package is named `graphifyy` (with a double 'y'), while the CLI command remains `graphify`.\n\n1. Install the package using `uv tool install graphifyy` or `pipx install graphifyy`.\n2. Run `graphify install` to register the skill with your supported AI coding assistant.\n3. Type `/graphify` in your assistant to query the generated knowledge graph.\n\nFor team environments and continuous workflows, Graphify Cloud offers always-on memory, cross-repo support, formal verification, and integrations with tracking tools like Jira and Sentry. Users can verify the installation steps, configuration guides, and troubleshooting documentation directly on the official GitHub repository and documentation site.",
+  "hi_body": "ग्राफिफाई एक ओपन-सोर्स टूल है जिसे कोडबेस, दस्तावेज़, एसक्यूएल स्कीमा, कॉन्फ़िगरेशन और पीडीएफ को क्वेरी करने योग्य नॉलेज ग्राफ में मैप करने के लिए डिज़ाइन किया गया है। वेक्टर एम्बेडिंग या ग्रोप खोजों पर भरोसा करने के बजाय, यह टूल एकdeterministic ग्राफ प्रतिनिधित्व बनाने के लिए ट्री-सिट्टर एएसटी का उपयोग करके स्थानीय रूप से कोड को पार्स करता है।\n\n## मुख्य विशेषताدएं और संचालन\n\n- **स्थानीय एएसटी पार्सिंग:** कोड को बाहरी सर्वर पर डेटा भेजे बिना स्थानीय रूप से संसाधित किया जाता है, जिसके लिए केवल-कोड कॉर्पोरा के लिए किसी एपीआई कुंजी की आवश्यकता नहीं होती है।\n- **स्पष्ट किए गए किनारे:** प्रत्येक कनेक्शन को या तो `EXTRACTED` (स्रोत में स्पष्ट) या `INFERRED` (ग्राफिफाई द्वारा हल किया गया) के रूप में टैग किया जाता है, जो स्पष्ट प्रामाणिकता प्रदान करता है।\n- **मल्टी-असिस्टेंट समर्थन:** एक सरल इंस्टॉलेशन कमांड के माध्यम से क्लॉड कोड, कर्सर, कोडेक्स और जेमिनी सीएलआई जैसे टूल के साथ एकीकृत होता है।\n- **सिमेंटिक पास:** समर्थित एआई बैकएंड या ओलामा जैसे स्थानीय विकल्पों का उपयोग करके एक वैकल्पिक सिमेंटिक पास के माध्यम से दस्तावेज़ों, पीडीएफ, छवियों और मीडिया को संसाधित किया जा सकता है।\n\n## इंस्टॉलेशन और त्वरित शुरुआत\n\nग्राफिफाई के लिए Python 3.10+ और `uv` या `pipx` जैसे पैकेज रनर की आवश्यकता होती है। आधिकारिक PyPI पैकेज का नाम `graphifyy` (डबल 'y' के साथ) है, जबकि CLI कमांड `graphify` रहता है।\n\n1. `uv tool install graphifyy` या `pipx install graphifyy` का उपयोग करके पैकेज इंस्टॉल करें।\n2. अपने समर्थित एआई कोडिंग सहायक के साथ स्किल को पंजीकृत करने के लिए `graphify install` चलाएं।\n3. जनरेट किए गए नॉलेज ग्राफ की क्वेरी करने के लिए अपने सहायक में `/graphify` टाइप करें।\n\nटीम वातावरण और निरंतर वर्कफ़्लो के लिए, ग्राफिफाई क्लाउड हमेशा चालू रहने वाली मेमोरी, क्रॉस-रिपो समर्थन, औपचारिक सत्यापन और जीरा और सेंट्री जैसे ट्रैकिंग टूल के साथ एकीकरण प्रदान करता है। उपयोगकर्ता आधिकारिक गिटहब रिपॉजिटरी और दस्तावेज़ीकरण साइट पर सीधे इंस्टॉलेशन चरणों, कॉन्फ़िगरेशन गाइड और समस्या निवारण दस्तावेज़ को सत्यापित कर सकते हैं।",
+  "en_meta": "Learn how Graphify turns codebases, docs, and PDFs into a local queryable knowledge graph using tree-sitter AST parsing without vector stores.",
+  "hi_meta": "जानें कि कैसे ग्राफिफाई वेक्टर स्टोर के बिना ट्री-सिट्टर एएसटी पार्सिंग का उपयोग करके कोडबेस, दस्तावेज़ों और पीडीएफ को स्थानीय क्वेरी करने योग्य नॉलेज ग्राफ…",
+  "en_keywords": [
+    "knowledge graph",
+    "codebase mapping",
+    "Graphify",
+    "tree-sitter AST",
+    "AI coding assistant",
+    "queryable graph"
+  ],
+  "hi_keywords": [
+    "नॉलेज ग्राफ",
+    "कोडबेस मैपिंग",
+    "Graphify",
+    "ट्री-सिट्टर एएसटी",
+    "एआई कोडिंग सहायक",
+    "क्वेरी करने योग्य ग्राफ"
+  ],
+  "source_published_at": "2026-10-31T05:34:38+00:00",
+  "id": "c290a2acf859",
+  "source": "https://github.com/Graphify-Labs/graphify",
+  "date": "2026-11-09T09:30:18.707259+00:00",
+  "source_title": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
