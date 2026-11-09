@@ -1,6 +1,6 @@
 {
   "published": 4,
-  "updated": 0,
+  "updated": 2,
   "target": 8,
   "missing": {
     "colleges": 2,
@@ -9,13 +9,13 @@
   "categories": {
     "colleges": {
       "new": 0,
-      "updated": 0,
+      "updated": 2,
       "eligible_new": 0,
-      "eligible_updates": 0,
+      "eligible_updates": 2,
       "shortfall": 2,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 18,
+        "already_published_unchanged": 16,
         "insufficient verified descriptive fields": 85,
         "identifier URL is not specification evidence": 199
       },
@@ -151,16 +151,16 @@
     "phones": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 1037,
+      "eligible_new": 1036,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 101,
+        "already_published_unchanged": 103,
         "insufficient verified descriptive fields": 104,
-        "identifier URL is not specification evidence": 639
+        "identifier URL is not specification evidence": 638
       },
-      "rejected_count": 743,
+      "rejected_count": 742,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -292,16 +292,16 @@
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 854,
+      "eligible_new": 897,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 7301,
-        "already_published_unchanged": 103,
-        "insufficient verified descriptive fields": 692,
-        "identifier URL is not specification evidence": 5652
+        "considered": 7461,
+        "already_published_unchanged": 105,
+        "insufficient verified descriptive fields": 702,
+        "identifier URL is not specification evidence": 5757
       },
-      "rejected_count": 6344,
+      "rejected_count": 6459,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -572,5 +572,5 @@
       ]
     }
   },
-  "date": "2026-11-09T16:25:21.616040+00:00"
+  "date": "2026-11-09T19:17:33.298480+00:00"
 }

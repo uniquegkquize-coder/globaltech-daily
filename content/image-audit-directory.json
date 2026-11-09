@@ -1,106 +1,33 @@
 {
-  "total_posts": 4405,
+  "total_posts": 4470,
   "selected": 42,
   "results": {
     "source_photo_saved": 4,
-    "cooldown": 38
+    "cooldown": 36,
+    "invalid_source_images": 2
   },
-  "still_missing": 393,
+  "still_missing": 397,
   "articles": [
     {
-      "id": "507deed776a77a1ca81ea35c",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Honor_7",
+      "id": "333a4e8781b2c24b11e13da5",
+      "source": "https://en.wikipedia.org/wiki/Lifan_Xingshun",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794263129.5280702
+      "retry_after": 1794273459.015699
     },
     {
-      "id": "635e4aa01fc60223a6fea284",
-      "result": "cooldown"
+      "id": "537f6878f3c1adb008bdf26e",
+      "source": "https://en.wikipedia.org/wiki/Foton_Grand_General_G9",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794273459.0292008
     },
     {
-      "id": "b0979abba345525f23d6b27e",
-      "result": "cooldown"
-    },
-    {
-      "id": "b1e668b9c10e7cfe7e4acd5a",
-      "result": "cooldown"
-    },
-    {
-      "id": "b73ac57f1ef5ed96390ec4f0",
-      "result": "cooldown"
-    },
-    {
-      "id": "9380990d113b5de5f521da53",
-      "result": "cooldown"
-    },
-    {
-      "id": "02364f4d79f5caac07cae019",
-      "result": "cooldown"
-    },
-    {
-      "id": "9e59804909cc110131739d58",
-      "result": "cooldown"
-    },
-    {
-      "id": "fab6501205ba27e38dac785c",
-      "result": "cooldown"
-    },
-    {
-      "id": "33686a761fa5d097afc337dc",
-      "result": "cooldown"
-    },
-    {
-      "id": "a941ae3553703f8fd24d4d17",
-      "result": "cooldown"
-    },
-    {
-      "id": "d5ff9974453f739276c8eb9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "e8fc748d4c8dffaa2212a1cf",
-      "result": "cooldown"
-    },
-    {
-      "id": "2d100db342cdd6c9c517a807",
-      "result": "cooldown"
-    },
-    {
-      "id": "ff28f504e8e3f011fe2acd9b",
-      "result": "cooldown"
-    },
-    {
-      "id": "0d093f1b1d8b95e0ce3c5ba1",
-      "result": "cooldown"
-    },
-    {
-      "id": "611527df4de7f3170a99cfde",
-      "result": "cooldown"
-    },
-    {
-      "id": "fb6dd420a2fc44c8f8340751",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
-    },
-    {
-      "id": "8ede6684d4cf14febb863aad",
-      "result": "cooldown"
-    },
-    {
-      "id": "e21f0c9303189bff05b728a0",
-      "result": "cooldown"
-    },
-    {
-      "id": "d5adbd5f7c0ee6e635219a5c",
-      "result": "cooldown"
+      "id": "691ec9d88e7e2f94f8225785",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_610",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794273459.2465107
     },
     {
       "id": "2a8b92143f14b264d8d27146",
@@ -167,25 +94,105 @@
       "result": "cooldown"
     },
     {
-      "id": "db38fd013d8a79af46dc8be1",
-      "source": "https://en.wikipedia.org/wiki/Jonway_Wuxing",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794263129.7651758
+      "id": "635e4aa01fc60223a6fea284",
+      "result": "cooldown"
     },
     {
-      "id": "969a89192cca8ad505de11dc",
-      "source": "https://en.wikipedia.org/wiki/Mercedes-Benz_170S",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794263130.199354
+      "id": "b0979abba345525f23d6b27e",
+      "result": "cooldown"
     },
     {
-      "id": "079c6208de37c416bb13f424",
-      "source": "https://en.wikipedia.org/wiki/Fairphone_1",
+      "id": "b1e668b9c10e7cfe7e4acd5a",
+      "result": "cooldown"
+    },
+    {
+      "id": "b73ac57f1ef5ed96390ec4f0",
+      "result": "cooldown"
+    },
+    {
+      "id": "9380990d113b5de5f521da53",
+      "result": "cooldown"
+    },
+    {
+      "id": "02364f4d79f5caac07cae019",
+      "result": "cooldown"
+    },
+    {
+      "id": "9e59804909cc110131739d58",
+      "result": "cooldown"
+    },
+    {
+      "id": "fab6501205ba27e38dac785c",
+      "result": "cooldown"
+    },
+    {
+      "id": "33686a761fa5d097afc337dc",
+      "result": "cooldown"
+    },
+    {
+      "id": "a941ae3553703f8fd24d4d17",
+      "result": "cooldown"
+    },
+    {
+      "id": "d5ff9974453f739276c8eb9f",
+      "result": "cooldown"
+    },
+    {
+      "id": "2d100db342cdd6c9c517a807",
+      "result": "cooldown"
+    },
+    {
+      "id": "e8fc748d4c8dffaa2212a1cf",
+      "result": "cooldown"
+    },
+    {
+      "id": "ff28f504e8e3f011fe2acd9b",
+      "result": "cooldown"
+    },
+    {
+      "id": "0d093f1b1d8b95e0ce3c5ba1",
+      "result": "cooldown"
+    },
+    {
+      "id": "611527df4de7f3170a99cfde",
+      "result": "cooldown"
+    },
+    {
+      "id": "fb6dd420a2fc44c8f8340751",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
+      "result": "cooldown"
+    },
+    {
+      "id": "554edbfdaee926ed82007433",
+      "result": "cooldown"
+    },
+    {
+      "id": "8ede6684d4cf14febb863aad",
+      "result": "cooldown"
+    },
+    {
+      "id": "d5adbd5f7c0ee6e635219a5c",
+      "source": "https://en.wikipedia.org/wiki/Concept_F_450_GS",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794273459.432058
+    },
+    {
+      "id": "ca2706fd8df0d4bab986c417",
+      "source": "https://en.wikipedia.org/wiki/Fairphone_2",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794263130.2667882
+      "retry_after": 1794273459.492928
+    },
+    {
+      "id": "e21f0c9303189bff05b728a0",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794273459.70246
     }
   ],
   "missing": [
@@ -307,6 +314,13 @@
       "title": "Divine Hindu Announces On-Site Social Media Internship Opening in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/social-media-intern-immediate-joiners-bangalore-at-divine-hindu-4484913408",
       "reason": "access_denied"
+    },
+    {
+      "id": "f81ffd2ebbe7",
+      "category": "sports",
+      "title": "WNBA Finals Face Scheduling Controversy Over Game 6 Start Time",
+      "source": "https://www.cbc.ca/sports/basketball/the-buzzer-newsletter-wnba-finals-controversy-9.7400150?cmp=rss",
+      "reason": "source_error"
     },
     {
       "id": "37c0e160c49f",
@@ -687,6 +701,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "6756046eb2db",
+      "category": "ai-news",
+      "title": "WISEcode Launches Beta of WISEcode Intelligence™ – First AI Tool for Food & Beverage Brands",
+      "source": "https://www.prnewswire.com/news-releases/wisecode-opens-beta-of-wisecode-intelligence-its-first-ai-product-for-food-and-beverage-companies-302922406.html",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "eefb8ef6f1c2",
       "category": "defence",
       "title": "Employment Opportunities in Military and Protective Services Across Querétaro",
@@ -887,7 +908,7 @@
       "category": "private-vacancy",
       "title": "Exploring Private Sector Job Listings and Openings Across India Listed on Public Portals",
       "source": "https://in.linkedin.com/jobs/Genuinely+wondering%2C+is+novaluxia+legit+online.epn-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "40de10a52a3c",
@@ -1114,6 +1135,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "b6327dd14d54",
+      "category": "cricket",
+      "title": "Sophie Molineux Becomes Most Expensive Buy at WPL 2027 Auction",
+      "source": "https://www.business-standard.com/cricket/news/wpl-2027-auction-sold-unsold-players-full-list-sophie-molineux-126102801647_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "e62d34be0421",
       "category": "ai-news",
       "title": "Definitive Healthcare Announces Data Scientist, Applied AI Role to Boost Healthcare‑Focused LLM Solutions",
@@ -1139,7 +1167,7 @@
       "category": "private-vacancy",
       "title": "Yum! Brands Lists Open Role for Analyst or Specialist in Gurugram",
       "source": "https://in.linkedin.com/jobs/view/analyst-specialist-at-yum%21-brands-4482296646",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "0da0ead215c3",
@@ -1601,7 +1629,7 @@
       "category": "private-vacancy",
       "title": "WeMakeScholars Lists Academic Advisor Opening Across Multiple Indian Locations via LinkedIn",
       "source": "https://in.linkedin.com/jobs/view/academic-advisor-in-pondicherry-secunderabad-hubli-mumbai-chennai-coimbatore-madurai-vellore-ernakulam-nashik-pondy-bangalore-alwal-at-wemakescholars-4482000625",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "39d743e65a7f",
@@ -1888,7 +1916,7 @@
       "category": "private-vacancy",
       "title": "Professional Career Listings and Private Sector Job Openings Reported Across India",
       "source": "https://in.linkedin.com/jobs/Nexbirlik+istifad%C9%99%C3%A7i+t%C9%99cr%C3%BCb%C9%99si%3A+%C4%B0nternetd%C9%99+%C5%9F%C9%99rhl%C9%99ri+indi+oxuyun.thv-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "dc3e1b701984",
@@ -2098,7 +2126,7 @@
       "category": "apps-software",
       "title": "Accenture in India Lists Multiple Technology Architect and Software Engineering Roles in Pune",
       "source": "https://in.linkedin.com/jobs/accenture-in-india-technology-architect-jobs-pune-division?f_EA=true",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "07f5b24312a4",
@@ -2322,7 +2350,7 @@
       "category": "private-vacancy",
       "title": "Current Life Sciences and Pharmaceutical Job Openings Listed on Professional Networks in India",
       "source": "https://in.linkedin.com/jobs/Read+novaluxia.ph+Reviews+for+order+tips.jdv-jobs?f_AL=true",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "ef94d73f2eea",
@@ -2392,7 +2420,7 @@
       "category": "private-vacancy",
       "title": "ANWON Posts Opening for Area Sales Executive in Surat",
       "source": "https://in.linkedin.com/jobs/view/area-sales-executive-at-anwon-brand-by-anthems-wires-and-cables-pvt-ltd-4483018972",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "c766ee90465d",
@@ -2616,7 +2644,7 @@
       "category": "tourism",
       "title": "Exploring Career Opportunities in International Holiday Sales and Destination Expertise",
       "source": "https://in.linkedin.com/jobs/view/sales-executive-%E2%80%93-destination-expert-international-holidays-at-catch-a-trip-4483426182",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "83501d275446",
@@ -2658,7 +2686,7 @@
       "category": "private-vacancy",
       "title": "Abhasa Rehab and Wellness Lists Senior Counsellor Opening in Coimbatore",
       "source": "https://in.linkedin.com/jobs/view/senior-counsellor-at-abhasa-rehab-and-wellness-4483860034",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "f500b0f86472",
@@ -2850,6 +2878,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "2a6cbf3386f0",
+      "category": "ai-news",
+      "title": "ZentLaw Expands Legal Services with AI-Native Subscription Model",
+      "source": "https://www.prnewswire.com/news-releases/zentlaw-introduces-ai-native-subscription-legal-services-powered-by-zentais-context-driven-agentic-ai-capabilities-302923668.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "89a9f272b95b",
       "category": "social-media",
       "title": "Exploring Content and Social Media Marketing Internship Opportunities in Delhi",
@@ -2943,33 +2978,53 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "invalid_source_images": 83,
-    "access_denied": 99,
-    "no_source_image": 136,
-    "source_error": 38,
+    "invalid_source_images": 88,
+    "access_denied": 95,
+    "no_source_image": 138,
+    "source_error": 39,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "507deed776a77a1ca81ea35c": {
+    "333a4e8781b2c24b11e13da5": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Honor_7",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Huawei_Honor_7.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Lifan_Xingshun",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/2011_Lifan_Xingshun_%28front%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "db38fd013d8a79af46dc8be1": {
+    "537f6878f3c1adb008bdf26e": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Jonway_Wuxing",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/21/Skio_Junfeng_01_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Foton_Grand_General_G9",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Foton_Grand_General_001.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "969a89192cca8ad505de11dc": {
+    "691ec9d88e7e2f94f8225785": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Mercedes-Benz_170S",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Mercedes-Benz_170_S_%281949-51%29_Classic-Gala_2021_1X7A0295.jpg/1280px-Mercedes-Benz_170_S_%281949-51%29_Classic-Gala_2021_1X7A0295.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_610",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Nokia_Lumia_610-01.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "079c6208de37c416bb13f424": {
+    "d5adbd5f7c0ee6e635219a5c": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Concept_F_450_GS",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Robot_Not.svg/120px-Robot_Not.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Robot_Not.svg/60px-Robot_Not.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "ca2706fd8df0d4bab986c417": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Fairphone_1",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Fairphone_1_-_front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Fairphone_2",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/59/Fairphone_2_%2825250139694%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "e21f0c9303189bff05b728a0": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
     }
   },
   "mode": "directory"
