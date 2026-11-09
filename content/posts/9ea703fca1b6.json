@@ -1,0 +1,31 @@
+{
+  "en_title": "MotionBricks Offers Real-Time Character and Robot Animation via Modular Latent Models",
+  "hi_title": "मोशनब्रिक्स मॉड्यूलर लेटेंट मॉडल के माध्यम से रियल-टाइम कैरेक्टर और रोबोट एनिमेशन प्रदान करता है",
+  "en_body": "MotionBricks is an open-source project featuring a modular latent generative model designed to animate characters and robots in real time. Based on a SIGGRAPH 2026 paper, the repository provides pretrained models, a Python runtime, interactive demos, and authoring editors. Users can verify the announcement directly through the official GitHub repository.\n\n## Core Architecture and Operation\nThe system operates by filling in motion between recent poses and target poses at 30 Hz. Three learned modules handle specific tasks:\n- **Root Module:** Predicts the duration and path of the root.\n- **Pose Module:** Employs a masked token transformer to predict motion tokens along the path.\n- **Decoder:** Utilizes a VQ-VAE with codebook heads to convert tokens into continuous motion.\n\nLonger animations are created by chaining generations together, where the runtime uses the last four recorded poses as context for the next sequence.\n\n## Included Tools and Components\nThe repository supplies pretrained models for the SOMA body model and the Unitree G1 robot as ONNX files, with checkpoints hosted on Hugging Face. Key components include:\n- **Demos:** An Inbetweener demo for pose-to-pose generation and a Scene Preview demo showcasing continuous locomotion and interactions.\n- **Editors:** Smart Primitive Editor and Scene Editor for authoring actions and environments.\n- **Runtime Requirements:** TensorRT integration requiring an NVIDIA GPU. Testing was conducted on Windows and Linux (x86-64) systems equipped with an NVIDIA GeForce RTX 4090.\n\n## Practical Implications and Licensing\nMotionBricks aims to assist developers and researchers working on humanoid motion, animation, and physical AI. Component licenses vary: the code is licensed under Apache 2.0, documentation under CC-BY-4.0, models under the NVIDIA Open Model Agreement, and sample motions under the NVIDIA Sample Data Evaluation License. The repository currently does not accept external contributions.",
+  "hi_body": "मोशनब्रिक्स एक ओपन-सोर्स प्रोजेक्ट है जिसमें एक मॉड्यूलर लेटेंट जनरेटिव मॉडल शामिल है जो कैरेक्टर और रोबोट को रियल-टाइम में एनिमेट करने के लिए डिज़ाइन किया गया है। SIGGRAPH 2026 के एक शोध पत्र पर आधारित, यह रिपॉजिटरी प्रीट्रेनड मॉडल, एक पाइथन रनटाइम, इंटरैक्टिव डेमो और ऑथरिंग एडिटर प्रदान करती है। उपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी के माध्यम से सीधे घोषणा की पुष्टि कर सकते हैं।\n\n## मुख्य वास्तुकला और संचालन\nसिस्टम हाल के पोज़ और टारगेट पोज़ के बीच 30 Hz पर गति भरकर काम करता है। तीन सीखे गए मॉड्यूल विशिष्ट कार्यों को संभालते हैं:\n- **रूट मॉड्यूल:** रूट की अवधि और पथ की भविष्यवाणी करता है।\n- **पोज़ मॉड्यूल:** पथ के साथ गति टोकन की भविष्यवाणी करने के लिए एक मास्क किए गए टोकन ट्रांसफॉर्मर का उपयोग करता है।\n- **डिकोडर:** टोकन को निरंतर गति में बदलने के लिए कोडबुक हेड के साथ VQ-VAE का उपयोग करता है।\n\nलंबी एनिमेटेड अनुक्रम पीढ़ियों को एक साथ जोड़कर बनाई जाती हैं, जहां रनटाइम अगले अनुक्रम के लिए संदर्भ के रूप में अंतिम चार रिकॉर्ड किए गए पोज़ का उपयोग करता है।\n\n## शामिल उपकरण और घटक\nरिपॉजिटरी Hugging Face पर होस्ट किए गए चेकपॉइंट के साथ, SOMA बॉडी मॉडल और Unitree G1 रोबोट के लिए ONNX फ़ाइलों के रूप में प्रीट्रेनड मॉडल प्रदान करती है। मुख्य घटकों में शामिल हैं:\n- **डेमो:** पोज़-टू-पोज़ जनरेशन के लिए एक इनब्रीवीनर डेमो और निरंतर गति और इंटरैक्शन दिखाने वाला एक सीन प्रिव्यू डेमो।\n- **एडिटर:** क्रियाओं और वातावरण को अधिकृत करने के लिए स्मार्ट प्रिमिटिव एडिटर और सीन एडिटर।\n- **रनटाइम आवश्यकताएँ:** TensorRT एकीकरण जिसके लिए NVIDIA GPU की आवश्यकता होती है। परीक्षण NVIDIA GeForce RTX 4090 से लैस Windows और Linux (x86-64) सिस्टम पर किया गया था।\n\n## व्यावहारिक निहितार्थ और लाइसेंसिंग\nमोशनब्रिक्स का उद्देश्य ह्यूमेनॉइड गति, एनिमेशन और फिजिकल AI पर काम करने वाले डेवलपर्स और शोधकर्ताओं की सहायता करना है। घटक लाइसेंस भिन्न हैं: कोड Apache 2.0 के तहत लाइसेंस प्राप्त है, दस्तावेज़ीकरण CC-BY-4.0 के तहत, मॉडल NVIDIA ओपन मॉडल समझौते के तहत, और नमूना गति NVIDIA सैंपल डेटा मूल्यांकन लाइसेंस के तहत हैं। रिपॉजिटरी वर्तमान में बाहरी योगदान स्वीकार नहीं कर रही है।",
+  "en_meta": "Explore MotionBricks, a modular latent generative model for real-time character and robot animation based on a SIGGRAPH 2026 paper.",
+  "hi_meta": "मोशनब्रिक्स की खोज करें, जो SIGGRAPH 2026 पेपर पर आधारित रियल-टाइम कैरेक्टर और रोबोट एनिमेशन के लिए एक मॉड्यूलर लेटेंट जनरेटिव मॉडल है।",
+  "en_keywords": [
+    "MotionBricks",
+    "real-time animation",
+    "latent generative model",
+    "Unitree G1",
+    "SOMA body model",
+    "SIGGRAPH 2026"
+  ],
+  "hi_keywords": [
+    "MotionBricks",
+    "मोशनब्रिक्स",
+    "रियल-टाइम एनिमेशन",
+    "Unitree G1",
+    "SOMA",
+    "SIGGRAPH 2026"
+  ],
+  "source_published_at": null,
+  "id": "9ea703fca1b6",
+  "source": "https://github.com/NVlabs/motionbricks",
+  "date": "2026-11-09T13:47:51.863747+00:00",
+  "source_title": "MotionBricks: Scalable Real-Time Motions with Modular Latent Generative Model and Smart Primitives - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

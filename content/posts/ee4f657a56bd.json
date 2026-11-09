@@ -1,0 +1,32 @@
+{
+  "en_title": "nanoMuse Open-Source Personal Agent Project Details and Features",
+  "hi_title": "nanoMuse ओपन-सोर्स पर्सनल एजेंट प्रोजेक्ट की जानकारी और विशेषताएँ",
+  "en_body": "nanoMuse is an open-source personal agent project designed to run across multiple devices including mobile phones, desktops, and web consoles. According to project documentation and repository details, the software aims to provide a personal agent with its own name and look that can perform tasks, continue operating while the application is closed, maintain memory, and prompt users before executing irreversible actions. \n\n## Architecture and Components\n- **Multi-Device Support:** Includes applications for phones, desktop operating systems, and a web console, coordinated through a relay system.\n- **Licensing:** Distributed under the GNU General Public License v3.0 or later (GPL-3.0-or-later).\n- **Model Access:** Users receive a free community relay model allowance provided by the developer, with options to use custom API keys or host a self-hosted relay server.\n\n## Project Milestones and Updates\n- **Initial Release:** Released on GitHub on September 25, 2026, starting with an Android app built on OpenMinis 1.13, followed by desktop and iPhone applications.\n- **Version Releases:** Version 1.0.0 Keel launched on October 9, 2026, followed by subsequent updates such as version 1.0.9 Tiller.\n- **Community Metrics:** Reached 1,000 GitHub stars by October 13, 2026, and 2,000 stars by October 21, 2026, appearing on GitHub Trending lists.\n- **Academic Papers:** An associated paper authored by Guangyi Liu, Yong Liu, and Jiangning Zhang from Zhejiang University was published on arXiv on October 7, 2026, and featured on Hugging Face Daily Papers.\n\n## Verification and Self-Hosting\nProject documentation, installation guides, self-hosting scripts (such as `scripts/self-host.sh`), and contribution guidelines are publicly accessible via the official GitHub repository and documentation pages. Users can verify release notes, third-party notices, and source code directly on GitHub or through mirrors like `nanomuse.cn`.",
+  "hi_body": "nanoMuse एक ओपन-सोर्स पर्सनल एजेंट प्रोजेक्ट है जिसे मोबाइल फोन, डेस्कटॉप और वेब कंसोल सहित कई उपकरणों पर चलने के लिए डिज़ाइन किया गया है। प्रोजेक्ट दस्तावेज़ और रिपॉजिटरी विवरण के अनुसार, इस सॉफ्टवेयर का उद्देश्य एक ऐसा पर्सनल एजेंट प्रदान करना है जिसकी अपनी पहचान हो, जो कार्य कर सके, ऐप बंद होने पर भी काम जारी रख सके, याददाश्त बनाए रखे, और किसी भी अपरिवर्तनीय कार्य को करने से पहले उपयोगकर्ता से पुष्टि ले।\n\n## वास्तुकला और घटक\n- **मल्टी-डिवाइस सपोर्ट:** इसमें फोन, डेस्कटॉप ऑपरेटिंग सिस्टम और वेब कंसोल के लिए एप्लिकेशन शामिल हैं, जो एक रिले सिस्टम के माध्यम से जुड़े हैं।\n- **लाइसेंसिंग:** इसे GNU जनरल पब्लिक लाइसेंस v3.0 या इसके बाद के संस्करण (GPL-3.0-or-later) के तहत वितरित किया जाता है।\n- **मॉडल एक्सेस:** उपयोगकर्ताओं को डेवलपर द्वारा प्रदान किया जाने वाला एक मुफ्त कम्युनिटी रिले मॉडल भत्ता मिलता है, जिसमें कस्टम एपीआई कुंजी का उपयोग करने या खुद का रिले सर्वर होस्ट करने का विकल्प होता है।\n\n## प्रोजेक्ट के चरण और अपडेट\n- **प्रारंभिक रिलीज़:** इसे 25 सितंबर 2026 को GitHub पर जारी किया गया था, जिसकी शुरुआत OpenMinis 1.13 पर बने एंड्रॉइड ऐप से हुई, जिसके बाद डेस्कटॉप और आईफोन एप्लिकेशन आए।\n- **वर्जन रिलीज़:** वर्जन 1.0.0 Keel को 9 अक्टूबर 2026 को लॉन्च किया गया था, जिसके बाद 1.0.9 Tiller जैसे अन्य अपडेट आए।\n- **कम्युनिटी मेट्रिक्स:** 13 अक्टूबर 2026 तक GitHub पर 1,000 स्टार और 21 अक्टूबर 2026 तक 2,000 स्टार प्राप्त हुए, और यह GitHub ट्रेंडिंग सूचियों में शामिल रहा।\n- **शोध पत्र:** झेजियांग विश्वविद्यालय के गुआंगयी लियू, योंग लियू और जियांगिंग झांग द्वारा लिखित एक संबंधित शोध पत्र 7 अक्टूबर 2026 को arXiv पर प्रकाशित हुआ था।\n\n## सत्यापन और सेल्फ-होस्टिंग\nप्रोजेक्ट के दस्तावेज़, इंस्टॉलेशन गाइड, सेल्फ-होस्टिंग स्क्रिप्ट (जैसे `scripts/self-host.sh`) और योगदान दिशानिर्देश आधिकारिक GitHub रिपॉजिटरी और दस्तावेज़ पृष्ठों पर सार्वजनिक रूप से उपलब्ध हैं। उपयोगकर्ता GitHub या `nanomuse.cn` जैसे मिरर के माध्यम से रिलीज़ नोट्स और सोर्स कोड की जाँच कर सकते हैं।",
+  "en_meta": "Learn about nanoMuse, an open-source personal agent for multiple devices featuring cross-platform support, self-hosting options, and GPL-3.0 licensing.",
+  "hi_meta": "nanoMuse के बारे में जानें, जो कई उपकरणों के लिए एक ओपन-सोर्स पर्सनल एजेंट है जिसमें क्रॉस-प्लेटफ़ॉर्म समर्थन और सेल्फ-होस्टिंग विकल्प शामिल हैं।",
+  "en_keywords": [
+    "nanoMuse",
+    "open-source personal agent",
+    "multi-device AI agent",
+    "GitHub trending",
+    "self-hosted AI relay"
+  ],
+  "hi_keywords": [
+    "nanoMuse",
+    "ओपन-सोर्स पर्सनल एजेंट",
+    "मल्टी-डिवाइस एआई एजेंट",
+    "GitHub ट्रेंडिंग",
+    "सेल्फ-होस्टेड एआई रिले"
+  ],
+  "source_published_at": null,
+  "id": "ee4f657a56bd",
+  "source": "https://github.com/nano-muse/nanoMuse",
+  "date": "2026-11-09T13:48:32.042445+00:00",
+  "source_title": "nano-muse/nanoMuse: nanoMuse: an open-source personal agent for every device you own. One agent with a name and a look of its own that does things, keeps working while the app is closed, remembers you, and asks before anything you cannot undo. On - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

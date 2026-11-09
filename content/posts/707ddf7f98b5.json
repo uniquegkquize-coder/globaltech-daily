@@ -1,0 +1,29 @@
+{
+  "en_title": "net-merge Enables Combined Internet Connections Across Platforms",
+  "hi_title": "net-merge विंडोज, मैकओएस, लिनक्स और एंड्रॉइड पर एक साथ इंटरनेट कनेक्शन जोड़ने की अनुमति देता है",
+  "en_body": "net-merge is a free, open-source utility designed to combine multiple internet connections—such as Wi-Fi, Ethernet, mobile data, and phone tethers—simultaneously on Windows, macOS, Linux, and Android. According to project documentation, the tool aims to distribute network traffic across active adapters to enhance speeds for multi-connection tasks like game downloads, torrents, and parallel browser downloads.\n\n## Core Functionality and Requirements\n- **Compatibility**: Operates on Windows, macOS, Linux, and Android without requiring user accounts, external servers, or a VPN.\n- **Mechanism**: Spreads concurrent application connections across all available links. Faster links receive a higher proportion of connections.\n- **Prerequisites**: Requires at least two distinct internet paths reaching the network independently (e.g., home Wi-Fi combined with a phone hotspot). Using Wi-Fi and Ethernet plugged into the same router does not increase speed because they share a single internet line.\n\n## Limitations and Practical Considerations\n- **Single Connections**: A single file download using only one connection will not see a speed increase, as individual connections utilize only one link.\n- **VPN Conflicts**: Standard computer-based VPNs route all traffic through themselves, leaving net-merge with no separate paths to combine.\n- **Data Usage**: Because mobile data remains active while the tool runs, users should monitor their data consumption.\n\n## Verification and Setup\nUsers can verify connection status using built-in commands such as `net-merge status` or `net-merge list` to check which adapters are active or skipped. The project repository and setup guides are hosted on GitHub under the net-merge organization.",
+  "hi_body": "net-merge एक स्वतंत्र और ओपन-सोर्स यूटिलिटी है जिसे विंडोज, मैकओएस, लिनक्स और एंड्रॉइड पर वाई-फाई, ईथरनेट, मोबाइल डेटा और फोन टीथर जैसे कई इंटरनेट कनेक्शनों को एक साथ संयोजित करने के लिए डिज़ाइन किया गया है। प्रोजेक्ट दस्तावेज़ के अनुसार, यह टूल गेम डाउनलोड, टोरेंट और समानांतर ब्राउज़र डाउनलोड जैसे मल्टी-कनेक्शन कार्यों के लिए गति बढ़ाने हेतु सक्रिय एडाप्टर में नेटवर्क ट्रैफिक वितरित करता है।\n\n## मुख्य कार्यक्षमता और आवश्यकताएं\n- **संगतता**: यह विंडोज, मैकओएस, लिनक्स और एंड्रॉइड पर काम करता है और इसके लिए किसी यूजर अकाउंट, बाहरी सर्वर या वीपीएन की आवश्यकता नहीं होती है।\n- **कार्यप्रणाली**: यह सभी उपलब्ध लिंक पर समवर्ती एप्लिकेशन कनेक्शन फैलाता है। तेज लिंक को कनेक्शन का अधिक अनुपात प्राप्त होता है।\n- **आवश्यकताएं**: स्वतंत्र रूप से नेटवर्क तक पहुंचने वाले कम से कम दो अलग-अलग इंटरनेट पथों की आवश्यकता होती है (जैसे होम वाई-फाई के साथ फोन हॉटस्पॉट)। एक ही राउटर से जुड़े वाई-फाई और ईथरनेट का उपयोग करने से गति नहीं बढ़ती है क्योंकि वे एक ही इंटरनेट लाइन साझा करते हैं।\n\n## सीमाएं और व्यावहारिक विचार\n- **एकल कनेक्शन**: केवल एक कनेक्शन का उपयोग करके एक ही फ़ाइल डाउनलोड करने पर गति में वृद्धि दिखाई नहीं देगी, क्योंकि व्यक्तिगत कनेक्शन केवल एक लिंक का उपयोग करते हैं।\n- **वीपीएन संघर्ष**: मानक कंप्यूटर-आधारित वीपीएन सभी ट्रैफिक को अपने माध्यम से रूट करते हैं, जिससे net-merge के पास संयोजित करने के लिए कोई अलग पथ नहीं बचता है।\n- **डेटा उपयोग**: चूंकि टूल चलते समय मोबाइल डेटा सक्रिय रहता है, इसलिए उपयोगकर्ताओं को अपने डेटा की खपत पर नजर रखनी चाहिए।\n\n## सत्यापन और सेटअप\nउपयोगकर्ता यह जांचने के लिए कि कौन से एडाप्टर सक्रिय हैं या छोड़े गए हैं, `net-merge status` या `net-merge list` जैसे अंतर्निहित कमांड का उपयोग करके कनेक्शन स्थिति सत्यापित कर सकते हैं। प्रोजेक्ट रिपॉजिटरी और सेटअप गाइड GitHub पर उपलब्ध हैं।",
+  "en_meta": "Discover net-merge, a free tool to combine Wi-Fi, Ethernet, and mobile data connections simultaneously on Windows, macOS, Linux, and Android.",
+  "hi_meta": "net-merge के बारे में जानें, जो विंडोज, मैकओएस, लिनक्स और एंड्रॉइड पर वाई-फाई, ईथरनेट और मोबाइल डेटा को एक साथ जोड़ने का एक मुफ्त टूल है।",
+  "en_keywords": [
+    "net-merge",
+    "load balancing",
+    "combine internet connections",
+    "network utility",
+    "GitHub"
+  ],
+  "hi_keywords": [
+    "net-merge",
+    "लोड संतुलन",
+    "इंटरनेट कनेक्शन मिलाएं",
+    "नेटवर्क यूटिलिटी",
+    "गिटहब"
+  ],
+  "source_published_at": null,
+  "id": "707ddf7f98b5",
+  "source": "https://github.com/net-merge/net-merge",
+  "date": "2026-11-09T13:49:03.490708+00:00",
+  "source_title": "net-merge/net-merge: Use all your internet connections at once on Windows, macOS, Linux and Android: per-connection load balancing over Wi-Fi, Ethernet, mobile data and phone tethers - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

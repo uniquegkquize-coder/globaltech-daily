@@ -1,0 +1,35 @@
+{
+  "en_title": "What Are Open-Weight AI Models? A Guide to Downloading and Running AI Locally",
+  "hi_title": "ओपन-वेट एआई मॉडल क्या हैं? इन्हें डाउनलोड कर स्थानीय स्तर पर चलाने की गाइड",
+  "en_body": "Open-weight artificial intelligence models allow users to download pretrained AI software and run local copies on personal hardware, offering an alternative to cloud-based chatbots like ChatGPT or Claude. While closed models keep their neural network weights private, open-weight models make these numerical parameters publicly available. According to published reports, developers and organizations releasing such models include Mistral AI, Google, Meta, Nvidia, DeepSeek, and Alibaba, among others.\n\nRunning an AI model locally involves specific technical and practical considerations:\n\n* **Local Privacy:** Operating a model offline using desktop software such as LM Studio, Ollama, or Jan can keep user prompts and files off external servers.\n* **Hardware Requirements:** Performance and compatibility depend heavily on computer specifications. While smaller models can run on standard personal computers or devices like phones, larger variants require robust GPUs or substantial RAM (such as 16GB to 36GB).\n* **Licensing and Control:** Availability of weights does not automatically grant unrestricted usage. Licenses may restrict commercial applications, and open-weight models do not always meet formal open-source definitions set by organizations like the Open Source Initiative, which typically require sharing training and run code.\n* **Safeguards and Limitations:** Offline models can still hallucinate, carry biases, or exhibit vulnerabilities if guardrails are bypassed or modified after download. Original developers have limited control once a copy is distributed.\n\nIndustry participants note that open weights enable independent researchers to examine models more closely and test security implications directly. However, users must weigh the costs of required hardware against standard monthly subscription fees for hosted cloud alternatives. Verification of any specific model requires checking the developer's official documentation, license terms, and hardware specifications.",
+  "hi_body": "ओपन-वेट आर्टिफिशियल इंटेलिजेंस (एआई) मॉडल उपयोगकर्ताओं को प्री-ट्रेन की गई एआई सॉफ्टवेयर को डाउनलोड करने और व्यक्तिगत हार्डवेयर पर स्थानीय प्रतियां चलाने की अनुमति देते हैं। यह चैटजीपीटी या क्लॉड जैसे क्लाउड-आधारित चैटबॉट्स का एक विकल्प प्रदान करता है। जहां बंद (क्लोज्ड) मॉडल अपने न्यूरल नेटवर्क वेट्स को निजी रखते हैं, वहीं ओपन-वेट मॉडल इन संख्यात्मक मापदंडों को सार्वजनिक रूप से उपलब्ध कराते हैं। प्रकाशित रिपोर्टों के अनुसार, मिस्ट्रल एआई, गूगल, मेटा, एनवीडिया, डीपसीक और अलीबाबा जैसे डेवलपर्स इस तरह के मॉडल जारी करते हैं।\n\nस्थानीय स्तर पर एआई मॉडल चलाने में कुछ विशिष्ट तकनीकी और व्यावहारिक बातें शामिल हैं:\n\n* **स्थानीय गोपनीयता:** एलएम स्टूडियो (LM Studio), ओलामा (Ollama) या जैन (Jan) जैसे डेस्कटॉप सॉफ्टवेयर का उपयोग करके ऑफ़लाइन मॉडल चलाने से उपयोगकर्ता के प्रॉम्प्ट और फाइलें बाहरी सर्वर से दूर रहती हैं।\n* **हार्डवेयर आवश्यकताएं:** प्रदर्शन और अनुकूलता कंप्यूटर की विशिष्टताओं पर निर्भर करती है। जहां छोटे मॉडल मानक व्यक्तिगत कंप्यूटरों या फोन पर चल सकते हैं, वहीं बड़े संस्करणों के लिए मजबूत जीपीयू या पर्याप्त रैम (जैसे 16जीबी से 36जीबी) की आवश्यकता होती है।\n* **लाइसेंस और नियंत्रण:** वेट्स की उपलब्धता का मतलब यह नहीं है कि असीमित उपयोग की अनुमति मिल गई है। लाइसेंस वाणिज्यिक अनुप्रयोगों को प्रतिबंधित कर सकते हैं, और ओपन-वेट मॉडल हमेशा ओपन सोर्स इनिशिएटिव जैसे संगठनों द्वारा निर्धारित औपचारिक ओपन-सोर्स परिभाषाओं को पूरा नहीं करते हैं।\n* **सुरक्षा उपाय और सीमाएं:** ऑफ़लाइन मॉडल में भी भ्रम (ह्यूसिनेशन), पूर्वाग्रह या सुरक्षा कमियां हो सकती हैं यदि डाउनलोड के बाद सुरक्षा उपायों को संशोधित किया जाए। एक बार प्रतिलिपि वितरित हो जाने के बाद मूल डेवलपर्स का उस पर सीमित नियंत्रण रहता है।\n\nउद्योग के जानकारों का कहना है कि ओपन वेट स्वतंत्र शोधकर्ताओं को मॉडल की बारीकी से जांच करने और सुरक्षा प्रभावों का सीधा परीक्षण करने में सक्षम बनाते हैं। हालांकि, उपयोगकर्ताओं को आवश्यक हार्डवेयर की लागत और क्लाउड विकल्पों की मासिक सदस्यता शुल्क की तुलना करनी चाहिए। किसी भी विशिष्ट मॉडल के सत्यापन के लिए डेवलपर के आधिकारिक दस्तावेज़, लाइसेंस शर्तों और हार्डवेयर विनिर्देशों की जांच करनी आवश्यक है।",
+  "en_meta": "Learn what open-weight AI models are, how they let you run artificial intelligence locally on your computer, and what to consider regarding hardware and…",
+  "hi_meta": "जानें ओपन-वेट एआई मॉडल क्या हैं, वे कैसे स्थानीय स्तर पर एआई चलाने की अनुमति देते हैं, और हार्डवेयर तथा गोपनीयता से जुड़े महत्वपूर्ण बिंदु।",
+  "en_keywords": [
+    "open-weight AI models",
+    "local AI execution",
+    "Mistral AI",
+    "DeepSeek",
+    "Google Gemma",
+    "Meta Llama",
+    "AI privacy",
+    "hardware requirements"
+  ],
+  "hi_keywords": [
+    "ओपन-वेट एआई मॉडल",
+    "स्थानीय एआई निष्पादन",
+    "मिस्ट्रल एआई",
+    "डीपसीक",
+    "गूगल जेम्मा",
+    "मेटा लामा",
+    "एआई गोपनीयता",
+    "हार्डवेयर आवश्यकताएं"
+  ],
+  "source_published_at": "2026-10-30T16:15:01-04:00",
+  "id": "239fab524740",
+  "source": "https://www.cnet.com/tech/services-and-software/what-are-open-weight-ai-models/",
+  "date": "2026-11-09T13:30:30.903090+00:00",
+  "source_title": "What Are Open-Weight AI Models?",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

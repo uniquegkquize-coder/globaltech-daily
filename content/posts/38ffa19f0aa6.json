@@ -1,0 +1,29 @@
+{
+  "en_title": "Laya: Open Non-Autoregressive Multilingual System 1 Decision Engine Released",
+  "hi_title": "लाया (Laya): ओपन नॉन-ऑटोरेग्रेसिव बहुभाषी सिस्टम 1 डिसीजन इंजन जारी",
+  "en_body": "## Overview\nLaya is an open-source, non-autoregressive System 1 decision engine designed to deliver typed choices, scores, and yes/no decisions across more than 100 languages in a single forward pass. Operating on models within the ModernBERT family (ranging from approximately 150M to 421M parameters), the system achieves decision times around 33 ms on standard hardware such as a T4 GPU. It features an intelligent router that detects scripts and languages to select the appropriate checkpoint per request.\n\n## Key Features and Extensions\n- **Multilingual and Long-Document Support:** The multilingual checkpoint reads up to 8,192 tokens when configured with `max_len=8192`.\n- **Vega Integration:** Optional Vega extensions (`vegaml=True`) combine a reader with a physics engine to output conformal prediction sets, abstain flags, out-of-distribution flags, and routing decisions without guessing thresholds.\n- **Fine-Tuning and Calibration:** Users can fit and calibrate lightweight decision heads on custom labeled data using reinforcement learning against strictly proper scoring rules (RLCD) without altering the underlying base reader.\n- **Flexible Deployment:** Available via PyPI, GitHub source checkouts, and `uv`, supporting Python 3.10 or newer alongside optional extras for serving, MCP, LangChain, LlamaIndex, CrewAI, ONNX Runtime, and audio/vision inputs.\n\n## Practical Implications and Verification\nDeployments can leverage built-in command-line tools (`laya`), batch processing with length sorting for performance gains, and a self-contained FastAPI server example for local testing. Users should verify installation using environment-specific checks and consult the official documentation and repository for hardware-specific PyTorch builds and compatibility notes.",
+  "hi_body": "## अवलोकन\nलाया एक ओपन-सोर्स, नॉन-ऑटोरेग्रेसिव सिस्टम 1 डिसीजन इंजन है जिसे एक ही फॉरवर्ड पास में 100 से अधिक भाषाओं में टाइप्ड विकल्प, स्कोर और हां/ना निर्णय प्रदान करने के लिए डिज़ाइन किया गया है। मॉडर्नबीईआरटी (ModernBERT) परिवार के मॉडलों पर आधारित (लगभग 150M से 421M पैरामीटर), यह प्रणाली टी4 जीपीयू जैसे मानक हार्डवेयर पर लगभग 33 मिलीसेकंड में निर्णय लेती है। इसमें एक बुद्धिमान राउटर शामिल है जो प्रत्येक अनुरोध के लिए उपयुक्त चेकपॉइंट का चयन करने हेतु स्क्रिप्ट और भाषा का पता लगाता है।\n\n## मुख्य विशेषताएं और विस्तार\n- **बहुभाषी और लंबे दस्तावेज़ का समर्थन:** बहुभाषी चेकपॉइंट `max_len=8192` के साथ कॉन्फ़िगर किए जाने पर 8,192 टोकन तक पढ़ सकता है।\n- **वेगा एकीकरण:** वैकल्पिक वेगा एक्सटेंशन (`vegaml=True`) कॉन्फ़िगरशनल प्रेडिक्शन सेट, एबस्टेन फ्लैग और रूटिंग निर्णय प्रदान करते हैं।\n- **फाइन-ट्यूनिंग और अंशांकन:** उपयोगकर्ता अंतर्निहित बेस रीडर को बदले बिना आरएलसीडी (RLCD) का उपयोग करके कस्टम डेटा पर हल्के डिसीजन हेड को फिट और कैलिब्रेट कर सकते हैं।\n- **लचीला परिनियोजन:** पीवाईपीआई (PyPI), गिटहब और `uv` के माध्यम से उपलब्ध, जो पायथन 3.10 या नए संस्करण का समर्थन करता है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nपरिनियोजन अंतर्निहित कमांड-लाइन टूल, बैच प्रोसेसिंग और स्थानीय परीक्षण के लिए एक फास्टएपीआई (FastAPI) सर्वर का लाभ उठा सकते हैं। उपयोगकर्ता विशिष्ट वातावरण जांच का उपयोग करके स्थापना का सत्यापन कर सकते हैं।",
+  "en_meta": "Discover Laya, an open non-autoregressive multilingual System 1 decision engine for typed choices and predictions across 100+ languages in a single forward…",
+  "hi_meta": "लाया (Laya) एक ओपन नॉन-ऑटोरेग्रेसिव बहुभाषी सिस्टम 1 डिसीजन इंजन है, जो 100 से अधिक भाषाओं में त्वरित निर्णय और भविष्यवाणियां प्रदान करता है।",
+  "en_keywords": [
+    "Laya decision engine",
+    "non-autoregressive AI",
+    "multilingual NLP",
+    "ModernBERT",
+    "machine learning router"
+  ],
+  "hi_keywords": [
+    "लाया डिसीजन इंजन",
+    "नॉन-ऑटोरेग्रेसिव एआई",
+    "बहुभाषी एनएलपी",
+    "मॉडर्नबीईआरटी",
+    "मशीन लर्निंग राउटर"
+  ],
+  "source_published_at": null,
+  "id": "38ffa19f0aa6",
+  "source": "https://github.com/NandhaKishorM/laya",
+  "date": "2026-11-09T13:48:24.162906+00:00",
+  "source_title": "NandhaKishorM/laya: Non-autoregressive System 1 decision engine. Typed choice, score and yes/no decisions over any text in a single forward pass, in 100+ languages, with a router that picks the right checkpoint per request. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,32 @@
+{
+  "en_title": "NetBox: Open Source Network Infrastructure Modeling and Automation Source of Truth",
+  "hi_title": "NetBox: ओपन सोर्स नेटवर्क बुनियादी ढांचा मॉडलिंग और ऑटोमेशन का स्रोत",
+  "en_body": "NetBox functions as an open-source data modeling and documentation tool designed to serve as a central source of truth for network infrastructure. According to the project documentation, it defines and validates the intended state of network components without directly interacting with network nodes. Instead, it exposes programmable APIs for external automation, monitoring, and assurance tools.\n\n## Core Architecture and Capabilities\n- **Structured Data Modeling:** Organizes diverse network primitives including racks, devices, cables, IP addresses, VLANs, power, and circuits.\n- **Customization and Extensibility:** Allows administrators to add custom fields, tags, and custom validation rules, alongside support for community or custom plugins.\n- **Automation and Configuration:** Supports Jinja2 template rendering for device configurations, custom user-defined scripts, and event-driven webhooks.\n- **Access Control and Auditing:** Features granular user and group permissions alongside comprehensive logging of object creation, modification, and deletion.\n\n## Deployment and Verification Options\nNetBox is distributed under the Apache 2 license. Organizations can review the official documentation on GitHub or the project's website to evaluate installation guides, community Docker images, or the NetBox Cloud free tier offering. Users can verify announcements and features directly through the official repository and discussion channels.",
+  "hi_body": "NetBox एक ओपन-सोर्स डेटा मॉडलिंग और दस्तावेज़ीकरण टूल के रूप में कार्य करता है, जिसे नेटवर्क बुनियादी ढांचे के लिए एक केंद्रीय स्रोत (source of truth) के रूप में डिज़ाइन किया गया है। प्रोजेक्ट दस्तावेज़ के अनुसार, यह सीधे नेटवर्क नोड्स के साथ इंटरैक्ट किए बिना नेटवर्क घटकों की इच्छित स्थिति को परिभाषित और मान्य करता है। इसके बजाय, यह बाहरी ऑटोमेशन, निगरानी और आश्वासन टूल के लिए प्रोग्राम योग्य एपीआई प्रदान करता है।\n\n## मुख्य वास्तुकला और क्षमताएं\n- **संरचित डेटा मॉडलिंग:** रैक, डिवाइस, केबल, आईपी पते, वीएलएएन, पावर और सर्किट सहित विभिन्न नेटवर्क तत्वों को व्यवस्थित करता है।\n- **कस्टमाइज़ेशन और एक्सेंसिबिलिटी:** प्रशासकों को कस्टम फ़ील्ड, टैग और कस्टम वैलिडेशन नियम जोड़ने की अनुमति देता है, साथ ही कम्युनिटी या कस्टम प्लगइन के लिए समर्थन प्रदान करता है।\n- **ऑटोमेशन और कॉन्फ़िगरेशन:** डिवाइस कॉन्फ़िगरेशन के लिए Jinja2 टेम्पलेट रेंडरिंग, कस्टम उपयोगकर्ता-परिभाषित स्क्रिप्ट और इवेंट-संचालित वेबहुक का समर्थन करता है।\n- **एक्सेस कंट्रोल और ऑडिटिंग:** ऑब्जेक्ट निर्माण, संशोधन और विलोपन की व्यापक लॉगिंग के साथ दानेदार उपयोगकर्ता और समूह अनुमति सुविधाएं प्रदान करता है।\n\n## तैनाती और सत्यापन के विकल्प\nNetBox को Apache 2 लाइसेंस के तहत वितरित किया जाता है। संगठन स्थापना गाइड, कम्युनिटी Docker इमेज, या NetBox Cloud फ्री टियर प्रसाद का मूल्यांकन करने के लिए GitHub या प्रोजेक्ट की वेबसाइट पर आधिकारिक दस्तावेज़ की समीक्षा कर सकते हैं। उपयोगकर्ता आधिकारिक रिपॉजिटरी और चर्चा चैनलों के माध्यम से सीधे घोषणाओं और सुविधाओं को सत्यापित कर सकते हैं।",
+  "en_meta": "Learn about NetBox, an open-source network infrastructure modeling and documentation tool acting as a source of truth for network automation.",
+  "hi_meta": "NetBox के बारे में जानें, जो नेटवर्क ऑटोमेशन के लिए स्रोत के रूप में कार्य करने वाला एक ओपन-सोर्स नेटवर्क बुनियादी ढांचा मॉडलिंग टूल है।",
+  "en_keywords": [
+    "NetBox",
+    "network automation",
+    "source of truth",
+    "open source",
+    "infrastructure modeling"
+  ],
+  "hi_keywords": [
+    "NetBox",
+    "नेटवर्क ऑटोमेशन",
+    "सोर्स ऑफ ट्रूथ",
+    "ओपन सोर्स",
+    "बुनियादी ढांचा मॉडलिंग"
+  ],
+  "source_published_at": null,
+  "id": "f6453024bea5",
+  "source": "https://github.com/netbox-community/netbox",
+  "date": "2026-11-09T13:49:11.092240+00:00",
+  "source_title": "netbox-community/netbox: The premier source of truth powering network automation. Open source under Apache 2. Try NetBox Cloud free: https://netboxlabs.com/products/free-netbox-cloud - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

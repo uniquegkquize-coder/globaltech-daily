@@ -1,0 +1,35 @@
+{
+  "en_title": "Hokum Brings Unified Control Center and Notifications to Wayland Compositors",
+  "hi_title": "होकम (Hokum) Wayland कंपोजिटर्स के लिए एकीकृत नियंत्रण केंद्र और सूचना डेमॉन लाता है",
+  "en_body": "Hokum is a control center and notification daemon designed for Wayland compositors that support layer-shell protocols, such as niri, sway, Hyprland, and river. Built using the Rust UI framework Rune, the application consolidates notifications, sound management via PipeWire, and Bluetooth controls via BlueZ into a single multi-section window and tray icon.\n\n## Core Features and Architecture\n\n* **Notifications:** Operates as a freedesktop notification daemon where notification cards slide in, restack on springs, and support features like action buttons, progress bars, and in-place replacement.\n* **Sound Management:** Interacts with PipeWire and WirePlumber to manage input, output, active apps, devices, ports, Bluetooth codecs, and volume routing.\n* **Bluetooth Controls:** Utilizes BlueZ to monitor power, paired devices, battery levels, pairing codes, and device trust settings.\n* **Single Process Design:** Runs as a unified process where the service owns the bus name, draws click-through overlay cards, and hosts independent threads for audio and Bluetooth.\n\n## Configuration and Theming\n\nUsers can customize Hokum through a single configuration file located at `~/.config/hokum/config.kdl`. The application includes eight built-in themes—Soft, Crisp, Capsule, Ribbon, Terminal, Bubble, Signal, and Pill—with Capsule serving as the default. Additionally, users can apply per-app rules, script interactions using Rhai, and adjust behavior settings such as screen corners and Do Not Disturb modes.\n\n## Installation and System Requirements\n\nHokum can be installed across various distributions using available packaging methods, Nix flakes, or direct binary downloads from GitHub releases. It requires PipeWire with WirePlumber for audio features and BlueZ for Bluetooth functionality. The software is compatible with layer-shell-supported compositors and KDE Plasma, though it does not operate on GNOME due to the lack of layer-shell support.\n\n## Verification and Updates\n\nThe software includes an optional update checker that fetches release manifests from the project domain. Depending on the installation method, updates can either automatically download and replace the binary for standalone files or provide commands for package manager updates.",
+  "hi_body": "होकम (Hokum) Wayland कंपोजिटर्स के लिए एक नियंत्रण केंद्र और नोटिफिकेशन डेमॉन है जो लेयर-शेल प्रोटोकॉल (जैसे niri, sway, Hyprland, और river) का समर्थन करता है। रस्ट (Rust) UI फ्रेमवर्क Rune का उपयोग करके निर्मित, यह एप्लिकेशन नोटिफिकेशन, PipeWire के माध्यम से ध्वनि प्रबंधन, और BlueZ के माध्यम से ब्लूटूथ नियंत्रण को एक ही विंडो और ट्रे आइकन में जोड़ता है।\n\n## मुख्य विशेषताएँ और वास्तुकला\n\n* **नोटिफिकेशन:** एक फ्रीडेस्कटॉप नोटिफिकेशन डेमॉन के रूप में कार्य करता है जहाँ नोटिफिकेशन कार्ड स्लाइड इन करते हैं, स्प्रिंग्स पर रीस्टैक होते हैं, और एक्शन बटन तथा प्रगति बार का समर्थन करते हैं।\n* **ध्वनि प्रबंधन:** इनपुट, आउटपुट, सक्रिय ऐप्स, डिवाइस, पोर्ट, ब्लूटूथ कोडेक और वॉल्यूम रूटिंग को प्रबंधित करने के लिए PipeWire और WirePlumber के साथ इंटरैक्ट करता है।\n* **ब्लूूटूथ नियंत्रण:** पावर, युग्मित डिवाइस, बैटरी स्तर, युग्म कोड और डिवाइस ट्रस्ट सेटिंग्स की निगरानी के लिए BlueZ का उपयोग करता है।\n* **सिंगल प्रोसेस डिज़ाइन:** एक एकीकृत प्रक्रिया के रूप में चलता है जहाँ सेवा बस नाम की मालिक होती है, क्लिक-थ्रू ओवरले कार्ड खींचती है, और ऑडियो तथा ब्लूटूथ के लिए स्वतंत्र धागे चलाती है।\n\n## कॉन्फ़िगरेशन और थीमिंग\n\nउपयोगकर्ता `~/.config/hokum/config.kdl` पर स्थित एक एकल कॉन्फ़िगरेशन फ़ाइल के माध्यम से होकम को कस्टमाइज़ कर सकते हैं। एप्लिकेशन में आठ अंतर्निहित थीम शामिल हैं—Soft, Crisp, Capsule, Ribbon, Terminal, Bubble, Signal, और Pill—जिनमें Capsule डिफ़ॉल्ट है। इसके अतिरिक्त, उपयोगकर्ता प्रति-ऐप नियम लागू कर सकते हैं, Rhai का उपयोग करके स्क्रिप्ट इंटरैक्शन कर सकते हैं, और स्क्रीन कॉर्नर तथा डू नॉट डिस्टर्ब मोड जैसी व्यवहार सेटिंग्स को समायोजित कर सकते हैं।\n\n## स्थापना और सिस्टम आवश्यकताएँ\n\nहोकम को विभिन्न वितरणों में उपलब्ध पैकेजिंग विधियों, Nix फ़्लेक्स, या GitHub रिलीज़ से सीधे बाइनरी डाउनलोड का उपयोग करके स्थापित किया जा सकता है। ऑडियो सुविधाओं के लिए WirePlumber के साथ PipeWire और ब्लूटूथ कार्यक्षमता के लिए BlueZ की आवश्यकता होती है। यह सॉफ़्टवेयर लेयर-शेल-समर्थित कंपोजिटर्स और KDE Plasma के साथ संगत है, हालांकि लेयर-शेल समर्थन की कमी के कारण यह GNOME पर काम नहीं करता है।\n\n## सत्यापन और अपडेट\n\nसॉफ़्टवेयर में एक वैकल्पिक अपडेट चेकर शामिल है जो प्रोजेक्ट डोमेन से रिलीज़ मेनिफ़ेस्ट प्राप्त करता है। स्थापना पद्धति के आधार पर, अपडेट या तो स्वचालित रूप से स्टैंडअलोन फ़ाइलों के लिए बाइनरी को डाउनलोड और प्रतिस्थापित कर सकते हैं या पैकेज मैनेजर अपडेट के लिए कमांड प्रदान कर सकते हैं।",
+  "en_meta": "Discover Hokum, a unified notification daemon and control center for Wayland compositors supporting Pipewire and BlueZ, built with Rust and Rune.",
+  "hi_meta": "Wayland कंपोजिटर्स के लिए Rust और Rune से बने एकीकृत नोटिफिकेशन डेमॉन और नियंत्रण केंद्र होकम (Hokum) के बारे में जानें।",
+  "en_keywords": [
+    "Hokum",
+    "Wayland",
+    "notification daemon",
+    "PipeWire",
+    "BlueZ",
+    "Rust",
+    "Rune",
+    "control center"
+  ],
+  "hi_keywords": [
+    "Hokum",
+    "Wayland",
+    "notification daemon",
+    "PipeWire",
+    "BlueZ",
+    "Rust",
+    "Rune",
+    "control center"
+  ],
+  "source_published_at": null,
+  "id": "2e093cf45fdb",
+  "source": "https://github.com/anomalyco/hokum",
+  "date": "2026-11-09T13:49:28.121252+00:00",
+  "source_title": "Notifications for Wayland that look like they belong on a computer from this decade. Drawn with Rune. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

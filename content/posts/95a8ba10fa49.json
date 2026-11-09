@@ -1,0 +1,29 @@
+{
+  "en_title": "Virid Launches marketAgility MCP Connector to Bring AI-Powered Store Management to eCommerce",
+  "hi_title": "Virid ने ईकॉमर्स के लिए एआई-संचालित स्टोर प्रबंधन लाने हेतु marketAgility MCP कनेक्टर लॉन्च किया",
+  "en_body": "Virid announced the launch of the marketAgility MCP Connector, a new integration designed to connect marketAgility stores to major AI platforms using natural language.\n\nAccording to the announcement, the integration uses the Model Context Protocol (MCP) standard. It enables clients to interact with assistants such as Anthropic's Claude and OpenAI's ChatGPT to manage products, orders, customers, and promotions without relying solely on the admin dashboard.\n\n## Key Capabilities and How It Works\n* **Natural Language Management:** Users can search products, customer data, orders, and inventories using conversational prompts.\n* **Read-and-Write Controls:** While users can create or update certain records, specific data points such as orders, carts, and per-site inventory remain read-only.\n* **Review Before Action:** The connector prompts users to review proposed modifications before changes are finalized.\n\n## Security and Access Requirements\n* **Authentication:** The integration operates via OAuth 2.1, requiring direct authentication with marketAgility rather than the AI platform provider.\n* **Data Handling:** Virid states that the connector does not retain store data or store credentials, and all transit traffic is encrypted.\n* **Prerequisites:** Availability requires an active marketAgility store with API access, though setup steps involve configuring the server URL and signing in without manual API token generation.\n\nRetailers interested in the integration can contact Virid directly or review the company's official documentation and privacy policies to verify compatibility and plan requirements.",
+  "hi_body": "Virid ने marketAgility MCP कनेक्टर के लॉन्च की घोषणा की है, जो marketAgility स्टोरों को प्रमुख एआई प्लेटफॉर्म से जोड़ने के लिए बनाई गई एक नई इंटीग्रेशन है।\n\nघोषणा के अनुसार, यह इंटीग्रेशन मॉडल कॉंटेक्स्ट प्रोटोकॉल (MCP) मानक पर आधारित है। यह ग्राहकों को एडमिन डैशबोर्ड पर पूरी तरह निर्भर रहने के बजाय Anthropic के Claude और OpenAI के ChatGPT जैसे एआई सहायकों के साथ प्राकृतिक भाषा के माध्यम से उत्पादों, ऑर्डर, ग्राहकों और प्रचारों को प्रबंधित करने की अनुमति देता है।\n\n## मुख्य क्षमताएं और यह कैसे काम करता है\n* **प्राकृतिक भाषा प्रबंधन:** उपयोगकर्ता संवादात्मक संकेतों का उपयोग करके उत्पादों, ग्राहक डेटा, ऑर्डर और इन्वेंट्री खोज सकते हैं।\n* **रीड-एंड-राइट नियंत्रण:** हालांकि उपयोगकर्ता कुछ रिकॉर्ड बना या अपडेट कर सकते हैं, लेकिन ऑर्डर, कार्ट और प्रति-साइट इन्वेंट्री जैसे विशिष्ट डेटा पॉइंट रीड-ऑनलाइन (केवल पढ़ने योग्य) रहते हैं।\n* **कार्रवाई से पहले समीक्षा:** कनेक्टर उपयोगकर्ताओं को बदलावों को अंतिम रूप देने से पहले प्रस्तावित संशोधनों की समीक्षा करने के लिए प्रेरित करता है।\n\n## सुरक्षा और एक्सेस आवश्यकताएं\n* **प्रमाणन:** इंटीग्रेशन OAuth 2.1 के माध्यम से संचालित होता है, जिसमें एआई प्लेटफॉर्म प्रदाता के बजाय सीधे marketAgility के साथ प्रमाणीकरण की आवश्यकता होती है।\n* **डेटा प्रबंधन:** Virid का कहना है कि कनेक्टर स्टोर डेटा या क्रेडेंशियल को अपने पास सुरक्षित नहीं रखता है, और सारा ट्रांसिट ट्रैफ़िक एन्क्रिप्टेड होता है।\n* **आवश्यक शर्तें:** उपलब्धता के लिए एपीआई एक्सेस के साथ एक सक्रिय marketAgility स्टोर की आवश्यकता होती है, हालांकि सेटअप चरणों में केवल सर्वर यूआरएल को कॉन्फ़िगर करना और बिना किसी मैन्युअल एपीआई टोकन निर्माण के साइन इन करना शामिल है।\n\nइंटीग्रेशन में रुचि रखने वाले खुदरा विक्रेता संगतता और योजना आवश्यकताओं को सत्यापित करने के लिए सीधे Virid से संपर्क कर सकते हैं या कंपनी के आधिकारिक दस्तावेजों और गोपनीयता नीतियों की समीक्षा कर सकते हैं।",
+  "en_meta": "Virid launched the marketAgility MCP Connector, allowing eCommerce retailers to manage stores via AI assistants like Claude and ChatGPT using natural language.",
+  "hi_meta": "Virid ने marketAgility MCP कनेक्टर लॉन्च किया, जिससे ईकॉमर्स खुदरा विक्रेता Claude और ChatGPT जैसे एआई सहायकों के माध्यम से स्टोर प्रबंधित कर सकते हैं।",
+  "en_keywords": [
+    "Virid",
+    "marketAgility MCP Connector",
+    "eCommerce AI management",
+    "Model Context Protocol",
+    "Claude and ChatGPT integration"
+  ],
+  "hi_keywords": [
+    "Virid",
+    "marketAgility MCP Connector",
+    "ईकॉमर्स एआई प्रबंधन",
+    "Model Context Protocol",
+    "Claude और ChatGPT इंटीग्रेशन"
+  ],
+  "source_published_at": "2026-10-28T12:30:00Z",
+  "id": "95a8ba10fa49",
+  "source": "https://www.prnewswire.com/news-releases/virid-launches-marketagility-mcp-connector-bringing-ai-powered-store-management-to-ecommerce-retailers-302921630.html",
+  "date": "2026-11-09T13:26:54.526530+00:00",
+  "source_title": "Virid Launches marketAgility MCP Connector, Bringing AI-Powered Store Management to eCommerce Retailers - PR Newswire",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,33 @@
+{
+  "en_title": "SkyboundTotk Brings Experimental Native Static Recompilation Project for The Legend of Zelda: Tears of the Kingdom to Windows and Linux",
+  "hi_title": "SkyboundTotk विंडोज और लिनक्स के लिए द लीजेंड ऑफ़ ज़ेल्डा: टीयर्स ऑफ़ द किंगडम का प्रायोगिक नेटिव स्टैटिक रिकॉम्पिलेशन प्रोजेक्ट लाता है",
+  "en_body": "SkyboundTotk is an experimental native static recompilation project designed for The Legend of Zelda: Tears of the Kingdom base game version 1.0.0. The software targets Windows x64 and Linux x86_64 architectures, providing an ahead-of-time translation approach for AArch64 game code into C, which is then compiled locally into a native executable. The project is developed independently and is not affiliated with Nintendo.\n\n## Technical Architecture and Requirements\n\nThe project functions as a game-specific port rather than a general-purpose emulator. A custom runtime implements expected game services, while a renderer translates graphics work and shaders for WebGPU. Users must supply their own legally obtained, extracted, and unmodified 1.0.0 base-game ExeFS and RomFS files. No game files, generated code, keys, firmware, or save data are distributed with the source repository.\n\n- **Windows Requirements:** Windows 10/11 x64, a GPU and driver supported by wgpu-native, Python 3.10 or newer with lz4, Visual Studio 2022 Build Tools with MSVC C++ tools, Windows SDK, along with Clang, clang++, and lld.\n- **Linux Requirements:** x86_64 Linux with a Vulkan-capable GPU and driver, Python 3.10+, Clang, clang++, lld, pkg-config, development files for SDL3 and FFmpeg, plus Rust 1.93+ to build libwgpu_native.so.\n- **Storage and Memory:** At least 45 GB of free space is required in addition to the game dump for intermediate files and packaged RomFS. The build process is heavily CPU- and memory-intensive.\n\n## Features and Controls\n\nSkyboundTotk includes experimental features such as spatial upscaling via FidelityFX Super Resolution 1 (FSR 1), experimental image-based optical-flow frame interpolation, and camera adjustments for wider displays. Controls support standard keyboard and mouse layouts alongside XInput and SDL-compatible controllers. Mouse aiming and camera movement operate smoothly across variable frame rates.\n\nMod support allows users to place folders alongside the executable, utilizing RomFS replacement files and specific .pchtxt or .ips patches, though extra code modules like exlaunch-based mods are not loaded.\n\n## Licensing and Verification\n\nOriginal project code by NotRexed is provided under the MIT License, though the combined repository includes GPL-licensed components and other third-party code subject to their respective licenses. Users should verify build requirements, consult official GitHub documentation, and ensure compliance with legal obligations before attempting local compilation.",
+  "hi_body": "SkyboundTotk द लीजेंड ऑफ़ ज़ेल्डा: टीयर्स ऑफ़ द किंगडम के बेस गेम संस्करण 1.0.0 के लिए एक प्रायोगिक नेटिव स्टैटिक रिकॉम्पिलेशन प्रोजेक्ट है। यह सॉफ्टवेयर विंडोज x64 और लिनक्स x86_64 आर्किटेक्चर को लक्षित करता है, जो AArch64 गेम कोड को C में पहले से अनुवादित करके स्थानीय रूप से एक नेटिव निष्पादन योग्य फाइल में संकलित करता है। यह प्रोजेक्ट स्वतंत्र रूप से विकसित किया गया है और निनटेंडो से संबद्ध नहीं है।\n\n## तकनीकी वास्तुकला और आवश्यकताएँ\n\nयह प्रोजेक्ट एक सामान्य प्रयोजन एमुलेटर के बजाय गेम-विशिष्ट पोर्ट के रूप में कार्य करता है। एक कस्टम रनटाइम आवश्यक गेम सेवाओं को लागू करता है, जबकि एक रेंडरर WebGPU के लिए ग्राफिक्स कार्य और शेडर्स का अनुवाद करता है। उपयोगकर्ताओं को अपने स्वयं के कानूनी रूप से प्राप्त, निकाले गए और अपरिवर्तित 1.0.0 बेस-गेम ExeFS और RomFS फाइलें प्रदान करनी होंगी। स्रोत रिपॉजिटरी के साथ कोई गेम फाइल, जनरेट किया गया कोड, कीज़, फर्मवेयर या सेव डेटा वितरित नहीं किया जाता है।\n\n- **विंडोज आवश्यकताएँ:** विंडोज 10/11 x64, wgpu-native समर्थित GPU और ड्राइवर, पायथन 3.10 या नया lz4 के साथ, MSVC C++ टूल के साथ विजुअल स्टूडियो 2022 बिल्ड टूल्स, विंडोज SDK, और Clang, clang++, lld।\n- **लिनक्स आवश्यकताएँ:** Vulkan-सक्षम GPU और ड्राइवर के साथ x86_64 लिनक्स, पायथन 3.10+, Clang, clang++, lld, pkg-config, SDL3 और FFmpeg के लिए डेवलपमेंट फाइलें, और libwgpu_native.so बनाने के लिए Rust 1.93+।\n- **स्टोरेज और मेमोरी:** मध्यवर्ती फाइलों और पैकेज्ड RomFS के लिए गेम डंप के अलावा कम से कम 45 GB खाली जगह आवश्यक है।\n\n## विशेषताएँ और नियंत्रण\n\nSkyboundTotk में FidelityFX Super Resolution 1 (FSR 1) के माध्यम से स्थानिक अपस्केलिंग, प्रायोगिक फ्रेम इंटरपोलेशन और वाइडर डिस्प्ले के लिए कैमरा समायोजन जैसी प्रायोगिक विशेषताएँ शामिल हैं। नियंत्रण मानक कीबोर्ड और माउस लेआउट के साथ-साथ XInput और SDL-संगत नियंत्रकों का समर्थन करते हैं।\n\nमॉड समर्थन उपयोगकर्ताओं को निष्पादन योग्य फाइल के पास फोल्डर रखने की अनुमति देता है, जिसमें RomFS प्रतिस्थापन फाइलों का उपयोग किया जाता है, हालांकि एक्सलॉन्च-आधारितड जैसे अतिरिक्त कोड मॉड्यूल लोड नहीं होते हैं।\n\n## लाइसेंसिंग और सत्यापन\n\nNotRexed द्वारा मूल प्रोजेक्ट कोड MIT लाइसेंस के तहत पेश किया जाता है, हालांकि संयुक्त रिपॉजिटरी में GPL-लाइसेंस प्राप्त घटक और अन्य तीसरे पक्ष के कोड शामिल हैं। उपयोगकर्ताओं को स्थानीय संकलन का प्रयास करने से पहले बिल्ड आवश्यकताओं को सत्यापित करना चाहिए और आधिकारिक GitHub प्रलेखन की समीक्षा करनी चाहिए।",
+  "en_meta": "Explore SkyboundTotk, an experimental native static recompilation project for The Legend of Zelda: Tears of the Kingdom on Windows and Linux.",
+  "hi_meta": "SkyboundTotk के बारे में जानें, जो विंडोज और लिनक्स पर द लीजेंड ऑफ़ ज़ेल्डा: टीयर्स ऑफ़ द किंगडम के लिए एक प्रायोगिक नेटिव स्टैटिक रिकॉम्पिलेशन प्रोजेक्ट है।",
+  "en_keywords": [
+    "SkyboundTotk",
+    "static recompilation",
+    "Tears of the Kingdom",
+    "NotRexed",
+    "Windows",
+    "Linux",
+    "WebGPU"
+  ],
+  "hi_keywords": [
+    "SkyboundTotk",
+    "स्टैटिक रिकॉम्पिलेशन",
+    "Tears of the Kingdom",
+    "NotRexed",
+    "विंडोज",
+    "लिनक्स",
+    "WebGPU"
+  ],
+  "source_published_at": null,
+  "id": "f7fdc339d032",
+  "source": "https://github.com/NotRexed/SkyboundTotk",
+  "date": "2026-11-09T13:49:36.555624+00:00",
+  "source_title": "NotRexed/SkyboundTotk - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

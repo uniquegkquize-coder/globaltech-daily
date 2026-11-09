@@ -1,0 +1,31 @@
+{
+  "en_title": "Nvidia Releases Nemotron 3.5 Transcribe Open Voice Model",
+  "hi_title": "एनवीडिया ने नया ओपन ट्रांसक्रिप्शन मॉडल नेमोट्रॉन 3.5 ट्रांसक्राइब किया जारी",
+  "en_body": "Nvidia announced the release of Nemotron 3.5 Transcribe, a free, open-weight model designed to transcribe audio across up to 40 languages. Alongside the model release, the company introduced version 2 of Granary, its open-source speech dataset.\n\nAccording to reported statements from Nvidia, Nemotron 3.5 Transcribe can translate 31 languages to and from English, process audio recordings up to an hour in length, and separate up to eight distinct speakers. The company stated that the model performs favorably against competitors on evaluation benchmarks, including Hugging Face’s Open ASR Leaderboard. Independent verification of these benchmark claims remains pending.\n\n## Target Use Cases and Technical Specifications\n\nThe newly released tools are aimed at developers building applications for business meetings and medical transcription. Nvidia reported that developers can combine the model with the updated Granary dataset and tools like the NeMo Speech model to customize applications for industry-specific terminology across various languages.\n\nKey reported technical details include:\n* **Model Size:** 30 billion parameters.\n* **Hardware Compatibility:** Designed to run on a single chip, ranging from the Jetson AGX Thor robotics controller and DGX Spark laptop chip to Blackwell datacenter chips.\n* **Limitation:** The model currently processes recorded audio files rather than live audio streams.\n\n## Context and Industry Environment\n\nNvidia’s release arrives amid a period of active development in AI voice technology. Other recent releases in the sector include Mistral’s Voxtral 3, ElevenLabs’ Realtime tool for speech in voice agents, and Salesforce’s Launa-Omni voice model.\n\n## Practical Implications and Verification\n\nDevelopers and organizations interested in evaluating Nemotron 3.5 Transcribe can review the official announcements and technical documentation provided directly by Nvidia. Practical testing on local or cloud hardware is recommended to verify performance metrics, accuracy, and hardware compatibility against specific workload requirements before deployment.",
+  "hi_body": "एनवीडिया ने नेमोट्रॉन 3.5 ट्रांसक्राइब (Nemotron 3.5 Transcribe) को जारी करने की घोषणा की है, जो एक मुफ्त, ओपन-वेट मॉडल है और अधिकतम 40 भाषाओं में ऑडियो को ट्रांसक्रिप्ट कर सकता है। मॉडल के साथ-साथ कंपनी ने अपने ओपन-सोर्स स्पीच डेटासेट 'ग्रैनरी' (Granary) का संस्करण 2 भी पेश किया है।\n\nएनवीडिया की रिपोर्ट के अनुसार, नेमोट्रॉन 3.5 ट्रांसक्राइब अंग्रेजी से और अंग्रेजी में 31 भाषाओं का अनुवाद कर सकता है, एक घंटे तक की ऑडियो रिकॉर्डिंग को संभाल सकता है, और अधिकतम आठ अलग-अलग वक्ताओं की पहचान कर सकता है। कंपनी ने दावा किया है कि यह मॉडल Hugging Face के ओपन एएसआर लीडरबोर्ड सहित मूल्यांकन बेंचमार्क पर प्रतिद्वंद्वियों से बेहतर प्रदर्शन करता है। इन बेंचमार्क दावों का स्वतंत्र सत्यापन अभी बाकी है।\n\n## लक्षित उपयोग के मामले और तकनीकी विनिर्देश\n\nइन नए उपकरणों का उद्देश्य उन डेवलपर्स के लिए है जो व्यावसायिक बैठकों और चिकित्सा ट्रांसक्रिप्शन के लिए एप्लिकेशन बना रहे हैं। एनवीडिया ने बताया कि डेवलपर विभिन्न भाषाओं में उद्योग-विशिष्ट शब्दावली को पहचानने के लिए इस मॉडल को अपडेटेड ग्रैनरी डेटासेट और नीमो स्पीच (NeMo Speech) मॉडल जैसे टूल के साथ मिला सकते हैं।\n\nप्रमुख तकनीकी विवरणों में शामिल हैं:\n* **मॉडल का आकार:** 30 अरब पैरामीटर।\n* **हार्डवेयर संगतता:** जेटसन एजीएक्स थोर रोबोटिक्स कंट्रोलर और डीजीएक्स स्पार्क लैपटॉप चिप से लेकर ब्लैकवेल डेटासेंटर चिप्स तक, एक ही चिप पर चलने के लिए डिज़ाइन किया गया।\n* **सीमा:** यह मॉडल वर्तमान में लाइवस्ट्रीम के बजाय रिकॉर्ड किए गए ऑडियो के साथ काम करता है।\n\n## संदर्भ और उद्योग का माहौल\n\nएनवीडिया की यह घोषणा एआई वॉयस तकनीक के क्षेत्र में सक्रिय विकास के दौरान आई है। इस क्षेत्र में अन्य हालिया रिलीज़ में मिस्ट्रल का वोक्सट्रल 3 (Voxtral 3), एलेवेन लैब्स का रियलटाइम टूल, और सेल्सफोर्स का लौना-ऑम्नी वॉयस मॉडल शामिल हैं।\n* **संदर्भ और सत्यापन:** डेवलपर्स और संगठन आधिकारिक घोषणाओं और तकनीकी दस्तावेजों की समीक्षा करके इस मॉडल का मूल्यांकन कर सकते हैं। परिनियोजन से पहले कार्यभार आवश्यकताओं के अनुसार प्रदर्शन और सटीकता को सत्यापित करने की सिफारिश की जाती है।",
+  "en_meta": "Nvidia releases Nemotron 3.5 Transcribe, a free open-weight model supporting 40 languages, alongside version 2 of the Granary speech dataset.",
+  "hi_meta": "एनवीडिया ने 40 भाषाओं का समर्थन करने वाला मुफ्त ओपन-वेट मॉडल नेमोट्रॉन 3.5 ट्रांसक्राइब और ग्रैनरी स्पीच डेटासेट का संस्करण 2 जारी किया है।",
+  "en_keywords": [
+    "Nvidia",
+    "Nemotron 3.5 Transcribe",
+    "open voice model",
+    "Granary dataset",
+    "speech recognition",
+    "AI transcription"
+  ],
+  "hi_keywords": [
+    "एनवीडिया",
+    "नेमोट्रॉन 3.5 ट्रांसक्राइब",
+    "ओपन वॉयस मॉडल",
+    "ग्रैनरी डेटासेट",
+    "स्पीच रिकग्निशन",
+    "एआई ट्रांसक्रिप्शन"
+  ],
+  "source_published_at": "2026-10-28T15:00:00+00:00",
+  "id": "8fd264d14a34",
+  "source": "https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/",
+  "date": "2026-11-09T13:27:19.593022+00:00",
+  "source_title": "Voice AI in vogue: Nvidia releases new open transcription model",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

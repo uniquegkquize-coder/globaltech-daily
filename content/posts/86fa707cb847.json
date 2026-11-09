@@ -1,0 +1,31 @@
+{
+  "en_title": "Atlas of Physics: An Interactive 3D Textbook Project for AP Physics",
+  "hi_title": "एटलस ऑफ फिजिक्स: एपी फिजिक्स के लिए एक इंटरैक्टिव 3डी पाठ्यपुस्तक प्रोजेक्ट",
+  "en_body": "Atlas of Physics is an open-source, interactive 3D textbook project designed for AP Physics 1 and AP Physics C students. According to the project repository documentation, the resource visualizes physics chapters as simple motions drawn in 3D, utilizing a minimalist aesthetic featuring paper-like solids, ink edges, and selective lighting.\n\n## Core Features and Interaction\nThe project repository outlines several key interaction methods for readers:\n* **Minimalist Visuals**: Displays only the moving object, its vectors, axes, and corresponding graphs without distracting apparatus details.\n* **Scroll and Navigation**: Scrolling turns pages and moves the camera, while arrow keys allow users to turn pages directly.\n* **Hover and Click Actions**: Hovering over elements highlights them, and clicking breaks down complex elements, such as splitting a vector into components or interpreting a graph via slope and area.\n* **Mobile Support**: On phones and tablets, figures stack over the text, swipes snap to whole pages, and taps break down parts, with resolution scaling down automatically if frame rates drop.\n\n## Technical Setup and Requirements\nFor developers and advanced users wishing to run or build the project locally, the documentation specifies:\n* **Dependencies**: Relies on Three.js loaded via jsDelivr, requiring any standard static server such as `python3 -m http.server 8137` to run locally.\n* **Tools**: Includes helper tools requiring `npm install` (specifically `puppeteer-core`) and Google Chrome to generate screenshots via provided Node.js scripts.\n* **Equation Alignment**: The project notes that its equation sheet follows published AP Physics equation tables. The documentation explicitly clarifies that AP® is a registered trademark of the College Board, which does not endorse this site.\n\n## Practical Implications and Verification\nThis project offers a supplementary visual tool for students studying advanced placement physics concepts. Because this is an independent open-source project hosted on GitHub, users and educators can verify the source code, inspect the implementation details, and review documentation directly on the official repository page.",
+  "hi_body": "एटलस ऑफ फिजिक्स एक ओपन-सोर्स, इंटरैक्टिव 3डी पाठ्यपुस्तक प्रोजेक्ट है जिसे एपी फिजिक्स 1 और एपी फिजिक्स C के छात्रों के लिए तैयार किया गया है। प्रोजेक्ट रिपॉजिटरी के दस्तावेजीकरण के अनुसार, यह संसाधन भौतिकी के अध्यायों को 3डी में खींची गई सरल गतियों के रूप में विजुअलाइज करता है, जिसमें कागज़ जैसे सॉलिड, इंक एज और चुनिंदा लाइटिंग जैसी न्यूनतम सौंदर्य शैली का उपयोग किया गया है।\n\n## मुख्य विशेषताएं और इंटरैक्शन\nप्रोजेक्ट रिपॉजिटरी पाठकों के लिए कई प्रमुख इंटरैक्शन तरीकों को रेखांकित करती है:\n* **न्यूनतम विजुअल्स**: बिना किसी विकर्षक उपकरण विवरण के केवल गतिमान वस्तु, उसके वैक्टर, अक्ष और संबंधित ग्राफ प्रदर्शित करता है।\n* **स्क्रॉल और नेविगेशन**: स्क्रॉल करने से पन्ने पलटते हैं और कैमरा आगे बढ़ता है, जबकि तीर कुंजियों (arrow keys) से उपयोगकर्ता सीधे पन्ने पलट सकते हैं।\n* **होवर और क्लिक क्रियाएं**: तत्वों पर होवर करने से वे हाइलाइट होते हैं, और क्लिक करने से जटिल तत्व टूट जाते हैं, जैसे किसी वेक्टर को घटकों में विभाजित करना या ढलान (slope) और क्षेत्रफल के माध्यम से ग्राफ की व्याख्या करना।\n* **मोबाइल समर्थन**: फोन और टैबलेट पर, आंकड़े पाठ के ऊपर स्टैक हो जाते हैं, स्वाइप करने पर पूरे पन्नों पर स्नैप होता है, और टैप करने पर भाग टूट जाते हैं, तथा फ्रेम दर कम होने पर रिज़ॉल्यूशन अपने आप कम हो जाता है।\n\n## तकनीकी सेटअप और आवश्यकताएं\nडेवलपर्स और उन्नत उपयोगकर्ताओं के लिए जो प्रोजेक्ट को स्थानीय रूप से चलाना या बनाना चाहते हैं, दस्तावेज़ निम्नलिखित निर्दिष्ट करते हैं:\n* **डिपेंडेंसी**: jsDelivr के माध्यम से लोड किए गए Three.js पर निर्भर करता है, जिसे स्थानीय रूप से चलाने के लिए `python3 -m http.server 8137` जैसे किसी भी मानक स्टैटिक सर्वर की आवश्यकता होती है।\n* **टूल्स**: इसमें ऐसे सहायक उपकरण शामिल हैं जिनके लिए `npm install` (विशेष रूप से `puppeteer-core`) और प्रदान की गई नोड.जेएस स्क्रिप्ट के माध्यम से स्क्रीनशॉट जेनरेट करने के लिए गूगल क्रोम की आवश्यकता होती है।\n* **समीकरण संरेखण**: प्रोजेक्ट नोट करता है कि इसकी समीकरण शीट प्रकाशित एपी फिजिक्स समीकरण तालिकाओं का पालन करती है। दस्तावेज़ स्पष्ट रूप से स्पष्ट करता है कि AP® कॉलेज बोर्ड का एक पंजीकृत ट्रेडमार्क है, जो इस साइट का समर्थन नहीं करता है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nयह प्रोजेक्ट उन्नत प्लेसमेंट भौतिकी अवधारणाओं का अध्ययन करने वाले छात्रों के लिए एक पूरक दृश्य उपकरण प्रदान करता है। चूंकि यह GitHub पर होस्ट किया गया एक स्वतंत्र ओपन-सोर्स प्रोजेक्ट है, इसलिए उपयोगकर्ता और शिक्षक आधिकारिक रिपॉजिटरी पेज पर सीधे स्रोत कोड को सत्यापित कर सकते हैं, कार्यान्वयन विवरणों का निरीक्षण कर सकते हैं और दस्तावेज़ों की समीक्षा कर सकते हैं।",
+  "en_meta": "Explore Atlas of Physics, an interactive 3D textbook project for AP Physics 1 and AP Physics C featuring minimal 3D motions, vectors, and graphs.",
+  "hi_meta": "एटलस ऑफ फिजिक्स का अन्वेषण करें, जो न्यूनतम 3डी गति, वैक्टर और ग्राफ़ के साथ एपी फिजिक्स 1 और सी के लिए एक इंटरैक्टिव 3डी पाठ्यपुस्तक प्रोजेक्ट है।",
+  "en_keywords": [
+    "Atlas of Physics",
+    "interactive 3D textbook",
+    "AP Physics 1",
+    "AP Physics C",
+    "open-source physics",
+    "Three.js textbook"
+  ],
+  "hi_keywords": [
+    "एटलस ऑफ फिजिक्स",
+    "इंटरैक्टिव 3डी पाठ्यपुस्तक",
+    "एपी फिजिक्स 1",
+    "एपी फिजिक्स C",
+    "ओपन-सोर्स फिजिक्स",
+    "Three.js पाठ्यपुस्तक"
+  ],
+  "source_published_at": null,
+  "id": "86fa707cb847",
+  "source": "https://github.com/nathanliow/atlas-of-physics",
+  "date": "2026-11-09T13:48:40.299401+00:00",
+  "source_title": "nathanliow/atlas-of-physics: An interactive 3D textbook for AP Physics 1 and AP Physics C - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Announces New Tools, Triggers, and Cost Controls for Copilot Automations",
+  "hi_title": "GitHub ने Copilot Automations के लिए नए टूल्स, ट्रिगर्स और कॉस्ट कंट्रोल्स की घोषणा की",
+  "en_body": "GitHub has announced new tools, triggers, and cost controls for Copilot Automations, expanding how teams can design workflows using prompts, triggers, and tools. According to the announcement, the updates include API-based external triggers, support for 24 additional GitHub events, multi-step workflow chaining, 20 new GitHub tools, custom Model Context Protocol (MCP) server integration, and new AI credit limit settings.\n\n## Summary of New Capabilities\n\n* **External Triggers via API:** Trigger automations using the GitHub REST API to integrate with external systems such as Jira, Sentry, or PagerDuty using webhook handlers.\n* **Expanded Event Support:** Run automations in response to 24 additional events across issues, pull requests, discussions, and security alerts.\n* **Multi-Step Workflows:** Chain automations together using the \"Can be triggered by\" setting or specific \"Automation run succeeded\" and \"Automation run failed\" triggers.\n* **New Tools:** Access 20 new GitHub tools—such as uploading attachments, updating comments, managing pull request states, and interacting with discussions—or connect custom MCP servers.\n* **Cost Controls:** Set AI credit limits per run, day, week, or month to manage credit consumption.\n\n## Practical Implications and Availability\n\nCopilot Automations are available for users with Copilot Pro, Pro+, Max, Business, and Enterprise plans in repositories where the user has write access. Teams can use these features to automate repetitive triage, security alert responses, and development workflows. To verify these updates and learn how to configure limits, developers can consult the official documentation on GitHub.com or the GitHub Copilot app, and participate in discussions on the GitHub Community platform.",
+  "hi_body": "GitHub ने Copilot Automations के लिए नए टूल्स, ट्रिगर्स और कॉस्ट कंट्रोल्स की घोषणा की है, जिससे टीमों को प्रॉम्प्ट, ट्रिगर्स और टूल्स का उपयोग करके वर्कफ़्लो डिज़ाइन करने के नए तरीके मिलते हैं। घोषणा के अनुसार, अपडेट में एपीआई-आधारित बाहरी ट्रिगर्स, 24 अतिरिक्त GitHub इवेंट्स के लिए समर्थन, मल्टी-स्टेप वर्कफ़्लो चेनिंग, 20 नए GitHub टूल्स, कस्टम मॉडल कॉन्टेक्स्ट प्रोटोकॉल (MCP) सर्वर एकीकरण और नए AI क्रेडिट लिमिट सेटिंग्स शामिल हैं।\n\n## नई क्षमताओं का सारांश\n\n* **API के माध्यम से बाहरी ट्रिगर:** बाहरी प्रणालियों जैसे Jira, Sentry, या PagerDuty के साथ एकीकृत करने के लिए GitHub REST API का उपयोग करके ऑटोमेशन ट्रिगर करें।\n* **विस्तृत इवेंट समर्थन:** इश्यूज, पुल रिक्वेस्ट्स, चर्चाओं और सुरक्षा अलर्ट में 24 अतिरिक्त इवेंट्स के जवाब में ऑटोमेशन चलाएं।\n* **मल्टी-स्टेप वर्कफ़्लो:** \"Can be triggered by\" सेटिंग या विशिष्ट \"Automation run succeeded\" और \"Automation run failed\" ट्रिगर्स का उपयोग करके ऑटोमेशन को आपस में जोड़ें।\n* **नए टूल्स:** 20 नए GitHub टूल्स तक पहुंचें—जैसे अटैचमेंट अपलोड करना, टिप्पणियां अपडेट करना, पुल रिक्वेस्ट की स्थिति प्रबंधित करना—या कस्टम MCP सर्वर कनेक्ट करना।\n* **कॉस्ट कंट्रोल्स:** क्रेडिट खपत को प्रबंधित करने के लिए प्रति रन, दिन, सप्ताह या महीने के हिसाब से AI क्रेडिट सीमाएं सेट करें।\n\n## व्यावहारिक निहितार्थ और उपलब्धता\n\nCopilot Automations उन रिपॉजिटरी में Copilot Pro, Pro+, Max, Business और Enterprise प्लान वाले उपयोगकर्ताओं के लिए उपलब्ध है जहाँ उपयोगकर्ता के पास राइट एक्सेस है। टीमें दोहराए जाने वाले कार्यों, सुरक्षा अलर्ट प्रतिक्रियाओं और विकास वर्कफ़्लो को स्वचालित करने के लिए इन सुविधाओं का उपयोग कर सकती हैं। इन अपडेट को सत्यापित करने और सीमाओं को कॉन्फ़िगर करना सीखने के लिए, डेवलपर्स GitHub.com या GitHub Copilot ऐप पर आधिकारिक दस्तावेज़ देख सकते हैं और GitHub Community प्लेटफॉर्म पर चर्चा में शामिल हो सकते हैं।",
+  "en_meta": "GitHub announces new tools, triggers, API integrations, MCP server support, and cost controls for Copilot Automations across eligible plans.",
+  "hi_meta": "GitHub ने योग्य प्लान के लिए Copilot Automations में नए टूल्स, ट्रिगर्स, API एकीकरण, MCP सर्वर समर्थन और कॉस्ट कंट्रोल्स की घोषणा की।",
+  "en_keywords": [
+    "Copilot Automations",
+    "GitHub",
+    "AI credit limits",
+    "MCP servers",
+    "REST API triggers"
+  ],
+  "hi_keywords": [
+    "Copilot Automations",
+    "GitHub",
+    "AI क्रेडिट सीमा",
+    "MCP सर्वर",
+    "REST API ट्रिगर्स"
+  ],
+  "source_published_at": "2026-10-28T15:30:00+00:00",
+  "id": "cc02df03d9bf",
+  "source": "https://github.blog/changelog/2026-10-28-new-tools-triggers-and-cost-controls-for-copilot-automations/",
+  "date": "2026-11-09T13:49:19.422006+00:00",
+  "source_title": "New tools, triggers, and cost controls for Copilot Automations - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
