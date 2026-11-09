@@ -1,37 +1,93 @@
 {
-  "finished_at": "2026-11-08T23:00:54.587882+00:00",
-  "outcome": "providers_unavailable",
-  "duration_seconds": 1306.1,
-  "published": 15,
-  "by_category": {
-    "ai-news": 7,
-    "cricket": 8
-  },
-  "ai_calls": 30,
-  "ai_limit": 200,
+  "outcome": "time_limit_reached",
+  "ai_calls": 39,
+  "retry_after_seconds": 60,
+  "finished_at": "2026-11-09T02:48:00.832638+00:00",
+  "duration_seconds": 6294.9,
   "target": 200,
-  "discovered_by_category": {
+  "published": 22,
+  "by_category": {
+    "cricket": 12,
+    "ai-news": 5,
+    "india-news": 2,
+    "government-schemes": 2,
     "defence": 1
   },
-  "retry_after_seconds": null,
-  "shortfall": 185,
+  "ai_limit": 900,
+  "shortfall": 178,
   "target_met": false,
   "attempts": [
     {
       "pass": 1,
       "exit_code": 0,
-      "published": 8,
-      "ai_calls": 18,
+      "published": 12,
+      "ai_calls": 25,
       "ai_limit": 100,
       "outcome": "time_limit_reached"
     },
     {
       "pass": 2,
-      "exit_code": 0,
-      "published": 7,
-      "ai_calls": 12,
+      "exit_code": 124,
+      "published": 5,
+      "ai_calls": 0,
       "ai_limit": 100,
-      "outcome": "providers_unavailable"
+      "outcome": "collector_failed"
+    },
+    {
+      "pass": 3,
+      "exit_code": 124,
+      "published": 0,
+      "ai_calls": 1,
+      "ai_limit": 100,
+      "outcome": "time_limit_reached"
+    },
+    {
+      "pass": 4,
+      "exit_code": 124,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "collector_failed"
+    },
+    {
+      "pass": 5,
+      "exit_code": 124,
+      "published": 3,
+      "ai_calls": 3,
+      "ai_limit": 100,
+      "outcome": "time_limit_reached"
+    },
+    {
+      "pass": 6,
+      "exit_code": 124,
+      "published": 1,
+      "ai_calls": 6,
+      "ai_limit": 100,
+      "outcome": "time_limit_reached"
+    },
+    {
+      "pass": 7,
+      "exit_code": 124,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "collector_failed"
+    },
+    {
+      "pass": 8,
+      "exit_code": 0,
+      "published": 1,
+      "ai_calls": 4,
+      "ai_limit": 100,
+      "outcome": "time_limit_reached"
+    },
+    {
+      "pass": 9,
+      "exit_code": 124,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "collector_failed"
     }
   ]
 }
