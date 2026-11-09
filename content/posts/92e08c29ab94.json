@@ -1,0 +1,31 @@
+{
+  "en_title": "Microsoft's ONNX Runtime: An Overview of the Cross-Platform ML Accelerator",
+  "hi_title": "Microsoft का ONNX Runtime: क्रॉस-प्लेटफ़ॉर्म मशीन लर्निंग एक्सेलेरेटर का अवलोकन",
+  "en_body": "## Introduction to ONNX Runtime\nONNX Runtime is an open-source accelerator designed by Microsoft to improve the speed and efficiency of machine learning inference and training. It serves as a cross-platform tool capable of supporting models developed in various popular frameworks.\n\n## Core Capabilities\n*   **Inference Acceleration:** The platform supports models from frameworks such as PyTorch, TensorFlow/Keras, scikit-learn, LightGBM, and XGBoost. It optimizes performance by leveraging specific hardware accelerators and graph transformations.\n*   **Model Training:** Users can accelerate training times for transformer models on multi-node NVIDIA GPUs by integrating a single line of code into existing PyTorch scripts.\n*   **Compatibility:** The runtime is engineered to work across a variety of operating systems, drivers, and hardware environments.\n\n## Resources and Support\nMicrosoft provides several resources for developers looking to implement or contribute to the project:\n*   **Documentation:** Technical guides and tutorials are available at onnxruntime.ai/docs.\n*   **Examples:** Sample repositories for both inference and training are hosted on GitHub.\n*   **Community:** Users can engage via GitHub Discussions, report bugs, or submit feature requests through GitHub Issues.\n\n## Release and Participation\nInformation regarding current and past releases is maintained on the project's GitHub page. For those interested in future updates, Microsoft provides a release roadmap at onnxruntime.ai/roadmap, which includes upcoming features and release schedules. The project operates under the MIT License and follows the Microsoft Open Source Code of Conduct. Please note that the software may collect usage data to aid in product improvement, with details available in the project’s privacy statement.",
+  "hi_body": "## ONNX Runtime का परिचय\nONNX Runtime माइक्रोसॉफ्ट द्वारा विकसित एक ओपन-सोर्स एक्सेलेरेटर है, जिसे मशीन लर्निंग इंफ़रेंस और ट्रेनिंग की गति और दक्षता में सुधार करने के लिए डिज़ाइन किया गया है। यह एक क्रॉस-प्लेटफ़ॉर्म टूल के रूप में कार्य करता है जो विभिन्न लोकप्रिय फ़्रेमवर्क में विकसित किए गए मॉडल का समर्थन करने में सक्षम है।\n\n## मुख्य क्षमताएं\n*   **इंफ़रेंस एक्सेलरेशन:** यह प्लेटफ़ॉर्म PyTorch, TensorFlow/Keras, scikit-learn, LightGBM और XGBoost जैसे फ़्रेमवर्क से मॉडल का समर्थन करता है। यह हार्डवेयर एक्सेलेरेटर और ग्राफ़ ट्रांसफ़ॉर्मेशन का उपयोग करके प्रदर्शन को अनुकूलित करता है।\n*   **मॉडल ट्रेनिंग:** उपयोगकर्ता मौजूदा PyTorch स्क्रिप्ट में केवल एक अतिरिक्त लाइन जोड़कर मल्टी-नोड NVIDIA GPU पर ट्रांसफ़ॉर्मर मॉडल के लिए ट्रेनिंग समय को कम कर सकते हैं।\n*   **संगतता:** इस रनटाइम को विभिन्न ऑपरेटिंग सिस्टम, ड्राइवर और हार्डवेयर वातावरण में काम करने के लिए डिज़ाइन किया गया है।\n\n## संसाधन और सहायता\nमाइक्रोसॉफ्ट डेवलपर्स के लिए कई संसाधन प्रदान करता है:\n*   **दस्तावेज़ीकरण:** तकनीकी गाइड और ट्यूटोरियल onnxruntime.ai/docs पर उपलब्ध हैं।\n*   **उदाहरण:** इंफ़रेंस और ट्रेनिंग दोनों के लिए सैंपल रिपॉजिटरी GitHub पर होस्ट की गई हैं।\n*   **समुदाय:** उपयोगकर्ता GitHub चर्चाओं के माध्यम से जुड़ सकते हैं, बग रिपोर्ट कर सकते हैं या सुविधा अनुरोध सबमिट कर सकते हैं।\n\n## रिलीज़ और भागीदारी\nवर्तमान और पिछली रिलीज़ के बारे में जानकारी प्रोजेक्ट के GitHub पेज पर उपलब्ध है। भविष्य के अपडेट के लिए, माइक्रोसॉफ्ट onnxruntime.ai/roadmap पर एक रिलीज़ रोडमैप प्रदान करता है। यह प्रोजेक्ट MIT लाइसेंस के तहत संचालित होता है और माइक्रोसॉफ्ट ओपन सोर्स आचार संहिता का पालन करता है। कृपया ध्यान दें कि सॉफ़्टवेयर उत्पाद सुधार में सहायता के लिए उपयोग डेटा एकत्र कर सकता है, जिसका विवरण गोपनीयता नीति में उपलब्ध है।",
+  "en_meta": "Learn about ONNX Runtime, a cross-platform machine learning accelerator for inference and training, supporting major frameworks like PyTorch and TensorFlow.",
+  "hi_meta": "ONNX Runtime के बारे में जानें, जो एक क्रॉस-प्लेटफ़ॉर्म मशीन लर्निंग एक्सेलेरेटर है, जो PyTorch और TensorFlow जैसे प्रमुख फ़्रेमवर्क का समर्थन करता है।",
+  "en_keywords": [
+    "ONNX Runtime",
+    "machine learning",
+    "Microsoft",
+    "inference",
+    "model training",
+    "open source"
+  ],
+  "hi_keywords": [
+    "ONNX Runtime",
+    "मशीन लर्निंग",
+    "माइक्रोसॉफ्ट",
+    "इंफ़रेंस",
+    "मॉडल ट्रेनिंग",
+    "ओपन सोर्स"
+  ],
+  "source_published_at": null,
+  "id": "92e08c29ab94",
+  "source": "https://github.com/microsoft/onnxruntime",
+  "date": "2026-11-09T12:04:44.404155+00:00",
+  "source_title": "microsoft/onnxruntime: ONNX Runtime: cross-platform, high performance ML inferencing and training accelerator - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

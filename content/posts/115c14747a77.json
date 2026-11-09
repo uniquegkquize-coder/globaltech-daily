@@ -1,0 +1,31 @@
+{
+  "en_title": "Exploring the LangChain Agent Evals 101 Webinar Repository",
+  "hi_title": "LangChain एजेंट इवल्स 101 वेबिनार रिपॉजिटरी की खोज",
+  "en_body": "The LangChain Agent Evals 101 webinar repository provides a hands-on learning environment featuring two small AI agents designed to help developers understand evaluation techniques using LangSmith. The repository includes code, configuration templates, and evaluation scripts intended for the free LangSmith Developer plan.\n\n## Repository Overview and Setup\n\nTo use the repository, developers configure environment variables using a provided template file. Essential configuration parameters include:\n\n* **LANGSMITH_API_KEY**: Required to send traces, datasets, and experiments to LangSmith.\n* **OPENAI_API_KEY**: Used to run the underlying agents and language model judges.\n* **Regional Endpoints**: Specific configuration lines for accounts in EU or APAC regions.\n* **Dataset and Judge Settings**: Variables defining dataset names and model choices.\n\n## Key Components and Exercises\n\nThe repository is structured around two primary applications, each containing intentional bugs to be discovered and resolved through tracing and evaluation.\n\n### 1. Dinner Bot\n\nDinner Bot is an agent that suggests recipes based on available kitchen ingredients. \n\n* **The Bug**: An expanded staples list mistakenly includes items like butter, garlic, and onions alongside standard staples such as salt, pepper, oil, and water.\n* **Evaluation Process**: Developers inspect traces in LangSmith, upload saved traces, create a dataset, and run code-based and LLM-based evaluators to identify and fix the issue.\n\n### 2. Recipe Remixer\n\nRecipe Remixer modifies existing recipes to fit specific dietary requirements, such as vegetarian or dairy-free alternatives.\n\n* **The Bug**: A logic error prevents correct ingredient swaps from reaching the text-rewriting function.\n* **Evaluation Process**: Traces are uploaded and analyzed using custom evaluators and LLM judges to isolate where the data flow breaks down.\n\n## Practical Implications and Verification\n\nThese exercises demonstrate how developers can structure systematic evaluations for AI agents by combining code assertions and LLM-as-a-judge patterns. To verify the original setup and instructions, users can review the official repository on GitHub at `langchain-samples/agent-evals-101-webinar` and ensure they utilize appropriate API credentials securely on their local machines.",
+  "hi_body": "LangChain एजेंट इवल्स 101 वेबिनार रिपॉजिटरी डेवलपर्स को LangSmith का उपयोग करके मूल्यांकन तकनीकों को समझने में मदद करने के लिए डिज़ाइन किए गए दो छोटे एआई एजेंटों के साथ एक व्यावहारिक सीखने का माहौल प्रदान करती है। इस रिपॉजिटरी में मुफ्त LangSmith डेवलपर प्लान के लिए कोड, कॉन्फ़िगरेशन टेम्पलेट और मूल्यांकन स्क्रिप्ट शामिल हैं।\n\n## रिपॉजिटरी अवलोकन और सेटअप\n\nरिपॉजिटरी का उपयोग करने के लिए, डेवलपर एक प्रदान किए गए टेम्पलेट फ़ाइल का उपयोग करके पर्यावरण चर (environment variables) को कॉन्फ़िगर करते हैं। आवश्यक कॉन्फ़िगरेशन मापदंडों में शामिल हैं:\n\n* **LANGSMITH_API_KEY**: LangSmith को ट्रेस, डेटासेट और प्रयोग भेजने के लिए आवश्यक है।\n* **OPENAI_API_KEY**: अंतर्निहित एजेंटों और भाषा मॉडल न्यायाधीशों को चलाने के लिए उपयोग किया जाता है।\n* **क्षेत्रीय एंडपॉइंट्स**: EU या APAC क्षेत्रों में खातों के लिए विशिष्ट कॉन्फ़िगरेशन पंक्तियाँ।\n* **डेटासेट और जज सेटिंग्स**: डेटासेट के नाम और मॉडल विकल्पों को परिभाषित करने वाले चर।\n\n## मुख्य घटक और अभ्यास\n\nरिपॉजिटरी दो प्राथमिक अनुप्रयोगों के आसपास संरचित है, जिनमें से प्रत्येक में ट्रेसिंग और मूल्यांकन के माध्यम से खोजे जाने और हल किए जाने वाले जानबूझकर बग शामिल हैं।\n\n### 1. डिनर बॉट (Dinner Bot)\n\nडिनर बॉट एक ऐसा एजेंट है जो उपलब्ध रसोई की सामग्री के आधार पर व्यंजनों का सुझाव देता है।\n\n* **बग**: एक विस्तारित स्टेपल्स सूची में गलती से नमक, काली मिर्च, तेल और पानी के अलावा मक्खन, लहसुन और प्याज जैसी वस्तुएं शामिल हो जाती हैं।\n* **मूल्यांकन प्रक्रिया**: डेवलपर LangSmith में ट्रेस का निरीक्षण करते हैं, सहेजे गए ट्रेस अपलोड करते हैं, एक डेटासेट बनाते हैं, और समस्या की पहचान करने और उसे ठीक करने के लिए कोड-आधारित और LLM-आधारित मूल्यांकनकर्ताओं को चलाते हैं।\n\n### 2. रेसिपी रीमिक्सर (Recipe Remixer)\n\nरेसिपी रीमिक्सर मौजूदा व्यंजनों को विशिष्ट आहार संबंधी आवश्यकताओं, जैसे कि शाकाहारी या डेयरी-मुक्त विकल्पों के अनुकूल संशोधित करता है।\n\n* **बग**: एक तार्किक त्रुटि सही सामग्री की अदला-बदली को टेक्स्ट-पुनर्लेखन फ़ंक्शन तक पहुँचने से रोकती है।\n* **मूल्यांकन प्रक्रिया**: डेटा प्रवाह कहाँ टूटता है इसे अलग करने के लिए कस्टम मूल्यांकनकर्ताओं और LLM जजों का उपयोग करके ट्रेस अपलोड और विश्लेषित किए जाते हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nये अभ्यास प्रदर्शित करते हैं कि डेवलपर कोड एसरशन और LLM-as-a-judge पैटर्न को मिलाकर एआई एजेंटों के लिए व्यवस्थित मूल्यांकन कैसे संरचित कर सकते हैं। मूल सेटअप और निर्देशों को सत्यापित करने के लिए, उपयोगकर्ता GitHub पर आधिकारिक रिपॉजिटरी `langchain-samples/agent-evals-101-webinar` की समीक्षा कर सकते हैं और यह सुनिश्चित कर सकते हैं कि वे अपनी स्थानीय मशीनों पर सुरक्षित रूप से उचित API क्रेडेंशियल्स का उपयोग करते हैं।",
+  "en_meta": "Explore the LangChain Agent Evals 101 webinar repository, featuring hands-on exercises with Dinner Bot and Recipe Remixer using LangSmith.",
+  "hi_meta": "LangSmith का उपयोग करके डिनर बॉट और रेसिपी रीमिक्सर के साथ व्यावहारिक अभ्यास वाली LangChain एजेंट इवल्स 101 रिपॉजिटरी की खोज करें।",
+  "en_keywords": [
+    "LangChain",
+    "Agent Evals 101",
+    "LangSmith",
+    "Dinner Bot",
+    "Recipe Remixer",
+    "AI evaluation"
+  ],
+  "hi_keywords": [
+    "LangChain",
+    "Agent Evals",
+    "LangSmith",
+    "Dinner Bot",
+    "Recipe Remixer",
+    "एआई मूल्यांकन"
+  ],
+  "source_published_at": null,
+  "id": "115c14747a77",
+  "source": "https://github.com/langchain-samples/agent-evals-101-webinar",
+  "date": "2026-11-09T12:00:12.393994+00:00",
+  "source_title": "langchain-samples/agent-evals-101-webinar - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

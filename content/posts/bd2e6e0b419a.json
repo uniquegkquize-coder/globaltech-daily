@@ -1,0 +1,32 @@
+{
+  "en_title": "Microsoft Fixes Remote Desktop Connection Failures Caused by Recent Windows Updates",
+  "hi_title": "माइक्रोसॉफ्ट ने हालिया विंडोज अपडेट के कारण होने वाली रिमोट डेस्कटॉप समस्याओं को ठीक किया",
+  "en_body": "Microsoft has addressed a known issue that previously prevented non-admin users from connecting to devices via Remote Desktop when the \"Administrator protection\" security feature was enabled. According to Microsoft, the problem emerged after the installation of specific recent Windows updates on systems running Windows 11 version 24H2 and later.\n\n### Overview of the Issue\nThe complication specifically impacted enterprise-managed remote devices configured as Remote Desktop hosts while Administrator protection was enabled. When standard users attempted connections, they encountered error 0xC000000D. The Administrator protection feature itself is designed to prompt standard users to authenticate using Windows Hello, such as a PIN or biometrics, whenever system changes like Windows Registry modifications or app installations are attempted. The feature began rolling out in October 2025 and became enabled by default in organizations utilizing Windows security baselines following the October 2026 security update.\n\n### Resolution and Updates\nMicrosoft confirmed that the Remote Desktop connection failures have been resolved for users who install the KB5127936 preview update released on October 28, 2026, or subsequent Windows updates. \n\n* **Recommended Action:** Users and administrators are advised to install the latest available security updates for their devices, as these packages include important performance improvements alongside the Remote Desktop fix.\n* **Temporary Workaround:** For administrators preferring to wait for upcoming cumulative updates rather than installing the preview release, a temporary workaround is available. IT staff can disable the admin protection feature by adjusting the \"User Account Control Type Of Admin Approval Mode\" policy through Microsoft Intune or Group Policy.\n\n### Verification and Next Steps\nUsers experiencing Remote Desktop issues on Windows 11 24H2 or later can verify their system status by checking installed Windows updates in system settings. To confirm the fix, administrators should review update histories for KB5127936 or later cumulative releases. Organizations can also consult official Microsoft support channels and security bulletins for further documentation regarding Administrator protection configurations.",
+  "hi_body": "माइक्रोसॉफ्ट ने एक ज्ञात समस्या का समाधान कर दिया है जिसके कारण \"Administrator protection\" सुरक्षा सुविधा सक्षम होने पर गैर-एडमिन उपयोगकर्ता रिमोट डेस्कटॉप के माध्यम से डिवाइस से कनेक्ट नहीं हो पा रहे थे। माइक्रोसॉफ्ट के अनुसार, यह समस्या विंडोज 11 संस्करण 24H2 और उससे बाद के संस्करणों पर चलने वाले सिस्टम पर हालिया विंडोज अपडेट स्थापित करने के बाद सामने आई थी।\n\n### समस्या का अवलोकन\nयह जटिलता विशेष रूप से उन उद्यम-प्रबंधित रिमोट उपकरणों को प्रभावित करती थी जो रिमोट डेस्कटॉप होस्ट के रूप में कॉन्फ़िगर किए गए थे और जिनमें प्रशासक सुरक्षा सक्षम थी। जब मानक उपयोगकर्ता कनेक्ट करने का प्रयास करते थे, तो उन्हें त्रुटि 0xC000000D का सामना करना पड़ता था। एडमिनिस्ट्रेटर प्रोटेक्शन सुविधा को मानक उपयोगकर्ताओं को विंडोज हेलो (जैसे पिन या बायोमेट्रिक्स) का उपयोग करके प्रमाणित करने के लिए प्रॉम्प्ट करने के लिए डिज़ाइन किया गया है जब भी विंडोज रजिस्ट्री संशोधन या ऐप इंस्टॉलेशन जैसे सिस्टम परिवर्तन का प्रयास किया जाता है।\n\n### समाधान और अपडेट\nमाइक्रोसॉफ्ट ने पुष्टि की है कि 28 अक्टूबर, 2026 को जारी किए गए KB5127936 पूर्वावलोकन अपडेट या बाद के विंडोज अपडेट को स्थापित करने वाले उपयोगकर्ताओं के लिए रिमोट डेस्कटॉप कनेक्शन विफलताओं को हल कर दिया गया है।\n\n* **अनुशंसित कार्रवाई:** उपयोगकर्ताओं और प्रशासकों को सलाह दी जाती है कि वे अपने उपकरणों के लिए नवीनतम उपलब्ध सुरक्षा अपडेट स्थापित करें, क्योंकि इन पैकेजों में रिमोट डेस्कटॉप सुधार के साथ-साथ महत्वपूर्ण प्रदर्शन सुधार भी शामिल हैं।\n* **अस्थायी समाधान:** जो प्रशासक पूर्वावलोकन रिलीज़ स्थापित करने के बजाय आगामी संचयी अपडेट की प्रतीक्षा करना पसंद करते हैं, उनके लिए एक अस्थायी समाधान उपलब्ध है। आईटी कर्मचारी माइक्रोसॉफ्ट इंट्यून या ग्रुप पॉलिसी के माध्यम से \"User Account Control Type Of Admin Approval Mode\" नीति को रीसेट करके एडमिन सुरक्षा सुविधा को अक्षम कर सकते हैं।\n\n### सत्यापन और अगले चरण\nविंडोज 11 24H2 या इसके बाद के संस्करण पर रिमोट डेस्कटॉप समस्याओं का सामना करने वाले उपयोगकर्ता सिस्टम सेटिंग्स में इंस्टॉल किए गए विंडोज अपडेट की जांच करके अपने सिस्टम की स्थिति को सत्यापित कर सकते हैं।",
+  "en_meta": "Microsoft has released updates to fix Remote Desktop connection failures caused by recent Windows updates when Administrator protection is enabled.",
+  "hi_meta": "माइक्रोसॉफ्ट ने हालिया विंडोज अपडेट के कारण होने वाली रिमोट डेस्कटॉप कनेक्शन समस्याओं को ठीक करने के लिए अपडेट जारी किए हैं।",
+  "en_keywords": [
+    "Microsoft",
+    "Remote Desktop",
+    "Windows 11",
+    "Administrator protection",
+    "Windows updates",
+    "error 0xC000000D",
+    "KB5127936"
+  ],
+  "hi_keywords": [
+    "माइक्रोसॉफ्ट",
+    "रिमोट डेस्कटॉप",
+    "विंडोज 11",
+    "विंडोज अपडेट",
+    "KB5127936",
+    "त्रुटि 0xC000000D"
+  ],
+  "source_published_at": "2026-10-29T10:35:40-04:00",
+  "id": "bd2e6e0b419a",
+  "source": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-remote-desktop-failures-caused-by-recent-windows-updates/",
+  "date": "2026-11-09T12:02:33.062535+00:00",
+  "source_title": "Microsoft fixes Remote Desktop failures caused by recent Windows updates",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

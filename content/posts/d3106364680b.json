@@ -1,0 +1,34 @@
+{
+  "en_title": "Microsoft Research AI for Science Releases BioEmu2 Foundation Model for Biomolecular Structure and Dynamics",
+  "hi_title": "माइक्रोसॉफ्ट रिसर्च एआई फॉर साइंस ने बायोमोलेक्यूलर संरचना और गतिशीलता के लिए बायोएमू2 फाउंडेशन मॉडल जारी किया",
+  "en_body": "Microsoft Research AI for Science has published BioEmu2, a foundation model designed for biomolecular structure prediction, equilibrium sampling, and time-lagged trajectory generation. The software package aims to support molecular systems containing proteins, nucleic acids, ligands, and other chemical components.\n\n### Core Capabilities and Features\n- **Structure Prediction and Equilibrium Sampling:** Predict folded structures and sample equilibrium ensembles from the command line or using Python interfaces.\n- **Dynamic Trajectory Generation:** Propagate structures forward in time using implicit transfer operator models.\n- **Steered and Parallel Sampling:** Apply contact conditioning, perform inference-time steering toward specific properties, and utilize context-parallel sampling across multiple GPUs for structures that exceed single-device memory limits.\n\n### System Requirements and Installation\nBioEmu2 is reported to require a Linux operating system and a supported NVIDIA GPU; macOS and Windows environments are not supported. \n- **GPU Compatibility:** The software requires NVIDIA hardware with compute capability 7.0 or newer. Specific installation extras depend on the GPU model, separating requirements for CUDA 13 configurations and older architectures like Volta (compute capability 7.0).\n- **Python Environment:** The model is tested with Python 3.12, while versions 3.13 and 3.14 are noted to pass test suites.\n\n### Practical Implications and Verification\nUsers can interact with BioEmu2 via command-line utilities or Python APIs, and run interactive workflows using Jupytext and Jupyter notebooks or VS Code. Developers interested in verifying the original announcement, reviewing complete documentation, or checking license terms can inspect the official Microsoft repository on GitHub (`microsoft/bioemu2`).",
+  "hi_body": "माइक्रोसॉफ्ट रिसर्च एआई फॉर साइंस ने बायोएमू2 (BioEmu2) को प्रकाशित किया है, जो बायोमोलेक्यूलर संरचना की भविष्यवाणी, संतुलन नमूनाकरण (equilibrium sampling) और समय-लागयुक्त प्रक्षेपवक्र (trajectory) जनरेशन के लिए डिज़ाइन किया गया एक फाउंडेशन मॉडल है। यह सॉफ़्टवेयर पैकेज प्रोटीन, न्यूक्लिक एसिड, लिगैंड और अन्य रासायनिक घटकों वाले आणविक प्रणालियों का समर्थन करने का लक्ष्य रखता है।\n\n### मुख्य क्षमताएं और विशेषताएं\n- **संरचना भविष्यवाणी और संतुलन नमूनाकरण:** कमांड लाइन या पायथन इंटरफ़ेस का उपयोग करके मुड़ी हुई संरचनाओं की भविष्यवाणी करें और संतुलन एनसेम्बल का नमूना लें।\n- **डायनेमिक ट्रेजेक्टरी जनरेशन:** निहित ट्रांसफर ऑपरेटर मॉडल का उपयोग करके संरचनाओं को समय के साथ आगे बढ़ाएं।\n- **स्टीयर्ड और समानांतर नमूनाकरण:** संपर्क कंडीशनिंग लागू करें, विशिष्ट गुणों की ओर अनुमान-समय संचालन (inference-time steering) करें, और उन संरचनाओं के लिए कई जीपीयू में संदर्भ-समानांतर (context-parallel) नमूनाकरण का उपयोग करें जो एकल-डिवाइस मेमोरी सीमाओं से अधिक हैं।\n\n### सिस्टम आवश्यकताएं और स्थापना\nरिपोर्ट के अनुसार बायोएमू2 के लिए लिनक्स ऑपरेटिंग सिस्टम और समर्थित एनवीआईडीआईए जीपीयू की आवश्यकता है; मैकोएस और विंडोज वातावरण समर्थित नहीं हैं।\n- **जीपीयू संगतता:** सॉफ्टवेयर को कंप्यूट क्षमता 7.0 या नए वाले एनवीआईडीआईए हार्डवेयर की आवश्यकता है। विशिष्ट स्थापना अतिरिक्त जीपीयू मॉडल पर निर्भर करती हैं, जो CUDA 13 कॉन्फ़िगरेशन और वोल्टा जैसे पुराने आर्किटेक्चर के बीच आवश्यकताओं को अलग करती है।\n- **पायथन वातावरण:** मॉडल का परीक्षण पायथन 3.12 के साथ किया गया है, जबकि संस्करण 3.13 और 3.14 परीक्षण सुइट को पास करते हैं।\n\n### व्यावहारिक निहितार्थ और सत्यापन\nउपयोगकर्ता कमांड-लाइन यूटिलिटीज या पायथन एपीआई के माध्यम से बायोएमू2 के साथ बातचीत कर सकते हैं, और जुपिटेक और जुपिटर नोटबुक या वीएस कोड का उपयोग करके इंटरैक्टिव वर्कफ़्लो चला सकते हैं। मूल घोषणा को सत्यापित करने, पूर्ण दस्तावेज़ीकरण की समीक्षा करने या लाइसेंस शर्तों की जांच करने के इच्छुक डेवलपर्स गिटहब (`microsoft/bioemu2`) पर आधिकारिक माइक्रोसॉफ्ट रिपॉजिटरी का निरीक्षण कर सकते हैं।",
+  "en_meta": "Learn about BioEmu2, a Microsoft Research AI for Science foundation model for biomolecular structure and dynamics, system requirements, and installation.",
+  "hi_meta": "बायोमोलेक्यूलर संरचना और गतिशीलता के लिए माइक्रोसॉफ्ट रिसर्च एआई फॉर साइंस के बायोएमू2 फाउंडेशन मॉडल, सिस्टम आवश्यकताओं और स्थापना के बारे में जानें।",
+  "en_keywords": [
+    "BioEmu2",
+    "Microsoft Research",
+    "biomolecular structure",
+    "equilibrium sampling",
+    "AI for Science",
+    "molecular dynamics"
+  ],
+  "hi_keywords": [
+    "BioEmu2",
+    "माइक्रोसॉफ्ट रिसर्च",
+    "बायोमोलेक्यूलर संरचना",
+    "संतुलन नमूनाकरण",
+    "एआई फॉर साइंस",
+    "आणविक गतिशीलता"
+  ],
+  "source_published_at": null,
+  "id": "d3106364680b",
+  "source": "https://github.com/microsoft/bioemu2",
+  "date": "2026-11-09T12:03:50.674149+00:00",
+  "source_title": "microsoft/bioemu2 - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

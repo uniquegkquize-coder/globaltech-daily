@@ -1,0 +1,32 @@
+{
+  "en_title": "Open-Source Repository Explores 4D Yang–Mills Wilson Loops via Extended Bałaban Method",
+  "hi_title": "ओपन-सोर्स रिपॉजिटरी विस्तारित बालाबान विधि के माध्यम से 4D Yang–Mills विल्सन लूप्स की खोज करती है",
+  "en_body": "A publicly available GitHub repository titled \"4D_Wilson_Loop_RG,\" maintained by Martin Peev and Akshunna S. Dogra, investigates the computation of correlation functions of physical observables in four-dimensional Yang–Mills (YM) theory. The project extends Bałaban's renormalisation group (RG) construction to the expectation of renormalised Wilson loops.\n\nAccording to the project documentation, the initiative began on August 26, 2026, and seeks to address ultraviolet singular behaviours of Wilson loops and pointwise traces in dimensions greater than two. The researchers note that their ongoing work aims to identify scalar contributions corresponding to perimeter and corner renormalisations within the RG, targeting finite-volume constructions rather than infinite-volume limits.\n\n## Project Structure and Working Drafts\nThe repository provides several working drafts, manuscripts, and supporting notes:\n* **Manuscripts under Construction:** Includes version V5 (PDF, LaTeX source, and bibliography) and its pedagogical companion summary (V4 companion), which serves as the current reference manuscript.\n* **Drafts and Reading Guides:** Contains iteration drafts, cutoff-comparison documents, the D2 step map, IT-1 notes, and a Cauchy-estimate draft updated through October and November 2026.\n* **Verification Status:** The authors state that mathematical content has been extensively checked with the assistance of Large Language Models (LLMs), but emphasize that nothing in the repository should be considered an academically rigorous, publishable mathematical paper.\n\n## Practical Implications and Verification\nThe repository is openly licensed under CC0-1.0 for original research material, while third-party contributions retain their respective notices. Interested researchers can verify the original announcements, build instructions, and LaTeX dependencies directly via the GitHub repository source.\n\nTo compile the documents, users require a recent TeX Live or MiKTeX installation equipped with pdfLaTeX, BibTeX, and latexmk, alongside the packages listed in the repository's dependency documentation.",
+  "hi_body": "मार्टिन पीव और अक्षुण्ण एस. डोगरा द्वारा अनुरक्षित \"4D_Wilson_Loop_RG\" नामक एक सार्वजनिक रूप से उपलब्ध गिटहब रिपॉजिटरी, चार-आयामी यांग-मिल्स (YM) सिद्धांत में भौतिक observables के सहसंबंध कार्यों की गणना की जांच करती है। यह परियोजना पुनर्निर्मित विल्सन लूप्स की अपेक्षा के लिए बालाबान के पुनर्निर्माण समूह (RG) निर्माण का विस्तार करती है।\n\nपरियोजना के दस्तावेज के अनुसार, यह पहल 26 अगस्त 2026 को शुरू हुई, और दो से अधिक आयामों में विल्सन लूप्स और पॉइंटवाइज ट्रेस के पराबैंगनी एकल व्यवहारों को संबोधित करना चाहती है। शोधकर्ताओं का उल्लेख है कि उनका चल रहा कार्य अनंत-आयोजन सीमाओं के बजाय परिमित-आयतन निर्माणों को लक्षित करते हुए, आरजी के भीतर परिधि और कोने के पुनर्निर्माण से संबंधित स्केलर योगदान की पहचान करना है।\n\n## परियोजना संरचना और कार्यशील मसौदे\nरिपॉजिटरी कई कार्यशील मसौदे, पांडुलिपियां और सहायक नोट्स प्रदान करती है:\n* **निर्माणधीन पांडुलिपियां:** इसमें संस्करण V5 (PDF, LaTeX स्रोत, और ग्रंथ सूची) और इसका शैक्षणिक साथी सारांश (V4 साथी) शामिल है, जो वर्तमान संदर्भ पांडुलिपि के रूप में कार्य करता है।\n* **मसौदे और पठन मार्गदर्शिका:** इसमें पुनरावृत्ति मसौदे, कटऑफ-तुलना दस्तावेज़, D2 चरण मानचित्र, IT-1 नोट्स, और अक्टूबर और नवंबर 2026 तक अद्यतन कॉची-अनुमान मसौदा शामिल हैं।\n* **सत्यापन स्थिति:** लेखकों का कहना है कि बड़े भाषा मॉडल (LLM) की सहायता से गणितीय सामग्री की व्यापक रूप से जांच की गई है, लेकिन इस बात पर जोर दिया जाता है कि रिपॉजिटरी में कुछ भी अकादमिक रूप से कठोर, प्रकाशन योग्य गणितीय पेपर नहीं माना जाना चाहिए।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nमूल शोध सामग्री के लिए रिपॉजिटरी CC0-1.0 के तहत खुले तौर पर लाइसेंस प्राप्त है, जबकि तीसरे पक्ष की सामग्री अपने संबंधित नोटिस बरकरार रखती है। इच्छुक शोधकर्ता गिटहब रिपॉजिटरी स्रोत के माध्यम से सीधे मूल घोषणाओं, निर्माण निर्देशों और लेटेक्स निर्भरता को सत्यापित कर सकते हैं।\n\nदस्तावेजों को संकलित करने के लिए, उपयोगकर्ताओं को रिपॉजिटरी की निर्भरता प्रलेखन में सूचीबद्ध पैकेजों के साथ-साथ pdfLaTeX, BibTeX और latexmk से लैस हालिया TeX Live या MiKTeX स्थापना की आवश्यकता होती है।",
+  "en_meta": "Explore the open-source 4D_Wilson_Loop_RG repository by Martin Peev and Akshunna S. Dogra, investigating Yang–Mills correlation functions.",
+  "hi_meta": "मार्टिन पीव और अक्षुण्ण एस. डोगरा द्वारा 4D_Wilson_Loop_RG ओपन-सोर्स रिपॉजिटरी का अन्वेषण करें, जो यांग-मिल्स सहसंबंध कार्यों की जांच करती है।",
+  "en_keywords": [
+    "Yang-Mills theory",
+    "Wilson loops",
+    "renormalisation group",
+    "Baaban method",
+    "open source physics"
+  ],
+  "hi_keywords": [
+    "यांग-मिल्स सिद्धांत",
+    "विल्सन लूप्स",
+    "पुनर्निर्माण समूह",
+    "बालाबान विधि",
+    "ओपन सोर्स भौतिकी"
+  ],
+  "source_published_at": null,
+  "id": "9719884c466d",
+  "source": "https://github.com/MathePhysics/4D_Wilson_Loop_RG",
+  "date": "2026-11-09T12:01:53.599235+00:00",
+  "source_title": "MathePhysics/4D_Wilson_Loop_RG: Computing correlation functions of physical observables of 4D YM by extending Bałaban's method to the expectation of renormalised Wilson loops. - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

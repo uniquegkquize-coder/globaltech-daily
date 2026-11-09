@@ -1,0 +1,29 @@
+{
+  "en_title": "Mac.apk Runs Android Apps on Apple Silicon Macs Without Emulation",
+  "hi_title": "Mac.apk बिना एमुलेटर के एप्पल सिलिकॉन मैक पर चलाता है एंड्रॉइड ऐप्स",
+  "en_body": "Mac.apk is an open-source tool designed to let users run Android apps on Apple Silicon-based Macs by translating Android instructions to macOS system calls instead of using a conventional emulator. \n\nJournalist Dhruv Bhutani reported testing the early-stage software by downloading the application from GitHub and installing various APKs, noting that results varied depending on the app.\n\n## How Mac.apk Works\n\nUnlike traditional emulators that boot a full Android operating system in the background, Mac.apk integrates the Android environment directly into macOS. Key features reported include:\n* **Installation:** Users download a DMG file, install the app, and drag-and-drop APK, APKM, XAPK, or APKS files into the interface.\n* **Integration:** Installed apps appear in the Mac Applications folder and can be launched via Spotlight.\n* **Format Support:** Supports common package formats and enables features like Google account sign-in.\n\n## Testing Results and Limitations\n\nBhutani shared hands-on observations from testing select applications:\n* **Pocket Casts:** Successfully installed, allowed Google sign-in, and synced listening history, though the window was locked to a horizontal orientation with only scaling options available.\n* **Crossy Road:** Tested as a 3D mobile game and worked immediately without visual glitches or lag, though mouse and keyboard controls may vary by game.\n* **DI.FM:** Failed to load during testing, freezing on a blank screen due to the alpha status of the software.\n* **Multitasking:** Testing was limited to running one Android app at a time.\n\n## Practical Implications and Verification\n\nBecause the software is in an early alpha stage, users should expect mixed compatibility and avoid relying on it for critical production tasks. The project is available on GitHub for those wishing to review the source code or verify the project's current status firsthand.",
+  "hi_body": "Mac.apk एक ओपन-सोर्स टूल है जिसे उपयोगकर्ताओं को पारंपरिक एमुलेटर का उपयोग करने के बजाय एंड्रॉइड निर्देशों को मैकओएस सिस्टम कॉल्स में अनुवाद करके एप्पल सिलिकॉन-आधारित मैक पर एंड्रॉइड ऐप्स चलाने की अनुमति देने के लिए डिज़ाइन किया गया है।\n\nपत्रकार ध्रुव भुटानी ने गिटहब से एप्लिकेशन डाउनलोड करके और विभिन्न एपीके इंस्टॉल करके शुरुआती चरण के सॉफ्टवेयर का परीक्षण करने की सूचना दी, यह नोट करते हुए कि ऐप के आधार पर परिणाम अलग-अलग थे।\n\n## Mac.apk कैसे काम करता है\n\nपारंपरिक एमुलेटर के विपरीत जो पृष्ठभूमि में एक पूर्ण एंड्रॉइड ऑपरेटिंग सिस्टम को बूट करते हैं, Mac.apk एंड्रॉइड वातावरण को सीधे मैकओएस में एकीकृत करता है। रिपोर्ट की गई मुख्य विशेषताएं:\n* **इंस्टॉलेशन:** उपयोगकर्ता डीएमजी फ़ाइल डाउनलोड करते हैं, ऐप इंस्टॉल करते हैं, और एपीके, एपीकेएम, एक्सएपीके या एपीकेएस फ़ाइलों को इंटरफ़ेस में खींचते और छोड़ते हैं।\n* **एकीकरण:** इंस्टॉल किए गए ऐप्स मैक एप्लिकेशन फोल्डर में दिखाई देते हैं और स्पॉटलाइट के माध्यम से लॉन्च किए जा सकते हैं।\n* **फ़ॉर्मेट समर्थन:** सामान्य पैकेज प्रारूपों का समर्थन करता है और Google खाता साइन-इन जैसी सुविधाओं को सक्षम बनाता है.\n\n## परीक्षण परिणाम और सीमाएं\n\nभुटानी ने चुनिंदा अनुप्रयोगों के परीक्षण से प्रत्यक्ष अवलोकन साझा किए:\n* **पॉकेट कास्ट्स:** सफलतापूर्वक इंस्टॉल किया गया, Google साइन-इन की अनुमति दी, और सुनने के इतिहास को सिंक किया गया, हालांकि विंडो केवल स्केलिंग विकल्पों के साथ एक क्षैतिज अभिविन्यास के लिए लॉक थी।\n* **क्रॉसी रोड:** एक 3डी मोबाइल गेम के रूप में परीक्षण किया गया और बिना किसी दृश्य गड़बड़ी या अंतराल के तुरंत काम किया, हालांकि माउस और कीबोर्ड नियंत्रण गेम के अनुसार भिन्न हो सकते हैं।\n* **DI.FM:** परीक्षण के दौरान लोड होने में विफल रहा, सॉफ्टवेयर की अल्फा स्थिति के कारण एक खाली स्क्रीन पर फ्रीज हो गया।\n* **मल्टीटास्किंग:** परीक्षण एक समय में एक एंड्रॉइड ऐप चलाने तक सीमित था।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nक्योंकि सॉफ्टवेयर शुरुआती अल्फा चरण में है, उपयोगकर्ताओं को मिश्रित संगतता की उम्मीद करनी चाहिए और महत्वपूर्ण उत्पादन कार्यों के लिए इस पर भरोसा करने से बचना चाहिए। यह प्रोजेक्ट गिटहब पर उन लोगों के लिए उपलब्ध है जो स्रोत कोड की समीक्षा करना चाहते हैं या प्रोजेक्ट की वर्तमान स्थिति को सत्यापित करना चाहते हैं।",
+  "en_meta": "Discover Mac.apk, an open-source tool that lets users run Android apps on Apple Silicon Macs without traditional emulation. Read about testing and limitations.",
+  "hi_meta": "Mac.apk के बारे में जानें, जो एक ओपन-सोर्स टूल है जो उपयोगकर्ताओं को पारंपरिक एमुलेटर के बिना एप्पल सिलिकॉन मैक पर एंड्रॉइड ऐप चलाने देता है।",
+  "en_keywords": [
+    "Mac.apk",
+    "Android apps on Mac",
+    "Apple Silicon",
+    "macOS compatibility",
+    "open-source tools"
+  ],
+  "hi_keywords": [
+    "Mac.apk",
+    "मैक पर एंड्रॉइड ऐप्स",
+    "एप्पल सिलिकॉन",
+    "मैकओएस संगतता",
+    "ओपन-सोर्स टूल"
+  ],
+  "source_published_at": "2026-10-30T19:00:10Z",
+  "id": "82df1cc557b7",
+  "source": "https://www.androidpolice.com/macapk-runs-my-favorite-android-apps-on-my-mac-and-most-just-worked/",
+  "date": "2026-11-09T12:01:29.341203+00:00",
+  "source_title": "Mac.apk runs my favorite Android apps on my Mac; most just worked",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

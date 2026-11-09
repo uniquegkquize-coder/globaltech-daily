@@ -1,0 +1,36 @@
+{
+  "en_title": "AutoTavern Released as Hearthstone Battlegrounds Simulator and AI Benchmark",
+  "hi_title": "ऑटो-टवर्न्स (AutoTavern) हार्थस्टोन बैटलग्राउंड्स सिम्युलेटर और एआई बेंचमार्क के रूप में जारी",
+  "en_body": "AutoTavern has been released as an open-source repository featuring TavernGym and TavernBench, designed to provide a reproducible environment and decision benchmark for AI research involving Hearthstone Battlegrounds. Authored by Changlian Ma and Limin Wang from Nanjing University and Shanghai AI Laboratory, the project accompanies the research paper titled \"Build, Don't Play: Self-Improving LLM Research Agents Develop a Hearthstone Battlegrounds AI That Rivals Top Players.\"\n\nAccording to the documentation, the release provides code and data under the MIT License, though specific items like the trained TavernAgent weights, training code, and benchmark item generators are not included. Users can verify the original announcement and access instructions directly through the project's public GitHub repository.\n\n## Core Components\n\n* **TavernGym:** A simulator targeting patch 37.0.2 for solo Battlegrounds gameplay. It exposes player-visible states, exact legal action masks, seeded save and restore functions, 245 discrete actions, 3,227 numeric features, and 124 card indices per observation.\n* **TavernBench:** A decision benchmark containing 960 total tasks, which includes a 368-task evaluation set, saved simulator states, and shared prompt formats with common scoring code.\n\n## Practical Implications and Setup\n\nResearchers and developers can use TavernGym to simulate complete games, connect learning algorithms, or evaluate model judgments against fixed tasks. The simulator requires Python 3.10 or newer along with a Rust toolchain. TavernBench scoring requires only Python's standard library without needing a simulator build, model access, or API key.\n\nThis independent, non-commercial research project is unaffiliated with Blizzard Entertainment. Hearthstone and Hearthstone Battlegrounds are trademarks of Blizzard, and no game client files or official artwork are distributed.",
+  "hi_body": "ऑटो-टवर्न्स (AutoTavern) को टवर्न्जिम (TavernGym) और टवर्न्बेंच (TavernBench) के साथ एक ओपन-सोर्स रिपॉजिटरी के रूप में जारी किया गया है, जिसे हार्थस्टोन बैटलग्राउंड्स से जुड़े एआई अनुसंधान के लिए एक पुनरुत्पादक वातावरण और निर्णय बेंचमार्क प्रदान करने के लिए डिज़ाइन किया गया है। नानजिंग विश्वविद्यालय और शंघाई एआई लेबोरेटरी के चांग्लियन मा और लिमिन वांग द्वारा लिखित यह परियोजना \"बिल्ड, डोंट प्ले: सेल्फ-इम्प्रूविंग एलएलएम रिसर्च एजेंट्स डेवलप ए हार्थस्टोन बैटलग्राउंड्स एआई दैट राइवल्स टॉप प्लेयर्स\" नामक शोध पत्र के साथ है।\n\nदस्तावेज़ के अनुसार, यह रिलीज़ एमआईटी लाइसेंस के तहत कोड और डेटा प्रदान करती है, हालांकि प्रशिक्षित टवर्नेट एजेंट वजन, प्रशिक्षण कोड और बेंचमार्क आइटम जनरेटर जैसी विशिष्ट चीजें शामिल नहीं हैं। उपयोगकर्ता परियोजना के सार्वजनिक गिटहब रिपॉजिटरी के माध्यम से मूल घोषणा की पुष्टि कर सकते हैं और निर्देश प्राप्त कर सकते हैं।\n\n## मुख्य घटक\n\n* **टवर्न्जिम (TavernGym):** एकल बैटलग्राउंड गेमप्ले के लिए पैच 37.0.2 को लक्षित करने वाला एक सिम्युलेटर। यह खिलाड़ी-दृश्य राज्यों, सटीक कानूनी कार्रवाई मास्क, सीडेड सेव और रिस्टोर फ़ंक्शंस, 245 अलग-अलग कार्यों, 3,227 संख्यात्मक विशेषताओं और प्रति अवलोकन 124 कार्ड इंडेक्स को उजागर करता है।\n* **टवर्न्बेंच (TavernBench):** कुल 960 कार्यों वाला एक निर्णय बेंचमार्क, जिसमें 368-कार्य मूल्यांकन सेट, सहेजे गए सिम्युलेटर राज्य और सामान्य स्कोरिंग कोड के साथ साझा प्रॉम्प्ट प्रारूप शामिल हैं।\n\n## व्यावहारिक निहितार्थ और सेटअप\n\nशोधकर्ता और डेवलपर पूर्ण गेम का अनुकरण करने, सीखने के एल्गोरिदम को जोड़ने या निश्चित कार्यों के खिलाफ मॉडल के निर्णय का मूल्यांकन करने के लिए टवर्न्जिम का उपयोग कर सकते हैं। सिम्युलेटर को पायथन 3.10 या नए संस्करण के साथ-साथ रस्ट टूलचेन की आवश्यकता होती है। टवर्न्बेंच स्कोरिंग के लिए सिम्युलेटर बिल्ड, मॉडल एक्सेस या एपीआई कुंजी की आवश्यकता के बिना केवल पायथन की मानक लाइब्रेरी की आवश्यकता होती है।\n\nयह स्वतंत्र, गैर-व्यापारी अनुसंधान परियोजना ब्लिज़ार्ड एंटरटेनमेंट से संबद्ध नहीं है। हार्थस्टोन और हार्थस्टोन बैटलग्राउंड्स ब्लिज़ार्ड के ट्रेडमार्क हैं, और कोई गेम क्लाइंट फ़ाइलें या आधिकारिक कलाकृति वितरित नहीं की जाती हैं।",
+  "en_meta": "Discover AutoTavern, an open-source Hearthstone Battlegrounds simulator and 960-task decision benchmark released for AI research by Nanjing University and…",
+  "hi_meta": "नारिंग विश्वविद्यालय और शंघाई एआई लेबोरेटरी द्वारा एआई अनुसंधान के लिए जारी ऑटो-टवर्न्स हार्थस्टोन बैटलग्राउंड्स सिम्युलेटर और 960-कार्य निर्णय बेंचमार्क के…",
+  "en_keywords": [
+    "AutoTavern",
+    "TavernGym",
+    "TavernBench",
+    "Hearthstone Battlegrounds",
+    "AI research",
+    "simulator",
+    "decision benchmark"
+  ],
+  "hi_keywords": [
+    "AutoTavern",
+    "TavernGym",
+    "TavernBench",
+    "हार्थस्टोन बैटलग्राउंड्स",
+    "एआई अनुसंधान",
+    "सिम्युलेटर",
+    "बेंचमार्क"
+  ],
+  "source_published_at": null,
+  "id": "2327a8e3fdd1",
+  "source": "https://github.com/MCG-NJU/AutoTavern",
+  "date": "2026-11-09T12:02:17.701643+00:00",
+  "source_title": "MCG-NJU/AutoTavern: TavernGym and TavernBench: a faithful, full-content Hearthstone Battlegrounds simulator with an RL interface, and a 960-task decision benchmark. Code and data for \"Build, Don't Play\". - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

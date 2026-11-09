@@ -1,0 +1,31 @@
+{
+  "en_title": "Lunaris 3.13 Changelog Details Android 16 Backports and UI Overhauls",
+  "hi_title": "Android 16 पर आधारित लूनारिस 3.13 बदलाव सूची और यूआई अपडेट की जानकारी",
+  "en_body": "The public changelog for Lunaris version 3.13, hosted on GitHub by Lunaris-AOSP, outlines a broad set of planned and implemented modifications based on Android 16. The update introduces numerous visual customizations, backported interface behaviors, and under-the-hood performance adjustments.\n\n## Interface and Design Updates\n- **Dynamic Island Additions:** Introduces the Lunaris Bar with support for left and right cutouts, an island glow effect, lock screen support, and landscape disabling options.\n- **Quick Settings and Notifications:** Adds Android 17 quick settings bounce animations, grouped privacy chips, dialog spring animations, and an optional modular quick settings layout.\n- **Lock Screen Enhancements:** Features water ripple effects for unlock and charging animations, adjustable notification anchor positions, 3D spatial effects for depth wallpapers, and third-party lock screen widget support.\n\n## System and Application Tweaks\n- **Redesigned Components:** Incorporates a redesigned Dialer and Package Installer built with Compose Material 3 Expressive, alongside a revamped settings homepage UI.\n- **Functional Improvements:** Implements advanced CPU/GPU model spoofing, a native backup and restore solution, Duck RKP V1 provisioning with TrickyStore integration, and fixes for VoIP call volume in Compose panels.\n\n## Practical Implications and Verification\nUsers tracking custom ROM development can review the official GitHub repository for code-level implementation details and update availability. Verification of specific device compatibility and installation requirements depends on maintainer releases and official project documentation.",
+  "hi_body": "लूनारिस-एओएसजी द्वारा गिटहब पर जारी लूनारिस संस्करण 3.13 की सार्वजनिक बदलाव सूची (changelog) में एंड्रॉइड 16 पर आधारित कई संशोधनों और सुधारों का विवरण दिया गया है। इस अपडेट में दृश्य अनुकूलन, इंटरफ़ेस व्यवहार और सिस्टम-स्तरीय प्रदर्शन समायोजन शामिल हैं।\n\n## इंटरफ़ेस और डिज़ाइन अपडेट\n- **डायनेमिक आइलैंड सुविधाएँ:** बाएं और दाएं कटआउट समर्थन, आइलैंड ग्लो इफ़ेक्ट, लॉक स्क्रीन समर्थन और लैंडस्केप अक्षम करने के विकल्पों के साथ लूनारिस बार पेश किया गया है।\n- **क्विक सेटिंग्स और नोटिफिकेशन:** एंड्रॉइड 17 क्विक सेटिंग्स बाउंस एनिमेशन, समूहीकृत गोपनीयता चिप्स, और वैकल्पिक मॉड्यूलर क्विक सेटिंग्स लेआउट जोड़े गए हैं।\n- **लॉक स्क्रीन सुधार:** अनलॉक और चार्जिंग एनिमेशन के लिए वाटर रिपल इफ़ेक्ट, समायोज्य नोटिफिकेशन एंकर स्थिति, गहराई वाले वॉलपेपर के लिए 3डी स्थानिक प्रभाव, और थर्ड-पार्टी लॉक स्क्रीन विजेट समर्थन शामिल हैं।\n\n## सिस्टम और एप्लिकेशन बदलाव\n- **पुनर्रूपांकित घटक:** कंपोज़ मटीरियल 3 एक्सप्रेसिव के साथ निर्मित एक नया डायलर और पैकेज इंस्टॉलर, साथ ही सेटिंग्स होमपेज यूआई को अपडेट किया गया है।\n- ** कार्यात्मक सुधार:** उन्नत सीपीयू/जीपीयू मॉडल स्पूफ़िंग, एक मूल बैकअप और पुनर्स्थापना समाधान, और ट्रिकीस्टोर एकीकरण के साथ डक आरकेपी वी1 प्रोविजनिंग लागू की गई है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nकस्टम रॉम विकास पर नज़र रखने वाले उपयोगकर्ता कोड-स्तरीय कार्यान्वयन विवरण और अपडेट की उपलब्धता के लिए आधिकारिक गिटहब रिपॉजिटरी की जाँच कर सकते हैं। विशिष्ट डिवाइस संगतता और स्थापना आवश्यकताओं का सत्यापन मेंटेनर रिलीज़ पर निर्भर करता है।",
+  "en_meta": "Explore the Lunaris 3.13 changelog based on Android 16, detailing interface updates, Quick Settings backports, and system tweaks on GitHub.",
+  "hi_meta": "एंड्रॉइड 16 पर आधारित लूनारिस 3.13 बदलाव सूची की जानकारी, जिसमें इंटरफ़ेस अपडेट और सिस्टम ट्विक्स शामिल हैं।",
+  "en_keywords": [
+    "Lunaris 3.13",
+    "Android 16",
+    "Changelog",
+    "Dynamic Island",
+    "GitHub",
+    "Custom ROM"
+  ],
+  "hi_keywords": [
+    "लूनारिस 3.13",
+    "एंड्रॉइड 16",
+    "चेंजलॉग",
+    "डायनेमिक आइलैंड",
+    "गिटहब",
+    "कस्टम रॉम"
+  ],
+  "source_published_at": null,
+  "id": "29ee38fbc55b",
+  "source": "https://github.com/Lunaris-AOSP/changelogs",
+  "date": "2026-11-09T12:01:20.944524+00:00",
+  "source_title": "Lunaris 3.13 Changelogs based on Android 16 - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

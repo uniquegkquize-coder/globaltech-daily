@@ -1,0 +1,29 @@
+{
+  "en_title": "Snowhush Brings Interactive Snow, Leaves, Rain and Petals to Mac, Windows and Linux Desktops",
+  "hi_title": "Snowhush मैक, विंडोज और लिनक्स डेस्कटॉप पर लाता है इंटरैक्टिव बर्फ, पत्तियां, बारिश और फूल",
+  "en_body": "Snowhush is a small, source-available desktop utility designed to overlay animated weather effects such as falling snow, autumn leaves, rain, and cherry blossoms onto computer screens. According to public documentation, the application sits in the macOS menu bar and in the system tray on Windows and Linux, offering interactive physics where particles settle on windows, the Dock, and taskbars, and part or slide away when users move their cursors or manipulate windows.\n\n## Platform Support and Requirements\n\nThe software supports macOS 14 or later, Windows 10 or 11, and specific Linux environments utilizing Wayland compositors including KDE Plasma 6, Hyprland, Sway, and niri. Linux releases provide AppImage files alongside .deb and .rpm packages, while Arch Linux users can utilize an AUR package build script. Developers report that resource consumption sits around 6% of a single processor core and approximately 65 MB of memory, reducing usage further during battery operation, Low Power Mode, or when the screen is locked, sleeping, or covered.\n\n## Customization Modes and Visual Effects\n\nUsers can switch between multiple modes via the menu bar or system tray:\n* **Snow:** Flakes drift downward, pile up at the bottom of the screen or on windows, and can optionally melt slowly over time.\n* **Autumn Leaves:** Leaves fall, turn, sway, and gather in visible heaps, with an optional setting to wither.\n* **Rain:** Raindrops beat down, spatter surfaces, run down glass, and leave trails or wet films without accumulating.\n* **Cherry Blossom:** Pink petals and occasional flowering stalks fall, accumulating similarly to leaves, with an optional browning effect.\n* **Halloween:** A seasonal mode featuring glowing jack-o'-lanterns and ghosts within the snow drifts.\n\nSettings also control intensity, opacity, accumulation, window interaction, performance limits, and whether the animations appear in screenshots.\n\n## Licensing and Verification\n\nThe project is distributed under the PolyForm Noncommercial 1.0.0 license, permitting free use, sharing, and modification for non-commercial purposes, while prior versions up to 0.6.1 used the MIT License. Users can review the original source code, packaging instructions, and download links directly on the official GitHub repository maintained by mbezruchko.",
+  "hi_body": "Snowhush एक छोटी, सोर्स-उपलब्ध डेस्कटॉप यूटिलिटी है जिसे कंप्यूटर स्क्रीन पर गिरती बर्फ, पतझड़ की पत्तियां, बारिश और चेरी ब्लॉसम जैसे एनिमेटेड मौसम प्रभाव दिखाने के लिए डिज़ाइन किया गया है। सार्वजनिक दस्तावेज़ीकरण के अनुसार, यह एप्लिकेशन macOS में मेनू बार और विंडोज तथा लिनक्स में सिस्टम ट्रे में रहता है। इसमें इंटरैक्टिव फिजिक्स दी गई है जहाँ कण खिड़कियों, डॉक और टास्कबार पर जमा होते हैं और कर्सर ले जाने या खिड़कियां हिलाने पर हट जाते हैं या फिसल जाते हैं।\n\n## प्लेटफ़ॉर्म समर्थन और आवश्यकताएं\n\nयह सॉफ्टवेयर macOS 14 या इसके बाद के संस्करण, विंडोज 10 या 11, और KDE Plasma 6, Hyprland, Sway तथा niri जैसे Wayland कंपोजिट का उपयोग करने वाले विशिष्ट लिनक्स वातावरण का समर्थन करता है। लिनक्स रिलीज़ में .deb और .rpm पैकेजों के साथ AppImage फाइलें मिलती हैं, जबकि आर्च लिनक्स उपयोगकर्ता AUR पैकेज बिल्ड स्क्रिप्ट का उपयोग कर सकते हैं। डेवलपर्स के अनुसार, संसाधन की खपत एक प्रोसेसर कोर का लगभग 6% और लगभग 65 MB मेमोरी है, और बैटरी मोड, लो पावर मोड या स्क्रीन के स्लीप/लॉक होने पर यह और कम हो जाती है।\n\n## कस्टमाइज़ेशन मोड और दृश्य प्रभाव\n\nउपयोगकर्ता मेनू बार या सिस्टम ट्रे के माध्यम से कई मोड के बीच स्विच कर सकते हैं:\n* **बर्फ (Snow):** बर्फ के टुकड़े नीचे गिरते हैं, स्क्रीन के निचले हिस्से या खिड़कियों पर जमा होते हैं, और धीरे-धीरे पिघल सकते हैं।\n* **पतझड़ की पत्तियां (Autumn Leaves):** पत्तियां गिरती हैं, घूमती हैं और ढेर बनाती हैं।\n* **बारिश (Rain):** बारिश की बूंदें गिरती हैं, सतहों पर छींटे मारती हैं और बिना जमा हुए कांच पर नीचे की ओर बहती हैं।\n* **चेरी ब्लॉसम (Cherry Blossom):** गुलाबी पंखुड़ियां और कभी-कभार डंठल वाले फूल गिरते हैं।\n* **हैलोवीन (Halloween):** एक मौसमी मोड जिसमें चमकते कद्दू और भूत दिखाई देते हैं।\n\nसेटिंग्स के जरिए तीव्रता, पारदर्शिता, संचय, खिड़की की बातचीत और स्क्रीनशॉट में एनिमेशन दिखने जैसी चीजों को नियंत्रित किया जा सकता है।\n\n## लाइसेंसिंग और सत्यापन\n\nयह प्रोजेक्ट पॉलीफ़ॉर्म नॉनकॉमर्शियल 1.0.0 लाइसेंस के तहत वितरित किया जाता है, जो गैर-व्यावसायिक उद्देश्यों के लिए मुफ्त उपयोग, साझाकरण और संशोधन की अनुमति देता है, जबकि 0.6.1 तक के पुराने संस्करण MIT लाइसेंस के तहत जारी किए गए थे। उपयोगकर्ता mbezruchko द्वारा बनाए गए आधिकारिक GitHub रिपॉजिटरी पर जाकर मूल स्रोत कोड, पैकेजिंग निर्देश और डाउनलोड लिंक देख सकते हैं।",
+  "en_meta": "Discover Snowhush, a free desktop app for macOS, Windows and Linux that adds interactive snow, rain, leaves and cherry blossoms to your screen.",
+  "hi_meta": "Snowhush के बारे में जानें, जो मैक, विंडोज और लिनक्स के लिए एक मुफ्त डेस्कटॉप ऐप है जो स्क्रीन पर इंटरैक्टिव बर्फ, बारिश और पत्तियां जोड़ता है।",
+  "en_keywords": [
+    "Snowhush",
+    "macOS app",
+    "Windows desktop utility",
+    "Linux Wayland app",
+    "animated desktop effects"
+  ],
+  "hi_keywords": [
+    "Snowhush",
+    "मैक ऐप",
+    "विंडोज डेस्कटॉप यूटिलिटी",
+    "लिनक्स वेसलैंड ऐप",
+    "डेस्कटॉप एनिमेशन"
+  ],
+  "source_published_at": null,
+  "id": "86e5f774a219",
+  "source": "https://github.com/mbezruchko/Snowhush",
+  "date": "2026-11-09T12:02:01.777745+00:00",
+  "source_title": "mbezruchko/Snowhush: Soft snow on your Mac's desktop. It settles on your windows and parts under your cursor. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

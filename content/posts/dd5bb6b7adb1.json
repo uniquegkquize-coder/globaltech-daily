@@ -1,0 +1,32 @@
+{
+  "en_title": "An Overview of Kubernetes: Open Source Container Management",
+  "hi_title": "कुबेरनेट्स का परिचय: ओपन-सोर्स कंटेनर प्रबंधन सिस्टम",
+  "en_body": "Kubernetes, also known as K8s, is an open-source system designed for managing containerized applications across multiple hosts. According to the project documentation, it provides foundational mechanisms for application deployment, maintenance, and scaling.\n\n## Background and Governance\n- **Origins**: Kubernetes builds upon approximately fifteen years of Google experience running production workloads at scale using an internal system called Borg, alongside community best practices.\n- **Hosting**: The project is hosted by the Cloud Native Computing Foundation (CNCF).\n- **Governance**: The project is guided by a framework of principles, values, policies, and processes overseen by a Steering Committee to support community goals.\n\n## Development and Resources\n- **Source Code**: The community repository on GitHub hosts information on building Kubernetes from source, contributing code and documentation, and project contacts.\n- **Documentation**: Comprehensive guides are available on kubernetes.io, including developer resources and a troubleshooting guide for support.\n- **Learning and Community**: Free courses such as Scalable Microservices with Kubernetes are referenced, alongside community meeting calendars and real-world user case studies.\n\n## Technical Considerations\n- **Library Usage**: The documentation notes that using the `k8s.io/kubernetes` module or its packages as libraries in other applications is not supported, though a list of published components is provided for integration needs.\n- **Verification**: Readers can review official announcements and repository documentation directly on GitHub and kubernetes.io to verify details and project status.",
+  "hi_body": "कुबेरनेट्स (जिसे K8s के नाम से भी जाना जाता है) मल्टीपल होस्ट पर कंटेनरयुक्त एप्लिकेशन को प्रबंधित करने के लिए एक ओपन-सोर्स सिस्टम है। प्रोजेक्ट दस्तावेज़ के अनुसार, यह एप्लिकेशन की तैनाती, रखरखाव और स्केलिंग के लिए बुनियादी तंत्र प्रदान करता है।\n\n## पृष्ठभूमि और प्रशासन\n- **उत्पत्ति**: कुबेरनेट्स बॉर्ग (Borg) नामक सिस्टम का उपयोग करके बड़े पैमाने पर प्रोडक्शन वर्कलोड चलाने के Google के डेढ़ दशक के अनुभव और कम्युनिटी के सर्वोत्तम विचारों पर आधारित है।\n- **होस्टिंग**: इस प्रोजेक्ट को क्लाउड नेटिव कंप्यूटिंग फाउंडेशन (CNCF) द्वारा होस्ट किया जाता है।\n- **प्रशासन**: यह प्रोजेक्ट कम्युनिटी के लक्ष्यों का समर्थन करने के लिए स्टीयरिंग कमेटी द्वारा देखरेख किए जाने वाले सिद्धांतों, मूल्यों और नीतियों के ढांचे द्वारा संचालित होता है।\n\n## विकास और संसाधन\n- **सोर्स कोड**: GitHub पर कम्युनिटी रिपॉजिटरी सोर्स से कुबेरनेट्स बनाने, कोड और दस्तावेज़ योगदान करने के बारे में जानकारी होस्ट करती है।\n- **दस्तावेज़**: डेवलपर संसाधनों और समस्या निवारण मार्गदर्शिका सहित व्यापक गाइड kubernetes.io पर उपलब्ध हैं।\n- **शिक्षा और कम्युनिटी**: स्केलेबल माइक्रोसर्विसेज विद कुबेरनेट्स जैसे मुफ्त पाठ्यक्रम, कम्युनिटी मीटिंग कैलेंडर और वास्तविक दुनिया के उपयोग के मामले उपलब्ध हैं।\n\n## तकनीकी विचार\n- **लाइब्रेरी उपयोग**: दस्तावेज़ में उल्लेख किया गया है कि अन्य एप्लिकेशनों में लाइब्रेरी के रूप में `k8s.io/kubernetes` मॉड्यूल का उपयोग समर्थित नहीं है।\n- **सत्यापन**: पाठक विवरण और प्रोजेक्ट स्थिति को सत्यापित करने के लिए GitHub और kubernetes.io पर आधिकारिक घोषणाओं और रिपॉजिटरी दस्तावेज़ों की समीक्षा कर सकते हैं।",
+  "en_meta": "Learn about Kubernetes, the open-source container management system hosted by CNCF, its background, documentation, and community resources.",
+  "hi_meta": "कुबेरनेट्स के बारे में जानें, जो CNCF द्वारा होस्ट किया जाने वाला ओपन-सोर्स कंटेनर प्रबंधन सिस्टम है।",
+  "en_keywords": [
+    "Kubernetes",
+    "K8s",
+    "CNCF",
+    "Container Management",
+    "Open Source"
+  ],
+  "hi_keywords": [
+    "कुबेरनेट्स",
+    "K8s",
+    "CNCF",
+    "कंटेनर प्रबंधन",
+    "ओपन सोर्स"
+  ],
+  "source_published_at": null,
+  "id": "dd5bb6b7adb1",
+  "source": "https://github.com/kubernetes/kubernetes",
+  "date": "2026-11-09T12:00:03.038631+00:00",
+  "source_title": "kubernetes/kubernetes: Production-Grade Container Scheduling and Management - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

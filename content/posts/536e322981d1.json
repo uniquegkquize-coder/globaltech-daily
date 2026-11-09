@@ -1,0 +1,32 @@
+{
+  "en_title": "Microsoft Releases Out-of-Band Windows Updates to Untrust eMudhra Certificates",
+  "hi_title": "माइक्रोसॉफ्ट ने ईमुद्रा प्रमाणपत्रों पर अविश्वास जताने के लिए आउट-ऑफ-बैंड विंडोज अपडेट जारी किए",
+  "en_body": "Microsoft has released out-of-band (OOB) Windows updates to remove trust in specific certificates tied to compromised eMudhra certificate authority keys. This action aims to protect systems that do not receive automatic certificate trust updates.\n\nAccording to the announcement, the KB5134133 update applies to Windows 11 versions 24H2, 25H2, and 26H2, while the KB5134125 update covers Windows 10 versions 21H2 and 22H2. Both updates were released on October 26.\n\n## Purpose of the Out-of-Band Updates\n\n* **Target Audience:** The releases are intended for systems without internet access, devices unable to reach Microsoft's certificate-update service, and environments where automatic Certificate Trust List (CTL) updates are disabled.\n* **Key Removal:** The updates remove seven certificates associated with the affected hierarchies from the Windows trust list, specifically six eMudhra G3 roots and an AAA Certificate Services cross-sign.\n* **Browser Impact:** Microsoft stated that the same seven certificates would also be removed from the Edge trust list on October 27.\n\n## Background on the eMudhra Key Compromise\n\nThe updates follow the discovery of eight eMudhra intermediate certificate authority private keys generated in April 2025. Reports indicate these keys were exceptionally weak, having values smaller than 256, which theoretically allowed recovery by testing a limited set of numbers.\n\n* **Potential Risks:** Weak keys could have allowed attackers to forge certificates for legitimate websites and intercept encrypted communications.\n* **Vendor Responses:** Following disclosure, eMudhra revoked the eight compromised intermediate certificates, and other vendors including Mozilla, Google, and Apple began taking revocation steps.\n\n## Practical Implications and Verification\n\nMicrosoft notes that removing a root from a trust list is a broader security decision than blocking impacted intermediate certificate authorities. \n\n* **Administrator Guidance:** Administrators are advised to install the updates on disconnected systems and review certificates depending on the removed roots, as replacements might be necessary.\n* **Local Policies:** Organizations with specific compatibility needs can choose to trust a certificate locally based on their own security assessments.\n* **Ongoing Investigation:** Microsoft is continuing to investigate remaining eMudhra roots and may introduce additional trust changes in the future.\n\nTo verify original announcements and deployment details, administrators should consult official Microsoft security advisories and support channels.",
+  "hi_body": "माइक्रोसॉफ्ट ने समझौता किए गए ईमुद्रा प्रमाणपत्र प्राधिकरण कुंजियों से जुड़े विशिष्ट प्रमाणपत्रों पर से भरोसा हटाने के लिए आउट-ऑफ-बैंड (OOB) विंडोज अपडेट जारी किए हैं। इस कदम का उद्देश्य उन प्रणालियों की सुरक्षा करना है जिन्हें स्वचालित प्रमाणपत्र विश्वास अपडेट प्राप्त नहीं होते हैं।\n\nघोषणा के अनुसार, KB5134133 अपडेट विंडोज 11 संस्करण 24H2, 25H2 और 26H2 पर लागू होता है, जबकि KB5134125 अपडेट विंडोज 10 संस्करण 21H2 और 22H2 को कवर करता है। दोनों अपडेट 26 अक्टूबर को जारी किए गए थे।\n\n## आउट-ऑफ-बैंड अपडेट का उद्देश्य\n\n* **लक्षित उपयोगकर्ता:** ये रिलीज़ बिना इंटरनेट एक्सेस वाले सिस्टम, माइक्रोसॉफ्ट की प्रमाणपत्र-अपडेट सेवा तक पहुंचने में असमर्थ डिवाइस और ऐसे वातावरण के लिए हैं जहाँ स्वचालित प्रमाणपत्र ट्रस्ट सूची (CTL) अपडेट अक्षम हैं।\n* **कुंजी निष्कासन:** ये अपडेट विंडोज ट्रस्ट सूची से प्रभावित पदानुक्रमों से जुड़े सात प्रमाणपत्रों को हटाते हैं, जिनमें विशेष रूप से छह ईमुद्रा G3 रूट और एक AAA सर्टिफिकेट सर्विसेज क्रॉस-साइन शामिल हैं।\n* **ब्राउज़र प्रभाव:** माइक्रोसॉफ्ट ने बताया कि 27 अक्टूबर को एज ट्रस्ट सूची से भी उन्हीं सात प्रमाणपत्रों को हटा दिया गया।\n\n## ईमुद्रा कुंजी समझौते की पृष्ठभूमि\n\nयह अपडेट अप्रैल 2025 में उत्पन्न आठ ईमुद्रा मध्यवर्ती प्रमाणपत्र प्राधिकरण निजी कुंजियों की खोज के बाद आया है। रिपोर्टों से संकेत मिलता है कि ये कुंजियाँ बेहद कमज़ोर थीं, जिनके मान 256 से छोटे थे।\n\n* **संभावित जोखिम:** कमज़ोर कुंजियाँ हमलावरों को वैध वेबसाइटों के लिए प्रमाणपत्र जाली बनाने और एन्क्रिप्टेड संचार को रोकने की अनुमति दे सकती थीं।\n* **विक्रेता की प्रतिक्रिया:** खुलासे के बाद, ईमुद्रा ने आठों समझौता किए गए मध्यवर्ती प्रमाणपत्रों को रद्द कर दिया, और मोज़िला, गूगल तथा एप्पल सहित अन्य विक्रेताओं ने भी इन्हें रद्द करना शुरू कर दिया।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nमाइक्रोसॉफ्ट का कहना है कि ट्रस्ट सूची से रूट को हटाना, प्रभावित मध्यवर्ती प्रमाणपत्र प्राधिकरणों को ब्लॉक करने की तुलना में एक व्यापक सुरक्षा निर्णय है।\n\n* **प्रशासक मार्गदर्शन:** प्रशासकों को डिस्कनेक्ट किए गए सिस्टम पर अपडेट इंस्टॉल करने और हटाए गए रूट पर निर्भर प्रमाणपत्रों की समीक्षा करने की सलाह दी जाती है।\n* **स्थानीय नीतियां:** विशिष्ट संगतता आवश्यकताओं वाले संगठन अपने स्वयं के सुरक्षा मूल्यांकन के आधार पर स्थानीय रूप से किसी प्रमाणपत्र पर भरोसा करना चुन सकते हैं।\n* **चल रही जांच:** माइक्रोसॉफ्ट शेष ईमुद्रा रूटों की जांच करना जारी रखे हुए है और भविष्य में अतिरिक्त विश्वास परिवर्तन कर सकता है।\n\nमूल घोषणाओं और तैनाती विवरणों को सत्यापित करने के लिए, प्रशासकों को आधिकारिक माइक्रोसॉफ्ट सुरक्षा सलाहकारों और समर्थन चैनलों से परामर्श करना चाहिए।",
+  "en_meta": "Microsoft releases out-of-band Windows updates KB5134133 and KB5134125 to remove trust in compromised eMudhra certificates for offline systems.",
+  "hi_meta": "माइक्रोसॉफ्ट ने ऑफलाइन सिस्टम के लिए ईमुद्रा प्रमाणपत्रों को हटाने हेतु KB5134133 और KB5134125 विंडोज अपडेट जारी किए।",
+  "en_keywords": [
+    "Microsoft",
+    "Windows updates",
+    "eMudhra",
+    "certificate authority",
+    "KB5134133",
+    "KB5134125",
+    "security updates"
+  ],
+  "hi_keywords": [
+    "माइक्रोसॉफ्ट",
+    "विंडोज अपडेट",
+    "ईमुद्रा",
+    "प्रमाणपत्र प्राधिकरण",
+    "KB5134133",
+    "सुरक्षा अपडेट"
+  ],
+  "source_published_at": "2026-10-27T14:20:28-04:00",
+  "id": "536e322981d1",
+  "source": "https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-windows-oob-updates-to-distrust-emudhra-certificates/",
+  "date": "2026-11-09T12:03:42.924663+00:00",
+  "source_title": "Microsoft releases Windows OOB updates to distrust eMudhra certificates",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
