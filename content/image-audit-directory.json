@@ -1,116 +1,180 @@
 {
-  "total_posts": 3990,
+  "total_posts": 3996,
   "selected": 44,
   "results": {
     "source_photo_saved": 6,
-    "cooldown": 38
+    "invalid_source_images": 21,
+    "cooldown": 17
   },
   "still_missing": 346,
   "articles": [
     {
-      "id": "fa56a6eef9cd9add61feaaad",
-      "source": "https://en.wikipedia.org/wiki/Norton_Model_7_Dominator",
+      "id": "65d4e78c62aa91a29bd7cf77",
+      "source": "https://en.wikipedia.org/wiki/Harley-Davidson_RR250",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794232283.4729397
+      "retry_after": 1794241459.4131384
     },
     {
-      "id": "da06e3d22ba722ba3010c8d4",
-      "source": "https://en.wikipedia.org/wiki/Ariel_Leader",
+      "id": "c8ce7a397f9371162b8bdff6",
+      "source": "https://en.wikipedia.org/wiki/Mercedes-Benz_W140",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794232283.4768212
+      "retry_after": 1794241459.4746478
     },
     {
-      "id": "03808bb286fbb9d14ba8510a",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Z5_Compact",
+      "id": "c8ddca288def21772a2b8a40",
+      "source": "https://en.wikipedia.org/wiki/Norton_Model_88_Dominator",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794232283.9268486
+      "retry_after": 1794241459.6830442
     },
     {
       "id": "b1e668b9c10e7cfe7e4acd5a",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241460.0453656
+    },
+    {
+      "id": "2f99ae29d4ee1913891a7a5f",
+      "source": "https://en.wikipedia.org/wiki/Exeed_VX",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794241460.2272015
+    },
+    {
+      "id": "d4cae4cc8d802db7e1a86822",
+      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794241460.3275137
     },
     {
       "id": "b73ac57f1ef5ed96390ec4f0",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Bridgestone_350_GTR",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241460.3313622
     },
     {
-      "id": "9380990d113b5de5f521da53",
-      "result": "cooldown"
-    },
-    {
-      "id": "02364f4d79f5caac07cae019",
-      "result": "cooldown"
-    },
-    {
-      "id": "9e59804909cc110131739d58",
-      "result": "cooldown"
+      "id": "40642c17c3db13d480503436",
+      "source": "https://en.wikipedia.org/wiki/Huawei_Honor_6",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794241460.402646
     },
     {
       "id": "fab6501205ba27e38dac785c",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241460.6066315
+    },
+    {
+      "id": "9380990d113b5de5f521da53",
+      "source": "https://en.wikipedia.org/wiki/Norton_Nomad",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241460.6765888
+    },
+    {
+      "id": "02364f4d79f5caac07cae019",
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241460.921472
+    },
+    {
+      "id": "9e59804909cc110131739d58",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III_Neo",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241461.0152552
     },
     {
       "id": "33686a761fa5d097afc337dc",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241461.177637
     },
     {
       "id": "a941ae3553703f8fd24d4d17",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241461.2628431
     },
     {
       "id": "d5ff9974453f739276c8eb9f",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241461.4204147
     },
     {
       "id": "2d100db342cdd6c9c517a807",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241461.4496043
     },
     {
       "id": "e8fc748d4c8dffaa2212a1cf",
-      "result": "cooldown"
-    },
-    {
-      "id": "ff28f504e8e3f011fe2acd9b",
-      "result": "cooldown"
-    },
-    {
-      "id": "0d093f1b1d8b95e0ce3c5ba1",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241461.6096044
     },
     {
       "id": "611527df4de7f3170a99cfde",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241461.730655
+    },
+    {
+      "id": "0d093f1b1d8b95e0ce3c5ba1",
+      "source": "https://en.wikipedia.org/wiki/Brammo_Enertia",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241461.8818758
     },
     {
       "id": "fb6dd420a2fc44c8f8340751",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241462.1701906
+    },
+    {
+      "id": "ff28f504e8e3f011fe2acd9b",
+      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241462.3134515
     },
     {
       "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241462.4952939
     },
     {
       "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241462.6771753
     },
     {
       "id": "8ede6684d4cf14febb863aad",
-      "result": "cooldown"
-    },
-    {
-      "id": "e21f0c9303189bff05b728a0",
-      "result": "cooldown"
-    },
-    {
-      "id": "635e4aa01fc60223a6fea284",
-      "result": "cooldown"
-    },
-    {
-      "id": "b0979abba345525f23d6b27e",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794241462.6883643
     },
     {
       "id": "d5adbd5f7c0ee6e635219a5c",
@@ -181,25 +245,25 @@
       "result": "cooldown"
     },
     {
-      "id": "c789fa4dd1d7ae0a58674b3b",
-      "source": "https://en.wikipedia.org/wiki/BYD_Song_Pro",
+      "id": "635e4aa01fc60223a6fea284",
+      "source": "https://en.wikipedia.org/wiki/Borgward_BX3",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794232283.9961734
+      "result": "invalid_source_images",
+      "retry_after": 1794241462.887314
     },
     {
-      "id": "948f354a0d18bfdbf96f934f",
-      "source": "https://en.wikipedia.org/wiki/Nexus_5X",
+      "id": "b0979abba345525f23d6b27e",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_M5",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794232284.1447613
+      "result": "invalid_source_images",
+      "retry_after": 1794241463.0381227
     },
     {
-      "id": "500eadf90954204a98ac3997",
-      "source": "https://en.wikipedia.org/wiki/Lagonda_V12",
+      "id": "e21f0c9303189bff05b728a0",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794232284.3665793
+      "result": "invalid_source_images",
+      "retry_after": 1794241463.2489135
     }
   ],
   "missing": [
@@ -2636,35 +2700,243 @@
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "fa56a6eef9cd9add61feaaad": {
+    "65d4e78c62aa91a29bd7cf77": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Norton_Model_7_Dominator",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Norton_mod_7.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Harley-Davidson_RR250",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/Aermacchi_Harley_Davidson_1973_1976.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "da06e3d22ba722ba3010c8d4": {
+    "c8ce7a397f9371162b8bdff6": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Ariel_Leader",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ariel_Leader_left_side.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Mercedes-Benz_W140",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Mercedes-Benz_S-Klasse_%28W_140%2C_Facelift%29_%E2%80%93_Frontansicht%2C_10._August_2013%2C_Hilden_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "03808bb286fbb9d14ba8510a": {
+    "c8ddca288def21772a2b8a40": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_Z5_Compact",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Sony_Xperia_Z5_Compact_PSD_%E9%BB%84.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Norton_Model_88_Dominator",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Norton_Dominator_88_500cc_%281957%29_%2815776399275%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "c789fa4dd1d7ae0a58674b3b": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/BYD_Song_Pro",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/BYD_Song_Pro_DM-i_2023_facelift_001_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "b1e668b9c10e7cfe7e4acd5a": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/60px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
     },
-    "948f354a0d18bfdbf96f934f": {
+    "2f99ae29d4ee1913891a7a5f": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nexus_5X",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/40/Nexus_5X_%28White%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Exeed_VX",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/Exeed_VX_IMG002.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "500eadf90954204a98ac3997": {
+    "d4cae4cc8d802db7e1a86822": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Lagonda_V12",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/1940_Lagonda_V12_DHC.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_950",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Lumia950.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "b73ac57f1ef5ed96390ec4f0": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Bridgestone_350_GTR",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "40642c17c3db13d480503436": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Huawei_Honor_6",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/21/Huawei_Honor_6_MWC_2015.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "fab6501205ba27e38dac785c": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "9380990d113b5de5f521da53": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Norton_Nomad",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "02364f4d79f5caac07cae019": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
+      "candidate_count": 7,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/1280px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/500px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "9e59804909cc110131739d58": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III_Neo",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Samsung_Galaxy_S_III.png/500px-Samsung_Galaxy_S_III.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Samsung_Galaxy_S_III.png/250px-Samsung_Galaxy_S_III.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "33686a761fa5d097afc337dc": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "a941ae3553703f8fd24d4d17": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/120px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/60px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "d5ff9974453f739276c8eb9f": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "2d100db342cdd6c9c517a807": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
+      "candidate_count": 9,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/commons/0/0e/1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/1280px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/960px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "e8fc748d4c8dffaa2212a1cf": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/120px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/60px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "611527df4de7f3170a99cfde": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "0d093f1b1d8b95e0ce3c5ba1": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Brammo_Enertia",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "fb6dd420a2fc44c8f8340751": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/120px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "ff28f504e8e3f011fe2acd9b": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18614.jpg"
+      ]
+    },
+    "ab5161457cb0ef816db211ff": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "554edbfdaee926ed82007433": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "8ede6684d4cf14febb863aad": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "635e4aa01fc60223a6fea284": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Borgward_BX3",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "b0979abba345525f23d6b27e": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_M5",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "e21f0c9303189bff05b728a0": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
     }
   },
   "mode": "directory"
