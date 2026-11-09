@@ -1,103 +1,17 @@
 {
-  "total_posts": 4401,
-  "selected": 400,
+  "total_posts": 4447,
+  "selected": 402,
   "results": {
-    "source_error": 1,
-    "invalid_source_images": 7,
-    "source_unavailable": 1,
-    "cooldown": 387,
-    "no_source_image": 4
+    "cooldown": 402
   },
-  "still_missing": 393,
+  "still_missing": 395,
   "articles": [
-    {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "source": "https://isc-edu.org/",
-      "policy": "93e2ad7deccc",
-      "result": "source_error",
-      "retry_after": 1794257648.841199
-    },
-    {
-      "id": "007acb84538e69bcc14f4f9f",
-      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794257649.8485646
-    },
-    {
-      "id": "4afa4536b18e5a41b30a3497",
-      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794257649.8488681
-    },
-    {
-      "id": "ab5757b7bde7e5a43128d256",
-      "source": "https://exploitsmw.com/",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1794257649.8531106
-    },
-    {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794257649.854514
-    },
-    {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794257649.9580646
-    },
     {
       "id": "bbc7e9f926b8",
       "result": "cooldown"
     },
     {
-      "id": "d1a155ad9276",
-      "result": "cooldown"
-    },
-    {
-      "id": "adad154ed506",
-      "result": "cooldown"
-    },
-    {
-      "id": "c0014e281a78",
-      "result": "cooldown"
-    },
-    {
-      "id": "974391e0b5d2",
-      "result": "cooldown"
-    },
-    {
-      "id": "6476180107ed",
-      "result": "cooldown"
-    },
-    {
-      "id": "a82799421118",
-      "result": "cooldown"
-    },
-    {
-      "id": "9ca03f9d3aa1",
-      "result": "cooldown"
-    },
-    {
-      "id": "5ebf8e2fb21a",
-      "result": "cooldown"
-    },
-    {
-      "id": "2d88ce8f7f5e",
-      "result": "cooldown"
-    },
-    {
-      "id": "457b8e7b48a3",
-      "result": "cooldown"
-    },
-    {
-      "id": "0bd4d9f078aa",
+      "id": "b0979abba345525f23d6b27e",
       "result": "cooldown"
     },
     {
@@ -105,27 +19,15 @@
       "result": "cooldown"
     },
     {
-      "id": "1333720c1c9a",
+      "id": "0bd4d9f078aa",
       "result": "cooldown"
     },
     {
-      "id": "da47fed12cb3",
+      "id": "c0014e281a78",
       "result": "cooldown"
     },
     {
-      "id": "c0fc0c893736",
-      "result": "cooldown"
-    },
-    {
-      "id": "6bb5fcf9c01a",
-      "result": "cooldown"
-    },
-    {
-      "id": "a8fd59e43402",
-      "result": "cooldown"
-    },
-    {
-      "id": "635e4aa01fc60223a6fea284",
+      "id": "adad154ed506",
       "result": "cooldown"
     },
     {
@@ -133,7 +35,59 @@
       "result": "cooldown"
     },
     {
-      "id": "b0979abba345525f23d6b27e",
+      "id": "635e4aa01fc60223a6fea284",
+      "result": "cooldown"
+    },
+    {
+      "id": "457b8e7b48a3",
+      "result": "cooldown"
+    },
+    {
+      "id": "a8fd59e43402",
+      "result": "cooldown"
+    },
+    {
+      "id": "2d88ce8f7f5e",
+      "result": "cooldown"
+    },
+    {
+      "id": "5ebf8e2fb21a",
+      "result": "cooldown"
+    },
+    {
+      "id": "d1a155ad9276",
+      "result": "cooldown"
+    },
+    {
+      "id": "6bb5fcf9c01a",
+      "result": "cooldown"
+    },
+    {
+      "id": "c0fc0c893736",
+      "result": "cooldown"
+    },
+    {
+      "id": "9ca03f9d3aa1",
+      "result": "cooldown"
+    },
+    {
+      "id": "da47fed12cb3",
+      "result": "cooldown"
+    },
+    {
+      "id": "a82799421118",
+      "result": "cooldown"
+    },
+    {
+      "id": "6476180107ed",
+      "result": "cooldown"
+    },
+    {
+      "id": "974391e0b5d2",
+      "result": "cooldown"
+    },
+    {
+      "id": "1333720c1c9a",
       "result": "cooldown"
     },
     {
@@ -1601,53 +1555,64 @@
       "result": "cooldown"
     },
     {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "007acb84538e69bcc14f4f9f",
+      "result": "cooldown"
+    },
+    {
+      "id": "4afa4536b18e5a41b30a3497",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5757b7bde7e5a43128d256",
+      "result": "cooldown"
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "result": "cooldown"
+    },
+    {
       "id": "6548e415fc086ccec65bbb7c",
-      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794257650.334825
+      "result": "cooldown"
     },
     {
       "id": "b211f120ea27b93fc925f6b4",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794257650.5773108
+      "result": "cooldown"
     },
     {
       "id": "8444aa187e09b377f661fcbf",
-      "source": "https://dec.ac.in/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1794257651.8238218
+      "result": "cooldown"
     },
     {
       "id": "8af54bb949a0c055391d640a",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1794257652.722779
+      "result": "cooldown"
     },
     {
       "id": "fbff6440d68d52399ca212b1",
-      "source": "https://cctu.edu.gh/site/index",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1794257653.1537013
+      "result": "cooldown"
     },
     {
       "id": "a6510273f0889bf4d7684eae",
-      "source": "https://mua.ac.ke/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794257655.7890315
+      "result": "cooldown"
     },
     {
       "id": "ef614dcb4163038685679d1d",
-      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1794257656.2328885
+      "result": "cooldown"
+    },
+    {
+      "id": "6756046eb2db",
+      "result": "cooldown"
+    },
+    {
+      "id": "b6327dd14d54",
+      "result": "cooldown"
     }
   ],
   "missing": [
@@ -2149,6 +2114,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "6756046eb2db",
+      "category": "ai-news",
+      "title": "WISEcode Launches Beta of WISEcode Intelligence™ – First AI Tool for Food & Beverage Brands",
+      "source": "https://www.prnewswire.com/news-releases/wisecode-opens-beta-of-wisecode-intelligence-its-first-ai-product-for-food-and-beverage-companies-302922406.html",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "eefb8ef6f1c2",
       "category": "defence",
       "title": "Employment Opportunities in Military and Protective Services Across Querétaro",
@@ -2574,6 +2546,13 @@
       "title": "TUI Updates Flight Status Information and Delay Guidance for Travelers",
       "source": "https://www.tui.com/hilfe/flug/verspaetung/",
       "reason": "no_source_image"
+    },
+    {
+      "id": "b6327dd14d54",
+      "category": "cricket",
+      "title": "Sophie Molineux Becomes Most Expensive Buy at WPL 2027 Auction",
+      "source": "https://www.business-standard.com/cricket/news/wpl-2027-auction-sold-unsold-players-full-list-sophie-molineux-126102801647_1.html",
+      "reason": "access_denied"
     },
     {
       "id": "e62d34be0421",
@@ -4405,105 +4384,13 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "invalid_source_images": 83,
-    "access_denied": 99,
+    "invalid_source_images": 84,
+    "access_denied": 100,
     "no_source_image": 136,
     "source_error": 38,
     "restricted_page": 1
   },
-  "existing_representatives_preserved": 1,
-  "diagnostics": {
-    "0a95ccf111c45db4cfb5c9e3": {
-      "reason": "source_error",
-      "source": "https://isc-edu.org/",
-      "error": "ConnectionError"
-    },
-    "4afa4536b18e5a41b30a3497": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18613.jpg"
-      ]
-    },
-    "007acb84538e69bcc14f4f9f": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18606.jpg"
-      ]
-    },
-    "ab5757b7bde7e5a43128d256": {
-      "reason": "source_unavailable",
-      "source": "https://exploitsmw.com/",
-      "status": 200
-    },
-    "8f4b17c49d1b2a0c5cb45a53": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
-      "candidate_count": 6,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "9d1f6341eb5fa6644d63ff08": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18615.jpg"
-      ]
-    },
-    "6548e415fc086ccec65bbb7c": {
-      "reason": "invalid_source_images",
-      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
-      "candidate_count": 20,
-      "candidates": [
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/frontier/vehicle-profile-assets/2027/model-2027-frontier-crew-cab-pro-4x-red-alert.png-v2.png",
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue-hybrid/vehicle-profile-assets/2027/model-2027-rogue-hybrid-sr-horizon-blue-pearl-metallic-super-black-two-tone.png.ximg.l_3_m.smart.png",
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue/vehicle-profile-assets/2027/model-2027-rogue-rock-creek-intelligent-awd-baja-storm-metallic.png.ximg.l_3_m.smart.png"
-      ]
-    },
-    "b211f120ea27b93fc925f6b4": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
-      "candidate_count": 8,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/1/1e/Nokia_Asha_501.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/250px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/120px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "8444aa187e09b377f661fcbf": {
-      "reason": "no_source_image",
-      "source": "https://dec.ac.in/"
-    },
-    "8af54bb949a0c055391d640a": {
-      "reason": "no_source_image",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "existing_representative_preserved": true
-    },
-    "fbff6440d68d52399ca212b1": {
-      "reason": "no_source_image",
-      "source": "https://cctu.edu.gh/site/index"
-    },
-    "a6510273f0889bf4d7684eae": {
-      "reason": "invalid_source_images",
-      "source": "https://mua.ac.ke/",
-      "candidate_count": 3,
-      "candidates": [
-        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
-        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png",
-        "https://mua.ac.ke/wp-content/uploads/2026/11/MUA_New_Chancellor_Banner.png"
-      ]
-    },
-    "ef614dcb4163038685679d1d": {
-      "reason": "no_source_image",
-      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/"
-    }
-  },
+  "existing_representatives_preserved": 0,
+  "diagnostics": {},
   "mode": "all"
 }
