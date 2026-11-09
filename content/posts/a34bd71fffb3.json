@@ -1,0 +1,34 @@
+{
+  "en_title": "RudderStack Releases Open Source Autonomous Engineering Harness 'DevBox'",
+  "hi_title": "रडरस्टैक ने ओपन सोर्स ऑटोनॉमस इंजीनियरिंग हार्नेस 'DevBox' पेश किया",
+  "en_body": "## Overview\nRudderStack has introduced DevBox, an open-source autonomous engineering harness designed to run within a company's own infrastructure. Unlike individual coding assistants, DevBox is built to serve as a shared team resource that manages engineering tickets, writes code, executes tests, and handles pull requests independently.\n\n## Core Functionality\nDevBox operates by taking a ticket as input, planning the necessary changes, and executing the implementation through a staged pipeline. This process includes:\n*   **Planning and Review:** The agent drafts a plan for the repository changes, which is then reviewed before any code is generated.\n*   **Execution:** DevBox writes code, performs testing, and opens draft pull requests.\n*   **Closed Feedback Loop:** Using a GitHub integration, the system processes reviewer comments and CI results to refine its work.\n*   **Isolation:** Each task runs in its own sandboxed environment, ensuring that sensitive credentials are not exposed within the code-generation process.\n\n## Deployment and Security\nDevBox is self-hosted via Docker Compose or Kubernetes. It does not send data to RudderStack; users configure their own LLM endpoints (OpenAI or Anthropic). Key security features include:\n*   **Credential Management:** Tokens are managed via local keychains or environment variables, with an egress proxy handling injection to ensure secrets never reside in files or the sandbox.\n*   **Scoped Access:** The system is restricted to only write to specified repositories.\n\n## Verification and Getting Started\nUsers can verify the installation and configuration via the official [GitHub repository](https://github.com/rudderlabs/devbox). The setup requires Docker Desktop, Bun, and an API key from an supported LLM provider. The project is licensed under the MIT License and includes extensive documentation for Kubernetes integration and GitHub App configuration.",
+  "hi_body": "## परिचय\nरडरस्टैक (RudderStack) ने DevBox पेश किया है, जो एक ओपन-सोर्स ऑटोनॉमस इंजीनियरिंग हार्नेस है। इसे विशेष रूप से किसी कंपनी के अपने इंफ्रास्ट्रक्चर पर चलाने के लिए बनाया गया है। व्यक्तिगत कोडिंग सहायकों के विपरीत, DevBox को एक साझा टीम रिसोर्स के रूप में डिज़ाइन किया गया है जो इंजीनियरिंग टिकटों का प्रबंधन करने, कोड लिखने, टेस्ट चलाने और पुल रिक्वेस्ट (PR) को संभालने का काम स्वतंत्र रूप से करता है।\n\n## मुख्य कार्यक्षमता\nDevBox एक टिकट को इनपुट के रूप में लेता है, आवश्यक बदलावों की योजना बनाता है और एक स्टेज्ड पाइपलाइन के माध्यम से उसे पूरा करता है। इस प्रक्रिया में शामिल हैं:\n*   **योजना और समीक्षा:** एजेंट रिपॉजिटरी में बदलाव के लिए एक योजना बनाता है, जिसे कोड जनरेट करने से पहले समीक्षा के लिए रखा जाता है।\n*   **एग्जीक्यूशन:** DevBox कोड लिखता है, टेस्टिंग करता है और ड्राफ्ट पुल रिक्वेस्ट खोलता है।\n*   **फीडबैक लूप:** GitHub एकीकरण का उपयोग करते हुए, सिस्टम समीक्षकों की टिप्पणियों और CI परिणामों को प्रोसेस करता है ताकि काम में सुधार किया जा सके।\n*   **आइसोलेशन:** प्रत्येक कार्य अपने स्वयं के सैंडबॉक्स्ड वातावरण में चलता है, जिससे यह सुनिश्चित होता है कि संवेदनशील क्रेडेंशियल कोड-जेनरेशन प्रक्रिया में उजागर न हों।\n\n## परिनियोजन और सुरक्षा\nDevBox को Docker Compose या Kubernetes के माध्यम से सेल्फ-होस्ट किया जाता है। यह रडरस्टैक को कोई डेटा नहीं भेजता है; उपयोगकर्ता अपने स्वयं के LLM एंडपॉइंट (OpenAI या Anthropic) कॉन्फ़िगर करते हैं। सुरक्षा सुविधाओं में शामिल हैं:\n*   **क्रेडेंशियल प्रबंधन:** टोकन का प्रबंधन स्थानीय कीचेन या पर्यावरण चर के माध्यम से किया जाता है, जिसमें एक इग्रेस प्रॉक्सी यह सुनिश्चित करता है कि सीक्रेट्स कभी भी फाइलों या सैंडबॉक्स में न रहें।\n*   **सीमित पहुंच:** सिस्टम को केवल निर्दिष्ट रिपॉजिटरी में लिखने के लिए प्रतिबंधित किया गया है।\n\n## सत्यापन और शुरुआत कैसे करें\nउपयोगकर्ता आधिकारिक [GitHub रिपॉजिटरी](https://github.com/rudderlabs/devbox) के माध्यम से इंस्टॉलेशन और कॉन्फ़िगरेशन को सत्यापित कर सकते हैं। सेटअप के लिए Docker Desktop, Bun, और एक समर्थित LLM प्रदाता से API कुंजी की आवश्यकता होती है। यह प्रोजेक्ट MIT लाइसेंस के तहत उपलब्ध है और इसमें Kubernetes एकीकरण और GitHub ऐप कॉन्फ़िगरेशन के लिए विस्तृत दस्तावेज़ शामिल हैं।",
+  "en_meta": "RudderStack's open-source DevBox is an autonomous engineering tool that manages tickets, writes code, and handles pull requests in your own secure cloud…",
+  "hi_meta": "रडरस्टैक का ओपन-सोर्स DevBox एक ऑटोनॉमस इंजीनियरिंग टूल है जो सुरक्षित क्लाउड वातावरण में टिकट प्रबंधन, कोडिंग और पुल रिक्वेस्ट को हैंडल करता है।",
+  "en_keywords": [
+    "DevBox",
+    "RudderStack",
+    "autonomous engineering",
+    "GitHub automation",
+    "open source software",
+    "LLM integration"
+  ],
+  "hi_keywords": [
+    "DevBox",
+    "रडरस्टैक",
+    "ऑटोनॉमस इंजीनियरिंग",
+    "GitHub ऑटोमेशन",
+    "ओपन सोर्स सॉफ्टवेयर",
+    "LLM एकीकरण"
+  ],
+  "source_published_at": "2026-10-30T07:36:57+00:00",
+  "id": "a34bd71fffb3",
+  "source": "https://github.com/rudderlabs/devbox",
+  "date": "2026-11-09T16:12:19.543643+00:00",
+  "source_title": "Open source autonomous engineering harness in your cloud. One sandbox per task, no real secrets inside. - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

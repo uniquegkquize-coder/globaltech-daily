@@ -1,0 +1,29 @@
+{
+  "en_title": "RemoveMacAI: A Tool for Debloating macOS and Managing Apple Intelligence",
+  "hi_title": "RemoveMacAI: macOS को साफ करने और Apple Intelligence को प्रबंधित करने का एक टूल",
+  "en_body": "## Overview\nRemoveMacAI is an open-source utility designed to give macOS users more control over their system environment. It provides options to disable Apple Intelligence, remove its associated models, and manage various system analytics, ads, and background processes. The tool is available as both a native macOS application and a command-line interface (CLI).\n\n## Core Features\n* **Apple Intelligence Management**: Users can turn off Apple Intelligence and delete the related models to reclaim disk space.\n* **System Debloating**: The app allows for the suppression of analytics, ads, and persistent pop-ups.\n* **Configuration Profiles**: It can generate configuration profiles for MDM deployment, enabling consistent settings across multiple devices.\n* **Reversibility**: Every change performed by the app can be undone. The tool maintains a journal to restore previous settings exactly as they were.\n\n## Usage and Safety\n* **Transparency**: The app displays all proposed changes before they are applied, allowing users to review them.\n* **Security**: It respects System Integrity Protection (SIP) and does not modify files under `/System`.\n* **Installation**: Users can install it via direct download from GitHub or using Homebrew. Since the app is not notarized, users must grant permission in System Settings > Privacy & Security upon first use.\n\n## Important Considerations\n* **Updates**: While settings persist across macOS updates, some background download processes may temporarily retry fetching blocked Apple Intelligence models. \n* **Functionality**: Disabling Apple Intelligence will affect features like Visual Intelligence and specific Shortcuts actions. \n* **Verification**: Users should verify the project on the official GitHub repository (omlahore/RemoveMacAI) to ensure they are using the latest version and to review the source code for themselves.",
+  "hi_body": "## अवलोकन\nRemoveMacAI एक ओपन-सोर्स यूटिलिटी है जिसे macOS उपयोगकर्ताओं को उनके सिस्टम वातावरण पर अधिक नियंत्रण देने के लिए डिज़ाइन किया गया है। यह Apple Intelligence को अक्षम करने, इससे संबंधित मॉडल को हटाने, और विभिन्न सिस्टम एनालिटिक्स, विज्ञापनों व बैकग्राउंड प्रक्रियाओं को प्रबंधित करने के विकल्प प्रदान करता है। यह टूल एक नेटिव macOS एप्लिकेशन और कमांड-लाइन इंटरफेस (CLI) दोनों के रूप में उपलब्ध है।\n\n## मुख्य विशेषताएं\n* **Apple Intelligence प्रबंधन**: उपयोगकर्ता Apple Intelligence को बंद कर सकते हैं और डिस्क स्थान वापस पाने के लिए संबंधित मॉडल को हटा सकते हैं।\n* **सिस्टम क्लीनअप**: यह ऐप एनालिटिक्स, विज्ञापनों और लगातार आने वाले पॉप-अप को रोकने की अनुमति देता है।\n* **कॉन्फ़िगरेशन प्रोफाइल**: यह MDM परिनियोजन के लिए कॉन्फ़िगरेशन प्रोफाइल तैयार कर सकता है, जिससे कई उपकरणों पर समान सेटिंग्स सुनिश्चित की जा सकती हैं।\n* **रिवर्सिबिलिटी (Undo)**: ऐप द्वारा किए गए प्रत्येक बदलाव को पूर्ववत (undo) किया जा सकता है। यह टूल पिछली सेटिंग्स को वैसा ही बहाल करने के लिए एक जर्नल रखता है।\n\n## उपयोग और सुरक्षा\n* **पारदर्शिता**: ऐप लागू होने से पहले सभी प्रस्तावित बदलाव दिखाता है, जिससे उपयोगकर्ताओं को उनकी समीक्षा करने की अनुमति मिलती है।\n* **सुरक्षा**: यह सिस्टम इंटीग्रिटी प्रोटेक्शन (SIP) का सम्मान करता है और `/System` के अंतर्गत किसी भी फाइल को संशोधित नहीं करता है।\n* **इंस्टॉलेशन**: उपयोगकर्ता इसे GitHub से सीधे डाउनलोड कर सकते हैं या Homebrew का उपयोग कर सकते हैं। चूंकि ऐप नोटराइज़्ड नहीं है, इसलिए पहली बार उपयोग करते समय सिस्टम सेटिंग्स > प्राइवेसी और सुरक्षा में अनुमति देनी होगी।\n\n## महत्वपूर्ण बातें\n* **अपडेट**: हालांकि सेटिंग्स macOS अपडेट के बाद भी बनी रहती हैं, लेकिन कुछ बैकग्राउंड डाउनलोड प्रक्रियाएं अस्थायी रूप से अवरुद्ध Apple Intelligence मॉडल को फिर से प्राप्त करने का प्रयास कर सकती हैं।\n* **कार्यक्षमता**: Apple Intelligence को बंद करने से Visual Intelligence और शॉर्टकट्स जैसे फीचर्स प्रभावित होंगे।\n* **सत्यापन**: उपयोगकर्ताओं को सलाह दी जाती है कि वे आधिकारिक GitHub रिपॉजिटरी (omlahore/RemoveMacAI) पर टूल को सत्यापित करें और नवीनतम संस्करण का उपयोग करें।",
+  "en_meta": "RemoveMacAI is an open-source tool for macOS that allows users to disable Apple Intelligence, remove models, and debloat the system of ads and analytics.",
+  "hi_meta": "RemoveMacAI एक macOS टूल है जो उपयोगकर्ताओं को Apple Intelligence को बंद करने, मॉडल हटाने और सिस्टम से विज्ञापन व एनालिटिक्स को साफ करने में मदद करता है।",
+  "en_keywords": [
+    "macOS",
+    "Apple Intelligence",
+    "debloat",
+    "privacy",
+    "RemoveMacAI"
+  ],
+  "hi_keywords": [
+    "macOS",
+    "Apple Intelligence",
+    "debloat",
+    "प्राइवेसी",
+    "RemoveMacAI"
+  ],
+  "source_published_at": null,
+  "id": "b0ff7ff16732",
+  "source": "https://github.com/omlahore/RemoveMacAI",
+  "date": "2026-11-09T16:10:35.287781+00:00",
+  "source_title": "omlahore/RemoveMacAI: Debloat macOS: turn off Apple Intelligence, analytics, ads and pop-ups. A native app and CLI, and every change can be undone. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

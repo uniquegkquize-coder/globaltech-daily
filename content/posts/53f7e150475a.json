@@ -1,0 +1,29 @@
+{
+  "en_title": "NSGo: A New Cross-Platform UI Engine Powered by Go",
+  "hi_title": "NSGo: Go पर आधारित एक नया क्रॉस-प्लेटफ़ॉर्म UI इंजन",
+  "en_body": "NSGo is a developing cross-platform native UI engine designed to allow developers to build applications using Go. By leveraging Go for app logic, reactive graphs, and layout, the framework enables each target platform to render using its own native UI components.\n\n## Core Architecture\nInspired by the Native Shell (NSH) design, NSGo provides an alternative for development teams looking for a native-drawing model without using Rust. Key architectural features include:\n* **Reactive UI:** Utilizes signals and memos to manage state and UI updates.\n* **Flexbox Layout:** Employs familiar web-style layout systems within Go components.\n* **Native Rendering:** Instead of using webviews or canvas-based emulation, the engine instructs each host platform to draw using its native view primitives.\n\n## Platform Support\nNSGo is currently in an early development phase. There is no official release or stable API at this time. According to the project repository, the engine aims to support a wide range of targets:\n* **Desktop and Mobile:** macOS, iOS, Windows, Linux, Android, tvOS, and watchOS.\n* **Web and Mini-Apps:** Native web support, alongside integration for WeChat, QQ, Alipay, and Douyin mini-programs.\n\n## Getting Started\nDevelopment requires Go 1.26 or later, with additional toolchains like Xcode necessary for Apple platforms. The framework supports hot-reloading for faster iteration. \n\nDevelopers can explore the project's documentation, which covers component creation, localization, testing, and deployment workflows. As an open-source project licensed under Apache-2.0, the codebase is available on GitHub. Users are encouraged to review the `ARCHITECTURE.md` and `CHANGELOG.md` files for updates on platform-specific status and internal changes before contributing.",
+  "hi_body": "NSGo एक उभरता हुआ क्रॉस-प्लेटफ़ॉर्म नेटिव UI इंजन है जिसे डेवलपर्स के लिए Go भाषा का उपयोग करके एप्लिकेशन बनाने हेतु डिज़ाइन किया गया है। यह ऐप लॉजिक, रिएक्टिव ग्राफ और लेआउट के लिए Go का उपयोग करता है, जिससे प्रत्येक प्लेटफॉर्म अपनी नेटिव UI तकनीकों का उपयोग करके रेंडरिंग कर सकता है।\n\n## मुख्य आर्किटेक्चर\nनेटिव शेल (NSH) डिज़ाइन से प्रेरित, NSGo उन टीमों के लिए एक विकल्प प्रदान करता है जो Rust के बिना NSH जैसा मॉडल चाहती हैं। इसकी प्रमुख विशेषताएं निम्नलिखित हैं:\n* **रिएक्टिव UI:** स्टेट और UI अपडेट प्रबंधित करने के लिए सिग्नल्स और मेमो का उपयोग।\n* **फ्लेक्सबॉक्स लेआउट:** Go कंपोनेंट्स के भीतर परिचित वेब-शैली लेआउट सिस्टम।\n* **नेटिव रेंडरिंग:** यह वेबव्यू या कैनवस-आधारित एमुलेशन के बजाय सीधे होस्ट प्लेटफॉर्म के नेटिव व्यू प्रिमिटिव्स का उपयोग करता है।\n\n## प्लेटफॉर्म सपोर्ट\nNSGo अभी शुरुआती विकास चरण में है और वर्तमान में इसका कोई स्थिर API या आधिकारिक रिलीज़ उपलब्ध नहीं है। प्रोजेक्ट रिपॉजिटरी के अनुसार, यह इंजन कई प्लेटफॉर्म्स को लक्षित करता है:\n* **डेस्कटॉप और मोबाइल:** macOS, iOS, Windows, Linux, Android, tvOS, और watchOS।\n* **वेब और मिनी-ऐप्स:** नेटिव वेब सपोर्ट के साथ-साथ WeChat, QQ, Alipay, और Douyin मिनी-प्रोग्राम्स के लिए एकीकरण।\n\n## शुरुआत कैसे करें\nविकास के लिए Go 1.26 या उससे बाद के संस्करण की आवश्यकता है, और Apple प्लेटफॉर्म्स के लिए Xcode जैसे टूलचेन आवश्यक हैं। यह फ्रेमवर्क तेज़ डेवलपमेंट के लिए हॉट-रीलोडिंग का समर्थन करता है।\n\nडेवलपर्स प्रोजेक्ट के दस्तावेज़ देख सकते हैं, जिसमें कंपोनेंट निर्माण, लोकलाइजेशन, टेस्टिंग और डिप्लॉयमेंट के तरीके शामिल हैं। Apache-2.0 लाइसेंस के तहत उपलब्ध इस प्रोजेक्ट का कोडबेस GitHub पर है। योगदान देने से पहले प्लेटफॉर्म-विशिष्ट स्थिति और बदलावों के लिए `ARCHITECTURE.md` और `CHANGELOG.md` फ़ाइलों को पढ़ने की सलाह दी जाती है।",
+  "en_meta": "NSGo is an early-stage cross-platform UI engine for Go. Learn about its native rendering approach, platform support, and reactive component model.",
+  "hi_meta": "NSGo Go भाषा के लिए एक शुरुआती चरण का क्रॉस-प्लेटफ़ॉर्म UI इंजन है। इसके नेटिव रेंडरिंग दृष्टिकोण और प्लेटफॉर्म समर्थन के बारे में विस्तार से जानें।",
+  "en_keywords": [
+    "NSGo",
+    "Go programming",
+    "cross-platform UI",
+    "native rendering",
+    "reactive UI"
+  ],
+  "hi_keywords": [
+    "NSGo",
+    "Go प्रोग्रामिंग",
+    "क्रॉस-प्लेटफ़ॉर्म UI",
+    "नेटिव रेंडरिंग",
+    "रिएक्टिव UI"
+  ],
+  "source_published_at": null,
+  "id": "53f7e150475a",
+  "source": "https://github.com/oneo-me/nsgo",
+  "date": "2026-11-09T16:10:43.381727+00:00",
+  "source_title": "oneo-me/nsgo: A cross-platform native UI engine with a Go backend: write apps in Go with signals, memos and flexbox layout, and each platform draws with its own native views — iOS, macOS, Windows, Android, Linux and the web - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

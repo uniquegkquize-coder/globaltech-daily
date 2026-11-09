@@ -1,0 +1,31 @@
+{
+  "en_title": "HakiOS Project Advances Darwin Kernel Integration on Android Hardware",
+  "hi_title": "HakiOS प्रोजेक्ट ने Android हार्डवेयर पर Darwin कर्नेल को एकीकृत करने की दिशा में प्रगति की",
+  "en_body": "## Overview of HakiOS\nHakiOS is an independent, open-source research initiative aimed at porting Apple’s Darwin XNU kernel to Android-based mobile devices. Unlike a standard ROM, the project functions as a research bench that operates from device RAM, ensuring that a simple reboot restores the phone's native Android environment. The project explicitly states that it is not affiliated with or endorsed by Apple Inc.\n\n## Performance Milestones\nAs of November 4, 2026, the development team has reported progress in rendering performance on the POCO X5 Pro 5G, utilizing the Adreno 642L GPU:\n\n* **Metal Integration:** The team has successfully implemented Metal rendering on the Adreno GPU. \n* **Frame Rates:** Testing with `hakios-metal` achieved 110–115 fps for page swipes and 118 fps for scrolling in Settings. Performance drops to approximately 90 fps when running at the full 1125x2436 resolution.\n* **Comparison:** Preliminary tests comparing 'hakios-metal' against 'UniXNU’s Metal on Vulkan' show significantly higher frame rates for the former, though hitting the panel's native 120 Hz refresh rate remains an ongoing goal.\n\n## Usage and Compliance\nThe repository provides the kernel and necessary framework but does not distribute Apple’s proprietary software. Users are responsible for providing their own Darwin user space sourced from personal IPSW files and their own device firmware. The project does not support Apple services, such as iCloud, Apple ID, or the App Store.\n\nProject files are distributed under the Apple Public Source License 2.0 (APSL) and MIT licenses. For those interested in exploring the architecture, documentation is available via the project’s GitHub repository and the dedicated hackios-web site. Users should review the `LEGAL.md` and `COMPLIANCE.md` files in the repository for detailed information regarding third-party components and distribution policies.",
+  "hi_body": "## HakiOS का अवलोकन\nHakiOS एक स्वतंत्र, ओपन-सोर्स शोध पहल है जिसका लक्ष्य Apple के Darwin XNU कर्नेल को Android-आधारित मोबाइल उपकरणों पर पोर्ट करना है। यह एक मानक ROM के बजाय एक शोध बेंच के रूप में कार्य करता है जो डिवाइस की RAM से चलता है, जिससे यह सुनिश्चित होता है कि फोन को रीबूट करने पर मूल Android वातावरण वापस मिल जाता है। परियोजना स्पष्ट करती है कि यह Apple Inc. से संबद्ध या समर्थित नहीं है।\n\n## प्रदर्शन के मील के पत्थर\n4 नवंबर 2026 तक, विकास टीम ने POCO X5 Pro 5G पर Adreno 642L GPU का उपयोग करके रेंडरिंग प्रदर्शन में प्रगति की सूचना दी है:\n\n* **Metal एकीकरण:** टीम ने Adreno GPU पर Metal रेंडरिंग को सफलतापूर्वक लागू किया है।\n* **फ्रेम दर:** 'hakios-metal' के साथ परीक्षण ने पेज स्वाइप के लिए 110-115 फ्रेम प्रति सेकंड और सेटिंग्स स्क्रॉलिंग के लिए 118 फ्रेम प्रति सेकंड प्राप्त किए। पूर्ण 1125x2436 रिज़ॉल्यूशन पर चलने पर प्रदर्शन लगभग 90 फ्रेम प्रति सेकंड हो जाता है।\n* **तुलना:** 'hakios-metal' और 'UniXNU’s Metal on Vulkan' की तुलना करने वाले प्रारंभिक परीक्षणों में पूर्व के लिए काफी अधिक फ्रेम दर दिखाई दी, हालांकि पैनल की मूल 120 Hz रिफ्रेश दर तक पहुँचना अभी भी एक लक्ष्य बना हुआ है।\n\n## उपयोग और अनुपालन\nरिपॉजिटरी कर्नेल और आवश्यक फ्रेमवर्क प्रदान करती है, लेकिन Apple के मालिकाना सॉफ़्टवेयर को वितरित नहीं करती है। उपयोगकर्ता स्वयं के IPSW फ़ाइलों और डिवाइस फर्मवेयर से Darwin उपयोगकर्ता स्थान प्राप्त करने के लिए जिम्मेदार हैं। यह प्रोजेक्ट iCloud, Apple ID, या App Store जैसी Apple सेवाओं का समर्थन नहीं करता है।\n\nपरियोजना की फाइलें Apple Public Source License 2.0 (APSL) और MIT लाइसेंस के तहत वितरित की जाती हैं। जो लोग आर्किटेक्चर को जानने में रुचि रखते हैं, उनके लिए दस्तावेज़ीकरण GitHub रिपॉजिटरी और समर्पित hackios-web साइट पर उपलब्ध है। उपयोगकर्ताओं को तृतीय-पक्ष घटकों और वितरण नीतियों के बारे में विस्तृत जानकारी के लिए रिपॉजिटरी में `LEGAL.md` और `COMPLIANCE.md` फ़ाइलों की समीक्षा करनी चाहिए।",
+  "en_meta": "HakiOS is an experimental project bringing the Darwin XNU kernel to Android phones for research, featuring Metal rendering on Adreno hardware.",
+  "hi_meta": "HakiOS एक प्रयोगात्मक प्रोजेक्ट है जो शोध के लिए Darwin XNU कर्नेल को Android फोन पर लाता है, जिसमें Adreno हार्डवेयर पर Metal रेंडरिंग शामिल है।",
+  "en_keywords": [
+    "HakiOS",
+    "XNU kernel",
+    "Darwin",
+    "Android research",
+    "Metal on Adreno",
+    "POCO X5 Pro"
+  ],
+  "hi_keywords": [
+    "HakiOS",
+    "XNU कर्नेल",
+    "Darwin",
+    "Android शोध",
+    "Adreno पर Metal",
+    "POCO X5 Pro"
+  ],
+  "source_published_at": null,
+  "id": "d642f3803ec9",
+  "source": "https://github.com/oosexgang/hakios-xnu-kernel",
+  "date": "2026-11-09T16:11:04.724310+00:00",
+  "source_title": "oosexgang/hakios-xnu-kernel - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
