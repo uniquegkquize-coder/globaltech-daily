@@ -1,92 +1,18 @@
 {
-  "total_posts": 4322,
+  "total_posts": 4405,
   "selected": 42,
   "results": {
     "source_photo_saved": 4,
-    "cooldown": 35,
-    "invalid_source_images": 3
+    "cooldown": 38
   },
-  "still_missing": 378,
+  "still_missing": 393,
   "articles": [
     {
-      "id": "70f857696bf746ba0d59e502",
-      "source": "https://en.wikipedia.org/wiki/LG_V10",
+      "id": "507deed776a77a1ca81ea35c",
+      "source": "https://en.wikipedia.org/wiki/Huawei_Honor_7",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794253056.1408284
-    },
-    {
-      "id": "201988173a088d2878ea1a68",
-      "source": "https://en.wikipedia.org/wiki/Bestune_T33",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794253056.180488
-    },
-    {
-      "id": "11cf767fc5b423033ff2e537",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Mini_2",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794253056.3544998
-    },
-    {
-      "id": "3129ac4e87d7c102239e1f89",
-      "source": "https://en.wikipedia.org/wiki/Bestune_NAT",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794253056.6040058
-    },
-    {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab5757b7bde7e5a43128d256",
-      "result": "cooldown"
-    },
-    {
-      "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "result": "cooldown"
-    },
-    {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "result": "cooldown"
-    },
-    {
-      "id": "4afa4536b18e5a41b30a3497",
-      "result": "cooldown"
-    },
-    {
-      "id": "6548e415fc086ccec65bbb7c",
-      "result": "cooldown"
-    },
-    {
-      "id": "b211f120ea27b93fc925f6b4",
-      "result": "cooldown"
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
-    },
-    {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
-    },
-    {
-      "id": "ef614dcb4163038685679d1d",
-      "result": "cooldown"
-    },
-    {
-      "id": "a6510273f0889bf4d7684eae",
-      "result": "cooldown"
+      "retry_after": 1794263129.5280702
     },
     {
       "id": "635e4aa01fc60223a6fea284",
@@ -178,24 +104,88 @@
     },
     {
       "id": "2a8b92143f14b264d8d27146",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794253056.6418695
+      "result": "cooldown"
     },
     {
       "id": "c176a1dc41c1e122cab45821",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794253056.9803455
+      "result": "cooldown"
     },
     {
       "id": "2f02162d9ab27a8cd5662161",
-      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "result": "cooldown"
+    },
+    {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "007acb84538e69bcc14f4f9f",
+      "result": "cooldown"
+    },
+    {
+      "id": "4afa4536b18e5a41b30a3497",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5757b7bde7e5a43128d256",
+      "result": "cooldown"
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "result": "cooldown"
+    },
+    {
+      "id": "6548e415fc086ccec65bbb7c",
+      "result": "cooldown"
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "a6510273f0889bf4d7684eae",
+      "result": "cooldown"
+    },
+    {
+      "id": "ef614dcb4163038685679d1d",
+      "result": "cooldown"
+    },
+    {
+      "id": "db38fd013d8a79af46dc8be1",
+      "source": "https://en.wikipedia.org/wiki/Jonway_Wuxing",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794253057.0770793
+      "result": "source_photo_saved",
+      "retry_after": 1794263129.7651758
+    },
+    {
+      "id": "969a89192cca8ad505de11dc",
+      "source": "https://en.wikipedia.org/wiki/Mercedes-Benz_170S",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794263130.199354
+    },
+    {
+      "id": "079c6208de37c416bb13f424",
+      "source": "https://en.wikipedia.org/wiki/Fairphone_1",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794263130.2667882
     }
   ],
   "missing": [
@@ -445,6 +435,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "c534a92f550b",
+      "category": "business",
+      "title": "Actinium Pharmaceuticals Grants 3,000-Share Stock Option to New Hire",
+      "source": "https://www.prnewswire.com/news-releases/actinium-pharmaceuticals-announces-inducement-grant-to-new-employee-302924063.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "99b77aadeefa",
       "category": "business",
       "title": "MSM Solutions Launches PortalTrack Print Quality Inspection for Real-Time Label Validation",
@@ -456,6 +453,13 @@
       "category": "cyber-security",
       "title": "ERMProtect Briefs International Delegation on U.S. Cybersecurity and Cybercrime",
       "source": "https://www.prnewswire.com/news-releases/ermprotect-selected-to-present-on-us-cybersecurity-and-cybercrime-to-international-delegation-302925230.html",
+      "reason": "no_source_image"
+    },
+    {
+      "id": "b79c3d6cec0c",
+      "category": "ai-news",
+      "title": "Waters Announces AI-Powered Peak Integration for Empower Software",
+      "source": "https://www.prnewswire.com/news-releases/waters-launches-ai-powered-peak-integration-expanding-its-suite-of-premium-ai-subscription-capabilities-for-empower-software-302922097.html",
       "reason": "no_source_image"
     },
     {
@@ -620,6 +624,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "bbaf6ab367ac",
+      "category": "business",
+      "title": "ADAMA Reports Financial Results for Third Quarter and First Nine Months of 2026",
+      "source": "https://www.prnewswire.com/news-releases/adama-reports-third-quarter--first-nine-months-2026-results-302923838.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "b62fda47bd5e",
       "category": "travel-packages",
       "title": "TUI Updates Travel Insurance Guidance and Allianz Partnership Details",
@@ -781,6 +792,13 @@
       "reason": "source_unavailable"
     },
     {
+      "id": "eb06e1cf1836",
+      "category": "private-vacancy",
+      "title": "The Estée Lauder Companies Announces Full-Time Beauty Advisor Opening in Chennai",
+      "source": "https://in.linkedin.com/jobs/view/beauty-advisor-multibrand-full-time-express-avenue-nykaa-luxe-chennai-at-the-est%C3%A9e-lauder-companies-inc-4484938336",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "ecf6b0469322",
       "category": "private-vacancy",
       "title": "Overview of Recent Job Openings Across Various Sectors in India",
@@ -890,6 +908,13 @@
       "category": "gadgets",
       "title": "Sony Xperia C: Smartphone Specifications, Facts and Verification Guide",
       "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "6476b9376115",
+      "category": "private-vacancy",
+      "title": "The Estée Lauder Companies Hiring Full-Time Beauty Advisor in Hyderabad",
+      "source": "https://in.linkedin.com/jobs/view/beauty-advisor-multibrand-full-time-nexus-forum-sujana-mall-hyderabad-at-the-est%C3%A9e-lauder-companies-inc-4483867225",
       "reason": "invalid_source_images"
     },
     {
@@ -1285,6 +1310,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "1652067282f0",
+      "category": "ai-news",
+      "title": "Wealthbox Launches Vault File Storage and Expands AI Capabilities",
+      "source": "https://www.prnewswire.com/news-releases/wealthbox-launches-vault-advanced-file-storage-for-advisory-firms-and-expands-ai-to-client-documents-for-all-users-302922375.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "8c34cb11fa0d",
       "category": "ai-news",
       "title": "Big Tech's $750 Billion AI Bet Faces Strain as Core Growth Slows",
@@ -1495,6 +1527,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "587069bed5b3",
+      "category": "business",
+      "title": "Acutaas Chemicals Shares Surge 13% to Record High Following Strong Q2 Earnings",
+      "source": "https://www.business-standard.com/markets/news/acutaas-chemicals-rallies-13-hits-record-high-on-strong-q2-results-126102700730_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "9f440eefa5ac",
       "category": "telecom",
       "title": "TRAI Unveils Draft AI Governance Framework for Indian Telecoms, Seeks Public Feedback",
@@ -1562,6 +1601,13 @@
       "category": "private-vacancy",
       "title": "WeMakeScholars Lists Academic Advisor Opening Across Multiple Indian Locations via LinkedIn",
       "source": "https://in.linkedin.com/jobs/view/academic-advisor-in-pondicherry-secunderabad-hubli-mumbai-chennai-coimbatore-madurai-vellore-ernakulam-nashik-pondy-bangalore-alwal-at-wemakescholars-4482000625",
+      "reason": "access_denied"
+    },
+    {
+      "id": "39d743e65a7f",
+      "category": "business",
+      "title": "Adani Group Stocks Rally Following Strong Q2 FY27 Earnings Reports",
+      "source": "https://www.business-standard.com/markets/news/adani-group-stocks-rally-led-by-adani-enterprises-adani-ports-post-q2-show-126102900780_1.html",
       "reason": "access_denied"
     },
     {
@@ -1999,6 +2045,13 @@
       "reason": "source_error"
     },
     {
+      "id": "557b8e2f8d81",
+      "category": "automobiles",
+      "title": "Ariel Shifts US Strategy: Atom and Nomad Models to Arrive via New Exclusive Partner",
+      "source": "https://www.motor1.com/news/813846/ariel-extreme-cars-finally-coming/",
+      "reason": "access_denied"
+    },
+    {
       "id": "4be79532a665",
       "category": "ai-news",
       "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
@@ -2314,6 +2367,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "86fa707cb847",
+      "category": "apps-software",
+      "title": "Atlas of Physics: An Interactive 3D Textbook Project for AP Physics",
+      "source": "https://github.com/nathanliow/atlas-of-physics",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "222914040e11",
       "category": "social-media",
       "title": "The Blue Kite Announces Opening for Social Media Associate Role in Goa via LinkedIn",
@@ -2398,6 +2458,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "f7fdc339d032",
+      "category": "apps-software",
+      "title": "SkyboundTotk Brings Experimental Native Static Recompilation Project for The Legend of Zelda: Tears of the Kingdom to Windows and Linux",
+      "source": "https://github.com/NotRexed/SkyboundTotk",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "4afa4536b18e5a41b30a3497",
       "category": "education",
       "title": "Université Officielle de Semuliki: College Admissions, Facts and Verification Guide",
@@ -2468,6 +2535,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "d4f183780204",
+      "category": "automobiles",
+      "title": "Aston Martin Financial Analysis: Revenue Growth Meets Persistent Debt",
+      "source": "https://www.motor1.com/news/813805/aston-martin-keeps-losing-money/",
+      "reason": "access_denied"
+    },
+    {
       "id": "9e37935bcd6c",
       "category": "private-vacancy",
       "title": "San Francisco Bay Area Media and Communications Job Listings Highlight Tech and Corporate Sector Demand",
@@ -2508,6 +2582,13 @@
       "title": "Aarti Industries Reports Q2 FY27 Financial Results Driven by Higher Volumes",
       "source": "https://www.prnewswire.com/in/news-releases/aarti-industries-sustains-growth-momentum-in-q2-fy27-led-by-higher-volumes-302925023.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "93590db6a53c",
+      "category": "ai-news",
+      "title": "Could an AI Bubble Burst Accelerate Worker Replacement and Job Losses?",
+      "source": "https://www.npr.org/sections/planet-money/2026/10/20/g-s1-148305/what-if-an-ai-bubble-bursts-and-that-accelerates-ai-job-losses",
+      "reason": "source_error"
     },
     {
       "id": "b884520e4af2",
@@ -2790,6 +2871,20 @@
       "reason": "access_denied"
     },
     {
+      "id": "2ce81c65737b",
+      "category": "apps-software",
+      "title": "NatWest Group Hiring Software Engineer in Bengaluru",
+      "source": "https://in.linkedin.com/jobs/view/software-engineer-at-natwest-group-4482856179",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "76c30ad6e59c",
+      "category": "business",
+      "title": "Adani Ports Shares Rise 4% on Strong Q2 Earnings, FY27 Guidance Raised",
+      "source": "https://www.business-standard.com/markets/news/adani-ports-soars-4-on-healthy-q2-raises-fy27-guidance-brokerages-upbeat-126102900431_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "554edbfdaee926ed82007433",
       "category": "gadgets",
       "title": "Xiaomi Mi 2S: Smartphone Specifications, Facts and Verification Guide",
@@ -2848,63 +2943,33 @@
   ],
   "missing_reasons": {
     "source_unavailable": 36,
-    "invalid_source_images": 78,
-    "access_denied": 94,
-    "no_source_image": 132,
-    "source_error": 37,
+    "invalid_source_images": 83,
+    "access_denied": 99,
+    "no_source_image": 136,
+    "source_error": 38,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "70f857696bf746ba0d59e502": {
+    "507deed776a77a1ca81ea35c": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/LG_V10",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d2/LG_V10_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Huawei_Honor_7",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Huawei_Honor_7.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "201988173a088d2878ea1a68": {
+    "db38fd013d8a79af46dc8be1": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Bestune_T33",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/08/Bestune_T33_img07.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Jonway_Wuxing",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/21/Skio_Junfeng_01_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "11cf767fc5b423033ff2e537": {
+    "969a89192cca8ad505de11dc": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Mini_2",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/GT-S6500L.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Mercedes-Benz_170S",
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Mercedes-Benz_170_S_%281949-51%29_Classic-Gala_2021_1X7A0295.jpg/1280px-Mercedes-Benz_170_S_%281949-51%29_Classic-Gala_2021_1X7A0295.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
     },
-    "3129ac4e87d7c102239e1f89": {
+    "079c6208de37c416bb13f424": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Bestune_NAT",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/2021_FAW_Bestune_E05_front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "2a8b92143f14b264d8d27146": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "c176a1dc41c1e122cab45821": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "2f02162d9ab27a8cd5662161": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
-      "candidate_count": 10,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
-        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled"
-      ]
+      "source": "https://en.wikipedia.org/wiki/Fairphone_1",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Fairphone_1_-_front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"

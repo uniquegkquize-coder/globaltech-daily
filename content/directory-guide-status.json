@@ -1,6 +1,6 @@
 {
   "published": 4,
-  "updated": 2,
+  "updated": 0,
   "target": 8,
   "missing": {
     "colleges": 2,
@@ -9,13 +9,13 @@
   "categories": {
     "colleges": {
       "new": 0,
-      "updated": 2,
+      "updated": 0,
       "eligible_new": 0,
-      "eligible_updates": 2,
+      "eligible_updates": 0,
       "shortfall": 2,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 16,
+        "already_published_unchanged": 18,
         "insufficient verified descriptive fields": 85,
         "identifier URL is not specification evidence": 199
       },
@@ -151,12 +151,12 @@
     "phones": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 1039,
+      "eligible_new": 1037,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 99,
+        "already_published_unchanged": 101,
         "insufficient verified descriptive fields": 104,
         "identifier URL is not specification evidence": 639
       },
@@ -292,16 +292,16 @@
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 849,
+      "eligible_new": 854,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 7214,
-        "already_published_unchanged": 101,
-        "insufficient verified descriptive fields": 686,
-        "identifier URL is not specification evidence": 5578
+        "considered": 7301,
+        "already_published_unchanged": 103,
+        "insufficient verified descriptive fields": 692,
+        "identifier URL is not specification evidence": 5652
       },
-      "rejected_count": 6264,
+      "rejected_count": 6344,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -572,5 +572,5 @@
       ]
     }
   },
-  "date": "2026-11-09T13:37:26.975840+00:00"
+  "date": "2026-11-09T16:25:21.616040+00:00"
 }
