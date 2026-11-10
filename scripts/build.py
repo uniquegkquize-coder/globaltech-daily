@@ -1,5 +1,4 @@
 from pathlib import Path
-from advertising import head_ads, footer_ads
 from link_resources import render as render_link_resources
 from article_layout import render as render_article, guide_body, excerpt, CSS as ARTICLE_CSS
 from news_sitemap import write_news_sitemap, is_news_article
@@ -200,59 +199,18 @@ def shell(lang,t,desc,url,body,extra='',*,alternate_urls=None,canonical_url=None
  links=''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in nav)
  more=[('All Latest News','सभी ताज़ा खबरें','all-news/'),('Jobs & Exam Hub','नौकरी और परीक्षा हब','jobs-exams/'),('Launches & Specs','लॉन्च और स्पेक्स','launches/'),('Freebies & Discounts','फ्रीबीज़ और डिस्काउंट','freebies-deals/'),('Study Abroad Guide','विदेश में पढ़ाई','study-abroad-guide/'),('Jobs Archive','पुराने नोटिस','jobs-archive/'),('AI Tools','AI टूल्स','tools/'),('College Finder','कॉलेज खोजें','colleges/'),('Course Explorer','कोर्स खोजें','courses/'),('Car Explorer','कार खोजें','cars/'),('Phone Explorer','फोन खोजें','phones/'),('Bike Explorer','बाइक खोजें','bikes/')]+[(en,hi,cat+'/') for cat,(en,hi) in CATEGORIES.items()]+[('About','हमारे बारे में','about/'),('Contact','संपर्क','contact/')]
  more_html='<details class="nav-more"><summary>'+('More' if lang=='en' else 'और देखें')+'</summary><div class="nav-more-list">'+''.join(f'<a href="/{lang}/{path}">{e(en if lang=="en" else hi)}</a>' for en,hi,path in more)+'</div></details>'
- return f'''<!doctype html><html lang="{document_lang or lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script>{meta}<script async src="https://www.googletagmanager.com/gtag/js?id=G-MFZZNMZCWJ"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag("js",new Date());gtag("config","G-MFZZNMZCWJ");</script><meta name="generator" content="GlobeWire SEO v2"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css?v={hashlib.sha256((CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS+ARTICLE_CSS).encode()).hexdigest()[:12]}">{head_ads()}</head><body><a class="skip-link" href="#main-content">{'Skip to content' if lang=='en' else 'मुख्य सामग्री पर जाएँ'}</a><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="{e(switch_url)}" hreflang="{target_lang}">{switch_label}</a></nav><div class="category-menu">{more_html}</div></div></header><main id="main-content">{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>{label("Independent bilingual news and explainers, with clear sourcing, corrections and transparent editorial standards.",lang)}</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{label(s.title(),lang)}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools','resources','site-map'])}</div></div></footer><script defer src="/site.js?v={hashlib.sha256((JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS).encode()).hexdigest()[:12]}"></script>{footer_ads()}</body></html>'''
-def adsterra_slot(position, lang):
-    label = 'विज्ञापन' if lang == 'hi' else 'Advertisement'
-    fallback = ''
-    if position == 'title':
-        invitation = 'GlobeWire Daily पर विज्ञापन दें' if lang == 'hi' else 'Advertise on GlobeWire Daily'
-        fallback = (
-            '<div style="max-width:728px;margin:12px auto;padding:8px 12px;'
-            'border:1px solid #dce5f1;border-radius:8px;background:#f5f8fc">'
-            f'<small>{label}</small><br><a href="/{lang}/contact/">{invitation}</a></div>'
-        )
-    return f'<div data-adsterra-slot="{position}" aria-label="{label}" style="text-align:center;overflow:hidden">{fallback}</div>'
-
-
+ return f'''<!doctype html><html lang="{document_lang or lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="google-site-verification" content="IjjkuYPqG93dE2SwPvi0HJ258E5WwNGAhIu7LB9qQqE"><meta name="theme-color" content="#0a1429"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1849673109734274" crossorigin="anonymous"></script>{meta}<script async src="https://www.googletagmanager.com/gtag/js?id=G-MFZZNMZCWJ"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag("js",new Date());gtag("config","G-MFZZNMZCWJ");</script><meta name="generator" content="GlobeWire SEO v2"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="color-scheme" content="light"><link rel="stylesheet" href="/style.css?v={hashlib.sha256((CSS+MENU_CSS+HUB_CSS+GLOBAL_CSS+EXAM_CSS+DIRECTORY_CSS+ARTICLE_CSS).encode()).hexdigest()[:12]}"></head><body><a class="skip-link" href="#main-content">{'Skip to content' if lang=='en' else 'मुख्य सामग्री पर जाएँ'}</a><div class="reading"></div><header class="top"><div class="wrap"><a class="logo" href="/{lang}/">GlobeWire <span>Daily</span></a><nav aria-label="Primary">{links}<a class="langswitch" href="{e(switch_url)}" hreflang="{target_lang}">{switch_label}</a></nav><div class="category-menu">{more_html}</div></div></header><main id="main-content">{body}</main><footer class="footer"><div class="wrap"><div><strong>GlobeWire Daily</strong><p>{label("Independent bilingual news and explainers, with clear sourcing, corrections and transparent editorial standards.",lang)}</p><a href="mailto:{CONTACT}">{CONTACT}</a></div><div class="footerlinks">{''.join(f'<a href="/{lang}/{s}/">{label(s.title(),lang)}</a>' for s in ['about','privacy','contact','editorial','corrections','affiliate','tools','resources','site-map'])}</div></div></footer><script defer src="/site.js?v={hashlib.sha256((JS+HUB_JS+GLOBAL_JS+DIRECTORY_JS).encode()).hexdigest()[:12]}"></script></body></html>'''
 def article_ad_scripts():
-    return r'''
-<script>
+    # Preserve Infolinks; Adsterra banner and popunder loaders were removed.
+    return r'''<script>
 (() => {
   if (navigator.globalPrivacyControl) return;
-
-  function mount(slot) {
-    if (slot.querySelector('iframe')) return;
-    const available = slot.clientWidth;
-    const [width, height, key] = slot.dataset.adsterraSlot === "inline"
-      ? [300, 250, "52835a675f1767f1a04f1936910f50fc"]
-      : available >= 728
-        ? [728, 90, "ea1d474556632d121d26679ad3ab397a"]
-        : [320, 50, "d5df9465701fdd4db6592b1b19550468"];
-    if (available < width) return;
-
-    const frame = document.createElement("iframe");
-    frame.title = slot.getAttribute("aria-label");
-    frame.width = width;
-    frame.height = height;
-    frame.loading = "lazy";
-    frame.style.cssText = "display:block;border:0;margin:12px auto;max-width:100%";
-    // Adsterra uses document.cookie in its supplied loader and needs a real origin.
-    frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox");
-    const options = JSON.stringify({key, format: "iframe", height, width, params: {}});
-    // Keep document.write and per-banner options in this frame.
-    frame.srcdoc = '<body style="margin:0;overflow:hidden"><script>window.atOptions=' + options
-      + ';<' + '/script><script src="https://bicea.org/22/' + key + '"><' + '/script></body>';
-    slot.replaceChildren(frame);
-  }
-
-  document.querySelectorAll("[data-adsterra-slot]").forEach(mount);
   window.infolinks_pid = 3449361;
   window.infolinks_wsid = 0;
   const tag = document.createElement("script");
   tag.src = "https://resources.infolinks.com/js/infolinks_main.js";
   tag.async = true;
   document.body.appendChild(tag);
-
 })();
 </script>'''
 
@@ -530,8 +488,8 @@ for p in POSTS:
    paragraphs=[m.end() for m in re.finditer(r"<blockquote>.*?</blockquote>|(</p>)",story_html,re.S) if m[1]]
    if len(paragraphs)>1:split=paragraphs[(len(paragraphs)-1)//2]
   if len(boundaries)>2 or len(paragraphs)>1:
-   story_html=story_html[:split]+adsterra_slot("inline",lang)+story_html[split:]
-  title_ad=adsterra_slot("title",lang)
+   pass  # Former inline Adsterra placement removed
+  title_ad=""  # Former title Adsterra placement removed
   reading_html='<p class="reading-meta">'+(f'{reading_minutes} min read' if content_lang=='en' else f'{reading_minutes} मिनट में पढ़ें')+'</p>'
   guide_notice=('<p class="guide-context">'+('Reference guide • Source-listed details may cover multiple variants. Check the exact model and market before buying.' if content_lang=='en' else 'संदर्भ गाइड • स्रोत में कई वेरिएंट का विवरण हो सकता है। खरीदने से पहले सही मॉडल और बाजार की जानकारी जाँचें।')+'</p>') if p.get('directory_kind') in ('phones','cars','bikes') else ''
   trending_html=trending_section(lang,p)
