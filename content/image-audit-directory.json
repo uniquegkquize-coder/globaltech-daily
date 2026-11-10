@@ -1,101 +1,220 @@
 {
-  "total_posts": 4995,
+  "total_posts": 5133,
   "selected": 44,
   "results": {
     "source_photo_saved": 4,
-    "cooldown": 40
+    "invalid_source_images": 19,
+    "source_error": 1,
+    "source_unavailable": 1,
+    "no_source_image": 4,
+    "cooldown": 15
   },
-  "still_missing": 452,
+  "still_missing": 462,
   "articles": [
     {
-      "id": "7354cef174369dbee7a22ddb",
-      "source": "https://en.wikipedia.org/wiki/IPhone_SE_%281st_generation%29",
+      "id": "7068e00a4f7a6f0747deb069",
+      "source": "https://en.wikipedia.org/wiki/Wuling_LZ110",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794348562.5261335
+      "retry_after": 1794359892.9027379
+    },
+    {
+      "id": "6ef16a0f9ea403870cff86a2",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Omnia_W",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794359892.9714894
     },
     {
       "id": "0d093f1b1d8b95e0ce3c5ba1",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Brammo_Enertia",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359893.2573612
     },
     {
       "id": "611527df4de7f3170a99cfde",
-      "result": "cooldown"
-    },
-    {
-      "id": "fb6dd420a2fc44c8f8340751",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359893.3859138
     },
     {
       "id": "2a8b92143f14b264d8d27146",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359893.7831197
     },
     {
-      "id": "c176a1dc41c1e122cab45821",
-      "result": "cooldown"
+      "id": "6c82193e6e6decde2e0a6489",
+      "source": "https://en.wikipedia.org/wiki/RAF-2203",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794359893.8549228
+    },
+    {
+      "id": "58a432955b039ea4fb61f57b",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_T",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794359893.867007
     },
     {
       "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
+      "source": "https://isc-edu.org/",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794359893.902112
     },
     {
-      "id": "2f02162d9ab27a8cd5662161",
-      "result": "cooldown"
+      "id": "fb6dd420a2fc44c8f8340751",
+      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359893.9039245
     },
     {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "result": "cooldown"
+      "id": "c176a1dc41c1e122cab45821",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359894.4618402
     },
     {
       "id": "ab5757b7bde7e5a43128d256",
-      "result": "cooldown"
+      "source": "https://exploitsmw.com/",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1794359894.536642
     },
     {
-      "id": "4afa4536b18e5a41b30a3497",
-      "result": "cooldown"
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359894.6788418
+    },
+    {
+      "id": "2f02162d9ab27a8cd5662161",
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359895.14876
     },
     {
       "id": "9d1f6341eb5fa6644d63ff08",
-      "result": "cooldown"
+      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359895.1687887
+    },
+    {
+      "id": "4afa4536b18e5a41b30a3497",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359895.176068
     },
     {
       "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "6548e415fc086ccec65bbb7c",
-      "result": "cooldown"
-    },
-    {
-      "id": "b211f120ea27b93fc925f6b4",
-      "result": "cooldown"
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
+      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359895.4241865
     },
     {
       "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
+      "source": "https://dec.ac.in/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794359895.9457858
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359896.286286
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "source": "https://cctu.edu.gh/site/index",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794359898.1286576
     },
     {
       "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794359898.5554578
+    },
+    {
+      "id": "33686a761fa5d097afc337dc",
+      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359898.8582664
+    },
+    {
+      "id": "a941ae3553703f8fd24d4d17",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359899.4286127
+    },
+    {
+      "id": "d5ff9974453f739276c8eb9f",
+      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359899.884734
+    },
+    {
+      "id": "2d100db342cdd6c9c517a807",
+      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359900.675313
     },
     {
       "id": "a6510273f0889bf4d7684eae",
+      "source": "https://mua.ac.ke/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359900.7893982
+    },
+    {
+      "id": "e8fc748d4c8dffaa2212a1cf",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794359901.1762977
+    },
+    {
+      "id": "8ede6684d4cf14febb863aad",
       "result": "cooldown"
     },
     {
-      "id": "ef614dcb4163038685679d1d",
+      "id": "ab5161457cb0ef816db211ff",
       "result": "cooldown"
     },
     {
-      "id": "17aa97db89715afd896833ea",
+      "id": "554edbfdaee926ed82007433",
+      "result": "cooldown"
+    },
+    {
+      "id": "e21f0c9303189bff05b728a0",
       "result": "cooldown"
     },
     {
       "id": "28682dd8dfac94fd33504b6e",
+      "result": "cooldown"
+    },
+    {
+      "id": "17aa97db89715afd896833ea",
       "result": "cooldown"
     },
     {
@@ -135,65 +254,25 @@
       "result": "cooldown"
     },
     {
-      "id": "33686a761fa5d097afc337dc",
-      "result": "cooldown"
-    },
-    {
-      "id": "a941ae3553703f8fd24d4d17",
-      "result": "cooldown"
-    },
-    {
-      "id": "d5ff9974453f739276c8eb9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "2d100db342cdd6c9c517a807",
-      "result": "cooldown"
-    },
-    {
-      "id": "e8fc748d4c8dffaa2212a1cf",
-      "result": "cooldown"
-    },
-    {
       "id": "ff28f504e8e3f011fe2acd9b",
-      "result": "cooldown"
-    },
-    {
-      "id": "8ede6684d4cf14febb863aad",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
-    },
-    {
-      "id": "e21f0c9303189bff05b728a0",
-      "result": "cooldown"
-    },
-    {
-      "id": "6accb72e7b5963a7165c7af8",
-      "source": "https://en.wikipedia.org/wiki/Daihatsu_Max",
+      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794348562.9228632
+      "result": "invalid_source_images",
+      "retry_after": 1794359901.4861333
     },
     {
-      "id": "5ca81827a4ad5156fccf47b4",
-      "source": "https://en.wikipedia.org/wiki/McLaren_Artura",
+      "id": "6548e415fc086ccec65bbb7c",
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794348563.0228732
+      "result": "invalid_source_images",
+      "retry_after": 1794359902.1807668
     },
     {
-      "id": "07ba28060f7d97bf2377ba73",
-      "source": "https://en.wikipedia.org/wiki/Nokia_N86_8MP",
+      "id": "ef614dcb4163038685679d1d",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794348563.2473195
+      "result": "no_source_image",
+      "retry_after": 1794359904.2950208
     }
   ],
   "missing": [
@@ -489,7 +568,7 @@
       "category": "apps-software",
       "title": "Mastercard Lists Software Engineer II Opening in Pune, India",
       "source": "https://in.linkedin.com/jobs/view/software-engineer-ii-at-mastercard-4480679568",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "c534a92f550b",
@@ -625,6 +704,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "7622d7f38452",
+      "category": "world-news",
+      "title": "Carín León: The Mexican Superstar Blending Traditional Machismo with Vulnerable Songwriting",
+      "source": "https://www.npr.org/2026/10/30/nx-s1-6023373/a-macho-mexican-superstar-sings-songs-full-of-emotion",
+      "reason": "source_error"
+    },
+    {
       "id": "e4ccc220e689",
       "category": "business",
       "title": "Ecuador Targets Expansion of Banana Exports to Middle Eastern Markets",
@@ -707,6 +793,13 @@
       "title": "Military and Protective Services Opportunities Highlighted in Cheyenne and Fort Collins Region",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-cheyenne-wy",
       "reason": "no_source_image"
+    },
+    {
+      "id": "98e47325920a",
+      "category": "world-news",
+      "title": "A New Political Era Begins in the Southern Philippines as Lawmakers Take Seats",
+      "source": "https://www.npr.org/2026/10/31/nx-s1-6020639/a-new-political-era-in-the-southern-philippines",
+      "reason": "source_error"
     },
     {
       "id": "4805037fd814",
@@ -1003,6 +1096,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "beac754bc9f5",
+      "category": "ai-news",
+      "title": "Marvix AI and Unlimited Systems Partner to Connect Clinical Documentation and Revenue Cycle Management",
+      "source": "https://www.prnewswire.com/news-releases/marvix-ai-partners-with-unlimited-systems-to-bring-smarter-clinical-documentation-ai-to-specialty-practices-302924054.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "1a65058bc25d",
       "category": "private-vacancy",
       "title": "LinkedIn Shows Over 53,000 Research‑Related Job Openings Across India – From Pharma Labs to University Labs",
@@ -1162,13 +1262,6 @@
       "title": "Archival Records Shed Light on Historical Middle East Policy Documents at the United Nations",
       "source": "https://www.un.org/unispal/documents/page/1567/",
       "reason": "invalid_source_images"
-    },
-    {
-      "id": "fc1e4812e76d",
-      "category": "gadgets",
-      "title": "Why Students Should Buy the Galaxy Tab S12 Series",
-      "source": "https://news.samsung.com/my/why-students-should-buy-the-galaxy-tab-s12-series",
-      "reason": "source_error"
     },
     {
       "id": "1f6245b7c964",
@@ -1346,6 +1439,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "023a2a9c0605",
+      "category": "ai-news",
+      "title": "KRAFTON Unveils Ludi 0.2: A Leap Toward Socially Intelligent Robots",
+      "source": "https://www.prnewswire.com/news-releases/krafton-develops-socially-intelligent-ai-that-helps-robots-better-understand-people-302923488.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "f50d37ff0019",
       "category": "ai-news",
       "title": "Opyn AI Agents Report 40% Reduction in Marpai Provider Call Center Costs",
@@ -1497,6 +1597,13 @@
       "category": "business",
       "title": "InventHelp Client Develops New Concept to Ease Pallet Wrapping and Reduce Strain",
       "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-easier-pallet-wrapping-idea-pta-796-302923952.html",
+      "reason": "no_source_image"
+    },
+    {
+      "id": "52754f757c54",
+      "category": "defence",
+      "title": "SOTERIA Launches Cancer Hunt™ to Offer Free Precision Oncology for U.S. Military and Veterans",
+      "source": "https://www.prnewswire.com/news-releases/soteria-precision-medicine-foundation-launches-cancer-hunt-to-provide-advanced-precision-oncology-support-services-for-active-duty-us-military-and-veterans-302924347.html",
       "reason": "no_source_image"
     },
     {
@@ -1735,6 +1842,13 @@
       "category": "sarkari-naukri",
       "title": "Understanding CGPA to Percentage Conversion Tools for Government Jobs",
       "source": "https://www.sahisarkarijobs.in/cgpa-to-percentage-calculator/",
+      "reason": "no_source_image"
+    },
+    {
+      "id": "ebe24ab264a7",
+      "category": "controversies",
+      "title": "AST SpaceMobile Faces Securities Fraud Class Action Lawsuit with November 13, 2026 Deadline",
+      "source": "https://www.prnewswire.com/news-releases/asts-deadline-in-15-days-ast-spacemobile-inc-class-action-lawsuit-seeks-recovery-for-investors-november-13-2026-deadline--contact-kessler-topaz-meltzer--check-llp-302924003.html",
       "reason": "no_source_image"
     },
     {
@@ -2018,6 +2132,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "a51bcbb99340",
+      "category": "conflict-news",
+      "title": "Israel Holds Pivotal Election as Voters Weigh Leadership Amid Years of Conflict",
+      "source": "https://www.npr.org/2026/10/27/g-s1-149944/israel-election-guide",
+      "reason": "source_error"
+    },
+    {
       "id": "36fc08c8c68d",
       "category": "defence",
       "title": "Overview of Military and Protective Services Openings in the Des Moines Area",
@@ -2057,7 +2178,7 @@
       "category": "private-vacancy",
       "title": "BDO India and Other Firms Report Open Positions in the Greater Bengaluru Area",
       "source": "https://in.linkedin.com/jobs/bdo-india-jobs-greater-bengaluru-area",
-      "reason": "no_source_image"
+      "reason": "invalid_source_images"
     },
     {
       "id": "6fce26052ffc",
@@ -2351,7 +2472,7 @@
       "category": "private-vacancy",
       "title": "Employment Listings and Job Openings Reported Across India on Professional Networks",
       "source": "https://in.linkedin.com/jobs/novaluxia%2Bis%2Blegit-%2Bstudy%2Bthe%2Bprocess.mxs-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "5ebf8e2fb21a",
@@ -2795,6 +2916,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "1684274403ad",
+      "category": "controversies",
+      "title": "Bank of America Faces Securities Fraud Lawsuit as Investors Reminded of December Deadline",
+      "source": "https://www.prnewswire.com/news-releases/bac-investors-have-opportunity-to-lead-bank-of-america-corporation-securities-fraud-lawsuit-302925375.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "537dca555153",
       "category": "business",
       "title": "Jio Platforms Marks Blockbuster Stock Market Debut with Employee Bonuses and Nationwide Festivities",
@@ -2834,7 +2962,7 @@
       "category": "private-vacancy",
       "title": "Frontier Agrotech Private Limited Posts Opening for Accounts Executive-Finance in Chandigarh",
       "source": "https://in.linkedin.com/jobs/view/accounts-executive-finance-at-frontier-agrotech-private-limited-4483847528",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "dfccb93a8259",
@@ -2977,6 +3105,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "c54de0109dca",
+      "category": "ai-news",
+      "title": "Kipu Health Introduces Agentic AI Capabilities for Behavioral Health",
+      "source": "https://www.prnewswire.com/news-releases/kipu-health-launches-agentic-ai-powered-by-2-trillion-words-of-clinical-data-extending-its-lead-as-behavioral-healths-most-widely-adopted-ai-platform-302923822.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "93590db6a53c",
       "category": "ai-news",
       "title": "Could an AI Bubble Burst Accelerate Worker Replacement and Job Losses?",
@@ -3024,6 +3159,13 @@
       "title": "Data Security Council Launches India-Specific Guide on Agentic AI Liability",
       "source": "https://www.business-standard.com/companies/news/data-security-council-unveils-ai-liability-guide-for-indian-enterprises-126103001647_1.html",
       "reason": "access_denied"
+    },
+    {
+      "id": "c0ca5b0778d9",
+      "category": "ai-news",
+      "title": "Luxor Technology Raises $16 Million Strategic Round Led by CMT Digital to Scale AI Compute Trading and Hardware",
+      "source": "https://www.prnewswire.com/news-releases/luxor-technology-raises-16-million-strategic-round-led-by-cmt-digital-to-scale-ai-compute-trading-and-hardware-302920538.html",
+      "reason": "no_source_image"
     },
     {
       "id": "579dc10cba05",
@@ -3087,6 +3229,13 @@
       "title": "Samsung Galaxy Round: Smartphone Specifications, Facts and Verification Guide",
       "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "f2bef9f7b4b0",
+      "category": "technology",
+      "title": "Startup Proposes Massive Nuclear-Powered Data Center on Federal Land in Utah",
+      "source": "https://www.npr.org/2026/09/30/nx-s1-5983482/valar-atomic-nuclear-data-center-project-beehive-utah",
+      "reason": "source_error"
     },
     {
       "id": "b9e7ebed5efd",
@@ -3363,34 +3512,243 @@
     }
   ],
   "missing_reasons": {
-    "no_source_image": 153,
+    "no_source_image": 160,
     "source_unavailable": 36,
-    "invalid_source_images": 94,
-    "access_denied": 123,
-    "source_error": 45,
+    "invalid_source_images": 93,
+    "access_denied": 124,
+    "source_error": 48,
     "restricted_page": 1
   },
-  "existing_representatives_preserved": 0,
+  "existing_representatives_preserved": 1,
   "diagnostics": {
-    "7354cef174369dbee7a22ddb": {
+    "7068e00a4f7a6f0747deb069": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/IPhone_SE_%281st_generation%29",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/IPhone_SE_in_silver.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Wuling_LZ110",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Wuling_LZ110_002.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "6accb72e7b5963a7165c7af8": {
+    "6ef16a0f9ea403870cff86a2": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Daihatsu_Max",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Daihatsu_Fellow-Max.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Samsung_Omnia_W",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/05/Samsung_Omnia_W_Model_no.GT-I8350.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "5ca81827a4ad5156fccf47b4": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/McLaren_Artura",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/2021_McLaren_Artura_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "0d093f1b1d8b95e0ce3c5ba1": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Brammo_Enertia",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
     },
-    "07ba28060f7d97bf2377ba73": {
+    "611527df4de7f3170a99cfde": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "2a8b92143f14b264d8d27146": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "6c82193e6e6decde2e0a6489": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nokia_N86_8MP",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Nokia_N86_8MP.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/RAF-2203",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/48/%D0%A0%D0%90%D0%A4-2203_%22%D0%9B%D0%B0%D1%82%D0%B2%D0%B8%D1%8F%22.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "58a432955b039ea4fb61f57b": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_T",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Xperia_T.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "0a95ccf111c45db4cfb5c9e3": {
+      "reason": "source_error",
+      "source": "https://isc-edu.org/",
+      "error": "ConnectionError"
+    },
+    "fb6dd420a2fc44c8f8340751": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/120px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "c176a1dc41c1e122cab45821": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "ab5757b7bde7e5a43128d256": {
+      "reason": "source_unavailable",
+      "source": "https://exploitsmw.com/",
+      "status": 200
+    },
+    "8f4b17c49d1b2a0c5cb45a53": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "candidate_count": 6,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "2f02162d9ab27a8cd5662161": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "candidate_count": 10,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled"
+      ]
+    },
+    "4afa4536b18e5a41b30a3497": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18613.jpg"
+      ]
+    },
+    "9d1f6341eb5fa6644d63ff08": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18615.jpg"
+      ]
+    },
+    "007acb84538e69bcc14f4f9f": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18606.jpg"
+      ]
+    },
+    "8444aa187e09b377f661fcbf": {
+      "reason": "no_source_image",
+      "source": "https://dec.ac.in/"
+    },
+    "b211f120ea27b93fc925f6b4": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "candidate_count": 8,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/commons/1/1e/Nokia_Asha_501.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/250px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/120px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "fbff6440d68d52399ca212b1": {
+      "reason": "no_source_image",
+      "source": "https://cctu.edu.gh/site/index"
+    },
+    "8af54bb949a0c055391d640a": {
+      "reason": "no_source_image",
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "existing_representative_preserved": true
+    },
+    "33686a761fa5d097afc337dc": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "a941ae3553703f8fd24d4d17": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/120px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/60px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "d5ff9974453f739276c8eb9f": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "2d100db342cdd6c9c517a807": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
+      "candidate_count": 9,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/commons/0/0e/1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/1280px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/960px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "a6510273f0889bf4d7684eae": {
+      "reason": "invalid_source_images",
+      "source": "https://mua.ac.ke/",
+      "candidate_count": 3,
+      "candidates": [
+        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
+        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png",
+        "https://mua.ac.ke/wp-content/uploads/2026/11/MUA_New_Chancellor_Banner.png"
+      ]
+    },
+    "e8fc748d4c8dffaa2212a1cf": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/120px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/60px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "ff28f504e8e3f011fe2acd9b": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18614.jpg"
+      ]
+    },
+    "6548e415fc086ccec65bbb7c": {
+      "reason": "invalid_source_images",
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "candidate_count": 23,
+      "candidates": [
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/frontier/vehicle-profile-assets/2027/model-2027-frontier-crew-cab-pro-4x-red-alert.png-v2.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue-hybrid/vehicle-profile-assets/2027/model-2027-rogue-hybrid-sr-horizon-blue-pearl-metallic-super-black-two-tone.png.ximg.l_3_m.smart.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue/vehicle-profile-assets/2027/model-2027-rogue-rock-creek-intelligent-awd-baja-storm-metallic.png.ximg.l_3_m.smart.png"
+      ]
+    },
+    "ef614dcb4163038685679d1d": {
+      "reason": "no_source_image",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/"
     }
   },
   "mode": "directory"
