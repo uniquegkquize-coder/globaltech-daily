@@ -1,0 +1,29 @@
+{
+  "en_title": "OpenClaw Releases Detailed Software Updates and Security Fixes Across Versions",
+  "hi_title": "OpenClaw ने विभिन्न संस्करणों के लिए विस्तृत सॉफ्टवेयर अपडेट और सुरक्षा सुधार जारी किए",
+  "en_body": "OpenClaw project records outline several software releases, including extended-stable and maintenance versions like v2026.11.3 and v2026.9.37, addressing numerous pull requests, security updates, and performance fixes.\n\n## Key Security and Reliability Improvements\n- **Credential and Authentication Isolation:** Improvements target stalled provider authentication, preventing secrets inheritance in child-process environments, and surfacing credential-read failures correctly.\n- **Gateway and Channel Safety:** Faster startup module-file loading, safer Telegram and Control UI processing for long table cells, and isolated Twitch IRC parser error logs.\n- **Update Recovery:** Enhanced snapshot writes, safe directory identity checks during package timeouts, and rollback retention features.\n\n## Practical Implications and Verification\nUsers and system administrators can review official release evidence reports, verify npm packages, inspect registry tarballs, and consult GitHub action run logs to confirm the integrity of downloaded assets.\n\n- Check official npm pages for package distribution.\n- Verify cryptographic hashes and release manifests published in the repository.\n- Inspect CI build reports for validation status.",
+  "hi_body": "OpenClaw प्रोजेक्ट रिकॉर्ड में v2026.11.3 और v2026.9.37 जैसे विस्तारित-स्थिर (extended-stable) और रखरखाव संस्करण शामिल हैं, जो कई पुल अनुरोधों, सुरक्षा अपडेट और प्रदर्शन सुधारों को संबोधित करते हैं।\n\n## प्रमुख सुरक्षा और विश्वसनीयता सुधार\n- **क्रेडेंशियल और प्रमाणीकरण अलगाव:** सुधारों का उद्देश्य अटके हुए प्रदाता प्रमाणीकरण को रोकना, चाइल्ड-प्रोसेस वातावरण में गुप्त डेटा के वंशानुक्रम (inheritance) को रोकना और क्रेडेंशियल-रीड विफलताओं को सही ढंग से सामने लाना है।\n- **गेटवे और चैनल सुरक्षा:** तेज़ स्टार्टअप मॉड्यूल-फ़ाइल लोड हो रही है, लंबी टेबल सेल के लिए सुरक्षित टेलीग्राम और कंट्रोल यूआई प्रोसेसिंग, और पृथक ट्विच आईआरसी पार्सर त्रुटि लॉग।\n- **अपडेट रिकवरी:** बेहतर स्नैपशॉट राइट्स, पैकेज टाइमआउट के दौरान सुरक्षित निर्देशिका पहचान जांच, और रोलबैक प्रतिधारण सुविधाएं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nउपयोगकर्ता और सिस्टम प्रशासक डाउनलोड की गई संपत्तियों की अखंडता की पुष्टि करने के लिए आधिकारिक रिलीज़ साक्ष्य रिपोर्ट की समीक्षा कर सकते हैं, npm पैकेज सत्यापित कर सकते हैं, और GitHub एक्शन रन लॉग का परामर्श ले सकते हैं।\n- पैकेज वितरण के लिए आधिकारिक npm पृष्ठ देखें।\n- रिपॉजिटरी में प्रकाशित क्रिप्टोग्राफिक हैश और रिलीज़ मैनिफ़ेस्ट सत्यापित करें।\n- सत्यापन स्थिति के लिए CI निर्माण रिपोर्ट का निरीक्षण करें।",
+  "en_meta": "Read the latest OpenClaw software releases, security fixes, and update recovery details for versions v2026.11.3 and v2026.9.37.",
+  "hi_meta": "OpenClaw के नवीनतम सॉफ्टवेयर रिलीज़, सुरक्षा सुधार और संस्करण v2026.11.3 तथा v2026.9.37 की अपडेट रिकवरी विवरण पढ़ें।",
+  "en_keywords": [
+    "OpenClaw",
+    "software releases",
+    "security updates",
+    "gateway performance",
+    "npm package"
+  ],
+  "hi_keywords": [
+    "OpenClaw",
+    "सॉफ्टवेयर रिलीज़",
+    "सुरक्षा अपडेट",
+    "गेटवे प्रदर्शन",
+    "npm पैकेज"
+  ],
+  "source_published_at": null,
+  "id": "24e0d0e581cb",
+  "source": "https://github.com/openclaw/openclaw/releases",
+  "date": "2026-11-10T21:59:10.425706+00:00",
+  "source_title": "Releases · openclaw/openclaw - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

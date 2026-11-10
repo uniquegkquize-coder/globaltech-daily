@@ -1,0 +1,29 @@
+{
+  "en_title": "Run Language-Model Agents in Minecraft with Mineflayer Tools and Persistent Sessions",
+  "hi_title": "माइनफ्लेयर टूल्स और निरंतर सत्रों के साथ माइनक्राफ्ट में भाषा-मॉडल एजेंट चलाएं",
+  "en_body": "A new open-source repository on GitHub enables developers to connect large language models to Minecraft servers using Mineflayer tools, persistent sessions, and shell sandboxes. The harness allows an LLM to walk, mine, craft, build, fight, and chat like a regular player.\n\n## Core Features and Capabilities\n\n* **Model Compatibility:** Works with Claude, GPT, Gemini, OpenRouter, or custom endpoints supporting the OpenAI Responses API. The default model is listed as GPT-6.1 Terra.\n* **Persistent Sessions:** Sessions survive restarts, allowing an agent to be stopped and restarted under the same name while carrying on its previous state.\n* **Individual Shell Sandboxes:** Each agent is provided a shell utilizing Docker, E2B, or a plain local folder where they can keep notes and write scripts calling their game tools.\n* **Team Coordination:** Supports multi-agent teams configured via a single JSON file, enabling direct messages between agents and an optional shared machine.\n\n## Requirements and Setup\n\nAccording to the documentation, users need Node 22.19+, an API key for a supported model provider, and a Minecraft server. A development server is included in the repository for those without an existing server, which requires Java 21.\n\nTo observe the agents, users can connect to `localhost:25565` from Minecraft version 1.21.6 and use `/tell` to communicate with the agents. Terminal streaming displays output and tool calls, while `Ctrl+C` terminates the process. State information is saved locally to resume sessions upon restart.\n\n## Configuration and Licensing\n* **Configuration Hierarchy:** Settings can be managed through command-line flags, environment variables, or a JSON file. Flags take precedence over environment variables, which override file settings.\n* **Sandbox Options:** E2B sandboxes are used if `E2B_API_KEY` is provided, falling back to Docker or a local folder. Local folders execute commands with user permissions, though sandboxing can be disabled entirely using `--sandbox none`.\n* **Licensing:** The repository is released under the MIT license, with third-party notices detailing components from Mindcraft and prismarine-viewer.\n\nUsers can verify and review the original announcement and setup instructions directly on the official GitHub repository.",
+  "hi_body": "GitHub पर एक नया ओपन-सोर्स रिपॉजिटरी डेवलपर्स को माइनफ्लेयर टूल्स, निरंतर सत्रों (persistent sessions) और शेल सैंडबॉक्स का उपयोग करके बड़े भाषा मॉडल को माइनक्राफ्ट सर्वर से जोड़ने की अनुमति देता है। यह हार्नेस एक एलएलएम को एक नियमित खिलाड़ी की तरह चलने, खनन करने, क्राफ्ट करने, निर्माण करने, लड़ने और चैट करने में सक्षम बनाता है।\n\n## मुख्य विशेषताएं और क्षमताएं\n\n* **मॉडल संगतता:** Claude, GPT, Gemini, OpenRouter, या OpenAI Responses API का समर्थन करने वाले कस्टम एंडपॉइंट के साथ काम करता है। डिफ़ॉल्ट मॉडल GPT-6.1 Terra के रूप में सूचीबद्ध है।\n* **निरंतर सत्र:** सत्र रीस्टार्ट होने के बाद भी सुरक्षित रहते हैं, जिससे एक एजेंट को रोका जा सकता है और पिछले राज्य को जारी रखते हुए उसी नाम से फिर से शुरू किया जा सकता है।\n* **व्यक्तिगत शेल सैंडबॉक्स:** प्रत्येक एजेंट को Docker, E2B, या एक साधारण स्थानीय फ़ोल्डर का उपयोग करने वाला शेल प्रदान किया जाता है जहां वे नोट्स रख सकते हैं और गेम टूल्स को कॉल करने वाली स्क्रिप्ट लिख सकते हैं।\n* **टीम समन्वय:** एकल JSON फ़ाइल के माध्यम से कॉन्फ़िगर की गई बहु-ए एजेंट टीमों का समर्थन करता है, जो एजेंटों के बीच सीधे संदेश और एक वैकल्पिक साझा मशीन को सक्षम बनाता है।\n\n## आवश्यकताएं और सेटअप\n\nदस्तावेज़ के अनुसार, उपयोगकर्ताओं को Node 22.19+, एक समर्थित मॉडल प्रदाता के लिए एक एपीआई कुंजी, और एक माइनक्राफ्ट सर्वर की आवश्यकता होती है। मौजूदा सर्वर के बिना उपयोगकर्ताओं के लिए रिपॉजिटरी में एक विकास सर्वर शामिल है, जिसके लिए Java 21 की आवश्यकता होती है।\n\nएजेंटों का निरीक्षण करने के लिए, उपयोगकर्ता माइनक्राफ्ट संस्करण 1.21.6 से `localhost:25565` से जुड़ सकते हैं और संवाद करने के लिए `/tell` का उपयोग कर सकते हैं। टर्मिनल स्ट्रीमिंग आउटपुट और टूल कॉल प्रदर्शित करती है, जबकि `Ctrl+C` प्रक्रिया को समाप्त करता है।\n\n## कॉन्फ़िगरेशन और लाइसेंसिंग\n* **कॉन्फ़िगरेशन पदानुक्रम:** सेटिंग्स को कमांड-लाइन फ़्लैग, पर्यावरण चर, या JSON फ़ाइल के माध्यम से प्रबंधित किया जा सकता है।\n* **सैंडबॉक्स विकल्प:** यदि `E2B_API_KEY` प्रदान की जाती है, तो E2B सैंडबॉक्स का उपयोग किया जाता है, जो Docker या स्थानीय फ़ोल्डर पर वापस जाता है।\n* **लाइसेंसिंग:** रिपॉजिटरी को MIT लाइसेंस के तहत जारी किया गया है, जिसमें Mindcraft और prismarine-viewer के घटकों का विवरण देने वाले तृतीय-पक्ष नोटिस शामिल हैं।\n\nउपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी पर सीधे मूल घोषणा और सेटअप निर्देशों की समीक्षा कर सकते हैं।",
+  "en_meta": "Learn how to run language-model agents in Minecraft using Mineflayer tools, persistent sessions, shell sandboxes, and team configurations.",
+  "hi_meta": "माइनफ्लेयर टूल्स, निरंतर सत्रों और शेल सैंडबॉक्स का उपयोग करके माइनक्राफ्ट में भाषा-मॉडल एजेंटों को चलाने का तरीका जानें।",
+  "en_keywords": [
+    "Minecraft AI agents",
+    "Mineflayer",
+    "LLM Minecraft harness",
+    "persistent sessions",
+    "shell sandboxes"
+  ],
+  "hi_keywords": [
+    "माइनक्राफ्ट एआई एजेंट",
+    "माइनफ्लेयर",
+    "एलएलएम माइनक्राफ्ट हार्नेस",
+    "निरंतर सत्र",
+    "शेल सैंडबॉक्स"
+  ],
+  "source_published_at": null,
+  "id": "780b70023987",
+  "source": "https://github.com/yc-software/minecraft-agent-harness",
+  "date": "2026-11-10T22:03:06.745832+00:00",
+  "source_title": "Run language-model agents in Minecraft with Mineflayer tools, persistent sessions and shell sandboxes. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

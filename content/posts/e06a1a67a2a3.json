@@ -1,0 +1,29 @@
+{
+  "en_title": "NOOP: An Offline, Account-Free Companion App for WHOOP Straps",
+  "hi_title": "NOOP: WHOOP स्ट्रैप्स के लिए एक ऑफ़लाइन, खाता-मुक्त कंपेनियन ऐप",
+  "en_body": "NOOP is an independent, unofficial, and fully offline companion app designed for WHOOP straps (versions 4.0 and 5.0) and experimental Oura Ring integration. Built to operate entirely without a cloud server, user account, or subscription, NOOP pairs directly with user-owned hardware via Bluetooth and stores all biometric data locally in a SQLite database.\n\n## Core Architecture and Privacy\n- **No Cloud or Accounts:** The application requires no login or connection to external servers, ensuring that heart rate, R-R intervals, SpO₂ and other health metrics never leave the user's device.\n- **Transparent Local Analytics:** Recovery, strain, HRV, and sleep stages are computed directly on-device using documented, citable methods such as Karvonen %HRR and Task Force 1996 HRV. These algorithms serve as approximations rather than direct reproductions of proprietary models.\n- **Data Portability:** Users can import historical data via WHOOP CSV exports or Apple Health export XML files to build a permanent local archive.\n\n## Platform Features and Integration\n- **Cross-Platform Design:** Shipped with a shared cross-platform codebase supporting macOS, iOS, and Android devices under the \"Liquid Metal\" design language.\n- **Automation and Shortcuts:** On macOS, strap interactions such as double-taps can trigger local system actions or execute custom macOS Shortcuts via URL schemes.\n- **Hardware Limitations:** The software is constrained by what sensors can physically decode. For instance, WHOOP 5.0 / MG requires breaking the official app's Bluetooth bond for pairing, and certain advanced metrics remain dependent on raw sensor inputs.\n\n## Licensing and Verification\nNOOP is source-available under the PolyForm Noncommercial License 1.0.0, making it free for personal and educational use while restricting commercial application. It is explicitly not a medical device, and derived metrics are intended for informational purposes only. Users can inspect the full source code and verify installation steps directly through the project's official GitHub repository at ryanbr/noop.",
+  "hi_body": "NOOP एक स्वतंत्र, अनौपचारिक और पूरी तरह से ऑफ़लाइन कंपेनियन ऐप है जिसे WHOOP स्ट्रैप्स (संस्करणीय 4.0 और 5.0) और प्रायोगिक Oura रिंग एकीकरण के लिए डिज़ाइन किया गया है। पूरी तरह से बिना किसी क्लाउड सर्वर, यूजर अकाउंट या सब्सक्रिप्शन के काम करने के लिए निर्मित, NOOP ब्लूटूथ के माध्यम से सीधे उपयोगकर्ता के हार्डवेयर के साथ जुड़ता है और सभी बायोमेट्रिक डेटा को स्थानीय रूप से SQLite डेटाबेस में संग्रहीत करता है।\n\n## मुख्य वास्तुकला और गोपनीयता\n- **कोई क्लाउड या खाता नहीं:** इस एप्लिकेशन को किसी लॉगिन या बाहरी सर्वर से कनेक्ट करने की आवश्यकता नहीं होती है, जिससे यह सुनिश्चित होता है कि हृदय गति, R-R अंतराल, SpO₂ और अन्य स्वास्थ्य मेट्रिक्स उपयोगकर्ता के डिवाइस से बाहर नहीं जाते हैं।\n- **पारदर्शी स्थानीय विश्लेषण:** रिकवरी, स्ट्रेन, HRV और नींद के चरणों की गणना सीधे डिवाइस पर प्रलेखित, उद्धृत तरीकों जैसे Karvonen %HRR और Task Force 1996 HRV का उपयोग करके की जाती है। ये एल्गोरिदम मालिकाना मॉडल के प्रत्यक्ष पुनरुत्पादन के बजाय सन्निकटन के रूप में कार्य करते हैं।\n- **डेटा पोर्टेबिलिटी:** उपयोगकर्ता स्थायी स्थानीय संग्रह बनाने के लिए WHOOP CSV निर्यात या Apple Health निर्यात XML फ़ाइलों के माध्यम से ऐतिहासिक डेटा आयात कर सकते हैं।\n\n## प्लेटफ़ॉर्म सुविधाएँ और एकीकरण\n- **क्रॉस-प्लेटफ़ॉर्म डिज़ाइन:** \"लिक्विड मेटल\" डिज़ाइन भाषा के तहत macOS, iOS और Android उपकरणों का समर्थन करने वाले साझा क्रॉस-प्लेटफ़ॉर्म कोडबेस के साथ भेजा गया।\n- **स्वचालन और शॉर्टकट:** macOS पर, स्ट्रैप इंटरैक्शन जैसे डबल-टैप स्थानीय सिस्टम क्रियाओं को ट्रिगर कर सकते हैं या URL योजनाओं के माध्यम से कस्टम macOS शॉर्टकट निष्पादित कर सकते हैं।\n- **हार्डवेयर सीमाएं:** सॉफ़्टवेयर उन चीज़ों तक सीमित है जिन्हें सेंसर भौतिक रूप से डिकोड कर सकते हैं। उदाहरण के लिए, WHOOP 5.0 / MG को युग्मन के लिए आधिकारिक ऐप के ब्लूटूथ बॉन्ड को तोड़ने की आवश्यकता होती है।\n\n## लाइसेंसिंग और सत्यापन\nNOOP पॉलीफॉर्म गैर-व्यावसायिक लाइसेंस 1.0.0 के तहत स्रोत-उपलब्ध है, जो इसे व्यावसायिक अनुप्रयोग को प्रतिबंधित करते हुए व्यक्तिगत और शैक्षिक उपयोग के लिए स्वतंत्र बनाता है। यह स्पष्ट रूप से कोई चिकित्सा उपकरण नहीं है, और व्युत्पन्न मेट्रिक्स केवल सूचना के उद्देश्यों के लिए हैं। उपयोगकर्ता पूर्ण स्रोत कोड का निरीक्षण कर सकते हैं और ryanbr/noop पर आधिकारिक GitHub रिपॉजिटरी के माध्यम से स्थापना चरणों को सत्यापित कर सकते हैं।",
+  "en_meta": "Discover NOOP, an independent offline companion app for WHOOP and Oura straps that keeps all biometric data locally on your device without cloud or account.",
+  "hi_meta": "NOOP के बारे में जानें, जो WHOOP और Oura स्ट्रैप्स के लिए एक स्वतंत्र ऑफ़लाइन ऐप है जो बिना क्लाउड या खाते के सभी बायोमेट्रिक डेटा को स्थानीय रूप से सहेजता है।",
+  "en_keywords": [
+    "NOOP",
+    "WHOOP companion",
+    "offline fitness tracker",
+    "local biometric data",
+    "open source wellness app"
+  ],
+  "hi_keywords": [
+    "NOOP",
+    "WHOOP कंपेनियन",
+    "ऑफ़लाइन फिटनेस ट्रैकर",
+    "स्थानीय बायोमेट्रिक डेटा",
+    "ओपन सोर्स ऐप"
+  ],
+  "source_published_at": null,
+  "id": "e06a1a67a2a3",
+  "source": "https://github.com/ryanbr/noop",
+  "date": "2026-11-10T22:03:28.462122+00:00",
+  "source_title": "ryanbr/noop: Offline WHOOP companion — pair your strap over Bluetooth, keep all data on your own device. No cloud, no account, no subscription. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

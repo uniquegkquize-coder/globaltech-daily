@@ -1,0 +1,29 @@
+{
+  "en_title": "Managing Save Data and Script Execution via ns2jb Sessions",
+  "hi_title": "एनएस2जेबी सत्रों के माध्यम से सेव डेटा और स्क्रिप्ट निष्पादन का प्रबंधन",
+  "en_body": "## Overview\nAn open-source repository titled `ns2-savekit` provides toolsets to read, back up, restore, and modify save data across various titles over a live `ns2jb` session. The documentation specifies that the utility is not an exploit itself; it requires a patched local `ns2jb` checkout, a running exploit session, and specific firmware environments like firmware 23.0.1 alongside retail SmileBASIC 4.\n\n## Core Save Operations and Safeguards\nAccording to the repository documentation, save management works by opening an archive, moving files, committing changes, and verifying results via hashes. Safety measures include:\n- **Read-only by default:** Writing requires a prior backup and a byte-by-byte comparison against live data.\n- **Allowlist restrictions:** Only titles specified in configuration lists (such as Elden Ring) can be modified.\n- **Verification checks:** Large save files are processed in 256 KiB reads to ensure integrity.\n\n## Launchers and External Integrations\nThe toolkit facilitates installing external launchers from pinned releases, such as a Lua launcher for the Switch 1 edition of Balatro running on newer hardware in compatibility mode. It also supports Artemis-based environments (tested on specific demo titles like the Seedsow demo and Nora 2 demo) which configure script execution paths through save containers or suspend files.\n\n## Verification and Limitations\nUsers must verify all procedures against the official repository documentation (`docs/` directory). The developer notes certain components remain in a staging or smoke-tested phase rather than fully installed on all hardware configurations. Third-party components such as upstream repositories and dependencies are acknowledged under the project's notice file.",
+  "hi_body": "## अवलोकन\n`ns2-savekit` नामक एक ओपन-सोर्स रिपॉजिटरी ऐसे टूलसेट प्रदान करती है जो लाइव `ns2-जेबी` (ns2jb) सत्र के माध्यम से विभिन्न शीर्षकों के सेव डेटा को पढ़ने, बैकअप लेने, पुनर्स्थापित करने और संशोधित करने की अनुमति देते हैं। दस्तावेज़ के अनुसार, यह यूटिलिटी स्वयं कोई एक्सप्लॉइट नहीं है; इसके लिए पैच किए गए स्थानीय `ns2jb` चेकआउट, एक सक्रिय एक्सप्लॉइट सत्र और फर्मवेयर 23.0.1 तथा रिटेल स्माइलबेसिक 4 (SmileBASIC 4) जैसे विशिष्ट फर्मवेयर वातावरण की आवश्यकता होती है।\n\n## मुख्य सेव संचालन और सुरक्षा उपाय\nरिपॉजिटरी के प्रलेखन के अनुसार, सेव प्रबंधन एक आर्काइव को खोलकर, फ़ाइलों को स्थानांतरित करके, प्रतिबद्ध (commit) करके और हैश के माध्यम से परिणामों को सत्यापित करके काम करता है। सुरक्षा उपायों में शामिल हैं:\n- **डिफ़ॉल्ट रूप से केवल पढ़ने योग्य:** लिखने के लिए पूर्व बैकअप और लाइव डेटा के मुकाबले बाइट-दर-बाइट तुलना की आवश्यकता होती है।\n- **अनुमति सूची प्रतिबंध:** केवल कॉन्फ़िगरेशन सूचियों में निर्दिष्ट शीर्षक (जैसे एल्डन रिंग) ही संशोधित किए जा सकते हैं।\n- **सत्यापन जांच:** अखंडता सुनिश्चित करने के लिए बड़े सेव फ़ाइलों को 256 KiB रीड में संसाधित किया जाता है।\n\n## लॉन्चर और बाहरी एकीकरण\nयह टूलकिट पिन किए गए रिलीज़ से बाहरी लॉन्चर स्थापित करने की सुविधा देती है, जैसे कि संगतता मोड में नए हार्डवेयर पर चलने वाले बलाट्रो (Balatro) के स्विच 1 संस्करण के लिए एक लूआ (Lua) लॉन्चर। यह आर्टेमिस-आधारित वातावरण (Seedsow और Nora 2 डेमो जैसे विशिष्ट डेमो शीर्षकों पर परीक्षण किया गया) का भी समर्थन करता है जो सेव कंटेनर या सस्पेंड फ़ाइलों के माध्यम से स्क्रिप्ट निष्पादन पथ को कॉन्फ़िगर करते हैं।\n\n## सत्यापन और सीमाएं\nउपयोगकर्ताओं को आधिकारिक रिपॉजिटरी दस्तावेज़ीकरण (`docs/` निर्देशिका) के विरुद्ध सभी प्रक्रियाओं को सत्यापित करना चाहिए। डेवलपर ने उल्लेख किया है कि कुछ घटक सभी हार्डवेयर कॉन्फ़िगरेशन पर पूरी तरह से स्थापित होने के बजाय अभी भी स्टेजिंग या स्मोक-टेस्टेड चरण में हैं। अपस्ट्रीम रिपॉजिटरी और निर्भरता जैसे तृतीय-पक्ष घटकों को प्रोजेक्ट की नोटिस फ़ाइल के तहत स्वीकार किया गया है।",
+  "en_meta": "Learn about the ns2-savekit utility for managing save data and executing scripts over ns2jb sessions, including safety safeguards and requirements.",
+  "hi_meta": "एनएस2जेबी सत्रों पर सेव डेटा प्रबंधन और स्क्रिप्ट निष्पादन के लिए ns2-savekit टूलसेट के बारे में जानें।",
+  "en_keywords": [
+    "ns2-savekit",
+    "save data management",
+    "ns2jb session",
+    "Lua launcher",
+    "homebrew toolset"
+  ],
+  "hi_keywords": [
+    "ns2-savekit",
+    "सेव डेटा प्रबंधन",
+    "ns2jb सत्र",
+    "लूआ लॉन्चर",
+    "होमब्रू टूल"
+  ],
+  "source_published_at": null,
+  "id": "fd8d9ca5e078",
+  "source": "https://github.com/dougchansan/ns2-savekit",
+  "date": "2026-11-10T21:58:09.560829+00:00",
+  "source_title": "read/write switch2 save data through a ns2jb session. run lua inside lullaby without a switch 1. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

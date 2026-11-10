@@ -1,0 +1,29 @@
+{
+  "en_title": "AIVPN 1.2.0 Released With Dual-Stack Networking and InitialV2 Handshake",
+  "hi_title": "AIVPN 1.2.0 रिलीज़: डुअल-स्टैक नेटवर्किंग और InitialV2 हैंडशेक के साथ उपलब्ध",
+  "en_body": "AIVPN has announced the release of version 1.2.0, introducing dual-stack networking, signed distribution protocols, application hardening, and an updated InitialV2 handshake mechanism. This release extends IPv6 support across the tunnel, adds large management messaging channels, and implements fixes for session, storage, and platform security issues.\n\n## Core Protocol and Networking Updates\n\n* **IPv6 Across Tunnel:** Servers assign IPv6 addresses, prefixes, and MTUs via ServerHello. Both desktop and mobile clients handle these with source validation, client isolation, and Quality of Service (QoS).\n* **InitialV2 Handshake:** Replaces older exchanges using separate Key Derivation Functions (KDF v2) and XChaCha20-Poly1305 with a random 24-byte nonce. This requires confirmed Perfect Forward Secrecy (PFS) for data and management commands.\n* **Adaptive Data Pacing:** Queues respond dynamically to persistent delays instead of stalling at fixed packet rates, featuring selectable adaptive, full, or off shaping modes.\n\n## Security and Distribution Improvements\n\n* **Signed Distribution:** Release artifacts and mask archives are signed using Ed25519. Mask delivery utilizes DNS TXT, PNG, Bitcoin OP_RETURN, Ethereum calldata, and email bootstrap via JMAP.\n* **Platform Client Enhancements:** Includes an Android Material 3 interface with automatic network recovery, Linux Material/Breeze layouts, and Windows Fluent layouts alongside a persistent Windows kill switch.\n* **Server-Side Security:** Site peers no longer receive pool databases or management rights. The update adds live revocation for inter-server nodes and dependency fixes.\n\n## Upgrade Considerations\n\nThis is a breaking release requiring simultaneous updates across servers, pool/site/chain nodes, and all clients, including embedded mobile cores. Operators must remove explicit `pool.transport=legacy` entries, configure client databases, and distribute trusted release and operator public keys before enabling signature enforcement. Verification steps and detailed settings are documented in the repository's `docs/RELEASE_1.2.0.md` file.",
+  "hi_body": "AIVPN ने संस्करण 1.2.0 जारी करने की घोषणा की है, जिसमें डुअल-स्टैक नेटवर्किंग, हस्ताक्षरित वितरण प्रोटोकॉल, एप्लिकेशन हार्डनिंग और अपडेटेड InitialV2 हैंडशेक तंत्र शामिल हैं। यह रिलीज़ टनल में IPv6 समर्थन का विस्तार करती है, बड़े प्रबंधन मैसेजिंग चैनल जोड़ती है, और सत्र, स्टोरेज तथा प्लेटफ़ॉर्म सुरक्षा समस्याओं के समाधान लागू करती है।\n\n## मुख्य प्रोटोकॉल और नेटवर्किंग अपडेट\n\n* **टनल में IPv6:** सर्वर ServerHello के माध्यम से IPv6 पते, उपसर्ग और MTU असाइन करते हैं। डेस्कटॉप और मोबाइल क्लाइंट दोनों स्रोत सत्यापन, क्लाइंट आइसोलेशन और सर्विस की गुणवत्ता (QoS) के साथ इन्हें लागू करते हैं।\n* **InitialV2 हैंडशेक:** यह पुराने एक्सचेंजों को अलग KDF v2 और 24-बाइट यादृच्छिक नॉन्स के साथ XChaCha20-Poly1305 से बदलता है। डेटा और प्रबंधन कमांड के लिए अब कन्फ़र्मड परफेक्ट फॉरवर्ड सीक्रेसी (PFS) आवश्यक है।\n* **अनुकूल डेटा पेसिंग:** कतारें निश्चित पैकेट दरों पर रुकने के बजाय निरंतर देरी के प्रति गतिशील रूप से प्रतिक्रिया करती हैं।\n\n## सुरक्षा और वितरण सुधार\n\n* **हस्ताक्षरित वितरण:** रिलीज़ आर्टिफ़ैक्ट और मास्कアーカイブ Ed25519 का उपयोग करके हस्ताक्षरित हैं। मास्क डिलीवरी के लिए DNS TXT, PNG, बिटकॉइन OP_RETURN, एथेरियम कैलाडाटा और JMAP का उपयोग किया जाता है।\n* **प्लेटफ़ॉर्म क्लाइंट संवर्द्धन:** इसमें स्वचालित नेटवर्क रिकवरी के साथ एंड्रॉइड मटीरियल 3 इंटरफ़ेस, लिनक्स मटीरियल/ब्रीज़ लेआउट और विंडोज फ़्लुएंट लेआउट शामिल हैं।\n* **सर्वर-साइड सुरक्षा:** साइट पीयर्स को अब पूल डेटाबेस या प्रबंधन अधिकार प्राप्त नहीं हैं। अपडेट में इंटर-सर्वर नोड्स के लिए लाइव रद्दीकरण और निर्भरता सुधार शामिल हैं।\n* **अपग्रेड निर्देश:** यह एक ब्रेकिंग रिलीज़ है जिसके लिए सर्वर, पूल/साइट/चेन नोड्स और सभी क्लाइंट्स पर एक साथ अपडेट की आवश्यकता होती है।",
+  "en_meta": "AIVPN 1.2.0 is released with IPv6 tunneling, InitialV2 handshakes, signed distributions, and security updates. Review upgrade instructions before deployment.",
+  "hi_meta": "AIVPN 1.2.0 संस्करण IPv6 टनलिंग, InitialV2 हैंडशेक और सुरक्षा अपडेट के साथ जारी किया गया है। तैनाती से पहले अपग्रेड निर्देश देखें।",
+  "en_keywords": [
+    "AIVPN",
+    "VPN release",
+    "InitialV2 handshake",
+    "IPv6 tunneling",
+    "network security"
+  ],
+  "hi_keywords": [
+    "AIVPN",
+    "VPN रिलीज़",
+    "InitialV2 हैंडशेक",
+    "IPv6 टनलिंग",
+    "नेटवर्क सुरक्षा"
+  ],
+  "source_published_at": null,
+  "id": "17a1a3a78998",
+  "source": "https://github.com/infosave2007/aivpn/releases",
+  "date": "2026-11-10T21:58:17.839060+00:00",
+  "source_title": "Releases · infosave2007/aivpn - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

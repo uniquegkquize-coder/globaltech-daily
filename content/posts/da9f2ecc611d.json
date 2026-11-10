@@ -1,0 +1,29 @@
+{
+  "en_title": "AzerothSurvivors Mirror Service Shut Down and Retired",
+  "hi_title": "AzerothSurvivors मिरर सेवा बंद और सेवानिवृत्त",
+  "en_body": "The mirror service for AzerothSurvivors, previously accessible via azerothsurvivors-mirror.sandervspl.dev, has been officially shut down. The site now displays a notice confirming the closure of the service.\n\n## Current Status\n* The service is no longer operational.\n* All former API routes, download endpoints, and administrative interfaces have been decommissioned and return an HTTP 410 Gone status code.\n* The homepage remains accessible to display the closure notification (HTTP 200).\n\n## Impact on Data\nAs part of the shutdown process, the production R2 bucket, azerothsurvivors-downloads, has been permanently deleted along with its entire contents. The maintainer reports that the Worker hosting the service no longer utilizes any storage or analytics bindings.\n\n## Repository Status\nWhile the live service is offline, the associated GitHub repository remains available. Historical implementation files and verification artifacts are preserved; however, users should note that the original upload and verification commands documented in the repository are no longer functional and do not apply to the now-defunct live site. Users seeking information on the project's history or technical implementation can still review these files directly on GitHub.",
+  "hi_body": "AzerothSurvivors के लिए मिरर सेवा, जो पहले azerothsurvivors-mirror.sandervspl.dev के माध्यम से उपलब्ध थी, को आधिकारिक रूप से बंद कर दिया गया है। साइट अब एक सूचना प्रदर्शित करती है जो सेवा के समापन की पुष्टि करती है।\n\n## वर्तमान स्थिति\n* सेवा अब चालू नहीं है।\n* सभी पूर्व एपीआई रूट, डाउनलोड एंडपॉइंट्स और प्रशासनिक इंटरफेस को बंद कर दिया गया है और वे अब HTTP 410 Gone स्टेटस कोड लौटाते हैं।\n* क्लोजर नोटिफिकेशन दिखाने के लिए होमपेज अभी भी सुलभ है (HTTP 200)।\n\n## डेटा पर प्रभाव\nशटडाउन प्रक्रिया के तहत, प्रोडक्शन R2 बकेट 'azerothsurvivors-downloads' और उसकी संपूर्ण सामग्री को स्थायी रूप से हटा दिया गया है। मेंटेनर के अनुसार, सेवा को होस्ट करने वाला वर्कर अब किसी भी स्टोरेज या एनालिटिक्स बाइंडिंग का उपयोग नहीं करता है।\n\n## रिपॉजिटरी की स्थिति\nहालांकि लाइव सेवा ऑफलाइन है, संबंधित गिटहब रिपॉजिटरी अभी भी उपलब्ध है। ऐतिहासिक कार्यान्वयन फाइलें और सत्यापन कलाकृतियां संरक्षित हैं; हालांकि, उपयोगकर्ताओं को यह ध्यान देना चाहिए कि रिपॉजिटरी में प्रलेखित मूल अपलोड और सत्यापन कमांड अब कार्यात्मक नहीं हैं और अब सक्रिय साइट पर लागू नहीं होते हैं। जो उपयोगकर्ता प्रोजेक्ट के इतिहास या तकनीकी कार्यान्वयन के बारे में जानकारी चाहते हैं, वे अभी भी इन फाइलों की समीक्षा सीधे गिटहब पर कर सकते हैं।",
+  "en_meta": "The AzerothSurvivors mirror service has been shut down and its storage buckets deleted. The live site now returns an HTTP 410 status for all functional routes.",
+  "hi_meta": "AzerothSurvivors मिरर सेवा को बंद कर दिया गया है और इसके स्टोरेज बकेट को हटा दिया गया है। लाइव साइट अब सभी कार्यात्मक रूटों के लिए HTTP 410 स्टेटस देती है।",
+  "en_keywords": [
+    "AzerothSurvivors",
+    "GitHub",
+    "service shutdown",
+    "R2 bucket",
+    "mirror site"
+  ],
+  "hi_keywords": [
+    "AzerothSurvivors",
+    "GitHub",
+    "सेवा बंद",
+    "R2 बकेट",
+    "मिरर साइट"
+  ],
+  "source_published_at": null,
+  "id": "da9f2ecc611d",
+  "source": "https://github.com/sandervspl/azerothsurvivors-mirror-r2",
+  "date": "2026-11-10T22:03:56.702949+00:00",
+  "source_title": "sandervspl/azerothsurvivors-mirror-r2 - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

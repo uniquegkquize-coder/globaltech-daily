@@ -1,0 +1,29 @@
+{
+  "en_title": "Rendering Huge Pull Requests in the GitHub Copilot App",
+  "hi_title": "गिटहब कोपायलट ऐप में विशाल पुल अनुरोधों को रेंडर करना",
+  "en_body": "Engineering teams at GitHub discussed the technical updates implemented to render massive pull requests efficiently within the GitHub Copilot app, ensuring responsive scrolling and smooth navigation even for diffs containing over a million changed lines and hundreds of comments.\n\n## Managing Scale and Complex Geometry\n\nWhile rendering standard code diffs at scale relies on conventional virtualization techniques—such as recycling DOM elements and maintaining a fixed height calculation based on known line counts—review comments introduce significant unpredictability. Comment heights vary based on markdown wrapping, expandable sections, loaded images, and active reply composers.\n\nTo address this without causing layout jumps, the team decoupled the document layout into two distinct domains:\n\n* **Code Geometry:** Deterministic, prefix-summed, exact, and unaffected by comment resizing.\n* **Dynamic Block Geometry:** Manages unpredictable components like review threads, drafts, and composers using stable keys anchored to specific file locations rather than raw pixel coordinates.\n\n## Measurement and Performance Safeguards\n\nTo prevent performance regressions from constant layout recalculations, the app utilizes an idle- and scroll-gated measurement strategy. Instead of relying on continuous observers that risk infinite loops, measurements occur in batched passes outside the hot scrolling path. \n\nKey architectural patterns include:\n\n* **Viewport-Scoped Passes:** Only blocks near the visible window are evaluated immediately, allowing distant blocks to rely on estimates until they approach the viewport.\n* **Scroll Anchoring:** Position adjustments are calculated by identity rather than raw pixels to prevent unexpected view jumps when elements resize.\n* **Structured Probes:** Continuous monitoring tracks invariants like mount counts and frame timing to ensure the UI remains performant under load.\n\n## Practical Implications and Verification\n\nThese updates are designed to eliminate lag during intensive code reviews. Developers interested in verifying technical specifications or exploring underlying repository features can consult the official GitHub Blog engineering portal for full documentation and implementation guidelines.",
+  "hi_body": "गिटहब की इंजीनियरिंग टीमों ने गिटहब कोपायलट ऐप के भीतर विशाल पुल अनुरोधों को कुशलतापूर्वक रेंडर करने के लिए लागू किए गए तकनीकी अपडेट पर चर्चा की, जिससे यह सुनिश्चित हुआ कि दस लाख से अधिक बदली गई लाइनों और सैकड़ों टिप्पणियों वाले अंतर (diffs) के लिए भी स्क्रॉलिंग और नेविगेशन सुचारू रहे।\n\n## पैमाने और जटिल ज्यामिति का प्रबंधन\n\nपैमाने पर मानक कोड अंतर को रेंडर करना पारंपरिक वर्चुअलाइजेशन तकनीकों पर निर्भर करता है—जैसे DOM तत्वों को पुनर्चक्रित करना और ज्ञात लाइन काउंट के आधार पर निश्चित ऊँचाई की गणना बनाए रखना—लेकिन समीक्षा टिप्पणियाँ (review comments) काफी अनिश्चितता पैदा करती हैं।\n\nलेआउट में अचानक बदलाव से बचने के लिए, टीम ने दस्तावेज़ लेआउट को दो अलग-अलग डोमेन में विभाजित किया:\n\n* **कोड ज्यामिति:**deterministic, सटीक, और टिप्पणी के आकार बदलने से प्रभावित नहीं।\n* **डायनेमिक ब्लॉक ज्यामिति:** पिक्सेल निर्देशांक के बजाय विशिष्ट फ़ाइल स्थानों पर लंगर डाले गए स्थिर कुंजियों का उपयोग करके समीक्षा धागों (review threads) का प्रबंधन करती है।\n\n## माप और प्रदर्शन सुरक्षा उपाय\n\nनिरंतर लेआउट पुनर्गणना से प्रदर्शन में गिरावट को रोकने के लिए, ऐप एक निष्क्रिय और स्क्रॉल-गेटेड माप रणनीति का उपयोग करता है। निरंतर観 observers पर भरोसा करने के बजाय, माप गर्म स्क्रॉलिंग पथ के बाहर बैचों में होते हैं।\n\nमुख्य वास्तुकला पैटर्न में शामिल हैं:\n\n* **व्यूपोर्ट-तय पास:** केवल दृश्यमान विंडो के पास के ब्लॉकों का तुरंत मूल्यांकन किया जाता है।\n* **स्क्रॉल एंकरिंग:** तत्वों का आकार बदलने पर अप्रत्याशित दृश्य छलांग को रोकने के लिए पिक्सेल के बजाय पहचान द्वारा स्थिति समायोजन की गणना की जाती है।\n* **संरचित जांच:** निरंतर निगरानी यह सुनिश्चित करने के लिए इनवेरिएंट्स को ट्रैक करती है कि लोड के तहत यूआई प्रदर्शनशील बना रहे।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nइन अपडेट को गहन कोड समीक्षा के दौरान अंतराल को खत्म करने के लिए डिज़ाइन किया गया है। तकनीकी विनिर्देशों को सत्यापित करने या अंतर्निहित रिपॉजिटरी सुविधाओं का पता लगाने के इच्छुक डेवलपर्स पूर्ण दस्तावेज के लिए आधिकारिक गिटहब ब्लॉग इंजीनियरिंग पोर्टल से परामर्श कर सकते हैं।",
+  "en_meta": "Learn how the GitHub Copilot app optimizes rendering performance for massive pull requests with over a million lines of code and extensive review threads.",
+  "hi_meta": "जानें कि गिटहब कोपायलट ऐप दस लाख से अधिक कोड लाइनों वाले विशाल पुल अनुरोधों के लिए रेंडरिंग प्रदर्शन को कैसे अनुकूलित करता है।",
+  "en_keywords": [
+    "GitHub Copilot",
+    "pull requests",
+    "virtualization",
+    "performance engineering",
+    "code review"
+  ],
+  "hi_keywords": [
+    "गिटहब कोपायलट",
+    "पुल अनुरोध",
+    "वर्चुअलाइजेशन",
+    "कोड समीक्षा",
+    "इंजीनियरिंग"
+  ],
+  "source_published_at": "2026-09-23T18:29:49+00:00",
+  "id": "0f1a07da5479",
+  "source": "https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app/",
+  "date": "2026-11-10T21:59:31.977444+00:00",
+  "source_title": "Rendering huge pull requests in the GitHub Copilot app",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

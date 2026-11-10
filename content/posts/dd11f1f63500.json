@@ -1,0 +1,27 @@
+{
+  "en_title": "Guide Details Save Preparation and Transfer for Seedsow Lua Editor",
+  "hi_title": "गाइड सीड्सो लुआ एडिटर के लिए सेव तैयारी और ट्रांसफर प्रक्रिया को समझाती है",
+  "en_body": "A community-focused preparation and installation guide outlines the workflow for setting up and transferring the Seedsow Lua Editor save data between a hacked Nintendo Switch 1 and a stock Nintendo Switch 2. The process utilizes a modded Switch 1 for initial save restoration via the JKSV homebrew tool, followed by standard Nintendo save-transfer features to move the data to the second console.\n\n## Core System Requirements\n\n- **Consoles**: A hacked Nintendo Switch 1 capable of running homebrew and a stock Nintendo Switch 2.\n- **Firmware**: Targets firmware version 23.0.1 on both consoles, which represents the current checkpoint referenced in the guide.\n- **Accounts**: A matching Nintendo Account linked to the designated save user on both devices.\n- **Software**: The same edition of Seedsow Lullaby installed on both systems, with reference testing performed using the 1.0.0 US eShop demo.\n\n## Preparation and Installation Steps\n\n1. **Initial Save Generation**: On Switch 1 in stock mode, launch the software, create a new game, make an in-game save, and close the application.\n2. **Homebrew Tool Setup**: Transfer the JKSV save manager to the Switch 1 microSD card and boot into custom firmware (CFW) on sysNAND to run it.\n3. **Backup Creation**: Use JKSV to create an initial backup of the existing save data as a safety precaution.\n4. **Save Substitution**: Place the pre-built `Seedsow-Lua-Editor-Save.zip` file into the appropriate JKSV backup folder alongside the original backup, then use JKSV to restore the editor save.\n\n## Transfer Methods\n\n- **Nearby Local Transfer**: Recommended for demo editions, utilizing system settings to beam the save directly from Switch 1 to Switch 2 while connected to Nintendo servers.\n- **Cloud Save Transfer**: Requires an active Nintendo Switch Online membership and the full game edition on both consoles to upload and download the save data via Nintendo's cloud servers.\n\nUsers should verify all firmware requirements and official instructions directly with Nintendo. The guide emphasizes keeping original backups intact and notes that custom firmware usage carries inherent platform risks.",
+  "hi_body": "एक कम्युनिटी-केंद्रित गाइड निनटेंडो स्विच 1 और स्टॉक निनटेंडो स्विच 2 के बीच सीड्सो लुआ एडिटर सेव डेटा को सेट अप और ट्रांसफर करने की प्रक्रिया को रेखांकित करती है। इस प्रक्रिया में JKSV होमब्रू टूल के माध्यम से शुरुआती सेव रिस्टोर करने के लिए एक मॉड किए गए स्विच 1 का उपयोग किया जाता है, जिसके बाद डेटा को दूसरे कंसोल पर ले जाने के लिए निनटेंडो की मानक सेव-ट्रांसफर सुविधाओं का उपयोग किया जाता है।\n\n## मुख्य सिस्टम आवश्यकताएँ\n\n- **कंसोल**: होमब्रू चलाने में सक्षम एक मॉड किया गया निनटेंडो स्विच 1 और एक स्टॉक निनटेंडो स्विच 2।\n- **फर्मवेयर**: दोनों कंसोल पर फर्मवेयर संस्करण 23.0.1 को लक्षित करता है।\n- **खाता**: दोनों उपकरणों पर नामित सेव यूजर से जुड़ा एक समान निनटेंडो अकाउंट।\n- **सॉफ्टवेयर**: दोनों सिस्टम पर इंस्टॉल किया गया सीड्सो लुलबी का एक ही संस्करण।\n\n## तैयारी और स्थापना के चरण\n\n1. **शुरुआती सेव जनरेशन**: स्टॉक मोड में स्विच 1 पर, सॉफ्टवेयर लॉन्च करें, एक नया गेम बनाएं, इन-गेम सेव करें और एप्लिकेशन बंद करें।\n2. **होमब्रू टूल सेटअप**: JKSV सेव मैनेजर को स्विच 1 माइक्रोएसडी कार्ड में ट्रांसफर करें और इसे चलाने के लिए sysNAND पर कस्टम फर्मवेयर (CFW) बूट करें।\n3. **बैकअप निर्माण**: सुरक्षा उपाय के रूप में मौजूदा सेव डेटा का शुरुआती बैकअप बनाने के लिए JKSV का उपयोग करें।\n4. **सेव प्रतिस्थापन**: मूल बैकअप के साथ JKSV बैकअप फ़ोल्डर में `Seedsow-Lua-Editor-Save.zip` फ़ाइल रखें, फिर एडिटर सेव को रिस्टोर करें।\n\n## ट्रांसफर के तरीके\n\n- **नारबाय लोकल ट्रांसफर**: डेमो संस्करणों के लिए अनुशंसित, निनटेंडो सर्वर से कनेक्ट होने पर स्विच 1 से स्विच 2 तक सीधे सेव भेजने के लिए सिस्टम सेटिंग्स का उपयोग करना।\n- **क्लाउड सेव ट्रांसफर**: निनटेंडो के क्लाउड सर्वर के माध्यम से सेव डेटा अपलोड और डाउनलोड करने के लिए दोनों कंसोल पर सक्रिय निनटेंडो स्विच ऑनलाइन सदस्यता और पूर्ण गेम संस्करण की आवश्यकता होती है।\n\nउपयोगकर्ताओं को निनटेंडो के साथ सीधे सभी फर्मवेयर आवश्यकताओं और आधिकारिक निर्देशों को सत्यापित करना चाहिए। गाइड मूल बैकअप को सुरक्षित रखने पर जोर देती है।",
+  "en_meta": "Read the preparation and transfer guide for Seedsow Lua Editor save data between Nintendo Switch 1 and Switch 2 using JKSV.",
+  "hi_meta": "JKSV का उपयोग करके निनटेंडो स्विच 1 और स्विच 2 के बीच सीड्सो लुआ एडिटर सेव डेटा की तैयारी और ट्रांसफर गाइड पढ़ें।",
+  "en_keywords": [
+    "Seedsow Lua Editor",
+    "Nintendo Switch save transfer",
+    "JKSV homebrew",
+    "Switch 1 and Switch 2"
+  ],
+  "hi_keywords": [
+    "सीड्सो लुआ एडिटर",
+    "निनटेंडो स्विच सेव ट्रांसफर",
+    "JKSV होमब्रू",
+    "स्विच 1 और स्विच 2"
+  ],
+  "source_published_at": null,
+  "id": "dd11f1f63500",
+  "source": "https://github.com/DialingSpoon527/seedsow-lua-editor/blob/main/docs/01-console-install.md",
+  "date": "2026-11-10T22:04:27.100452+00:00",
+  "source_title": "seedsow-lua-editor/docs/01-console-install.md at main · DialingSpoon527/seedsow-lua-editor - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

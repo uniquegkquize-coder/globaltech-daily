@@ -1,0 +1,32 @@
+{
+  "en_title": "Compositor: A Free, Open-Source Mac Image Editor Designed as a Photoshop Alternative",
+  "hi_title": "कंपोजिटोआर: मैक के लिए एक मुफ्त और ओपन-सोर्स इमेज एडिटर जो फोटोशॉप का विकल्प है",
+  "en_body": "According to its developer, Compositor is a free and open-source image editor built for macOS, designed to provide a workflow focused on compositing and post-processing similar to Adobe Photoshop. The project is available on GitHub and the official website, with source code that can be built using Xcode.\n\n## Key Features and Tools\n- **Layers and Adjustments:** Supports folders with opacity, full Photoshop blend modes, layer masks, and a wide array of adjustment layers like Curves, Levels, and Hue/Saturation.\n- **Selection and Transformation:** Features marquee tools, lassos, magic wand, object tracing, non-destructive transformations, and content-aware fill capabilities.\n- **Filters and Effects:** Includes Gaussian blur, motion blur, lens effects, camera raw filtering, and AI-assisted features like Volumetric Light, which downloads a distilled depth model upon first use.\n- **Compatibility:** Imports formats including JPEG, PNG, HEIC, TIFF, WebP, SVG, PDF, and PSD/PSB files (with some conversion limitations for vectors and text).\n\n## System Requirements and Availability\n- **Platform:** Requires macOS and a Mac with Apple silicon. \n- **Source Code:** Available as an Xcode project for users who wish to build or modify features.\n- **Language Support:** English only at launch, with the developer noting that localization pull requests are not currently accepted.\n- **Unofficial Ports:** Community members have created unofficial ports for Windows and Linux, though these are maintained separately from the official project.\n\n## Practical Implications and Verification\nUsers interested in evaluating Compositor can review the official repository on GitHub or download releases directly. Because it is an open-source tool, individuals can inspect the code and customize it via Xcode. Unofficial Windows and Linux ports must be verified through their respective community maintainers.",
+  "hi_body": "डेवलपर के अनुसार, कंपोजिटोआर (Compositor) मैकओएस (macOS) के लिए बनाया गया एक मुफ्त और ओपन-सोर्स इमेज एडिटर है, जिसे एडोब फोटोशॉप के समान कंपोजिटिंग और पोस्ट-प्रोसेसिंग वर्कफ़्लो प्रदान करने के लिए डिज़ाइन किया गया है। यह प्रोजेक्ट गिटहब (GitHub) और आधिकारिक वेबसाइट पर उपलब्ध है, और इसका सोर्स कोड Xcode का उपयोग करके तैयार किया जा सकता है।\n\n## मुख्य विशेषताएँ और उपकरण\n- **लेयर्स और एडजस्टमेंट:** ओपेसिटी, फोटोशॉप ब्लेंड मोड, लेयर मास्क और कर्व्स, लेवल्स तथा ह्यू/सैचुरेशन जैसे कई एडजस्टमेंट लेयर्स का समर्थन करता है।\n- **चयन और परिवर्तन:** इसमें मार्की टूल्स, लासो, मैजिक वांड, ऑब्जेक्ट ट्रेसिंग, नॉन-डструктивные ट्रांसफॉर्मेशन और कंटेंट-अवेयर फिल जैसी क्षमताएँ शामिल हैं।\n- **फिल्टर और प्रभाव:** इसमें गॉसियन ब्लर, मोशन ब्लर, लेंस इफेक्ट्स, कैमरा रॉ फिल्टरिंग और वॉल्यूमेट्रिक लाइट जैसी एआई-सहायता प्राप्त सुविधाएँ शामिल हैं, जो पहली बार उपयोग करने पर एक डेप्थ मॉडल डाउनलोड करती हैं।\n- **संगतता:** यह JPEG, PNG, HEIC, TIFF, WebP, SVG, PDF और PSD/PSB फाइलों को आयात (import) कर सकता है (वेक्टर और टेक्स्ट के लिए कुछ रूपांतरण सीमाओं के साथ)।\n\n## सिस्टम आवश्यकताएँ और उपलब्धता\n- **प्लेटफॉर्म:** इसके लिए मैकओएस और एप्पल सिलिकॉन वाला मैक आवश्यक है।\n- **सोर्स कोड:** उन उपयोगकर्ताओं के लिए एक्सकोड प्रोजेक्ट के रूप में उपलब्ध है जो सुविधाओं को बनाना या संशोधित करना चाहते हैं।\n- **भाषा समर्थन:** शुरुआत में केवल अंग्रेजी उपलब्ध है, और डेवलपर का कहना है कि वर्तमान में स्थानीयकरण (localization) पुल रिक्वेस्ट स्वीकार नहीं किए जा रहे हैं।\n- **अनौपचारिक पोर्ट्स:** समुदाय के सदस्यों ने विंडोज और लिनक्स के लिए अनौपचारिक पोर्ट बनाए हैं, हालांकि इन्हें आधिकारिक प्रोजेक्ट से अलग बनाए रखा जाता है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nकंपोजिटोआर का मूल्यांकन करने के इच्छुक उपयोगकर्ता गिटहब पर आधिकारिक रिपॉजिटरी की समीक्षा कर सकते हैं या सीधे रिलीज डाउनलोड कर सकते हैं। चूँकि यह एक ओपन-सोर्स टूल है, व्यक्ति कोड का निरीक्षण कर सकते हैं और एक्सकोड के माध्यम से इसे अनुकूलित कर सकते हैं। विंडोज और लिनक्स के अनौपचारिक पोर्ट का सत्यापन उनके संबंधित सामुदायिक रखरखावकर्ताओं के माध्यम से किया जाना चाहिए।",
+  "en_meta": "Discover Compositor, a free, open-source Mac image editor offering a Photoshop-like workflow, layers, adjustments, and open-source customizability.",
+  "hi_meta": "कंपोजिटोआर की खोज करें, जो मैक के लिए एक मुफ्त, ओपन-सोर्स इमेज एडिटर है जो फोटोशॉप जैसा वर्कफ़्लो प्रदान करता है।",
+  "en_keywords": [
+    "Compositor",
+    "open-source image editor",
+    "Photoshop alternative",
+    "Mac photo editor",
+    "robbietilton"
+  ],
+  "hi_keywords": [
+    "कंपोजिटोआर",
+    "Compositor",
+    "ओपन सोर्स इमेज एडिटर",
+    "फोटोशॉप विकल्प",
+    "मैक फोटो एडिटर"
+  ],
+  "source_published_at": null,
+  "id": "ceb0048f0661",
+  "source": "https://github.com/robbietilton/compositor",
+  "date": "2026-11-10T22:01:51.328086+00:00",
+  "source_title": "robbietilton/Compositor: The Photoshop alternative for Mac - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}
