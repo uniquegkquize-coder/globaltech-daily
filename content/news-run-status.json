@@ -1,37 +1,41 @@
 {
-  "finished_at": "2026-11-10T02:44:24.254759+00:00",
-  "outcome": "time_limit_reached",
-  "duration_seconds": 6285.7,
-  "published": 26,
+  "finished_at": "2026-11-10T03:57:44.444829+00:00",
+  "outcome": "providers_unavailable",
+  "duration_seconds": 3953.8,
+  "published": 15,
   "by_category": {
-    "world-news": 2,
-    "india-news": 13,
-    "sports": 3,
-    "gaming": 2,
-    "cricket": 3,
-    "movies-entertainment": 1,
-    "apps-software": 2
+    "cricket": 11,
+    "india-news": 2,
+    "sports": 2
   },
-  "ai_calls": 30,
-  "ai_limit": 900,
+  "ai_calls": 12,
+  "ai_limit": 600,
   "target": 200,
   "discovered_by_category": {
     "defence": 1
   },
   "retry_after_seconds": null,
-  "shortfall": 174,
+  "shortfall": 185,
   "target_met": false,
   "attempts": [
     {
       "pass": 1,
-      "exit_code": 0,
-      "published": 3,
-      "ai_calls": 10,
+      "exit_code": 124,
+      "published": 0,
+      "ai_calls": 0,
       "ai_limit": 100,
-      "outcome": "time_limit_reached"
+      "outcome": "collector_failed"
     },
     {
       "pass": 2,
+      "exit_code": 124,
+      "published": 11,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "collector_failed"
+    },
+    {
+      "pass": 3,
       "exit_code": 2,
       "published": 0,
       "ai_calls": 0,
@@ -39,60 +43,28 @@
       "outcome": "time_limit_reached"
     },
     {
-      "pass": 3,
-      "exit_code": 124,
-      "published": 13,
-      "ai_calls": 0,
-      "ai_limit": 100,
-      "outcome": "collector_failed"
-    },
-    {
       "pass": 4,
-      "exit_code": 124,
-      "published": 1,
-      "ai_calls": 0,
+      "exit_code": 0,
+      "published": 2,
+      "ai_calls": 5,
       "ai_limit": 100,
-      "outcome": "collector_failed"
+      "outcome": "time_limit_reached"
     },
     {
       "pass": 5,
-      "exit_code": 124,
+      "exit_code": 0,
       "published": 2,
-      "ai_calls": 6,
+      "ai_calls": 4,
       "ai_limit": 100,
       "outcome": "time_limit_reached"
     },
     {
       "pass": 6,
-      "exit_code": 124,
-      "published": 1,
-      "ai_calls": 0,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 3,
       "ai_limit": 100,
-      "outcome": "collector_failed"
-    },
-    {
-      "pass": 7,
-      "exit_code": 124,
-      "published": 1,
-      "ai_calls": 0,
-      "ai_limit": 100,
-      "outcome": "collector_failed"
-    },
-    {
-      "pass": 8,
-      "exit_code": 0,
-      "published": 3,
-      "ai_calls": 7,
-      "ai_limit": 100,
-      "outcome": "time_limit_reached"
-    },
-    {
-      "pass": 9,
-      "exit_code": 124,
-      "published": 2,
-      "ai_calls": 7,
-      "ai_limit": 100,
-      "outcome": "time_limit_reached"
+      "outcome": "providers_unavailable"
     }
   ]
 }
