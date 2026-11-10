@@ -1,32 +1,24 @@
 {
-  "finished_at": "2026-11-10T05:22:34.218875+00:00",
+  "finished_at": "2026-11-10T07:34:00.279914+00:00",
   "outcome": "providers_unavailable",
-  "duration_seconds": 1742.8,
-  "published": 14,
+  "duration_seconds": 1719.9,
+  "published": 13,
   "by_category": {
-    "india-news": 9,
-    "cricket": 5
+    "india-news": 7,
+    "sports": 6
   },
-  "ai_calls": 30,
+  "ai_calls": 24,
   "ai_limit": 300,
   "target": 200,
   "discovered_by_category": {
     "defence": 1
   },
   "retry_after_seconds": null,
-  "shortfall": 186,
+  "shortfall": 187,
   "target_met": false,
   "attempts": [
     {
       "pass": 1,
-      "exit_code": 0,
-      "published": 5,
-      "ai_calls": 14,
-      "ai_limit": 100,
-      "outcome": "time_limit_reached"
-    },
-    {
-      "pass": 2,
       "exit_code": 2,
       "published": 0,
       "ai_calls": 0,
@@ -34,10 +26,18 @@
       "outcome": "time_limit_reached"
     },
     {
+      "pass": 2,
+      "exit_code": 0,
+      "published": 6,
+      "ai_calls": 11,
+      "ai_limit": 100,
+      "outcome": "time_limit_reached"
+    },
+    {
       "pass": 3,
       "exit_code": 0,
-      "published": 9,
-      "ai_calls": 16,
+      "published": 7,
+      "ai_calls": 13,
       "ai_limit": 100,
       "outcome": "providers_unavailable"
     }
