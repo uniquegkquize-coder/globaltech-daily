@@ -1,0 +1,29 @@
+{
+  "en_title": "New 'UnknownAuto' Tool Enables Sideloaded Apps on Android Auto",
+  "hi_title": "नया 'UnknownAuto' टूल Android Auto पर साइडलोडेड ऐप्स चलाने में सक्षम बनाता है",
+  "en_body": "A Reddit user has introduced an open-source tool named UnknownAuto, designed to allow sideloaded or self-developed applications to run on Android Auto. By default, Android Auto only permits applications that have been officially installed via the Google Play Store, meaning sideloaded APKs are typically blocked from appearing on the vehicle's dashboard.\n\n## How UnknownAuto Functions\n\nAndroid Auto relies on a verification check to ensure that installed applications originate from the Google Play Store. UnknownAuto modifies the installation process for specific APKs to bypass this check. Specifically, the tool flags the sideloaded app as being \"installed from Google Play,\" tricking the platform into recognizing and launching the software.\n\n## Key Differences and Benefits\n\n* **Free and Open Source:** Unlike proprietary alternatives, the developer notes that UnknownAuto is entirely open-source and free to use.\n* **No Usage Limits:** The creator contrasts their tool with AA Enabler, which reportedly limits users to one free app installation every 30 days. UnknownAuto permits an unlimited number of sideloaded app installations.\n* **Offline Capability:** The tool is designed to function without requiring an active internet connection.\n\n## Important Considerations\n\nThe tool is currently available on GitHub. Users interested in this functionality should note that the creator developed UnknownAuto with assistance from the AI model Claude. Because this tool interacts with the Android Auto framework in an unofficial capacity, users should exercise caution regarding system stability and security when running non-verified software on their vehicle's infotainment system. To verify these claims or explore the code, users can visit the official GitHub repository associated with the project.",
+  "hi_body": "Reddit के एक उपयोगकर्ता ने UnknownAuto नामक एक ओपन-सोर्स टूल पेश किया है, जिसे साइडलोडेड या स्वयं विकसित एप्लिकेशन को Android Auto पर चलाने की अनुमति देने के लिए डिज़ाइन किया गया है। डिफ़ॉल्ट रूप से, Android Auto केवल उन एप्लिकेशन की अनुमति देता है जो आधिकारिक तौर पर Google Play Store के माध्यम से इंस्टॉल किए गए हैं, जिसका अर्थ है कि साइडलोडेड APK आमतौर पर वाहन के डैशबोर्ड पर दिखाई देने से अवरुद्ध होते हैं।\n\n## UnknownAuto कैसे काम करता है\n\nAndroid Auto यह सुनिश्चित करने के लिए सत्यापन जांच पर निर्भर करता है कि इंस्टॉल किए गए एप्लिकेशन Google Play Store से आए हैं। UnknownAuto इस जांच को बायपास करने के लिए विशिष्ट APK के इंस्टॉलेशन प्रक्रिया को संशोधित करता है। विशेष रूप से, यह टूल साइडलोडेड ऐप को \"Google Play से इंस्टॉल\" के रूप में चिह्नित करता है, जिससे प्लेटफ़ॉर्म को यह लगता है कि सॉफ़्टवेयर आधिकारिक है और उसे लॉन्च कर देता है।\n\n## मुख्य अंतर और लाभ\n\n* **मुफ़्त और ओपन सोर्स:** मालिकाना विकल्पों के विपरीत, डेवलपर का कहना है कि UnknownAuto पूरी तरह से ओपन-सोर्स है और उपयोग करने के लिए मुफ़्त है।\n* **कोई उपयोग सीमा नहीं:** निर्माता ने AA Enabler के साथ अपने टूल की तुलना की है, जो कथित तौर पर उपयोगकर्ताओं को हर 30 दिनों में केवल एक मुफ़्त ऐप इंस्टॉलेशन की अनुमति देता है। UnknownAuto असीमित संख्या में साइडलोडेड ऐप्स इंस्टॉल करने की सुविधा देता है।\n* **ऑफ़लाइन क्षमता:** टूल को सक्रिय इंटरनेट कनेक्शन की आवश्यकता के बिना काम करने के लिए डिज़ाइन किया गया है।\n\n## महत्वपूर्ण बातें\n\nयह टूल वर्तमान में GitHub पर उपलब्ध है। इस कार्यक्षमता में रुचि रखने वाले उपयोगकर्ताओं को ध्यान देना चाहिए कि निर्माता ने Claude AI मॉडल की सहायता से UnknownAuto को विकसित किया है। चूंकि यह टूल अनौपचारिक क्षमता में Android Auto फ्रेमवर्क के साथ इंटरैक्ट करता है, इसलिए अपने वाहन के इंफोटेनमेंट सिस्टम पर गैर-सत्यापित सॉफ़्टवेयर चलाते समय उपयोगकर्ताओं को सिस्टम स्थिरता और सुरक्षा के संबंध में सावधानी बरतनी चाहिए। इन दावों को सत्यापित करने के लिए, उपयोगकर्ता प्रोजेक्ट से जुड़े आधिकारिक GitHub रिपॉजिटरी पर जा सकते हैं।",
+  "en_meta": "A new open-source tool called UnknownAuto allows users to run sideloaded apps on Android Auto by spoofing the installation source as the Google Play Store.",
+  "hi_meta": "UnknownAuto नामक एक नया ओपन-सोर्स टूल उपयोगकर्ताओं को Android Auto पर साइडलोडेड ऐप्स चलाने की अनुमति देता है, जिससे इंस्टॉलेशन सोर्स Google Play जैसा दिखता है।",
+  "en_keywords": [
+    "Android Auto",
+    "UnknownAuto",
+    "sideloading",
+    "open-source",
+    "APK"
+  ],
+  "hi_keywords": [
+    "Android Auto",
+    "UnknownAuto",
+    "साइडलोडिंग",
+    "ओपन-सोर्स",
+    "APK"
+  ],
+  "source_published_at": "2026-10-30T19:59:47+00:00",
+  "id": "ee9fc1f0fd7f",
+  "source": "https://www.androidauthority.com/android-auto-unknownauto-tool-3730284/",
+  "date": "2026-11-10T19:46:03.816921+00:00",
+  "source_title": "Android Auto can run sideloaded apps for free with this new tool",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

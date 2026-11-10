@@ -1,0 +1,33 @@
+{
+  "en_title": "OpenRig Launches as an Open-Source System for Managing Multi-Agent AI Teams",
+  "hi_title": "OpenRig मल्टी-एजेंट एआई टीमों के प्रबंधन के लिए ओपन-सोर सिस्टम के रूप में लॉन्च",
+  "en_body": "## Overview\nOpenRig is an open-source software project designed to build and run networks of AI coding agents, specifically wrapping harnesses like Claude Code and Codex into a managed system. Rather than leaving developers with scattered terminal sessions, OpenRig organizes agents into persistent teams with defined roles, shared context, and owned work. The system is available as open-source code and relies on prerequisites including Node.js 22 or 24, tmux, and macOS or Linux (with WSL2 for Windows).\n\n## Core Architecture and Capabilities\nOpenRig functions as a multi-agent harness manager that coordinates how separate AI coding sessions relate to each other. Key capabilities include:\n\n* **Topology Definitions:** Define agent teams and pods using YAML specifications, managing continuity policies and relationships.\n* **Single-Command Control:** Boot and manage tmux sessions, startup files, and readiness checks using commands like `rig up` and `rig down`.\n* **Terminal Integration:** Every agent runs within an attachable tmux session, allowing direct inspection and work.\n* **Monitoring and TUI:** View rigs, pods, and seats using the terminal user interface (TUI) topology table and graph to inspect instance health.\n* **Communication Tools:** Send messages across agents using `rig send`, `rig broadcast`, and `rig chatroom`.\n* **Topology Evolution:** Grow, shrink, or launch new components dynamically as projects progress.\n\n## Available Teams and Bundles\nThe system offers starter configurations designed to scale with project needs, guided by a kernel operator:\n\n* **Starter:** Features a builder and a reviewer for a single bounded change.\n* **Workshop:** A rig bundle providing a lead, a builder, QA, and a reviewer for ongoing work.\n* **Factory:** A seven-agent structure including a lead, an advisor, build, QA, design, and two independent reviewers for sustained product development.\n* **Specialist Teams:** Includes configurations for code-review, research, and product management (pm).\n\n## Setup, Permissions, and Verification\nSetting up OpenRig involves installing the `@openrig/cli` package globally via npm or Bun and running setup routines. The software configures workspace trust, activity hooks, and permission boundaries depending on the selected harness and security profile. Users can review prerequisites, execute dry runs using `rig setup --dry-run`, and verify installations by checking provider status and running diagnostic commands such as `rig doctor` and `rig ps`.\n\n*Note: OpenRig modifies local configuration files such as `~/.tmux.conf`, workspace trust settings, and activity hooks. Users should back up relevant configuration files before initial setup.*",
+  "hi_body": "## अवलोकन\nOpenRig एक ओपन-सर्स सॉफ्टवेयर प्रोजेक्ट है जिसे एआई कोडिंग एजेंटों के नेटवर्क को बनाने और चलाने के लिए डिज़ाइन किया गया है। यह Claude Code और Codex जैसे हार्नेस को एक प्रबंधित सिस्टम में समेकित करता है। डेवलपर्स के लिए बिखरे हुए टर्मिनल सत्रों को छोड़ने के बजाय, OpenRig एजेंटों को निश्चित भूमिकाओं, साझा संदर्भ और स्वामित्व वाले कार्य के साथ लगातार टीमों में व्यवस्थित करता है। यह सॉफ्टवेयर ओपन-सर्स रूप में उपलब्ध है और इसके लिए Node.js 22 या 24, tmux, और macOS या Linux (Windows के लिए WSL2) की आवश्यकता होती है।\n\n## मुख्य वास्तुकला और क्षमताएं\nOpenRig एक मल्टी-एजेंट हार्नेस मैनेजर के रूप में कार्य करता है जो अलग-अलग एआई कोडिंग सत्रों को आपस में जोड़ता है। इसकी मुख्य विशेषताओं में शामिल हैं:\n\n* **टोपोलॉजी परिभाषाएँ:** YAML विनिर्देशों का उपयोग करके एजेंट टीमों और पॉड को परिभाषित करना, निरंतरता नीतियों का प्रबंधन करना।\n* **एक-आदेश नियंत्रण:** `rig up` और `rig down` जैसे कमांड का उपयोग करके tmux सत्रों, स्टार्टअप फ़ाइलों और तत्परता जाँच का प्रबंधन करना।\n* **टर्मिनल एकीकरण:** प्रत्येक एजेंट एक संलग्न करने योग्य tmux सत्र के भीतर चलता है, जिससे सीधे निरीक्षण की अनुमति मिलती है।\n* **निगरानी और TUI:** इंस्टेंस स्वास्थ्य का निरीक्षण करने के लिए टर्मिनल यूजर इंटरफेस (TUI) टोपोलॉजी तालिका और ग्राफ का उपयोग करना।\n* **संचार उपकरण:** `rig send`, `rig broadcast`, और `rig chatroom` का उपयोग करके एजेंटों के बीच संदेश भेजना।\n\n## उपलब्ध टीमें और बंडल\nसिस्टम कर्नेल ऑपरेटर द्वारा निर्देशित प्रोजेक्ट आवश्यकताओं के अनुसार कई शुरुआती कॉन्फ़िगरेशन प्रदान करता है:\n\n* **Starter:** एक सीमित बदलाव के लिए एक बिल्डर और एक समीक्षक प्रदान करता है।\n* **Workshop:** चल रहे कार्य के लिए एक लीड, एक बिल्डर, QA और एक समीक्षक प्रदान करने वाला एक रिग बंडल।\n* **Factory:** निरंतर उत्पाद विकास के लिए एक लीड, एक सलाहकार, बिल्ड, QA, डिज़ाइन और दो स्वतंत्र समीक्षकों सहित सात एजेंटों की संरचना।\n* **विशेषज्ञ टीमें:** कोड-समीक्षा (code-review), अनुसंधान (research), और उत्पाद प्रबंधन (pm) के लिए कॉन्फ़िगरेशन।\n\n## सेटअप, अनुमतियां और सत्यापन\nOpenRig को स्थापित करने में npm या Bun के माध्यम से `@openrig/cli` पैकेज को विश्व स्तर पर स्थापित करना और सेटअप रूटीन चलाना शामिल है। सॉफ्टवेयर चयनित हार्नेस और सुरक्षा प्रोफ़ाइल के आधार पर कार्यक्षेत्र विश्वास (workspace trust), गतिविधि हुक और अनुमति सीमाओं को कॉन्फ़िगर करता है। उपयोगकर्ता पूर्वापेक्षाओं की समीक्षा कर सकते हैं, `rig setup --dry-run` का उपयोग करके ड्राई रन निष्पादित कर सकते हैं, और प्रदाता स्थिति की जांच करके और `rig doctor` और `rig ps` जैसे नैदानिक कमांड चलाकर स्थापना को सत्यापित कर सकते हैं।\n\n*नोट: OpenRig स्थानीय कॉन्फ़िगरेशन फ़ाइलों जैसे `~/.tmux.conf`, कार्यक्षेत्र विश्वास सेटिंग्स और गतिविधि हुक को संशोधित करता है। उपयोगकर्ताओं को प्रारंभिक सेटअप से पहले प्रासंगिक कॉन्फ़िगरेशन फ़ाइलों का बैकअप लेना चाहिए।*",
+  "en_meta": "OpenRig is an open-source system for building, organizing, and running multi-agent AI coding teams using Claude Code and Codex with tmux integration.",
+  "hi_meta": "OpenRig Claude Code और Codex और tmux एकीकरण का उपयोग करके मल्टी-एजेंट एआई कोडिंग टीमों के प्रबंधन के लिए एक ओपन-सोर्स सिस्टम है।",
+  "en_keywords": [
+    "OpenRig",
+    "AI agents",
+    "Claude Code",
+    "Codex",
+    "multi-agent harness",
+    "tmux",
+    "open-source AI software"
+  ],
+  "hi_keywords": [
+    "OpenRig",
+    "एआई एजेंट",
+    "Claude Code",
+    "Codex",
+    "मल्टी-एजेंट सॉफ्टवेयर",
+    "tmux",
+    "ओपन-सोर्स एआई"
+  ],
+  "source_published_at": "2026-10-31T00:26:44+00:00",
+  "id": "a5babe6eb0c3",
+  "source": "https://github.com/mvschwarz/openrig",
+  "date": "2026-11-10T19:23:46.267153+00:00",
+  "source_title": "mvschwarz/openrig: Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
