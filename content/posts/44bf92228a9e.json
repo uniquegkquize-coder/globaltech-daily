@@ -1,0 +1,29 @@
+{
+  "en_title": "billion-context: Context-Compression Plugin for Long-Lived Coding Sessions",
+  "hi_title": "billion-context: लंबे कोडिंग सत्रों के लिए संदर्भ संपीड़न प्लगइन",
+  "en_body": "The `billion-context` project is a context-compression tool designed to manage long-running single sessions that accumulate billions of tokens. By compressing conversational history into layered summaries, it aims to reduce token consumption and prevent context-window degradation on supported model APIs.\n\n## Core Capabilities\n- **Token Savings:** Operates with smaller context windows (such as 100K) while targeting significantly fewer consumed tokens.\n- **Model-Driven Compression:** The AI model decides when and what to compress using injected tools rather than hitting a hard truncation limit.\n- **Incremental & Reversible:** Summaries are structured in small ranges, allowing on-demand decompression while maintaining prefix-cache efficiency.\n\n## Installation and Setup\nUsers can install the plugin via npm or run it as a launcher depending on their workflow:\n- **User-Level Prefix (Recommended):** `npm install -g billion-context --prefix=~/.local` avoids permission errors on Linux and macOS.\n- **Native Plugin:** Commands like `bili plugin install` integrate the proxy into supported clients such as Pi, OpenCode, and Claude Code.\n- **Launcher Mode:** Wraps a client in a single command, spawning an independent proxy instance without modifying existing configuration files.\n\n## Verification and Monitoring\nOnce running, logs track cache health and compression events (`~/.local/state/billion-context/bili.log`). A healthy session targets a 95–97% prefix-cache hit rate. Users can also check cache statistics directly inside supported clients using commands like `/acp-cache` or inspect a web dashboard available locally.\n\n## Practical Implications & Verification\nAdopting context compression can help developers maintain extended coding sessions without losing historical context or exceeding provider token limits. However, unreleased features on the development branch may be unstable, and users should rely on official release channels. Always verify installation steps, client compatibility, and configuration backups directly against the original GitHub repository before deployment.",
+  "hi_body": "`billion-context` प्रोजेक्ट एक संदर्भ-संपीडन (context-compression) टूल है जिसे लंबे समय तक चलने वाले सिंगल सेशन को प्रबंधित करने के लिए डिज़ाइन किया गया है। यह बातचीत के इतिहास को स्तरित सारांशों में संपीड़ित करके टोकन की खपत को कम करने और समर्थित मॉडल एपीआई पर संदर्भ विंडो के क्षरण को रोकने का प्रयास करता है।\n\n## मुख्य विशेषताएँ\n- **टोकन की बचत:** यह छोटी संदर्भ विंडो (जैसे 100K) के साथ काम करता है और कम टोकन की खपत का लक्ष्य रखता है।\n- **मॉडल-संचालित संपीड़न:** एआई मॉडल यह तय करता है कि कठिन सीमा पर पहुँचे बिना कब और क्या संपीड़ित करना है।\n- **वृद्धिशील और प्रतिवर्ती (Incremental & Reversible):** सारांश छोटे-छोटे हिस्सों में लिखे जाते हैं, जिससे आवश्यकतानुसार डीकंप्रेसन संभव होता है और प्रीफ़िक्स-कैश दक्षता बनी रहती है।\n\n## स्थापना और सेटअप\nउपयोगकर्ता अपने वर्कफ़्लो के आधार पर एनपीएम के माध्यम से प्लगइन स्थापित कर सकते हैं या इसे लॉन्चर के रूप में चला सकते हैं:\n- **यूज़र-लेवल प्रिफ़िक्स:** लिनक्स और मैकओएस पर अनुमति त्रुटियों से बचने के लिए `npm install -g billion-context --prefix=~/.local` का उपयोग किया जा सकता है।\n- **नेटिव प्लगइन:** `bili plugin install` जैसे कमांड प्रॉक्सी को समर्थित क्लाइंट्स जैसे पाई, ओपनकोड और क्लाउड कोड में एकीकृत करते हैं।\n- **ल लॉन्चर मोड:** मौजूदा कॉन्फ़िगरेशन फ़ाइलों को संशोधित किए बिना एक स्वतंत्र प्रॉक्सी इंस्टेंस लॉन्च करता है।\n\n## सत्यापन और निगरानी\nएक बार चालू होने पर, लॉग कैश स्वास्थ्य और संपीड़न गतिविधियों को ट्रैक करते हैं (`~/.local/state/billion-context/bili.log`)। एक स्वस्थ सत्र 95–97% प्रीफ़िक्स-कैश हिट दर का लक्ष्य रखता है। उपयोगकर्ता `/acp-cache` जैसे कमांड का उपयोग करके सीधे समर्थित क्लाइंट के भीतर कैश आँकड़ों की जाँच भी कर सकते हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nसंदर्भ संपीड़न को अपनाने से डेवलपर्स को ऐतिहासिक संदर्भ खोए बिना या प्रदाता टोकन सीमा को पार किए बिना विस्तारित कोडिंग सत्र बनाए रखने में मदद मिल सकती है। हालांकि, विकास शाखा पर अन रिलीज़्ड सुविधाएँ अस्थिर हो सकती हैं, इसलिए उपयोगकर्ताओं को आधिकारिक रिलीज़ चैनलों पर भरोसा करना चाहिए। परिनियोजन से पहले हमेशा मूल गिटहब रिपॉजिटरी के मुकाबले स्थापना चरणों और क्लाइंट संगतता को सत्यापित करें।",
+  "en_meta": "Learn about billion-context, a context-compression plugin designed to manage long-lived AI coding sessions with reduced token usage and model-driven summaries.",
+  "hi_meta": "billion-context के बारे में जानें, जो कम टोकन उपयोग और मॉडल-संचालित सारांश के साथ लंबे समय तक चलने वाले एआई कोडिंग सत्रों को प्रबंधित करने के लिए एक प्लगइन है।",
+  "en_keywords": [
+    "billion-context",
+    "context compression",
+    "token savings",
+    "AI coding assistants",
+    "npm plugin"
+  ],
+  "hi_keywords": [
+    "billion-context",
+    "संदर्भ संपीड़न",
+    "टोकन बचत",
+    "एआई कोडिंग सहायक",
+    "npm plugin"
+  ],
+  "source_published_at": null,
+  "id": "44bf92228a9e",
+  "source": "https://github.com/ranxianglei/billion-context",
+  "date": "2026-11-10T18:09:54.437671+00:00",
+  "source_title": "ranxianglei/billion-context: A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣 - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

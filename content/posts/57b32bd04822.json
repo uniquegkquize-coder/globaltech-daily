@@ -1,0 +1,32 @@
+{
+  "en_title": "Polars: A High-Performance Query Engine for DataFrames and SQL",
+  "hi_title": "Polars: डेटाफ्रेम और SQL के लिए एक उच्च-प्रदर्शन क्वेरी इंजन",
+  "en_body": "## Overview of Polars\nPolars is an analytical query engine built from the ground up using the Rust programming language. Designed for high performance and ease of use, it provides a unified engine for both DataFrame API and SQL-based queries. By utilizing the Apache Arrow Columnar Format, Polars enables zero-copy data sharing and efficient memory management.\n\n## Core Features\n* **Performance:** Leverages multi-threaded, vectorized (SIMD) execution to maximize hardware efficiency.\n* **Memory Management:** Includes spill-to-disk capabilities for operations that exceed available RAM.\n* **Flexibility:** Supports a mix of DataFrame expressions and SQL queries, both processed through the same optimizer.\n* **GPU Acceleration:** Offers optional support for NVIDIA GPUs to speed up complex query workloads.\n* **Extensibility:** Allows developers to extend functionality through native I/O and expression plugins.\n\n## Getting Started\nPolars can be installed via standard package managers. Users looking for \"bleeding edge\" performance can compile the software directly from the source code. The project provides multiple build profiles—ranging from debug-friendly versions to optimized distribution builds—to balance compilation speed against binary performance.\n\n## Compatibility and Support\nFor advanced use cases, such as handling datasets exceeding 4.2 billion rows or running on older CPU architectures, documentation is available in the project's User Guide. Users can also join the Polars Discord server for community assistance or review the contributing guidelines to support the project's development.\n\n*Verification: Interested parties should consult the official Polars GitHub repository and the provided User Guide for specific installation instructions, dependency requirements, and benchmark data.*",
+  "hi_body": "## पोलार्स (Polars) का परिचय\nपोलार्स एक एनालिटिकल क्वेरी इंजन है जिसे पूरी तरह से रस्ट (Rust) प्रोग्रामिंग भाषा में लिखा गया है। इसे डेटाफ्रेम एपीआई और SQL दोनों के लिए एक एकीकृत इंजन के रूप में डिज़ाइन किया गया है। यह अपाचे एरो (Apache Arrow) कॉलम फॉर्मेट का उपयोग करता है, जो डेटा को बिना किसी कॉपी के साझा करने और कुशल मेमोरी प्रबंधन में मदद करता है।\n\n## मुख्य विशेषताएं\n* **प्रदर्शन:** मल्टी-थ्रेडेड और वेक्टरकृत (SIMD) निष्पादन का उपयोग करके हार्डवेयर का अधिकतम लाभ उठाता है।\n* **मेमोरी प्रबंधन:** इसमें उपलब्ध रैम से अधिक होने वाले कार्यों के लिए 'स्पिल टू डिस्क' की सुविधा मौजूद है।\n* **लचीलापन:** उपयोगकर्ता डेटाफ्रेम एक्सप्रेशन और SQL क्वेरी का मिश्रण उपयोग कर सकते हैं, जो एक ही ऑप्टिमाइज़र के माध्यम से चलते हैं।\n* **GPU सपोर्ट:** जटिल क्वेरी को तेज करने के लिए NVIDIA GPU के साथ वैकल्पिक त्वरण प्रदान करता है।\n* **विस्तारणीयता:** I/O और एक्सप्रेशन प्लगइन्स के माध्यम से इसे अनुकूलित कोड के साथ विस्तारित किया जा सकता है।\n\n## शुरुआत कैसे करें\nपोलार्स को मानक पैकेज मैनेजरों के माध्यम से इंस्टॉल किया जा सकता है। जो उपयोगकर्ता अधिकतम प्रदर्शन चाहते हैं, वे इसे सीधे सोर्स कोड से कंपाइल कर सकते हैं। प्रोजेक्ट कई बिल्ड प्रोफाइल प्रदान करता है, जिससे उपयोगकर्ता अपनी आवश्यकतानुसार कंपाइल समय और बाइनरी प्रदर्शन के बीच संतुलन बना सकते हैं।\n\n## अनुकूलता और सहायता\n4.2 बिलियन से अधिक पंक्तियों वाले डेटासेट को संभालने या पुराने CPU आर्किटेक्चर पर काम करने के लिए उपयोगकर्ता गाइड में विस्तृत जानकारी दी गई है। समुदाय से सहायता के लिए आप पोलार्स डिस्कॉर्ड सर्वर से जुड़ सकते हैं या योगदान देने के लिए प्रोजेक्ट के दिशा-निर्देशों की जांच कर सकते हैं।\n\n*सत्यापन: विस्तृत इंस्टॉलेशन निर्देशों, निर्भरताओं और बेंचमार्क डेटा के लिए आधिकारिक पोलार्स गिटहब रिपॉजिटरी और यूजर गाइड देखें।*",
+  "en_meta": "Learn about Polars, an analytical query engine for DataFrames and SQL written in Rust, featuring SIMD execution, GPU support, and flexible APIs.",
+  "hi_meta": "डेटाफ्रेम और SQL के लिए रस्ट में बने एनालिटिकल क्वेरी इंजन 'पोलार्स' के बारे में जानें, जिसमें SIMD निष्पादन, GPU सपोर्ट और लचीले एपीआई शामिल हैं।",
+  "en_keywords": [
+    "Polars",
+    "Rust",
+    "DataFrames",
+    "SQL",
+    "Query Engine",
+    "Apache Arrow",
+    "SIMD"
+  ],
+  "hi_keywords": [
+    "पोलार्स",
+    "रस्ट",
+    "डेटाफ्रेम",
+    "SQL",
+    "क्वेरी इंजन",
+    "अपाचे एरो"
+  ],
+  "source_published_at": null,
+  "id": "57b32bd04822",
+  "source": "https://github.com/pola-rs/polars",
+  "date": "2026-11-10T18:04:59.463419+00:00",
+  "source_title": "pola-rs/polars: Extremely fast Query Engine for DataFrames, written in Rust - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,27 @@
+{
+  "en_title": "Autopilot Playtesting Tool Offers Integration for Major Game Engines",
+  "hi_title": "ऑटोपायलट प्लेटेस्टिंग टूल प्रमुख गेम इंजन के लिए एकीकरण प्रदान करता है",
+  "en_body": "Autopilot is described as a continually learning real-time general playtesting system designed to help explore and test game levels. According to the documentation provided by its developers, the system is compatible with several game development platforms, offering support for Unreal Engine 5, Unity 6, Godot 4, and Roblox Studio on Windows and macOS.\n\n## Installation and Setup Overview\n\nThe documentation outlines specific integration steps depending on the game engine being utilized:\n\n* **Unreal Engine:** Users can download builds for supported versions and place the Autopilot folder into the project's Plugins directory, or build from source for advanced setups.\n* **Unity:** Installation involves using the Package Manager to install a `.tgz` package file.\n* **Godot:** Files are placed within the project's addons folder and enabled via project settings.\n* **Roblox Studio:** Requires running an installation script, placing a plugin file in the local plugins directory, enabling the Studio MCP server, and running a terminal service.\n\n## Onboarding and Features\n\nOnce installed, users open the Autopilot window within their engine and connect via an Aura account or use Bring Your Own Key (BYOK) options. The software supports integration with coding assistants like Claude Code and Codex through Model Context Protocol (MCP) servers.\n\nPrompts processed by Autopilot generally fall into four categories:\n* **Exploration:** Investigating specific systems or areas.\n* **Testing:** Identifying visual or functional issues within an open level.\n* **Verification:** Checking specific interactive behaviors.\n* **Goal-based commands:** Executing defined objectives, such as defeating a boss while maintaining health thresholds.\n\n## Practical Implications and Verification\n\nThe developers state that the tool populates project memory over successive runs, with performance and efficiency improving as it continues to play. Users interested in verifying these details, reviewing licensing terms under Apache License 2.0, or accessing complete developer guides can consult the official documentation and repository at tryaura.dev/autopilot or via the Aura developer resources.",
+  "hi_body": "ऑटोपायलट को एक निरंतर सीखने वाली रीयल-टाइम सामान्य प्लेटेस्टिंग प्रणाली के रूप में वर्णित किया गया है जिसे गेम स्तरों का पता लगाने और उनका परीक्षण करने में मदद करने के लिए डिज़ाइन किया गया है। इसके डेवलपर्स द्वारा प्रदान किए गए दस्तावेज़ के अनुसार, यह प्रणाली कई गेम विकास प्लेटफार्मों के साथ संगत है, जो विंडोज और मैकओएस पर अनरियल इंजन 5, यूनिटी 6, गोडोट 4 और रोबोटिक्स स्टूडियो के लिए समर्थन प्रदान करती है।\n\n## स्थापना और सेटअप का अवलोकन\n\nदस्तावेज़ उपयोग किए जा रहे गेम इंजन के आधार पर विशिष्ट एकीकरण चरणों की रूपरेखा तैयार करता है:\n\n* **अनरियल इंजन:** उपयोगकर्ता समर्थित संस्करणों के लिए बिल्ड डाउनलोड कर सकते हैं और ऑटोपायलट फ़ोल्डर को प्रोजेक्ट की प्लगइन्स निर्देशिका में रख सकते हैं।\n* **यूनिटी:** स्थापना में पैकेज मैनेजर का उपयोग करके `.tgz` पैकेज फ़ाइल स्थापित करना शामिल है।\n* **गोडोट:** फ़ाइलों को प्रोजेक्ट के एडॉन्स फ़ोल्डर के भीतर रखा जाता है और प्रोजेक्ट सेटिंग्स के माध्यम से सक्षम किया जाता है।\n* **रोबोटिक्स स्टूडियो:** इसके लिए एक स्थापना स्क्रिप्ट चलाने, स्थानीय प्लगइन निर्देशिका में प्लगइन फ़ाइल रखने और स्टूडियो एमसीपी सर्वर को सक्षम करने की आवश्यकता होती है।\n\n## ऑनबोर्डिंग और विशेषताएं\n\nएक बार स्थापित होने के बाद, उपयोगकर्ता अपने इंजन के भीतर ऑटोपायलट विंडो खोलते हैं और ओरा (Aura) खाते के माध्यम से कनेक्ट होते हैं। यह सॉफ्टवेयर मॉडल Context Protocol (MCP) सर्वर के माध्यम से क्लाउड कोड और कोडेक्स जैसे कोडिंग सहायकों के साथ एकीकरण का समर्थन करता है।\n\nऑटोपायलट द्वारा संसाधित संकेत आमतौर पर चार श्रेणियों में आते हैं:\n* **अन्वेषण:** विशिष्ट प्रणालियों या क्षेत्रों की जांच करना।\n* **परीक्षण:** खुले स्तर के भीतर दृश्य या कार्यात्मक समस्याओं की पहचान करना।\n* **सत्यापन:** विशिष्ट इंटरैक्टिव व्यवहारों की जाँच करना।\n* **लक्ष्य-आधारित कमांड:** परिभाषित उद्देश्यों को निष्पादित करना।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n* डेवलपर्स का कहना है कि यह टूल लगातार चलने वाले रनों पर प्रोजेक्ट मेमोरी को पॉप्युलेट करता है, और जैसे-जैसे यह खेलना जारी रखता है, प्रदर्शन में सुधार होता है। इन विवरणों को सत्यापित करने, अपाचे लाइसेंस 2.0 के तहत लाइसेंसिंग शर्तों की समीक्षा करने के लिए, उपयोगकर्ता tryaura.dev/autopilot पर आधिकारिक दस्तावेजों का उल्लेख कर सकते हैं।",
+  "en_meta": "Learn about Autopilot, a real-time playtesting system supporting Unreal Engine, Unity, Godot, and Roblox Studio with setup and usage instructions.",
+  "hi_meta": "ऑटोपायलट के बारे में जानें, जो अनरियल इंजन, यूनिटी, गोडोट और रोबोटिक्स स्टूडियो का समर्थन करने वाला एक रीयल-टाइम प्लेटेस्टिंग सिस्टम है।",
+  "en_keywords": [
+    "Autopilot playtesting",
+    "game engine plugin",
+    "Unreal Engine Unity Godot Roblox",
+    "Aura development tools"
+  ],
+  "hi_keywords": [
+    "ऑटोपायलट प्लेटेस्टिंग",
+    "गेम इंजन प्लगइन",
+    "अनरियल इंजन यूनिटी गोडोट",
+    "ओरा डेवलपमेंट टूल्स"
+  ],
+  "source_published_at": "2026-10-30T13:17:46+00:00",
+  "id": "4e620e3c15dd",
+  "source": "https://github.com/ramenvr/autopilot",
+  "date": "2026-11-10T18:09:40.109776+00:00",
+  "source_title": "ramenvr/autopilot: Playtest any game. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

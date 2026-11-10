@@ -1,0 +1,31 @@
+{
+  "en_title": "GitHub Begins Gradual Rollout of Mandatory Two-Factor Authentication Starting March 13",
+  "hi_title": "GitHub ने 13 मार्च से अनिवार्य टू-факटर प्रमाणीकरण की क्रमिक शुरुआत की घोषणा की",
+  "en_body": "GitHub announced a gradual rollout of a mandatory two-factor authentication (2FA) requirement for code contributors, beginning March 13. According to the company, the initiative aims to improve account security and protect the software supply chain against social engineering and account takeover attacks.\n\n## Rollout and Notification Process\n\nStarting March 13, GitHub will reach out to groups of developers and administrators in phases over the course of the year. \n\n* **Email Notifications:** Selected accounts will receive an email approximately 45 days before their specific deadline.\n* **Dashboard Banners:** Users will see a reminder banner on GitHub.com guiding them through the onboarding process.\n* **Grace Period and Snooze Options:** After the deadline passes, users will be prompted to enable 2FA upon access. A one-week snooze option is available, which only begins after signing in post-deadline to accommodate vacations or time away.\n\n## Platform Enhancements and Security Options\n\nGitHub has introduced several platform features to assist with the transition and prevent account lockouts:\n\n* **Multiple Methods:** Users can register both an authenticator app (TOTP) and an SMS number simultaneously, though security keys and TOTP apps are strongly recommended over SMS.\n* **Preferred Method Selection:** Developers can choose their preferred 2FA method for logins and sudo prompts.\n* **Post-Setup Validation:** A prompt appears 28 days after setup to verify that 2FA is functioning correctly, offering a shortcut to reset configurations if needed.\n* **Email Unlinking:** Users locked out of an account can unlink their email address to start fresh with a new account.\n\n## Verification and Next Steps\n\nUsers who wish to enroll proactively rather than waiting for an early enrollment group notification can do so directly through the GitHub interface. To verify official announcements and updates, users should check the official GitHub Blog.",
+  "hi_body": "GitHub ने कोड योगदानकर्ताओं के लिए टू-फैक्टर ऑथेंटिकेशन (2FA) की अनिवार्यता को 13 मार्च से क्रमिक रूप से शुरू करने की घोषणा की है। कंपनी के अनुसार, इस पहल का उद्देश्य खाता सुरक्षा में सुधार करना और सोशल इंजीनियरिंग तथा अकाउंट टेकओवर हमलों से सॉफ्टवेयर आपूर्ति श्रृंखला की रक्षा करना है।\n\n## रोलआउट और सूचना प्रक्रिया\n\n13 मार्च से, GitHub वर्ष के दौरान चरणों में डेवलपर्स और प्रशासकों के समूहों से संपर्क करेगा।\n\n* **ईमेल सूचनाएं:** चयनित खातों को उनकी विशिष्ट समय सीमा से लगभग 45 दिन पहले एक ईमेल प्राप्त होगा।\n* **डैशबोर्ड बैनर:** उपयोगकर्ताओं को GitHub.com पर एक अनुस्मारक बैनर दिखाई देगा जो उन्हें ऑनबोर्डिंग प्रक्रिया के माध्यम से मार्गदर्शन करेगा।\n* **अनुग्रह अवधि और स्नूज़ विकल्प:** समय सीमा बीत जाने के बाद, उपयोगकर्ताओं को पहुंच पर 2FA सक्षम करने के लिए कहा जाएगा। एक सप्ताह का स्नूज़ विकल्प उपलब्ध है, जो छुट्टियों या कार्यालय से बाहर होने की स्थिति में केवल समय सीमा के बाद साइन इन करने पर शुरू होता है।\n\n## प्लेटफ़ॉर्म संवर्द्धन और सुरक्षा विकल्प\n\nGitHub ने संक्रमण में सहायता करने और खाता लॉकआउट को रोकने के लिए कई प्लेटफ़ॉर्म सुविधाएँ पेश की हैं:\n\n* **एकाधिक विधियाँ:** उपयोगकर्ता एक साथ एक प्रमाणक ऐप (TOTP) और एक एसएमएस नंबर दोनों पंजीकृत कर सकते हैं, हालांकि एसएमएस की तुलना में सुरक्षा कुंजियों और TOTP ऐप्स की दृढ़ता से अनुशंसा की जाती है।\n* **पसंदीदा विधि चयन:** डेवलपर्स लॉगिन और सुडो संकेतों के लिए अपनी पसंदीदा 2FA विधि चुन सकते हैं।\n* **सेटअप के बाद सत्यापन:** यह सत्यापित करने के लिए सेटअप के 28 दिन बाद एक संकेत दिखाई देता है कि 2FA सही ढंग से काम कर रहा है, यदि आवश्यक हो तो कॉन्फ़िगरेशन रीसेट करने के लिए एक शॉर्टकट प्रदान करता है।\n* **ईमेल अनलंक करना:** एक खाते से लॉक आउट हुए उपयोगकर्ता नए खाते के साथ शुरुआत करने के लिए अपना ईमेल पता अनलंक कर सकते हैं।\n\n## सत्यापन और अगले चरण\n\nजो उपयोगकर्ता प्रारंभिक नामांकन समूह सूचना की प्रतीक्षा करने के बजाय सक्रिय रूप से नामांकन करना चाहते हैं, वे सीधे GitHub इंटरफ़ेस के माध्यम से ऐसा कर सकते हैं। आधिकारिक घोषणाओं और अपडेट को सत्यापित करने के लिए, उपयोगकर्ताओं को आधिकारिक GitHub ब्लॉग की जांच करनी चाहिए।",
+  "en_meta": "GitHub begins a gradual rollout of mandatory two-factor authentication for developers starting March 13 to improve account security.",
+  "hi_meta": "GitHub ने खाता सुरक्षा में सुधार के लिए 13 मार्च से डेवलपर्स के लिए अनिवार्य टू-फैक्टर ऑथेंटिकेशन की क्रमिक शुरुआत की घोषणा की है।",
+  "en_keywords": [
+    "GitHub",
+    "two-factor authentication",
+    "2FA",
+    "software security",
+    "supply chain security",
+    "developer accounts"
+  ],
+  "hi_keywords": [
+    "गिटहब",
+    "टू-फैक्टर ऑथेंटिकेशन",
+    "2FA",
+    "सॉफ्टवेयर सुरक्षा",
+    "सप्लाई चेन सुरक्षा",
+    "डेवलपर खाते"
+  ],
+  "source_published_at": "2023-03-09T17:00:21+00:00",
+  "id": "f3e59d8a3101",
+  "source": "https://github.blog/news-insights/product-news/raising-the-bar-for-software-security-github-2fa-begins-march-13/",
+  "date": "2026-11-10T18:08:22.900333+00:00",
+  "source_title": "Raising the bar for software security: GitHub 2FA begins March 13",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
