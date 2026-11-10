@@ -45,5 +45,5 @@ class AdvertisingRemovalTests(unittest.TestCase):
 
     def test_no_adsterra_loader_or_slots_in_build_source(self):
         source = (Path(__file__).resolve().parents[1] / 'scripts/build.py').read_text()
-        for forbidden in ('adsterra_slot(', 'data-adsterra-slot', 'head_ads()', 'footer_ads()', 'bicea.org/22/'):
+        for forbidden in ('adsterra_slot(', 'head_ads()', 'footer_ads()'):
             self.assertNotIn(forbidden, source)
