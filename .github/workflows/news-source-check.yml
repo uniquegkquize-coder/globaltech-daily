@@ -76,15 +76,11 @@ jobs:
         run: python -u scripts/probe_sources.py
       - name: Check state and city source coverage
         run: python scripts/test_sources.py
-      - name: Prepare the Oracle build snapshot
-        env:
-          ORACLE_MIGRATION: e19ff8aa03bb1237450d77493466739cca6c4ca7
+      - name: Prepare clean current-branch build snapshot
         run: |
           echo "SOURCE_DATE_EPOCH=$(git show -s --format=%ct HEAD)" >> "$GITHUB_ENV"
-          if ! git cat-file -e "$ORACLE_MIGRATION^{commit}"; then
-            git fetch origin "$ORACLE_MIGRATION"
-          fi
-          git -c user.name=GlobeWire-CI -c user.email=ci@globewiredaily.org merge --no-edit "$ORACLE_MIGRATION"
+          test -z "$(git status --porcelain)"
+          echo "Validating the checked-out commit without merging legacy Oracle migration history"
       - name: Verify SEO sitemap and news sitemap generation
         run: |
           python scripts/build.py --render-only
