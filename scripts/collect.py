@@ -534,10 +534,22 @@ def _discover_gemini_models(key):
  GEMINI_MODEL_CACHE[key]=fallback
  return fallback
 
+GEMINI_KEY_NAMES=('GEMINI_API_KEY','APEX_GEMINI_KEY','UNIQUE','VK6917434')
+PROVIDER_KEYS={'groq':'GROQ_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}
+PROVIDER_KEYS.update({('gemini' if i==0 else 'gemini_'+str(i)):name for i,name in enumerate(GEMINI_KEY_NAMES)})
+
 def provider_order():
- # One generation attempt per language; no repeated model probing.
+ # Each configured Gemini secret is an independent fallback slot, with
+ # separate per-model cooldowns. Preserve the existing non-Gemini order.
  order=os.getenv('AI_PROVIDER_ORDER','gemini,groq,openrouter').lower().split(',')
- return [p.strip() for p in order if p.strip() in ('groq','gemini','openrouter','openai')]
+ result=[]
+ for item in order:
+  p=item.strip()
+  if p=='gemini':
+   result.extend(slot for slot in PROVIDER_KEYS if slot.startswith('gemini') and os.getenv(PROVIDER_KEYS[slot],'').strip())
+  elif p in ('groq','openrouter','openai'):
+   result.append(p)
+ return result
 # Authentication failures stay disabled; temporary failures use timed backoff.
 PROVIDER_LOCK=threading.RLock()
 PROVIDER_COOLDOWNS=set()
@@ -619,14 +631,14 @@ def daily_quota_exhausted(response):
 
 def provider_retry_delay():
  now=time.monotonic()
- keys={'gemini':'GEMINI_API_KEY','groq':'GROQ_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}
+ keys=PROVIDER_KEYS
  with PROVIDER_LOCK:
   waits=[max(0,PROVIDER_RETRY_AT[p]-now) for p in provider_order()
          if p not in PROVIDER_COOLDOWNS and os.getenv(keys[p],'').strip() and p in PROVIDER_RETRY_AT]
  return min(waits) if waits else None
 
 def providers_ready():
- keys={'gemini':'GEMINI_API_KEY','groq':'GROQ_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}
+ keys=PROVIDER_KEYS
  with PROVIDER_LOCK:
   return any(provider not in PROVIDER_COOLDOWNS and PROVIDER_RETRY_AT.get(provider,0)<=time.monotonic() and os.getenv(keys[provider],'').strip() for provider in provider_order())
 
@@ -653,10 +665,10 @@ def _call_provider(prompt):
   with PROVIDER_LOCK:
    if CALLS>=MAX_CALLS:break
    if provider in PROVIDER_COOLDOWNS or PROVIDER_RETRY_AT.get(provider,0)>time.monotonic():continue
-  key=os.getenv({'groq':'GROQ_API_KEY','gemini':'GEMINI_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}[provider],'').strip()
+  key=os.getenv(PROVIDER_KEYS[provider],'').strip()
   if not key:continue
-  models=gemini_models(key) if provider=='gemini' else ([m.strip() for m in os.getenv('GROQ_MODELS',os.getenv('GROQ_MODEL','openai/gpt-oss-120b')).split(',') if m.strip()] if provider=='groq' else [os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free')])
-  preferred=os.getenv('GEMINI_MODEL','').removeprefix('models/').strip() if provider=='gemini' else ''
+  models=gemini_models(key) if provider.startswith('gemini') else ([m.strip() for m in os.getenv('GROQ_MODELS',os.getenv('GROQ_MODEL','openai/gpt-oss-120b')).split(',') if m.strip()] if provider=='groq' else [os.getenv('OPENAI_MODEL','gpt-4.1-mini') if provider=='openai' else os.getenv('OPENROUTER_MODEL','openrouter/free')])
+  preferred=os.getenv('GEMINI_MODEL','').removeprefix('models/').strip() if provider.startswith('gemini') else ''
   if preferred in models:models=[preferred]+[model for model in models if model!=preferred]
   # Retry malformed output once on the same model. HTTP cooldowns still skip
   # the repeated entry, and both requests count against the AI call budget.
@@ -672,7 +684,7 @@ def _call_provider(prompt):
     request_prompt=prompt
     if output_attempt:
      request_prompt+='\nOUTPUT RETRY: Return a complete valid JSON object only. Escape newlines inside JSON strings. Use concise, complete articles grounded in the source; avoid long introductions and padding.'
-    if provider=='gemini':
+    if provider.startswith('gemini'):
      r=requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',headers={'x-goog-api-key':key},json={'contents':[{'parts':[{'text':request_prompt}]}],'generationConfig':{'responseMimeType':'application/json','maxOutputTokens':8192}},timeout=(min(7,response_timeout),response_timeout))
      raw=''.join(p.get('text','') for p in r.json()['candidates'][0]['content']['parts']) if r.ok else ''
     else:
@@ -694,9 +706,9 @@ def _call_provider(prompt):
      if r.status_code==429 and daily_quota_exhausted(r):
       print('Provider daily quota exhausted:',provider,'model',model,flush=True)
       with PROVIDER_LOCK:
-       if provider in ('gemini','groq'):UNAVAILABLE_MODELS.add((provider,model))
+       if (provider.startswith('gemini') or provider=='groq'):UNAVAILABLE_MODELS.add((provider,model))
        else:PROVIDER_COOLDOWNS.add(provider)
-      if provider in ('gemini','groq'):continue
+      if (provider.startswith('gemini') or provider=='groq'):continue
       break
      if r.status_code==429 or r.status_code>=500:
       with PROVIDER_LOCK:
@@ -704,9 +716,9 @@ def _call_provider(prompt):
        MODEL_FAILURES[(provider,model)]=failure
        delay=retry_seconds(r,min(300,30*2**min(failure-1,4)))
        MODEL_RETRY_AT[(provider,model)]=time.monotonic()+delay
-       if provider not in ('gemini','groq'):PROVIDER_RETRY_AT[provider]=time.monotonic()+delay
+       if not (provider.startswith('gemini') or provider=='groq'):PROVIDER_RETRY_AT[provider]=time.monotonic()+delay
       print('Provider temporary backoff:',provider,'model',model,'seconds',round(delay),flush=True)
-      if provider not in ('gemini','groq'):break
+      if not (provider.startswith('gemini') or provider=='groq'):break
       continue
      continue
     data=json_object(raw)
@@ -715,7 +727,7 @@ def _call_provider(prompt):
       MODEL_FAILURES.pop((provider,model),None)
       MODEL_RETRY_AT.pop((provider,model),None)
      print('Provider success:',provider,'model',model,flush=True)
-     return data,provider
+     return data,('gemini' if provider.startswith('gemini') else provider)
     print('Provider',provider,'model',model,'returned unusable JSON; output attempt',output_attempt+1,flush=True)
    except (requests.RequestException,ValueError,KeyError,IndexError,TypeError) as exc:
     print('Provider',provider,'error',type(exc).__name__,flush=True)
@@ -1423,7 +1435,7 @@ def main():
  remaining=POSTS_PER_RUN
  print('Target posts this run:',remaining,flush=True)
  if not remaining:return 0
- if not any(os.getenv(k) for k in ('GROQ_API_KEY','GEMINI_API_KEY','OPENROUTER_API_KEY','OPENAI_API_KEY')):
+ if not any(os.getenv(k) for k in PROVIDER_KEYS.values()):
   print('No AI provider configured');write_run_status('no_provider',started);return 0
  published=0; inspected=0; category_published={}; category_reserved=Counter()
  existing_posts={p.stem for p in POSTS.glob('*.json')}
@@ -1730,7 +1742,7 @@ def main():
                          for cat in CATEGORIES},
            'published_total':sum(total_category_counts.values()),
            'categories_below_minimum':{cat:count for cat,count in total_category_counts.items() if count<MIN_POSTS_PER_CATEGORY},
-           'provider_status':{'configured':[p for p in provider_order() if os.getenv({'gemini':'GEMINI_API_KEY','groq':'GROQ_API_KEY','openrouter':'OPENROUTER_API_KEY','openai':'OPENAI_API_KEY'}[p],'').strip()], 'cooldown':sorted(PROVIDER_COOLDOWNS), 'unavailable_models':[{'provider':p,'model':m} for p,m in sorted(UNAVAILABLE_MODELS)]},
+           'provider_status':{'configured':[p for p in provider_order() if os.getenv(PROVIDER_KEYS[p],'').strip()], 'cooldown':sorted(PROVIDER_COOLDOWNS), 'unavailable_models':[{'provider':p,'model':m} for p,m in sorted(UNAVAILABLE_MODELS)]},
            'sources':{domain:{metric:count for (d,metric),count in SOURCE_DIAGNOSTICS.items() if d==domain}
                       for domain in sorted({d for d,_ in SOURCE_DIAGNOSTICS})}}
  (ROOT/'content/news-coverage-status.json').write_text(json.dumps(coverage,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
