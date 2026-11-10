@@ -94,6 +94,9 @@ jobs:
         shell: bash
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          APEX_GEMINI_KEY: ${{ secrets.APEX_GEMINI_KEY }}
+          UNIQUE: ${{ secrets.UNIQUE }}
+          VK6917434: ${{ secrets.VK6917434 }}
           AUTO_POST: ${{ vars.AUTO_POST }}
           SITE_URL: https://globewiredaily.org
           PYTHONUNBUFFERED: '1'
