@@ -1,0 +1,31 @@
+{
+  "en_title": "New Android Vulnerability Linked to Malicious WAP Push SMS",
+  "hi_title": "Android में नई खामी: संदिग्ध SMS से फोन हो सकता है प्रभावित",
+  "en_body": "## The Vulnerability Explained\nSecurity researcher Mark Blaszczyk has identified a significant vulnerability affecting devices running Android 12 and later. The issue stems from how the Android telephony framework processes a specially crafted WAP Push SMS. Instead of appearing as a standard text message, the system attempts to process the payload in the background, which can lead to system errors.\n\n## Impact and Risks\nWhen the device attempts to process these malicious messages, several functional issues can occur:\n* Disruption of active phone calls.\n* Temporary loss of cellular connectivity.\n* Potential device instability if multiple messages are received, rendering the phone unusable.\n\nCritically, this exploit requires no user interaction, such as clicking a link or opening a message, making it a passive threat. While researchers identified the issue on Google Pixel and Samsung Galaxy handsets, the vulnerability potentially extends to all devices running Android 12 or newer.\n\n## Status and Mitigation\nInitial reports of the flaw in May were reportedly contested by Google; however, the Android engineering team has since developed a patch. The solution is included in the October security update for devices running Android 14 or later. \n\n## Important Considerations\n* **Patch Availability:** Users with devices on Android 14 or higher should check for and install the October security patch immediately.\n* **Legacy Devices:** Devices running Android 13 or older remain vulnerable, and there are currently no reported user-side fixes for these handsets.\n* **Verification:** To verify if your device is protected, navigate to Settings > Security & Privacy > System & updates to ensure your security patch level is current.\n\nThis vulnerability highlights the ongoing necessity of keeping mobile operating systems updated to address underlying telephony framework weaknesses.",
+  "hi_body": "## सुरक्षा खामी का विवरण\nसुरक्षा शोधकर्ता मार्क ब्लास्ज़िक ने एंड्रॉइड 12 और उसके बाद के संस्करणों पर चलने वाले उपकरणों को प्रभावित करने वाली एक महत्वपूर्ण खामी की पहचान की है। यह समस्या इस बात से उत्पन्न होती है कि एंड्रॉइड का टेलीफोनी फ्रेमवर्क एक विशेष रूप से तैयार किए गए WAP पुश SMS को कैसे संसाधित करता है। सामान्य संदेश के रूप में दिखाई देने के बजाय, सिस्टम पृष्ठभूमि में पेलोड को प्रोसेस करने का प्रयास करता है, जिससे सिस्टम त्रुटियां हो सकती हैं।\n\n## प्रभाव और जोखिम\nजब डिवाइस इन दुर्भावनापूर्ण संदेशों को संसाधित करने का प्रयास करता है, तो कई कार्यात्मक समस्याएं हो सकती हैं:\n* सक्रिय फोन कॉल का अचानक कट जाना।\n* सेलुलर कनेक्टिविटी का अस्थायी नुकसान।\n* कई संदेश प्राप्त होने पर डिवाइस की अस्थिरता, जिससे फोन अनुपयोगी हो सकता है।\n\nयह खतरा इसलिए अधिक गंभीर है क्योंकि इसके लिए उपयोगकर्ता की किसी भी सक्रियता (जैसे लिंक पर क्लिक करना) की आवश्यकता नहीं है। शोधकर्ताओं ने इस समस्या को गूगल पिक्सेल और सैमसंग गैलेक्सी हैंडसेट पर देखा है, लेकिन एंड्रॉइड 12 या उसके बाद के सभी डिवाइस इससे प्रभावित हो सकते हैं।\n\n## वर्तमान स्थिति और समाधान\nमई में शोधकर्ताओं द्वारा रिपोर्ट किए जाने के बाद, एंड्रॉइड इंजीनियरिंग टीम ने एक समाधान तैयार किया है। यह फिक्स एंड्रॉइड 14 या उसके बाद के संस्करणों पर चलने वाले उपकरणों के लिए अक्टूबर के सुरक्षा अपडेट में शामिल किया गया है।\n\n## महत्वपूर्ण बातें\n* **पैच की उपलब्धता:** एंड्रॉइड 14 या उससे ऊपर के डिवाइस वाले उपयोगकर्ता तुरंत अक्टूबर सुरक्षा पैच की जांच करें और उसे इंस्टॉल करें।\n* **पुराने डिवाइस:** एंड्रॉइड 13 या उससे पुराने संस्करण वाले डिवाइस अभी भी असुरक्षित हैं, और इन हैंडसेट के लिए वर्तमान में कोई आधिकारिक समाधान उपलब्ध नहीं है।\n* **सत्यापन:** यह जांचने के लिए कि आपका डिवाइस सुरक्षित है या नहीं, सेटिंग्स > सुरक्षा और गोपनीयता > सिस्टम और अपडेट में जाएं और सुनिश्चित करें कि आपका सुरक्षा पैच स्तर अद्यतित है।\n\nयह भेद्यता मोबाइल ऑपरेटिंग सिस्टम को टेलीफोनी फ्रेमवर्क की कमियों को दूर करने के लिए अपडेट रखने की आवश्यकता पर जोर देती है।",
+  "en_meta": "A newly discovered Android vulnerability allows malicious WAP Push SMS messages to destabilize devices. Check for October security updates to mitigate the risk.",
+  "hi_meta": "एंड्रॉइड में एक नई सुरक्षा खामी मिली है जिससे दुर्भावनापूर्ण SMS से फोन प्रभावित हो सकता है। सुरक्षा के लिए अपने एंड्रॉइड डिवाइस पर अक्टूबर अपडेट चेक करें।",
+  "en_keywords": [
+    "Android vulnerability",
+    "WAP Push SMS",
+    "Security patch",
+    "Mobile security",
+    "Android 12",
+    "Mark Blaszczyk"
+  ],
+  "hi_keywords": [
+    "एंड्रॉइड सुरक्षा",
+    "WAP पुश SMS",
+    "सुरक्षा पैच",
+    "एंड्रॉइड 12",
+    "मार्क ब्लास्ज़िक",
+    "मोबाइल सुरक्षा"
+  ],
+  "source_published_at": "2026-10-30T21:03:02+01:00",
+  "id": "c51b126902ea",
+  "source": "https://www.gsmarena.com/a_new_android_vulnerability_can_leave_your_phone_unusable_when_receiving_the_sms_of_death-news-75288.php",
+  "date": "2026-11-10T09:48:41.564196+00:00",
+  "source_title": "A new vulnerability can brick your Android phone when receiving the SMS of Death",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

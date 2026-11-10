@@ -1,0 +1,33 @@
+{
+  "en_title": "HyperFrames Open-Source Framework Enables HTML-to-Video Rendering for AI Agents",
+  "hi_title": "हाइपरफ्रेम्स ओपन-सर्स फ्रेमवर्क एआई एजेंटों के लिए एचटीएमएल से वीडियो रेंडरिंग सक्षम करता है",
+  "en_body": "HyperFrames is a free, open-source framework designed to turn HTML, CSS, media, and seekable animations into deterministic MP4 videos. According to the project documentation, the tool can be used locally via command-line interfaces, integrated with AI coding agents using specialized skills, or deployed as the rendering core for hosted authoring workflows.\n\n### Core Architecture and Features\nThe project operates on an HTML-native approach rather than requiring a proprietary timeline or specific component libraries like React. Key architectural elements include:\n\n* **HTML-Native Compositions:** Videos are defined using plain HTML files with data attributes for timing and tracks, requiring no separate build step for basic playback.\n* **Deterministic Rendering:** The rendering engine utilizes headless Chrome to seek each frame and encodes the output with FFmpeg, ensuring that identical inputs yield identical videos for continuous integration and automated pipelines.\n* **Flexible Animation Adapters:** Developers can bring their own animation runtimes, including GSAP, CSS animations, Lottie, Three.js, Anime.js, the Web Animations API (WAAPI), or custom frame adapters.\n* **Open-Source Licensing:** Released under an Apache 2.0 license with no per-render fees or commercial-use thresholds.\n\n### Integration with AI Coding Agents\nHyperFrames provides built-in support for coding assistants such as Claude Code, Codex, Cursor, and the Gemini CLI. By installing specific skill sets via the command line, developers can instruct their coding agents to plan, write, lint, preview, and render video content automatically.\n\nThe framework ships with nine published skills, covering tasks ranging from general video creation to specific integrations like slideshows and layout translation. Standalone installations default to a core set of six skills, while additional components can be added on demand.\n\n### Studio App and Ecosystem\nAlongside the open-source rendering engine, the platform offers the HyperFrames Studio application. While the core app is free to use, a Pro plan incorporates select video, image, voice, and music models from HeyGen.\n\nThe project also introduces `frame.md`, a design system translation layer intended to help web-context specifications adapt for video frames so AI agents can compose promotional materials without guessing element scales.\n\n### Verification and Resources\nDevelopers can verify installation instructions, review adapter documentation, or explore community examples through the official GitHub repository (`heygen-com/hyperframes`) and the HyperFrames documentation portal (`hyperframes.heygen.com`).",
+  "hi_body": "हाइपरफ्रेम्स एक मुफ्त, ओपन-सोर्स फ्रेमवर्क है जिसे एचटीएमएल, सीएसएस, मीडिया और एनिमेशन को नियतात्मक (deterministic) एमपी4 वीडियो में बदलने के लिए डिज़ाइन किया गया है। प्रोजेक्ट दस्तावेज़ के अनुसार, इस टूल का उपयोग स्थानीय स्तर पर कमांड-लाइन इंटरफेस के माध्यम से किया जा सकता है, विशेष कौशलों का उपयोग करके एआई कोडिंग एजेंटों के साथ एकीकृत किया जा सकता है, या होस्टेड वर्कफ़्लो के लिए रेंडरिंग कोर के रूप में तैनात किया जा सकता है।\n\n### मुख्य वास्तुकला और विशेषताएं\nयह प्रोजेक्ट रिएक्ट जैसी मालिकाना टाइमलाइन या विशिष्ट घटक पुस्तकालयों की आवश्यकता के बजाय एचटीएमएल-मूल दृष्टिकोण पर काम करता है। मुख्य वास्तुकला तत्वों में शामिल हैं:\n\n* **एचटीएमएल-मूल रचनाएं:** वीडियो को टाइमिंग और ट्रैक के लिए डेटा विशेषताओं के साथ सादे एचटीएमएल फ़ाइलों का उपयोग करके परिभाषित किया जाता है।\n* **नियतात्मक रेंडरिंग:** रेंडरिंग इंजन प्रत्येक फ्रेम को प्राप्त करने के लिए हेडलेस क्रोम का उपयोग करता है और एफएफएमपीईजी के साथ आउटपुट को एन्कोड करता है, जिससे यह सुनिश्चित होता है कि समान इनपुट से समान वीडियो प्राप्त हों।\n* **लचीले एनिमेशन एडेप्टर:** डेवलपर्स जीएसएपी, सीएसएस एनिमेशन, लोटी, थ्री.जेएस, एनिमे.जेएस, या कस्टम फ्रेम एडेप्टर जैसे रनटाइम का उपयोग कर सकते हैं।\n* **ओपन-सोर्स लाइसेंसिंग:** इसे बिना किसी प्रति-रेंडर शुल्क या वाणिज्यिक-उपयोग सीमा के Apache 2.0 लाइसेंस के तहत जारी किया गया है।\n\n### एआई कोडिंग एजेंटों के साथ एकीकरण\nहाइपरफ्रेम्स क्लाउड कोड, कोडेक्स, कर्सर और जेमिनी सीएलआई जैसे कोडिंग सहायकों के लिए अंतर्निहित सहायता प्रदान करता है। कमांड लाइन के माध्यम से विशिष्ट कौशल स्थापित करके, डेवलपर्स अपने कोडिंग एजेंटों को स्वचालित रूप से वीडियो सामग्री की योजना बनाने, लिखने और रेंडर करने का निर्देश दे सकते हैं।\n\nफ्रेमवर्क नौ प्रकाशित कौशल के साथ आता है, जिसमें सामान्य वीडियो निर्माण से लेकर स्लाइडशो और लेआउट अनुवाद जैसे विशिष्ट एकीकरण शामिल हैं।\n\n### स्टूडियो ऐप और पारिस्थितिकी तंत्र\nओपन-सोर्स रेंडरिंग इंजन के साथ-साथ, प्लेटफॉर्म हाइपरफ्रेम्स स्टूडियो एप्लिकेशन भी प्रदान करता है। जबकि मुख्य ऐप उपयोग करने के लिए स्वतंत्र है, एक प्रो योजना में HeyGen के कुछ मॉडल शामिल हैं।\n\nप्रोजेक्ट `frame.md` को भी पेश करता है, जो एक डिज़ाइन सिस्टम अनुवाद परत है जिसका उद्देश्य वेब-संदर्भ विनिर्देशों को वीडियो फ्रेम के अनुकूल बनाने में मदद करना है।\n\n### सत्यापन और संसाधन\nडेवलपर आधिकारिक GitHub रिपॉजिटरी (`heygen-com/hyperframes`) और हाइपरफ्रेम्स दस्तावेज़ीकरण पोर्टल के माध्यम से स्थापना निर्देशों को सत्यापित कर सकते हैं, एडेप्टर दस्तावेज़ीकरण की समीक्षा कर सकते हैं या सामुदायिक उदाहरणों का पता लगा सकते हैं।",
+  "en_meta": "Learn about HyperFrames, an open-source framework for rendering deterministic MP4 videos from HTML and CSS, built for AI coding agents and local workflows.",
+  "hi_meta": "हाइपरफ्रेम्स के बारे में जानें, जो एआई कोडिंग एजेंटों के लिए एचटीएमएल से वीडियो रेंडर करने का एक ओपन-सोर्स फ्रेमवर्क है।",
+  "en_keywords": [
+    "HyperFrames",
+    "HTML to video",
+    "AI coding agents",
+    "deterministic rendering",
+    "open-source framework",
+    "headless Chrome FFmpeg"
+  ],
+  "hi_keywords": [
+    "हाइपरफ्रेम्स",
+    "HTML से वीडियो",
+    "एआई कोडिंग एजेंट",
+    "ओपन-सोर्स फ्रेमवर्क",
+    "हेडलेस क्रोम"
+  ],
+  "source_published_at": "2026-10-31T06:43:30+00:00",
+  "id": "6e18aa23e1f0",
+  "source": "https://github.com/heygen-com/hyperframes",
+  "date": "2026-11-10T09:56:22.811634+00:00",
+  "source_title": "heygen-com/hyperframes: Write HTML. Render video. Built for agents. - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

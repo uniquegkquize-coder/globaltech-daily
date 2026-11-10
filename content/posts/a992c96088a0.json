@@ -1,0 +1,31 @@
+{
+  "en_title": "LangChain Open-Sources Design Agent for Slack and Chat Workflows",
+  "hi_title": "लैंगचेन ने स्लैक और चैट वर्कफ़्लो के लिए ओपन-सोर्स डिज़ाइन एजेंट लॉन्च किया",
+  "en_body": "LangChain has open-sourced Content Studio, a design agent built on Managed Deep Agents that generates on-brand visual assets directly from chat threads. The repository is available on GitHub under the Apache 2.0 license.\n\n## Overview and Capabilities\n- **Chat-Driven Workflow:** Users can interact with the agent in Slack or via other supported interfaces, requesting assets such as resized ads, presentation decks, charts, and motion graphics.\n- **Sandbox Environment:** Each thread runs in its own LangSmith sandbox, utilizing tools like Chrome, FFmpeg, and HyperFrames to render and check code-based assets without exposing API keys to the sandbox.\n- **Modular Skills and Memory:** The agent uses a router skill to select from dozens of workflows, while maintaining team and personal memory layers to retain brand rules and feedback.\n\n## Deployment and Verification\nAccording to the documentation, deploying the agent requires a LangSmith account—where Managed Deep Agents is currently in public beta on LangSmith Cloud—along with a compatible model key, such as Claude Opus 5.5 or endpoints supported via the LangSmith Gateway.\n\n- Local testing can be performed using Docker with a scripted model and no API keys.\n- Users can install dependencies using tools like `uv` and execute deployment commands as outlined in the repository instructions.\n- The open-source code is free under the Apache 2.0 license, though users incur standard costs for model providers and Managed Deep Agents hosting.",
+  "hi_body": "लैंगचेन ने कंटेंट स्टूडियो को ओपन-सोर्स कर दिया है, जो मैनेज्ड डीप एजेंट्स पर आधारित एक डिज़ाइन एजेंट है जो चैट थ्रेड्स से सीधे ब्रांड के अनुकूल विज़ुअल एसेट तैयार करता है। यह रिपॉजिटरी गिटहब पर Apache 2.0 लाइसेंस के तहत उपलब्ध है।\n\n## मुख्य विशेषताएं और कार्यक्षमता\n- **चैट-संचालित वर्कफ़्लो:** उपयोगकर्ता स्लैक या अन्य समर्थित इंटरफ़ेस में एजेंट के साथ बातचीत कर सकते हैं, जैसे कि विज्ञापनों का आकार बदलना, प्रेजेंटेशन डेक, चार्ट और मोशन ग्राफिक्स का अनुरोध करना।\n- **सैंडबॉक्स वातावरण:** प्रत्येक थ्रेड अपने स्वयं के लैंगस्मिथ सैंडबॉक्स में चलता है, जिसमें क्रोम, एफ़एफएमपीईजी और हाइपरफ्रेम्स जैसे टूल का उपयोग करके कोड-आधारित संपत्तियों को रेंडर और जांचा जाता है, बिना सैंडबॉक्स को एपीआई कुंजी उजागर किए।\n- **मॉड्यूलर कौशल और मेमोरी:** एजेंट दर्जनों वर्कफ़्लो में से चुनने के लिए एक राउटर स्किल का उपयोग करता है, साथ ही ब्रांड नियमों और फीडबैक को बनाए रखने के लिए टीम और व्यक्तिगत मेमोरी परतों को बनाए रखता है।\n- **लागत और मॉडल:** यह एजेंट डिफ़ॉल्ट रूप से Claude Opus 5.5 का उपयोग करता है, और ओपनएआई, गूगल या लैंगस्मिथ गेटवे के माध्यम से संगत अन्य मॉडल का समर्थन करता है।\n\n## तैनाती और सत्यापन\nदस्तावेज़ीकरण के अनुसार, एजेंट को तैनात करने के लिए एक लैंगस्मिथ खाते की आवश्यकता होती है—जहां मैनेज्ड डीप एजेंट्स वर्तमान में लैंगस्मिथ क्लाउड पर पब्लिक बीटा में है—साथ ही एक संगत मॉडल कुंजी की भी आवश्यकता होती है।\n- स्थानीय परीक्षण डॉकर का उपयोग करके बिना एपीआई कुंजी के किया जा सकता है।\n- उपयोगकर्ता `uv` जैसे टूल का उपयोग करके निर्भरताएं स्थापित कर सकते हैं और रिपॉजिटरी निर्देशों में उल्लिखित तैनाती आदेश निष्पादित कर सकते हैं।",
+  "en_meta": "LangChain open-sources Content Studio, a design agent built on Managed Deep Agents for generating on-brand visual assets via Slack and chat threads.",
+  "hi_meta": "लैंगचेन ने स्लैक और चैट थ्रेड्स के माध्यम से ब्रांड-संगत विज़ुअल एसेट जेनरेट करने के लिए मैनेज्ड डीप एजेंट्स पर आधारित डिज़ाइन एजेंट पेश किया।",
+  "en_keywords": [
+    "LangChain",
+    "design agent",
+    "Content Studio",
+    "Managed Deep Agents",
+    "Slack integration",
+    "open source"
+  ],
+  "hi_keywords": [
+    "लैंगचेन",
+    "डिज़ाइन एजेंट",
+    "कंटेंट स्टूडियो",
+    "मैनेज्ड डीप एजेंट्स",
+    "स्लैक इंटीग्रेशन",
+    "ओपन सोर्स"
+  ],
+  "source_published_at": null,
+  "id": "a992c96088a0",
+  "source": "https://github.com/langchain-ai/design-agent",
+  "date": "2026-11-10T09:58:14.248254+00:00",
+  "source_title": "Open-source design agent: on-brand stills, decks, diagrams, charts and motion graphics from a chat thread, built on Deep Agents. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

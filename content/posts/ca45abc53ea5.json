@@ -1,0 +1,32 @@
+{
+  "en_title": "GeoLibre: An Open-Source, Cloud-Native GIS Platform for Multi-Platform Geospatial Analysis",
+  "hi_title": "GeoLibre: मल्टी-प्लेटफ़ॉर्म जियोस्पेशियल विश्लेषण के लिए एक ओपन-सोर्स क्लाउड-नेटिव जीआईएस प्लेटफ़ॉर्म",
+  "en_body": "GeoLibre is a free, open-source, and lightweight cloud-native Geographic Information System (GIS) platform designed for visualizing, exploring, and analyzing geospatial data. According to project documentation, the platform operates across web browsers, desktop environments, mobile devices, and Jupyter notebooks while maintaining local data privacy.\n\n## Core Architecture and Rendering Engines\n\nBuilt using Tauri v2, React, TypeScript, MapLibre GL JS, DuckDB-WASM Spatial, and deck.gl, GeoLibre allows a single project to be viewed through multiple rendering engines. Users can switch between MapLibre GL JS, Mapbox GL JS, CesiumJS, or the ArcGIS Maps SDK for JavaScript, or display them in synchronized split panes without duplicating project layers. The platform reads cloud-native formats such as COG, GeoParquet, PMTiles, FlatGeobuf, Zarr, and STAC in place.\n\n## Browser-Based Geoprocessing Tools\n\nGeoLibre includes over 1,000 geoprocessing tools that execute entirely within the browser via a WebAssembly runtime. These tools cover various analytical domains:\n\n* Terrain and hydrology analysis\n* LiDAR and remote sensing\n* Vector analysis\n\nExecutions occur locally on the user's machine without requiring a server setup or an external Python sidecar, though an optional self-hosted Python environment is available for certain tasks.\n\n## Multi-Body Planetary Mapping\n\nBeyond Earth geography, GeoLibre supports planetary basemaps from OpenPlanetaryMap and USGS Astrogeology. Available bodies include:\n\n* The Moon, Mars, Mercury, and Venus\n* The Galilean moons (Io, Europa, Ganymede, Callisto)\n* Titan, Pluto, and Charon\n\nEach project applies a specific ellipsoid to ensure distance, area, and scale calculations match the mapped celestial body. Deep-space starfields and atmospheric effects are rendered using the Atmosphere Effects plugin.\n\n## Verification and Access\n\nUsers can verify project details, installation steps, and source repositories directly through the official GitHub repository (`opengeos/GeoLibre`) or documentation published at `geolibre.app`. Academic users can cite the platform using its Zenodo archive entry.",
+  "hi_body": "GeoLibre एक स्वतंत्र, ओपन-सोर्स और हल्का क्लाउड-नेटिव ज्योग्राफिक इंफॉर्मेशन सिस्टम (GIS) प्लेटफ़ॉर्म है जिसे जियोस्पेशियल डेटा को विज़ुअलाइज, तलाश और विश्लेषण करने के लिए डिज़ाइन किया गया है। प्रोजेक्ट दस्तावेज़ के अनुसार, यह प्लेटफ़ॉर्म वेब ब्राउज़र, डेस्कटॉप वातावरण, मोबाइल उपकरणों और जुपिटर नोटबुक में काम करता है और डेटा को स्थानीय रूप से निजी रखता है。\n\n## कोर आर्किटेक्चर और रेंडरिंग इंजन\n\nटाउरी v2, रिएक्ट, टाइपस्क्रिप्ट, मैपलिब्रे जीएल जेएस, डकडीबी-वास्सम स्पेशल और डेक.जीएल का उपयोग करके निर्मित, GeoLibre एक ही प्रोजेक्ट को कई रेंडरिंग इंजन के माध्यम से देखने की अनुमति देता है। उपयोगकर्ता मैपलिब्रे जीएल जेएस, मैपबॉक्स जीएल जेएस, सीजियमजेएस, या आर्कजीआईएस मैप्स एसडीके के बीच स्विच कर सकते हैं, या प्रोजेक्ट परतों को डुप्लिकेट किए बिना उन्हें सिंक किए गए स्प्लिट पेन में प्रदर्शित कर सकते हैं। यह सीओजी, जियोपारकेट्स, पीएमटाइल्स और जार जैसे क्लाउड-नेटिव फॉर्मेट को पढ़ता है।\n\n## ब्राउज़र-आधारित जियोप्रोसेसिंग टूल\n\nGeoLibre में 1,000 से अधिक जियोप्रोसेसिंग टूल शामिल हैं जो वेबएम्ब्लाइंड रनटाइम के माध्यम से पूरी तरह से ब्राउज़र के भीतर निष्पादित होते हैं। इन टूल में निम्नलिखित शामिल हैं:\n\n* भूभाग और जल विज्ञान विश्लेषण\n* LiDAR और रिमोट सेंसिंग\n* वेक्टर विश्लेषण\n\nनिष्पादन स्थानीय रूप से उपयोगकर्ता की मशीन पर होता है जिसके लिए किसी सर्वर सेटअप की आवश्यकता नहीं होती है।\n\n## मल्टी-बॉडी प्लैनेटरी मैपिंग\n\nपृथ्वी भूगोल के अलावा, GeoLibre ओपनप्लैनेटरीमैप और यूएसजीएस एस्ट्रोजियोलॉजी से ग्रहीय बेस मैप का समर्थन करता है। उपलब्ध पिंडों में शामिल हैं:\n\n* चंद्रमा, मंगल, बुध और शुक्र\n* गैलीलियन चंद्रमा (आयो, यूरोपा, गेनीमेड, कैलिस्टो)\n* टाइटन, प्लूटो और चारोन\n\nप्रत्येक प्रोजेक्ट दूरी, क्षेत्र और पैमाने की गणना को सुनिश्चित करने के लिए एक विशिष्टEllipsoid लागू करता है।\n\n## सत्यापन और पहुंच\n\nउपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी (`opengeos/GeoLibre`) या `geolibre.app` पर प्रकाशित दस्तावेजों के माध्यम से प्रोजेक्ट विवरण, स्थापना चरणों और स्रोत रिपॉजिटरी को सत्यापित कर सकते हैं।",
+  "en_meta": "Explore GeoLibre, a free open-source cloud-native GIS platform running in browsers, desktops, mobile devices, and Jupyter notebooks with WebAssembly tools.",
+  "hi_meta": "GeoLibre के बारे में जानें, जो ब्राउज़र, डेस्कटॉप, मोबाइल और जुपिटर नोटबुक में चलने वाला एक स्वतंत्र ओपन-सोर्स क्लाउड-नेटिव जीआईएस प्लेटफ़ॉर्म है।",
+  "en_keywords": [
+    "GeoLibre",
+    "cloud-native GIS",
+    "geospatial data analysis",
+    "WebAssembly GIS",
+    "open-source mapping"
+  ],
+  "hi_keywords": [
+    "GeoLibre",
+    "क्लाउड-नेटिव GIS",
+    "जियोस्पेशियल डेटा विश्लेषण",
+    "WebAssembly GIS",
+    "ओपन-सोर्स मैपिंग"
+  ],
+  "source_published_at": null,
+  "id": "ca45abc53ea5",
+  "source": "https://github.com/opengeos/GeoLibre",
+  "date": "2026-11-10T09:58:43.508442+00:00",
+  "source_title": "opengeos/GeoLibre: A lightweight, cloud-native GIS platform for visualizing, exploring, and analyzing geospatial data. It runs in the web browser, on the desktop, on mobile, and inside Jupyter notebooks. - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

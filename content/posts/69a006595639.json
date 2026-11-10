@@ -1,0 +1,30 @@
+{
+  "en_title": "Patchy Open-Source Image Editor Focuses on PSD Compatibility and Familiar Workflows",
+  "hi_title": "पैची ओपन-सोर्स इमेज एडिटर जो पीएसडी कंपैटिबिलिटी और जाने-पहचाने वर्कफ़्लो पर केंद्रित है",
+  "en_body": "Patchy is a free, open-source image editor designed for Windows, macOS, Linux, and web browsers, with a focus on game art, pixel art, and Adobe Photoshop file compatibility. According to the project documentation, it aims to keep text, vectors, masks, layer styles, and Smart Objects editable in layered PSD files while offering workflows and keyboard shortcuts familiar to Photoshop users.\n\n## Core Features and Format Support\n- **Cross-Platform Availability:** Runs on Windows, macOS, Linux, and in local browser sessions via WebAssembly.\n- **File Compatibility:** Opens and handles artwork from formats such as PDF, Affinity, Krita, GIMP, OpenRaster, and Paint.NET.\n- **Extensibility:** Supports classic plug-ins and JavaScript scripting.\n- **Color and Editing Limits:** Editing is performed in RGB at 8, 16, or 32 bits per channel, though the browser build is limited to 16 bits. CMYK is supported for proofing and exporting, while Lab and other color modes convert to RGB upon opening.\n\n## Practical Implications and Verification\nThe software contains no telemetry or tracking by default, with optional update checks and AI tool calls requiring explicit user action or API keys. Independent test results from October 2026 evaluated PSD compatibility using specific benchmark collections, noting perceptual render matches and text preservation scores under test conditions. Users can verify release authenticity through GPG signatures on Linux Flatpak repositories, code-signed Windows builds, and SHA-256 checksums published on GitHub.",
+  "hi_body": "पैची एक मुफ़्त और ओपन-सोर्स इमेज एडिटर है जिसे विंडोज, मैकओएस, लिनक्स और वेब ब्राउज़र के लिए बनाया गया है। यह गेम आर्ट, पिक्सेल आर्ट और एडोब फोटोशॉप फ़ाइल कंपैटिबिलिटी पर ध्यान केंद्रित करता है। प्रोजेक्ट दस्तावेज़ के अनुसार, इसका उद्देश्य लेयर्ड पीएसडी फ़ाइलों में टेक्स्ट, वेक्टर, मास्क, लेयर स्टाइल और स्मार्ट ऑब्जेक्ट्स को संपादन योग्य रखना है, साथ ही फोटोशॉप उपयोगकर्ताओं के लिए परिचित वर्कफ़्लो और कीबोर्ड शॉर्टकट प्रदान करना है।\n\n## मुख्य विशेषताएँ और फ़ाइल समर्थन\n- **क्रॉस-प्लेटफ़ॉर्म उपलब्धता:** यह विंडोज, मैकओएस, लिनक्स और वेबएम्ब्ली के माध्यम से स्थानीय ब्राउज़र सत्रों में चलता है।\n- **फ़ाइल संगतता:** यह पीडीएफ, एफिनिटी, क्रिटा, जिम्प, ओपनरास्टर और पेंट डॉट नेट जैसे प्रारूपों की कलाकृतियों को खोलता और संभालता है।\n- **विस्तारणीयता:** यह क्लासिक प्लग-इन और जावास्क्रिप्ट स्क्रिप्टिंग का समर्थन करता है।\n- **रंग और संपादन सीमाएँ:** संपादन प्रति चैनल 8, 16 या 32 बिट्स पर आरजीबी में किया जाता है, हालांकि ब्राउज़र बिल्ड 16 बिट्स तक सीमित है। सीएमवाईके का उपयोगप्रूफिंग और निर्यात के लिए किया जाता है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nडिफ़ॉल्ट रूप से सॉफ़्टवेयर में कोई टेलीमेट्री या ट्रैकिंग नहीं है, वैकल्पिक अपडेट जाँच और एआई टूल कॉल के लिए स्पष्ट उपयोगकर्ता कार्रवाई या एपीआई कुंजियों की आवश्यकता होती है। अक्टूबर 2026 के स्वतंत्र परीक्षण परिणामों ने विशिष्ट बेंचमार्क संग्रहों का उपयोग करके पीएसडी संगतता का मूल्यांकन किया। उपयोगकर्ता लिनक्स फ्लैटपैक रिपॉजिटरी पर जीपीजी हस्ताक्षर, कोड-हस्ताक्षर वाले विंडोज बिल्ड और GitHub पर प्रकाशित SHA-256 चेकसम के माध्यम से रिलीज़ की प्रामाणिकता सत्यापित कर सकते हैं।",
+  "en_meta": "Discover Patchy, a free, open-source image editor focused on PSD file compatibility, cross-platform support, and familiar Adobe Photoshop workflows.",
+  "hi_meta": "पैची एक मुफ़्त ओपन-सोर्स इमेज एडिटर है जो पीएसडी कंपैटिबिलिटी, क्रॉस-प्लेटफ़ॉर्म सपोर्ट और फोटोशॉप वर्कफ़्लो पर केंद्रित है।",
+  "en_keywords": [
+    "Patchy image editor",
+    "PSD compatibility",
+    "open source Photoshop alternative",
+    "game art pixel art tool"
+  ],
+  "hi_keywords": [
+    "पैची इमेज एडिटर",
+    "पीएसडी कंपैटिबिलिटी",
+    "ओपन सोर्स फोटोशॉप विकल्प",
+    "गेम आर्ट टूल"
+  ],
+  "source_published_at": null,
+  "id": "69a006595639",
+  "source": "https://github.com/SethRobinson/Patchy",
+  "date": "2026-11-10T09:58:22.058998+00:00",
+  "source_title": "Open-source image editor focused on PSD compatibility and workflows familiar to Adobe Photoshop users. - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

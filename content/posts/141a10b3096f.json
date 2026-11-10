@@ -1,0 +1,32 @@
+{
+  "en_title": "RustGIS Introduced as a Fast, Free and Open-Source Geographic Information System in Pure Rust",
+  "hi_title": "Rust`GIS` को शुद्ध `Rust` में निर्मित एक तेज़, मुफ्त और ओपन-सोर्स भौगोलिक सूचना प्रणाली के रूप में प्रस्तुत किया गया",
+  "en_body": "RustGIS is presented as a fast, free and open-source Geographic Information System (GIS) developed in pure Rust for mapping, analyzing, and sharing geospatial data. According to available project documentation, the software runs natively on Windows, macOS, and Linux, and is also accessible via a web browser through WebAssembly.\n\n### Key Features and Architecture\n* **Local Processing:** Files are read and written directly on the user's machine without automatic background uploads.\n* **Command-Driven Interface:** Every interface action corresponds to an identifiable command that can be scripted via the command line or integrated into notebooks.\n* **Tool Integration:** The platform includes access to various geospatial and terrain analysis tools through integrations such as GeoLibre.\n* **Cross-Platform Availability:** Native binaries and package manager installations are supported alongside a web-based version.\n\n### Practical Implications and Verification\nUsers interested in evaluating RustGIS can review the source code, installation instructions, and user guides directly on its official GitHub repository and associated web portals. As with any open-source software, practitioners should verify compatibility with their specific data formats, operating environments, and analysis workflows before deployment in production settings.",
+  "hi_body": "Rust`GIS` को जियोस्पेशियल डेटा को मैप करने, विश्लेषण करने और साझा करने के लिए शुद्ध `Rust` में विकसित एक तेज़, मुफ्त और ओपन-सोर्स भौगोलिक सूचना प्रणाली (`GIS`) के रूप में प्रस्तुत किया गया है। उपलब्ध प्रोजेक्ट दस्तावेज़ों के अनुसार, यह सॉफ़्टवेयर `Windows`, `macOS` और `Linux` पर नेटिव रूप से चलता है, और वेबएसेम्बली के माध्यम से वेब ब्राउज़र में भी उपलब्ध है।\n\n### मुख्य विशेषताएँ और वास्तुकला\n* **स्थानीय प्रोसेसिंग:** फ़ाइलें स्वचालित बैकग्राउंड अपलोड के बिना सीधे उपयोगकर्ता की मशीन पर पढ़ी और लिखी जाती हैं।\n* **कमांड-संचालित इंटरफ़ेस:** प्रत्येक इंटरफ़ेस एक्शन एक पहचान योग्य कमांड से मेल खाता है जिसे कमांड लाइन के माध्यम से स्क्रिप्ट किया जा सकता है।\n* **टूल इंटीग्रेशन:** प्लेटफ़ॉर्म में जियोलिब्र (`GeoLibre`) जैसे इंटीग्रेशन के माध्यम से विभिन्न जियोस्पेशियल और भू-भाग विश्लेषण टूल तक पहुंच शामिल है।\n* **क्रॉस-प्लेटफ़ॉर्म उपलब्धता:** वेब-आधारित संस्करण के साथ-साथ नेटिव बाइनरी और पैकेज मैनेजर इंस्टॉल समर्थित हैं।\n\n### व्यावहारिक निहितार्थ और सत्यापन\nRust`GIS` का मूल्यांकन करने के इच्छुक उपयोगकर्ता इसके आधिकारिक `GitHub` रिपॉजिटरी और संबंधित वेब पोर्टल पर सीधे स्रोत कोड, स्थापना निर्देश और उपयोगकर्ता मार्गदर्शिकाओं की समीक्षा कर सकते हैं। किसी भी ओपन-सोर्स सॉफ़्टवेयर की तरह, उपयोगकर्ताओं को उत्पादन परिवेश में तैनाती से पहले अपने विशिष्ट डेटा स्वरूपों, ऑपरेटिंग वातावरण और विश्लेषण वर्कफ़्लो के साथ अनुकूलता सत्यापित करनी चाहिए।",
+  "en_meta": "Discover RustGIS, a fast, free, and open-source GIS built in pure Rust for cross-platform mapping, local data privacy, and geospatial analysis.",
+  "hi_meta": "RustGIS के बारे में जानें, जो क्रॉस-प्लेटफ़ॉर्म मैपिंग और जियोस्पेशियल विश्लेषण के लिए शुद्ध Rust में बनी एक तेज़, मुफ्त और ओपन-सोर्स GIS है।",
+  "en_keywords": [
+    "RustGIS",
+    "GIS",
+    "Rust",
+    "geospatial data",
+    "open-source mapping"
+  ],
+  "hi_keywords": [
+    "RustGIS",
+    "GIS",
+    "Rust",
+    "जियोस्पेशियल डेटा",
+    "ओपन-सोर्स मैपिंग"
+  ],
+  "source_published_at": null,
+  "id": "141a10b3096f",
+  "source": "https://github.com/opengeos/RustGIS",
+  "date": "2026-11-10T09:58:50.343162+00:00",
+  "source_title": "opengeos/RustGIS: A fast, free and open-source GIS in pure Rust. - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

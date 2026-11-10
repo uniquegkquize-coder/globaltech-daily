@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Copilot Assisted Permissions Generally Available Across Multiple Interfaces",
+  "hi_title": "GitHub Copilot असिस्टेड परमिशन्स कई इंटरफेस में सामान्य रूप से उपलब्ध",
+  "en_body": "GitHub has announced that assisted permissions are now generally available in the GitHub Copilot CLI, the GitHub Copilot app, and Visual Studio Code. According to the announcement, this feature uses a large language model to evaluate requests when Copilot asks for permission to run a command, access a file system path, or open a URL.\n\n## How Assisted Permissions Work\n\n* **Safe Requests:** Requests that are classified as clearly safe proceed automatically without manual intervention.\n* **Manual Approval:** Any requests not classified as clearly safe require user approval before proceeding.\n\n## Enabling Assisted Permissions\n\nUsers can enable the feature across different supported interfaces using specific commands and settings:\n\n* **GitHub Copilot CLI:** Run `/permissions` and then select `assisted`.\n* **GitHub Copilot App:** Open the mode picker, click `Tool permissions`, and select `Assisted`.\n* **Visual Studio Code:** Open the permissions picker and select `Assisted permissions`.\n\n## Enterprise and Default Settings\n\nEnterprise administrators can configure enterprise-managed settings to block the `Allow All` option while keeping the assisted feature available, or disable assisted permissions separately. Additionally, users can choose a default permission mode for new sessions, though developers remain able to select another mode permitted by policy. If a default mode is unavailable or prohibited by policy, the session will start with manual approval.\n\n## Verification and Further Details\n\nTo verify the original announcement and review technical guides, developers can consult the official GitHub Blog changelog entry. Documentation regarding how assisted permissions evaluate requests and when approval is required is available through the official documentation resources provided by GitHub.",
+  "hi_body": "GitHub ने घोषणा की है कि असिस्टेड परमिशन्स अब GitHub Copilot CLI, GitHub Copilot ऐप और Visual Studio Code में सामान्य रूप से उपलब्ध हैं। घोषणा के अनुसार, जब Copilot किसी कमांड को चलाने, फ़ाइल सिस्टम पथ तक पहुँचने या किसी URL को खोलने की अनुमति मांगता है, तो यह सुविधा अनुरोधों का मूल्यांकन करने के लिए एक बड़े भाषा मॉडल (LLM) का उपयोग करती है।\n\n## असिस्टेड परमिशन्स कैसे काम करती हैं\n\n* **सुरक्षित अनुरोध:** जिन अनुरोधों को स्पष्ट रूप से सुरक्षित के रूप में वर्गीकृत किया जाता है, वे बिना किसी मैन्युअल हस्तक्षेप के स्वतः आगे बढ़ जाते हैं।\n* **मैन्युअल स्वीकृति:** स्पष्ट रूप से सुरक्षित के रूप में वर्गीकृत न किए जाने वाले अन्य अनुरोधों को आगे बढ़ने से पहले उपयोगकर्ता की स्वीकृति की आवश्यकता होती है।\n\n## असिस्टेड परमिशन्स को सक्षम करना\n\nउपयोगकर्ता विशिष्ट कमांड और सेटिंग्स का उपयोग करके समर्थित इंटरफेस में इस सुविधा को सक्षम कर सकते हैं:\n\n* **GitHub Copilot CLI:** `/permissions` चलाएं और फिर `assisted` चुनें।\n* **GitHub Copilot App:** मोड पिकर खोलें, `Tool permissions` पर क्लिक करें और फिर `Assisted` चुनें।\n* **Visual Studio Code:** परमिशन्स पिकर खोलें और फिर `Assisted permissions` चुनें।\n\n## एंटरप्राइज और डिफ़ॉल्ट सेटिंग्स\n\nएंटरप्राइज प्रशासक 'Allow All' विकल्प को ब्लॉक करने के लिए एंटरप्राइज-प्रबंधित सेटिंग्स का उपयोग कर सकते हैं, जबकि असिस्टेड सुविधा को उपलब्ध रख सकते हैं या असिस्टेड को अलग से अक्षम कर सकते हैं। इसके अतिरिक्त, डेवलपर्स नई सत्रों के लिए डिफ़ॉल्ट अनुमति मोड चुन सकते हैं, हालांकि डेवलपर्स नीति द्वारा अनुमति प्राप्त कोई अन्य मोड चुनना जारी रख सकते हैं। यदि डिफ़ॉल्ट अनुपलब्ध है या नीति द्वारा प्रतिबंधित है, तो सत्र मैन्युअल स्वीकृति के साथ शुरू होता है।\n\n## सत्यापन और आगे के विवरण\n\nमूल घोषणा को सत्यापित करने और तकनीकी मार्गदर्शिकाओं की समीक्षा करने के लिए, डेवलपर्स आधिकारिक GitHub Blog चेंजलॉग प्रविष्टि से परामर्श कर सकते हैं। असिस्टेड परमिशन्स अनुरोधों का मूल्यांकन कैसे करती हैं और स्वीकृति कब आवश्यक है, इससे संबंधित विवरण GitHub द्वारा प्रदान किए गए आधिकारिक दस्तावेज़ संसाधनों के माध्यम से उपलब्ध हैं।",
+  "en_meta": "GitHub Copilot assisted permissions are now generally available in the Copilot CLI, app, and VS Code, utilizing an LLM to evaluate safe requests.",
+  "hi_meta": "GitHub Copilot असिस्टेड परमिशन्स अब Copilot CLI, ऐप और VS Code में उपलब्ध हैं, जो सुरक्षित अनुरोधों के मूल्यांकन के लिए LLM का उपयोग करते हैं।",
+  "en_keywords": [
+    "GitHub Copilot",
+    "assisted permissions",
+    "Visual Studio Code",
+    "Copilot CLI",
+    "developer tools"
+  ],
+  "hi_keywords": [
+    "GitHub Copilot",
+    "असिस्टेड परमिशन्स",
+    "Visual Studio Code",
+    "Copilot CLI",
+    "डेवलपर टूल"
+  ],
+  "source_published_at": "2026-10-26T22:31:30+00:00",
+  "id": "ba5512df9271",
+  "source": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available/",
+  "date": "2026-11-10T09:55:07.628095+00:00",
+  "source_title": "GitHub Copilot assisted permissions generally available - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

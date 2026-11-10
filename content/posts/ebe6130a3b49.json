@@ -1,0 +1,31 @@
+{
+  "en_title": "GMO Internet urges Japanese customers to shut down PCs amid ransomware threat",
+  "hi_title": "जापान की GMO इंटरनेट ने रैनसमवेयर खतरे के चलते ग्राहकों को पीसी बंद करने का निर्देश दिया",
+  "en_body": "## Summary\nJapan’s GMO Internet Group has warned its customers to disconnect from the internet, power‑off their PCs and unplug cables after a threat actor claimed to have planted ransomware on the Onamae Desktop Cloud VPS service.\n\n## Confirmed facts\n- On Oct 20 GMO detected an intrusion that may have installed malware on up to **26,739** customer servers.\n- The attacker later published company and customer data online and demanded a ransom of **¥8 billion** (≈ $50 million). GMO said it will not pay.\n- GMO is offering a **¥5,000** (≈ $30) compensation to each affected customer and, where damage is proven, a replacement PC.\n- The company is working with Trend Micro to scan systems and verify whether the ransomware payload was ever activated – no evidence of a live attack has been found.\n\n## Reported claims and unknowns\n- GMO warned that the stolen data includes MetaTrader 4/5 credentials and trading‑account details; it advises password resets and termination of active sessions.\n- The firm says payment‑card information was not exposed, but it cannot confirm that all other personal data are safe.\n- It remains unclear how many customers actually suffered data loss or system damage beyond the initial intrusion.\n\n## Practical steps for customers\n1. **Back up** any important files to an offline medium.\n2. **Disconnect** the PC from the network, shut it down and unplug the power cord.\n3. **Reset** passwords for all accounts, especially MT4/MT5 and any trading platforms.\n4. **Monitor** email and banking statements for suspicious activity.\n5. **Contact** GMO support for verification of compromised data and to request the ¥5,000 compensation.\n\n## How to verify the announcement\n- Check GMO’s official blog or press release page (URL ends with */news*). \n- Look for statements from Trend Micro confirming joint investigation.\n- Verify the ransom demand and compensation figures in reputable Japanese tech news outlets (e.g., *Nikkei* or *ITmedia*).\n\n## Implications\nThe incident highlights the risk of unmanaged VPS environments and the importance of rapid isolation when a breach is suspected. Enterprises using GMO’s cloud services should review their incident‑response plans and consider multi‑factor authentication for trading‑platform credentials.\n\n---\n*This article is based on publicly available statements from GMO Internet and does not contain original reporting.*",
+  "hi_body": "## सारांश\nजापान की GMO इंटरनेट ग्रुप ने अपने ग्राहकों को ऑनामाए डेस्कटॉप क्लाउड VPS सेवा में रैनसमवेयर स्थापित होने के आरोप के बाद इंटरनेट से डिस्कनेक्ट करने, पीसी बंद करने और केबल अनप्लग करने की चेतावनी दी है।\n\n## पुष्टि किए गए तथ्य\n- 20 अक्टूबर को GMO ने एक घुसपैठ का पता लगाया, जिसमें **26,739** ग्राहक सर्वरों पर मालवेयर स्थापित हो सकता है।\n- हमलावर ने बाद में कंपनी और ग्राहक डेटा ऑनलाइन प्रकाशित किया और **¥8 अरब** (लगभग $50 मिलियन) की फिरौती की मांग की। GMO ने भुगतान न करने का इरादा बताया।\n- प्रभावित प्रत्येक ग्राहक को **¥5,000** (लगभग $30) की मुआवजा राशि और नुकसान सिद्ध होने पर नया पीसी देने की पेशकश की गई है।\n- कंपनी Trend Micro के साथ मिलकर सिस्टम स्कैन कर रही है; अभी तक रैनसमवेयर सक्रिय होने का कोई प्रमाण नहीं मिला है।\n\n## रिपोर्टेड दावे और अनिश्चितताएँ\n- GMO ने चेतावनी दी कि चोरी हुए डेटा में MetaTrader 4/5 के लॉगिन और ट्रेडिंग‑एकाउंट विवरण शामिल हैं; पासवर्ड रीसेट और सक्रिय सत्र समाप्त करने की सलाह दी गई है।\n- कंपनी कहती है कि भुगतान‑कार्ड जानकारी उजागर नहीं हुई, पर अन्य व्यक्तिगत डेटा की सुरक्षा पूरी तरह से पुष्टि नहीं की जा सकती।\n- यह स्पष्ट नहीं है कि कितने ग्राहकों को वास्तविक डेटा हानि या सिस्टम क्षति हुई है।\n\n## ग्राहकों के लिए व्यावहारिक कदम\n1. **बैकअप**: महत्वपूर्ण फ़ाइलें ऑफ़लाइन माध्यम में सहेजें।\n2. **डिस्कनेक्ट**: पीसी को नेटवर्क से अलग करें, बंद करें और पावर केबल अनप्लग करें।\n3. **पासवर्ड रीसेट**: सभी खातों, विशेषकर MT4/MT5 और ट्रेडिंग प्लेटफ़ॉर्म के पासवर्ड बदलें।\n4. **निगरानी**: ई‑मेल और बैंक स्टेटमेंट में संदिग्ध गतिविधियों पर नजर रखें।\n5. **संपर्क**: GMO सपोर्ट से जुड़ें, डेटा समझौता की पुष्टि करवाएँ और ¥5,000 मुआवजा मांगें।\n\n## घोषणा की पुष्टि कैसे करें\n- GMO की आधिकारिक ब्लॉग या प्रेस रिलीज़ पेज (URL */news* पर समाप्त) देखें।\n- Trend Micro की संयुक्त जांच की घोषणा की पुष्टि करें।\n- रैनसमवेयर की मांग और मुआवजा राशि को विश्वसनीय जापानी टेक समाचार (जैसे *Nikkei* या *ITmedia*) में देखें।\n\n## प्रभाव\nयह घटना अनमैनेज्ड VPS वातावरण के जोखिम को उजागर करती है और जब कोई उल्लंघन संदेह हो तो शीघ्र अलगाव की महत्ता को रेखांकित करती है। GMO क्लाउड सेवाओं का उपयोग करने वाले उद्यमों को अपने इन्सिडेंट‑रिस्पॉन्स प्लान की समीक्षा करनी चाहिए और ट्रेडिंग‑प्लेटफ़ॉर्म क्रेडेंशियल के लिए मल्टी‑फ़ैक्टर ऑथेंटिकेशन अपनाना चाहिए।\n\n---\n*यह लेख सार्वजनिक रूप से उपलब्ध GMO इंटरनेट के बयानों पर आधारित है और इसमें कोई मूल रिपोर्टिंग नहीं है।*",
+  "en_meta": "GMO Internet warns Japanese customers to shut down PCs after ransomware threat, offers ¥5,000 compensation and advises offline backups.",
+  "hi_meta": "GMO इंटरनेट ने रैनसमवेयर खतरे के कारण ग्राहकों को पीसी बंद करने की सलाह दी, ¥5,000 मुआवजा और डेटा सुरक्षा उपायों की सूचना दी।",
+  "en_keywords": [
+    "GMO Internet ransomware threat",
+    "Onamae Desktop Cloud breach",
+    "Japanese VPS attack",
+    "PC shutdown advisory",
+    "¥8 billion ransom demand",
+    "MetaTrader credential leak"
+  ],
+  "hi_keywords": [
+    "GMO इंटरनेट रैनसमवेयर खतरा",
+    "ऑनामाए डेस्कटॉप क्लाउड उल्लंघन",
+    "जापानी VPS हमला",
+    "पीसी बंद करने का निर्देश",
+    "¥8 अरब फिरौती मांग",
+    "MetaTrader क्रेडेंशियल लीक"
+  ],
+  "source_published_at": "2026-10-27T19:35:51-04:00",
+  "id": "ebe6130a3b49",
+  "source": "https://www.bleepingcomputer.com/news/security/japans-gmo-urges-customers-to-shut-down-pcs-amid-ransomware-threat/",
+  "date": "2026-11-10T09:25:42.030280+00:00",
+  "source_title": "Japan's GMO urges customers to shut down PCs amid ransomware threat",
+  "category": "cyber-security",
+  "image_kind": "conceptual"
+}

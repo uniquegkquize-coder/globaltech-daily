@@ -1,0 +1,29 @@
+{
+  "en_title": "OpenSenseNova Releases SenseNova 6.8 Code2Video for Code-Driven Video Creation",
+  "hi_title": "OpenSenseNova ने कोड-संचालित वीडियो निर्माण के लिए SenseNova 6.8 Code2Video पेश किया",
+  "en_body": "OpenSenseNova has introduced SenseNova 6.8 Code2Video, described as an open-source model designed for code-driven video creation. The release is intended as an initial step toward programmatic video generation using small open models.\n\n## Overview of the Model\n\nSenseNova 6.8 Code2Video builds and renders short videos by generating executable code. According to the preliminary material, the approach focuses on motion design, visual composition, and motion choreography. The developers state that using code as an entry point allows the system to connect various generative models and creative tools, such as image generation, 3D modeling, and video editing.\n\n## Key Technical Features and Architecture\n\n- **Base Model:** Built on Qwen3.8-27B, the model supports a 512K context window and handles context compaction.\n- **Execution:** Capable of sustaining sessions of over a thousand turns, with documentation noting potential runs exceeding 10 hours and 2,000 turns under specific configurations.\n- **Scope:** Primarily focused on content that can be represented in code, such as motion graphics, explainers, stylized 2D and 3D scenes, and procedural audio. It does not generate photorealistic footage.\n\n## Practical Implications and Limitations\n\nThe developers note that the model is intended as a reference for researchers. While it provides precise control over text, formulas, and coordinates compared to black-box sampling models, it currently trails the strongest proprietary models in visual polish and long-horizon reliability.\n\n## Verification and Resources\n\nResearchers and developers can inspect the repository on GitHub under the organization OpenSenseNova (SenseNova-6.8-Code2Video) to review the codebase, installation guides for the code-video skill, and links to model weights hosted on Hugging Face.",
+  "hi_body": "OpenSenseNova ने SenseNova 6.8 Code2Video को पेश किया है, जिसे कोड-संचालित वीडियो निर्माण के लिए एक ओपन-सोर्स मॉडल के रूप में प्रस्तुत किया गया है। इस रिलीज़ का उद्देश्य छोटे ओपन मॉडल का उपयोग करके प्रोग्रामेटिक वीडियो जेनरेशन की दिशा में एक शुरुआती कदम उठाना है।\n\n## मॉडल का परिचय\n\nSenseNova 6.8 Code2Video निष्पादযোগ্য कोड जनरेट करके छोटे वीडियो का निर्माण और रेंडर करता है। प्रारंभिक सामग्री के अनुसार, यह दृष्टिकोण गति डिज़ाइन, दृश्य संयोजन और गति कोरियोग्राफी पर केंद्रित है। डेवलपर्स का कहना है कि कोड को प्रवेश बिंदु के रूप में उपयोग करने से सिस्टम विभिन्न जनरेटिव मॉडल और रचनात्मक टूल, जैसे छवि निर्माण, 3डी मॉडलिंग और वीडियो संपादन को जोड़ सकता है।\n\n## मुख्य तकनीकी विशेषताएं और वास्तुकला\n\n- **बेस मॉडल:** Qwen3.8-27B पर निर्मित, यह मॉडल 512K संदर्भ विंडो का समर्थन करता है और संदर्भ कॉम्पैक्शन को संभालता है।\n- **निष्पादन:** एक हजार से अधिक टर्न के सत्रों को बनाए रखने में सक्षम, जिसमें विशिष्ट कॉन्फ़िगरेशन के तहत 10 घंटे और 2,000 टर्न से अधिक के रन शामिल हो सकते हैं।\n- **दायरा:** मुख्य रूप से ऐसी सामग्री पर केंद्रित है जिसे कोड में लिखा जा सकता है, जैसे मोशन ग्राफिक्स, एक्सप्लेनर, स्टाइल वाले 2डी और 3डी दृश्य, और प्रक्रियात्मक ऑडियो। यह फोटोरीलिस्टिक फुटेज जनरेट नहीं करता है।\n\n## व्यावहारिक निहितार्थ और सीमाएं\n\nड डेवलपर्स का उल्लेख है कि इस मॉडल का उद्देश्य शोधकर्ताओं के लिए एक संदर्भ के रूप में कार्य करना है। हालांकि यह ब्लैक-बॉक्स नमूनाकरण मॉडल की तुलना में टेक्स्ट, फॉर्मूल और कोऑर्डिनेट पर सटीक नियंत्रण प्रदान करता है, लेकिन यह वर्तमान में दृश्य पॉलिश और दीर्घकालिक विश्वसनीयता में सबसे मजबूत मालिकाना मॉडल से पीछे है।\n\n## सत्यापन और संसाधन\n\nशोधकर्ता और डेवलपर कोडबेस, कोड-वीडियो स्किल के लिए इंस्टॉलेशन गाइड और Hugging Face पर होस्ट किए गए मॉडल वेट की समीक्षा करने के लिए GitHub पर OpenSenseNova (SenseNova-6.8-Code2Video) के तहत रिपॉजिटरी की जांच कर सकते हैं।",
+  "en_meta": "OpenSenseNova announces SenseNova 6.8 Code2Video, an open-source model for code-driven video creation built on Qwen3.8-27B. Learn features and limitations.",
+  "hi_meta": "OpenSenseNova ने Qwen3.8-27B पर आधारित कोड-संचालित वीडियो निर्माण मॉडल SenseNova 6.8 Code2Video की घोषणा की।",
+  "en_keywords": [
+    "OpenSenseNova",
+    "SenseNova 6.8 Code2Video",
+    "code-driven video creation",
+    "open-source model",
+    "Qwen3.8-27B"
+  ],
+  "hi_keywords": [
+    "OpenSenseNova",
+    "SenseNova 6.8 Code2Video",
+    "कोड-संचालित वीडियो निर्माण",
+    "ओपन-सोर्स मॉडल",
+    "Qwen3.8-27B"
+  ],
+  "source_published_at": null,
+  "id": "2f7c96875c60",
+  "source": "https://github.com/OpenSenseNova/SenseNova-6.8-Code2Video",
+  "date": "2026-11-10T09:58:58.680521+00:00",
+  "source_title": "OpenSenseNova/SenseNova-6.8-Code2Video: The first open-source model for code-driven video creation. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

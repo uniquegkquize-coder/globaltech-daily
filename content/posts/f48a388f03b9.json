@@ -1,0 +1,31 @@
+{
+  "en_title": "GitHub Copilot Fusion Introduces Intelligent Local Model Routing in Preview",
+  "hi_title": "GitHub Copilot Fusion ने लोकल मॉडल रूटिंग का प्रिव्यू पेश किया",
+  "en_body": "GitHub has launched an experimental preview of intelligent routing for local models within GitHub Copilot Fusion. This update allows the Copilot CLI, Copilot app, and Visual Studio Code to automatically determine whether to utilize an on-device local model or a cloud-based model for specific tasks, reducing the need for manual switching.\n\n## Key Features of the Experimental Preview\n* **Intelligent Routing:** When the 'Standard' option is selected in Copilot Fusion, the system dynamically routes requests between eligible local and cloud models.\n* **Managed Model Support:** On Windows devices, users can download and configure MAI Code 1.1 Flash through the Windows ML provider.\n* **Manual Configuration:** Users on Windows, macOS, and Linux can connect manually configured models, such as MAI Code 1.1 Flash or Qwen3.8 Flash Next, via an OpenAI-compatible server.\n\n## Configuration Guidelines\n* **Visual Studio Code:** Enable the `chat.copilot.localModel.enabled` setting to begin.\n* **Copilot CLI:** Enable experimental mode and navigate to `/model` to follow the setup prompts.\n* **Copilot App:** Configure the Windows ML provider in settings and enable 'Local model auto routing' under the experiments menu.\n\n## Important Considerations\nWhile this feature leverages local hardware, it is not a fully offline experience. Copilot Fusion still processes routing decisions in the cloud. Additionally, users should be aware that local models may carry different safety protections compared to standard GitHub-provided cloud models. Users are responsible for managing the inference runtime and ensuring their hardware meets the necessary resource requirements. For detailed configuration steps, please refer to the official GitHub Copilot documentation on adding LLM models.",
+  "hi_body": "GitHub ने GitHub Copilot Fusion में लोकल मॉडल्स के लिए इंटेलिजेंट रूटिंग का एक्सपेरिमेंटल प्रिव्यू शुरू किया है। यह अपडेट Copilot CLI, Copilot ऐप और Visual Studio Code को यह तय करने की अनुमति देता है कि किसी कार्य के लिए ऑन-डिवाइस लोकल मॉडल का उपयोग करना है या क्लाउड-आधारित मॉडल का, जिससे मैन्युअल स्विचिंग की आवश्यकता कम हो जाती है।\n\n## एक्सपेरिमेंटल प्रिव्यू की मुख्य विशेषताएं\n* **इंटेलिजेंट रूटिंग:** जब Copilot Fusion में 'Standard' विकल्प चुना जाता है, तो सिस्टम योग्य लोकल और क्लाउड मॉडल्स के बीच स्वचालित रूप से अनुरोधों को रूट करता है।\n* **मैनेज्ड मॉडल सपोर्ट:** Windows डिवाइस पर, उपयोगकर्ता Windows ML प्रदाता के माध्यम से MAI Code 1.1 Flash को डाउनलोड और कॉन्फ़िगर कर सकते हैं।\n* **मैन्युअल कॉन्फ़िगरेशन:** Windows, macOS और Linux के उपयोगकर्ता OpenAI-संगत सर्वर के माध्यम से मैन्युअल रूप से कॉन्फ़िगर किए गए मॉडल्स (जैसे MAI Code 1.1 Flash या Qwen3.8 Flash Next) को कनेक्ट कर सकते हैं।\n\n## कॉन्फ़िगरेशन दिशा-निर्देश\n* **Visual Studio Code:** शुरुआत करने के लिए `chat.copilot.localModel.enabled` सेटिंग को सक्षम करें।\n* **Copilot CLI:** एक्सपेरिमेंटल मोड चालू करें और सेटअप प्रॉम्पट्स का पालन करने के लिए `/model` पर जाएं।\n* **Copilot ऐप:** सेटिंग्स में Windows ML प्रदाता को कॉन्फ़िगर करें और एक्सपेरिमेंट मेनू के तहत 'Local model auto routing' को सक्षम करें।\n\n## महत्वपूर्ण बातें\nयद्यपि यह सुविधा स्थानीय हार्डवेयर का उपयोग करती है, लेकिन यह पूरी तरह से ऑफलाइन अनुभव नहीं है। Copilot Fusion अभी भी क्लाउड में रूटिंग निर्णय लेता है। इसके अलावा, उपयोगकर्ताओं को ध्यान देना चाहिए कि GitHub द्वारा प्रदान किए गए क्लाउड मॉडल्स की तुलना में लोकल मॉडल्स में सुरक्षा सुरक्षा अलग हो सकती है। उपयोगकर्ताओं को इन्फरेंस रनटाइम का प्रबंधन करने और यह सुनिश्चित करने की जिम्मेदारी लेनी होगी कि उनका हार्डवेयर आवश्यक संसाधनों को पूरा करता है। विस्तृत निर्देशों के लिए, GitHub Copilot के आधिकारिक दस्तावेज़ देखें।",
+  "en_meta": "GitHub Copilot Fusion now supports experimental intelligent routing between on-device local models and cloud models for CLI, app, and VS Code users.",
+  "hi_meta": "GitHub Copilot Fusion अब CLI, ऐप और VS Code के लिए ऑन-डिवाइस लोकल मॉडल और क्लाउड मॉडल के बीच इंटेलिजेंट रूटिंग का समर्थन करता है।",
+  "en_keywords": [
+    "GitHub Copilot",
+    "Copilot Fusion",
+    "Local LLM",
+    "Intelligent Routing",
+    "VS Code",
+    "Windows ML"
+  ],
+  "hi_keywords": [
+    "GitHub Copilot",
+    "Copilot Fusion",
+    "लोकल मॉडल",
+    "इंटेलिजेंट रूटिंग",
+    "VS Code",
+    "Windows ML"
+  ],
+  "source_published_at": "2026-10-28T15:30:42+00:00",
+  "id": "f48a388f03b9",
+  "source": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models",
+  "date": "2026-11-10T09:55:31.658493+00:00",
+  "source_title": "GitHub Copilot Fusion now supports selection of local models - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,32 @@
+{
+  "en_title": "Open Source Canvas: A Node-Based Interface for Local ComfyUI Workflows",
+  "hi_title": "ओपन सोर्स कैनवास: लोकल ComfyUI वर्कफ़्लो के लिए एक नोड-आधारित इंटरफ़ेस",
+  "en_body": "Open Source Canvas is a recently documented open-source project designed to provide a node canvas interface for running image and video generation workflows locally using ComfyUI on personal hardware. According to the project documentation, the application runs locally rather than in a browser, connecting to a local ComfyUI server to build and execute workflows.\n\n## Core Features and Structure\n\n* **Infinite Board:** Users can arrange prompts, references, models, outputs, and notes on a shared canvas.\n* **Node Connections:** Typed connections link various nodes, and templates are available for use cases such as music videos and marketing films.\n* **Reference Handling:** Prompts support \"@\" references to point directly to specific reference nodes.\n* **History and Chains:** Each node features a history strip, and outputs from one node can be used as references or initial frames for subsequent nodes.\n* **Collaboration and Storage:** The project includes options for node comments, reactions, and an optional room synchronization script. Boards autosave in the browser and can be exported as JSON.\n\n## Technical Requirements and Setup\n\nRunning the application requires specific technical prerequisites and setup steps as outlined in the repository documentation:\n\n* **Software Prerequisites:** Node.js version 20 or newer, alongside a recent installation of ComfyUI (version 0.40 or newer recommended).\n* **Hardware Considerations:** Hardware requirements vary by model; for instance, SD-Turbo image generation runs on various systems including Apple Silicon, while the default LTX-Video 2B model requires approximately 24 GB of GPU or unified memory and roughly 16 GB of disk space.\n* **Setup Options:** Users can utilize automated setup scripts provided in the repository or perform a manual installation following the setup documentation.\n* **CORS Configuration:** ComfyUI must be started with CORS enabled, or users can run the provided server script to proxy ComfyUI requests.\n\n## Troubleshooting and Verification\n\n* **Connection Status:** Users can verify connectivity by checking the ComfyUI badge in the top bar of the application.\n* **Common Errors:** Documentation notes potential issues such as offline status badges, prompt failures due to mismatched model file names, out-of-memory errors during video generation, and HTTP 403 errors on shared deployments.\n\n*Note: The project is released under the MIT license, though individual models are subject to their respective terms.*",
+  "hi_body": "ओपन सोर्स कैनवास एक हाल ही में प्रलेखित ओपन-सोर्स प्रोजेक्ट है जिसे पर्सनल हार्डवेयर पर ComfyUI का उपयोग करके स्थानीय रूप से इमेज और वीडियो जनरेशन वर्कफ़्लो चलाने के लिए एक नोड कैनवास इंटरफ़ेस प्रदान करने के लिए डिज़ाइन किया गया है। प्रोजेक्ट दस्तावेज़ के अनुसार, यह एप्लिकेशन ब्राउज़र के बजाय स्थानीय रूप से चलता है और वर्कफ़्लो बनाने तथा निष्पादित करने के लिए एक लोकल ComfyUI सर्वर से कनेक्ट होता है।\n\n## मुख्य विशेषताدएं और संरचना\n\n* **इनफिनिट बोर्ड:** उपयोगकर्ता एक साझा कैनवास पर प्रॉम्प्ट, संदर्भ, मॉडल, आउटपुट और नोट्स व्यवस्थित कर सकते हैं।\n* **नोड कनेक्शन:** टाइप किए गए कनेक्शन विभिन्न नोड्स को जोड़ते हैं, और म्यूजिक वीडियो तथा मार्केटिंग फिल्मों जैसे उपयोग मामलों के लिए टेम्पलेट उपलब्ध हैं।\n* **रेफरेंस हैंडलिंग:** प्रॉम्प्ट विशिष्ट संदर्भ नोड्स को सीधे इंगित करने के लिए \"@\" संदर्भों का समर्थन करते हैं।\n* **हिस्ट्री और चेन्स:** प्रत्येक नोड में एक हिस्ट्री स्ट्रिप होती है, और एक नोड के आउटपुट का उपयोग बाद के नोड्स के लिए संदर्भ या शुरुआती फ्रेम के रूप में किया जा सकता है।\n* **सहयोग और स्टोरेज:** प्रोजेक्ट में नोड टिप्पणियों, प्रतिक्रियाओं और एक वैकल्पिक रूम सिंक्रनाइज़ेशन स्क्रिप्ट के विकल्प शामिल हैं। बोर्ड ब्राउज़र में स्वतः सव होते हैं और JSON के रूप में निर्यात किए जा सकते हैं।\n\n## तकनीकी आवश्यकताएं और सेटअप\n\nएप्लिकेशन को चलाने के लिए रिपॉजिटरी दस्तावेज़ में उल्लिखित विशिष्ट तकनीकी पूर्वापेक्षाओं और सेटअप चरणों की आवश्यकता होती है:\n\n* **सॉफ्टवेयर पूर्वापेक्षाएँ:** Node.js संस्करण 20 या नया, साथ ही ComfyUI का एक हालिया इंस्टॉलेशन (संस्करण 0.40 या नया अनुशंसित)।\n* **हार्डवेयर विचार:** हार्डवेयर आवश्यकताएं मॉडल के अनुसार भिन्न होती हैं; उदाहरण के लिए, SD-Turbo इमेज जनरेशन Apple सिलिकॉन सहित विभिन्न प्रणालियों पर चलती है, जबकि डिफ़ॉल्ट LTX-Video 2B मॉडल को लगभग 24 GB GPU या यूनिफाइड मेमोरी और लगभग 16 GB डिस्क स्पेस की आवश्यकता होती है।\n* **सेटअप विकल्प:** उपयोगकर्ता रिपॉजिटरी में प्रदान की गई स्वचालित सेटअप स्क्रिप्ट का उपयोग कर सकते हैं या सेटअप दस्तावेज़ का पालन करके मैन्युअल इंस्टॉलेशन कर सकते हैं।\n* **CORS कॉन्फ़िगरेशन:** ComfyUI को CORS सक्षम करके शुरू किया जाना चाहिए, या उपयोगकर्ता ComfyUI अनुरोधों को प्रॉक्सी करने के लिए प्रदान की गई सर्वर स्क्रिप्ट चला सकते हैं।\n\n## समस्या निवारण और सत्यापन\n\n* **कनेक्शन स्थिति:** उपयोगकर्ता एप्लिकेशन के शीर्ष बार में ComfyUI बैज की जाँच करके कनेक्टिविटी सत्यापित कर सकते हैं।\n* **सामान्य त्रुटियां:** दस्तावेज़ ऑफ़लाइन स्थिति बैज, बेमेल मॉडल फ़ाइल नामों के कारण प्रॉम्प्ट विफलताएं, वीडियो जनरेशन के दौरान मेमोरी समाप्त होने की त्रुटियां, और साझा परिनियोजन पर HTTP 403 त्रुटियों जैसी संभावित समस्याओं को नोट करता है।\n*नोट: प्रोजेक्ट को MIT लाइसेंस के तहत जारी किया गया है, हालांकि व्यक्तिगत मॉडल उनकी संबंधित शर्तों के अधीन हैं।*",
+  "en_meta": "Explore Open Source Canvas, an open-source node interface for running local image and video workflows with ComfyUI. Learn requirements and setup steps.",
+  "hi_meta": "ओपन सोर्स कैनवास की खोज करें, जो ComfyUI के साथ लोकल इमेज और वीडियो वर्कफ़्लो चलाने के लिए एक ओपन-सोर्स नोड इंटरफ़ेस है। आवश्यकताएं और सेटअप जानें।",
+  "en_keywords": [
+    "Open Source Canvas",
+    "ComfyUI",
+    "node canvas",
+    "local generation",
+    "open-source software"
+  ],
+  "hi_keywords": [
+    "ओपन सोर्स कैनवास",
+    "ComfyUI",
+    "नोड कैनवास",
+    "लोकल जनरेशन",
+    "ओपन-सोर्स सॉफ्टवेयर"
+  ],
+  "source_published_at": null,
+  "id": "8c06b95a7afb",
+  "source": "https://github.com/raph651/open-source-canvas",
+  "date": "2026-11-10T09:58:07.143755+00:00",
+  "source_title": "Open Source Canvas: an open-source node canvas that runs ComfyUI workflows. - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}
