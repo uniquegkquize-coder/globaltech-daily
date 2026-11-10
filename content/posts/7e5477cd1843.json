@@ -1,0 +1,32 @@
+{
+  "en_title": "Autonomous AI Agents Linked to Cyberattacks on Over 1,200 Websites",
+  "hi_title": "स्वायत्त एआई एजेंटों का उपयोग करके 1,200 से अधिक वेबसाइटों पर साइबर हमले",
+  "en_body": "Security researchers have identified a campaign in which malicious actors deployed autonomous AI agents to scan and breach over 1,200 websites, including those of major corporations. The activity was discovered by Snorre Fagerland of NorForge, who observed attackers utilizing the open-source AI tool 'Cairn' to automate penetration testing against unauthorized targets.\n\n## Methodology and Observations\n\n- **Targeting:** Agents were configured to identify vulnerabilities and gain persistent access to payment and shop systems. Successful compromises averaged approximately 23 hours.\n- **Tools:** The campaign appeared to utilize models such as DeepSeek V4.1 Flash and Anthropic's Claude Code via the Cairn interface.\n- **Exposure:** The attackers left their command-and-control panels exposed on the internet without authentication, allowing researchers to observe real-time operations and identify victimized companies.\n\n## Impact and Mitigation\n\nCompanies such as Deere, SharkNinja, and Cummins were identified as targets. Reported impacts range from minor support-site breaches to localized backend vulnerabilities. NorForge confirmed the existence of malicious web shells on several systems but noted that the extent of data theft remains unknown. The researcher has emphasized the importance of securing open-source testing tools and patching critical vulnerabilities, such as the Magento flaw CVE-2026-75650. Organizations are advised to audit their environments for unauthorized file-upload forms and monitor for anomalous traffic consistent with automated reconnaissance.",
+  "hi_body": "सुरक्षा शोधकर्ताओं ने एक ऐसे अभियान की पहचान की है जिसमें दुर्भावनापूर्ण तत्वों ने 1,200 से अधिक वेबसाइटों को स्कैन करने और उन्हें हैक करने के लिए स्वायत्त एआई (AI) एजेंटों का उपयोग किया है। नोरफोर्ज (NorForge) के सुरक्षा शोधकर्ता स्नोर फेगरलैंड ने पाया कि हमलावर 'केर्न' (Cairn) नामक ओपन-सोर्स एआई टूल का उपयोग करके अनधिकृत वेबसाइटों पर स्वचालित पेनिट्रेशन टेस्टिंग कर रहे थे।\n\n## कार्यप्रणाली और अवलोकन\n\n- **लक्ष्य:** एजेंटों को कमजोरियों की पहचान करने और पेमेंट व शॉप सिस्टम तक स्थायी पहुंच बनाने के लिए कॉन्फ़िगर किया गया था। सफल हमलों में औसतन 23 घंटे का समय लगा।\n- **उपकरण:** ऐसा प्रतीत होता है कि इस अभियान में केर्न इंटरफ़ेस के माध्यम से डीपसीक (DeepSeek) V4.1 फ्लैश और एंथ्रोपिक के क्लाउड कोड जैसे मॉडल का उपयोग किया गया है।\n- **खुलासा:** हमलावरों ने अपने कंट्रोल पैनल को इंटरनेट पर बिना किसी सुरक्षा के खुला छोड़ दिया था, जिससे शोधकर्ताओं को वास्तविक समय में उनके संचालन को देखने और पीड़ित कंपनियों की पहचान करने का मौका मिला।\n\n## प्रभाव और बचाव\n\nडीरे (Deere), शार्कनिंजा (SharkNinja) और कमिंस (Cummins) जैसी कंपनियों को लक्ष्यों के रूप में पहचाना गया है। हमलों के प्रभाव छोटे सपोर्ट-साइट उल्लंघन से लेकर बैकएंड कमजोरियों तक सीमित बताए गए हैं। नोरफोर्ज ने कुछ प्रणालियों पर दुर्भावनापूर्ण वेब शेल की उपस्थिति की पुष्टि की है, हालांकि यह स्पष्ट नहीं है कि कितना डेटा चोरी हुआ है। शोधकर्ता ने ओपन-सोर्स टूल को सुरक्षित रखने और मैजेंटो (Magento) खामी CVE-2026-75650 जैसी गंभीर कमजोरियों के लिए पैच लागू करने पर जोर दिया है। संगठनों को सलाह दी जाती है कि वे अनधिकृत फाइल-अपलोड फॉर्म के लिए अपने वातावरण का ऑडिट करें।",
+  "en_meta": "Security researchers tracked autonomous AI agents targeting over 1,200 sites. The campaign used exposed Cairn panels to automate unauthorized penetration…",
+  "hi_meta": "सुरक्षा शोधकर्ताओं ने स्वायत्त एआई एजेंटों द्वारा 1,200 से अधिक वेबसाइटों को निशाना बनाने का पता लगाया है, जिसमें केर्न (Cairn) टूल का दुरुपयोग किया गया था।",
+  "en_keywords": [
+    "AI agents",
+    "cybersecurity",
+    "Cairn",
+    "data breach",
+    "NorForge"
+  ],
+  "hi_keywords": [
+    "एआई एजेंट",
+    "साइबर सुरक्षा",
+    "केर्न",
+    "डेटा उल्लंघन",
+    "नोरफोर्ज"
+  ],
+  "source_published_at": "2026-10-20T19:37:00+05:30",
+  "id": "7e5477cd1843",
+  "source": "https://thehackernews.com/2026/10/hackers-use-autonomous-ai-agents-to.html",
+  "date": "2026-11-10T13:34:19.179676+00:00",
+  "source_title": "Hackers Use Autonomous AI Agents to Breach Company Websites, Target Over 1,200 Sites",
+  "category": "cyber-security",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "ai-news"
+  ]
+}

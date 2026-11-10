@@ -1,0 +1,31 @@
+{
+  "en_title": "HOPPR Unveils Whole-Body Musculoskeletal AI Narrative Model for Radiology Developers",
+  "hi_title": "HOPPR ने रेडियोलॉजी डेवलपर्स के लिए होल-बॉडी मस्कुलोस्केलेटल एआई नैरेटिव मॉडल पेश किया",
+  "en_body": "On October 28, 2026, Chicago-based company HOPPR announced the beta release of its FS MSK Whole-Body Narrative Model. This vision-language foundation model is designed to generate draft findings for musculoskeletal (MSK) X-rays, processing up to three views per study. The model aims to provide developers with a single tool that covers a wide range of anatomical regions, including the spine, thorax, upper extremities, and the pelvis.\n\n## Key Features of the FS MSK Model\n* **Broad Coverage:** Trained on approximately 674,000 outpatient MSK studies, the model spans the entire musculoskeletal system.\n* **Narrative Focus:** It is engineered to describe abnormalities rather than normal anatomy, covering 26 categories such as fractures, degenerative changes, bone lesions, and hardware presence.\n* **Developer-Focused:** The tool acts as a software component to assist in building radiology reporting and workflow applications.\n\n## Integration and Development\nThe model is currently accessible via HOPPR’s Forward Deployed Services (FDS). This team of machine learning scientists, software engineers, and clinical experts works directly with partner organizations to customize the model using proprietary data, integrate it into existing workflows, and design labeling processes. \n\n## Important Considerations and Regulatory Status\nIt is critical to note that the FS MSK Whole-Body Narrative Model is currently in **beta release for evaluation purposes only**. The company explicitly states that the model is:\n* **Not FDA cleared.**\n* **Not intended for diagnostic use.**\n* A software component, not a medical device.\n\nOrganizations evaluating this model must handle their own validation testing within their environments and are responsible for obtaining necessary regulatory authorizations before any commercial or operational deployment. The naming of the model honors Dr. Florence Ada Stoney, a pioneering radiologist in the early 20th century.",
+  "hi_body": "28 अक्टूबर, 2026 को, शिकागो स्थित कंपनी HOPPR ने अपने FS MSK होल-बॉडी नैरेटिव मॉडल के बीटा संस्करण की घोषणा की। यह विजन-लैंग्वेज फाउंडेशन मॉडल मस्कुलोस्केलेटल (MSK) एक्स-रे के लिए ड्राफ्ट फाइंडिंग्स तैयार करने हेतु डिज़ाइन किया गया है, जो प्रति स्टडी तीन व्यू तक प्रोसेस कर सकता है। इसका उद्देश्य डेवलपर्स को एक ऐसा टूल प्रदान करना है जो रीढ़ की हड्डी, छाती, ऊपरी अंगों और पेल्विस सहित पूरे शरीर के अंगों को कवर करता है।\n\n## FS MSK मॉडल की मुख्य विशेषताएं\n* **व्यापक कवरेज:** लगभग 674,000 आउटपेशेंट MSK अध्ययनों पर प्रशिक्षित, यह मॉडल पूरे मस्कुलोस्केलेटल सिस्टम को कवर करता है।\n* **नैरेटिव फोकस:** यह सामान्य एनाटॉमी के बजाय असामान्यताओं का वर्णन करने पर केंद्रित है, जिसमें फ्रैक्चर, अपक्षयी परिवर्तन, हड्डियों के घाव और हार्डवेयर जैसे 26 श्रेणियां शामिल हैं।\n* **डेवलपर-केंद्रित:** यह टूल रेडियोलॉजी रिपोर्टिंग और वर्कफ़्लो एप्लिकेशन बनाने के लिए एक सॉफ्टवेयर घटक के रूप में कार्य करता है।\n\n## एकीकरण और विकास\nयह मॉडल वर्तमान में HOPPR की 'फॉरवर्ड डिप्लॉयड सर्विसेज' (FDS) के माध्यम से उपलब्ध है। विशेषज्ञों की यह टीम पार्टनर संगठनों के साथ मिलकर मॉडल को उनके डेटा के अनुसार अनुकूलित करने, वर्कफ़्लो में एकीकृत करने और लेबलिंग प्रक्रियाओं को डिजाइन करने का कार्य करती है।\n\n## महत्वपूर्ण निर्देश और नियामक स्थिति\nयह ध्यान रखना महत्वपूर्ण है कि FS MSK होल-बॉडी नैरेटिव मॉडल वर्तमान में **केवल मूल्यांकन के लिए बीटा रिलीज** में है। कंपनी ने स्पष्ट किया है कि यह मॉडल:\n* **FDA द्वारा स्वीकृत नहीं है।**\n* **नैदानिक ​​उपयोग के लिए नहीं है।**\n* एक सॉफ्टवेयर घटक है, न कि कोई मेडिकल डिवाइस।\n\nइस मॉडल का मूल्यांकन करने वाले संगठनों को अपने वातावरण में स्वयं सत्यापन परीक्षण करना होगा और व्यावसायिक तैनाती से पहले आवश्यक नियामक प्राधिकरण प्राप्त करने होंगे। इस मॉडल का नाम 20वीं सदी की अग्रणी रेडियोलॉजिस्ट डॉ. फ्लोरेंस एडा स्टोनी के सम्मान में रखा गया है।",
+  "en_meta": "HOPPR announces the beta release of a vision-language model for musculoskeletal X-ray reporting. For evaluation by developers, not for diagnostic use.",
+  "hi_meta": "HOPPR ने मस्कुलोस्केलेटल एक्स-रे रिपोर्टिंग के लिए एक विजन-लैंग्वेज मॉडल पेश किया। केवल डेवलपर्स के मूल्यांकन के लिए, नैदानिक उपयोग हेतु नहीं।",
+  "en_keywords": [
+    "HOPPR",
+    "medical imaging AI",
+    "musculoskeletal radiology",
+    "FS MSK Model",
+    "radiology reporting",
+    "vision-language model"
+  ],
+  "hi_keywords": [
+    "HOPPR",
+    "मेडिकल इमेजिंग एआई",
+    "मस्कुलोस्केलेटल रेडियोलॉजी",
+    "FS MSK मॉडल",
+    "रेडियोलॉजी रिपोर्टिंग",
+    "एआई फाउंडेशन मॉडल"
+  ],
+  "source_published_at": "2026-10-28T13:02:00Z",
+  "id": "9e4cda20d9af",
+  "source": "https://www.prnewswire.com/news-releases/hoppr-expands-medical-imaging-ai-portfolio-with-whole-body-musculoskeletal-x-ray-narrative-model-302921827.html",
+  "date": "2026-11-10T13:36:20.075659+00:00",
+  "source_title": "HOPPR Expands Medical Imaging AI Portfolio with Whole-Body Musculoskeletal X-ray Narrative Model - PR Newswire",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
