@@ -1,34 +1,18 @@
 {
-  "total_posts": 4973,
+  "total_posts": 4995,
   "selected": 44,
   "results": {
     "source_photo_saved": 4,
     "cooldown": 40
   },
-  "still_missing": 450,
+  "still_missing": 452,
   "articles": [
     {
-      "id": "47f11e83cf184dec879b345e",
-      "source": "https://en.wikipedia.org/wiki/Geely_Xingrui",
+      "id": "7354cef174369dbee7a22ddb",
+      "source": "https://en.wikipedia.org/wiki/IPhone_SE_%281st_generation%29",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794338904.7402766
-    },
-    {
-      "id": "8ede6684d4cf14febb863aad",
-      "result": "cooldown"
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
-    },
-    {
-      "id": "e21f0c9303189bff05b728a0",
-      "result": "cooldown"
+      "retry_after": 1794348562.5261335
     },
     {
       "id": "0d093f1b1d8b95e0ce3c5ba1",
@@ -175,25 +159,41 @@
       "result": "cooldown"
     },
     {
-      "id": "0d52bd8494c4851935daff07",
-      "source": "https://en.wikipedia.org/wiki/Cadillac_ELR",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794338904.9172084
+      "id": "8ede6684d4cf14febb863aad",
+      "result": "cooldown"
     },
     {
-      "id": "c93413c283712f48f3512500",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_X",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794338905.1529005
+      "id": "ab5161457cb0ef816db211ff",
+      "result": "cooldown"
     },
     {
-      "id": "17e68f83f9f10c70649d772e",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Honor_5X",
+      "id": "554edbfdaee926ed82007433",
+      "result": "cooldown"
+    },
+    {
+      "id": "e21f0c9303189bff05b728a0",
+      "result": "cooldown"
+    },
+    {
+      "id": "6accb72e7b5963a7165c7af8",
+      "source": "https://en.wikipedia.org/wiki/Daihatsu_Max",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794338905.3155546
+      "retry_after": 1794348562.9228632
+    },
+    {
+      "id": "5ca81827a4ad5156fccf47b4",
+      "source": "https://en.wikipedia.org/wiki/McLaren_Artura",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794348563.0228732
+    },
+    {
+      "id": "07ba28060f7d97bf2377ba73",
+      "source": "https://en.wikipedia.org/wiki/Nokia_N86_8MP",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794348563.2473195
     }
   ],
   "missing": [
@@ -1134,6 +1134,13 @@
       "title": "Ninetology Black Pearl II: Smartphone Specifications, Facts and Verification Guide",
       "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "9e4cda20d9af",
+      "category": "ai-news",
+      "title": "HOPPR Unveils Whole-Body Musculoskeletal AI Narrative Model for Radiology Developers",
+      "source": "https://www.prnewswire.com/news-releases/hoppr-expands-medical-imaging-ai-portfolio-with-whole-body-musculoskeletal-x-ray-narrative-model-302921827.html",
+      "reason": "no_source_image"
     },
     {
       "id": "ab9d234d1765",
@@ -2099,6 +2106,13 @@
       "category": "business",
       "title": "InventHelp Client Develops ACCULOAD Safety Assistance Concept for Boat Loading",
       "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-safety-assistance-idea-for-boat-loading-ksg-320-302923724.html",
+      "reason": "no_source_image"
+    },
+    {
+      "id": "985cc751bdc3",
+      "category": "defence",
+      "title": "Air Force Enlisted Village Featured in New Educational Series on Military Senior Living",
+      "source": "https://www.prnewswire.com/news-releases/rethinking-senior-living-for-military-families-air-force-enlisted-village-redefines-lifetime-care-on-all-access-hosted-by-andy-garcia-302867608.html",
       "reason": "no_source_image"
     },
     {
@@ -3349,7 +3363,7 @@
     }
   ],
   "missing_reasons": {
-    "no_source_image": 151,
+    "no_source_image": 153,
     "source_unavailable": 36,
     "invalid_source_images": 94,
     "access_denied": 123,
@@ -3358,25 +3372,25 @@
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "47f11e83cf184dec879b345e": {
+    "7354cef174369dbee7a22ddb": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Geely_Xingrui",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Geely_Preface_008.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/IPhone_SE_%281st_generation%29",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/IPhone_SE_in_silver.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "0d52bd8494c4851935daff07": {
+    "6accb72e7b5963a7165c7af8": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Cadillac_ELR",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/79/2014_Cadillac_ELR_trimmed.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Daihatsu_Max",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Daihatsu_Fellow-Max.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "c93413c283712f48f3512500": {
+    "5ca81827a4ad5156fccf47b4": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_X",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Sony_Xperia_X_%2826693301985%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/McLaren_Artura",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/2021_McLaren_Artura_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "17e68f83f9f10c70649d772e": {
+    "07ba28060f7d97bf2377ba73": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Honor_5X",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/28/Huawei_Honor_5X_-_Mobile_World_Congress_2016_%2824871702443%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Nokia_N86_8MP",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Nokia_N86_8MP.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
