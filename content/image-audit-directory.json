@@ -1,35 +1,18 @@
 {
-  "total_posts": 4563,
-  "selected": 42,
+  "total_posts": 4594,
+  "selected": 44,
   "results": {
-    "invalid_source_images": 2,
-    "cooldown": 38,
-    "source_photo_saved": 2
+    "source_photo_saved": 4,
+    "cooldown": 40
   },
   "still_missing": 397,
   "articles": [
     {
-      "id": "17aa97db89715afd896833ea",
-      "source": "https://en.wikipedia.org/wiki/Redmi_Note_Prime",
+      "id": "4ac4d0947bf839e34d508fff",
+      "source": "https://en.wikipedia.org/wiki/Freedom_251",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794305606.9770558
-    },
-    {
-      "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
-    },
-    {
-      "id": "8ede6684d4cf14febb863aad",
-      "result": "cooldown"
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
-    },
-    {
-      "id": "e21f0c9303189bff05b728a0",
-      "result": "cooldown"
+      "result": "source_photo_saved",
+      "retry_after": 1794317826.8500779
     },
     {
       "id": "635e4aa01fc60223a6fea284",
@@ -168,25 +151,49 @@
       "result": "cooldown"
     },
     {
+      "id": "17aa97db89715afd896833ea",
+      "result": "cooldown"
+    },
+    {
       "id": "28682dd8dfac94fd33504b6e",
-      "source": "https://en.wikipedia.org/wiki/Droid_Turbo_2",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794305607.0817792
+      "result": "cooldown"
     },
     {
-      "id": "289617c96c02bb8b180db9d9",
-      "source": "https://en.wikipedia.org/wiki/Soueast_A5",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794305607.148005
+      "id": "8ede6684d4cf14febb863aad",
+      "result": "cooldown"
     },
     {
-      "id": "0f0dc7d28ac070a5e0301e20",
-      "source": "https://en.wikipedia.org/wiki/Venturi_F%C3%A9tish",
+      "id": "554edbfdaee926ed82007433",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
+      "result": "cooldown"
+    },
+    {
+      "id": "e21f0c9303189bff05b728a0",
+      "result": "cooldown"
+    },
+    {
+      "id": "e10c419e9ae6f824c3cfa7da",
+      "source": "https://en.wikipedia.org/wiki/Youngman_Lotus_L5",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794305607.1792881
+      "retry_after": 1794317826.8698215
+    },
+    {
+      "id": "8eed61901831b79766f7c812",
+      "source": "https://en.wikipedia.org/wiki/Nissan_180SX",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794317827.0152347
+    },
+    {
+      "id": "531e9f9b1384b4470ea9ebec",
+      "source": "https://en.wikipedia.org/wiki/Redmi_3",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794317827.1819575
     }
   ],
   "missing": [
@@ -2980,35 +2987,25 @@
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "17aa97db89715afd896833ea": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Redmi_Note_Prime",
-      "candidate_count": 7,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/20px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "28682dd8dfac94fd33504b6e": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Droid_Turbo_2",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "289617c96c02bb8b180db9d9": {
+    "4ac4d0947bf839e34d508fff": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Soueast_A5",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/37/Soueast_A5_Yiwu_01_China_2019-03-20.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Freedom_251",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Freedom251image.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "0f0dc7d28ac070a5e0301e20": {
+    "e10c419e9ae6f824c3cfa7da": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Venturi_F%C3%A9tish",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c3/P145_-_Venturi.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Youngman_Lotus_L5",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Youngman-Lotus_L5_Sportback_China_2015-04-06.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "8eed61901831b79766f7c812": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Nissan_180SX",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Nissan_180SX_TYPE_X_%28E-RPS13%29_front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "531e9f9b1384b4470ea9ebec": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Redmi_3",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Redmi_3_front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
