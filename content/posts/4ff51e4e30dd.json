@@ -1,0 +1,29 @@
+{
+  "en_title": "Autonomous AI Swarm Legion Wins Tencent Intelligent Attack-Defense Challenge",
+  "hi_title": "स्वायत्त एआई स्वार्म लीजन ने जीता टेंसेंट इंटेलिजेंट अटैक-डिफेंस चैलेंज",
+  "en_body": "## Overview\n\nAn autonomous multi-agent orchestration harness developed by open-source contributors has secured first place in the online qualifier of the 3rd Tencent Intelligent Attack-Defense Challenge. Operating fully unattended for eight hours against 634 competing teams, the system utilized a structured AI legion architecture combining an AI commander, worker swarms, and a layered fact-intent graph framework.\n\nAccording to project documentation, the framework achieved identical scoring results to the runner-up while utilizing significantly fewer tokens, highlighting efficiency in multi-agent task distribution and resource allocation.\n\n## Architecture and Core Design\n\nUnlike single-agent models, the project—designated as *sapper-v2*—functions as a coordinated force using the \"Nüwa Foundation\" base layer. This architecture incorporates three foundational capabilities:\n\n* **Create:** Spawning processes and agents.\n* **Language:** Enabling inter-agent communication and signaling.\n* **History:** Maintaining a layered fact-intent-recall graph for persistent external memory.\n\nThe runtime environment separates responsibilities into distinct operational windows:\n\n* **The Commander:** Reads the operational board, makes strategic decisions, and dispatches tasks without directly executing attacks.\n* **The AI Legion:** Generals and soldiers execute parallel operations within managed panes.\n* **The Watchdog:** A background script focused entirely on system resilience, managing crashes, key rotation, and session continuity.\n\n## Practical Deployment and Verification\n\nProject maintainers emphasize that the framework is designed for competitive scenarios and general long-horizon cooperative work. Deploying the system outside standard evaluation platforms requires proper environment configuration, including setting benchmark base URLs, model gateways, and API keys as detailed in the repository documentation. Verification of official announcements and updates can be conducted directly through the project's official GitHub repository.\n\n## Safety and Responsibility\n\nRecognizing the potential risks associated with automated offensive tooling, the authors propose a taggant mechanism. This proposed system aims to embed harmless operational markings during authorized testing while aiding attribution in unauthorized contexts, inviting community collaboration on cryptographic safety designs.",
+  "hi_body": "## अवलोकन\n\nओपन-सोर्स योगदानकर्ताओं द्वारा विकसित एक स्वायत्त मल्टी-एजेंट आर्केस्ट्रेशन हार्नेस ने तीसरी टेंसेंट इंटेलिजेंट अटैक-डिफेंस चैलेंज के ऑनलाइन क्वालीफायर में प्रथम स्थान हासिल किया है। 634 प्रतिस्पर्धी टीमों के खिलाफ आठ घंटे तक पूरी तरह से बिना निगरानी के संचालित, इस प्रणाली ने एक एआई कमांडर, वर्कर स्वार्म और एक स्तरीकृत फैक्ट-इन्टेंट ग्राफ फ्रेमवर्क का उपयोग किया।\n\nपरियोजना दस्तावेज़ीकरण के अनुसार, इस फ्रेमवर्क ने कम टोकन का उपयोग करते हुए उपविजेता के समान स्कोरिंग परिणाम प्राप्त किए, जो मल्टी-एजेंट कार्य वितरण और संसाधन आवंटन में दक्षता को उजागर करता है।\n\n## वास्तुकला और कोर डिज़ाइन\n\nसिंगल-एजेंट मॉडल के विपरीत, यह परियोजना—जिसे *sapper-v2* नामित किया गया है—\"नूवा फाउंडेशन\" आधार परत का उपयोग करके एक समन्वित बल के रूप में कार्य करती है। इस वास्तुकला में तीन मूलभूत क्षमताएं शामिल हैं:\n\n* **बनाना (Create):** प्रक्रियाओं और एजेंटों को उत्पन्न करना।\n* **भाषा (Language):** एजेंटों के बीच संचार और सिग्नलिंग को सक्षम करना।\n* **इतिहास (History):** निरंतर बाहरी मेमोरी के लिए एक स्तरीकृत फैक्ट-इन्टेंट-रिकॉल ग्राफ बनाए रखना।\n\n## व्यावहारिक तैनाती और सत्यापन\n\nपरियोजना रखरखावकर्ता इस बात पर जोर देते हैं कि फ्रेमवर्क प्रतिस्पर्धी परिदृश्यों और सामान्य लॉन्ग-हॉराइजन सहकारी कार्य के लिए डिज़ाइन किया गया है। मानक मूल्यांकन प्लेटफार्मों के बाहर सिस्टम को तैनात करने के लिए रिपॉजिटरी दस्तावेज़ीकरण में विस्तृत बेंचमार्क बेस यूआरएल, मॉडल गेटवे और एपीआई कुंजी सेट करने सहित उचित वातावरण विन्यास की आवश्यकता होती है। आधिकारिक घोषणाओं का सत्यापन सीधे परियोजना के आधिकारिक गिटहब रिपॉजिटरी के माध्यम से किया जा सकता है।\n\n## सुरक्षा और जिम्मेदारी\n\nस्वचालित आक्रामक उपकरणों से जुड़े संभावित जोखिमों को पहचानते हुए, लेखकों ने एक टैगेंट तंत्र का प्रस्ताव रखा है। इस प्रस्तावित प्रणाली का उद्देश्य अधिकृत परीक्षण के दौरान हानिरोहन परिचालन चिह्न एम्बेड करना है, जबकि अनधिकृत संदर्भों में एट्रिब्यूशन में सहायता करना है।",
+  "en_meta": "An autonomous multi-agent AI framework won the 3rd Tencent Intelligent Attack-Defense Challenge online qualifier using a layered fact-intent graph.",
+  "hi_meta": "एक स्वायत्त मल्टी-एजेंट एआई फ्रेमवर्क ने स्तरीकृत फैक्ट-इन्टेंट ग्राफ का उपयोग करके टेंसेंट इंटेलिजेंट अटैक-डिफेंस चैलेंज जीता।",
+  "en_keywords": [
+    "AI legion",
+    "autonomous pentest",
+    "Tencent Intelligent Attack-Defense Challenge",
+    "multi-agent orchestration",
+    "Nüwa Foundation"
+  ],
+  "hi_keywords": [
+    "एआई लीजन",
+    "स्वायत्त पेंटेस्ट",
+    "टेंसेंट इंटेलिजेंट अटैक-डिफेंस चैलेंज",
+    "मल्टी-एजेंट आर्केस्ट्रेशन",
+    "नूवा फाउंडेशन"
+  ],
+  "source_published_at": "2026-10-30T17:46:25+00:00",
+  "id": "4ff51e4e30dd",
+  "source": "https://github.com/N1nEmAn/sapper-v2",
+  "date": "2026-11-10T11:36:56.520528+00:00",
+  "source_title": "N1nEmAn/sapper-v2: Autonomous pentest legion — AI commander + worker swarm + layered fact-intent graph. 3rd Tencent Intelligent Attack-Defense online champion (634 teams · 8h unattended · 1B tokens beat 4.5B). The Nüwa Test: give AIs Create/Langu - GitHub",
+  "category": "defence",
+  "image_kind": "conceptual"
+}

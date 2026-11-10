@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Announces General Availability of Public Monitoring for Enterprises",
+  "hi_title": "GitHub ने एंटरप्राइजेज के लिए पब्लिक मॉनिटरिंग की सामान्य उपलब्धता की घोषणा की",
+  "en_body": "GitHub has announced that public monitoring for enterprises is generally available, designed to alert organizations when their secrets are publicly exposed anywhere across github.com. According to GitHub, the feature is included at no additional cost for enterprises with GitHub Secret Protection or GitHub Advanced Security.\n\n## Understanding Public Monitoring\n\nSecret scanning traditionally protects repositories owned directly by an organization, but leaks often occur outside those boundaries. Developers may commit to personal forks, open-source projects, or paste tokens into public issues, pull requests, or gists. Public monitoring is built to address these blind spots by scanning public content on github.com in real time and attributing findings back to the appropriate enterprise.\n\n* **Real-Time Scanning:** Operates continuously across arbitrary public repositories and user-created content.\n* **Native Attribution:** Links exposures using GitHub's identity layer and verified domains rather than relying solely on commit emails.\n* **Zero Configuration:** Works out of the box once enabled by enterprise owners or security managers from their Security tab.\n\n## Attribution Heuristics and Data Residency\n\nGitHub attributes public findings using verified domain matching and enterprise membership. Verified domain matching applies even when an account is not directly linked to the enterprise or when the email is private.\n\nFor GitHub Enterprise Cloud customers utilizing data residency, public monitoring is supported with specific adaptations:\n\n* Attribution is powered exclusively by verified domain matching due to tenant isolation.\n* Alerts are encrypted and delivered directly to the enterprise dashboard, ensuring data remains within the designated geographic region.\n\n## Practical Implications and Verification\n\nEnterprises looking to utilize this capability can enable it directly through the Security tab if they possess the required Secret Protection or Advanced Security licenses. Organizations can verify announcements and read technical documentation by visiting the official GitHub Blog or participating in community discussions.",
+  "hi_body": "GitHub ने घोषणा की है कि एंटरप्राइजेज के लिए पब्लिक मॉनिटरिंग अब सामान्य रूप से उपलब्ध है, जिसे संगठनों को यह चेतावनी देने के लिए डिज़ाइन किया गया है कि उनके सीक्रेट्स github.com पर कहीं भी सार्वजनिक रूप से उजागर हो गए हैं। GitHub के अनुसार, यह सुविधा GitHub Secret Protection या GitHub Advanced Security वाले एंटरप्राइजेज के लिए बिना किसी अतिरिक्त लागत के शामिल है।\n\n## पब्लिक मॉनिटरिंग को समझना\n\nसीक्रेट स्कैनिंग पारंपरिक रूप से किसी संगठन के स्वामित्व वाली रिपॉजिटरी की रक्षा करती है, लेकिन लीक अक्सर उन सीमाओं के बाहर होते हैं। डेवलपर्स व्यक्तिगत फोर्क, ओपन-सोर्स प्रोजेक्ट्स में कमिट कर सकते हैं, या सार्वजनिक मुद्दों, पुल अनुरोधों या गिस्ट में टोकन पेस्ट कर सकते हैं। पब्लिक मॉनिटरिंग वास्तविक समय में github.com पर सार्वजनिक सामग्री को स्कैन करके और निष्कर्षों को उचित एंटरप्राइजेज के साथ वापस जोड़कर इन कमियों को दूर करने के लिए बनाई गई है.\n\n* **रीयल-टाइम स्कैनिंग:** मनमाने सार्वजनिक रिपॉजिटरी और उपयोगकर्ता द्वारा बनाई गई सामग्री में लगातार काम करता है।\n* **मूल एट्रिब्यूशन:** कमिट ईमेल पर पूरी तरह से भरोसा करने के बजाय GitHub की पहचान परत और सत्यापित डोमेन का उपयोग करके एक्सपोजर को लिंक करता है।\n* **शून्य कॉन्फ़िगरेशन:** एंटरप्राइजेज मालिकों या सुरक्षा प्रबंधकों द्वारा अपने सुरक्षा टैब से सक्षम करने के बाद तुरंत काम करता है।\n\n## एट्रिब्यूशन ह्यूरिस्टिक्स और डेटा रेजिडेंसी\n\nGitHub सत्यापित डोमेन मिलान और एंटरप्राइजेज सदस्यता का उपयोग करके सार्वजनिक निष्कर्षों का विशेषता बताता है। सत्यापित डोमेन मिलान तब भी लागू होता है जब खाता सीधे एंटरप्राइजेज से जुड़ा नहीं होता है या जब ईमेल निजी होता है।\n\nडेटा रेजिडेंसी का उपयोग करने वाले GitHub Enterprise Cloud ग्राहकों के लिए, विशिष्ट अनुकूलन के साथ पब्लिक मॉनिटरिंग समर्थित है:\n\n* टेनेंट आइसोलेशन के कारण एट्रिब्यूशन विशेष रूप से सत्यापित डोमेन मिलान द्वारा संचालित होता है।\n* अलर्ट एन्क्रिप्ट किए जाते हैं और सीधे एंटरप्राइजेज डैशबोर्ड पर वितरित किए जाते हैं, जिससे यह सुनिश्चित होता है कि डेटा निर्दिष्ट भौगोलिक क्षेत्र के भीतर रहे।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nइस क्षमता का उपयोग करने के इच्छुक एंटरप्राइजेज आवश्यक Secret Protection या Advanced Security लाइसेंस होने पर सीधे सुरक्षा टैब के माध्यम से इसे सक्षम कर सकते हैं। संगठन आधिकारिक GitHub ब्लॉग पर जाकर या सामुदायिक चर्चाओं में भाग लेकर घोषणाओं को सत्यापित कर सकते हैं और तकनीकी दस्तावेज़ पढ़ सकते हैं।",
+  "en_meta": "GitHub public monitoring is now generally available for enterprises with Secret Protection, scanning github.com for leaked secrets at no extra cost.",
+  "hi_meta": "GitHub पब्लिक मॉनिटरिंग अब Secret Protection वाले एंटरप्राइजेज के लिए उपलब्ध है, जो बिना किसी अतिरिक्त लागत के लीक हुए सीक्रेट्स को स्कैन करती है।",
+  "en_keywords": [
+    "GitHub",
+    "public monitoring",
+    "enterprise security",
+    "secret scanning",
+    "GitHub Advanced Security"
+  ],
+  "hi_keywords": [
+    "गिटहब",
+    "पब्लिक मॉनिटरिंग",
+    "एंटरप्राइजेज सुरक्षा",
+    "सीक्रेट स्कैनिंग",
+    "गिटहब एडवांस्ड सिक्योरिटी"
+  ],
+  "source_published_at": "2026-10-28T15:30:00+00:00",
+  "id": "e1690a3c9727",
+  "source": "https://github.blog/changelog/2026-10-28-public-monitoring-for-enterprises-generally-available",
+  "date": "2026-11-10T12:09:41.578160+00:00",
+  "source_title": "Public monitoring for enterprises generally available - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

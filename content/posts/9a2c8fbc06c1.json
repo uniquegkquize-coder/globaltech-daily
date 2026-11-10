@@ -1,0 +1,29 @@
+{
+  "en_title": "Nashi: Independent Open-Source File Toolkit Released on GitHub",
+  "hi_title": "नाशी: GitHub पर स्वतंत्र ओपन-सोर्स फ़ाइल टूलकिट जारी",
+  "en_body": "Nashi is an independent, open-source file conversion and editing application available on GitHub. Inspired by the drag-and-wheel interaction model of Tangerine, the project offers a suite of utility features while remaining unaffiliated with Tangerine or LEAP STUDIO.\n\n## Core Features and Tools\n- **Conversion and Editing:** Features 27 tools supporting multiple input formats and conversion routes, alongside crop and annotation workflows.\n- **Additional Capabilities:** Includes public web-media downloads, QR code reading, keyboard media editing, live progress indicators, and signed automatic updates.\n- **Platform Support:** Available for macOS (Apple Silicon, macOS 13+) and Windows x64.\n\n## Setup and First Launch\nUpon initial launch, the application guides users through a setup sequence to download missing upstream tools with hash verification. Core native image and PDF features function immediately, while media and Office utilities install sequentially. \n\nUsers should note that initial public builds lack Apple notarization and Windows Authenticode publisher signing. Operating systems may require manual first-launch approval, and official releases provide SHA-256 checksums for verification.\n\n## Privacy and Verification\nConversion and editing operations run locally on the user's device, with web downloads contacting selected media sites directly. The application does not include built-in analytics, cloud accounts, or browser-cookie import functions. Source code is distributed under the MIT license, with individual licenses applying to vendored libraries and external tools.\n\nTo verify announcements and official releases, users should consult the official GitHub repository directly.",
+  "hi_body": "नाशी (Nashi) एक स्वतंत्र, ओपन-सोर्स फ़ाइल रूपांतरण और संपादन एप्लिकेशन है जो GitHub पर उपलब्ध है। टैंजरिन (Tangerine) के ड्रैग-एंड-व्हील इंटरैक्शन मॉडल से प्रेरित, यह प्रोजेक्ट विभिन्न यूटिलिटी सुविधाएँ प्रदान करता है, हालांकि यह टैंजरिन या LEAP STUDIO से संबंधित नहीं है।\n\n## मुख्य विशेषताएँ और उपकरण\n- **रूपांतरण और संपादन:** इसमें 27 टूल शामिल हैं जो कई इनपुट फॉर्मेट और रूपांतरण मार्गों का समर्थन करते हैं, साथ ही क्रॉप और एनोटेशन वर्कफ़्लो भी उपलब्ध हैं।\n- **अतिरिक्त क्षमताएं:** सार्वजनिक वेब-मीडिया डाउनलोड, QR कोड रीडिंग, कीबोर्ड मीडिया संपादन, लाइव प्रगति संकेतक और हस्ताक्षरित स्वचालित अपडेट शामिल हैं।\n- **प्लेटफ़ॉर्म समर्थन:** macOS (Apple Silicon, macOS 13+) और Windows x64 के लिए उपलब्ध।\n\n## सेटअप और पहली लॉन्च\nप्रारंभिक लॉन्च पर, एप्लिकेशन उपयोगकर्ताओं को हैश सत्यापन के साथ गुम अपस्ट्रीम टूल डाउनलोड करने के लिए सेटअप अनुक्रम के माध्यम से मार्गदर्शन करता है। मुख्य मूल छवि और पीडीएफ सुविधाएँ तुरंत काम करती हैं, जबकि मीडिया और ऑफिस यूटिलिटीज क्रमिक रूप से स्थापित होती हैं।\n\nउपयोगकर्ताओं को ध्यान देना चाहिए कि शुरुआती सार्वजनिक बिल्ड में Apple नोटरीकरण और Windows Authenticode प्रकाशक हस्ताक्षर का अभाव है। ऑपरेटिंग सिस्टम को मैन्युअल पहली-लॉन्च अनुमोदन की आवश्यकता हो सकती है, और आधिकारिक रिलीज़ सत्यापन के लिए SHA-256 चेकसम प्रदान करते हैं।\n\n## गोपनीयता और सत्यापन\nरूपांतरण और संपादन संचालन उपयोगकर्ता के डिवाइस पर स्थानीय रूप से चलते हैं, और वेब डाउनलोड सीधे चयनित मीडिया साइटों से संपर्क करते हैं। एप्लिकेशन में कोई अंतर्निहित एनालिटिक्स, क्लाउड खाता या ब्राउज़र-कुकी आयात फ़ंक्शन शामिल नहीं है। सोर्स कोड MIT लाइसेंस के तहत वितरित किया जाता है।\n\nआधिकारिक घोषणाओं और रिलीज़ को सत्यापित करने के लिए, उपयोगकर्ता सीधे आधिकारिक GitHub रिपॉजिटरी की जाँच कर सकते हैं।",
+  "en_meta": "Learn about Nashi, an independent open-source file toolkit for macOS and Windows offering conversion, editing, web downloads, and QR reading.",
+  "hi_meta": "macOS और Windows के लिए स्वतंत्र ओपन-सोर्स फ़ाइल टूलकिट नाशी के बारे में जानें, जो रूपांतरण, संपादन, वेब डाउनलोड और QR रीडिंग प्रदान करता है।",
+  "en_keywords": [
+    "Nashi app",
+    "open source file toolkit",
+    "file conversion app",
+    "GitHub open source",
+    "Tangerine alternative"
+  ],
+  "hi_keywords": [
+    "नाशी ऐप",
+    "ओपन सोर्स फ़ाइल टूलकिट",
+    "फ़ाइल रूपांतरण ऐप",
+    "GitHub ओपन सोर्स",
+    "Tangerine विकल्प"
+  ],
+  "source_published_at": null,
+  "id": "9a2c8fbc06c1",
+  "source": "https://github.com/orkunisitmak/nashi-app",
+  "date": "2026-11-10T12:04:25.206751+00:00",
+  "source_title": "orkunisitmak/nashi-app: Independent open-source file toolkit inspired by Tangerine, with added web downloads, QR reading and editing workflows. / Tangerine’den ilham alan, yeni özelliklerle geliştirilen bağımsız açık kaynak dosya aracı. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

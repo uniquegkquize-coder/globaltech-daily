@@ -1,0 +1,29 @@
+{
+  "en_title": "Pickering Interfaces Launches Remote Gateway Software for PXI Test Systems",
+  "hi_title": "पिकरिंग इंटरफेसेस ने PXI टेस्ट सिस्टम के लिए रिमोट गेटवे सॉफ्टवेयर लॉन्च किया",
+  "en_body": "Pickering Interfaces has introduced Pickering Remote Gateway, a gRPC-based software solution designed to enable cross-platform remote control of Pickering PXI and PXIe hardware. According to the company announcement, the software allows engineers to manage test systems from separate computers across various operating systems and programming languages while keeping existing driver investments intact.\n\n## Key Features of Pickering Remote Gateway\n* **Cross-Platform Access:** Operates across multiple operating systems and programming languages including Python, C#, Go, and Java.\n* **Driver Preservation:** Utilizes a gRPC Device Server on the host PC or embedded controller, meaning client systems do not require the full Pickering driver stack.\n* **Distributed Architecture:** Built on the open-source gRPC framework and HTTP/2 transport to support remote test routines, user interfaces, and cloud-hosted applications.\n\n## Practical Applications and Access\nThe software is intended to support automated validation, production testing, and distributed development teams. By decoupling the test application from the instrument-control host, hardware can remain close to the device under test or in a central rack while engineers work from network-connected workstations. \n\nThe server software, Protocol Buffers (.proto) files, and user manual are currently available through the Pickering download site. Interested users can verify specifications and access support materials directly by visiting the official Pickering Interfaces website at www.pickeringtest.com.",
+  "hi_body": "पिकरिंग इंटरफेसेस ने पिकरिंग रिमोट गेटवे पेश किया है, जो gRPC-आधारित सॉफ्टवेयर समाधान है जिसे पिकरिंग PXI और PXIe हार्डवेयर के क्रॉस-प्लेटफॉर्म रिमोट कंट्रोल को सक्षम करने के लिए डिज़ाइन किया गया है। कंपनी की घोषणा के अनुसार, यह सॉफ्टवेयर इंजीनियरों को मौजूदा ड्राइवर निवेश को सुरक्षित रखते हुए विभिन्न ऑपरेटिंग सिस्टम और प्रोग्रामिंग भाषाओं में अलग-अलग कंप्यूटरों से टेस्ट सिस्टम को प्रबंधित करने की अनुमति देता है।\n\n## पिकरिंग रिमोट गेटवे की मुख्य विशेषताएं\n* **क्रॉस-प्लेटफॉर्म एक्सेस:** यह पायथन, सी#, गो और जावा सहित कई ऑपरेटिंग सिस्टम और प्रोग्रामिंग भाषाओं में काम करता है।\n* **ड्राइवर संरक्षण:** होस्ट पीसी या एम्बेडेड कंट्रोलर पर gRPC डिवाइस सर्वर का उपयोग करता है, जिसका अर्थ है कि क्लाइंट सिस्टम को पूर्ण पिकरिंग ड्राइवर स्टैक की आवश्यकता नहीं होती है।\n* **वितरित वास्तुकला:** रिमोट टेस्ट रूटीन, यूजर इंटरफेस और क्लाउड-हॉस्टेड एप्लिकेशन का समर्थन करने के लिए ओपन-सोर्स gRPC फ्रेमवर्क और HTTP/2 ट्रांसपोर्ट पर आधारित है।\n\n## व्यावहारिक अनुप्रयोग और पहुंच\nयह सॉफ्टवेयर स्वचालित सत्यापन, उत्पादन परीक्षण और वितरित विकास टीमों का समर्थन करने के लिए है। टेस्ट एप्लिकेशन को इंस्ट्रूमेंट-कंट्रोल होस्ट से अलग करके, हार्डवेयर को डिवाइस के पास या सेंट्रल रैक में रखा जा सकता है जबकि इंजीनियर नेटवर्क-कनेक्टेड वर्कस्टेशन से काम करते हैं।\n\nसर्वर सॉफ्टवेयर, प्रोटोकॉल बफर्स (.proto) फाइलें और यूजर मैनुअल पिकरिंग डाउनलोड साइट के माध्यम से उपलब्ध हैं। इच्छुक उपयोगकर्ता आधिकारिक पिकरिंग इंटरफेसेस वेबसाइट www.pickeringtest.com पर जाकर विशिष्टताओं को सत्यापित कर सकते हैं और सहायता सामग्री प्राप्त कर सकते हैं।",
+  "en_meta": "Pickering Interfaces has introduced Pickering Remote Gateway software, enabling gRPC-based cross-platform remote control for PXI and PXIe test hardware.",
+  "hi_meta": "पिकरिंग इंटरफेसेस ने PXI और PXIe टेस्ट हार्डवेयर के लिए gRPC-आधारित क्रॉस-प्लेटफॉर्म रिमोट कंट्रोल सॉफ्टवेयर पिकरिंग रिमोट गेटवे लॉन्च किया है।",
+  "en_keywords": [
+    "Pickering Remote Gateway",
+    "PXI test systems",
+    "gRPC software",
+    "remote test control",
+    "Pickering Interfaces"
+  ],
+  "hi_keywords": [
+    "पिकरिंग रिमोट गेटवे",
+    "PXI टेस्ट सिस्टम",
+    "gRPC सॉफ्टवेयर",
+    "रिमोट टेस्ट कंट्रोल",
+    "पिकरिंग इंटरफेसेस"
+  ],
+  "source_published_at": "2026-10-29T12:07:00Z",
+  "id": "df46d2c32629",
+  "source": "https://www.prnewswire.com/news-releases/pickering-interfaces-launches-remote-gateway-software-for-remote-control-of-pxi-test-systems-302923056.html",
+  "date": "2026-11-10T12:06:51.757525+00:00",
+  "source_title": "Pickering Interfaces Launches Remote Gateway Software for Remote Control of PXI Test Systems - PR Newswire",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

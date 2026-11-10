@@ -1,0 +1,31 @@
+{
+  "en_title": "Project Pyrrhus Brings Unofficial Killzone 2 Static Recompilation Port to Windows",
+  "hi_title": "प्रोजेक्ट पाइरहस विंडोज के लिए अनौपचारिक किलजोन 2 स्टैटिक रिकंपाइलेशन पोर्ट लेकर आया है",
+  "en_body": "Project Pyrrhus is an unofficial, work-in-progress static recompilation tool designed to run Killzone 2 (PS3) as a native Windows program by building it directly on the user's PC from their own legally obtained game files. Released as version v0.1.11 on GitHub by developer undecuple, the pre-release project aims to translate the game's PPU and SPU code ahead of time to native x64 while translating graphics commands to Direct3D 12 at run time.\n\n## Current Status and Playability\n\nAs an active work in progress, version v0.1.11 is classified as a pre-release and is only partly playable:\n\n* **Working:** The intro movie plays, menus run with sound, and the first level loads and can be played.\n* **Unfinished / Not Yet Working:** A steady 30 frames per second, progress past the first level, loading checkpoint saves, 5.1 surround sound, and multiplayer features (offline bots and self-hosted online) are not complete.\n* **Performance:** Scripted runs currently show speeds below the PS3's original 30 frames per second.\n\n## Requirements and Setup\n\nUsers must bring their own game files, as the repository contains no game code, assets, keys, firmware, or decryption steps. To use the setup, players require:\n\n* A disc dump of Killzone 2 (US version BCUS98116 is tested; European, Asian, and Japanese versions are accepted but untested).\n* The 1.29 update of the same region.\n* The decrypted 1.29 EBOOT (EBOOT.elf) made from the update's EBOOT.BIN.\n* A 64-bit Windows 10 or 11 PC with a CPU supporting AVX and FMA3 (circa 2013 or later), recommended 16 GB of RAM for building, and a Direct3D 12 graphics card.\n\nPlayers who use the PS3 emulator RPCS3 can point the installer to their existing RPCS3 installation to automatically locate the required files.\n\n## Relationship to Other Projects and Verification\n\nProject Pyrrhus adapts methods and runtime work from Project Helghast (a similar Killzone 3 PC port project) and is licensed under the MIT license. It is an independent fan project and has no affiliation with or endorsement from Sony Interactive Entertainment or Guerrilla Games.\n\nTo verify official announcements, check the official GitHub repository maintained by undecuple, as official builds and fixes are distributed exclusively through GitHub Releases.",
+  "hi_body": "प्रोजेक्ट पाइरहस एक अनौपचारिक, प्रगति पर चल रहा स्टैटिक रिकंपाइलेशन टूल है जिसे उपयोगकर्ता की अपनी कानूनी रूप से प्राप्त गेम फाइलों से सीधे उनके पीसी पर किलजोन 2 (PS3) को मूल विंडोज प्रोग्राम के रूप में चलाने के लिए डिज़ाइन किया गया है। डेवलपर undecuple द्वारा GitHub पर संस्करण v0.1.11 के रूप में जारी किया गया यह प्री-रिलीज प्रोजेक्ट गेम के PPU और SPU कोड को पहले से ही मूल x64 में अनुवादित करने और रन टाइम पर ग्राफिक्स कमांड को Direct3D 12 में अनुवादित करने का प्रयास करता है।\n\n## वर्तमान स्थिति और खेलने की क्षमता\n    \nएक सक्रिय कार्य के रूप में, संस्करण v0.1.11 को प्री-रिलीज के रूप में वर्गीकृत किया गया है और यह आंशिक रूप से ही खेलने योग्य है:\n\n* **कार्यरत:** इंट्रो मूवी चलती है, मेनू ध्वनि के साथ चलते हैं, और पहला स्तर लोड होता है और खेला जा सकता है।\n* **अपूर्ण / अभी तक काम नहीं कर रहा:** 30 फ्रेम प्रति सेकंड की स्थिर गति, पहले स्तर से आगे की प्रगति, चेकपॉइंट सेव लोड करना, 5.1 सराउंड साउंड, और मल्टीप्लेयर सुविधाएं (ऑफ़लाइन बॉट्स और स्व-होस्टेड ऑनलाइन) अभी पूरी नहीं हुई हैं।\n* **प्रदर्शन:** स्क्रिप्टेड रन वर्तमान में PS3 के मूल 30 फ्रेम प्रति सेकंड से कम गति दिखाते हैं।\n\n## आवश्यकताएं और सेटअप\n\nउपयोगकर्ताओं को अपनी खुद की गेम फाइलें लानी होंगी, क्योंकि रिपॉजिटरी में कोई गेम कोड, संपत्तियां, कुंजियां, फर्मवेयर या डिक्रिप्शन चरण शामिल नहीं हैं। सेटअप का उपयोग करने के लिए, खिलाड़ियों को निम्नलिखित की आवश्यकता है:\n\n* किलजोन 2 का डिस्क डंप (यूएस संस्करण BCUS98116 परीक्षण किया गया है; यूरोपीय, एशियाई और जापानी संस्करण स्वीकार किए जाते हैं लेकिन परीक्षण नहीं किए गए हैं)।\n* उसी क्षेत्र का 1.29 अपडेट।\n* अपडेट के EBOOT.BIN से बनाया गया डिक्रिप्टेड 1.29 EBOOT (EBOOT.elf)।\n* AVX और FMA3 का समर्थन करने वाले CPU (लगभग 2013 या बाद का) के साथ 64-बिट Windows 10 या 11 PC, निर्माण के लिए अनुशंसित 16 GB रैम, और Direct3D 12 ग्राफिक्स कार्ड।\n\nजो खिलाड़ी PS3 एमुलेटर RPCS3 का उपयोग करते हैं, वे आवश्यक फाइलों का स्वतः पता लगाने के लिए इंस्टॉलर को अपने मौजूदा RPCS3 इंस्टॉलेशन की ओर इंगित कर सकते हैं।\n\n## अन्य परियोजनाओं से संबंध और सत्यापन\n\nप्रोजेक्ट पाइरहस प्रोजेक्ट हेलघास्ट (एक समान किलजोन 3 पीसी पोर्ट प्रोजेक्ट) से तरीकों और रनटाइम कार्य को अनुकूलित करता है और इसे MIT लाइसेंस के तहत लाइसेंस प्राप्त है। यह एक स्वतंत्र प्रशंसक प्रोजेक्ट है और इसका सोनी इंटरएक्टिव एंटरटेनमेंट या गुरिला गेम्स के साथ कोई संबंध या समर्थन नहीं है।\n\nआधिकारिक घोषणाओं को सत्यापित करने के लिए, undecuple द्वारा प्रबंधित आधिकारिक GitHub रिपॉजिटरी की जाँच करें, क्योंकि आधिकारिक बिल्ड और फिक्स विशेष रूप से GitHub रिलीज़ के माध्यम से वितरित किए जाते हैं।",
+  "en_meta": "Project Pyrrhus is an unofficial static recompilation port bringing Killzone 2 to Windows as a native app, currently in a partly playable pre-release state.",
+  "hi_meta": "प्रोजेक्ट पाइरहस एक अनौपचारिक स्टैटिक रिकंपाइलेशन पोर्ट है जो किलजोन 2 को विंडोज पर लाता है, जो वर्तमान में आंशिक रूप से खेलने योग्य प्री-रिलीज स्थिति में है।",
+  "en_keywords": [
+    "Project Pyrrhus",
+    "Killzone 2 PC port",
+    "static recompilation",
+    "undecuple",
+    "Direct3D 12",
+    "PS3 port"
+  ],
+  "hi_keywords": [
+    "प्रोजेक्ट पाइरहस",
+    "किलजोन 2 पीसी पोर्ट",
+    "स्टैटिक रिकंपाइलेशन",
+    "undecuple",
+    "Direct3D 12",
+    "PS3 पोर्ट"
+  ],
+  "source_published_at": null,
+  "id": "ee4ae208eb09",
+  "source": "https://github.com/undecuple/project-pyrrhus",
+  "date": "2026-11-10T12:08:48.236222+00:00",
+  "source_title": "Project Pyrrhus (work in progress) - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,32 @@
+{
+  "en_title": "T3 Code Introduces Agent Harness Control Surface for Multiple AI Providers",
+  "hi_title": "T3 कोड ने कई एआई प्रदाताओं के लिए एजेंट हार्नेस कंट्रोल सरफेस पेश किया",
+  "en_body": "T3 Code has emerged as a new software project described as an \"agent harness control surface,\" designed to let users manage local AI coding agents across mobile, web, and desktop environments. According to the repository details, the tool interfaces with existing machine subscriptions including Claude Code, Codex, Cursor, Grok Build, OpenCode, Google Antigravity, and fx.\n\nThe developers state they created the project to achieve a high-performance, remote-ready, and open editor experience inspired by existing tools. The software is currently in an early development stage, with the maintainers explicitly warning users to expect bugs and noting that large feature contributions are not being accepted at this time.\n\n## Core Architecture and Supported Platforms\n* **Multi-Platform Access:** Includes mobile applications for iOS and Android, a web app, and an Electron-based desktop app.\n* **Provider Integration:** Connects to pre-configured local setups for Codex, Claude, Cursor, Grok Build, OpenCode, Antigravity, and fx.\n* **Open Access:** Built to be forkable if users wish to modify or build their own customized editors.\n\n## Getting Started and Installation\n* **Temporary Run:** Users can try the tool without a permanent installation by executing `npx t3@latest`.\n* **Server Setup:** Running the `t3` command starts the local server and web application, while `t3 service install` manages background execution.\n* **Desktop and Package Managers:** Desktop application builds are available via GitHub Releases, along with AUR packaging and nixpkgs support.\n* **Provider Authentication:** Each integrated service requires individual CLI installation and login authentication prior to use, such as running `codex login` or `claude auth login`.\n\n## Verification and Practical Implications\nBecause the project is documented as very early stage, users should anticipate potential instability and verify instructions directly against the official GitHub repository (`pingdotgg/t3code`). The repository houses the primary documentation under the `docs/` directory, internal architecture notes, and contribution guidelines for minor fixes.",
+  "hi_body": "T3 कोड एक नया सॉफ्टवेयर प्रोजेक्ट है जिसे \"एजेंट हार्नेस कंट्रोल सरफेस\" के रूप में वर्णित किया गया है, जो उपयोगकर्ताओं को मोबाइल, वेब और डेस्कटॉप वातावरण में स्थानीय एआई कोडिंग एजेंटों को प्रबंधित करने की अनुमति देता है। रिपॉजिटरी विवरण के अनुसार, यह टूल Claude Code, Codex, Cursor, Grok Build, OpenCode, Google Antigravity और fx सहित मौजूदा मशीन सब्सक्रिप्शन के साथ इंटरफेस करता है।\n\nडेवलपर्स का कहना है कि उन्होंने मौजूदा टूल्स से प्रेरित होकर एक उच्च-प्रदर्शन, रिमोट-तैयार और खुला संपादक अनुभव प्राप्त करने के लिए इस प्रोजेक्ट का निर्माण किया। सॉफ्टवेयर वर्तमान में विकास के शुरुआती चरण में है, और रखरखावकर्ताओं ने स्पष्ट रूप से उपयोगकर्ताओं को बग की उम्मीद करने की चेतावनी दी है तथा यह उल्लेख किया है कि इस समय बड़े फीचर योगदान स्वीकार नहीं किए जा रहे हैं।\n\n## मुख्य वास्तुकला और समर्थित प्लेटफ़ॉर्म\n* **मल्टी-प्लेटफ़ॉर्म एक्सेस:** इसमें iOS और Android के लिए मोबाइल एप्लिकेशन, एक वेब ऐप और एक इलेक्ट्रॉन-आधारित डेस्कटॉप ऐप शामिल है।\n* **प्रदाता एकीकरण:** यह Codex, Claude, Cursor, Grok Build, OpenCode, Antigravity और fx के लिए पूर्व-कॉन्फ़िगर किए गए स्थानीय सेटअप से कनेक्ट होता है।\n* **खुली पहुंच:** इसे इस तरह से बनाया गया है कि यदि उपयोगकर्ता अपने स्वयं के अनुकूलित संपादकों को संशोधित करना या बनाना चाहते हैं, तो वे इसे फोर्क कर सकते हैं।\n\n## शुरुआत करना और स्थापना\n* **अस्थाई रूप से चलाना:** उपयोगकर्ता `npx t3@latest` निष्पादित करके बिना किसी स्थायी स्थापना के टूल को आज़मा सकते हैं।\n* **सर्वर सेटअप:** `t3` कमांड चलाने से स्थानीय सर्वर और वेब एप्लिकेशन शुरू होता है, जबकि `t3 service install` पृष्ठभूमि निष्पादन का प्रबंधन करता है।\n* **डेस्कटॉप और पैकेज मैनेजर:** डेस्कटॉप एप्लिकेशन बिल्ड GitHub रिलीज़ के माध्यम से उपलब्ध हैं, साथ ही AUR पैकेजिंग और nixpkgs समर्थन भी उपलब्ध है।\n* **प्रदाता प्रमाणीकरण:** प्रत्येक एकीकृत सेवा के लिए उपयोग से पहले व्यक्तिगत CLI स्थापना और लॉगिन प्रमाणीकरण की आवश्यकता होती है, जैसे `codex login` या `claude auth login` चलाना।\n\n## सत्यापन और व्यावहारिक निहितार्थ\nचूंकि प्रोजेक्ट को बहुत शुरुआती चरण के रूप में प्रलेखित किया गया है, इसलिए उपयोगकर्ताओं को संभावित अस्थिरता की उम्मीद करनी चाहिए और आधिकारिक GitHub रिपॉजिटरी (`pingdotgg/t3code`) पर सीधे निर्देशों का सत्यापन करना चाहिए। रिपॉजिटरी `docs/` निर्देशिका के तहत प्राथमिक दस्तावेज़ीकरण, आंतरिक वास्तुकला नोट्स और छोटे सुधारों के लिए योगदान दिशानिर्देशों को होस्ट करती है।",
+  "en_meta": "Learn about T3 Code, a new agent harness control surface for managing AI coding assistants across mobile, web, and desktop platforms.",
+  "hi_meta": "T3 कोड के बारे में जानें, जो मोबाइल, वेब और डेस्कटॉप प्लेटफ़ॉर्म पर एआई कोडिंग सहायकों को प्रबंधित करने के लिए एक नया एजेंट हार्नेस कंट्रोल सरफेस है।",
+  "en_keywords": [
+    "T3 Code",
+    "AI coding agents",
+    "agent harness control surface",
+    "developer tools",
+    "GitHub releases"
+  ],
+  "hi_keywords": [
+    "T3 Code",
+    "एआई कोडिंग एजेंट",
+    "एजेंट हार्नेस कंट्रोल सरफेस",
+    "डेवलपर टूल",
+    "GitHub रिलीज़"
+  ],
+  "source_published_at": null,
+  "id": "553e1cc54ebc",
+  "source": "https://github.com/pingdotgg/t3code",
+  "date": "2026-11-10T12:07:40.196540+00:00",
+  "source_title": "pingdotgg/t3code - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

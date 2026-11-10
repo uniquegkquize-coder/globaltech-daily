@@ -1,0 +1,32 @@
+{
+  "en_title": "PdfCraft Enters Alpha Stage as an Open-Source Rust PDF Reader and Editor",
+  "hi_title": "PdfCraft अल्फा चरण में प्रवेश करता है: एक ओपन-सोर्स रस्ट पीडीएफ रीडर और एडिटर",
+  "en_body": "PdfCraft is an open-source, modern PDF reader and editor written from scratch in pure Rust. The project provides native desktop application builds for macOS, Windows, Linux, and FreeBSD, alongside a web-based version. As of October 2026, developers report that the project is in an alpha stage, achieving approximately 57 percent feature parity across target requirements and roughly 94 percent completion for core essentials.\n\n## Key Architectural Features\n- **Pure Rust Engine:** Written from the ground up, separating the parsing, rendering, and editing logic into reusable library crates.\n- **Cross-Platform Support:** Native builds exist for macOS, Windows (including ARM64), Linux, and FreeBSD, alongside WebAssembly for browsers.\n- **Privacy Focused:** Operates completely offline without requiring user accounts, telemetry, or cloud-based processing.\n\n## Organization and Document Management\n- **Page Organization:** Allows users to view all pages as cards on a table to rotate, delete, insert blank pages, or rearrange sequences.\n- **Combining and Splitting:** Merges multiple PDF files with nested bookmark support or splits documents into smaller files.\n- **Security Handling:** Implements the complete PDF standard security handler, supporting encryption from 40-bit RC4 to AES-256, user and owner passwords, and permission respect.\n\n## Verification and Availability\nUsers can verify project details, review documentation, or download releases directly through the official GitHub repository and the ArtCraft community platform at getartcraft.com. Automated quality gates check formatting, Clippy rules, layer boundaries, and test corpora to ensure stability.",
+  "hi_body": "PdfCraft पूरी तरह से रस्ट भाषा में शुरू से लिखा गया एक आधुनिक, ओपन-सोर्स पीडीएफ रीडर और एडिटर है। यह प्रोजेक्ट मैकओएस, विंडोज, लिनक्स और फ्रीबीएसडी के लिए नेटिव डेस्कटॉप ऐप बिल्ड के साथ-साथ एक वेब-आधारित संस्करण प्रदान करता है। अक्टूबर 2026 तक, डेवलपर्स ने बताया है कि यह प्रोजेक्ट अभी अल्फा चरण में है, जो लक्षित आवश्यकताओं में लगभग 57 प्रतिशत फीचर समता और मुख्य अनिवार्यताओं के लिए लगभग 94 प्रतिशत पूर्णता प्राप्त करता है।\n\n## मुख्य वास्तुकला विशेषताएं\n- **शुद्ध रस्ट इंजन:** इसे पूरी तरह से नए सिरे से लिखा गया है, जिसमें पार्सिंग, रेंडरिंग और संपादन तर्क को पुन: प्रयोज्य लाइब्रेरी क्रेट्स में अलग किया गया है।\n- **क्रॉस-प्लेटफॉर्म समर्थन:** मैकओएस, विंडोज (एआरएम64 सहित), लिनक्स, और फ्रीबीएसडी के लिए नेटिव बिल्ड उपलब्ध हैं, साथ ही ब्राउज़र के लिए वेबअसेंबली भी है।\n- **गोपनीयता-केंद्रित:** यह बिना किसी यूजर अकाउंट, टेलीमेट्री या क्लाउड-आधारित प्रोसेसिंग के पूरी तरह से ऑफलाइन काम करता है।\n\n## संगठन और दस्तावेज़ प्रबंधन\n- **पेज संगठन:** उपयोगकर्ताओं को सभी पृष्ठों को एक टेबल पर कार्ड की तरह देखने, घुमाने, हटाने, खाली पृष्ठ डालने या अनुक्रमों को पुनर्व्यवस्थित करने की अनुमति देता है।\n- **संयोजन और विभाजन:** नेस्टेड बुकमार्क समर्थन के साथ कई पीडीएफ फाइलों को मर्ज करता है या दस्तावेजों को विभाजित करता है।\n- **सुरक्षा प्रबंधन:** यह 40-बिट आरसी4 से एईएस-256 तक एन्क्रिप्शन, यूजर और ओनर पासवर्ड, और अनुमतियों का सम्मान करते हुए संपूर्ण पीडीएफ मानक सुरक्षा हैंडलर को लागू करता है.\n\n## सत्यापन और उपलब्धता\nउपयोगकर्ता आधिकारिक गिटहब रिपॉजिटरी और getartcraft.com पर आर्टक्राफ्ट कम्युनिटी प्लेटफॉर्म के माध्यम से प्रोजेक्ट विवरण की पुष्टि कर सकते हैं, दस्तावेज़ीकरण की समीक्षा कर सकते हैं, या रिलीज़ डाउनलोड कर सकते हैं। स्वचालित गुणवत्ता जांच स्थिरता सुनिश्चित करने के लिए स्वरूपण, क्लिपी नियमों और परीक्षणों का उपयोग करती है।",
+  "en_meta": "PdfCraft is an open-source, pure Rust PDF reader and editor currently in alpha, supporting macOS, Windows, Linux, FreeBSD, and the web.",
+  "hi_meta": "PdfCraft एक ओपन-सोर्स, शुद्ध रस्ट पीडीएफ रीडर और एडिटर है जो वर्तमान में अल्फा चरण में है।",
+  "en_keywords": [
+    "PdfCraft",
+    "PDF editor",
+    "open-source PDF reader",
+    "Rust PDF library",
+    "ArtCraft"
+  ],
+  "hi_keywords": [
+    "PdfCraft",
+    "पीडीएफ एडिटर",
+    "ओपन-सोर्स पीडीएफ",
+    "रस्ट पीडीएफ",
+    "ArtCraft"
+  ],
+  "source_published_at": null,
+  "id": "b84769654476",
+  "source": "https://github.com/storytold/pdfcraft",
+  "date": "2026-11-10T12:06:44.437916+00:00",
+  "source_title": "PdfCraft: An open-source PDF reader and editor written by scratch in pure Rust - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "en_title": "Arken-Core Rust Library Introduces DID-Based Passwordless Authentication",
+  "hi_title": "Arken-Core Rust लाइब्रेरी ने DID-आधारित पासवर्ड रहित प्रमाणीकरण पेश किया",
+  "en_body": "Arken-core is an early-stage cryptographic Rust library designed to provide passwordless authentication through Decentralized Identifier (DID) signatures, according to GitHub documentation from the Arken Protocol project. The software relies on cryptographic verification rather than stored passwords or server sessions, aiming to eliminate traditional credential databases.\n\n## Core Technical Architecture\n- **Cryptographic Engine:** Uses ECDSA secp256k1 signature verification via ethers-rs.\n- **Identity Standard:** Implements W3C spec did:key identity using the `zQ3s…` prefix for secp256k1, deriving a consistent identity across any server running Arken.\n- **Challenge-Response Mechanism:** Generates cryptographically random nonces with a 60-second Time-To-Live (TTL).\n- **Compilation and Distribution:** Compiles to a native shared library (`.dylib`, `.so`, `.dll`) loaded by higher-level packages via Foreign Function Interface (FFI), exporting three C-compatible functions.\n\n## Authentication Flow\nUnsigned requests receive a 401 status code accompanied by a one-time nonce. Clients sign this nonce using an secp256k1 private key and retry the request using an `Authorization: Signature` header. The core system verifies the signature and checks the nonce, returning the agent's `did:key` without storing session state.\n\n## Current Limitations and Status\nProject maintainers state that the software is not yet production-ready and remains in an early stage:\n- Nonces are stored in memory, meaning they will not survive server restarts or operate across multiple instances without a shared external store.\n- There is no built-in key recovery mechanism; losing the private key results in permanent loss of access.\n- Building the library requires the Rust toolchain, with prebuilt binaries scheduled for the 1.0 roadmap.\n\n## Verification and Roadmap\nDevelopers can review the repository and the `SECURITY.md` file on GitHub to examine implementation details. The project invites security researchers to report flaws via private advisories. Additionally, the project documentation outlines a Founding Builders program for contributors joining before December 15, 2026, alongside ten design-partner slots for teams collaborating on API development.",
+  "hi_body": "Arken Protocol प्रोजेक्ट के GitHub दस्तावेज़ों के अनुसार, arken-core एक शुरुआती चरण की क्रिप्टोग्राफिक Rust लाइब्रेरी है जिसे Decentralized Identifier (DID) हस्ताक्षर के माध्यम से पासवर्ड रहित प्रमाणीकरण प्रदान करने के लिए डिज़ाइन किया गया है। यह सॉफ्टवेयर संग्रहीत पासवर्ड या सर्वर सत्रों के बजाय क्रिप्टोग्राफिक सत्यापन पर निर्भर करता है, जिसका उद्देश्य पारंपरिक क्रेडेंशियल डेटाबेस को समाप्त करना है।\n\n## मुख्य तकनीकी वास्तुकला\n- **क्रिप्टोग्राफिक इंजन:** ethers-rs के माध्यम से ECDSA secp256k1 हस्ताक्षर सत्यापन का उपयोग करता है।\n- **पहचान मानक:** secp256k1 के लिए `zQ3s…` उपसर्ग का उपयोग करके W3C विनिर्देश did:key पहचान को लागू करता है, Arken चलाने वाले किसी भी सर्वर पर एक सुसंगत पहचान प्राप्त करता है।\n- **चैलेंज-रिस्पांस तंत्र:** 60-सेकंड के टाइम-टू-लाइव (TTL) के साथ क्रिप्टोग्राफिक रूप से यादृच्छिक नॉनस उत्पन्न करता है।\n- **संकलन और वितरण:** एक मूल साझा लाइब्रेरी (`.dylib`, `.so`, `.dll`) में संकलित होता है जिसे उच्च-स्तरीय पैकेजों द्वारा Foreign Function Interface (FFI) के माध्यम से लोड किया जाता है, जो तीन C-संगत कार्यों को निर्यात करता है।\n\n## प्रमाणीकरण प्रवाह\nबिना हस्ताक्षर वाले अनुरोधों को एकमुश्त नॉनस के साथ 401 स्थिति कोड प्राप्त होता है। क्लाइंट secp256k1 निजी कुंजी का उपयोग करके इस नॉनस पर हस्ताक्षर करते हैं और `Authorization: Signature` हेडर का उपयोग करके अनुरोध का पुनः प्रयास करते हैं। कोर सिस्टम हस्ताक्षर को सत्यापित करता है और नॉनस की जाँच करता है, सत्र स्थिति को संग्रहीत किए बिना एजेंट की `did:key` लौटाता है।\n\n## वर्तमान सीमाएँ और स्थिति\nप्रोजेक्ट मेंटेनर्स का कहना है कि सॉफ्टवेयर अभी उत्पादन-तैयार नहीं है और शुरुआती चरण में है:\n- नॉनस मेमोरी में संग्रहीत होते हैं, जिसका अर्थ है कि वे साझा बाहरी स्टोर के बिना सर्वर पुनरारंभ से बच नहीं पाएंगे या कई उदाहरणों में काम नहीं करेंगे।\n- कोई अंतर्निहित कुंजी पुनर्प्राप्ति तंत्र नहीं है; निजी कुंजी खोने का मतलब पहुंच का स्थायी नुकसान है।\n- लाइब्रेरी बनाने के लिए Rust टूलचेन की आवश्यकता होती है, जिसमें 1.0 रोडमैप के लिए प्रीबिल्ट बाइनरी निर्धारित हैं।\n\n## सत्यापन और रोडमैप\nविकासक कार्यान्वयन विवरण की जांच करने के लिए GitHub पर रिपॉजिटरी और `SECURITY.md` फ़ाइल की समीक्षा कर सकते हैं। प्रोजेक्ट सुरक्षा शोधकर्ताओं को निजी सलाहकारों के माध्यम से कमियों की रिपोर्ट करने के लिए आमंत्रित करता है। इसके अतिरिक्त, प्रोजेक्ट दस्तावेज़ीकरण 15 दिसंबर, 2026 से पहले शामिल होने वाले योगदानकर्ताओं के लिए एक फाउंडिंग बिल्डर्स कार्यक्रम और एपीआई विकास पर सहयोग करने वाली टीमों के लिए दस डिज़ाइन-पार्टनर स्लॉट की रूपरेखा तैयार करता है।",
+  "en_meta": "Learn about arken-core, an early-stage Rust library offering passwordless authentication using DID signatures, ECDSA verification, and W3C did:key standards.",
+  "hi_meta": "arken-core के बारे में जानें, जो DID हस्ताक्षर, ECDSA सत्यापन और W3C did:key मानकों का उपयोग करके पासवर्ड रहित प्रमाणीकरण प्रदान करने वाली शुरुआती Rust…",
+  "en_keywords": [
+    "arken-core",
+    "passwordless authentication",
+    "DID signatures",
+    "Rust library",
+    "ECDSA secp256k1",
+    "did:key"
+  ],
+  "hi_keywords": [
+    "arken-core",
+    "पासवर्ड रहित प्रमाणीकरण",
+    "DID हस्ताक्षर",
+    "Rust लाइब्रेरी",
+    "ECDSA secp256k1",
+    "did:key"
+  ],
+  "source_published_at": null,
+  "id": "b95079bc68fc",
+  "source": "https://github.com/zacharybenson/arken-protocol",
+  "date": "2026-11-10T12:06:06.501715+00:00",
+  "source_title": "Passwordless authentication via DID signatures. No passwords. No sessions. Nothing to breach. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

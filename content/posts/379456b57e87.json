@@ -1,0 +1,31 @@
+{
+  "en_title": "Pika H3 Flex Released for Local and Hosted Video-Audio Generation",
+  "hi_title": "लोकल और होस्टेड वीडियो-ऑडियो जनरेशन के लिए Pika H3 Flex जारी",
+  "en_body": "Pika has introduced Pika H3 Flex, a post-trained model designed to generate video with synchronized audio across six sampling steps. The repository provides local open-weight inference alongside hosted API capabilities.\n\n## Core Architecture and Adapters\n\nBuilt on MiniMax-H3 components, Pika H3 Flex uses two task adapters:\n- **FL2VA**: Handles text conditioning and endpoint frames.\n- **Ref2VA**: Manages multimodal references.\n\nThe pipeline encodes prompts and input media to produce video and audio latents before decoding them into an MP4 output. The software automatically downloads pinned base components and adapters.\n\n## Input Limits and Specifications\n\n- **Resolutions**: Local inference supports native 480p and 768p with mixed stereo audio. Hosted Pika API endpoints extend this to 1080p, 2K, and 4K.\n- **Duration**: Requests span 5 to 15 integer seconds, mapped to a 17n+5 frame grid at 24fps (for example, a 5-second request yields 124 frames, or roughly 5.17 seconds).\n- **References**: Ref2VA accepts up to 12 total references (maximum 9 images, 3 videos, and 3 standalone audio clips). Individual video or standalone audio clips must run between 2 and 15 seconds, with combined durations for each category capped at 15 seconds.\n\n## Hardware and Installation\n\nRunning local inference requires Python 3.12, an NVIDIA GPU with a compatible driver, and system prerequisites such as git, patch, ffmpeg, and a C compiler. The distribution is named `pika-h3-pro`.\n\nTested cases indicate that a single NVIDIA H100 80GB GPU handles standard configurations. For requests exceeding available VRAM, users can enable `--cpu-offload` to keep transformer weights on host RAM while trading speed for lower peak VRAM usage. Multi-GPU processing within a single request is not implemented.\n\n## Licensing and Verification\n\nThe adapters fall under the MiniMax H3 Community License Agreement, while the inference and loader code is licensed under Apache-2.0. Creators should consult the official GitHub repository for complete documentation, hardware verification tables, and setup instructions.",
+  "hi_body": "पिका (Pika) ने Pika H3 Flex पेश किया है, जो छह सैंपलिंग चरणों में सिंक्रनाइज़ ऑडियो के साथ वीडियो जनरेट करने के लिए डिज़ाइन किया गया एक पोस्ट-ट्रेन मॉडल है। यह रिपॉजिटरी लोकल ओपन-वेट इन्फेरेंस के साथ-साथ होस्टेड API क्षमताएं प्रदान करती है।\n\n## कोर आर्किटेक्चर और अडैप्टर\n\nMiniMax-H3 घटकों पर आधारित, Pika H3 Flex दो टास्क अडैप्टर का उपयोग करता है:\n- **FL2VA**: टेक्स्ट कंडीशनिंग और एंडपॉइंट फ्रेम को संभालता है।\n- **Ref2VA**: मल्टीमॉडल संदर्भों (references) को प्रबंधित करता है।\n\nपाइपलाइन MP4 आउटपुट में डिकोड करने से पहले वीडियो और ऑडियो लेटेंट उत्पन्न करने के लिए प्रॉम्प्ट और इनपुट मीडिया को एनकोड करती है। सॉफ्टवेयर स्वचालित रूप से पिन किए गए बेस घटकों और अडैप्टर को डाउनलोड करता है।\n\n## इनपुट सीमाएं और विनिर्देश\n\n- **रिज़ॉल्यूशन**: लोकल इन्फेरेंस मिश्रित स्टीरियो ऑडियो के साथ मूल 480p और 768p का समर्थन करता है। होस्टेड Pika API इसे 1080p, 2K और 4K तक बढ़ाता है।\n- **अवधि**: अनुरोध 5 से 15 पूर्ण सेकंड के होते हैं, जो 24fps पर 17n+5 फ्रेम ग्रिड पर मैप होते हैं (उदाहरण के लिए, 5 सेकंड के अनुरोध से 124 फ्रेम, या लगभग 5.17 सेकंड मिलते हैं)।\n- **संदर्भ (References)**: Ref2VA कुल 12 तक संदर्भ स्वीकार करता है (अधिकतम 9 इमेज, 3 वीडियो और 3 स्वतंत्र ऑडियो क्लिप)। व्यक्तिगत वीडियो या ऑडियो क्लिप 2 से 15 सेकंड के बीच होनी चाहिए, और प्रत्येक श्रेणी की संयुक्त अवधि 15 सेकंड तक सीमित है।\n\n## हार्डवेयर और इंस्टॉलेशन\n\nलोकल इन्फेरेंस चलाने के लिए Python 3.12, एक संगत ड्राइवर के साथ NVIDIA GPU, और git, patch, ffmpeg और C कंपाइलर जैसी सिस्टम पूर्व-आवश्यकताओं की आवश्यकता होती है। इस डिस्ट्रीब्यूशन का नाम `pika-h3-pro` है।\n\nपरीक्षण किए गए मामले बताते हैं कि एक सिंगल NVIDIA H100 80GB GPU मानक कॉन्फ़िगरेशन को संभालता है। उपलब्ध VRAM से अधिक अनुरोधों के लिए, उपयोगकर्ता कम पीक VRAM उपयोग के लिए गति का आदान-प्रदान करते हुए ट्रांसफार्मर वजन को होस्ट RAM पर रखने के लिए `--cpu-offload` सक्षम कर सकते हैं। एक ही अनुरोध के भीतर मल्टी-GPU प्रोसेसिंग लागू नहीं है।\n\n## लाइसेंसिंग और सत्यापन\n\nअडैप्टर MiniMax H3 कम्युनिटी लाइसेंस समझौते के अंतर्गत आते हैं, जबकि इन्फेरेंस और लोडर कोड Apache-2.0 के तहत लाइसेंस प्राप्त हैं। निर्माता संपूर्ण दस्तावेज़ीकरण, हार्डवेयर सत्यापन तालिकाओं और सेटअप निर्देशों के लिए आधिकारिक GitHub रिपॉजिटरी देख सकते हैं।",
+  "en_meta": "Learn about Pika H3 Flex, a video and audio generation inference model featuring local open-weight execution, adapter types, hardware requirements, and limits.",
+  "hi_meta": "Pika H3 Flex के बारे में जानें, जो लोकल ओपन-वेट निष्पादन, अडैप्टर प्रकार, हार्डवेयर आवश्यकताओं और सीमाओं के साथ एक वीडियो और ऑडियो जनरेशन मॉडल है।",
+  "en_keywords": [
+    "Pika H3 Flex",
+    "video generation",
+    "audio generation",
+    "MiniMax-H3",
+    "AI inference",
+    "open-weight model"
+  ],
+  "hi_keywords": [
+    "Pika H3 Flex",
+    "वीडियो जनरेशन",
+    "ऑडियो जनरेशन",
+    "MiniMax-H3",
+    "AI इन्फेरेंस",
+    "ओपन-वेट मॉडल"
+  ],
+  "source_published_at": null,
+  "id": "379456b57e87",
+  "source": "https://github.com/Pika-Labs/Pika-H3-Flex",
+  "date": "2026-11-10T12:07:11.579654+00:00",
+  "source_title": "Pika H3 Flex: video and audio generation inference - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

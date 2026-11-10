@@ -1,0 +1,32 @@
+{
+  "en_title": "Compound: New Open-Source Nintendo Switch Emulator Project Written in C",
+  "hi_title": "Compound: C में लिखा गया नया ओपन-सोर्स Nintendo Switch एमुलेटर प्रोजेक्ट",
+  "en_body": "Compound is an early-stage, open-source Nintendo Switch emulator project written in C, currently available on GitHub under the repository ovsky/compound. The project emphasizes defensive architecture, performance, and cross-platform support across Linux, macOS, Windows, Android, and ARM64.\n\nAccording to the repository documentation, the emulator is under active, early-stage development and focuses on correctness and system emulation foundations. Switch 2 support is explicitly stated as a research target rather than a shipping capability, with the current build containing no console keys, content decryption, or Switch 2 execution layer.\n\n## Core Architectural Features\n- **Memory System:** Uses mimalloc allocator with host accounting, pool, slab, and rewindable arena strategies, along with checked-arithmetic validation.\n- **JIT Engine:** Features the Ballistic ARM64 recompiler aimed at high-performance execution.\n- **Guest OS Emulation:** Implements Horizon OS kernel objects, per-process handles, named services, and basic SVC dispatch.\n- **Graphics and Title Loading:** Includes Vulkan render backend scaffolding and content-based NRO/NSO detection. Encrypted formats such as NCA, NSP, and XCI are refused because the build lacks keys and decryption capabilities.\n\n## Practical Implications and Verification\nDevelopers and emulation enthusiasts can review the source code, build instructions, and contribution guidelines directly on the official GitHub repository. Because the software is experimental and relies on staged development, users should consult the documentation in the `/docs` folder for prerequisites, testing suites, and setup procedures.",
+  "hi_body": "Compound C में लिखा गया एक शुरुआती चरण का ओपन-सोर्स Nintendo Switch एमुलेटर प्रोजेक्ट है, जो वर्तमान में GitHub पर ovsky/compound रिपॉजिटरी के रूप में उपलब्ध है। यह प्रोजेक्ट सुरक्षा, प्रदर्शन और Linux, macOS, Windows, Android तथा ARM64 पर क्रॉस-प्लेटफ़ॉर्म समर्थन पर ध्यान केंद्रित करता है।\n\nरिपॉजिटरी दस्तावेज़ के अनुसार, एमुलेटर सक्रिय और शुरुआती विकास के चरण में है, जो मुख्य रूप से सहीता (correctness) और सिस्टम एमुलेशन की नींव पर काम कर रहा है। Switch 2 समर्थन को स्पष्ट रूप से एक शोध लक्ष्य (research target) बताया गया है, न कि कोई तैयार क्षमता। वर्तमान बिल्ड में कोई कंसोल कुंजियाँ, सामग्री डिक्रिप्शन (content decryption) या Switch 2 निष्पादन परत शामिल नहीं है।\n\n## मुख्य वास्तुकला विशेषताएँ\n- **मेमोरी सिस्टम:** होस्ट अकाउंटिंग के साथ mimalloc allocator, पूल, स्लैब और रिवाइंडेबल एरिना रणनीतियों का उपयोग करता है।\n- **JIT इंजन:** उच्च-प्रदर्शन निष्पादन के लिए Ballistic ARM64 रीकम्पाइलर शामिल है।\n- **गेस्ट OS एमुलेशन:** Horizon OS कर्नेल ऑब्जेक्ट, प्रति-प्रक्रिया हैंडल, नामित सेवाएँ और बुनियादी SVC डिस्पैच को लागू करता है।\n- **ग्राफिक्स और टाइटल लोडिंग:** Vulkan रेंडर बैकएंड स्कैफोल्डिंग और सामग्री-आधारित NRO/NSO पहचान शामिल है। NCA, NSP और XCI जैसे एन्क्रिप्टेड प्रारूपों को अस्वीकार कर दिया जाता है क्योंकि बिल्ड में कुंजियाँ और डिक्रिप्शन क्षमताएँ नहीं हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nविकासकर्ता और एमुलेटर उत्साही सीधे आधिकारिक GitHub रिपॉजिटरी पर स्रोत कोड, निर्माण निर्देश और योगदान दिशानिर्देशों की समीक्षा कर सकते हैं। चूंकि यह सॉफ्टवेयर प्रायोगिक है और चरणबद्ध विकास पर निर्भर करता है, उपयोगकर्ताओं को पूर्वापेक्षाओं, परीक्षण सुइट्स और सेटअप प्रक्रियाओं के लिए `/docs` फ़ोल्डर में दिए गए दस्तावेज़ की जांच करनी चाहिए।",
+  "en_meta": "Explore Compound, an early-stage open-source Nintendo Switch emulator written in C. Learn about its architecture, features, and GitHub availability.",
+  "hi_meta": "C में लिखे गए शुरुआती चरण के ओपन-सोर्स Nintendo Switch एमुलेटर Compound के बारे में जानें। इसकी वास्तुकला और विशेषताओं की जानकारी प्राप्त करें।",
+  "en_keywords": [
+    "Compound emulator",
+    "Nintendo Switch emulator",
+    "open source emulation",
+    "ovsky compound GitHub",
+    "C emulator project"
+  ],
+  "hi_keywords": [
+    "Compound एमुलेटर",
+    "Nintendo Switch एमुलेटर",
+    "ओपन सोर्स एमुलेशन",
+    "ovsky compound GitHub",
+    "C एमुलेटर प्रोजेक्ट"
+  ],
+  "source_published_at": null,
+  "id": "73c13c996593",
+  "source": "https://github.com/ovsky/compound",
+  "date": "2026-11-10T12:05:29.787228+00:00",
+  "source_title": "ovsky/compound: Open source emulator for the Nintedo Switch 1 and 2. Highly work in progress - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

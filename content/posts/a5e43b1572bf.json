@@ -1,0 +1,34 @@
+{
+  "en_title": "Paperclip Offers Open-Source Orchestration for AI Agent Teams",
+  "hi_title": "Paperclip एआई एजेंट टीमों के लिए ओपन-सोर्स ऑर्केस्ट्रेशन प्रस्तुत करता है",
+  "en_body": "Paperclip is an open-source Node.js server and React UI project designed to orchestrate teams of AI agents to run businesses. Rather than operating as a standalone chat wrapper, the software provides a control plane featuring organizational charts, budgets, governance, goal alignment, and agent coordination.\n\n## Core Architecture and Features\n- **Agent Management**: Bring your own agents—such as Claude Code, Codex, Cursor, or OpenClaw—assign roles, titles, reporting lines, permissions, and budgets.\n- **Task System**: Issues support project and goal links, atomic checkout with execution locks, blocker dependencies, comments, documents, and search capabilities.\n- **Governance and Budget Control**: Includes board approval workflows, execution policies, budget hard-stops, and token-level tracking by company, agent, project, or model.\n- **Deployment and Security**: Offers trusted local or authenticated deployment modes, encrypted credential storage, local or S3-compatible file storage, and optional Sentry or OpenTelemetry integrations.\n\n## Practical Implications and Verification\nThe project is self-hosted under an MIT license, requiring Node.js 24.11+ and pnpm 9.15+. Users can review the official GitHub repository, documentation, and quickstart guides to verify setup requirements, deployment modes, and community guidelines before implementing local or production instances.",
+  "hi_body": "Paperclip एक ओपन-सोर्स Node.js सर्वर और React UI प्रोजेक्ट है जिसे व्यवसायों को चलाने के लिए एआई एजेंटों की टीमों को व्यवस्थित करने के लिए डिज़ाइन किया गया है। यह सॉफ्टवेयर एक स्टैंडअलोन चैट रैपर के रूप में काम करने के बजाय संगठनात्मक चार्ट, बजट, शासन, लक्ष्य संरेखण और एजेंट समन्वय की सुविधा प्रदान करता है।\n\n## मुख्य वास्तुकला और विशेषताएँ\n- **एजेंट प्रबंधन**: अपने स्वयं के एजेंट लाएं—जैसे Claude Code, Codex, Cursor, या OpenClaw—और भूमिकाएँ, शीर्षक, रिपोर्टिंग लाइन, अनुमति और बजट निर्दिष्ट करें।\n- **टास्क सिस्टम**: मुद्दों में प्रोजेक्ट और गोल लिंक, निष्पादन ताले के साथ परमाणु चेकआउट, अवरोधक निर्भरता, टिप्पणियाँ और दस्तावेज़ शामिल हैं।\n- **शासन और बजट नियंत्रण**: इसमें बोर्ड अनुमोदन वर्कफ़्लो, निष्पादन नीतियां, बजट हार्ड-स्टॉप और टोकन-स्तरीय ट्रैकिंग शामिल है।\n- **परिनियोजन और सुरक्षा**: विश्वसनीय स्थानीय या प्रमाणित परिनियोजन मोड, एन्क्रिप्टेड क्रेडेंशियल स्टोरेज और वैकल्पिक एकीकरण प्रदान करता है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nयह प्रोजेक्ट MIT लाइसेंस के तहत सेल्फ-होस्टेड है, जिसके लिए Node.js 24.11+ और pnpm 9.15+ की आवश्यकता होती है। उपयोगकर्ता स्थानीय या उत्पादन उदाहरणों को लागू करने से पहले सेटअप आवश्यकताओं को सत्यापित करने के लिए आधिकारिक GitHub रिपॉजिटरी और दस्तावेज़ देख सकते हैं।",
+  "en_meta": "Discover Paperclip, an open-source orchestration tool for managing AI agent teams with budgets, governance, and org charts. Learn features and setup details.",
+  "hi_meta": "Paperclip के बारे में जानें, जो बजट, शासन और संगठनात्मक चार्ट के साथ एआई एजेंट टीमों के प्रबंधन के लिए एक ओपन-सोर्स टूल है।",
+  "en_keywords": [
+    "Paperclip",
+    "AI agents",
+    "open-source orchestration",
+    "Node.js",
+    "agent management",
+    "governance"
+  ],
+  "hi_keywords": [
+    "Paperclip",
+    "एआई एजेंट",
+    "ओपन-सोर्स ऑर्केस्ट्रेशन",
+    "Node.js",
+    "एजेंट प्रबंधन",
+    "शासन"
+  ],
+  "source_published_at": null,
+  "id": "a5e43b1572bf",
+  "source": "https://github.com/paperclipai/paperclip",
+  "date": "2026-11-10T12:05:53.066864+00:00",
+  "source_title": "paperclipai/paperclip: The open-source app everyone uses to manage agents at work - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

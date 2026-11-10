@@ -1,0 +1,31 @@
+{
+  "en_title": "Adding Manual Battery Preconditioning to Hyundai IONIQ 5 and Kia EV6",
+  "hi_title": "Hyundai IONIQ 5 और Kia EV6 के लिए मैनुअल बैटरी प्रीकंडीशनिंग टूल",
+  "en_body": "Launchpad is a community-developed application designed to provide a manual battery preconditioning button for the Hyundai IONIQ 5 and Kia EV6 infotainment systems. This tool allows users to trigger battery heating without requiring a specific navigation destination set in the vehicle's stock software.\n\n## Important Safety and Technical Considerations\n* **Risk:** This modification involves accessing the vehicle's infotainment system. Unauthorized changes can potentially render the unit unusable and result in costly repairs.\n* **Requirement:** Users must consult the official compatibility chart on the project's GitHub page before attempting installation to ensure their specific head-unit software version is supported.\n* **Alternative:** If you are uncomfortable with modifying the infotainment software, the developer notes that hardware-based, reversible mods exist that provide similar functionality.\n\n## Installation and Functionality\nInstallation requires a FAT32 or exFAT formatted USB drive and the prior installation of the NEMESIS exploit package, which serves as the framework for running custom applications on the head unit. Once installed, users can launch the application by holding the 'TUNE' knob for one second. The app provides:\n* **Manual Activation:** Users can start or stop preconditioning on demand.\n* **Scheduling:** Options to set a desired time for preconditioning to be active or a target 'Arrive by' time for fast-charging preparation.\n* **Background Operation:** The software continues to run in the background even if the head unit is restarted.\n\nFor full verification of compatibility and to access the installation files, visit the official [paytondevs/gen5w-preconditioning GitHub repository](https://github.com/paytondevs/gen5w-preconditioning).",
+  "hi_body": "Launchpad एक सामुदायिक-विकसित एप्लिकेशन है, जिसे Hyundai IONIQ 5 और Kia EV6 के इंफोटेनमेंट सिस्टम में मैनुअल बैटरी प्रीकंडीशनिंग बटन जोड़ने के लिए बनाया गया है। यह टूल उपयोगकर्ताओं को वाहन के स्टॉक सॉफ़्टवेयर में नेविगेशन डेस्टिनेशन सेट किए बिना बैटरी हीटिंग शुरू करने की सुविधा देता है।\n\n## महत्वपूर्ण सुरक्षा और तकनीकी सावधानियां\n* **जोखिम:** यह प्रक्रिया वाहन के इंफोटेनमेंट सिस्टम में बदलाव करती है। गलत तरीके से की गई कोई भी कार्रवाई इंफोटेनमेंट सिस्टम को अनुपयोगी बना सकती है, जिससे मरम्मत का भारी खर्च आ सकता है।\n* **अनिवार्यता:** इंस्टॉलेशन शुरू करने से पहले, यह सुनिश्चित करने के लिए कि आपकी कार का हेड-यूनिट सॉफ़्टवेयर संस्करण समर्थित है, GitHub पेज पर दी गई संगतता सूची (compatibility chart) को अवश्य देखें।\n* **विकल्प:** यदि आप इंफोटेनमेंट सिस्टम में बदलाव करने में सहज नहीं हैं, तो हार्डवेयर-आधारित संशोधन भी उपलब्ध हैं जो इसी तरह की कार्यक्षमता प्रदान करते हैं और अधिक सुरक्षित माने जाते हैं।\n\n## इंस्टॉलेशन और कार्यक्षमता\nइंस्टॉलेशन के लिए FAT32 या exFAT फॉर्मेट वाली USB ड्राइव और NEMESIS एक्सप्लॉइट पैकेज की आवश्यकता होती है। एक बार इंस्टॉल हो जाने पर, उपयोगकर्ता 'TUNE' नॉब को एक सेकंड के लिए दबाकर एप्लिकेशन शुरू कर सकते हैं। इसके प्रमुख फीचर्स में शामिल हैं:\n* **मैनुअल एक्टिवेशन:** उपयोगकर्ता अपनी इच्छानुसार प्रीकंडीशनिंग शुरू या बंद कर सकते हैं।\n* **शेड्यूलिंग:** इसमें प्रीकंडीशनिंग के लिए समय सेट करने या फास्ट-चार्जिंग से पहले 'Arrive by' का समय निर्धारित करने का विकल्प है।\n* **बैकग्राउंड ऑपरेशन:** शेड्यूल किया गया काम बैकग्राउंड में चलता रहता है, भले ही हेड यूनिट रीस्टार्ट हो जाए।\n\nसंगतता की पुष्टि करने और इंस्टॉलेशन फाइल्स प्राप्त करने के लिए, आधिकारिक [paytondevs/gen5w-preconditioning GitHub रिपॉजिटरी](https://github.com/paytondevs/gen5w-preconditioning) पर जाएं।",
+  "en_meta": "Learn how to add manual battery preconditioning to your Hyundai IONIQ 5 or Kia EV6 using the community-developed Launchpad app for Gen5W infotainment systems.",
+  "hi_meta": "Launchpad ऐप का उपयोग करके अपनी Hyundai IONIQ 5 या Kia EV6 में मैनुअल बैटरी प्रीकंडीशनिंग जोड़ने का तरीका जानें।",
+  "en_keywords": [
+    "IONIQ 5",
+    "Kia EV6",
+    "battery preconditioning",
+    "EV maintenance",
+    "infotainment mod",
+    "NEMESIS exploit"
+  ],
+  "hi_keywords": [
+    "IONIQ 5",
+    "Kia EV6",
+    "बैटरी प्रीकंडीशनिंग",
+    "EV तकनीक",
+    "इंफोटेनमेंट मॉड",
+    "NEMESIS"
+  ],
+  "source_published_at": null,
+  "id": "29f1a933c631",
+  "source": "https://github.com/paytondevs/gen5w-preconditioning",
+  "date": "2026-11-10T12:06:39.630037+00:00",
+  "source_title": "paytondevs/gen5w-preconditioning: an app that gives you a manual preconditioning button in your IONIQ 5. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

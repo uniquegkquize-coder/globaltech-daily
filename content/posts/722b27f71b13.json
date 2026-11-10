@@ -1,0 +1,29 @@
+{
+  "en_title": "OpenSenseNova Releases SenseNova-Loop-9B-Preview Multimodal Model",
+  "hi_title": "OpenSenseNova ने SenseNova-Loop-9B-Preview मल्टीмоडल मॉडल जारी किया",
+  "en_body": "OpenSenseNova has released SenseNova-Loop-9B-Preview, a looped multimodal language model designed for long-context tasks and agentic workflows. The model accepts text and image inputs and generates text, targeting applications that combine document understanding, coding, and interaction with external tools.\n\nAccording to the documentation, the release combines a looped decoder with two-stream manifold-constrained hyper-connections (mHC). It is built on a 32-layer multimodal decoder architecture where a contiguous block of layers is executed twice with shared weights, providing a deeper execution path without increasing the distinct parameter count.\n\n## Architecture and Core Design\n\nThe model's architecture incorporates several technical components designed to handle extended contexts and complex processing:\n\n* **Shared Looped Block:** Layers 4 through 27 (24 layers) are applied twice in sequence, producing 56 decoder-layer executions from 32 distinct layers.\n* **Two-Stream mHC:** Learned mappings route and combine information across two residual streams within the looped section, constrained by Sinkhorn normalization.\n* **Hybrid Attention:** The decoder uses a repeating four-layer pattern consisting of three linear-attention layers followed by one full-attention layer.\n* **Long-Context Training:** Documented training recipes support sequences up to 262,144 tokens, incorporating text, images, code, and tool trajectories.\n\n## Inference and Practical Implementation\n\nPractical performance and speedups depend on the specific workload, hardware, and serving configuration. The development team reports that MTP is supported for accelerated inference, while Dspark and Dflash2 draft models remain under development with training currently in progress.\n\nUsers can load the model using Transformers and PyTorch. The documented reference environment utilizes Transformers 5.18.0 and PyTorch 2.11.0 with CUDA 13.0. Loading requires setting `trust_remote_code=True` to execute the custom model implementation.\n\n## Verification and Next Steps\n\nTo verify the original announcement, inspect the official OpenSenseNova/SenseNova-Loop repository on GitHub. Users should review the configuration parameters, dependency versions, and deployment guides before running production workloads or fine-tuning datasets.",
+  "hi_body": "OpenSenseNova ने SenseNova-Loop-9B-Preview लॉन्च किया है, जो लंबे संदर्भ (long-context) और एजेंटिक वर्कफ़्लो के लिए डिज़ाइन किया गया एक लूप्ड मल्टीмоडल भाषा मॉडल है। यह मॉडल टेक्स्ट और इमेज इनपुट स्वीकार करता है और टेक्स्ट जनरेट करता है, जिसका उद्देश्य दस्तावेज़ समझ, कोडिंग और बाहरी टूल के साथ इंटरैक्शन को संयोजित करने वाले एप्लिकेशन हैं।\n\nदस्तावेज़ीकरण के अनुसार, इस रिलीज़ में लूप्ड डिकोडर को टू-स्ट्रीम मेनिफोल्ड-कन्स्ट्रेंड हाइपर-कनेक्शन (mHC) के साथ जोड़ा गया है। यह 32-परत वाले मल्टीмоडल डिकोडर आर्किटेक्चर पर बनाया गया है जहां परतों के एक सन्निहित ब्लॉक को साझा वजन (shared weights) के साथ दो बार निष्पादित किया जाता है।\n\n## वास्तुकला और मुख्य डिज़ाइन\n\nमॉडल की वास्तुकला में विस्तारित संदर्भों को संभालने के लिए कई तकनीकी घटक शामिल हैं:\n\n* **साझा लूप्ड ब्लॉक:** परत 4 से 27 (24 परतें) को क्रमानुसार दो बार लागू किया जाता है, जिससे 32 अलग-अलग परतों से 56 डिकोडर-परत निष्पादन उत्पन्न होते हैं।\n* **टू-स्ट्रीम mHC:** सीखे गए मैपिंग लूप्ड अनुभाग के भीतर दो रेजिडूल स्ट्रीम में जानकारी को रूट और संयोजित करते हैं।\n* **हाइब्रिड अटेंशन:** डिकोडर तीन लीनियर-अटेंशन परतों के बाद एक फुल-अटेंशन परत के दोहराए जाने वाले चार-परत पैटर्न का उपयोग करता है।\n* **लॉन्ग-कॉन्टेक्स्ट ट्रेनिंग:** प्रलेखित प्रशिक्षण विधियों में 2,62,144 टोकन तक के अनुक्रम शामिल हैं।\n\n## अनुमान और व्यावहारिक कार्यान्वयन\n\nव्या व्यावहारिक गति और प्रदर्शन विशिष्ट कार्यभार, हार्डवेयर और सर्विंग कॉन्फ़िगरेशन पर निर्भर करते हैं। विकास टीम की रिपोर्ट है कि त्वरित अनुमान के लिए MTP समर्थित है, जबकि Dspark और Dflash2 ड्राफ्ट मॉडल अभी विकास के अधीन हैं।\n\nउपयोगकर्ता Transformers और PyTorch का उपयोग करके मॉडल को लोड कर सकते हैं। प्रलेखित संदर्भ वातावरण में Transformers 5.18.0 और PyTorch 2.11.0 with CUDA 13.0 का उपयोग किया गया है।\n\n## सत्यापन और अगले चरण\n\nमूल घोषणा को सत्यापित करने के लिए, GitHub पर आधिकारिक OpenSenseNova/SenseNova-Loop रिपॉजिटरी की जाँच करें। उपयोगकर्ताओं को उत्पादन कार्यभार चलाने से पहले कॉन्फ़िगरेशन और परिनियोजन गाइड की समीक्षा करनी चाहिए।",
+  "en_meta": "OpenSenseNova releases SenseNova-Loop-9B-Preview, a looped multimodal model for long-context and agentic workflows. Explore its architecture and setup.",
+  "hi_meta": "OpenSenseNova ने SenseNova-Loop-9B-Preview मल्टीмоडल मॉडल लॉन्च किया। लंबे संदर्भ और एजेंटिक वर्कफ़्लो के लिए इसकी वास्तुकला और सेटअप जानें।",
+  "en_keywords": [
+    "SenseNova-Loop-9B-Preview",
+    "OpenSenseNova",
+    "multimodal model",
+    "looped decoder",
+    "manifold-constrained hyper-connections"
+  ],
+  "hi_keywords": [
+    "SenseNova-Loop-9B-Preview",
+    "OpenSenseNova",
+    "मल्टीмоडल मॉडल",
+    "लूप्ड डिकोडर",
+    "AI मॉडल"
+  ],
+  "source_published_at": null,
+  "id": "722b27f71b13",
+  "source": "https://github.com/OpenSenseNova/SenseNova-Loop",
+  "date": "2026-11-10T12:04:00.672349+00:00",
+  "source_title": "OpenSenseNova/SenseNova-Loop - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

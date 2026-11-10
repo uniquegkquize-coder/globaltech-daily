@@ -1,0 +1,33 @@
+{
+  "en_title": "Oxc Project Offers High-Performance JavaScript Tools Written in Rust",
+  "hi_title": "ऑक्सीडेशन कंपाइलर प्रोजेक्ट रस्ट में लिखे गए उच्च-प्रदर्शन JavaScript टूल प्रदान करता है",
+  "en_body": "The Oxidation Compiler (Oxc) is a collection of high-performance tools designed for JavaScript and TypeScript, written in Rust. Developed as part of VoidZero's vision for a unified, high-performance toolchain, Oxc powers Rolldown—Vite's bundler—and is intended to enable fast development workflows.\n\nAccording to the project documentation, Oxc is utilized across several tools and frameworks for different tasks:\n* **Parsing:** Used by Rolldown and Nuxt.\n* **Transformation and Minification:** Handled by Rolldown using Oxc.\n* **Module Resolution:** `oxc_resolver` is used by Nova, swc-node, and knip.\n* **Linting:** `oxlint` is adopted by Preact, Shopify, ByteDance, and Shopee.\n\n## Core Capabilities\nThe project highlights several foundational modules:\n* **Transformer:** Transforms TypeScript, JSX, and modern JavaScript.\n* **Minifier:** Minifies JavaScript code for production builds.\n* **Resolver:** Resolves modules for both JavaScript and TypeScript.\n\n## Licensing and Contributions\nOxc is distributed as free and open-source software under the MIT License. The project accepts community contributions, with guidelines available via CONTRIBUTING.md and the official website, oxc.rs. Non-coding participation includes sharing updates on social platforms. The project repository also outlines specific guidelines for AI agents regarding code reuse and acknowledgments.\n\n## Practical Implications\nDevelopers working with JavaScript and TypeScript ecosystems can evaluate Oxc components for parsing, linting, and building tasks to assess performance impacts. Verification of official announcements, releases, and documentation updates can be conducted directly through the official GitHub repository at github.com/oxc-project/oxc or the project website.",
+  "hi_body": "ऑक्सीडेशन कंपाइलर (Oxc) JavaScript और TypeScript के लिए उच्च-प्रदर्शन टूल का एक संग्रह है, जिसे रस्ट (Rust) में लिखा गया है। VoidZero के एकीकृत और तेज़ टूलचेन के दृष्टिकोण के हिस्से के रूप में विकसित, Oxc विटे (Vite) के बंडलर रोल्डडाउन (Rolldown) को संचालित करता है और तेज़ विकास वर्कफ़्लो को सक्षम करने के लिए डिज़ाइन किया गया है।\n\nप्रोजेक्ट दस्तावेज़ के अनुसार, Oxc का उपयोग विभिन्न कार्यों के लिए कई टूल और फ्रेमवर्क में किया जाता है:\n* **पार्सिंग:** Rolldown और Nuxt द्वारा उपयोग किया जाता है।\n* **ट्रांसफॉर्मेशन और मिनिफ़िकेशन:** Rolldown द्वारा Oxc का उपयोग करके संभाला जाता है।\n* **मॉड्यूल रिज़ॉल्यूशन:** Nova, swc-node, और knip द्वारा `oxc_resolver` का उपयोग किया जाता है।\n* **लिंटिंग:** Preact, Shopify, ByteDance, और Shopee द्वारा `oxlint` अपनाया जाता है।\n\n## मुख्य क्षमताएं\nप्रोजेक्ट कई बुनियादी मॉड्यूल को उजागर करता है:\n* **ट्रांसफॉर्मर:** TypeScript, JSX, और आधुनिक JavaScript को रूपांतरित करता है।\n* **मिनिफायर:** प्रोडक्शन बिल्ड के लिए JavaScript को छोटा करता है।\n* **रिज़ॉल्वर:** JavaScript और TypeScript दोनों के लिए मॉड्यूल हल करता है।\n\n## लाइसेंसिंग और योगदान\nOxc को MIT लाइसेंस के तहत मुफ्त और ओपन-सर्च सॉफ्टवेयर के रूप में वितरित किया जाता है। प्रोजेक्ट समुदाय के योगदान का स्वागत करता है, जिसके दिशा-निर्देश CONTRIBUTING.md और आधिकारिक वेबसाइट oxc.rs पर उपलब्ध हैं।\n\n## व्यावहारिक निहितार्थ\nJavaScript और TypeScript पारिस्थितिकी तंत्र के साथ काम करने वाले डेवलपर्स प्रदर्शन प्रभाव का आकलन करने के लिए पार्सिंग, लिंटिंग और बिल्डिंग कार्यों के लिए Oxc घटकों का मूल्यांकन कर सकते हैं। आधिकारिक घोषणाओं और दस्तावेज़ीकरण अपडेट का सत्यापन सीधे आधिकारिक GitHub रिपॉजिटरी github.com/oxc-project/oxc पर किया जा सकता है।",
+  "en_meta": "Explore Oxc, a collection of high-performance Rust-based tools for JavaScript and TypeScript offering parsing, linting, and transformation capabilities.",
+  "hi_meta": "Oxc एक उच्च-प्रदर्शन रस्ट-आधारित JavaScript और TypeScript टूल संग्रह है जो पार्सिंग, लिंटिंग और ट्रांसफॉर्मेशन क्षमताएं प्रदान करता है।",
+  "en_keywords": [
+    "Oxc",
+    "Rust",
+    "JavaScript tools",
+    "TypeScript",
+    "VoidZero",
+    "Rolldown",
+    "oxlint"
+  ],
+  "hi_keywords": [
+    "Oxc",
+    "रस्ट",
+    "JavaScript टूल",
+    "TypeScript",
+    "VoidZero",
+    "Rolldown",
+    "oxlint"
+  ],
+  "source_published_at": null,
+  "id": "857519861bce",
+  "source": "https://github.com/oxc-project/oxc",
+  "date": "2026-11-10T12:05:47.458290+00:00",
+  "source_title": "oxc-project/oxc: ⚓ A collection of high-performance JavaScript tools. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
