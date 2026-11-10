@@ -42,6 +42,12 @@ GENERATED_HTML=set()
 (OUT/'googled7fc3627b4add656.html').write_text('google-site-verification: googled7fc3627b4add656.html\n',encoding='utf-8')
 def e(x):return html.escape(str(x or ''),quote=True)
 def write(p,s):
+ # Fail the build before publishing any newly rendered HTML containing Adsterra.
+ if p.suffix.lower() in ('.html', '.htm'):
+  forbidden=('profitableratecpmnetwork.com', 'data-adsterra-', 'bicea.org/22/', 'window.atOptions')
+  matches=[marker for marker in forbidden if marker.lower() in s.lower()]
+  if matches:
+   raise RuntimeError(f'Blocked Adsterra markup in {p}: {", ".join(matches)}')
  if p.name=='index.html':GENERATED_HTML.add(p.relative_to(OUT).as_posix())
  p.parent.mkdir(parents=True,exist_ok=True)
  data=s.encode('utf-8')
