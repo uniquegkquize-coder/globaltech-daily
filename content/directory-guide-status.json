@@ -1,6 +1,6 @@
 {
   "published": 4,
-  "updated": 8,
+  "updated": 0,
   "target": 8,
   "missing": {
     "colleges": 2,
@@ -9,13 +9,13 @@
   "categories": {
     "colleges": {
       "new": 0,
-      "updated": 2,
+      "updated": 0,
       "eligible_new": 0,
-      "eligible_updates": 2,
+      "eligible_updates": 0,
       "shortfall": 2,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 16,
+        "already_published_unchanged": 18,
         "insufficient verified descriptive fields": 85,
         "identifier URL is not specification evidence": 199
       },
@@ -150,17 +150,17 @@
     },
     "phones": {
       "new": 2,
-      "updated": 4,
-      "eligible_new": 1016,
-      "eligible_updates": 4,
+      "updated": 0,
+      "eligible_new": 1015,
+      "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 119,
+        "already_published_unchanged": 125,
         "insufficient verified descriptive fields": 104,
-        "identifier URL is not specification evidence": 638
+        "identifier URL is not specification evidence": 637
       },
-      "rejected_count": 742,
+      "rejected_count": 741,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -291,17 +291,17 @@
     },
     "cars": {
       "new": 2,
-      "updated": 2,
-      "eligible_new": 1186,
-      "eligible_updates": 2,
+      "updated": 0,
+      "eligible_new": 1233,
+      "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 9440,
-        "already_published_unchanged": 123,
-        "insufficient verified descriptive fields": 893,
-        "identifier URL is not specification evidence": 7236
+        "considered": 9689,
+        "already_published_unchanged": 127,
+        "insufficient verified descriptive fields": 927,
+        "identifier URL is not specification evidence": 7402
       },
-      "rejected_count": 8129,
+      "rejected_count": 8329,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -572,5 +572,5 @@
       ]
     }
   },
-  "date": "2026-11-11T01:30:22.813376+00:00"
+  "date": "2026-11-11T04:16:34.011409+00:00"
 }
