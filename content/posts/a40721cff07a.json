@@ -1,0 +1,33 @@
+{
+  "en_title": "Apple Backports CoreGraphics Zero-Day Patches to Older iPhones and iPads",
+  "hi_title": "एप्पल ने पुराने आईफोन और आईपैड के लिए कोरग्राफिक्स ज़ीरो-डे पैच जारी किए",
+  "en_body": "Apple has backported security updates to older iPhone and iPad models to address a zero-day vulnerability previously patched in newer software versions. The flaw, tracked as CVE-2026-86950, is an out-of-bounds write weakness in the CoreGraphics framework.\n\nMeta Product Security discovered the vulnerability, which affects two-dimensional vector graphics, text drawing, and image rendering processes across Apple operating systems. According to Apple, processing a maliciously crafted file could lead to arbitrary code execution or application crashes due to inadequate bounds checking.\n\n## Impact and Targeted Devices\n\nApple stated it is aware of reports indicating this vulnerability has been exploited in extremely sophisticated, highly targeted attacks against specific individuals using iOS versions prior to iOS 27. The newly released backports extend protection to several legacy and current devices, including:\n\n* iPhone XS, iPhone XS Max, and iPhone XR\n* iPad 7th generation and later\n* iPad Air 4th generation and later\n* iPad mini 6th generation and later\n\n## Broader Security Context\n\nThis update marks the second zero-day vulnerability addressed by Apple that was actively exploited in attacks this year. In February, Apple patched an arbitrary code execution flaw in the Dynamic Link Editor (dyld) tracked as CVE-2026-20700. Additional fixes earlier in the year included a high-severity flaw in Beats Studio Buds and four vulnerabilities targeted in cyberespionage campaigns.\n\n## Practical Implications and Verification\n\nAlthough Apple noted that the CVE-2026-86950 exploit has been limited to highly targeted attacks, users of supported older hardware are strongly advised to install the latest software updates to mitigate potential risks.\n\n* **How to Verify:** Users can check and install available updates by navigating to Settings > General > Software Update on their iOS or iPadOS devices.\n* **Official Guidance:** Always rely on official Apple security support documentation for authentic patch advisory details and verification steps.",
+  "hi_body": "एप्पल ने हाल ही में नए सॉफ्टवेयर संस्करणों में ठीक की गई ज़ीरो-डे कमज़ोरी को दूर करने के लिए पुराने आईफोन और आईपैड मॉडल के लिए सुरक्षा अपडेट जारी किए हैं। इस कमज़ोरी को CVE-2026-86950 के रूप में ट्रैक किया गया है, जो कोरग्राफिक्स फ्रेमवर्क में एक आउट-ऑफ-बाउंड्स राइट समस्या है।\n\nमेटा प्रोडक्ट सिक्योरिटी ने इस कमज़ोरी की खोज की थी, जो एप्पल ऑपरेटिंग सिस्टम पर दो-आयामी वेक्टर ग्राफिक्स, टेक्स्ट ड्राइंग और इमेज रेंडरिंग को प्रभावित करती है। एप्पल के अनुसार, अपर्याप्त बाउंड्स जाँच के कारण दुर्भावनापूर्ण रूप से तैयार की गई फ़ाइल को संसाधित करने से मनमाना कोड निष्पादन या एप्लिकेशन क्रैश हो सकता है।\n\n## प्रभाव और लक्षित उपकरण\n\nएप्पल ने कहा है कि वह ऐसी रिपोर्टों से अवगत है जो यह संकेत देती हैं कि आईओएस 27 से पहले के आईओएस संस्करणों का उपयोग करने वाले विशिष्ट व्यक्तियों के खिलाफ अत्यधिक परिष्कृत, अत्यधिक लक्षित हमलों में इस कमज़ोरी का फायदा उठाया गया है। नए जारी किए गए पैच निम्नलिखित सहित कई पुराने और वर्तमान उपकरणों सुरक्षा प्रदान करते हैं:\n\n* आईफोन XS, आईफोन XS मैक्स, और आईफोन XR\n* आईपैड 7वीं पीढ़ी और बाद के संस्करण\n* आईपैड एयर चौथी पीढ़ी और बाद के संस्करण\n* आईपैड मिनी छठी पीढ़ी और बाद के संस्करण\n\n## व्यापक सुरक्षा संदर्भ\n\nयह अपडेट एप्पल द्वारा संबोधित की गई दूसरी ज़ीरो-डे कमज़ोरी है जिसका इस वर्ष हमलों में सक्रिय रूप से फायदा उठाया गया था। फरवरी में, एप्पल ने डायनेमिक लिंक एडिटर (dyld) में एक मनमाने कोड निष्पादन दोष को पैच किया था जिसे CVE-2026-20700 के रूप में ट्रैक किया गया था। इस वर्ष की शुरुआत में किए गए अन्य सुधारों में बीट्स स्टूडियो बड्स में एक उच्च-गंभीरता वाला दोष और साइबर जासूसी अभियानों में लक्षित चार कमज़ोरियां शामिल थीं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nयद्यपि एप्पल ने उल्लेख किया है कि CVE-2026-86950 का फायदा उठाने वाले हमले अत्यधिक लक्षित रहे हैं, फिर भी समर्थित पुराने हार्डवेयर के उपयोगकर्ताओं को संभावित जोखिमों को कम करने के लिए नवीनतम सॉफ़्टवेयर अपडेट स्थापित करने की दृढ़ता से सलाह दी जाती है।\n\n* **सत्यापन कैसे करें:** उपयोगकर्ता अपने आईओएस या आईपैडओएस उपकरणों पर सेटिंग्स > सामान्य > सॉफ्टवेयर अपडेट पर जाकर उपलब्ध अपडेट की जांच और स्थापना कर सकते हैं।\n* **आधिकारिक मार्गदर्शन:** प्रामाणिक पैच सलाहकार विवरण और सत्यापन चरणों के लिए हमेशा आधिकारिक एप्पल सुरक्षा सहायता प्रलेखन पर भरोसा करें।",
+  "en_meta": "Apple backports CoreGraphics zero-day vulnerability patches (CVE-2026-86950) to older iPhone and iPad models following targeted attacks.",
+  "hi_meta": "एप्पल ने लक्षित हमलों के बाद पुराने आईफोन और आईपैड मॉडल के लिए कोरग्राफिक्स ज़ीरो-डे कमज़ोरी पैच (CVE-2026-86950) वापस भेज दिए हैं।",
+  "en_keywords": [
+    "Apple",
+    "CoreGraphics",
+    "zero-day",
+    "CVE-2026-86950",
+    "iPhone",
+    "iPad",
+    "security patch"
+  ],
+  "hi_keywords": [
+    "एप्पल",
+    "कोरग्राफिक्स",
+    "ज़ीरो-डे",
+    "CVE-2026-86950",
+    "आईफोन",
+    "आईपैड",
+    "सुरक्षा पैच"
+  ],
+  "source_published_at": "2026-10-27T06:36:12-04:00",
+  "id": "a40721cff07a",
+  "source": "https://www.bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones/",
+  "date": "2026-11-11T09:47:03.709446+00:00",
+  "source_title": "Apple backports CoreGraphics zero-day patches to older iPhones",
+  "category": "technology",
+  "image_kind": "conceptual"
+}
