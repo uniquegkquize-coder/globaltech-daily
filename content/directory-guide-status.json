@@ -1,6 +1,6 @@
 {
   "published": 4,
-  "updated": 0,
+  "updated": 4,
   "target": 8,
   "missing": {
     "colleges": 2,
@@ -9,13 +9,13 @@
   "categories": {
     "colleges": {
       "new": 0,
-      "updated": 0,
+      "updated": 2,
       "eligible_new": 0,
-      "eligible_updates": 0,
+      "eligible_updates": 2,
       "shortfall": 2,
       "reasons": {
         "considered": 302,
-        "already_published_unchanged": 18,
+        "already_published_unchanged": 16,
         "insufficient verified descriptive fields": 85,
         "identifier URL is not specification evidence": 199
       },
@@ -150,13 +150,13 @@
     },
     "phones": {
       "new": 2,
-      "updated": 0,
-      "eligible_new": 1015,
-      "eligible_updates": 0,
+      "updated": 1,
+      "eligible_new": 1013,
+      "eligible_updates": 1,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 125,
+        "already_published_unchanged": 126,
         "insufficient verified descriptive fields": 104,
         "identifier URL is not specification evidence": 637
       },
@@ -291,13 +291,13 @@
     },
     "cars": {
       "new": 2,
-      "updated": 0,
-      "eligible_new": 1233,
-      "eligible_updates": 0,
+      "updated": 1,
+      "eligible_new": 1231,
+      "eligible_updates": 1,
       "shortfall": 0,
       "reasons": {
         "considered": 9689,
-        "already_published_unchanged": 127,
+        "already_published_unchanged": 128,
         "insufficient verified descriptive fields": 927,
         "identifier URL is not specification evidence": 7402
       },
@@ -572,5 +572,5 @@
       ]
     }
   },
-  "date": "2026-11-11T04:16:34.011409+00:00"
+  "date": "2026-11-11T07:39:31.152922+00:00"
 }
