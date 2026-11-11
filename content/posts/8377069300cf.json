@@ -1,0 +1,29 @@
+{
+  "en_title": "Understanding T3 Code: FAQ, Harnesses, and Remote Access",
+  "hi_title": "T3 Code को समझना: अक्सर पूछे जाने वाले प्रश्न, हार्नेस और रिमोट एक्सेस",
+  "en_body": "T3 Code is an open-source tool designed to integrate with various AI harnesses and provider subscriptions, functioning as a restaurant analogy where users bring their own kitchen setup. According to official project documentation, T3 Code requires an underlying harness such as the Anthropic Agent SDK or Codex App Server to operate.\n\n## Core Concepts and Harness Integration\n- **Definition**: T3 Code itself is an interface and ecosystem wrapper, not a standalone harness.\n- **Brought Subscriptions**: Users bring their existing subscriptions (such as Claude Code, Codex, Cursor, Grok Build, OpenCode, Google Antigravity, Pi, or Muse Code).\n- **Licensing**: Distributed under the MIT license, with no subscription fees paid directly to T3 Code for its use.\n\n## Remote Capabilities and T3 Connect\n- **T3 Connect**: A built-in alternative to Tailscale designed for remote connections, allowing users to drive code environments from anywhere using desktop apps, CLI tools, or mobile apps for iOS and Android.\n- **Machine Limits**: Free accounts can connect up to three machines via T3 Connect. Linking a T3 Chat account can raise limits (up to 10 for Pro, up to 100 for Premier).\n- **Troubleshooting**: Connection diagnostics are accessible via Settings > Environments > Machine > Details.\n\n## Provider Limits and Data Privacy\n- **Usage Limits**: The documentation notes a reported bug involving Anthropic's Agent SDK where usage via SDK wrappers may drain 5-hour limits faster than using Claude Code directly, while weekly limits remain unaffected.\n- **Data Flow**: Code and prompts travel directly from the user's machine to the respective provider (such as Anthropic or OpenAI) rather than through T3 servers. T3 Connect traffic utilizes a Cloudflare tunnel.\n- **Telemetry**: Basic product usage data is collected, but telemetry can be disabled by setting `T3CODE_TELEMETRY_ENABLED=false`.\n\n## Verification and Practical Setup\nTo verify original setup instructions, consult the official `t3code/docs/user/faq.md` on GitHub. Users experiencing missing CLI tools should verify path configurations and ensure authentication logins are complete on the host machine running the server.",
+  "hi_body": "T3 Code एक ओपन-सोर्स टूल है जिसे विभिन्न AI हार्नेस और प्रदाता सब्सक्रिप्शन के साथ एकीकृत करने के लिए डिज़ाइन किया गया है। आधिकारिक प्रोजेक्ट दस्तावेज़ीकरण के अनुसार, T3 Code को संचालित करने के लिए Anthropic Agent SDK या Codex App Server जैसे अंतर्निहित हार्नेस की आवश्यकता होती है।\n\n## मुख्य अवधारणाएँ और हार्नेस एकीकरण\n- **परिभाषा**: T3 Code स्वयं एक इंटरफ़ेस है, न कि एक स्टैंडअलोन हार्नेस।\n- **सब्सक्रिप्शन**: उपयोगकर्ता अपने मौजूदा सब्सक्रिप्शन (जैसे Claude Code, Codex, Cursor, Grok Build, OpenCode, Google Antigravity, Pi, या Muse Code) का उपयोग करते हैं।\n- **लाइसेंसिंग**: इसे MIT लाइसेंस के तहत वितरित किया जाता है, और इसके उपयोग के लिए T3 Code को कोई सीधा शुल्क नहीं दिया जाता है।\n\n## रिमोट क्षमताएं और T3 Connect\n- **T3 Connect**: रिमोट कनेक्शन के लिए एक अंतर्निहित विकल्प है, जो उपयोगकर्ताओं को डेस्कटॉप ऐप, CLI टूल या मोबाइल ऐप का उपयोग करके कहीं से भी कोड वातावरण संचालित करने की अनुमति देता है।\n- **मशीन सीमाएं**: निःशुल्क खाते T3 Connect के माध्यम से अधिकतम तीन मशीनों को कनेक्ट कर सकते हैं। T3 Chat खाता लिंक करके सीमा बढ़ाई जा सकती है।\n- **समस्या निवारण**: कनेक्शन संबंधी समस्याओं की जांच Settings > Environments > Machine > Details के माध्यम से की जा सकती है।\n\n## प्रदाता सीमाएं और डेटा गोपनीयता\n- **उपयोग सीमाएं**: दस्तावेज़ीकरण में Anthropic के Agent SDK से जुड़े एक ज्ञात बग का उल्लेख है, जिसके कारण SDK के माध्यम से उपयोग करने पर 5 घंटे की सीमाएं तेजी से समाप्त हो सकती हैं, जबकि साप्ताहिक सीमाएं अप्रभावित रहती हैं।\n- **डेटा प्रवाह**: कोड और प्रॉम्प्ट सीधे उपयोगकर्ता की मशीन से संबंधित प्रदाता (जैसे Anthropic या OpenAI) तक जाते हैं। T3 Connect ट्रैफिक Cloudflare टनल का उपयोग करता है।\n- **टेलीमेट्री**: बुनियादी उत्पाद उपयोग डेटा एकत्र किया जाता है, लेकिन `T3CODE_TELEMETRY_ENABLED=false` सेट करके इसे अक्षम किया जा सकता है।\n\n## सत्यापन और व्यावहारिक सेटअप\nमूल सेटअप निर्देशों को सत्यापित करने के लिए, GitHub पर आधिकारिक `t3code/docs/user/faq.md` देखें। यदि CLI टूल अनुपस्थित हैं, तो पाथ कॉन्फ़िगरेशन की जांच करें और होस्ट मशीन पर प्रमाणीकरण लॉगिन सुनिश्चित करें।",
+  "en_meta": "Read the official T3 Code FAQ overview covering harnesses, remote access via T3 Connect, machine limits, data privacy, and platform compatibility.",
+  "hi_meta": "हार्नेस, T3 Connect रिमोट एक्सेस, मशीन सीमाओं और डेटा गोपनीयता को कवर करने वाले आधिकारिक T3 Code FAQ का विवरण पढ़ें।",
+  "en_keywords": [
+    "T3 Code",
+    "AI harness",
+    "T3 Connect",
+    "remote access",
+    "developer tools"
+  ],
+  "hi_keywords": [
+    "T3 Code",
+    "AI harness",
+    "T3 Connect",
+    "रिमोट एक्सेस",
+    "डेवलपर टूल्स"
+  ],
+  "source_published_at": null,
+  "id": "8377069300cf",
+  "source": "https://github.com/pingdotgg/t3code/blob/main/docs/user/faq.md",
+  "date": "2026-11-10T23:43:52.840636+00:00",
+  "source_title": "t3code/docs/user/faq.md at main · pingdotgg/t3code - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

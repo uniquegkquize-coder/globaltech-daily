@@ -1,0 +1,32 @@
+{
+  "en_title": "TablePro: Free and Open Source Native Database Client for Developers",
+  "hi_title": "TablePro: डेवलपर्स के लिए मुफ़्त और ओपन-सोर्स नेटिव डेटाबेस क्लाइंट",
+  "en_body": "TablePro is a free and open-source database client designed to provide native applications across multiple platforms, including macOS, iPhone, iPad, and Linux, with a Windows version currently in development. According to available details, the software allows users to browse data, write queries, and edit rows in both SQL and NoSQL databases.\n\n## Platform Architecture and Tech Stack\n\nThe project utilizes native technologies tailored to each operating system:\n\n* **Apple Apps (macOS, iPhone, iPad):** Built using Swift and native frameworks.\n* **Linux:** Built using Rust, GTK 4, and libadwaita.\n* **Windows:** Built using C# and WinUI 3, currently in development.\n\nThe Linux and Windows versions build on a shared Rust core, while the Swift application does not currently use it. Linux native packages require specific library versions, with Ubuntu 26.04 / 26.10 using a dedicated PPA, Fedora 44 / 45 using a repository package, and other distributions utilizing the beta Flatpak repository. Packages are also distributed via GitHub Releases.\n\n## Core Features and Capabilities\n\nFeatures vary by platform, and users are advised to consult the official documentation for complete lists and limits:\n\n* **General:** Query editors, data browsing, row editing, SSH tunnels, and SSL/TLS connections.\n* **Mac and Linux:** Autocomplete, multi-cursor editing, Vim mode, and AI assistance with user-provided providers or Ollama, alongside an MCP server for local clients.\n* **Mac Only:** Split panes and driver plugins.\n* **iPhone and iPad:** Data browsing and editing, with optional iCloud sync for connections and saved queries.\n\n## Licensing, Plans, and Verification\n\nThe database tools are offered free on supported databases with no trial period or time limit. Pro and Team tiers add paid features on macOS and Linux, where a single license covers up to three computers. The iOS and iPadOS applications do not require a license. The project is licensed under the GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later), with trademarks managed separately.\n\nTo verify announcements, installation steps, and pricing plans, consult the official GitHub repository, GitHub Releases, and platform-specific guides.",
+  "hi_body": "TablePro एक मुफ़्त और ओपन-सोर्स डेटाबेस क्लाइंट है जिसे macOS, iPhone, iPad और Linux पर नेटिव एप्लिकेशन प्रदान करने के लिए डिज़ाइन किया गया है, जबकि Windows संस्करण वर्तमान में विकास के चरण में है। उपलब्ध विवरण के अनुसार, यह सॉफ़्टवेयर उपयोगकर्ताओं को SQL और NoSQL दोनों डेटाबेस में डेटा ब्राउज़ करने, क्वेरी लिखने और पंक्तियों को संपादित करने की अनुमति देता है।\n\n## प्लेटफ़ॉर्म आर्किटेक्चर और तकनीक\n\nयह प्रोजेक्ट प्रत्येक ऑपरेटिंग सिस्टम के अनुसार तैयार की गई नेटिव तकनीकों का उपयोग करता है:\n\n* **Apple ऐप्स (macOS, iPhone, iPad):** Swift और नेटिव फ्रेमवर्क का उपयोग करके निर्मित।\n* **Linux:** Rust, GTK 4 और libadwaita का उपयोग करके निर्मित।\n* **Windows:** C# और WinUI 3 का उपयोग करके निर्मित, जो वर्तमान में विकास में है।\n\nLinux और Windows संस्करण एक साझा Rust कोर पर आधारित हैं, जबकि Swift एप्लिकेशन अभी इसका उपयोग नहीं करता है। Linux नेटिव पैकेजों के लिए विशिष्ट लाइब्रेरी संस्करणों की आवश्यकता होती है, जिसमें Ubuntu 26.04 / 26.10 एक समर्पित PPA का उपयोग करता है, Fedora 44 / 45 रिपॉजिटरी पैकेज का उपयोग करता है, और अन्य वितरण बीटा फ्लैटपैक रिपॉजिटरी का उपयोग करते हैं। पैकेज GitHub रिलीज़ के माध्यम से भी उपलब्ध हैं।\n\n## मुख्य विशेषताएं और क्षमताएं\n\nविशेषताएं प्लेटफ़ॉर्म के अनुसार भिन्न होती हैं, और उपयोगकर्ताओं को पूरी सूचियों के लिए आधिकारिक दस्तावेज़ देखने की सलाह दी जाती है:\n\n* **सामान्य:** क्वेरी संपादक, डेटा ब्राउज़िंग, पंक्ति संपादन, SSH टनल और SSL/TLS कनेक्शन।\n* **Mac और Linux:** ऑटोमैटिक पूर्णता (autocomplete), बहु-कर्सर संपादन, Vim मोड, और स्थानीय ग्राहकों के लिए MCP सर्वर के साथ AI सहायता।\n* **केवल Mac:** विभाजित फलक (split panes) और ड्राइवर प्लगइन।\n* **iPhone और iPad:** कनेक्शन और सहेजी गई क्वेरी के लिए वैकल्पिक iCloud सिंक के साथ डेटा ब्राउज़िंग और संपादन।\n\n## लाइसेंसिंग, योजनाएं और सत्यापन\n\nडेटाबेस टूल बिना किसी परीक्षण अवधि या समय सीमा के समर्थित डेटाबेस पर मुफ़्त उपलब्ध हैं। Pro और Team स्तर macOS और Linux पर सशुल्क सुविधाएं जोड़ते हैं, जहां एक लाइसेंस तीन कंप्यूटरों तक को कवर करता है। iOS और iPadOS एप्लिकेशन को किसी लाइसेंस की आवश्यकता नहीं होती है। यह प्रोजेक्ट GNU Affero जनरल पब्लिक लाइसेंस v3.0 या बाद के संस्करण (AGPL-3.0-or-later) के तहत लाइसेंस प्राप्त है।\n\nआधिकारिक घोषणाओं, स्थापना चरणों और मूल्य निर्धारण योजनाओं को सत्यापित करने के लिए आधिकारिक GitHub रिपॉजिटरी, GitHub रिलीज़ और प्लेटफ़ॉर्म-विशिष्ट गाइड देखें।",
+  "en_meta": "Learn about TablePro, a free and open-source native database client for macOS, Linux, iOS, and iPadOS, with Windows in development. Explore features and plans.",
+  "hi_meta": "TablePro के बारे में जानें, जो macOS, Linux, iOS और iPadOS के लिए एक मुफ़्त और ओपन-सोर्स नेटिव डेटाबेस क्लाइंट है। विशेषताएं और योजनाएं देखें।",
+  "en_keywords": [
+    "TablePro",
+    "database client",
+    "open source database tool",
+    "native database app",
+    "SQL client Linux Mac"
+  ],
+  "hi_keywords": [
+    "TablePro",
+    "डेटाबेस क्लाइंट",
+    "ओपन सोर्स डेटाबेस टूल",
+    "नेटिव डेटाबेस ऐप",
+    "SQL क्लाइंट Linux Mac"
+  ],
+  "source_published_at": null,
+  "id": "af647c3831b2",
+  "source": "https://github.com/TableProApp/TablePro",
+  "date": "2026-11-10T23:44:02.301999+00:00",
+  "source_title": "TableProApp/TablePro: Free and open source database client built natively for developers - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

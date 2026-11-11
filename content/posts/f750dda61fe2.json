@@ -1,0 +1,33 @@
+{
+  "en_title": "Spotube Open Source Cross-Platform Music Streaming App Detailed in Repository Documentation",
+  "hi_title": "स्पोट्यूब ओपन सोर्स क्रॉस-प्लेटफ़ॉर्म म्यूज़िक स्ट्रीमिंग ऐप की रिपॉजिटरी दस्तावेज़ में जानकारी",
+  "en_body": "Spotube is presented as a cross-platform, extensible, and open-source music streaming application designed for both desktop and mobile environments. According to project documentation, the software allows users to bring their own music metadata, playlists, and audio sources via community-created or self-made plugins, positioning itself as an entry toward decentralized music streaming.\n\n## Core Features and Architecture\n- **Plugin-Powered:** Supports various platforms or custom music services through modular extensions.\n- **Downloads and Metadata:** Offers freely downloadable tracks with tagged metadata alongside time-synced lyrics regardless of specific plugin support.\n- **Privacy Focus:** Features no telemetry, diagnostics, or user data collection.\n- **Local Control:** Playback control is executed locally rather than on a remote server.\n\n## Development and Building Requirements\nProject maintainers outline specific requirements for users looking to build the software from source:\n- **Prerequisites:** JDK 21 for running Gradle, alongside Rust (`rustup` and `cargo`) for the composeApp library built through Gobley.\n- **Dependencies:** Requires ComposeNativeWebview, Linux runtime libraries including VLC, and specific development packages depending on the Linux distribution (such as Debian, Ubuntu, Fedora, Arch, or openSUSE).\n- **Native Builds:** Compiling a native image involves tools like GraalVM, Nucleus for desktop packaging and integration, and handling reachability metadata for reflection and JNI components.\n\n## Project Governance and Licensing\nKingkor Roy Tirtho is identified as the founder, maintainer, and lead developer of the project. Spotube is distributed under the AGPL-3.0-or-later license. Users can download stable, beta, or nightly builds, or access the source code directly through the official website and repository links.",
+  "hi_body": "स्पोट्यूब को एक क्रॉस-प्लेटफ़ॉर्म, विस्तार योग्य और ओपन-सोर्स म्यूज़िक स्ट्रीमिंग एप्लिकेशन के रूप में प्रस्तुत किया गया है जो डेस्कटॉप और मोबाइल दोनों वातावरणों के लिए उपलब्ध है। प्रोजेक्ट दस्तावेज़ के अनुसार, यह सॉफ़्टवेयर उपयोगकर्ताओं को समुदाय-निर्मित या स्वयं-निर्मित प्लगइन्स के माध्यम से अपने स्वयं के संगीत मेटाडेटा, प्लेलिस्ट और ऑडियो स्रोत लाने की अनुमति देता है।\n\n## मुख्य विशेषताएँ और वास्तुकला\n- **प्लगइन-संचालित:** मॉड्यूलर एक्सटेंशन के माध्यम से विभिन्न प्लेटफार्मों या कस्टम संगीत सेवाओं का समर्थन करता है।\n- **डाउनलोड और मेटाडेटा:** विशिष्ट प्लगइन समर्थन की परवाह किए बिना टैग किए गए मेटाडेटा और समय-समन्वित गीत (टाइम-सिंक्ड लिरिक्स) के साथ डाउनलोड करने योग्य ट्रैक प्रदान करता है।\n- **गोपनीयता:** इसमें कोई टेलीमेट्री, डायग्नोस्टिक्स या उपयोगकर्ता डेटा संग्रह नहीं है।\n- **स्थानीय नियंत्रण:** प्लेबैक नियंत्रण दूरस्थ सर्वर के बजाय स्थानीय रूप से निष्पादित किया जाता है।\n\n## विकास और निर्माण आवश्यकताएँ\nप्रोजेक्ट mantener उन उपयोगकर्ताओं के लिए विशिष्ट आवश्यकताएँ रेखांकित करते हैं जो स्रोत से सॉफ़्टवेयर बनाना चाहते हैं:\n- **आवश्यक शर्तें:** Gradle चलाने के लिए JDK 21, साथ ही Gobley के माध्यम से निर्मित composeApp लाइब्रेरी के लिए Rust (`rustup` और `cargo`)।\n- **डिपेंडेंसी:** इसमें ComposeNativeWebview, VLC सहित लिनक्स रनटाइम लाइब्रेरी और विभिन्न लिनक्स वितरणों के अनुसार विशिष्ट विकास पैकेज शामिल हैं।\n- **नेटिव बिल्ड:** नेटिव इमेज को संकलित करने में GraalVM, डेस्कटॉप पैकेजिंग के लिए न्यूक्लियस (Nucleus), और प्रतिबिंब (reflection) घटकों के लिए मेटाडेटा संभालना शामिल है।\n\n## प्रोजेक्ट गवर्नेंस और लाइसेंसिंग\nकिंगकोर रॉय तीर्थो (Kingkor Roy Tirtho) को प्रोजेक्ट के संस्थापक, रखरखावकर्ता और मुख्य डेवलपर के रूप में पहचाना जाता है। स्पोट्यूब AGPL-3.0-or-later लाइसेंस के तहत वितरित किया जाता है। उपयोगकर्ता आधिकारिक वेबसाइट और रिपॉजिटरी लिंक के माध्यम से स्थिर, बीटा या नाइटली बिल्ड डाउनलोड कर सकते हैं।",
+  "en_meta": "Explore Spotube, an open-source, cross-platform music streaming app featuring plugin support, local playback control, and no telemetry.",
+  "hi_meta": "स्पोट्यूब एक ओपन-सोर्स, क्रॉस-प्लेटफ़ॉर्म म्यूज़िक स्ट्रीमिंग ऐप है जो प्लगइन समर्थन और स्थानीय प्लेबैक नियंत्रण प्रदान करता है।",
+  "en_keywords": [
+    "Spotube",
+    "music streaming app",
+    "open source",
+    "cross-platform",
+    "plugin powered",
+    "Kingkor Roy Tirtho"
+  ],
+  "hi_keywords": [
+    "स्पोट्यूब",
+    "म्यूज़िक स्ट्रीमिंग ऐप",
+    "ओपन सोर्स",
+    "क्रॉस-प्लेटफ़ॉर्म",
+    "किंगकोर रॉय तीर्थो"
+  ],
+  "source_published_at": null,
+  "id": "f750dda61fe2",
+  "source": "https://github.com/team-spotube/spotube",
+  "date": "2026-11-10T23:44:56.202306+00:00",
+  "source_title": "team-spotube/spotube: 🎧 Open source music streaming app! Available for both desktop & mobile! - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

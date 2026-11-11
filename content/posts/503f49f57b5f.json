@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Copilot App Announced as Agent-Native Desktop Experience",
+  "hi_title": "GitHub Copilot ऐप की घोषणा, एजेंट-नेटिव डेस्कटॉप अनुभव के रूप में पेश",
+  "en_body": "GitHub has introduced the GitHub Copilot app, described as an agent-native desktop experience designed to help developers find, run, steer, and land software work across their GitHub repositories. According to the announcement, the application aims to serve as a single control center to manage software development from initial ideas to pull requests.\n\n## Core Features and Architecture\n\nThe application is designed to support parallel agent-driven development through isolated environments:\n* **Isolated Worktrees:** Local sessions run within their own isolated git worktrees.\n* **Cloud Sessions:** Cloud-based environments allow agents to continue working remotely, enabling developers to pick up tasks from various locations.\n* **Canvases:** These shared, inspectable surfaces display agent activities, plans, diffs, and workflow states, allowing users to redirect work and verify progress without relying solely on chat threads.\n* **My Work & Automations:** Features like My Work aggregate sessions, issues, and pull requests, while automations convert repeatable prompts into background tasks.\n* **Agent Merge:** Assists in navigating pull requests through reviews, checks, and merge conditions.\n\n## Requirements and Access\n\nUsage requires a GitHub Copilot plan, which includes Copilot Free and GitHub Copilot Student tiers. Alternatively, users without a Copilot plan can utilize the app by bringing their own model provider key (BYOK).\n\n## Support and Verification\n\nDevelopers can review official documentation for setup instructions and initial session walkthroughs. Builds and releases are accessible directly through the repository's Releases page. Users encountering issues or wishing to submit feature requests can utilize the public repository's Issues and Discussions tabs, ensuring they follow guidelines such as providing debug logs when reporting problems.",
+  "hi_body": "GitHub ने GitHub Copilot ऐप पेश किया है, जिसे डेवलपर्स के लिए उनके GitHub रिपॉजिटरी में सॉफ्टवेयर कार्य को खोजने, चलाने, संचालित करने और पूरा करने के लिए एक एजेंट-नेटिव डेस्कटॉप अनुभव के रूप में वर्णित किया गया है। घोषणा के अनुसार, यह एप्लिकेशन शुरुआती विचारों से लेकर पुल रिक्वेस्ट तक सॉफ्टवेयर विकास को प्रबंधित करने के लिए एक एकल नियंत्रण केंद्र के रूप में कार्य करने का प्रयास करता है।\n\n## मुख्य विशेषता, और वास्तुकला\n\nएप्लिकेशन को अलग-अलग वातावरणों के माध्यम से समानांतर एजेंट-संचालित विकास का समर्थन करने के लिए डिज़ाइन किया गया है:\n* **आइसोलेटेड वर्कट्री:** स्थानीय सत्र अपने स्वयं के आइसोलेटेड गिट वर्कट्री के भीतर चलते हैं।\n* **क्लाउड सत्र:** क्लाउड-आधारित वातावरण एजेंटों को दूरस्थ रूप से काम जारी रखने की अनुमति देते हैं, जिससे डेवलपर्स विभिन्न स्थानों से कार्यों को संभाल सकते हैं।\n* **कैनवास:** ये साझा, निरीक्षण योग्य सतहें एजेंट गतिविधियों, योजनाओं और वर्कफ़्लो राज्यों को प्रदर्शित करती हैं, जिससे उपयोगकर्ताओं को केवल चैट धागों पर निर्भर रहने के बिना काम को पुनर्निर्देशित करने की अनुमति मिलती है।\n* **माई वर्क और ऑटोमेशन:** माई वर्क जैसी विशेषताएं सत्रों और मुद्दों को एकत्रित करती हैं, जबकि ऑटोमेशन दोहराए जाने वाले संकेतों को पृष्ठभूमि कार्यों में परिवर्तित करते हैं।\n* **एजेंट मर्ज:** समीक्षाओं और मर्ज शर्तों के माध्यम से पुल रिक्वेस्ट को आगे बढ़ाने में सहायता करता है।\n\n## आवश्यकताएँ और पहुँच\n\nउपयोग के लिए GitHub Copilot योजना की आवश्यकता होती है, जिसमें Copilot Free और GitHub Copilot Student टियर शामिल हैं। वैकल्पिक रूप से, Copilot योजना के बिना उपयोगकर्ता अपनी खुद की मॉडल प्रदाता कुंजी (BYOK) लाकर ऐप का उपयोग कर सकते हैं।\n\n## सहायता और सत्यापन\n\nडेवलपर्स सेटअप निर्देशों और प्रारंभिक सत्र वॉकथ्रू के लिए आधिकारिक दस्तावेज़ीकरण की समीक्षा कर सकते हैं। बिल्ड और रिलीज़ रिपॉजिटरी के रिलीज़ पेज के माध्यम से उपलब्ध हैं। समस्याओं का सामना करने वाले उपयोगकर्ता सार्वजनिक रिपॉजिटरी के मुद्दों और चर्चाओं टैब का उपयोग कर सकते हैं।",
+  "en_meta": "Learn about the GitHub Copilot desktop app, an agent-native experience for managing software work, isolated sessions, canvases, and integration requirements.",
+  "hi_meta": "GitHub Copilot डेस्कटॉप ऐप के बारे में जानें, जो सॉफ्टवेयर कार्य, आइसोलेटेड सत्रों और एकीकरण आवश्यकताओं को प्रबंधित करने के लिए एक एजेंट-नेटिव अनुभव है।",
+  "en_keywords": [
+    "GitHub Copilot app",
+    "agent-native desktop experience",
+    "software development tools",
+    "isolated git worktrees",
+    "GitHub Copilot plans"
+  ],
+  "hi_keywords": [
+    "GitHub Copilot ऐप",
+    "एजेंट-नेटिव डेस्कटॉप अनुभव",
+    "सॉफ्टवेयर विकास उपकरण",
+    "आइसोलेटेड गिट वर्कट्री",
+    "GitHub Copilot योजनाएं"
+  ],
+  "source_published_at": null,
+  "id": "503f49f57b5f",
+  "source": "https://github.com/github/app",
+  "date": "2026-11-10T23:45:55.289419+00:00",
+  "source_title": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,29 @@
+{
+  "en_title": "Telegram Android Voice Call Flaw Potentially Allowed Attackers to Run Code",
+  "hi_title": "टेलीग्राम के एंड्रॉइड वॉयस कॉल में सुरक्षा खामी, कोड रन होने का खतरा सामने आया",
+  "en_body": "Security startup NebuSec reported that a vulnerability in Telegram for Android could be chained with two other bugs to achieve remote code execution during voice calls. Telegram addressed the issue in version 12.10.4, released in late September.\n\nAccording to NebuSec co-founder and chief executive Eten Zou, the vulnerability affects versions 8.6.2 through 12.10.3, released between March 2022 and September 2026. When combined with an information-leak bug and an Android root exploit, the flaw could theoretically allow full device control upon answering a call.\n\n## Key Details and Scope\n- **Affected Versions:** Telegram for Android versions 8.6.2 to 12.10.3.\n- **Resolution:** Telegram fixed the issue in version 12.10.4.\n- **Attack Requirements:** The victim must receive and answer a voice call from an ordinary Telegram account.\n- **Scope Limitations:** NebuSec confirmed the behavior in private voice calls on ARM64-based phones and stated there is no evidence of direct impact on iOS, desktop apps, or group calls as of October 29.\n\n## Technical Context\nNebuSec stated the flaw resides in how MediaState messages—used during calls to report microphone state, camera status, and video rotation—are parsed. A review of Telegram's published source code for version 12.10.3 indicated that the code read a video state field even when the message lacked it if a rotation value was included. Version 12.10.4 corrected this field reading.\n\n## Mitigation and Verification\n- **Update the App:** Users should verify their Telegram for Android version is 12.10.4 or later by checking the bottom of the Settings page.\n- **Call Privacy Settings:** Changing Telegram's call privacy setting to \"Nobody\" or declining incoming calls can block the attack vector.\n- **Unknowns:** As of October 29, the flaw did not have a CVE identifier, NebuSec had not observed the issue used in real-world attacks, and no comprehensive technical write-up was published at the time of disclosure.",
+  "hi_body": "सुरक्षा स्टार्टअप नेबुसेक (NebuSec) के अनुसार, एंड्रॉइड के लिए टेलीग्राम में मौजूद एक खामी को अन्य दो बग्स के साथ जोड़कर वॉयस कॉल के दौरान रिमोट कोड निष्पादन (आरसीई) हासिल किया जा सकता था। टेलीग्राम ने सितंबर के अंत में जारी किए गए वर्जन 12.10.4 में इस समस्या को ठीक कर दिया है।\n\nनेबुसेक के सह-संस्थापक और मुख्य कार्यकारी एतेन जू के अनुसार, यह वल्नरेबिलिटी मार्च 2022 से सितंबर 2026 के बीच जारी किए गए वर्जन 8.6.2 से 12.10.3 तक को प्रभावित करती है। एक सूचना-लीक बग और एंड्रॉइड रूट exploit के साथ संयोजित होने पर, यह खामी सैद्धांतिक रूप से कॉल का उत्तर देने पर डिवाइस पर पूरा नियंत्रण दे सकती थी।\n\n## मुख्य विवरण और दायरा\n- **प्रभावित वर्जन:** एंड्रॉइड के लिए टेलीग्राम वर्जन 8.6.2 से 12.10.3 तक।\n- **समाधान:** टेलीग्राम ने वर्जन 12.10.4 में इस समस्या को ठीक कर दिया है।\n- **हमले की आवश्यकताएं:** पीड़ित को सामान्य टेलीग्राम खाते से वॉयस कॉल प्राप्त करना और उसका उत्तर देना होगा।\n- **दायरे की सीमाएं:** नेबुसेक ने ARM64-आधारित फोन पर निजी वॉयस कॉल में इसकी पुष्टि की और कहा कि 29 अक्टूबर तक iOS, डेस्कटॉप ऐप या ग्रुप कॉल पर सीधे प्रभाव का कोई प्रमाण नहीं है।\n\n## तकनीकी संदर्भ\nनेबुसेक ने बताया कि यह खामी इस बात में है कि कॉल के दौरान माइक्रोफ़ोन स्थिति, कैमरे की स्थिति और वीडियो रोटेशन की रिपोर्ट करने के लिए उपयोग किए जाने वाले मीडियास्टेट (MediaState) संदेशों को कैसे पार्स किया जाता है। टेलीग्राम के वर्जन 12.10.3 के सोर्स कोड की समीक्षा से संकेत मिला कि यदि रोटेशन मान शामिल था, तो कोड ने वीडियो स्टेट फ़ील्ड को पढ़ा, भले ही संदेश में ऐसा कोई फ़ील्ड न हो। वर्जन 12.10.4 ने इस फ़ील्ड रीडिंग को सुधार दिया है।\n\n## बचाव और सत्यापन\n- **ऐप अपडेट करें:** उपयोगकर्ताओं को सेटिंग्स पेज के नीचे जांच करके यह सुनिश्चित करना चाहिए कि उनका टेलीग्राम एंड्रॉइड वर्जन 12.10.4 या इसके बाद का है।\n- **कॉल गोपनीयता सेटिंग्स:** टेलीग्राम की कॉल गोपनीयता सेटिंग को \"कोई नहीं\" (Nobody) पर सेट करना या आने वाली कॉल को अस्वीकार करना इस हमले को रोक सकता है।\n- **अज्ञात बातें:** 29 अक्टूबर तक इस खामी के पास कोई CVE पहचानकर्ता नहीं था, नेबुसेक ने वास्तविक दुनिया के हमलों में इस समस्या को नहीं देखा था, और खुलासे के समय कोई व्यापक तकनीकी विवरण प्रकाशित नहीं किया गया था।",
+  "en_meta": "Learn about the Telegram Android voice call vulnerability reported by NebuSec, affected app versions, mitigation steps, and technical context.",
+  "hi_meta": "नेबुसेक द्वारा रिपोर्ट की गई टेलीग्राम एंड्रॉइड वॉयस कॉल वल्नरेबिलिटी, प्रभावित ऐप संस्करणों और बचाव के उपायों के बारे में जानें।",
+  "en_keywords": [
+    "Telegram Android flaw",
+    "NebuSec",
+    "remote code execution",
+    "voice call vulnerability",
+    "Telegram version 12.10.4"
+  ],
+  "hi_keywords": [
+    "टेलीग्राम एंड्रॉइड खामी",
+    "नेबुसेक",
+    "रिमोट कोड निष्पादन",
+    "वॉयस कॉल वल्नरेबिलिटी",
+    "टेलीग्राम वर्जन 12.10.4"
+  ],
+  "source_published_at": "2026-10-29T17:09:00+05:30",
+  "id": "b35772fb4a04",
+  "source": "https://thehackernews.com/2026/10/telegram-android-flaw-lets-attackers.html",
+  "date": "2026-11-10T23:45:16.136614+00:00",
+  "source_title": "Telegram Android Flaw Lets Attackers Run Code When Users Answer Voice Calls - The Hacker News",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

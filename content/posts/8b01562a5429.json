@@ -1,0 +1,34 @@
+{
+  "en_title": "treg Introduces OpenRouter-Style Proxy and Catalog for AI Agent Tools",
+  "hi_title": "ट्रेंड्स और एआई टूल्स के लिए treg ने पेश किया ओपनरॉटर जैसा प्रॉक्सी और कैटलॉग",
+  "en_body": "## Overview\ntreg is a newly introduced open-source proxy and registry platform designed to act as an \"OpenRouter for agent tools.\" The system aims to simplify how AI agents access external paid services, APIs, and CLI tools by routing requests through a single base URL and token without requiring separate vendor accounts or subscriptions for every service.\n\n## Core Architecture and Features\n- **Unified Catalog & Pay-Per-Call:** Provides access to thousands of endpoints across multiple providers—such as SEO, scraping, and enrichment—priced per call starting from a fraction of a cent.\n- **Credential Management:** Allows teams to store their own keys, OAuth connections, and CLIs securely on the server, ensuring credentials never leave the infrastructure or get exposed to agents directly.\n- **Flexible Routing:** Supports direct tool calls, automatic provider routing for common tasks like web searches, and a faithful proxy relay that injects authentication server-side.\n- **Self-Hosting and Community:** Available for self-hosting with local development support via SQLite and tmux, alongside an official hosted version at `treg.to`.\n\n## Verification and Getting Started\nUsers can interact with the platform using the CLI tool, integrate via Model Context Protocol (MCP), or explore the interactive API documentation at `/docs`. For deployment and source code details, developers can visit the official GitHub repository or join the community Discord server.\n\n*Note: Ensure you review the official documentation and licensing terms (Apache 2.0 with additional terms) before commercial deployment or redistribution.*",
+  "hi_body": "## अवलोकन\ntreg एक नया ओपन-सोर्स प्रॉक्सी और रजिस्ट्री प्लेटफॉर्म है जिसे \"एआई एजेंट टूल्स के लिए ओपनरॉटर\" के रूप में डिज़ाइन किया गया है। यह प्रणाली एआई एजेंटों को एक ही बेस यूआरएल और टोकन के माध्यम से बाहरी सेवाओं, एपीआई और सीएलआई टूल्स तक पहुंचने में मदद करती है, जिससे हर सेवा के लिए अलग से वेंडर खाते बनाने की आवश्यकता नहीं होती है।\n\n## मुख्य वास्तुकला और विशेषताएं\n- **एकीकृत कैटलॉग और प्रति-कॉल भुगतान:** कई प्रदाताओं के हजारों एंडपॉइंट्स तक पहुंच प्रदान करता है—जैसे एसईओ, स्क्रैपिंग और एनरिचमेंट—जो प्रति कॉल एक सेंट के अंश से शुरू होते हैं।\n- **क्रेडेंशियल प्रबंधन:** टीमों को अपने स्वयं के कीज़, ओएथ कनेक्शन और सीएलआई को सर्वर पर सुरक्षित रूप से संग्रहीत करने की अनुमति देता है।\n- **लचीली रूटिंग:** सीधे टूल कॉल्स, सामान्य कार्यों के लिए स्वचालित प्रेंडर रूटिंग, और एक वफादार प्रॉक्सी रिले का समर्थन करता है।\n- **सेल्फ-होस्टिंग और समुदाय:** SQLite और tmux के माध्यम से स्थानीय विकास समर्थन के साथ सेल्फ-होस्टिंग के लिए उपलब्ध है, साथ ही `treg.to` पर एक आधिकारिक होस्टेड संस्करण भी है।\n\n## सत्यापन और शुरुआत कैसे करें\nउपयोगकर्ता सीएलआई टूल का उपयोग करके प्लेटफ़ॉर्म के साथ इंटरैक्ट कर सकते हैं, मॉडल कॉन्टेक्स्ट प्रोटोकॉल (MCP) के माध्यम से एकीकृत कर सकते हैं, या `/docs` पर इंटरैक्टिव एपीआई दस्तावेज़ीकरण का पता लगा सकते हैं।\n\n*नोट: वाणिज्यिक तैनाती या पुनर्वितरण से पहले आधिकारिक दस्तावेज़ीकरण और लाइसेंसिंग शर्तों (अतिरिक्त शर्तों के साथ Apache 2.0) की समीक्षा अवश्य करें।*",
+  "en_meta": "treg is an open-source proxy and tool registry for AI agents, providing a unified catalog, server-side credential management, and pay-per-call access.",
+  "hi_meta": "treg एआई एजेंटों के लिए एक ओपन-सोर्स प्रॉक्सी और टूल रजिस्ट्री है, जो एक एकीकृत कैटलॉग और सर्वर-साइड क्रेडेंशियल प्रबंधन प्रदान करता है।",
+  "en_keywords": [
+    "treg",
+    "AI agents",
+    "OpenRouter",
+    "API proxy",
+    "tool registry",
+    "developer tools"
+  ],
+  "hi_keywords": [
+    "treg",
+    "एआई एजेंट",
+    "ओपनरॉटर",
+    "एपीआई प्रॉक्सी",
+    "टूल रजिस्ट्री",
+    "डेवलपर टूल्स"
+  ],
+  "source_published_at": null,
+  "id": "8b01562a5429",
+  "source": "https://github.com/superdesigndev/treg",
+  "date": "2026-11-10T23:43:30.677414+00:00",
+  "source_title": "superdesigndev/treg: OpenRouter for agent tools. Join community here: https://discord.gg/6mQYYfFMAn - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

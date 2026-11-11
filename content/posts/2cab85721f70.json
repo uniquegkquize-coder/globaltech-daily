@@ -1,0 +1,29 @@
+{
+  "en_title": "SharpEmu: An Experimental PlayStation 5 and PS4 Emulator for Windows and Linux",
+  "hi_title": "SharpEmu: विंडोज और लिनक्स के लिए एक प्रायोगिक प्लेस्टेशन 5 और PS4 एमुलेटर",
+  "en_body": "SharpEmu is an experimental open-source software project designed to emulate the PlayStation 5, featuring experimental backward compatibility support for PlayStation 4 games. Developed entirely from scratch in C#, the software is currently in the early stages of its development lifecycle, focusing primarily on accuracy and infrastructure setup rather than game-specific compatibility.\n\nAccording to the project documentation, SharpEmu targets research and educational goals, aiming to explore system architecture and reverse engineering. The developers state that the project does not contain copyrighted system firmware, game data, or proprietary PlayStation assets.\n\n## System Requirements and Compatibility\n\n* **Operating Systems:** Supports Windows x64 and Linux x64 hosts. Windows on ARM devices can run the x64 build via built-in emulation. macOS support is managed separately in a distinct repository.\n* **Graphics:** Requires a Vulkan-capable GPU along with an up-to-date graphics driver, utilizing Vulkan for video output.\n* **Performance:** Platform support remains experimental, meaning compatibility and performance will vary based on the specific game, operating system, and GPU driver.\n\n## Core Capabilities and Usage\n\n* **Execution:** The software can currently load the `eboot.bin` file of real games, execute native CPU instructions, and partially handle GPU-related functionality.\n* **Configuration:** Environment variables can be managed via the graphical user interface (GUI) either globally or per game, or passed directly through the command-line interface (CLI).\n* **Development:** Building the project requires cloning the repository, installing the specified .NET SDK version from `global.json`, opening the solution file in VSCode, and running standard .NET build commands.\n\n## Verification and Official Channels\n\nUsers interested in reviewing the project or verifying updates can consult the official GitHub repository and website at sharpemu.app. The developers emphasize that any other websites, accounts, or donation pages outside of these official channels are unauthorized. The project explicitly states that it does not condone piracy and expects users to supply legally obtained game copies dumped from consoles they personally own.",
+  "hi_body": "SharpEmu विंडोज और लिनक्स के लिए एक प्रायोगिक ओपन-सोर्स सॉफ्टवेयर प्रोजेक्ट है, जिसे प्लेस्टेशन 5 को एमुलेट करने के लिए डिज़ाइन किया गया है और इसमें प्लेस्टेशन 4 गेम्स के लिए प्रायोगिक बैकवर्ड कंपैटिबिलिटी समर्थन शामिल है। C# में पूरी तरह से नए सिरे से विकसित यह सॉफ्टवेयर वर्तमान में अपने विकास के शुरुआती चरण में है, जिसका मुख्य ध्यान गेम-विशिष्ट संगतता के बजाय सटीकता और बुनियादी ढांचे के सेटअप पर है।\n\nप्रोजेक्ट दस्तावेज़ के अनुसार, SharpEmu का उद्देश्य अनुसंधान और शैक्षणिक लक्ष्यों को पूरा करना है, जिसका लक्ष्य सिस्टम आर्किटेक्चर और रिवर्स इंजीनियरिंग का अध्ययन करना है। डेवलपर्स का कहना है कि इस प्रोजेक्ट में कोई भी कॉपीराइटेड सिस्टम फर्मवेयर, गेम डेटा या मालिकाना प्लेस्टेशन संपत्तियां शामिल नहीं हैं।\n\n## सिस्टम आवश्यकताएँ और संगतता\n\n* **ऑपरेटिंग सिस्टम:** विंडोज x64 और लिनक्स x64 होस्ट का समर्थन करता है। आर्म डिवाइस पर विंडोज अंतर्निहित एमुलेशन के माध्यम से x64 बिल्ड चला सकता है। macOS समर्थन का रखरखाव एक अलग रिपॉजिटरी में किया जाता है।\n* **ग्राफिक्स:** वीडियो आउटपुट के लिए वुकन (Vulkan) का उपयोग करते हुए, एक वुकन-सक्षम GPU और अपडेटेड ग्राफिक्स ड्राइवर की आवश्यकता होती है।\n* **प्रदर्शन:** प्लेटफ़ॉर्म समर्थन अभी भी प्रायोगिक है, जिसका अर्थ है कि संगतता और प्रदर्शन विशिष्ट गेम, ऑपरेटिंग सिस्टम और GPU ड्राइवर के आधार पर भिन्न होंगे।\n\n## मुख्य क्षमताएं और उपयोग\n\n* **निष्पादन:** यह सॉफ्टवेयर वर्तमान में वास्तविक गेम की `eboot.bin` फ़ाइल को लोड कर सकता है, मूल CPU निर्देशों को निष्पादित कर सकता है, और GPU-संबंधित कार्यक्षमता को आंशिक रूप से संभाल सकता है।\n* **कॉन्फ़िगरेशन:** पर्यावरण चर को GUI के माध्यम से वैश्विक स्तर पर या प्रति गेम प्रबंधित किया जा सकता है, या सीधे CLI के माध्यम से पारित किया जा सकता है।\n* **विकास:** प्रोजेक्ट को बनाने के लिए रिपॉजिटरी को क्लोन करना, `global.json` में निर्दिष्ट .NET SDK संस्करण स्थापित करना, VSCode में सॉल्यूशन फ़ाइल खोलना और मानक .NET बिल्ड कमांड चलाना आवश्यक है।\n\n## सत्यापन और आधिकारिक चैनल\n\nप्रोजेक्ट की समीक्षा करने या अपडेट सत्यापित करने के इच्छुक उपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी और sharpemu.app वेबसाइट का संदर्भ ले सकते हैं। डेवलपर्स इस बात पर जोर देते हैं कि इन आधिकारिक चैनलों के बाहर की कोई अन्य वेबसाइट, खाते या दान पृष्ठ अनधिकृत हैं। प्रोजेक्ट स्पष्ट रूप से बताता है कि यह पाइरेसी का समर्थन नहीं करता है और उपयोगकर्ताओं से कानूनी रूप से प्राप्त गेम प्रतियों का उपयोग करने की अपेक्षा करता है।",
+  "en_meta": "Learn about SharpEmu, an experimental PlayStation 5 and PS4 emulator for Windows and Linux developed in C# for research and educational purposes.",
+  "hi_meta": "SharpEmu के बारे में जानें, जो अनुसंधान और शिक्षा के लिए C# में विकसित विंडोज और लिनक्स के लिए एक प्रायोगिक PS5 और PS4 एमुलेटर है।",
+  "en_keywords": [
+    "SharpEmu",
+    "PlayStation 5 emulator",
+    "PS4 emulator",
+    "Windows and Linux emulator",
+    "C# emulator project"
+  ],
+  "hi_keywords": [
+    "SharpEmu",
+    "प्लेस्टेशन 5 एमुलेटर",
+    "PS4 एमुलेटर",
+    "विंडोज और लिनक्स",
+    "C# एमुलेटर"
+  ],
+  "source_published_at": null,
+  "id": "2cab85721f70",
+  "source": "https://github.com/sharpemu/sharpemu",
+  "date": "2026-11-10T23:42:04.783325+00:00",
+  "source_title": "sharpemu/sharpemu: An experimental PlayStation 5 emulator for Windows and Linux - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

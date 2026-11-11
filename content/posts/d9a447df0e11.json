@@ -1,0 +1,29 @@
+{
+  "en_title": "Tencent Hunyuan Releases Hy-SimulMT for Real-Time Bilingual Speech Translation and Voice Cloning",
+  "hi_title": "टेनसेंट हनयुआन ने रियल-टाइम द्विभाषी भाषण अनुवाद और वॉयस क्लोनिंग के लिए Hy-SimulMT किया जारी",
+  "en_body": "Tencent Hunyuan has released Hy-SimulMT, a real-time simultaneous translation model supporting bidirectional speech-to-speech translation between Chinese and English alongside real-time voice cloning. Designed for live communication settings such as meetings, speeches, and interviews, the model processes incoming audio streams to generate both translated text and synthesized speech while preserving the original speaker's vocal characteristics.\n\n## Performance and Benchmarks\n\nTo balance translation quality and latency, the developers evaluated Hy-SimulMT across public benchmarks and real-world audio samples:\n\n* **Long-Form Audio:** In the RealSI evaluation, Hy-SimulMT recorded a StreamLAAL of approximately 3 seconds, achieving the lowest lag among compared systems.\n* **Quality Scores:** Its GEMBA translation quality score surpassed those of tested open-source models and four out of five commercial APIs.\n* **Short-Form Datasets:** The model scored higher than other listed open-source models on FLEURS, ACL6060, and RealSI-Sentence benchmarks.\n* **Expert Comparisons:** In an evaluation involving 18 online audio recordings across ten domains compared against expert human interpreters holding CATTI Level 1 and 2 certificates, the system demonstrated competitive translation performance.\n\n## Deployment and Tools\n\nThe project provides inference services and training tools via its repository:\n\n* **SimulInfer:** Offers web interfaces, audio file uploads, real-time WebSockets, and optional TTS integration with input voice cloning.\n* **Llama.cpp Integration:** A pull request (#31198) has been submitted to add architecture-specific support for GGUF model inference using `llama-mtmd-cli`.\n* **SGLang-Omni Runtime:** Serves the `Hy-SimulMT-30B-A3B` checkpoint through OpenAI-compatible HTTP endpoints and real-time WebSockets.\n* **SimulTrain:** Provides capabilities to continue training from downloaded checkpoints using customized environment configurations.\n\n## Verification and Expert Feedback\n\nAcademic figures, including representatives from Guangdong University of Foreign Studies, noted that the system's iterative correction mechanism resembles human self-corrections, marking progress for AI simultaneous interpreting in low-risk settings. Users can verify the official announcement and access resources through the Tencent Hunyuan GitHub repository, Hugging Face, ModelScope, or by trying the Hy Translate App.",
+  "hi_body": "टेनसेंट हनयुआन ने Hy-SimulMT नामक एक रियल-टाइम समवर्ती अनुवाद मॉडल जारी किया है, जो चीनी और अंग्रेजी के बीच द्विभाषी स्पीच-टू-स्पीच अनुवाद और रियल-टाइम वॉयस क्लोनिंग का समर्थन करता है। बैठकों, भाषणों और साक्षात्कारों जैसे लाइव संचार सेटअप के लिए डिज़ाइन किया गया यह मॉडल आने वाले ऑडियो को संसाधित करता है और मूल वक्ता की आवाज की विशेषताओं को बनाए रखते हुए अनुवादित पाठ और भाषण दोनों उत्पन्न करता है।\n\n## प्रदर्शन और बेंचमार्क\n\nअनुवाद गुणवत्ता और विलंबता के बीच संतुलन का मूल्यांकन करने के लिए डेवलपर्स ने सार्वजनिक बेंचमार्क और वास्तविक ऑडियो नमूनों पर परीक्षण किए:\n\n* **लॉन्ग-फॉर्म ऑडियो:** RealSI मूल्यांकन में, Hy-SimulMT ने लगभग 3 सेकंड का StreamLAAL दर्ज किया, जो तुलना किए गए सिस्टम में सबसे कम था।\n* **गुणवत्ता स्कोर:** इसका GEMBA अनुवाद गुणवत्ता स्कोर परीक्षण किए गए ओपन-सॉर्ट मॉडल और पांच में से चार वाणिज्यिक एपीआई से अधिक रहा।\n* **शॉर्ट-फॉर्म डेटासेट:** मॉडल ने FLEURS, ACL6060 और RealSI-Sentence बेंचमार्क पर सूचीबद्ध अन्य ओपन-सोर्स मॉडल की तुलना में उच्च अंक प्राप्त किए।\n* **विशेषज्ञ तुलना:** CATTI स्तर 1 और 2 प्रमाणपत्र धारक विशेषज्ञ दुभाषियों के साथ दस डोमेन में 18 ऑनलाइन ऑडियो रिकॉर्डिंग के मूल्यांकन में सिस्टम ने प्रतिस्पर्धी प्रदर्शन दिखाया।\n\n## परिनियोजन और उपकरण\n\nयह प्रोजेक्ट अपनी रिपॉजिटरी के माध्यम से अनुमान सेवाएं और प्रशिक्षण उपकरण प्रदान करता है:\n\n* **SimulInfer:** वेब इंटरफेस, ऑडियो फाइल अपलोड, रियल-टाइम वेबसॉकेट और इनपुट वॉयस क्लोनिंग के साथ वैकल्पिक टीटीएस एकीकरण प्रदान करता है।\n* **Llama.cpp एकीकरण:** GGUF मॉडल अनुमान के लिए `llama-mtmd-cli` का उपयोग करके वास्तुकला-विशिष्ट समर्थन जोड़ने हेतु एक पुल अनुरोध (#31198) प्रस्तुत किया गया है।\n* **SGLang-Omni रनटाइम:** OpenAI-संगत HTTP समापन बिंदुओं और रियल-टाइम वेबसॉकेट के माध्यम से `Hy-SimulMT-30B-A3B` चेकपॉइंट को सेवा प्रदान करता है।\n* **SimulTrain:** अनुकूलित पर्यावरण कॉन्फ़िगरेशन का उपयोग करके डाउनलोड किए गए चेकपॉइंट से प्रशिक्षण जारी रखने की क्षमता प्रदान करता है।\n\n## सत्यापन और विशेषज्ञ प्रतिक्रिया\n\nगुआंग्डोंग यूनिवर्सिटी ऑफ फॉरेन स्टडीज के प्रतिनिधियों सहित अकादमिक विशेषज्ञों ने उल्लेख किया कि सिस्टम की पुनरावृत्ति सुधार तंत्र मानव आत्म-सुधार जैसा दिखता है, जो कम जोखिम वाले सेटिंग्स में AI समवर्ती दुभाषिया के लिए एक मील का पत्थर है। उपयोगकर्ता टेनसेंट हनयुआन गिटहब रिपॉजिटरी, हगिंग फेस, मॉडलस्कोप के माध्यम से आधिकारिक घोषणा और संसाधनों को सत्यापित कर सकते हैं या Hy Translate ऐप का उपयोग कर सकते हैं।",
+  "en_meta": "Tencent Hunyuan introduces Hy-SimulMT, a real-time simultaneous translation model for Chinese and English featuring voice cloning, benchmarks, and deployment…",
+  "hi_meta": "टेनसेंट हनयुआन ने चीनी और अंग्रेजी के लिए वॉयस क्लोनिंग और बेंचमार्क के साथ Hy-SimulMT रियल-टाइम समवर्ती अनुवाद मॉडल पेश किया।",
+  "en_keywords": [
+    "Hy-SimulMT",
+    "Tencent Hunyuan",
+    "real-time simultaneous translation",
+    "speech-to-speech translation",
+    "voice cloning"
+  ],
+  "hi_keywords": [
+    "Hy-SimulMT",
+    "टेनसेंट हनयुआन",
+    "समवर्ती अनुवाद",
+    "भाषण अनुवाद",
+    "वॉयस क्लोनिंग"
+  ],
+  "source_published_at": null,
+  "id": "d9a447df0e11",
+  "source": "https://github.com/Tencent-Hunyuan/Hy-SimulMT",
+  "date": "2026-11-10T23:45:36.889769+00:00",
+  "source_title": "Tencent-Hunyuan/Hy-SimulMT - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

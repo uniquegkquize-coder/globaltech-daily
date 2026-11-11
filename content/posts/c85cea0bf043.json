@@ -1,0 +1,32 @@
+{
+  "en_title": "WordCraft: An Open-Source, Clean-Room Word Processor Built in Pure Rust",
+  "hi_title": "WordCraft: पूरे Rust में निर्मित एक ओपन-सोर्स वर्ड प्रोसेसर",
+  "en_body": "WordCraft is an open-source, modern word processor developed in pure Rust by the ArtCraft team. Designed for both human users and AI agents, the project aims to provide a familiar office workflow featuring a ribbon interface, styles, tables, track changes, references, and mail merge capabilities.\n\n## Core Features and Architecture\n- **File Support:** Reads and writes `.docx` (OOXML) files, along with support for `.odt`, `.rtf`, `.html`, `.md`, `.tex` (LaTeX), `.txt`, and legacy `97-2003 .doc` formats, while exporting to PDF with selectable text, links, and bookmarks.\n- **Performance:** Caches paragraph layouts to achieve fast re-layout times, such as processing a 188-page document in approximately 1.4 milliseconds.\n- **Cross-Platform:** Runs natively on macOS, Windows, Linux, and BSD via native GPU-accelerated `egui` (without Electron or Tauri), and in the browser through WebAssembly.\n- **Agent Integration:** Features a command-driven architecture where actions map to IDs, supporting command-line tools, a JSON control channel, and an MCP server.\n\n## Development Status and Roadmap\nWordCraft is currently in alpha status. According to the project's documentation, it includes commands for about 97% of ribbon and menu features, with estimated readiness around 60% for general work, 55% for typical weekly professional tasks, and 63% for everyday essentials. Advancing to beta will require further testing against real-world documents, stability sweeps, pagination fidelity improvements, and native printing support.\n\n## Licensing and Verification\nThe software is dual-licensed under the MIT or Apache-2.0 licenses. Users can review the project roadmap and source repository on GitHub under the `storytold/wordcraft` organization to verify details, installation instructions, and contribution guidelines.",
+  "hi_body": "WordCraft ArtCraft टीम द्वारा पूरी तरह से Rust में विकसित एक ओपन-सोर्स, आधुनिक वर्ड प्रोसेसर है। इसे मानव उपयोगकर्ताओं और एआई एजेंटों दोनों के लिए डिज़ाइन किया गया है, जिसका उद्देश्य रिबन इंटरफ़ेस, स्टाइल, टेबल, ट्रैक चेंज, और मेल मर्ज जैसी परिचित कार्यप्रणाली प्रदान करना है।\n\n## मुख्य विशेषताएँ और वास्तुकला\n- **फ़ाइल समर्थन:** यह `.docx` (OOXML) फ़ाइलों को पढ़ता और लिखता है, साथ ही `.odt`, `.rtf`, `.html`, `.md`, `.tex` (LaTeX), `.txt`, और पुराने `97-2003 .doc` प्रारूपों का समर्थन करता है, और चयन योग्य पाठ के साथ पीडीएफ में निर्यात करता है।\n- **प्रदर्शन:** यह पैराग्राफ लेआउट को कैश करता है ताकि तेजी से लेआउट हो सके, जैसे कि 188-पृष्ठ के दस्तावेज़ को लगभग 1.4 मिलीसेकंड में प्रोसेस करना।\n- **क्रॉस-प्लेटफ़ॉर्म:** यह macOS, Windows, Linux और BSD पर मूल रूप से GPU-त्वरित `egui` के माध्यम से (Electron या Tauri के बिना), और WebAssembly के माध्यम से ब्राउज़र में चलता है।\n- **एजेंट एकीकरण:** इसमें एक कमांड-संचालित वास्तुकला है जहाँ क्रियाएं आईडी से जुड़ी होती हैं, जो कमांड-लाइन टूल, JSON नियंत्रण चैनल और MCP सर्वर का समर्थन करती हैं।\n\n## विकास स्थिति और रोडमैप\nWordCraft वर्तमान में अल्फा स्थिति में है। परियोजना के दस्तावेजीकरण के अनुसार, इसमें लगभग 97% रिबन और मेनू सुविधाओं के लिए कमांड शामिल हैं, और सामान्य कार्य के लिए तैयारी का अनुमान लगभग 60% है। बीटा संस्करण में आगे बढ़ने के लिए वास्तविक दुनिया के दस्तावेजों के खिलाफ आगे के परीक्षण, स्थिरता जांच और देशी मुद्रण समर्थन की आवश्यकता होगी।\n\n## लाइसेंसिंग और सत्यापन\nयह सॉफ्टवेयर MIT या Apache-2.0 लाइसेंस के तहत दोहरा-लाइसेंस प्राप्त है। उपयोगकर्ता विवरण, स्थापना निर्देश और योगदान दिशानिर्देशों को सत्यापित करने के लिए GitHub पर `storytold/wordcraft` के तहत प्रोजेक्ट रोडमैप की समीक्षा कर सकते हैं।",
+  "en_meta": "Read about WordCraft, an open-source, clean-room word processor built in pure Rust by the ArtCraft team supporting cross-platform workflows and .docx.",
+  "hi_meta": "WordCraft के बारे में जानें, जो ArtCraft टीम द्वारा शुद्ध Rust में निर्मित एक ओपन-सोर्स वर्ड प्रोसेसर है जो क्रॉस-प्लेटफॉर्म समर्थन प्रदान करता है।",
+  "en_keywords": [
+    "WordCraft",
+    "Rust word processor",
+    "open-source office app",
+    "ArtCraft team",
+    "cross-platform editor"
+  ],
+  "hi_keywords": [
+    "WordCraft",
+    "रस्ट वर्ड प्रोसेसर",
+    "ओपन-सोर्स ऐप",
+    "ArtCraft टीम",
+    "डॉक्यूमेंट एडिटर"
+  ],
+  "source_published_at": null,
+  "id": "c85cea0bf043",
+  "source": "https://github.com/storytold/wordcraft",
+  "date": "2026-11-10T23:43:14.552059+00:00",
+  "source_title": "storytold/wordcraft: An open-source, clean-room reimplementation of Microsoft Word in pure Rust - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

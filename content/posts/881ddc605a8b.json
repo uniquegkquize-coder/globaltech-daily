@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Announces New Security Updates, Storage Architecture, and Developer Tools",
+  "hi_title": "GitHub ने नए सुरक्षा अपडेट, स्टोरेज आर्किटेक्चर और डेवलपर टूल्स की घोषणा की",
+  "en_body": "GitHub has published a series of updates covering security patches, Git storage architecture improvements, accessibility documentation, and developer tools like GitHub Copilot. Users and maintainers can review official announcements directly on the GitHub Blog to verify details.\n\n## Recent Security and Infrastructure Updates\n\n* **Security Patches:** Git is releasing updates addressing six security vulnerabilities affecting recursive clones, reference handling, merges, binary patches, and imports.\n* **Storage Architecture:** GitHub shared insights into its new Git storage architecture designed to enable multiple agents to push to a single repository simultaneously.\n* **Git Infrastructure:** Reports detailed the migration of repository copies to Azure and the use of per-reference quorums and object storage for scaling reads.\n\n## Developer Productivity and Tools\n\n* **Agentic Engineering:** New guides explore planning, writing code, reviewing changes, and investigating production issues using GitHub Copilot.\n* **Accessibility Documentation:** GitHub now highlights `ACCESSIBILITY.md` files to help maintainers document accessibility goals, known barriers, and reporting processes.\n* **Session Continuity:** Documentation outlines how to move an agent session from the GitHub Copilot app into VS Code without losing conversation history or code changes.\n\n## Community and Ecosystem Highlights\n\n* **Game Jam:** GitHub announced the return of its annual month-long game jam for its 14th year, featuring the theme `SHIFT` this November.\n* **Security Research:** The GitHub Bug Bounty team highlighted security researchers during Cybersecurity Awareness Month, sharing insights into methodologies and bug classes.\n* **Secret Detection:** A context-aware secret classifier was discussed to improve detection quality and reduce median scan execution times.\n\nTo verify these updates, check the official GitHub Blog at github.blog/latest/ for full articles, technical specifications, and implementation guidelines.",
+  "hi_body": "GitHub ने सुरक्षा पैच, Git स्टोरेज आर्किटेक्चर सुधार, एक्सेसिबिलिटी दस्तावेज़ और GitHub Copilot जैसे डेवलपर टूल्स को कवर करते हुए कई अपडेट प्रकाशित किए हैं। उपयोगकर्ता और मेंटेनर विवरण सत्यापित करने के लिए सीधे GitHub Blog पर आधिकारिक घोषणाओं की समीक्षा कर सकते हैं।\n\n## हालिया सुरक्षा और बुनियादी ढांचा अपडेट\n\n* **सुरक्षा पैच:** Git रिकर्सिव क्लोन, संदर्भ हैंडलिंग, मर्ज, बाइनरी पैच और आयात को प्रभावित करने वाली छह सुरक्षा कमियों को दूर करने के लिए अपडेट जारी कर रहा है।\n* **स्टोर आर्किटेक्चर:** GitHub ने अपने नए Git स्टोरेज आर्किटेक्चर की जानकारी साझा की जिसे कई एजेंटों को एक ही रिपॉजिटरी में एक साथ पुश करने में सक्षम बनाने के लिए बनाया गया है।\n* **Git बुनियादी ढांचा:** रिपोर्टों में Azure पर रिपॉजिटरी प्रतियों के प्रवास और रीड्स को स्केल करने के लिए प्रति-संदर्भ कोरम और ऑब्जेक्ट स्टोरेज के उपयोग का विवरण दिया गया है।\n\n## डेवलपर उत्पादकता और उपकरण\n\n* **एजेंटिक इंजीनियरिंग:** नए गाइड GitHub Copilot का उपयोग करके योजना बनाने, कोड लिखने, परिवर्तनों की समीक्षा करने और उत्पादन समस्याओं की जांच करने का पता लगाते हैं।\n* **एक्सेसिबिलिटी दस्तावेज़ीकरण:** GitHub अब मेंटेनर को एक्सेसिबिलिटी लक्ष्यों, ज्ञात बाधाओं और रिपोर्टिंग प्रक्रियाओं का दस्तावेजीकरण करने में मदद करने के लिए `ACCESSIBILITY.md` फ़ाइलों को हाइलाइट करता है।\n* **सत्र निरंतरता:** दस्तावेज़ रूपरेखा तैयार करते हैं कि बातचीत के इतिहास या कोड परिवर्तनों को खोए बिना GitHub Copilot ऐप से एजेंट सत्र को VS Code में कैसे ले जाया जाए।\n\n## समुदाय और पारिस्थितिकी तंत्र हाइलाइट्स\n\n* **गेम जैम:** GitHub ने इस नवंबर में `SHIFT` थीम की विशेषता वाले अपने 14वें वर्ष के लिए अपनी वार्षिक महीने भर चलने वाली गेम जैम की वापसी की घोषणा की।\n* **सुरक्षा अनुसंधान:** GitHub बग बाउंड्री टीम ने साइबर सुरक्षा जागरूकता माह के दौरान सुरक्षा शोधकर्ताओं को उजागर किया, पद्धतियों और बग श्रेणियों में अंतर्दृष्टि साझा की।\n* **सीक्रेट डिटेक्शन:** डिटेक्शन गुणवत्ता में सुधार और औसत स्कैन निष्पादन समय को कम करने के लिए एक संदर्भ-जागरूक गुप्त क्लासिफायर पर चर्चा की गई।\n\nइन अपडेट को सत्यापित करने के लिए, पूर्ण लेखों, तकनीकी विनिर्देशों और कार्यान्वयन दिशानिर्देशों के लिए github.blog/latest/ पर आधिकारिक GitHub ब्लॉग देखें।",
+  "en_meta": "Read the latest GitHub updates covering security patches, Git storage architecture, accessibility features, and GitHub Copilot enhancements.",
+  "hi_meta": "सुरक्षा पैच, Git स्टोरेज आर्किटेक्चर और GitHub Copilot संवर्द्धन को कवर करने वाले नवीनतम GitHub अपडेट पढ़ें।",
+  "en_keywords": [
+    "GitHub updates",
+    "Git security vulnerabilities",
+    "GitHub Copilot",
+    "Git storage architecture",
+    "accessibility documentation"
+  ],
+  "hi_keywords": [
+    "GitHub अपडेट",
+    "Git सुरक्षा कमजोरियां",
+    "GitHub Copilot",
+    "Git स्टोरेज आर्किटेक्चर",
+    "एक्सेसिबिलिटी दस्तावेज़"
+  ],
+  "source_published_at": "2024-07-23T12:51:32+00:00",
+  "id": "881ddc605a8b",
+  "source": "https://github.blog/latest/",
+  "date": "2026-11-10T23:46:04.245197+00:00",
+  "source_title": "The latest blogs from GitHub - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

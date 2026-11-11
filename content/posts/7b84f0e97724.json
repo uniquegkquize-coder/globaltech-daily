@@ -1,0 +1,29 @@
+{
+  "en_title": "Tiny World Model Generates and Plays Games on Raspberry Pi Pico 2 W",
+  "hi_title": "रास्बेरी पाई पिको 2 डब्लू पर छोटे वर्ल्ड मॉडल द्वारा गेम जनरेट और प्ले करना",
+  "en_body": "## Overview\n\nA small neural network project demonstrates generating and playing simple games simultaneously on a Raspberry Pi Pico 2 W microcontroller. The system uses a looped transformer world model to predict the next frame and reward, alongside a streaming reinforcement learning agent that plays the generated game.\n\n## How the System Works\n\n- **World Model:** A single transformer block applied multiple times with shared weights processes game frames and actions. It outputs scores for every cell and token, which are decoded into the next frame using specific rules for backgrounds, singletons, and sprites.\n- **Agent:** The system uses Stream AC(λ) reinforcement learning, operating transition-by-transition without a replay buffer or target network.\n- **Hardware Split:** On the RP2350 chip, core 1 handles the game logic, world model, and agent execution, while core 0 manages USB communication and display tasks.\n\n## Implementation Details\n\n- **Quantization:** The models use int8 weights trained with quantization-aware training (QAT) to fit within microcontroller memory constraints.\n- **Memory Footprint:** Games fit within the Pico 2 W's 4 MB of flash and 512 KiB of SRAM. For example, Breakout uses 361 KB of flash and 299 KB of SRAM, while Pac-Man uses 600 KB and 460 KB.\n- **Interactivity:** Users can press buttons via a connected display pack or over USB to take control from the automated agent, or switch to an on-device learning mode where the agent trains from scratch.\n\n## Verification and Reproduction\n\nThe project provides Python code for training and simulation, as well as a WebAssembly port to run the engine in a browser. Original source code, models, and firmware instructions are available in the public GitHub repository under SheepSeb/tinyworldformer.",
+  "hi_body": "## अवलोकन\n\nएक छोटा न्यूरल नेटवर्क प्रोजेक्ट रास्बेरी पाई पिको 2 डब्लू माइक्रोकंट्रोलर पर एक साथ गेम जनरेट करने और खेलने का प्रदर्शन करता है। यह सिस्टम अगले फ्रेम और इनाम की भविष्यवाणी करने के लिए एक लूपेड ट्रांसफॉर्मर वर्ल्ड मॉडल का उपयोग करता है, साथ ही एक स्ट्रीमिंग रीइन्फोर्समेंट लर्निंग एजेंट भी इसमें शामिल है।\n\n## यह सिस्टम कैसे काम करता है\n\n- **वर्ल्ड मॉडल:** साझा वजन के साथ कई बार लागू किया जाने वाला एक सिंगल ट्रांसफॉर्मर ब्लॉक गेम फ्रेम और एक्शन को प्रोसेस करता है। यह प्रत्येक सेल और टोकन के लिए स्कोर आउटपुट करता है, जिन्हें नियमों के आधार पर डिकोड किया जाता है।\n- **एजेंट:** यह सिस्टम स्ट्रीम एसी (λ) रीइन्फोर्समेंट लर्निंग का उपयोग करता है, जो बिना रीप्ले बफर के काम करता है।\n- **हार्डवेयर विभाजन:** आरपी2350 चिप पर, कोर 1 गेम लॉजिक और वर्ल्ड मॉडल को संभालता है, जबकि कोर 0 यूएसबी संचार और डिस्प्ले कार्यों का प्रबंधन करता है।\n\n## कार्यान्वयन विवरण\n\n- **क्वांटाइजेशन:** माइक्रोकंट्रोलर की मेमोरी सीमाओं के भीतर फिट होने के लिए मॉडल क्वांटाइजेशन-अवेयर ट्रेनिंग (QAT) का उपयोग करते हैं।\n- **मेमोरी उपयोग:** गेम पिको 2 डब्लू की 4 एमबी फ्लैश और 512 केबी रैम में फिट होते हैं। उदाहरण के लिए, ब्रेकआउट 361 केबी फ्लैश और 299 केबी रैम का उपयोग करता है।\n- **इंटरएक्टिविटी:** उपयोगकर्ता स्वचालित एजेंट से नियंत्रण लेने के लिए बटन दबा सकते हैं या ऑन-डिवाइस लर्निंग मोड पर स्विच कर सकते हैं।\n\n## सत्यापन और पुनरुत्पादन\n\nप्रोजेक्ट प्रशिक्षण के लिए पाइथन कोड और ब्राउज़र में इंजन चलाने के लिए वेबसेंबली पोर्ट प्रदान करता है। मूल स्रोत कोड और फर्मवेयर निर्देश GitHub पर SheepSeb/tinyworldformer रिपॉजिटरी में उपलब्ध हैं।",
+  "en_meta": "Explore a tiny world model and reinforcement learning agent running on a Raspberry Pi Pico 2 W microcontroller to generate and play simple games.",
+  "hi_meta": "रास्बेरी पाई पिको 2 डब्लू माइक्रोकंट्रोलर पर चलने वाले छोटे वर्ल्ड मॉडल और रीइन्फोर्समेंट लर्निंग एजेंट के बारे में जानें।",
+  "en_keywords": [
+    "Raspberry Pi Pico 2 W",
+    "world model",
+    "reinforcement learning",
+    "transformer",
+    "microcontroller games"
+  ],
+  "hi_keywords": [
+    "रास्बेरी पाई पिको 2 डब्लू",
+    "वर्ल्ड मॉडल",
+    "रीइन्फोर्समेंट लर्निंग",
+    "ट्रांसफॉर्मर",
+    "माइक्रोकंट्रोलर गेम"
+  ],
+  "source_published_at": null,
+  "id": "7b84f0e97724",
+  "source": "https://github.com/SheepSeb/tinyworldformer",
+  "date": "2026-11-10T23:42:09.763264+00:00",
+  "source_title": "SheepSeb/tinyworldformer: Tiny world model generates games and stream ac plays them all on Pico 2W - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,29 @@
+{
+  "en_title": "KytyPS5-Native GitHub Project Explores Running PS5 Titles on Linux via AMD BC-250 Hardware",
+  "hi_title": "GitHub पर superkeka/KytyPS5-Native प्रोजेक्ट लिनक्स पर एएमडी BC-250 हार्डवेयर के माध्यम से PS5 गेम चलाने का पता लगाता है",
+  "en_body": "An open-source GitHub repository named superkeka/KytyPS5-Native documents a translation and execution approach designed to run PlayStation 5 game command buffers natively on AMD BC-250 hardware under Linux. According to the project documentation, the BC-250 utilizes an APU sharing architecture with the PS5, potentially allowing shader execution with minor patches and hardware-level GPU work translation.\n\n## Technical Architecture and Requirements\n\nThe repository notes that Vulkan is utilized for presentation and fallback purposes. Setup instructions target Linux distributions such as SteamOS, Bazzite, and CachyOS Handheld, incorporating a Decky plugin to manage installations and updates. Key system configurations mentioned in the documentation include:\n\n* Allocating a 512 MB UMA Frame Buffer Size via a modified BIOS or specific configuration tools.\n* Adjusting memory parameters, such as setting GTT to 14 GiB using `ttm.pages_limit=3670016` to prevent loading stalls on large titles.\n* Utilizing specific kernel parameters for the `amdgpu` driver, including `sched_policy=2`, `vm_update_mode=0`, and `cwsr_enable=0`.\n\n## Project Scope and Limitations\n\nThe documentation clarifies that the project is not affiliated with Sony Interactive Entertainment or PlayStation. No proprietary games, system software, or copyrighted binaries are distributed through the repository. Users must supply legally obtained game files.\n\nReported testing notes within the documentation mention behaviors such as an infinite loading spinner and additional-content registrations when testing titles like *Ghost of Yōtei* on the BC-250 platform running SteamOS.\n\n## Licensing and Verification\n\nThe project is licensed under the GNU General Public License version 2 (GPL-2.0-only), with components derived from the Kyty emulator (MIT license) and references to shadPS4. Interested users and developers can examine the source code, build instructions, and release notes directly on the official GitHub repository (`superkeka/KytyPS5-Native`) to verify the implementation details and hardware requirements.",
+  "hi_body": "superkeka/KytyPS5-Native नामक एक ओपन-सोर्स गिटहब रिपॉजिटरी एक ऐसे अनुवाद और निष्पादन दृष्टिकोण का दस्तावेजीकरण करती है जिसे लिनक्स के तहत एएमडी BC-250 हार्डवेयर पर मूल रूप से PlayStation 5 गेम कमांड बफर चलाने के लिए डिज़ाइन किया गया है। प्रोजेक्ट दस्तावेज़ के अनुसार, BC-250 एक एपीयू शेयरिंग आर्किटेक्चर का उपयोग करता है जो PS5 के समान है, जिससे छोटे पैच और हार्डवेयर-स्तरीय GPU कार्य अनुवाद के साथ शेडर निष्पादन संभव हो सकता है।\n\n## तकनीकी वास्तुकला और आवश्यकताएँ\n\nरिपॉजिटरी यह बताती है कि प्रस्तुति और फ़ॉलबैक उद्देश्यों के लिए Vulkan का उपयोग किया जाता है। सेटअप निर्देश SteamOS, Bazzite, और CachyOS Handheld जैसे लिनक्स वितरणों को लक्षित करते हैं, जिसमें इंस्टॉलेशन और अपडेट प्रबंधित करने के लिए एक Decky प्लगइन शामिल है। दस्तावेज़ में उल्लिखित मुख्य सिस्टम कॉन्फ़िगरेशन में शामिल हैं:\n\n* संशोधित BIOS या विशिष्ट कॉन्फ़िगरेशन टूल के माध्यम से 512 MB UMA फ्रेम बफर आकार आवंटित करना।\n* बड़े शीर्षकों पर लोडिंग को रोकने के लिए `ttm.pages_limit=3670016` का उपयोग करके GTT को 14 GiB पर सेट करना जैसे मेमोरी पैरामीटर समायोजित करना।\n* `amdgpu` ड्राइवर के लिए विशिष्ट कर्नेल पैरामीटर का उपयोग करना, जिसमें `sched_policy=2`, `vm_update_mode=0`, और `cwsr_enable=0` शामिल हैं।\n\n## प्रोजेक्ट का दायरा और सीमाएँ\n\nदस्तावेज़ स्पष्ट करता है कि प्रोजेक्ट Sony Interactive Entertainment या PlayStation से संबद्ध नहीं है। रिपॉजिटरी के माध्यम से कोई भी मालिकाना गेम, सिस्टम सॉफ़्टवेयर या कॉपीराइटेड बाइनरी वितरित नहीं किए जाते हैं। उपयोगकर्ताओं को कानूनी रूप से प्राप्त गेम फ़ाइलें स्वयं प्रदान करनी होंगी।\n\nदस्तावेज़ के भीतर रिपोर्ट किए गए परीक्षण नोट्स SteamOS चलाने वाले BC-250 प्लेटफॉर्म पर *Ghost of Yōtei* जैसे शीर्षकों का परीक्षण करते समय अनंत लोडिंग स्पिनर और अतिरिक्त-सामग्री पंजीकरण जैसे व्यवहारों का उल्लेख करते हैं।\n\n## लाइसेंसिंग और सत्यापन\n\nप्रोजेक्ट GNU जनरल पब्लिक लाइसेंस संस्करण 2 (GPL-2.0-only) के तहत लाइसेंस प्राप्त है, जिसमें Kyty emulator (MIT लाइसेंस) से प्राप्त घटक और shadPS4 के संदर्भ शामिल हैं। इच्छुक उपयोगकर्ता और डेवलपर कार्यान्वयन विवरण और हार्डवेयर आवश्यकताओं को सत्यापित करने के लिए आधिकारिक गिटहब रिपॉजिटरी (`superkeka/KytyPS5-Native`) पर सीधे सोर्स कोड, बिल्ड निर्देश और रिलीज़ नोट्स की जांच कर सकते हैं।",
+  "en_meta": "Explore the superkeka/KytyPS5-Native GitHub project aiming to run PS5 games natively on AMD BC-250 hardware under Linux. Read technical requirements and limits.",
+  "hi_meta": "लिनक्स पर एएमडी BC-250 हार्डवेयर पर PS5 गेम चलाने वाले superkeka/KytyPS5-Native गिटहब प्रोजेक्ट की खोज करें। तकनीकी आवश्यकताएं और सीमाएं पढ़ें।",
+  "en_keywords": [
+    "KytyPS5-Native",
+    "PS5 Linux",
+    "AMD BC-250",
+    "superkeka GitHub",
+    "PlayStation 5 emulation"
+  ],
+  "hi_keywords": [
+    "KytyPS5-Native",
+    "PS5 लिनक्स",
+    "AMD BC-250",
+    "superkeka GitHub",
+    "प्लेस्टेशन 5 एमुलेशन"
+  ],
+  "source_published_at": null,
+  "id": "a4c964e3ece7",
+  "source": "https://github.com/superkeka/KytyPS5-Native/",
+  "date": "2026-11-10T23:43:41.577852+00:00",
+  "source_title": "superkeka/KytyPS5-Native: PS5 games natively on the PS5 chip under Linux - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

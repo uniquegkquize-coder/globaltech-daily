@@ -1,0 +1,29 @@
+{
+  "en_title": "diffmap Aims to Help Coding Agents Explain Code Changes Visually",
+  "hi_title": "diffmap कोडिंग एजेंटों को कोड बदलावों को विजुअल रूप से समझाने में मदद करने का प्रयास करता है",
+  "en_body": "diffmap is an open-source agent skill designed to help coding agents explain code changes visually through interactive diagrams and specs. It allows an agent to create specifications with diagrams where individual elements link back to source code files.\n\n## Core Features and Operation\n\n* **Visual Explanations:** The skill lets agents generate specs using service diagrams, Mermaid diagrams, and call stacks to depict code changes.\n* **Source Linking:** Diagram components and call stacks can link directly to files, line ranges, or specific Git commits.\n* **Local and Hosted Viewing:** Specs are served locally by default, or they can be shared as unlisted GitHub gists viewable on diffmap.dev.\n\n## Commands and Verification\n\n* **Validation:** Users can check Markdown files, diagrams, and annotations without starting a server by running the validate command.\n* **Server Controls:** The local server can be managed via the command line, with options to specify ports and workspace roots.\n* **Telemetry:** The CLI sends anonymous usage data to PostHog, which can be disabled using environment variables such as `DIFFMAP_TELEMETRY=0` or `DO_NOT_TRACK=1`.\n\nTo verify the original announcement or review installation instructions, consult the official repository on GitHub or test the tool directly using the documented npx commands.",
+  "hi_body": "diffmap एक ओपन-सोर्स एजेंट स्किल है जिसे कोडिंग एजेंटों को इंटरैक्टिव आरेख और स्पेक्स के माध्यम से कोड बदलावों को विजुअल रूप से समझाने में मदद करने के लिए डिज़ाइन किया गया है। यह एक एजेंट को ऐसे आरेखों के साथ स्पेसिफिकेशन बनाने की अनुमति देता है जहाँ व्यक्तिगत तत्व वापस स्रोत कोड फ़ाइलों से जुड़ते हैं।\n\n## मुख्य विशेषताएँ और संचालन\n\n* **विजुअल स्पष्टीकरण:** यह स्किल एजेंटों को कोड परिवर्तनों को दर्शाने के लिए सर्विस आरेख, मर्मेड आरेख और कॉल स्टैक का उपयोग करके स्पेक्स जेनरेट करने देती है।\n* **स्रोत लिंकिंग:** आरेख घटक और कॉल स्टैक सीधे फ़ाइलों, लाइन श्रेणियों या विशिष्ट Git कमिट से जुड़ सकते हैं।\n* **स्थानीय और होस्टेड व्यूइंग:** स्पेक्स डिफ़ॉल्ट रूप से स्थानीय रूप से परोसे जाते हैं, या उन्हें diffmap.dev पर देखने योग्य अनलिस्टेड GitHubGist के रूप में साझा किया जा सकता है।\n\n## कमांड और सत्यापन\n* **सत्यापन:** उपयोगकर्ता सर्वर शुरू किए बिना validate कमांड चलाकर मार्कडाउन फ़ाइलों, आरेखों और एनोटेशन की जाँच कर सकते हैं।\n* **सर्वर नियंत्रण:** स्थानीय सर्वर को कमांड लाइन के माध्यम से प्रबंधित किया जा सकता है, जिसमें पोर्ट और कार्यक्षेत्र रूट निर्दिष्ट करने के विकल्प शामिल हैं।\n* **टेलीमेट्री:** CLI PostHog को अज्ञात उपयोग डेटा भेजता है, जिसे `DIFFMAP_TELEMETRY=0` या `DO_NOT_TRACK=1` जैसे पर्यावरण चर का उपयोग करके अक्षम किया जा सकता है।\n\nमूल घोषणा को सत्यापित करने या स्थापना निर्देशों की समीक्षा करने के लिए, GitHub पर आधिकारिक रिपॉजिटरी देखें या प्रलेखित npx कमांड का उपयोग करके सीधे टूल का परीक्षण करें।",
+  "en_meta": "Learn about diffmap, an open-source agent skill for visualizing code changes with interactive diagrams and source links.",
+  "hi_meta": "diffmap के बारे में जानें, जो इंटरैक्टिव आरेखों और स्रोत लिंक के साथ कोड परिवर्तनों को विज़ुअलाइज़ करने के लिए एक ओपन-सोर्स एजेंट स्किल है।",
+  "en_keywords": [
+    "diffmap",
+    "coding agent",
+    "diagrams",
+    "open source",
+    "GitHub"
+  ],
+  "hi_keywords": [
+    "diffmap",
+    "कोडिंग एजेंट",
+    "आरेख",
+    "ओपन सोर्स",
+    "GitHub"
+  ],
+  "source_published_at": "2026-10-30T22:25:19+00:00",
+  "id": "3788e665f9a0",
+  "source": "https://github.com/tanishqkancharla/diffmap",
+  "date": "2026-11-10T23:44:08.898049+00:00",
+  "source_title": "tanishqkancharla/diffmap: big diff energy - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
