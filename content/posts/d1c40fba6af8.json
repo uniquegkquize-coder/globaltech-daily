@@ -1,0 +1,31 @@
+{
+  "en_title": "ub-mode Open Source Agent Skill Enforces Disciplined Software Engineering Principles",
+  "hi_title": "ub-mode ओपन सोर्स एजेंट स्किल अनुशासित सॉफ्टवेयर इंजीनियरिंग सिद्धांतों को लागू करती है",
+  "en_body": "ub-mode is an open source agent skill published on GitHub designed to enforce disciplined software engineering principles when writing or modifying code. According to the documentation, the project is loosely based on portions of @poteto's rules, specifically poteto-mode and pstack, while pairing reduced guidelines with deterministic quality-gate tools.\n\n## Core Principles and Methodology\n\nThe repository outlines a structured methodology divided into sequential phases and practices:\n\n* **First Make it Work:** Incorporates protocols such as the Laziness Protocol, Foundational Thinking, Test-Driven Development (TDD), Redesign From First Principles, Attack the Premise, Subtract Before You Add, Outcome-Oriented Execution, Build the Lever, and Architecture components including domain modeling, boundary discipline, type system discipline, idempotent operations, and state separation before serialization.\n* **Then Make it Right:** Focuses on fixing root causes, sequencing work into verifiable units, testing behavior rather than implementation, maintaining low CRAP scores, reducing duplication, utilizing mutation testing, and refactoring.\n* **Practice:** Emphasizes keeping a log, guarding the context window, performing worktree cleanups, and committing and pushing in small, ordered commits.\n\n## Deterministic Quality-Gate Tools\n\nib-mode relies on specific tools to enforce structure, complexity limits, duplication checks, and test thoroughness:\n\n* **unclebob/crapper:** Computes cyclomatic complexity, test coverage, and CRAP scores per function to keep metrics below defined thresholds.\n* **unclebob/dryer:** Detects structural code duplication to help eliminate duplicate blocks.\n* **unclebob/mutator:** Executes mutation testing to expose uncovered code and surviving mutants.\n* **unclebob/uml-viewer:** Visualizes components, coverage, CRAP, mutation scores, and dependency directions.\n\n## Installation and Usage\n\nTo use the skill, developers can copy SKILL.md into their agent's designated skills directory—such as ~/.grok/skills/ub-mode/SKILL.md, ~/.claude/skills/ub-mode/SKILL.md, or ~/.cursor/skills/ub-mode/SKILL.md—and invoke the command `/ub-mode`.\n\nReaders should verify the original README.md file directly on the official GitHub repository for any updates, configuration details, or additional requirements.",
+  "hi_body": "ub-mode गिटहब पर प्रकाशित एक ओपन सोर्स एजेंट स्किल है जिसे कोड लिखते या बदलते समय अनुशासित सॉफ्टवेयर इंजीनियरिंग सिद्धांतों को लागू करने के लिए डिज़ाइन किया गया है। दस्तावेज़ के अनुसार, यह प्रोजेक्ट ढीले तौर पर @poteto के नियमों (poteto-mode और pstack) के कुछ हिस्सों पर आधारित है, जिसे निर्धारणात्मक क्वालिटी-गेट टूल के साथ जोड़ा गया है।\n\n## मुख्य सिद्धांत और कार्यपद्धति\n\nरिपॉजिटरी में क्रमिक चरणों और प्रथाओं में विभाजित एक संरचित कार्यपद्धति की रूपरेखा दी गई है:\n\n* **पहले इसे काम करने योग्य बनाएं (First Make it Work):** इसमें लेज़िनेस प्रोटोकॉल, मूलभूत सोच, टीडीडी (TDD), पहले सिद्धांतों से री डिज़ाइन, प्रेमिस पर हमला, जोड़ने से पहले घटाना, परिणाम-उन्मुख निष्पादन, और डोमेन मॉडलिंग, बाउंड्री डिसिप्लिन, टाइप सिस्टम डिसिप्लिन जैसे आर्किटेक्चर घटक शामिल हैं।\n* **फिर इसे सही बनाएं (Then Make it Right):** यह मूल कारणों को ठीक करने, काम को सत्यापित इकाइयों में क्रमबद्ध करने, कार्यान्वयन के बजाय व्यवहार का परीक्षण करने, कम सीआरएपी (CRAP) स्कोर बनाए रखने और रिफैक्टरिंग पर केंद्रित है।\n* **प्रैक्टिस:** लॉग रखना, संदर्भ विंडो की रक्षा करना, वर्कट्री सफाई करना, और छोटे क्रमित कमिट में पुश करना शामिल है।\n\n## निर्धारणात्मक क्वालिटी-गेट टूल्स\n\nub-mode संरचना, जटिलता सीमाओं, डुप्लीकेशन जांच और परीक्षण की पूर्णता को लागू करने के लिए विशिष्ट टूल पर निर्भर करता है:\n\n* **unclebob/crapper:** प्रत्येक फ़ंक्शन के लिए साइक्लोमैटिक जटिलता, परीक्षण कवरेज और सीआरएपी स्कोर की गणना करता है।\n* **unclebob/dryer:** डुप्लीकेट ब्लॉकों को खत्म करने में मदद करने के लिए संरचनात्मक कोड डुप्लीकेशन का पता लगाता है।\n* **unclebob/mutator:** अनिष्पादित कोड और जीवित म्यूटेंट को उजागर करने के लिए म्यूटेशन परीक्षण चलाता है।\n* **unclebob/uml-viewer:** घटकों, कवरेज, सीआरएपी, म्यूटेशन स्कोर और निर्भरता दिशाओं को विज़ुअलाइज़ करता है।\n\n## स्थापना और उपयोग\n\nइस स्किल का उपयोग करने के लिए, डेवलपर्स SKILL.md को अपने एजेंट की निर्दिष्ट स्किल निर्देशिका में कॉपी कर सकते हैं—जैसे ~/.grok/skills/ub-mode/SKILL.md, ~/.claude/skills/ub-mode/SKILL.md, या ~/.cursor/skills/ub-mode/SKILL.md—और `/ub-mode` कमांड का आह्वान कर सकते हैं।\n\nपाठकों को किसी भी अपडेट, विन्यास विवरण या अतिरिक्त आवश्यकताओं के लिए आधिकारिक गिटहब रिपॉजिटरी पर सीधे मूल README.md फ़ाइल को सत्यापित करना चाहिए।",
+  "en_meta": "Learn about ub-mode, an open source agent skill on GitHub that enforces disciplined software engineering and quality gates.",
+  "hi_meta": "ub-mode के बारे में जानें, जो गिटहब पर एक ओपन सोर्स एजेंट स्किल है जो अनुशासित सॉफ्टवेयर इंजीनियरिंग को लागू करती है।",
+  "en_keywords": [
+    "ub-mode",
+    "agent skill",
+    "software engineering",
+    "GitHub",
+    "TDD",
+    "quality-gate tools"
+  ],
+  "hi_keywords": [
+    "ub-mode",
+    "एजेंट स्किल",
+    "सॉफ्टवेयर इंजीनियरिंग",
+    "गिटहब",
+    "क्वालिटी गेट",
+    "टीडीडी"
+  ],
+  "source_published_at": null,
+  "id": "d1c40fba6af8",
+  "source": "https://github.com/unclebob/ub-mode/blob/master/README.md",
+  "date": "2026-11-11T01:54:42.103329+00:00",
+  "source_title": "ub-mode/README.md at master · unclebob/ub-mode - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

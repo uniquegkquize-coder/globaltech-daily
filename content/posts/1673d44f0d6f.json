@@ -1,0 +1,29 @@
+{
+  "en_title": "Exploring Projects and Tools Built with libghostty Ecosystem",
+  "hi_title": "libghostty इकोसिस्टम के साथ बने प्रोजेक्ट्स और टूल्स की जानकारी",
+  "en_body": "A curated list of open-source projects, tools, and integrations demonstrates how developers leverage libghostty and libghostty-vt across multiple platforms and environments. The community-driven catalog highlights various terminal emulators, bindings, and AI agent workspaces.\n\n## Ecosystem Overview and Bindings\n\nThe collection includes language bindings and integration wrappers designed to make libghostty's VT parsing and rendering capabilities accessible in different programming languages:\n\n* **Python & Go:** Bindings such as `ghosttpy-vt` and `go-libghostty` provide CGO-based or alternative access.\n* **Rust & Swift:** Packages like `libghostty-rs` and `GhosttyKit` offer native wrappers for memory-safe and platform-specific implementations.\n* **Cross-Platform Frameworks:** Implementations exist for Flutter (`flutter_ghostty`, `libghostty-dart`), .NET (`libghostty-vt-dotnet`), and WebAssembly.\n\n## Terminal Emulators and Workspaces\n\nDevelopers have built standalone terminal applications and workspace managers utilizing the rendering core:\n\n* **macOS & iOS:** Tools like `Aster`, `Enso`, and `Geistty` offer native interfaces, tmux control modes, and window management.\n* **Linux & Windows:** Projects such as `forgetty`, `mightty`, and `Husk` cater to Wayland, Linux, and Windows environments.\n* **Web and IDE Extensions:** Browser-based projects and extensions for editors like Emacs, Obsidian, and JetBrains integrate terminal capabilities directly into workflows.\n\n## AI Agent Integrations\n\nA prominent segment of the ecosystem focuses on environments tailored for AI coding agents and parallel task execution:\n\n* **Agent Workspaces:** Tools like `agterm`, `AiyuTerm`, `Calyx`, and `Supacode` organize sessions into workspaces with live agent status tracking.\n* **Session Management:** Multiplexers and daemon-backed tools help preserve and restore terminal states across workflows.\n\n## Verification and Contribution\n\nReaders can examine the complete repository and contribution guidelines directly on the [GitHub Source Repository](https://github.com/Uzaaft/awesome-libghostty). Licensing details, code contributions, and additional tools are documented in the official source files.",
+  "hi_body": "ओपन-सोर्स प्रोजेक्ट्स, टूल्स और इंटीग्रेशन की एक क्यूरेटेड सूची दर्शाती है कि डेवलपर्स विभिन्न प्लेटफॉर्म्स पर libghostty और libghostty-vt का उपयोग कैसे कर रहे हैं। यह कम्युनिटी-संचालित कैटलॉग विभिन्न टर्मिनल एमुलेटर, बाइंडिंग्स और एआई एजेंट वर्कस्पेस को उजागर करता है।\n\n## इकोसिस्टम और बाइंडिंग्स\n\nइस संग्रह में विभिन्न प्रोग्रामिंग भाषाओं में libghostty की पार्सिंग और रेंडरिंग क्षमताओं का उपयोग करने के लिए भाषा बाइंडिंग और इंटीग्रेशन रैपर शामिल हैं:\n\n* **पायथन और गो:** `ghosttpy-vt` और `go-libghostty` जैसी बाइंडिंग्स वैकल्पिक या CGO-आधारित एक्सेस प्रदान करती हैं।\n* **रस्ट और स्विफ्ट:** `libghostty-rs` और `GhosttyKit` जैसे पैकेज नेटिव इम्प्लीमेंटेशन और सेफ एपीआई प्रदान करते हैं।\n* **क्रॉस-प्लेटफॉर्म फ्रेमवर्क:** फ्लटर (`flutter_ghostty`), .NET (`libghostty-vt-dotnet`) और वेबएम्बेली के लिए भी इम्प्लीमेंटेशन मौजूद हैं।\n\n## टर्मिनल एमुलेटर और वर्कस्पेस\n\nडेवलपर्स ने रेंडरिंग कोर का उपयोग करके स्टैंडअलोन टर्मिनल एप्लिकेशन और वर्कस्पेस मैनेजर बनाए हैं:\n\n* **macOS और iOS:** `Aster`, `Enso`, और `Geistty` जैसे टूल्स नेटिव इंटरफेस और विंडो मैनेजमेंट प्रदान करते हैं।\n* **Linux और Windows:** `forgetty`, `mightty`, और `Husk` जैसे प्रोजेक्ट्स Wayland, Linux और Windows वातावरण के लिए उपलब्ध हैं।\n* **वेब और आईडीई एक्सटेंशन:** ब्राउज़र-आधारित प्रोजेक्ट्स और Emacs, Obsidian व JetBrains के लिए एक्सटेंशन वर्कफ़्लो में टर्मिनल क्षमताएं जोड़ते हैं।\n\n## एआई एजेंट इंटीग्रेशन\n\nइकोसिस्टम का एक प्रमुख हिस्सा एआई कोडिंग एजेंट और समानांतर कार्यों के लिए तैयार किए गए वातावरण पर केंद्रित है:\n\n* **एजेंट वर्कस्पेस:** `agterm`, `AiyuTerm`, `Calyx`, और `Supacode` जैसे टूल्स लाइव एजेंट स्टेटस ट्रैकिंग के साथ सेशन व्यवस्थित करते हैं।\n* **सेशन प्रबंधन:** मल्टीप्लेक्सर और डेमन-समर्थित टूल्स वर्कफ़्लो में टर्मिनल स्थिति को सुरक्षित रखने में मदद करते हैं।\n\n## सत्यापन और योगदान\n\nपाठक [GitHub Source Repository](https://github.com/Uzaaft/awesome-libghostty) पर जाकर संपूर्ण रिपॉजिटरी और योगदान दिशानिर्देशों की जांच कर सकते हैं। लाइसेंसिंग विवरण और अतिरिक्त टूल्स आधिकारिक सोर्स फाइलों में प्रलेखित हैं।",
+  "en_meta": "Explore a curated list of terminal emulators, bindings, and AI agent workspaces built with the libghostty ecosystem.",
+  "hi_meta": "libghostty इकोसिस्टम के साथ बने टर्मिनल एमुलेटर, बाइंडिंग्स और एआई एजेंट वर्कस्पेस की क्यूरेटेड सूची देखें।",
+  "en_keywords": [
+    "libghostty",
+    "terminal emulator",
+    "bindings",
+    "AI coding agents",
+    "open source"
+  ],
+  "hi_keywords": [
+    "libghostty",
+    "टर्मिनल एमुलेटर",
+    "बाइंडिंग्स",
+    "एआई कोडिंग एजेंट",
+    "ओपन सोर्स"
+  ],
+  "source_published_at": null,
+  "id": "1673d44f0d6f",
+  "source": "https://github.com/Uzaaft/awesome-libghostty",
+  "date": "2026-11-11T01:55:43.267885+00:00",
+  "source_title": "Uzaaft/awesome-libghostty - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

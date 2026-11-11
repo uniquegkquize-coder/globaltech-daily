@@ -1,0 +1,32 @@
+{
+  "en_title": "OpenClaude: An Open-Source Multi-Provider Coding-Agent CLI",
+  "hi_title": "OpenClaude: एक ओपन-सोर्स मल्टी-प्रदाता कोडिंग-एजेंट CLI",
+  "en_body": "OpenClaude is an open-source coding-agent command-line interface (CLI) designed to support both cloud and local model providers. It provides a terminal-first workflow incorporating prompts, tools, agents, Model Context Protocol (MCP), slash commands, and streaming output across various backends.\n\n## Overview and Features\n- **Multi-Provider Support**: Compatible with OpenAI-compatible APIs, Gemini, GitHub Models, Codex OAuth, Ollama, Atomic Chat, and more.\n- **Tool-Driven Workflows**: Includes bash integration, file read/write/edit tools, grep, glob, tasks, and web tools.\n- **Visual Companion**: Features a bundled pixel-art hero companion that responds when messages are submitted.\n- **VS Code Integration**: Includes a bundled extension for launch integration, theme support, and control center features.\n\n## Technical Requirements and Setup\n- **Node.js**: Requires Node.js version >=24.22.1 for npm installs and runtime, with Node 26 recommended. Bun is utilized for source builds and local development.\n- **Configuration**: Stores user configurations under `~/.openclaude` and `~/.openclaude.json`. It maintains independence from legacy paths like `~/.claude`.\n- **Search Backends**: Exa serves as the default web search backend, with options to configure alternatives such as Tavily, Brave, Firecrawl, or local Ollama endpoints.\n\n## Practical Implications and Verification\nUsers migrating from older package scopes should remove legacy installations before updating. For verification, users can consult the official GitHub repository and documentation to review setup guides, provider configurations, and contribution guidelines.",
+  "hi_body": "OpenClaude एक ओपन-सोर्स कोडिंग-एजेंट कमांड-लाइन इंटरफेस (CLI) है जिसे क्लाउड और स्थानीय मॉडल प्रदाताओं दोनों का समर्थन करने के लिए डिज़ाइन किया गया है। यह विभिन्न बैकएंड में संकेतों, उपकरणों, एजेंटों, मॉडल संदर्भ प्रोटोकॉल (MCP), स्लैश कमांड और स्ट्रीमिंग आउटपुट को शामिल करने वाला एक टर्मिनल-प्रथम वर्कफ़्लो प्रदान करता है।\n\n## अवलोकन और विशेषताएँ\n- **मल्टी-प्रदाता समर्थन**: OpenAI-संगत API, Gemini, GitHub Models, Codex OAuth, Ollama, Atomic Chat और अन्य के साथ संगत।\n- **टूल-संचालित वर्कफ़्लो**: इसमें बाश इंटीग्रेशन, फ़ाइल रीड/राइट/एडिट टूल, ग्रेप, ग्लोब, टास्क और वेब टूल शामिल हैं।\n- **विजुअल कंपेनियन**: इसमें एक पिक्सेल-आर्ट हीरो कंपेनियन शामिल है जो संदेश सबमिट करने पर प्रतिक्रिया देता है।\n- **VS Code इंटीग्रेशन**: लॉन्च इंटीग्रेशन, थीम समर्थन और नियंत्रण केंद्र सुविधाओं के लिए एक बंडल एक्सटेंशन शामिल है।\n\n## तकनीकी आवश्यकताएँ और सेटअप\n- **Node.js**: npm इंस्टॉल और रनटाइम के लिए Node.js संस्करण >=24.22.1 की आवश्यकता है, जिसमें Node 26 अनुशंसित है। स्रोत बिल्ड और स्थानीय विकास के लिए Bun का उपयोग किया जाता है।\n- **कॉन्फ़िगरेशन**: उपयोगकर्ता कॉन्फ़िगरेशन को `~/.openclaude` और `~/.openclaude.json` के तहत संग्रहीत करता है। यह `~/.claude` जैसे पुराने पथों से स्वतंत्रता बनाए रखता है।\n- **सर्च बैकएंड**: Exa डिफ़ॉल्ट वेब सर्च बैकएंड के रूप में कार्य करता है, जिसमें Tavily, Brave, Firecrawl या स्थानीय Ollama जैसे विकल्पों को कॉन्फ़िगर करने के विकल्प हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nपुराने पैकेज स्कोप से माइग्रेट करने वाले उपयोगकर्ताओं को अपडेट करने से पहले पुरानी स्थापनाओं को हटा देना चाहिए। सत्यापन के लिए, उपयोगकर्ता सेटअप गाइड, प्रदाता कॉन्फ़िगरेशन और योगदान दिशानिर्देशों की समीक्षा करने के लिए आधिकारिक GitHub रिपॉजिटरी और दस्तावेज़ देख सकते हैं।",
+  "en_meta": "Explore OpenClaude, an open-source multi-provider coding-agent CLI supporting cloud and local models with a terminal-first workflow.",
+  "hi_meta": "OpenClaude का अन्वेषण करें, जो क्लाउड और स्थानीय मॉडल के लिए एक ओपन-सोर्स मल्टी-प्रदाता कोडिंग-एजेंट CLI है।",
+  "en_keywords": [
+    "OpenClaude",
+    "coding agent CLI",
+    "open source",
+    "Node.js",
+    "developer tools"
+  ],
+  "hi_keywords": [
+    "OpenClaude",
+    "कोडिंग एजेंट CLI",
+    "ओपन सोर्स",
+    "Node.js",
+    "डेवलपर टूल्स"
+  ],
+  "source_published_at": null,
+  "id": "15209dbc4583",
+  "source": "https://github.com/Twigpine/openclaude",
+  "date": "2026-11-11T01:54:30.748082+00:00",
+  "source_title": "Twigpine/openclaude: runs anywhere. uses anything - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

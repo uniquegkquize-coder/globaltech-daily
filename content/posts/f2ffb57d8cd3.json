@@ -1,0 +1,36 @@
+{
+  "en_title": "YourOwnWeigh Open-Source Project Offers Alternative Data Sync for Withings Scales",
+  "hi_title": "ओपन-सोर्स प्रोजेक्ट YourOwnWeigh Withings तराजू के लिए वैकल्पिक डेटा सिंक प्रदान करता है",
+  "en_body": "An open-source software project named YourOwnWeigh (YOW) has been released to help users sync their Withings smart scales to local data stores or services like Apple Health and Google Health without relying on official subscription services or cloud infrastructure.\n\nReleased on October 29, the project provides components designed to replace Withings as the data synchronization API. It allows owners to manage device configurations, users, and readings independently. According to the release documentation, the system can be hosted on a free CloudFlare account or run locally using alternative setups.\n\n## Core Components and Requirements\nThe software package consists of several main parts:\n- **Firmware Patches:** Custom modifications for selected scale models.\n- **Python Bridge App:** A local application that handles firmware updates and requires Bluetooth proximity to the scales.\n- **Web Application:** A management interface handling device configurations, users, and weight readings, acting as the primary replacement for the Withings API.\n- **Automation Scripts:** Shortcuts to facilitate data transfer into platforms like Apple Health.\n\nSetup options include deploying a CloudFlare worker utilizing D1 storage, or running the server locally via Docker or a reverse proxy like Caddy to handle required ports (80 or 443).\n\n## Practical Implications and Risks\nWhile the project aims to bypass subscription fees and allow direct data ownership, the author notes that the software is provided as-is without guarantees, and the repository is described as a work in progress. Modifying scale firmware carries inherent technical risks:\n- **Firmware Overwrites:** The project downloads official firmware from Withings servers and applies local patches before flashing. Devices typically feature two firmware slots, writing updates to the lower version slot to preserve a fallback option.\n- **Potential Recovery Needs:** A failed or interrupted firmware write could potentially disrupt Bluetooth functionality, requiring hardware recovery via a UART connection.\n- **Operating System Limits:** The web app supports all operating systems, but the Python bridge currently is limited to macOS and Linux, with Windows support still pending.\n\n## Verification and Community Involvement\nUsers can verify whether a scale is running the alternative firmware by removing and reinserting a battery; stock firmware typically displays a greeting, whereas the alternative firmware displays a smiley face. The creator has invited community contributions for tasks such as adding Windows support, testing additional scale models, and maintaining the repository.\n\n*Disclaimer: Withings is a registered trademark of Withings SA. This independent project has no affiliation with or endorsement from Withings.*",
+  "hi_body": "YourOwnWeigh (YOW) नामक एक ओपन-सोर्स सॉफ्टवेयर प्रोजेक्ट जारी किया गया है, जो उपयोगकर्ताओं को आधिकारिक सब्सक्रिप्शन सेवाओं या क्लाउड बुनियादी ढांचे पर निर्भर हुए बिना अपने Withings स्मार्ट तराजू को स्थानीय डेटा स्टोर या Apple Health और Google Health जैसी सेवाओं के साथ सिंक करने में मदद करता है।\n\n29 अक्टूबर को जारी इस प्रोजेक्ट में ऐसे घटक शामिल हैं जिन्हें Withings को डेटा सिंक्रनाइज़ेशन एपीआई के रूप में बदलने के लिए डिज़ाइन किया गया है। यह मालिकों को डिवाइस कॉन्फ़िगरेशन, उपयोगकर्ताओं और रीडिंग को स्वतंत्र रूप से प्रबंधित करने की अनुमति देता है। रिलीज़ दस्तावेज़ के अनुसार, सिस्टम को एक मुफ्त क्लाउडफ्लेयर (CloudFlare) खाते पर होस्ट किया जा सकता है या वैकल्पिक सेटअप का उपयोग करके स्थानीय रूप से चलाया जा सकता है।\n\n## मुख्य घटक और आवश्यकताएँ\nसॉफ्टवेयर पैकेज में कई मुख्य भाग शामिल हैं:\n- **फर्मवेयर पैच:** चुनिंदा स्केल मॉडल के लिए कस्टम संशोधन।\n- **पायथन ब्रिज ऐप:** एक स्थानीय एप्लिकेशन जो फर्मवेयर अपडेट को संभालता है और तराजू के साथ ब्लूटूथ निकटता की आवश्यकता रखता है।\n- **वेब एप्लिकेशन:** डिवाइस कॉन्फ़िगरेशन, उपयोगकर्ताओं और वजन रीडिंग को प्रबंधित करने वाला एक इंटरफ़ेस, जो Withings API के प्राथमिक विकल्प के रूप में कार्य करता है।\n- **ऑटोमेशन स्क्रिप्ट:** Apple Health जैसे प्लेटफार्मों में डेटा ट्रांसफर को सुविधाजनक बनाने के लिए शॉर्टकट।\n\nसेटअप विकल्पों में D1 स्टोरेज का उपयोग करने वाले क्लाउडफ्लेयर वर्कर को तैनात करना, या आवश्यक पोर्ट (80 या 443) को संभालने के लिए Docker या Caddy जैसे रिवर्स प्रॉक्सी के माध्यम से स्थानीय रूप से सर्वर चलाना शामिल है।\n\n## व्यावहारिक निहितार्थ और जोखिम\nजबकि इस प्रोजेक्ट का उद्देश्य सब्सक्रिप्शन शुल्क से बचना और प्रत्यक्ष डेटा स्वामित्व की अनुमति देना है, लेखक का कहना है कि सॉफ्टवेयर बिना किसी गारंटी के प्रदान किया गया है, और रिपॉजिटरी को प्रगति पर कार्य के रूप में वर्णित किया गया है। स्केल फर्मवेयर को संशोधित करने में अंतर्निहित तकनीकी जोखिम शामिल हैं:\n- **फर्मवेयर ओवरराइट:** प्रोजेक्ट Withings सर्वर से आधिकारिक फर्मवेयर डाउनलोड करता है और फ्लैश करने से पहले स्थानीय पैच लागू करता है।\n- **संभावित पुनर्प्राप्ति आवश्यकताएं:** एक विफल या बाधित फर्मवेयर राइट संभावित रूप से ब्लूटूथ कार्यक्षमता को बाधित कर सकता है, जिसके लिए UART कनेक्शन के माध्यम से हार्डवेयर पुनर्प्राप्ति की आवश्यकता हो सकती है।\n- **ऑपरेटिंग सिस्टम सीमाएं:** वेब ऐप सभी ऑपरेटिंग सिस्टम का समर्थन करता है, लेकिन पायथन ब्रिज वर्तमान में macOS और Linux तक सीमित है, और Windows समर्थन अभी बाकी है।\n\n## सत्यापन और सामुदायिक भागीदारी\nउपयोगकर्ता बैटरी को निकालकर और दोबारा लगाकर यह सत्यापित कर सकते हैं कि स्केल वैकल्पिक फर्मवेयर पर चल रहा है या नहीं; स्टॉक फर्मवेयर आम तौर पर एक ग्रीटिंग प्रदर्शित करता है, जबकि वैकल्पिक फर्मवेयर एक स्माइली चेहरा प्रदर्शित करता है। निर्माता ने विंडोज समर्थन जोड़ने, अतिरिक्त स्केल मॉडल का परीक्षण करने और रिपॉजिटरी को बनाए रखने जैसे कार्यों के लिए सामुदायिक योगदान आमंत्रित किया है।\n\n*अस्वीकरण: Withings, Withings SA का एक पंजीकृत ट्रेडमार्क है। इस स्वतंत्र प्रोजेक्ट का Withings के साथ कोई संबंध या समर्थन नहीं है।*",
+  "en_meta": "Discover YourOwnWeigh, an open-source project enabling users to sync Withings scales to local storage or Apple Health without subscription fees.",
+  "hi_meta": "YourOwnWeigh के बारे में जानें, जो उपयोगकर्ताओं को सब्सक्रिप्शन शुल्क के बिना Withings तराजू को स्थानीय स्टोरेज या Apple Health से सिंक करने में सक्षम बनाता है।",
+  "en_keywords": [
+    "YourOwnWeigh",
+    "Withings scales",
+    "open-source",
+    "data sync",
+    "firmware patch",
+    "CloudFlare",
+    "Apple Health"
+  ],
+  "hi_keywords": [
+    "YourOwnWeigh",
+    "Withings तराजू",
+    "ओपन-सोर्स",
+    "डेटा सिंक",
+    "फर्मवेयर पैच",
+    "क्लाउडफ्लेयर",
+    "Apple Health"
+  ],
+  "source_published_at": null,
+  "id": "f2ffb57d8cd3",
+  "source": "https://github.com/tomanthony/YourOwnWeigh/",
+  "date": "2026-11-11T01:51:57.565967+00:00",
+  "source_title": "TomAnthony/YourOwnWeigh - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

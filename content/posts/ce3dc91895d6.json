@@ -1,0 +1,32 @@
+{
+  "en_title": "Vercel Introduces Eve: A Filesystem-First Open Framework for Building Durable AI Agents",
+  "hi_title": "Vercel ने पेश किया Eve: टिकाऊ AI एजेंट बनाने के लिए फाइलystem-first ओपन फ्रेमवर्क",
+  "en_body": "Vercel has released Eve, an open framework designed to build durable AI agents using a filesystem-first approach. According to the project's repository, core agent capabilities reside in conventional locations, aiming to make projects easier to inspect, extend, and operate.\n\n## Core Architecture and Filesystem Design\n\nThe framework treats the filesystem as the authoring interface. A typical Eve agent relies on a structured project layout where components are organized logically. Developers can initialize a new project or add Eve to an existing codebase using terminal commands provided in the official documentation.\n\n* **Local Documentation:** The Eve package includes full documentation locally within `node_modules/eve/docs`, allowing coding agents to read guides and references directly.\n* **Model Selection:** Projects can be configured with specific AI models and reasoning parameters through command-line flags or configuration files.\n* **Extensibility:** Developers can define custom instructions, implement tools such as mock weather functions, and configure agent behaviors in designated directories.\n\n## Deployment and Channels\n\nEve integrates with Vercel for project hosting and web chat provisioning. Developers can link a Vercel project from the agent directory, choose a hosting layout, and authenticate team members. Channels like Web Chat can be selected via the terminal UI's channel picker or added during setup.\n\n* Run `npx eve deploy` to publish the agent.\n* Local development functions without requiring browser sign-in.\n* Web setup guides outline specific permissions and recovery steps.\n\n## Community and Contributions\n\nThe project maintains an open-source presence on GitHub. Users can engage through GitHub Discussions for questions and ideas. Contributions are accepted via standard pull requests following the repository's contributing guidelines and code of conduct.\n\n## Verification and Security\n\nInterested users can review the original repository and documentation on GitHub under the Vercel organization. For security vulnerabilities, the maintainers request responsible disclosure by following the `SECURITY.md` instructions rather than opening public issues.",
+  "hi_body": "Vercel ने Eve को लॉन्च किया है, जो एक फाइलसिस्टम-फर्स्ट अप्रोच का उपयोग करके टिकाऊ AI एजेंट बनाने के लिए डिज़ाइन किया गया एक ओपन फ्रेमवर्क है। प्रोजेक्ट के रिपॉजिटरी के अनुसार, मुख्य एजेंट क्षमताएं पारंपरिक स्थानों पर रहती हैं, जिसका उद्देश्य प्रोजेक्ट्स को जांचना, विस्तारित करना और संचालित करना आसान बनाना है।\n\n## कोर आर्किटेक्चर और फाइलसिस्टम डिज़ाइन\n\nयह फ्रेमवर्क फाइलसिस्टम को ऑथरिंग इंटरफेस के रूप में मानता है। एक विशिष्ट Eve एजेंट एक संरचित प्रोजेक्ट लेआउट पर निर्भर करता है जहां घटकों को तार्किक रूप से व्यवस्थित किया जाता है। डेवलपर्स आधिकारिक दस्तावेजों में प्रदान किए गए टर्मिनल कमांड का उपयोग करके एक नया प्रोजेक्ट शुरू कर सकते हैं या मौजूदा कोडबेस में Eve जोड़ सकते हैं।\n\n* **स्थानीय दस्तावेज़:** Eve पैकेज में `node_modules/eve/docs` के भीतर स्थानीय रूप से पूर्ण दस्तावेज़ शामिल हैं, जिससे कोडिंग एजेंटों को सीधे गाइड और संदर्भ पढ़ने की अनुमति मिलती है।\n* **मॉडल चयन:** प्रोजेक्ट्स को कमांड-लाइन फ्लैग या कॉन्फ़िगरेशन फ़ाइलों के माध्यम से विशिष्ट AI मॉडल और रीज़निंग पैरामीटर के साथ कॉन्फ़िगर किया जा सकता है।\n* **विस्तारशीलता:** डेवलपर कस्टम निर्देश परिभाषित कर सकते हैं, मॉक वेदर फ़ंक्शन जैसे टूल लागू कर सकते हैं, और निर्दिष्ट निर्देशिकाओं में एजेंट व्यवहार को कॉन्फ़िगर कर सकते हैं।\n\n## परिनियोजन (Deployment) और चैनल\n\nEve प्रोजेक्ट होस्टिंग और वेब चैट प्रावधान के लिए Vercel के साथ एकीकृत होता है। डेवलपर एजेंट निर्देशिका से एक Vercel प्रोजेक्ट को लिंक कर सकते हैं, होस्टिंग लेआउट चुन सकते हैं, और टीम के सदस्यों को प्रमाणित कर सकते हैं। वेब चैट जैसे चैनलों को टर्मिनल UI के चैनल पिकर के माध्यम से चुना जा सकता है या सेटअप के दौरान जोड़ा जा सकता है।\n\n* एजेंट को प्रकाशित करने के लिए `npx eve deploy` चलाएं।\n* स्थानीय विकास ब्राउज़र साइन-इन की आवश्यकता के बिना काम करता है।\n* वेब सेटअप गाइड विशिष्ट अनुमति और पुनर्प्राप्ति चरणों को रेखांकित करते हैं।\n\n## समुदाय और योगदान\n\nयह प्रोजेक्ट GitHub पर एक ओपन-सोर्स उपस्थिति बनाए रखता है। उपयोगकर्ता प्रश्नों और विचारों के लिए GitHub Discussions के माध्यम से जुड़ सकते हैं। रिपॉजिटरी के योगदान दिशानिर्देशों और आचार संहिता का पालन करते हुए मानक पुल अनुरोधों के माध्यम से योगदान स्वीकार किए जाते हैं।\n\n## सत्यापन और सुरक्षा\n\nइच्छुक उपयोगकर्ता Vercel संगठन के तहत GitHub पर मूल रिपॉजिटरी और दस्तावेज़ की समीक्षा कर सकते हैं। सुरक्षा कमजोरियों के लिए, रखरखावकर्ता सार्वजनिक मुद्दों को खोलने के बजाय `SECURITY.md` निर्देशों का पालन करके जिम्मेदार खुलासे का अनुरोध करते हैं।",
+  "en_meta": "Learn about Vercel Eve, an open framework for building durable AI agents with a filesystem-first design, local documentation, and Vercel deployment.",
+  "hi_meta": "Vercel Eve के बारे में जानें, जो फाइलसिस्टम-फर्स्ट डिज़ाइन और स्थानीय दस्तावेज़ के साथ टिकाऊ AI एजेंट बनाने का एक ओपन फ्रेमवर्क है।",
+  "en_keywords": [
+    "Vercel Eve",
+    "AI agents",
+    "filesystem framework",
+    "open source",
+    "developer tools"
+  ],
+  "hi_keywords": [
+    "Vercel Eve",
+    "AI एजेंट",
+    "फाइलसिस्टम फ्रेमवर्क",
+    "ओपन सोर्स",
+    "डेवलपर टूल्स"
+  ],
+  "source_published_at": null,
+  "id": "ce3dc91895d6",
+  "source": "https://github.com/vercel/eve",
+  "date": "2026-11-11T01:56:00.403892+00:00",
+  "source_title": "vercel/eve: The Open Framework for Building Agents - GitHub",
+  "category": "ai-news",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

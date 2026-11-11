@@ -1,0 +1,29 @@
+{
+  "en_title": "noalloc: Go Tooling for Enforcing Zero Heap Allocations",
+  "hi_title": "noalloc: गो में ज़ीरो हीप एलोकेशन लागू करने के लिए टूलिंग",
+  "en_body": "The open-source repository `noalloc` provides experimental tooling and libraries designed to help enforce zero heap allocations in Go applications. Developed with human guidance and utilized in production environments at The Consensus, the project introduces command-line utilities and fixed-capacity data structures to audit and maintain memory allocation constraints.\n\n## Core Features and Usage\n\nThe `noalloc` command-line tool analyzes a Go module starting from functions marked with specific directives to check the entire call tree for heap allocations.\n\n* **Function Marking:** Developers can use `//noalloc:root` to designate an entry point and `//noalloc:exempt` to bypass specific lines or calls.\n* **Fixed-Size Data Structures:** The accompanying `bounded` package provides containers such as `Buf`, `Vec`, `Slice`, and `Map` with fixed maximum capacities to help prevent dynamic resizing and heap memory allocations.\n* **Zero-Allocation JSON:** The repository includes specialized encoding and decoding tools that utilize generated methods to process JSON without heap overhead.\n\n## Verification and Limitations\n\nThe tool operates experimentally and relies on compiler outputs, configurations, and build tags. Because it depends on internal compiler representations and assembly patterns, behaviors may vary across Go toolchain releases. Developers can verify outputs through test commands and integrated benchmarking tools provided within the repository. To review original announcements and access the complete codebase, visit the official GitHub repository at theconsensuslabs/noalloc.",
+  "hi_body": "ओपन-सोर्स रिपॉजिटरी `noalloc` प्रायोगिक टूलिंग और लाइब्रेरी प्रदान करती है जिसे गो (Go) अनुप्रयोगों में ज़ीरो हीप एलोकेशन को लागू करने में मदद के लिए डिज़ाइन किया गया है। द कंसेंसस (The Consensus) में उत्पादन वातावरण में उपयोग किया जाने वाला यह प्रोजेक्ट मेमोरी एलोकेशन की जांच और रखरखाव के लिए कमांड-लाइन यूटिलिटीज और फिक्स-कैपेसिटी डेटा स्ट्रक्चर पेश करता है।\n\n## मुख्य विशेषताएं और उपयोग\n\n`noalloc` कमांड-लाइन टूल हीप एलोकेशन के लिए पूरे कॉल ट्री की जांच करने वास्ते विशिष्ट निर्देशों के साथ चिह्नित कार्यों से एक गो मॉड्यूल का विश्लेषण करता है।\n\n* **फ़ंक्शन मार्किंग:** डेवलपर्स किसी प्रविष्टि बिंदु को नामित करने के लिए `//noalloc:root` और विशिष्ट लाइनों को छोड़ने के लिए `//noalloc:exempt` का उपयोग कर सकते हैं।\n* **निश्चित आकार के डेटा स्ट्रक्चर:** साथ आने वाला `bounded` पैकेज गतिशील आकार बदलने और हीप मेमोरी एलोकेशन को रोकने में मदद करने के लिए `Buf`, `Vec`, `Slice`, और `Map` जैसे कंटेनर प्रदान करता है.\n* **ज़ीरो-एलोकेशन JSON:** रिपॉजिटरी में विशिष्ट एन्कोडिंग और डिकोडिंग टूल शामिल हैं जो हीप ओवरहेड के बिना JSON को प्रोसेस करने के लिए जनरेटेड तरीकों का उपयोग करते हैं।\n\n## सत्यापन और सीमाएं\n\nयह टूल प्रायोगिक रूप से काम करता है और कंपाइलर आउटपुट, कॉन्फ़िगरेशन और बिल्ड टैग पर निर्भर करता है। चूंकि यह आंतरिक कंपाइलर प्रतिनिधित्व और असेंबली पैटर्न पर निर्भर करता है, इसलिए व्यवहार गो टूलचेन रिलीज़ में भिन्न हो सकते हैं। डेवलपर्स रिपॉजिटरी के भीतर प्रदान किए गए परीक्षण कमांड और बेंचमार्किंग टूल के माध्यम से आउटपुट सत्यापित कर सकते हैं। मूल घोषणाओं की समीक्षा करने और संपूर्ण कोडबेस तक पहुंचने के लिए, theconsensuslabs/noalloc पर आधिकारिक GitHub रिपॉजिटरी पर जाएं।",
+  "en_meta": "Explore noalloc, an experimental Go tool and library package designed to enforce zero heap allocations through call tree analysis and fixed data structures.",
+  "hi_meta": "noalloc का अन्वेषण करें, जो कॉल ट्री विश्लेषण और निश्चित डेटा संरचनाओं के माध्यम से ज़ीरो हीप एलोकेशन लागू करने के लिए डिज़ाइन किया गया एक प्रायोगिक गो टूल है।",
+  "en_keywords": [
+    "Golang",
+    "heap allocations",
+    "memory management",
+    "noalloc",
+    "Go tooling"
+  ],
+  "hi_keywords": [
+    "गोलांग",
+    "हीप एलोकेशन",
+    "मेमोरी प्रबंधन",
+    "noalloc",
+    "गो टूलिंग"
+  ],
+  "source_published_at": null,
+  "id": "deea08fa2c3e",
+  "source": "https://github.com/theconsensuslabs/noalloc",
+  "date": "2026-11-11T01:50:38.985980+00:00",
+  "source_title": "theconsensuslabs/noalloc: Tooling and libraries to enforce zero heap allocations in Golang - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

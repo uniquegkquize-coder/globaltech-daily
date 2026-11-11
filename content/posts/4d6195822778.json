@@ -1,0 +1,29 @@
+{
+  "en_title": "GitHub Announces Planned Deprecation and Shutdown Schedule for LGTM.com",
+  "hi_title": "GitHub ने LGTM.com के निर्धारित अवमूल्यन और बंद होने के कार्यक्रम की घोषणा की",
+  "en_body": "Following the integration of CodeQL analysis technology into GitHub code scanning, GitHub has announced a scheduled deprecation and shutdown plan for LGTM.com through the end of 2022.\n\nAccording to GitHub's official announcement, LGTM.com's core features are now available within GitHub code scanning, prompting the gradual retirement of the platform. Users are advised to review official GitHub documentation and transition their workflows accordingly.\n\n## Scheduled Timeline and Key Milestones\n\n* **End of August 2022:** New user sign-ups and the addition of new repositories will cease. Existing users can still log in, and current repositories will analyze new commits, though historical analysis will stop.\n* **October 2022:** Migration assistance will be provided for active repositories, which includes automated pull requests adding GitHub Actions workflows for code scanning where feasible.\n* **End of November 2022:** Analysis of new commits and pull requests on LGTM.com will officially stop.\n* **16th of December 2022:** LGTM.com will fully shut down, removing access to the service and the query console.\n\n## Practical Implications and Verification\n\nActive users of LGTM.com must migrate their repositories and workflows to GitHub code scanning before the scheduled shutdown dates. Advanced configurations may require manual setup. Developers can verify announcements and read migration guides directly on the official GitHub Blog.",
+  "hi_body": "GitHub code scanning में CodeQL विश्लेषण तकनीक के एकीकरण के बाद, GitHub ने 2022 के अंत तक LGTM.com के लिए एक क्रमिक अवमूल्यन और बंद होने की योजना की घोषणा की है।\n\nGitHub की आधिकारिक घोषणा के अनुसार, LGTM.com की मुख्य विशेषताएं अब GitHub code scanning में उपलब्ध हैं, जिसके कारण इस प्लेटफॉर्म को धीरे-धीरे सेवानिवृत्त किया जा रहा है। उपयोगकर्ताओं को सलाह दी जाती है कि वे आधिकारिक GitHub दस्तावेज़ों की समीक्षा करें और तदनुसार अपने वर्कफ़्लो को स्थानांतरित करें।\n\n## निर्धारित समयरेखा और मुख्य मील के पत्थर\n\n* **अगस्त 2022 का अंत:** नए उपयोगकर्ता साइन-अप और नए रिपॉजिटरी जोड़ने की प्रक्रिया बंद हो जाएगी। मौजूदा उपयोगकर्ता लॉग इन करना जारी रख सकते हैं, और वर्तमान रिपॉजिटरी नए कमिट का विश्लेषण करेंगे, हालांकि ऐतिहासिक विश्लेषण बंद हो जाएगा।\n* **अक्टूबर 2022:** सक्रिय रिपॉजिटरी के लिए माइग्रेशन सहायता प्रदान की जाएगी, जिसमें कोड स्कैनिंग के लिए GitHub Actions वर्कफ़्लो जोड़ने वाले स्वचालित पुल अनुरोध शामिल हैं।\n* **नवंबर 2022 का अंत:** LGTM.com पर नए कमिट और पुल अनुरोधों का विश्लेषण आधिकारिक तौर पर बंद हो जाएगा।\n* **16 दिसंबर 2022:** LGTM.com पूरी तरह से बंद हो जाएगा, जिससे सेवा और क्वेरी कंसोल तक पहुंच समाप्त हो जाएगी।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nLGTM.com के सक्रिय उपयोगकर्ताओं को निर्धारित बंद होने की तारीखों से पहले अपने रिपॉजिटरी और वर्कफ़्लो को GitHub code scanning पर स्थानांतरित करना होगा। डेवलपर्स आधिकारिक GitHub Blog पर घोषणाओं को सत्यापित कर सकते हैं और माइग्रेशन गाइड पढ़ सकते हैं।",
+  "en_meta": "GitHub announces the scheduled deprecation and shutdown of LGTM.com by December 16, 2022, following the integration of CodeQL into GitHub code scanning.",
+  "hi_meta": "GitHub ने CodeQL एकीकरण के बाद 16 दिसंबर, 2022 तक LGTM.com को बंद करने और हटाने की निर्धारित योजना की घोषणा की है।",
+  "en_keywords": [
+    "LGTM.com",
+    "GitHub code scanning",
+    "CodeQL",
+    "deprecation",
+    "software security"
+  ],
+  "hi_keywords": [
+    "LGTM.com",
+    "GitHub code scanning",
+    "CodeQL",
+    "डिप्रीकिएशन",
+    "सॉफ्टवेयर सुरक्षा"
+  ],
+  "source_published_at": "2022-08-15T15:00:07+00:00",
+  "id": "4d6195822778",
+  "source": "https://github.blog/news-insights/product-news/the-next-step-for-lgtm-com-github-code-scanning/",
+  "date": "2026-11-11T01:50:16.670502+00:00",
+  "source_title": "The next step for LGTM.com: GitHub code scanning!",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

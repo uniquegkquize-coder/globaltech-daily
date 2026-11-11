@@ -1,0 +1,29 @@
+{
+  "en_title": "Bootstrap Development Update: Overview of Repository Structure and Installation Options",
+  "hi_title": "बूटस्ट्रैप विकास अपडेट: रिपॉजिटरी संरचना और स्थापना विकल्पों का अवलोकन",
+  "en_body": "Bootstrap serves as a widely utilized front-end framework designed to streamline web development through HTML, CSS, and JavaScript. According to project documentation hosted on GitHub, development efforts are currently directed toward the Bootstrap 6 release on the default branch, while the v5-dev branch houses resources for Bootstrap 5.\n\nProject maintainers outline multiple installation methods for developers seeking to integrate the framework into their projects. The framework is distributed under the MIT License, with documentation available under Creative Commons.\n\n## Installation and Setup Options\n\nDevelopers can acquire the framework using several package managers and dependency tools. Based on documentation instructions, available installation commands include:\n\n* **Git Clone:** `git clone https://github.com/twbs/bootstrap.git`\n* **npm:** `npm install bootstrap@6.0.0-alpha.1`\n* **Yarn:** `yarn add bootstrap@6.0.0-alpha.1`\n* **Bun:** `bun add bootstrap@6.0.0-alpha.1`\n* **Composer:** `composer require twbs/bootstrap:6.0.0-alpha.1`\n* **NuGet:** `Install-Package bootstrap` (CSS) or `Install-Package bootstrap.sass` (Sass)\n\n## Asset Structure and Documentation\n\nThe repository includes compiled and minified CSS and JavaScript files, alongside source maps for browser developer tools. Bundled JavaScript files integrate utilities such as Floating UI and Vanilla Calendar Pro. Additionally, the CSS files support both Left-to-Right (LTR) and Right-to-Left (RTL) layouts through logical properties.\n\nThe official documentation is built using Astro and hosted on GitHub Pages at the official Bootstrap website. Developers interested in running the documentation locally can follow these steps:\n\n1. Install Node.js dependencies by running `npm install` in the root directory.\n2. Execute `npm run docs-serve` to start the local server.\n3. Access `http://localhost:9001` via a web browser.\n\n## Community and Contribution\n\nContributions are governed by specific guidelines regarding coding standards and issue reporting. The project maintains backward compatibility following Semantic Versioning guidelines. Developers can engage with the community and track updates through channels such as GitHub Discussions, the official blog, Discord, Reddit, IRC, and Stack Overflow.",
+  "hi_body": "बूटस्ट्रैप एक लोकप्रिय फ्रंट-एंड फ्रेमवर्क है जो एचटीएमएल, सीएसएस और जावास्क्रिप्ट का उपयोग करके वेब विकास को आसान बनाने के लिए डिज़ाइन किया गया है। GitHub पर उपलब्ध प्रोजेक्ट दस्तावेज़ के अनुसार, वर्तमान में डिफ़ॉल्ट शाखा पर बूटस्ट्रैप 6 रिलीज़ के विकास पर काम चल रहा है, जबकि v5-dev शाखा में बूटस्ट्रैप 5 के संसाधन उपलब्ध हैं।\n\nप्रोजेक्ट मेंटेनर्स ने फ्रेमवर्क को एकीकृत करने के इच्छुक डेवलपर्स के लिए कई स्थापना के तरीकों का उल्लेख किया है। यह फ्रेमवर्क एमआईटी लाइसेंस के तहत जारी किया गया है।\n\n## स्थापना और सेटअप विकल्प\nदस्तावेज़ के निर्देशों के आधार पर, उपलब्ध स्थापना आदेशों में निम्नलिखित शामिल हैं:\n\n* **गिट क्लोन:** `git clone https://github.com/twbs/bootstrap.git`\n* **एनपीएम:** `npm install bootstrap@6.0.0-alpha.1`\n* **यार्न:** `yarn add bootstrap@6.0.0-alpha.1`\n* **बुन:** `bun add bootstrap@6.0.0-alpha.1`\n* **कंपोजर:** `composer require twbs/bootstrap:6.0.0-alpha.1`\n* **नूगेट:** `Install-Package bootstrap` (CSS) या `Install-Package bootstrap.sass` (Sass)\n\n## एसेट संरचना और दस्तावेज़ीकरण\nरिपॉजिटरी में संकलित और लघु किए गए सीएसएस और जावास्क्रिप्ट फ़ाइलें शामिल हैं। बंडल की गई जावास्क्रिप्ट फ़ाइलों में फ़्लोटिंग यूआई और वैनिला कैलेंडर प्रो जैसी उपयोगिताएँ शामिल हैं। इसके अलावा, सीएसएस फ़ाइलें तार्किक गुणों के माध्यम से एलटीआर और आरटीएल दोनों लेआउट का समर्थन करती हैं।\n\nआधिकारिक दस्तावेज़ एस्ट्रो का उपयोग करके बनाए गए हैं और GitHub Pages पर होस्ट किए गए हैं। दस्तावेज़ को स्थानीय रूप से चलाने के लिए डेवलपर इन चरणों का पालन कर सकते हैं:\n\n1. रूट निर्देशिका में `npm install` चलाकर Node.js निर्भरताएँ स्थापित करें।\n2. स्थानीय सर्वर शुरू करने के लिए `npm run docs-serve` चलाएँ।\n3. वेब ब्राउज़र के माध्यम से `http://localhost:9001` खोलें।\n\n## समुदाय और योगदान\nयोगदान को कोडिंग मानकों और समस्या रिपोर्टिंग से संबंधित विशिष्ट दिशानिर्देशों द्वारा नियंत्रित किया जाता है। प्रोजेक्ट सिमेंटिक वर्ज़निंग दिशानिर्देशों का पालन करता है। डेवलपर GitHub चर्चाओं, आधिकारिक ब्लॉग, डिस्कॉर्ड और अन्य चैनलों के माध्यम से समुदाय के साथ जुड़ सकते हैं।",
+  "en_meta": "Explore the Bootstrap front-end framework repository structure, installation options for npm, yarn, and git, and local documentation setup instructions.",
+  "hi_meta": "बूटस्ट्रैप फ्रंट-एंड फ्रेमवर्क रिपॉजिटरी संरचना, एनपीएम और यार्न जैसे स्थापना विकल्पों और स्थानीय दस्तावेज़ सेटअप निर्देशों की जानकारी प्राप्त करें।",
+  "en_keywords": [
+    "Bootstrap",
+    "front-end framework",
+    "web development",
+    "HTML CSS JavaScript",
+    "GitHub repository"
+  ],
+  "hi_keywords": [
+    "बूटस्ट्रैप",
+    "फ्रंट-एंड फ्रेमवर्क",
+    "वेब विकास",
+    "HTML CSS JavaScript",
+    "GitHub रिपॉजिटरी"
+  ],
+  "source_published_at": null,
+  "id": "8c2fc2f67578",
+  "source": "https://github.com/twbs/bootstrap",
+  "date": "2026-11-11T01:50:02.005833+00:00",
+  "source_title": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

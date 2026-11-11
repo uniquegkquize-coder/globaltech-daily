@@ -1,0 +1,29 @@
+{
+  "en_title": "Unnoficial LMS_Android Project Explores Static Recompilation of LEGO Marvel Super Heroes for ARM64 Devices",
+  "hi_title": "एआरएम64 डिवाइसों के लिए लेगो मार्वल सुपर हीरोज के स्टेटिक रीकम्पिलेशन की खोज करता अनौपचारिक LMS_Android प्रोजेक्ट",
+  "en_body": "An open-source repository titled ttom795/LMS_Android has emerged, detailing a static recompilation approach to bring the 2013 PC game *LEGO Marvel Super Heroes* to Android devices. According to the project documentation, the utility acts as a recompiler rather than a decompilation tool, converting existing PC binary files into an Android-compatible package using user-supplied game assets.\n\n## Technical Requirements and Setup\n\nThe documentation notes that the project requires specific components to function on mobile hardware:\n- **Hardware:** An ARM64 Android device running Android 9 or newer, equipped with Vulkan 1.1 support and adequate storage and memory.\n- **Game Files:** Users must supply their own legitimate PC installation files (specifically tested with the Steam release), including precise dependencies like specific DLL versions verified by SHA-1 hashes.\n- **Build Tools:** Building the APK locally involves tools like Python 3.10+, Gradle 8.1.1, Android NDK, CMake, and a host environment such as Linux or WSL for initial stages.\n\n## Performance and Gameplay Features\n\nThe port implements several compatibility layers, utilizing a patched dxvk-native implementation to translate D3D9 to Vulkan 1.1, alongside SDL2 for input, audio, and window handling. Because mobile GPUs may not natively recognize the game's original calls, shaders compile dynamically upon initial execution. The developers caution that the first launch may present a prolonged black screen while shaders compile, though subsequent boots typically load faster as compiled data is cached.\n\nIn-game options include adjustable resolution scaling, toggleable touch controls, and controller layout swaps. The repository explicitly clarifies that it contains no copyrighted game code or assets, serving strictly as a technical demonstration requiring user-provided files from a legal PC purchase.\n\n## How to Verify and Practical Implications\n\nUsers interested in reviewing the source code, verifying file hashes, or examining build instructions can visit the public GitHub repository at `ttom795/LMS_Android`. As an unofficial, fan-led endeavor, the project has no affiliation with or endorsement from LEGO, Marvel, or the original game publishers.",
+  "hi_body": "ttom795/LMS_Android नामक एक ओपन-सোর্স रिपॉजिटरी सामने आई है, जो 2013 के पीसी गेम *LEGO Marvel Super Heroes* को एंड्रॉइड डिवाइसों पर लाने के लिए स्टेटिक रीकम्पिलेशन दृष्टिकोण का विवरण देती है। प्रोजेक्ट दस्तावेज़ के अनुसार, यह यूटिलिटी डीकंपिलेशन टूल के बजाय एक रीकम्पाइलर के रूप में कार्य करती है, जो उपयोगकर्ता द्वारा प्रदान की गई गेम संपत्तियों का उपयोग करके मौजूदा पीसी बाइनरी फाइलों को एंड्रॉइड-संगत पैकेज में परिवर्तित करती है।\n\n## तकनीकी आवश्यकताएं और सेटअप\n\nदस्तावेज़ में उल्लेख किया गया है कि प्रोजेक्ट को मोबाइल हार्डवेयर पर काम करने के लिए विशिष्ट घटकों की आवश्यकता होती है:\n- **हार्डवेयर:** एंड्रॉइड 9 या नए संस्करण पर चलने वाला एआरएम64 एंड्रॉइड डिवाइस, जो Vulkan 1.1 समर्थन और पर्याप्त स्टोरेज व रैम से लैस हो।\n- **गेम फाइलें:** उपयोगकर्ताओं को अपनी स्वयं की वैध पीसी इंस्टॉलेशन फाइलें (विशेष रूप से स्टीम रिलीज़ के साथ परीक्षण की गई) प्रदान करनी होंगी, जिसमें SHA-1 हैश द्वारा सत्यापित विशिष्ट DLL संस्करण शामिल हैं।\n- **बिल्ड टूल्स:** एपीके को स्थानीय रूप से बनाने में Python 3.10+, Gradle 8.1.1, Android NDK, CMake, और शुरुआती चरणों के लिए Linux या WSL जैसे होस्ट वातावरण शामिल हैं।\n\n## प्रदर्शन और गेमप्ले विशेषताएं\n\nपोर्ट विभिन्न संगतता परतों को लागू करता है, जिसमें इनपुट, ऑडियो और विंडो हैंडलिंग के लिए SDL2 के साथ-साथ D3D9 को Vulkan 1.1 में अनुवाद करने के लिए पैच किए गए dxvk-native कार्यान्वयन का उपयोग किया जाता है। चूंकि मोबाइल जीपीयू मूल रूप से गेम के मूल कॉल को नहीं पहचान सकते हैं, इसलिए शेडर प्रारंभिक निष्पादन पर गतिशील रूप से संकलित होते हैं। डेवलपर्स चेतावनी देते हैं कि शेडर संकलित होने के दौरान पहली बार लॉन्च होने पर लंबी काली स्क्रीन आ सकती है, हालांकि संकलित डेटा कैश्ड होने के बाद बाद के बूट आमतौर पर तेजी से लोड होते हैं।\n\nइन-गेम विकल्पों में समायोज्य रिज़ॉल्यूशन स्केलिंग, टॉगल करने योग्य टच नियंत्रण और नियंत्रक लेआउट स्वैप शामिल हैं। रिपॉजिटरी स्पष्ट रूप से स्पष्ट करती है कि इसमें कोई कॉपीराइट गेम कोड या संपत्ति शामिल नहीं है, जो कानूनी पीसी खरीद से उपयोगकर्ता-प्रदान की गई फाइलों की आवश्यकता वाले तकनीकी प्रदर्शन के रूप में सख्ती से कार्य करती है।\n\n## सत्यापन कैसे करें और व्यावहारिक निहितार्थ\n\nस्रोत कोड की समीक्षा करने, फ़ाइल हैश सत्यापित करने, या बिल्ड निर्देशों की जांच करने के इच्छुक उपयोगकर्ता `ttom795/LMS_Android` पर सार्वजनिक गिटहब रिपॉजिटरी देख सकते हैं। एक अनौपचारिक, प्रशंसक-संचालित प्रयास के रूप में, इस प्रोजेक्ट का लेगो, मार्वल या मूल गेम पब्लिशर्स के साथ कोई संबंध या समर्थन नहीं है।",
+  "en_meta": "Explore the ttom795/LMS_Android GitHub project detailing a static recompilation of LEGO Marvel Super Heroes for ARM64 Android devices.",
+  "hi_meta": "एआरएम64 एंड्रॉइड डिवाइसों के लिए लेगो मार्वल सुपर हीरोज के स्टेटिक रीकम्पिलेशन का विवरण देने वाले ttom795/LMS_Android प्रोजेक्ट को देखें।",
+  "en_keywords": [
+    "LEGO Marvel Super Heroes Android port",
+    "ttom795 LMS_Android",
+    "static recompilation Android",
+    "dxvk-native Vulkan 1.1",
+    "GitHub open source project"
+  ],
+  "hi_keywords": [
+    "लेगो मार्वल एंड्रॉइड पोर्ट",
+    "ttom795 LMS_Android",
+    "स्टेटिक रीकम्पिलेशन एंड्रॉइड",
+    "Vulkan 1.1 गेमिंग",
+    "गिटहब ओपन सोर्स प्रोजेक्ट"
+  ],
+  "source_published_at": null,
+  "id": "5cd6385e3dba",
+  "source": "https://github.com/ttom795/LMS_Android",
+  "date": "2026-11-11T01:53:40.623836+00:00",
+  "source_title": "ttom795/LMS_Android: A static recompilation of LEGO Marvel Superheroes (2013) for Android devices. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

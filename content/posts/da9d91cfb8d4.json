@@ -1,0 +1,34 @@
+{
+  "en_title": "TrueFoundry Launches TrueForge Open-Source Agent Harness to Run LLMs",
+  "hi_title": "TrueFoundry ने LLM को एजेंट में बदलने के लिए TrueForge ओपन-सोर्स एजेंट हार्नेस लॉन्च किया",
+  "en_body": "TrueFoundry has introduced TrueForge, an open-source agent harness designed to serve as a runtime layer that turns a Large Language Model (LLM) into a working agent. The software aims to handle the agent execution loop, covering model calls, Model Context Protocol (MCP) tools, skills, sandboxing, approvals, context management, and session state.\n\nAccording to the repository documentation, TrueForge exposes its runtime capabilities through three distinct interfaces: a chat user interface, an HTTP API with a TypeScript SDK, and an embeddable UI SDK.\n\n## Core Features and Architecture\n\nTrueForge provides infrastructure out of the box to help developers run agents reliably:\n\n* **Initial Setup from Catalogs:** Configure models, MCP servers, skills, and a sandbox once using customizable YAML catalogs.\n* **Model Compatibility:** Supports OpenAI, Anthropic, Google Gemini, and other catalog providers, alongside any OpenAI-compatible endpoint.\n* **MCP Tools and Skills:** Integrates remote MCP servers with header auth or OAuth and git-backed instruction packs loaded on demand.\n* **Sandbox Execution:** Offers isolated code and file execution via Daytona currently, with more providers planned, while keeping secrets inside the harness.\n* **Human Checkpoints:** Includes tool approval, user query prompts, and Generative UI in chat.\n* **Context Engineering:** Features subagents, deferred tool loading, Code Mode, large-result offloading, and compaction.\n\n## Deployment Options and Scaling\n\nTrueForge scales across different environments:\n\n* **Local Mode:** Runs as a single process using SQLite for local machine testing. Documentation notes this mode has no default login and advises keeping it on localhost to prevent unauthorized access.\n* **Hosted Mode:** Utilizes Postgres and Redis, and can be deployed via Docker Compose, Helm, or Railway for shared or production environments.\n\n## Benchmarking and Contribution\n\nTrueFoundry reports comparative benchmarks against Claude Managed Agents and deepagents within the repository's benchmark directory. TrueForge is released under the MIT License. Interested users can review the Quickstart guide and CONTRIBUTING.md file on GitHub to verify installation instructions, deployment methods, and contribution guidelines.",
+  "hi_body": "TrueFoundry ने TrueForge नामक एक ओपन-सोर्स एजेंट हार्नेस पेश किया है, जिसे एक रनटाइम लेयर के रूप में काम करने के लिए डिज़ाइन किया गया है जो किसी लार्ज लैंग्वेज मॉडल (LLM) को एक कामकाजी एजेंट में बदल देता है। यह सॉफ्टवेयर मॉडल कॉल, मॉडल संदर्भ प्रोटोकॉल (MCP) टूल, स्किल्स, सैंडबॉक्सिंग, अनुमोदन, संदर्भ प्रबंधन और सत्र अवस्था को संभालने का लक्ष्य रखता है।\n\nरिपॉजिटरी दस्तावेज़ के अनुसार, TrueForge अपनी रनटाइम क्षमताओं को तीन अलग-अलग इंटरफेस के माध्यम से उजागर करता है: एक चैट यूजर इंटरफेस, टाइपस्क्रिप्ट SDK के साथ एक HTTP API, और एक एम्बेड करने योग्य UI SDK।\n\n## मुख्य विशेषताएँ और वास्तुकला\n\nTrueForge डेवलपर्स को एजेंटों को मज़बूती से चलाने में मदद करने के लिए बुनियादी ढांचा प्रदान करता है:\n\n* **कैटलॉग से प्रारंभिक सेटअप:** कस्टमाइज़ करने योग्य YAML कैटलॉग का उपयोग करके मॉडल, MCP सर्वर, स्किल्स और एक सैंडबॉक्स को एक बार कॉन्फ़िगर करें।\n* **मॉडल संगतता:** OpenAI, Anthropic, Google Gemini, और अन्य कैटलॉग प्रदाताओं के साथ-साथ किसी भी OpenAI-संगीत समाप्त बिंदु का समर्थन करता है।\n* **MCP टूल और स्किल्स:** हेडर ऑथ या OAuth के साथ रिमोट MCP सर्वर और मांग पर लोड किए गए गिट-समर्थित निर्देश पैक को एकीकृत करता है।\n* **सैंडबॉक्स निष्पादन:** वर्तमान में Daytona के माध्यम से अलग किए गए कोड और फ़ाइल निष्पादन की पेशकश करता है, जिसमें अधिक प्रदाता नियोजित हैं, जबकि रहस्य हार्नेस के भीतर रहते हैं।\n* **मानव चेकपॉइंट:** चैट में टूल अनुमोदन, उपयोगकर्ता-प्रश्न पूछना और जनरेटिव UI शामिल हैं।\n* **संदर्भ इंजीनियरिंग:** सबएजेंट, स्थगित टूल लोडिंग, कोड मोड, बड़े-परिणाम ऑफलोडिंग और कॉम्पैक्शन की सुविधा है।\n\n## तैनाती विकल्प और स्केलिंग\n\nTrueForge विभिन्न वातावरणों में स्केल करता है:\n\n* **लोकल मोड:** लोकल मशीन परीक्षण के लिए SQLite का उपयोग करके एक एकल प्रक्रिया के रूप में चलता है। दस्तावेज़ीकरण नोट करता है कि इस मोड में कोई डिफ़ॉल्ट लॉगिन नहीं है और अनधिकृत पहुँच को रोकने के लिए इसे localhost पर रखने की सलाह देता है।\n* **होस्टेड मोड:** Postgres और Redis का उपयोग करता है, और साझा या उत्पादन वातावरण के लिए Docker Compose, Helm, या Railway के माध्यम से तैनात किया जा सकता है।\n\n## बेंचमार्किंग और योगदान\n\nTrueFoundry रिपॉजिटरी की बेंचमार्क निर्देशिका के भीतर Claude Managed Agents और deepagents के खिलाफ तुलनात्मक बेंचमार्क रिपोर्ट करता है। TrueForge को MIT लाइसेंस के तहत जारी किया गया है। इच्छुक उपयोगकर्ता स्थापना निर्देशों, तैनाती विधियों और योगदान दिशानिर्देशों को सत्यापित करने के लिए GitHub पर Quickstart गाइड और CONTRIBUTING.md फ़ाइल की समीक्षा कर सकते हैं।",
+  "en_meta": "Learn about TrueFoundry's TrueForge, an open-source agent harness for LLMs featuring MCP tools, sandboxing, context engineering, and flexible deployment.",
+  "hi_meta": "TrueFoundry के TrueForge के बारे में जानें, जो MCP टूल, सैंडबॉक्सिंग और संदर्भ इंजीनियरिंग के साथ LLM के लिए एक ओपन-सोर्स एजेंट हार्नेस है।",
+  "en_keywords": [
+    "TrueForge",
+    "TrueFoundry",
+    "open-source agent harness",
+    "LLM runtime",
+    "MCP tools",
+    "AI agents"
+  ],
+  "hi_keywords": [
+    "TrueForge",
+    "TrueFoundry",
+    "ओपन-सोर्स एजेंट हार्नेस",
+    "LLM रनटाइम",
+    "MCP टूल",
+    "AI एजेंट"
+  ],
+  "source_published_at": null,
+  "id": "da9d91cfb8d4",
+  "source": "https://github.com/truefoundry/trueforge",
+  "date": "2026-11-11T01:53:29.098637+00:00",
+  "source_title": "truefoundry/trueforge: The open-source agent harness - the runtime layer that turns an LLM into a working agent. - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}
