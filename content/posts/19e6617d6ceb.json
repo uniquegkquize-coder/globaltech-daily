@@ -1,0 +1,33 @@
+{
+  "en_title": "Battery Watchdog Offers 12V Battery Monitoring for Gen5W Vehicles",
+  "hi_title": "Gen5W वाहनों के लिए बैटरी वॉचडॉग 12V बैटरी मॉनिटरिंग प्रदान करता है",
+  "en_body": "Battery Watchdog is an unofficial package designed for Hyundai and Kia vehicles equipped with the Gen5W head unit running the NEMESIS community package manager. The utility monitors the 12V vehicle battery, providing status readings and early warnings on the head unit screen to help drivers spot potential starting issues.\n\n## Core Features and Monitoring\n\n* **Charge Level Tracking:** Logs the 12V charge estimate at the start of every drive and every five minutes while the screen remains active.\n* **Early Warnings:** Displays alerts on the head unit if the 12V charge is low at startup (default below 60%), drops significantly while parked (default 15 points or more), or fails to recover during a drive lasting 20 minutes or longer.\n* **Data Export:** Allows users to export readings, drive history, and warning logs to a USB drive as spreadsheet-ready CSV files or privacy-focused zip folders with dates hidden.\n\n## Installation and Firmware Safety\n\nBattery Watchdog can be installed via the NEMESIS Package Store on version 1.16 or newer, or by placing the release bundle onto a FAT32 or exFAT formatted USB drive. \n\nTo protect vehicle systems, the app verifies telematics service function names against the car's specific firmware version on first launch. If verification is unsuccessful, the service may display a \"Paused\" status, and built-in function numbers are only utilized if explicitly configured by users who have manually verified their firmware compatibility.\n\n## Practical Implications and Limitations\n\nThis utility serves as an early-warning aid rather than a comprehensive battery tester, relying on the car's battery-sensor charge estimates rather than direct voltage measurements. It operates only while the head unit is awake and cannot detect sudden internal failures or drains occurring while the vehicle is completely shut down. Users seeking continuous monitoring or parking-mode voltage tracking often pair head unit tools with dedicated hardware monitors connected directly to the battery terminals.",
+  "hi_body": "बैटरी वॉचडॉग (Battery Watchdog) हुंडई (Hyundai) और किआ (Kia) की उन कारों के लिए एक अनौपचारिक पैकेज है जिनमें Gen5W हेड यूनिट और NEMESIS कम्युनिटी पैकेज मैनेजर इंस्टॉल है। यह टूल कार की 12V बैटरी पर नजर रखता है और ड्राइवरों को संभावित स्टार्ट समस्याओं से बचाने के लिए हेड यूनिट स्क्रीन पर स्टेटस रीडिंग और शुरुआती चेतावनियां देता है।\n\n## मुख्य विशेषताएं और मॉनिटरिंग\n\n* **चार्ज लेवल ट्रैकिंग:** हर ड्राइव की शुरुआत में और स्क्रीन चालू रहने पर हर पांच मिनट में 12V चार्ज अनुमान को लॉग करता है।\n* **शुरुआती चेतावनियां:** यदि स्टार्टअप पर 12V चार्ज कम है (डिफ़ॉल्ट 60% से नीचे), पार्क होने के दौरान काफी गिर जाता है (डिफ़ॉल्ट 15 पॉइंट या अधिक), या 20 मिनट या उससे अधिक लंबी ड्राइव के दौरान रिकवर नहीं होता है, तो हेड यूनिट पर अलर्ट प्रदर्शित करता है।\n* **डेटा एक्सपोर्ट:** उपयोगकर्ताओं को रीडिंग, ड्राइव इतिहास और चेतावनी लॉग को स्प्रेडशीट-तैयार CSV फाइलों या तारीखों को छिपाने वाले जिप फोल्डर के रूप में USB ड्राइव में एक्सपोर्ट करने की अनुमति देता है।\n\n## इंस्टॉलेशन और फर्मवेयर सुरक्षा\n\nबैटरी वॉचडॉग को संस्करण 1.16 या नए पर NEMESIS पैकेज स्टोर के माध्यम से, या FAT32 या exFAT स्वरूपित USB ड्राइव पर रिलीज बंडल रखकर इंस्टॉल किया जा सकता है।\n\nवाहन प्रणालियों की सुरक्षा के लिए, ऐप पहली बार लॉन्च होने पर कार के विशिष्ट फर्मवेयर संस्करण के खिलाफ टेलीमैटिक्स सेवा फ़ंक्शन नामों का सत्यापन करता है। यदि सत्यापन सफल नहीं होता है, तो सेवा \"Paused\" स्थिति प्रदर्शित कर सकती है, और इनबिल्ट फ़ंक्शन नंबरों का उपयोग केवल उन उपयोगकर्ताओं द्वारा स्पष्ट रूप से कॉन्फ़िगर किए जाने पर किया जाता है जिन्होंने मैन्युअल रूप से अपने फर्मवेयर संगतता की जाँच की है।\n\n## व्यावहारिक निहितार्थ और सीमाएं\n\nयह टूल व्यापक बैटरी परीक्षक के बजाय एक शुरुआती चेतावनी सहायता के रूप में कार्य करता है, जो प्रत्यक्ष वोल्टेज माप के बजाय कार के बैटरी-सेंसर चार्ज अनुमानों पर निर्भर करता है। यह केवल तभी संचालित होता है जब हेड यूनिट जाग रही होती है और वाहन के पूरी तरह से बंद होने पर होने वाले अचानक आंतरिक फेल्योर या ड्रेन का पता नहीं लगा सकता है। निरंतर मॉनिटरिंग चाहने वाले उपयोगकर्ता अक्सर बैटरी टर्मिनलों से सीधे जुड़े समर्पित हार्डवेयर मॉनिटर का उपयोग करते हैं।",
+  "en_meta": "Battery Watchdog is an unofficial Gen5W head unit package for Hyundai and Kia cars that monitors 12V battery charge levels and warns of potential issues.",
+  "hi_meta": "बैटरी वॉचडॉग हुंडई और किआ Gen5W कारों के लिए एक अनौपचारिक पैकेज है जो 12V बैटरी चार्ज स्तर की निगरानी करता है और समस्याओं की चेतावनी देता है।",
+  "en_keywords": [
+    "Battery Watchdog",
+    "Gen5W",
+    "Hyundai",
+    "Kia",
+    "NEMESIS",
+    "12V battery",
+    "car app"
+  ],
+  "hi_keywords": [
+    "बैटरी वॉचडॉग",
+    "Gen5W",
+    "हुंडई",
+    "किआ",
+    "NEMESIS",
+    "12V बैटरी",
+    "कार ऐप"
+  ],
+  "source_published_at": null,
+  "id": "19e6617d6ceb",
+  "source": "https://github.com/zpoon/gen5w-BatteryWatchdog",
+  "date": "2026-11-11T05:58:55.279664+00:00",
+  "source_title": "zpoon/gen5w-BatteryWatchdog: Service/app that acts as a watchdog for the 12v battery in Gen5W vehicles - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
