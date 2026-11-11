@@ -160,6 +160,10 @@ def route_category(title, default='technology', url=''):
         return 'government-schemes'
     if civic and not sport and not has(r'\b(?:education|university|school|college|job aspirants|age relaxation|scheme|yojana|subsidy)\b'):
         return 'india-news' if INDIA_CONTEXT.search(text) or parts & {'india','india-news','national','cities','city','state','states'} else 'world-news'
+    # Local Indian civic reports must not inherit a broad World News feed label.
+    # Only explicit Indian place names or government bodies trigger this override.
+    if has(r'\b(?:gorakhpur|gola bazar|gida|gdagkp|ghaziabad|lucknow|prayagraj|varanasi|deoria|kushinagar|maharajganj|basti)\b|गोरखपुर|गोला बाजार|गाजियाबाद|लखनऊ|देवरिया|कुशीनगर|महराजगंज|बस्ती') and has(r'\b(?:development authority|municipal|nagar panchayat|drain|road|tender|auction|plot|allotment|notice|police|district administration)\b|विकास प्राधिकरण|नगर पंचायत|नाला|सड़क|निविदा|नीलामी|प्लॉट|आवंटन|सूचना|पुलिस') and not sport:
+        return 'india-news'
     # Viral human-interest reports are not government benefit announcements.
     # A passing reference to a social platform is not platform-policy news.
     if parts & {'viral','viral-news','human-interest','pets'}:
