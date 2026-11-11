@@ -401,6 +401,7 @@ def trending_posts(exclude=None,limit=6):
  return [p for p in _trending_rank_cache if exclude is None or slug(p)!=slug(exclude)][:limit]
 
 def trending_section(lang,exclude=None):
+ # The thumbnail alt describes the image; aria-label names the link once for screen readers.
  selected=trending_posts(exclude,6)
  if not selected:return ''
  heading='Trending on GlobeWire Daily' if lang=='en' else 'GlobeWire Daily पर चर्चित खबरें'
