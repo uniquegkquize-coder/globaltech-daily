@@ -1,0 +1,31 @@
+{
+  "en_title": "Vite+ Introduces a Unified Toolchain for Web Development",
+  "hi_title": "Vite+ ने वेब विकास के लिए एक एकीकृत टूलचेन पेश किया",
+  "en_body": "Vite+ has been introduced as a unified entry point and toolchain for local web development, combining multiple tools into a single zero-config workflow.\n\n## Overview of Vite+\nAccording to the project documentation, Vite+ combines Vite, Vitest, Oxlint, Oxfmt, Rolldown, tsdown, and Vite Task. It also manages runtime and package manager workflows from a project's root directory. The project is open-source under the MIT license.\n\n## Core Commands and Features\nThe toolchain provides several commands via the `vp` CLI:\n* `vp env`: Manages Node.js and package managers globally and per project.\n* `vp install`: Installs dependencies with automatic package manager detection.\n* `vp dev`: Runs Vite's native ESM dev server with hot module replacement.\n* `vp check`: Executes formatting, linting, and type checks in a single command.\n* `vp test`: Runs tests using bundled Vitest.\n* `vp build`: Builds applications for production using Vite and Rolldown.\n* `vp run`: Runs package.json scripts and monorepo tasks with caching and dependency-aware scheduling.\n* `vp pack`: Builds libraries for npm publishing or standalone app binaries.\n* `vp toolchain`: Displays versions of Vite+, Vite, Rolldown, Oxc, and related tools.\n* `vp create` / `vp migrate`: Scaffolds new projects and migrates existing ones.\n\n## Configuration and Migration\nVite+ utilizes a single `vite.config.ts` file at the project root for configuring the development server, builds, tests, linting, formatting, task runners, and staged-file workflows. Developers can use `vp migrate` to transition existing projects, which merges tool-specific configuration files into the central configuration file.\n\n## Practical Implications and Verification\nDevelopers looking to adopt Vite+ can review the official repository on GitHub under the `voidzero-dev/vite-plus` organization. Verification of setup instructions, exact dependencies, and CI/CD integration steps can be performed by reading the documentation and release notes directly from the source repository.",
+  "hi_body": "Vite+ को स्थानीय वेब विकास के लिए एक एकीकृत प्रविष्टि बिंदु और टूलचेन के रूप में पेश किया गया है, जो कई उपकरणों को एक एकल शून्य-कॉन्फ़िगरेशन वर्कफ़्लो में जोड़ता है।\n\n## Vite+ का अवलोकन\nपरियोजना दस्तावेज़ीकरण के अनुसार, Vite+ में Vite, Vitest, Oxlint, Oxfmt, Rolldown, tsdown और Vite Task शामिल हैं। यह प्रोजेक्ट रूट निर्देशिका से रनटाइम और पैकेज मैनेजर वर्कफ़्लो को भी प्रबंधित करता है। यह परियोजना MIT लाइसेंस के तहत ओपन-सोर्स है।\n\n## मुख्य कमांड और विशेषताएँ\nयह टूलचेन `vp` CLI के माध्यम से कई कमांड प्रदान करता है:\n* `vp env`: वैश्विक स्तर पर और प्रति प्रोजेक्ट Node.js और पैकेज मैनेजर प्रबंधित करता है।\n* `vp install`: स्वचालित पैकेज मैनेजर पहचान के साथ निर्भरता स्थापित करता है।\n* `vp dev`: हॉट मॉड्यूल प्रतिस्थापन के साथ Vite का नेटिव ESM देव सर्वर चलाता है।\n* `vp check`: एक ही कमांड में फ़ॉर्मेटिंग, लिंटिंग और टाइप चेक निष्पादित करता है।\n* `vp test`: बंडल किए गए Vitest के माध्यम से परीक्षण चलाता है।\n* `vp build`: उत्पादन के लिए Vite और Rolldown का उपयोग करके एप्लिकेशन बनाता है।\n* `vp run`: कैशिंग और निर्भरता-जागरूक शेड्यूलिंग के साथ package.json स्क्रिप्ट और मोनोरेपो कार्य चलाता है।\n* `vp pack`: npm प्रकाशन या स्टैंडअलोन ऐप बाइनरी के लिए लाइब्रेरी बनाता है।\n* `vp toolchain`: Vite+, Vite, Rolldown, Oxc और संबंधित टूल के संस्करण प्रदर्शित करता है।\n* `vp create` / `vp migrate`: नए प्रोजेक्ट तैयार करता है और मौजूदा प्रोजेक्ट्स को माइग्रेट करता है।\n\n## कॉन्फ़िगरेशन और माइग्रेशन\nVite+ डेवलपमेंट सर्वर, बिल्ड, टेस्ट, लिंट, फ़ॉर्मेट, टास्क रनर और स्टेज्ड-फाइल वर्कफ़्लो को कॉन्फ़िगर करने के लिए प्रोजेक्ट रूट पर एक एकल `vite.config.ts` फ़ाइल का उपयोग करता है। डेवलपर्स मौजूदा प्रोजेक्ट्स को बदलने के लिए `vp migrate` का उपयोग कर सकते हैं, जो टूल-विशिष्ट कॉन्फ़िगरेशन फ़ाइलों को केंद्रीय फ़ाइल में विलीन कर देता है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nVite+ को अपनाने के इच्छुक डेवलपर `voidzero-dev/vite-plus` संगठन के तहत GitHub पर आधिकारिक रिपॉजिटरी की समीक्षा कर सकते हैं। सेटअप निर्देशों, सटीक निर्भरता और CI/CD एकीकरण चरणों का सत्यापन सीधे स्रोत रिपॉजिटरी से दस्तावेज़ीकरण और रिलीज़ नोट्स पढ़कर किया जा सकता है।",
+  "en_meta": "Learn about Vite+, the unified toolchain combining Vite, Vitest, Rolldown, and more into a single zero-config web development entry point.",
+  "hi_meta": "Vite+ के बारे में जानें, जो Vite, Vitest, Rolldown और अन्य को एक एकल ज़ीरो-कॉन्फ़िगरेशन वेब डेवलपमेंट टूलचेन में जोड़ता है।",
+  "en_keywords": [
+    "Vite+",
+    "web development",
+    "toolchain",
+    "Vite",
+    "Rolldown",
+    "JavaScript tools"
+  ],
+  "hi_keywords": [
+    "Vite+",
+    "वेब विकास",
+    "टूलचेन",
+    "Vite",
+    "Rolldown",
+    "JavaScript टूल"
+  ],
+  "source_published_at": null,
+  "id": "40170f63c989",
+  "source": "https://github.com/voidzero-dev/vite-plus",
+  "date": "2026-11-11T03:39:24.316726+00:00",
+  "source_title": "voidzero-dev/vite-plus: The unified toolchain and entry point for web development. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

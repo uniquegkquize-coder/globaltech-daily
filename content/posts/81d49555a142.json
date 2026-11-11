@@ -1,0 +1,31 @@
+{
+  "en_title": "Xiaomi-OCR-0: A Unified 0.8B Vision-Language Model for Document Parsing and OCR",
+  "hi_title": "Xiaomi-OCR-0: दस्तावेज़ पार्सिंग और ओसीआर के लिए एक एकीकृत 0.8B विजन-लैंग्वेज मॉडल",
+  "en_body": "Xiaomi-OCR-0 is a unified 0.8B vision-language model designed for document parsing and OCR-centric understanding. Built upon Qwen3.5-0.8B, the model has been trained on an approximately 170M-sample OCR-centric corpus utilizing Q-Mask text anchoring, continued pretraining (CPT), and mixed-task reinforcement learning (Mix-RL).\n\n## Capabilities and Performance\n\nThe model handles multiple document tasks and reports various benchmark results:\n- **Document Parsing:** Produces structured Markdown from document pages, converting OTSL outputs to HTML tables and formulas to LaTeX.\n- **Key Information Extraction (KIE):** Extracts requested fields into JSON format.\n- **Visual Question Answering (VQA):** Answers queries regarding text and content within document images.\n\n## Installation and Local Runtimes\n\nRunning Xiaomi-OCR-0 locally requires Python 3.10 or newer along with an inference runtime such as SGLang, vLLM, or Ollama. \n- **Browser Demo:** A local web interface is available for testing whole-page and region document parsing, KIE, VQA, and PDF parsing without installing full agent skills.\n- **Region Parsing Dependencies:** Region mode requires additional layout dependencies including PaddlePaddle, PaddleX, and PP-DocLayoutV3 weights.\n- **Token Limits:** The default output limit is 4096 tokens for document parsing and KIE, while VQA uses a fixed 1024-token limit.\n\nCommunity conversions, such as GGUF and Ninfer packages, are available via contributors, though users should note that original benchmark scores do not automatically apply to these alternative weight formats.",
+  "hi_body": "Xiaomi-OCR-0 दस्तावेज़ पार्सिंग और ओसीआर-केंद्रित समझ के लिए एक एकीकृत 0.8B विजन-लैंग्वेज मॉडल है। Qwen3.5-0.8B पर आधारित, इस मॉडल को Q-Mask टेक्स्ट एंकरिंग, निरंतर प्रीट्रेनिंग (CPT), और मिक्स्ड-टास्क सुदृढीकरण लर्निंग (Mix-RL) का उपयोग करके लगभग 170M-सैंपल ओसीआर-केंद्रित कॉर्पस पर प्रशिक्षित किया गया है।\n\n## क्षमताएं और प्रदर्शन\n\nयह मॉडल कई दस्तावेज़ कार्यों को संभालता है और विभिन्न बेंचमार्क परिणाम प्रस्तुत करता है:\n- **दस्तावेज़ पार्सिंग:** दस्तावेज़ पृष्ठों से संरचित मार्कडाउन तैयार करता है, OTSL आउटपुट को HTML तालिकाओं में और सूत्रों को लेटेक्स में परिवर्तित करता है।\n- **कुंजी सूचना निष्कर्षण (KIE):** अनुरोधित फ़ील्ड को JSON प्रारूप में निकालता है।\n- **विज़ुअल प्रश्न उत्तर (VQA):** दस्तावेज़ छवियों में पाठ और सामग्री के बारे में प्रश्नों के उत्तर देता है।\n\n## स्थापना और स्थानीय रनटाइम\n\nXiaomi-OCR-0 को स्थानीय रूप से चलाने के लिए Python 3.10 या नए संस्करण के साथ-साथ SGLang, vLLM, या Ollama जैसे इन्फर्लेंस रनटाइम की आवश्यकता होती है।\n- **ब्राउज़र डेमो:** पूर्ण एजेंट कौशल स्थापित किए बिना पूरे पृष्ठ और क्षेत्र दस्तावेज़ पार्सिंग, KIE, VQA, और PDF पार्सिंग का परीक्षण करने के लिए एक स्थानीय वेब इंटरफ़ेस उपलब्ध है।\n- **क्षेत्र पार्सिंग निर्भरताएँ:** क्षेत्र मोड को पैडलपैडल (PaddlePaddle), पैडलएक्स (PaddleX), और PP-DocLayoutV3 वजन सहित अतिरिक्त लेआउट निर्भरताओं की आवश्यकता होती है।\n- **टोकन सीमाएँ:** दस्तावेज़ पार्सिंग और KIE के लिए डिफ़ॉल्ट आउटपुट सीमा 4096 टोकन है, जबकि VQA एक निश्चित 1024-टोकन सीमा का उपयोग करता है।\n\nयोगदानकर्ताओं के माध्यम से GGUF और Ninfer पैकेज जैसे सामुदायिक रूपांतरण उपलब्ध हैं, हालांकि उपयोगकर्ताओं को यह ध्यान रखना चाहिए कि मूल बेंचमार्क स्कोर स्वचालित रूप से इन वैकल्पिक वजन प्रारूपों पर लागू नहीं होते हैं।",
+  "en_meta": "Learn about Xiaomi-OCR-0, a unified 0.8B vision-language model for document parsing, OCR, KIE, and VQA, featuring local runtimes and setup options.",
+  "hi_meta": "Xiaomi-OCR-0 के बारे में जानें, जो दस्तावेज़ पार्सिंग, ओसीआर, KIE और VQA के लिए एक एकीकृत 0.8B विजन-लैंग्वेज मॉडल है।",
+  "en_keywords": [
+    "Xiaomi-OCR-0",
+    "vision-language model",
+    "document parsing",
+    "OCR",
+    "KIE",
+    "VQA"
+  ],
+  "hi_keywords": [
+    "Xiaomi-OCR-0",
+    "विजन-लैंग्वेज मॉडल",
+    "दस्तावेज़ पार्सिंग",
+    "ओसीआर",
+    "KIE",
+    "VQA"
+  ],
+  "source_published_at": null,
+  "id": "81d49555a142",
+  "source": "https://github.com/xiaomi-research/Xiaomi-OCR-0",
+  "date": "2026-11-11T03:42:58.142738+00:00",
+  "source_title": "xiaomi-research/Xiaomi-OCR-0: Xiaomi-OCR-0 - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

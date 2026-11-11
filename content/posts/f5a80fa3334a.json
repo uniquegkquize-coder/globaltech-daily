@@ -1,0 +1,29 @@
+{
+  "en_title": "Zeabur Offers Self-Hosted Platform-as-a-Service for Kubernetes Clusters",
+  "hi_title": "Zeabur अपने खुद के कुबेरनेट्स क्लस्टर के लिए सेल्फ-होस्टेड PaaS प्रदान करता है",
+  "en_body": "Zeabur is an open-source, self-hosted Platform-as-a-Service (PaaS) designed to run directly on your own Kubernetes cluster or local machine, according to its public repository documentation. The project aims to translate cluster management into straightforward projects and services while providing plain-word explanations for issues.\n\nAccording to the documentation, Zeabur operates without maintaining its own separate state, database, or custom resources, and functions using existing Kubernetes objects while adhering to user permission limits.\n\n## Deployment Options\n\n- **Single Linux Server:** An installer is available to set up K3s or RKE2 alongside Zeabur Identity and the platform itself.\n- **Existing Kubernetes Cluster:** Users can install the platform via a Helm chart and sign in using Zeabur Identity.\n- **Personal Use:** Individuals using a `kubeconfig` file can run `zeaburctl ui` to open the interface locally in a browser.\n\n## Documentation and Resources\n\n- Official documentation covers installation, deployment, configuration, cluster operation, and uninstallation procedures.\n- Documentation is provided in English, Traditional Chinese, and Simplified Chinese.\n- The project repository includes developer guidelines, contribution rules, and testing environments configured via a Nix development shell.\n\n## Licensing and Verification\n\nThe software is licensed under the Apache-2.0 license, with contributions accepted under the Developer Certificate of Origin. Users can review official release lists and repository documentation to verify releases and inspect third-party components, such as embedded catalog bundles and font licenses.\n\n## Practical Implications\n\nAdopting a self-hosted PaaS like Zeabur requires administrative access to a Kubernetes environment and familiarity with container orchestration tools. Teams evaluating the platform should review the official GitHub repository, check release notes, and test installations in a non-production environment before deploying to production clusters.",
+  "hi_body": "सार्वजनिक रिपॉजिटरी दस्तावेज़ीकरण के अनुसार, Zeabur एक ओपन-सोर्स, सेल्फ-होस्टेड प्लेटफ़ॉर्म-एज़-ए-सविर्स (PaaS) है जिसे सीधे आपके अपने कुबेरनेट्स क्लस्टर या स्थानीय मशीन पर चलाने के लिए डिज़ाइन किया गया है। इस प्रोजेक्ट का उद्देश्य क्लस्टर प्रबंधन को सीधे प्रोजेक्ट्स और सेवाओं में बदलना है, साथ ही समस्याओं के लिए सरल शब्दों में स्पष्टीकरण प्रदान करना है।\n\nदस्तावेज़ीकरण के अनुसार, Zeabur अपनी खुद की अलग स्थिति, डेटाबेस या कस्टम संसाधनों को बनाए रखे बिना काम करता है, और उपयोगकर्ता की अनुमति सीमाओं का पालन करते हुए मौजूदा कुबेरनेट्स ऑब्जेक्ट्स का उपयोग करता है।\n\n## तैनाती के विकल्प\n\n- **सिंगल लिनक्स सर्वर:** Zeabur Identity और प्लेटफ़ॉर्म के साथ K3s या RKE2 स्थापित करने के लिए एक इंस्टॉलर उपलब्ध है।\n- **मौजूदा कुबेरनेट्स क्लस्टर:** उपयोगकर्ता Helm चार्ट के माध्यम से प्लेटफ़ॉर्म स्थापित कर सकते हैं और Zeabur Identity का उपयोग करके साइन इन कर सकते हैं।\n- **व्यक्तिगत उपयोग:** `kubeconfig` फ़ाइल का उपयोग करने वाले व्यक्ति स्थानीय रूप से ब्राउज़र में इंटरफ़ेस खोलने के लिए `zeaburctl ui` चला सकते हैं।\n\n## दस्तावेज़ीकरण और संसाधन\n\n- आधिकारिक दस्तावेज़ीकरण में स्थापना, तैनाती, कॉन्फ़िगरेशन, क्लस्टर संचालन और हटाने की प्रक्रियाएं शामिल हैं।\n- दस्तावेज़ीकरण अंग्रेजी, पारंपरिक चीनी और सरलीकृत चीनी में प्रदान किया जाता है।\n- प्रोजेक्ट रिपॉजिटरी में डेवलपर दिशानिर्देश, योगदान नियम और Nix डेवलपमेंट शेल के माध्यम से कॉन्फ़िगर किए गए परीक्षण वातावरण शामिल हैं।\n\n## लाइसेंसिंग और सत्यापन\n\nयह सॉफ़्टवेयर Apache-2.0 लाइसेंस के तहत लाइसेंस प्राप्त है, जिसमें डेवलपर सर्टिफिकेट ऑफ़ ओरिजिन के तहत योगदान स्वीकार किया जाता है। उपयोगकर्ता रिलीज़ को सत्यापित करने और एम्बेडेड कैटलॉग बंडल और फ़ॉन्ट लाइसेंस जैसे तृतीय-पक्ष घटकों का निरीक्षण करने के लिए आधिकारिक रिलीज़ सूचियों और रिपॉजिटरी दस्तावेज़ीकरण की समीक्षा कर सकते हैं।\n\n## व्यावहारिक निहितार्थ\n\nZeabur जैसे सेल्फ-होस्टेड PaaS को अपनाने के लिए कुबेरनेट्स वातावरण तक प्रशासनिक पहुंच और कंटेनर ऑर्केस्ट्रेशन टूल से परिचित होना आवश्यक है। प्लेटफ़ॉर्म का मूल्यांकन करने वाली टीमों को आधिकारिक GitHub रिपॉजिटरी की समीक्षा करनी चाहिए, रिलीज़ नोट्स की जांच करनी चाहिए और प्रोडक्शन क्लस्टर में तैनात करने से पहले गैर-उत्पादन वातावरण में स्थापना का परीक्षण करना चाहिए।",
+  "en_meta": "Explore Zeabur, an open-source, self-hosted PaaS for Kubernetes. Learn about deployment options, architecture, documentation, and licensing.",
+  "hi_meta": "कुबेरनेट्स के लिए ओपन-सोर्स, सेल्फ-होस्टेड PaaS, Zeabur के बारे में जानें। तैनाती विकल्प, वास्तुकला और दस्तावेज़ीकरण की समीक्षा करें।",
+  "en_keywords": [
+    "Zeabur",
+    "Kubernetes PaaS",
+    "self-hosted platform",
+    "open-source Kubernetes",
+    "container deployment"
+  ],
+  "hi_keywords": [
+    "Zeabur",
+    "कुबेरनेट्स PaaS",
+    "सेल्फ-होस्टेड प्लेटफ़ॉर्म",
+    "ओपन-सोर्स कुबेरनेट्स",
+    "कंटेनर तैनाती"
+  ],
+  "source_published_at": null,
+  "id": "f5a80fa3334a",
+  "source": "https://github.com/zeabur-oss/zeabur",
+  "date": "2026-11-11T03:43:47.438200+00:00",
+  "source_title": "zeabur-oss/zeabur: Self-hosted PaaS on your own Kubernetes. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

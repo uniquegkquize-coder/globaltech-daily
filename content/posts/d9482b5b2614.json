@@ -1,0 +1,31 @@
+{
+  "en_title": "Zexyen Releases Witch-Time, an Unofficial Static Recompilation Project for Bayonetta 3 on PC",
+  "hi_title": "जेक्सेन ने PC पर बेयोनेटा 3 के लिए अनौपचारिक स्टैटिक रीकम्पिलेशन प्रोजेक्ट 'विंच-टाइम' पेश किया",
+  "en_body": "An open-source project named Witch-Time on GitHub offers an unofficial static recompilation tool for the Nintendo Switch game Bayonetta 3 to run on 64-bit Windows 10 or 11 PCs. According to the repository documentation, the software translates the game's AArch64 code into C locally using the user's legally obtained game dump, operating on a re-implemented system layer that includes thread handling, file systems, input, audio, and Vulkan-based NVN translation.\n\nProject maintainers emphasize that the repository contains no proprietary game code, assets, keys, or Nintendo SDK files. All derived binaries, caches, and translated files are generated locally on the user's machine during the build process.\n\n## How the Recompilation Works\n\n* **Local Processing:** Users provide a legally extracted game folder containing `exefs/` and `romfs/` directories.\n* **Translation and Build:** The included Rust-based build tool (`wtbuild`) translates code and compiles it locally.\n* **Runtime Requirements:** Prebuilt releases bundle necessary components such as LLVM's clang and lld, along with SDL3 and FFmpeg dependencies, requiring only an updated Vulkan driver on the host system.\n\n## Additional Features and Integration\n\n* **Bayonetta Origins Prologue Support:** Users can optionally include update files (Title ID `01004A4010FEA001`, update 1.2.0) to enable the prologue accessible via the in-game book feature.\n* **Launcher and Shortcuts:** The utility features a graphical launcher and command-line arguments like `--play` to integrate directly with platforms such as Steam, Playnite, or LaunchBox.\n\n## Practical Implications and Verification\n\nBecause the binaries are not code-signed, security tools like Windows Defender may flag the application as a Trojan. Users are advised to download the software exclusively from the official GitHub repository and verify file integrity using the provided SHA256 checksums alongside tools like `certutil`. Reviewers and users should consult the repository's `docs/STATUS.md` and `docs/RE_NOTES.md` for technical progress and known limitations before attempting a build.",
+  "hi_body": "GitHub पर उपलब्ध 'विंच-टाइम' नामक एक ओपन-सोर्स प्रोजेक्ट 64-बिट Windows 10 या 11 PC पर निनटेंडो स्विच गेम बेयोनेटा 3 को चलाने के लिए एक अनौपचारिक स्टैटिक रीकम्पिलेशन टूल प्रदान करता है। रिपॉजिटरी दस्तावेज़ के अनुसार, यह सॉफ्टवेयर उपयोगकर्ता की कानूनी रूप से प्राप्त गेम डम्प का उपयोग करके स्थानीय रूप से गेम के AArch64 कोड को C में अनुवादित करता है, जो थ्रेड, फाइल सिस्टम, इनपुट, ऑडियो और वल्कन-आधारित NVN अनुवाद जैसी री-इम्प्लीमेंटेड सिस्टम परतों पर चलता है।\n\nप्रोजेक्ट मेंटेनर्स इस बात पर जोर देते हैं कि रिपॉजिटरी में कोई भी मालिकाना गेम कोड, एसेट्स, कीज़ या निनटेंडो SDK फाइलें शामिल नहीं हैं। बिल्ड प्रक्रिया के दौरान सभी डिराइव्ड बाइनरी, कैशे और अनुवादित फाइलें स्थानीय रूप से उपयोगकर्ता की मशीन पर ही जेनरेट होती हैं।\n\n## रीकम्पिलेशन कैसे काम करता है\n\n* **स्थानीय प्रोसेसिंग:** उपयोगकर्ता `exefs/` और `romfs/` डवलपमेंट फोल्डर वाले कानूनी रूप से निकाले गए गेम डम्प का उपयोग करते हैं।\n* **अनुवाद और बिल्ड:** शामिल रस्ट-आधारित बिल्ड टूल (`wtbuild`) कोड का अनुवाद करता है और इसे स्थानीय स्तर पर कंपाइल करता है।\n* **रनटाइम आवश्यकताएँ:** प्रीबिल्ट रिलीज में LLVM के clang और lld के साथ-साथ SDL3 और FFmpeg निर्भरताएं शामिल होती हैं, जिसके लिए होस्ट सिस्टम पर केवल एक अपडेटेड Vulkan ड्राइवर की आवश्यकता होती है।\n\n## अतिरिक्त सुविधाएँ और एकीकरण\n\n* **बेयोनेटा ऑरिजिनैंस प्रोलॉग सपोर्ट:** उपयोगकर्ता इन-बुक फीचर के माध्यम से सुलभ प्रोलॉग को सक्षम करने के लिए वैकल्पिक रूप से अपडेट फाइलें (शीर्षक आईडी `01004A4010FEA001`, अपडेट 1.2.0) शामिल कर सकते हैं।\n* **लॉन्चर और शॉर्टकट:** इस यूटिलिटी में एक ग्राफिकल लॉन्चर और `--play` जैसे कमांड-लाइन आर्गुमेंट शामिल हैं जो स्टीम, प्लेनाइट या लॉन्चबॉक्स जैसे प्लेटफॉर्म के साथ सीधे एकीकृत होते हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\nचूंकि बाइनरी कोड-साइन नहीं हैं, इसलिए Windows Defender जैसे सुरक्षा टूल इस एप्लिकेशन को ट्रोजन के रूप में चिह्नित कर सकते हैं। उपयोगकर्ताओं को सलाह दी जाती है कि वे आधिकारिक GitHub रिपॉजिटरी से ही सॉफ्टवेयर डाउनलोड करें और `certutil` जैसे टूल के साथ प्रदान किए गए SHA256 चेकसम का उपयोग करके फाइल की प्रामाणिकता की जांच करें। तकनीकी प्रगति और ज्ञात सीमाओं के लिए उपयोगकर्ताओं को रिपॉजिटरी के `docs/STATUS.md` और `docs/RE_NOTES.md` की समीक्षा करनी चाहिए।",
+  "en_meta": "Learn about Witch-Time, an unofficial static recompilation tool for Bayonetta 3 on PC using local user game dumps. Read requirements and setup details.",
+  "hi_meta": "PC पर स्थानीय गेम डम्प का उपयोग करके बेयोनेटा 3 के लिए एक अनौपचारिक स्टैटिक रीकम्पिलेशन टूल 'विंच-टाइम' के बारे में जानें। आवश्यकताएँ और सेटअप विवरण पढ़ें।",
+  "en_keywords": [
+    "Witch-Time",
+    "Bayonetta 3",
+    "static recompilation",
+    "PC port",
+    "Zexyen",
+    "GitHub"
+  ],
+  "hi_keywords": [
+    "विंच-टाइम",
+    "बेयोनेटा 3",
+    "स्टैटिक रीकम्पिलेशन",
+    "PC पोर्ट",
+    "जेक्सेन",
+    "गीथब"
+  ],
+  "source_published_at": "2026-10-31T05:09:28+00:00",
+  "id": "d9482b5b2614",
+  "source": "https://github.com/Zexyen/Witch-Time",
+  "date": "2026-11-11T03:43:56.789270+00:00",
+  "source_title": "Zexyen/Witch-Time: Unofficial static recompilation of Bayonetta 3. Builds the game on your PC from your own legally dumped copy. No game files, keys or SDK code included. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

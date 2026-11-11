@@ -1,0 +1,34 @@
+{
+  "en_title": "Kensaku: Open-Source Local Search and File Launcher with OCR",
+  "hi_title": "Kensaku: ओपेन-सर्स लोकल सर्च और ओसीआर के साथ फाइल लॉन्चर",
+  "en_body": "Kensaku is a free, open-source local file launcher and search tool designed to find files across documents, code, and images entirely on a user's machine. It combines filename matching, full-text search, typo-tolerant fuzzy search, and semantic capabilities into a single application supporting Windows, macOS, and Linux.\n\n## Core Features and Capabilities\n\n* **Local Indexing:** Operates entirely offline with no telemetry or mandatory cloud account, keeping indices within the operating system's configuration directory.\n* **Multi-Format Support:** Reads standard documents (PDF, DOCX, XLSX, EPUB), 50+ programming languages and data formats, emails, and images using OCR (bundled PP-OCRv6, with optional Indra or Tesseract engines).\n* **Flexible Interfaces:** Runs either as a tray launcher summoned via a global keystroke or as a traditional desktop window, featuring light and dark themes and space previews.\n* **AI Agent Integration:** Connects with AI tools like Claude and Cursor through the Model Context Protocol (MCP) or loopback HTTP for read-only local index searching.\n\n## Performance and Security\n\nKensaku utilizes incremental indexing to process changed files without full-disk rescanning. Its memory footprint for metadata remains compact, using an in-memory layer of roughly 12.8 MB for 100,000 file entries. Privacy measures include skipping hidden files, honoring `.gitignore` and `.cursorignore` rules, and excluding sensitive credential patterns by default.\n\n## Installation and Verification\n\nReleases are distributed with SHA256SUMS files to verify downloads. Because builds are currently unsigned, operating systems like Windows and macOS may display security prompts during the initial run, which users can bypass through system settings. Source code and documentation are available via the project's repository for users wishing to build from source or contribute.",
+  "hi_body": "Kensaku एक मुफ्त, ओपेन-सर्स लोकल फाइल लॉन्चर और सर्च टूल है जिसे उपयोगकर्ताओं की मशीन पर दस्तावेजों, कोड और छवियों में फाइलें खोजने के लिए डिज़ाइन किया गया है। यह विंडोज, मैकओएस और लिनक्स का समर्थन करता है और इसमें फाइलनाम मिलान, फुल-टेक्स्ट सर्च, टाइपो-सहिष्णु फजी सर्च और सिमेंटिक क्षमताएं शामिल हैं।\n\n## मुख्य विशेषताएं और क्षमताएं\n\n* **लोकल इंडेक्सिंग:** यह बिना टेलीमेट्री या क्लाउड अकाउंट के पूरी तरह से ऑफ़लाइन काम करता है, और इंडेक्स को ऑपरेटिंग सिस्टम की कॉन्फ़िगरेशन निर्देशिका में रखता है।\n* **मल्टी-फॉर्मेट समर्थन:** यह मानक दस्तावेजों (PDF, DOCX, XLSX, EPUB), 50 से अधिक प्रोग्रामिंग भाषाओं, ईमेल और ओसीआर (PP-OCRv6) का उपयोग करके छवियों को पढ़ता है।\n* **लचीले इंटरफेस:** यह या तो एक ग्लोबल कीस्ट्रोक के माध्यम से ट्रे लॉन्चर के रूप में या पारंपरिक डेस्कटॉप विंडो के रूप में चलता है।\n* **एआई एजेंट इंटीग्रेशन:** यह रीड-नॉन लोकल इंडेक्स सर्च के लिए मॉडल कॉंटेक्स्ट प्रोटोकॉल (MCP) या लूपबैक एचटीटीपी के माध्यम से Claude और Cursor जैसे एआई टूल से जुड़ता है।\n\n## प्रदर्शन और सुरक्षा\n\nKensaku संपूर्ण डिस्क को दोबारा स्कैन किए बिना बदले हुए फ़ाइलों को प्रोसेस करने के लिए वृद्धिशील इंडेक्सिंग का उपयोग करता है। यह डिफ़ॉल्ट रूप से छुपी हुई फ़ाइलों को छोड़ देता है और क्रेडेंशियल पैटर्न को बाहर रखता है।\n\n## स्थापना और सत्यापन\n\nडाउनलोड सत्यापित करने के लिए रिलीज के साथ SHA256SUMS फाइलें प्रदान की जाती हैं। चूंकि बिल्ड वर्तमान में अनसाigned हैं, इसलिए विंडोज और मैकओएस पहली बार चलाने पर सुरक्षा चेतावनी दिखा सकते हैं, जिन्हें सिस्टम सेटिंग्स के माध्यम से बायपास किया जा सकता है।",
+  "en_meta": "Discover Kensaku, a free, open-source local file launcher and search tool with OCR, semantic search, and AI agent access for Windows, macOS, and Linux.",
+  "hi_meta": "Kensaku एक मुफ्त और ओपेन-सर्स लोकल सर्च टूल है जो विंडोज, मैकओएस और लिनक्स पर ओसीआर और एआई एजेंट एक्सेस के साथ फाइलें खोजने में मदद करता है।",
+  "en_keywords": [
+    "Kensaku",
+    "local search",
+    "file launcher",
+    "OCR search",
+    "open source",
+    "MCP agent"
+  ],
+  "hi_keywords": [
+    "Kensaku",
+    "लोकल सर्च",
+    "फाइल लॉन्चर",
+    "ओसीआर",
+    "ओपेन सोर्स",
+    "MCP"
+  ],
+  "source_published_at": null,
+  "id": "11bc87decd60",
+  "source": "https://github.com/yjid/kensaku",
+  "date": "2026-11-11T03:43:37.149150+00:00",
+  "source_title": "yjid/kensaku: Search inside documents, code, and even screenshots - instantly and locally. A free, open-source file launcher with OCR, semantic search, and MCP agent access. - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

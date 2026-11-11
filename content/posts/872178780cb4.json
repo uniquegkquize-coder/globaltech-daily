@@ -1,0 +1,29 @@
+{
+  "en_title": "QM: A Multiplayer Agent Harness for Teams",
+  "hi_title": "QM: टीमों के लिए एक मल्टीप्लेयर एजेंट हार्नेस",
+  "en_body": "QM is an open-source multiplayer agent harness designed for team environments. Unlike personal assistant agents that can become complex when scaled across groups, QM provides isolated workspaces for individuals while supporting collaboration in channels, group messages, and projects.\n\n## Core Architecture and Capabilities\n\n- **Independent Workspaces**: Every user and room has a scoped memory, file storage, keychain view, permissions, crons, web apps, and a durable sandbox.\n- **Always-On Operation**: Agents run independently on schedules and webhooks in your chosen cloud environment, using models and API keys of your choice rather than being tied to a single vendor.\n- **Dual Interface**: Supports interaction via Slack and a web application sharing the same identity and configuration.\n- **Customization and Apps**: Administrators can set organization-level security configurations, model availability, and publish custom internal web apps.\n\n## Technical Implementation\n\nQM core is built with TypeScript on Node.js using Fastify for HTTP routing. It relies on a PostgreSQL persistence layer for user data, session history, and state management. The architecture includes an execute tool that runs commands inside an isolated sandbox environment.\n\n## Security and Deployment\n\nOperators deploy QM in their own cloud accounts using providers like DigitalOcean, E2B, or Render. The project outlines multiple security postures:\n\n- **Strict**: Requires human approval for every tool call, excluding turn enders.\n- **Auto (Default)**: Blocks private-network access.\n- **Dangerous**: Permits tool execution without approval gates.\n\nContent screening and command policies can be further configured by administrators to restrict potentially destructive operations.\n\n## Verification and Resources\n\nDocumentation, deployment guides, and source code are available via the official GitHub repository and documentation site at labs.ycombinator.com/qm. QM is available under the MIT License.",
+  "hi_body": "QM टीमों के लिए डिज़ाइन किया गया एक ओपन-सोर्स मल्टीप्लेयर एजेंट हार्नेस है। व्यक्तिगत सहायक एजेंटों के विपरीत, QM प्रत्येक सदस्य को एक अलग कार्यक्षेत्र प्रदान करता है और साथ ही चैनलों, संदेशों तथा परियोजनाओं में सहयोग का समर्थन करता है।\n\n## मुख्य वास्तुकला और क्षमताएं\n\n- **स्वतंत्र कार्यक्षेत्र**: प्रत्येक व्यक्ति और कमरे की अपनी सीमित मेमोरी, फ़ाइलें, अनुमतियां, क्रॉन जॉब्स और सैंडबॉक्स होते हैं।\n- **ऑलवेज-ऑन संचालन**: एजेंट आपके चुने हुए क्लाउड वातावरण में शेड्यूल और वेबहुक पर काम करते हैं, जिसमें आप अपनी पसंद के मॉडल और कुंजियों का उपयोग कर सकते हैं।\n- **डिफ़ॉल्ट इंटरफ़ेस**: यह स्लैक (Slack) और वेब एप्लिकेशन दोनों पर समान पहचान और कॉन्फ़िगरेशन के साथ काम करता है।\n- **व्यवस्थापक नियंत्रण**: व्यवस्थापक संगठन-स्तरीय सुरक्षा, मॉडल उपलब्धता और आंतरिक वेब ऐप को प्रबंधित कर सकते हैं।\n\n## तकनीकी विवरण\n\nQM कोर को Node.js पर TypeScript और Fastify का उपयोग करके बनाया गया है। यह डेटा और सत्र इतिहास के लिए PostgreSQL का उपयोग करता है। वास्तुकला में एक निष्पादक उपकरण शामिल है जो पृथक सैंडबॉक्स में कमांड चलाता है।\n\n## सुरक्षा और परिनियोजन\n\nऑपरेटर डिजिटलओशन (DigitalOcean), E2B या रेंडर (Render) जैसे प्रदाताओं का उपयोग करके इसे अपने क्लाउड खाते में तैनात कर सकते हैं। सुरक्षा के स्तरों में शामिल हैं:\n\n- **Strict**: हर टूल कॉल के लिए मानवीय स्वीकृति आवश्यक है।\n- **Auto (डिफ़ॉल्ट)**: निजी-नेटवर्क पहुंच को रोकता है।\n- **Dangerous**: बिना स्वीकृति के टूल निष्पादन की अनुमति देता है।\n\n## सत्यापन और संसाधन\n\nदस्तावेज़ीकरण और स्रोत कोड आधिकारिक GitHub रिपॉजिटरी और labs.ycombinator.com/qm पर उपलब्ध हैं। QM को MIT लाइसेंस के तहत उपलब्ध कराया गया है।",
+  "en_meta": "Explore QM, an open-source multiplayer agent harness for teams. Run isolated AI agents in your own cloud with customizable models, Slack and web support.",
+  "hi_meta": "QM का परिचय, टीमों के लिए एक ओपन-सोर्स मल्टीप्लेयर एजेंट हार्नेस। अपने क्लाउड में स्वतंत्र AI एजेंट चलाएं और स्लैक तथा वेब का उपयोग करें।",
+  "en_keywords": [
+    "QM agent harness",
+    "multiplayer AI agents",
+    "open source AI teams",
+    "Slack AI agent",
+    "PostgreSQL agent framework"
+  ],
+  "hi_keywords": [
+    "QM एजेंट हार्नेस",
+    "मल्टीप्लेयर AI एजेंट",
+    "ओपन सोर्स AI",
+    "स्लैक AI एजेंट",
+    "PostgreSQL फ्रेमवर्क"
+  ],
+  "source_published_at": null,
+  "id": "872178780cb4",
+  "source": "https://github.com/yc-software/qm",
+  "date": "2026-11-11T03:43:19.109006+00:00",
+  "source_title": "yc-software/qm: Multiplayer agent harness for work. - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

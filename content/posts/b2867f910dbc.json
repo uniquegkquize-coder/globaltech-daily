@@ -1,0 +1,29 @@
+{
+  "en_title": "Marble Releases Open Elementary Curriculum Taxonomy Dataset with 1,861 Micro-Topics",
+  "hi_title": "मार्बल ने 1,861 सूक्ष्म-विषयों के साथ ओपन प्राथमिक पाठ्यक्रम वर्गीकरण डेटासेट किया जारी",
+  "en_body": "Marble has released an open, structured taxonomy mapping elementary school learning into fine-grained micro-topics, prerequisite graphs, and national curriculum standards. Designated as version v1, the dataset provides a connected graph of learning designed to show how educational concepts interlink across primary education.\n\n## Dataset Structure and Scope\n\nThe public release organizes elementary education data into machine-readable UTF-8 JSON files containing:\n- **1,861 micro-topics**, each representing a single teachable idea equipped with a plain-language description, mastery criteria, classification type, and age range.\n- **4,003 prerequisite dependencies**, forming a directed acyclic graph where each edge indicates a directional prerequisite relationship labeled as hard or soft.\n- **Curriculum alignment records**, linking micro-topics to established frameworks such as the Next Generation Science Standards (NGSS), Common Core, and the UK National Curriculum.\n- **1,049 teaching-research records**, providing pedagogical guidance and activity proposals linked to specific concepts.\n\n## Jurisdictional Integrations and Reviews\nThe repository details extensive alignment work across international standards, including updates for the Australian Curriculum, Ontario elementary expectations, and draft NCERT foundational frameworks. Grade-by-grade reviews for Ontario mathematics and science document how local standards map onto the core taxonomy without certifying individual student mastery.\n\n## Practical Implications and Verification\n- **Pure Data Architecture:** The repository operates as a static data collection requiring no proprietary runtime or background dependencies.\n- **Licensing:** The database is distributed under the Open Database License (ODbL 1.0), while text and content fall under Creative Commons Attribution-ShareAlike (CC BY-SA 4.0).\n- **Verification:** Users can inspect schemas, verify SHA-256 manifest checksums, and run validation scripts using standard Node.js commands (`npm test` and `npm run validate`) directly from the public GitHub repository.",
+  "hi_body": "मार्बल ने प्राथमिक विद्यालय की शिक्षा को सूक्ष्म-विषयों, पूर्वापेक्षा ग्राफ और राष्ट्रीय पाठ्यक्रम मानकों में मैप करने वाला एक खुला, संरचित वर्गीकरण जारी किया है। संस्करण v1 के रूप में नामित, यह डेटासेट सीखने का एक जुड़ा हुआ ग्राफ प्रदान करता है जो यह दर्शाता है कि प्राथमिक शिक्षा में शैक्षणिक अवधारणाएं कैसे आपस में जुड़ी हुई हैं।\n\n## डेटासेट संरचना और दायरा\n\nसार्वजनिक रिलीज़ प्राथमिक शिक्षा डेटा को मशीन-पठनीय UTF-8 JSON फ़ाइलों में व्यवस्थित करती है जिसमें शामिल हैं:\n- **1,861 सूक्ष्म-विषय**, जिनमें से प्रत्येक एक एकल सीखने योग्य विचार का प्रतिनिधित्व करता है जिसमें सादे भाषा का विवरण, महारत मानदंड, वर्गीकरण प्रकार और आयु सीमा होती है।\n- **4,003 पूर्वापेक्षा निर्भरताएँ**, जो एक निर्देशित acyclic ग्राफ बनाती हैं जहाँ प्रत्येक किनारा एक दिशात्मक पूर्वापेक्षा संबंध को दर्शाता है।\n- **पाठ्यक्रम संरेखण रिकॉर्ड**, जो सूक्ष्म-विषयों को स्थापित फ्रेमवर्क जैसे NGSS और यूके राष्ट्रीय पाठ्यक्रम से जोड़ते हैं।\n- **1,049 शिक्षण-शोध रिकॉर्ड**, जो विशिष्ट अवधारणाओं से जुड़े शैक्षणिक मार्गदर्शन और गतिविधि प्रस्ताव प्रदान करते हैं।\n\n## क्षेत्राधिकार संबंधी एकीकरण और समीक्षाएँ\nभंडार अंतरराष्ट्रीय मानकों में व्यापक संरेखण कार्य का विवरण देता है, जिसमें ऑस्ट्रेलियाई पाठ्यक्रम, ओन्टारियो प्राथमिक अपेक्षाएं और एनसीईआरटी मूलभूत फ्रेमवर्क शामिल हैं। ओन्टारियो गणित और विज्ञान के लिए श्रेणी-दर-श्रेणी समीक्षाएं यह दस्तावेज करती हैं कि स्थानीय मानक व्यक्तिगत छात्र की महारत को प्रमाणित किए बिना मूल वर्गीकरण पर कैसे मैप करते हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n- **शुद्ध डेटा आर्किटेक्चर:** यह रिपॉजिटरी एक स्थिर डेटा संग्रह के रूप में संचालित होती है जिसमें किसी मालिकाना रनटाइम की आवश्यकता नहीं होती है।\n- **लाइसेंसिंग:** डेटाबेस को ओपन डेटाबेस लाइसेंस (ODbL 1.0) के तहत वितरित किया जाता है, जबकि सामग्री Creative Commons (CC BY-SA 4.0) के अंतर्गत आती है।\n- **सत्यापन:** उपयोगकर्ता सार्वजनिक GitHub रिपॉजिटरी से सीधे मानक Node.js कमांड का उपयोग करके स्कीमा का निरीक्षण कर सकते हैं, SHA-256 चेकसम सत्यापित कर सकते हैं और सत्यापन स्क्रिप्ट चला सकते हैं।",
+  "en_meta": "Marble releases an open elementary curriculum taxonomy with 1,861 micro-topics, prerequisite graphs, and standards alignments under ODbL and CC BY-SA.",
+  "hi_meta": "मार्बल ने ODbL और CC BY-SA के तहत 1,861 सूक्ष्म-विषयों, पूर्वापेक्षा ग्राफ़ और मानक संरेखण के साथ एक ओपन प्राथमिक पाठ्यक्रम वर्गीकरण जारी किया है।",
+  "en_keywords": [
+    "Marble curriculum taxonomy",
+    "open educational dataset",
+    "micro-topics graph",
+    "curriculum alignment",
+    "primary education JSON"
+  ],
+  "hi_keywords": [
+    "मार्बल पाठ्यक्रम वर्गीकरण",
+    "ओपन शैक्षणिक डेटासेट",
+    "सूक्ष्म-विषय ग्राफ",
+    "पाठ्यक्रम संरेखण",
+    "प्राथमिक शिक्षा JSON"
+  ],
+  "source_published_at": null,
+  "id": "b2867f910dbc",
+  "source": "https://github.com/withmarbleapp/os-taxonomy",
+  "date": "2026-11-11T03:42:16.916350+00:00",
+  "source_title": "withmarbleapp/os-taxonomy - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

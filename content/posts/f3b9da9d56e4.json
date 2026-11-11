@@ -1,0 +1,32 @@
+{
+  "en_title": "OpenField: Open-Source Studio for Video, Stills, and 3D on Local GPUs via ComfyUI",
+  "hi_title": "ओपनफील्ड: ComfyUI के माध्यम से स्थानीय GPU पर वीडियो, स्टिल्स और 3D के लिए ओपन-सोर्स स्टूडियो",
+  "en_body": "OpenField is an open-source creative studio application designed to run locally on a user's GPU by interfacing with ComfyUI. Built for Comfy's open-source Higgsfield competition and distributed under the MIT license, the platform uses open-weight models and the official Comfy SDK to provide modular tools for video generation, photography, and 3D rendering.\n\n## Core Capabilities and Features\n- **Video and Stills:** Supports text-to-video or image-to-video pipelines, motion presets, and multi-reference image conditioning on models like FLUX.2.\n- **3D and Object Workflows:** Converts single still images into textured 3D GLB models featuring PBR maps and turntable views.\n- **Stage and Director Tools:** Allows users to block out scenes in a 3D browser interface using basic shapes and models, compiling multi-shot sequences through local language model planners.\n- **Model Integration:** Supports local LoRAs, custom node packs, and MCP (Model Context Protocol) integration to let AI clients direct and execute tasks.\n\n## Technical Setup and Requirements\n- **Execution Environment:** Runs locally via a connected ComfyUI (version 0.38+) instance, utilizing a Python proxy and the Comfy SDK.\n- **Dependencies:** Requires local model downloads, specific environment variables (such as a Hugging Face read token for gated weights like LTX-2.5), and third-party tools like ffmpeg.\n- **Licensing:** The software code is MIT-licensed, while individual model weights adhere to their respective publishers' terms.\n\n## Verification and Practical Implications\nUsers can verify installation requirements and view code implementations directly within the official GitHub repository (`wexloops/openfield`). The platform operates entirely locally without requiring paid cloud subscriptions or remote credits, though performance depends heavily on local hardware capabilities.",
+  "hi_body": "ओपनफील्ड एक ओपन-सोर्स क्रिएटिव स्टूडियो एप्लिकेशन है जिसे ComfyUI के साथ इंटरफेस करके उपयोगकर्ता के अपने GPU पर स्थानीय रूप से चलाने के लिए डिज़ाइन किया गया है। Comfy की ओपन-सोर्स हिग्सफ़ील्ड प्रतियोगिता के लिए निर्मित और MIT लाइसेंस के तहत वितरित, यह प्लेटफ़ॉर्म वीडियो जेनरेशन, फ़ोटोग्राफ़ी और 3D रेंडरिंग के लिए मॉड्यूलर टूल प्रदान करने हेतु ओपन-वेट मॉडल और आधिकारिक Comfy SDK का उपयोग करता है।\n\n## मुख्य क्षमताएं और विशेषताएं\n- **वीडियो और स्टिल्स:** टेक्स्ट-टू-वीडियो या इमेज-टू-वीडियो पाइपलाइन, मोशन प्रीसेट और FLUX.2 जैसे मॉडल पर मल्टी-रेफरेंस इमेज कंडीशनिंग का समर्थन करता है।\n- **3D और ऑब्जेक्ट वर्कफ़्लो:** सिंगल स्टिल इमेज को PBR मैप्स और टर्नटेबल व्यू वाले टेक्सचर 3D GLB मॉडल में बदलता है।\n- **स्टेज और डायरेक्टर टूल्स:** उपयोगकर्ताओं को बुनियादी आकृतियों और मॉडल का उपयोग करके 3D ब्राउज़र इंटरफ़ेस में दृश्यों को ब्लॉक करने की अनुमति देता है।\n- **मॉडल एकीकरण:** स्थानीय LLoRA, कस्टम नोड पैक और MCP (मॉडल संदर्भ प्रोटोकॉल) एकीकरण का समर्थन करता है।\n\n## तकनीकी सेटअप और आवश्यकताएँ\n- **निष्पादन पर्यावरण:** एक कनेक्टेड ComfyUI (संस्करण 0.38+) इंस्टेंस के माध्यम से स्थानीय रूप से चलता है।\n- **डिपेंडेंसी:** स्थानीय मॉडल डाउनलोड, विशिष्ट पर्यावरण चर (जैसे LTX-2.5 जैसे गेटेड वेट के लिए Hugging Face रीड टोकन) और ffmpeg जैसे थर्ड-पार्टी टूल की आवश्यकता होती है।\n- **लाइसेंसिंग:** सॉफ़्टवेयर कोड MIT-लाइसेंस प्राप्त है, जबकि व्यक्तिगत मॉडल वेट उनके संबंधित प्रकाशकों की शर्तों का पालन करते हैं।\n\n## सत्यापन और व्यावहारिक निहितार्थ\nउपयोगकर्ता आधिकारिक GitHub रिपॉजिटरी (`wexloops/openfield`) के भीतर सीधे स्थापना आवश्यकताओं को सत्यापित कर सकते हैं और कोड कार्यान्वयन देख सकते हैं। यह प्लेटफ़ॉर्म सशुल्क क्लाउड सदस्यता की आवश्यकता के बिना पूरी तरह से स्थानीय रूप से काम करता है।",
+  "en_meta": "Explore OpenField, an open-source studio for video, stills, and 3D running locally on your GPU via ComfyUI. Learn about its features, setup, and requirements.",
+  "hi_meta": "OpenField के बारे में जानें, जो ComfyUI के माध्यम से आपके GPU पर स्थानीय रूप से चलने वाला वीडियो, स्टिल्स और 3D के लिए एक ओपन-सोर्स स्टूडियो है।",
+  "en_keywords": [
+    "OpenField",
+    "ComfyUI",
+    "open-source video studio",
+    "local GPU rendering",
+    "3D generation"
+  ],
+  "hi_keywords": [
+    "ओपनफील्ड",
+    "ComfyUI",
+    "ओपन-सोर्स वीडियो स्टूडियो",
+    "स्थानीय GPU रेंडरिंग",
+    "3D जेनरेशन"
+  ],
+  "source_published_at": "2026-10-30T13:29:42+00:00",
+  "id": "f3b9da9d56e4",
+  "source": "https://github.com/wexloops/openfield",
+  "date": "2026-11-11T03:39:43.127889+00:00",
+  "source_title": "wexloops/openfield: Open-source studio for video, stills and 3D on your own GPU through ComfyUI - GitHub",
+  "category": "technology",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "apps-software"
+  ]
+}

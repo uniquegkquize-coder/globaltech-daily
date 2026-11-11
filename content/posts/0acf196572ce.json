@@ -1,0 +1,29 @@
+{
+  "en_title": "ThinkRail Combines Agentic IDE Features with Pi Coding Agent Integration",
+  "hi_title": "थिंकरेल (ThinkRail) एजेंटिक आईडीई और पाई कोडिंग एजेंट एकीकरण को जोड़ता है",
+  "en_body": "ThinkRail is an agentic IDE designed to integrate with the pi coding agent, offering an environment that adapts through Spec-Driven Development and extensible workflows. The software ships in two forms: a native desktop installer and a self-contained CLI tool available from its landing page and releases.\n\n## Core Architecture and Workspaces\n\nThe platform supports isolated workspaces by allowing users to open any git repository and create git worktree workspaces. Each workspace operates with its own branch and working directory, enabling agents to run tasks in parallel without altering the original codebase. The topbar displays branch status against the origin and pull request states, letting developers publish, push, or open new pull requests directly.\n\n## Interface and Search Capabilities\n\nThinkRail features an interface built around the agent, featuring Monaco editor tabs, integrated file trees, terminals, and document support. \n\n* **Unified Palette:** Pressing ⌘K (or double-tapping Shift) opens a palette to locate chats, messages, workspaces, projects, files, and specifications with a preview pane.\n* **Text Search:** ⌘⇧F enables searching text inside workspace files with grouped match results, whole-word toggles, and code previews.\n* **Scratch Chats:** Users can start chats without repositories for quick planning or drafting, and later convert them to workspaces via a handoff summary.\n\n## Specifications and Agent Tools\n\nProjects maintain an up-to-date specification graph using connected `SPEC.md` files located alongside the code. The agent utilizes dedicated tools to read, search, and maintain these specifications across sessions.\n\n* **Structured Questions:** The graphical interface allows the AI agent to ask structured multiple-choice questions instead of guessing.\n* **Visual Previews:** Agents can render Mermaid diagrams, file previews, and before/after mockups for proposed UI changes.\n* **Package Installation:** Users can install pi packages via npm, git, or local folders to extend agent capabilities.\n\n## Customization and Verification\n\nThinkRail allows users to configure their own model servers, language preferences, themes, and fonts. It reads existing pi configurations while allowing overrides via settings. Desktop installations are available for macOS, Windows, and Linux, with specific dependency requirements outlined for Linux distributions. Users can verify downloads using SHA-256 checksums provided on the official releases page.",
+  "hi_body": "थिंकरेल (ThinkRail) एक एजेंटिक आईडीई है जिसे पाई कोडिंग एजेंट के साथ एकीकृत करने के लिए डिज़ाइन किया गया है। यह स्पेक-संचालित विकास (Spec-Driven Development) और विस्तार योग्य वर्कफ़्लो के माध्यम से एक अनुकूलन योग्य वातावरण प्रदान करता है। यह सॉफ्टवेयर नेटिव डेस्कटॉप इंस्टॉलर और एक स्व-निहित सीएलआई टूल के रूप में उपलब्ध है।\n\n## मुख्य वास्तुकला और वर्कस्पेस\n\nप्लेटफ़ॉर्म उपयोगकर्ताओं को किसी भी गिट रिपॉजिटरी को खोलने और गिट वर्कट्री वर्कस्पेस बनाने की अनुमति देकर आइसोलेटेड वर्कस्पेस का समर्थन करता है। प्रत्येक वर्कस्पेस अपनी खुद की शाखा (branch) और कार्य निर्देशिका के साथ काम करता है, जिससे एजेंट मूल कोडबेस को छुए बिना समानांतर में कार्य कर सकते हैं। टॉपबार मूल रिपॉजिटरी के मुकाबले सक्रिय शाखा की स्थिति और पुल अनुरोध (PR) की स्थिति को प्रदर्शित करता है।\n\n## इंटरफ़ेस और खोज क्षमताएं\n\nथिंकरेल में मोनाको एडिटर टैब, गिट-एकीकृत फ़ाइल ट्री, टर्मिनल और दस्तावेज़ समर्थन शामिल हैं।\n\n* **एकीकृत पैलेट:** ⌘K (या Shift को दो बार टैप करने से) चैट, संदेश, वर्कस्पेस और फ़ाइलों का पता लगाने के लिए एक पैलेट खुलता है।\n* **टेक्स्ट खोज:** ⌘⇧F फ़ाइल के अंदर टेक्स्ट खोजने की अनुमति देता है।\n* **स्क्रैच चैट:** उपयोगकर्ता बिना रिपॉजिटरी के त्वरित योजना या ड्राफ्टिंग के लिए चैट शुरू कर सकते हैं।\n\n## विनिर्देश और एजेंट टूल\n\nप्रोजेक्ट कोड के साथ स्थित जुड़े हुए `SPEC.md` फ़ाइलों का उपयोग करके एक अद्यतन विनिर्देश ग्राफ बनाए रखते हैं। एजेंट सत्रों में इन विनिर्देशों को पढ़ने, खोजने और बनाए रखने के लिए समर्पित टूल का उपयोग करता है।\n\n* **संरचित प्रश्न:** ग्राफिकल इंटरफ़ेस एआई एजेंट को अनुमान लगाने के बजाय संरचित बहुविकल्पीय प्रश्न पूछने की अनुमति देता है।\n* **दृश्य पूर्वावलोकन:** एजेंट मर्मेड आरेख, फ़ाइल पूर्वावलोकन और यूआई परिवर्तनों के लिए मॉकअप प्रस्तुत कर सकते हैं।\n* **पैकेज इंस्टॉलेशन:** उपयोगकर्ता एजेंट क्षमताओं का विस्तार करने के लिए एनपीएम, गिट या स्थानीय फ़ोल्डर के माध्यम से पाई पैकेज स्थापित कर सकते हैं।\n\n## अनुकूलन और सत्यापन\n\nथिंकरेल उपयोगकर्ताओं को अपने स्वयं के मॉडल सर्वर, भाषा प्राथमिकताएं, थीम और फॉन्ट को कॉन्फ़िगर करने की अनुमति देता है। डेस्कटॉप इंस्टॉलेशन macOS, Windows और Linux के लिए उपलब्ध हैं। उपयोगकर्ता आधिकारिक रिलीज़ पेज पर दिए गए SHA-256 चेकसम का उपयोग करके डाउनलोड सत्यापित कर सकते हैं।",
+  "en_meta": "Discover ThinkRail, an agentic IDE built around the pi coding agent with isolated workspaces, spec-driven development, and full extension support.",
+  "hi_meta": "थिंकरेल के बारे में जानें, जो पाई कोडिंग एजेंट के इर्द-गिर्द बना एक एजेंटिक आईडीई है, जिसमें आइसोलेटेड वर्कस्पेस और स्पेक-संचालित विकास शामिल हैं।",
+  "en_keywords": [
+    "ThinkRail",
+    "agentic IDE",
+    "pi coding agent",
+    "isolated workspaces",
+    "spec-driven development"
+  ],
+  "hi_keywords": [
+    "ThinkRail",
+    "एजेंटिक आईडीई",
+    "पाई कोडिंग एजेंट",
+    "आइसोलेटेड वर्कस्पेस",
+    "स्पेक-संचालित विकास"
+  ],
+  "source_published_at": null,
+  "id": "0acf196572ce",
+  "source": "https://github.com/JetBrains/thinkrail",
+  "date": "2026-11-11T03:38:55.126840+00:00",
+  "source_title": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need - GitHub",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

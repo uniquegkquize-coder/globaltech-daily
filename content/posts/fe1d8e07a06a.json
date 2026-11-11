@@ -1,0 +1,31 @@
+{
+  "en_title": "GitHub Introduces Connected Copilot Cloud Experience and Flexible Compute Entitlement",
+  "hi_title": "GitHub ने कनेक्टेड कोपायलट क्लाउड अनुभव और लचीले कंप्यूट एंटाइटेलमेंट की घोषणा की",
+  "en_body": "GitHub has announced a new connected Copilot cloud experience, rolling out to users starting October 28 on paid Copilot plans. The update integrates cloud tasks across multiple surfaces, allowing users to start a session on platforms like github.com, GitHub Mobile, the Copilot CLI, the Copilot app, VS Code, Slack, and Microsoft Teams, and continue it elsewhere.\n\nAccording to the announcement, sessions run by default in a secure cloud sandbox on GitHub-managed infrastructure. These sandboxes start fast, lack a one-hour running time limit, and save snapshots upon shutdown to let users resume sessions from any surface. Users can initiate tasks using voice or attachments on mobile, or via specific menus and mentions on the web, Slack, and Microsoft Teams.\n\n## Key Features of the Connected Experience\n- **Unified Context:** Sessions and pins sync across web and mobile, and opening Copilot over a pull request, file, or repository automatically includes that page as context.\n- **Tools and Integrations:** Cloud sessions support Bash, GitHub CLI, and built-in connectors for services like Sentry, Linear, and Cloudflare, alongside custom Model Context Protocol (MCP) servers and agent skills.\n- **Permissions:** Copilot requests approval prior to any tool call requiring it, and existing repository exclusions or enterprise-managed settings carry over.\n\n## Flexible Compute Entitlement\nGitHub has updated its included Actions entitlement into a single, shared, dollar-based compute pool instead of fixed standard runner minutes. This pool covers standard GitHub-hosted runners, cloud sandboxes, and—for Team and Enterprise Cloud—larger hosted runners. Billing for cloud sandbox usage begins in November 2026, with free usage drawing from the shared compute entitlement.\n\n## Practical Implications and Verification\n- **Access Requirements:** The update is available on paid Copilot plans and governed by \"Copilot in the cloud\" settings. Free tier users can continue using Copilot Chat on web and mobile and upgrade to access the new experience.\n- **Security and Access Control:** Chat sessions are scoped to a single organization or personal repositories by default, requiring single sign-on where applicable. Users without write access default to read-only mode.\n- **Verification:** Users can review official documentation on the GitHub Blog changelog and product documentation pages to confirm setup steps, billing details, and policy configurations.",
+  "hi_body": "GitHub ने एक नए कनेक्टेड कोपायलट क्लाउड अनुभव की घोषणा की है, जो भुगतान किए गए कोपायलट प्लान वाले उपयोगकर्ताओं के लिए 28 अक्टूबर से रोल आउट किया जा रहा है। यह अपडेट कई सतहों पर क्लाउड कार्यों को एकीकृत करता है, जिससे उपयोगकर्ताओं को github.com, GitHub मोबाइल, कोपायलट CLI, कोपायलट ऐप, VS कोड, स्लैक और माइक्रोसॉफ्ट टीम्स जैसे प्लेटफॉर्म पर एक सत्र शुरू करने और उसे कहीं से भी जारी रखने की अनुमति मिलती है।\n\nघोषणा के अनुसार, डिफ़ॉल्ट रूप से प्रत्येक सत्र GitHub-प्रबंधित बुनियादी ढांचे पर एक सुरक्षित क्लाउड सैंडबॉक्स में चलता है। ये सैंडबॉक्स तेजी से शुरू होते हैं, इनमें कुल चलने वाले समय की कोई एक घंटे की सीमा नहीं होती है, और बंद होने पर स्नैपशॉट सहेजते हैं ताकि उपयोगकर्ता किसी भी सतह से सत्र को फिर से शुरू कर सकें।\n\n## कनेक्टेड अनुभव की मुख्य विशेषताएं\n- **एकीकृत संदर्भ:** सत्र और पिन वेब और मोबाइल पर सिंक होते हैं, और किसी पुल अनुरोध, फ़ाइल या रिपॉजिटरी पर कोपायलट खोलने से वह पेज स्वचालित रूप से संदर्भ के रूप में जुड़ जाता है।\n- **टूल्स और इंटीग्रेशन:** क्लाउड सत्र Bash, GitHub CLI, और Sentry, Linear तथा Cloudflare जैसी सेवाओं के लिए इन-बिल्ट कनेक्टर के साथ-साथ कस्टम मॉडल कॉंटेक्स्ट प्रोटोकॉल (MCP) सर्वर और एजेंट कौशल का समर्थन करते हैं।\n- **अनुमतियां:** कोपायलट किसी भी आवश्यक टूल कॉल से पहले अनुमोदन मांगता है, और मौजूदा रिपॉजिटरी बहिष्करण या उद्यम-प्रबंधित सेटिंग्स लागू रहती हैं।\n\n## लचीला कंप्यूट एंटाइटेलमेंट\nGitHub ने अपने शामिल Actions एंटाइटेलमेंट को मानक रनर मिनटों की एक निश्चित संख्या के बजाय एक एकल, साझा, डॉलर-आधारित कंप्यूट पूल में बदल दिया है। यह पूल मानक GitHub-होस्टेड रनर, क्लाउड सैंडबॉक्स और—टीम और एंटरप्राइज क्लाउड के लिए—बड़े होस्टेड रनर को कवर करता है। क्लाउड सैंडबॉक्स उपयोग के लिए बिलिंग नवंबर 2026 से शुरू होगी, जिसमें मुफ्त उपयोग साझा कंप्यूट एंटाइटेलमेंट से लिया जाएगा।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n- **पहुँच आवश्यकताएँ:** यह अपडेट भुगतान किए गए कोपायलट प्लान पर उपलब्ध है और इसे \"Copilot in the cloud\" सेटिंग्स द्वारा नियंत्रित किया जाता है। मुफ़्त टियर के उपयोगकर्ता वेब और मोबाइल पर कोपायलट चैट का उपयोग जारी रख सकते हैं।\n- **सुरक्षा और पहुँच नियंत्रण:** चैट सत्र डिफ़ॉल्ट रूप से एक संगठन या व्यक्तिगत रिपॉजिटरी तक सीमित होते हैं। बिना राइट एक्सेस वाले उपयोगकर्ता स्वचालित रूप से रीड-ऑनूडी मोड में होते हैं।\n- **सत्यापन:** उपयोगकर्ता सेटअप चरणों, बिलिंग विवरण और नीति कॉन्फ़िगरेशन की पुष्टि करने के लिए GitHub ब्लॉग और उत्पाद दस्तावेज़ पृष्ठों पर आधिकारिक दस्तावेज़ देख सकते हैं।",
+  "en_meta": "GitHub rolled out a connected Copilot cloud experience with cross-surface sessions, cloud sandboxes, and a flexible Actions compute entitlement.",
+  "hi_meta": "GitHub ने क्रॉस-सरफेस सत्र, क्लाउड सैंडबॉक्स और लचीले Actions कंप्यूट एंटाइटेलमेंट के साथ कनेक्टेड कोपायलट क्लाउड अनुभव पेश किया।",
+  "en_keywords": [
+    "GitHub Copilot",
+    "cloud sandbox",
+    "Actions compute entitlement",
+    "Copilot cloud experience",
+    "VS Code",
+    "GitHub Mobile"
+  ],
+  "hi_keywords": [
+    "GitHub Copilot",
+    "क्लाउड सैंडबॉक्स",
+    "Actions कंप्यूट एंटाइटेलमेंट",
+    "कोपायलट क्लाउड अनुभव",
+    "VS Code",
+    "GitHub Mobile"
+  ],
+  "source_published_at": "2026-10-28T15:30:00+00:00",
+  "id": "fe1d8e07a06a",
+  "source": "https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience/",
+  "date": "2026-11-11T03:42:46.318720+00:00",
+  "source_title": "Work from anywhere with a new, connected Copilot cloud experience - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
