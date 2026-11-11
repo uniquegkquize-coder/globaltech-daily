@@ -1,29 +1,61 @@
 {
-  "total_posts": 6184,
+  "total_posts": 6275,
   "selected": 45,
   "results": {
-    "source_photo_saved": 4,
-    "cooldown": 41
+    "source_photo_saved": 3,
+    "invalid_source_images": 6,
+    "cooldown": 36
   },
-  "still_missing": 572,
+  "still_missing": 578,
   "articles": [
     {
-      "id": "64a384127aa954b9e0b901aa",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_%281st_generation%29",
+      "id": "a081c4c98bc7a3e33be0918c",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Series_490",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794425683.4588053
+      "retry_after": 1794446636.1120234
     },
     {
-      "id": "9e59804909cc110131739d58",
-      "result": "cooldown"
+      "id": "02364f4d79f5caac07cae019",
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794446636.2603073
     },
     {
-      "id": "fab6501205ba27e38dac785c",
-      "result": "cooldown"
+      "id": "e87722eae1171c56c834caee",
+      "source": "https://en.wikipedia.org/wiki/Redmi_Note_4",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794446636.2859852
+    },
+    {
+      "id": "143e60189659fea092ac3a1e",
+      "source": "https://en.wikipedia.org/wiki/Pixel_%281st_generation%29",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794446636.3759882
+    },
+    {
+      "id": "8ede6684d4cf14febb863aad",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794446636.4728568
+    },
+    {
+      "id": "546c228c5ca9a83351a8e257",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Agile",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794446636.475856
     },
     {
       "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5757b7bde7e5a43128d256",
       "result": "cooldown"
     },
     {
@@ -31,11 +63,11 @@
       "result": "cooldown"
     },
     {
-      "id": "611527df4de7f3170a99cfde",
+      "id": "c176a1dc41c1e122cab45821",
       "result": "cooldown"
     },
     {
-      "id": "ab5757b7bde7e5a43128d256",
+      "id": "9e59804909cc110131739d58",
       "result": "cooldown"
     },
     {
@@ -51,7 +83,23 @@
       "result": "cooldown"
     },
     {
-      "id": "c176a1dc41c1e122cab45821",
+      "id": "611527df4de7f3170a99cfde",
+      "result": "cooldown"
+    },
+    {
+      "id": "fab6501205ba27e38dac785c",
+      "result": "cooldown"
+    },
+    {
+      "id": "33686a761fa5d097afc337dc",
+      "result": "cooldown"
+    },
+    {
+      "id": "a941ae3553703f8fd24d4d17",
+      "result": "cooldown"
+    },
+    {
+      "id": "d5ff9974453f739276c8eb9f",
       "result": "cooldown"
     },
     {
@@ -63,31 +111,7 @@
       "result": "cooldown"
     },
     {
-      "id": "33686a761fa5d097afc337dc",
-      "result": "cooldown"
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
-    },
-    {
-      "id": "2f02162d9ab27a8cd5662161",
-      "result": "cooldown"
-    },
-    {
       "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "d5ff9974453f739276c8eb9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "a941ae3553703f8fd24d4d17",
-      "result": "cooldown"
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
       "result": "cooldown"
     },
     {
@@ -95,11 +119,11 @@
       "result": "cooldown"
     },
     {
-      "id": "e8fc748d4c8dffaa2212a1cf",
+      "id": "2f02162d9ab27a8cd5662161",
       "result": "cooldown"
     },
     {
-      "id": "b211f120ea27b93fc925f6b4",
+      "id": "e8fc748d4c8dffaa2212a1cf",
       "result": "cooldown"
     },
     {
@@ -107,15 +131,19 @@
       "result": "cooldown"
     },
     {
+      "id": "b211f120ea27b93fc925f6b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
+    },
+    {
       "id": "6548e415fc086ccec65bbb7c",
-      "result": "cooldown"
-    },
-    {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
-    },
-    {
-      "id": "a6510273f0889bf4d7684eae",
       "result": "cooldown"
     },
     {
@@ -123,15 +151,23 @@
       "result": "cooldown"
     },
     {
+      "id": "a6510273f0889bf4d7684eae",
+      "result": "cooldown"
+    },
+    {
+      "id": "8af54bb949a0c055391d640a",
+      "result": "cooldown"
+    },
+    {
       "id": "6bb2ac3830abf79750ec9c1e",
       "result": "cooldown"
     },
     {
-      "id": "28682dd8dfac94fd33504b6e",
+      "id": "17aa97db89715afd896833ea",
       "result": "cooldown"
     },
     {
-      "id": "17aa97db89715afd896833ea",
+      "id": "28682dd8dfac94fd33504b6e",
       "result": "cooldown"
     },
     {
@@ -159,45 +195,25 @@
       "result": "cooldown"
     },
     {
-      "id": "02364f4d79f5caac07cae019",
-      "result": "cooldown"
-    },
-    {
-      "id": "8ede6684d4cf14febb863aad",
-      "result": "cooldown"
-    },
-    {
       "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794446636.8757539
     },
     {
       "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794446636.895225
     },
     {
       "id": "e21f0c9303189bff05b728a0",
-      "result": "cooldown"
-    },
-    {
-      "id": "119fcd0c069c12352a34469d",
-      "source": "https://en.wikipedia.org/wiki/Mercedes-Benz_MB700",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794425683.54988
-    },
-    {
-      "id": "402b8099f5c88312cfbd2979",
-      "source": "https://en.wikipedia.org/wiki/LG_V20",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794425683.6520417
-    },
-    {
-      "id": "93c3bf0b469d14585507844d",
-      "source": "https://en.wikipedia.org/wiki/Chery_A3",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794425683.8263092
+      "result": "invalid_source_images",
+      "retry_after": 1794446637.0993538
     }
   ],
   "missing": [
@@ -489,6 +505,13 @@
       "reason": "source_error"
     },
     {
+      "id": "143e60189659fea092ac3a1e",
+      "category": "gadgets",
+      "title": "Pixel: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Pixel_%281st_generation%29",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "3a640d951615",
       "category": "sarkari-naukri",
       "title": "Estimating Annual Salary Increments Under 7th Pay Commission Guidelines",
@@ -515,6 +538,13 @@
       "title": "Aker Solutions Reports Stable Q3 2026 Results Amid Strategic Transformation",
       "source": "https://www.prnewswire.com/news-releases/aker-solutions-asa-third-quarter-results-2026-302921759.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "1b5825efbd8a",
+      "category": "technology",
+      "title": "As Crypto and Prediction Markets Expand, Their Regulator Shrinks",
+      "source": "https://www.npr.org/2026/10/08/nx-s1-5903204/crypto-prediction-markets-cftc-weakens",
+      "reason": "source_error"
     },
     {
       "id": "8fb539b04f5d",
@@ -570,7 +600,7 @@
       "category": "apps-software",
       "title": "Mastercard Lists Software Engineer II Opening in Pune, India",
       "source": "https://in.linkedin.com/jobs/view/software-engineer-ii-at-mastercard-4480679568",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "c534a92f550b",
@@ -612,7 +642,7 @@
       "category": "private-vacancy",
       "title": "Allianz Technology Lists Archer Specialist Opening in Pune",
       "source": "https://in.linkedin.com/jobs/view/archer-specialist-3046-immediate-joiner-at-allianz-technology-4484242011",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "99b77aadeefa",
@@ -963,6 +993,13 @@
       "title": "Overview of Current Media and Communications Private Vacancies in the Des Moines Area",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-des-moines-ia",
       "reason": "access_denied"
+    },
+    {
+      "id": "f89770032773",
+      "category": "private-vacancy",
+      "title": "Community and Social Services Job Openings Reported in San Francisco Bay Area",
+      "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-san-francisco-ca",
+      "reason": "invalid_source_images"
     },
     {
       "id": "43f6c019300c",
@@ -1438,7 +1475,7 @@
       "category": "private-vacancy",
       "title": "Administrative and Support Job Openings Highlighted in Querétaro Region",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-querétaro-que",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "611527df4de7f3170a99cfde",
@@ -1683,7 +1720,7 @@
       "category": "private-vacancy",
       "title": "Yum! Brands Lists Open Role for Analyst or Specialist in Gurugram",
       "source": "https://in.linkedin.com/jobs/view/analyst-specialist-at-yum%21-brands-4482296646",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "0da0ead215c3",
@@ -1718,7 +1755,7 @@
       "category": "private-vacancy",
       "title": "Millennium Global Services Lists Airport Ground Staff Vacancies for Freshers in Kochi",
       "source": "https://in.linkedin.com/jobs/view/airport-ground-staff-jobs-at-airport-freshers-kochi-at-millennium-global-services-4484503781",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "423e596c4719",
@@ -1798,6 +1835,13 @@
       "reason": "source_error"
     },
     {
+      "id": "d549220bc300",
+      "category": "private-vacancy",
+      "title": "Hirenix Solutions Announces Opening for Customer Support Executive in New Delhi",
+      "source": "https://in.linkedin.com/jobs/view/customer-support-executive-at-hirenix-solutions-4483837926",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "07f40dc280d1",
       "category": "private-vacancy",
       "title": "EH Jobs Recruits Western Music Teacher for Primary Grades in Tellapur, Hyderabad",
@@ -1865,7 +1909,7 @@
       "category": "apps-software",
       "title": "Accenture and Other Employers List Full Stack and Software Roles in Coimbatore via LinkedIn",
       "source": "https://in.linkedin.com/jobs/accenture-in-india-full-stack-engineer-jobs-coimbatore-tn?f_AL=true",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "8f4b17c49d1b2a0c5cb45a53",
@@ -2323,11 +2367,18 @@
       "reason": "access_denied"
     },
     {
+      "id": "1b83b8f7f5eb",
+      "category": "india-news",
+      "title": "INDIA Bloc Organizes Mock Impeachment of CEC Ahead of November 1 Delhi Rally",
+      "source": "https://www.indiatoday.in/india/video/india-bloc-public-impeachment-of-cec-kharge-residence-headquarter-november-1-rally-ytvd-3029257-2026-10-31",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "52bc81a4ba48",
       "category": "private-vacancy",
       "title": "WeMakeScholars Lists Academic Advisor Opening Across Multiple Indian Locations via LinkedIn",
       "source": "https://in.linkedin.com/jobs/view/academic-advisor-in-pondicherry-secunderabad-hubli-mumbai-chennai-coimbatore-madurai-vellore-ernakulam-nashik-pondy-bangalore-alwal-at-wemakescholars-4482000625",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "d561ed0d809f",
@@ -2922,14 +2973,14 @@
       "category": "private-vacancy",
       "title": "Employment Listings and Job Openings Reported Across India on Professional Networks",
       "source": "https://in.linkedin.com/jobs/novaluxia%2Bis%2Blegit-%2Bstudy%2Bthe%2Bprocess.mxs-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "5ebf8e2fb21a",
       "category": "private-vacancy",
       "title": "Millennium Global Services Lists Airport Driver and Ground Staff Openings on LinkedIn",
       "source": "https://in.linkedin.com/jobs/view/airport-driver-and-ground-staff-new-vacancy-apply-now-at-millennium-global-services-4484599584",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "b11524ec6a1a",
@@ -3125,7 +3176,7 @@
       "category": "private-vacancy",
       "title": "Account Executive – Numoo Hiring Solutions (Remote‑First, Mumbai)",
       "source": "https://in.linkedin.com/jobs/view/account-executive-at-numoo-hiring-solutions-4483014386",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "c1266aba0540",
@@ -3237,7 +3288,7 @@
       "category": "private-vacancy",
       "title": "Credit Saison India Lists Multiple Job Openings Across Tamil Nadu Locations",
       "source": "https://in.linkedin.com/jobs/credit-saison-india-jobs-tamil-nadu",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "8013ad63ce33",
@@ -3546,6 +3597,13 @@
       "title": "Jordan Strikes Militant Targets in Syria Following Deadly Church Attack",
       "source": "https://www.cbc.ca/news/world/jordan-church-attack-arrests-9.7395806",
       "reason": "source_error"
+    },
+    {
+      "id": "b403708c02d1",
+      "category": "private-vacancy",
+      "title": "Indian Manpower Services Announces Customer Relationship Manager Vacancy in Bhiwandi",
+      "source": "https://in.linkedin.com/jobs/view/customer-relationship-manager-at-indian-manpower-services-4483297888",
+      "reason": "invalid_source_images"
     },
     {
       "id": "2f02162d9ab27a8cd5662161",
@@ -4119,7 +4177,7 @@
       "category": "apps-software",
       "title": "NatWest Group Hiring Software Engineer in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/software-engineer-at-natwest-group-4482856179",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "76c30ad6e59c",
@@ -4207,34 +4265,89 @@
     }
   ],
   "missing_reasons": {
-    "no_source_image": 200,
+    "no_source_image": 201,
     "source_unavailable": 36,
-    "invalid_source_images": 106,
-    "access_denied": 159,
-    "source_error": 70,
+    "invalid_source_images": 118,
+    "access_denied": 151,
+    "source_error": 71,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "64a384127aa954b9e0b901aa": {
+    "a081c4c98bc7a3e33be0918c": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_%281st_generation%29",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Samsung_Galaxy_S_White.png/330px-Samsung_Galaxy_S_White.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Series_490",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/22/1922_Chevrolet_490_Touring.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "119fcd0c069c12352a34469d": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Mercedes-Benz_MB700",
-      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/MERCEDES_BENZ_MB700.jpg/500px-MERCEDES_BENZ_MB700.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+    "02364f4d79f5caac07cae019": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
+      "candidate_count": 7,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/1280px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/500px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
     },
-    "402b8099f5c88312cfbd2979": {
+    "e87722eae1171c56c834caee": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/LG_V20",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/LG_V20.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Redmi_Note_4",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Xiaomi_Redmi_Note_4.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "93c3bf0b469d14585507844d": {
+    "143e60189659fea092ac3a1e": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Pixel_%281st_generation%29",
+      "candidate_count": 11,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Pixel_%282016%29.svg/250px-Pixel_%282016%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Pixel_%282016%29.svg/120px-Pixel_%282016%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Pixel_XL_%282016%29.svg/250px-Pixel_XL_%282016%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "8ede6684d4cf14febb863aad": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "546c228c5ca9a83351a8e257": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chery_A3",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Chery_A3_at_the_2010_Guangzhou_Motorshow_1.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Agile",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Chevrolet_Agile_1.4_LS_Spirit_2012_%2813787195273%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "ab5161457cb0ef816db211ff": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "554edbfdaee926ed82007433": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "e21f0c9303189bff05b728a0": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
     }
   },
   "mode": "directory"
