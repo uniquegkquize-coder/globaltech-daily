@@ -1,0 +1,32 @@
+{
+  "en_title": "Inside GitHub's Engineering Updates: Architecture and Optimization",
+  "hi_title": "गिटहब के इंजीनियरिंग अपडेट: आर्किटेक्चर और ऑप्टिमाइजेशन",
+  "en_body": "GitHub has published a series of engineering articles detailing architectural updates, performance optimizations, and infrastructure changes across its platform. According to the published posts, these developments cover Git storage infrastructure, AI coding efficiency, search architecture, and developer tools.\n\n## Git Storage and Infrastructure\nGitHub reports that it has moved a copy of the vast majority of its repositories to Azure. The company outlines plans to use per-reference quorums to bring over remaining repositories and notes that object storage enables reads to scale independently. Additionally, the new Git storage architecture is described as designed to support thousands of agents pushing to a single repository simultaneously.\n\n## Performance and Search Improvements\nEngineering teams have shared details on several performance initiatives:\n* **CSS Migration:** GitHub states it has fully migrated github.com away from CSS-in-JS to ship more CSS and improve site performance.\n* **Star History API:** The new star history API provides trends without returning individual identities or requiring unbounded database work, reducing requests from 2,500 down to 24.\n* **Code Search:** A branch-free loop and byte-space arithmetic allow case-folding every byte of code search at more than 45 GiB/s on a single core.\n* **Issues Navigation:** Client-side caching, smart prefetching, and service workers were implemented to modernize GitHub Issues navigation performance.\n* **High Availability Search:** GitHub Enterprise Server search architecture was rebuilt for improved availability and resilience.\n\n## AI and Developer Tools\nUpdates concerning GitHub Copilot and agentic workflows include:\n* **Copilot Efficiency:** GitHub discusses how reducing wasted work and managing output lengths helps make AI coding more cost-efficient without sacrificing task quality.\n* **Code Review:** Migrating Copilot code review to shared Unix-style code exploration tools reportedly reduced review costs by reshaping agent workflows around pull request evidence.\n* **Agentic Workflows:** The Aspire team automated cross-repo documentation by turning merged product changes into SME-reviewed documentation pull requests.\n\n## Verification and Practical Implications\nReaders can verify these technical announcements and explore the full documentation by visiting the official GitHub Engineering blog at github.blog/engineering/architecture-optimization/. These architectural updates provide practical insights for developers and system administrators tracking large-scale infrastructure management.",
+  "hi_body": "गिटहब ने अपने प्लेटफ़ॉर्म पर आर्किटेक्चरल अपडेट, प्रदर्शन अनुकूलन (परफॉरमेंस ऑप्टिमाइजेशन) और बुनियादी ढांचा (इन्फ्रास्ट्रक्चर) में बदलावों का विवरण देते हुए इंजीनियरिंग लेखों की एक श्रृंखला प्रकाशित की है। प्रकाशित पोस्ट के अनुसार, इन विकासों में गिट स्टोरेज इन्फ्रास्ट्रक्चर, एआई कोडिंग दक्षता, सर्च आर्किटेक्चर और डेवलपर टूल शामिल हैं।\n\n## गिट स्टोरेज और इन्फ्रास्ट्रक्चर\nगिटहब की रिपोर्ट है कि उसने अपने अधिकांश रिपॉजिटरी की एक प्रति एज़्योर (Azure) में स्थानांतरित कर दी है। कंपनी ने शेष रिपॉजिटरी को लाने के लिए प्रति-संदर्भ कोरम (per-reference quorums) का उपयोग करने की योजनाओं की रूपरेखा तैयार की है और नोट किया है कि ऑब्जेक्ट स्टोरेज रीड्स को स्वतंत्र रूप से स्केल करने की अनुमति देता है। इसके अतिरिक्त, नए गिट स्टोरेज आर्किटेक्चर को हजारों एजेंटों को एक साथ एक ही रिपॉजिटरी में पुश करने में सक्षम बनाने के लिए डिज़ाइन किया गया है।\n## प्रदर्शन और सर्च में सुधार\nइंजीनियरिंग टीमों ने कई प्रदर्शन पहलों पर विवरण साझा किया है:\n* **सीएसएस माइग्रेशन:** गिटहब का कहना है कि उसने अधिक सीएसएस भेजने और साइट के प्रदर्शन को बेहतर बनाने के लिए github.com को पूरी तरह से सीएसएस-इन-जेएस से दूर स्थानांतरित कर दिया है।\n* **स्टार हिस्ट्री एपीआई:** नया स्टार हिस्ट्री एपीआई व्यक्तिगत पहचान लौटाए बिना या असीमित डेटाबेस कार्य की आवश्यकता के बिना रुझान प्रदान करता है, जिससे अनुरोध 2,500 से घटकर 24 हो गए हैं।\n* **कोड सर्च:** एक शाखा-मुक्त लूप (branch-free loop) और बाइट-स्पेस अंकगणित एक ही कोर पर 45 GiB/s से अधिक की गति से कोड सर्च के प्रत्येक बाइट को केस-फोल्ड करने की अनुमति देते हैं।\n* **इश्यू नेविगेशन:** गिटहब इश्यूज़ नेविगेशन प्रदर्शन को आधुनिक बनाने के लिए क्लाइंट-साइड कैशिंग, स्मार्ट प्रीफ़ेचिंग और सर्विस वर्कर्स को लागू किया गया था।\n* **हाई अवेलेबिलिटी सर्च:** बेहतर उपलब्धता और लचीलेपन के लिए गिटहब एंटरप्राइज़ सर्वर सर्च आर्किटेक्चर को फिर से बनाया गया था।\n\n## एआई और डेवलपर टूल्स\nगिटहब कोपायलट और एजेंटिक वर्कफ़्लो से संबंधित अपडेट में शामिल हैं:\n* **कोपायलट दक्षता:** गिटहब चर्चा करता है कि कैसे बर्बाद काम को कम करना और आउटपुट लंबाई का प्रबंधन करना कार्य की गुणवत्ता का त्याग किए बिना एआई कोडिंग को अधिक लागत प्रभावी बनाने में मदद करता है।\n* **कोड समीक्षा:** कोपायलट कोड समीक्षा को साझा यूनिक्स-शैली के कोड अन्वेषण टूल में माइग्रेट करने से पुल अनुरोध साक्ष्य के आसपास एजेंट वर्कफ़्लो को नया रूप देकर समीक्षा लागत कम हो गई।\n* **एजेंटिक वर्कफ़्लो:** एस्पायर टीम ने मर्ज किए गए उत्पाद परिवर्तनों को एसएमई-समीक्षा किए गए दस्तावेज़ीकरण पुल अनुरोधों में बदलकर क्रॉस-रिपॉजिटरी दस्तावेज़ीकरण को स्वचालित किया।\n\n## सत्यापन और व्यावहारिक निहितार्थ\nपाठक आधिकारिक गिटहब इंजीनियरिंग ब्लॉग github.blog/engineering/architecture-optimization/ पर जाकर इन तकनीकी घोषणाओं को सत्यापित कर सकते हैं और संपूर्ण दस्तावेज़ का पता लगा सकते हैं। ये आर्किटेक्चरल अपडेट बड़े पैमाने पर बुनियादी ढांचा प्रबंधन को ट्रैक करने वाले डेवलपर्स और सिस्टम प्रशासकों के लिए व्यावहारिक अंतर्दृष्टि प्रदान करते हैं।",
+  "en_meta": "Explore GitHub's engineering updates on architecture, Git storage, search optimization, and AI coding efficiency on the official blog.",
+  "hi_meta": "आर्किटेक्चर, गिट स्टोरेज, सर्च ऑप्टिमाइजेशन और एआई कोडिंग दक्षता पर गिटहब के इंजीनियरिंग अपडेट आधिकारिक ब्लॉग पर देखें।",
+  "en_keywords": [
+    "GitHub engineering",
+    "Git storage architecture",
+    "performance optimization",
+    "GitHub Copilot",
+    "search architecture"
+  ],
+  "hi_keywords": [
+    "गिटहब इंजीनियरिंग",
+    "गिट स्टोरेज आर्किटेक्चर",
+    "परफॉरमेंस ऑप्टिमाइजेशन",
+    "गिटहब कोपायलट",
+    "सर्च आर्किटेक्चर"
+  ],
+  "source_published_at": null,
+  "id": "de51d2e61e3d",
+  "source": "https://github.blog/engineering/architecture-optimization/",
+  "date": "2026-11-11T12:05:42.685228+00:00",
+  "source_title": "Architecture & optimization",
+  "category": "apps-software",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "technology"
+  ]
+}

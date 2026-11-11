@@ -1,0 +1,32 @@
+{
+  "en_title": "Applebee’s Fixes Security Flaw That Exposed Customer Data Via Hardcoded App Password",
+  "hi_title": "एप्पलबीज़ ने उस सुरक्षा खामी को ठीक किया जिससे ऐप में पासवर्ड छूटने पर ग्राहकों का डेटा उजागर हुआ था",
+  "en_body": "Applebee's recently addressed a security vulnerability that allowed unauthorized access to registered customer information after a database password was discovered inside its mobile application. Robert Wiggins, a U.K.-based cybersecurity researcher, found the credential buried within the source code of the Android app using AI assistance.\n\nFollowing notification through reporting channels, the restaurant chain confirmed it took action to resolve the issue. Parent company Dine Brands stated that its security team launched an investigation, though it remains unclear how many individuals were affected or how long the credential was present in the software.\n\n## Overview of the Security Issue\n\n* **Discovery Method:** A researcher used AI to analyze source code in the Android application and found a hardcoded database password.\n* **Exposed Information:** The database contained customer names, email addresses, dates of birth, phone numbers, ZIP codes, veteran status, login counts, account creation dates, and recent login IP addresses.\n* **Potential Impact:** Hardcoding credentials allows anyone extracting the key to access remote systems and potentially modify data.\n\n## Company Response and Verification\n\n* **Action Taken:** Applebee's secured the database after being alerted, and the reporting outlet verified the findings by examining the app's code and testing dummy account retrieval.\n* **Investigation Status:** Dine Brands reported an ongoing investigation but has not disclosed server log details or whether affected customers and regulators will be notified.\n* **Reporting Gap:** The researcher noted that neither Applebee's nor Dine Brands provided a direct mechanism for reporting security vulnerabilities.\n\n## Practical Implications and Verification\n\n* **Customer Vigilance:** Registered users should monitor their accounts for unusual activity given the exposure of personal details and login metadata.\n* **Verifying Announcements:** Users can check official statements from Dine Brands or updates from cybersecurity reporting outlets to confirm future disclosures regarding the incident.",
+  "hi_body": "एप्पलबीज़ ने हाल ही में एक सुरक्षा खामी को दूर किया है जिसके कारण उसके मोबाइल एप्लिकेशन के भीतर एक डेटाबेस पासवर्ड मिलने के बाद पंजीकृत ग्राहकों की जानकारी तक अनधिकृत पहुंच संभव हो गई थी। यूके स्थित साइबर सुरक्षा शोधकर्ता रॉबर्ट विगिंस ने एआई की मदद से एंड्रॉइड ऐप के सोर्स कोड के भीतर छिपे इस क्रेडेंशियल का पता लगाया था।\n\nरिपोर्टिंग चैनलों के माध्यम से सूचना मिलने के बाद, रेस्तरां श्रृंखला ने पुष्टि की कि उसने इस समस्या को हल करने के लिए कार्रवाई की है। मूल कंपनी डाइन ब्रांड्स ने कहा कि उसकी सुरक्षा टीम ने जांच शुरू कर दी है, हालांकि यह अभी स्पष्ट नहीं है कि कितने लोग प्रभावित हुए थे या सॉफ्टवेयर में यह क्रेडेंशियल कितने समय तक मौजूद रहा।\n\n## सुरक्षा समस्या का अवलोकन\n\n* **खोज का तरीका:** एक शोधकर्ता ने एंड्रॉइड एप्लिकेशन में सोर्स कोड का विश्लेषण करने के लिए एआई का उपयोग किया और एक हार्डकोडेड डेटाबेस पासवर्ड पाया।\n* **उजागर जानकारी:** डेटाबेस में ग्राहकों के नाम, ईमेल पते, जन्म तिथि, फोन नंबर, ज़िप कोड, वेटरन स्थिति, लॉगिन गिनती, खाता निर्माण तिथियां और हालिया लॉगिन आईपी पते शामिल थे।\n* **संभावित प्रभाव:** क्रेडेंशियल को हार्डकोड करने से कुंजी निकालने वाले किसी भी व्यक्ति को दूरस्थ प्रणालियों तक पहुंचने और संभावित रूप से डेटा को संशोधित करने की अनुमति मिलती है।\n\n## कंपनी की प्रतिक्रिया और सत्यापन\n\n* **की गई कार्रवाई:** सतर्क किए जाने के बाद एप्पलबीज़ ने डेटाबेस को सुरक्षित कर लिया, और रिपोर्टिंग आउटलेट ने ऐप के कोड की जांच करके और डमी अकाउंट पुनर्प्राप्ति का परीक्षण करके निष्कर्षों को सत्यापित किया।\n* **जांच की स्थिति:** डाइन ब्रांड्स ने चल रही जांच की सूचना दी है, लेकिन सर्वर लॉग विवरण या इस बात का खुलासा नहीं किया है कि प्रभावित ग्राहकों और नियामकों को सूचित किया जाएगा या नहीं।\n* **रिपोर्टिंग अंतराल:** शोधकर्ता ने उल्लेख किया कि न तो एप्पलबीज़ और न ही डाइन ब्रांड्स ने सुरक्षा कमियों की रिपोर्ट करने के लिए कोई प्रत्यक्ष तंत्र प्रदान किया है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\n\n* **ग्राहक सतर्कता:** व्यक्तिगत विवरण और लॉगिन मेटाडेटा के उजागर होने के कारण पंजीकृत उपयोगकर्ताओं को असामान्य गतिविधि के लिए अपने खातों की निगरानी करनी चाहिए।\n* **घोषणाओं का सत्यापन:** उपयोगकर्ता इस घटना के संबंध में भविष्य के खुलासों की पुष्टि करने के लिए डाइन ब्रांड्स के आधिकारिक बयानों या साइबर सुरक्षा रिपोर्टिंग आउटलेट के अपडेट की जांच कर सकते हैं।",
+  "en_meta": "Applebee's fixed a security flaw that exposed customer data after a database password was found hardcoded inside its mobile app.",
+  "hi_meta": "एप्पलबीज़ ने मोबाइल ऐप में डेटाबेस पासवर्ड मिलने के बाद ग्राहक डेटा उजागर करने वाली सुरक्षा खामी को ठीक किया।",
+  "en_keywords": [
+    "Applebee's",
+    "data exposure",
+    "cybersecurity",
+    "Dine Brands",
+    "mobile app vulnerability"
+  ],
+  "hi_keywords": [
+    "एप्पलबीज़",
+    "डेटा एक्सपोज़र",
+    "साइबर सुरक्षा",
+    "डाइन ब्रांड्स",
+    "मोबाइल ऐप"
+  ],
+  "source_published_at": "2026-10-30T21:48:53+00:00",
+  "id": "fd5da6a441b6",
+  "source": "https://techcrunch.com/2026/10/30/applebees-exposed-customers-personal-data-after-leaving-database-password-in-app/",
+  "date": "2026-11-11T12:05:24.937438+00:00",
+  "source_title": "Applebee’s exposed customers’ personal data after leaving database password in app",
+  "category": "cyber-security",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "technology"
+  ]
+}
