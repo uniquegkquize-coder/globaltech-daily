@@ -1,0 +1,33 @@
+{
+  "en_title": "CERT-UA Warns of Dahua IP Camera Hijacking via P2P Access and Auth Weaknesses",
+  "hi_title": "CERT-UA की चेतावनी: P2P एक्सेस और प्रमाणीकरण कमियों के जरिए डहुआ (Dahua) IP कैमरों को बनाया जा रहा है निशाना",
+  "en_body": "The Computer Emergency Response Team of Ukraine (CERT-UA) issued an alert warning about unauthorized remote access to Dahua video surveillance systems. According to reported information, attackers have compromised IP cameras and digital video recorders (DVRs), gaining access to video streams, altering device configurations, and creating unauthorized third-party accounts.\n\nCERT-UA noted that the primary initial access vector involves the Easy4IP peer-to-peer (P2P) platform. The agency reported that device serial numbers feature a predictable structure containing a 10-character model prefix and a 5-character hexadecimal counter. This structure can allow attackers to perform brute-force attacks at scale to identify cloud-connected devices without triggering rate limits.\n\n## Key Findings and Attack Mechanisms\n\n* **P2P Platform Exploitation:** Attackers leverage the Easy4IP platform to reach devices behind network address translation (NAT).\n* **Authentication Weaknesses:** Intruders bypass authentication barriers using weak passwords or by exploiting known firmware vulnerabilities, specifically CVE-2021-33044 and CVE-2021-33045.\n* **Indicators of Compromise:** CERT-UA highlighted audit logs showing authentication events using the native DVRIP protocol from a local address (127.0.0.1) as a sign of P2P access.\n* **Persistent Backdoors:** Similar independent research by Hunt.io identified instances where threat actors installed persistent backdoor accounts ('p2pwn / p2password') that can survive password changes and factory resets on certain firmware.\n\n## Practical Implications and Recommendations\n\nSecurity authorities advise organizations and individuals utilizing Dahua surveillance equipment to evaluate their exposure and implement defensive measures:\n\n* Disable the P2P feature if remote monitoring is not strictly required.\n* Avoid exposing surveillance devices directly to the public internet.\n* Apply available firmware updates to mitigate known authentication bypass flaws.\n\nTo verify official advisories and technical indicators, consult the official CERT-UA or State Special Communications Service of Ukraine (SSSCIP) web portals for direct alerts.",
+  "hi_body": "यूक्रेन की कंप्यूटर आपातकालीन प्रतिक्रिया टीम (CERT-UA) ने डहुआ (Dahua) वीडियो निगरानी प्रणालियों तक अनधिकृत रिमोट एक्सेस के बारे में चेतावनी जारी की है। रिपोर्ट की गई जानकारी के अनुसार, हमलावरों ने IP कैमरों और डिजिटल वीडियो रिकॉर्डर (DVR) से छेड़छाड़ की है, जिससे वीडियो स्ट्रीम तक पहुंच प्राप्त हुई है, डिवाइस कॉन्फ़िगरेशन में बदलाव किए गए हैं और अनधिकृत तृतीय-पक्ष खाते बनाए गए हैं।\n\nCERT-UA ने उल्लेख किया कि प्राथमिक प्रारंभिक एक्सेस वेक्टर Easy4IP पीयर-to-पीयर (P2P) प्लेटफॉर्म से जुड़ा है। एजेंसी ने बताया कि डिवाइस के सीरियल नंबरों की एक अनुमानित संरचना होती है, जिसमें 10-वर्ण का मॉडल प्रिफ़िक्स और 5-वर्ण का हेक्साडेसिमल काउंटर शामिल होता है। यह संरचना हमलावरों को दर सीमा (rate limits) को ट्रिगर किए बिना क्लाउड-कनेक्टेड उपकरणों की पहचान करने के लिए बड़े पैमाने पर ब्रूट-फोर्स हमले करने की अनुमति दे सकती है।\n\n## मुख्य निष्कर्ष और हमले के तरीके\n\n* **P2P प्लेटफॉर्म का उपयोग:** हमलावर नेटवर्क एड्रेस ट्रांसलेशन (NAT) के पीछे मौजूद उपकरणों तक पहुंचने के लिए Easy4IP प्लेटफॉर्म का लाभ उठाते हैं।\n* **प्र प्रमाणीकरण कमियां:** घुसपैठिए कमजोर पासवर्ड का उपयोग करके या ज्ञात फर्मवेयर कमजोरियों, विशेष रूप से CVE-2021-33044 और CVE-2021-33045 का फायदा उठाकर प्रमाणीकरण बाधाओं को पार करते हैं।\n* **समझौते के संकेतक:** CERT-UA ने स्थानीय पते (127.0.0.1) से मूल DVRIP प्रोटोकॉल का उपयोग करने वाली प्रमाणीकरण घटनाओं को दिखाने वाले ऑडिट लॉग को P2P एक्सेस के संकेत के रूप में उजागर किया।\n* **स्थायी बैकडोर:** Hunt.io द्वारा किए गए समान स्वतंत्र शोध में ऐसे उदाहरणों की पहचान की गई जहां threat actors ने स्थायी बैकडोर खाते ('p2pwn / p2password') स्थापित किए जो पासवर्ड परिवर्तन और कुछ फर्मवेयर पर फैक्ट्री रीसेट से बचे रह सकते हैं।\n\n## व्यावहारिक निहितार्थ और सिफारिशें\n\nसुरक्षा अधिकारी डहुआ निगरानी उपकरणों का उपयोग करने वाले संगठनों और व्यक्तियों को उनके जोखिम का मूल्यांकन करने और सुरक्षात्मक उपाय लागू करने की सलाह देते हैं:\n\n* यदि रिमोट मॉनिटरिंग की सख्त आवश्यकता नहीं है, तो P2P सुविधा को अक्षम करें।\n* निगरानी उपकरणों को सीधे सार्वजनिक इंटरनेट पर उजागर करने से बचें।\n* ज्ञात प्रमाणीकरण कमजोरियों को कम करने के लिए उपलब्ध फर्मवेयर अपडेट लागू करें।\n\nआधिकारिक सलाह और तकनीकी संकेतकों को सत्यापित करने के लिए, सीधे अलर्ट के लिए आधिकारिक CERT-UA या यूक्रेन की राज्य विशेष संचार सेवा (SSSCIP) के वेब पोर्टल देखें।",
+  "en_meta": "CERT-UA warns of Dahua IP camera and DVR compromises in Ukraine using P2P access, predictable serial numbers, and firmware vulnerabilities.",
+  "hi_meta": "CERT-UA ने चेतावनी दी है कि P2P एक्सेस, अनुमानित सीरियल नंबर और फर्मवेयर कमजोरियों का उपयोग करके यूक्रेन में डहुआ IP कैमरों से समझौता किया जा रहा है।",
+  "en_keywords": [
+    "CERT-UA",
+    "Dahua",
+    "IP cameras",
+    "P2P access",
+    "Easy4IP",
+    "vulnerabilities",
+    "Ukraine"
+  ],
+  "hi_keywords": [
+    "CERT-UA",
+    "डहुआ",
+    "IP कैमरे",
+    "P2P एक्सेस",
+    "Easy4IP",
+    "कमजोरियां",
+    "यूक्रेन"
+  ],
+  "source_published_at": "2026-10-27T12:04:00+05:30",
+  "id": "a2da896f1147",
+  "source": "https://thehackernews.com/2026/10/attackers-hijack-dahua-ip-cameras-in.html",
+  "date": "2026-11-11T18:24:01.517763+00:00",
+  "source_title": "Attackers Hijack Dahua IP Cameras in Ukraine Using P2P Access and Auth Weaknesses - The Hacker News",
+  "category": "technology",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,29 @@
+{
+  "en_title": "Attackers Hijacked Over 300 Tor Exit Relays to Intercept SSH Connections",
+  "hi_title": "तथ्य: हमलावरों ने SSH कनेक्शन बाधित करने के लिए 300 से अधिक Tor एग्जिट रिले को हैक किया",
+  "en_body": "Security researchers and the Tor Project reported that attackers compromised over 300 Tor exit relays in early October to redirect SSH traffic to malicious interception servers designed to capture login credentials. The incident affected Tor's network capacity temporarily before directory authorities removed the malicious relays from consensus.\n\n## Overview of the Tor Relay Incident\n\n* **Timeline:** The activity occurred between October 1 and October 5.\n* **Scale:** A security researcher known as kaba identified 333 relays redirecting SSH, while directory analyses noted up to 377 affected relays.\n* **Impact:** At its peak on October 4, the modified relays accounted for 7.46% of Tor's exit capacity.\n\n## How the Interception Worked\n\nAttackers gained administrative access to underlying Linux hosts and modified `torrc` configuration files. By altering exit policies, they enabled port 22 (SSH) on relays that previously blocked it, while simultaneously disrupting encrypted mail ports.\n\n* **Traffic Redirection:** SSH connections through affected exits were routed to one of 12 interception servers.\n* **Host Key Warnings:** Users connecting via password authentication encountered altered or unfamiliar host keys. Accepting these keys allowed attackers to record passwords.\n* **Key-Based Logins Unaffected:** SSH connections utilizing cryptographic keys remained secure because session-unique signatures cannot be replayed against real servers.\n\n## Response and Remediation\n\nThe Tor Project's network health team detected the policy changes and coordinated with directory authorities to add `BadExit` and `MiddleOnly` flags. By October 5, all non-compliant relays were removed from the consensus list.\n\nA prominent relay operator, Zimmer, reported that two of his servers were compromised via the Ebury OpenSSH backdoor, which survived routine reboots. Security experts recommend verifying relay configurations, checking for unauthorized `torrc` modifications, inspecting system files for the Ebury implant, and rotating all credentials if exposure is suspected.",
+  "hi_body": "सुरक्षा शोधकर्ताओं और Tor प्रोजेक्ट ने बताया कि अक्टूबर की शुरुआत में हमलावरों ने लॉगिन क्रेडेंशियल चुराने के लिए SSH ट्रैफ़िक को दुर्भावनापूर्ण सर्वर पर पुनर्निर्देशित करने के वास्ते 300 से अधिक Tor एग्जिट रिले से छेड़छाड़ की। निर्देशिका अधिकारियों द्वारा दुर्भावनापूर्ण रिले को सूची से हटाने से पहले इस घटना ने Tor की नेटवर्क क्षमता को अस्थायी रूप से प्रभावित किया।\n\n## Tor रिले घटना का अवलोकन\n\n* **समयसीमा:** यह गतिविधि 1 अक्टूबर से 5 अक्टूबर के बीच हुई।\n* **पैमाना:** kaba के रूप में पहचाने जाने वाले एक सुरक्षा शोधकर्ता ने SSH को पुनर्निर्देशित करने वाले 333 रिले की पहचान की, जबकि निर्देशिका विश्लेषण में 377 प्रभावित रिले दर्ज किए गए।\n* **प्रभाव:** 4 अक्टूबर को अपने चरम पर, संशोधित रिले ने Tor की एग्जिट क्षमता का 7.46% हिस्सा बनाया।\n\n## इंटरसेप्शन ने कैसे काम किया\n\nहमलावरों ने अंतર્ગत लिनक्स होस्ट तक प्रशासनिक पहुंच प्राप्त की और `torrc` कॉन्फ़िगरेशन फ़ाइलों को संशोधित किया। एग्जिट नीतियों को बदलकर, उन्होंने उन रिले पर पोर्ट 22 (SSH) को सक्षम कर दिया जिन्होंने पहले इसे अवरुद्ध किया था, साथ ही एन्क्रिप्टेड मेल पोर्ट को बाधित कर दिया।\n\n* **ट्रैफ़िक पुनर्निर्देशन:** प्रभावित एग्जिट के माध्यम से SSH कनेक्शन को 12 इंटरसेप्शन सर्वर में से एक पर रूट किया गया।\n* **होस्ट कुंजी चेतावनियाँ:** पासवर्ड प्रमाणीकरण के माध्यम से कनेक्ट होने वाले उपयोगकर्ताओं को बदली हुई या अपरिचित होस्ट कुंजियाँ मिलीं। इन कुंजियों को स्वीकार करने से हमलावरों को पासवर्ड रिकॉर्ड करने की अनुमति मिली।\n* **कुंजी-आधारित लॉगिन प्रभावित नहीं:** क्रिप्टोग्राफिक कुंजियों का उपयोग करने वाले SSH कनेक्शन सुरक्षित रहे क्योंकि सत्र-अद्वितीय हस्ताक्षर वास्तविक सर्वर के खिलाफ दोबारा उपयोग नहीं किए जा सकते।\n\n## प्रतिक्रिया और उपाय\n\nTor प्रोजेक्ट की नेटवर्क हेल्थ टीम ने नीति परिवर्तनों का पता लगाया और `BadExit` तथा `MiddleOnly` फ़्लैग जोड़ने के लिए निर्देशिका अधिकारियों के साथ समन्वय किया। 5 अक्टूबर तक, सभी गैर-अनुपालन रिले को सहमति सूची से हटा दिया गया था।\n\nएक प्रमुख रिले ऑपरेटर, जिम्मर (Zimmer) ने बताया कि उनके दो सर्वर Ebury OpenSSH बैकडोर के माध्यम से से compromised हुए थे। सुरक्षा विशेषज्ञ रिले कॉन्फ़िगरेशन को सत्यापित करने, अनधिकृत `torrc` संशोधनों की जाँच करने, Ebury इम्प्लांट के लिए सिस्टम फ़ाइलों का निरीक्षण करने और जोखिम होने पर सभी क्रेडेंशियल बदलने की सलाह देते हैं।",
+  "en_meta": "Attackers hijacked over 300 Tor exit relays in October to intercept SSH connections and capture passwords. Learn how the Tor Project and operators responded.",
+  "hi_meta": "अक्टूबर में SSH कनेक्शन को बाधित करने और पासवर्ड चुराने के लिए 300 से अधिक Tor एग्जिट रिले हैक किए गए। जानिए Tor प्रोजेक्ट और ऑपरेटरों ने क्या प्रतिक्रिया दी।",
+  "en_keywords": [
+    "Tor",
+    "exit relays",
+    "SSH interception",
+    "cybersecurity",
+    "Ebury backdoor"
+  ],
+  "hi_keywords": [
+    "Tor",
+    "एग्जिट रिले",
+    "SSH इंटरसेप्शन",
+    "साइबर सुरक्षा",
+    "Ebury बैकडोर"
+  ],
+  "source_published_at": "2026-10-21T16:00:00+05:30",
+  "id": "bf7cf33fc0eb",
+  "source": "https://thehackernews.com/2026/10/attackers-hijacked-over-300-tor-exit.html",
+  "date": "2026-11-11T18:26:43.873039+00:00",
+  "source_title": "Attackers Hijacked Over 300 Tor Exit Relays to Intercept SSH Connections",
+  "category": "technology",
+  "image_kind": "conceptual"
+}
