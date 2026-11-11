@@ -401,11 +401,12 @@ def trending_posts(exclude=None,limit=6):
  return [p for p in _trending_rank_cache if exclude is None or slug(p)!=slug(exclude)][:limit]
 
 def trending_section(lang,exclude=None):
+ # The thumbnail alt describes the image; aria-label names the link once for screen readers.
  selected=trending_posts(exclude,6)
  if not selected:return ''
  heading='Trending on GlobeWire Daily' if lang=='en' else 'GlobeWire Daily पर चर्चित खबरें'
  note='Selected from recent coverage and related topics; not live search rankings.' if lang=='en' else 'हालिया खबरों और संबंधित विषयों पर आधारित चयन; लाइव सर्च रैंकिंग नहीं।'
- return '<section class="trending-news trending-feature"><h2>'+heading+'</h2><p class="muted">'+note+'</p><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg?v={image_version(q)}" alt="">' if has_featured(q) else '<span class="related-placeholder">News</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in selected)+'</div></section>'
+ return '<section class="trending-news trending-feature"><h2>'+heading+'</h2><p class="muted">'+note+'</p><div class="trending-list">'+''.join('<a href="'+article_path(q,lang)+'" aria-label="'+e(title(q,lang))+'">'+(f'<img loading="lazy" width="120" height="80" src="/images/{slug(q)}.jpg?v={image_version(q)}" alt="{e(image_alt(q,lang))}">' if has_featured(q) else '<span class="related-placeholder">News</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in selected)+'</div></section>'
 
 def display_date(value):
  try:
@@ -504,7 +505,7 @@ for p in POSTS:
   page=page.removesuffix('</body></html>')+article_ad_scripts()+'</body></html>'
   write(OUT / article_path(p,lang).lstrip('/') / 'index.html',page)
 for lang in ('en','hi'):
- h='Worldwide news, movies and technology explained' if lang=='en' else 'दुनियाभर की ताज़ा खबरें, आसान हिंदी में'
+ h='World News, Tech & Entertainment' if lang=='en' else 'दुनियाभर की ताज़ा खबरें, आसान हिंदी में'
  desc=label('Worldwide news, movies, entertainment, technology, business, sports and useful explainers.',lang)
  latest=''.join(card(p,lang) for p in POSTS[:24]) or '<p>No articles yet. New verified-source explainers are being prepared.</p>'
  focus_posts=[p for p in POSTS if category(p) in ('technology','automobiles')][:6]
