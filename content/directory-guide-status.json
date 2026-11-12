@@ -1,21 +1,21 @@
 {
-  "published": 5,
-  "updated": 4,
+  "published": 4,
+  "updated": 0,
   "target": 8,
   "missing": {
-    "colleges": 1,
+    "colleges": 2,
     "bikes": 2
   },
   "categories": {
     "colleges": {
-      "new": 1,
-      "updated": 1,
-      "eligible_new": 1,
-      "eligible_updates": 1,
-      "shortfall": 1,
+      "new": 0,
+      "updated": 0,
+      "eligible_new": 0,
+      "eligible_updates": 0,
+      "shortfall": 2,
       "reasons": {
         "considered": 317,
-        "already_published_unchanged": 17,
+        "already_published_unchanged": 19,
         "insufficient verified descriptive fields": 89,
         "identifier URL is not specification evidence": 209
       },
@@ -150,13 +150,13 @@
     },
     "phones": {
       "new": 2,
-      "updated": 3,
-      "eligible_new": 1003,
-      "eligible_updates": 3,
+      "updated": 0,
+      "eligible_new": 1001,
+      "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 134,
+        "already_published_unchanged": 139,
         "insufficient verified descriptive fields": 104,
         "identifier URL is not specification evidence": 637
       },
@@ -292,16 +292,16 @@
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 1348,
+      "eligible_new": 1382,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 11245,
-        "already_published_unchanged": 139,
-        "insufficient verified descriptive fields": 1072,
-        "identifier URL is not specification evidence": 8686
+        "considered": 11411,
+        "already_published_unchanged": 141,
+        "insufficient verified descriptive fields": 1107,
+        "identifier URL is not specification evidence": 8781
       },
-      "rejected_count": 9758,
+      "rejected_count": 9888,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -572,5 +572,5 @@
       ]
     }
   },
-  "date": "2026-11-12T01:35:56.532181+00:00"
+  "date": "2026-11-12T04:17:22.893594+00:00"
 }

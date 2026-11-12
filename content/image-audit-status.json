@@ -1,62 +1,34 @@
 {
-  "total_posts": 6562,
-  "selected": 47,
+  "total_posts": 6709,
+  "selected": 48,
   "results": {
+    "invalid_source_images": 2,
     "source_photo_saved": 3,
-    "invalid_source_images": 6,
-    "cooldown": 37,
+    "cooldown": 42,
     "no_source_image": 1
   },
-  "still_missing": 617,
+  "still_missing": 638,
   "articles": [
     {
-      "id": "8143c0ff6e0900c1166a044f",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Bel_Air",
+      "id": "95c9f12cac7c67468ea940bb",
+      "source": "https://en.wikipedia.org/wiki/Lenovo_Z2_Plus",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794468963.0230684
+      "result": "invalid_source_images",
+      "retry_after": 1794478651.8635702
     },
     {
       "id": "d4519cf5c59f707b293a301d",
       "source": "https://en.wikipedia.org/wiki/Meizu_M3S",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794468963.2996464
+      "retry_after": 1794478652.139054
     },
     {
-      "id": "4c66cb8e4e5fdd59f699ba44",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Brookwood",
+      "id": "0a4629d80419aa5844d0b16b",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Chevette",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794468963.301887
-    },
-    {
-      "id": "02364f4d79f5caac07cae019",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794468963.4407544
-    },
-    {
-      "id": "8ede6684d4cf14febb863aad",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794468963.5333002
-    },
-    {
-      "id": "ab5161457cb0ef816db211ff",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794468963.911313
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794468963.9479048
+      "retry_after": 1794478652.3821514
     },
     {
       "id": "143e60189659fea092ac3a1e",
@@ -207,25 +179,45 @@
       "result": "cooldown"
     },
     {
-      "id": "56cfa5db0c77209dede8767e",
-      "source": "https://en.wikipedia.org/wiki/Nokia_6",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794468964.2903745
+      "id": "02364f4d79f5caac07cae019",
+      "result": "cooldown"
+    },
+    {
+      "id": "8ede6684d4cf14febb863aad",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
+      "result": "cooldown"
+    },
+    {
+      "id": "554edbfdaee926ed82007433",
+      "result": "cooldown"
     },
     {
       "id": "e21f0c9303189bff05b728a0",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "result": "cooldown"
+    },
+    {
+      "id": "00a80a00c6d6195003b8e3ca",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_S-10_Blazer",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794468964.6045558
+      "result": "source_photo_saved",
+      "retry_after": 1794478652.5518801
+    },
+    {
+      "id": "de39845b8754afc0eec71d6d",
+      "source": "https://en.wikipedia.org/wiki/Acer_Stream",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794478653.2462955
     },
     {
       "id": "209d604deb685d19f6811277",
       "source": "https://www.cuk.ac.ke/",
       "policy": "93e2ad7deccc",
       "result": "no_source_image",
-      "retry_after": 1794468969.4840686
+      "retry_after": 1794478653.7711425
     }
   ],
   "missing": [
@@ -319,6 +311,13 @@
       "title": "Professional Overview of Open Positions in Merchant Partnerships and Query Themes Across India",
       "source": "https://in.linkedin.com/jobs/Partner+merchant+query+themes%3A+Novaluxia+Reviews.fkv-jobs",
       "reason": "no_source_image"
+    },
+    {
+      "id": "33080e8cf465",
+      "category": "private-vacancy",
+      "title": "Elevate Now Lists Fitness Coach Vacancy in Delhi, India",
+      "source": "https://in.linkedin.com/jobs/view/fitness-coach-at-elevate-now-4483864411",
+      "reason": "invalid_source_images"
     },
     {
       "id": "fac509b27662",
@@ -881,6 +880,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "ecb254cec532",
+      "category": "business",
+      "title": "China's Factory Activity Contracts in October as Manufacturing PMI Hits 49.3",
+      "source": "https://www.business-standard.com/world-news/china-s-factory-activity-eases-in-october-manufacturing-pmi-falls-to-49-3-126103100099_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "a8977d34f1ce",
       "category": "space-news",
       "title": "Copernicus Sentinel-2 Captures Namibia's Etosha Pan from Space",
@@ -942,6 +948,13 @@
       "title": "Tairex Unveils AI Agent Ecosystem to Augment Clinical Decision-Making",
       "source": "https://www.prnewswire.com/news-releases/tairex-launches-multi-agent-ai-system-to-transform-clinical-collaboration-and-decision-support-302916729.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "43f10f1755db",
+      "category": "business",
+      "title": "Evaluating OPD Health Insurance: Essential Checks Before You Buy",
+      "source": "https://www.business-standard.com/finance/personal-finance/check-costs-sub-limits-and-network-restrictions-before-buying-opd-cover-126103001417_1.html",
+      "reason": "access_denied"
     },
     {
       "id": "0f2e549a24cc",
@@ -1102,7 +1115,7 @@
       "category": "private-vacancy",
       "title": "Tissera Announces Communication Design Intern Opening in Chennai",
       "source": "https://in.linkedin.com/jobs/view/communication-design-intern-at-tissera-4483884581",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "4c58118a1c0b",
@@ -1249,6 +1262,13 @@
       "category": "private-vacancy",
       "title": "EaseMyTrip.com Recruits Domestic Travel Consultant in Gurugram",
       "source": "https://in.linkedin.com/jobs/view/domestic-travel-consultant-at-easemytrip-com-4483877973",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "95c9f12cac7c67468ea940bb",
+      "category": "gadgets",
+      "title": "Lenovo Z2 Plus: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Lenovo_Z2_Plus",
       "reason": "invalid_source_images"
     },
     {
@@ -1420,6 +1440,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "16759bd66b49",
+      "category": "apps-software",
+      "title": "Flight Centre Travel Group Lists Opening for Software Engineer in Noida",
+      "source": "https://in.linkedin.com/jobs/view/software-engineer-python-at-flight-centre-travel-group-4485300660",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "80b7aa568a06",
       "category": "private-vacancy",
       "title": "Exploring Private Sector Job Listings and Openings Across India Listed on Public Portals",
@@ -1539,6 +1566,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "cd748d662e43",
+      "category": "mobile-launches",
+      "title": "Samsung Announces Galaxy S26 FE in Malaysia with ProVisual Engine and Malay Galaxy AI Support",
+      "source": "https://news.samsung.com/my/the-galaxy-s26-fe-the-fans-concert-phone-of-choice-packed-with-ultra-camera-capabilities",
+      "reason": "source_error"
+    },
+    {
       "id": "611527df4de7f3170a99cfde",
       "category": "gadgets",
       "title": "Ninetology Black Pearl II: Smartphone Specifications, Facts and Verification Guide",
@@ -1564,6 +1598,13 @@
       "category": "business",
       "title": "Binance Faces Potential Record $6.3B Cryptocurrency Theft",
       "source": "https://www.cbc.ca/news/business/binance-north-korea-9.7402446",
+      "reason": "source_error"
+    },
+    {
+      "id": "6881887d71b6",
+      "category": "sports",
+      "title": "WNBA Finals Game 6 Scheduled for Unusual Thursday Afternoon Start Amid Logistics Controversy",
+      "source": "https://www.cbc.ca/sports/basketball/the-buzzer-newsletter-wnba-finals-controversy-9.7400150",
       "reason": "source_error"
     },
     {
@@ -1777,6 +1818,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "2ed1d7c2f844",
+      "category": "business",
+      "title": "Centre Releases Additional Tax Devolution Instalment of ₹1.09 Trillion to States",
+      "source": "https://www.business-standard.com/economy/news/centre-releases-addl-instalment-of-tax-devolution-of-1-09-trn-to-states-126103101265_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "e62d34be0421",
       "category": "ai-news",
       "title": "Definitive Healthcare Announces Data Scientist, Applied AI Role to Boost Healthcare‑Focused LLM Solutions",
@@ -1830,6 +1878,13 @@
       "category": "private-vacancy",
       "title": "WeMakeScholars Recruits Technical HR Professional Across Multiple Indian Cities",
       "source": "https://in.linkedin.com/jobs/view/technial-hr-recruiter-in-secunderabad-hyderabad-hyderabad-hyderabad-vishakhapatnam-alwal-visakhapatnam-at-wemakescholars-4484295029?position=58&pageNum=0&refId=IYfwluMaDIcsUuazNwoLjw%3D%3D&trackingId=4yed8vCMLTz%2BknFIMv5vzQ%3D%3D",
+      "reason": "access_denied"
+    },
+    {
+      "id": "2e88aa5783a7",
+      "category": "business",
+      "title": "Centre Constitutes Social Security Boards for Gig and Unorganised Workers",
+      "source": "https://www.business-standard.com/industry/news/centre-constitutes-social-security-board-for-gig-unorganised-workers-126103001418_1.html",
       "reason": "access_denied"
     },
     {
@@ -1921,7 +1976,7 @@
       "category": "private-vacancy",
       "title": "Blessings Aquarium Announces Personal Assistant Opening in Pune",
       "source": "https://in.linkedin.com/jobs/view/personal-assistant-at-blessings-aquarium-4481898243",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "cb0756133fee",
@@ -2174,6 +2229,13 @@
       "title": "Exploring CAD and Software Development Engineer Job Listings in Hyderabad",
       "source": "https://in.linkedin.com/jobs/cad-software-development-engineer-jobs-hyderabad-ts?trk=guest_job_details_jd_jserp_more_jobs_link&f_AL=true",
       "reason": "no_source_image"
+    },
+    {
+      "id": "73c1cf121032",
+      "category": "world-news",
+      "title": "Brazil's Liberal Party accepts election defeat, but Flávio Bolsonaro refuses to concede",
+      "source": "https://www.npr.org/2026/10/27/nx-s1-6019217/bolsonaro-flavio-lula-brazil-election-trump",
+      "reason": "source_error"
     },
     {
       "id": "c97657ff60c5",
@@ -2503,6 +2565,13 @@
       "title": "Shareholder Investigation Announced Regarding ADT Inc. Proposed Sale to Thrive Holdings",
       "source": "https://www.prnewswire.com/news-releases/hareholder-alert-the-ma-class-action-firm-announces-an-investigation-of-adt-inc-nyse-adt-302925281.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "ddb69144264e",
+      "category": "controversies",
+      "title": "General Motors Agrees to $220 Million Settlement Over Driver Data Allegations",
+      "source": "https://www.motor1.com/news/813942/general-motors-privacy-settlement-36-states/",
+      "reason": "access_denied"
     },
     {
       "id": "b76cbc517e62",
@@ -3027,7 +3096,7 @@
       "category": "private-vacancy",
       "title": "Exploring Community and Social Services Openings in San Antonio",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-san-antonio-tx",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "ee5f46eec1e1",
@@ -3149,6 +3218,13 @@
       "reason": "source_error"
     },
     {
+      "id": "953a21482a7a",
+      "category": "world-news",
+      "title": "Blockchain Firms Link North Korea to Record $6.3B Binance Hack",
+      "source": "https://www.npr.org/2026/10/30/g-s1-150902/blockchain-intelligence-firms-link-north-korea-to-6-3b-hack-on-binance",
+      "reason": "source_error"
+    },
+    {
       "id": "02518f2b343c",
       "category": "world-news",
       "title": "US Administration Challenges State Voter Rolls Ahead of Midterm Elections",
@@ -3198,6 +3274,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "bf48c01f0609",
+      "category": "business",
+      "title": "CNX Resources Releases Third Quarter 2026 Financial and Operational Results",
+      "source": "https://www.prnewswire.com/news-releases/cnx-reports-third-quarter-results-302922574.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "b11524ec6a1a",
       "category": "world-news",
       "title": "Australian Court Rules Triple-Murderer Erin Patterson Must Spend Rest of Life in Prison",
@@ -3217,6 +3300,13 @@
       "title": "ATI Inc. Reports Third Quarter 2026 Results, Raises Full-Year Guidance",
       "source": "https://www.prnewswire.com/news-releases/ati-announces-third-quarter-2026-results-302922812.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "b1e8eb746694",
+      "category": "business",
+      "title": "Balancing Competing Priorities in Policy and Business",
+      "source": "https://www.business-standard.com/opinion/specials/choices-between-worthy-goals-pulling-in-different-directions-126102700027_1.html",
+      "reason": "access_denied"
     },
     {
       "id": "3396e579e6f8",
@@ -3252,6 +3342,13 @@
       "title": "Regional Ceasefire Begins in Occupied Oleshky Amid Continued Conflict",
       "source": "https://www.cbc.ca/news/world/ukraine-oleshky-ceasefire-begins-9.7397593?cmp=rss",
       "reason": "source_error"
+    },
+    {
+      "id": "45767eed37c2",
+      "category": "controversies",
+      "title": "Levi & Korsinsky Investigates Cerebras Systems Following Allegations Regarding Processor Reliability",
+      "source": "https://www.prnewswire.com/news-releases/cerebras-systems-investigation-notice-levi--korsinsky-notifies-investors-of-pending-investigation-into-cerebras-systems-cbrs-302924075.html",
+      "reason": "no_source_image"
     },
     {
       "id": "557b8e2f8d81",
@@ -3457,6 +3554,13 @@
       "reason": "source_error"
     },
     {
+      "id": "45fcfb91d4a3",
+      "category": "space-news",
+      "title": "NASA Awards LeWiz Communications Phase III Contract to Advance Spaceflight Avionics Networking",
+      "source": "https://www.prnewswire.com/news-releases/nasa-awards-lewiz-communications-phase-iii-contract-to-advance-spaceflight-avionics-networking-302922966.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "efeded53a5bb",
       "category": "telecom",
       "title": "TRAI Releases New Recommendations for Application-Based Linear Television Distribution Services",
@@ -3524,7 +3628,7 @@
       "category": "private-vacancy",
       "title": "Credit Saison India Lists Multiple Job Openings Across Tamil Nadu Locations",
       "source": "https://in.linkedin.com/jobs/credit-saison-india-jobs-tamil-nadu",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "8013ad63ce33",
@@ -3681,6 +3785,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "85eb88e4dd66",
+      "category": "business",
+      "title": "ChoiceOne Financial Services Reports Third Quarter 2026 Financial Results",
+      "source": "https://www.prnewswire.com/news-releases/choiceone-reports-third-quarter-2026-results-302924618.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "2cc712b6b796",
       "category": "private-vacancy",
       "title": "Current Life Sciences and Pharmaceutical Job Openings Listed on Professional Networks in India",
@@ -3702,6 +3813,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "96693e2dc676",
+      "category": "private-vacancy",
+      "title": "Fly Consulting Services Ltd Announces Opening for Content Moderation Associate in Hyderabad",
+      "source": "https://in.linkedin.com/jobs/view/content-moderator-at-fly-consulting-services-ltd-4483430852",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "5b4c4558aa60",
       "category": "business",
       "title": "CaringKind Completes Merger to Expand Long Island Dementia Care and National Reach",
@@ -3720,7 +3838,7 @@
       "category": "private-vacancy",
       "title": "Horizon9 Invites Applications for Client Servicing Internship in NCR",
       "source": "https://in.linkedin.com/jobs/view/client-servicing-internship-in-greater-noida-delhi-noida-ghaziabad-at-horizon9-4483176337",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "276998767be1",
@@ -4073,6 +4191,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "f733746daf56",
+      "category": "business",
+      "title": "Centre's Fiscal Deficit Reaches 42% of FY27 Target in First Half",
+      "source": "https://www.business-standard.com/economy/news/centre-s-fiscal-deficit-widens-to-42-of-fy27-target-in-first-half-cga-126103001658_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "917e269b7267",
       "category": "business",
       "title": "Aarti Industries Reports Q2 FY27 Financial Results Driven by Higher Volumes",
@@ -4297,6 +4422,13 @@
       "reason": "source_error"
     },
     {
+      "id": "5edf8f2b5d3e",
+      "category": "business",
+      "title": "Centrus Energy Ships First New Centrifuge from Tennessee to Ohio to Expand Nuclear Fuel Production",
+      "source": "https://www.prnewswire.com/news-releases/centrus-begins-shipping-centrifuges-to-ohio-to-support-major-expansion-of-uranium-enrichment-capacity-302923570.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "08a83556bce2",
       "category": "private-vacancy",
       "title": "WeMakeScholars Recruits Education Finance Officers Across Multiple Indian Regions",
@@ -4479,6 +4611,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "6fff541dca8a",
+      "category": "business",
+      "title": "Systemair Announces Changes in Shares and Votes Following Incentive Program",
+      "source": "https://www.prnewswire.com/news-releases/change-in-the-number-of-shares-and-votes-in-systemair-302924644.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "ff28f504e8e3f011fe2acd9b",
       "category": "education",
       "title": "Université Patrice Emery Lumumba de Wembo-Nyama: College Admissions, Facts and Verification Guide",
@@ -4550,19 +4689,24 @@
     }
   ],
   "missing_reasons": {
-    "no_source_image": 216,
+    "no_source_image": 222,
     "source_unavailable": 36,
-    "invalid_source_images": 121,
-    "access_denied": 167,
-    "source_error": 76,
+    "invalid_source_images": 128,
+    "access_denied": 171,
+    "source_error": 80,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "8143c0ff6e0900c1166a044f": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Bel_Air",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/57_Chevy_BelAir.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "95c9f12cac7c67468ea940bb": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Lenovo_Z2_Plus",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/20px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
     },
     "d4519cf5c59f707b293a301d": {
       "reason": "invalid_source_images",
@@ -4574,65 +4718,20 @@
         "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
       ]
     },
-    "4c66cb8e4e5fdd59f699ba44": {
+    "0a4629d80419aa5844d0b16b": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Brookwood",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/Flickr_-_DVS1mn_-_60_Chevrolet_Brookwood.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Chevette",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChevroletChevette.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "02364f4d79f5caac07cae019": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
-      "candidate_count": 7,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/1280px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/500px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "8ede6684d4cf14febb863aad": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "ab5161457cb0ef816db211ff": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "554edbfdaee926ed82007433": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "56cfa5db0c77209dede8767e": {
+    "00a80a00c6d6195003b8e3ca": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Nokia_6",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/05/Nokia_6_front_view.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_S-10_Blazer",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ad/1991_Chevrolet_S-10_Blazer_Tahoe_4-Door_4x4.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "e21f0c9303189bff05b728a0": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
+    "de39845b8754afc0eec71d6d": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Acer_Stream",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Acer_Stream.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
     "209d604deb685d19f6811277": {
       "reason": "no_source_image",
