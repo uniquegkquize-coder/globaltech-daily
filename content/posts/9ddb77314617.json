@@ -1,0 +1,32 @@
+{
+  "en_title": "GitHub is Rebuilding Its Git Infrastructure for Agent-Scale Development",
+  "hi_title": "GitHub एजेंट-स्केल डेवलपमेंट के लिए अपनी Git बुनियादी संरचना का पुनर्निर्माण कर रहा है",
+  "en_body": "GitHub announced that it is rebuilding its core Git infrastructure to support agentic software development and high-volume workloads. According to the company, total Git activity on the platform more than doubled between September 2025 and August 2026, reaching 473.3 billion events per month, while monthly commits surged over five times to 7.38 billion in September.\n\n## Architectural Challenges at Scale\n\nAgentic workflows introduce distinct scaling hurdles:\n* **Commit Turnaround:** AI agents operating in tight loops commit or checkpoint frequently, making push latency a primary bottleneck.\n* **Write Throughput:** Monthly pushes grew 4.9x year-over-year to 3.35 billion, concentrating heavy write activity onto single repositories.\n* **Merge Contention:** Trunk-based development and pull requests funnel extensive activity onto single references.\n* **Read Fan-Out:** CI pipelines and code scanning clone or fetch branch tips thousands of times per minute, supported by 3.26 billion GitHub Actions runs in September.\n\n## Current Architecture Limitations\n\nGitHub currently stores repositories using Spokes, maintaining full copies on multiple local fileservers. While this provides low-latency native reads and redundancy via a three-phase commit quorum, it couples durability with scale. Adding read replicas increases write overhead because every replica participates in every write.\n\n## Redesigning for the Agent Era\n\nTo decouple scale from durability, the new infrastructure follows core distributed systems principles:\n* **Coordinate Only Necessary Updates:** Reference updates require agreement, but underlying object storage and validation can happen in parallel.\n* **Move Maintenance Off the Serving Path:** Heavy tasks like garbage collection and compaction will run on separate workers against durable storage.\n* **Independent Scaling:** Authoritative repository data will live in Azure Blob Storage, while lightweight compute workers handle read traffic and cache data.\n* **Faster Failure Recovery:** Losing compute workers functions similarly to a cache miss, allowing rapid replacement without rebuilding full repository copies.\n\nInternal benchmarks indicate the new architecture has achieved up to 35 times higher write throughput. GitHub noted that it is rolling out these foundational changes without altering standard developer workflows, compliance controls, or security governance. Further technical details on the architecture will be shared in upcoming posts.",
+  "hi_body": "GitHub ने घोषणा की है कि वह एजेंटिक सॉफ्टवेयर विकास और उच्च-वॉल्यूम वर्कलोड का समर्थन करने के लिए अपनी मुख्य Git बुनियादी संरचना (infrastructure) का पुनर्निर्माण कर रहा है। कंपनी के अनुसार, सितंबर 2025 और अगस्त 2026 के बीच प्लेटफ़ॉर्म पर कुल Git गतिविधि दोगुनी से अधिक होकर 473.3 अरब इवेंट प्रति माह हो गई, जबकि मासिक कमिट सितंबर में पाँच गुना से अधिक बढ़कर 7.38 अरब हो गए।\n\n## पैमाने पर वास्तुकला संबंधी चुनौतियाँ\n\nएजेंटिक वर्कफ़्लो विशिष्ट स्केलिंग बाधाएँ पेश करते हैं:\n* **कमिट टर्नअराउंड:** टाइट लूप में काम करने वाले AI एजेंट लगातार कमिट या चेकपॉइंट करते हैं, जिससे पुश लेटेंसी एक मुख्य बाधा बन जाती है।\n* **राइट थ्रूपुट:** साल-दर-साल मासिक पुश 4.9 गुना बढ़कर 3.35 अरब हो गए, जिससे भारी राइट गतिविधि एक ही रिपॉजिटरी पर केंद्रित हो जाती है।\n* **मर्ज कंटेंशन:** ट्रंक-आधारित विकास और पुल अनुरोध व्यापक गतिविधि को एक ही संदर्भ (ref) पर भेजते हैं।\n* **रीड फैन-आउट:** CI पाइपलाइन और कोड स्कैनिंग प्रति मिनट हजारों बार शाखा युक्तियों (branch tips) को क्लोन या फ़ेच करती हैं, जिसे सितंबर में 3.26 अरब GitHub Actions रन का समर्थन मिला।\n\n## वर्तमान वास्तुकला की सीमाएँ\n\nGitHub वर्तमान में Spokes का उपयोग करके रिपॉजिटरी को संग्रहीत करता है, जो कई स्थानीय फ़ाइलसर्वर पर पूर्ण प्रतियां बनाए रखता है। हालांकि यह कम-विलंबता मूल रीड और रिडंडेंसी प्रदान करता है, लेकिन यह स्थायित्व (durability) को पैमाने के साथ जोड़ता है। रीड प्रतिकृतियां (replicas) जोड़ने से राइट ओवरहेड बढ़ जाता है क्योंकि प्रत्येक प्रतिकृति हर राइट में भाग लेती है।\n\n## एजेंट युग के लिए पुनर्रूपण\n\nपैमाने को स्थायित्व से अलग करने के लिए, नई बुनियादी संरचना मुख्य वितरित प्रणाली सिद्धांतों का पालन करती है:\n* **केवल आवश्यक अपडेट का समन्वय करें:** संदर्भ अपडेट के लिए सहमति की आवश्यकता होती है, लेकिन अंतर्निहित ऑब्जेक्ट स्टोरेज और सत्यापन समानांतर में हो सकते हैं।\n* **रखरखाव को सर्विसिंग पथ से हटाएं:** कचरा संग्रहण (garbage collection) जैसे भारी कार्य टिकाऊ भंडारण के खिलाफ अलग-अलग कामगारों (workers) पर चलेंगे।\n* **स्वतंत्र स्केलिंग:** आधिकारिक रिपॉजिटरी डेटा Azure Blob Storage में रहेगा, जबकि हल्के कंप्यूट वर्कर रीड ट्रैफ़िक को संभालेंगे और डेटा को कैश करेंगे।\n* **तेजी से विफलता पुनर्प्राप्ति:** कंप्यूट वर्कर खोना कैश मिस के समान है, जिससे पूर्ण रिपॉजिटरी प्रतियों को फिर से बनाए बिना तेजी से प्रतिस्थापन की अनुमति मिलती है।\n\nआंतरिक बेंचमार्क से संकेत मिलता है कि नई वास्तुकला ने 35 गुना तक अधिक राइट थ्रूपुट हासिल किया है। GitHub ने उल्लेख किया कि वह मानक डेवलपर वर्कफ़्लो, अनुपालन नियंत्रण या सुरक्षा शासन को बदले बिना इन基础 बदलावों को लागू कर रहा है। वास्तुकला पर आगे के तकनीकी विवरण आगामी पोस्ट में साझा किए जाएंगे।",
+  "en_meta": "GitHub is rebuilding its Git infrastructure to support agentic software development, aiming to scale read and write performance independently.",
+  "hi_meta": "GitHub एजेंटिक सॉफ्टवेयर विकास का समर्थन करने और स्वतंत्र रूप से रीड-राइट प्रदर्शन को बढ़ाने के लिए अपनी Git बुनियादी संरचना का पुनर्निर्माण कर रहा है।",
+  "en_keywords": [
+    "GitHub",
+    "Git infrastructure",
+    "agentic software development",
+    "software architecture",
+    "Azure Blob Storage"
+  ],
+  "hi_keywords": [
+    "GitHub",
+    "Git बुनियादी संरचना",
+    "एजेंटिक सॉफ्टवेयर विकास",
+    "सॉफ्टवेयर आर्किटेक्चर",
+    "Azure Blob Storage"
+  ],
+  "source_published_at": "2026-10-06T20:57:56+00:00",
+  "id": "9ddb77314617",
+  "source": "https://github.blog/engineering/architecture-optimization/building-git-infrastructure-for-agent-scale-development/",
+  "date": "2026-11-12T05:58:46.161475+00:00",
+  "source_title": "Building Git infrastructure for agent-scale development",
+  "category": "apps-software",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "technology"
+  ]
+}

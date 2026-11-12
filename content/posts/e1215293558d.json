@@ -1,0 +1,29 @@
+{
+  "en_title": "Chrome Extensions With 13.4 Million Installs Caught Hijacking Searches",
+  "hi_title": "1.34 करोड़ इंस्टॉल वाले क्रोम एक्सटेंशन सर्च हाइजैक करते पकड़े गए",
+  "en_body": "A report published by Socket researcher John Tuckner details a search-hijacking campaign involving 319 Chrome extensions with a combined 13.4 million reported installations. According to the findings, these add-ons redirected user searches through tracking servers to generate advertising revenue from Bing and Yahoo.\n\n## Overview of the Campaign\n- **Scale:** 319 unlisted Chrome extensions and 13.4 million reported users.\n- **Mechanism:** Utilizing Chrome's built-in 'chrome_settings_overrides' setting to alter default search engines.\n- **Disguises:** Pretending to be PDF converters, safe search utilities, manual finders, and AI search tools.\n\n## How the Hijacking Works\nThe report explains that organized operators used unlisted extensions hosted on the Chrome Web Store, promoting them through shady advertisements on external websites. Instead of performing their stated functions, queries were routed through proxy servers to collect partner referral payments from Yahoo or Bing.\n\nResearchers highlighted examples like the \"Bing-Search\" cluster and the \"SecuryBrowse\" wave, which included security-themed add-ons like Fire Shield and Securify. The Predator Search extension was also noted for dynamically changing destination URLs on identical queries, posing potential risks for redirection to phishing pages or malicious downloads.\n\n## Verification and Practical Implications\n- Most of the identified extensions were reportedly removed from the Chrome Web Store at the time of publication, though new variants continue to emerge.\n- Users are advised to review installed extensions against Socket's published list, remove unauthorized add-ons, run an antivirus scan, and exercise caution when downloading browser utilities from unknown publishers.\n- Verification of the original announcement can be conducted by reviewing Socket's published security advisory and checking official Google Workspace or Chrome security updates.",
+  "hi_body": "सॉकेट (Socket) के शोधकर्ता जॉन ट्यूकनर द्वारा प्रकाशित एक रिपोर्ट में 319 क्रोम एक्सटेंशन से जुड़े एक सर्च-हाइजैकिंग अभियान का विवरण दिया गया है, जिनके कुल 1.34 करोड़ इंस्टॉल बताए गए हैं। रिपोर्ट के अनुसार, ये एक्सटेंशन बिंग (Bing) और याहू (Yahoo) से विज्ञापन राजस्व उत्पन्न करने के लिए ट्रैकिंग सर्वर के माध्यम से यूजर के सर्च को पुनर्निर्देशित करते थे।\n\n## अभियान का अवलोकन\n- **दायरा:** 319 असूचीबद्ध क्रोम एक्सटेंशन और 1.34 करोड़ रिपोर्ट किए गए उपयोगकर्ता।\n- **तरीका:** डिफ़ॉल्ट सर्च इंजन बदलने के लिए क्रोम की अंतर्निहित 'chrome_settings_overrides' सेटिंग का उपयोग करना।\n- **मुखौटा:** पीडीएफ कनवर्टर, सेफ सर्च टूल, और एआई सर्च टूल होने का दिखावा करना।\n\n## हाइजैकिंग कैसे काम करती है\nरिपोर्ट बताती है कि संगठित ऑपरेटरों ने क्रोम वेब स्टोर पर होस्ट किए गए असूचीबद्ध एक्सटेंशन का उपयोग किया और बाहरी वेबसाइटों पर विज्ञापनों के माध्यम से उनका प्रचार किया। अपने बताए गए कार्यों को करने के बजाय, याहू या बिंग से पार्टनर रेफरल भुगतान एकत्र करने के लिए प्रॉक्सी सर्वर के माध्यम से क्वेरी को रूट किया गया था।\n\nशोधकर्ताओं ने \"बिंग-सर्च\" क्लस्टर और \"सिक्योरब्राउज़\" वेव जैसे उदाहरणों पर प्रकाश डाला, जिसमें फायर शील्ड और सिक्योरिफाई जैसे सुरक्षा-थीम वाले ऐड-ऑन शामिल थे।\n\n## सत्यापन और व्यावहारिक निहितार्थ\n- प्रकाशन के समय अधिकांश पहचाने गए एक्सटेंशन को क्रोम वेब स्टोर से हटाए जाने की सूचना मिली थी, हालांकि नए रूप सामने आ रहे हैं।\n- उपयोगकर्ताओं को सलाह दी जाती है कि वे सॉकेट की प्रकाशित सूची के विरुद्ध स्थापित एक्सटेंशन की समीक्षा करें, अनधिकृत ऐड-ऑन हटाएं, और एंटीवायरस स्कैन चलाएं।\n- मूल घोषणा का सत्यापन सॉकेट की प्रकाशित सुरक्षा सलाह की समीक्षा करके किया जा सकता है।",
+  "en_meta": "Read about a search-hijacking Chrome extension campaign involving 319 add-ons and 13.4 million installs redirecting queries to Bing and Yahoo.",
+  "hi_meta": "जानिए 319 क्रोम एक्सटेंशन और 1.34 करोड़ इंस्टॉल वाले सर्च-हाइजैकिंग अभियान के बारे में जो बिंग और याहू पर यूजर सर्च को डायवर्ट कर रहे थे।",
+  "en_keywords": [
+    "Chrome extensions",
+    "search hijacking",
+    "Socket report",
+    "browser security",
+    "Bing and Yahoo"
+  ],
+  "hi_keywords": [
+    "क्रोम एक्सटेंशन",
+    "सर्च हाइजैकिंग",
+    "सॉकेट रिपोर्ट",
+    "ब्राउज़र सुरक्षा",
+    "बिंग और याहू"
+  ],
+  "source_published_at": "2026-10-29T12:10:31-04:00",
+  "id": "e1215293558d",
+  "source": "https://www.bleepingcomputer.com/news/security/chrome-extensions-with-134-million-installs-caught-hijacking-searches/",
+  "date": "2026-11-12T06:00:27.007415+00:00",
+  "source_title": "Chrome extensions with 13.4 million installs caught hijacking searches",
+  "category": "technology",
+  "image_kind": "conceptual"
+}

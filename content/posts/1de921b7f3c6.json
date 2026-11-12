@@ -1,0 +1,31 @@
+{
+  "en_title": "Chinese Hackers Chain PHP2Shell to Root Servers and Breach US Government-Affiliated Firewalls",
+  "hi_title": "चीनी हैकर्स ने सर्वर को रूट करने और अमेरिकी सरकार से जुड़ी फ़ायरवॉल में सेंध लगाने के लिए PHP2Shell का किया उपयोग",
+  "en_body": "Cybersecurity researchers report the first confirmed compromises involving the PHP2Shell vulnerability, with attackers successfully targeting organizations linked to the US government. According to reports, threat actors chained PHP2Shell with a Linux kernel privilege-escalation flaw to gain root access and persistent control.\n\n## The Attack Chain and Methodology\n\nSecurity firm Dream stated that the campaign began around October 23, 2026, targeting firms across the US, Japan, Taiwan, and South Korea before focusing on Palo Alto Networks devices running older, vulnerable versions of PAN-OS. \n\n* **Initial Access:** Attackers utilized an unauthenticated HTTPS request to an exposed management interface.\n* **Privilege Escalation:** The PHP2Shell flaw was chained with Fragnesia (CVE-2026-46300), a local privilege escalation vulnerability disclosed earlier in May 2026.\n* **Execution:** Attackers executed roughly 40 custom post-exploitation scripts, progressing from initial compromise to internal network tunneling and Active Directory attacks in under 15 minutes.\n\n## Tooling and Intelligence Gathering\n\nResearchers discovered evidence of tool usage during the incidents, including the FOFA search engine, which helped attackers allegedly identify approximately 19,000 internet-connected Palo Alto Networks firewalls. Evidence of AI assistance—such as Claude Code, AIscan, and API keys for Chinese models DeepSeek and Kimi—was also found, though analysts believe the attacks were not fully automated.\n\n## Verification and Practical Implications\n\nOrganizations utilizing Palo Alto Networks firewalls or PHP-based applications should review exposure management interfaces and apply available vendor patches. Original announcements and technical indicators can be verified through cybersecurity advisories issued by security firms and official vendor channels.",
+  "hi_body": "साइबर सुरक्षा शोधकर्ताओं ने PHP2Shell कमज़ोरी से जुड़े पहले पुख्ता हमलों की सूचना दी है, जिसमें हमलावरों ने अमेरिकी सरकार से जुड़े संगठनों को निशाना बनाया है। रिपोर्ट के अनुसार, हमलावरों ने रूट एक्सेस और निरंतर नियंत्रण प्राप्त करने के लिए PHP2Shell को लिनक्स कर्नेल प्रिविलेज-एस्केलेशन फ़्लॉ के साथ जोड़ा।\n\n## हमला श्रृंखला और कार्यप्रणाली\n\nसुरक्षा फर्म ड्रीम ने बताया कि यह अभियान लगभग 23 अक्टूबर, 2026 को शुरू हुआ, जिसमें अमेरिका, जापान, ताइवान और दक्षिण कोरिया की फर्मों को निशाना बनाया गया और बाद में पैन-ओएस (PAN-OS) के पुराने, संवेदनशील संस्करणों पर चलने वाले पालो अल्टो नेटवर्क्स (Palo Alto Networks) उपकरणों पर ध्यान केंद्रित किया गया।\n\n* **प्रारंभिक प्रवेश:** हमलावरों ने एक असुरक्षित प्रबंधन इंटरफ़ेस पर अनधिकृत HTTPS अनुरोध का उपयोग किया।\n* **अधिकार वृद्धि:** PHP2Shell की कमज़ोरी को फ्रेग्नेसिया (Fragnesia - CVE-2026-46300) के साथ जोड़ा गया, जो मई 2026 में सामने आई एक स्थानीय प्रिविलेज एस्केलेशन कमज़ोरी है।\n* **निष्पादन:** हमलावरों ने लगभग 40 कस्टम पोस्ट-एक्सप्लॉइटेशन स्क्रिप्ट निष्पादित कीं, जो 15 मिनट से भी कम समय में प्रारंभिक समझौते से आंतरिक नेटवर्क टनलिंग और एक्टिव डायरेक्टरी हमलों तक बढ़ गईं।\n\n## टूलिंग और खुफिया जानकारी\n\nशोधकर्ताओं ने घटनाओं के दौरान टूल के उपयोग के प्रमाण खोजे, जिसमें FOFA सर्च इंजन शामिल है, जिससे हमलावरों द्वारा इंटरनेट से जुड़े लगभग 19,000 पालो अल्टो नेटवर्क्स फ़ायरवॉल की पहचान करने में मदद मिलने का दावा किया गया। क्लाउड कोड (Claude Code), AIscan, और चीनी मॉडल DeepSeek तथा Kimi की API कुंजियों जैसे एआई सहायता के प्रमाण भी मिले, हालांकि विश्लेषकों का मानना है कि हमले पूरी तरह से स्वचालित नहीं थे।\n\n## सत्यापन और व्यावहारिक निहितार्थ\n\nपालो अल्टो नेटवर्क्स फ़ायरवॉल या PHP-आधारित एप्लिकेशन का उपयोग करने वाले संगठनों को एक्सपोज़र प्रबंधन इंटरफ़ेस की समीक्षा करनी चाहिए और उपलब्ध वेंडर पैच लागू करने चाहिए। मूल घोषणाओं और तकनीकी संकेतकों को सुरक्षा फर्मों और आधिकारिक वेंडर चैनलों द्वारा जारी साइबर सुरक्षा सलाहकारों के माध्यम से सत्यापित किया जा सकता है।",
+  "en_meta": "Researchers report the first confirmed PHP2Shell compromises, with attackers chaining the vulnerability to root 25 servers and breach US-linked firewalls.",
+  "hi_meta": "शोधकर्ताओं ने पहले पुख्ता PHP2Shell हमलों की सूचना दी है, जिसमें हमलावरों ने 25 सर्वरों को रूट किया और अमेरिकी सरकार से जुड़ी फ़ायरवॉल को तोड़ा।",
+  "en_keywords": [
+    "PHP2Shell",
+    "cybersecurity",
+    "Palo Alto Networks",
+    "privilege escalation",
+    "US government",
+    "vulnerability"
+  ],
+  "hi_keywords": [
+    "PHP2Shell",
+    "साइबर सुरक्षा",
+    "पालो अल्टो नेटवर्क्स",
+    "कमज़ोरी",
+    "अमेरिकी सरकार",
+    "हैकर"
+  ],
+  "source_published_at": "2026-10-30T16:05:00+00:00",
+  "id": "1de921b7f3c6",
+  "source": "https://www.techradar.com/pro/security/chinese-hackers-build-php2shell-exploit-use-it-to-root-25-servers-breach-us-government-affiliated-firewalls",
+  "date": "2026-11-12T06:00:11.030347+00:00",
+  "source_title": "Chinese hackers build PHP2SHELL exploit, use it to root 25 servers, breach US government-affiliated firewalls",
+  "category": "technology",
+  "image_kind": "conceptual"
+}
