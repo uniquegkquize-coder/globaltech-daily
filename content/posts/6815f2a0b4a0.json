@@ -1,0 +1,31 @@
+{
+  "en_title": "Critical GitLab Flaw CVE-2026-110264 Carries CVSS 10.0 Rating and Affects Versions Dating Back to 2014",
+  "hi_title": "गिटलैब में गंभीर त्रुटि CVE-2026-110264: CVSS 10.0 रेटिंग और 2014 तक के संस्करण प्रभावित",
+  "en_body": "GitLab has released security updates addressing a critical vulnerability tracked as CVE-2026-110264, which carries a maximum CVSS score of 10.0. According to the company's advisory, the flaw could theoretically allow an unauthenticated attacker to execute arbitrary code on self-managed servers under certain conditions. The issue stems from an integer overflow during the compilation of a specially crafted regular expression using Ruby's built-in Onigmo engine.\n\n### Scope and Impact\n* **Affected Versions:** Every release dating back to version 7.0, originally released in 2014.\n* **Deployment Status:** GitLab.com and managed GitLab Dedicated tenants running specified internal releases already include the fix. Only self-managed installations need to apply updates manually.\n* **Attack Status:** GitLab reported no evidence of active exploitation in the wild, and the vulnerability was not listed in the U.S. CISA known exploited vulnerabilities catalog as of October 22.\n\n### Patch Details and Backporting\nThe October 21 security release addresses the flaw across seven distinct versions simultaneously. Because the vulnerability affects software branches far older than GitLab's standard support policy—which normally covers only the current release and the previous two monthly versions (19.5, 19.4, and 19.3)—the company backporting the fix to older builds including 18.11.13, 19.0.10, 19.1.9, and 19.2.9.\n\nAdministrators who applied patches on October 12 for a previous advisory must update again, as those earlier fixes only covered versions 19.2 and later, leaving instances within the newly released patch levels vulnerable.\n\n### Mitigation and Verification\n* **No Workaround:** GitLab has not provided an interim configuration workaround, making immediate patching the sole confirmed protection.\n* **Detection Rules:** GitLab published two open-ствие detection rules named \"Onigmo native worker crash\" and \"Org mode render error burst\" using the Sigma format within its TLDR framework to help administrators monitor logs for exploitation attempts.\n* **Upgrade Considerations:** Upgrades to versions 19.4.3 and 19.3.6 include database migrations. Single-node servers will experience downtime during the process, while multi-node architectures can utilize zero-downtime procedures.\n\nTo verify announcements and apply updates, administrators should consult the official GitLab security advisory and review application logs using the provided detection rules.",
+  "hi_body": "गिटलैब ने एक गंभीर सुरक्षा त्रुटि (CVE-2026-110264) को ठीक करने के लिए अपडेट जारी किए हैं, जिसे अधिकतम CVSS स्कोर 10.0 दिया गया है। कंपनी की सलाह के अनुसार, यह खामी कुछ निश्चित परिस्थितियों में एक अप्रमाणित हमलावर को सेल्फ-मैनेज्ड सर्वर पर मनमाना कोड निष्पादित करने की अनुमति दे सकती है। यह समस्या रूबी के अंतर्निहित Onigmo इंजन का उपयोग करके एक विशेष रूप से तैयार नियमित अभिव्यक्ति (regular expression) के संकलन के दौरान पूर्णांक ओवरफ्लो (integer overflow) के कारण उत्पन्न होती है।\n\n### दायरा और प्रभाव\n* **प्रभावित संस्करण:** वर्ष 2014 में जारी संस्करण 7.0 से लेकर अब तक के सभी संस्करण।\n* **तैनाती की स्थिति:** GitLab.com और निर्दिष्ट आंतरिक रिलीज़ चलाने वाले GitLab Dedicated टेनेंट्स में पहले से ही सुधार शामिल है। केवल सेल्फ-मैनेज्ड इंस्टॉलेशन को मैन्युअल रूप से अपडेट लागू करने की आवश्यकता है।\n* **हमले की स्थिति:** गिटलैब ने सक्रिय शोषण का कोई प्रमाण नहीं बताया है, और 22 अक्टूबर तक यह कमजोरी अमेरिकी CISA की ज्ञात शोषित कमजोरियों की सूची में शामिल नहीं थी।\n\n### पैच विवरण और बैकपोर्टिंग\n21 अक्टूबर का सुरक्षा रिलीज़ एक साथ सात अलग-अलग संस्करणों में इस खामी को दूर करता है। चूँकि यह कमज़ोरी गिटलैब की मानक समर्थन नीति से कहीं पुराने सॉफ्टवेयर शाखाओं को प्रभावित करती है—जो सामान्यतः केवल वर्तमान रिलीज़ और पिछले दो मासिक संस्करणों (19.5, 19.4 और 19.3) को कवर करती है—कंपनी ने 18.11.13, 19.0.10, 19.1.9 और 19.2.9 सहित पुराने बिल्ड्स के लिए भी इस फिक्स को बैकपोर्ट किया है।\n\nजिन प्रशासकों ने पिछले अपडेट के लिए 12 अक्टूबर को पैच लागू किया था, उन्हें फिर से अपडेट करना होगा, क्योंकि वे पिछले फिक्स केवल संस्करण 19.2 और बाद के संस्करणों को कवर करते थे।\n\n### शमन और सत्यापन\n* **कोई वर्कअराउंड नहीं:** गिटलैब ने कोई अंतरिम कॉन्फ़िगरेशन वर्कअराउंड प्रदान नहीं किया है, जिससे तत्काल पैचिंग ही एकमात्र निश्चित सुरक्षा उपाय बनती है।\n* **डिटेक्शन नियम:** प्रशासकों को शोषण के प्रयासों के लिए लॉग की निगरानी करने में मदद करने के लिए गिटलैब ने अपने TLDR फ्रेमवर्क के भीतर सिग्मा प्रारूप का उपयोग करके \"Onigmo native worker crash\" और \"Org mode render error burst\" नामक दो ओपन-सोर्स डिटेक्शन नियम प्रकाशित किए हैं।\n* **अपग्रेड विचार:** संस्करण 19.4.3 और 19.3.6 के अपग्रेड में डेटाबेस माइग्रेशन शामिल हैं। सिंगल-नोड सर्वर को प्रक्रिया के दौरान डाउनटाइम का सामना करना पड़ेगा, जबकि मल्टी-नोड आर्किटेक्चर ज़ीरो-डाउनटाइम प्रक्रियाओं का उपयोग कर सकते हैं।\n\nघोषणाओं को सत्यापित करने और अपडेट लागू करने के लिए, प्रशासकों को आधिकारिक गिटलैब सुरक्षा सलाह से परामर्श करना चाहिए और प्रदान किए गए डिटेक्शन नियमों का उपयोग करके एप्लिकेशन लॉग की समीक्षा करनी चाहिए।",
+  "en_meta": "GitLab released patches for a critical CVSS 10.0 vulnerability, CVE-2026-110264, affecting all self-managed versions back to 7.0. Learn details and upgrade…",
+  "hi_meta": "गिटलैब ने संस्करण 7.0 तक सभी सेल्फ-मैनेज्ड संस्करणों को प्रभावित करने वाली गंभीर CVSS 10.0 त्रुटि CVE-2026-110264 के लिए पैच जारी किए हैं।",
+  "en_keywords": [
+    "GitLab",
+    "CVE-2026-110264",
+    "CVSS 10.0",
+    "remote code execution",
+    "security advisory",
+    "Onigmo regular expression"
+  ],
+  "hi_keywords": [
+    "गिटलैब",
+    "CVE-2026-110264",
+    "CVSS 10.0",
+    "सुरक्षा सलाह",
+    "रिमोट कोड निष्पादन",
+    "Onigmo"
+  ],
+  "source_published_at": "2026-10-22T00:27:00+05:30",
+  "id": "6815f2a0b4a0",
+  "source": "https://thehackernews.com/2026/10/critical-gitlab-flaw-cvss-100-could.html",
+  "date": "2026-11-12T07:58:00.098436+00:00",
+  "source_title": "Critical GitLab Flaw (CVSS 10.0) Could Allow Unauthenticated RCE Across 12 Years of Releases",
+  "category": "technology",
+  "image_kind": "conceptual"
+}

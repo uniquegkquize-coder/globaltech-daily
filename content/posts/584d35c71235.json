@@ -1,0 +1,31 @@
+{
+  "en_title": "Critical FortiSIEM Flaw Gets Public Exploit PoC for Unauthenticated Remote Code Execution",
+  "hi_title": "क्रिटिकल FortiSIEM खामी के लिए अनऑथेंटिकेटेड रिमोट कोड एक्जीक्यूशन हेतु पब्लिक एक्सप्लॉइट PoC जारी",
+  "en_body": "Cybersecurity researchers have publicly released a proof-of-concept (PoC) exploit for a critical security flaw affecting Fortinet FortiSIEM, which carries a CVSS score of 9.4 and is tracked as CVE-2026-106173. The vulnerability involves an unauthenticated path traversal weakness that can potentially lead to arbitrary remote code execution. Fortinet released patches for the affected versions last week.\n\nAccording to findings published by Horizon3.ai, the vulnerability stems from how the gRPC service listening on TCP port 27918 handles connections. Specifically, the SendQueryResult() function processes untrusted metadata without adequate path validation.\n\n## Technical Details of the Exploit Mechanism\n\n* **Path Traversal:** Attackers can use directory traversal sequences such as `../` within the user-supplied \"query-id\" parameter.\n* **Null Byte Injection:** By embedding a null byte (`\\0`) in the parameter, the operating system treats it as a string terminator, causing the software's automatically appended file name suffix to be ignored.\n* **File Overwriting:** This allows attackers to target existing files, such as a Redis health check shell script executed periodically by a cron job, or to create new files using multiple requests.\n\nZach Hanley, Chief Attack Engineer at Horizon3.ai, noted that the write operation lands precisely on the path preceding the null byte, overwriting the file in place while retaining original ownership and permissions.\n\n## Advisory Updates and Verification\n\nThe Canadian Centre for Cyber Security has updated its advisory regarding CVE-2026-106173, indicating that the vulnerability is being exploited in the wild based on open-source reporting.\n\n* **Action Items:** Organizations utilizing Fortinet FortiSIEM should verify their software versions against official vendor bulletins.\n* **Mitigation:** Apply the security patches provided by Fortinet as soon as possible.\n* **Verification:** Check vendor advisories directly through official channels to confirm patch levels and remediation steps.",
+  "hi_body": "साइबर सुरक्षा शोधकर्ताओं ने Fortinet FortiSIEM को प्रभावित करने वाली एक क्रिटिकल सुरक्षा खामी के लिए पब्लिक रूप से प्रूफ-ऑफ-कांसेप्ट (PoC) एक्सप्लॉइट जारी किया है। इस कमज़ोरी को CVE-2026-106173 के रूप में ट्रैक किया गया है और इसका CVSS स्कोर 9.4 है। यह एक क्रिटिकल पाथ ट्रैवर्सल खामी है, जो बिना प्रमाणीकरण (unauthenticated) के हमलावरों को अनधिकृत कोड या कमांड निष्पादित करने की अनुमति दे सकती है। Fortinet ने पिछले हफ्ते प्रभावित वर्जन्स के लिए पैच जारी किए थे।\n\nHorizon3.ai द्वारा प्रकाशित जानकारी के अनुसार, यह समस्या TCP पोर्ट 27918 पर सुनने वाली gRPC सर्विस से जुड़ने वाले अनऑथेंटिकेटेड हमलावर से जुड़ी है। SendQueryResult() फ़ंक्शन बिना उचित पाथ वैलिडेशन के अनट्रस्टेड मेटाडेटा को प्रोसेस करता है।\n\n## एक्सप्लॉइट तंत्र के तकनीकी विवरण\n\n* **पाथ ट्रैवर्सल:** हमलावर यूजर द्वारा प्रदान किए गए \"query-id\" पैरामीटर के भीतर `../` जैसे डायरेक्टरी ट्रैवर्सल सीक्वेंस का उपयोग कर सकते हैं।\n* **नल बाइट इंजेक्शन:** पैरामीटर में नल बाइट (`\\0`) को एम्बेड करके, ऑपरेटिंग सिस्टम इसे स्ट्रिंग टर्मिनेटर के रूप में मानता है, जिससे सॉफ़्टवेयर द्वारा स्वचालित रूप से जोड़े गए फ़ाइल नाम प्रत्यय (suffix) को अनदेखा कर दिया जाता है।\n* **फ़ाइल ओवरराइटिंग:** यह हमलावरों को मौजूदा फ़ाइलों को लक्षित करने की अनुमति देता है, जैसे कि Redis हेल्थ चेक शेल स्क्रिप्ट जिसे क्रॉन जॉब द्वारा समय-समय पर निष्पादित किया जाता है।\n\nHarrison3.ai के चीफ अटैक इंजीनियर ज़ैक हैनले ने बताया कि राइट ऑपरेशन नल बाइट से पहले के पाथ पर सटीक रूप से भूमि करता है, जिससे मूल स्वामित्व और अनुमतियों को बनाए रखते हुए फ़ाइल को उसकी जगह पर ओवरराइट किया जाता है।\n\n## एडवाइजरी अपडेट और सत्यापन\n\nकनाडाई सेंटर फॉर साइबर सिक्योरिटी (Canadian Centre for Cyber Security) ने CVE-2026-106173 के लिए अपनी एडवाइजरी को अपडेट किया है, जिसमें ओपन-सोर्स रिपोर्टिंग का हवाला देते हुए कहा गया है कि इस खामी का सक्रिय रूप से फायदा उठाया जा रहा है।\n\n* **कार्रवाई योग्य कदम:** Fortinet FortiSIEM का उपयोग करने वाले संगठनों को आधिकारिक वेंडर बुलेटिन के मुकाबले अपने सॉफ़्टवेयर वर्जन्स को सत्यापित करना चाहिए।\n* **उपाय (Mitigation):** Fortinet द्वारा प्रदान किए गए सुरक्षा पैच को जल्द से जल्द लागू करें।\n* **सत्यापन:** पैच स्तरों और सुधार के चरणों की पुष्टि करने के लिए आधिकारिक चैनलों के माध्यम से सीधे वेंडर एडवाइजरी की जाँच करें।",
+  "en_meta": "Read about the critical Fortinet FortiSIEM vulnerability CVE-2026-106173, public PoC exploit details, technical mechanics, and official advisories.",
+  "hi_meta": "Fortinet FortiSIEM की क्रिटिकल खामी CVE-2026-106173, पब्लिक PoC एक्सप्लॉइट विवरण और सुरक्षा सलाह के बारे में पढ़ें।",
+  "en_keywords": [
+    "FortiSIEM",
+    "CVE-2026-106173",
+    "Fortinet",
+    "remote code execution",
+    "Horizon3.ai",
+    "path traversal"
+  ],
+  "hi_keywords": [
+    "FortiSIEM",
+    "CVE-2026-106173",
+    "Fortinet",
+    "रिमोट कोड एक्जीक्यूशन",
+    "Horizon3.ai",
+    "साइबर सुरक्षा"
+  ],
+  "source_published_at": "2026-10-20T21:08:00+05:30",
+  "id": "584d35c71235",
+  "source": "https://thehackernews.com/2026/10/critical-fortisiem-flaw-gets-public.html",
+  "date": "2026-11-12T07:56:05.590795+00:00",
+  "source_title": "Critical FortiSIEM Flaw Gets Public Exploit PoC for Unauthenticated Remote Code Execution",
+  "category": "technology",
+  "image_kind": "conceptual"
+}
