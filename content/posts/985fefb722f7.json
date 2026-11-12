@@ -1,0 +1,31 @@
+{
+  "en_title": "Android SMS of Death Vulnerability Discovered: What We Know About the Crash Bug and Coming Fixes",
+  "hi_title": "एंड्रॉइड एसएमएस ऑफ डेथ Vulnerability का खुलासा: क्रैश बग और फिक्स से जुड़ी जानकारी",
+  "en_body": "A newly disclosed Android vulnerability known as the \"SMS of Death\" allows specially crafted text messages to silently crash a phone’s calling service and potentially cause reboot loops. Security researcher Mark Blaszczyk discovered the bug, which affects devices running older vulnerable code dating back to Android 12.\n\nAccording to reported details, the malicious messages do not appear in a user's inbox, meaning there is no visual warning. Instead, the input causes the system handling phone calls to fail, potentially disconnecting active conversations, including emergency calls. Repeated transmission of these messages can trigger persistent crashes or bootloops, requiring technical intervention to recover the device.\n\n## Discovery, Timeline, and Google's Response\n\n* **Discovery:** Researcher Mark Blaszczyk reported the flaw to Google on May 5, though he stated the initial reports were dismissed as non-security issues.\n* **Public Disclosure:** Frustrated by the initial handling, Blaszczyk publicly disclosed the vulnerability and a working demonstration on October 29.\n* **Fix Development:** Code records indicate Google developed a fix on June 15, and GrapheneOS noted that the fix was distributed in security previews in July.\n* **Current Status:** The issue is tracked as CVE-2026-58882 with a Critical severity rating and is reportedly slated for the November Android Security Bulletin, with some versions receiving updates in October.\n\n## Practical Implications and How to Verify\n\nWhile Google engineers independently developed a fix months before the public disclosure, rollout timelines across different manufacturers and carrier networks can vary. Older Android devices that no longer receive official security updates may remain exposed to the vulnerability.\n\n* **Verification:** Users should check their device's security patch level by navigating to Settings > About Phone > Android Version > Android Security Update.\n* **Protection:** Installing the latest available security updates provided by your device manufacturer or carrier is the recommended method to ensure protection against known flaws.\n\nReaders should verify original announcements directly through official Google security bulletins and manufacturer support channels.",
+  "hi_body": "एंड्रॉइड में \"एसएमएस ऑफ डेथ\" के रूप में पहचानी जाने वाली एक नई Vulnerability का खुलासा हुआ है, जिसके माध्यम से विशेष रूप से तैयार किए गए टेक्स्ट मैसेज फोन की कॉलिंग सर्विस को चुपचाप क्रैश कर सकते हैं और रीबूट लूप का कारण बन सकते हैं। सुरक्षा शोधकर्ता मार्क ब्लास्ज़्ज़िक (Mark Blaszczyk) ने इस बग की खोज की है, जो एंड्रॉइड 12 से चली आ रही पुरानी कमजोर कोड वाली डिवाइसों को प्रभावित करता है।\n\nरिपोर्ट किए गए विवरण के अनुसार, ये मैसियस मैसेज यूजर के इनबॉक्स में दिखाई नहीं देते हैं, जिससे कोई दृश्य चेतावनी नहीं मिलती है। इसके बजाय, यह इनपुट फोन कॉल संभालने वाले सिस्टम को विफल कर देता है, जिससे आपातकालीन कॉल सहित सक्रिय बातचीत डिस्कनेक्ट हो सकती है। ऐसे संदेशों को बार-बार भेजने से लगातार क्रैश या बूटलूप हो सकते हैं, जिन्हें ठीक करने के लिए तकनीकी सहायता की आवश्यकता हो सकती है।\n\n## खोज, समयरेखा और गूगल की प्रतिक्रिया\n\n* **खोज:** शोधकर्ता मार्क ब्लास्ज़्ज़िक ने 5 मई को गूगल को इस कमी की सूचना दी थी, हालांकि उन्होंने बताया कि शुरुआती रिपोर्टों को गैर-सुरक्षा मुद्दों के रूप में खारिज कर दिया गया था।\n* **सार्वजनिक खुलासा:** शुरुआती प्रतिक्रिया से निराश होकर, ब्लास्ज़्ज़िक ने 29 अक्टूबर को सार्वजनिक रूप से इस Vulnerability का खुलासा किया और एक कार्यशील प्रदर्शन जारी किया।\n* **फिक्स का विकास:** कोड रिकॉर्ड से संकेत मिलता है कि गूगल ने 15 जून को एक फिक्स विकसित किया था, और GrapheneOS ने उल्लेख किया कि जुलाई में सुरक्षा पूर्वावलोकन (security previews) में फिक्स वितरित किया गया था।\n* **वर्तमान स्थिति:** इस समस्या को CVE-2026-58882 के रूप में ट्रैक किया गया है, इसे क्रिटिकल गंभीरता रेटिंग दी गई है, और यह नवंबर के एंड्रॉइड सिक्योरिटी बुलेटिन में शामिल होने के लिए निर्धारित है।\n\n## व्यावहारिक निहितार्थ और कैसे जांच करें\n\nजबकि गूगल के इंजीनियरों ने सार्वजनिक खुलासे से महीने पहले स्वतंत्र रूप से एक फिक्स विकसित कर लिया था, विभिन्न निर्माताओं और वाहक नेटवर्क पर रोलआउट की समयरेखा भिन्न हो सकती है। पुरानी एंड्रॉइड डिवाइसें जिन्हें अब आधिकारिक सुरक्षा अपडेट नहीं मिलते हैं, वे इस Vulnerability के संपर्क में बनी रह सकती हैं।\n\n* **सत्यापन:** उपयोगकर्ता सेटिंग्स > अबाउट फोन > एंड्रॉइड वर्जन > एंड्रॉइड सिक्योरिटी अपडेट में जाकर अपने डिवाइस के सुरक्षा पैच स्तर की जांच कर सकते हैं।\n* **सुरक्षा:** ज्ञात कमियों से सुरक्षा सुनिश्चित करने के लिए अपने डिवाइस निर्माता या वाहक द्वारा प्रदान किए गए नवीनतम उपलब्ध सुरक्षा अपडेट को स्थापित करना अनुशंसित तरीका है।\n\nपाठकों को आधिकारिक गूगल सुरक्षा बुलेटिन और निर्माता सहायता चैनलों के माध्यम से मूल घोषणाओं को सीधे सत्यापित करना चाहिए।",
+  "en_meta": "Learn about the newly disclosed Android SMS of Death vulnerability, its impact on calling services, CVE-2026-58882 details, and security patch timelines.",
+  "hi_meta": "एंड्रॉइड एसएमएस ऑफ डेथ Vulnerability, कॉलिंग सेवाओं पर इसके प्रभाव, CVE-2026-58882 और सुरक्षा पैच समयरेखा के बारे में जानें।",
+  "en_keywords": [
+    "Android vulnerability",
+    "SMS of Death",
+    "CVE-2026-58882",
+    "Mark Blaszczyk",
+    "Google security patch",
+    "Android crash bug"
+  ],
+  "hi_keywords": [
+    "एंड्रॉइड Vulnerability",
+    "एसएमएस ऑफ डेथ",
+    "CVE-2026-58882",
+    "मार्क ब्लास्ज़्ज़िक",
+    "गूगल सुरक्षा पैच",
+    "एंड्रॉइड क्रैश बग"
+  ],
+  "source_published_at": "2026-10-30T10:33:32+00:00",
+  "id": "985fefb722f7",
+  "source": "https://www.androidauthority.com/android-sms-of-death-google-fix-3729929/",
+  "date": "2026-11-12T12:38:51.359335+00:00",
+  "source_title": "Android’s SMS of Death bug can knock out your phone, but a fix is coming soon",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}

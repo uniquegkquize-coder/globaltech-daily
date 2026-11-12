@@ -1,0 +1,31 @@
+{
+  "en_title": "GitHub Expands Public Monitoring with Triage, Validity Checks, API, and Webhooks",
+  "hi_title": "GitHub ने ट्राइएज, वैधता जांच, API और वेबहुक के साथ पब्लिक मॉनिटरिंग का विस्तार किया",
+  "en_body": "GitHub announced updates to its public monitoring features for enterprise security dashboards, adding alert management, automated validity checks, REST API access, and enterprise webhooks. According to the announcement, these capabilities are currently available in public preview for GitHub Enterprise Cloud customers.\n\nPublic monitoring is included at no additional cost for organizations with a GitHub Advanced Security or GitHub Secret Protection license. Enterprise administrators and security managers can enable and configure these settings directly from the enterprise security dashboard.\n\n## Core Alert Management Features\n\nEnterprise security teams can now triage findings using expanded management options:\n\n* **Dismiss and Reopen:** Close alerts as Dismissed or Fixed with optional explanatory comments, or reopen them if circumstances change.\n* **Activity Timeline:** Track an audit trail detailing all actions and state changes applied to an alert.\n* **Filter and Sort:** Narrow down alerts by repository, committer, secret type, attribution method, and state to prioritize relevant exposures.\n\nGitHub clarifies that closing an alert updates its state within the enterprise dashboard only. It does not automatically revoke the exposed credential or remove the leaked data from the public repository.\n\n## Automated Validity Checks\n\nThe update introduces ongoing, automated token validity checks for supported secret types. Alerts categorize credentials as Active, Inactive, or Unknown, helping security teams identify and prioritize live tokens that pose immediate risks.\n\n## Integration via API and Webhooks\n\nTo support custom incident response workflows, GitHub introduced programmatic access methods:\n\n* **REST API:** Enterprise admins and security managers can query attributed findings programmatically to retrieve metadata, secret types, attribution details, and exposed locations.\n* **Webhooks:** Organizations can subscribe to enterprise-level webhook events to receive real-time notifications when newly detected leaks are attributed to them.\n\n## Practical Implications and Verification\n\nThese features assist enterprises in managing leaked secrets at scale by combining triage workflows with automated validation and external tool integration. Teams can verify original announcements, review technical guides, and participate in discussions through the GitHub Community or by subscribing to the official developer newsletter.",
+  "hi_body": "GitHub ने अपने एंटरप्राइज सिक्योरिटी डैशबोर्ड के लिए पब्लिक मॉनिटरिंग फीचर्स में अपडेट की घोषणा की है, जिसमें अलर्ट प्रबंधन, स्वचालित वैधता जांच, REST API एक्सेस और एंटरप्राइज वेबहुक शामिल हैं। घोषणा के अनुसार, ये क्षमताएं वर्तमान में GitHub Enterprise Cloud ग्राहकों के लिए पब्लिक प्रीव्यू में उपलब्ध हैं।\n\nGitHub Advanced Security या GitHub Secret Protection लाइसेंस वाले संगठनों के लिए पब्लिक मॉनिटरिंग बिना किसी अतिरिक्त लागत के शामिल है। एंटरप्राइज प्रशासक और सुरक्षा प्रबंधक सीधे एंटरप्राइज सिक्योरिटी डैशबोर्ड से इन सेटिंग्स को सक्षम और प्रबंधित कर सकते हैं।\n## मुख्य अलर्ट प्रबंधन विशेषताएं\n\nएंटरप्राइज सुरक्षा टीमें अब विस्तारित प्रबंधन विकल्पों का उपयोग करके ट्राइएज कर सकती हैं:\n\n* **खारिज करें और फिर से खोलें:** वैकल्पिक टिप्पणियों के साथ अलर्ट को खारिज या ठीक किया गया के रूप में बंद करें, या स्थितियां बदलने पर उन्हें फिर से खोलें।\n* **गतिविधि समयरेखा:** किसी अलर्ट पर की गई सभी कार्रवाइयों और स्थिति परिवर्तनों का ऑडिट ट्रेल ट्रैक करें।\n* **फ़िल्टर और सॉर्ट करें:** प्रासंगिक एक्सपोजर को प्राथमिकता देने के लिए रिपॉजिटरी, कमिटर्स, सीक्रेट प्रकार, एट्रिब्यूशन विधि और स्थिति के आधार पर अलर्ट को फ़िल्टर करें।\n\nGitHub स्पष्ट करता है कि किसी अलर्ट को बंद करने से केवल एंटरप्राइज डैशबोर्ड के भीतर उसकी स्थिति अपडेट होती है। यह स्वचालित रूप से उजागर क्रेडेंशियल को रद्द नहीं करता है या सार्वजनिक रिपॉजिटरी से लीक डेटा को नहीं हटाता है।\n## स्वचालित वैधता जांच\n\nयह अपडेट समर्थित सीक्रेट प्रकारों के लिए चल रही, स्वचालित टोकन वैधता जांच पेश करता है। अलर्ट क्रेडेंशियल को सक्रिय, निष्क्रिय या अज्ञात के रूप में वर्गीकृत करते हैं, जिससे सुरक्षा टीमों को लाइव टोकन की पहचान करने और प्राथमिकता देने में मदद मिलती है जो तत्काल जोखिम पैदा करते हैं।\n## API और वेबहुक के माध्यम से एकीकरण\n\nकस्टम घटना प्रतिक्रिया वर्कफ़्लो का समर्थन करने के लिए, GitHub ने प्रोग्रामेटिक एक्सेस के तरीके पेश किए हैं:\n\n* **REST API:** एंटरप्राइज एडमिन और सुरक्षा प्रबंधक मेटाडेटा, सीक्रेट प्रकार, एट्रिब्यूशन विवरण और उजागर स्थानों को पुनर्प्राप्त करने के लिए एट्रिब्यूटेड निष्कर्षों को प्रोग्रामेटिक रूप से क्वेरी कर सकते हैं।\n* **वेबहुक:** संगठन वास्तविक समय की सूचनाएं प्राप्त करने के लिए एंटरप्राइज-स्तरीय वेबहुक घटनाओं की सदस्यता ले सकते हैं जब नए पाए गए लीक उनके संगठन से जुड़े होते हैं।\n## व्यावहारिक निहितार्थ और सत्यापन\n\nये विशेषताएं ट्राइएज वर्कफ़्लो को स्वचालित सत्यापन और बाहरी टूल एकीकरण के साथ जोड़कर बड़े पैमाने पर लीक हुए रहस्यों को प्रबंधित करने में उद्यमों की सहायता करती हैं। टीमें GitHub कम्युनिटी के माध्यम से मूल घोषणाओं को सत्यापित कर सकती हैं, तकनीकी मार्गदर्शिका की समीक्षा कर सकती हैं, या आधिकारिक डेवलपर न्यूज़लेटर की सदस्यता ले सकती हैं।",
+  "en_meta": "GitHub adds alert triage, validity checks, REST API, and webhooks to public monitoring in public preview for GitHub Enterprise Cloud customers.",
+  "hi_meta": "GitHub Enterprise Cloud ग्राहकों के लिए पब्लिक प्रीव्यू में अलर्ट ट्राइएज, वैधता जांच, REST API और वेबहुक जोड़े गए।",
+  "en_keywords": [
+    "GitHub",
+    "public monitoring",
+    "secret scanning",
+    "alert management",
+    "REST API",
+    "webhooks"
+  ],
+  "hi_keywords": [
+    "गिटहब",
+    "पब्लिक मॉनिटरिंग",
+    "सीक्रेट स्कैनिंग",
+    "REST API",
+    "वेबहुक",
+    "सुरक्षा डैशबोर्ड"
+  ],
+  "source_published_at": "2026-10-23T17:17:58+00:00",
+  "id": "2780f5565f42",
+  "source": "https://github.blog/changelog/2026-10-23-public-monitoring-adds-triage-validity-api-and-webhooks/",
+  "date": "2026-11-12T12:39:02.980821+00:00",
+  "source_title": "Public monitoring adds triage, validity, API, and webhooks - The GitHub Blog",
+  "category": "apps-software",
+  "image_kind": "conceptual"
+}
