@@ -1,25 +1,25 @@
 {
-  "published": 4,
-  "updated": 1,
+  "published": 5,
+  "updated": 4,
   "target": 8,
   "missing": {
-    "colleges": 2,
+    "colleges": 1,
     "bikes": 2
   },
   "categories": {
     "colleges": {
-      "new": 0,
+      "new": 1,
       "updated": 1,
-      "eligible_new": 0,
+      "eligible_new": 1,
       "eligible_updates": 1,
-      "shortfall": 2,
+      "shortfall": 1,
       "reasons": {
-        "considered": 302,
+        "considered": 317,
         "already_published_unchanged": 17,
-        "insufficient verified descriptive fields": 85,
-        "identifier URL is not specification evidence": 199
+        "insufficient verified descriptive fields": 89,
+        "identifier URL is not specification evidence": 209
       },
-      "rejected_count": 284,
+      "rejected_count": 298,
       "rejected_sample": [
         {
           "name": "Bryant University",
@@ -150,13 +150,13 @@
     },
     "phones": {
       "new": 2,
-      "updated": 0,
-      "eligible_new": 1005,
-      "eligible_updates": 0,
+      "updated": 3,
+      "eligible_new": 1003,
+      "eligible_updates": 3,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 135,
+        "already_published_unchanged": 134,
         "insufficient verified descriptive fields": 104,
         "identifier URL is not specification evidence": 637
       },
@@ -292,16 +292,16 @@
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 1350,
+      "eligible_new": 1348,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 10905,
-        "already_published_unchanged": 137,
-        "insufficient verified descriptive fields": 1046,
-        "identifier URL is not specification evidence": 8372
+        "considered": 11245,
+        "already_published_unchanged": 139,
+        "insufficient verified descriptive fields": 1072,
+        "identifier URL is not specification evidence": 8686
       },
-      "rejected_count": 9418,
+      "rejected_count": 9758,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -572,5 +572,5 @@
       ]
     }
   },
-  "date": "2026-11-11T22:29:42.131062+00:00"
+  "date": "2026-11-12T01:35:56.532181+00:00"
 }
