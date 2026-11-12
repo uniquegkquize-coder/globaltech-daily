@@ -1,843 +1,799 @@
 {
   "colleges": {
-    "cooldown": 236,
-    "attempted": 78,
-    "no_new_facts": 76,
-    "price_fee_rechecked": 1,
-    "updated": 1,
-    "failures": [
-      {
-        "name": "Dhemaji Engineering College",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "California State University, Los Angeles",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Exploits University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Federal University, Wukari",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "California State University, Sacramento",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Cape Coast Technical University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Institut Sciences Campus",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "The Co-operative University of Kenya",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Management University of Africa",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Universidade Tuiuti do Paraná",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Institute for Advanced Studies in Basic Sciences",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "California Miramar University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Castelo Branco University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "University Center Monte Serrat",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Shahid Beheshti Teacher Training College",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Seinan Gakuin University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Universidade Braz Cubas",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "IIT Bombay",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Universidade da Região de Joinville",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Canisius University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Universidade de Mogi das Cruzes",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Brasil University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Gödöllő University of Agricultural Sciences",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "IIT Delhi",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "UCLA Center for Neighborhood Knowledge",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Université de Mwene-Ditu",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Uniararas",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Tobruk University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Sa'adatu Rimi College of Education",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "University of Taquari Valley",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Josai International University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Lúrio University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Oikos University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Guarulhos University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Federal University of Triângulo Mineiro",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Al Manhal University Academy of Science",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Universidade Estadual de Ciências da Saúde de Alagoas",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Cape Peninsula University of Technology",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Montes Claros State University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Dalian University of Foreign Languages",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Mato Grosso do Sul State University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Art University of Isfahan",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Osaka University of Arts",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Universidade de Ribeirão Preto",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "State University of Piauí",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Universidade Fundação Mineira de Educação e Cultura",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Islamic Azad University of Najafabad",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Instituição Toledo de Ensino",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Konan University",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Federal University of Lavras",
-        "reason": "no additional source-labelled facts available"
-      }
-    ],
-    "remaining": 3,
-    "budget_exhausted": true
-  },
-  "phones": {
-    "cooldown": 228,
+    "cooldown": 189,
     "attempted": 120,
-    "no_new_facts": 117,
-    "price_fee_rechecked": 1,
-    "updated": 2,
-    "failures": [
-      {
-        "name": "Lenovo Z2 Plus",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Acer Stream",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "LG K4 2017",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Redmi Note 4",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Sony Xperia X Compact",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Pixel",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "iPhone 15 Pro",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Alcatel Idol 4",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Nexus 6P",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "iPhone 15",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Sony Xperia Z",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Moto G (3rd generation)",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "LG V20",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Huawei G8",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Samsung Galaxy S",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Sony Xperia M5",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Sony Xperia M4 Aqua",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Moto G4",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Sony Xperia X",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "BQ Aquaris E5",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "BlackBerry Classic",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Microsoft Lumia 532",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Samsung Galaxy S7",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "LG V10",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Google Pixel 9",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "HTC One M9",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "BlackBerry Leap",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Microsoft Lumia 435",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Huawei Ascend Mate",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "HTC HD2",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Samsung Galaxy Mini 2",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Samsung Galaxy S6",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "HTC Butterfly S",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Nexus 5",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Huawei Honor 5X",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Nokia Asha 501",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Sony Ericsson Xperia X10 mini",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Nokia Lumia 625",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Sony Xperia Z Ultra",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "HTC One Mini",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Sony Ericsson Xperia Arc",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Samsung Galaxy S24",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Nokia Asha 500",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Sony Xperia ZR",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Moto X (2nd generation)",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Samsung Galaxy Xcover 7",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "HTC One Max",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Sony Xperia Z1",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Samsung Galaxy F15 5G",
-        "reason": "no additional source-labelled facts available"
-      },
-      {
-        "name": "Sony Xperia 5 V",
-        "reason": "no additional source-labelled facts available"
-      }
-    ],
-    "remaining": 1535,
-    "budget_exhausted": false
-  },
-  "cars": {
-    "cooldown": 170,
-    "attempted": 120,
-    "no_new_facts": 117,
+    "price_fee_rechecked": 5,
+    "no_new_facts": 112,
     "updated": 3,
     "failures": [
       {
-        "name": "Chevrolet Corvette C5-R",
+        "name": "Vila Velha University",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Chevrolet Corvette (C4)",
+        "name": "Universidade Vale do Rio Verde",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Chevrolet Agile",
+        "name": "Universidade Metropolitana de Santos",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Chevrolet Chevette",
+        "name": "Federal University of the Valleys of Jequitinhonha and Mucuri",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Chevrolet 490",
+        "name": "Regional University of Blumenau",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Audi A6 e-tron",
+        "name": "Vale do Rio Doce University",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Chevrolet S-10 Blazer",
+        "name": "Philipps-Universität Marburg Centrum für Nah- und Mittelost-Studien",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Toyota Carina",
+        "name": "Rio Grande do Sul State University",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Chevrolet Astro",
+        "name": "Methodist University of Piracicaba",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Cadillac ELR",
+        "name": "Universidade do Vale do Sapucaí",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Mercedes-Benz MB700",
+        "name": "University of Saint La Salle",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Chevrolet Beretta",
+        "name": "California State University, Fresno",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Skywell D11",
+        "name": "Technische Universität Berlin Institut für Technische Akustik",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Soueast A5",
+        "name": "Ministry of Minerals",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Foday Lion F22",
+        "name": "RAF International University",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Venturi Fétish",
+        "name": "New Cairo Technological University",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Chery A3",
+        "name": "Balthazar University",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Kia EV6",
+        "name": "Universidade Regional do Noroeste do Estado do Rio Grande do Sul",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Weltmeister W6",
+        "name": "Universidade Lusófona de Angola",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Borgward BX3",
+        "name": "Northrop University",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Foday Explorer",
+        "name": "Universidad Privada Telesup",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Bestune T33",
+        "name": "Mohammad Ali Jinnah University",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Dongfeng Huashen Tianlai",
+        "name": "University of Western São Paulo",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Foday Landfort",
+        "name": "INTO City University London",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Bestune NAT",
+        "name": "Universidad Tecnológica de Durango",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Hafei Zhongyi V5",
+        "name": "Pyongyang University of Mechanical Engineering",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Hawtai Lusheng E70",
+        "name": "Shandong University of Technology",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Hafei Minyi",
+        "name": "Pyongyang University of Music and Dance",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Huanghai Plutus",
+        "name": "California State Polytechnic University, Pomona",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Alvis 10/30",
+        "name": "Lao University of Health Sciences",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Hafei Xiaobawang",
+        "name": "Universidad Galileo",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "JAC V7",
+        "name": "University of Computer Studies",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Dongfeng Junfeng",
+        "name": "Universidade do Planalto Catarinense",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Huanghai Major",
+        "name": "Universidad Rural de Guatemala",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Chana CM7",
+        "name": "Islamic Republic of Iran Army University of Medical Sciences",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Renault Fluence",
+        "name": "Darul Uloom Latheefia",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Buick Rainier",
+        "name": "Angola Central Highlands University",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Maserati Grecale",
+        "name": "Sudan University College for Women",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Infiniti QX55",
+        "name": "Pacific Corporate University",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Chevrolet Trax",
+        "name": "Dely Brahim University",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Hyundai Creta",
+        "name": "International Virtual University",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Leapmotor C11",
+        "name": "Yorker International University",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "NIO ET7",
+        "name": "University of South-East Asia",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Jinbei Grand Haise",
+        "name": "Universidade do Alto Vale do Rio do Peixe",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Chevrolet S-10",
+        "name": "UNIMAR",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Mercedes-Benz W206",
+        "name": "Universidade Atlântica",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Audi Q6 e-tron",
+        "name": "Fundação do Ensino Superior de Rio Verde",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Geely Xingrui",
+        "name": "Baden-Wuerttemberg Cooperative State University Loerrach",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Aiways U6",
+        "name": "Uniandrade",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Hongqi E-HS9",
+        "name": "Université du Faso",
         "reason": "no additional source-labelled facts available"
       }
     ],
-    "remaining": 11339,
+    "remaining": 8,
+    "budget_exhausted": false
+  },
+  "phones": {
+    "cooldown": 225,
+    "attempted": 120,
+    "no_new_facts": 107,
+    "price_fee_rechecked": 12,
+    "updated": 1,
+    "failures": [
+      {
+        "name": "Nokia Lumia 510",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Nokia 5",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "HTC U Ultra",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Xiaomi Mi 5",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "LG G6",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Sony Xperia XZ",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Sony Xperia T",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "LG G5",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Samsung Galaxy J5 (2016)",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Samsung Galaxy Grand Prime",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Samsung Omnia W",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Meizu M3S",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Nokia 6",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Samsung Galaxy On7",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "iPhone 16e",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Sony Xperia Z5 Premium",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Samsung Galaxy J7 (2018)",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Honor Power2",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "OnePlus 2",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Alcatel One Touch Go Play",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Motorola Motoluxe",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Samsung Galaxy S26",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Samsung Galaxy S26 Ultra",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Realme C31",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Moto E13",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Vivo Y30",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "OnePlus 10R",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Samsung Galaxy S26+",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Nokia C12",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Pixel 4a with 5G",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Oppo A72",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Redmi Note 8 Pro",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Redmi Note 8",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Vsmart Aris",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Xiaomi Mi 11",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Huawei Y5 Prime (2018)",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Huawei Honor 10 Lite",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Shift5me",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Xiaomi Mi 8 Lite",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Redmi 8A",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Redmi Note 8T",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Honor 7A",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Moto G10",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Xiaomi Mi Play",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Samsung Galaxy M40",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Freedom Phone",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "LG CT810 Incite",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Vsmart Live 4",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "LG Optimus L7 II",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Honor 9A",
+        "reason": "no additional source-labelled facts available"
+      }
+    ],
+    "remaining": 1538,
+    "budget_exhausted": false
+  },
+  "cars": {
+    "cooldown": 194,
+    "attempted": 118,
+    "no_new_facts": 36,
+    "price_fee_rechecked": 18,
+    "errors": 2,
+    "new": 64,
+    "failures": [
+      {
+        "name": "Chevrolet Corsica",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Chevrolet Delray",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Chevrolet Classic Six",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Chevrolet Celebrity",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Buick Excelle",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Forthing T5 EVO",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Chevrolet Brookwood",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Chevrolet Bel Air",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Buick GL8",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Roewe iMAX8",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Volkswagen Talagon",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Leapmotor C16",
+        "reason": "LookupError"
+      },
+      {
+        "name": "Leapmotor B10",
+        "reason": "LookupError"
+      },
+      {
+        "name": "FAW V5",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Ford Escort RS2000",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Datsun on-Do",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Škoda Octavia RS",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "KrAZ-6446",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "UAZ-3172",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Packard Deluxe Eight",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Nissan Atlas Max",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Isuzu Midi",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Caterpillar 773A",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "MAZ-6310",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Cadillac Model L",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "AWE racing cars",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Jaguar XJ (X308)",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Edison Fibird",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Peugeot Type 127",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Jeep Compass",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Jeep Gladiator",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Daewoo Gentra",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Toyota Corolla (E170/E180)",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Maple Hisoon 205",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "International Harvester Travelette",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Oldsmobile Model H Flying Roadster",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "DKW Schwebeklasse",
+        "reason": "no additional source-labelled facts available"
+      },
+      {
+        "name": "Tatra 602",
+        "reason": "no additional source-labelled facts available"
+      }
+    ],
+    "remaining": 11317,
     "budget_exhausted": false
   },
   "bikes": {
-    "cooldown": 239,
+    "cooldown": 234,
     "attempted": 120,
-    "no_new_facts": 120,
+    "price_fee_rechecked": 6,
+    "no_new_facts": 113,
+    "updated": 1,
     "failures": [
       {
-        "name": "Suzuki TS series",
+        "name": "Jawa 90",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "CFMoto 650",
+        "name": "Bultaco Junior",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Silver Bird",
+        "name": "Bultaco 360 24 Hores",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Suzuki RM85",
+        "name": "Ducati 750 Sport",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Ducati Desmosedici RR",
+        "name": "Bultaco Senior",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Suzuki RGV500",
+        "name": "Sokół 200",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Kawasaki Z300",
+        "name": "K1B",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Honda SH50",
+        "name": "Sokół 500",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Kawasaki Versys-X 250/300",
+        "name": "Everest",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Suzuki Choinori",
+        "name": "Bultaco Campera",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Lambretta Model B",
+        "name": "Piaggio Vespa 50 Special",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "BMW C600 Sport and C650GT",
+        "name": "Montesa King Scorpion",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "BSA Fury",
+        "name": "Sokół 600",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Tula T-200",
+        "name": "Bultaco Tirón",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Harley-Davidson Pan America",
+        "name": "Montesa Rapita",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Ducati PaulSmart1000LE",
+        "name": "Vespa 150",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Harley-Davidson XA",
+        "name": "Honda VF",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "AJS Model D",
+        "name": "OSSA Stiletto",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Panther Model 100",
+        "name": "Montesa 150",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "BUB Seven streamliner",
+        "name": "Montesa B-46/49",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Buell 1125R",
+        "name": "Montesa D-51",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Ducati Mach 1",
+        "name": "Bultaco Sherpa T",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Royal Enfield Interceptor 650",
+        "name": "Montesa Ciclo",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "BMW F750GS",
+        "name": "The Mighty One",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Bajaj Sunny",
+        "name": "Bultaco Metralla",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Slippery Sam",
+        "name": "Garelli Formuno",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "BSA B31",
+        "name": "Montesa Cota 330",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Sokół 1000",
+        "name": "Bultaco Streaker",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "ELF 500 ROC",
+        "name": "Garelli Ciclone",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Ducati MH900e",
+        "name": "Montesa Cota 200",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Velocette Viper",
+        "name": "GasGas TXT",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Piaggio Free",
+        "name": "Montesa Cota 310",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Panther Model 120",
+        "name": "Bultaco TSS",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Royal Enfield WD/RE",
+        "name": "Garelli GSP",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Velocette Thruxton",
+        "name": "Montesa Crono",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Velocette LE",
+        "name": "Montesa Cota 311",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Yamaha RD500LC",
+        "name": "Montesa Cota 300RR",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "SHL M11",
+        "name": "Garelli VIP",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Kawasaki H2R",
+        "name": "Kawasaki KX",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Yamaha TD2",
+        "name": "Malaguti Fifty",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Velocette Venom",
+        "name": "Montesa Cota 315R",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "KTM RC16",
+        "name": "MBK Evolis",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "MV Agusta RVS#1",
+        "name": "wiejski popierdalacz",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Yamaha FZS600 Fazer",
+        "name": "Montesa Cota 4RT",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Harley-Davidson Model W",
+        "name": "Moto Guzzi Nuovo Falcone",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Urban S",
+        "name": "BMW Concept Link",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "BSA B25",
+        "name": "Ossa TRi",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Aprilia RXV/SXV",
+        "name": "Moto Guzzi Astore",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Aprilia RS 457",
+        "name": "Montesa Cota",
         "reason": "no additional source-labelled facts available"
       },
       {
-        "name": "Ack Attack",
+        "name": "Yamaha Bolt",
         "reason": "no additional source-labelled facts available"
       }
     ],
-    "remaining": 91,
+    "remaining": 96,
     "budget_exhausted": false
   }
 }
