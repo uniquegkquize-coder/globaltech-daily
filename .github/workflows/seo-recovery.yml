@@ -1,0 +1,43 @@
+name: SEO recovery audit (read-only)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+  pull_request:
+    paths:
+      - 'scripts/seo_recovery_audit.py'
+      - 'tests/test_seo_recovery_audit.py'
+      - '.github/workflows/seo-recovery.yml'
+permissions:
+  contents: read
+concurrency:
+  group: seo-recovery-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit tests
+        run: python -m unittest discover -s tests -p 'test_seo_recovery_audit.py' -v
+      - name: Install build dependencies
+        run: pip install -r requirements.txt
+      - name: Build isolated audit preview
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python scripts/build.py --render-only
+      - name: Audit rendered SEO and Cloudflare redirects
+        run: |
+          python scripts/seo_recovery_audit.py --dist dist --report seo-recovery-report.json
+      - name: Upload findings even when audit fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-recovery-findings
+          path: seo-recovery-report.json
+          if-no-files-found: warn
