@@ -1,0 +1,34 @@
+{
+  "en_title": "EDB Previews Horizontal Scaling for Postgres AI to Support Growing Enterprise Workloads",
+  "hi_title": "EDB ने बढ़ते एंटरप्राइज वर्कलोड का समर्थन करने के लिए पोस्टgres एआई के हॉरिजॉन्टल स्केलिंग का पूर्वावलोकन किया",
+  "en_body": "EnterpriseDB (EDB) has announced a preview of horizontal scaling for EDB Postgres AI Distributed (PG AI Distributed), with general availability planned for February 2027. According to the company, the preview uses sharding to distribute transactional writes across node groups to expand write capacity while maintaining high availability.\n\nAs enterprises consolidate fragmented data and AI systems into unified platforms, incoming autonomous agents and continuous workloads add substantial transactional load. The company reports that horizontal scaling is designed to spread data and writes across shard groups operating in parallel, allowing organizations to scale capacity without replacing their database.\n\n## Key Details and Architecture\n* **Preview Status:** Currently available in preview with customer design partners.\n* **Target General Availability:** Planned for February 2027.\n* **Core Mechanism:** Uses sharding to distribute transactional writes across node groups while retaining replication, automatic failover, and configurable durability.\n* **Deployment Options:** Designed to run with identical architecture on-premises, in the cloud, and in hybrid environments.\n\n## Practical Implications and Verification\nOrganizations evaluating database scalability face choices regarding infrastructure costs, migration projects, and system availability. EDB states that the horizontal scaling capability aims to extend existing Postgres operational foundations rather than requiring system replacements.\n\nInterested parties can review the technical documentation, read the technical blog, and watch the demo preview provided by EDB. Official announcements and updates can be verified directly through EnterpriseDB's corporate newsroom and official communications channels.",
+  "hi_body": "एंटरप्राइज़डीबी (EDB) ने ईबीडी पोस्टग्रेज एआई डिस्ट्रीब्यूटेड (PG AI Distributed) के लिए हॉरिजॉन्टल स्केलिंग के पूर्वावलोकन की घोषणा की है, जिसकी सामान्य उपलब्धता फरवरी 2027 मेंplanned है। कंपनी के अनुसार, यह क्षमता नोड समूहों में ट्रांजैक्शनल राइट्स को वितरित करने के लिए शार्डिंग का उपयोग करती है, जिससे उच्च उपलब्धता को बनाए रखते हुए राइट क्षमता का विस्तार होता है।\n\nजैसे-जैसे एंटरप्राइज बिखरे हुए डेटा और एआई सिस्टम को एकीकृत प्लेटफार्मों में समेकित करते हैं, आने वाले स्वायत्त एजेंट और निरंतर वर्कलोड महत्वपूर्ण ट्रांजैक्शनल लोड जोड़ते हैं। कंपनी की रिपोर्ट है कि हॉरिजॉन्टल स्केलिंग को डेटा और राइट्स को समानांतर रूप से काम करने वाले शार्ड समूहों में फैलाने के लिए डिज़ाइन किया गया है, जिससे संगठनों को अपने डेटाबेस को बदले बिना क्षमता बढ़ाने की अनुमति मिलती है।\n\n## मुख्य विवरण और वास्तुकला\n* **पूर्वावलोकन स्थिति:** वर्तमान में ग्राहक डिज़ाइन भागीदारों के साथ पूर्वावलोकन में उपलब्ध है।\n* **लक्षित सामान्य उपलब्धता:** फरवरी 2027 के लिए नियोजित।\n* **कोर तंत्र:** प्रतिकृति (replication), स्वचालित फेलओवर और कॉन्फ़िगर करने योग्य स्थायित्व को बनाए रखते हुए नोड समूहों में ट्रांजैक्शनल राइट्स वितरित करने के लिए शार्डिंग का उपयोग करता है।\n* **तैनाती विकल्प:** ऑन-प्रिमाइसेस, क्लाउड और हाइब्रिड वातावरण में समान वास्तुकला के साथ चलने के लिए डिज़ाइन किया गया है।\n* **सत्यापन:** तकनीकी ब्लॉग और आधिकारिक घोषणाओं के माध्यम से विवरण की पुष्टि की जा सकती है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nडेटाबेस स्केलेबिलिटी का मूल्यांकन करने वाले संगठन बुनियादी ढांचा लागत, माइग्रेशन प्रोजेक्ट और सिस्टम उपलब्धता से संबंधित विकल्पों का सामना करते हैं। EDB का कहना है कि हॉरिजॉन्टल स्केलिंग क्षमता का उद्देश्य सिस्टम प्रतिस्थापन की आवश्यकता के बजाय मौजूदा पोस्टग्रेज परिचालन नींव का विस्तार करना है।\n\nइच्छुक पक्ष तकनीकी दस्तावेज की समीक्षा कर सकते हैं, तकनीकी ब्लॉग पढ़ सकते हैं, और EDB द्वारा प्रदान किए गए डेमो पूर्वावलोकन को देख सकते हैं। आधिकारिक घोषणाओं और अपडेट को सीधे EnterpriseDB के कॉर्पोरेट न्यूज़ रूम और आधिकारिक संचार चैनलों के माध्यम से सत्यापित किया जा सकता है।",
+  "en_meta": "EnterpriseDB previews horizontal scaling for EDB Postgres AI Distributed, using sharding to expand write capacity with general availability planned for…",
+  "hi_meta": "EnterpriseDB ने ईबीडी पोस्टग्रेज एआई डिस्ट्रीब्यूटेड के लिए हॉरिजॉन्टल स्केलिंग का पूर्वावलोकन किया, जिसकी सामान्य उपलब्धता फरवरी 2027 में है।",
+  "en_keywords": [
+    "EnterpriseDB",
+    "EDB Postgres AI",
+    "horizontal scaling",
+    "sharding",
+    "database architecture",
+    "PostgreSQL"
+  ],
+  "hi_keywords": [
+    "EnterpriseDB",
+    "EDB Postgres AI",
+    "हॉरिजॉन्टल स्केलिंग",
+    "शार्डिंग",
+    "डेटाबेस आर्किटेक्चर",
+    "PostgreSQL"
+  ],
+  "source_published_at": "2026-10-29T12:54:00Z",
+  "id": "597b612a6c35",
+  "source": "https://www.prnewswire.com/news-releases/edb-previews-horizontal-scaling-so-mission-critical-postgres-grows-with-every-customer-and-every-agent-302923239.html",
+  "date": "2026-11-12T09:55:40.873714+00:00",
+  "source_title": "EDB Previews Horizontal Scaling so Mission-Critical Postgres® Grows with Every Customer and Every Agent",
+  "category": "ai-news",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "business"
+  ]
+}
