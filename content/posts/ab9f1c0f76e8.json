@@ -1,0 +1,31 @@
+{
+  "en_title": "Bolt Graphics Powers On First Zeus GPU Test Chip, Targeting 2028 Volume Production",
+  "hi_title": "Bolt Graphics ने अपने पहले Zeus GPU टेस्ट चिप को किया सक्रिय, 2028 में वॉल्यूम प्रोडक्शन का लक्ष्य",
+  "en_body": "Bolt Graphics has announced that it has successfully powered on the first silicon test chip for its Zeus GPU project, though volume production is not expected until 2028. According to the company, the 12nm test chip manufactured by TSMC ran without issues.\n\n## Test Chip Specifications and Architecture\nThe initial test chip measures 6mm² and draws 1.4 watts of power, a significant decrease from the 35 watts consumed by the FPGA previously used for prototyping. The architecture centers around dedicated hardware designed for electromagnetic simulation, intended to assist in designing radar sensors and camera lenses.\n\nCEO and founder Darwesh Singh stated to HPCwire that the chip successfully executes a complex hardware-accelerated physics algorithm. While Bolt reported that the test chip exceeded internal estimates, independent performance benchmarks have not been published.\n\n## Future Production and Hardware Design\nThe final Zeus GPU intended for release will be a separate chip built on TSMC's N5P process node. Bolt selected this process to avoid competing for wafer supplies utilized by other modern chipmakers.\n\nKey architectural details include:\n* **Processor Cores:** Built around RISC-V open-standard instruction set cores.\n* **Path-Tracing:** Features Bolt's proprietary path-tracing hardware.\n* **Memory Expansion:** PCIe cards will combine soldered LPDDR5X memory with DDR5 SO-DIMM slots, supporting expansion up to 384GB.\n\n## Market Plans and Funding\nWhen Bolt initially announced Zeus, it reported performance claims including significantly higher path-tracing throughput compared to existing market alternatives. These figures remain untested by independent evaluators. \n\nBolt initially targets studios, engineers, and scientists, with later expansions planned for the gaming and artificial intelligence markets. Reuters reported that Bolt was seeking to raise approximately $100 million at a $700 million valuation. Additionally, Bolt reported significant sign-ups for its early access program, though specific customer identities have not been publicly disclosed.\n\n## Practical Implications and Verification\nBecause the Zeus GPU is years away from commercial availability and lacks independent testing, prospective enterprise users should treat performance projections with caution. Observers can verify official updates and product roadmap announcements directly through Bolt Graphics' corporate communications and press releases.",
+  "hi_body": "Bolt Graphics ने घोषणा की है कि उसने अपने Zeus GPU प्रोजेक्ट के लिए पहले सिलिकॉन टेस्ट चिप को सफलतापूर्वक चालू कर दिया है, हालांकि इसके वॉल्यूम प्रोडक्शन की उम्मीद 2028 तक नहीं है। कंपनी के अनुसार, TSMC द्वारा निर्मित 12nm टेस्ट चिप बिना किसी समस्या के संचालित हुआ।\n\n## टेस्ट चिप विनिर्देश और वास्तुकला\nशुरुआती टेस्ट चिप का आकार 6mm² है और यह 1.4 वाट बिजली की खपत करता है, जो प्रोटोटाइप के लिए पहले उपयोग किए जाने वाले FPGA द्वारा उपयोग किए जाने वाले 35 वाट से काफी कम है। इसकी वास्तुकला विद्युत चुम्बकीय सिमुलेशन (electromagnetic simulation) के लिए समर्पित हार्डवेयर पर केंद्रित है।\n\nCEO और संस्थापक Darwesh Singh ने HPCwire को बताया कि चिप ने एक जटिल हार्डवेयर-त्वरित भौतिकी एल्गोरिदम को सफलतापूर्वक निष्पादित किया। हालांकि Bolt ने बताया कि टेस्ट चिप ने आंतरिक अनुमानों को पार कर लिया है, लेकिन स्वतंत्र प्रदर्शन बेंचमार्क प्रकाशित नहीं किए गए हैं।\n\n## भविष्य का उत्पादन और हार्डवेयर डिज़ाइन\nरिलीज के लिए लक्षित अंतिम Zeus GPU TSMC के N5P प्रोसेस नोड पर बनाया जाने वाला एक अलग चिप होगा। Bolt ने अन्य आधुनिक चिपमेकर्स के साथ वेफर आपूर्ति के लिए प्रतिस्पर्धा से बचने के लिए इस प्रक्रिया को चुना।\n\nमुख्य वास्तुकला विवरण:\n* **प्रोसेसर कोर:** RISC-V ओपन-स्टैंडर्ड निर्देश सेट कोर के आसपास निर्मित।\n* **पाथ-ट्रेसिंग:** Bolt के अपने पाथ-ट्रेसिंग हार्डवेयर की विशेषता।\n* **मेमोरी विस्तार:** PCIe कार्ड सोल्डेड LPDDR5X मेमोरी को DDR5 SO-DIMM स्लॉट के साथ जोड़ेंगे, जो 384GB तक के विस्तार का समर्थन करते हैं।\n\n## बाजार योजनाएं और फंडिंग\nजब Bolt ने पहली बार Zeus की घोषणा की थी, तो उसने मौजूदा बाजार विकल्पों की तुलना में काफी अधिक पाथ-ट्रेसिंग थ्रूपुट सहित प्रदर्शन दावों की रिपोर्ट दी थी। इन आंकड़ों का स्वतंत्र मूल्यांकनकर्ताओं द्वारा परीक्षण किया जाना बाकी है।\n\nBolt शुरुआत में स्टूडियो, इंजीनियरों और वैज्ञानिकों को लक्षित कर रहा है, और बाद में गेमिंग और कृत्रिम बुद्धिमत्ता बाजारों में विस्तार की योजना है। Reuters की एक रिपोर्ट के अनुसार, Bolt $700 मिलियन के मूल्यांकन पर लगभग $100 मिलियन जुटाने का प्रयास कर रहा था।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nचूंकि Zeus GPU व्यावसायिक उपलब्धता से वर्षों दूर है और इसमें स्वतंत्र परीक्षण का अभाव है, इसलिए संभावित उद्यम उपयोगकर्ताओं को प्रदर्शन अनुमानों को सावधानी से देखना चाहिए। पर्यवेक्षक Bolt Graphics के कॉर्पोरेट संचार और प्रेस विज्ञप्तियों के माध्यम से आधिकारिक अपडेट और उत्पाद रोडमैप घोषणाओं को सत्यापित कर सकते हैं।",
+  "en_meta": "Bolt Graphics has powered on its first 12nm Zeus GPU test chip, with volume production planned for 2028. Learn about its architecture, specs, and plans.",
+  "hi_meta": "Bolt Graphics ने अपना पहला 12nm Zeus GPU टेस्ट चिप चालू किया है, जिसका वॉल्यूम प्रोडक्शन 2028 के लिए निर्धारित है। वास्तुकला और योजनाओं के बारे में जानें।",
+  "en_keywords": [
+    "Bolt Graphics",
+    "Zeus GPU",
+    "TSMC",
+    "RISC-V",
+    "Darwesh Singh",
+    "hardware simulation"
+  ],
+  "hi_keywords": [
+    "Bolt Graphics",
+    "Zeus GPU",
+    "TSMC",
+    "RISC-V",
+    "Darwesh Singh",
+    "हार्डवेयर सिमुलेशन"
+  ],
+  "source_published_at": "2026-10-31T17:30:00+00:00",
+  "id": "ab9f1c0f76e8",
+  "source": "https://www.engadget.com/2301962/bolt-graphics-powers-on-first-zeus-gpu/",
+  "date": "2026-11-12T01:59:57.614095+00:00",
+  "source_title": "Bolt Graphics powers on its first Zeus GPU",
+  "category": "technology",
+  "image_kind": "conceptual"
+}
