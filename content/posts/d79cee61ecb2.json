@@ -1,0 +1,31 @@
+{
+  "en_title": "Beyond CVSS: Why Blast Radius Defines Security Risk After PHP2Shell",
+  "hi_title": "CVSS से परे: PHP2Shell के बाद ब्लास्ट रेडियस क्यों है सुरक्षा के लिए महत्वपूर्ण",
+  "en_body": "## The Shift from Patching to Identity Protection\n\nRecent exploitation patterns surrounding the 'PHP2Shell' vulnerabilities highlight a critical disconnect between the speed of attacker activity and enterprise remediation capabilities. While CVSS scores often dictate patching priorities, experts argue that focusing on the 'blast radius'—the potential reach of a compromised asset—is a more effective security strategy.\n\n### The Velocity of Modern Exploitation\n\n- **Pre-disclosure Activity:** Vulnerabilities are increasingly targeted before patches are released. For the PHP flaws identified in August 2024, exploitation attempts were observed by Amazon days before the October 21 patch.\n- **Remediation Lags:** Despite advancements in AI-driven security, organizations face a significant gap. Data suggests median remediation times for known exploited vulnerabilities often exceed several weeks, even as hundreds of new CVEs emerge daily.\n- **Legacy Challenges:** Millions of internet-facing PHP services remain vulnerable, many of which are locked in appliances or control panels that hinder manual patching.\n\n### Prioritizing Blast Radius over CVSS\n\nOrganizations cannot realistically win the race to patch every vulnerability before an attacker gains access. Instead, security teams are encouraged to view identity as the primary control plane. A compromised server only becomes a major breach if that server holds excessive permissions.\n\n- **Limit Lateral Movement:** By auditing service accounts, cloud roles, and API keys, teams can prevent a compromised host from acting as a gateway to sensitive 'locked rooms' containing credentials or production data.\n- **Intent-Based Access:** For AI agents and non-human identities, access should be governed by intent rather than broad, permanent permissions.\n- **Verify Controls:** Security practitioners should verify their exposure by auditing their identity footprint, specifically identifying what tokens or roles are accessible from internet-facing workloads.\n\nBy securing identities, organizations ensure that even when patching is delayed, the impact of a potential compromise is strictly contained.",
+  "hi_body": "## पैचिंग से पहचान सुरक्षा की ओर बदलाव\n\n'PHP2Shell' कमजोरियों के आसपास हालिया शोषण के पैटर्न यह दर्शाते हैं कि हमलावरों की सक्रियता की गति और उद्यमों की मरम्मत (remediation) क्षमता के बीच एक बड़ा अंतर है। हालांकि CVSS स्कोर अक्सर पैचिंग की प्राथमिकताओं को निर्धारित करते हैं, विशेषज्ञ यह तर्क देते हैं कि 'ब्लास्ट रेडियस'—यानी किसी संक्रमित एसेट की संभावित पहुंच—पर ध्यान केंद्रित करना एक अधिक प्रभावी सुरक्षा रणनीति है।\n\n### आधुनिक शोषण की गति\n\n- **प्रकटीकरण से पहले की गतिविधि:** कमजोरियों को पैच जारी होने से पहले ही निशाना बनाया जा रहा है। अगस्त 2024 में खोजी गई PHP खामियों के लिए, 21 अक्टूबर को पैच आने से कुछ दिन पहले ही अमेज़न ने शोषण के प्रयास देखे थे।\n- **मरम्मत में देरी:** AI-संचालित सुरक्षा में प्रगति के बावजूद, संगठन एक बड़े अंतर का सामना कर रहे हैं। डेटा बताता है कि ज्ञात कमजोरियों को ठीक करने का औसत समय अक्सर कई सप्ताह से अधिक होता है, जबकि हर दिन सैकड़ों नई CVE प्रकाशित होती हैं।\n- **लीगेसी चुनौतियां:** करोड़ों इंटरनेट-फेसिंग PHP सेवाएं अभी भी असुरक्षित हैं, जिनमें से कई ऐसे उपकरणों या कंट्रोल पैनल में हैं जिन्हें मैन्युअल रूप से पैच करना कठिन है।\n\n### CVSS पर ब्लास्ट रेडियस को प्राथमिकता देना\n\nसंगठन हर भेद्यता को हमलावर के प्रवेश से पहले पैच करने की दौड़ में वास्तविक रूप से जीत नहीं सकते। इसके बजाय, सुरक्षा टीमों को पहचान (identity) को प्राथमिक नियंत्रण के रूप में देखने के लिए प्रोत्साहित किया जा रहा है। एक संक्रमित सर्वर केवल तभी एक बड़ा खतरा बनता है यदि उस सर्वर के पास अत्यधिक अनुमतियां हों।\n\n- **पार्श्व गति (Lateral Movement) को सीमित करें:** सर्विस अकाउंट्स, क्लाउड रोल्स और API कुंजियों का ऑडिट करके, टीमें संक्रमित होस्ट को संवेदनशील डेटा तक पहुंचने से रोक सकती हैं।\n- **उद्देश्य-आधारित पहुंच:** AI एजेंटों और गैर-मानवीय पहचानों के लिए, पहुंच को व्यापक अनुमतियों के बजाय उद्देश्य के आधार पर नियंत्रित किया जाना चाहिए।\n- **नियंत्रणों को सत्यापित करें:** सुरक्षा विशेषज्ञों को अपनी पहचान पदचिह्न का ऑडिट करके अपने जोखिम को सत्यापित करना चाहिए, विशेष रूप से यह पहचानना कि इंटरनेट-फेसिंग वर्कलोड से कौन से टोकन या भूमिकाएं सुलभ हैं।\n\nपहचान को सुरक्षित करके, संगठन यह सुनिश्चित करते हैं कि पैचिंग में देरी होने पर भी, संभावित समझौते का प्रभाव सीमित रहे।",
+  "en_meta": "Learn why reducing blast radius and securing identities is more critical than CVSS patching strategies following the PHP2Shell vulnerability disclosures.",
+  "hi_meta": "जानें कि PHP2Shell कमजोरियों के बाद CVSS पैचिंग से ज्यादा ब्लास्ट रेडियस और पहचान सुरक्षा को प्राथमिकता देना क्यों जरूरी है।",
+  "en_keywords": [
+    "PHP2Shell",
+    "Cybersecurity",
+    "CVSS",
+    "Identity Security",
+    "Vulnerability Management",
+    "Blast Radius"
+  ],
+  "hi_keywords": [
+    "PHP2Shell",
+    "साइबर सुरक्षा",
+    "CVSS",
+    "पहचान सुरक्षा",
+    "भेद्यता प्रबंधन",
+    "ब्लास्ट रेडियस"
+  ],
+  "source_published_at": "2026-10-28T09:50:59-04:00",
+  "id": "d79cee61ecb2",
+  "source": "https://www.bleepingcomputer.com/news/security/even-after-php2shell-blast-radius-matters-more-than-a-cvss-score/",
+  "date": "2026-11-12T14:11:50.530302+00:00",
+  "source_title": "Even after PHP2Shell, blast radius matters more than a CVSS score",
+  "category": "technology",
+  "image_kind": "conceptual"
+}
