@@ -1,38 +1,19 @@
 {
-  "total_posts": 7355,
+  "total_posts": 7386,
   "selected": 51,
   "results": {
-    "source_photo_saved": 4,
-    "cooldown": 47
+    "source_photo_saved": 3,
+    "cooldown": 47,
+    "invalid_source_images": 1
   },
-  "still_missing": 745,
+  "still_missing": 747,
   "articles": [
     {
-      "id": "af7bf0706387e1a96162f5c4",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_V",
+      "id": "025fda11d9e17a0827a50ed7",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Delray",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794512191.171247
-    },
-    {
-      "id": "02364f4d79f5caac07cae019",
-      "result": "cooldown"
-    },
-    {
-      "id": "8ede6684d4cf14febb863aad",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
-    },
-    {
-      "id": "e21f0c9303189bff05b728a0",
-      "result": "cooldown"
+      "retry_after": 1794522373.2316024
     },
     {
       "id": "6e0b7f005efe9f07310a5382",
@@ -203,25 +184,45 @@
       "result": "cooldown"
     },
     {
-      "id": "6cf24c6203a66cf9e21fa1da",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_C5-R",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794512191.333054
+      "id": "02364f4d79f5caac07cae019",
+      "result": "cooldown"
     },
     {
-      "id": "9472a012a0d7cf56a6ac9297",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_%28C4%29",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794512191.690346
+      "id": "8ede6684d4cf14febb863aad",
+      "result": "cooldown"
     },
     {
-      "id": "39911e0c2af8f887c9ee1df7",
-      "source": "https://www.lg.com/uk/mobile-phones/smartphones/lgm160/",
+      "id": "ab5161457cb0ef816db211ff",
+      "result": "cooldown"
+    },
+    {
+      "id": "554edbfdaee926ed82007433",
+      "result": "cooldown"
+    },
+    {
+      "id": "e21f0c9303189bff05b728a0",
+      "result": "cooldown"
+    },
+    {
+      "id": "71ad44ca5375549c9a0fafea",
+      "source": "https://en.wikipedia.org/wiki/LG_G6",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794522373.283623
+    },
+    {
+      "id": "b7fb1dcaf0918ff4ef6adc9a",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Corsica",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794512199.8199432
+      "retry_after": 1794522373.294437
+    },
+    {
+      "id": "0b845dd6861c9b3d57d433b3",
+      "source": "https://en.wikipedia.org/wiki/Nokia_5",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794522373.4456909
     }
   ],
   "missing": [
@@ -3859,6 +3860,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "b036003b2c6a",
+      "category": "world-news",
+      "title": "Canada Facing Carbon Tariff Threat From European Union, Internal Documents Reveal",
+      "source": "https://www.cbc.ca/news/politics/cbam-carbon-tariff-canada-european-union-9.7398807",
+      "reason": "source_error"
+    },
+    {
       "id": "ef614bd711ec",
       "category": "automobiles",
       "title": "Driving the 2027 Nissan Rogue Hybrid Back-to-Back With the Toyota RAV4",
@@ -5336,6 +5344,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "71ad44ca5375549c9a0fafea",
+      "category": "gadgets",
+      "title": "LG G6: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/LG_G6",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "554edbfdaee926ed82007433",
       "category": "gadgets",
       "title": "Xiaomi Mi 2S: Smartphone Specifications, Facts and Verification Guide",
@@ -5444,32 +5459,37 @@
   "missing_reasons": {
     "no_source_image": 228,
     "source_unavailable": 36,
-    "invalid_source_images": 160,
+    "invalid_source_images": 161,
     "access_denied": 233,
-    "source_error": 87,
+    "source_error": 88,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "af7bf0706387e1a96162f5c4": {
+    "025fda11d9e17a0827a50ed7": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_V",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/NTT_DOCOMO_XPERIA_AX_SO-01E_Front.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Delray",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/52/1958-chevy-delray-chevrolet-archives.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "6cf24c6203a66cf9e21fa1da": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_C5-R",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7f/CHEVROLET_CORVETTE_C5-R_RETROMOBILE_2023_%2852683233300%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "71ad44ca5375549c9a0fafea": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/LG_G6",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/LG_G6_%EC%A0%9C%ED%92%88%EC%82%AC%EC%A7%84.png/250px-LG_G6_%EC%A0%9C%ED%92%88%EC%82%AC%EC%A7%84.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/LG_G6_%EC%A0%9C%ED%92%88%EC%82%AC%EC%A7%84.png/120px-LG_G6_%EC%A0%9C%ED%92%88%EC%82%AC%EC%A7%84.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
     },
-    "9472a012a0d7cf56a6ac9297": {
+    "b7fb1dcaf0918ff4ef6adc9a": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_%28C4%29",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/1994_Chevrolet_Corvette_coupe%2C_front_right%2C_06-16-2024.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Corsica",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/Chevrolet_Corsica_1994.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "39911e0c2af8f887c9ee1df7": {
+    "0b845dd6861c9b3d57d433b3": {
       "reason": "source_photo_saved",
-      "source": "https://www.lg.com/uk/mobile-phones/smartphones/lgm160/",
-      "image": "https://www.lg.com/content/dam/channel/wcms/uk/images/mobile-phones/LGM160_AGBRBK_EEUK_UK_C/K4-image450.jpg"
+      "source": "https://en.wikipedia.org/wiki/Nokia_5",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/90/Nokia_5.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
