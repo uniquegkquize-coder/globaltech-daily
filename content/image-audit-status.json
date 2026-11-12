@@ -1,54 +1,26 @@
 {
-  "total_posts": 6978,
-  "selected": 48,
+  "total_posts": 7118,
+  "selected": 49,
   "results": {
-    "invalid_source_images": 6,
-    "source_photo_saved": 3,
-    "cooldown": 39
+    "invalid_source_images": 3,
+    "cooldown": 44,
+    "source_photo_saved": 2
   },
-  "still_missing": 702,
+  "still_missing": 716,
   "articles": [
+    {
+      "id": "27399602ccef42af310a2803",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_XA_Ultra",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794500833.3887837
+    },
     {
       "id": "6e0b7f005efe9f07310a5382",
       "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_510",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794491018.9176998
-    },
-    {
-      "id": "02364f4d79f5caac07cae019",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794491019.1402128
-    },
-    {
-      "id": "ff7ded650348ecdea82fbf2d",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Series_C_Classic_Six",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794491019.3715055
-    },
-    {
-      "id": "8ede6684d4cf14febb863aad",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794491019.4169033
-    },
-    {
-      "id": "90354b9daaaf920f54e99625",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Celebrity",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794491019.490369
-    },
-    {
-      "id": "ab5161457cb0ef816db211ff",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794491019.9228206
+      "retry_after": 1794500833.3929725
     },
     {
       "id": "d4519cf5c59f707b293a301d",
@@ -207,28 +179,55 @@
       "result": "cooldown"
     },
     {
-      "id": "554edbfdaee926ed82007433",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794491020.1230156
+      "id": "02364f4d79f5caac07cae019",
+      "result": "cooldown"
     },
     {
-      "id": "86bb16407d1f80600397c2e6",
-      "source": "https://en.wikipedia.org/wiki/HTC_U_Ultra",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794491020.1516864
+      "id": "8ede6684d4cf14febb863aad",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
+      "result": "cooldown"
+    },
+    {
+      "id": "554edbfdaee926ed82007433",
+      "result": "cooldown"
     },
     {
       "id": "e21f0c9303189bff05b728a0",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "result": "cooldown"
+    },
+    {
+      "id": "e329583be741bb8896c157a7",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Series_M_Copper-Cooled",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794500833.514681
+    },
+    {
+      "id": "74e0c52178b2f0827ab81b54",
+      "source": "https://en.wikipedia.org/wiki/Huawei_Nova",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794491020.4515324
+      "retry_after": 1794500833.8671563
+    },
+    {
+      "id": "7dc00555bbbccda56150c7e7",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Chevelle",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794500834.1858392
     }
   ],
   "missing": [
+    {
+      "id": "7845f3b5f47c",
+      "category": "controversies",
+      "title": "Duolingo, Inc. Faces Class Action Lawsuit Over Securities Law Allegations",
+      "source": "https://www.prnewswire.com/news-releases/duolingo-inc-sued-for-securities-law-violations---contact-the-djs-law-group-to-discuss-your-rights--duol-302924172.html",
+      "reason": "no_source_image"
+    },
     {
       "id": "eb4678a5588c",
       "category": "business",
@@ -332,6 +331,13 @@
       "category": "private-vacancy",
       "title": "Elevate Now Lists Fitness Coach Vacancy in Delhi, India",
       "source": "https://in.linkedin.com/jobs/view/fitness-coach-at-elevate-now-4483864411",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "74e0c52178b2f0827ab81b54",
+      "category": "gadgets",
+      "title": "Huawei Nova: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Huawei_Nova",
       "reason": "invalid_source_images"
     },
     {
@@ -613,6 +619,13 @@
       "title": "Estimating Annual Salary Increments Under 7th Pay Commission Guidelines",
       "source": "https://www.sahisarkarijobs.in/increment-calculator/",
       "reason": "no_source_image"
+    },
+    {
+      "id": "9c09fc18c9fc",
+      "category": "private-vacancy",
+      "title": "Alila Hotels Advertises Guest Experience Manager Opening in Lansdowne, Uttarakhand",
+      "source": "https://in.linkedin.com/jobs/view/guest-experience-manager-at-alila-hotels-4484451267",
+      "reason": "invalid_source_images"
     },
     {
       "id": "e8fc748d4c8dffaa2212a1cf",
@@ -1476,6 +1489,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "5c3f7754e7bd",
+      "category": "automobiles",
+      "title": "James May Test-Drives Slate's Compact Electric Truck and Expresses Interest",
+      "source": "https://www.motor1.com/news/813939/james-may-drives-slate-truck-video/",
+      "reason": "access_denied"
+    },
+    {
       "id": "82150bdb0b91",
       "category": "business",
       "title": "Borr Drilling Reports Prospector 5 Rig Sinking Offshore Gabon with Five Personnel Unaccounted For",
@@ -2162,6 +2182,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "e0d616bd7306",
+      "category": "business",
+      "title": "Docusign Intelligent Agreement Management to Be Sold as SAP Solution Extensions",
+      "source": "https://www.prnewswire.com/news-releases/docusign-intelligent-agreement-management-to-be-sold-as-sap-solution-extensions-302918563.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "8df79a94610e",
       "category": "private-vacancy",
       "title": "Blessings Aquarium Announces Personal Assistant Opening in Pune",
@@ -2820,6 +2847,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "27399602ccef42af310a2803",
+      "category": "gadgets",
+      "title": "Sony Xperia XA Ultra: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_XA_Ultra",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "ddb69144264e",
       "category": "controversies",
       "title": "General Motors Agrees to $220 Million Settlement Over Driver Data Allegations",
@@ -3247,6 +3281,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "f3fafd3d0e6b",
+      "category": "gaming",
+      "title": "Grand Theft Auto Fans Planning Paid Time Off Ahead of GTA 6 Release",
+      "source": "https://www.npr.org/2026/10/25/nx-s1-6012317/grand-theft-auto-fans-are-already-calling-off-from-work-ahead-of-gta6-release",
+      "reason": "source_error"
+    },
+    {
       "id": "e2045453ce2b",
       "category": "defence",
       "title": "New Pentagon Study on Future Warfare Led by Elon Musk and Palmer Luckey Raises Ethics Concerns",
@@ -3338,6 +3379,13 @@
       "reason": "source_error"
     },
     {
+      "id": "4a42137e3532",
+      "category": "space-news",
+      "title": "NASA Heat Shield Technology Enables Successful Re-entry for Varda Capsule",
+      "source": "https://www.nasa.gov/directorates/stmd/nasa-heat-shield-technology-enables-space-industry-growth/",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "bf5257fad3a5",
       "category": "business",
       "title": "Atomera Reports Third Quarter 2026 Financial Results and Business Updates",
@@ -3384,7 +3432,7 @@
       "category": "private-vacancy",
       "title": "Exploring Community and Social Services Openings in San Antonio",
       "source": "https://in.linkedin.com/jobs/community-and-social-services-jobs-san-antonio-tx",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "ee5f46eec1e1",
@@ -3532,6 +3580,13 @@
       "title": "US Administration Challenges State Voter Rolls Ahead of Midterm Elections",
       "source": "https://www.aljazeera.com/sitemap.xml%3Fyyyy=2026/page/28297?dd=26&mm=02%3Fgb%3Dtrue%3Fgb%3Dtrue",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "be3525af6967",
+      "category": "business",
+      "title": "Global Doors Market Projected to Reach $105.93 Billion by 2031, Report Says",
+      "source": "https://www.prnewswire.com/news-releases/doors-market-worth-105-93-billion-by-2031---exclusive-report-by-marketsandmarkets-302923158.html",
+      "reason": "no_source_image"
     },
     {
       "id": "a6510273f0889bf4d7684eae",
@@ -3763,6 +3818,13 @@
       "title": "Aging NASA Swift Observatory Expected to Re-enter Atmosphere This Week",
       "source": "https://www.cbc.ca/news/world/nasa-telescope-failed-rescue-mission-9.7404355?cmp=rss",
       "reason": "source_error"
+    },
+    {
+      "id": "8ec539beeb9a",
+      "category": "business",
+      "title": "eClerx Services Shares Fall 13% Following Second-Quarter Financial Results",
+      "source": "https://www.business-standard.com/markets/news/eclerx-services-shares-plunge-13-post-company-s-second-quarter-results-126102900576_1.html",
+      "reason": "access_denied"
     },
     {
       "id": "d15bcc8a3c3b",
@@ -4357,7 +4419,7 @@
       "category": "private-vacancy",
       "title": "BRIKitt Announces Opening for Collections Executive Role in Lucknow",
       "source": "https://in.linkedin.com/jobs/view/collections-executive-at-brikitt-4483018557",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "223fe80c75c8",
@@ -4553,6 +4615,13 @@
       "category": "education",
       "title": "Dhemaji Engineering College: College Admissions, Facts and Verification Guide",
       "source": "https://dec.ac.in/",
+      "reason": "no_source_image"
+    },
+    {
+      "id": "53732d09e0d9",
+      "category": "business",
+      "title": "ECMC Scholars Program Awards $1.2 Million to Graduates in Connecticut, Virginia and Oregon",
+      "source": "https://www.prnewswire.com/news-releases/ecmc-scholars-program-awards-1-2-million-to-high-school-graduates-in-connecticut-virginia-and-oregon-302924043.html",
       "reason": "no_source_image"
     },
     {
@@ -4843,6 +4912,13 @@
       "reason": "source_error"
     },
     {
+      "id": "453f63c21ab4",
+      "category": "space-news",
+      "title": "NASA Tests Powerful Lithium-Fed Thruster Prototype for Potential Deep Space Missions",
+      "source": "https://www.nasa.gov/missions/tech-demonstration/nasa-fires-up-powerful-lithium-fed-thruster-for-trips-to-mars/",
+      "reason": "access_denied"
+    },
+    {
       "id": "5edf8f2b5d3e",
       "category": "business",
       "title": "Centrus Energy Ships First New Centrifuge from Tennessee to Ohio to Expand Nuclear Fuel Production",
@@ -4890,6 +4966,13 @@
       "title": "New Omni-Flex Independent Suspension System Developed for Side-by-Sides and UTVs",
       "source": "https://www.prnewswire.com/news-releases/123invent-inventor-develops-new-independent-suspension-for-side-by-sides--utvs-302923291.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "a0e7e7e9adec",
+      "category": "private-vacancy",
+      "title": "Hospitality Jobs Lists New Opening for Kesar Bagh Palace in Chittorgarh",
+      "source": "https://in.linkedin.com/jobs/view/%F0%9F%9A%A8-we-are-hiring-kesar-bagh-palace-chittorgarh-at-hospitality-jobs-4469170612",
+      "reason": "invalid_source_images"
     },
     {
       "id": "f390d4af3452",
@@ -5109,6 +5192,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "3ad84826d279",
+      "category": "business",
+      "title": "Trent Shares Climb Over 6% Following Strong Q2 FY27 Financial Results",
+      "source": "https://www.business-standard.com/markets/news/trent-shares-jump-over-6-on-strong-q2-nos-brokerages-stay-bullish-126103000100_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "63616ffbf4c2",
       "category": "apps-software",
       "title": "Associate QA Engineer – Software at Light & Wonder, Bengaluru – Join the Gaming Quality Team",
@@ -5145,15 +5235,25 @@
     }
   ],
   "missing_reasons": {
-    "no_source_image": 214,
+    "no_source_image": 219,
     "source_unavailable": 36,
-    "invalid_source_images": 152,
-    "access_denied": 213,
-    "source_error": 86,
+    "invalid_source_images": 158,
+    "access_denied": 215,
+    "source_error": 87,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
+    "27399602ccef42af310a2803": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_XA_Ultra",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
     "6e0b7f005efe9f07310a5382": {
       "reason": "invalid_source_images",
       "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_510",
@@ -5164,70 +5264,25 @@
         "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Text_document_with_red_question_mark.svg/120px-Text_document_with_red_question_mark.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
       ]
     },
-    "02364f4d79f5caac07cae019": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
-      "candidate_count": 7,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/1280px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/500px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "ff7ded650348ecdea82fbf2d": {
+    "e329583be741bb8896c157a7": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Series_C_Classic_Six",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/1912_Chevrolet_Series_C_Classic_Six.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Series_M_Copper-Cooled",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Chevrolet_cooper_cooled_car.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "8ede6684d4cf14febb863aad": {
+    "74e0c52178b2f0827ab81b54": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "90354b9daaaf920f54e99625": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Celebrity",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/1986_Chevrolet_Celebrity_2.5.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "ab5161457cb0ef816db211ff": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "554edbfdaee926ed82007433": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "86bb16407d1f80600397c2e6": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/HTC_U_Ultra",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/HTC_U_Ultra.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "e21f0c9303189bff05b728a0": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "source": "https://en.wikipedia.org/wiki/Huawei_Nova",
       "candidate_count": 5,
       "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/20px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
         "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
       ]
+    },
+    "7dc00555bbbccda56150c7e7": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Chevelle",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/df/1970_Chevrolet_Chevelle_SS_396_Sport_Coupe%2C_front_left%2C_06-08-2024.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
