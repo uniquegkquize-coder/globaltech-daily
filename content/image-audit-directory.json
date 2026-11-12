@@ -1,26 +1,46 @@
 {
-  "total_posts": 7118,
-  "selected": 49,
+  "total_posts": 7355,
+  "selected": 51,
   "results": {
-    "invalid_source_images": 3,
-    "cooldown": 44,
-    "source_photo_saved": 2
+    "source_photo_saved": 4,
+    "cooldown": 47
   },
-  "still_missing": 716,
+  "still_missing": 745,
   "articles": [
     {
-      "id": "27399602ccef42af310a2803",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_XA_Ultra",
+      "id": "af7bf0706387e1a96162f5c4",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_V",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794500833.3887837
+      "result": "source_photo_saved",
+      "retry_after": 1794512191.171247
+    },
+    {
+      "id": "02364f4d79f5caac07cae019",
+      "result": "cooldown"
+    },
+    {
+      "id": "8ede6684d4cf14febb863aad",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
+      "result": "cooldown"
+    },
+    {
+      "id": "554edbfdaee926ed82007433",
+      "result": "cooldown"
+    },
+    {
+      "id": "e21f0c9303189bff05b728a0",
+      "result": "cooldown"
     },
     {
       "id": "6e0b7f005efe9f07310a5382",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_510",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794500833.3929725
+      "result": "cooldown"
+    },
+    {
+      "id": "95c9f12cac7c67468ea940bb",
+      "result": "cooldown"
     },
     {
       "id": "d4519cf5c59f707b293a301d",
@@ -43,7 +63,11 @@
       "result": "cooldown"
     },
     {
-      "id": "95c9f12cac7c67468ea940bb",
+      "id": "74e0c52178b2f0827ab81b54",
+      "result": "cooldown"
+    },
+    {
+      "id": "27399602ccef42af310a2803",
       "result": "cooldown"
     },
     {
@@ -143,15 +167,11 @@
       "result": "cooldown"
     },
     {
-      "id": "ef614dcb4163038685679d1d",
-      "result": "cooldown"
-    },
-    {
-      "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
-    },
-    {
       "id": "635e4aa01fc60223a6fea284",
+      "result": "cooldown"
+    },
+    {
+      "id": "ef614dcb4163038685679d1d",
       "result": "cooldown"
     },
     {
@@ -163,7 +183,7 @@
       "result": "cooldown"
     },
     {
-      "id": "a6510273f0889bf4d7684eae",
+      "id": "8af54bb949a0c055391d640a",
       "result": "cooldown"
     },
     {
@@ -175,49 +195,33 @@
       "result": "cooldown"
     },
     {
+      "id": "a6510273f0889bf4d7684eae",
+      "result": "cooldown"
+    },
+    {
       "id": "9380990d113b5de5f521da53",
       "result": "cooldown"
     },
     {
-      "id": "02364f4d79f5caac07cae019",
-      "result": "cooldown"
-    },
-    {
-      "id": "8ede6684d4cf14febb863aad",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
-    },
-    {
-      "id": "e21f0c9303189bff05b728a0",
-      "result": "cooldown"
-    },
-    {
-      "id": "e329583be741bb8896c157a7",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Series_M_Copper-Cooled",
+      "id": "6cf24c6203a66cf9e21fa1da",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_C5-R",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794500833.514681
+      "retry_after": 1794512191.333054
     },
     {
-      "id": "74e0c52178b2f0827ab81b54",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Nova",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794500833.8671563
-    },
-    {
-      "id": "7dc00555bbbccda56150c7e7",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Chevelle",
+      "id": "9472a012a0d7cf56a6ac9297",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_%28C4%29",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794500834.1858392
+      "retry_after": 1794512191.690346
+    },
+    {
+      "id": "39911e0c2af8f887c9ee1df7",
+      "source": "https://www.lg.com/uk/mobile-phones/smartphones/lgm160/",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794512199.8199432
     }
   ],
   "missing": [
@@ -275,7 +279,7 @@
       "category": "private-vacancy",
       "title": "Exploring Professional Opportunities Across India's Financial and Tech Sectors",
       "source": "https://in.linkedin.com/jobs/Invadigm%20herramientas%20de%20trading.mll-jobs?f_AL=true",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "4a904640746e",
@@ -289,7 +293,7 @@
       "category": "social-media",
       "title": "Exploring Social Media Marketing Internship Opportunities Listed on LinkedIn",
       "source": "https://in.linkedin.com/jobs/view/social-media-marketing-internship-in-delhi-bangalore-hyderabad-mumbai-at-foodstories-4479738162?position=44&pageNum=0&refId=6HZzQVkTvpvkiIYOUZ%2F6vQ%3D%3D&trackingId=jLeQWDCS3GoiLwZtObrHrw%3D%3D",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "6ee66cd09c1e",
@@ -338,6 +342,13 @@
       "category": "gadgets",
       "title": "Huawei Nova: Smartphone Specifications, Facts and Verification Guide",
       "source": "https://en.wikipedia.org/wiki/Huawei_Nova",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "6dc32474192f",
+      "category": "ai-news",
+      "title": "RemoExperts Lists Online Generalist Vacancy for AI Training and Data Labeling",
+      "source": "https://www.linkedin.com/jobs/view/online-generalist-jobs-in-india-at-rex-zone-4399897196?refId=ut9Weby9iKeA3nIguBOAOw%3D%3D&trackingId=TSSiUWs2MQDUFKOvY%2FSnTw%3D%3D",
       "reason": "invalid_source_images"
     },
     {
@@ -408,7 +419,7 @@
       "category": "private-vacancy",
       "title": "Overview of Recent Professional Job Openings Listed on LinkedIn India",
       "source": "https://in.linkedin.com/jobs/Nexbirlik+istifad%C9%99%C3%A7i+t%C9%99cr%C3%BCb%C9%99si%3A+m%C3%BCxt%C9%99lif+izahlara+n%C9%99z%C9%99r+sal%C4%B1n.whn-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "ddfa4e186cef",
@@ -416,6 +427,13 @@
       "title": "Fired OpenAI Employees Raise Safety Concerns Amid Dismissal Dispute",
       "source": "https://www.npr.org/2026/10/09/nx-s1-5996890/openai-safety-firings",
       "reason": "source_error"
+    },
+    {
+      "id": "288bde8c0268",
+      "category": "private-vacancy",
+      "title": "PlanetSpark Announces Inside Sales Executive Fresher Hiring Across Multiple Locations",
+      "source": "https://in.linkedin.com/jobs/view/inside-sales-executive-fresher-hiring-in-hyderabad-bangalore-patna-at-planetspark-4483765745",
+      "reason": "invalid_source_images"
     },
     {
       "id": "b7601652de21",
@@ -485,7 +503,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted in Cheyenne, Wyoming",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "66a3307beb25",
@@ -807,7 +825,7 @@
       "category": "private-vacancy",
       "title": "LinkedIn Job Listings in India: Overview of Recent Roles and Application Channels",
       "source": "https://in.linkedin.com/jobs/is+novaluxia+legit+before+signing+up.mbi-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "db84976129b4",
@@ -943,18 +961,25 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "b6300303262b",
+      "category": "private-vacancy",
+      "title": "Media and Communications Job Openings and Regional Listings Reported in Boydton Area",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-boydton-va",
+      "reason": "no_source_image"
+    },
+    {
       "id": "880129981de7",
       "category": "private-vacancy",
       "title": "Advance Auto Parts India Center Lists Open Professional Roles on LinkedIn",
       "source": "https://www.linkedin.com/jobs/advance-auto-parts-india-%28india-innovation-center%29-jobs-worldwide",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "6ba39bcd4548",
       "category": "private-vacancy",
       "title": "Recent Program and Project Management Openings Listed on LinkedIn for the San Francisco Bay Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-francisco-ca",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "de9e139b22f9",
@@ -975,6 +1000,13 @@
       "category": "sarkari-naukri",
       "title": "Understanding Leave Encashment Calculations for Government Retirees",
       "source": "https://www.sahisarkarijobs.in/leave-encashment-calculator/",
+      "reason": "no_source_image"
+    },
+    {
+      "id": "81ed9bbd050d",
+      "category": "business",
+      "title": "Erie Indemnity Reports Third Quarter 2026 Financial Results",
+      "source": "https://www.prnewswire.com/news-releases/erie-indemnity-reports-third-quarter-2026-results-302922102.html",
       "reason": "no_source_image"
     },
     {
@@ -1013,6 +1045,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "bc36bed41594",
+      "category": "private-vacancy",
+      "title": "Media and Communications Job Openings Reported in San Antonio, Texas",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-antonio-tx",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "08f803d5a037",
       "category": "defence",
       "title": "Jordanian Air Force Strikes Militant Hideouts in Syria Following Church Attack Arrests",
@@ -1039,6 +1078,13 @@
       "title": "Bridgestone 350 GTR: Motorcycle Specifications, Facts and Verification Guide",
       "source": "https://en.wikipedia.org/wiki/Bridgestone_350_GTR",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "cef8c3322065",
+      "category": "business",
+      "title": "Esquire Financial Holdings Reports Growth Following Signature Bancorporation Acquisition",
+      "source": "https://www.prnewswire.com/news-releases/esquire-financial-holdings-inc-reports-third-quarter-2026-results-302920050.html",
+      "reason": "no_source_image"
     },
     {
       "id": "49b672507c84",
@@ -1307,6 +1353,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "9581ce0bb569",
+      "category": "automobiles",
+      "title": "Ford's New LMDh Hypercar Prototype With Coyote-Based V8 Spotted Testing at Monza",
+      "source": "https://www.motor1.com/news/813623/ford-le-mans-hypercar-coyote-v8-engine-track-sounds/",
+      "reason": "access_denied"
+    },
+    {
       "id": "ee28a6d6e51d",
       "category": "private-vacancy",
       "title": "Current Private Job Openings Listed Across India on Professional Networks",
@@ -1332,7 +1385,7 @@
       "category": "visas-immigration",
       "title": "US Immigration Executive Roles Highlight Growing Corporate Mobility Sector in Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/us-immigration-executive-at-vidlexinfo-llc-4483058702",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "c04b22371a9a",
@@ -1367,6 +1420,13 @@
       "category": "business",
       "title": "Banco Santander Investigation Notice Issued Following Recent Stock Declines",
       "source": "https://www.prnewswire.com/news-releases/banco-santander-investigation-notice-suewallst-notifies-investors-of-pending-investigation-into-banco-santander-san-302924074.html",
+      "reason": "no_source_image"
+    },
+    {
+      "id": "b1a1f51376ac",
+      "category": "business",
+      "title": "ESENTIA Reports 3Q26 Financial Results, Lower Leverage, and Pacific Expansion Plans",
+      "source": "https://www.prnewswire.com/news-releases/esentia-increases-adjusted-ebitda-in-3q26-reduces-leverage-and-advances-its-growth-strategy-302923074.html",
       "reason": "no_source_image"
     },
     {
@@ -1423,7 +1483,7 @@
       "category": "private-vacancy",
       "title": "Overview of Recent Job Openings Across Various Sectors in India",
       "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Bm%C9%99nfi%2Br%C9%99yl%C9%99r%2B%E2%80%94%2B%C3%BCzvl%C3%BCk%2Bt%C9%99qdimat%C4%B1n%C4%B1%2B%C3%B6yr%C9%99nin.wam-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "e43332812610",
@@ -1486,7 +1546,7 @@
       "category": "private-vacancy",
       "title": "Professional Listings and Job Openings Reported Across India on Professional Platforms",
       "source": "https://in.linkedin.com/jobs/Nexbirlik+haqq%C4%B1nda+m%C9%99nfi+r%C9%99yl%C9%99r+%E2%80%94+%C5%9Firk%C9%99t+yenilikl%C9%99rini+d%C9%99y%C9%99rl%C9%99ndirin.whx-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "5c3f7754e7bd",
@@ -1542,7 +1602,7 @@
       "category": "private-vacancy",
       "title": "Brigade Group Seeks Product Development Designer in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/designer-product-development-at-brigade-group-4484709074",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "beac754bc9f5",
@@ -1563,7 +1623,7 @@
       "category": "private-vacancy",
       "title": "LinkedIn Shows Over 53,000 Research‑Related Job Openings Across India – From Pharma Labs to University Labs",
       "source": "https://in.linkedin.com/jobs/Research+first%3A+Novaluxia+reviews.edu-jobs?f_AL=true",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "6b8f9d0076e4",
@@ -1591,7 +1651,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-phoenix-az",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "ccf9864b6c87",
@@ -1612,7 +1672,7 @@
       "category": "private-vacancy",
       "title": "Exploring Private Sector Job Listings and Openings Across India Listed on Public Portals",
       "source": "https://in.linkedin.com/jobs/Genuinely+wondering%2C+is+novaluxia+legit+online.epn-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "40de10a52a3c",
@@ -1634,6 +1694,13 @@
       "title": "Sony Xperia C: Smartphone Specifications, Facts and Verification Guide",
       "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "b7ca1e725641",
+      "category": "business",
+      "title": "Equentis Wealth Advisory Services Hosts Investor Awareness Seminar on Equity Market Fraud in Bengaluru",
+      "source": "https://www.business-standard.com/content/specials/equentis-wealth-advisory-services-leads-investor-awareness-drive-against-equity-market-fraud-126102801020_1.html",
+      "reason": "access_denied"
     },
     {
       "id": "cba42010d5d6",
@@ -1864,7 +1931,7 @@
       "category": "visas-immigration",
       "title": "Peerless Immigration Services Lists Business Development Executive Opening in New Delhi",
       "source": "https://in.linkedin.com/jobs/view/busienss-development-executive-at-peerless-immigration-services-4483857590",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "e999e797ef10",
@@ -1892,7 +1959,7 @@
       "category": "private-vacancy",
       "title": "Professional Career Openings Listed on LinkedIn for the Jersey Region",
       "source": "https://je.linkedin.com/jobs/Win%20Gaming%20API%20-%20India%20Market%20API%F0%9F%8F%A7TG%40gameapi26-jobs?position=1&pageNum=0",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "20bc19a667fd",
@@ -1900,6 +1967,13 @@
       "title": "Tata Consumer Products Reports Strong Q2 FY27 Results Amid Strategic Price Hikes",
       "source": "https://www.business-standard.com/markets/news/discounted-valuations-offset-near-term-headwinds-for-tata-consumer-126102701740_1.html",
       "reason": "access_denied"
+    },
+    {
+      "id": "23e7812c4f09",
+      "category": "controversies",
+      "title": "Pomerantz Law Firm Reminds Bank of America Investors of Class Action Lawsuit and December Deadline",
+      "source": "https://www.prnewswire.com/news-releases/investor-alert-pomerantz-law-firm-reminds-investors-with-losses-on-their-investment-in-bank-of-america-corporation-of-class-action-lawsuit-and-upcoming-deadlines--bac-302923315.html",
+      "reason": "no_source_image"
     },
     {
       "id": "bed5a467722a",
@@ -2032,7 +2106,7 @@
       "category": "ai-news",
       "title": "Definitive Healthcare Announces Data Scientist, Applied AI Role to Boost Healthcare‑Focused LLM Solutions",
       "source": "https://www.linkedin.com/jobs/view/data-scientist-applied-ai-at-definitive-healthcare-4484088856",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "13248d99afbe",
@@ -2053,14 +2127,14 @@
       "category": "private-vacancy",
       "title": "Power Dental Studio Announces Open Vacancy for Dental Designer (Exocad) in Kochi, Kerala",
       "source": "https://in.linkedin.com/jobs/view/dental-designer-exocad-at-power-dental-studio-4484942374",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "4bb8b389fb4b",
       "category": "private-vacancy",
       "title": "EH Jobs Announces Co-Curricular Activities Coordinator Vacancy for Gondal School",
       "source": "https://in.linkedin.com/jobs/view/co-curricular-activities-is-needed-for-a-reputed-school-in-gondal-gujarat-at-eh-jobs-4481352698",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "7c6f6d44e10c",
@@ -2133,6 +2207,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "8746c65fe139",
+      "category": "private-vacancy",
+      "title": "Media and Communications Job Listings Overview for Cheyenne and Fort Collins Regions",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-cheyenne-wy",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "7ba9e85f5ffa",
       "category": "cyber-security",
       "title": "AI Discovery and Code Leaks Trigger Cybersecurity Concerns Over PHP2SHELL",
@@ -2179,7 +2260,7 @@
       "category": "private-vacancy",
       "title": "Alok Industries Limited Lists Assistant Manager Opening in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-alok-industries-limited-india-4481052431",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "e0d616bd7306",
@@ -2315,10 +2396,24 @@
       "reason": "no_source_image"
     },
     {
+      "id": "6a268ec5bb99",
+      "category": "business",
+      "title": "Eternal Eyes Accelerated Blinkit Expansion Amid Positive Q2 Results",
+      "source": "https://www.business-standard.com/markets/news/eternal-eyes-faster-blinkit-expansion-as-margins-and-order-values-grow-126102201467_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "52754f757c54",
       "category": "defence",
       "title": "SOTERIA Launches Cancer Hunt™ to Offer Free Precision Oncology for U.S. Military and Veterans",
       "source": "https://www.prnewswire.com/news-releases/soteria-precision-medicine-foundation-launches-cancer-hunt-to-provide-advanced-precision-oncology-support-services-for-active-duty-us-military-and-veterans-302924347.html",
+      "reason": "no_source_image"
+    },
+    {
+      "id": "2915d2250539",
+      "category": "business",
+      "title": "Entergy Increases Quarterly Dividend and Reports Q3 2026 Results",
+      "source": "https://www.prnewswire.com/news-releases/entergy-increases-quarterly-dividend-payment-to-shareholders-302925348.html",
       "reason": "no_source_image"
     },
     {
@@ -2375,7 +2470,7 @@
       "category": "visas-immigration",
       "title": "Deloitte Highlights Global Mobility and Immigration Role in Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/associate-global-mobility-and-immigration-talent-services-tipm-perm-services-hyderabad-at-deloitte-4484168606",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "6cc0de62842b",
@@ -2487,7 +2582,7 @@
       "category": "visas-immigration",
       "title": "Sky Heaven Immigration Announces Recruitment for Visitor Visa Counselor in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/visitor-visa-counselor-at-sky-heaven-immigration-opc-pvt-ltd-4482294678",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "d25fe3284c63",
@@ -2508,6 +2603,13 @@
       "category": "sports",
       "title": "Volkswagen Pauses Development of Upcoming Electric Golf",
       "source": "https://insideevs.com/news/813891/volkswagen-id-golf-development-paused-official/",
+      "reason": "access_denied"
+    },
+    {
+      "id": "efe483451e58",
+      "category": "business",
+      "title": "Eternal Shares Rally 6% in Two Days, Approach Record High Amid Blinkit Optimism",
+      "source": "https://www.business-standard.com/markets/news/eternal-share-price-rallies-6-in-two-days-stock-nears-record-high-here-s-why-126103000553_1.html",
       "reason": "access_denied"
     },
     {
@@ -2543,7 +2645,7 @@
       "category": "private-vacancy",
       "title": "Ten 11 Hospitality Announces Opening for Executive Assistant to Managing Director in Gurugram",
       "source": "https://in.linkedin.com/jobs/view/executive-assistant-to-managing-director-at-ten-11-hospitality-4482942205",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "23a46be33c4f",
@@ -2551,6 +2653,13 @@
       "title": "Bambusa Therapeutics Announces Pricing of Upsized Initial Public Offering",
       "source": "https://www.prnewswire.com/news-releases/bambusa-therapeutics-announces-pricing-of-upsized-initial-public-offering-302924376.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "f43035953bcc",
+      "category": "private-vacancy",
+      "title": "Ingrain --- beyond Architecture Announces Architectural Internship Opportunity in Pune",
+      "source": "https://in.linkedin.com/jobs/view/architectural-intern-at-ingrain-beyond-architecture-4483005191",
+      "reason": "invalid_source_images"
     },
     {
       "id": "c1462dd0a99f",
@@ -2579,6 +2688,13 @@
       "title": "Adani Ports, Nykaa, and Saregama Highlighted by Analyst Amid October Market Volatility",
       "source": "https://www.business-standard.com/markets/news/breakout-stocks-adani-ports-nykaa-saregama-on-radar-analyst-tells-why-126103000358_1.html",
       "reason": "access_denied"
+    },
+    {
+      "id": "4bd3e1390510",
+      "category": "business",
+      "title": "Emirates Flight Catering Recognized for LFC Biodigester Waste Solution",
+      "source": "https://www.prnewswire.com/news-releases/emirates-flight-catering-named-food-waste-initiative-of-2026-for-lfc-biodigester-solution-302925396.html",
+      "reason": "no_source_image"
     },
     {
       "id": "54f88bc32999",
@@ -2634,7 +2750,7 @@
       "category": "private-vacancy",
       "title": "Funk Foods Hiring Assistant Manager in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-funk-foods-4480050636",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "12533696a787",
@@ -2700,6 +2816,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "7de4e7ee71b3",
+      "category": "business",
+      "title": "Eleven Power to Pursue Legal Remedies After HERC Halts Licence Process",
+      "source": "https://www.business-standard.com/companies/news/eleven-power-legal-remedies-herc-parallel-distribution-licence-gurugram-nuh-126102900652_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "07bc3bf8fade",
       "category": "defence",
       "title": "Understanding Council Tax Reductions, Discounts, and Exemptions",
@@ -2725,7 +2848,7 @@
       "category": "private-vacancy",
       "title": "Agilent Technologies Announces Opening for Services Sales Product Specialist in Bengaluru East",
       "source": "https://in.linkedin.com/jobs/view/services-sales-product-specialist-%E2%80%93-south-east-india-at-agilent-technologies-4480141691",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "3611b527f6b7",
@@ -2847,6 +2970,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "dc39cd9fdeda",
+      "category": "business",
+      "title": "Embraer Announces ADS Ratio Change and Forward Split Schedule",
+      "source": "https://www.prnewswire.com/news-releases/embraer-announces-change-in-ads-ratio-302924846.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "27399602ccef42af310a2803",
       "category": "gadgets",
       "title": "Sony Xperia XA Ultra: Smartphone Specifications, Facts and Verification Guide",
@@ -2900,7 +3030,7 @@
       "category": "private-vacancy",
       "title": "WeMakeScholars Lists Academic Advisor Opening Across Multiple Indian Locations via LinkedIn",
       "source": "https://in.linkedin.com/jobs/view/academic-advisor-in-pondicherry-secunderabad-hubli-mumbai-chennai-coimbatore-madurai-vellore-ernakulam-nashik-pondy-bangalore-alwal-at-wemakescholars-4482000625",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "d561ed0d809f",
@@ -3145,21 +3275,21 @@
       "category": "defence",
       "title": "Overview of Military and Protective Services Openings in the Des Moines Area",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-des-moines-ia",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "cc5233c674f0",
       "category": "defence",
       "title": "Overview of Military and Protective Services Opportunities in the San Francisco Bay Area",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-san-francisco-ca",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "91712e374b16",
       "category": "private-vacancy",
       "title": "Recent Program and Project Management Openings Highlighted for Boydton and Surrounding Regions",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-boydton-va",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "040dd341f762",
@@ -3173,6 +3303,13 @@
       "category": "ai-news",
       "title": "Check Point Launches Maestro Hyperscale Orchestrator 200 to Secure AI-Scale Traffic",
       "source": "https://www.prnewswire.com/news-releases/check-point-secures-ai-scale-traffic-for-neoclouds-sovereign-ai-and-the-enterprise-with-new-maestro-hyperscale-orchestrator-302923480.html",
+      "reason": "no_source_image"
+    },
+    {
+      "id": "b5de6b16d801",
+      "category": "controversies",
+      "title": "Pomerantz Law Firm Reminds York Space Systems Investors of Class Action Lawsuit and Upcoming Deadlines",
+      "source": "https://www.prnewswire.com/news-releases/investor-alert-pomerantz-law-firm-reminds-investors-with-losses-on-their-investment-in-york-space-systems-inc-of-class-action-lawsuit-and-upcoming-deadlines--yss-302923308.html",
       "reason": "no_source_image"
     },
     {
@@ -3369,7 +3506,7 @@
       "category": "apps-software",
       "title": "Saatvik Agro Announces Hiring for Analyst Software Engineer (Java) in Morena",
       "source": "https://in.linkedin.com/jobs/view/analyst-software-engineer-java-at-saatvik-agro-4484805864",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "12518e969a95",
@@ -3491,6 +3628,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "a38a0774c04b",
+      "category": "business",
+      "title": "Electrolux Group Reports Q3 2026 Results with Net Sales of SEK 33,919 Million",
+      "source": "https://www.prnewswire.com/news-releases/electrolux-group-interim-report-q3-2026-302917824.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "9a0aada26bcb",
       "category": "world-news",
       "title": "US Administration Challenges Voter Rolls Amid Tense Midterm Election Environment",
@@ -3596,6 +3740,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "9e6fe2d78615",
+      "category": "controversies",
+      "title": "Pomerantz Law Firm Reminds Ryde Group Ltd. Investors of Class Action Lawsuit and Upcoming Deadlines",
+      "source": "https://www.prnewswire.com/news-releases/investor-alert-pomerantz-law-firm-reminds-investors-with-losses-on-their-investment-in-ryde-group-ltd-of-class-action-lawsuit-and-upcoming-deadlines--ryde-302923029.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "a28e5c356dd7",
       "category": "ai-news",
       "title": "Arctic Wolf Named a Leader in 2026 QKS SPARK Matrix for AI SOC Automation",
@@ -3643,6 +3794,13 @@
       "title": "GLOCERY Announces Full-Time Graphic Designer Opening in Delhi NCR",
       "source": "https://in.linkedin.com/jobs/view/graphic-designer-at-glocery-4483888452",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "318f84b0be98",
+      "category": "business",
+      "title": "Esquire Financial Holdings, Inc. Announces Quarterly Dividend Payment",
+      "source": "https://www.prnewswire.com/news-releases/esquire-financial-holdings-inc-declares-regular-quarterly-dividend-for-common-stockholders-302924107.html",
+      "reason": "no_source_image"
     },
     {
       "id": "b11524ec6a1a",
@@ -3722,6 +3880,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "d628b12d541f",
+      "category": "private-vacancy",
+      "title": "Private Sector Job Openings Reported Across Haryana in Design, Technology, and Support Roles",
+      "source": "https://www.linkedin.com/jobs/national-institute-of-design-haryana-jobs-worldwide",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "c1085e9a2afd",
       "category": "conflict-news",
       "title": "Regional Ceasefire Begins in Occupied Oleshky Amid Continued Conflict",
@@ -3782,7 +3947,7 @@
       "category": "private-vacancy",
       "title": "Hospitality and Operations Job Openings Listed in Uttarakhand",
       "source": "https://in.linkedin.com/jobs/view/hospitality-jobs-in-ramnagar-uttarakhand-%E2%80%93-halwai-dcdp-indian-cdp-at-hospitality-jobs-4475358582",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "52c013755cd0",
@@ -3845,7 +4010,7 @@
       "category": "apps-software",
       "title": "Accenture in India Lists Multiple Technology Architect and Software Engineering Roles in Pune",
       "source": "https://in.linkedin.com/jobs/accenture-in-india-technology-architect-jobs-pune-division?f_EA=true",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "5093dbf5a1e3",
@@ -4111,7 +4276,14 @@
       "category": "private-vacancy",
       "title": "Amneal Pharmaceuticals Hiring Executive for Manufacturing Accounting in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/executive-manufacturing-accounting-at-amneal-pharmaceuticals-4484490317",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "6584c0d778a7",
+      "category": "private-vacancy",
+      "title": "Service Designer and Related Professional Openings Listed in the Mumbai Metropolitan Region",
+      "source": "https://www.linkedin.com/jobs/service-designer-jobs-rahul-nagar",
+      "reason": "no_source_image"
     },
     {
       "id": "0b186bc5af89",
@@ -4300,7 +4472,7 @@
       "category": "defence",
       "title": "Defense and Protective Services Employment Openings Listed in Moses Lake, Washington",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-moses-lake-wa",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "c2bd86ee3fa0",
@@ -4363,7 +4535,7 @@
       "category": "social-media",
       "title": "The Blue Kite Announces Opening for Social Media Associate Role in Goa via LinkedIn",
       "source": "https://in.linkedin.com/jobs/view/social-media-associate-at-the-blue-kite-4483449440",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "7548888dfa18",
@@ -4461,7 +4633,7 @@
       "category": "private-vacancy",
       "title": "Frontier Agrotech Private Limited Posts Opening for Accounts Executive-Finance in Chandigarh",
       "source": "https://in.linkedin.com/jobs/view/accounts-executive-finance-at-frontier-agrotech-private-limited-4483847528",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "dfccb93a8259",
@@ -4534,11 +4706,18 @@
       "reason": "source_unavailable"
     },
     {
+      "id": "fe8bcc88fbbd",
+      "category": "controversies",
+      "title": "Lawsuit Update Issued for BellRing Brands, Inc. (NYSE: BRBR) Investors",
+      "source": "https://www.prnewswire.com/news-releases/lawsuit-update-bellring-brands-inc-nyse-brbr-investors-should-contact-the-shareholders-foundation-302923106.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "a6ec2cd71bae",
       "category": "social-media",
       "title": "Headout Recruits YouTube Scriptwriter in Bengaluru for Search-Driven Travel Content",
       "source": "https://in.linkedin.com/jobs/view/scriptwriter-youtube-at-headout-4483872792",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "a9a7441e4555",
@@ -4658,6 +4837,13 @@
       "title": "Administrative and Support Job Openings Highlighted in Cheyenne and Surrounding Region",
       "source": "https://in.linkedin.com/jobs/administrative-assistant-jobs-cheyenne-wy",
       "reason": "access_denied"
+    },
+    {
+      "id": "41134e3a6a69",
+      "category": "private-vacancy",
+      "title": "PlanetSpark Announces Fresher Hiring for Inside Sales Executive Roles Across Select Regions",
+      "source": "https://in.linkedin.com/jobs/view/inside-sales-executive-fresher-hiring-in-najafgarh-ghaziabad-moradabad-delhi-at-planetspark-4484770369",
+      "reason": "invalid_source_images"
     },
     {
       "id": "f733746daf56",
@@ -4783,7 +4969,7 @@
       "category": "private-vacancy",
       "title": "Abhasa Rehab and Wellness Lists Senior Counsellor Opening in Coimbatore",
       "source": "https://in.linkedin.com/jobs/view/senior-counsellor-at-abhasa-rehab-and-wellness-4483860034",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "6310329f8fba",
@@ -4791,6 +4977,13 @@
       "title": "Defense and Protective Services Employment Opportunities Overview",
       "source": "https://in.linkedin.com/jobs/military-and-protective-services-jobs-boydton-va",
       "reason": "access_denied"
+    },
+    {
+      "id": "8c7640e43197",
+      "category": "private-vacancy",
+      "title": "ibis, ibis Styles, and ibis Budget List Portfolio Revenue Manager Opening in Delhi Cantonment",
+      "source": "https://in.linkedin.com/jobs/view/portfolio-revenue-manager-at-ibis-ibis-styles-ibis-budget-4483884920",
+      "reason": "invalid_source_images"
     },
     {
       "id": "be4cbb6ec969",
@@ -4825,7 +5018,7 @@
       "category": "private-vacancy",
       "title": "Bright Blue Gemstones Announces Client Acquisition Internship in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/client-acquisition-intern-at-bright-blue-gemstones-4471542402",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "818ffc8cc59c",
@@ -4833,6 +5026,13 @@
       "title": "US Emerges as Major FDI Destination for Indian Investments Amid Global Shifts",
       "source": "https://www.business-standard.com/economy/news/datanomics-will-us-replace-singapore-as-india-s-top-fdi-destination-126102901062_1.html",
       "reason": "access_denied"
+    },
+    {
+      "id": "3b1025a56362",
+      "category": "private-vacancy",
+      "title": "Media and Communications Job Openings Listed in Querétaro Region",
+      "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-querétaro-que",
+      "reason": "no_source_image"
     },
     {
       "id": "7b29faf9110f",
@@ -4910,6 +5110,13 @@
       "title": "Israel Election Left Without Clear Winner as Arab Parties Hold Potential Kingmaker Role",
       "source": "https://www.cbc.ca/news/world/arab-parties-offer-israel-s-political-leaders-a-path-to-victory-why-does-no-one-want-to-take-it-9.7399428",
       "reason": "source_error"
+    },
+    {
+      "id": "cfbccf994588",
+      "category": "india-news",
+      "title": "INDIA Bloc Holds Symbolic Public Impeachment Event Against CEC in Delhi",
+      "source": "https://www.amarujala.com/live/india-news/congress-impeachment-against-cec-gyanesh-kumar-today-rahul-and-akhilesh-participate-know-latest-update-live-2026-10-31?src=aamnesaamne&position=5",
+      "reason": "invalid_source_images"
     },
     {
       "id": "453f63c21ab4",
@@ -5235,54 +5442,34 @@
     }
   ],
   "missing_reasons": {
-    "no_source_image": 219,
+    "no_source_image": 228,
     "source_unavailable": 36,
-    "invalid_source_images": 158,
-    "access_denied": 215,
+    "invalid_source_images": 160,
+    "access_denied": 233,
     "source_error": 87,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "27399602ccef42af310a2803": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_XA_Ultra",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "6e0b7f005efe9f07310a5382": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_510",
-      "candidate_count": 12,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/120px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Text_document_with_red_question_mark.svg/120px-Text_document_with_red_question_mark.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "e329583be741bb8896c157a7": {
+    "af7bf0706387e1a96162f5c4": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Series_M_Copper-Cooled",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Chevrolet_cooper_cooled_car.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_V",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/NTT_DOCOMO_XPERIA_AX_SO-01E_Front.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "74e0c52178b2f0827ab81b54": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Nova",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/20px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "7dc00555bbbccda56150c7e7": {
+    "6cf24c6203a66cf9e21fa1da": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Chevelle",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/df/1970_Chevrolet_Chevelle_SS_396_Sport_Coupe%2C_front_left%2C_06-08-2024.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_C5-R",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7f/CHEVROLET_CORVETTE_C5-R_RETROMOBILE_2023_%2852683233300%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "9472a012a0d7cf56a6ac9297": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Corvette_%28C4%29",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/1994_Chevrolet_Corvette_coupe%2C_front_right%2C_06-16-2024.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "39911e0c2af8f887c9ee1df7": {
+      "reason": "source_photo_saved",
+      "source": "https://www.lg.com/uk/mobile-phones/smartphones/lgm160/",
+      "image": "https://www.lg.com/content/dam/channel/wcms/uk/images/mobile-phones/LGM160_AGBRBK_EEUK_UK_C/K4-image450.jpg"
     }
   },
   "mode": "directory"
