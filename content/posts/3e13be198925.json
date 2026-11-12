@@ -1,0 +1,33 @@
+{
+  "en_title": "CISA Warns of 'Fragnesia' Linux Flaw Used in PHP2Shell Attack Chains",
+  "hi_title": "CISA ने 'Fragnesia' लिनक्स खामी को लेकर चेतावनी दी, PHP2Shell हमलों में इस्तेमाल",
+  "en_body": "## Overview of the Threat\n\nThe U.S. Cybersecurity and Infrastructure Security Agency (CISA) has issued an urgent warning regarding a high-severity Linux kernel privilege escalation vulnerability, designated as CVE-2026-46300 and nicknamed \"Fragnesia.\" This flaw is being actively exploited in the wild, often in combination with the \"PHP2Shell\" vulnerability chain.\n\n## Technical Details\n\nFragnesia is a logic bug residing within the Linux XFRM ESP-in-TCP subsystem. It is classified under the \"Dirty Frag\" vulnerability group. Exploitation allows local attackers to elevate their access to root-level permissions on affected Linux distributions. The vulnerability impacts kernels released prior to May 13, 2026.\n\n## The Attack Chain\n\nSecurity researchers and CISA have identified a concerning trend where attackers link Fragnesia with two critical PHP vulnerabilities (CVE-2026-109618 and CVE-2026-109619), known collectively as PHP2Shell. The attack flow generally involves:\n\n*   **Initial Access:** Utilizing PHP2Shell to execute remote code and implant PHP webshells.\n*   **Escalation:** Chaining the access with Fragnesia to achieve root privileges.\n*   **Post-Exploitation:** Deployment of custom scripts to compromise specific targeted systems.\n\nReports from Dream Security indicate that over two dozen servers across the United States, Japan, Taiwan, and South Korea have been compromised, with specific targeting of U.S. government-affiliated environments.\n\n## Mandatory Remediation\n\nUnder Binding Operational Directive (BOD) 26-04, CISA has added both Fragnesia and the PHP2Shell flaws to its Known Exploited Vulnerabilities (KEV) Catalog. Federal agencies are mandated to patch these vulnerabilities by the specified deadlines:\n\n*   **PHP2Shell (CVE-2026-109618/109619):** Deadline set for Thursday.\n*   **Fragnesia (CVE-2026-46300):** Deadline set for Saturday the 10th.\n\nAdministrators should verify their Linux kernel versions and PHP installations (notably Apache mod_php versions like 8.4.26) against official security advisories to ensure they are not running vulnerable code.",
+  "hi_body": "## खतरे का विवरण\n\nअमेरिकी साइबर सुरक्षा और बुनियादी ढांचा सुरक्षा एजेंसी (CISA) ने लिनक्स कर्नेल की एक उच्च-गंभीरता वाली प्रिविलेज एस्केलेशन खामी, जिसे CVE-2026-46300 और \"Fragnesia\" के नाम से जाना जाता है, के बारे में चेतावनी जारी की है। इस खामी का उपयोग सक्रिय रूप से \"PHP2Shell\" हमले की श्रृंखला के साथ मिलकर किया जा रहा है।\n\n## तकनीकी जानकारी\n\nFragnesia लिनक्स के XFRM ESP-in-TCP सबसिस्टम में मौजूद एक लॉजिक बग है। यह \"Dirty Frag\" भेद्यता वर्ग का हिस्सा है। इसका लाभ उठाकर स्थानीय हमलावर प्रभावित लिनक्स वितरणों पर रूट-लेवल की अनुमतियां हासिल कर सकते हैं। यह खामी उन कर्नेल को प्रभावित करती है जिन्हें 13 मई, 2026 से पहले जारी किया गया था।\n\n## हमला करने का तरीका\n\nसुरक्षा शोधकर्ताओं और CISA ने पाया है कि हमलावर Fragnesia को दो महत्वपूर्ण PHP कमजोरियों (CVE-2026-109618 और CVE-2026-109619), जिन्हें सामूहिक रूप से PHP2Shell कहा जाता है, के साथ जोड़ रहे हैं। हमले की सामान्य प्रक्रिया इस प्रकार है:\n\n*   **प्रारंभिक पहुंच:** PHP2Shell का उपयोग करके रिमोट कोड निष्पादित करना और PHP वेबशेल स्थापित करना।\n*   **एस्केलेशन:** रूट विशेषाधिकार प्राप्त करने के लिए Fragnesia का उपयोग करना।\n*   **पोस्ट-एक्सप्लॉयटेशन:** विशिष्ट लक्षित प्रणालियों को नुकसान पहुंचाने के लिए कस्टम स्क्रिप्ट तैनात करना।\n\nड्रीम सिक्योरिटी की रिपोर्ट के अनुसार, अमेरिका, जापान, ताइवान और दक्षिण कोरिया में दो दर्जन से अधिक सर्वर प्रभावित हुए हैं, जिनमें अमेरिकी सरकार से जुड़े तीन सर्वर भी शामिल हैं।\n\n## अनिवार्य सुरक्षा उपाय\n\nबाइंडिंग ऑपरेशनल डायरेक्टिव (BOD) 26-04 के तहत, CISA ने Fragnesia और PHP2Shell दोनों को अपनी 'ज्ञात शोषित कमजोरियों' (KEV) सूची में जोड़ा है। संघीय एजेंसियों को इन खामियों को तय समय सीमा के भीतर ठीक करना अनिवार्य है:\n\n*   **PHP2Shell (CVE-2026-109618/109619):** गुरुवार तक समाधान आवश्यक।\n*   **Fragnesia (CVE-2026-46300):** शनिवार, 10 तारीख तक समाधान आवश्यक।\n\nप्रशासकों को अपने लिनक्स कर्नेल संस्करणों और PHP इंस्टॉलेशन (विशेष रूप से Apache mod_php संस्करण 8.4.26) की जांच आधिकारिक सुरक्षा सलाहों के आधार पर करनी चाहिए ताकि यह सुनिश्चित हो सके कि वे असुरक्षित सिस्टम का उपयोग नहीं कर रहे हैं।",
+  "en_meta": "CISA warns that the 'Fragnesia' Linux kernel flaw is being chained with PHP2Shell vulnerabilities to gain root access. Federal agencies must patch immediately.",
+  "hi_meta": "CISA ने चेतावनी दी है कि 'Fragnesia' लिनक्स खामी का उपयोग PHP2Shell हमलों के साथ रूट एक्सेस के लिए किया जा रहा है। संघीय एजेंसियों के लिए पैचिंग अनिवार्य है।",
+  "en_keywords": [
+    "CISA",
+    "Fragnesia",
+    "Linux kernel",
+    "PHP2Shell",
+    "cybersecurity",
+    "vulnerability",
+    "CVE-2026-46300"
+  ],
+  "hi_keywords": [
+    "CISA",
+    "Fragnesia",
+    "लिनक्स कर्नेल",
+    "PHP2Shell",
+    "साइबर सुरक्षा",
+    "भेद्यता",
+    "CVE-2026-46300"
+  ],
+  "source_published_at": "2026-10-29T09:59:48-04:00",
+  "id": "3e13be198925",
+  "source": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-fragnesia-linux-flaw-chained-in-php2shell-attacks/",
+  "date": "2026-11-12T18:24:53.166334+00:00",
+  "source_title": "CISA warns of Fragnesia Linux flaw chained in PHP2Shell attacks",
+  "category": "technology",
+  "image_kind": "conceptual"
+}

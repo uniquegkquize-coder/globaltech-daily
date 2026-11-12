@@ -1,0 +1,31 @@
+{
+  "en_title": "CISA Adds Critical Brotli Vulnerability CVE-2026-111497 to Exploited Catalog",
+  "hi_title": "CISA ने सक्रिय रूप से शोषित गंभीर ब्रोटली (Brotli) भेद्यता CVE-2026-111497 को KEV कैटलॉग में जोड़ा",
+  "en_body": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has officially added a critical Brotli compression algorithm vulnerability, tracked as CVE-2026-111497, to its Known Exploited Vulnerabilities (KEV) catalog. This flaw, which has been associated with monikers such as Node2Shell, Broccoli2Shell, and HTTP2Shell, permits attackers to trigger memory corruption and potential remote code execution.\n\n## Understanding the Vulnerability\nThe issue arises from an out-of-bounds write weakness within the Brotli decoder. By utilizing a maliciously crafted Brotli-compressed stream, an unprivileged attacker can cause memory leaks, system crashes, or execute arbitrary code. While originally identified in the Node.js environment, the vulnerability extends to various HTTP servers and client implementations that utilize the Brotli library.\n\n## Federal Mandates and Patch Requirements\nFollowing the inclusion of the flaw in the KEV catalog, CISA issued Binding Operational Directive (BOD) 26-04, requiring all U.S. federal agencies to secure their systems by November 10. \n\nKey remediation steps include:\n* **Patching:** Applying updates provided by software vendors, including the emergency .NET security update released by Microsoft.\n* **Restarting Services:** Ensuring that all affected processes are restarted after the update is applied.\n* **Deployment:** Rebuilding and redeploying any container images that incorporate vulnerable libraries.\n\n## Guidance for Network Defenders\nAlthough BOD 26-04 applies directly to government agencies, CISA strongly advises all private and public sector security teams to prioritize this update. For those unable to patch immediately, CISA suggests the following temporary mitigations:\n* Block incoming Brotli-compressed requests via firewalls or proxies.\n* Temporarily disable the Brotli decoding feature in affected systems.\n\nAdministrators are advised to monitor official vendor security bulletins for ongoing updates related to CVE-2026-111497.",
+  "hi_body": "अमेरिकी साइबर सुरक्षा और बुनियादी ढांचा सुरक्षा एजेंसी (CISA) ने ब्रोटली (Brotli) कम्प्रेशन एल्गोरिदम में पाई गई एक गंभीर खामी, जिसे CVE-2026-111497 के रूप में ट्रैक किया जा रहा है, को अपने 'Known Exploited Vulnerabilities' (KEV) कैटलॉग में शामिल किया है। इसे Node2Shell, Broccoli2Shell और HTTP2Shell जैसे नामों से भी जाना जा रहा है, और यह हमलावरों को मेमोरी करप्शन और रिमोट कोड निष्पादन का अवसर दे सकता है।\n\n## भेद्यता का विवरण\nयह समस्या ब्रोटली डिकोडर में 'आउट-ऑफ-बाउंड्स राइट' कमजोरी के कारण उत्पन्न होती है। एक हमलावर विशेष रूप से तैयार किए गए ब्रोटली-कंप्रेस्ड स्ट्रीम का उपयोग करके मेमोरी लीक, सिस्टम क्रैश या मनमाना कोड निष्पादित कर सकता है। हालांकि यह मुख्य रूप से Node.js वातावरण में पहचानी गई थी, लेकिन यह उन सभी HTTP सर्वर और क्लाइंट कार्यान्वयन को प्रभावित करती है जो ब्रोटली लाइब्रेरी का उपयोग करते हैं।\n\n## संघीय निर्देश और पैचिंग की आवश्यकता\nKEV कैटलॉग में इसे शामिल करने के बाद, CISA ने 'बाइंडिंग ऑपरेशनल डायरेक्टिव' (BOD) 26-04 जारी किया है, जिसके तहत सभी अमेरिकी संघीय एजेंसियों को 10 नवंबर तक अपने सिस्टम को पैच करने का निर्देश दिया गया है।\n\nमहत्वपूर्ण उपचारात्मक उपाय:\n* **पैचिंग:** सॉफ्टवेयर विक्रेताओं द्वारा प्रदान किए गए अपडेट लागू करना, जिसमें माइक्रोसॉफ्ट द्वारा जारी आपातकालीन .NET सुरक्षा अपडेट भी शामिल है।\n* **रीस्टार्ट:** अपडेट लागू करने के बाद सभी प्रभावित प्रक्रियाओं को रीस्टार्ट करना सुनिश्चित करें।\n* **डिप्लॉयमेंट:** उन सभी कंटेनर इमेज को फिर से बनाना और डिप्लॉय करना जिनमें असुरक्षित लाइब्रेरी शामिल हैं।\n\n## नेटवर्क सुरक्षा सलाह\nयद्यपि BOD 26-04 विशेष रूप से सरकारी एजेंसियों के लिए है, CISA ने सभी निजी और सार्वजनिक क्षेत्र की सुरक्षा टीमों से इस अपडेट को प्राथमिकता देने का आग्रह किया है। जो टीमें तुरंत पैच लागू नहीं कर सकतीं, उनके लिए CISA ने निम्नलिखित अस्थाई समाधान सुझाए हैं:\n* फायरवाल या प्रॉक्सी के माध्यम से आने वाले ब्रोटली-कंप्रेस्ड अनुरोधों को ब्लॉक करें।\n* प्रभावित सिस्टम में ब्रोटली डिकोडिंग सुविधा को अस्थायी रूप से अक्षम करें।\n\nप्रशासकों को सलाह दी जाती है कि वे CVE-2026-111497 से संबंधित अपडेट के लिए आधिकारिक विक्रेता सुरक्षा बुलेटिनों पर निरंतर नज़र रखें।",
+  "en_meta": "CISA warns of active exploitation of the Brotli vulnerability CVE-2026-111497, mandating federal agencies to patch by November 10.",
+  "hi_meta": "CISA ने गंभीर ब्रोटली भेद्यता CVE-2026-111497 के सक्रिय शोषण पर चेतावनी दी है और संघीय एजेंसियों को 10 नवंबर तक पैचिंग करने का आदेश दिया है।",
+  "en_keywords": [
+    "CISA",
+    "CVE-2026-111497",
+    "Brotli",
+    "cybersecurity",
+    "Node2Shell",
+    "data compression"
+  ],
+  "hi_keywords": [
+    "CISA",
+    "CVE-2026-111497",
+    "Brotli",
+    "साइबर सुरक्षा",
+    "Node2Shell",
+    "डेटा कम्प्रेशन"
+  ],
+  "source_published_at": "2026-10-28T06:46:23-04:00",
+  "id": "dfcccddd5281",
+  "source": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw/",
+  "date": "2026-11-12T18:25:16.909295+00:00",
+  "source_title": "CISA warns of hackers now exploiting critical Node2Shell flaw",
+  "category": "technology",
+  "image_kind": "conceptual"
+}

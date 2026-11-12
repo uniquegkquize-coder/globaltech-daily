@@ -1,0 +1,31 @@
+{
+  "en_title": "CISA Confirms Active Exploitation of Critical GitLab Vulnerability",
+  "hi_title": "CISA ने गंभीर GitLab भेद्यता के सक्रिय रूप से शोषण की पुष्टि की",
+  "en_body": "## Overview of the Security Threat\nThe US Cybersecurity and Infrastructure Security Agency (CISA) has officially confirmed that attackers are actively exploiting a maximum-severity vulnerability in GitLab. The flaw, tracked as CVE-2026-97229, exists within the CI/CD Regular Expression Compiler and poses a significant risk to unpatched servers.\n\n## Technical Details and Impact\nIdentified by security researcher 'joaxcar', the vulnerability stems from an integer overflow weakness. If exploited, it allows remote, unauthenticated attackers to execute arbitrary code on target instances by injecting maliciously crafted regular expressions into CI/CD configuration files. This occurs due to insufficient validation processes within the compiler.\n\n## Remediation and Recommendations\nGitLab has released patches to address the issue in the following versions:\n* GitLab Community Edition (CE) and Enterprise Edition (EE) 19.4.2\n* GitLab CE/EE 19.3.5\n* GitLab CE/EE 19.2.8\n\nAdmins are urged to upgrade their instances immediately. Additionally, GitLab has provided threat detection resources to assist users with self-managed installations. CISA has added this flaw to its Known Exploited Vulnerabilities (KEV) Catalog and, under Binding Operational Directive (BOD) 26-04, has mandated that US federal agencies secure their systems by the upcoming Sunday deadline. Private sector organizations are also strongly advised to prioritize patching to defend against potential breaches.\n\n## Contextual Security Trends\nThis incident follows a series of recent security challenges for the platform. GitLab has addressed multiple high-severity vulnerabilities throughout the year, including flaws in the repository commits API and two-factor authentication bypasses. Security researchers note that thousands of internet-exposed instances remain, making prompt patching critical for the platform's extensive user base.",
+  "hi_body": "## सुरक्षा खतरे का विवरण\nअमेरिकी साइबर सुरक्षा और बुनियादी ढांचा सुरक्षा एजेंसी (CISA) ने आधिकारिक तौर पर पुष्टि की है कि हमलावर GitLab में एक अधिकतम-गंभीरता वाली भेद्यता का सक्रिय रूप से फायदा उठा रहे हैं। CVE-2026-97229 के रूप में ट्रैक की गई यह त्रुटि CI/CD रेगुलर एक्सप्रेशन कंपाइलर में मौजूद है और असुरक्षित सर्वरों के लिए बड़ा जोखिम पैदा करती है।\n\n## तकनीकी विवरण और प्रभाव\nसुरक्षा शोधकर्ता 'joaxcar' द्वारा खोजी गई यह भेद्यता एक 'इंटीजर ओवरफ्लो' कमजोरी के कारण होती है। यदि इसका फायदा उठाया जाता है, तो यह दूरस्थ हमलावरों को CI/CD कॉन्फ़िगरेशन फ़ाइलों में दुर्भावनापूर्ण रूप से तैयार किए गए रेगुलर एक्सप्रेशन इंजेक्ट करके लक्ष्य सर्वर पर मनमाना कोड चलाने की अनुमति दे सकता है। यह समस्या कंपाइलर के भीतर अपर्याप्त सत्यापन के कारण उत्पन्न होती है।\n\n## सुधार और सिफारिशें\nGitLab ने इस मुद्दे को हल करने के लिए निम्नलिखित संस्करणों में पैच जारी किए हैं:\n* GitLab कम्युनिटी एडिशन (CE) और एंटरप्राइज एडिशन (EE) 19.4.2\n* GitLab CE/EE 19.3.5\n* GitLab CE/EE 19.2.8\n\nप्रशासकों को सलाह दी जाती है कि वे तुरंत अपने सर्वर को अपडेट करें। GitLab ने स्वयं-प्रबंधित इंस्टेंस वाले उपयोगकर्ताओं की सहायता के लिए खतरे का पता लगाने वाले संसाधन भी प्रदान किए हैं। CISA ने इस भेद्यता को अपने 'नोअन एक्सप्लॉइटेड वल्नेरेबिलिटी' (KEV) कैटलॉग में जोड़ा है। बाइंडिंग ऑपरेशनल डायरेक्टिव (BOD) 26-04 के तहत, अमेरिकी संघीय एजेंसियों को रविवार तक अपने सिस्टम सुरक्षित करने का निर्देश दिया गया है। निजी क्षेत्र के संगठनों से भी हमलों से बचने के लिए पैचिंग को प्राथमिकता देने का आग्रह किया गया है।\n\n## सुरक्षा प्रवृत्तियाँ\nयह घटना GitLab के लिए हालिया सुरक्षा चुनौतियों की एक कड़ी का हिस्सा है। कंपनी ने इस वर्ष रिपॉजिटरी कमिट्स API और टू-फैक्टर ऑथेंटिकेशन बायपास जैसी कई गंभीर खामियों को ठीक किया है। शोधकर्ताओं का मानना है कि इंटरनेट पर हजारों GitLab इंस्टेंस खुले हुए हैं, जिससे तुरंत पैचिंग करना अनिवार्य हो जाता है।",
+  "en_meta": "CISA confirms active exploitation of critical GitLab CVE-2026-97229. Admins must patch immediately to prevent remote code execution attacks.",
+  "hi_meta": "CISA ने गंभीर GitLab भेद्यता CVE-2026-97229 के सक्रिय शोषण की पुष्टि की है। सुरक्षा के लिए एडमिन तुरंत पैच अपडेट करें।",
+  "en_keywords": [
+    "GitLab",
+    "CVE-2026-97229",
+    "CISA",
+    "cybersecurity",
+    "vulnerability",
+    "patch"
+  ],
+  "hi_keywords": [
+    "GitLab",
+    "CVE-2026-97229",
+    "CISA",
+    "साइबर सुरक्षा",
+    "भेद्यता",
+    "पैच"
+  ],
+  "source_published_at": "2026-10-30T09:00:32-04:00",
+  "id": "651570ec01bc",
+  "source": "https://www.bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks/",
+  "date": "2026-11-12T18:24:31.491867+00:00",
+  "source_title": "CISA says max severity GitLab flaw now exploited in the wild",
+  "category": "technology",
+  "image_kind": "conceptual"
+}
