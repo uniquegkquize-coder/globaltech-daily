@@ -32,6 +32,8 @@ def head(lang,title,description,url,extra='',*,site,alternates=None,canonical=No
     canonical=canonical or url
     alternates=alternates if alternates is not None else {
         'en':url.replace('/hi/','/en/',1),'hi':url.replace('/en/','/hi/',1)}
+    if canonical != url or 'noindex' in robots.lower():
+        alternates = {}
     tags=f'<title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta name="robots" content="{esc(robots)}"><link rel="canonical" href="{esc(canonical)}">'
     for code,target in alternates.items():tags+=f'<link rel="alternate" hreflang="{code}" href="{esc(target)}">'
     if alternates:tags+=f'<link rel="alternate" hreflang="x-default" href="{esc(alternates.get("en",canonical))}">'

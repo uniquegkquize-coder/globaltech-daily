@@ -420,7 +420,10 @@ def limit_article_words(raw,limit=10000):
  if len(parts)<=limit:return str(raw or '')
  return ' '.join(parts[:limit]).rstrip(' ,;:')+'…'
 
-RELATED_POSTS=related_index(POSTS)
+RELATED_POSTS={
+ 'en':related_index(POSTS),
+ 'hi':related_index([p for p in POSTS if 'hi' in article_languages(p)]),
+}
 logo=Image.new('RGB',(512,512),(10,20,41));draw=ImageDraw.Draw(logo)
 draw.ellipse((40,40,472,472),outline=(92,224,220),width=12)
 draw.text((140,205),'GW',fill='white',font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',100) if Path('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf').exists() else ImageFont.load_default(size=100))
@@ -443,23 +446,29 @@ for p in POSTS:
   alternate_urls={code:SITE+article_path(p,code) for code in available}
   schema={'@context':'https://schema.org','@type':'NewsArticle' if is_news_article(p) else 'Article','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('updated_at') or p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg?v={image_version(p)}'] if has_featured(p) else []),'author':{'@type':'Organization','name':author_name(p),'url':f'{SITE}/{lang}/author/{author_handle(p)}/','logo':{'@type':'ImageObject','url':f'{SITE}/publisher-logo.png','width':512,'height':512}},'publisher':{'@type':'Organization','name':'GlobeWire Daily','url':SITE},'isBasedOn':p['source']}
   if not has_featured(p):schema.pop('image',None)
-  schema['breadcrumb']={'@type':'BreadcrumbList','itemListElement':[
-   {'@type':'ListItem','position':1,'name':'Home' if lang=='en' else 'होम','item':f'{SITE}/{lang}/'},
-   {'@type':'ListItem','position':2,'name':CATEGORIES[category(p)][0 if lang=='en' else 1],'item':f'{SITE}/{lang}/{category(p)}/'},
-   {'@type':'ListItem','position':3,'name':t,'item':url}]}
+  breadcrumb_trail=[
+   ('Home' if lang=='en' else 'होम',f'/{lang}/'),
+   ('Latest News' if lang=='en' else 'ताज़ा खबरें',f'/{lang}/all-news/'),
+   (CATEGORIES[category(p)][lang=='hi'],f'/{lang}/{category(p)}/'),
+   (t,article_path(p,lang))]
+  crumbs={'@type':'BreadcrumbList','itemListElement':[
+   {'@type':'ListItem','position':position,'name':name,'item':SITE+path}
+   for position,(name,path) in enumerate(breadcrumb_trail,1)]}
+  breadcrumb_html=' › '.join(f'<a href="{e(path)}">{e(name)}</a>' for name,path in breadcrumb_trail[:-1])+f' › <span>{e(t)}</span>'
   schema['keywords']=article_keywords(p,lang)
-  schema['description']=desc[:160]
-  schema['url']=url
-  crumbs=schema.pop('breadcrumb')
+  schema['description']=desc
   schema['@id']=canonical_url+'#article';schema['url']=canonical_url
   schema['mainEntityOfPage']={'@id':canonical_url+'#webpage'}
   schema['inLanguage']=content_lang;schema['articleSection']=CATEGORIES[category(p)][content_lang=='hi']
   schema['publisher']={'@id':SITE+'/#publisher'}
-  for field in ('datePublished','dateModified'):
-   stamp=iso_date(schema.get(field))
-   if stamp:schema[field]=stamp
-   else:schema.pop(field,None)
-  schema_json=json.dumps({'@context':'https://schema.org','@graph':[schema,crumbs]},ensure_ascii=False).replace('<',chr(92)+'u003c')
+  published=iso_date(p.get('date'))
+  modified=iso_date(p.get('updated_at'))
+  if published:
+   schema['datePublished']=published
+   schema['dateModified']=max(filter(None,(published,modified)),key=dt.datetime.fromisoformat)
+  else:
+   schema.pop('datePublished',None);schema.pop('dateModified',None)
+  schema_json=json.dumps({'@context':'https://schema.org','@graph':[schema,crumbs] if not fallback else [crumbs]},ensure_ascii=False).replace('<',chr(92)+'u003c')
   extra_keywords='<meta name="keywords" content="'+e(', '.join(article_keywords(p,lang)))+'">'
   image_width,image_height=image_dimensions(s)
   og_image=f'<meta property="og:image" content="{SITE}/images/{s}.jpg?v={image_version(p)}"><meta property="og:image:width" content="{image_width}"><meta property="og:image:height" content="{image_height}"><meta property="og:image:alt" content="{e(image_alt(p,lang))}"><meta name="twitter:image" content="{SITE}/images/{s}.jpg?v={image_version(p)}">' if has_featured(p) else ''
@@ -478,15 +487,15 @@ for p in POSTS:
     f'<a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u={quote(url,safe="")}">Facebook</a>'
     f'<a target="_blank" rel="noopener noreferrer" href="https://t.me/share/url?url={quote(url,safe="")}&text={quote(t)}">Telegram</a>'
     f'<button type="button" class="copy-share" data-share-url="{e(url)}">{copy_text}</button></div></div>')
-  related=RELATED_POSTS.get(p['id'],[])
-  related_html=''.join('<a class="related-card" href="'+article_path(q,lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg?v={image_version(q)}" alt="{e(title(q,lang))}">' if has_featured(q) else '<span class="related-placeholder" aria-hidden="true">GlobeWire Daily</span>')+'<span>'+e(title(q,lang))+'</span></a>' for q in related)
+  related=RELATED_POSTS[content_lang].get(p['id'],[])
+  related_html=''.join('<a class="related-card" href="'+article_path(q,content_lang)+'">'+(f'<img loading="lazy" width="320" height="180" src="/images/{slug(q)}.jpg?v={image_version(q)}" alt="{e(title(q,content_lang))}">' if has_featured(q) else '<span class="related-placeholder" aria-hidden="true">GlobeWire Daily</span>')+'<span>'+e(title(q,content_lang))+'</span></a>' for q in related)
   keyword_html='<section class="article-tags"><strong>'+('Topics' if lang=='en' else 'संबंधित विषय')+'</strong><div class="tag-list">'+''.join('<span class="tag">'+e(term)+'</span>' for term in article_keywords(p,lang)[:7])+'</div></section>'
   context_html='<aside class="context-links"><strong>'+('Explore this topic' if lang=='en' else 'इस विषय पर और पढ़ें')+'</strong><a href="/'+lang+'/'+category(p)+'/">'+e(CATEGORIES[category(p)][0 if lang=='en' else 1])+'</a>'
   if p.get('directory_kind') in ('phones','cars','bikes','colleges') and p.get('directory_name'):
    from directories import entry_slug
    kind=p['directory_kind'];name=p['directory_name']
    context_html+='<a href="/'+lang+'/'+kind+'/'+entry_slug(name)+'/">'+e(name)+(' — full directory profile' if lang=='en' else ' — डायरेक्टरी में पूरा विवरण')+'</a>'
-  context_html+=''.join('<a href="'+article_path(q,lang)+'">'+e(title(q,lang))+'</a>' for q in related[:2])+'</aside>'
+  context_html+=''.join('<a href="'+article_path(q,content_lang)+'">'+e(title(q,content_lang))+'</a>' for q in related[:2])+'</aside>'
   # Offer relevant next steps at a section boundary without interrupting prose.
   boundaries=list(re.finditer(r'<h2 id=',story_html))
   split=boundaries[2].start() if len(boundaries)>2 else len(story_html)
@@ -500,7 +509,7 @@ for p in POSTS:
   reading_html='<p class="reading-meta">'+(f'{reading_minutes} min read' if content_lang=='en' else f'{reading_minutes} मिनट में पढ़ें')+'</p>'
   guide_notice=('<p class="guide-context">'+('Reference guide • Source-listed details may cover multiple variants. Check the exact model and market before buying.' if content_lang=='en' else 'संदर्भ गाइड • स्रोत में कई वेरिएंट का विवरण हो सकता है। खरीदने से पहले सही मॉडल और बाजार की जानकारी जाँचें।')+'</p>') if p.get('directory_kind') in ('phones','cars','bikes') else ''
   trending_html=trending_section(lang,p)
-  content=f'''<div class="wrap"><article class="article readable-article" data-article-layout="v3"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/{lang}/">{'Home' if lang=='en' else 'होम'}</a> › <a href="/{lang}/{category(p)}/">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</a> › <span>{e(t)}</span></nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1>{title_ad}<p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> · Source: {e(sourcehost)}</p>{reading_html}{updated_notice(p,lang)}{summary_html}{featured_html}{guide_notice}{article_note(p,lang)}{article_panel(p,lang)}{toc_html}<div class="story">{story_html}</div>{share_html}{keyword_html}<div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {'AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''
+  content=f'''<div class="wrap"><article class="article readable-article" data-article-layout="v3"><nav class="breadcrumbs" aria-label="{'Breadcrumb' if lang=='en' else 'नेविगेशन पथ'}">{breadcrumb_html}</nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1>{title_ad}<p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> · Source: {e(sourcehost)}</p>{reading_html}{updated_notice(p,lang)}{summary_html}{featured_html}{guide_notice}{article_note(p,lang)}{article_panel(p,lang)}{toc_html}<div class="story">{story_html}</div>{share_html}{keyword_html}<div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {'AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''
   page=shell(lang,t,desc,url,content,extra,alternate_urls=alternate_urls,canonical_url=canonical_url,robots='noindex,follow,max-image-preview:large' if fallback else ROBOTS,document_lang=content_lang)
   page=page.removesuffix('</body></html>')+article_ad_scripts()+'</body></html>'
   write(OUT / article_path(p,lang).lstrip('/') / 'index.html',page)
