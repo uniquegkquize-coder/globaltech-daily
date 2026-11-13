@@ -1,127 +1,118 @@
 {
-  "finished_at": "2026-11-13T06:40:54.320911+00:00",
+  "finished_at": "2026-11-13T08:59:59.543072+00:00",
   "outcome": "time_limit_reached",
-  "duration_seconds": 6083.0,
-  "published": 172,
+  "duration_seconds": 6294.8,
+  "published": 69,
   "by_category": {
-    "private-vacancy": 7,
-    "gadgets": 9,
-    "business": 18,
-    "social-media": 2,
-    "cricket": 17,
-    "celebrity-news": 15,
-    "defence": 8,
-    "controversies": 4,
-    "world-news": 16,
-    "movies-entertainment": 16,
-    "india-news": 7,
-    "apps-software": 2,
-    "movie-releases": 4,
-    "ai-news": 13,
-    "conflict-news": 5,
-    "mobile-launches": 3,
-    "deals-offers": 2,
-    "technology": 2,
-    "environment": 2,
-    "gaming": 2,
-    "consumer-alerts": 2,
-    "sports": 1,
-    "automobiles": 4,
-    "lifestyle": 2,
+    "controversies": 3,
+    "technology": 12,
+    "gaming": 3,
+    "ai-news": 5,
     "government-schemes": 4,
-    "cyber-security": 2,
-    "telecom": 2,
-    "banking-finance": 1
+    "movies-entertainment": 3,
+    "automobiles": 8,
+    "business": 7,
+    "india-news": 4,
+    "world-news": 3,
+    "gadgets": 1,
+    "private-vacancy": 2,
+    "deals-offers": 3,
+    "celebrity-news": 3,
+    "apps-software": 3,
+    "lifestyle": 1,
+    "environment": 2,
+    "car-launches": 1,
+    "mobile-launches": 1
   },
-  "ai_calls": 334,
+  "ai_calls": 161,
   "ai_limit": 1000,
   "target": 200,
   "discovered_by_category": {
     "defence": 1
   },
-  "retry_after_seconds": 0,
-  "shortfall": 28,
+  "retry_after_seconds": null,
+  "shortfall": 131,
   "target_met": false,
   "attempts": [
     {
       "pass": 1,
       "exit_code": 0,
-      "published": 9,
-      "ai_calls": 36,
+      "published": 5,
+      "ai_calls": 20,
       "ai_limit": 100,
       "outcome": "time_limit_reached"
     },
     {
       "pass": 2,
       "exit_code": 0,
-      "published": 18,
-      "ai_calls": 36,
+      "published": 7,
+      "ai_calls": 18,
       "ai_limit": 100,
       "outcome": "time_limit_reached"
     },
     {
       "pass": 3,
       "exit_code": 0,
-      "published": 20,
-      "ai_calls": 30,
-      "ai_limit": 100,
-      "outcome": "target_reached"
-    },
-    {
-      "pass": 4,
-      "exit_code": 0,
-      "published": 20,
-      "ai_calls": 40,
-      "ai_limit": 100,
-      "outcome": "target_reached"
-    },
-    {
-      "pass": 5,
-      "exit_code": 0,
-      "published": 20,
-      "ai_calls": 33,
-      "ai_limit": 100,
-      "outcome": "target_reached"
-    },
-    {
-      "pass": 6,
-      "exit_code": 0,
-      "published": 11,
-      "ai_calls": 33,
+      "published": 2,
+      "ai_calls": 15,
       "ai_limit": 100,
       "outcome": "time_limit_reached"
     },
     {
+      "pass": 4,
+      "exit_code": 0,
+      "published": 3,
+      "ai_calls": 17,
+      "ai_limit": 100,
+      "outcome": "time_limit_reached"
+    },
+    {
+      "pass": 5,
+      "exit_code": 0,
+      "published": 8,
+      "ai_calls": 16,
+      "ai_limit": 100,
+      "outcome": "time_limit_reached"
+    },
+    {
+      "pass": 6,
+      "exit_code": 0,
+      "published": 20,
+      "ai_calls": 22,
+      "ai_limit": 100,
+      "outcome": "target_reached"
+    },
+    {
       "pass": 7,
       "exit_code": 0,
-      "published": 14,
-      "ai_calls": 27,
+      "published": 11,
+      "ai_calls": 20,
       "ai_limit": 100,
       "outcome": "time_limit_reached"
     },
     {
       "pass": 8,
       "exit_code": 0,
-      "published": 20,
-      "ai_calls": 31,
+      "published": 3,
+      "ai_calls": 14,
       "ai_limit": 100,
-      "outcome": "target_reached"
+      "outcome": "time_limit_reached"
     },
     {
       "pass": 9,
       "exit_code": 0,
-      "published": 20,
-      "ai_calls": 33,
+      "published": 10,
+      "ai_calls": 19,
       "ai_limit": 100,
-      "outcome": "target_reached"
+      "outcome": "time_limit_reached"
     },
     {
       "pass": 10,
-      "exit_code": 0,
-      "published": 20,
-      "ai_calls": 35,
+      "exit_code": 124,
+      "published": 0,
+      "ai_calls": 0,
       "ai_limit": 100,
-      "outcome": "target_reached"
+      "outcome": "time_limit_reached"
     }
   ]
 }
