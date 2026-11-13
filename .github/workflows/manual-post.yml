@@ -3,11 +3,10 @@ on:
   workflow_dispatch:
     inputs:
       article:
-        description: English article text, or the full submission copied from the GlobeWire editor
-        required: true
+        description: Article in English or Hindi, or paste a copied editor submission
         type: string
       en_title:
-        description: English headline (fill when typing the article here)
+        description: Title in the same language as article (leave blank when using Hindi fields below)
         type: string
       category:
         description: Optional category slug. Leave blank to choose automatically from the article.
@@ -61,22 +60,46 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install photo importer dependencies
-        run: pip install 'requests>=2.31,<3' 'Pillow>=10,<13'
+      - name: Install publisher dependencies
+        run: pip install -r requirements.txt
       - name: Validate and save the article
         env:
           POST_MODE: ${{ inputs.mode }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          APEX_GEMINI_KEY: ${{ secrets.APEX_GEMINI_KEY }}
+          UNIQUE: ${{ secrets.UNIQUE }}
+          VK6917434: ${{ secrets.VK6917434 }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          AI_PROVIDER_ORDER: gemini,groq,openrouter
+          GEMINI_MODEL: gemini-flash-lite-latest
+          MAX_MODELS_PER_ARTICLE: '2'
+          MAX_AI_CALLS_PER_RUN: '12'
+          PYTHONDONTWRITEBYTECODE: '1'
         run: |
           set -euo pipefail
+          input="$RUNNER_TEMP/globewire-input.json"
           submission="$RUNNER_TEMP/globewire-post.json"
           jq -e '
             .inputs as $input
-            | ($input.article | try fromjson catch null) as $copied
+            | (($input.article // "") | try fromjson catch null) as $copied
             | (if ($copied | type) == "object" and ($copied | has("en_body")) then $copied
-               else {en_body: $input.article} end)
+               else {en_body: ($input.article // "")} end)
             + ($input | {en_title, category, hi_title, hi_body, source, image_url, image_upload, image_credit, image_license}
                | with_entries(select(.value != null and .value != "")))
-          ' "$GITHUB_EVENT_PATH" > "$submission"
+          ' "$GITHUB_EVENT_PATH" > "$input"
+          PYTHONPATH=scripts python - "$input" "$submission" <<'PYTHON'
+          import os
+          import sys
+          from manual_translation import prepare_file
+
+          try:
+              prepare_file(*sys.argv[1:])
+          except ValueError as error:
+              with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as summary:
+                  summary.write(f'## Submission stopped\n\n{error}\n')
+              sys.exit(str(error))
+          PYTHON
           if [ "$POST_MODE" = check ]; then
             python scripts/manual_post.py "$submission" --check
             exit 0

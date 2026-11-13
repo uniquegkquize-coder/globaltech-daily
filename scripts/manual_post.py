@@ -53,7 +53,8 @@ def infer_category(post):
     """Prefer a headline match, then a source section or the opening text."""
     fallback = 'india-news'
     for language in ('en', 'hi'):
-        topic = route_category(post[language + '_title'], fallback)
+        headline = post[language + '_title'].replace('परियोजना', '')
+        topic = route_category(headline, fallback)
         if topic != fallback:
             return topic
     topic = route_category(post['en_title'], fallback, post.get('source', ''))
@@ -65,7 +66,7 @@ def infer_category(post):
              if line.strip() and not line.lstrip().startswith(('#', '-', '*', '>'))),
             '',
         )
-        topic = route_category(opening[:400], fallback)
+        topic = route_category(opening[:400].replace('परियोजना', ''), fallback)
         if topic != fallback:
             return topic
     return fallback
@@ -76,6 +77,14 @@ def submission_hash(post, photo):
                    if key not in ('date', 'manual_category_mode')}
     fingerprint['photo'] = photo
     return hashlib.sha256(json.dumps(fingerprint, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+
+
+def article_paths(post):
+    article_slug = re.sub(r'[^a-z0-9]+', '-', (post.get('url_title') or post.get('en_title') or 'news').lower()).strip('-')[:75].rstrip('-')
+    return {
+        lang: f'/{lang}/news/{post["category"]}/{article_slug or "news"}-{post["id"][:10]}/'
+        for lang in ('en', 'hi') if lang == 'en' or post.get('hi_body')
+    }
 
 
 def prepare(data, now):
@@ -92,28 +101,30 @@ def prepare(data, now):
     post['hi_body'] = text_field(data, 'hi_body', maximum=24000)
     post['hi_meta'] = text_field(data, 'hi_meta', maximum=160)
     if any(post[key] for key in ('hi_title', 'hi_body', 'hi_meta')):
-        if len(post['hi_title']) < 5 or len(post['hi_body']) < 150 or not all(
+        minimum_hi = 80 if data.get('_translation_source') == 'en' else 150
+        if len(post['hi_title']) < 5 or len(post['hi_body']) < minimum_hi or not all(
             re.search(r'[\u0900-\u097f]', post[key]) for key in ('hi_title', 'hi_body')
         ):
             raise ValueError('Enter both a Hindi headline and at least 150 characters of Hindi text.')
     source = text_field(data, 'source', maximum=2000)
     post['url_title'] = post['en_title']
+    translation_request = text_field(data, '_translation_request', maximum=64)
+    if re.fullmatch(r'[a-f0-9]{64}', translation_request):
+        post['translation_request'] = translation_request
+        post['translation_source'] = text_field(data, '_translation_source', maximum=2)
     if source:
         post['source'] = https_url(source)
         post['source_title'] = text_field(data, 'source_title', maximum=180) or post['en_title']
         identity = canonical_lead_key(source)
     else:
         post['original_reporting'] = True
-        identity = 'globewire-original:' + title_key(post['en_title'])
+        original_title = post['hi_title'] if post.get('translation_source') == 'hi' else post['en_title']
+        identity = 'globewire-original:' + title_key(original_title)
     post['category'] = category or infer_category(post)
     post['manual_category_mode'] = 'selected' if category else 'automatic'
     post['id'] = hashlib.sha256(identity.encode()).hexdigest()[:12]
     post = normalize_post(post)
-    article_slug = re.sub(r'[^a-z0-9]+', '-', post['url_title'].lower()).strip('-')[:75].rstrip('-')
-    paths = {
-        lang: f'/{lang}/news/{post["category"]}/{article_slug or "news"}-{post["id"][:10]}/'
-        for lang in ('en', 'hi') if lang == 'en' or post['hi_body']
-    }
+    paths = article_paths(post)
     if not source:
         post['source'] = SITE + paths['en']
         post['source_title'] = post['en_title']
@@ -152,7 +163,10 @@ def check_existing(folder, post):
         if not isinstance(old, dict):
             continue
         if old.get('manual_submission') == post['manual_submission']:
-            return True
+            return old
+        if post.get('translation_request') and old.get('translation_request') == post['translation_request']:
+            if old.get('translation_photo_sha') == post.get('translation_photo_sha'):
+                return old
         old_titles = [old.get(key) for key in ('en_title', 'hi_title', 'source_title')]
         old_urls = [old.get('source')]
         for previous in old.get('source_history') or []:
@@ -166,7 +180,7 @@ def check_existing(folder, post):
                    for title in old_titles if isinstance(title, str) and title)
         ):
             raise ValueError(f'Duplicate of an existing post ({path.stem}). Open {SITE}/en/news/{path.stem}/')
-    return False
+    return None
 
 
 def import_linked_photo(post, photo):
@@ -201,6 +215,8 @@ def run(submission, check):
 
         uploaded_bytes = read_upload(upload)
         uploaded_sha = hashlib.sha256(uploaded_bytes).hexdigest()
+        if post.get('translation_request'):
+            post['translation_photo_sha'] = uploaded_sha
         post['manual_submission'] = hashlib.sha256(
             (post['manual_submission'] + upload + uploaded_sha).encode()
         ).hexdigest()
@@ -209,8 +225,11 @@ def run(submission, check):
                 prepare_image(uploaded_bytes, minimum_width=1, formats=['JPEG', 'PNG', 'WEBP'])
             except OSError as exc:
                 raise ValueError('The upload could not be opened as JPG, PNG or WebP.') from exc
-    already_saved = check_existing(folder, post)
-    if not check and not already_saved:
+    existing = check_existing(folder, post)
+    if existing:
+        post = existing
+        paths = article_paths(post)
+    if not check and not existing:
         path = folder / f'{post["id"]}.json'
         with path.open('x', encoding='utf-8') as stream:
             stream.write(json.dumps(post, indent=2, ensure_ascii=False) + '\n')
@@ -227,16 +246,23 @@ def run(submission, check):
                 for suffix in ('.jpg', '.json'):
                     (ROOT / 'content/featured' / (post['id'] + suffix)).unlink(missing_ok=True)
                 raise ValueError('Photo import failed. Check the uploaded file or direct photo link.') from exc
-    result = {'id': post['id'], 'already_saved': already_saved, 'category': post['category'],
+    result = {'id': post['id'], 'already_saved': bool(existing), 'category': post['category'],
               'urls': {lang: SITE + path for lang, path in paths.items()}}
     print(json.dumps(result, ensure_ascii=False))
     if summary := os.environ.get('GITHUB_STEP_SUMMARY'):
-        heading = 'Already saved' if already_saved else ('Checks passed' if check else 'Article saved to main')
+        heading = 'Already saved' if existing else ('Checks passed' if check else 'Article saved to main')
         with open(summary, 'a', encoding='utf-8') as stream:
             stream.write(f'## {heading}\n\n')
             stream.write(f'Category: **{CATEGORIES[post["category"]][0]}** (`{post["category"]}`)\n\n')
-            if not check or already_saved:
+            if not check or existing:
                 stream.write('Article links become available after the Oracle deployment.\n\n')
+            if post.get('translation_source'):
+                translated_lang = 'Hindi' if post['translation_source'] == 'en' else 'English'
+                stream.write(f'Automatically translated version: **{translated_lang}**\n\n')
+                if check and not existing:
+                    title_key = 'hi_title' if translated_lang == 'Hindi' else 'en_title'
+                    body_key = 'hi_body' if translated_lang == 'Hindi' else 'en_body'
+                    stream.write(f'### {post[title_key]}\n\n{post[body_key]}\n\n')
             for lang, url in result['urls'].items():
                 stream.write(f'- [{lang.upper()}]({url})\n')
 

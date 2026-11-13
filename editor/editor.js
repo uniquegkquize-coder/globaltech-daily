@@ -76,14 +76,16 @@ document.querySelector('#clear').addEventListener('click', () => {
 });
 
 function validate(data) {
-  if (data.en_title.length < 5 || data.en_body.length < 150) {
-    return 'English headline में कम से कम 5 और लेख में 150 अक्षर दें।';
+  const english = data.en_title || data.en_body;
+  const hindi = data.hi_title || data.hi_body;
+  if (!english && !hindi) return 'English या हिंदी में शीर्षक और लेख भरें।';
+  if (english && (data.en_title.length < 5 || data.en_body.length < 150)) {
+    return 'English शीर्षक में कम से कम 5 और लेख में 150 अक्षर दें।';
   }
-  const hindi = /[\u0900-\u097f]/;
-  if ((data.hi_title || data.hi_body || data.hi_meta) &&
-      (data.hi_title.length < 5 || data.hi_body.length < 150 ||
-       !hindi.test(data.hi_title) || !hindi.test(data.hi_body))) {
-    return 'हिंदी संस्करण के लिए हिंदी शीर्षक और कम से कम 150 अक्षर का हिंदी लेख दें।';
+  const devanagari = /[\u0900-\u097f]/;
+  if (hindi && (data.hi_title.length < 5 || data.hi_body.length < 150 ||
+      !devanagari.test(data.hi_title) || !devanagari.test(data.hi_body))) {
+    return 'हिंदी में कम से कम 5 अक्षर का शीर्षक और 150 अक्षर का लेख दें।';
   }
   if (data.source && !httpsUrl(data.source)) return 'स्रोत का पूरा HTTPS लिंक दें।';
   if (data.image_upload && data.image_url) return 'अपलोड की गई फोटो का नाम या फोटो लिंक, दोनों में से एक भरें।';
