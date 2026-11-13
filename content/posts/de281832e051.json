@@ -1,0 +1,31 @@
+{
+  "en_title": "Go Issues Emergency Update Blocking Eight CA Keys Over Undisclosed Security Concerns",
+  "hi_title": "Go ने गुप्त सुरक्षा चिंताओं के कारण आठ CA कुंजियों को ब्लॉक करने के लिए आपातकालीन अपडेट जारी किया",
+  "en_body": "The Go programming language team released Go 1.27.3 and Go 1.26.10 on October 20, incorporating an urgent update that rejects certificate chains passing through eight specific intermediate certificate authority keys. Programs built using these new releases will refuse connections to servers whose certificates were issued under the blocked keys.\n\n## Update Details and Scope\n- **Releases:** Go 1.27.3 and Go 1.26.10.\n- **Action:** Rejects certificate chains passing through eight intermediate CA keys.\n- **Implementation:** The filter hashes each certificate's public key, catching cross-signed copies as well.\n- **Scope:** Applies in Go's native verifier and macOS/Windows OS verification paths without a disable switch.\n\n## Background and Connections\nWhile the Go team stated the action stems from unspecified security concerns regarding the operation of an unnamed certificate authority, public commenters matched the blocked SHA-256 hashes to eMudhra intermediate keys. These include six TLS intermediates under emSign Root TLS CA - G3—matching entries added to Mozilla's OneCRL list on October 17—and two code-signing intermediates.\n\nAction status across other vendors like Chrome, Apple, or Microsoft remains unestablished. As of October 20, eMudhra had published no notice regarding the intermediates in its repository, and official statements from Mozilla and Go have not detailed the exact catalysts for the security actions.\n\n## Practical Implications and Verification\nBecause Go's verifier lacks built-in revocation checking, blocking keys requires shipping them directly within a software release. Developers must rebuild their applications using supported Go versions to enforce the filter. Programs relying on private deployments that intentionally trust any of the eight keys will also experience connection failures.\n\nTo verify official announcements and updates, administrators should consult the official Go download page and security advisory channels.",
+  "hi_body": "Go प्रोग्रामिंग भाषा टीम ने 20 अक्टूबर को Go 1.27.3 और Go 1.26.10 जारी किए, जिसमें एक आवश्यक अपडेट शामिल है जो आठ विशिष्ट मध्यवर्ती प्रमाणपत्र प्राधिकरण (CA) कुंजियों से गुजरने वाली प्रमाणपत्र श्रृंखलाओं को अस्वीकार करता है। इन नए रिलीज़ का उपयोग करके बनाए गए प्रोग्राम उन सर्वरों से कनेक्शन अस्वीकार कर देंगे जिनके प्रमाणपत्र इन ब्लॉक की गई कुंजियों के तहत जारी किए गए थे।\n\n## अपडेट विवरण और दायरा\n- **रिलीज़:** Go 1.27.3 और Go 1.26.10।\n- **कार्रवाई:** आठ मध्यवर्ती CA कुंजियों से गुजरने वाली प्रमाणपत्र श्रृंखलाओं को अस्वीकार करता है।\n- **कार्यान्वयन:** फ़िल्टर प्रत्येक प्रमाणपत्र की सार्वजनिक कुंजी का हैश बनाता है, जिससे क्रॉस-हस्ताक्षरित प्रतियां भी पकड़ी जाती हैं।\n- **दायरा:** Go के मूल सत्यापनकर्ता और macOS/Windows OS सत्यापन पथों में बिना किसी डिसेबल स्विच के लागू होता है।\n\n## पृष्ठभूमि और कनेक्शन\nजबकि Go टीम ने कहा कि यह कार्रवाई एक अनाम प्रमाणपत्र प्राधिकरण के संचालन से संबंधित अनिर्दिष्ट सुरक्षा चिंताओं से उपजी है, सार्वजनिक टिप्पणीकारों ने ब्लॉक किए गए SHA-256 हैश का मिलान eMudhra मध्यवर्ती कुंजियों से किया। इनमें emSign Root TLS CA - G3 के तहत छह TLS मध्यवर्ती—जो 17 अक्टूबर को Mozilla की OneCRL सूची में जोड़े गए प्रविष्टियों से मेल खाते हैं—और दो कोड-साइनिंग मध्यवर्ती शामिल हैं।\n\nChrome, Apple या Microsoft जैसे अन्य विक्रेताओं द्वारा कार्रवाई की स्थिति अभी स्थापित नहीं हुई है। 20 अक्टूबर तक, eMudhra ने अपने रिपॉजिटरी में मध्यवर्ती के बारे में कोई सूचना प्रकाशित नहीं की थी, और Mozilla और Go के आधिकारिक बयानों में सुरक्षा कार्रवाइयों के सटीक कारणों का विवरण नहीं दिया गया है।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nचूँकि Go के सत्यापनकर्ता में अंतर्निहित रद्दीकरण जाँच का अभाव है, कुंजियों को ब्लॉक करने के लिए उन्हें सीधे सॉफ़्टवेयर रिलीज़ में भेजना आवश्यक है। डेवलपर्स को फ़िल्टर लागू करने के लिए समर्थित Go संस्करणों का उपयोग करके अपने अनुप्रयोगों को फिर से बनाना होगा। निजी तैनाती पर निर्भर प्रोग्राम जो जानबूझकर आठ कुंजियों में से किसी एक पर भरोसा करते हैं, उन्हें भी कनेक्शन विफलता का अनुभव होगा।\n\nआधिकारिक घोषणाओं और अपडेट को सत्यापित करने के लिए, प्रशासकों को आधिकारिक Go डाउनलोड पृष्ठ और सुरक्षा सलाहकार चैनलों से परामर्श करना चाहिए।",
+  "en_meta": "Go released emergency updates Go 1.27.3 and Go 1.26.10 to block eight intermediate certificate authority keys over undisclosed security concerns.",
+  "hi_meta": "Go ने अनिर्दिष्ट सुरक्षा चिंताओं के कारण आठ मध्यवर्ती प्रमाणपत्र प्राधिकरण कुंजियों को ब्लॉक करने के लिए Go 1.27.3 और Go 1.26.10 जारी किए।",
+  "en_keywords": [
+    "Go programming language",
+    "certificate authority",
+    "security update",
+    "emMudhra",
+    "OneCRL",
+    "intermediate certificates"
+  ],
+  "hi_keywords": [
+    "Go प्रोग्रामिंग भाषा",
+    "प्रमाणपत्र प्राधिकरण",
+    "सुरक्षा अपडेट",
+    "eMudhra",
+    "OneCRL",
+    "मध्यवर्ती प्रमाणपत्र"
+  ],
+  "source_published_at": "2026-10-20T17:02:00+05:30",
+  "id": "de281832e051",
+  "source": "https://thehackernews.com/2026/10/go-issues-emergency-update-blocking.html",
+  "date": "2026-11-13T05:39:41.176901+00:00",
+  "source_title": "Go Issues Emergency Update Blocking Eight CA Keys Over Undisclosed Security Concerns",
+  "category": "technology",
+  "image_kind": "conceptual"
+}

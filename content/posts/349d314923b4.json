@@ -1,0 +1,29 @@
+{
+  "en_title": "Security Flaws Across UK Government Sites Exposed Sensitive Data",
+  "hi_title": "यूके सरकारी साइटों पर सुरक्षा कमियों के कारण संवेदनशील डेटा हुआ उजागर",
+  "en_body": "A security researcher reported finding more than 100 serious vulnerabilities in publicly available UK government code, highlighting cyber hygiene issues across multiple departments. \n\nControlPlane security researcher Chris Nesbitt-Smith stated that he used consumer-grade AI models on a laptop to identify the issues across codebases from 33 organizations, noting that many could have been caught by routine IT checks.\n\n## The Planning Inspectorate Incident\n\nIn the most serious case identified, the Planning Inspectorate accidentally committed login credentials to a public repository on GitHub. According to Nesbitt-Smith, the credentials provided Microsoft Entra ID access to SharePoint sites, private employee OneDrive accounts, HR records, and sensitive libraries related to statutory inquiries.\n\nA spokesperson for the Planning Inspectorate stated that cyber monitoring tools detected the researcher's activity in August and that the agency addressed the issue within 20 minutes of the report, verifying that no data breach occurred.\n\n## Broader Findings and Industry Response\n\nNesbitt-Smith reported finding vulnerabilities in approximately two-thirds of the scanned public sector codebases, including systems associated with the Department of Education and a Scottish Government open data portal. The organizations involved have since addressed the issues.\n\nIndustry experts note that the incidents often stem from internal process failures rather than inherent flaws in open-source publishing. Discussions continue regarding how public sector technology teams manage code repositories amidst emerging AI-driven vulnerability discovery.",
+  "hi_body": "एक सुरक्षा शोधकर्ता ने सार्वजनिक रूप से उपलब्ध यूके सरकारी कोड में 100 से अधिक गंभीर कमियों का पता लगाने की सूचना दी है, जिससे कई विभागों में साइबर हाइजीन से जुड़ी समस्याएं सामने आई हैं।\n\nकंट्रोलप्लेन के सुरक्षा शोधकर्ता क्रिस नेस्बिट-स्मिथ ने बताया कि उन्होंने 33 संगठनों के कोडबेस में इन मुद्दों की पहचान करने के लिए लैपटॉप पर कंज्यूमर-ग्रेड एआई मॉडल का इस्तेमाल किया, और यह भी कहा कि इनमें से कई कमियों का पता नियमित आईटी जांच से लगाया जा सकता था।\n\n## प्लानिंग इंस्पेक्टरट की घटना\n\nपहचाने गए सबसे गंभीर मामले में, प्लानिंग इंस्पेक्टरट ने गलती से गिटहब पर एक सार्वजनिक रिपॉजिटरी में लॉगिन क्रेडेंशियल कमिट कर दिए थे। नेस्बिट-स्मिथ के अनुसार, इन क्रेडेंशियल्स से शेयरपॉइंट साइट्स, निजी कर्मचारी वनड्राइव खातों, एचआर रिकॉर्ड और वैधानिक पूछताछ से जुड़ी संवेदनशील लाइब्रेरी तक पहुंच मिल सकती थी।\n\nप्लानिंग इंस्पेक्टरट के एक प्रवक्ता ने बताया कि साइबर निगरानी उपकरणों ने अगस्त में शोधकर्ता की गतिविधि का पता लगा लिया था और एजेंसी ने रिपोर्ट मिलने के 20 मिनट के भीतर इस समस्या को हल कर दिया था, साथ ही यह भी सत्यापित किया कि कोई डेटा उल्लंघन नहीं हुआ था।\n\n## व्यापक निष्कर्ष और उद्योग प्रतिक्रिया\n\nनेस्बिट-स्मिथ ने बताया कि उन्होंने स्कैन किए गए लगभग दो-तिहाई सार्वजनिक क्षेत्र के कोडबेस में कमियों का पता लगाया, जिसमें शिक्षा विभाग से जुड़ी प्रणालियां और स्कॉटिश सरकार का एक खुला डेटा पोर्टल शामिल है। संबंधित संगठनों ने तब से इन मुद्दों का समाधान कर दिया है।\n\nउद्योग विशेषज्ञों का कहना है कि ये घटनाएं अक्सर ओपन-सोर्स प्रकाशन की अंतर्निहित कमियों के बजाय आंतरिक प्रक्रिया की विफलताओं के कारण होती हैं।",
+  "en_meta": "A security researcher reported finding serious vulnerabilities in publicly available UK government code, raising questions about public sector cyber hygiene.",
+  "hi_meta": "यूके सरकार के सार्वजनिक कोड में सुरक्षा कमियों का पता चला, जिससे साइबर सुरक्षा और विभागों की कार्यप्रणाली पर चर्चा शुरू हो गई है।",
+  "en_keywords": [
+    "UK government",
+    "cyber security",
+    "vulnerabilities",
+    "Planning Inspectorate",
+    "open source"
+  ],
+  "hi_keywords": [
+    "यूके सरकार",
+    "साइबर सुरक्षा",
+    "सुरक्षा कमियां",
+    "प्लानिंग इंस्पेक्टरट",
+    "ओपन सोर्स"
+  ],
+  "source_published_at": "2026-11-10T02:00:00.000-05:00",
+  "id": "349d314923b4",
+  "source": "https://www.wired.com/story/security-flaws-across-uk-government-sites-exposed-god-tier-information/",
+  "date": "2026-11-13T06:31:17.153258+00:00",
+  "source_title": "Security Flaws Across UK Government Sites Exposed ‘God-Tier’ Information",
+  "category": "cyber-security",
+  "image_kind": "conceptual"
+}

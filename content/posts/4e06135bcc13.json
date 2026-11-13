@@ -1,0 +1,31 @@
+{
+  "en_title": "Fireworks AI Discloses Second Security Breach Following Cloud Provider Hack",
+  "hi_title": "क्लाउड प्रदाता हैक के बाद Fireworks AI ने नए सुरक्षा उल्लंघन का खुलासा किया",
+  "en_body": "AI infrastructure startup Fireworks AI has disclosed a second security incident after attackers accessed its development machines following a security breach at a third-party cloud provider.\n\nFireworks provides a high-performance inference platform that allows developers to deploy and run open-source artificial intelligence models, including Meta's Llama, Mistral, and Google's Gemma, without managing underlying hardware complexity.\n\n## Incident Details and Affected Data\n\nAccording to the company's advisory, the sequence of events involves:\n\n* **Third-Party Cloud Provider Breach:** A cloud provider hosting Fireworks R&D machines experienced a security incident on October 23.\n* **Development Environment Access:** On October 24, unauthorized actors leveraged the third-party compromise to reach Fireworks development machines and run an unauthorized workload.\n* **Data Impact:** The attackers accessed resource metadata, billing information (including addresses and invoice history), and incomplete model weights and datasets for some customers.\n* **Payment Security:** Fireworks confirmed that attackers could not access customer payment card numbers because the platform does not store them.\n\n## Response and Remediation\n\nFireworks reported that it detected the unauthorized activity on October 24 and initiated incident response procedures. Remediation measures taken by the company include:\n\n* Closing known critical vulnerabilities and revoking compromised credentials and service accounts.\n* Restricting unauthorized network pathways and isolating affected systems.\n* Tightening access controls to data storage and analytics systems.\n* Partnering with Palo Alto Networks' Unit 42 incident response division to investigate the scope of the attack and secure systems.\n\nAs of October 25, Fireworks stated it has not detected further evidence of successful unauthorized access on the customer-facing platform.\n\n## Context on LLMJacking Threats\n\nThis incident follows an earlier security notification by Fireworks in early October involving compromised API keys and environment variables linked to financially motivated threat actors targeting Large Language Models through unauthorized token reselling, a technique known as \"LLMJacking.\" Recent reports from security researchers indicate that such attacks can lead to substantial cloud AI costs for compromised organizations.\n\n## Verification and Practical Implications\n\nAffected customers and organizations should review official security advisories issued directly by Fireworks AI to confirm accurate details. Verification can be performed by monitoring official company communications and reviewing account access logs for unauthorized changes.",
+  "hi_body": "एआई इंफ्रास्ट्रक्चर स्टार्टअप Fireworks AI ने एक नए सुरक्षा उल्लंघन का खुलासा किया है, जिसमें हमलावरों ने एक तीसरे पक्ष के क्लाउड प्रदाता में सेंध लगाने के बाद उसकी डेवलपमेंट मशीनों तक पहुंच बनाई।\n\nFireworks डेवलपर्स को मेटा के Llama, Mistral और गूगल के Gemma जैसे ओपन-सोर्स आर्टिफिशियल इंटेलिजेंस मॉडल को डिप्लॉय और चलाने के लिए एक उच्च-प्रदर्शन इन्फेरेंस प्लेटफॉर्म प्रदान करता है।\n\n## घटना का विवरण और प्रभावित डेटा\n\nकंपनी की एडवाइजरी के अनुसार, घटनाओं का क्रम इस प्रकार है:\n\n* **तीसरे पक्ष के क्लाउड प्रदाता में सेंध:** Fireworks की आरएंडडी मशीनों को होस्ट करने वाले एक क्लाउड प्रदाता में 23 अक्टूबर को एक सुरक्षा घटना हुई।\n* **डेवलपमेंट एनवायरनमेंट तक पहुंच:** 24 अक्टूबर को, अनधिकृत हमलावरों ने Fireworks की डेवलपमेंट मशीनों तक पहुंचने और एक अनधिकृत वर्कलोड चलाने के लिए इस तीसरे पक्ष के समझौते का लाभ उठाया।\n* **डेटा प्रभाव:** हमलावरों ने कुछ ग्राहकों के लिए रिसोर्स मेटाडेटा, बिलिंग जानकारी और अधूरे मॉडल वेट और डेटासेट तक पहुंच बनाई।\n* **भुगतान सुरक्षा:** Fireworks ने पुष्टि की कि हमलावर ग्राहकों के भुगतान कार्ड नंबरों तक नहीं पहुंच सके क्योंकि प्लेटफॉर्म उन्हें संग्रहीत नहीं करता है।\n\n## प्रतिक्रिया और सुधार\n\nFireworks ने बताया कि उसने 24 अक्टूबर को अनधिकृत गतिविधि का पता लगाया और घटना प्रतिक्रिया प्रक्रियाओं को शुरू किया। कंपनी द्वारा उठाए गए उपायों में शामिल हैं:\n\n* ज्ञात महत्वपूर्ण कमजोरियों को बंद करना और समझौता किए गए क्रेडेंशियल्स को रद्द करना।\n* अनधिकृत नेटवर्क मार्गों को प्रतिबंधित करना और प्रभावित प्रणालियों को अलग करना।\n* डेटा स्टोरेज और एनालिटिक्स सिस्टम तक पहुंच नियंत्रण को सख्त करना।\n* हमले के दायरे की जांच करने और सिस्टम को सुरक्षित करने के लिए Palo Alto Networks के Unit 42 के साथ साझेदारी करना।\n\n25 अक्टूबर तक, Fireworks ने कहा कि उसने ग्राहक-सामना करने वाले प्लेटफॉर्म पर सफल अनधिकृत पहुंच का कोई और सबूत नहीं देखा है।\n\n## संदर्भ और व्यावहारिक निहितार्थ\n\nयह घटना अक्टूबर की शुरुआत में Fireworks द्वारा जारी की गई एक अन्य सुरक्षा सूचना के बाद हुई है, जिसमें एपीआई कुंजियों से जुड़ी अनधिकृत गतिविधियों को लक्षित किया गया था। सुरक्षा शोधकर्ताओं की हालिया रिपोर्टों से संकेत मिलता है कि इस तरह के हमलों से प्रभावित संगठनों को भारी लागत का सामना करना पड़ सकता है।\n\n## सत्यापन और व्यावहारिक सुझाव\n\nप्रभावित ग्राहकों और संगठनों को सटीक विवरण की पुष्टि करने के लिए सीधे Fireworks AI द्वारा जारी आधिकारिक सुरक्षा सलाहकारों की समीक्षा करनी चाहिए। सत्यापन आधिकारिक कंपनी संचार की निगरानी करके किया जा सकता है।",
+  "en_meta": "AI infrastructure startup Fireworks AI disclosed a new security breach impacting development machines and customer data following a third-party cloud provider…",
+  "hi_meta": "Fireworks AI ने तीसरे पक्ष के क्लाउड प्रदाता में सेंध के बाद डेवलपमेंट मशीनों और ग्राहक डेटा को प्रभावित करने वाले एक नए सुरक्षा उल्लंघन का खुलासा किया।",
+  "en_keywords": [
+    "Fireworks AI",
+    "security breach",
+    "cloud provider",
+    "LLMJacking",
+    "cybersecurity",
+    "data leak"
+  ],
+  "hi_keywords": [
+    "Fireworks AI",
+    "सुरक्षा उल्लंघन",
+    "क्लाउड प्रदाता",
+    "साइबर सुरक्षा",
+    "डेटा लीक",
+    "एआई"
+  ],
+  "source_published_at": "2026-11-10T02:49:58-05:00",
+  "id": "4e06135bcc13",
+  "source": "https://www.bleepingcomputer.com/news/security/fireworks-ai-discloses-new-breach-after-cloud-provider-hack/",
+  "date": "2026-11-13T06:30:22.493043+00:00",
+  "source_title": "Fireworks AI discloses new breach after cloud provider hack",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

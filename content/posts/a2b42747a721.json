@@ -1,0 +1,31 @@
+{
+  "en_title": "Russian Turla Hackers Deploy New Cereal Malware to Spy on Government Exchange Servers",
+  "hi_title": "रूसी टरला हैकर्स सरकारी एक्सचेंज सर्वरों पर जासूसी के लिए नए 'सीरियल' मैलवेयर का कर रहे हैं इस्तेमाल",
+  "en_body": "Security researchers have documented a cyber-espionage campaign involving a newly identified malware toolset called 'Cereal,' reportedly used by the Russian state-backed threat group Turla to intercept emails on Microsoft Exchange servers at government organizations.\n\nAccording to documentation published by ESET researchers, the activity was initially identified in late 2025 at a government body in Kazakhstan. A subsequent discovery was made at a government agency in Romania, where the toolset selectively gathered email correspondence involving representatives of international organizations.\n\n## Technical Details of the Cereal Malware\n\nTurla, also tracked under names such as Snake, Secret Blizzard, and Waterbug, utilizes specific components within the Cereal kit to target Exchange servers:\n\n* **CerealBox:** Injects into Exchange's `EdgeTransport.exe` process to hijack existing transport agent handlers, allowing actors to inspect email content in memory without interrupting standard delivery.\n* **CerealNeuron:** Awaits incoming encrypted web requests on paths mimicking legitimate Exchange services to execute commands.\n* **CerealRunner:** A wrapper program executing specified code, ranging from email retrieval to Active Directory queries and credential extraction.\n* **CerealHermit:** A variant lacking network capabilities that reads commands from encrypted files on disk, serving as a potential fallback mechanism.\n\nResearchers noted that the modular design and automated compilation framework indicate an engineered platform designed for long-term, stealthy espionage with a minimal disk footprint. ESET has released an extended list of indicators of compromise (IoCs) on its GitHub repository for verification purposes.",
+  "hi_body": "सुरक्षा शोधकर्ताओं ने 'सीरियल' (Cereal) नामक एक नए मैलवेयर टूलसेट से जुड़े साइबर-जासूसी अभियान का दस्तावेजीकरण किया है। रिपोर्ट के अनुसार, रूसी समर्थित थ्रेट ग्रुप टरला सरकारी संगठनों के माइक्रोसॉफ्ट एक्सचेंज सर्वर पर ईमेल इंटरसेप्ट करने के लिए इसका उपयोग कर रहा है।\n\nईएसईटी (ESET) शोधकर्ताओं द्वारा प्रकाशित जानकारी के अनुसार, इस गतिविधि का पहला पता 2025 के अंत में कजाकिस्तान में एक सरकारी निकाय में चला था। इसके एक महीने बाद, रोमानिया की एक सरकारी एजेंसी में भी यही टूलसेट पाया गया, जहां इसने अंतरराष्ट्रीय संगठनों के प्रतिनिधियों के साथ ईमेल पत्राचार को चुनिंदा रूप से एकत्र किया था।\n\n## सीरियल मैलवेयर की तकनीकी विशेषताएं\n\nटरला, जिसे स्नेक और वॉटरबग के नाम से भी जाना जाता है, एक्सचेंज सर्वर को लक्षित करने के लिए सीरियल किट के भीतर विशिष्ट घटकों का उपयोग करता है:\n\n* **सीरियल बॉक्स (CerealBox):** एक्सचेंज की प्रक्रिया में इंजेक्ट होकर मौजूदा ट्रांसपोर्ट एजेंटों को हाईजैक करता है, जिससे सामान्य डिलीवरी को बाधित किए बिना मेमोरी में ईमेल सामग्री की जांच की जा सकती है।\n* **सीरियल न्यूरॉन (CerealNeuron):** वैध एक्सचेंज सेवाओं की नकल करने वाले रास्तों पर आने वाले एन्क्रिप्टेड वेब अनुरोधों की प्रतीक्षा करता है।\n* **सीरियल रनर (CerealRunner):** एक रैपर प्रोग्राम जो ईमेल पुनर्प्राप्ति से लेकर क्रेडेंशियल निष्कर्षण तक के आदेशों को निष्पादित करता है।\n* **सीरियल हर्मिट (CerealHermit):** नेटवर्क क्षमताओं के बिना एक ऐसा संस्करण जो डिस्क पर एन्क्रिप्टेड फ़ाइलों से कमांड पढ़ता है।\n\nशोधकर्ताओं ने उल्लेख किया कि इसका मॉड्यूलर डिज़ाइन लंबे समय तक की जाने वाली गुप्त जासूसी के लिए तैयार किया गया है। ईएसईटी ने सत्यापन उद्देश्यों के लिए अपने गिटहब रिपॉजिटरी पर संकेतकों (IoCs) की एक विस्तृत सूची जारी की है।",
+  "en_meta": "Discover how Turla hackers use the new Cereal malware toolset to spy on government Microsoft Exchange servers, as documented by ESET researchers.",
+  "hi_meta": "जानें कैसे टरला हैकर्स सरकारी माइक्रोसॉफ्ट एक्सचेंज सर्वर पर जासूसी के लिए नए सीरियल मैलवेयर का उपयोग कर रहे हैं, जैसा कि ईएसईटी शोधकर्ताओं ने दस्तावेज किया है।",
+  "en_keywords": [
+    "Turla",
+    "Cereal malware",
+    "Microsoft Exchange",
+    "ESET",
+    "cyber-espionage",
+    "government servers"
+  ],
+  "hi_keywords": [
+    "टरला",
+    "सीरियल मैलवेयर",
+    "माइक्रोसॉफ्ट एक्सचेंज",
+    "ईएसईटी",
+    "साइबर जासूसी",
+    "सरकारी सर्वर"
+  ],
+  "source_published_at": "2026-11-10T05:04:32-05:00",
+  "id": "a2b42747a721",
+  "source": "https://www.bleepingcomputer.com/news/security/turla-hackers-use-new-ceral-malware-to-spy-on-govt-exchange-servers/",
+  "date": "2026-11-13T06:29:07.607844+00:00",
+  "source_title": "Turla hackers use new Cereal malware to spy on govt Exchange servers",
+  "category": "cyber-security",
+  "image_kind": "conceptual"
+}
