@@ -1,0 +1,31 @@
+{
+  "en_title": "Hugging Face Releases Carbon-X: A Conversational AI Model for DNA Analysis",
+  "hi_title": "हगिंग फेस ने 'कार्बन-एक्स' पेश किया: डीएनए विश्लेषण के लिए एक संवादात्मक एआई मॉडल",
+  "en_body": "## Introducing Carbon-X\nOn Thursday, the AI platform Hugging Face introduced Carbon-X, an open-weight model designed to interpret genomic data through a conversational interface. Developed in partnership with researchers from Zhongguancun Academy and the University of Naples Federico II, the model allows users to ask questions regarding the impact of DNA mutations on gene activity and health.\n\n## Technical Capabilities and Design\nUnlike traditional numeric-based models, Carbon-X bridges biological sequences and natural language. Key features include:\n* **Local Execution:** With 14 billion parameters, the model is built to run locally on a user's hardware, ensuring data privacy by not transmitting sensitive genomic information to the cloud.\n* **Data Integration:** Trained on 300 billion tokens, the model analyzes DNA sequences from various organisms including mammals, plants, and fungi, excluding viruses for safety.\n* **Input Limits:** The model processes DNA sequences of approximately 50,000 base pairs at a time rather than entire human genomes.\n\n## Research and Practical Applications\nResearchers envision Carbon-X aiding in the identification of whether specific genetic mutations are benign or pathogenic, which is a critical step in drug development and genetic therapy. Senior research scientist Lewis Tunstall emphasizes that while the model unlocks new ways to interact with DNA, it remains a tool for research. \n\n## Important Considerations\nDevelopers have issued a note of caution: the model has not yet been validated through wet lab experiments. Consequently, its predictive accuracy remains unconfirmed. Users interested in accessing the model can verify the release through the official Hugging Face platform, which serves as a centralized hub for open-source AI tools.",
+  "hi_body": "## कार्बन-एक्स का परिचय\nएआई प्लेटफॉर्म हगिंग फेस ने गुरुवार को 'कार्बन-एक्स' जारी किया है, जो एक ओपन-वेट मॉडल है जिसे संवादात्मक इंटरफ़ेस के माध्यम से जीनोमिक डेटा को समझने के लिए डिज़ाइन किया गया है। झोंगगुआनकुन अकादमी और यूनिवर्सिटी ऑफ नेपल्स फेडेरिको II के शोधकर्ताओं के सहयोग से विकसित यह मॉडल उपयोगकर्ताओं को डीएनए परिवर्तनों और जीन गतिविधि पर उनके प्रभाव के बारे में प्रश्न पूछने की सुविधा देता है।\n\n## तकनीकी क्षमताएं और डिज़ाइन\nपारंपरिक संख्या-आधारित मॉडलों के विपरीत, कार्बन-एक्स जैविक अनुक्रमों और प्राकृतिक भाषा के बीच की दूरी को कम करता है। इसकी मुख्य विशेषताएं हैं:\n* **स्थानीय निष्पादन:** 14 बिलियन पैरामीटर्स के साथ, इसे उपयोगकर्ता के हार्डवेयर पर स्थानीय रूप से चलाने के लिए बनाया गया है, जिससे संवेदनशील डेटा क्लाउड पर न भेजकर गोपनीयता बनाए रखी जा सके।\n* **डेटा एकीकरण:** इसे 300 बिलियन टोकन पर प्रशिक्षित किया गया है, जिसमें स्तनधारियों, पौधों और कवक के डीएनए अनुक्रम शामिल हैं। सुरक्षा कारणों से इसमें वायरस को शामिल नहीं किया गया है।\n* **इनपुट सीमा:** यह मॉडल एक बार में लगभग 50,000 बेस पेयर तक के डीएनए अनुक्रमों को प्रोसेस कर सकता है।\n\n## अनुसंधान और व्यावहारिक अनुप्रयोग\nशोधकर्ताओं का मानना है कि कार्बन-एक्स यह पहचानने में मदद कर सकता है कि क्या कोई आनुवंशिक उत्परिवर्तन (mutation) सौम्य है या रोग पैदा करने वाला, जो दवा विकास में एक महत्वपूर्ण कदम है। हगिंग फेस के वरिष्ठ शोध वैज्ञानिक लुईस टंस्टल के अनुसार, यह मॉडल डीएनए के साथ बातचीत करने का एक नया तरीका प्रदान करता है।\n\n## महत्वपूर्ण सावधानियां\nडेवलपर्स ने स्पष्ट किया है कि अभी तक इस मॉडल का वेट लैब प्रयोगों के माध्यम से सत्यापन नहीं किया गया है, इसलिए इसकी भविष्यवाणियों की सटीकता की पुष्टि नहीं की जा सकती है। इच्छुक उपयोगकर्ता आधिकारिक हगिंग फेस प्लेटफॉर्म के माध्यम से इस मॉडल के बारे में जानकारी प्राप्त कर सकते हैं।",
+  "en_meta": "Hugging Face has released Carbon-X, an open-weight AI model that allows users to query DNA sequences locally using natural language for research purposes.",
+  "hi_meta": "हगिंग फेस ने कार्बन-एक्स लॉन्च किया है, जो उपयोगकर्ताओं को स्थानीय रूप से प्राकृतिक भाषा का उपयोग करके डीएनए अनुक्रमों के बारे में सवाल पूछने की अनुमति देता है।",
+  "en_keywords": [
+    "Hugging Face",
+    "Carbon-X",
+    "DNA",
+    "Genomics",
+    "Artificial Intelligence",
+    "Bioinformatics"
+  ],
+  "hi_keywords": [
+    "हगिंग फेस",
+    "कार्बन-एक्स",
+    "डीएनए",
+    "जीनोमिक्स",
+    "कृत्रिम बुद्धिमत्ता",
+    "बायोइनफॉरमैटिक्स"
+  ],
+  "source_published_at": "2026-10-22T06:00:00.000-04:00",
+  "id": "b3332eaa7cad",
+  "source": "https://www.wired.com/story/hugging-face-new-ai-biology-model-chat-with-dna/",
+  "date": "2026-11-13T02:32:52.883718+00:00",
+  "source_title": "Hugging Face’s New AI Biology Model Lets You Chat With DNA",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
