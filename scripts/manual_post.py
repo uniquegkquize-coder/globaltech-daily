@@ -150,7 +150,11 @@ def run(submission, check):
                      photo['url'], post['source'], photo['license'], photo['credit']],
                     check=True, timeout=45, capture_output=True,
                 )
-            except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
+                metadata_path = ROOT / 'content/featured' / (post['id'] + '.json')
+                metadata = json.loads(metadata_path.read_text(encoding='utf-8'))
+                metadata.update(source_image=photo['url'], license_name=photo['license'])
+                metadata_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+            except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError, ValueError):
                 path.unlink(missing_ok=True)
                 for suffix in ('.jpg', '.json'):
                     (ROOT / 'content/featured' / (post['id'] + suffix)).unlink(missing_ok=True)
