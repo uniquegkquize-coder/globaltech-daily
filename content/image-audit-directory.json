@@ -1,78 +1,19 @@
 {
-  "total_posts": 8149,
-  "selected": 52,
+  "total_posts": 8450,
+  "selected": 53,
   "results": {
-    "source_photo_saved": 3,
-    "invalid_source_images": 6,
-    "cooldown": 43
+    "invalid_source_images": 2,
+    "cooldown": 49,
+    "source_photo_saved": 2
   },
-  "still_missing": 875,
+  "still_missing": 911,
   "articles": [
     {
-      "id": "ee77c0e36dac79283ebe07c0",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Standard_Six",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794587065.5794995
-    },
-    {
-      "id": "7adf40b3ba628bb367e38a7b",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_E5",
+      "id": "32280cce1125bb9a47dd1d42",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_MIX",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794587065.7234144
-    },
-    {
-      "id": "869fd8137e37aa12fc8772ac",
-      "source": "https://en.wikipedia.org/wiki/Essential_Phone",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794587065.7266555
-    },
-    {
-      "id": "18985ab3f88f52f17dbb8153",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Series_H",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794587065.7678692
-    },
-    {
-      "id": "02364f4d79f5caac07cae019",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794587065.8987873
-    },
-    {
-      "id": "8ede6684d4cf14febb863aad",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794587066.529631
-    },
-    {
-      "id": "71ad44ca5375549c9a0fafea",
-      "result": "cooldown"
-    },
-    {
-      "id": "6e0b7f005efe9f07310a5382",
-      "result": "cooldown"
-    },
-    {
-      "id": "95c9f12cac7c67468ea940bb",
-      "result": "cooldown"
-    },
-    {
-      "id": "d4519cf5c59f707b293a301d",
-      "result": "cooldown"
-    },
-    {
-      "id": "143e60189659fea092ac3a1e",
-      "result": "cooldown"
-    },
-    {
-      "id": "6bb2ac3830abf79750ec9c1e",
-      "result": "cooldown"
+      "retry_after": 1794598577.0404882
     },
     {
       "id": "0a95ccf111c45db4cfb5c9e3",
@@ -223,25 +164,73 @@
       "result": "cooldown"
     },
     {
+      "id": "02364f4d79f5caac07cae019",
+      "result": "cooldown"
+    },
+    {
+      "id": "8ede6684d4cf14febb863aad",
+      "result": "cooldown"
+    },
+    {
       "id": "554edbfdaee926ed82007433",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794587066.6606495
+      "result": "cooldown"
     },
     {
       "id": "ab5161457cb0ef816db211ff",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794587066.702765
+      "result": "cooldown"
     },
     {
       "id": "e21f0c9303189bff05b728a0",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "result": "cooldown"
+    },
+    {
+      "id": "7adf40b3ba628bb367e38a7b",
+      "result": "cooldown"
+    },
+    {
+      "id": "71ad44ca5375549c9a0fafea",
+      "result": "cooldown"
+    },
+    {
+      "id": "6e0b7f005efe9f07310a5382",
+      "result": "cooldown"
+    },
+    {
+      "id": "95c9f12cac7c67468ea940bb",
+      "result": "cooldown"
+    },
+    {
+      "id": "d4519cf5c59f707b293a301d",
+      "result": "cooldown"
+    },
+    {
+      "id": "143e60189659fea092ac3a1e",
+      "result": "cooldown"
+    },
+    {
+      "id": "6bb2ac3830abf79750ec9c1e",
+      "result": "cooldown"
+    },
+    {
+      "id": "ce0ef8db912e7a799d88cb97",
+      "source": "https://en.wikipedia.org/wiki/Lenovo_K6_Power",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794587066.82873
+      "retry_after": 1794598577.1288962
+    },
+    {
+      "id": "7da8dcf60546453fddf27728",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Superior",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794598577.14857
+    },
+    {
+      "id": "220b642e6b680bbf50e95e20",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Stylemaster",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794598577.4747472
     }
   ],
   "missing": [
@@ -264,7 +253,7 @@
       "category": "private-vacancy",
       "title": "RedeFin Capital Announces Opening for Investment Banking Associate, Senior Associate, and AVP Roles in Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/investment-banking-associate-senior-associate-avp-at-redefin-capital-4482284468",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "ee768c0612fa",
@@ -292,14 +281,14 @@
       "category": "private-vacancy",
       "title": "Alila Hotels Advertises Guest Experience Manager Opening in Lansdowne, Uttarakhand",
       "source": "https://in.linkedin.com/jobs/view/guest-experience-manager-at-alila-hotels-4484451267",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "8e242b8abca7",
       "category": "private-vacancy",
       "title": "Job Listings and Professional Opportunities Reported via Online Platforms",
       "source": "https://www.linkedin.com/jobs/view/virtual-assistant-at-a-full-renovation-%E2%80%93-project-services-4484010335",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "d0f211debf6a",
@@ -390,6 +379,13 @@
       "category": "business",
       "title": "Asian Shares Slip as Tech Sell-off Boosts Bonds and Dents Rate Hike Bets",
       "source": "https://www.business-standard.com/markets/news/asian-shares-slip-as-tech-rout-boosts-bonds-dents-rate-hike-bets-126102300074_1.html",
+      "reason": "access_denied"
+    },
+    {
+      "id": "e14513002c71",
+      "category": "automobiles",
+      "title": "Fiat's US Trial for the $15,000 Topolino Micro-EV Sees Strong Initial Demand",
+      "source": "https://www.motor1.com/news/814986/fiat-topolino-us-trial-15/",
       "reason": "access_denied"
     },
     {
@@ -642,7 +638,7 @@
       "category": "visas-immigration",
       "title": "Deloitte Highlights Global Mobility and Immigration Role in Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/associate-global-mobility-and-immigration-talent-services-tipm-perm-services-hyderabad-at-deloitte-4484168606",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "8fb539b04f5d",
@@ -748,6 +744,13 @@
       "title": "Canada's Economic Growth Stalls in August with Potential September Contraction Predicted",
       "source": "https://www.cbc.ca/news/business/august-2026-gdp-canada-9.7402495",
       "reason": "source_error"
+    },
+    {
+      "id": "261ffb682018",
+      "category": "private-vacancy",
+      "title": "Zenith Travels Services (OPC) Private Limited Announces Travel Sales Consultant Opening in Dehradun",
+      "source": "https://in.linkedin.com/jobs/view/travel-sales-consultant-at-zenith-travels-services-opc-private-limited-4484816830",
+      "reason": "invalid_source_images"
     },
     {
       "id": "fe3b874760b2",
@@ -894,7 +897,14 @@
       "category": "private-vacancy",
       "title": "Current Private Sector Job Openings and Roles Listed Across India",
       "source": "https://in.linkedin.com/jobs/Note+novaluxia.com+Reviews+platform+updates.xcv-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
+    },
+    {
+      "id": "9257f8339f78",
+      "category": "cricket",
+      "title": "IPL 2026 Auction: Prashant Veer Bought by CSK for Rs 14.20 Crore, Becomes Joint-Most Expensive Uncapped Player",
+      "source": "https://www.livehindustan.com/uttar-pradesh/ipl-auction-2026-amethi-prashant-veer-most-expensive-uncapped-player-bought-by-csk-201765951512288.html",
+      "reason": "invalid_source_images"
     },
     {
       "id": "635e4aa01fc60223a6fea284",
@@ -1356,7 +1366,7 @@
       "category": "mobile-launches",
       "title": "EarnReady by ShunyaTattvaa Talent Partners Announces Opening for Phone Banking Officer",
       "source": "https://in.linkedin.com/jobs/view/urgent-hiring-for-phone-banking-officer-day-shift-wfo-need-graduate-fresher-graduate-exp-with-immediate-joiners-salary-3lpa-to-4-50lpa-need-good-communication-at-earnready-by-shunyatattvaa-talent-partners-4483008539",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "23a46be33c4f",
@@ -1405,7 +1415,7 @@
       "category": "private-vacancy",
       "title": "A Full Renovation – Home Improvement Lists Virtual Assistant Opening in the United States",
       "source": "https://www.linkedin.com/jobs/view/virtual-assistant-at-a-full-renovation-%E2%80%93-home-improvement-4483788958",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "bc5eeeb23237",
@@ -1434,6 +1444,13 @@
       "title": "Israel Holds Pivotal Election as Voters Weigh Leadership Amid Years of Conflict",
       "source": "https://www.npr.org/2026/10/27/g-s1-149944/israel-election-guide",
       "reason": "source_error"
+    },
+    {
+      "id": "a9d24a225c8e",
+      "category": "government-schemes",
+      "title": "West Bengal Housing Board Invites Quotations for Electrical Panel Upgrades at ABASAN Building",
+      "source": "https://wbhousingboard.in/home/current_tenders/download/niq_no_wbhb_dd_ew-ii_nieq-13_2026-27_08092026.pdf",
+      "reason": "source_unavailable"
     },
     {
       "id": "e0d616bd7306",
@@ -1562,6 +1579,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "2bc806fa71b6",
+      "category": "government-schemes",
+      "title": "West Bengal Housing Board Invites Quotations for Smart TV and Hard Disk Installation at Kolkata",
+      "source": "https://wbhousingboard.in/home/current_tenders/download/niq_no_wbhb_dd_ew-ii_niq-17_2026-27_01102026.pdf",
+      "reason": "source_unavailable"
+    },
+    {
       "id": "08f803d5a037",
       "category": "defence",
       "title": "Jordanian Air Force Strikes Militant Hideouts in Syria Following Church Attack Arrests",
@@ -1629,7 +1653,14 @@
       "category": "private-vacancy",
       "title": "ibis, ibis Styles, and ibis Budget List Portfolio Revenue Manager Opening in Delhi Cantonment",
       "source": "https://in.linkedin.com/jobs/view/portfolio-revenue-manager-at-ibis-ibis-styles-ibis-budget-4483884920",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
+    },
+    {
+      "id": "a62af287e8a1",
+      "category": "government-schemes",
+      "title": "West Bengal Housing Board Issues Tender for Smart TV Supply and Installation",
+      "source": "https://wbhousingboard.in/home/current_tenders/download/niq_no_wbhb_dd_ew_ii_niq-15_2025-2026_14092026.pdf",
+      "reason": "source_unavailable"
     },
     {
       "id": "36fc08c8c68d",
@@ -1679,6 +1710,13 @@
       "title": "James May Test-Drives Slate's Compact Electric Truck and Expresses Interest",
       "source": "https://www.motor1.com/news/813939/james-may-drives-slate-truck-video/",
       "reason": "access_denied"
+    },
+    {
+      "id": "d607e22a1533",
+      "category": "private-vacancy",
+      "title": "well Path Solution Hiring Assistant Manager in New Delhi",
+      "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-well-path-solution-4481046239",
+      "reason": "invalid_source_images"
     },
     {
       "id": "e3f2b51920aa",
@@ -1772,6 +1810,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "b82f4689ffdc",
+      "category": "private-vacancy",
+      "title": "PaRa Music Announces Opening for Media Sales and Brand Solutions Executive in Mumbai",
+      "source": "https://in.linkedin.com/jobs/view/%F0%9F%93%A2-we%E2%80%99re-hiring-media-sales-brand-solutions-executive-at-para-music-4483439274",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "1f6245b7c964",
       "category": "ai-news",
       "title": "AI Is Not a Bubble Yet, But Volatility Lies Ahead: Shankar Sharma",
@@ -1854,6 +1899,13 @@
       "title": "8th Pay Commission Salary Projection Tools Emerge Amid Anticipation for Official Pay Matrix",
       "source": "https://www.sahisarkarijobs.in/8th-pay-commission-calculator/",
       "reason": "no_source_image"
+    },
+    {
+      "id": "86adb746a2d8",
+      "category": "india-news",
+      "title": "PM Modi Marks Rashtriya Ekta Diwas in Kevadia with Infrastructure and Ecological Projects",
+      "source": "https://www.indiatoday.in/india/video/pm-modi-marks-rashtriya-ekta-diwas-in-kevadia-major-projects-unveiled-ytvd-3029131-2026-10-31",
+      "reason": "invalid_source_images"
     },
     {
       "id": "021c54d7abdb",
@@ -1952,6 +2004,13 @@
       "title": "Understanding MACP Pay Fixation Under the 7th Pay Commission",
       "source": "https://www.sahisarkarijobs.in/macp-calculator/",
       "reason": "no_source_image"
+    },
+    {
+      "id": "6e1916c8358b",
+      "category": "government-schemes",
+      "title": "West Bengal Housing Board Invites e-Tenders for Repair and Renovation of Model Flats Across Zones",
+      "source": "https://wbhousingboard.in/home/current_tenders/download/nit_no_wbhb_dd_ew-ii_niet-07_2026-2027_2nd_call_05102026.pdf",
+      "reason": "source_unavailable"
     },
     {
       "id": "44fad3535fed",
@@ -2112,7 +2171,7 @@
       "category": "private-vacancy",
       "title": "Newell Brands Lists Vacancy for Lead Product Design Engineering in Tamil Nadu",
       "source": "https://in.linkedin.com/jobs/view/lead-product-design-engineering-at-newell-brands-4484924592",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "2716427d4300",
@@ -2147,6 +2206,13 @@
       "category": "automobiles",
       "title": "40,000 Miles in the Entry-Level Lucid Air Pure: Lessons from Long-Term Ownership",
       "source": "https://insideevs.com/news/813727/lucid-air-pure-ownership-review-video/",
+      "reason": "access_denied"
+    },
+    {
+      "id": "87f11c6b0971",
+      "category": "world-news",
+      "title": "Police in Scotland Investigate Former Prince Andrew and Epstein's Time at Balmoral",
+      "source": "https://www.nytimes.com/2026/10/30/world/europe/andrew-epstein-scotland-police-investigation-uk-balmoral.html",
       "reason": "access_denied"
     },
     {
@@ -2241,6 +2307,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "e6cbfbb4c762",
+      "category": "world-news",
+      "title": "Rare Evacuation Begins in Ukrainian City of Oleshky Amid Localized Cease-Fire",
+      "source": "https://www.nytimes.com/2026/10/26/world/europe/ukraine-oleshky-ceasefire-russia-war.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "2c04a6d38790",
       "category": "private-vacancy",
       "title": "Horizon9 Invites Applications for Client Servicing Internship in NCR",
@@ -2281,13 +2354,6 @@
       "title": "Turner, Mason & Company Releases Four Fall 2026 Energy Market Outlook Reports",
       "source": "https://www.prnewswire.com/news-releases/turner-mason--company-releases-four-fall-energy-market-outlook-reports-302923877.html",
       "reason": "no_source_image"
-    },
-    {
-      "id": "d42aae169fd8",
-      "category": "gadgets",
-      "title": "Samsung Galaxy Watch9 and Galaxy Watch Ultra2 Launch to Promote Healthier Lifestyles in Malaysia",
-      "source": "https://news.samsung.com/my/samsung-galaxy-watch9-and-galaxy-watch-ultra2-inspire-malaysians-to-move-more-and-live-healthier",
-      "reason": "source_error"
     },
     {
       "id": "6ba39bcd4548",
@@ -2385,7 +2451,7 @@
       "category": "tourism",
       "title": "Exploring Career Opportunities in International Holiday Sales and Destination Expertise",
       "source": "https://in.linkedin.com/jobs/view/sales-executive-%E2%80%93-destination-expert-international-holidays-at-catch-a-trip-4483426182",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "a91a82825e4a",
@@ -2602,7 +2668,7 @@
       "category": "private-vacancy",
       "title": "Media and Communications Openings Highlighted Across Central Washington Employers",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-moses-lake-wa",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "b7601652de21",
@@ -2637,7 +2703,7 @@
       "category": "private-vacancy",
       "title": "KONE Advertises Private Sector Vacancy for Material Management Coordinator in Chennai",
       "source": "https://in.linkedin.com/jobs/view/material-management-coordinator-at-kone-4484477721?position=46&pageNum=0&refId=7GWgQQ0v3ze9a3w3Q2vwcw%3D%3D&trackingId=BYWzdYE16qmuOI8vgMHtPQ%3D%3D",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "3396e579e6f8",
@@ -2721,7 +2787,7 @@
       "category": "private-vacancy",
       "title": "Overview of Recent Job Openings Across Various Sectors in India",
       "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Bm%C9%99nfi%2Br%C9%99yl%C9%99r%2B%E2%80%94%2B%C3%BCzvl%C3%BCk%2Bt%C9%99qdimat%C4%B1n%C4%B1%2B%C3%B6yr%C9%99nin.wam-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "948554632b74",
@@ -2729,6 +2795,13 @@
       "title": "India Telecom Sector Sees Steady Growth in August 2026",
       "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No125of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "a5b1ddc0eee8",
+      "category": "automobiles",
+      "title": "Europe Wants BYD Investigated Over Spying Fears. Company Responds.",
+      "source": "https://www.motor1.com/news/814970/europe-byd-investigation-spying-fears/",
+      "reason": "access_denied"
     },
     {
       "id": "e4ccc220e689",
@@ -2784,13 +2857,20 @@
       "category": "private-vacancy",
       "title": "WeMakeScholars Recruits Education Finance Officers Across Multiple Indian Regions",
       "source": "https://in.linkedin.com/jobs/view/education-finance-officer-in-nashik-trichey-begumpet-mangalore-solapur-bidar-bhubaneswar-coimbatore-cuttack-kollam-chennai-hyderabad-maharashta-koramangala-andhra-pradesh-at-wemakescholars-4483353601",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "2e293f23db10",
       "category": "conflict-news",
       "title": "Archival Records Highlight Ongoing UN Bodies' Reporting on Palestinian Rights and Humanitarian Issues",
       "source": "https://www.un.org/unispal/document-source/united-nations-childrens-fund-unicef/page/36/?wpv_view_count=4164",
+      "reason": "invalid_source_images"
+    },
+    {
+      "id": "7d8a9d35278c",
+      "category": "world-news",
+      "title": "Nagod Royal Family Dispute Turns Violent: Woman Shot in Madhya Pradesh, Accused Arrested",
+      "source": "https://www.livehindustan.com/madhya-pradesh/bloody-feud-in-madhya-pradesh-royal-family-woman-shoots-nagod-bahu-yogita-singh-201781314087887.html",
       "reason": "invalid_source_images"
     },
     {
@@ -2834,6 +2914,13 @@
       "title": "HOPPR Unveils Whole-Body Musculoskeletal AI Narrative Model for Radiology Developers",
       "source": "https://www.prnewswire.com/news-releases/hoppr-expands-medical-imaging-ai-portfolio-with-whole-body-musculoskeletal-x-ray-narrative-model-302921827.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "45b7d4aef683",
+      "category": "world-news",
+      "title": "Jaipur Cafe Owner Severely Injured in Brutal Attack, Police Investigate Dispute Angle",
+      "source": "https://www.livehindustan.com/rajasthan/jaipur/jaipur-cafe-owner-attacked-vaishali-nagar-employee-friend-death-threat-brutal-assault-video-201794297958301.html",
+      "reason": "invalid_source_images"
     },
     {
       "id": "c64d19fa0032",
@@ -2899,6 +2986,20 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "ac5aa9ac780b",
+      "category": "government-schemes",
+      "title": "West Bengal Housing Board Invites e-Tenders for Model Flat Renovation Works",
+      "source": "https://wbhousingboard.in/home/current_tenders/download/nit_no_wbhb_dd_ew-ii_niet-07_2026-2027_2nd_call_26102026.pdf",
+      "reason": "source_unavailable"
+    },
+    {
+      "id": "0ed0490ee6aa",
+      "category": "controversies",
+      "title": "Maulana Beaten Up Outside Jaipur Court Amid Allegations Regarding Madrasa Student's Marriage",
+      "source": "https://www.livehindustan.com/rajasthan/jaipur/jaipur-court-maulana-beaten-up-madrasa-student-marriage-brainwashing-allegations-three-children-father-jaisinghpura-khor-201794294042434.html",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "d5ff9974453f739276c8eb9f",
       "category": "automobiles",
       "title": "Ducati 100 Scrambler: Motorcycle Specifications, Facts and Verification Guide",
@@ -2931,7 +3032,7 @@
       "category": "private-vacancy",
       "title": "Fanzart Seeks Business Development Specialist for On-Site Role in Ranchi",
       "source": "https://in.linkedin.com/jobs/view/business-development-specialist-at-fanzart-designer-fans-4484908686",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "5f642b137c38",
@@ -3002,6 +3103,13 @@
       "title": "SBI Research Flags Mixed Signals in RBI's ₹2.5 Trillion Liquidity Infusion",
       "source": "https://www.business-standard.com/economy/news/rbi-s-2-5-trillion-liquidity-infusion-sends-mixed-signals-sbi-research-126102300929_1.html",
       "reason": "access_denied"
+    },
+    {
+      "id": "5be059fb9312",
+      "category": "world-news",
+      "title": "U.S. County Clerks Prepare for Midterms Amid Rising Election Denial Movement",
+      "source": "https://www.cbc.ca/news/canada/trump-midterm-election-denial-9.7398310?cmp=rss",
+      "reason": "source_error"
     },
     {
       "id": "515071786530",
@@ -3260,7 +3368,7 @@
       "category": "private-vacancy",
       "title": "Hospitality Jobs Lists New Opening for Kesar Bagh Palace in Chittorgarh",
       "source": "https://in.linkedin.com/jobs/view/%F0%9F%9A%A8-we-are-hiring-kesar-bagh-palace-chittorgarh-at-hospitality-jobs-4469170612",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "fa301ba3a07a",
@@ -3340,6 +3448,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "a2ad06d74692",
+      "category": "india-news",
+      "title": "West Bengal Housing Board Extends Bid Deadlines for Tender WBHB/DD(EW)-II/NIQ-17/2026-27",
+      "source": "https://wbhousingboard.in/home/current_tenders/download/corrigendum_niq_no_17_08102026.pdf",
+      "reason": "source_unavailable"
+    },
+    {
       "id": "bf846b00e7e7",
       "category": "private-vacancy",
       "title": "Recent Job Openings and Professional Opportunities Listed Across India on Professional Networks",
@@ -3403,6 +3518,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "4725ecc3446d",
+      "category": "world-news",
+      "title": "Poland Deploys Riot Police in Standoff Over Country’s Top Court",
+      "source": "https://www.nytimes.com/2026/10/31/world/europe/poland-court-police-president.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "d17bbde25b7c",
       "category": "business",
       "title": "Cornerstone Bancorp Reports Third Quarter 2026 Financial Results",
@@ -3450,6 +3572,13 @@
       "title": "Bank of America Faces Securities Fraud Lawsuit as Investors Reminded of December Deadline",
       "source": "https://www.prnewswire.com/news-releases/bac-investors-have-opportunity-to-lead-bank-of-america-corporation-securities-fraud-lawsuit-302925375.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "fe996ca369b8",
+      "category": "government-schemes",
+      "title": "West Bengal Housing Board Invites e-Quotation for Audio-Video System at Kolkata Headquarters",
+      "source": "https://wbhousingboard.in/home/current_tenders/download/niq_no_wbhb_dd_ew-ii_nieq-18_2026-27_16102026.pdf",
+      "reason": "source_unavailable"
     },
     {
       "id": "6734d0b5d4b1",
@@ -3855,7 +3984,7 @@
       "category": "private-vacancy",
       "title": "Professional Career Opportunities Listed Across India via Professional Platforms",
       "source": "https://in.linkedin.com/jobs/Find+Novaluxia+Reviews+among+your+reading+options.zqi-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "d9748374ccd4",
@@ -3876,7 +4005,7 @@
       "category": "telecom",
       "title": "TRAI Releases Mobile Network Performance Audit for Kathgodam-Dehradun Railway Route",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No132of2026.pdf",
-      "reason": "source_error"
+      "reason": "source_unavailable"
     },
     {
       "id": "8df79a94610e",
@@ -4439,6 +4568,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "e47012966b1d",
+      "category": "india-news",
+      "title": "Masked Robber Threatens Staff at Knife-Point in Jaipur Jewellery Showroom",
+      "source": "https://www.livehindustan.com/rajasthan/jaipur/jaipur-jewellery-showroom-robbery-woman-forced-to-hand-over-jewellery-at-knife-point-in-vaishali-nagar-201794304605670.html",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "f50d37ff0019",
       "category": "ai-news",
       "title": "Opyn AI Agents Report 40% Reduction in Marpai Provider Call Center Costs",
@@ -4471,7 +4607,7 @@
       "category": "private-vacancy",
       "title": "LinkedIn Shows Over 53,000 Research‑Related Job Openings Across India – From Pharma Labs to University Labs",
       "source": "https://in.linkedin.com/jobs/Research+first%3A+Novaluxia+reviews.edu-jobs?f_AL=true",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "ed1ad48ae5a8",
@@ -4513,7 +4649,7 @@
       "category": "private-vacancy",
       "title": "Overview of Current Job Openings and Professional Roles Across India",
       "source": "https://in.linkedin.com/jobs/nexbirlik%2Bistifad%C9%99%C3%A7i%2Bt%C9%99cr%C3%BCb%C9%99si-%2Bm%C3%BCxt%C9%99lif%2Bm%C9%99nb%C9%99l%C9%99rd%C9%99%2Bfikirl%C9%99ri%2Boxuyun.uew-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "c006205f24bc",
@@ -4563,6 +4699,13 @@
       "title": "Tissera Announces Communication Design Intern Opening in Chennai",
       "source": "https://in.linkedin.com/jobs/view/communication-design-intern-at-tissera-4483884581",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "ca974e804dd2",
+      "category": "india-news",
+      "title": "West Bengal Housing Board Issues Corrigendum for Tender NIQ-15/2026-27",
+      "source": "https://wbhousingboard.in/home/current_tenders/download/corrigendum_notice_i_wbhb_dd_ew-ii_niq-15_2026-27_24092026.pdf",
+      "reason": "source_unavailable"
     },
     {
       "id": "7ba9e85f5ffa",
@@ -4649,6 +4792,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "0b824c0d8171",
+      "category": "private-vacancy",
+      "title": "Welatino Traveltech LLP Announces Spanish Content Writer Opening in Noida",
+      "source": "https://in.linkedin.com/jobs/view/spanish-content-writer-at-welatino-traveltech-llp-4484853174",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "6a05b95ab24b",
       "category": "business",
       "title": "InventHelp Client Develops BLU MESH TECHNOLOGY to Keep Insects Out of Vehicles",
@@ -4710,6 +4860,13 @@
       "title": "Natural Cork Retains Closure Dominance as Primary Driver of U.S. Off-Premise Wine Revenue, Data Shows",
       "source": "https://www.prnewswire.com/news-releases/cork-retains-closure-dominance-as-primary-driver-of-us-off-premise-wine-revenue-302924945.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "ce0ef8db912e7a799d88cb97",
+      "category": "gadgets",
+      "title": "Lenovo K6 Power: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Lenovo_K6_Power",
+      "reason": "invalid_source_images"
     },
     {
       "id": "86994d486a5f",
@@ -4885,6 +5042,13 @@
       "title": "Power Dental Studio Announces Open Vacancy for Dental Designer (Exocad) in Kochi, Kerala",
       "source": "https://in.linkedin.com/jobs/view/dental-designer-exocad-at-power-dental-studio-4484942374",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "f07dca7c625b",
+      "category": "cyber-security",
+      "title": "France Blames Iran for Mid‑October Cyber Sabotage of Retail Refrigeration Systems",
+      "source": "https://www.npr.org/2026/11/09/g-s1-152724/france-iran-cyber-sabotage-fridge-attacks",
+      "reason": "source_error"
     },
     {
       "id": "9acdf4deb8ec",
@@ -5094,7 +5258,7 @@
       "category": "visas-immigration",
       "title": "Peerless Immigration Services Announces Openings for Business Development Associates in New Delhi",
       "source": "https://in.linkedin.com/jobs/view/business-development-associate-at-peerless-immigration-services-4483846739?position=23&pageNum=0&refId=pdi7GkDzOUAwjOAwZuhD7g%3D%3D&trackingId=99eGWHPhi0lFt1HRUu2RDA%3D%3D",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "c268010f138d",
@@ -5139,6 +5303,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "244ba723a97c",
+      "category": "india-news",
+      "title": "West Bengal Housing Board Invites Tender for Clearing Work at Sunray Project Campus",
+      "source": "https://wbhousingboard.in/home/current_tenders/download/nit_no_wbhb_dd_ew-ii_nit-19_2026-27_06102026.pdf",
+      "reason": "source_unavailable"
+    },
+    {
       "id": "3b1025a56362",
       "category": "private-vacancy",
       "title": "Media and Communications Job Openings Listed in Querétaro Region",
@@ -5150,6 +5321,13 @@
       "category": "world-news",
       "title": "Brazil's Liberal Party accepts election defeat, but Flávio Bolsonaro refuses to concede",
       "source": "https://www.npr.org/2026/10/27/nx-s1-6019217/bolsonaro-flavio-lula-brazil-election-trump",
+      "reason": "source_error"
+    },
+    {
+      "id": "de9af661c58e",
+      "category": "ai-news",
+      "title": "Europeans Protest Rapid Expansion of AI Data Centres Amid Resource Concerns",
+      "source": "https://www.cbc.ca/player/play/9.7413617?cmp=rss",
       "reason": "source_error"
     },
     {
@@ -5248,7 +5426,7 @@
       "category": "private-vacancy",
       "title": "Allison Off-Highway Drive & Motion Systems Announces Vacancy for Labour Welfare Officer in Sanand, Gujarat",
       "source": "https://in.linkedin.com/jobs/view/labour-welfare-officer-at-allison-off-highway-drive-motion-systems-4483874387",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "ec8b9639359a",
@@ -5342,6 +5520,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "943034c49121",
+      "category": "india-news",
+      "title": "BJP MP Janardan Mishra Claims Farmers Work Only Three Months, Sparking Controversy",
+      "source": "https://www.livehindustan.com/madhya-pradesh/kisan-kewal-teen-mahine-kaam-karta-hai-surprising-statement-of-bjp-mp-from-rewa-201794308408692.html",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "6e0dc4e7f395",
       "category": "controversies",
       "title": "Investors Face November 3 Deadline to Lead DICK'S Sporting Goods Securities Fraud Lawsuit",
@@ -5405,11 +5590,25 @@
       "reason": "no_source_image"
     },
     {
+      "id": "32280cce1125bb9a47dd1d42",
+      "category": "gadgets",
+      "title": "Xiaomi Mi MIX: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_MIX",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "143e60189659fea092ac3a1e",
       "category": "gadgets",
       "title": "Pixel: Smartphone Specifications, Facts and Verification Guide",
       "source": "https://en.wikipedia.org/wiki/Pixel_%281st_generation%29",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "cf9c65b682e0",
+      "category": "india-news",
+      "title": "West Bengal Housing Board Announces Cancellation of Tender WBHB/DD(EW)-II/NIQ-15/2026-27",
+      "source": "https://wbhousingboard.in/home/current_tenders/download/cancellation_corrigendum_wbhb_dd_ew-ii_niq-15_2026-27_28092026.pdf",
+      "reason": "source_unavailable"
     },
     {
       "id": "47e829176cc5",
@@ -5440,6 +5639,13 @@
       "reason": "restricted_page"
     },
     {
+      "id": "a2eb89f5dcb8",
+      "category": "world-news",
+      "title": "U.K. Charges Two Men Over Suspected Plot Targeting RAF Fairford",
+      "source": "https://www.cbc.ca/news/world/uk-charges-fairford-airbase-incident-9.7397620?cmp=rss",
+      "reason": "source_error"
+    },
+    {
       "id": "08e244f09bc8",
       "category": "ai-news",
       "title": "BFSI Summit 2026: AI Spending, Oil Prices, and Capital Flows Weigh on Indian Markets",
@@ -5468,11 +5674,18 @@
       "reason": "no_source_image"
     },
     {
+      "id": "ed8c2059786e",
+      "category": "government-schemes",
+      "title": "West Bengal Housing Board Invites e-Tenders for G+IV Buildings in New Town, Rajarhat",
+      "source": "https://wbhousingboard.in/home/current_tenders/download/nit_no_wbhb_jd_ew-iii_niet-06_2026-27_2nd_call_29092026.pdf",
+      "reason": "source_unavailable"
+    },
+    {
       "id": "0521da50fcf9",
       "category": "private-vacancy",
       "title": "PlanetSpark Announces Sales Associate Openings for Freshers in Ahmedabad, Kolkata, and Mumbai",
       "source": "https://in.linkedin.com/jobs/view/urgent-hiring-for-sales-associate-freshers-welcome-in-ahmedabad-kolkata-mumbai-at-planetspark-4484762814",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "576a9585e0de",
@@ -5510,11 +5723,25 @@
       "reason": "access_denied"
     },
     {
+      "id": "5b2ebaff7706",
+      "category": "business",
+      "title": "Reflecting on 35 Years of India's 1991 Economic Reforms",
+      "source": "https://www.business-standard.com/economy/news/half-a-lifetime-after-the-1991-reforms-lotuses-bloom-in-muddy-waters-126072301755_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "00f079e2ba3a",
       "category": "private-vacancy",
       "title": "Alok Industries Limited Lists Assistant Manager Opening in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-alok-industries-limited-india-4481052431",
       "reason": "access_denied"
+    },
+    {
+      "id": "403567ecedb0",
+      "category": "india-news",
+      "title": "Unnao-Shuklaganj Development Authority Invites Proposals for Empanelment of Architects, Urban Planners and SMEs",
+      "source": "https://usdaunnao.in/adminusda/uploads/EmpanelmentofArchitectUrbanplannersand.pdf",
+      "reason": "source_unavailable"
     },
     {
       "id": "c7d990d9fd7a",
@@ -5682,7 +5909,7 @@
       "category": "private-vacancy",
       "title": "PlanetSpark Announces Fresher Hiring for Inside Sales Executive Roles Across Select Regions",
       "source": "https://in.linkedin.com/jobs/view/inside-sales-executive-fresher-hiring-in-najafgarh-ghaziabad-moradabad-delhi-at-planetspark-4484770369",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "30c1509c3bb5",
@@ -5704,6 +5931,13 @@
       "title": "Understanding the Differences Between Dry and Wet Dual-Clutch Transmissions",
       "source": "https://www.motor1.com/features/813847/dry-clutch-vs-wet-clutch-dct-differences/",
       "reason": "access_denied"
+    },
+    {
+      "id": "bf4eb2a6b4d3",
+      "category": "india-news",
+      "title": "West Bengal Housing Board Issues Corrigendum for NIeQ Tender, Revising Dates and EMD Rules",
+      "source": "https://wbhousingboard.in/home/current_tenders/download/corrigendum1_for_niq_no_wbhb_dd_ew-ii_nieq-13_2026-27_08092026.pdf",
+      "reason": "source_unavailable"
     },
     {
       "id": "18058afab0cf",
@@ -5871,7 +6105,7 @@
       "category": "private-vacancy",
       "title": "Frontier Agrotech Private Limited Posts Opening for Accounts Executive-Finance in Chandigarh",
       "source": "https://in.linkedin.com/jobs/view/accounts-executive-finance-at-frontier-agrotech-private-limited-4483847528",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "3acc30eaefd0",
@@ -5955,6 +6189,13 @@
       "category": "private-vacancy",
       "title": "Overview of Recent Professional Job Openings Listed on LinkedIn India",
       "source": "https://in.linkedin.com/jobs/Nexbirlik+istifad%C9%99%C3%A7i+t%C9%99cr%C3%BCb%C9%99si%3A+m%C3%BCxt%C9%99lif+izahlara+n%C9%99z%C9%99r+sal%C4%B1n.whn-jobs",
+      "reason": "access_denied"
+    },
+    {
+      "id": "52e00118256d",
+      "category": "apps-software",
+      "title": "Older Bentley Models Get Apple CarPlay And Android Auto Via New Infotainment Upgrade",
+      "source": "https://www.motor1.com/news/814971/bentley-continental-gt-retrofit-adds/",
       "reason": "access_denied"
     },
     {
@@ -6235,7 +6476,7 @@
       "category": "private-vacancy",
       "title": "Amrit Skills Development Reports MIS Executive Opening in Delhi",
       "source": "https://in.linkedin.com/jobs/view/mis-executive-at-amrit-skills-development-4480055351",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "bc36bed41594",
@@ -6372,89 +6613,44 @@
     }
   ],
   "missing_reasons": {
-    "invalid_source_images": 196,
-    "access_denied": 265,
-    "source_error": 101,
-    "no_source_image": 270,
-    "source_unavailable": 42,
+    "invalid_source_images": 212,
+    "access_denied": 262,
+    "source_error": 103,
+    "no_source_image": 277,
+    "source_unavailable": 56,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "ee77c0e36dac79283ebe07c0": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Standard_Six",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fc/1934_Chevrolet_Standard_DC_Coach.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "7adf40b3ba628bb367e38a7b": {
+    "32280cce1125bb9a47dd1d42": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_E5",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_MIX",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/20px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "ce0ef8db912e7a799d88cb97": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Lenovo_K6_Power",
       "candidate_count": 5,
       "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/20px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
         "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
       ]
     },
-    "869fd8137e37aa12fc8772ac": {
+    "7da8dcf60546453fddf27728": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Essential_Phone",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Essential_Phone_in_ocean_depths.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Superior",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/1926_Chevrolet_Superior_Series_V_Touring_GAG685.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "18985ab3f88f52f17dbb8153": {
+    "220b642e6b680bbf50e95e20": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Series_H",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a6/1915_Chevrolet_Series_H-2_Royal_Mail_Roadster.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "02364f4d79f5caac07cae019": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
-      "candidate_count": 7,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/1280px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/500px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "8ede6684d4cf14febb863aad": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "554edbfdaee926ed82007433": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "ab5161457cb0ef816db211ff": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "e21f0c9303189bff05b728a0": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Stylemaster",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Flickr_-_DVS1mn_-_47_Chevrolet_Stylemaster_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
