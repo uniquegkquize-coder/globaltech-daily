@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src https:; base-uri 'none'; form-action 'none'">
+<title>GlobeWire Daily — पोस्ट लिखें</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #edf3f7; color: #142236; font: 16px/1.55 system-ui, sans-serif; }
+  header { background: #111f32; color: white; }
+  header div, main { max-width: 1160px; margin: auto; padding: 18px 24px; }
+  header div { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+  header a { color: #b7f4e5; }
+  main { padding-top: 30px; }
+  h1 { font-size: clamp(30px, 5vw, 46px); margin: 0; letter-spacing: -.025em; }
+  h2 { margin: 0 0 14px; font-size: 22px; }
+  p { margin: 8px 0 18px; }
+  .intro, .hint { color: #40556a; }
+  .hint { font-size: .875rem; margin-bottom: 10px; }
+  .grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+  .card { background: white; border: 1px solid #d4e0e9; border-radius: 14px; padding: 20px; }
+  label { display: block; margin: 14px 0; font-weight: 650; }
+  input, textarea, select { display: block; width: 100%; padding: 10px; margin-top: 4px; border: 1px solid #9aabba; border-radius: 8px; background: white; color: #142236; font: inherit; }
+  textarea { resize: vertical; min-height: 120px; }
+  details { margin: 15px 0; padding: 13px; border: 1px solid #d4e0e9; border-radius: 8px; }
+  summary { cursor: pointer; font-weight: 700; }
+  button, .action { display: inline-block; cursor: pointer; padding: 10px 14px; border: 1px solid #056854; border-radius: 8px; background: #056854; color: white; text-decoration: none; font: inherit; font-weight: 700; }
+  button.secondary { background: white; color: #056854; }
+  :focus-visible { outline: 3px solid #0874a6; outline-offset: 3px; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .preview { overflow-wrap: anywhere; min-width: 0; }
+  .preview h3 { margin: 0 0 12px; font-size: clamp(23px, 3vw, 31px); line-height: 1.22; }
+  #preview-body { white-space: pre-wrap; }
+  #preview-image { width: 100%; max-height: 300px; object-fit: contain; margin-bottom: 14px; background: #edf3f7; border-radius: 8px; }
+  #status { min-height: 1.5em; margin-bottom: 0; }
+  #submission { min-height: 92px; }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } header div, main { padding-inline: 14px; } .card { padding: 15px; } }
+</style>
+<script defer src="./editor.js"></script>
+</head>
+<body>
+<header><div><strong>GlobeWire Daily</strong><a href="https://globewiredaily.org/hi/">न्यूज़ साइट देखें</a></div></header>
+<main>
+  <h1>नई पोस्ट लिखें</h1>
+  <p class="intro">यहाँ पोस्ट तैयार करें। प्रकाशित करने के लिए अपने GlobeWire GitHub खाते से साइन इन करें।</p>
+  <noscript><p>पोस्ट editor चलाने के लिए JavaScript चालू करें।</p></noscript>
+  <div class="grid">
+    <form class="card" id="editor">
+      <h2>पोस्ट का विवरण</h2>
+      <label>श्रेणी<select name="category" required><option value="">श्रेणी चुनें</option><!-- CATEGORY_OPTIONS --></select></label>
+      <label>English headline<input name="en_title" required minlength="5" maxlength="180"></label>
+      <label>English article<textarea name="en_body" required minlength="150" maxlength="24000" rows="8"></textarea></label>
+      <p class="hint">कम से कम 150 अक्षर। पैराग्राफ के बीच खाली लाइन दें। सबहेडिंग के लिए Markdown में ## लगाएँ।</p>
+      <details>
+        <summary>हिंदी संस्करण</summary>
+        <label>हिंदी शीर्षक<input name="hi_title" minlength="5" maxlength="180"></label>
+        <label>हिंदी लेख<textarea name="hi_body" minlength="150" maxlength="24000" rows="7"></textarea></label>
+      </details>
+      <details>
+        <summary>स्रोत, फोटो और SEO</summary>
+        <label>खबर का स्रोत<input name="source" type="url" maxlength="2000" placeholder="https://…"></label>
+        <p class="hint">अपनी रिपोर्ट के लिए स्रोत खाली छोड़ें।</p>
+        <label>फोटो का सीधा लिंक<input name="image_url" type="url" maxlength="2000" placeholder="https://…"></label>
+        <label>फोटो क्रेडिट<input name="image_credit" maxlength="150"></label>
+        <label>फोटो के उपयोग की अनुमति या लाइसेंस<input name="image_license" maxlength="250"></label>
+        <p class="hint">कम से कम 1200 px चौड़ी फोटो दें। फोटो के बिना GlobeWire सांकेतिक चित्र लगाएगा।</p>
+        <label>English SEO description<input name="en_meta" maxlength="160"></label>
+        <label>हिंदी SEO विवरण<input name="hi_meta" maxlength="160"></label>
+      </details>
+      <div class="actions">
+        <button type="submit">पोस्ट कॉपी करें</button>
+        <button type="button" class="secondary" id="clear">ड्राफ्ट साफ़ करें</button>
+      </div>
+      <p class="hint">ड्राफ्ट इसी ब्राउज़र में अपने-आप सेव होता है।</p>
+      <p id="status" role="status"></p>
+      <section id="next" hidden>
+        <h2>GitHub पर भेजें</h2>
+        <p class="hint">GitHub में <strong>Run workflow</strong> खोलें और कॉपी किया हुआ टेक्स्ट <strong>article</strong> में पेस्ट करें। सिर्फ जाँच के लिए <strong>check</strong> और पोस्ट करने के लिए <strong>publish</strong> चुनें।</p>
+        <label>कॉपी करने का टेक्स्ट<textarea readonly id="submission" spellcheck="false"></textarea></label>
+        <a class="action" href="https://github.com/uniquegkquize-coder/globaltech-daily/actions/workflows/manual-post.yml" target="_blank" rel="noopener noreferrer">GitHub में खोलें ↗</a>
+      </section>
+    </form>
+    <section class="card preview" aria-labelledby="preview-heading">
+      <h2 id="preview-heading">पोस्ट का प्रीव्यू</h2>
+      <label>भाषा<select id="language"><option value="en">English</option><option value="hi">हिंदी</option></select></label>
+      <article id="preview" lang="en">
+        <p class="hint" id="preview-category"></p>
+        <h3 id="preview-title">आपका शीर्षक यहाँ दिखेगा</h3>
+        <img id="preview-image" alt="फीचर्ड फोटो का प्रीव्यू" referrerpolicy="no-referrer" hidden>
+        <p id="preview-body">लेख लिखना शुरू करें।</p>
+      </article>
+    </section>
+  </div>
+</main>
+</body>
+</html>

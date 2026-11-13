@@ -1,0 +1,74 @@
+name: GlobeWire Manual Post
+on:
+  workflow_dispatch:
+    inputs:
+      article:
+        description: Paste the submission copied from the GlobeWire editor
+        required: true
+        type: string
+      mode:
+        description: Check or publish
+        type: choice
+        options: [check, publish]
+        default: check
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  manual-post:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          filter: blob:none
+          sparse-checkout: |
+            scripts
+            content/posts
+            content/featured
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install photo importer dependencies
+        if: inputs.mode == 'publish'
+        run: pip install 'requests>=2.31,<3' 'Pillow>=10,<13'
+      - name: Validate and save the article
+        env:
+          POST_MODE: ${{ inputs.mode }}
+        run: |
+          set -euo pipefail
+          submission="$RUNNER_TEMP/globewire-post.json"
+          jq -er '.inputs.article' "$GITHUB_EVENT_PATH" > "$submission"
+          if [ "$POST_MODE" = check ]; then
+            python scripts/manual_post.py "$submission" --check
+            exit 0
+          fi
+          git config user.name 'GlobeWire Editorial Desk'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git reset --hard origin/main
+            result="$RUNNER_TEMP/globewire-post-summary.md"
+            : > "$result"
+            if ! GITHUB_STEP_SUMMARY="$result" python scripts/manual_post.py "$submission"; then
+              cat "$result" >> "$GITHUB_STEP_SUMMARY"
+              exit 1
+            fi
+            git add -- content/posts content/featured
+            if git diff --cached --quiet; then
+              cat "$result" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            git commit -m 'Publish manually submitted GlobeWire article'
+            if git push origin HEAD:main; then
+              cat "$result" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            sleep "$attempt"
+          done
+          echo 'Could not sync with main. Run this submission again.' >> "$GITHUB_STEP_SUMMARY"
+          exit 1

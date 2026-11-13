@@ -476,6 +476,7 @@ for p in POSTS:
   alternate_urls={code:SITE+article_path(p,code) for code in available}
   schema={'@context':'https://schema.org','@type':'NewsArticle' if is_news_article(p) else 'Article','headline':t,'articleSection':CATEGORIES[category(p)][0],'datePublished':p.get('date'),'dateModified':p.get('updated_at') or p.get('date'),'inLanguage':lang,'mainEntityOfPage':url,'image':([f'{SITE}/images/{s}.jpg?v={image_version(p)}'] if has_featured(p) else []),'author':{'@type':'Organization','name':author_name(p),'url':f'{SITE}/{lang}/author/{author_handle(p)}/','logo':{'@type':'ImageObject','url':f'{SITE}/publisher-logo.png','width':512,'height':512}},'publisher':{'@type':'Organization','name':'GlobeWire Daily','url':SITE},'isBasedOn':p['source']}
   if not has_featured(p):schema.pop('image',None)
+  if p.get('original_reporting'):schema.pop('isBasedOn',None)
   breadcrumb_trail=[
    ('Home' if lang=='en' else 'होम',f'/{lang}/'),
    ('Latest News' if lang=='en' else 'ताज़ा खबरें',f'/{lang}/all-news/'),
@@ -539,7 +540,18 @@ for p in POSTS:
   reading_html='<p class="reading-meta">'+(f'{reading_minutes} min read' if content_lang=='en' else f'{reading_minutes} मिनट में पढ़ें')+'</p>'
   guide_notice=('<p class="guide-context">'+('Reference guide • Source-listed details may cover multiple variants. Check the exact model and market before buying.' if content_lang=='en' else 'संदर्भ गाइड • स्रोत में कई वेरिएंट का विवरण हो सकता है। खरीदने से पहले सही मॉडल और बाजार की जानकारी जाँचें।')+'</p>') if p.get('directory_kind') in ('phones','cars','bikes') else ''
   trending_html=trending_section(lang,p)
-  content=f'''<div class="wrap"><article class="article readable-article" data-article-layout="v3"><nav class="breadcrumbs" aria-label="{'Breadcrumb' if lang=='en' else 'नेविगेशन पथ'}">{breadcrumb_html}</nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1>{title_ad}<p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> · Source: {e(sourcehost)}</p>{reading_html}{updated_notice(p,lang)}{summary_html}{featured_html}{guide_notice}{article_note(p,lang)}{article_panel(p,lang)}{toc_html}<div class="story">{story_html}</div>{share_html}{keyword_html}<div class="source"><strong>{'Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'}:</strong> <a href="{e(p['source'])}" rel="noopener noreferrer" target="_blank">{e(p.get('source_title') or sourcehost)}</a><p class="notice">{'AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'}</p></div><section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {'AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''
+  source_credit=f' · Source: {e(sourcehost)}'
+  source_label='Read the original source' if lang=='en' else 'मूल स्रोत पढ़ें'
+  source_note='AI-assisted reporting; source claims are attributed and have not been independently verified.' if lang=='en' else 'AI की सहायता से तैयार रिपोर्ट; मूल स्रोत के दावों की स्वतंत्र पुष्टि नहीं की गई है।'
+  author_note='AI-assisted news based on attributed published sources.' if lang=='en' else 'प्रकाशित स्रोतों पर आधारित AI-सहायता प्राप्त खबरें।'
+  if p.get('manual_post'):
+   source_note=''
+   author_note='Published by the GlobeWire Daily editorial desk.' if lang=='en' else 'GlobeWire Daily के संपादकीय डेस्क ने प्रकाशित किया।'
+  source_note_html=f'<p class="notice">{source_note}</p>' if source_note else ''
+  source_html=f'<div class="source"><strong>{source_label}:</strong> <a href="{e(p["source"])}" rel="noopener noreferrer" target="_blank">{e(p.get("source_title") or sourcehost)}</a>{source_note_html}</div>'
+  if p.get('original_reporting'):
+   source_credit=source_html=''
+  content=f'''<div class="wrap"><article class="article readable-article" data-article-layout="v3"><nav class="breadcrumbs" aria-label="{'Breadcrumb' if lang=='en' else 'नेविगेशन पथ'}">{breadcrumb_html}</nav><div class="eyebrow">{e(CATEGORIES[category(p)][0 if lang=='en' else 1])}</div><h1>{e(t)}</h1>{title_ad}<p class="date"><time datetime="{e(p.get('date',''))}">{e(display_date(p.get('date','')))}</time> · <a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a>{source_credit}</p>{reading_html}{updated_notice(p,lang)}{summary_html}{featured_html}{guide_notice}{article_note(p,lang)}{article_panel(p,lang)}{toc_html}<div class="story">{story_html}</div>{share_html}{keyword_html}{source_html}<section class="author-about"><h2>{'About the author' if lang=='en' else 'लेखक के बारे में'}</h2><p><a href="/{lang}/author/{author_handle(p)}/">{e(author_name(p))}</a> — {author_note}</p></section><h2>{'More to read' if lang=='en' else 'और पढ़ें'}</h2><div class="related">{related_html}</div>{trending_html}</article></div>'''
   page=shell(lang,t,desc,url,content,extra,alternate_urls=alternate_urls,canonical_url=canonical_url,robots='noindex,follow,max-image-preview:large' if fallback else ROBOTS,document_lang=content_lang)
   page=page.removesuffix('</body></html>')+article_ad_scripts()+'</body></html>'
   write(OUT / article_path(p,lang).lstrip('/') / 'index.html',page)
@@ -623,6 +635,14 @@ write(OUT/'favicon.svg','''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 
 # A real 404 document prevents Pages from serving the homepage with HTTP 200 for unknown URLs.
 missing='<div class="wrap"><article class="article"><h1>Page not found / पेज नहीं मिला</h1><p>The requested page is unavailable. Check the address or browse the current news categories.</p><p>यह पेज उपलब्ध नहीं है। पता जाँचें या खबरों की श्रेणियाँ देखें।</p><p><a href="/en/">English home</a> · <a href="/hi/">हिंदी होम</a> · <a href="/en/site-map/">Explore topics</a></p></article></div>'
 write(OUT/'404.html',shell('en','Page not found | GlobeWire Daily','The requested page was not found.',SITE+'/404.html',missing,alternate_urls={},robots='noindex,follow'))
+# The editor is a noindex form. GitHub checks write access before running the publisher.
+editor = (R/'editor/index.html').read_text(encoding='utf-8')
+editor_options = ''.join(
+ f'<option value="{e(key)}">{e(hi)} · {e(en)}</option>'
+ for key,(en,hi) in sorted(CATEGORIES.items(),key=lambda item:item[1][0])
+)
+write(OUT/'editor/index.html',editor.replace('<!-- CATEGORY_OPTIONS -->',editor_options))
+write(OUT/'editor/editor.js',(R/'editor/editor.js').read_text(encoding='utf-8'))
 write(OUT/'robots.txt',f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\nSitemap: {SITE}/news-sitemap.xml\n')
 urls=[f'/{lang}/{path}' for lang in ('en','hi') for path in ('','colleges/','courses/','cars/','phones/','bikes/','global-topics/','launches/','freebies-deals/','study-abroad-guide/','jobs-archive/','all-news/','jobs-exams/','author/editorial-desk/','tools/','government-schemes/','sarkari-naukri/','private-vacancy/','movies-entertainment/','world-news/','business/','sports/','automobiles/','health-science/','gaming/','environment/','travel/','education/','lifestyle/','technology/','about/','editorial/','corrections/','privacy/','contact/','affiliate/')]+[f'/{lang}/page/{page}/' for lang in ('en','hi') for page in range(2,max(1,(len(POSTS)+23)//24)+1)]+[f'/{lang}/{cat}/page/{page}/' for lang in ('en','hi') for cat in CATEGORIES for page in range(2,max(1,(sum(1 for p in POSTS if matches_category(p,cat))+23)//24)+1)]+[f'/{lang}/author/{handle}/' for lang in ('en','hi') for handle in sorted(set(AUTHOR_HANDLES.values()))]+[article_path(p,lang) for p in POSTS for lang in ('en','hi')]
 notice_cache=details_cache()
