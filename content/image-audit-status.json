@@ -1,314 +1,659 @@
 {
-  "total_posts": 8527,
-  "selected": 55,
+  "total_posts": 8587,
+  "selected": 929,
   "results": {
-    "invalid_source_images": 33,
-    "source_photo_saved": 4,
-    "source_error": 1,
-    "source_unavailable": 1,
-    "no_source_image": 4,
-    "cooldown": 12
+    "source_cache_reused": 2,
+    "access_denied": 16,
+    "no_source_image": 19,
+    "source_photo_saved": 2,
+    "invalid_source_images": 15,
+    "cooldown": 868,
+    "source_error": 7
   },
-  "still_missing": 916,
+  "still_missing": 919,
   "articles": [
     {
-      "id": "32280cce1125bb9a47dd1d42",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_MIX",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607898.6393669
+      "id": "a1132026000000000000000000000003",
+      "result": "source_cache_reused"
     },
     {
-      "id": "bdb9994724d228c215a472d9",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Yeoman",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794607899.037646
+      "id": "a1132026000000000000000000000004",
+      "result": "source_cache_reused"
     },
     {
-      "id": "c70a52c4acde13903b469f2d",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_van",
+      "id": "e5e963bfe190",
+      "source": "https://www.motor1.com/news/813869/bentley-torcal-passes-a-million/",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794607899.1184652
+      "result": "access_denied",
+      "retry_after": 1794609893.5807078
     },
     {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "source": "https://isc-edu.org/",
-      "policy": "93e2ad7deccc",
-      "result": "source_error",
-      "retry_after": 1794607899.1339242
-    },
-    {
-      "id": "3d6256720a87945b67465315",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_XA1",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794607899.3930216
-    },
-    {
-      "id": "ce0ef8db912e7a799d88cb97",
-      "source": "https://en.wikipedia.org/wiki/Lenovo_K6_Power",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607899.4683273
-    },
-    {
-      "id": "ab5757b7bde7e5a43128d256",
-      "source": "https://exploitsmw.com/",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1794607899.4865005
-    },
-    {
-      "id": "0d093f1b1d8b95e0ce3c5ba1",
-      "source": "https://en.wikipedia.org/wiki/Brammo_Enertia",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607899.644859
-    },
-    {
-      "id": "7d2f58f7dd2b81f8b6343504",
-      "source": "https://en.wikipedia.org/wiki/GeeksPhone_One",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794607899.8201365
-    },
-    {
-      "id": "9e59804909cc110131739d58",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III_Neo",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607899.9037974
-    },
-    {
-      "id": "17aa97db89715afd896833ea",
-      "source": "https://en.wikipedia.org/wiki/Redmi_Note_Prime",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607900.229223
-    },
-    {
-      "id": "2a8b92143f14b264d8d27146",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607900.277252
-    },
-    {
-      "id": "611527df4de7f3170a99cfde",
-      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607900.5455294
-    },
-    {
-      "id": "fb6dd420a2fc44c8f8340751",
-      "source": "https://en.wikipedia.org/wiki/JXD_P861",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607900.6459765
-    },
-    {
-      "id": "28682dd8dfac94fd33504b6e",
-      "source": "https://en.wikipedia.org/wiki/Droid_Turbo_2",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607900.7545161
-    },
-    {
-      "id": "c176a1dc41c1e122cab45821",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607901.1056545
-    },
-    {
-      "id": "33686a761fa5d097afc337dc",
-      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607901.2046409
-    },
-    {
-      "id": "d5ff9974453f739276c8eb9f",
-      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607901.394292
-    },
-    {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607901.6018112
-    },
-    {
-      "id": "2d100db342cdd6c9c517a807",
-      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607901.6132267
-    },
-    {
-      "id": "a941ae3553703f8fd24d4d17",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607901.7406263
-    },
-    {
-      "id": "e8fc748d4c8dffaa2212a1cf",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607901.8588696
-    },
-    {
-      "id": "fab6501205ba27e38dac785c",
-      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607902.0826108
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "source": "https://dec.ac.in/",
+      "id": "23db565d6f5a",
+      "source": "https://www.prnewswire.com/news-releases/announcement-of-change-in-the-total-number-of-votes-in-ab-skf-302924737.html",
       "policy": "93e2ad7deccc",
       "result": "no_source_image",
-      "retry_after": 1794607902.1349473
+      "retry_after": 1794609896.1002219
     },
     {
-      "id": "635e4aa01fc60223a6fea284",
-      "source": "https://en.wikipedia.org/wiki/Borgward_BX3",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607902.7784407
-    },
-    {
-      "id": "4afa4536b18e5a41b30a3497",
-      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607903.1308844
-    },
-    {
-      "id": "007acb84538e69bcc14f4f9f",
-      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607903.1356
-    },
-    {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607903.1372874
-    },
-    {
-      "id": "b73ac57f1ef5ed96390ec4f0",
-      "source": "https://en.wikipedia.org/wiki/Bridgestone_350_GTR",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607903.4661548
-    },
-    {
-      "id": "b1e668b9c10e7cfe7e4acd5a",
-      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607903.5998335
-    },
-    {
-      "id": "b0979abba345525f23d6b27e",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_M5",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607903.6767159
-    },
-    {
-      "id": "ff28f504e8e3f011fe2acd9b",
-      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607903.6799307
-    },
-    {
-      "id": "9380990d113b5de5f521da53",
-      "source": "https://en.wikipedia.org/wiki/Norton_Nomad",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607903.9509146
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "source": "https://cctu.edu.gh/site/index",
+      "id": "985cc751bdc3",
+      "source": "https://www.prnewswire.com/news-releases/rethinking-senior-living-for-military-families-air-force-enlisted-village-redefines-lifetime-care-on-all-access-hosted-by-andy-garcia-302867608.html",
       "policy": "93e2ad7deccc",
       "result": "no_source_image",
-      "retry_after": 1794607904.5617878
+      "retry_after": 1794609896.1761699
     },
     {
-      "id": "d5adbd5f7c0ee6e635219a5c",
-      "source": "https://en.wikipedia.org/wiki/Concept_F_450_GS",
+      "id": "a1132026000000000000000000000002",
+      "source": "https://www.swatantraprabhat.com/article/194236/chhangur-injured-in-gorakhpur-accident-dies-golas-chand-intersection-remained",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607904.5681393
+      "result": "source_photo_saved",
+      "retry_after": 1794609896.2381775
     },
     {
-      "id": "2f02162d9ab27a8cd5662161",
-      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "id": "f184bcc84d27",
+      "source": "https://in.linkedin.com/jobs/view/beauty-advisor-multibrand-full-time-select-citywalk-mall-saket-delhi-at-the-est%C3%A9e-lauder-companies-inc-4483872012",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794607904.6985717
+      "retry_after": 1794609897.2435014
     },
     {
-      "id": "b211f120ea27b93fc925f6b4",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "id": "9e4cda20d9af",
+      "source": "https://www.prnewswire.com/news-releases/hoppr-expands-medical-imaging-ai-portfolio-with-whole-body-musculoskeletal-x-ray-narrative-model-302921827.html",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607904.9535723
+      "result": "no_source_image",
+      "retry_after": 1794609897.6174302
     },
     {
-      "id": "6548e415fc086ccec65bbb7c",
-      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "id": "656a83689ee9",
+      "source": "https://www.prnewswire.com/news-releases/anesthesia-stability-may-be-masking-a-new-set-of-risks-for-hospitals-302923342.html",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607905.5374968
+      "result": "no_source_image",
+      "retry_after": 1794609897.8340938
     },
     {
-      "id": "27399602ccef42af310a2803",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_XA_Ultra",
+      "id": "6a05b95ab24b",
+      "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-vehicle-window-screen-idea-tki-1388-302924033.html",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607906.1750698
+      "result": "no_source_image",
+      "retry_after": 1794609899.0776155
     },
     {
-      "id": "74e0c52178b2f0827ab81b54",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Nova",
+      "id": "debca98e7215",
+      "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-safety-assistance-idea-for-boat-loading-ksg-320-302923724.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609899.207245
+    },
+    {
+      "id": "ff31945ede77",
+      "source": "https://insideevs.com/news/813774/tesla-cybercab-factory-munro-live/",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609899.325367
+    },
+    {
+      "id": "a1132026000000000000000000000001",
+      "source": "https://www.livehindustan.com/tags/gola",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794607907.1703024
+      "retry_after": 1794609899.362877
+    },
+    {
+      "id": "cdc16cd3edc0",
+      "source": "https://www.business-standard.com/companies/start-ups/companies-should-put-all-ai-agents-in-zero-trust-category-netskope-founder-126102901491_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609899.4056387
+    },
+    {
+      "id": "be4cbb6ec969",
+      "source": "https://in.linkedin.com/jobs/view/beauty-advisor-multibrand-full-time-ambience-mall-gurgaon-at-the-est%C3%A9e-lauder-companies-inc-4483615852",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794609900.7716734
+    },
+    {
+      "id": "a1132026000000000000000000000005",
+      "source": "https://www.livehindustan.com/uttar-pradesh/gorakhpur/story-gorakhpur-plans-4-14-crore-electric-crematorium-on-rapti-riverfront-201794515010622.html",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794609900.783873
+    },
+    {
+      "id": "e3f2b51920aa",
+      "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-improved-mouth-call-idea-for-turkey-hunters-ctk-8889-302923733.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609900.80408
+    },
+    {
+      "id": "26b7fce981af",
+      "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-easier-pallet-wrapping-idea-pta-796-302923952.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609900.8604333
+    },
+    {
+      "id": "61fdf518e469",
+      "source": "https://www.motor1.com/news/813625/dipstick-oil-scam/",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609900.8958766
+    },
+    {
+      "id": "4595510fe561",
+      "source": "https://www.motor1.com/news/813791/autozone-duralast-oil-filter-wrench/",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609900.9022655
+    },
+    {
+      "id": "10cf239ca7ad",
+      "source": "https://in.linkedin.com/jobs/view/architecture-internship-in-visakhapatnam-secunderabad-hyderabad-mumbai-kochi-hubballi-bhubaneswar-chennai-coimbatore-madurai-mangalore-mysuru-ooty-thiruvananthapuram-at-ergate-architecture-4483502865",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794609902.6713884
+    },
+    {
+      "id": "98cd45dba93d",
+      "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-centralized-sonar-system-idea-for-fishing-boats-lbt-9887-302923955.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609902.6961737
+    },
+    {
+      "id": "95ef09d7e83b",
+      "source": "https://in.linkedin.com/jobs/view/assistant-fitness-manager-at-e%C5%8Ds-fitness-4484462055",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794609902.7051046
+    },
+    {
+      "id": "c1266aba0540",
+      "source": "https://in.linkedin.com/jobs/view/associate-director-biddaable-media-at-ls-digital-group-4483411871",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794609902.7061572
+    },
+    {
+      "id": "7674f545a3f1",
+      "source": "https://in.linkedin.com/jobs/view/architecture-multiple-roles-at-architecture-talent-network-atn-4482279863",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794609902.7180195
+    },
+    {
+      "id": "eb4678a5588c",
+      "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-convenient-womens-personal-storage-idea-ctk-532-302923723.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609902.7240043
+    },
+    {
+      "id": "d561ed0d809f",
+      "source": "https://www.business-standard.com/markets/news/aeroflex-zooms-18-on-huge-volume-over-31-mn-shares-change-hands-126102900503_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609902.7982996
+    },
+    {
+      "id": "fa301ba3a07a",
+      "source": "https://www.business-standard.com/industry/news/afcons-wins-3-469-crore-contracts-for-jewar-expressway-lucknow-metro-126102901714_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609902.8214724
+    },
+    {
+      "id": "10117c44fe32",
+      "source": "https://www.prnewswire.com/news-releases/alfa-laval-successfully-refinances-revolving-credit-facility-302924667.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609904.5556366
+    },
+    {
+      "id": "5a83a56d4603",
+      "source": "https://in.linkedin.com/jobs/view/archer-specialist-3046-immediate-joiner-at-allianz-technology-4484242011",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794609904.6445558
+    },
+    {
+      "id": "cacf7e628c64",
+      "source": "https://www.prnewswire.com/news-releases/aker-solutions-asa-third-quarter-results-2026-302921759.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609904.785569
+    },
+    {
+      "id": "10f9aea153de",
+      "source": "https://www.prnewswire.com/news-releases/adp-national-employment-report-preliminary-estimate-for-october-10-2026-302920098.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609904.8371556
+    },
+    {
+      "id": "dbba5a69ce74",
+      "source": "https://www.prnewswire.com/news-releases/altruist-biologics-integrated-cmc-platform-supports-nmpa-acceptance-of-nda-for-localized-manufacturing-of-multinational-clients-biologic-302922345.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609904.8482995
+    },
+    {
+      "id": "e4ccc220e689",
+      "source": "https://www.prnewswire.com/news-releases/aebe-ecuador-expands-banana-exports-to-the-middle-east-ready-to-serve-any-market-302924839.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609905.209733
+    },
+    {
+      "id": "14f128886960",
+      "source": "https://in.linkedin.com/jobs/bdo-india-jobs-greater-bengaluru-area",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794609905.4119604
+    },
+    {
+      "id": "50288a4d39a7",
+      "source": "https://www.prnewswire.com/news-releases/alignment-healthcare-nasdaq-alhc-increasingly-scrutinized-over-h3815-cut-points-and-cms-bonus-eligibility---hbss-302925106.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609905.4635065
+    },
+    {
+      "id": "6721e85a1395",
+      "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-zynlonta-updates-in-japan-302922936.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609905.5682757
+    },
+    {
+      "id": "b5e2939265f1",
+      "source": "https://www.business-standard.com/economy/news/economy-news-satellite-lights-google-searches-estimate-state-quarterly-growth-rbi-bulletin-126102500368_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609905.5688982
+    },
+    {
+      "id": "dacf4d08b075",
+      "source": "https://www.business-standard.com/amp/economy/news/cabinet-clears-10-000-cr-scheme-to-boost-domestic-container-manufacturing-126102801022_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609905.654019
+    },
+    {
+      "id": "ac3d2cff2928",
+      "source": "https://www.business-standard.com/finance/news/income-tax-reassessment-invalid-without-mandatory-notice-supreme-court-126102901532_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609905.7242622
+    },
+    {
+      "id": "efa4334eb707",
+      "source": "https://www.business-standard.com/economy/news/rbi-s-2-5-trillion-liquidity-infusion-sends-mixed-signals-sbi-research-126102300929_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609905.7341683
+    },
+    {
+      "id": "e309e9047ab1",
+      "source": "https://www.business-standard.com/economy/news/cabinet-approves-7-395-crore-scheme-to-make-panchayats-self-reliant-126102801559_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609905.7762964
+    },
+    {
+      "id": "99e47ae67d51",
+      "source": "https://www.business-standard.com/economy/news/cabinet-approves-10-000-crore-scheme-to-boost-container-manufacturing-126102801586_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609905.7815678
+    },
+    {
+      "id": "f9e04dd4d4c7",
+      "source": "https://insideevs.com/features/813951/rivian-chief-software-officer-wassym-bensaid-interview-ai-assistant/",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609905.8288472
+    },
+    {
+      "id": "43f6c019300c",
+      "source": "https://www.prnewswire.com/news-releases/general-paul-m-nakasone-us-army-ret-joins-board-of-armadin-302923329.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609906.1898324
+    },
+    {
+      "id": "c3f41820032c",
+      "source": "https://www.business-standard.com/markets/news/jio-ipo-falls-short-of-record-payday-for-bankers-despite-mega-issue-126102601649_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609906.41802
+    },
+    {
+      "id": "33250a9e3bb4",
+      "source": "https://www.prnewswire.com/news-releases/bank-of-america-blackstone-citi-and-morgan-stanley-announce-landmark-63-billion-financing-structure-to-enable-ai-compute-capacity-in-partnership-with-broadcom-302919849.html",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794609906.4268842
+    },
+    {
+      "id": "185a52e14ab0",
+      "source": "https://www.business-standard.com/markets/news/choosing-the-right-credit-card-start-with-your-spending-habits-and-lifestyle-126102900740_1.html",
+      "policy": "93e2ad7deccc",
+      "result": "access_denied",
+      "retry_after": 1794609906.4775434
+    },
+    {
+      "id": "6fce26052ffc",
+      "source": "https://variety.com/2026/shopping/news/gifts-for-women-2026-christmas-shop-online-1236934071/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794609906.9161448
     },
     {
       "id": "02364f4d79f5caac07cae019",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794609907.0865002
     },
     {
       "id": "8ede6684d4cf14febb863aad",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794609907.2481256
     },
     {
       "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794609907.489918
     },
     {
       "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794609907.6576855
     },
     {
       "id": "e21f0c9303189bff05b728a0",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794609908.1475725
+    },
+    {
+      "id": "52e00118256d",
+      "result": "cooldown"
+    },
+    {
+      "id": "9257f8339f78",
+      "result": "cooldown"
+    },
+    {
+      "id": "a5b1ddc0eee8",
+      "result": "cooldown"
+    },
+    {
+      "id": "a62af287e8a1",
+      "result": "cooldown"
+    },
+    {
+      "id": "a9d24a225c8e",
+      "result": "cooldown"
+    },
+    {
+      "id": "2bc806fa71b6",
+      "result": "cooldown"
+    },
+    {
+      "id": "6e1916c8358b",
+      "result": "cooldown"
+    },
+    {
+      "id": "f07dca7c625b",
+      "result": "cooldown"
+    },
+    {
+      "id": "ac5aa9ac780b",
+      "result": "cooldown"
+    },
+    {
+      "id": "e14513002c71",
+      "result": "cooldown"
+    },
+    {
+      "id": "fe996ca369b8",
+      "result": "cooldown"
+    },
+    {
+      "id": "261ffb682018",
+      "result": "cooldown"
+    },
+    {
+      "id": "d607e22a1533",
+      "result": "cooldown"
+    },
+    {
+      "id": "0b824c0d8171",
+      "result": "cooldown"
+    },
+    {
+      "id": "5b2ebaff7706",
+      "result": "cooldown"
+    },
+    {
+      "id": "86adb746a2d8",
+      "result": "cooldown"
+    },
+    {
+      "id": "3d41206585f7",
+      "result": "cooldown"
+    },
+    {
+      "id": "9daab0b7e4cf",
+      "result": "cooldown"
+    },
+    {
+      "id": "30c1509c3bb5",
+      "result": "cooldown"
+    },
+    {
+      "id": "f2af1197fbbd",
+      "result": "cooldown"
+    },
+    {
+      "id": "ec7caf9b3fde",
+      "result": "cooldown"
+    },
+    {
+      "id": "8c2aaa616f6c",
+      "result": "cooldown"
+    },
+    {
+      "id": "5be059fb9312",
+      "result": "cooldown"
+    },
+    {
+      "id": "36d6111fd903",
+      "result": "cooldown"
+    },
+    {
+      "id": "4bf7bda6aaad",
+      "result": "cooldown"
+    },
+    {
+      "id": "214f8a8bf253",
+      "result": "cooldown"
+    },
+    {
+      "id": "2389f2dc876f",
+      "result": "cooldown"
+    },
+    {
+      "id": "8ece66fa8c97",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab439eb7fd94",
+      "result": "cooldown"
+    },
+    {
+      "id": "c6ad4ff0aa96",
+      "result": "cooldown"
+    },
+    {
+      "id": "c6a53a12d775",
+      "result": "cooldown"
+    },
+    {
+      "id": "6b17f139e455",
+      "result": "cooldown"
+    },
+    {
+      "id": "1a483df88524",
+      "result": "cooldown"
+    },
+    {
+      "id": "7f10f0fdbfa1",
+      "result": "cooldown"
+    },
+    {
+      "id": "0552584d3c4b",
+      "result": "cooldown"
+    },
+    {
+      "id": "6a6d7703de6a",
+      "result": "cooldown"
+    },
+    {
+      "id": "5f93fc7ed954",
+      "result": "cooldown"
+    },
+    {
+      "id": "f02822ee0f14",
+      "result": "cooldown"
+    },
+    {
+      "id": "749692eb56cd",
+      "result": "cooldown"
+    },
+    {
+      "id": "264f65da0496",
+      "result": "cooldown"
+    },
+    {
+      "id": "afb9980914f7",
+      "result": "cooldown"
+    },
+    {
+      "id": "c006205f24bc",
+      "result": "cooldown"
+    },
+    {
+      "id": "bca7a5d2aa6f",
+      "result": "cooldown"
+    },
+    {
+      "id": "e7782ddbfbba",
+      "result": "cooldown"
+    },
+    {
+      "id": "ad9fd9e684a5",
+      "result": "cooldown"
+    },
+    {
+      "id": "10b7af2083ee",
+      "result": "cooldown"
+    },
+    {
+      "id": "f38960048de4",
+      "result": "cooldown"
+    },
+    {
+      "id": "1d857cfec346",
+      "result": "cooldown"
+    },
+    {
+      "id": "733f33cd2a89",
+      "result": "cooldown"
+    },
+    {
+      "id": "8206a9eccd1d",
+      "result": "cooldown"
+    },
+    {
+      "id": "e1c95bbe50e5",
+      "result": "cooldown"
+    },
+    {
+      "id": "7b8d8ed6de35",
+      "result": "cooldown"
+    },
+    {
+      "id": "65d6495439f4",
+      "result": "cooldown"
+    },
+    {
+      "id": "eb7b9ea8591d",
+      "result": "cooldown"
+    },
+    {
+      "id": "59fdd8443868",
+      "result": "cooldown"
+    },
+    {
+      "id": "abd49e39020d",
+      "result": "cooldown"
+    },
+    {
+      "id": "d1cecdd10b10",
+      "result": "cooldown"
+    },
+    {
+      "id": "361b6a6a3c4e",
+      "result": "cooldown"
+    },
+    {
+      "id": "f821b844324f",
+      "result": "cooldown"
+    },
+    {
+      "id": "d75495738113",
+      "result": "cooldown"
+    },
+    {
+      "id": "b036003b2c6a",
+      "result": "cooldown"
+    },
+    {
+      "id": "22cb4189209a",
+      "result": "cooldown"
+    },
+    {
+      "id": "d4f183780204",
+      "result": "cooldown"
+    },
+    {
+      "id": "557b8e2f8d81",
+      "result": "cooldown"
+    },
+    {
+      "id": "587069bed5b3",
+      "result": "cooldown"
+    },
+    {
+      "id": "39d743e65a7f",
+      "result": "cooldown"
+    },
+    {
+      "id": "b6327dd14d54",
+      "result": "cooldown"
+    },
+    {
+      "id": "76c30ad6e59c",
       "result": "cooldown"
     },
     {
@@ -316,7 +661,1783 @@
       "result": "cooldown"
     },
     {
+      "id": "6756046eb2db",
+      "result": "cooldown"
+    },
+    {
+      "id": "2ce81c65737b",
+      "result": "cooldown"
+    },
+    {
+      "id": "eb06e1cf1836",
+      "result": "cooldown"
+    },
+    {
+      "id": "58b6cb46f059",
+      "result": "cooldown"
+    },
+    {
+      "id": "6476b9376115",
+      "result": "cooldown"
+    },
+    {
+      "id": "1ef0985dd3f3",
+      "result": "cooldown"
+    },
+    {
+      "id": "bbc7e9f926b8",
+      "result": "cooldown"
+    },
+    {
+      "id": "aedcec188434",
+      "result": "cooldown"
+    },
+    {
+      "id": "2a6cbf3386f0",
+      "result": "cooldown"
+    },
+    {
+      "id": "1652067282f0",
+      "result": "cooldown"
+    },
+    {
+      "id": "4b5baadd56ec",
+      "result": "cooldown"
+    },
+    {
+      "id": "c534a92f550b",
+      "result": "cooldown"
+    },
+    {
+      "id": "5edd24c14520",
+      "result": "cooldown"
+    },
+    {
+      "id": "b79c3d6cec0c",
+      "result": "cooldown"
+    },
+    {
+      "id": "9ca03f9d3aa1",
+      "result": "cooldown"
+    },
+    {
+      "id": "86994d486a5f",
+      "result": "cooldown"
+    },
+    {
+      "id": "a82799421118",
+      "result": "cooldown"
+    },
+    {
+      "id": "93cede8c55b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "14b4a19dab35",
+      "result": "cooldown"
+    },
+    {
+      "id": "337ca4b5606f",
+      "result": "cooldown"
+    },
+    {
+      "id": "c0014e281a78",
+      "result": "cooldown"
+    },
+    {
+      "id": "6476180107ed",
+      "result": "cooldown"
+    },
+    {
+      "id": "bbaf6ab367ac",
+      "result": "cooldown"
+    },
+    {
+      "id": "9638300bc977",
+      "result": "cooldown"
+    },
+    {
+      "id": "12533696a787",
+      "result": "cooldown"
+    },
+    {
+      "id": "d1a155ad9276",
+      "result": "cooldown"
+    },
+    {
+      "id": "917e269b7267",
+      "result": "cooldown"
+    },
+    {
+      "id": "c268010f138d",
+      "result": "cooldown"
+    },
+    {
+      "id": "818ffc8cc59c",
+      "result": "cooldown"
+    },
+    {
+      "id": "e180ffaaaf45",
+      "result": "cooldown"
+    },
+    {
+      "id": "974391e0b5d2",
+      "result": "cooldown"
+    },
+    {
+      "id": "afc796f5e0bf",
+      "result": "cooldown"
+    },
+    {
+      "id": "457b8e7b48a3",
+      "result": "cooldown"
+    },
+    {
+      "id": "adad154ed506",
+      "result": "cooldown"
+    },
+    {
+      "id": "a07b9eac5f39",
+      "result": "cooldown"
+    },
+    {
+      "id": "fcf325b6c08e",
+      "result": "cooldown"
+    },
+    {
+      "id": "991285850af2",
+      "result": "cooldown"
+    },
+    {
+      "id": "716f81e31e0d",
+      "result": "cooldown"
+    },
+    {
+      "id": "d1d350bb7559",
+      "result": "cooldown"
+    },
+    {
+      "id": "83501d275446",
+      "result": "cooldown"
+    },
+    {
+      "id": "579dc10cba05",
+      "result": "cooldown"
+    },
+    {
+      "id": "6ad27c2bc1ad",
+      "result": "cooldown"
+    },
+    {
+      "id": "65aa4d8015ae",
+      "result": "cooldown"
+    },
+    {
+      "id": "22fc7fedf182",
+      "result": "cooldown"
+    },
+    {
+      "id": "1a8ca0e906ec",
+      "result": "cooldown"
+    },
+    {
+      "id": "08e244f09bc8",
+      "result": "cooldown"
+    },
+    {
+      "id": "a5d18f9e9d23",
+      "result": "cooldown"
+    },
+    {
+      "id": "ccf9864b6c87",
+      "result": "cooldown"
+    },
+    {
+      "id": "8c34cb11fa0d",
+      "result": "cooldown"
+    },
+    {
+      "id": "0b186bc5af89",
+      "result": "cooldown"
+    },
+    {
+      "id": "f390d4af3452",
+      "result": "cooldown"
+    },
+    {
+      "id": "5c8eaf8f5c76",
+      "result": "cooldown"
+    },
+    {
+      "id": "950b84c9ac71",
+      "result": "cooldown"
+    },
+    {
+      "id": "6f1ed28c1330",
+      "result": "cooldown"
+    },
+    {
+      "id": "4961c8fd51e0",
+      "result": "cooldown"
+    },
+    {
+      "id": "f55c5adcb6ac",
+      "result": "cooldown"
+    },
+    {
+      "id": "6cc0de62842b",
+      "result": "cooldown"
+    },
+    {
+      "id": "d2887fbebc21",
+      "result": "cooldown"
+    },
+    {
+      "id": "7fcd04ef9a5e",
+      "result": "cooldown"
+    },
+    {
+      "id": "1f6245b7c964",
+      "result": "cooldown"
+    },
+    {
+      "id": "c737d4f8fbc3",
+      "result": "cooldown"
+    },
+    {
+      "id": "4b24a3879414",
+      "result": "cooldown"
+    },
+    {
+      "id": "9f440eefa5ac",
+      "result": "cooldown"
+    },
+    {
+      "id": "25f02743e934",
+      "result": "cooldown"
+    },
+    {
+      "id": "da47fed12cb3",
+      "result": "cooldown"
+    },
+    {
+      "id": "5ebf8e2fb21a",
+      "result": "cooldown"
+    },
+    {
+      "id": "3c4a8542ae9d",
+      "result": "cooldown"
+    },
+    {
+      "id": "6bb5fcf9c01a",
+      "result": "cooldown"
+    },
+    {
+      "id": "188292cc9d0e",
+      "result": "cooldown"
+    },
+    {
+      "id": "a8fd59e43402",
+      "result": "cooldown"
+    },
+    {
+      "id": "1333720c1c9a",
+      "result": "cooldown"
+    },
+    {
+      "id": "7b264efafcbb",
+      "result": "cooldown"
+    },
+    {
+      "id": "3611b527f6b7",
+      "result": "cooldown"
+    },
+    {
+      "id": "08b09f878bad",
+      "result": "cooldown"
+    },
+    {
+      "id": "294ce0c9dbfe",
+      "result": "cooldown"
+    },
+    {
+      "id": "ee768c0612fa",
+      "result": "cooldown"
+    },
+    {
+      "id": "4c8bdfb15977",
+      "result": "cooldown"
+    },
+    {
+      "id": "34cde08363f7",
+      "result": "cooldown"
+    },
+    {
+      "id": "ff70594848b0",
+      "result": "cooldown"
+    },
+    {
+      "id": "55a27b954943",
+      "result": "cooldown"
+    },
+    {
+      "id": "ee5f46eec1e1",
+      "result": "cooldown"
+    },
+    {
+      "id": "0493b37f6575",
+      "result": "cooldown"
+    },
+    {
+      "id": "450e4f272b75",
+      "result": "cooldown"
+    },
+    {
+      "id": "9e7d68e39abe",
+      "result": "cooldown"
+    },
+    {
+      "id": "ac43b931abf9",
+      "result": "cooldown"
+    },
+    {
+      "id": "537dca555153",
+      "result": "cooldown"
+    },
+    {
+      "id": "9f067ea024c5",
+      "result": "cooldown"
+    },
+    {
+      "id": "ec4e4a9fc7e9",
+      "result": "cooldown"
+    },
+    {
+      "id": "31e9404aeaf3",
+      "result": "cooldown"
+    },
+    {
+      "id": "1ea4c06fbe1f",
+      "result": "cooldown"
+    },
+    {
+      "id": "0bd4d9f078aa",
+      "result": "cooldown"
+    },
+    {
+      "id": "fdb64c8c63bf",
+      "result": "cooldown"
+    },
+    {
+      "id": "fddacd9eaeff",
+      "result": "cooldown"
+    },
+    {
+      "id": "18058afab0cf",
+      "result": "cooldown"
+    },
+    {
+      "id": "ecdc2ef2ac86",
+      "result": "cooldown"
+    },
+    {
+      "id": "9f52dfa8072c",
+      "result": "cooldown"
+    },
+    {
+      "id": "9db43091aef2",
+      "result": "cooldown"
+    },
+    {
+      "id": "999cbc82f86a",
+      "result": "cooldown"
+    },
+    {
+      "id": "423e596c4719",
+      "result": "cooldown"
+    },
+    {
+      "id": "aa47671a9f72",
+      "result": "cooldown"
+    },
+    {
+      "id": "827111033051",
+      "result": "cooldown"
+    },
+    {
+      "id": "c97657ff60c5",
+      "result": "cooldown"
+    },
+    {
+      "id": "d041bb37a69d",
+      "result": "cooldown"
+    },
+    {
+      "id": "40de10a52a3c",
+      "result": "cooldown"
+    },
+    {
+      "id": "1285f1ac72a8",
+      "result": "cooldown"
+    },
+    {
+      "id": "2f1dd8699d58",
+      "result": "cooldown"
+    },
+    {
+      "id": "07bc3bf8fade",
+      "result": "cooldown"
+    },
+    {
+      "id": "084a51126ee3",
+      "result": "cooldown"
+    },
+    {
+      "id": "d97adad0f0a5",
+      "result": "cooldown"
+    },
+    {
+      "id": "2d2ee8809ceb",
+      "result": "cooldown"
+    },
+    {
+      "id": "1a65058bc25d",
+      "result": "cooldown"
+    },
+    {
+      "id": "89a9f272b95b",
+      "result": "cooldown"
+    },
+    {
+      "id": "dfccb93a8259",
+      "result": "cooldown"
+    },
+    {
+      "id": "143c112cc93f",
+      "result": "cooldown"
+    },
+    {
+      "id": "93590db6a53c",
+      "result": "cooldown"
+    },
+    {
+      "id": "b62fda47bd5e",
+      "result": "cooldown"
+    },
+    {
+      "id": "f81ffd2ebbe7",
+      "result": "cooldown"
+    },
+    {
+      "id": "65c484924118",
+      "result": "cooldown"
+    },
+    {
+      "id": "e62d34be0421",
+      "result": "cooldown"
+    },
+    {
+      "id": "ee28a6d6e51d",
+      "result": "cooldown"
+    },
+    {
+      "id": "e26a9ba6438e",
+      "result": "cooldown"
+    },
+    {
+      "id": "ecf6b0469322",
+      "result": "cooldown"
+    },
+    {
+      "id": "97e1a9dd6d5e",
+      "result": "cooldown"
+    },
+    {
+      "id": "aeedadb6efcb",
+      "result": "cooldown"
+    },
+    {
+      "id": "44fad3535fed",
+      "result": "cooldown"
+    },
+    {
+      "id": "090108930e0d",
+      "result": "cooldown"
+    },
+    {
+      "id": "b927adfec00b",
+      "result": "cooldown"
+    },
+    {
+      "id": "75dbda51595c",
+      "result": "cooldown"
+    },
+    {
+      "id": "efde13817973",
+      "result": "cooldown"
+    },
+    {
+      "id": "7c6f6d44e10c",
+      "result": "cooldown"
+    },
+    {
+      "id": "18bd48829656",
+      "result": "cooldown"
+    },
+    {
+      "id": "4be79532a665",
+      "result": "cooldown"
+    },
+    {
+      "id": "d15bcc8a3c3b",
+      "result": "cooldown"
+    },
+    {
+      "id": "79cbda730083",
+      "result": "cooldown"
+    },
+    {
+      "id": "05cc9a358c55",
+      "result": "cooldown"
+    },
+    {
+      "id": "47e829176cc5",
+      "result": "cooldown"
+    },
+    {
+      "id": "70f76f450795",
+      "result": "cooldown"
+    },
+    {
+      "id": "ca998fc9670d",
+      "result": "cooldown"
+    },
+    {
+      "id": "040dd341f762",
+      "result": "cooldown"
+    },
+    {
+      "id": "ef94d73f2eea",
+      "result": "cooldown"
+    },
+    {
+      "id": "c3c44629d231",
+      "result": "cooldown"
+    },
+    {
+      "id": "0e2fde519d11",
+      "result": "cooldown"
+    },
+    {
+      "id": "0bdb0918a8cf",
+      "result": "cooldown"
+    },
+    {
+      "id": "3e80b8837374",
+      "result": "cooldown"
+    },
+    {
+      "id": "080b28de54ff",
+      "result": "cooldown"
+    },
+    {
+      "id": "07f5b24312a4",
+      "result": "cooldown"
+    },
+    {
+      "id": "d47d25fb753a",
+      "result": "cooldown"
+    },
+    {
+      "id": "07f40dc280d1",
+      "result": "cooldown"
+    },
+    {
+      "id": "9b3641414312",
+      "result": "cooldown"
+    },
+    {
+      "id": "4ca42dad8d6f",
+      "result": "cooldown"
+    },
+    {
+      "id": "06f842f028fe",
+      "result": "cooldown"
+    },
+    {
+      "id": "04bcdc448261",
+      "result": "cooldown"
+    },
+    {
+      "id": "0da0ead215c3",
+      "result": "cooldown"
+    },
+    {
+      "id": "0f2e549a24cc",
+      "result": "cooldown"
+    },
+    {
+      "id": "08a83556bce2",
+      "result": "cooldown"
+    },
+    {
+      "id": "aa511d7af8e4",
+      "result": "cooldown"
+    },
+    {
+      "id": "6734d0b5d4b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "4002fcf12fa5",
+      "result": "cooldown"
+    },
+    {
+      "id": "257900039128",
+      "result": "cooldown"
+    },
+    {
+      "id": "ef6d4c03dede",
+      "result": "cooldown"
+    },
+    {
+      "id": "ff059456a4ee",
+      "result": "cooldown"
+    },
+    {
+      "id": "029ee2179ac9",
+      "result": "cooldown"
+    },
+    {
+      "id": "6ba39bcd4548",
+      "result": "cooldown"
+    },
+    {
+      "id": "00f079e2ba3a",
+      "result": "cooldown"
+    },
+    {
+      "id": "021c54d7abdb",
+      "result": "cooldown"
+    },
+    {
+      "id": "8d6069082faf",
+      "result": "cooldown"
+    },
+    {
+      "id": "a91a82825e4a",
+      "result": "cooldown"
+    },
+    {
+      "id": "0983ec5f08f3",
+      "result": "cooldown"
+    },
+    {
+      "id": "1ad731a65211",
+      "result": "cooldown"
+    },
+    {
+      "id": "12d3cc56ebe6",
+      "result": "cooldown"
+    },
+    {
+      "id": "a9716e8287f2",
+      "result": "cooldown"
+    },
+    {
+      "id": "38138689935d",
+      "result": "cooldown"
+    },
+    {
+      "id": "0e7392808f2b",
+      "result": "cooldown"
+    },
+    {
+      "id": "122b5649e749",
+      "result": "cooldown"
+    },
+    {
+      "id": "4805037fd814",
+      "result": "cooldown"
+    },
+    {
+      "id": "b9e7ebed5efd",
+      "result": "cooldown"
+    },
+    {
+      "id": "36fc08c8c68d",
+      "result": "cooldown"
+    },
+    {
+      "id": "079aeaa0eeef",
+      "result": "cooldown"
+    },
+    {
+      "id": "731720281d96",
+      "result": "cooldown"
+    },
+    {
+      "id": "c929a77d3cf4",
+      "result": "cooldown"
+    },
+    {
+      "id": "736ca0bcddb6",
+      "result": "cooldown"
+    },
+    {
+      "id": "35c6b2e75c5a",
+      "result": "cooldown"
+    },
+    {
+      "id": "a28e5c356dd7",
+      "result": "cooldown"
+    },
+    {
+      "id": "0b33380de117",
+      "result": "cooldown"
+    },
+    {
+      "id": "090cabc5ee27",
+      "result": "cooldown"
+    },
+    {
+      "id": "05d3b71dd6e0",
+      "result": "cooldown"
+    },
+    {
+      "id": "92088c2de8c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "58f11d3687a2",
+      "result": "cooldown"
+    },
+    {
+      "id": "2254c016ebd0",
+      "result": "cooldown"
+    },
+    {
+      "id": "0391c4373eca",
+      "result": "cooldown"
+    },
+    {
+      "id": "37c0e160c49f",
+      "result": "cooldown"
+    },
+    {
+      "id": "91712e374b16",
+      "result": "cooldown"
+    },
+    {
+      "id": "8e77d55e51ba",
+      "result": "cooldown"
+    },
+    {
+      "id": "1f7266c02d07",
+      "result": "cooldown"
+    },
+    {
+      "id": "9e37935bcd6c",
+      "result": "cooldown"
+    },
+    {
+      "id": "2e293f23db10",
+      "result": "cooldown"
+    },
+    {
+      "id": "3570bb7ef821",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d38ac0228db",
+      "result": "cooldown"
+    },
+    {
+      "id": "05d05c18d987",
+      "result": "cooldown"
+    },
+    {
+      "id": "572d5792fe9b",
+      "result": "cooldown"
+    },
+    {
+      "id": "c1c8149f92de",
+      "result": "cooldown"
+    },
+    {
+      "id": "02518f2b343c",
+      "result": "cooldown"
+    },
+    {
+      "id": "8c6ddded2bc5",
+      "result": "cooldown"
+    },
+    {
+      "id": "2d88ce8f7f5e",
+      "result": "cooldown"
+    },
+    {
+      "id": "a4fcd6020999",
+      "result": "cooldown"
+    },
+    {
+      "id": "b08f3712a37e",
+      "result": "cooldown"
+    },
+    {
+      "id": "d25fe3284c63",
+      "result": "cooldown"
+    },
+    {
+      "id": "61ab99a70d23",
+      "result": "cooldown"
+    },
+    {
+      "id": "9a0aada26bcb",
+      "result": "cooldown"
+    },
+    {
+      "id": "43669547d8a9",
+      "result": "cooldown"
+    },
+    {
+      "id": "7548888dfa18",
+      "result": "cooldown"
+    },
+    {
+      "id": "03fdad6de98e",
+      "result": "cooldown"
+    },
+    {
+      "id": "63616ffbf4c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "9acdf4deb8ec",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d72856192eb",
+      "result": "cooldown"
+    },
+    {
+      "id": "cd652bf418a1",
+      "result": "cooldown"
+    },
+    {
+      "id": "7f651ce9d3f0",
+      "result": "cooldown"
+    },
+    {
+      "id": "2c1d9963406e",
+      "result": "cooldown"
+    },
+    {
+      "id": "07746bc77e63",
+      "result": "cooldown"
+    },
+    {
+      "id": "d37c02648def",
+      "result": "cooldown"
+    },
+    {
+      "id": "074cb06de604",
+      "result": "cooldown"
+    },
+    {
+      "id": "dfd16b79fae5",
+      "result": "cooldown"
+    },
+    {
+      "id": "9bcfb13f35c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "222914040e11",
+      "result": "cooldown"
+    },
+    {
+      "id": "23dc6e8075b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "89c13c75752a",
+      "result": "cooldown"
+    },
+    {
+      "id": "05bc5a47b19b",
+      "result": "cooldown"
+    },
+    {
+      "id": "06157d85578b",
+      "result": "cooldown"
+    },
+    {
+      "id": "029b646a13ec",
+      "result": "cooldown"
+    },
+    {
+      "id": "600062192bf4",
+      "result": "cooldown"
+    },
+    {
+      "id": "036d1e10e017",
+      "result": "cooldown"
+    },
+    {
+      "id": "3acc30eaefd0",
+      "result": "cooldown"
+    },
+    {
+      "id": "a99188c62a2d",
+      "result": "cooldown"
+    },
+    {
+      "id": "021dcf06da61",
+      "result": "cooldown"
+    },
+    {
+      "id": "040073763955",
+      "result": "cooldown"
+    },
+    {
+      "id": "bdaee5f4786c",
+      "result": "cooldown"
+    },
+    {
+      "id": "1c4f6e29aff4",
+      "result": "cooldown"
+    },
+    {
+      "id": "a6ec2cd71bae",
+      "result": "cooldown"
+    },
+    {
+      "id": "253e0e4a696b",
+      "result": "cooldown"
+    },
+    {
+      "id": "3a640d951615",
+      "result": "cooldown"
+    },
+    {
+      "id": "5cf2007cdcba",
+      "result": "cooldown"
+    },
+    {
+      "id": "b7601652de21",
+      "result": "cooldown"
+    },
+    {
+      "id": "bbfd4d3d5c0a",
+      "result": "cooldown"
+    },
+    {
+      "id": "8fb539b04f5d",
+      "result": "cooldown"
+    },
+    {
+      "id": "c766ee90465d",
+      "result": "cooldown"
+    },
+    {
+      "id": "9ac2bb5ad6c4",
+      "result": "cooldown"
+    },
+    {
+      "id": "dd07ef14c72f",
+      "result": "cooldown"
+    },
+    {
+      "id": "b822477903c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "51e45078d38e",
+      "result": "cooldown"
+    },
+    {
+      "id": "285dd8d5ec2f",
+      "result": "cooldown"
+    },
+    {
+      "id": "276998767be1",
+      "result": "cooldown"
+    },
+    {
+      "id": "62f5310583d8",
+      "result": "cooldown"
+    },
+    {
+      "id": "80ca872b27a0",
+      "result": "cooldown"
+    },
+    {
+      "id": "29f12d5d640a",
+      "result": "cooldown"
+    },
+    {
+      "id": "52c013755cd0",
+      "result": "cooldown"
+    },
+    {
+      "id": "d113f09eda07",
+      "result": "cooldown"
+    },
+    {
+      "id": "9cfed70093fb",
+      "result": "cooldown"
+    },
+    {
+      "id": "09eaa4a8cbc9",
+      "result": "cooldown"
+    },
+    {
+      "id": "e46d29680afe",
+      "result": "cooldown"
+    },
+    {
+      "id": "ed99df3183ca",
+      "result": "cooldown"
+    },
+    {
+      "id": "38accdd4d36d",
+      "result": "cooldown"
+    },
+    {
+      "id": "c0fc0c893736",
+      "result": "cooldown"
+    },
+    {
+      "id": "dc3e1b701984",
+      "result": "cooldown"
+    },
+    {
+      "id": "dd54d85ef928",
+      "result": "cooldown"
+    },
+    {
+      "id": "ca9ab95087f5",
+      "result": "cooldown"
+    },
+    {
+      "id": "712c404a4a7d",
+      "result": "cooldown"
+    },
+    {
+      "id": "0346b2c5ec85",
+      "result": "cooldown"
+    },
+    {
+      "id": "223fe80c75c8",
+      "result": "cooldown"
+    },
+    {
+      "id": "11663ea645ab",
+      "result": "cooldown"
+    },
+    {
+      "id": "ddfa4e186cef",
+      "result": "cooldown"
+    },
+    {
+      "id": "f4c763533019",
+      "result": "cooldown"
+    },
+    {
+      "id": "377c4c6071d8",
+      "result": "cooldown"
+    },
+    {
+      "id": "89eb457e7ce1",
+      "result": "cooldown"
+    },
+    {
+      "id": "fb35c9880949",
+      "result": "cooldown"
+    },
+    {
+      "id": "0cb8fb74d76a",
+      "result": "cooldown"
+    },
+    {
+      "id": "30adb0ee402d",
+      "result": "cooldown"
+    },
+    {
+      "id": "c39bb59142e8",
+      "result": "cooldown"
+    },
+    {
+      "id": "01a6933a42b8",
+      "result": "cooldown"
+    },
+    {
+      "id": "a3b36cdedd63",
+      "result": "cooldown"
+    },
+    {
+      "id": "49657c421eab",
+      "result": "cooldown"
+    },
+    {
+      "id": "e2045453ce2b",
+      "result": "cooldown"
+    },
+    {
+      "id": "87a7eca1831d",
+      "result": "cooldown"
+    },
+    {
+      "id": "cc856df3b9cb",
+      "result": "cooldown"
+    },
+    {
+      "id": "8881d87163fc",
+      "result": "cooldown"
+    },
+    {
+      "id": "7af4359479a7",
+      "result": "cooldown"
+    },
+    {
+      "id": "517293b280e5",
+      "result": "cooldown"
+    },
+    {
+      "id": "75fa04cea1e8",
+      "result": "cooldown"
+    },
+    {
+      "id": "58236be664fa",
+      "result": "cooldown"
+    },
+    {
+      "id": "cc5233c674f0",
+      "result": "cooldown"
+    },
+    {
+      "id": "5fc7e58715b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "eefb8ef6f1c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "6310329f8fba",
+      "result": "cooldown"
+    },
+    {
+      "id": "c1462dd0a99f",
+      "result": "cooldown"
+    },
+    {
+      "id": "a41b914c9659",
+      "result": "cooldown"
+    },
+    {
+      "id": "f638281840d9",
+      "result": "cooldown"
+    },
+    {
+      "id": "880129981de7",
+      "result": "cooldown"
+    },
+    {
+      "id": "49b672507c84",
+      "result": "cooldown"
+    },
+    {
+      "id": "1472984e2f72",
+      "result": "cooldown"
+    },
+    {
+      "id": "55a3bc2a17f1",
+      "result": "cooldown"
+    },
+    {
+      "id": "52bc81a4ba48",
+      "result": "cooldown"
+    },
+    {
+      "id": "f50d37ff0019",
+      "result": "cooldown"
+    },
+    {
+      "id": "2f5ed9c6b055",
+      "result": "cooldown"
+    },
+    {
+      "id": "bf846b00e7e7",
+      "result": "cooldown"
+    },
+    {
+      "id": "ef84455d3242",
+      "result": "cooldown"
+    },
+    {
+      "id": "81021699ab33",
+      "result": "cooldown"
+    },
+    {
+      "id": "9bbb1f28993a",
+      "result": "cooldown"
+    },
+    {
+      "id": "5639fbb5c59a",
+      "result": "cooldown"
+    },
+    {
+      "id": "6443d726150a",
+      "result": "cooldown"
+    },
+    {
+      "id": "2cc712b6b796",
+      "result": "cooldown"
+    },
+    {
+      "id": "80b7aa568a06",
+      "result": "cooldown"
+    },
+    {
+      "id": "99b77aadeefa",
+      "result": "cooldown"
+    },
+    {
+      "id": "36b9a7103fea",
+      "result": "cooldown"
+    },
+    {
+      "id": "669f45d2c742",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab9d234d1765",
+      "result": "cooldown"
+    },
+    {
+      "id": "987ad601818f",
+      "result": "cooldown"
+    },
+    {
+      "id": "d0f211debf6a",
+      "result": "cooldown"
+    },
+    {
+      "id": "af6725319f95",
+      "result": "cooldown"
+    },
+    {
+      "id": "977751fba066",
+      "result": "cooldown"
+    },
+    {
+      "id": "1fffe6df1fe9",
+      "result": "cooldown"
+    },
+    {
+      "id": "75ebcc814325",
+      "result": "cooldown"
+    },
+    {
+      "id": "efeded53a5bb",
+      "result": "cooldown"
+    },
+    {
+      "id": "b884520e4af2",
+      "result": "cooldown"
+    },
+    {
+      "id": "c1085e9a2afd",
+      "result": "cooldown"
+    },
+    {
+      "id": "c64d19fa0032",
+      "result": "cooldown"
+    },
+    {
+      "id": "1fa24dedc7c4",
+      "result": "cooldown"
+    },
+    {
+      "id": "06e9199a393c",
+      "result": "cooldown"
+    },
+    {
+      "id": "ade2cb72b841",
+      "result": "cooldown"
+    },
+    {
+      "id": "3b5a7fa28a88",
+      "result": "cooldown"
+    },
+    {
+      "id": "b4d20aefa8c3",
+      "result": "cooldown"
+    },
+    {
+      "id": "41e3cf0806d9",
+      "result": "cooldown"
+    },
+    {
+      "id": "7ba9e85f5ffa",
+      "result": "cooldown"
+    },
+    {
+      "id": "4eb7b2235122",
+      "result": "cooldown"
+    },
+    {
+      "id": "c4038aa3469b",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab1e7f889baf",
+      "result": "cooldown"
+    },
+    {
+      "id": "c9e064a48f72",
+      "result": "cooldown"
+    },
+    {
+      "id": "12518e969a95",
+      "result": "cooldown"
+    },
+    {
+      "id": "dc7366da5e5a",
+      "result": "cooldown"
+    },
+    {
+      "id": "e0af7576fb9d",
+      "result": "cooldown"
+    },
+    {
+      "id": "3a99b749f100",
+      "result": "cooldown"
+    },
+    {
+      "id": "c455f726510c",
+      "result": "cooldown"
+    },
+    {
+      "id": "e87bad536bfd",
+      "result": "cooldown"
+    },
+    {
+      "id": "948554632b74",
+      "result": "cooldown"
+    },
+    {
+      "id": "6a15ee2cbf6a",
+      "result": "cooldown"
+    },
+    {
+      "id": "e1696153c91b",
+      "result": "cooldown"
+    },
+    {
+      "id": "ec8b9639359a",
+      "result": "cooldown"
+    },
+    {
+      "id": "6e124eff65d5",
+      "result": "cooldown"
+    },
+    {
+      "id": "8aaa08766ff7",
+      "result": "cooldown"
+    },
+    {
+      "id": "576a9585e0de",
+      "result": "cooldown"
+    },
+    {
+      "id": "720b42ad4da2",
+      "result": "cooldown"
+    },
+    {
+      "id": "fb63d25d8fbe",
+      "result": "cooldown"
+    },
+    {
+      "id": "a43029d68bc6",
+      "result": "cooldown"
+    },
+    {
+      "id": "db84976129b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "1da89144be44",
+      "result": "cooldown"
+    },
+    {
+      "id": "0ed0490ee6aa",
+      "result": "cooldown"
+    },
+    {
+      "id": "45b7d4aef683",
+      "result": "cooldown"
+    },
+    {
+      "id": "943034c49121",
+      "result": "cooldown"
+    },
+    {
+      "id": "e47012966b1d",
+      "result": "cooldown"
+    },
+    {
+      "id": "7d8a9d35278c",
+      "result": "cooldown"
+    },
+    {
+      "id": "e6cbfbb4c762",
+      "result": "cooldown"
+    },
+    {
+      "id": "87f11c6b0971",
+      "result": "cooldown"
+    },
+    {
+      "id": "4725ecc3446d",
+      "result": "cooldown"
+    },
+    {
+      "id": "cf9c65b682e0",
+      "result": "cooldown"
+    },
+    {
+      "id": "a2eb89f5dcb8",
+      "result": "cooldown"
+    },
+    {
+      "id": "403567ecedb0",
+      "result": "cooldown"
+    },
+    {
+      "id": "bf4eb2a6b4d3",
+      "result": "cooldown"
+    },
+    {
+      "id": "a2ad06d74692",
+      "result": "cooldown"
+    },
+    {
+      "id": "ca974e804dd2",
+      "result": "cooldown"
+    },
+    {
+      "id": "244ba723a97c",
+      "result": "cooldown"
+    },
+    {
+      "id": "ed8c2059786e",
+      "result": "cooldown"
+    },
+    {
+      "id": "b82f4689ffdc",
+      "result": "cooldown"
+    },
+    {
+      "id": "221450df2ba4",
+      "result": "cooldown"
+    },
+    {
+      "id": "de9af661c58e",
+      "result": "cooldown"
+    },
+    {
+      "id": "b35896a91086",
+      "result": "cooldown"
+    },
+    {
+      "id": "bc8d023befc6",
+      "result": "cooldown"
+    },
+    {
+      "id": "db0252b38130",
+      "result": "cooldown"
+    },
+    {
+      "id": "341b93d3cfcc",
+      "result": "cooldown"
+    },
+    {
+      "id": "9566a9eadc27",
+      "result": "cooldown"
+    },
+    {
+      "id": "86fa43986407",
+      "result": "cooldown"
+    },
+    {
+      "id": "8e242b8abca7",
+      "result": "cooldown"
+    },
+    {
+      "id": "ec107581277c",
+      "result": "cooldown"
+    },
+    {
+      "id": "0521da50fcf9",
+      "result": "cooldown"
+    },
+    {
+      "id": "3dcaef57e8c0",
+      "result": "cooldown"
+    },
+    {
+      "id": "3cc03d775dfb",
+      "result": "cooldown"
+    },
+    {
+      "id": "f765e9298903",
+      "result": "cooldown"
+    },
+    {
+      "id": "0865102c1d74",
+      "result": "cooldown"
+    },
+    {
+      "id": "15270151de84",
+      "result": "cooldown"
+    },
+    {
+      "id": "5c14517d9601",
+      "result": "cooldown"
+    },
+    {
+      "id": "f401c44a6106",
+      "result": "cooldown"
+    },
+    {
+      "id": "8f6ed84d19c0",
+      "result": "cooldown"
+    },
+    {
+      "id": "af55399c2c59",
+      "result": "cooldown"
+    },
+    {
+      "id": "7078cdb05917",
+      "result": "cooldown"
+    },
+    {
+      "id": "63e439b3fb15",
+      "result": "cooldown"
+    },
+    {
+      "id": "d9748374ccd4",
+      "result": "cooldown"
+    },
+    {
+      "id": "22300884ee30",
+      "result": "cooldown"
+    },
+    {
+      "id": "53e2c541f4d4",
+      "result": "cooldown"
+    },
+    {
+      "id": "91c09f89f38a",
+      "result": "cooldown"
+    },
+    {
+      "id": "5ec14cad090b",
+      "result": "cooldown"
+    },
+    {
+      "id": "c4fa08960d67",
+      "result": "cooldown"
+    },
+    {
+      "id": "a8ee128459fc",
+      "result": "cooldown"
+    },
+    {
+      "id": "515071786530",
+      "result": "cooldown"
+    },
+    {
+      "id": "d1550221fa7b",
+      "result": "cooldown"
+    },
+    {
+      "id": "0e60e01dceb0",
+      "result": "cooldown"
+    },
+    {
+      "id": "3ce4eb1cdf88",
+      "result": "cooldown"
+    },
+    {
+      "id": "daddd952106e",
+      "result": "cooldown"
+    },
+    {
+      "id": "767bd84a0f7f",
+      "result": "cooldown"
+    },
+    {
+      "id": "ae7706c03bd2",
+      "result": "cooldown"
+    },
+    {
+      "id": "e9d047e3a91c",
+      "result": "cooldown"
+    },
+    {
+      "id": "6fa497a129f7",
+      "result": "cooldown"
+    },
+    {
+      "id": "70d679c722a1",
+      "result": "cooldown"
+    },
+    {
+      "id": "ccdd579b3858",
+      "result": "cooldown"
+    },
+    {
+      "id": "9c6afb7e1833",
+      "result": "cooldown"
+    },
+    {
+      "id": "3e6654e5b981",
+      "result": "cooldown"
+    },
+    {
+      "id": "3c8c73c28220",
+      "result": "cooldown"
+    },
+    {
+      "id": "fba71acdca41",
+      "result": "cooldown"
+    },
+    {
+      "id": "a762a86eec3a",
+      "result": "cooldown"
+    },
+    {
+      "id": "a0c3c674a706",
+      "result": "cooldown"
+    },
+    {
+      "id": "4eacb72d6700",
+      "result": "cooldown"
+    },
+    {
+      "id": "7082411514a1",
+      "result": "cooldown"
+    },
+    {
+      "id": "5e209b5ca406",
+      "result": "cooldown"
+    },
+    {
+      "id": "97cd937b2f2d",
+      "result": "cooldown"
+    },
+    {
+      "id": "1ac2c1217f90",
+      "result": "cooldown"
+    },
+    {
+      "id": "bc2ee4cb9299",
+      "result": "cooldown"
+    },
+    {
+      "id": "3be036b2ef90",
+      "result": "cooldown"
+    },
+    {
+      "id": "b5de6b16d801",
+      "result": "cooldown"
+    },
+    {
       "id": "71ad44ca5375549c9a0fafea",
+      "result": "cooldown"
+    },
+    {
+      "id": "9e6fe2d78615",
+      "result": "cooldown"
+    },
+    {
+      "id": "23e7812c4f09",
+      "result": "cooldown"
+    },
+    {
+      "id": "41134e3a6a69",
+      "result": "cooldown"
+    },
+    {
+      "id": "288bde8c0268",
+      "result": "cooldown"
+    },
+    {
+      "id": "8c7640e43197",
+      "result": "cooldown"
+    },
+    {
+      "id": "f43035953bcc",
+      "result": "cooldown"
+    },
+    {
+      "id": "b7ca1e725641",
+      "result": "cooldown"
+    },
+    {
+      "id": "2915d2250539",
+      "result": "cooldown"
+    },
+    {
+      "id": "4bd3e1390510",
+      "result": "cooldown"
+    },
+    {
+      "id": "dc39cd9fdeda",
+      "result": "cooldown"
+    },
+    {
+      "id": "a38a0774c04b",
+      "result": "cooldown"
+    },
+    {
+      "id": "7de4e7ee71b3",
+      "result": "cooldown"
+    },
+    {
+      "id": "5c3f7754e7bd",
+      "result": "cooldown"
+    },
+    {
+      "id": "53732d09e0d9",
+      "result": "cooldown"
+    },
+    {
+      "id": "8ec539beeb9a",
+      "result": "cooldown"
+    },
+    {
+      "id": "3ad84826d279",
+      "result": "cooldown"
+    },
+    {
+      "id": "e82d4072e297",
+      "result": "cooldown"
+    },
+    {
+      "id": "7845f3b5f47c",
+      "result": "cooldown"
+    },
+    {
+      "id": "be3525af6967",
+      "result": "cooldown"
+    },
+    {
+      "id": "e0d616bd7306",
       "result": "cooldown"
     },
     {
@@ -324,7 +2445,211 @@
       "result": "cooldown"
     },
     {
+      "id": "9c09fc18c9fc",
+      "result": "cooldown"
+    },
+    {
+      "id": "cfbccf994588",
+      "result": "cooldown"
+    },
+    {
+      "id": "a0e7e7e9adec",
+      "result": "cooldown"
+    },
+    {
+      "id": "c7d990d9fd7a",
+      "result": "cooldown"
+    },
+    {
+      "id": "bfe3bd5a2504",
+      "result": "cooldown"
+    },
+    {
+      "id": "9ffe6855395a",
+      "result": "cooldown"
+    },
+    {
+      "id": "2dd88b708d7e",
+      "result": "cooldown"
+    },
+    {
+      "id": "5db93f0ebb02",
+      "result": "cooldown"
+    },
+    {
       "id": "95c9f12cac7c67468ea940bb",
+      "result": "cooldown"
+    },
+    {
+      "id": "dfc519dd5290",
+      "result": "cooldown"
+    },
+    {
+      "id": "d9c57a9ae752",
+      "result": "cooldown"
+    },
+    {
+      "id": "747ff18b2108",
+      "result": "cooldown"
+    },
+    {
+      "id": "f3fafd3d0e6b",
+      "result": "cooldown"
+    },
+    {
+      "id": "1edfc129b8a8",
+      "result": "cooldown"
+    },
+    {
+      "id": "79fdc927361a",
+      "result": "cooldown"
+    },
+    {
+      "id": "a9739a8c7cdf",
+      "result": "cooldown"
+    },
+    {
+      "id": "d31582a6fa46",
+      "result": "cooldown"
+    },
+    {
+      "id": "28acc8a2a77f",
+      "result": "cooldown"
+    },
+    {
+      "id": "4bb8b389fb4b",
+      "result": "cooldown"
+    },
+    {
+      "id": "5cd9c5cf009b",
+      "result": "cooldown"
+    },
+    {
+      "id": "9439e2a43e14",
+      "result": "cooldown"
+    },
+    {
+      "id": "86beb0996d84",
+      "result": "cooldown"
+    },
+    {
+      "id": "c04b22371a9a",
+      "result": "cooldown"
+    },
+    {
+      "id": "7b29faf9110f",
+      "result": "cooldown"
+    },
+    {
+      "id": "26724eddeb7d",
+      "result": "cooldown"
+    },
+    {
+      "id": "691eccb208b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "a60bbdcfd9a9",
+      "result": "cooldown"
+    },
+    {
+      "id": "d17bbde25b7c",
+      "result": "cooldown"
+    },
+    {
+      "id": "e43332812610",
+      "result": "cooldown"
+    },
+    {
+      "id": "36d098c05b54",
+      "result": "cooldown"
+    },
+    {
+      "id": "06f0186f2720",
+      "result": "cooldown"
+    },
+    {
+      "id": "0e7bda3e0be8",
+      "result": "cooldown"
+    },
+    {
+      "id": "67a3f6a9db8b",
+      "result": "cooldown"
+    },
+    {
+      "id": "57ea29c782bd",
+      "result": "cooldown"
+    },
+    {
+      "id": "ddb69144264e",
+      "result": "cooldown"
+    },
+    {
+      "id": "45fcfb91d4a3",
+      "result": "cooldown"
+    },
+    {
+      "id": "96e3098e53ff",
+      "result": "cooldown"
+    },
+    {
+      "id": "40935701018a",
+      "result": "cooldown"
+    },
+    {
+      "id": "bf48c01f0609",
+      "result": "cooldown"
+    },
+    {
+      "id": "96693e2dc676",
+      "result": "cooldown"
+    },
+    {
+      "id": "b1e8eb746694",
+      "result": "cooldown"
+    },
+    {
+      "id": "ecb254cec532",
+      "result": "cooldown"
+    },
+    {
+      "id": "16759bd66b49",
+      "result": "cooldown"
+    },
+    {
+      "id": "43f10f1755db",
+      "result": "cooldown"
+    },
+    {
+      "id": "33080e8cf465",
+      "result": "cooldown"
+    },
+    {
+      "id": "6fff541dca8a",
+      "result": "cooldown"
+    },
+    {
+      "id": "85eb88e4dd66",
+      "result": "cooldown"
+    },
+    {
+      "id": "f733746daf56",
+      "result": "cooldown"
+    },
+    {
+      "id": "45767eed37c2",
+      "result": "cooldown"
+    },
+    {
+      "id": "2ed1d7c2f844",
+      "result": "cooldown"
+    },
+    {
+      "id": "2e88aa5783a7",
+      "result": "cooldown"
+    },
+    {
+      "id": "5edf8f2b5d3e",
       "result": "cooldown"
     },
     {
@@ -332,7 +2657,459 @@
       "result": "cooldown"
     },
     {
+      "id": "1019b825f2f5",
+      "result": "cooldown"
+    },
+    {
+      "id": "a8977d34f1ce",
+      "result": "cooldown"
+    },
+    {
+      "id": "70e3a24e8f5d",
+      "result": "cooldown"
+    },
+    {
+      "id": "6e4de3dc4f98",
+      "result": "cooldown"
+    },
+    {
+      "id": "66a3307beb25",
+      "result": "cooldown"
+    },
+    {
+      "id": "b76cbc517e62",
+      "result": "cooldown"
+    },
+    {
+      "id": "eb75efc35c06",
+      "result": "cooldown"
+    },
+    {
+      "id": "c13c4b7b14db",
+      "result": "cooldown"
+    },
+    {
+      "id": "48ec508b9fe4",
+      "result": "cooldown"
+    },
+    {
+      "id": "162b193214fe",
+      "result": "cooldown"
+    },
+    {
+      "id": "73c1cf121032",
+      "result": "cooldown"
+    },
+    {
+      "id": "953a21482a7a",
+      "result": "cooldown"
+    },
+    {
+      "id": "6881887d71b6",
+      "result": "cooldown"
+    },
+    {
       "id": "143e60189659fea092ac3a1e",
+      "result": "cooldown"
+    },
+    {
+      "id": "5b2157c995e5",
+      "result": "cooldown"
+    },
+    {
+      "id": "1b83b8f7f5eb",
+      "result": "cooldown"
+    },
+    {
+      "id": "d549220bc300",
+      "result": "cooldown"
+    },
+    {
+      "id": "b403708c02d1",
+      "result": "cooldown"
+    },
+    {
+      "id": "f89770032773",
+      "result": "cooldown"
+    },
+    {
+      "id": "5093dbf5a1e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "ceb48d2b5b08",
+      "result": "cooldown"
+    },
+    {
+      "id": "bd84f1410659",
+      "result": "cooldown"
+    },
+    {
+      "id": "6ee66cd09c1e",
+      "result": "cooldown"
+    },
+    {
+      "id": "26544d027bbb",
+      "result": "cooldown"
+    },
+    {
+      "id": "62eb6a55ce6f",
+      "result": "cooldown"
+    },
+    {
+      "id": "535bc68a6931",
+      "result": "cooldown"
+    },
+    {
+      "id": "b3b8f57907e0",
+      "result": "cooldown"
+    },
+    {
+      "id": "2c04a6d38790",
+      "result": "cooldown"
+    },
+    {
+      "id": "0bee7f4ce378",
+      "result": "cooldown"
+    },
+    {
+      "id": "b9b30d3f87dd",
+      "result": "cooldown"
+    },
+    {
+      "id": "1570f58d79d2",
+      "result": "cooldown"
+    },
+    {
+      "id": "f0c7498ee23b",
+      "result": "cooldown"
+    },
+    {
+      "id": "3f7fef713852",
+      "result": "cooldown"
+    },
+    {
+      "id": "24d3058a2c30",
+      "result": "cooldown"
+    },
+    {
+      "id": "1b5825efbd8a",
+      "result": "cooldown"
+    },
+    {
+      "id": "7c92876b5a3b",
+      "result": "cooldown"
+    },
+    {
+      "id": "6f7a421ef50a",
+      "result": "cooldown"
+    },
+    {
+      "id": "1d56f6da5bb9",
+      "result": "cooldown"
+    },
+    {
+      "id": "65b1d0250df8",
+      "result": "cooldown"
+    },
+    {
+      "id": "57f98c82f7a3",
+      "result": "cooldown"
+    },
+    {
+      "id": "2716427d4300",
+      "result": "cooldown"
+    },
+    {
+      "id": "6e0dc4e7f395",
+      "result": "cooldown"
+    },
+    {
+      "id": "b11524ec6a1a",
+      "result": "cooldown"
+    },
+    {
+      "id": "48d13fcbadba",
+      "result": "cooldown"
+    },
+    {
+      "id": "7c3a1801ad76",
+      "result": "cooldown"
+    },
+    {
+      "id": "515a39821a80",
+      "result": "cooldown"
+    },
+    {
+      "id": "37c6002d873c",
+      "result": "cooldown"
+    },
+    {
+      "id": "379fb4529f90",
+      "result": "cooldown"
+    },
+    {
+      "id": "c0608fda1e3e",
+      "result": "cooldown"
+    },
+    {
+      "id": "82150bdb0b91",
+      "result": "cooldown"
+    },
+    {
+      "id": "cc1e35957aad",
+      "result": "cooldown"
+    },
+    {
+      "id": "a9a7441e4555",
+      "result": "cooldown"
+    },
+    {
+      "id": "737c1551baf0",
+      "result": "cooldown"
+    },
+    {
+      "id": "318114f0f10d",
+      "result": "cooldown"
+    },
+    {
+      "id": "2544573e1d7c",
+      "result": "cooldown"
+    },
+    {
+      "id": "1c38d45acd26",
+      "result": "cooldown"
+    },
+    {
+      "id": "89eb91670069",
+      "result": "cooldown"
+    },
+    {
+      "id": "1be7e8afcd00",
+      "result": "cooldown"
+    },
+    {
+      "id": "910529450c4b",
+      "result": "cooldown"
+    },
+    {
+      "id": "2cf3ab82ab15",
+      "result": "cooldown"
+    },
+    {
+      "id": "a20281b7248c",
+      "result": "cooldown"
+    },
+    {
+      "id": "085042837e20",
+      "result": "cooldown"
+    },
+    {
+      "id": "c2bd86ee3fa0",
+      "result": "cooldown"
+    },
+    {
+      "id": "da2030a5882e",
+      "result": "cooldown"
+    },
+    {
+      "id": "6ee7df9a57d1",
+      "result": "cooldown"
+    },
+    {
+      "id": "64e8705df01e",
+      "result": "cooldown"
+    },
+    {
+      "id": "e941146733b5",
+      "result": "cooldown"
+    },
+    {
+      "id": "4bb34c108869",
+      "result": "cooldown"
+    },
+    {
+      "id": "da7f3987f6a5",
+      "result": "cooldown"
+    },
+    {
+      "id": "6db21a3cd2db",
+      "result": "cooldown"
+    },
+    {
+      "id": "62ead5dc8e91",
+      "result": "cooldown"
+    },
+    {
+      "id": "b4c1c6c7d647",
+      "result": "cooldown"
+    },
+    {
+      "id": "dd1c58d34455",
+      "result": "cooldown"
+    },
+    {
+      "id": "5f642b137c38",
+      "result": "cooldown"
+    },
+    {
+      "id": "b349c12dc7f2",
+      "result": "cooldown"
+    },
+    {
+      "id": "f34dfa1e3cc8",
+      "result": "cooldown"
+    },
+    {
+      "id": "8b2ede84e6e9",
+      "result": "cooldown"
+    },
+    {
+      "id": "3827217a3b06",
+      "result": "cooldown"
+    },
+    {
+      "id": "de9e139b22f9",
+      "result": "cooldown"
+    },
+    {
+      "id": "fac509b27662",
+      "result": "cooldown"
+    },
+    {
+      "id": "7e988adcb4a5",
+      "result": "cooldown"
+    },
+    {
+      "id": "376adc0fd47f",
+      "result": "cooldown"
+    },
+    {
+      "id": "13248d99afbe",
+      "result": "cooldown"
+    },
+    {
+      "id": "fd5bde16cf27",
+      "result": "cooldown"
+    },
+    {
+      "id": "6b8f9d0076e4",
+      "result": "cooldown"
+    },
+    {
+      "id": "50e675bd1e17",
+      "result": "cooldown"
+    },
+    {
+      "id": "a2b2f3da8c1a",
+      "result": "cooldown"
+    },
+    {
+      "id": "23a46be33c4f",
+      "result": "cooldown"
+    },
+    {
+      "id": "df770ec1b2ec",
+      "result": "cooldown"
+    },
+    {
+      "id": "4a11b89ba329",
+      "result": "cooldown"
+    },
+    {
+      "id": "1d8f014230fb",
+      "result": "cooldown"
+    },
+    {
+      "id": "ff3718605839",
+      "result": "cooldown"
+    },
+    {
+      "id": "bc5eeeb23237",
+      "result": "cooldown"
+    },
+    {
+      "id": "d46a51df172f",
+      "result": "cooldown"
+    },
+    {
+      "id": "003990743275",
+      "result": "cooldown"
+    },
+    {
+      "id": "4c58118a1c0b",
+      "result": "cooldown"
+    },
+    {
+      "id": "8087c4c9d6ec",
+      "result": "cooldown"
+    },
+    {
+      "id": "d94ec4bd7d8f",
+      "result": "cooldown"
+    },
+    {
+      "id": "cb0756133fee",
+      "result": "cooldown"
+    },
+    {
+      "id": "71cad285b62f",
+      "result": "cooldown"
+    },
+    {
+      "id": "67297b2638fa",
+      "result": "cooldown"
+    },
+    {
+      "id": "0908d907a930",
+      "result": "cooldown"
+    },
+    {
+      "id": "b8fba914e8d3",
+      "result": "cooldown"
+    },
+    {
+      "id": "e994df0de1e2",
+      "result": "cooldown"
+    },
+    {
+      "id": "bf6a9aaabe6f",
+      "result": "cooldown"
+    },
+    {
+      "id": "52ab94919f35",
+      "result": "cooldown"
+    },
+    {
+      "id": "f0b7ccad56bc",
+      "result": "cooldown"
+    },
+    {
+      "id": "702723f0ef9e",
+      "result": "cooldown"
+    },
+    {
+      "id": "8cebd460c85c",
+      "result": "cooldown"
+    },
+    {
+      "id": "669dca7a9af6",
+      "result": "cooldown"
+    },
+    {
+      "id": "bf5257fad3a5",
+      "result": "cooldown"
+    },
+    {
+      "id": "b49d5b8ecced",
+      "result": "cooldown"
+    },
+    {
+      "id": "e544fbed3461",
+      "result": "cooldown"
+    },
+    {
+      "id": "131d4428e3d5",
       "result": "cooldown"
     },
     {
@@ -340,25 +3117,793 @@
       "result": "cooldown"
     },
     {
+      "id": "1cb3e54c0641",
+      "result": "cooldown"
+    },
+    {
+      "id": "4a8cc206668a",
+      "result": "cooldown"
+    },
+    {
+      "id": "e3e26ad25148",
+      "result": "cooldown"
+    },
+    {
+      "id": "c2d2bb85f17c",
+      "result": "cooldown"
+    },
+    {
+      "id": "2359a21327a4",
+      "result": "cooldown"
+    },
+    {
+      "id": "a969de13c35c",
+      "result": "cooldown"
+    },
+    {
+      "id": "8df79a94610e",
+      "result": "cooldown"
+    },
+    {
+      "id": "8013ad63ce33",
+      "result": "cooldown"
+    },
+    {
+      "id": "d46b50b179f2",
+      "result": "cooldown"
+    },
+    {
+      "id": "d08415f851c4",
+      "result": "cooldown"
+    },
+    {
+      "id": "766f18713b16",
+      "result": "cooldown"
+    },
+    {
+      "id": "89da4e4f73cd",
+      "result": "cooldown"
+    },
+    {
+      "id": "672171c4bedc",
+      "result": "cooldown"
+    },
+    {
+      "id": "a3eabf51b023",
+      "result": "cooldown"
+    },
+    {
+      "id": "b4756685f7c4",
+      "result": "cooldown"
+    },
+    {
+      "id": "54934b0f0c85",
+      "result": "cooldown"
+    },
+    {
+      "id": "148b14ef3f7f",
+      "result": "cooldown"
+    },
+    {
+      "id": "318f74d4d181",
+      "result": "cooldown"
+    },
+    {
+      "id": "3396e579e6f8",
+      "result": "cooldown"
+    },
+    {
+      "id": "cfb3d3aaed1d",
+      "result": "cooldown"
+    },
+    {
+      "id": "1684274403ad",
+      "result": "cooldown"
+    },
+    {
+      "id": "ebe24ab264a7",
+      "result": "cooldown"
+    },
+    {
+      "id": "0b6d9b51b6bd",
+      "result": "cooldown"
+    },
+    {
+      "id": "841d9b9e1992",
+      "result": "cooldown"
+    },
+    {
+      "id": "f2d3bc3b0144",
+      "result": "cooldown"
+    },
+    {
+      "id": "cfdb8b538e85",
+      "result": "cooldown"
+    },
+    {
+      "id": "530949cc20f2",
+      "result": "cooldown"
+    },
+    {
+      "id": "f2bef9f7b4b0",
+      "result": "cooldown"
+    },
+    {
+      "id": "a51bcbb99340",
+      "result": "cooldown"
+    },
+    {
+      "id": "beac754bc9f5",
+      "result": "cooldown"
+    },
+    {
+      "id": "c0ca5b0778d9",
+      "result": "cooldown"
+    },
+    {
+      "id": "52754f757c54",
+      "result": "cooldown"
+    },
+    {
+      "id": "023a2a9c0605",
+      "result": "cooldown"
+    },
+    {
+      "id": "c54de0109dca",
+      "result": "cooldown"
+    },
+    {
+      "id": "98e47325920a",
+      "result": "cooldown"
+    },
+    {
+      "id": "7622d7f38452",
+      "result": "cooldown"
+    },
+    {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5757b7bde7e5a43128d256",
+      "result": "cooldown"
+    },
+    {
+      "id": "0d093f1b1d8b95e0ce3c5ba1",
+      "result": "cooldown"
+    },
+    {
+      "id": "9e59804909cc110131739d58",
+      "result": "cooldown"
+    },
+    {
+      "id": "17aa97db89715afd896833ea",
+      "result": "cooldown"
+    },
+    {
+      "id": "2a8b92143f14b264d8d27146",
+      "result": "cooldown"
+    },
+    {
+      "id": "611527df4de7f3170a99cfde",
+      "result": "cooldown"
+    },
+    {
+      "id": "fb6dd420a2fc44c8f8340751",
+      "result": "cooldown"
+    },
+    {
+      "id": "28682dd8dfac94fd33504b6e",
+      "result": "cooldown"
+    },
+    {
+      "id": "c176a1dc41c1e122cab45821",
+      "result": "cooldown"
+    },
+    {
+      "id": "33686a761fa5d097afc337dc",
+      "result": "cooldown"
+    },
+    {
+      "id": "d5ff9974453f739276c8eb9f",
+      "result": "cooldown"
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "result": "cooldown"
+    },
+    {
+      "id": "2d100db342cdd6c9c517a807",
+      "result": "cooldown"
+    },
+    {
+      "id": "a941ae3553703f8fd24d4d17",
+      "result": "cooldown"
+    },
+    {
+      "id": "e8fc748d4c8dffaa2212a1cf",
+      "result": "cooldown"
+    },
+    {
+      "id": "fab6501205ba27e38dac785c",
+      "result": "cooldown"
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "635e4aa01fc60223a6fea284",
+      "result": "cooldown"
+    },
+    {
+      "id": "4afa4536b18e5a41b30a3497",
+      "result": "cooldown"
+    },
+    {
+      "id": "007acb84538e69bcc14f4f9f",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "result": "cooldown"
+    },
+    {
+      "id": "b73ac57f1ef5ed96390ec4f0",
+      "result": "cooldown"
+    },
+    {
+      "id": "b1e668b9c10e7cfe7e4acd5a",
+      "result": "cooldown"
+    },
+    {
+      "id": "b0979abba345525f23d6b27e",
+      "result": "cooldown"
+    },
+    {
+      "id": "ff28f504e8e3f011fe2acd9b",
+      "result": "cooldown"
+    },
+    {
+      "id": "9380990d113b5de5f521da53",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "d5adbd5f7c0ee6e635219a5c",
+      "result": "cooldown"
+    },
+    {
+      "id": "2f02162d9ab27a8cd5662161",
+      "result": "cooldown"
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "6548e415fc086ccec65bbb7c",
+      "result": "cooldown"
+    },
+    {
       "id": "8af54bb949a0c055391d640a",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1794607907.8917866
+      "result": "cooldown"
     },
     {
       "id": "a6510273f0889bf4d7684eae",
-      "source": "https://mua.ac.ke/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794607908.5042095
+      "result": "cooldown"
     },
     {
       "id": "ef614dcb4163038685679d1d",
-      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
+      "result": "cooldown"
+    },
+    {
+      "id": "d6080a61dff5",
+      "result": "cooldown"
+    },
+    {
+      "id": "e74eb9a3e7b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "32280cce1125bb9a47dd1d42",
+      "result": "cooldown"
+    },
+    {
+      "id": "ce0ef8db912e7a799d88cb97",
+      "result": "cooldown"
+    },
+    {
+      "id": "b9f938473523",
+      "result": "cooldown"
+    },
+    {
+      "id": "834636b817fd",
+      "result": "cooldown"
+    },
+    {
+      "id": "88528232806f",
+      "result": "cooldown"
+    },
+    {
+      "id": "104272db75ef",
+      "result": "cooldown"
+    },
+    {
+      "id": "7131092fb6c6",
+      "result": "cooldown"
+    },
+    {
+      "id": "5671cedb0254",
+      "result": "cooldown"
+    },
+    {
+      "id": "3f87a4657830",
+      "result": "cooldown"
+    },
+    {
+      "id": "8111039998d5",
+      "result": "cooldown"
+    },
+    {
+      "id": "436d225217a2",
+      "result": "cooldown"
+    },
+    {
+      "id": "31affb669b66",
+      "result": "cooldown"
+    },
+    {
+      "id": "c73ee63b41e1",
+      "result": "cooldown"
+    },
+    {
+      "id": "9955bb9d6330",
+      "result": "cooldown"
+    },
+    {
+      "id": "387e81f30af2",
+      "result": "cooldown"
+    },
+    {
+      "id": "f6103bcf0b57",
+      "result": "cooldown"
+    },
+    {
+      "id": "afdcec06f986",
+      "result": "cooldown"
+    },
+    {
+      "id": "ad1532d7cf3d",
+      "result": "cooldown"
+    },
+    {
+      "id": "89316d768597",
+      "result": "cooldown"
+    },
+    {
+      "id": "677d24fb37fa",
+      "result": "cooldown"
+    },
+    {
+      "id": "0ad701b03d1b",
+      "result": "cooldown"
+    },
+    {
+      "id": "ca112d8cca112d8cca112d8cca112d8c",
+      "result": "cooldown"
+    },
+    {
+      "id": "c5b7f60e9a6a",
+      "result": "cooldown"
+    },
+    {
+      "id": "8924a3303e9e",
+      "result": "cooldown"
+    },
+    {
+      "id": "bc6c9893bc6c9893bc6c9893bc6c9893",
+      "result": "cooldown"
+    },
+    {
+      "id": "7d0431439e2a",
+      "result": "cooldown"
+    },
+    {
+      "id": "4ebc87c0d418",
+      "result": "cooldown"
+    },
+    {
+      "id": "7c5d635c6911",
+      "result": "cooldown"
+    },
+    {
+      "id": "37756aa1da12",
+      "result": "cooldown"
+    },
+    {
+      "id": "81efd7e08b3f",
+      "result": "cooldown"
+    },
+    {
+      "id": "f592b106d8cb",
+      "result": "cooldown"
+    },
+    {
+      "id": "ee2a67f92aed",
+      "result": "cooldown"
+    },
+    {
+      "id": "10653383106533831065338310653383",
+      "result": "cooldown"
+    },
+    {
+      "id": "78cc790578cc790578cc790578cc7905",
+      "result": "cooldown"
+    },
+    {
+      "id": "6dc32474192f",
+      "result": "cooldown"
+    },
+    {
+      "id": "6584c0d778a7",
+      "result": "cooldown"
+    },
+    {
+      "id": "14355421143554211435542114355421",
+      "result": "cooldown"
+    },
+    {
+      "id": "d628b12d541f",
+      "result": "cooldown"
+    },
+    {
+      "id": "b6300303262b",
+      "result": "cooldown"
+    },
+    {
+      "id": "3b1025a56362",
+      "result": "cooldown"
+    },
+    {
+      "id": "bc36bed41594",
+      "result": "cooldown"
+    },
+    {
+      "id": "9581ce0bb569",
+      "result": "cooldown"
+    },
+    {
+      "id": "efe483451e58",
+      "result": "cooldown"
+    },
+    {
+      "id": "fe8bcc88fbbd",
+      "result": "cooldown"
+    },
+    {
+      "id": "6a268ec5bb99",
+      "result": "cooldown"
+    },
+    {
+      "id": "318f84b0be98",
+      "result": "cooldown"
+    },
+    {
+      "id": "8746c65fe139",
+      "result": "cooldown"
+    },
+    {
+      "id": "cef8c3322065",
+      "result": "cooldown"
+    },
+    {
+      "id": "b1a1f51376ac",
+      "result": "cooldown"
+    },
+    {
+      "id": "81ed9bbd050d",
+      "result": "cooldown"
+    },
+    {
+      "id": "27399602ccef42af310a2803",
+      "result": "cooldown"
+    },
+    {
+      "id": "ef614bd711ec",
+      "result": "cooldown"
+    },
+    {
+      "id": "74e0c52178b2f0827ab81b54",
+      "result": "cooldown"
+    },
+    {
+      "id": "2a435cf90c49",
+      "result": "cooldown"
+    },
+    {
+      "id": "81a571404aaf",
+      "result": "cooldown"
+    },
+    {
+      "id": "246177e95f61",
+      "result": "cooldown"
+    },
+    {
+      "id": "f2384183d56f",
+      "result": "cooldown"
+    },
+    {
+      "id": "6739b2340df4",
+      "result": "cooldown"
+    },
+    {
+      "id": "5e81a92a23ee",
+      "result": "cooldown"
+    },
+    {
+      "id": "76738d737cf0",
+      "result": "cooldown"
+    },
+    {
+      "id": "c8434afd7a77",
+      "result": "cooldown"
+    },
+    {
+      "id": "802d22b6af98",
+      "result": "cooldown"
+    },
+    {
+      "id": "a6ca20237e47",
+      "result": "cooldown"
+    },
+    {
+      "id": "cba42010d5d6",
+      "result": "cooldown"
+    },
+    {
+      "id": "05f071caa7ab",
+      "result": "cooldown"
+    },
+    {
+      "id": "aa9126e9b84a",
+      "result": "cooldown"
+    },
+    {
+      "id": "7439a209b6b6",
+      "result": "cooldown"
+    },
+    {
+      "id": "df00855be41e",
+      "result": "cooldown"
+    },
+    {
+      "id": "b2beee881e70",
+      "result": "cooldown"
+    },
+    {
+      "id": "1b304ffdf28d",
+      "result": "cooldown"
+    },
+    {
+      "id": "20bc19a667fd",
+      "result": "cooldown"
+    },
+    {
+      "id": "447ebcb90132",
+      "result": "cooldown"
+    },
+    {
+      "id": "83c83ad98dd4",
+      "result": "cooldown"
+    },
+    {
+      "id": "4a904640746e",
+      "result": "cooldown"
+    },
+    {
+      "id": "c841c90c07fb",
+      "result": "cooldown"
+    },
+    {
+      "id": "6f63ebc5d5c7",
+      "result": "cooldown"
+    },
+    {
+      "id": "bad7bc311f5e",
+      "result": "cooldown"
+    },
+    {
+      "id": "176c6f82f0b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "d35a1e8a9083",
+      "result": "cooldown"
+    },
+    {
+      "id": "d998df5be953",
+      "result": "cooldown"
+    },
+    {
+      "id": "7063ff668b32",
+      "result": "cooldown"
+    },
+    {
+      "id": "4fafc2b34cbc",
+      "result": "cooldown"
+    },
+    {
+      "id": "da9bc99b1269",
+      "result": "cooldown"
+    },
+    {
+      "id": "3ae2220a2272",
+      "result": "cooldown"
+    },
+    {
+      "id": "7775afb1f1fa",
+      "result": "cooldown"
+    },
+    {
+      "id": "519265604034",
+      "result": "cooldown"
+    },
+    {
+      "id": "b5753b0f5208",
+      "result": "cooldown"
+    },
+    {
+      "id": "41c004476fd9",
+      "result": "cooldown"
+    },
+    {
+      "id": "2570449a251d",
+      "result": "cooldown"
+    },
+    {
+      "id": "ed1ad48ae5a8",
+      "result": "cooldown"
+    },
+    {
+      "id": "3e36a60028f3",
+      "result": "cooldown"
+    },
+    {
+      "id": "ded3a59e0175",
+      "result": "cooldown"
+    },
+    {
+      "id": "9243a1c9f1b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "14ae06e479f7",
+      "result": "cooldown"
+    },
+    {
+      "id": "2bab279b42bb",
+      "result": "cooldown"
+    },
+    {
+      "id": "e999e797ef10",
+      "result": "cooldown"
+    },
+    {
+      "id": "6699b67e8c38",
+      "result": "cooldown"
+    },
+    {
+      "id": "e98205e5e479",
+      "result": "cooldown"
+    },
+    {
+      "id": "bed5a467722a",
+      "result": "cooldown"
+    },
+    {
+      "id": "4c9f549964da",
+      "result": "cooldown"
+    },
+    {
+      "id": "a99d16356f09",
+      "result": "cooldown"
+    },
+    {
+      "id": "73f5d170dc8f",
+      "result": "cooldown"
+    },
+    {
+      "id": "8c0bff463e83",
+      "result": "cooldown"
+    },
+    {
+      "id": "d16ff8a16ec0",
+      "result": "cooldown"
+    },
+    {
+      "id": "6c9bc482b7e1",
+      "result": "cooldown"
+    },
+    {
+      "id": "0a0ae97d4e66",
+      "result": "cooldown"
+    },
+    {
+      "id": "8b5045373f15",
+      "result": "cooldown"
+    },
+    {
+      "id": "5b4c4558aa60",
+      "result": "cooldown"
+    },
+    {
+      "id": "8c1b78397727",
+      "result": "cooldown"
+    },
+    {
+      "id": "2489db34e641",
+      "result": "cooldown"
+    },
+    {
+      "id": "fe3b874760b2",
+      "result": "cooldown"
+    },
+    {
+      "id": "ed30f11d7c36",
+      "result": "cooldown"
+    },
+    {
+      "id": "f5dcb8a53791",
+      "source": "https://www.npr.org/2026/10/23/nx-s1-6000392/after-a-year-of-uncertainty-job-corps-is-making-a-comeback",
       "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1794607910.6275985
+      "result": "source_error",
+      "retry_after": 1794609915.13024
+    },
+    {
+      "id": "1bc48ff58cd1",
+      "source": "https://www.npr.org/2026/10/22/nx-s1-6000127/china-mahjong-tile-game-taixing-manufacturing",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794609915.1341624
+    },
+    {
+      "id": "08f803d5a037",
+      "source": "https://www.cbc.ca/news/world/jordan-church-attack-arrests-9.7395806?cmp=rss",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794609915.2315369
+    },
+    {
+      "id": "3a7a236264a1",
+      "source": "https://www.npr.org/2026/10/31/nx-s1-6024426/binance-crypto-heist-cyber-criminals-north-korea",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794609915.2927186
+    },
+    {
+      "id": "54f88bc32999",
+      "source": "https://www.npr.org/2026/10/30/nx-s1-6019371/la-bola-negra-review-los-javis",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794609915.4967883
+    },
+    {
+      "id": "72a42f4720d1",
+      "source": "https://www.npr.org/2026/10/30/nx-s1-6018258/affordability-florida-amendment-3",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794609916.479042
+    },
+    {
+      "id": "b6ee43ce2d8a",
+      "source": "https://www.cbc.ca/news/world/united-states-iran-conflict-next-round-9.7392215",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794609916.513367
     }
   ],
   "missing": [
@@ -997,7 +4542,7 @@
       "category": "private-vacancy",
       "title": "Sodexo Announces Opening for Hospitality Manager Position in Ajmer, Rajasthan",
       "source": "https://in.linkedin.com/jobs/view/hospitality-manager-at-sodexo-4481855744",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0bdb0918a8cf",
@@ -1368,7 +4913,7 @@
       "category": "private-vacancy",
       "title": "Media and Communications Job Listings Overview for Cheyenne and Fort Collins Regions",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-cheyenne-wy",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "3ce4eb1cdf88",
@@ -1914,7 +5459,7 @@
       "category": "private-vacancy",
       "title": "Professional Career Openings Listed in the Pune Region Through Recruitment Platforms",
       "source": "https://in.linkedin.com/jobs/gennext-india-private-limited-executive-search-company-jobs-pune-university",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "6b17f139e455",
@@ -2068,7 +5613,7 @@
       "category": "private-vacancy",
       "title": "BDO India and Other Firms Report Open Positions in the Greater Bengaluru Area",
       "source": "https://in.linkedin.com/jobs/bdo-india-jobs-greater-bengaluru-area",
-      "reason": "no_source_image"
+      "reason": "invalid_source_images"
     },
     {
       "id": "515a39821a80",
@@ -2166,7 +5711,7 @@
       "category": "private-vacancy",
       "title": "Hubbell Incorporated and Other Employers Report Open Roles in Kochi and Kerala",
       "source": "https://in.linkedin.com/jobs/hubbell-incorporated-jobs-kochi-kl",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "dc7366da5e5a",
@@ -2215,7 +5760,7 @@
       "category": "private-vacancy",
       "title": "Worldwide Clinical Trials Announces Grants Payable Specialist Opening in New Delhi",
       "source": "https://in.linkedin.com/jobs/view/grants-payable-specialist-at-worldwide-clinical-trials-4483885214",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "b884520e4af2",
@@ -3139,7 +6684,7 @@
       "category": "private-vacancy",
       "title": "EH Jobs Lists Vacancy for Female Pre-Primary Teacher in Jodhpur",
       "source": "https://in.linkedin.com/jobs/view/urgently-required-pre-primaryteacher-female-for-shastri-nagar-jodhpur-jodhpur8-job-id-24442-at-eh-jobs-4477561804",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "294ce0c9dbfe",
@@ -3412,7 +6957,7 @@
       "category": "world-news",
       "title": "UP Police Constable Result and PET: How to Check Official Updates",
       "source": "https://uppbpb.gov.in/",
-      "reason": "not_attempted"
+      "reason": "no_source_image"
     },
     {
       "id": "89316d768597",
@@ -3790,7 +7335,7 @@
       "category": "visas-immigration",
       "title": "GIEC Global Edu and Migration Private Limited Announces Immigration Consultant Opening in Lucknow",
       "source": "https://in.linkedin.com/jobs/view/immigration-consultant-at-giec-global-edu-and-migration-private-limited-4483444305",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "a07b9eac5f39",
@@ -4038,6 +7583,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "a1132026000000000000000000000001",
+      "category": "india-news",
+      "title": "Gola Bazar Police Book Six After DJ Volume Dispute in Kotia Nayak",
+      "source": "https://www.livehindustan.com/tags/gola",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "611527df4de7f3170a99cfde",
       "category": "gadgets",
       "title": "Ninetology Black Pearl II: Smartphone Specifications, Facts and Verification Guide",
@@ -4063,7 +7615,7 @@
       "category": "private-vacancy",
       "title": "GLOCERY Announces Full-Time Graphic Designer Opening in Delhi NCR",
       "source": "https://in.linkedin.com/jobs/view/graphic-designer-at-glocery-4483888452",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "450e4f272b75",
@@ -5351,7 +8903,7 @@
       "category": "sarkari-naukri",
       "title": "UPTET 2026 Notification: Application and Eligibility Updates",
       "source": "https://upessc.up.gov.in/",
-      "reason": "not_attempted"
+      "reason": "source_error"
     },
     {
       "id": "5db93f0ebb02",
@@ -5932,7 +9484,7 @@
       "category": "syllabus",
       "title": "UPPSC RO/ARO Exam Update: Schedule, Centres and Official Notices",
       "source": "https://uppsc.up.nic.in/",
-      "reason": "not_attempted"
+      "reason": "no_source_image"
     },
     {
       "id": "95ef09d7e83b",
@@ -6163,7 +9715,7 @@
       "category": "syllabus",
       "title": "RRB NTPC 2026 CBT Exam Date and City Intimation: Official Links",
       "source": "https://www.rrbcdg.gov.in/",
-      "reason": "not_attempted"
+      "reason": "source_error"
     },
     {
       "id": "0346b2c5ec85",
@@ -6639,7 +10191,7 @@
       "category": "sarkari-naukri",
       "title": "SSC GD Constable 2026–27: Recruitment Notice, Eligibility and Exam Updates",
       "source": "https://ssc.gov.in/",
-      "reason": "not_attempted"
+      "reason": "no_source_image"
     },
     {
       "id": "bc36bed41594",
@@ -6647,6 +10199,13 @@
       "title": "Media and Communications Job Openings Reported in San Antonio, Texas",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-antonio-tx",
       "reason": "no_source_image"
+    },
+    {
+      "id": "d6080a61dff5",
+      "category": "social-media",
+      "title": "Tribal Leader and Activist Nisha Bhagat Dies by Suicide in Ranchi After Facebook Live",
+      "source": "https://www.livehindustan.com/jharkhand/tribal-leader-nisha-bhagat-dies-by-suicide-after-live-on-fb-whom-she-accuse-in-her-final-video-201793991481368.html",
+      "reason": "invalid_source_images"
     },
     {
       "id": "c737d4f8fbc3",
@@ -6761,6 +10320,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "e74eb9a3e7b1",
+      "category": "business",
+      "title": "Travelzoo Announces New Member Club Offers for UK Travel Enthusiasts",
+      "source": "https://www.prnewswire.com/news-releases/club-offers-for-travel-enthusiasts-in-the-uk-302932597.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "2570449a251d",
       "category": "controversies",
       "title": "Gildan Activewear Securities Class Action: Rosen Law Firm Reminds Investors of December 14 Deadline",
@@ -6776,349 +10342,308 @@
     }
   ],
   "missing_reasons": {
-    "invalid_source_images": 212,
-    "access_denied": 262,
-    "source_error": 103,
-    "no_source_image": 277,
+    "invalid_source_images": 209,
+    "access_denied": 267,
+    "source_error": 105,
+    "no_source_image": 281,
     "source_unavailable": 56,
-    "not_attempted": 5,
     "restricted_page": 1
   },
-  "existing_representatives_preserved": 1,
+  "existing_representatives_preserved": 0,
   "diagnostics": {
-    "32280cce1125bb9a47dd1d42": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_MIX",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/20px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
+    "e5e963bfe190": {
+      "reason": "access_denied",
+      "source": "https://www.motor1.com/news/813869/bentley-torcal-passes-a-million/",
+      "status": 403
     },
-    "bdb9994724d228c215a472d9": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Yeoman",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cf/1958_Chevrolet_Yeoman_2Door_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "c70a52c4acde13903b469f2d": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_van",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Chevrolet_Sport_Van.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "0a95ccf111c45db4cfb5c9e3": {
-      "reason": "source_error",
-      "source": "https://isc-edu.org/",
-      "error": "ConnectionError"
-    },
-    "3d6256720a87945b67465315": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_XA1",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Sony_Xperia_XA1_G3121_front_view.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "ce0ef8db912e7a799d88cb97": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Lenovo_K6_Power",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/20px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "ab5757b7bde7e5a43128d256": {
-      "reason": "source_unavailable",
-      "source": "https://exploitsmw.com/",
-      "status": 200
-    },
-    "0d093f1b1d8b95e0ce3c5ba1": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Brammo_Enertia",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "7d2f58f7dd2b81f8b6343504": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/GeeksPhone_One",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/GeeksPhone_One.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "9e59804909cc110131739d58": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III_Neo",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Samsung_Galaxy_S_III.png/500px-Samsung_Galaxy_S_III.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Samsung_Galaxy_S_III.png/250px-Samsung_Galaxy_S_III.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "17aa97db89715afd896833ea": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Redmi_Note_Prime",
-      "candidate_count": 7,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/20px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "2a8b92143f14b264d8d27146": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "611527df4de7f3170a99cfde": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "fb6dd420a2fc44c8f8340751": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/JXD_P861",
-      "candidate_count": 7,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/120px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "28682dd8dfac94fd33504b6e": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Droid_Turbo_2",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "c176a1dc41c1e122cab45821": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "33686a761fa5d097afc337dc": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "d5ff9974453f739276c8eb9f": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "8f4b17c49d1b2a0c5cb45a53": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
-      "candidate_count": 6,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "2d100db342cdd6c9c517a807": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
-      "candidate_count": 9,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/0/0e/1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/1280px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/960px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "a941ae3553703f8fd24d4d17": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
-      "candidate_count": 7,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Ambox_current_red.svg/120px-Ambox_current_red.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Ambox_current_red.svg/60px-Ambox_current_red.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "e8fc748d4c8dffaa2212a1cf": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Ambox_current_red.svg/120px-Ambox_current_red.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Ambox_current_red.svg/60px-Ambox_current_red.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "fab6501205ba27e38dac785c": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "8444aa187e09b377f661fcbf": {
+    "23db565d6f5a": {
       "reason": "no_source_image",
-      "source": "https://dec.ac.in/"
+      "source": "https://www.prnewswire.com/news-releases/announcement-of-change-in-the-total-number-of-votes-in-ab-skf-302924737.html"
     },
-    "635e4aa01fc60223a6fea284": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Borgward_BX3",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "4afa4536b18e5a41b30a3497": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18613.jpg"
-      ]
-    },
-    "007acb84538e69bcc14f4f9f": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18606.jpg"
-      ]
-    },
-    "9d1f6341eb5fa6644d63ff08": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18615.jpg"
-      ]
-    },
-    "b73ac57f1ef5ed96390ec4f0": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Bridgestone_350_GTR",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "b1e668b9c10e7cfe7e4acd5a": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-      "candidate_count": 7,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/60px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "b0979abba345525f23d6b27e": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_M5",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "ff28f504e8e3f011fe2acd9b": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18614.jpg"
-      ]
-    },
-    "9380990d113b5de5f521da53": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Norton_Nomad",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "fbff6440d68d52399ca212b1": {
+    "985cc751bdc3": {
       "reason": "no_source_image",
-      "source": "https://cctu.edu.gh/site/index"
+      "source": "https://www.prnewswire.com/news-releases/rethinking-senior-living-for-military-families-air-force-enlisted-village-redefines-lifetime-care-on-all-access-hosted-by-andy-garcia-302867608.html"
     },
-    "d5adbd5f7c0ee6e635219a5c": {
+    "a1132026000000000000000000000002": {
+      "reason": "source_photo_saved",
+      "source": "https://www.swatantraprabhat.com/article/194236/chhangur-injured-in-gorakhpur-accident-dies-golas-chand-intersection-remained",
+      "image": "https://www.swatantraprabhat.com/media/c1200x628/2026-11/img-20261109-wa0026.jpg"
+    },
+    "f184bcc84d27": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Concept_F_450_GS",
-      "candidate_count": 5,
+      "source": "https://in.linkedin.com/jobs/view/beauty-advisor-multibrand-full-time-select-citywalk-mall-saket-delhi-at-the-est%C3%A9e-lauder-companies-inc-4483872012",
+      "candidate_count": 1,
       "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Robot_Not.svg/120px-Robot_Not.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Robot_Not.svg/60px-Robot_Not.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
       ]
     },
-    "2f02162d9ab27a8cd5662161": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
-      "candidate_count": 10,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
-        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled"
-      ]
+    "9e4cda20d9af": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/hoppr-expands-medical-imaging-ai-portfolio-with-whole-body-musculoskeletal-x-ray-narrative-model-302921827.html"
     },
-    "b211f120ea27b93fc925f6b4": {
+    "656a83689ee9": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/anesthesia-stability-may-be-masking-a-new-set-of-risks-for-hospitals-302923342.html"
+    },
+    "6a05b95ab24b": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-vehicle-window-screen-idea-tki-1388-302924033.html"
+    },
+    "debca98e7215": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-safety-assistance-idea-for-boat-loading-ksg-320-302923724.html"
+    },
+    "ff31945ede77": {
+      "reason": "access_denied",
+      "source": "https://insideevs.com/news/813774/tesla-cybercab-factory-munro-live/",
+      "status": 403
+    },
+    "a1132026000000000000000000000001": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "source": "https://www.livehindustan.com/tags/gola",
       "candidate_count": 8,
       "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/1/1e/Nokia_Asha_501.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/250px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/120px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        "https://www.livehindustan.com/static-content/1y/lh/img/header-photo-icon.webp",
+        "https://www.livehindustan.com/static-content/1y/lh/img/header-photo-icon.png",
+        "https://www.livehindustan.com/static-content/1y/lh/img/header-video-icon.webp"
       ]
     },
-    "6548e415fc086ccec65bbb7c": {
+    "cdc16cd3edc0": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/companies/start-ups/companies-should-put-all-ai-agents-in-zero-trust-category-netskope-founder-126102901491_1.html",
+      "status": 403
+    },
+    "be4cbb6ec969": {
       "reason": "invalid_source_images",
-      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
-      "candidate_count": 23,
+      "source": "https://in.linkedin.com/jobs/view/beauty-advisor-multibrand-full-time-ambience-mall-gurgaon-at-the-est%C3%A9e-lauder-companies-inc-4483615852",
+      "candidate_count": 1,
       "candidates": [
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/frontier/vehicle-profile-assets/2027/model-2027-frontier-crew-cab-pro-4x-red-alert.png-v2.png",
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue-hybrid/vehicle-profile-assets/2027/model-2027-rogue-hybrid-sr-horizon-blue-pearl-metallic-super-black-two-tone.png.ximg.l_3_m.smart.png",
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue/vehicle-profile-assets/2027/model-2027-rogue-rock-creek-intelligent-awd-baja-storm-metallic.png.ximg.l_3_m.smart.png"
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
       ]
     },
-    "27399602ccef42af310a2803": {
+    "a1132026000000000000000000000005": {
+      "reason": "source_photo_saved",
+      "source": "https://www.livehindustan.com/uttar-pradesh/gorakhpur/story-gorakhpur-plans-4-14-crore-electric-crematorium-on-rapti-riverfront-201794515010622.html",
+      "image": "https://www.livehindustan.com/lh-img/smart/img/2025/08/27/384x216/gorakhpur_1756323145951_1756323162513.png"
+    },
+    "e3f2b51920aa": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-improved-mouth-call-idea-for-turkey-hunters-ctk-8889-302923733.html"
+    },
+    "26b7fce981af": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-easier-pallet-wrapping-idea-pta-796-302923952.html"
+    },
+    "61fdf518e469": {
+      "reason": "access_denied",
+      "source": "https://www.motor1.com/news/813625/dipstick-oil-scam/",
+      "status": 403
+    },
+    "4595510fe561": {
+      "reason": "access_denied",
+      "source": "https://www.motor1.com/news/813791/autozone-duralast-oil-filter-wrench/",
+      "status": 403
+    },
+    "10cf239ca7ad": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_XA_Ultra",
+      "source": "https://in.linkedin.com/jobs/view/architecture-internship-in-visakhapatnam-secunderabad-hyderabad-mumbai-kochi-hubballi-bhubaneswar-chennai-coimbatore-madurai-mangalore-mysuru-ooty-thiruvananthapuram-at-ergate-architecture-4483502865",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "95ef09d7e83b": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/assistant-fitness-manager-at-e%C5%8Ds-fitness-4484462055",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "98cd45dba93d": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-centralized-sonar-system-idea-for-fishing-boats-lbt-9887-302923955.html"
+    },
+    "c1266aba0540": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/associate-director-biddaable-media-at-ls-digital-group-4483411871",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "7674f545a3f1": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/architecture-multiple-roles-at-architecture-talent-network-atn-4482279863",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "eb4678a5588c": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/an-inventhelp-123invent-client-develops-convenient-womens-personal-storage-idea-ctk-532-302923723.html"
+    },
+    "d561ed0d809f": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/markets/news/aeroflex-zooms-18-on-huge-volume-over-31-mn-shares-change-hands-126102900503_1.html",
+      "status": 403
+    },
+    "fa301ba3a07a": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/industry/news/afcons-wins-3-469-crore-contracts-for-jewar-expressway-lucknow-metro-126102901714_1.html",
+      "status": 403
+    },
+    "10117c44fe32": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/alfa-laval-successfully-refinances-revolving-credit-facility-302924667.html"
+    },
+    "5a83a56d4603": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/view/archer-specialist-3046-immediate-joiner-at-allianz-technology-4484242011",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/xlk678jv0tjp79pv10kglzkf"
+      ]
+    },
+    "cacf7e628c64": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/aker-solutions-asa-third-quarter-results-2026-302921759.html"
+    },
+    "10f9aea153de": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/adp-national-employment-report-preliminary-estimate-for-october-10-2026-302920098.html"
+    },
+    "dbba5a69ce74": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/altruist-biologics-integrated-cmc-platform-supports-nmpa-acceptance-of-nda-for-localized-manufacturing-of-multinational-clients-biologic-302922345.html"
+    },
+    "e4ccc220e689": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/aebe-ecuador-expands-banana-exports-to-the-middle-east-ready-to-serve-any-market-302924839.html"
+    },
+    "14f128886960": {
+      "reason": "invalid_source_images",
+      "source": "https://in.linkedin.com/jobs/bdo-india-jobs-greater-bengaluru-area",
+      "candidate_count": 1,
+      "candidates": [
+        "https://static.licdn.com/aero-v1/sc/h/1kxd9keftj1y0os0evez0vt9u"
+      ]
+    },
+    "50288a4d39a7": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/alignment-healthcare-nasdaq-alhc-increasingly-scrutinized-over-h3815-cut-points-and-cms-bonus-eligibility---hbss-302925106.html"
+    },
+    "b5e2939265f1": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/economy/news/economy-news-satellite-lights-google-searches-estimate-state-quarterly-growth-rbi-bulletin-126102500368_1.html",
+      "status": 403
+    },
+    "6721e85a1395": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/adc-therapeutics-announces-zynlonta-updates-in-japan-302922936.html"
+    },
+    "dacf4d08b075": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/amp/economy/news/cabinet-clears-10-000-cr-scheme-to-boost-domestic-container-manufacturing-126102801022_1.html",
+      "status": 403
+    },
+    "ac3d2cff2928": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/finance/news/income-tax-reassessment-invalid-without-mandatory-notice-supreme-court-126102901532_1.html",
+      "status": 403
+    },
+    "efa4334eb707": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/economy/news/rbi-s-2-5-trillion-liquidity-infusion-sends-mixed-signals-sbi-research-126102300929_1.html",
+      "status": 403
+    },
+    "e309e9047ab1": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/economy/news/cabinet-approves-7-395-crore-scheme-to-make-panchayats-self-reliant-126102801559_1.html",
+      "status": 403
+    },
+    "99e47ae67d51": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/economy/news/cabinet-approves-10-000-crore-scheme-to-boost-container-manufacturing-126102801586_1.html",
+      "status": 403
+    },
+    "f9e04dd4d4c7": {
+      "reason": "access_denied",
+      "source": "https://insideevs.com/features/813951/rivian-chief-software-officer-wassym-bensaid-interview-ai-assistant/",
+      "status": 403
+    },
+    "43f6c019300c": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/general-paul-m-nakasone-us-army-ret-joins-board-of-armadin-302923329.html"
+    },
+    "c3f41820032c": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/markets/news/jio-ipo-falls-short-of-record-payday-for-bankers-despite-mega-issue-126102601649_1.html",
+      "status": 403
+    },
+    "33250a9e3bb4": {
+      "reason": "no_source_image",
+      "source": "https://www.prnewswire.com/news-releases/bank-of-america-blackstone-citi-and-morgan-stanley-announce-landmark-63-billion-financing-structure-to-enable-ai-compute-capacity-in-partnership-with-broadcom-302919849.html"
+    },
+    "185a52e14ab0": {
+      "reason": "access_denied",
+      "source": "https://www.business-standard.com/markets/news/choosing-the-right-credit-card-start-with-your-spending-habits-and-lifestyle-126102900740_1.html",
+      "status": 403
+    },
+    "6fce26052ffc": {
+      "reason": "invalid_source_images",
+      "source": "https://variety.com/2026/shopping/news/gifts-for-women-2026-christmas-shop-online-1236934071/",
+      "candidate_count": 12,
+      "candidates": [
+        "https://variety.com/wp-content/uploads/2026/10/Screenshot-2026-10-29-at-12.29.17-PM.png?w=136",
+        "https://variety.com/wp-content/uploads/2026/10/unnamed.jpg?w=120",
+        "https://variety.com/wp-content/uploads/2026/10/Screenshot-2026-10-29-at-2.42.12-PM.png?w=150"
+      ]
+    },
+    "02364f4d79f5caac07cae019": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
+      "candidate_count": 7,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/1280px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/500px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "8ede6684d4cf14febb863aad": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "554edbfdaee926ed82007433": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "ab5161457cb0ef816db211ff": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "e21f0c9303189bff05b728a0": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
       "candidate_count": 5,
       "candidates": [
         "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
@@ -7126,35 +10651,41 @@
         "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
       ]
     },
-    "74e0c52178b2f0827ab81b54": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Nova",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/20px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
+    "f5dcb8a53791": {
+      "reason": "source_error",
+      "source": "https://www.npr.org/2026/10/23/nx-s1-6000392/after-a-year-of-uncertainty-job-corps-is-making-a-comeback",
+      "error": "ReadTimeout"
     },
-    "8af54bb949a0c055391d640a": {
-      "reason": "no_source_image",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "existing_representative_preserved": true
+    "1bc48ff58cd1": {
+      "reason": "source_error",
+      "source": "https://www.npr.org/2026/10/22/nx-s1-6000127/china-mahjong-tile-game-taixing-manufacturing",
+      "error": "ReadTimeout"
     },
-    "a6510273f0889bf4d7684eae": {
-      "reason": "invalid_source_images",
-      "source": "https://mua.ac.ke/",
-      "candidate_count": 5,
-      "candidates": [
-        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
-        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png",
-        "https://mua.ac.ke/wp-content/uploads/2026/11/MUA_New_Chancellor_Banner.png"
-      ]
+    "08f803d5a037": {
+      "reason": "source_error",
+      "source": "https://www.cbc.ca/news/world/jordan-church-attack-arrests-9.7395806?cmp=rss",
+      "error": "ReadTimeout"
     },
-    "ef614dcb4163038685679d1d": {
-      "reason": "no_source_image",
-      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/"
+    "3a7a236264a1": {
+      "reason": "source_error",
+      "source": "https://www.npr.org/2026/10/31/nx-s1-6024426/binance-crypto-heist-cyber-criminals-north-korea",
+      "error": "ReadTimeout"
+    },
+    "54f88bc32999": {
+      "reason": "source_error",
+      "source": "https://www.npr.org/2026/10/30/nx-s1-6019371/la-bola-negra-review-los-javis",
+      "error": "ReadTimeout"
+    },
+    "72a42f4720d1": {
+      "reason": "source_error",
+      "source": "https://www.npr.org/2026/10/30/nx-s1-6018258/affordability-florida-amendment-3",
+      "error": "ReadTimeout"
+    },
+    "b6ee43ce2d8a": {
+      "reason": "source_error",
+      "source": "https://www.cbc.ca/news/world/united-states-iran-conflict-next-round-9.7392215",
+      "error": "ReadTimeout"
     }
   },
-  "mode": "directory"
+  "mode": "all"
 }
