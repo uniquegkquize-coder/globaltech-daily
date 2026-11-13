@@ -259,6 +259,36 @@ def image_for(p):
  if use_original:
   shutil.copy2(existing,dest)
   return
+ # Custom, topic-specific editorial artwork for the five recruitment explainers.
+ # This is generated locally at build time, not a photograph of a real examination.
+ recruitment_topics={
+  'up-police-constable-result-pet':('UP POLICE CONSTABLE','RESULT & PET','POLICE RECRUITMENT',(20,58,95)),
+  'ssc-gd-2027-recruitment':('SSC GD CONSTABLE','2026-27 UPDATES','CAPF RECRUITMENT',(28,75,68)),
+  'uptet-2026-notification':('UPTET 2026','NOTIFICATION','TEACHER ELIGIBILITY',(70,55,110)),
+  'rrb-ntpc-2026-cbt-city-slip':('RRB NTPC 2026','CBT & CITY SLIP','RAILWAY RECRUITMENT',(110,53,46)),
+  'uppsc-ro-aro-exam-update':('UPPSC RO / ARO','EXAM UPDATES','REVIEW OFFICER',(40,65,112))
+ }
+ for topic,(heading,subheading,strap,bg) in recruitment_topics.items():
+  key=topic.encode('utf-8')
+  topic_id=format(__import__('functools').reduce(lambda h,c:((h*31+c)&0xffffffff),key,2166136261),'08x')*4
+  if s==topic_id:
+   art=Image.new('RGB',(1280,720),bg)
+   pen=ImageDraw.Draw(art)
+   pen.rounded_rectangle((48,48,1232,672),radius=36,outline=(92,213,205),width=5)
+   pen.ellipse((790,90,1240,540),outline=(140,180,185),width=16)
+   pen.ellipse((860,165,1180,485),outline=(100,150,170),width=9)
+   pen.rectangle((80,100,190,114),fill=(65,220,205))
+   try:
+    f='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+    big=ImageFont.truetype(f,70); mid=ImageFont.truetype(f,46);small=ImageFont.truetype(f,28)
+   except OSError:big=mid=small=ImageFont.load_default()
+   pen.text((80,145),heading,font=big,fill='white')
+   pen.text((80,265),subheading,font=mid,fill=(145,239,224))
+   pen.text((80,375),strap,font=small,fill=(220,231,242))
+   pen.rounded_rectangle((80,535,625,607),radius=14,fill=(18,31,48))
+   pen.text((105,554),'EDITORIAL ILLUSTRATION',font=small,fill=(245,245,245))
+   art.save(dest,'JPEG',quality=91,optimize=True)
+   return
  # If a previously selected photo is removed (for irrelevant subject or rights),
  # overwrite its old dist JPEG with a clearly labeled editorial illustration.
  # Never leave a misleading cached photo after the source image was removed.
