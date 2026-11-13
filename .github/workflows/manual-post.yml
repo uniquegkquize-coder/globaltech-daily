@@ -10,7 +10,7 @@ on:
         description: English headline (fill when typing the article here)
         type: string
       category:
-        description: Category slug, e.g. india-news, sports, sarkari-naukri (direct entry defaults to india-news)
+        description: Optional category slug. Leave blank to choose automatically from the article.
         type: string
       hi_title:
         description: Hindi headline (optional)
@@ -73,7 +73,7 @@ jobs:
             .inputs as $input
             | ($input.article | try fromjson catch null) as $copied
             | (if ($copied | type) == "object" and ($copied | has("en_body")) then $copied
-               else {en_body: $input.article, category: "india-news"} end)
+               else {en_body: $input.article} end)
             + ($input | {en_title, category, hi_title, hi_body, source, image_url, image_upload, image_credit, image_license}
                | with_entries(select(.value != null and .value != "")))
           ' "$GITHUB_EVENT_PATH" > "$submission"

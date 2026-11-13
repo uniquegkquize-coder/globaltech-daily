@@ -27,7 +27,7 @@ function preview() {
   const lang = language.value;
   document.querySelector('#preview').lang = lang;
   document.querySelector('#preview-category').textContent =
-    data.category ? form.elements.category.selectedOptions[0].textContent : '';
+    form.elements.category.selectedOptions[0].textContent;
   document.querySelector('#preview-title').textContent =
     data[lang + '_title'].trim() || 'आपका शीर्षक यहाँ दिखेगा';
   document.querySelector('#preview-body').textContent =

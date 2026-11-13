@@ -27,7 +27,7 @@ def repair(posts_dir, write=False):
         if updated == post:
             continue
         # Refuse oscillating rules rather than moving an article on every run.
-        if route_category(post.get('en_title') or post.get('source_title', ''), new, post.get('source', '')) != new:
+        if not post.get('manual_category_mode') and route_category(post.get('en_title') or post.get('source_title', ''), new, post.get('source', '')) != new:
             raise ValueError(f'Unstable category routing: {path.name}: {old} -> {new}')
         changes.append({'id': post['id'], 'from': old, 'to': new, 'title': post.get('en_title', '')})
         if write:

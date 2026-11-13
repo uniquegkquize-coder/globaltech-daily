@@ -32,6 +32,8 @@ def recent_priority(posts,limit=8,now=None):
     return sorted(recent,key=lambda p:(int((now-timestamp(p.get('source_published_at') or p.get('date')))//21600),-max(PRIORITY.get(c,4) for c in memberships(p)),-timestamp(p.get('source_published_at') or p.get('date'))))[:limit]
 
 def exam_bucket(post):
+    if post.get('manual_category_mode'):
+        return post['category']
     text=post.get('en_title','')+' '+post.get('hi_title','')
     bucket=classify(text,post.get('category','technology'))
     if bucket=='sarkari-naukri':

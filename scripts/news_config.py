@@ -93,7 +93,7 @@ def classify(title, default='technology'):
 
 def memberships(post):
     original=post.get('category','technology')
-    if post.get('directory_kind') or post.get('content_type') == 'evergreen_directory_guide':
+    if post.get('manual_category_mode') or post.get('directory_kind') or post.get('content_type') == 'evergreen_directory_guide':
         return {original}
     topic=route_category(post.get('en_title') or post.get('source_title',''),original,post.get('source',''))
     # Only related parent sections may share a story. A discovery-page label

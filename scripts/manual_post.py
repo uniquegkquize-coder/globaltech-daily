@@ -13,7 +13,7 @@ import unicodedata
 from urllib.parse import quote, urlsplit
 
 from editorial_quality import normalize_post
-from news_config import CATEGORIES
+from news_config import CATEGORIES, route_category
 from story_identity import canonical_lead_key, same_story
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,14 +49,42 @@ def title_key(value):
     ).split())
 
 
+def infer_category(post):
+    """Prefer a headline match, then a source section or the opening text."""
+    fallback = 'india-news'
+    for language in ('en', 'hi'):
+        topic = route_category(post[language + '_title'], fallback)
+        if topic != fallback:
+            return topic
+    topic = route_category(post['en_title'], fallback, post.get('source', ''))
+    if topic != fallback:
+        return topic
+    for language in ('en', 'hi'):
+        opening = next(
+            (line.strip() for line in post[language + '_body'].splitlines()
+             if line.strip() and not line.lstrip().startswith(('#', '-', '*', '>'))),
+            '',
+        )
+        topic = route_category(opening[:400], fallback)
+        if topic != fallback:
+            return topic
+    return fallback
+
+
+def submission_hash(post, photo):
+    fingerprint = {key: value for key, value in post.items()
+                   if key not in ('date', 'manual_category_mode')}
+    fingerprint['photo'] = photo
+    return hashlib.sha256(json.dumps(fingerprint, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+
+
 def prepare(data, now):
     if not isinstance(data, dict):
         raise ValueError('Paste the submission copied from the GlobeWire editor.')
     post = {'manual_post': True, 'date': now.isoformat()}
-    category = text_field(data, 'category', 1)
-    if category not in CATEGORIES:
-        raise ValueError('Choose a GlobeWire category.')
-    post['category'] = category
+    category = text_field(data, 'category')
+    if category and category not in CATEGORIES:
+        raise ValueError('Choose a valid GlobeWire category or leave it blank for automatic selection.')
     post['en_title'] = text_field(data, 'en_title', 5, 180)
     post['en_body'] = text_field(data, 'en_body', 150, 24000)
     post['en_meta'] = text_field(data, 'en_meta', maximum=160)
@@ -77,6 +105,8 @@ def prepare(data, now):
     else:
         post['original_reporting'] = True
         identity = 'globewire-original:' + title_key(post['en_title'])
+    post['category'] = category or infer_category(post)
+    post['manual_category_mode'] = 'selected' if category else 'automatic'
     post['id'] = hashlib.sha256(identity.encode()).hexdigest()[:12]
     post = normalize_post(post)
     article_slug = re.sub(r'[^a-z0-9]+', '-', post['url_title'].lower()).strip('-')[:75].rstrip('-')
@@ -102,13 +132,9 @@ def prepare(data, now):
             raise ValueError('A photo needs an upload or HTTPS link, plus credit and reuse terms.')
     if photo['url']:
         https_url(photo['url'])
-    fingerprint = {key: value for key, value in post.items() if key != 'date'}
-    fingerprint['photo'] = photo
+    post['manual_submission'] = submission_hash(post, photo)
     if upload:
         photo['upload'] = upload
-    post['manual_submission'] = hashlib.sha256(
-        json.dumps(fingerprint, sort_keys=True, ensure_ascii=False).encode()
-    ).hexdigest()
     return post, paths, photo
 
 
@@ -201,13 +227,14 @@ def run(submission, check):
                 for suffix in ('.jpg', '.json'):
                     (ROOT / 'content/featured' / (post['id'] + suffix)).unlink(missing_ok=True)
                 raise ValueError('Photo import failed. Check the uploaded file or direct photo link.') from exc
-    result = {'id': post['id'], 'already_saved': already_saved,
+    result = {'id': post['id'], 'already_saved': already_saved, 'category': post['category'],
               'urls': {lang: SITE + path for lang, path in paths.items()}}
     print(json.dumps(result, ensure_ascii=False))
     if summary := os.environ.get('GITHUB_STEP_SUMMARY'):
         heading = 'Already saved' if already_saved else ('Checks passed' if check else 'Article saved to main')
         with open(summary, 'a', encoding='utf-8') as stream:
             stream.write(f'## {heading}\n\n')
+            stream.write(f'Category: **{CATEGORIES[post["category"]][0]}** (`{post["category"]}`)\n\n')
             if not check or already_saved:
                 stream.write('Article links become available after the Oracle deployment.\n\n')
             for lang, url in result['urls'].items():

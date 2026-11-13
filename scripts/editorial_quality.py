@@ -17,7 +17,8 @@ def normalize_post(post):
     except ImportError:
         from news_config import route_category
     result = dict(post)
-    if not post.get('directory_kind') and post.get('content_type') != 'evergreen_directory_guide':
+    if (not post.get('manual_category_mode') and not post.get('directory_kind')
+            and post.get('content_type') != 'evergreen_directory_guide'):
         old = post.get('category', 'technology')
         new = route_category(post.get('en_title') or post.get('source_title', ''), old, post.get('source', ''))
         if new != old:
