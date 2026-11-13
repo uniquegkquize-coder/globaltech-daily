@@ -1,0 +1,29 @@
+{
+  "en_title": "IBM Introduces Identity and Control Tools for Enterprise AI Agents",
+  "hi_title": "IBM ने एंटरप्राइज एआई एजेंटों के लिए नई पहचान और नियंत्रण प्रणाली पेश की",
+  "en_body": "At the TechXchange 2026 conference, IBM announced new capabilities designed to help developers, IT, and security teams manage and secure enterprise AI agents. According to Gartner projections cited by IBM, the average Fortune 500 enterprise could use more than 150,000 AI agents by 2028, though only a small fraction of organizations currently feel equipped with proper governance.\n\nTo address credential management and security challenges, IBM and HashiCorp are extending HashiCorp Vault to AI agents. The updated platform issues short-lived, governed credentials and integrates Agent Identity to establish clear ownership and lifecycle records. Additionally, Vault 2.2 introduces post-quantum encryption readiness and automated credential renewal.\n\n### Key Ecosystem and Management Tools\n\n*   **IBM watsonx Orchestrate:** Offers discovery (tech preview) across platforms like Amazon Bedrock, Microsoft Foundry, and Google Gemini, alongside isolation sandboxes (tech preview) and built-in cost tracking.\n*   **IBM Integration Intelligence Hub:** Provides context through a Unified Context Engine so agents can safely interact with existing APIs and systems.\n*   **IBM Concert and Terraform:** Help teams identify high-risk vulnerabilities, manage infrastructure dependencies, and execute approved changes safely.\n*   **IBM Z Atlas:** Maps z/OS stacks to minimize unplanned outages related to unverified configuration updates.\n\n### Availability Status\n\n*   **Generally Available:** HashiCorp Vault 2.2, Agent Identity, watsonx Orchestrate evaluation tools, IBM Concert, and Terraform policy.\n*   **Public Preview:** Secure Hub, Terraform Developer Portal, Terraform remote MCP server, and IBM Z Atlas.\n*   **Tech Preview:** IBM Integration Intelligence Hub, along with watsonx Orchestrate discover and contain features.\n\nOrganizations can review official announcements and technical documentation directly through IBM's corporate channels or verify session replays via the TechXchange portal.",
+  "hi_body": "TechXchange 2026 सम्मेलन में, IBM ने डेवलपर्स, आईटी और सुरक्षा टीमों को एंटरप्राइज एआई एजेंटों को प्रबंधित और सुरक्षित करने में मदद करने के लिए नई क्षमताओं की घोषणा की। Gartner के अनुमानों के अनुसार, 2028 तक औसत Fortune 500 कंपनी 150,000 से अधिक एआई एजेंटों का उपयोग करेगी, हालांकि केवल 13% संगठन उचित शासन होने का विश्वास रखते हैं।\n\nक्रेडेंशियल प्रबंधन और सुरक्षा चुनौतियों से निपटने के लिए, HashiCorp Vault को एआई एजेंटों तक विस्तारित किया जा रहा है। यह अपडेटेड प्लेटफॉर्म अल्पकालिक, नियंत्रित क्रेडेंशियल जारी करता है और स्पष्ट स्वामित्व स्थापित करने के लिए एजेंट पहचान को एकीकृत करता है। इसके अतिरिक्त, Vault 2.2 में पोस्ट-क्वांटम एन्क्रिप्शन और स्वचालित क्रेडेंशियल नवीनीकरण शामिल है।\n\n### मुख्य पारिस्थितिकी तंत्र और प्रबंधन उपकरण\n\n*   **IBM watsonx Orchestrate:** Amazon Bedrock, Microsoft Foundry और Google Gemini जैसे प्लेटफार्मों पर डिस्कवरी (टेक पूर्वावलोकन), आइसोलेशन सैंडबॉक्स और अंतर्निहित लागत ट्रैकिंग प्रदान करता है।\n*   **IBM Integration Intelligence Hub:** एजेंटों को मौजूदा एपीआई और सिस्टम के साथ सुरक्षित रूप से बातचीत करने में सक्षम बनाता है।\n*   **IBM Concert और Terraform:** टीमों को उच्च जोखिम वाली कमजोरियों की पहचान करने और बुनियादी ढांचे के बदलावों को सुरक्षित रूप से लागू करने में मदद करते हैं।\n*   **IBM Z Atlas:** अनसत्यापित कॉन्फ़िगरेशन अपडेट से जुड़े अप्रत्याशित आउटेज को कम करने के लिए z/OS स्टैक को मैप करता है।\n\n### उपलब्धता की स्थिति\n\n*   **सामान्य रूप से उपलब्ध:** HashiCorp Vault 2.2, एजेंट पहचान, watsonx Orchestrate मूल्यांकन टूल, IBM Concert और Terraform पॉलिसी।\n*   **सार्वजनिक पूर्वावलोकन:** Secure Hub, Terraform डेवलपर पोर्टल, Terraform रिमोट MCP सर्वर और IBM Z Atlas।\n*   **टेक पूर्वावलोकन:** IBM Integration Intelligence Hub, और watsonx Orchestrate डिस्कवरी व नियंत्रण सुविधाएँ।\n\nसंगठन IBM के आधिकारिक चैनलों के माध्यम से घोषणाओं की समीक्षा कर सकते हैं और TechXchange पोर्टल पर सत्र रिप्ले की जांच कर सकते हैं।",
+  "en_meta": "IBM announced new identity, security, and orchestration capabilities for enterprise AI agents at TechXchange 2026, featuring updates to HashiCorp Vault.",
+  "hi_meta": "IBM ने TechXchange 2026 में एंटरप्राइज एआई एजेंटों के लिए नई पहचान, सुरक्षा और प्रबंधन क्षमताओं की घोषणा की, जिसमें HashiCorp Vault अपडेट शामिल हैं।",
+  "en_keywords": [
+    "IBM",
+    "AI agents",
+    "HashiCorp Vault",
+    "watsonx Orchestrate",
+    "enterprise security"
+  ],
+  "hi_keywords": [
+    "IBM",
+    "एआई एजेंट",
+    "HashiCorp Vault",
+    "watsonx Orchestrate",
+    "एंटरप्राइज सुरक्षा"
+  ],
+  "source_published_at": "2026-10-27T04:01:00Z",
+  "id": "0dc1ed0854a3",
+  "source": "https://www.prnewswire.com/news-releases/ibm-introduces-identity-and-control-for-ai-agents-securing-frontier-intelligence-for-the-enterprise-302920156.html",
+  "date": "2026-11-13T00:13:04.623614+00:00",
+  "source_title": "IBM Introduces Identity and Control for AI Agents, Securing Frontier Intelligence for the Enterprise - PR Newswire",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,31 @@
+{
+  "en_title": "Haut.AI Unveils SkinFM Foundation Model Alongside SkinBench Benchmark Highlighting AI Skin Analysis Flaws",
+  "hi_title": "Haut.AI ने SkinFM मॉडल लॉन्च किया, साथ ही SkinBench बेंचमार्क ने AI त्वचा विश्लेषण की कमियों को उजागर किया",
+  "en_body": "Haut.AI has introduced SkinFM, an image-based artificial intelligence foundation model trained on over 4 million real skin images to accelerate customized skin measurements. Alongside this release, the company published SkinBench, a public benchmark evaluating six leading AI models from providers such as Google, OpenAI, Anthropic, xAI, and Alibaba.\n\n### Key Findings from SkinBench\n\nAccording to Haut.AI's test results, general-purpose and specialized models frequently struggled with precise dermatological tasks:\n\n* **False Positives:** Multiple leading models incorrectly identified eye puffiness in 95% to 100% of images where the condition was absent.\n* **Wrinkle and Type Classification:** Models showed difficulties accurately locating wrinkles, such as marking the nose and mouth instead of frown lines, and struggled with consistent skin-type classification.\n* **Comparative Scores:** Haut.AI's specialized model achieved higher balanced accuracy and higher scores on specific tasks like deep forehead wrinkles compared to competing general-purpose models.\n* **Mixed Results:** While Haut.AI scored higher overall on the SkinBench Skin Intelligence Score, certain competing models performed better on specific isolated metrics, such as Gemini 3.5 Flash scoring higher in grading crow's feet and assessing skin tone.\n\n### Industry Implications and Verification\n\nThe introduction of SkinFM and SkinBench arrives as consumer reliance on generative AI for beauty and skincare recommendations continues to grow. Industry surveys indicate that a significant percentage of beauty consumers are open to or already utilize AI-powered shopping and advice tools.\n\nExperts note that inaccurate AI assessments can lead to mistaken product recommendations, unnecessary spending, and a decline in consumer trust. Beauty brands and researchers can review the full methodology, model comparisons, and the public leaderboard directly at skinbench.ai.",
+  "hi_body": "Haut.AI ने SkinFM नामक एक नई इमेज-आधारित आर्टिफिशियल इंटेलिजेंस फाउंडेशन मॉडल को पेश किया है, जिसे 40 लाख से अधिक वास्तविक त्वचा छवियों पर प्रशिक्षित किया गया है ताकि अनुकूलित त्वचा माप को तेजी से विकसित किया जा सके। इसके साथ ही, कंपनी ने SkinBench नाम से एक सार्वजनिक बेंचमार्क भी जारी किया है, जो Google, OpenAI, Anthropic, xAI और Alibaba सहित छह प्रमुख AI मॉडलों का मूल्यांकन करता है।\n\n### SkinBench के मुख्य निष्कर्ष\n\nHaut.AI के परीक्षण परिणामों के अनुसार, सामान्य-उद्देश्य और विशेष मॉडल त्वचा संबंधी सटीक कार्यों में अक्सर संघर्ष करते दिखे:\n\n* **गलत सकारात्मक परिणाम (False Positives):** कई प्रमुख मॉडलों ने उन छवियों में भी 95% से 100% मामलों में आँखों की सूजन (eye puffiness) का गलत पता लगाया, जहाँ वह मौजूद नहीं थी।\n* **झुर्रियों और प्रकार का वर्गीकरण:** मॉडलों को झुर्रियों का सटीक पता लगाने में कठिनाई हुई, जैसे माथे की रेखाओं के बजाय नाक और मुँह को चिह्नित करना, और वे लगातार त्वचा के प्रकार (skin-type) का वर्गीकरण करने में भी संघर्ष करते नजर आए।\n* **तुलनात्मक स्कोर:** प्रतियोगी सामान्य-उद्देश्य वाले मॉडलों की तुलना में Haut.AI के विशिष्ट मॉडल ने बेहतर संतुलित सटीकता और माथे की गहरी झुर्रियों जैसे विशिष्ट कार्यों पर उच्च स्कोर हासिल किया।\n* **मिश्रित परिणाम:** हालांकि Haut.AI ने SkinBench स्किन इंटेलिजेंस स्कोर पर कुल मिलाकर उच्च अंक प्राप्त किए, लेकिन कुछ प्रतियोगी मॉडलों ने विशिष्ट अलग-अलग मेट्रिक्स पर बेहतर प्रदर्शन किया, जैसे Gemini 3.5 Flash ने कौवे के पैरों (crow's feet) जैसी झुर्रियों और त्वचा के रंग का आकलन करने में बेहतर स्कोर किया।\n\n### उद्योग प्रभाव और सत्यापन\n\nSkinFM और SkinBench का यह परिचय ऐसे समय में आया है जब सौंदर्य और स्किनकेयर सिफारिशों के लिए जनरेटिव AI पर उपभोक्ता की निर्भरता लगातार बढ़ रही है। उद्योग सर्वेक्षण बताते हैं कि सौंदर्य उत्पादों के उपभोक्ता AI-संचालित खरीदारी और सलाह उपकरणों का उपयोग करने के लिए खुले तौर पर तैयार हैं।\n\nविशेषज्ञों का कहना है कि गलत AI आकलन से अनुचित उत्पाद सिफारिशें, अनावश्यक खर्च और उपभोक्ता विश्वास में कमी आ सकती है। सौंदर्य ब्रांड और शोधकर्ता skinbench.ai पर जाकर पूरी पद्धति, मॉडल तुलना और सार्वजनिक लीडरबोर्ड की समीक्षा कर सकते हैं।",
+  "en_meta": "Haut.AI launches SkinFM and SkinBench, a new benchmark revealing that leading AI models frequently misidentify skin concerns like wrinkles and puffiness.",
+  "hi_meta": "Haut.AI ने SkinFM और SkinBench लॉन्च किया। नए बेंचमार्क से पता चलता है कि प्रमुख AI मॉडल त्वचा की समस्याओं का गलत आकलन करते हैं।",
+  "en_keywords": [
+    "SkinFM",
+    "SkinBench",
+    "Haut.AI",
+    "AI skin analysis",
+    "skin intelligence",
+    "artificial intelligence benchmarks"
+  ],
+  "hi_keywords": [
+    "SkinFM",
+    "SkinBench",
+    "Haut.AI",
+    "AI त्वचा विश्लेषण",
+    "स्किन इंटेलिजेंस",
+    "आर्टिफिशियल इंटेलिजेंस बेंचमार्क"
+  ],
+  "source_published_at": "2026-10-27T10:05:00Z",
+  "id": "80f4a0ab0410",
+  "source": "https://www.prnewswire.com/news-releases/hautai-launches-skinfm-its-skin-foundation-model-as-new-skinbench-benchmark-exposes-ai-skin-analysis-flaws-302919982.html",
+  "date": "2026-11-13T00:12:24.845132+00:00",
+  "source_title": "Haut.AI Launches SkinFM, Its Skin Foundation Model, as New SkinBench Benchmark Exposes AI Skin Analysis Flaws - PR Newswire",
+  "category": "ai-news",
+  "image_kind": "conceptual"
+}
