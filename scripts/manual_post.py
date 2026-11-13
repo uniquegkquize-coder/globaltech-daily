@@ -10,7 +10,7 @@ import re
 import subprocess
 import sys
 import unicodedata
-from urllib.parse import urlsplit
+from urllib.parse import quote, urlsplit
 
 from editorial_quality import normalize_post
 from news_config import CATEGORIES
@@ -92,12 +92,20 @@ def prepare(data, now):
         'credit': text_field(data, 'image_credit', maximum=150),
         'license': text_field(data, 'image_license', maximum=250),
     }
-    if any(photo.values()):
-        if not all(photo.values()):
-            raise ValueError('A photo needs an HTTPS image link, credit and reuse terms.')
+    upload = text_field(data, 'image_upload', maximum=180)
+    if upload and not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._ -]*\.(?:jpe?g|png|webp)', upload, re.I):
+        raise ValueError('Enter the uploaded JPG, PNG or WebP filename, including its extension.')
+    if upload and photo['url']:
+        raise ValueError('Fill either image_upload or image_url.')
+    if any(photo.values()) or upload:
+        if not ((photo['url'] or upload) and photo['credit'] and photo['license']):
+            raise ValueError('A photo needs an upload or HTTPS link, plus credit and reuse terms.')
+    if photo['url']:
         https_url(photo['url'])
     fingerprint = {key: value for key, value in post.items() if key != 'date'}
     fingerprint['photo'] = photo
+    if upload:
+        photo['upload'] = upload
     post['manual_submission'] = hashlib.sha256(
         json.dumps(fingerprint, sort_keys=True, ensure_ascii=False).encode()
     ).hexdigest()
@@ -135,30 +143,64 @@ def check_existing(folder, post):
     return False
 
 
+def import_linked_photo(post, photo):
+    subprocess.run(
+        [sys.executable, str(ROOT / 'scripts/import_image.py'), post['id'],
+         photo['url'], post['source'], photo['license'], photo['credit']],
+        check=True, timeout=45, capture_output=True,
+    )
+    metadata_path = ROOT / 'content/featured' / (post['id'] + '.json')
+    metadata = json.loads(metadata_path.read_text(encoding='utf-8'))
+    metadata.update(source_image=photo['url'], license_name=photo['license'])
+    metadata_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+
+def read_upload(name):
+    path = ROOT / 'content/manual-uploads' / name
+    if path.is_symlink() or not path.is_file():
+        raise ValueError(f'Upload {name} to content/manual-uploads on main first.')
+    with path.open('rb') as stream:
+        content = stream.read(15_000_001)
+    if len(content) > 15_000_000:
+        raise ValueError('Photo must be at most 15 MB.')
+    return content
+
+
 def run(submission, check):
     post, paths, photo = prepare(submission, dt.datetime.now(dt.timezone.utc))
     folder = ROOT / 'content/posts'
+    upload = photo.get('upload')
+    if upload:
+        from import_image import prepare_image, save_featured
+
+        uploaded_bytes = read_upload(upload)
+        uploaded_sha = hashlib.sha256(uploaded_bytes).hexdigest()
+        post['manual_submission'] = hashlib.sha256(
+            (post['manual_submission'] + upload + uploaded_sha).encode()
+        ).hexdigest()
+        if check:
+            try:
+                prepare_image(uploaded_bytes, minimum_width=1, formats=['JPEG', 'PNG', 'WEBP'])
+            except OSError as exc:
+                raise ValueError('The upload could not be opened as JPG, PNG or WebP.') from exc
     already_saved = check_existing(folder, post)
     if not check and not already_saved:
         path = folder / f'{post["id"]}.json'
         with path.open('x', encoding='utf-8') as stream:
             stream.write(json.dumps(post, indent=2, ensure_ascii=False) + '\n')
-        if photo['url']:
+        if photo['url'] or upload:
             try:
-                subprocess.run(
-                    [sys.executable, str(ROOT / 'scripts/import_image.py'), post['id'],
-                     photo['url'], post['source'], photo['license'], photo['credit']],
-                    check=True, timeout=45, capture_output=True,
-                )
-                metadata_path = ROOT / 'content/featured' / (post['id'] + '.json')
-                metadata = json.loads(metadata_path.read_text(encoding='utf-8'))
-                metadata.update(source_image=photo['url'], license_name=photo['license'])
-                metadata_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-            except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError, ValueError):
+                if upload:
+                    url = 'https://github.com/uniquegkquize-coder/globaltech-daily/blob/main/content/manual-uploads/' + quote(upload)
+                    save_featured(ROOT, post, uploaded_bytes, 'licensed_source',
+                                  photo['credit'], photo['license'], post['source'], url, uploaded=True)
+                else:
+                    import_linked_photo(post, photo)
+            except (OSError, ValueError, subprocess.SubprocessError) as exc:
                 path.unlink(missing_ok=True)
                 for suffix in ('.jpg', '.json'):
                     (ROOT / 'content/featured' / (post['id'] + suffix)).unlink(missing_ok=True)
-                raise ValueError('Photo import failed. Use a direct JPEG/PNG/WebP link at least 1200 px wide, or clear the photo fields for an illustration.') from None
+                raise ValueError('Photo import failed. Check the uploaded file or direct photo link.') from exc
     result = {'id': post['id'], 'already_saved': already_saved,
               'urls': {lang: SITE + path for lang, path in paths.items()}}
     print(json.dumps(result, ensure_ascii=False))

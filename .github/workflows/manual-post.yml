@@ -24,11 +24,14 @@ on:
       image_url:
         description: Direct HTTPS photo link (optional)
         type: string
+      image_upload:
+        description: Filename uploaded to content/manual-uploads on main, e.g. photo.jpg
+        type: string
       image_credit:
-        description: Photo credit (required with a photo link)
+        description: Photo credit (required with any photo)
         type: string
       image_license:
-        description: Photo permission or license (required with a photo link)
+        description: Photo permission or license (required with any photo)
         type: string
       mode:
         description: Check or publish
@@ -54,11 +57,11 @@ jobs:
             scripts
             content/posts
             content/featured
+            content/manual-uploads
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Install photo importer dependencies
-        if: inputs.mode == 'publish'
         run: pip install 'requests>=2.31,<3' 'Pillow>=10,<13'
       - name: Validate and save the article
         env:
@@ -71,7 +74,7 @@ jobs:
             | ($input.article | try fromjson catch null) as $copied
             | (if ($copied | type) == "object" and ($copied | has("en_body")) then $copied
                else {en_body: $input.article, category: "india-news"} end)
-            + ($input | {en_title, category, hi_title, hi_body, source, image_url, image_credit, image_license}
+            + ($input | {en_title, category, hi_title, hi_body, source, image_url, image_upload, image_credit, image_license}
                | with_entries(select(.value != null and .value != "")))
           ' "$GITHUB_EVENT_PATH" > "$submission"
           if [ "$POST_MODE" = check ]; then

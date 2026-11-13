@@ -86,9 +86,14 @@ function validate(data) {
     return 'हिंदी संस्करण के लिए हिंदी शीर्षक और कम से कम 150 अक्षर का हिंदी लेख दें।';
   }
   if (data.source && !httpsUrl(data.source)) return 'स्रोत का पूरा HTTPS लिंक दें।';
-  if (data.image_url || data.image_credit || data.image_license) {
-    if (!httpsUrl(data.image_url) || !data.image_credit || !data.image_license) {
-      return 'फोटो के लिए HTTPS लिंक, क्रेडिट और उपयोग की अनुमति भरें।';
+  if (data.image_upload && data.image_url) return 'अपलोड की गई फोटो का नाम या फोटो लिंक, दोनों में से एक भरें।';
+  if (data.image_upload && !/^[a-z0-9][a-z0-9._ -]*\.(jpe?g|png|webp)$/i.test(data.image_upload)) {
+    return 'अपलोड की गई JPG, PNG या WebP फोटो का पूरा फ़ाइल नाम भरें।';
+  }
+  if (data.image_url && !httpsUrl(data.image_url)) return 'फोटो का पूरा HTTPS लिंक दें।';
+  if (data.image_upload || data.image_url || data.image_credit || data.image_license) {
+    if (!(data.image_upload || data.image_url) || !data.image_credit || !data.image_license) {
+      return 'फोटो, क्रेडिट और उपयोग की अनुमति भरें।';
     }
   }
   return '';
