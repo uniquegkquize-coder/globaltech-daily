@@ -1,0 +1,31 @@
+{
+  "en_title": "TeamViewer Issues Security Patch for Critical Vulnerability (CVE-2026-111585)",
+  "hi_title": "TeamViewer ने गंभीर सुरक्षा खामी (CVE-2026-111585) के लिए पैच जारी किया",
+  "en_body": "## Overview of the Vulnerability\nTeamViewer has released version 15.83 to address a critical security flaw, tracked as CVE-2026-111585, which allows a remote computer being controlled (the host) to potentially attack the computer controlling it (the viewer). This vulnerability, discovered by researcher Omri Dar of security firm Remedio, allows the host to trigger a memory overflow in the viewer's client.\n\n## Technical Details\nIn a standard remote session, the host informs the viewer of its screen dimensions. The vulnerability occurs because the viewer incorrectly calculates the memory required for this image data. According to the research:\n\n*   **Memory Corruption:** An incorrectly calculated buffer size allows incoming screen data to overwrite memory beyond the allocated space.\n*   **Impact:** This can force the viewer's TeamViewer application to crash. On Windows systems, it has been demonstrated that this flaw can be leveraged to execute unauthorized code.\n*   **Scope:** The issue affects the TeamViewer Full Client (Windows, Linux, macOS), the Windows Portable edition, and the Android Remote Control app for all versions prior to 15.83.\n\n## Mitigation and Verification\nTeamViewer states there is currently no workaround for this issue. Users are strongly advised to update to version 15.83 or later immediately. While TeamViewer indicates that code execution potential varies by platform, and the specific proof-of-concept for Windows required additional steps, the severity score of 8.8 warrants prompt action.\n\nAt the time of disclosure on October 29, 2026, TeamViewer reported that it was unaware of any active exploits targeting this vulnerability, and it was not included in the CISA Known Exploited Vulnerabilities catalog. Users should verify their software version via the 'About' section in their TeamViewer application to ensure they are running 15.83 or newer. Note that the update also addresses additional high-severity flaws, making it a critical security release for all deployments, including those running the TeamViewer Host module.",
+  "hi_body": "## भेद्यता का अवलोकन\nTeamViewer ने एक गंभीर सुरक्षा खामी, जिसे CVE-2026-111585 के रूप में ट्रैक किया गया है, को ठीक करने के लिए संस्करण 15.83 जारी किया है। यह खामी एक रिमोट कंप्यूटर (होस्ट) को उस कंप्यूटर (व्यूअर) पर हमला करने की अनुमति दे सकती है जो उसे नियंत्रित कर रहा है। सुरक्षा फर्म Remedio के शोधकर्ता ओमेरी डार द्वारा खोजी गई यह भेद्यता, होस्ट को व्यूअर के क्लाइंट में मेमोरी ओवरफ्लो ट्रिगर करने की अनुमति देती है।\n\n## तकनीकी विवरण\nएक सामान्य रिमोट सत्र में, होस्ट व्यूअर को अपने स्क्रीन आयामों के बारे में जानकारी देता है। यह भेद्यता इसलिए होती है क्योंकि व्यूअर इस इमेज डेटा के लिए आवश्यक मेमोरी की गलत गणना करता है। शोध के अनुसार:\n\n*   **मेमोरी करप्शन:** बफर का गलत आकार आने वाले स्क्रीन डेटा को आवंटित स्थान से आगे की मेमोरी को ओवरराइट करने की अनुमति देता है।\n*   **प्रभाव:** यह व्यूअर के TeamViewer एप्लिकेशन को क्रैश कर सकता है। विंडोज सिस्टम पर, यह प्रदर्शित किया गया है कि इस खामी का उपयोग अनधिकृत कोड निष्पादित करने के लिए किया जा सकता है।\n*   **दायरा:** यह समस्या 15.83 से पहले के सभी संस्करणों में TeamViewer फुल क्लाइंट (विंडोज, लिनक्स, मैकओएस), विंडोज पोर्टेबल संस्करण और एंड्रॉइड रिमोट कंट्रोल ऐप को प्रभावित करती है।\n\n## समाधान और सत्यापन\nTeamViewer का कहना है कि इस समस्या का वर्तमान में कोई अन्य समाधान नहीं है। उपयोगकर्ताओं को सलाह दी जाती है कि वे तुरंत संस्करण 15.83 या बाद के संस्करण में अपडेट करें। हालांकि TeamViewer बताता है कि कोड निष्पादन की संभावना प्लेटफॉर्म के आधार पर भिन्न होती है, फिर भी 8.8 का गंभीरता स्कोर तत्काल कार्रवाई की मांग करता है।\n\n29 अक्टूबर, 2026 को खुलासे के समय, TeamViewer ने बताया कि उसे इस भेद्यता का लाभ उठाने वाले किसी भी सक्रिय हमले की जानकारी नहीं है, और यह CISA की ज्ञात शोषित भेद्यता सूची में शामिल नहीं थी। उपयोगकर्ताओं को यह सुनिश्चित करने के लिए कि वे 15.83 या नए संस्करण का उपयोग कर रहे हैं, अपने TeamViewer एप्लिकेशन के 'अबाउट' अनुभाग के माध्यम से अपने सॉफ़्टवेयर संस्करण को सत्यापित करना चाहिए। ध्यान दें कि यह अपडेट अन्य उच्च-गंभीरता वाली खामियों को भी ठीक करता है, जिससे यह TeamViewer होस्ट मॉड्यूल चलाने वाले सहित सभी परिनियोजन के लिए एक महत्वपूर्ण सुरक्षा रिलीज़ बन जाता है।",
+  "en_meta": "TeamViewer has released version 15.83 to fix CVE-2026-111585, a vulnerability allowing remote hosts to attack viewing computers. Update your software…",
+  "hi_meta": "TeamViewer ने CVE-2026-111585 को ठीक करने के लिए संस्करण 15.83 जारी किया है, जो होस्ट को व्यूअर कंप्यूटर पर हमला करने की अनुमति देता है। तुरंत अपडेट करें।",
+  "en_keywords": [
+    "TeamViewer",
+    "CVE-2026-111585",
+    "cybersecurity",
+    "remote access",
+    "software patch",
+    "Remedio"
+  ],
+  "hi_keywords": [
+    "TeamViewer",
+    "CVE-2026-111585",
+    "साइबर सुरक्षा",
+    "रिमोट एक्सेस",
+    "सॉफ्टवेयर अपडेट",
+    "Remedio"
+  ],
+  "source_published_at": "2026-10-30T20:47:00+05:30",
+  "id": "33f30c5083f6",
+  "source": "https://thehackernews.com/2026/10/teamviewer-flaw-lets-remote-computers.html",
+  "date": "2026-11-13T09:35:22.696419+00:00",
+  "source_title": "TeamViewer Flaw Lets Remote Computers Attack Users Who Connect to Control Them - The Hacker News",
+  "category": "technology",
+  "image_kind": "conceptual"
+}

@@ -1,0 +1,34 @@
+{
+  "en_title": "Scaling GitHub's Git Infrastructure for an Agent-Driven Future",
+  "hi_title": "एजेंट-संचालित भविष्य के लिए GitHub के Git इंफ्रास्ट्रक्चर को स्केल करना",
+  "en_body": "## Addressing Infrastructure Constraints\nTo manage exponential growth in Git traffic, GitHub is migrating repositories to Azure while evolving its internal storage architecture. Physical constraints in data centers and regional power capacity necessitated a swift migration to cloud infrastructure, which began in August 2025. Currently, most repositories distribute their replicas across both GitHub's data centers and Azure to balance availability and latency.\n\n## Optimizing Write Throughput\nMoving replicas across regions introduces latency, specifically a 25ms round-trip delay. Under the existing architecture, this latency limits write throughput because the system uses repository-wide locks, forcing writes to queue behind the slowest healthy replica. To address this, GitHub is shifting from repository-level serialization to **per-reference serialization**. \n\n*   **Per-reference serialization:** Only writes contending on the same reference are queued, allowing independent updates to proceed concurrently.\n*   **Result:** Internal testing demonstrated a 3–4x improvement in write throughput with lower latency.\n\n## Decoupling Read and Write Operations\nGitHub is transitioning toward a decoupled model where storage is separated from compute. This involves the introduction of **virtual replicas**:\n\n1.  **Virtual Write Replica:** Acts as a bridge to Azure Blob Storage, ensuring writes are durable without requiring read-heavy compute nodes.\n2.  **Virtual Read Replica:** Allows for elastic scaling of read operations, which can be instantiated on demand without joining the core consensus quorum.\n\nThis shift allows GitHub to scale read and write resources independently, accommodating the heavy read-skew typical of most repositories. Future developments will focus on further optimizing write throughput and refining commit protocols to support the next generation of repository growth.\n\nFor more details, engineers can follow updates on the official GitHub Engineering blog.",
+  "hi_body": "## इंफ्रास्ट्रक्चर बाधाओं का समाधान\nGit ट्रैफ़िक में भारी वृद्धि को प्रबंधित करने के लिए, GitHub अपने रिपॉजिटरी को Azure में माइग्रेट कर रहा है और साथ ही अपनी आंतरिक स्टोरेज आर्किटेक्चर को विकसित कर रहा है। डेटा सेंटरों और क्षेत्रीय बिजली क्षमता की भौतिक सीमाओं के कारण क्लाउड इंफ्रास्ट्रक्चर पर तेजी से माइग्रेशन करना आवश्यक हो गया था, जो अगस्त 2025 में शुरू हुआ। वर्तमान में, अधिकांश रिपॉजिटरी उपलब्धता और लेटेंसी को संतुलित करने के लिए अपने रेप्लिका को GitHub के डेटा सेंटरों और Azure के बीच वितरित करते हैं।\n\n## राइट थ्रूपुट का अनुकूलन\nक्षेत्रों के बीच रेप्लिका को ले जाने से लेटेंसी (लगभग 25ms का राउंड-ट्रिप) बढ़ जाती है। मौजूदा आर्किटेक्चर में, यह लेटेंसी राइट थ्रूपुट को सीमित करती है क्योंकि सिस्टम रिपॉजिटरी-व्यापी लॉक का उपयोग करता है। इसे हल करने के लिए, GitHub 'रिपॉजिटरी-स्तरीय सीरियलाइजेशन' से 'प्रति-रेफरेंस (per-reference) सीरियलाइजेशन' की ओर बढ़ रहा है।\n\n*   **प्रति-रेफरेंस सीरियलाइजेशन:** केवल उन्हीं राइट्स को कतार में रखा जाता है जो एक ही रेफरेंस पर प्रतिस्पर्धा करते हैं, जिससे स्वतंत्र अपडेट एक साथ हो सकते हैं।\n*   **परिणाम:** आंतरिक परीक्षणों में कम लेटेंसी के साथ 3-4 गुना अधिक थ्रूपुट देखा गया है।\n\n## रीड और राइट ऑपरेशंस को अलग करना\nGitHub एक ऐसे मॉडल की ओर बढ़ रहा है जहां स्टोरेज को कंप्यूट से अलग किया जाता है। इसमें **वर्चुअल रेप्लिका** का उपयोग शामिल है:\n\n1.  **वर्चुअल राइट रेप्लिका:** यह Azure Blob Storage के लिए एक पुल के रूप में कार्य करता है, जो यह सुनिश्चित करता है कि राइट्स टिकाऊ हों, बिना रीड-हैवी कंप्यूट नोड्स की आवश्यकता के।\n2.  **वर्चुअल रीड रेप्लिका:** यह रीड ऑपरेशंस को मांग के अनुसार बढ़ाने की अनुमति देता है, जिसे कोर कंसेंसस कोरम में शामिल हुए बिना सक्रिय किया जा सकता है।\n\nयह बदलाव GitHub को रीड और राइट संसाधनों को स्वतंत्र रूप से स्केल करने की अनुमति देता है, जिससे अधिकांश रिपॉजिटरी में होने वाले भारी रीड-स्केव को समायोजित किया जा सके। भविष्य के विकास का लक्ष्य राइट थ्रूपुट को और अधिक अनुकूलित करना और रिपॉजिटरी विकास की अगली पीढ़ी का समर्थन करने के लिए कमिट प्रोटोकॉल को परिष्कृत करना है।\n\nअधिक जानकारी के लिए, इंजीनियर GitHub इंजीनियरिंग ब्लॉग पर अपडेट देख सकते हैं।",
+  "en_meta": "GitHub is evolving its Git storage architecture to support high-traffic agent operations by decoupling storage, optimizing write serialization, and using Azure.",
+  "hi_meta": "GitHub अपनी Git स्टोरेज आर्किटेक्चर को विकसित कर रहा है ताकि स्टोरेज को अलग करके और राइट सीरियलाइजेशन को अनुकूलित करके उच्च-ट्रैफ़िक का समर्थन किया जा सके।",
+  "en_keywords": [
+    "GitHub",
+    "Git infrastructure",
+    "Azure",
+    "scalability",
+    "per-reference serialization",
+    "cloud architecture"
+  ],
+  "hi_keywords": [
+    "GitHub",
+    "Git इंफ्रास्ट्रक्चर",
+    "Azure",
+    "स्केलेबिलिटी",
+    "सीरियलाइजेशन",
+    "क्लाउड आर्किटेक्चर"
+  ],
+  "source_published_at": "2026-10-21T16:00:00+00:00",
+  "id": "4ba30d9b0c53",
+  "source": "https://github.blog/engineering/architecture-optimization/the-bridge-to-agent-scale-git-infrastructure/",
+  "date": "2026-11-13T09:35:41.158147+00:00",
+  "source_title": "The bridge to agent-scale Git infrastructure",
+  "category": "apps-software",
+  "image_kind": "conceptual",
+  "previous_categories": [
+    "technology"
+  ]
+}

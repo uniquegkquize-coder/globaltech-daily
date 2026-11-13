@@ -1,0 +1,30 @@
+{
+  "en_title": "How Bug Bounty Programs Sharpen Security Skills: An Interview with Researcher @r31n",
+  "hi_title": "बग बाउंटी प्रोग्राम सुरक्षा कौशल को कैसे बेहतर बनाते हैं: शोधकर्ता @r31n के साथ एक साक्षात्कार",
+  "en_body": "As Cybersecurity Awareness Month concludes, the GitHub Bug Bounty team has highlighted security researcher @r31n, known for finding high-impact issues in GitHub Enterprise Server. In a published interview, the researcher shared insights into vulnerability discovery, methodology, and the evolving role of artificial intelligence in security research.\n\n## Core Methodologies and Bug Research\n\n* **System Understanding Over Checklists:** Experienced researchers emphasize learning internal application logic, data flows, and trust boundaries rather than relying solely on static payload lists.\n* **Sources and Sinks Approach:** Rather than targeting a predefined vulnerability class, investigators often track how attacker-controlled data (sources) travels to security-sensitive operations (sinks).\n* **Exploit Chains:** High-impact findings frequently involve combining multiple lower-risk anomalies, such as pairing an open redirect with an allowlisted-domain SSRF.\n\n## The Role of AI in Vulnerability Discovery\n\nArtificial intelligence has lowered barriers to entry, acting as an accelerator for navigating complex codebases, tracing data flows, and drafting proof-of-concept scripts. However, researchers stress that AI requires careful manual validation.\n\n* **Context-Specific Prompts:** AI performs best when given precise context and narrow questions rather than vague inquiries.\n* **Verification Required:** Hallucinations, false positives, and confident errors remain common; researchers must independently reproduce and verify every finding.\n* **Traditional Risks Remain:** As applications integrate probabilistic AI components, traditional vulnerabilities like XSS, SQL injection, and command injection still occur if downstream outputs are treated as trusted input.\n\n## Practical Implications and Verification\n\nFor developers and security professionals looking to refine their workflows or verify platform security announcements, official channels provide direct guidance. Bug bounty programs like GitHub's utilize platforms such as HackerOne to process vulnerability reports. Readers can review official GitHub security advisories and documentation to confirm specific patch details and platform updates directly from primary sources.",
+  "hi_body": "साइबर सुरक्षा जागरूकता माह के समापन पर, GitHub बग बाउंटी टीम ने सुरक्षा शोधकर्ता @r31n को spotlight किया है, जो GitHub Enterprise Server में उच्च प्रभाव वाली कमियों को खोजने के लिए जाने जाते हैं। एक प्रकाशित साक्षात्कार में, शोधकर्ता ने कमियों की खोज, कार्यप्रणाली और सुरक्षा अनुसंधान में कृत्रिम बुद्धिमत्ता की भूमिका पर अपने विचार साझा किए।\n\n## मुख्य कार्यप्रणाली और बग अनुसंधान\n\n* **चेकलिस्ट के बजाय सिस्टम की समझ:** अनुभवी शोधकर्ता केवल स्थैतिक पेलोड सूचियों पर भरोसा करने के बजाय आंतरिक एप्लिकेशन लॉजिक, डेटा प्रवाह और ट्रस्ट बाउंड्री को सीखने पर जोर देते हैं।\n* **सोर्स और सिंक दृष्टिकोण:** पूर्व-परिभाषित vulnerability श्रेणी को लक्षित करने के बजाय, अन्वेषक अक्सर यह ट्रैक करते हैं कि हमलावर-नियंत्रित डेटा (सोर्स) सुरक्षा-संवेदनशील संचालन (सिंक) तक कैसे पहुंचता है।\n* **एक्सप्लॉइड चेन:** उच्च-प्रभाव वाली खोजों में अक्सर कई कम जोखिम वाली विसंगतियों को जोड़ना शामिल होता है।\n\n## कमियों की खोज में AI की भूमिका\n* **संदर्भ-विशिष्ट संकेत:** जब AI को सटीक संदर्भ और संकीर्ण प्रश्न दिए जाते हैं, तो यह सबसे अच्छा प्रदर्शन करता है।\n* **सत्यापन आवश्यक:** भ्रम और गलत सकारात्मक परिणाम आम हैं; शोधकर्ताओं को हर खोज को स्वतंत्र रूप से सत्यापित करना चाहिए।\n* **पारंपरिक जोखिम:** चूंकि एप्लिकेशनों में AI घटक शामिल होते हैं, इसलिए पारंपरिक कमियां अभी भी हो सकती हैं।\n\n## व्यावहारिक निहितार्थ और सत्यापन\nअपने वर्कफ़्लो को परिष्कृत करने या प्लेटफ़ॉर्म सुरक्षा घोषणाओं को सत्यापित करने वाले डेवलपर्स के लिए, आधिकारिक चैनल सीधे मार्गदर्शन प्रदान करते हैं। GitHub जैसे बग बाउंटी प्रोग्राम vulnerability रिपोर्ट को संसाधित करने के लिए HackerOne जैसे प्लेटफ़ॉर्म का उपयोग करते हैं। पाठक प्राथमिक स्रोतों से सीधे पैच विवरण और प्लेटफ़ॉर्म अपडेट की पुष्टि करने के लिए आधिकारिक GitHub सुरक्षा सलाह की समीक्षा कर सकते हैं।",
+  "en_meta": "Read insights from security researcher @r31n on bug bounty methodologies, manual investigation, exploit chains, and responsible AI usage.",
+  "hi_meta": "बग बाउंटी कार्यप्रणाली, मैनुअल जांच और जिम्मेदार AI उपयोग पर सुरक्षा शोधकर्ता @r31n के विचार पढ़ें।",
+  "en_keywords": [
+    "bug bounty",
+    "security research",
+    "GitHub",
+    "vulnerability discovery",
+    "AI in cybersecurity",
+    "exploit chains"
+  ],
+  "hi_keywords": [
+    "बग बाउंटी",
+    "सुरक्षा अनुसंधान",
+    "GitHub",
+    "साइबर सुरक्षा",
+    "vulnerability"
+  ],
+  "source_published_at": "2026-10-22T17:21:30+00:00",
+  "id": "c10dae251e66",
+  "source": "https://github.blog/security/how-bug-bounty-sharpens-one-researchers-security-skills/",
+  "date": "2026-11-13T09:24:29.929765+00:00",
+  "source_title": "How bug bounty sharpens one researcher’s security skills",
+  "category": "technology",
+  "image_kind": "conceptual"
+}
