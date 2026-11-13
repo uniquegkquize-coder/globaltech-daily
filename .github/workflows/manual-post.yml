@@ -3,8 +3,32 @@ on:
   workflow_dispatch:
     inputs:
       article:
-        description: Paste the submission copied from the GlobeWire editor
+        description: English article text, or the full submission copied from the GlobeWire editor
         required: true
+        type: string
+      en_title:
+        description: English headline (fill when typing the article here)
+        type: string
+      category:
+        description: Category slug, e.g. india-news, sports, sarkari-naukri (direct entry defaults to india-news)
+        type: string
+      hi_title:
+        description: Hindi headline (optional)
+        type: string
+      hi_body:
+        description: Hindi article (optional)
+        type: string
+      source:
+        description: Source HTTPS link (optional for original reporting)
+        type: string
+      image_url:
+        description: Direct HTTPS photo link (optional)
+        type: string
+      image_credit:
+        description: Photo credit (required with a photo link)
+        type: string
+      image_license:
+        description: Photo permission or license (required with a photo link)
         type: string
       mode:
         description: Check or publish
@@ -42,7 +66,14 @@ jobs:
         run: |
           set -euo pipefail
           submission="$RUNNER_TEMP/globewire-post.json"
-          jq -er '.inputs.article' "$GITHUB_EVENT_PATH" > "$submission"
+          jq -e '
+            .inputs as $input
+            | ($input.article | try fromjson catch null) as $copied
+            | (if ($copied | type) == "object" and ($copied | has("en_body")) then $copied
+               else {en_body: $input.article, category: "india-news"} end)
+            + ($input | {en_title, category, hi_title, hi_body, source, image_url, image_credit, image_license}
+               | with_entries(select(.value != null and .value != "")))
+          ' "$GITHUB_EVENT_PATH" > "$submission"
           if [ "$POST_MODE" = check ]; then
             python scripts/manual_post.py "$submission" --check
             exit 0
