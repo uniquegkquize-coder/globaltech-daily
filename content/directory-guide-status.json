@@ -151,12 +151,12 @@
     "phones": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 975,
+      "eligible_new": 973,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 165,
+        "already_published_unchanged": 167,
         "insufficient verified descriptive fields": 104,
         "identifier URL is not specification evidence": 637
       },
@@ -292,16 +292,16 @@
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 1652,
+      "eligible_new": 1702,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 11505,
-        "already_published_unchanged": 167,
-        "insufficient verified descriptive fields": 1157,
-        "identifier URL is not specification evidence": 8529
+        "already_published_unchanged": 169,
+        "insufficient verified descriptive fields": 1151,
+        "identifier URL is not specification evidence": 8483
       },
-      "rejected_count": 9686,
+      "rejected_count": 9634,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -572,5 +572,5 @@
       ]
     }
   },
-  "date": "2026-11-13T19:19:55.679935+00:00"
+  "date": "2026-11-13T22:07:08.104325+00:00"
 }
