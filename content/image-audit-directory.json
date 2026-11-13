@@ -1,54 +1,295 @@
 {
-  "total_posts": 7857,
+  "total_posts": 8076,
   "selected": 52,
   "results": {
     "source_photo_saved": 4,
-    "invalid_source_images": 5,
-    "cooldown": 43
+    "source_error": 1,
+    "source_unavailable": 1,
+    "invalid_source_images": 29,
+    "no_source_image": 4,
+    "cooldown": 13
   },
-  "still_missing": 828,
+  "still_missing": 861,
   "articles": [
     {
-      "id": "ccf0ad6939bed4166e370cb6",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Lumina_APV",
+      "id": "0042e676663d39c49de7f995",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Omega",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794565005.0587595
+      "retry_after": 1794577342.9519196
+    },
+    {
+      "id": "3a1b817df6adbef2ccfa5ab4",
+      "source": "https://en.wikipedia.org/wiki/IPhone_3GS",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794577343.2161727
+    },
+    {
+      "id": "eee5887241ecfd3c350cff86",
+      "source": "https://en.wikipedia.org/wiki/Casio_G%27zOne_Commando",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794577343.2867754
+    },
+    {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "source": "https://isc-edu.org/",
+      "policy": "93e2ad7deccc",
+      "result": "source_error",
+      "retry_after": 1794577343.3195193
+    },
+    {
+      "id": "ab5757b7bde7e5a43128d256",
+      "source": "https://exploitsmw.com/",
+      "policy": "93e2ad7deccc",
+      "result": "source_unavailable",
+      "retry_after": 1794577343.5913606
+    },
+    {
+      "id": "0d093f1b1d8b95e0ce3c5ba1",
+      "source": "https://en.wikipedia.org/wiki/Brammo_Enertia",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577343.8247685
+    },
+    {
+      "id": "9e59804909cc110131739d58",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III_Neo",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577344.257833
+    },
+    {
+      "id": "17aa97db89715afd896833ea",
+      "source": "https://en.wikipedia.org/wiki/Redmi_Note_Prime",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577344.6353335
+    },
+    {
+      "id": "2a8b92143f14b264d8d27146",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577344.8606024
+    },
+    {
+      "id": "28682dd8dfac94fd33504b6e",
+      "source": "https://en.wikipedia.org/wiki/Droid_Turbo_2",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577345.0593188
+    },
+    {
+      "id": "611527df4de7f3170a99cfde",
+      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577345.0612795
+    },
+    {
+      "id": "fb6dd420a2fc44c8f8340751",
+      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577345.2092075
+    },
+    {
+      "id": "c176a1dc41c1e122cab45821",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577345.5484593
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577345.8891873
+    },
+    {
+      "id": "33686a761fa5d097afc337dc",
+      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577345.9824636
+    },
+    {
+      "id": "d5ff9974453f739276c8eb9f",
+      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577346.2145088
+    },
+    {
+      "id": "2d100db342cdd6c9c517a807",
+      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577346.2670963
+    },
+    {
+      "id": "daf1ec9d5785cf6a7550b2ed",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Nomad",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794577346.2866607
+    },
+    {
+      "id": "a941ae3553703f8fd24d4d17",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577346.531451
+    },
+    {
+      "id": "e8fc748d4c8dffaa2212a1cf",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577346.6434789
+    },
+    {
+      "id": "fab6501205ba27e38dac785c",
+      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577346.8343756
+    },
+    {
+      "id": "4afa4536b18e5a41b30a3497",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577347.0944138
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "source": "https://dec.ac.in/",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794577347.1582606
+    },
+    {
+      "id": "007acb84538e69bcc14f4f9f",
+      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577347.548616
+    },
+    {
+      "id": "635e4aa01fc60223a6fea284",
+      "source": "https://en.wikipedia.org/wiki/Borgward_BX3",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577347.5610793
+    },
+    {
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577347.6018713
+    },
+    {
+      "id": "ff28f504e8e3f011fe2acd9b",
+      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577347.7004766
+    },
+    {
+      "id": "b0979abba345525f23d6b27e",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_M5",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577347.9367695
+    },
+    {
+      "id": "b1e668b9c10e7cfe7e4acd5a",
+      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577348.1082795
+    },
+    {
+      "id": "b73ac57f1ef5ed96390ec4f0",
+      "source": "https://en.wikipedia.org/wiki/Bridgestone_350_GTR",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577348.3503494
+    },
+    {
+      "id": "2f02162d9ab27a8cd5662161",
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577348.671033
+    },
+    {
+      "id": "9380990d113b5de5f521da53",
+      "source": "https://en.wikipedia.org/wiki/Norton_Nomad",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577349.2399936
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577349.2492874
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "source": "https://cctu.edu.gh/site/index",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794577349.25037
+    },
+    {
+      "id": "d5adbd5f7c0ee6e635219a5c",
+      "source": "https://en.wikipedia.org/wiki/Concept_F_450_GS",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577349.6721354
+    },
+    {
+      "id": "6548e415fc086ccec65bbb7c",
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577349.804392
+    },
+    {
+      "id": "27399602ccef42af310a2803",
+      "result": "cooldown"
+    },
+    {
+      "id": "74e0c52178b2f0827ab81b54",
+      "result": "cooldown"
     },
     {
       "id": "02364f4d79f5caac07cae019",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794565005.2552497
-    },
-    {
-      "id": "74e1c064a1c9fece03c7409e",
-      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_X8",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794565005.2764988
-    },
-    {
-      "id": "262458129e5f4bc7f41c9ef5",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Light_Six",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794565005.3669488
-    },
-    {
-      "id": "51e8297044ff8907024512b0",
-      "source": "https://en.wikipedia.org/wiki/Moto_G5",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794565005.5191357
+      "result": "cooldown"
     },
     {
       "id": "8ede6684d4cf14febb863aad",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794565005.7981088
+      "result": "cooldown"
+    },
+    {
+      "id": "554edbfdaee926ed82007433",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
+      "result": "cooldown"
+    },
+    {
+      "id": "e21f0c9303189bff05b728a0",
+      "result": "cooldown"
     },
     {
       "id": "71ad44ca5375549c9a0fafea",
@@ -75,173 +316,25 @@
       "result": "cooldown"
     },
     {
-      "id": "28682dd8dfac94fd33504b6e",
-      "result": "cooldown"
-    },
-    {
-      "id": "17aa97db89715afd896833ea",
-      "result": "cooldown"
-    },
-    {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab5757b7bde7e5a43128d256",
-      "result": "cooldown"
-    },
-    {
-      "id": "0d093f1b1d8b95e0ce3c5ba1",
-      "result": "cooldown"
-    },
-    {
-      "id": "9e59804909cc110131739d58",
-      "result": "cooldown"
-    },
-    {
-      "id": "2a8b92143f14b264d8d27146",
-      "result": "cooldown"
-    },
-    {
-      "id": "611527df4de7f3170a99cfde",
-      "result": "cooldown"
-    },
-    {
-      "id": "fb6dd420a2fc44c8f8340751",
-      "result": "cooldown"
-    },
-    {
-      "id": "c176a1dc41c1e122cab45821",
-      "result": "cooldown"
-    },
-    {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "result": "cooldown"
-    },
-    {
-      "id": "fab6501205ba27e38dac785c",
-      "result": "cooldown"
-    },
-    {
-      "id": "33686a761fa5d097afc337dc",
-      "result": "cooldown"
-    },
-    {
-      "id": "d5ff9974453f739276c8eb9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "2d100db342cdd6c9c517a807",
-      "result": "cooldown"
-    },
-    {
-      "id": "a941ae3553703f8fd24d4d17",
-      "result": "cooldown"
-    },
-    {
-      "id": "e8fc748d4c8dffaa2212a1cf",
-      "result": "cooldown"
-    },
-    {
-      "id": "4afa4536b18e5a41b30a3497",
-      "result": "cooldown"
-    },
-    {
-      "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
-    },
-    {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "result": "cooldown"
-    },
-    {
-      "id": "ff28f504e8e3f011fe2acd9b",
-      "result": "cooldown"
-    },
-    {
-      "id": "635e4aa01fc60223a6fea284",
-      "result": "cooldown"
-    },
-    {
-      "id": "b0979abba345525f23d6b27e",
-      "result": "cooldown"
-    },
-    {
-      "id": "2f02162d9ab27a8cd5662161",
-      "result": "cooldown"
-    },
-    {
-      "id": "b1e668b9c10e7cfe7e4acd5a",
-      "result": "cooldown"
-    },
-    {
-      "id": "b211f120ea27b93fc925f6b4",
-      "result": "cooldown"
-    },
-    {
-      "id": "b73ac57f1ef5ed96390ec4f0",
-      "result": "cooldown"
-    },
-    {
-      "id": "6548e415fc086ccec65bbb7c",
-      "result": "cooldown"
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "result": "cooldown"
-    },
-    {
-      "id": "9380990d113b5de5f521da53",
-      "result": "cooldown"
-    },
-    {
-      "id": "d5adbd5f7c0ee6e635219a5c",
-      "result": "cooldown"
-    },
-    {
       "id": "8af54bb949a0c055391d640a",
-      "result": "cooldown"
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "policy": "93e2ad7deccc",
+      "result": "no_source_image",
+      "retry_after": 1794577351.646353
     },
     {
       "id": "a6510273f0889bf4d7684eae",
-      "result": "cooldown"
+      "source": "https://mua.ac.ke/",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794577353.2099202
     },
     {
       "id": "ef614dcb4163038685679d1d",
-      "result": "cooldown"
-    },
-    {
-      "id": "27399602ccef42af310a2803",
-      "result": "cooldown"
-    },
-    {
-      "id": "74e0c52178b2f0827ab81b54",
-      "result": "cooldown"
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
       "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794565006.3559937
-    },
-    {
-      "id": "ab5161457cb0ef816db211ff",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794565006.4091246
-    },
-    {
-      "id": "e21f0c9303189bff05b728a0",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794565006.7337434
+      "result": "no_source_image",
+      "retry_after": 1794577355.0349724
     }
   ],
   "missing": [
@@ -272,6 +365,13 @@
       "title": "TRAI Drive Test Shows Mixed Mobile‑Network Quality in South Andaman and Port Blair‑Havelock Corridor",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No136of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "15270151de84",
+      "category": "business",
+      "title": "Global Rate Risks and Capital Outflows to Weigh on Indian Markets: Experts",
+      "source": "https://www.business-standard.com/specials/bs-events/global-rate-risks-capital-outflows-indian-markets-bfsi-insight-summit-2026-126102600598_1.html",
+      "reason": "access_denied"
     },
     {
       "id": "98cd45dba93d",
@@ -771,6 +871,13 @@
       "reason": "source_error"
     },
     {
+      "id": "ec107581277c",
+      "category": "mobile-launches",
+      "title": "EarnReady by ShunyaTattvaa Talent Partners Announces Opening for Phone Banking Officer",
+      "source": "https://in.linkedin.com/jobs/view/urgent-hiring-for-phone-banking-officer-day-shift-wfo-need-graduate-fresher-graduate-exp-with-immediate-joiners-salary-3lpa-to-4-50lpa-need-good-communication-at-earnready-by-shunyatattvaa-talent-partners-4483008539",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "dbba5a69ce74",
       "category": "business",
       "title": "Altruist Biologics Advances Localized Manufacturing for Multinational Client with NMPA Priority Review",
@@ -992,7 +1099,7 @@
       "category": "telecom",
       "title": "TRAI Releases Mobile Network Performance Audit for Kathgodam-Dehradun Railway Route",
       "source": "https://trai.gov.in/sites/default/files/2026-10/PR_No132of2026.pdf",
-      "reason": "source_unavailable"
+      "reason": "source_error"
     },
     {
       "id": "2389f2dc876f",
@@ -1174,7 +1281,7 @@
       "category": "private-vacancy",
       "title": "Progressive Associates Group Announces Intern Architect Vacancy in Indore",
       "source": "https://in.linkedin.com/jobs/view/intern-architect-at-progressive-associates-group-4482512723",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "08f803d5a037",
@@ -1188,7 +1295,7 @@
       "category": "private-vacancy",
       "title": "Beyond Border Consultants Hiring EdTech Business Development Executive in Noida",
       "source": "https://in.linkedin.com/jobs/view/edtech-bde-upto-6-5lpa-at-beyond-border-consultants-4484550159",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "03fdad6de98e",
@@ -1216,7 +1323,7 @@
       "category": "private-vacancy",
       "title": "RedeFin Capital Announces Opening for Investment Banking Associate, Senior Associate, and AVP Roles in Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/investment-banking-associate-senior-associate-avp-at-redefin-capital-4482284468",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "49b672507c84",
@@ -1335,7 +1442,7 @@
       "category": "cricket",
       "title": "Latest Cricket Scores and Fixtures Roundup: Multi-Day Matches in Progress",
       "source": "https://www.bbc.co.uk/sport/cricket/scores-fixtures",
-      "reason": "no_source_image"
+      "reason": "invalid_source_images"
     },
     {
       "id": "97cd937b2f2d",
@@ -1349,7 +1456,7 @@
       "category": "private-vacancy",
       "title": "Current Private Sector Job Openings and Roles Listed Across India",
       "source": "https://in.linkedin.com/jobs/Note+novaluxia.com+Reviews+platform+updates.xcv-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "246177e95f61",
@@ -1408,6 +1515,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "0865102c1d74",
+      "category": "business",
+      "title": "Global Tech Shares Slump and Bonds Rally Amid Growing AI Spending Concerns",
+      "source": "https://www.business-standard.com/markets/news/global-tech-giants-spending-spooks-investors-and-drives-bonds-rally-126103002004_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "7674f545a3f1",
       "category": "private-vacancy",
       "title": "Architecture Talent Network Announces Multiple Openings in Chennai for Interns, Senior Architects, and Interior Designers",
@@ -1440,7 +1554,7 @@
       "category": "private-vacancy",
       "title": "Tissera Announces Communication Design Intern Opening in Chennai",
       "source": "https://in.linkedin.com/jobs/view/communication-design-intern-at-tissera-4483884581",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "4c58118a1c0b",
@@ -1527,6 +1641,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "221450df2ba4",
+      "category": "apps-software",
+      "title": "PlugShare Releases Version 8.0 App Update With Dark Mode and Apple Device Support",
+      "source": "https://insideevs.com/news/814963/plugshare-app-update-redesign-dark-mode-iphone-duo/",
+      "reason": "access_denied"
+    },
+    {
       "id": "72a42f4720d1",
       "category": "world-news",
       "title": "Florida Voters Decide on Amendment 3 Property Tax Cuts Amid Affordability Debate",
@@ -1538,7 +1659,7 @@
       "category": "visas-immigration",
       "title": "US Immigration Executive Roles Highlight Growing Corporate Mobility Sector in Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/us-immigration-executive-at-vidlexinfo-llc-4483058702",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "c04b22371a9a",
@@ -1555,6 +1676,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "3e6654e5b981",
+      "category": "sports",
+      "title": "Canada Expresses Disappointment After Sports Court Ruling Clears Path for Russia in World Juniors",
+      "source": "https://www.cbc.ca/news/canada/russia-hockey-world-junior-championships-2027-canada-exploring-options-minister-says-9.7403796?cmp=rss",
+      "reason": "source_error"
+    },
+    {
       "id": "0bee7f4ce378",
       "category": "business",
       "title": "Built To Last Season 10 to Premiere on Halloween Across the Midwest",
@@ -1566,7 +1694,7 @@
       "category": "private-vacancy",
       "title": "Professional Career Openings and Role Listings Reported on LinkedIn",
       "source": "https://in.linkedin.com/jobs/perficient-india-jobs-india",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "9439e2a43e14",
@@ -1601,7 +1729,7 @@
       "category": "private-vacancy",
       "title": "The Nature Conservancy Lists Executive Assistant Opening in India",
       "source": "https://in.linkedin.com/jobs/view/executive-assistant-at-the-nature-conservancy-4483668079",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "079aeaa0eeef",
@@ -1741,7 +1869,7 @@
       "category": "private-vacancy",
       "title": "Professional Listings and Job Openings Reported Across India on Professional Platforms",
       "source": "https://in.linkedin.com/jobs/Nexbirlik+haqq%C4%B1nda+m%C9%99nfi+r%C9%99yl%C9%99r+%E2%80%94+%C5%9Firk%C9%99t+yenilikl%C9%99rini+d%C9%99y%C9%99rl%C9%99ndirin.whx-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "5c3f7754e7bd",
@@ -1832,6 +1960,13 @@
       "category": "private-vacancy",
       "title": "LinkedIn Shows Over 53,000 Research‑Related Job Openings Across India – From Pharma Labs to University Labs",
       "source": "https://in.linkedin.com/jobs/Research+first%3A+Novaluxia+reviews.edu-jobs?f_AL=true",
+      "reason": "access_denied"
+    },
+    {
+      "id": "ec7caf9b3fde",
+      "category": "business",
+      "title": "Gates Industrial Reports Third-Quarter 2026 Financial Results",
+      "source": "https://www.prnewswire.com/news-releases/gates-industrial-reports-third-quarter-2026-results-302924519.html",
       "reason": "no_source_image"
     },
     {
@@ -1860,6 +1995,13 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Highlighted Across the Phoenix Metropolitan Area",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-phoenix-az",
+      "reason": "access_denied"
+    },
+    {
+      "id": "0521da50fcf9",
+      "category": "private-vacancy",
+      "title": "PlanetSpark Announces Sales Associate Openings for Freshers in Ahmedabad, Kolkata, and Mumbai",
+      "source": "https://in.linkedin.com/jobs/view/urgent-hiring-for-sales-associate-freshers-welcome-in-ahmedabad-kolkata-mumbai-at-planetspark-4484762814",
       "reason": "access_denied"
     },
     {
@@ -1947,11 +2089,18 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "d9748374ccd4",
+      "category": "conflict-news",
+      "title": "Kushner and Witkoff Resume Peace Talks in Abu Dhabi to Address Russia-Ukraine War",
+      "source": "https://www.npr.org/2026/11/10/nx-s1-6034616/kushner-and-witkoff-renew-peace-talks-to-end-war-between-russia-and-ukraine",
+      "reason": "source_error"
+    },
+    {
       "id": "5cd9c5cf009b",
       "category": "private-vacancy",
       "title": "Skill College Hiring Education Outreach Coordinator in Surat",
       "source": "https://in.linkedin.com/jobs/view/education-outreach-coordinator-at-skill-college-4485340366",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "47e829176cc5",
@@ -1982,6 +2131,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "36d6111fd903",
+      "category": "business",
+      "title": "Garmin Reports Record Third Quarter 2026 Results and Raises Full-Year Guidance",
+      "source": "https://www.prnewswire.com/news-releases/garmin-announces-third-quarter-2026-results-302921655.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "da47fed12cb3",
       "category": "apps-software",
       "title": "Birlasoft Lists Java Software Engineer Opening on LinkedIn",
@@ -1993,7 +2149,7 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Reported in San Antonio, TX",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-san-antonio-tx",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "f2d3bc3b0144",
@@ -2015,6 +2171,13 @@
       "title": "Ukraine Disputes Elon Musk's Claims Regarding Starlink Use in Military Operations",
       "source": "https://www.cbc.ca/news/world/ukraine-disputes-elon-musk-claim-starlink-starshield-9.7395412?cmp=rss",
       "reason": "source_error"
+    },
+    {
+      "id": "f765e9298903",
+      "category": "business",
+      "title": "Gold Faces Further Losses as $3,930 Support in Focus",
+      "source": "https://www.business-standard.com/markets/news/gold-faces-further-losses-as-3-930-support-in-focus-mirae-asset-sharekhan-126103000480_1.html",
+      "reason": "access_denied"
     },
     {
       "id": "950b84c9ac71",
@@ -2178,6 +2341,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "86fa43986407",
+      "category": "private-vacancy",
+      "title": "Vensure Employer Solutions and Other Firms Report Open Roles Across Kerala via Job Platforms",
+      "source": "https://in.linkedin.com/jobs/vensure-employer-solutions-jobs-kerala",
+      "reason": "no_source_image"
+    },
+    {
       "id": "021c54d7abdb",
       "category": "private-vacancy",
       "title": "Professional Career Openings Listed on LinkedIn for the Jersey Region",
@@ -2281,6 +2451,13 @@
       "title": "TRAI Releases Mobile Network Performance Audit for Delhi-Agra Corridors",
       "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No123of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "5c14517d9601",
+      "category": "business",
+      "title": "Gildan Activewear Securities Class Action Filed: What Investors Should Know",
+      "source": "https://www.prnewswire.com/news-releases/gil-investor-alert-gildan-activewear-inc-investors-with-substantial-losses-have-opportunity-to-lead-the-gil-securities-class-action-302923027.html",
+      "reason": "no_source_image"
     },
     {
       "id": "1ad731a65211",
@@ -2444,6 +2621,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "341b93d3cfcc",
+      "category": "private-vacancy",
+      "title": "Courtyard by Marriott Gorakhpur Announces Open Hospitality Positions",
+      "source": "https://in.linkedin.com/jobs/view/we-are-hiring-courtyard-by-marriott-gorakhpur-%F0%9F%8F%A8%E2%9C%A8-at-hospitality-jobs-4468214916",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "7ba9e85f5ffa",
       "category": "cyber-security",
       "title": "AI Discovery and Code Leaks Trigger Cybersecurity Concerns Over PHP2SHELL",
@@ -2577,6 +2761,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "3d41206585f7",
+      "category": "automobiles",
+      "title": "Bugatti CEO Chases Stolen Chiron Using Live Telemetry and a Porsche 911",
+      "source": "https://www.motor1.com/news/813799/bugatti-boss-chased-chiron-thief/",
+      "reason": "access_denied"
+    },
+    {
       "id": "4fafc2b34cbc",
       "category": "business",
       "title": "Daikin Releases Annual U.S. Business and Innovation Report Detailing Expanded Investments",
@@ -2595,7 +2786,14 @@
       "category": "private-vacancy",
       "title": "Program and Project Management Job Openings Reported in Querétaro Region",
       "source": "https://in.linkedin.com/jobs/program-and-project-management-jobs-querétaro-que",
-      "reason": "access_denied"
+      "reason": "no_source_image"
+    },
+    {
+      "id": "3c8c73c28220",
+      "category": "world-news",
+      "title": "MV Odyssey Suspends Around-the-World Voyage in Cambodia Due to Rising Fuel Costs",
+      "source": "https://www.cbc.ca/news/world/cruise-ship-fuel-odyssey-9.7399290?cmp=rss",
+      "reason": "source_error"
     },
     {
       "id": "c1c8149f92de",
@@ -2654,6 +2852,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "3cc03d775dfb",
+      "category": "business",
+      "title": "Globe Life Faces Investigation After Disclosing $7 Million in Excess CMS-Linked Claims",
+      "source": "https://www.prnewswire.com/news-releases/globe-life-inc-investigation-notice-suewallst-notifies-investors-of-pending-investigation-into-globe-life-inc-gl-302919923.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "2915d2250539",
       "category": "business",
       "title": "Entergy Increases Quarterly Dividend and Reports Q3 2026 Results",
@@ -2686,7 +2891,7 @@
       "category": "private-vacancy",
       "title": "PropAdvisor Realty (P) Ltd. Advertises Full-Time Property Consultant Vacancy in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/property-consultant-at-propadvisor-realty-p-ltd-4481024956",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "1c38d45acd26",
@@ -2715,6 +2920,13 @@
       "title": "Artemis II Commander Reid Wiseman Appointed Caltech VP and NASA JPL Deputy Director",
       "source": "https://www.nasa.gov/centers-and-facilities/jpl/caltech-names-artemis-ii-commander-reid-wiseman-as-nasa-jpl-deputy/",
       "reason": "invalid_source_images"
+    },
+    {
+      "id": "f401c44a6106",
+      "category": "private-vacancy",
+      "title": "Exploring Academic and Technical Job Openings Listed on Professional Networks",
+      "source": "https://www.linkedin.com/jobs/unnamalai-institute-of-technology-india-jobs-worldwide",
+      "reason": "no_source_image"
     },
     {
       "id": "4ca42dad8d6f",
@@ -2750,6 +2962,13 @@
       "title": "Wealthbox Launches Vault File Storage and Expands AI Capabilities",
       "source": "https://www.prnewswire.com/news-releases/wealthbox-launches-vault-advanced-file-storage-for-advisory-firms-and-expands-ai-to-client-documents-for-all-users-302922375.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "9566a9eadc27",
+      "category": "private-vacancy",
+      "title": "Infosys BPM Announces Walk-In Drive for Service Desk L1 Support in Bengaluru",
+      "source": "https://in.linkedin.com/jobs/view/walk-in-infosys-bpm-is-hiring-service-desk-l1-support-at-infosys-bpm-4478837789",
+      "reason": "invalid_source_images"
     },
     {
       "id": "a20281b7248c",
@@ -2871,6 +3090,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "9daab0b7e4cf",
+      "category": "automobiles",
+      "title": "Navigating Compact SUV Choices: Expert Advice on Automatics and Market Trends",
+      "source": "https://www.autocarindia.com/advice/should-automatic-emergency-braking-be-compulsory-504596",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "efe483451e58",
       "category": "business",
       "title": "Eternal Shares Rally 6% in Two Days, Approach Record High Amid Blinkit Optimism",
@@ -2966,7 +3192,7 @@
       "category": "private-vacancy",
       "title": "Square N Circle Hiring Product Designer for Handcrafted Kitchenware and Home Decor",
       "source": "https://in.linkedin.com/jobs/view/product-designer-at-square-n-circle-4484563576?position=14&pageNum=0&refId=RJ34DjbR3YzAe3PHTqV7ew%3D%3D&trackingId=NwAXYJR0gtzJjv7lt0i8%2Bg%3D%3D",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "4bd3e1390510",
@@ -3093,6 +3319,13 @@
       "title": "AST SpaceMobile Faces Securities Fraud Class Action Lawsuit with November 13, 2026 Deadline",
       "source": "https://www.prnewswire.com/news-releases/asts-deadline-in-15-days-ast-spacemobile-inc-class-action-lawsuit-seeks-recovery-for-investors-november-13-2026-deadline--contact-kessler-topaz-meltzer--check-llp-302924003.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "22300884ee30",
+      "category": "ai-news",
+      "title": "Google Launches Project Suncatcher to Test AI Chips in Space",
+      "source": "https://www.npr.org/2026/10/01/nx-s1-5983697/project-suncatcher-google-ai-data-center-space",
+      "reason": "source_error"
     },
     {
       "id": "6f1ed28c1330",
@@ -3340,6 +3573,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "b35896a91086",
+      "category": "government-schemes",
+      "title": "Unnao-Shuklaganj Development Authority Announces E-Auction Notice for Unallocated Properties Across Schemes",
+      "source": "https://usdaunnao.in/adminusda/uploads/Notice_3ce294a96c8cc01a3213800d27386cb6.pdf",
+      "reason": "source_unavailable"
+    },
+    {
       "id": "b76cbc517e62",
       "category": "business",
       "title": "Camden National Corporation Reports Third Quarter 2026 Net Income Up 8% Year Over Year",
@@ -3393,7 +3633,7 @@
       "category": "private-vacancy",
       "title": "HITECH METAL FORMINGS (INDIA) Lists Press Tools Design Engineer Role in Greater Indore Area",
       "source": "https://in.linkedin.com/jobs/view/press-tools-design-engineer-at-hitech-metal-formings-india-4483436752?position=7&pageNum=0&refId=axS7j8YtaxoZW3%2FmMQMGvQ%3D%3D&trackingId=sJlz8FKIsbChuAz0WKpipA%3D%3D",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "9243a1c9f1b4",
@@ -3792,7 +4032,7 @@
       "category": "private-vacancy",
       "title": "Allison Off-Highway Drive & Motion Systems Announces Vacancy for Labour Welfare Officer in Sanand, Gujarat",
       "source": "https://in.linkedin.com/jobs/view/labour-welfare-officer-at-allison-off-highway-drive-motion-systems-4483874387",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "64e8705df01e",
@@ -3820,7 +4060,7 @@
       "category": "private-vacancy",
       "title": "Engage Partners Private Limited Announces Relationship Manager Hiring Collaboration with ICICI Bank",
       "source": "https://in.linkedin.com/jobs/view/relationship-manager-at-engage-partners-private-limited-4483030052",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "d4519cf5c59f707b293a301d",
@@ -3988,7 +4228,7 @@
       "category": "private-vacancy",
       "title": "Professional Career Listings and Private Sector Job Openings Reported Across India",
       "source": "https://in.linkedin.com/jobs/Nexbirlik+istifad%C9%99%C3%A7i+t%C9%99cr%C3%BCb%C9%99si%3A+%C4%B0nternetd%C9%99+%C5%9F%C9%99rhl%C9%99ri+indi+oxuyun.thv-jobs",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "dc3e1b701984",
@@ -4149,7 +4389,7 @@
       "category": "private-vacancy",
       "title": "Newell Brands Lists Vacancy for Lead Product Design Engineering in Tamil Nadu",
       "source": "https://in.linkedin.com/jobs/view/lead-product-design-engineering-at-newell-brands-4484924592",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "a6510273f0889bf4d7684eae",
@@ -4234,6 +4474,13 @@
       "title": "Australian Court Rules Triple-Murderer Erin Patterson Must Spend Rest of Life in Prison",
       "source": "https://www.cbc.ca/news/world/erin-patterson-mushroom-poison-murder-prison-9.7402361",
       "reason": "source_error"
+    },
+    {
+      "id": "db0252b38130",
+      "category": "ai-news",
+      "title": "Sino Biological Advances AI-Designed Molecule Validation with 4RISE™",
+      "source": "https://www.prnewswire.com/news-releases/sino-biological-advances-ai-designed-molecule-validation-with-4rise-302934772.html",
+      "reason": "no_source_image"
     },
     {
       "id": "aeedadb6efcb",
@@ -4432,6 +4679,13 @@
       "reason": "source_error"
     },
     {
+      "id": "7078cdb05917",
+      "category": "business",
+      "title": "Gen Z Financial Habits: Lifestyle Spending Poses Greater Risk Than Market Volatility",
+      "source": "https://www.business-standard.com/specials/bs-events/genz-s-lifestyle-spends-more-risky-than-market-volatility-sakchi-jain-126102800040_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "8ec539beeb9a",
       "category": "business",
       "title": "eClerx Services Shares Fall 13% Following Second-Quarter Financial Results",
@@ -4523,6 +4777,13 @@
       "reason": "source_unavailable"
     },
     {
+      "id": "9c6afb7e1833",
+      "category": "world-news",
+      "title": "Floating Home Cruise Ship Suspends Global Voyage Amid Rising Fuel Costs",
+      "source": "https://www.cbc.ca/news/world/cruise-ship-fuel-odyssey-9.7399290",
+      "reason": "source_error"
+    },
+    {
       "id": "33250a9e3bb4",
       "category": "ai-news",
       "title": "Major Financial Institutions Announce $63 Billion Financing Structure to Scale AI Compute Capacity for Anthropic",
@@ -4548,6 +4809,13 @@
       "category": "private-vacancy",
       "title": "Account Executive – Numoo Hiring Solutions (Remote‑First, Mumbai)",
       "source": "https://in.linkedin.com/jobs/view/account-executive-at-numoo-hiring-solutions-4483014386",
+      "reason": "no_source_image"
+    },
+    {
+      "id": "bc8d023befc6",
+      "category": "ai-news",
+      "title": "Ceipal Launches Ceipal Ora: New Agentic AI Platform for Staffing and Recruiting",
+      "source": "https://www.prnewswire.com/news-releases/ceipal-launches-ceipal-ora-its-agentic-ai-for-staffing-and-recruiting-302934034.html",
       "reason": "no_source_image"
     },
     {
@@ -4768,6 +5036,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "f2af1197fbbd",
+      "category": "business",
+      "title": "Gastops and Bell Textron Sign MOU to Explore Aerospace Collaboration",
+      "source": "https://www.prnewswire.com/news-releases/gastops-and-bell-sign-memorandum-of-understanding-to-explore-future-collaboration-opportunities-302924989.html",
+      "reason": "no_source_image"
+    },
+    {
       "id": "677d24fb37fa",
       "category": "private-vacancy",
       "title": "Employment Opportunities and Open Roles Reported Across Uttar Pradesh via Professional Networks",
@@ -4940,7 +5215,7 @@
       "category": "private-vacancy",
       "title": "Professional Career Opportunities Listed Across India via Professional Platforms",
       "source": "https://in.linkedin.com/jobs/Find+Novaluxia+Reviews+among+your+reading+options.zqi-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "96693e2dc676",
@@ -4961,14 +5236,14 @@
       "category": "private-vacancy",
       "title": "Fanzart Seeks Business Development Specialist for On-Site Role in Ranchi",
       "source": "https://in.linkedin.com/jobs/view/business-development-specialist-at-fanzart-designer-fans-4484908686",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "2c04a6d38790",
       "category": "private-vacancy",
       "title": "Horizon9 Invites Applications for Client Servicing Internship in NCR",
       "source": "https://in.linkedin.com/jobs/view/client-servicing-internship-in-greater-noida-delhi-noida-ghaziabad-at-horizon9-4483176337",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "276998767be1",
@@ -5115,7 +5390,7 @@
       "category": "private-vacancy",
       "title": "BRIKitt Announces Opening for Collections Executive Role in Lucknow",
       "source": "https://in.linkedin.com/jobs/view/collections-executive-at-brikitt-4483018557",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "223fe80c75c8",
@@ -5146,6 +5421,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "63e439b3fb15",
+      "category": "government-schemes",
+      "title": "Data on National Apprenticeship Promotion Scheme Highlights Persistent Gender Skill Gap in India's Labour Market",
+      "source": "https://www.business-standard.com/opinion/editorial/gendered-skill-gap-126102802000_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "ab5757b7bde7e5a43128d256",
       "category": "education",
       "title": "Exploits University: College Admissions, Facts and Verification Guide",
@@ -5157,7 +5439,7 @@
       "category": "private-vacancy",
       "title": "Frontier Agrotech Private Limited Posts Opening for Accounts Executive-Finance in Chandigarh",
       "source": "https://in.linkedin.com/jobs/view/accounts-executive-finance-at-frontier-agrotech-private-limited-4483847528",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "dfccb93a8259",
@@ -5328,6 +5610,13 @@
       "reason": "no_source_image"
     },
     {
+      "id": "8f6ed84d19c0",
+      "category": "business",
+      "title": "GIFT City Aims for Global Hub Status with Proposed Regulatory Streamlining",
+      "source": "https://www.business-standard.com/specials/bs-events/gift-city-eyes-global-financial-hub-status-with-easier-rules-new-avenues-126102801359_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "1570f58d79d2",
       "category": "business",
       "title": "Motilal Oswal Highlights Stock Ideas Across Large, Mid, and Small-Caps",
@@ -5381,7 +5670,7 @@
       "category": "private-vacancy",
       "title": "PlanetSpark Announces Fresher Hiring for Inside Sales Executive Roles Across Select Regions",
       "source": "https://in.linkedin.com/jobs/view/inside-sales-executive-fresher-hiring-in-najafgarh-ghaziabad-moradabad-delhi-at-planetspark-4484770369",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "f733746daf56",
@@ -5458,7 +5747,7 @@
       "category": "tourism",
       "title": "Exploring Career Opportunities in International Holiday Sales and Destination Expertise",
       "source": "https://in.linkedin.com/jobs/view/sales-executive-%E2%80%93-destination-expert-international-holidays-at-catch-a-trip-4483426182",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "83501d275446",
@@ -5496,6 +5785,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "3dcaef57e8c0",
+      "category": "private-vacancy",
+      "title": "Job Openings and Listings Overview in the United States",
+      "source": "https://www.linkedin.com/jobs/view/virtual-assistant-at-a-full-renovation-%E2%80%93-residential-remodeling-4481412552",
+      "reason": "no_source_image"
+    },
+    {
       "id": "dfd16b79fae5",
       "category": "apps-software",
       "title": "Tech Hiring Surges in Chennai as Flex Opens Associate Software Engineer Roles",
@@ -5521,7 +5817,7 @@
       "category": "private-vacancy",
       "title": "iRage Announces Job Opening for Product Manager in Trading Infrastructure in Mumbai",
       "source": "https://in.linkedin.com/jobs/view/product-manager-at-irage-4483613380",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "6310329f8fba",
@@ -5599,6 +5895,13 @@
       "title": "Media and Communications Job Openings Listed in Querétaro Region",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-querétaro-que",
       "reason": "no_source_image"
+    },
+    {
+      "id": "af55399c2c59",
+      "category": "business",
+      "title": "German Firms View India as Manufacturing and R&D Hub, Says Piyush Goyal",
+      "source": "https://www.business-standard.com/economy/news/german-firms-see-india-as-manufacturing-r-d-innovation-hub-goyal-126102400401_1.html",
+      "reason": "access_denied"
     },
     {
       "id": "7b29faf9110f",
@@ -5745,7 +6048,7 @@
       "category": "private-vacancy",
       "title": "Hospitality Jobs Lists New Opening for Kesar Bagh Palace in Chittorgarh",
       "source": "https://in.linkedin.com/jobs/view/%F0%9F%9A%A8-we-are-hiring-kesar-bagh-palace-chittorgarh-at-hospitality-jobs-4469170612",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "f390d4af3452",
@@ -5787,7 +6090,7 @@
       "category": "private-vacancy",
       "title": "Eternal Research Investment Advisors Announces Opening for Business Development Executive in Gwalior",
       "source": "https://in.linkedin.com/jobs/view/senior-bde-at-eternal-research-investment-advisors-4482278177",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "4ebc87c0d418",
@@ -5853,6 +6156,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "30c1509c3bb5",
+      "category": "business",
+      "title": "GAIL Net Profit More Than Doubles to ₹4,650 Crore in Q2",
+      "source": "https://www.business-standard.com/industry/news/gail-q2-net-profit-jumps-to-4-650-cr-as-gas-marketing-revenue-rises-126103001032_1.html",
+      "reason": "access_denied"
+    },
+    {
       "id": "036d1e10e017",
       "category": "business",
       "title": "New Clinical and Real-World Evidence for Alzheimer's Treatment Lecanemab Scheduled for CTAD 2026",
@@ -5865,6 +6175,20 @@
       "title": "ZentLaw Expands Legal Services with AI-Native Subscription Model",
       "source": "https://www.prnewswire.com/news-releases/zentlaw-introduces-ai-native-subscription-legal-services-powered-by-zentais-context-driven-agentic-ai-capabilities-302923668.html",
       "reason": "no_source_image"
+    },
+    {
+      "id": "8c2aaa616f6c",
+      "category": "business",
+      "title": "GARDANT Global Partners with International Offset Corporation to Expand Government Procurement",
+      "source": "https://www.prnewswire.com/news-releases/gardant-global-expands-government-procurement-capabilities-through-strategic-partnership-with-international-offset-corporation-302924012.html",
+      "reason": "no_source_image"
+    },
+    {
+      "id": "8e242b8abca7",
+      "category": "private-vacancy",
+      "title": "Job Listings and Professional Opportunities Reported via Online Platforms",
+      "source": "https://www.linkedin.com/jobs/view/virtual-assistant-at-a-full-renovation-%E2%80%93-project-services-4484010335",
+      "reason": "invalid_source_images"
     },
     {
       "id": "89a9f272b95b",
@@ -6043,68 +6367,43 @@
     }
   ],
   "missing_reasons": {
-    "no_source_image": 262,
-    "access_denied": 256,
+    "no_source_image": 271,
+    "access_denied": 263,
     "source_unavailable": 38,
-    "invalid_source_images": 177,
-    "source_error": 94,
+    "invalid_source_images": 188,
+    "source_error": 100,
     "restricted_page": 1
   },
-  "existing_representatives_preserved": 0,
+  "existing_representatives_preserved": 1,
   "diagnostics": {
-    "ccf0ad6939bed4166e370cb6": {
+    "0042e676663d39c49de7f995": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Lumina_APV",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/46/1994-1996_Chevrolet_Lumina_APV.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Omega",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/40/PR_comboio_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "02364f4d79f5caac07cae019": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
-      "candidate_count": 7,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/1280px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/500px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "74e1c064a1c9fece03c7409e": {
+    "3a1b817df6adbef2ccfa5ab4": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_X8",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Sony_Ericsson_Xperia_X8.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/IPhone_3GS",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/IPhone_3G_or_3GS_digital_render.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "262458129e5f4bc7f41c9ef5": {
+    "eee5887241ecfd3c350cff86": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Light_Six",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/dc/1914_Chevrolet_Light_Six.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Casio_G%27zOne_Commando",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/11/IS11CA_FRONT.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "51e8297044ff8907024512b0": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Moto_G5",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Moto_G5.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    "0a95ccf111c45db4cfb5c9e3": {
+      "reason": "source_error",
+      "source": "https://isc-edu.org/",
+      "error": "ConnectionError"
     },
-    "8ede6684d4cf14febb863aad": {
+    "ab5757b7bde7e5a43128d256": {
+      "reason": "source_unavailable",
+      "source": "https://exploitsmw.com/",
+      "status": 200
+    },
+    "0d093f1b1d8b95e0ce3c5ba1": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "554edbfdaee926ed82007433": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "ab5161457cb0ef816db211ff": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "source": "https://en.wikipedia.org/wiki/Brammo_Enertia",
       "candidate_count": 3,
       "candidates": [
         "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
@@ -6112,15 +6411,299 @@
         "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
       ]
     },
-    "e21f0c9303189bff05b728a0": {
+    "9e59804909cc110131739d58": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III_Neo",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Samsung_Galaxy_S_III.png/500px-Samsung_Galaxy_S_III.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Samsung_Galaxy_S_III.png/250px-Samsung_Galaxy_S_III.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "17aa97db89715afd896833ea": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Redmi_Note_Prime",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/20px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "2a8b92143f14b264d8d27146": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
       "candidate_count": 5,
       "candidates": [
         "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
         "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
         "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
       ]
+    },
+    "611527df4de7f3170a99cfde": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "28682dd8dfac94fd33504b6e": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Droid_Turbo_2",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "fb6dd420a2fc44c8f8340751": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/120px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "c176a1dc41c1e122cab45821": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "8f4b17c49d1b2a0c5cb45a53": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
+      "candidate_count": 6,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "33686a761fa5d097afc337dc": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "d5ff9974453f739276c8eb9f": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "2d100db342cdd6c9c517a807": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
+      "candidate_count": 9,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/commons/0/0e/1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/1280px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/960px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "daf1ec9d5785cf6a7550b2ed": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Nomad",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/1955_Chevrolet_Nomad%2C_front_right_%28Wings-n-Wheels_2023%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "a941ae3553703f8fd24d4d17": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Ambox_current_red.svg/120px-Ambox_current_red.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Ambox_current_red.svg/60px-Ambox_current_red.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "e8fc748d4c8dffaa2212a1cf": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Ambox_current_red.svg/120px-Ambox_current_red.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Ambox_current_red.svg/60px-Ambox_current_red.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "fab6501205ba27e38dac785c": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "4afa4536b18e5a41b30a3497": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18613.jpg"
+      ]
+    },
+    "8444aa187e09b377f661fcbf": {
+      "reason": "no_source_image",
+      "source": "https://dec.ac.in/"
+    },
+    "007acb84538e69bcc14f4f9f": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18606.jpg"
+      ]
+    },
+    "635e4aa01fc60223a6fea284": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Borgward_BX3",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "9d1f6341eb5fa6644d63ff08": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18615.jpg"
+      ]
+    },
+    "ff28f504e8e3f011fe2acd9b": {
+      "reason": "invalid_source_images",
+      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
+      "candidate_count": 1,
+      "candidates": [
+        "https://www.unirank.org/i/screenshots/18614.jpg"
+      ]
+    },
+    "b0979abba345525f23d6b27e": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_M5",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "b1e668b9c10e7cfe7e4acd5a": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
+      "candidate_count": 7,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/60px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "b73ac57f1ef5ed96390ec4f0": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Bridgestone_350_GTR",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "2f02162d9ab27a8cd5662161": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
+      "candidate_count": 10,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
+        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled"
+      ]
+    },
+    "9380990d113b5de5f521da53": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Norton_Nomad",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "b211f120ea27b93fc925f6b4": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
+      "candidate_count": 8,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/commons/1/1e/Nokia_Asha_501.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/250px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/120px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "fbff6440d68d52399ca212b1": {
+      "reason": "no_source_image",
+      "source": "https://cctu.edu.gh/site/index"
+    },
+    "d5adbd5f7c0ee6e635219a5c": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Concept_F_450_GS",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Robot_Not.svg/120px-Robot_Not.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Robot_Not.svg/60px-Robot_Not.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "6548e415fc086ccec65bbb7c": {
+      "reason": "invalid_source_images",
+      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "candidate_count": 23,
+      "candidates": [
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/frontier/vehicle-profile-assets/2027/model-2027-frontier-crew-cab-pro-4x-red-alert.png-v2.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue-hybrid/vehicle-profile-assets/2027/model-2027-rogue-hybrid-sr-horizon-blue-pearl-metallic-super-black-two-tone.png.ximg.l_3_m.smart.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue/vehicle-profile-assets/2027/model-2027-rogue-rock-creek-intelligent-awd-baja-storm-metallic.png.ximg.l_3_m.smart.png"
+      ]
+    },
+    "8af54bb949a0c055391d640a": {
+      "reason": "no_source_image",
+      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
+      "existing_representative_preserved": true
+    },
+    "a6510273f0889bf4d7684eae": {
+      "reason": "invalid_source_images",
+      "source": "https://mua.ac.ke/",
+      "candidate_count": 5,
+      "candidates": [
+        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
+        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png",
+        "https://mua.ac.ke/wp-content/uploads/2026/11/MUA_New_Chancellor_Banner.png"
+      ]
+    },
+    "ef614dcb4163038685679d1d": {
+      "reason": "no_source_image",
+      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/"
     }
   },
   "mode": "directory"
