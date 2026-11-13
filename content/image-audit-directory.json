@@ -1,287 +1,54 @@
 {
-  "total_posts": 7777,
+  "total_posts": 7857,
   "selected": 52,
   "results": {
     "source_photo_saved": 4,
-    "invalid_source_images": 29,
-    "source_error": 1,
-    "source_unavailable": 1,
-    "no_source_image": 4,
-    "cooldown": 13
+    "invalid_source_images": 5,
+    "cooldown": 43
   },
-  "still_missing": 821,
+  "still_missing": 828,
   "articles": [
     {
-      "id": "46adeb3919c97783271cf244",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Kingswood",
+      "id": "ccf0ad6939bed4166e370cb6",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Lumina_APV",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794555314.1115007
-    },
-    {
-      "id": "74e0c52178b2f0827ab81b54",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Nova",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555314.4383237
-    },
-    {
-      "id": "27399602ccef42af310a2803",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_XA_Ultra",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555314.7481766
-    },
-    {
-      "id": "4991d5bef3f4051bc87e0dc2",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_El_Camino",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794555314.7514167
-    },
-    {
-      "id": "90f0edb8efee6f4437545dc5",
-      "source": "https://en.wikipedia.org/wiki/Lenovo_P2",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794555314.7619014
-    },
-    {
-      "id": "0a95ccf111c45db4cfb5c9e3",
-      "source": "https://isc-edu.org/",
-      "policy": "93e2ad7deccc",
-      "result": "source_error",
-      "retry_after": 1794555314.7867095
-    },
-    {
-      "id": "ab5757b7bde7e5a43128d256",
-      "source": "https://exploitsmw.com/",
-      "policy": "93e2ad7deccc",
-      "result": "source_unavailable",
-      "retry_after": 1794555314.9247787
-    },
-    {
-      "id": "0d093f1b1d8b95e0ce3c5ba1",
-      "source": "https://en.wikipedia.org/wiki/Brammo_Enertia",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555315.0043912
-    },
-    {
-      "id": "9e59804909cc110131739d58",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III_Neo",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555315.2475488
-    },
-    {
-      "id": "8b18fdee4f936ef9ef824c6d",
-      "source": "https://en.wikipedia.org/wiki/Huawei_P10",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794555315.2637782
-    },
-    {
-      "id": "2a8b92143f14b264d8d27146",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555315.4117022
-    },
-    {
-      "id": "611527df4de7f3170a99cfde",
-      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555315.7747495
-    },
-    {
-      "id": "fb6dd420a2fc44c8f8340751",
-      "source": "https://en.wikipedia.org/wiki/JXD_P861",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555315.892556
-    },
-    {
-      "id": "c176a1dc41c1e122cab45821",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555315.8947258
-    },
-    {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555316.2710347
-    },
-    {
-      "id": "fab6501205ba27e38dac785c",
-      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555316.4185722
-    },
-    {
-      "id": "33686a761fa5d097afc337dc",
-      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555316.5284956
-    },
-    {
-      "id": "d5ff9974453f739276c8eb9f",
-      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555316.5302527
-    },
-    {
-      "id": "2d100db342cdd6c9c517a807",
-      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555316.6760142
-    },
-    {
-      "id": "a941ae3553703f8fd24d4d17",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555316.8715522
-    },
-    {
-      "id": "e8fc748d4c8dffaa2212a1cf",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555317.1261313
-    },
-    {
-      "id": "4afa4536b18e5a41b30a3497",
-      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555317.2863252
-    },
-    {
-      "id": "007acb84538e69bcc14f4f9f",
-      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555317.3591523
-    },
-    {
-      "id": "8444aa187e09b377f661fcbf",
-      "source": "https://dec.ac.in/",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1794555317.6957653
-    },
-    {
-      "id": "9d1f6341eb5fa6644d63ff08",
-      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555317.6966653
-    },
-    {
-      "id": "ff28f504e8e3f011fe2acd9b",
-      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555317.8330688
-    },
-    {
-      "id": "635e4aa01fc60223a6fea284",
-      "source": "https://en.wikipedia.org/wiki/Borgward_BX3",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555317.9854217
-    },
-    {
-      "id": "b0979abba345525f23d6b27e",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_M5",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555318.3565836
-    },
-    {
-      "id": "2f02162d9ab27a8cd5662161",
-      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555318.5978684
-    },
-    {
-      "id": "b1e668b9c10e7cfe7e4acd5a",
-      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555318.8542702
-    },
-    {
-      "id": "b211f120ea27b93fc925f6b4",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555319.085258
-    },
-    {
-      "id": "b73ac57f1ef5ed96390ec4f0",
-      "source": "https://en.wikipedia.org/wiki/Bridgestone_350_GTR",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555319.1076896
-    },
-    {
-      "id": "6548e415fc086ccec65bbb7c",
-      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555319.2970588
-    },
-    {
-      "id": "fbff6440d68d52399ca212b1",
-      "source": "https://cctu.edu.gh/site/index",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1794555319.4449685
-    },
-    {
-      "id": "9380990d113b5de5f521da53",
-      "source": "https://en.wikipedia.org/wiki/Norton_Nomad",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555319.5901163
-    },
-    {
-      "id": "d5adbd5f7c0ee6e635219a5c",
-      "source": "https://en.wikipedia.org/wiki/Concept_F_450_GS",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555319.6674666
+      "retry_after": 1794565005.0587595
     },
     {
       "id": "02364f4d79f5caac07cae019",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794565005.2552497
+    },
+    {
+      "id": "74e1c064a1c9fece03c7409e",
+      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_X8",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794565005.2764988
+    },
+    {
+      "id": "262458129e5f4bc7f41c9ef5",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Light_Six",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794565005.3669488
+    },
+    {
+      "id": "51e8297044ff8907024512b0",
+      "source": "https://en.wikipedia.org/wiki/Moto_G5",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794565005.5191357
     },
     {
       "id": "8ede6684d4cf14febb863aad",
-      "result": "cooldown"
-    },
-    {
-      "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
-    },
-    {
-      "id": "e21f0c9303189bff05b728a0",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794565005.7981088
     },
     {
       "id": "71ad44ca5375549c9a0fafea",
@@ -316,25 +83,165 @@
       "result": "cooldown"
     },
     {
+      "id": "0a95ccf111c45db4cfb5c9e3",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5757b7bde7e5a43128d256",
+      "result": "cooldown"
+    },
+    {
+      "id": "0d093f1b1d8b95e0ce3c5ba1",
+      "result": "cooldown"
+    },
+    {
+      "id": "9e59804909cc110131739d58",
+      "result": "cooldown"
+    },
+    {
+      "id": "2a8b92143f14b264d8d27146",
+      "result": "cooldown"
+    },
+    {
+      "id": "611527df4de7f3170a99cfde",
+      "result": "cooldown"
+    },
+    {
+      "id": "fb6dd420a2fc44c8f8340751",
+      "result": "cooldown"
+    },
+    {
+      "id": "c176a1dc41c1e122cab45821",
+      "result": "cooldown"
+    },
+    {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "result": "cooldown"
+    },
+    {
+      "id": "fab6501205ba27e38dac785c",
+      "result": "cooldown"
+    },
+    {
+      "id": "33686a761fa5d097afc337dc",
+      "result": "cooldown"
+    },
+    {
+      "id": "d5ff9974453f739276c8eb9f",
+      "result": "cooldown"
+    },
+    {
+      "id": "2d100db342cdd6c9c517a807",
+      "result": "cooldown"
+    },
+    {
+      "id": "a941ae3553703f8fd24d4d17",
+      "result": "cooldown"
+    },
+    {
+      "id": "e8fc748d4c8dffaa2212a1cf",
+      "result": "cooldown"
+    },
+    {
+      "id": "4afa4536b18e5a41b30a3497",
+      "result": "cooldown"
+    },
+    {
+      "id": "007acb84538e69bcc14f4f9f",
+      "result": "cooldown"
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d1f6341eb5fa6644d63ff08",
+      "result": "cooldown"
+    },
+    {
+      "id": "ff28f504e8e3f011fe2acd9b",
+      "result": "cooldown"
+    },
+    {
+      "id": "635e4aa01fc60223a6fea284",
+      "result": "cooldown"
+    },
+    {
+      "id": "b0979abba345525f23d6b27e",
+      "result": "cooldown"
+    },
+    {
+      "id": "2f02162d9ab27a8cd5662161",
+      "result": "cooldown"
+    },
+    {
+      "id": "b1e668b9c10e7cfe7e4acd5a",
+      "result": "cooldown"
+    },
+    {
+      "id": "b211f120ea27b93fc925f6b4",
+      "result": "cooldown"
+    },
+    {
+      "id": "b73ac57f1ef5ed96390ec4f0",
+      "result": "cooldown"
+    },
+    {
+      "id": "6548e415fc086ccec65bbb7c",
+      "result": "cooldown"
+    },
+    {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "9380990d113b5de5f521da53",
+      "result": "cooldown"
+    },
+    {
+      "id": "d5adbd5f7c0ee6e635219a5c",
+      "result": "cooldown"
+    },
+    {
       "id": "8af54bb949a0c055391d640a",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1794555321.710589
+      "result": "cooldown"
     },
     {
       "id": "a6510273f0889bf4d7684eae",
-      "source": "https://mua.ac.ke/",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794555322.6107395
+      "result": "cooldown"
     },
     {
       "id": "ef614dcb4163038685679d1d",
-      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/",
+      "result": "cooldown"
+    },
+    {
+      "id": "27399602ccef42af310a2803",
+      "result": "cooldown"
+    },
+    {
+      "id": "74e0c52178b2f0827ab81b54",
+      "result": "cooldown"
+    },
+    {
+      "id": "554edbfdaee926ed82007433",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
       "policy": "93e2ad7deccc",
-      "result": "no_source_image",
-      "retry_after": 1794555325.262855
+      "result": "invalid_source_images",
+      "retry_after": 1794565006.3559937
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794565006.4091246
+    },
+    {
+      "id": "e21f0c9303189bff05b728a0",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794565006.7337434
     }
   ],
   "missing": [
@@ -528,6 +435,13 @@
       "reason": "source_unavailable"
     },
     {
+      "id": "ad1532d7cf3d",
+      "category": "private-vacancy",
+      "title": "Xplorewide Announces Travel Consultant Opening in Gurugram",
+      "source": "https://in.linkedin.com/jobs/view/travel-consultant-at-xplorewide-4484922682",
+      "reason": "invalid_source_images"
+    },
+    {
       "id": "672171c4bedc",
       "category": "technology",
       "title": "An Overview of Recent Vercel Open Source Repositories and SDKs",
@@ -540,6 +454,13 @@
       "title": "Overview of Recent Professional Job Openings Listed on LinkedIn India",
       "source": "https://in.linkedin.com/jobs/Nexbirlik+istifad%C9%99%C3%A7i+t%C9%99cr%C3%BCb%C9%99si%3A+m%C3%BCxt%C9%99lif+izahlara+n%C9%99z%C9%99r+sal%C4%B1n.whn-jobs",
       "reason": "access_denied"
+    },
+    {
+      "id": "89316d768597",
+      "category": "private-vacancy",
+      "title": "Peloton Consulting Group Advertises Anaplan Consultant Opening in Hyderabad",
+      "source": "https://in.linkedin.com/jobs/view/anaplan-consultant-at-peloton-consulting-group-4482950332",
+      "reason": "invalid_source_images"
     },
     {
       "id": "ddfa4e186cef",
@@ -1246,7 +1167,7 @@
       "category": "private-vacancy",
       "title": "Media and Communications Job Openings Reported in San Antonio, Texas",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-san-antonio-tx",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "6fa497a129f7",
@@ -1708,7 +1629,7 @@
       "category": "private-vacancy",
       "title": "EaseMyTrip.com Recruits Domestic Travel Consultant in Gurugram",
       "source": "https://in.linkedin.com/jobs/view/domestic-travel-consultant-at-easemytrip-com-4483877973",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "95c9f12cac7c67468ea940bb",
@@ -1730,6 +1651,13 @@
       "title": "Overview of Recent Job Openings Across Various Sectors in India",
       "source": "https://in.linkedin.com/jobs/nexbirlik%2Bhaqq%C4%B1nda%2Bm%C9%99nfi%2Br%C9%99yl%C9%99r%2B%E2%80%94%2B%C3%BCzvl%C3%BCk%2Bt%C9%99qdimat%C4%B1n%C4%B1%2B%C3%B6yr%C9%99nin.wam-jobs",
       "reason": "no_source_image"
+    },
+    {
+      "id": "9955bb9d6330",
+      "category": "private-vacancy",
+      "title": "Unison International Consulting Advertises Senior Stylist Vacancy in Mumbai",
+      "source": "https://in.linkedin.com/jobs/view/senior-stylist-at-unison-international-consulting-the-recruitment-company-4484823418",
+      "reason": "invalid_source_images"
     },
     {
       "id": "e43332812610",
@@ -2177,7 +2105,7 @@
       "category": "private-vacancy",
       "title": "GSquare Group Announces Openings for Over 250 Positions in Mumbai",
       "source": "https://in.linkedin.com/jobs/view/gsquare-jobs-at-gsquare-4474259087",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "1f7266c02d07",
@@ -2513,7 +2441,7 @@
       "category": "private-vacancy",
       "title": "Media and Communications Job Listings Overview for Cheyenne and Fort Collins Regions",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "7ba9e85f5ffa",
@@ -3192,7 +3120,7 @@
       "category": "private-vacancy",
       "title": "AGCO Corporation Announces Job Opening for Developer, Machine Platform in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/developer-machine-platform-at-agco-corporation-4484823983",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "a82799421118",
@@ -3318,7 +3246,7 @@
       "category": "private-vacancy",
       "title": "Sodexo Announces Opening for Hospitality Manager Position in Ajmer, Rajasthan",
       "source": "https://in.linkedin.com/jobs/view/hospitality-manager-at-sodexo-4481855744",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "736ca0bcddb6",
@@ -3647,7 +3575,7 @@
       "category": "private-vacancy",
       "title": "Global Private Job Listings: Overview of Open Roles and How to Apply via Professional Platforms",
       "source": "https://www.linkedin.com/jobs/hiring-solutions-llc-jobs-worldwide",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "029ee2179ac9",
@@ -4287,6 +4215,13 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "f6103bcf0b57",
+      "category": "ai-news",
+      "title": "Siri AI Expands Language Support with 27.2 Software Updates",
+      "source": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
+      "reason": "no_source_image"
+    },
+    {
       "id": "318f84b0be98",
       "category": "business",
       "title": "Esquire Financial Holdings, Inc. Announces Quarterly Dividend Payment",
@@ -4550,7 +4485,7 @@
       "category": "private-vacancy",
       "title": "Guptha Infraventures and Constructions Private Limited Lists Safety Officer Opening in Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/safety-officer-at-guptha-infraventures-and-constructions-private-limited-4483886480",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "18058afab0cf",
@@ -4578,7 +4513,7 @@
       "category": "private-vacancy",
       "title": "Hubbell Incorporated and Other Employers Report Open Roles in Kochi and Kerala",
       "source": "https://in.linkedin.com/jobs/hubbell-incorporated-jobs-kochi-kl",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "75ebcc814325",
@@ -4670,6 +4605,13 @@
       "title": "TRAI Releases Independent Mobile Network Performance Data for South Delhi Areas",
       "source": "https://trai.gov.in/sites/default/files/2026-09/PR_No124of2026.pdf",
       "reason": "source_unavailable"
+    },
+    {
+      "id": "afdcec06f986",
+      "category": "private-vacancy",
+      "title": "UAE Jobs Lists Safety Officer Opening in Thanjavur, Tamil Nadu",
+      "source": "https://in.linkedin.com/jobs/view/safety-officer-at-uae-jobs-4481087458",
+      "reason": "invalid_source_images"
     },
     {
       "id": "4bf7bda6aaad",
@@ -4826,11 +4768,18 @@
       "reason": "invalid_source_images"
     },
     {
+      "id": "677d24fb37fa",
+      "category": "private-vacancy",
+      "title": "Employment Opportunities and Open Roles Reported Across Uttar Pradesh via Professional Networks",
+      "source": "https://in.linkedin.com/jobs/unitell-india-jobs-uttar-pradesh",
+      "reason": "no_source_image"
+    },
+    {
       "id": "6584c0d778a7",
       "category": "private-vacancy",
       "title": "Service Designer and Related Professional Openings Listed in the Mumbai Metropolitan Region",
       "source": "https://www.linkedin.com/jobs/service-designer-jobs-rahul-nagar",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "0b186bc5af89",
@@ -5932,6 +5881,13 @@
       "reason": "access_denied"
     },
     {
+      "id": "0ad701b03d1b",
+      "category": "government-schemes",
+      "title": "Odisha State Housing Board Announces Residential Plot E-Auctions and Affordable Housing Sale",
+      "source": "https://oshb.org/news/application-form-e-auction-of-residential-plot-at-bhubaneswar-dhenkanal-rourkela-and-sale-of-lig-houses-ews-flats-at-nayagarh-bhawanipatana-kalatrandi-on-outright-purchase-basis/",
+      "reason": "no_source_image"
+    },
+    {
       "id": "3827217a3b06",
       "category": "health-science",
       "title": "India cuts MRPs for trade-margin-capped cancer drugs by up to 93%",
@@ -6087,234 +6043,68 @@
     }
   ],
   "missing_reasons": {
-    "no_source_image": 257,
-    "access_denied": 251,
+    "no_source_image": 262,
+    "access_denied": 256,
     "source_unavailable": 38,
-    "invalid_source_images": 180,
+    "invalid_source_images": 177,
     "source_error": 94,
     "restricted_page": 1
   },
-  "existing_representatives_preserved": 1,
+  "existing_representatives_preserved": 0,
   "diagnostics": {
-    "46adeb3919c97783271cf244": {
+    "ccf0ad6939bed4166e370cb6": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_Kingswood",
-      "image": "https://upload.wikimedia.org/wikipedia/en/9/90/1959_Chevrolet_Kingswood_%28rear%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled"
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Lumina_APV",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/46/1994-1996_Chevrolet_Lumina_APV.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "74e0c52178b2f0827ab81b54": {
+    "02364f4d79f5caac07cae019": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Huawei_Nova",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/20px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "27399602ccef42af310a2803": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_XA_Ultra",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "4991d5bef3f4051bc87e0dc2": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Chevrolet_El_Camino",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/1969_Chevrolet_El_Camino_SS%2C_front_5.19.19.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "90f0edb8efee6f4437545dc5": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Lenovo_P2",
-      "image": "https://upload.wikimedia.org/wikipedia/en/0/0a/Lenovo_P2_Grey.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "0a95ccf111c45db4cfb5c9e3": {
-      "reason": "source_error",
-      "source": "https://isc-edu.org/",
-      "error": "ConnectionError"
-    },
-    "ab5757b7bde7e5a43128d256": {
-      "reason": "source_unavailable",
-      "source": "https://exploitsmw.com/",
-      "status": 200
-    },
-    "0d093f1b1d8b95e0ce3c5ba1": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Brammo_Enertia",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "9e59804909cc110131739d58": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S_III_Neo",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Samsung_Galaxy_S_III.png/500px-Samsung_Galaxy_S_III.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Samsung_Galaxy_S_III.png/250px-Samsung_Galaxy_S_III.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "8b18fdee4f936ef9ef824c6d": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Huawei_P10",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/Huawei_P10_front.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "2a8b92143f14b264d8d27146": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_500",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "611527df4de7f3170a99cfde": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ninetology_Black_Pearl_II",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "fb6dd420a2fc44c8f8340751": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/JXD_P861",
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
       "candidate_count": 7,
       "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/120px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/1280px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/500px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
       ]
     },
-    "c176a1dc41c1e122cab45821": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_Round",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
+    "74e1c064a1c9fece03c7409e": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_X8",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Sony_Ericsson_Xperia_X8.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "8f4b17c49d1b2a0c5cb45a53": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Lumia_925",
-      "candidate_count": 6,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
+    "262458129e5f4bc7f41c9ef5": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Chevrolet_Light_Six",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/dc/1914_Chevrolet_Light_Six.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "fab6501205ba27e38dac785c": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Isai_VL_LGV31",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
+    "51e8297044ff8907024512b0": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Moto_G5",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Moto_G5.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "33686a761fa5d097afc337dc": {
+    "8ede6684d4cf14febb863aad": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ducati_50_Scrambler",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "d5ff9974453f739276c8eb9f": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ducati_100_Scrambler",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "2d100db342cdd6c9c517a807": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Alvis_10/30",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
       "candidate_count": 9,
       "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/0/0e/1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/1280px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1920_Alvis_1030.jpg/960px-1920_Alvis_1030.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
       ]
     },
-    "a941ae3553703f8fd24d4d17": {
+    "554edbfdaee926ed82007433": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_TX",
-      "candidate_count": 7,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/120px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/60px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "e8fc748d4c8dffaa2212a1cf": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C3",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
       "candidate_count": 9,
       "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/120px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Ambox_current_red_Asia_Australia.svg/60px-Ambox_current_red_Asia_Australia.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
       ]
     },
-    "4afa4536b18e5a41b30a3497": {
+    "ab5161457cb0ef816db211ff": {
       "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-officielle-de-semuliki/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18613.jpg"
-      ]
-    },
-    "007acb84538e69bcc14f4f9f": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-notre-dame-de-lomami/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18606.jpg"
-      ]
-    },
-    "9d1f6341eb5fa6644d63ff08": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-pedagogique-de-kananga/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18615.jpg"
-      ]
-    },
-    "8444aa187e09b377f661fcbf": {
-      "reason": "no_source_image",
-      "source": "https://dec.ac.in/"
-    },
-    "ff28f504e8e3f011fe2acd9b": {
-      "reason": "invalid_source_images",
-      "source": "https://www.unirank.org/cd/uni/universite-patrice-emery-lumumba/",
-      "candidate_count": 1,
-      "candidates": [
-        "https://www.unirank.org/i/screenshots/18614.jpg"
-      ]
-    },
-    "635e4aa01fc60223a6fea284": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Borgward_BX3",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
       "candidate_count": 3,
       "candidates": [
         "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
@@ -6322,108 +6112,15 @@
         "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
       ]
     },
-    "b0979abba345525f23d6b27e": {
+    "e21f0c9303189bff05b728a0": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_M5",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
       "candidate_count": 5,
       "candidates": [
         "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
         "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
         "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
       ]
-    },
-    "2f02162d9ab27a8cd5662161": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Ubuntu_Edge",
-      "candidate_count": 10,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
-        "https://upload.wikimedia.org/wikipedia/en/6/6b/A_render_of_Ubuntu_Touch_on_the_Ubuntu_Edge.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled"
-      ]
-    },
-    "b1e668b9c10e7cfe7e4acd5a": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Microsoft_Lumia_430",
-      "candidate_count": 7,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/60px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/60px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "b211f120ea27b93fc925f6b4": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Nokia_Asha_501",
-      "candidate_count": 8,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/1/1e/Nokia_Asha_501.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/250px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Asha501-1.jpg/120px-Asha501-1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "b73ac57f1ef5ed96390ec4f0": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Bridgestone_350_GTR",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "6548e415fc086ccec65bbb7c": {
-      "reason": "invalid_source_images",
-      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
-      "candidate_count": 23,
-      "candidates": [
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/frontier/vehicle-profile-assets/2027/model-2027-frontier-crew-cab-pro-4x-red-alert.png-v2.png",
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue-hybrid/vehicle-profile-assets/2027/model-2027-rogue-hybrid-sr-horizon-blue-pearl-metallic-super-black-two-tone.png.ximg.l_3_m.smart.png",
-        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue/vehicle-profile-assets/2027/model-2027-rogue-rock-creek-intelligent-awd-baja-storm-metallic.png.ximg.l_3_m.smart.png"
-      ]
-    },
-    "fbff6440d68d52399ca212b1": {
-      "reason": "no_source_image",
-      "source": "https://cctu.edu.gh/site/index"
-    },
-    "9380990d113b5de5f521da53": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Norton_Nomad",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "d5adbd5f7c0ee6e635219a5c": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Concept_F_450_GS",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Robot_Not.svg/120px-Robot_Not.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Robot_Not.svg/60px-Robot_Not.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "8af54bb949a0c055391d640a": {
-      "reason": "no_source_image",
-      "source": "https://support.google.com/pixelphone/answer/7158570?hl=en",
-      "existing_representative_preserved": true
-    },
-    "a6510273f0889bf4d7684eae": {
-      "reason": "invalid_source_images",
-      "source": "https://mua.ac.ke/",
-      "candidate_count": 5,
-      "candidates": [
-        "https://mua.ac.ke/wp-content/uploads/2025/07/Group-17265.png",
-        "https://mua.ac.ke/wp-content/uploads/2025/07/NoPath-Copy-27_Image_minify.png",
-        "https://mua.ac.ke/wp-content/uploads/2026/11/MUA_New_Chancellor_Banner.png"
-      ]
-    },
-    "ef614dcb4163038685679d1d": {
-      "reason": "no_source_image",
-      "source": "https://www.samsung.com/in/smartphones/galaxy-f/galaxy-f15-5g-black-128gb-sm-e156bzkdins/"
     }
   },
   "mode": "directory"

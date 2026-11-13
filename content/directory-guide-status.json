@@ -1,6 +1,6 @@
 {
   "published": 4,
-  "updated": 3,
+  "updated": 2,
   "target": 8,
   "missing": {
     "colleges": 2,
@@ -9,13 +9,13 @@
   "categories": {
     "colleges": {
       "new": 0,
-      "updated": 1,
+      "updated": 0,
       "eligible_new": 0,
-      "eligible_updates": 1,
+      "eligible_updates": 0,
       "shortfall": 2,
       "reasons": {
         "considered": 317,
-        "already_published_unchanged": 18,
+        "already_published_unchanged": 19,
         "insufficient verified descriptive fields": 89,
         "identifier URL is not specification evidence": 209
       },
@@ -150,13 +150,13 @@
     },
     "phones": {
       "new": 2,
-      "updated": 1,
-      "eligible_new": 987,
-      "eligible_updates": 1,
+      "updated": 2,
+      "eligible_new": 985,
+      "eligible_updates": 2,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 152,
+        "already_published_unchanged": 153,
         "insufficient verified descriptive fields": 104,
         "identifier URL is not specification evidence": 637
       },
@@ -292,16 +292,16 @@
     "cars": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 1545,
+      "eligible_new": 1571,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
-        "considered": 11504,
-        "already_published_unchanged": 155,
-        "insufficient verified descriptive fields": 1155,
-        "identifier URL is not specification evidence": 8649
+        "considered": 11505,
+        "already_published_unchanged": 157,
+        "insufficient verified descriptive fields": 1156,
+        "identifier URL is not specification evidence": 8621
       },
-      "rejected_count": 9804,
+      "rejected_count": 9777,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -432,13 +432,13 @@
     },
     "bikes": {
       "new": 0,
-      "updated": 1,
+      "updated": 0,
       "eligible_new": 0,
-      "eligible_updates": 1,
+      "eligible_updates": 0,
       "shortfall": 2,
       "reasons": {
         "considered": 447,
-        "already_published_unchanged": 101,
+        "already_published_unchanged": 102,
         "insufficient verified descriptive fields": 83,
         "identifier URL is not specification evidence": 262
       },
@@ -572,5 +572,5 @@
       ]
     }
   },
-  "date": "2026-11-13T01:35:02.223699+00:00"
+  "date": "2026-11-13T04:16:34.670976+00:00"
 }
