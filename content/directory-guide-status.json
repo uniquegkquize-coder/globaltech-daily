@@ -9,13 +9,13 @@
   "categories": {
     "colleges": {
       "new": 0,
-      "updated": 1,
+      "updated": 0,
       "eligible_new": 0,
-      "eligible_updates": 1,
+      "eligible_updates": 0,
       "shortfall": 2,
       "reasons": {
         "considered": 317,
-        "already_published_unchanged": 18,
+        "already_published_unchanged": 19,
         "insufficient verified descriptive fields": 89,
         "identifier URL is not specification evidence": 209
       },
@@ -151,16 +151,16 @@
     "phones": {
       "new": 2,
       "updated": 0,
-      "eligible_new": 971,
+      "eligible_new": 970,
       "eligible_updates": 0,
       "shortfall": 0,
       "reasons": {
         "considered": 1881,
-        "already_published_unchanged": 169,
+        "already_published_unchanged": 171,
         "insufficient verified descriptive fields": 104,
-        "identifier URL is not specification evidence": 637
+        "identifier URL is not specification evidence": 636
       },
-      "rejected_count": 741,
+      "rejected_count": 740,
       "rejected_sample": [
         {
           "name": "OnePlus Open",
@@ -291,17 +291,17 @@
     },
     "cars": {
       "new": 2,
-      "updated": 0,
-      "eligible_new": 1700,
-      "eligible_updates": 0,
+      "updated": 1,
+      "eligible_new": 1702,
+      "eligible_updates": 1,
       "shortfall": 0,
       "reasons": {
         "considered": 11506,
-        "already_published_unchanged": 171,
-        "insufficient verified descriptive fields": 1151,
-        "identifier URL is not specification evidence": 8484
+        "already_published_unchanged": 172,
+        "insufficient verified descriptive fields": 1153,
+        "identifier URL is not specification evidence": 8478
       },
-      "rejected_count": 9635,
+      "rejected_count": 9631,
       "rejected_sample": [
         {
           "name": "Hyundai Bayon",
@@ -572,5 +572,5 @@
       ]
     }
   },
-  "date": "2026-11-14T01:27:59.621216+00:00"
+  "date": "2026-11-14T04:13:44.238246+00:00"
 }

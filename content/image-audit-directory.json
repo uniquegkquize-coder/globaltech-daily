@@ -1,85 +1,19 @@
 {
-  "total_posts": 8924,
+  "total_posts": 9004,
   "selected": 55,
   "results": {
     "source_photo_saved": 4,
-    "invalid_source_images": 6,
-    "cooldown": 45
+    "cooldown": 50,
+    "invalid_source_images": 1
   },
   "still_missing": 916,
   "articles": [
     {
-      "id": "25aef16251a25dfe4e56654d",
-      "source": "https://en.wikipedia.org/wiki/Jaguar_XK140",
+      "id": "614f03b5cde81bf30878973f",
+      "source": "https://en.wikipedia.org/wiki/LG_Optimus_G",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794641294.4505064
-    },
-    {
-      "id": "d72d76f4c3646d29f9dfab34",
-      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_Mini",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794641294.657468
-    },
-    {
-      "id": "a85db04de80a47159808eb72",
-      "source": "https://en.wikipedia.org/wiki/HTC_Incredible_S",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794641294.8642373
-    },
-    {
-      "id": "02364f4d79f5caac07cae019",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794641294.8850944
-    },
-    {
-      "id": "672ec970b2343fab3950e9b0",
-      "source": "https://en.wikipedia.org/wiki/Land_Rover_series",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794641295.1488683
-    },
-    {
-      "id": "8ede6684d4cf14febb863aad",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794641295.6323998
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794641295.8831232
-    },
-    {
-      "id": "71ad44ca5375549c9a0fafea",
-      "result": "cooldown"
-    },
-    {
-      "id": "6e0b7f005efe9f07310a5382",
-      "result": "cooldown"
-    },
-    {
-      "id": "95c9f12cac7c67468ea940bb",
-      "result": "cooldown"
-    },
-    {
-      "id": "d4519cf5c59f707b293a301d",
-      "result": "cooldown"
-    },
-    {
-      "id": "143e60189659fea092ac3a1e",
-      "result": "cooldown"
-    },
-    {
-      "id": "6bb2ac3830abf79750ec9c1e",
-      "result": "cooldown"
+      "retry_after": 1794651231.6849835
     },
     {
       "id": "0a95ccf111c45db4cfb5c9e3",
@@ -202,8 +136,11 @@
       "result": "cooldown"
     },
     {
-      "id": "6548e415fc086ccec65bbb7c",
-      "result": "cooldown"
+      "id": "c44ea102f2124d58db23bbd4",
+      "source": "https://en.wikipedia.org/wiki/HTC_ThunderBolt",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794651232.0470939
     },
     {
       "id": "fbff6440d68d52399ca212b1",
@@ -238,25 +175,73 @@
       "result": "cooldown"
     },
     {
-      "id": "ab5161457cb0ef816db211ff",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794641296.0529695
+      "id": "02364f4d79f5caac07cae019",
+      "result": "cooldown"
     },
     {
-      "id": "7adf40b3ba628bb367e38a7b",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_E5",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794641296.10116
+      "id": "8ede6684d4cf14febb863aad",
+      "result": "cooldown"
+    },
+    {
+      "id": "554edbfdaee926ed82007433",
+      "result": "cooldown"
+    },
+    {
+      "id": "ab5161457cb0ef816db211ff",
+      "result": "cooldown"
     },
     {
       "id": "e21f0c9303189bff05b728a0",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "result": "cooldown"
+    },
+    {
+      "id": "7adf40b3ba628bb367e38a7b",
+      "result": "cooldown"
+    },
+    {
+      "id": "71ad44ca5375549c9a0fafea",
+      "result": "cooldown"
+    },
+    {
+      "id": "6e0b7f005efe9f07310a5382",
+      "result": "cooldown"
+    },
+    {
+      "id": "95c9f12cac7c67468ea940bb",
+      "result": "cooldown"
+    },
+    {
+      "id": "d4519cf5c59f707b293a301d",
+      "result": "cooldown"
+    },
+    {
+      "id": "143e60189659fea092ac3a1e",
+      "result": "cooldown"
+    },
+    {
+      "id": "6bb2ac3830abf79750ec9c1e",
+      "result": "cooldown"
+    },
+    {
+      "id": "6548e415fc086ccec65bbb7c",
+      "source": "https://www.nissanusa.com/vehicles/trucks/2027-frontier.html",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794641296.655112
+      "retry_after": 1794651232.4788558
+    },
+    {
+      "id": "8960b809bdfe4defdc89cff6",
+      "source": "https://en.wikipedia.org/wiki/Ferrari_GT4",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794651232.4914844
+    },
+    {
+      "id": "852109c03abd284d3b9858fc",
+      "source": "https://en.wikipedia.org/wiki/Ferrari_P4/5_by_Pininfarina",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794651232.7213836
     }
   ],
   "missing": [
@@ -496,7 +481,7 @@
       "category": "business",
       "title": "MSM Solutions Launches PortalTrack Print Quality Inspection for Real-Time Label Validation",
       "source": "https://www.prnewswire.com/news-releases/msm-solutions-launches-portaltrack-print-iq-for-real-time-label-validation-302858812.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "d628b12d541f",
@@ -699,7 +684,7 @@
       "category": "ai-news",
       "title": "Tata Communications Announces $450 Million Investment for India's AI Infrastructure",
       "source": "https://www.prnewswire.com/news-releases/tata-communications-to-build-indias-ai-super-highway-302922235.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "9ffe6855395a",
@@ -831,7 +816,7 @@
       "id": "6548e415fc086ccec65bbb7c",
       "category": "automobiles",
       "title": "Nissan Frontier: Car Specifications, Facts and Verification Guide",
-      "source": "https://www.nissanusa.com/vehicles/trucks/frontier.html",
+      "source": "https://www.nissanusa.com/vehicles/trucks/2027-frontier.html",
       "reason": "invalid_source_images"
     },
     {
@@ -846,7 +831,7 @@
       "category": "private-vacancy",
       "title": "Kudometrics Technologies Private Limited Announces Video Editor Opening in Attur, Tamil Nadu",
       "source": "https://in.linkedin.com/jobs/view/video-editor-at-kudometrics-technologies-private-limited-4484170601",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "41c004476fd9",
@@ -944,7 +929,7 @@
       "category": "private-vacancy",
       "title": "Overview of Gaming and Customer Support Openings Reported on Professional Networks in India",
       "source": "https://in.linkedin.com/jobs/%E6%96%B0%E7%9B%9B%E8%B5%8C%E5%9C%BA%E6%B8%B8%E6%88%8F%E5%AE%A2%E6%9C%8D15508830630.cnv-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "4b24a3879414",
@@ -1105,14 +1090,14 @@
       "category": "business",
       "title": "RCG Ventures Closes Fund VIII Above Target at $515 Million, Citing Strong Institutional Demand",
       "source": "https://www.prnewswire.com/news-releases/rcg-ventures-closes-fund-viii-above-target-at-515-million-302919410.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "06157d85578b",
       "category": "business",
       "title": "Society for Immunotherapy of Cancer Unveils Late-Breaking Abstracts and Press Briefing Lineup for SITC 2026",
       "source": "https://www.prnewswire.com/news-releases/the-society-for-immunotherapy-of-cancer-announces-late-breaking-abstracts-and-press-briefing-presented-at-sitc-2026-302923852.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "600062192bf4",
@@ -1140,7 +1125,7 @@
       "category": "business",
       "title": "DODGEN Reports Industrial Milestones for POE Devolatilization Projects in China",
       "source": "https://www.prnewswire.com/news-releases/dodgen-reports-poe-devolatilization-milestones-across-three-industrial-projects-in-china-302923001.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "81a571404aaf",
@@ -1294,7 +1279,7 @@
       "category": "visas-immigration",
       "title": "Sky Heaven Immigration Announces Recruitment for Visitor Visa Counselor in Ahmedabad",
       "source": "https://in.linkedin.com/jobs/view/visitor-visa-counselor-at-sky-heaven-immigration-opc-pvt-ltd-4482294678",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "c1085e9a2afd",
@@ -1308,7 +1293,7 @@
       "category": "business",
       "title": "Five California Nonprofits Receive $500,000 in Final Round of PG&E Foundation Grants",
       "source": "https://www.prnewswire.com/news-releases/five-california-nonprofits-receive-500-000-to-restore-habitats-expand-environmental-education-and-strengthen-local-food-systems-302924612.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "f2384183d56f",
@@ -1427,7 +1412,7 @@
       "category": "private-vacancy",
       "title": "AkbarTravels.com Announces Junior Content Writer Opening in Mumbai",
       "source": "https://in.linkedin.com/jobs/view/junior-content-writer-at-akbartravels-com-4484198171",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "de9e139b22f9",
@@ -1455,7 +1440,7 @@
       "category": "business",
       "title": "Ruizhi Machinery Unveils Three New Paper Bag Machines at All in Print China 2026",
       "source": "https://www.prnewswire.com/news-releases/all-in-print-china-2026-concludes-successfully-as-ruizhi-machinery-showcases-three-new-machines-302923371.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "a3eabf51b023",
@@ -1588,7 +1573,7 @@
       "category": "business",
       "title": "Preclinical Study Highlights Potential of Human Breast Milk-Derived Nasal Antibody Treatment Against Respiratory Viruses",
       "source": "https://www.prnewswire.com/news-releases/human-breast-milk-derived-antibodies-protect-against-influenza-and-show-broad-antiviral-activity-302923790.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "da47fed12cb3",
@@ -1966,7 +1951,7 @@
       "category": "private-vacancy",
       "title": "BDO India and Other Firms Report Open Positions in the Greater Bengaluru Area",
       "source": "https://in.linkedin.com/jobs/bdo-india-jobs-greater-bengaluru-area",
-      "reason": "invalid_source_images"
+      "reason": "no_source_image"
     },
     {
       "id": "515a39821a80",
@@ -2085,7 +2070,7 @@
       "category": "apps-software",
       "title": "Global ESG Reporting Software Market Projected to Reach $4.48 Billion by 2031, Driven by Integrated Disclosures",
       "source": "https://www.prnewswire.com/news-releases/esg-reporting-software-market-worth-4-48-billion-by-2031--report-by-marketsandmarkets-302924789.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "26724eddeb7d",
@@ -2365,7 +2350,7 @@
       "category": "business",
       "title": "Turner, Mason & Company Releases Four Fall 2026 Energy Market Outlook Reports",
       "source": "https://www.prnewswire.com/news-releases/turner-mason--company-releases-four-fall-energy-market-outlook-reports-302923877.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "6ba39bcd4548",
@@ -2477,7 +2462,7 @@
       "category": "private-vacancy",
       "title": "Publicis Groupe India and Other Firms List Open Roles Across Maharashtra",
       "source": "https://in.linkedin.com/jobs/publicis-groupe-india-jobs-maharashtra",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "716f81e31e0d",
@@ -2666,7 +2651,7 @@
       "category": "ai-news",
       "title": "Yeastar Announces Yeahs Awards 2026 Winners Highlighting AI and Partner Innovations",
       "source": "https://www.prnewswire.com/news-releases/yeastar-reconoce-la-ia-la-innovacion-tecnica-y-el-exito-de-los-clientes-en-los-yeahs-awards-2026-302917649.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "0983ec5f08f3",
@@ -2750,7 +2735,7 @@
       "category": "business",
       "title": "XPENG Reports Record Monthly Deliveries for October 2026 and Progress in Autonomous Operations",
       "source": "https://www.prnewswire.com/news-releases/xpeng-announces-vehicle-delivery-results-for-october-2026-302925668.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "da7f3987f6a5",
@@ -2967,7 +2952,7 @@
       "category": "controversies",
       "title": "Duolingo Faces Securities Class Action Lawsuit: What Investors Should Know",
       "source": "https://www.prnewswire.com/news-releases/duol-investors-have-opportunity-to-lead-duolingo-inc-securities-fraud-lawsuit-with-sbs-law-302924160.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "7548888dfa18",
@@ -2981,7 +2966,7 @@
       "category": "defence",
       "title": "Defense Seeks Release of Career Air Force Officer Held in Pretrial Confinement",
       "source": "https://www.prnewswire.com/news-releases/defense-moves-to-free-career-air-force-officer-from-pretrial-jail-judge-to-hear-arguments-november-17-302924913.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "9f440eefa5ac",
@@ -3044,7 +3029,7 @@
       "category": "private-vacancy",
       "title": "Fanzart Seeks Business Development Specialist for On-Site Role in Ranchi",
       "source": "https://in.linkedin.com/jobs/view/business-development-specialist-at-fanzart-designer-fans-4484908686",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "5f642b137c38",
@@ -3128,7 +3113,7 @@
       "category": "private-vacancy",
       "title": "Birlasoft Lists React Developer Opcenter Opening in Pune",
       "source": "https://in.linkedin.com/jobs/view/react-developer-opcenter-at-birlasoft-4481390213",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "7e988adcb4a5",
@@ -3184,7 +3169,7 @@
       "category": "ai-news",
       "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
       "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "579dc10cba05",
@@ -3282,7 +3267,7 @@
       "category": "business",
       "title": "TuHURA Biosciences Reports Initial Data from Open-Label Study of IFx-2.0 in Metastatic Merkel Cell Carcinoma",
       "source": "https://www.prnewswire.com/news-releases/tuhura-biosciences-provides-first-look-at-data-from-its-open-label-study-of-ifx-2-0-as-an-adjunctive-therapy-to-keytruda-in-first-line-treatment-of-patients-with-deep-seated-metastatic-merkel-cell-carcinoma-302918838.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "1ef0985dd3f3",
@@ -3443,7 +3428,7 @@
       "category": "business",
       "title": "New Clinical and Real-World Evidence for Alzheimer's Treatment Lecanemab Scheduled for CTAD 2026",
       "source": "https://www.prnewswire.com/news-releases/new-clinical-data-on-lecanemab-to-be-presented-at-ctad-conference-2026-302924707.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "83c83ad98dd4",
@@ -3548,7 +3533,7 @@
       "category": "private-vacancy",
       "title": "Mancini Enterprises Private Limited Recruits Product Designer in Chennai",
       "source": "https://in.linkedin.com/jobs/view/product-designer-at-mancini-enterprises-private-limited-4484184209",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "264f65da0496",
@@ -3877,7 +3862,7 @@
       "category": "private-vacancy",
       "title": "House of Tech & Innovation Announces Opening for Punjabi Language Associate in Ranchi",
       "source": "https://in.linkedin.com/jobs/view/langauge-associate-at-house-of-tech-4482274902",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "7de4e7ee71b3",
@@ -4017,7 +4002,7 @@
       "category": "ai-news",
       "title": "Cognizant Launches OpenAI Frontier Capability Group with Over 25,000 Professionals",
       "source": "https://www.prnewswire.com/news-releases/cognizant-commits-more-than-25-000-professionals-to-openai-delivery-as-enterprises-move-frontier-ai-into-production-302924550.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "a41b914c9659",
@@ -4136,7 +4121,7 @@
       "category": "private-vacancy",
       "title": "Niyukti Systems Advertises Agency Development Manager Roles for Life and Health Insurance",
       "source": "https://in.linkedin.com/jobs/view/job-hiring-agency-development-manager-insurance-life-and-health-at-niyukti-systems-inc-4482681909",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "991285850af2",
@@ -4164,7 +4149,7 @@
       "category": "ai-news",
       "title": "ModelBest and OpenBMB Release MiniCPM-OCR Series for Efficient Document Parsing and Quality Control",
       "source": "https://www.prnewswire.com/news-releases/modelbest-and-openbmb-open-source-minicpm-ocr-series-delivering-high-performance-document-parsing-and-ai-powered-quality-control-302925594.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "31e9404aeaf3",
@@ -4514,7 +4499,7 @@
       "category": "business",
       "title": "New Omni-Flex Independent Suspension System Developed for Side-by-Sides and UTVs",
       "source": "https://www.prnewswire.com/news-releases/123invent-inventor-develops-new-independent-suspension-for-side-by-sides--utvs-302923291.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "34cde08363f7",
@@ -4598,7 +4583,7 @@
       "category": "ai-news",
       "title": "Opyn AI Agents Report 40% Reduction in Marpai Provider Call Center Costs",
       "source": "https://www.prnewswire.com/news-releases/opyn-ai-agents-cut-marpais-provider-call-center-costs-by-40-302923120.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "0b6d9b51b6bd",
@@ -4703,7 +4688,7 @@
       "category": "ai-news",
       "title": "Springbrook Expands Cirrus ERP Platform, Puts AI to Work for Local Government",
       "source": "https://www.prnewswire.com/news-releases/springbrook-expands-cirrus-erp-platform-and-puts-ai-to-work-for-local-government-302924286.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "0e7392808f2b",
@@ -4955,7 +4940,7 @@
       "category": "government-schemes",
       "title": "National Kidney Foundation Selected as Charitable Beneficiary for Humble Bundle's Phunkier Physics Campaign",
       "source": "https://www.prnewswire.com/news-releases/national-kidney-foundation-named-charitable-beneficiary-of-humble-bundles-phunkier-physics-bundle-302925257.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "e544fbed3461",
@@ -4983,7 +4968,7 @@
       "category": "business",
       "title": "Nanoscope Therapeutics Executives to Speak at Advanced Therapies USA 2026",
       "source": "https://www.prnewswire.com/news-releases/nanoscope-therapeutics-to-participate-in-advanced-therapies-usa-2026-in-boston-302923034.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "b036003b2c6a",
@@ -5074,14 +5059,14 @@
       "category": "business",
       "title": "Pakistani Banks Score Poorly on Climate and Biodiversity Benchmarks, Highlighting Gaps in Financing Safeguards",
       "source": "https://www.prnewswire.com/news-releases/pakistaanse-banken-slagen-niet-voor-de-klimaat--en-natuurbeleidstest-omdat-financieringswaarborgen-tekortschieten-302925673.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "7af4359479a7",
       "category": "private-vacancy",
       "title": "Agilent Technologies Announces Opening for Services Sales Product Specialist in Bengaluru East",
       "source": "https://in.linkedin.com/jobs/view/services-sales-product-specialist-%E2%80%93-south-east-india-at-agilent-technologies-4480141691",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "f5dcb8a53791",
@@ -5193,7 +5178,7 @@
       "category": "visas-immigration",
       "title": "US Immigration Executive Roles Highlight Growing Corporate Mobility Sector in Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/us-immigration-executive-at-vidlexinfo-llc-4483058702",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "dbba5a69ce74",
@@ -5214,7 +5199,7 @@
       "category": "ai-news",
       "title": "Software Experts Recognizes CapCut in 2026 Creative AI Software Coverage for Multi-Format Tools",
       "source": "https://www.prnewswire.com/news-releases/best-creative-ai-software-2026-capcut-recognized-for-bringing-video-image-and-content-creation-into-one-platform-by-software-experts-302924470.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "07f40dc280d1",
@@ -5312,7 +5297,7 @@
       "category": "private-vacancy",
       "title": "International Voice Process Job Opening at Tech Mahindra in Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/international-voice-process-jobs-in-tech-mahindra-hyderabad-telangana-india-at-vihu-4483048131",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "f0b7ccad56bc",
@@ -5382,7 +5367,7 @@
       "category": "business",
       "title": "LifeStance Health Reports Patient Symptom Improvements Following Esketamine and TMS Treatments",
       "source": "https://www.prnewswire.com/news-releases/lifestance-patients-with-treatment-resistant-depression-see-clinically-meaningful-improvement-in-symptoms-after-esketamine-or-tms-treatment-new-data-shows-302922942.html",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "7845f3b5f47c",
@@ -5494,7 +5479,7 @@
       "category": "private-vacancy",
       "title": "WeMakeScholars Announces Junior Financial Sales Associate Opening Across Multiple Locations",
       "source": "https://in.linkedin.com/jobs/view/junior-financial-sales-associcate-in-trichey-trichey-bangalore-odisha-kochi-chennai-coimbatore-aurangabad-nashik-salem-hyderabad-mumbai-secunderabad-mangalore-kollam-at-wemakescholars-4484776042",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "1a8ca0e906ec",
@@ -5606,14 +5591,14 @@
       "category": "ai-news",
       "title": "AI Inference Software Market Projected to Reach USD 545.33 Billion by 2034",
       "source": "https://www.prnewswire.com/news-releases/ai-inference-software-market-to-reach-usd-545-33-billion-by-2034-as-enterprises-move-ai-from-pilots-to-production-302923824.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "7f651ce9d3f0",
       "category": "telecom",
       "title": "123NET Awarded $86 Million in Federal BEAD Funding to Expand Michigan Fiber Infrastructure",
       "source": "https://www.prnewswire.com/news-releases/123net-awarded-86-million-in-federal-bead-funding-for-michigan-broadband-infrastructure-302922523.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "32280cce1125bb9a47dd1d42",
@@ -5739,7 +5724,7 @@
       "category": "ai-news",
       "title": "Tairex Unveils AI Agent Ecosystem to Augment Clinical Decision-Making",
       "source": "https://www.prnewswire.com/news-releases/tairex-launches-multi-agent-ai-system-to-transform-clinical-collaboration-and-decision-support-302916729.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "9b3641414312",
@@ -5795,7 +5780,7 @@
       "category": "visas-immigration",
       "title": "Primex Visa Pvt. Ltd. Advertises New Visa Documentation Executive Position in Delhi",
       "source": "https://in.linkedin.com/jobs/view/visa-documentation-executve-at-primex-visa-pvt-ltd-4484924300",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "c5b7f60e9a6a",
@@ -6222,14 +6207,14 @@
       "category": "defence",
       "title": "Navy Mutual Honors Military Financial Educator Lacey Langford with 2026 Bolles Award",
       "source": "https://www.prnewswire.com/news-releases/navy-mutual-awards-milmos-lacey-langford-with-the-2026-lieutenant-timothy-dix-bolles-excellency-in-education-award-302922401.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "70f76f450795",
       "category": "private-vacancy",
       "title": "Overview of Recent Professional Job Openings Listed on LinkedIn India",
       "source": "https://in.linkedin.com/jobs/Nexbirlik+istifad%C9%99%C3%A7i+t%C9%99cr%C3%BCb%C9%99si%3A+m%C3%BCxt%C9%99lif+izahlara+n%C9%99z%C9%99r+sal%C4%B1n.whn-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "52e00118256d",
@@ -6313,14 +6298,14 @@
       "category": "social-media",
       "title": "Phutari Recruits Marketing Intern for Social Media Role in Jaipur",
       "source": "https://in.linkedin.com/jobs/view/social-media-marketing-intern-at-phutari-4474290400?position=46&pageNum=0&refId=MokvWhBZDFkgNbSMFxWtgQ%3D%3D&trackingId=s1EXirMGaEvIaOhvCNaSmQ%3D%3D",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "d041bb37a69d",
       "category": "tourism",
       "title": "Greece and Serbia Deepen Ties Through Tourism and Business Networking Ahead of EXPO 2027",
       "source": "https://www.prnewswire.com/news-releases/athens-networking-event-strengthens-greek---serbian-business-and-tourism-ties-ahead-of-expo-2027-302924705.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "bed5a467722a",
@@ -6481,7 +6466,7 @@
       "category": "ai-news",
       "title": "TaxDome Launches Public API and MCP Server for AI Agents and Developers",
       "source": "https://www.prnewswire.com/news-releases/taxdome-releases-public-api-and-mcp-server-for-ai-agents-and-developers-302923194.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "7674f545a3f1",
@@ -6551,7 +6536,7 @@
       "category": "ai-news",
       "title": "Cognizant Launches OpenAI Frontier Capability Group, Deploying Over 25,000 Professionals to Accelerate Enterprise AI Adoption",
       "source": "https://www.prnewswire.com/news-releases/cognizant-zet-meer-dan-25-000-professionals-in-voor-de-implementatie-van-openai-oplossingen-nu-ondernemingen-geavanceerde-ai-in-productie-nemen-302925664.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "39d743e65a7f",
@@ -6593,7 +6578,7 @@
       "category": "ai-news",
       "title": "Arctic Wolf Named a Leader in 2026 QKS SPARK Matrix for AI SOC Automation",
       "source": "https://www.prnewswire.com/news-releases/arctic-wolf-named-a-leader-in-2026-qks-spark-matrix-for-ai-soc-automation-302923421.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "1da89144be44",
@@ -6670,98 +6655,48 @@
       "category": "private-vacancy",
       "title": "Karnataka Jobs Lists Opening for Kannada Voice Process Role in Vijayapura",
       "source": "https://in.linkedin.com/jobs/view/kannada-voice-process-at-karnataka-jobs-4481411457",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     }
   ],
   "missing_reasons": {
-    "access_denied": 280,
-    "invalid_source_images": 196,
+    "access_denied": 325,
+    "invalid_source_images": 187,
     "source_error": 105,
-    "no_source_image": 278,
+    "no_source_image": 242,
     "source_unavailable": 56,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "25aef16251a25dfe4e56654d": {
+    "614f03b5cde81bf30878973f": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Jaguar_XK140",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Jaguar_XK140_%281955%29_-_9576441709.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/LG_Optimus_G",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/LG_Optimus_G_%28Black%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "d72d76f4c3646d29f9dfab34": {
+    "c44ea102f2124d58db23bbd4": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_Mini",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Sony_Ericsson_Xperia_mini_pro_20120421.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/HTC_ThunderBolt",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/HTC_Thunderbolt.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "a85db04de80a47159808eb72": {
+    "6548e415fc086ccec65bbb7c": {
+      "reason": "invalid_source_images",
+      "source": "https://www.nissanusa.com/vehicles/trucks/2027-frontier.html",
+      "candidate_count": 23,
+      "candidates": [
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/frontier/vehicle-profile-assets/2027/model-2027-frontier-crew-cab-pro-4x-red-alert.png-v2.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue-hybrid/vehicle-profile-assets/2027/model-2027-rogue-hybrid-sr-horizon-blue-pearl-metallic-super-black-two-tone.png.ximg.l_3_m.smart.png",
+        "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/rogue/vehicle-profile-assets/2027/model-2027-rogue-rock-creek-intelligent-awd-baja-storm-metallic.png.ximg.l_3_m.smart.png"
+      ]
+    },
+    "8960b809bdfe4defdc89cff6": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/HTC_Incredible_S",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c3/HTC_Incredible_S_%28red%29_-_front.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Ferrari_GT4",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d4/1975_Dino_308_GT4_in_Marrone_Metallizzato%2C_Berlin.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "02364f4d79f5caac07cae019": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
-      "candidate_count": 7,
-      "candidates": [
-        "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/1280px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/500px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "672ec970b2343fab3950e9b0": {
+    "852109c03abd284d3b9858fc": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Land_Rover_series",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/Land_Rover_Series_I_1948_%28HUE_166%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "8ede6684d4cf14febb863aad": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "554edbfdaee926ed82007433": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
-      "candidate_count": 9,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
-      ]
-    },
-    "ab5161457cb0ef816db211ff": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
-      "candidate_count": 3,
-      "candidates": [
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
-        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
-        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
-      ]
-    },
-    "7adf40b3ba628bb367e38a7b": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_E5",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "e21f0c9303189bff05b728a0": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
+      "source": "https://en.wikipedia.org/wiki/Ferrari_P4/5_by_Pininfarina",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/Ferrari_P4_%E2%88%95_5_by_Pininfarina%2C_front_right.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
