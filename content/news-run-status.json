@@ -1,30 +1,26 @@
 {
-  "finished_at": "2026-11-14T10:36:33.684904+00:00",
+  "finished_at": "2026-11-14T12:27:17.965889+00:00",
   "outcome": "time_limit_reached",
-  "duration_seconds": 6240.4,
-  "published": 20,
-  "by_category": {
-    "india-news": 15,
-    "defence": 1,
-    "world-news": 4
-  },
-  "ai_calls": 26,
-  "ai_limit": 1500,
+  "duration_seconds": 6182.2,
+  "published": 0,
+  "by_category": {},
+  "ai_calls": 0,
+  "ai_limit": 2100,
   "target": 200,
   "discovered_by_category": {
     "defence": 1
   },
   "retry_after_seconds": null,
-  "shortfall": 180,
+  "shortfall": 200,
   "target_met": false,
   "attempts": [
     {
       "pass": 1,
-      "exit_code": 0,
-      "published": 20,
-      "ai_calls": 26,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
       "ai_limit": 100,
-      "outcome": "target_reached"
+      "outcome": "queue_exhausted"
     },
     {
       "pass": 2,
@@ -136,7 +132,55 @@
       "published": 0,
       "ai_calls": 0,
       "ai_limit": 100,
-      "outcome": "time_limit_reached"
+      "outcome": "queue_exhausted"
+    },
+    {
+      "pass": 16,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "queue_exhausted"
+    },
+    {
+      "pass": 17,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "queue_exhausted"
+    },
+    {
+      "pass": 18,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "queue_exhausted"
+    },
+    {
+      "pass": 19,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "queue_exhausted"
+    },
+    {
+      "pass": 20,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "queue_exhausted"
+    },
+    {
+      "pass": 21,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "queue_exhausted"
     }
   ]
 }
