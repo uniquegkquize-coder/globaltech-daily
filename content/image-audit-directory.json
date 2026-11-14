@@ -1,18 +1,85 @@
 {
-  "total_posts": 8725,
+  "total_posts": 8924,
   "selected": 55,
   "results": {
     "source_photo_saved": 4,
-    "cooldown": 51
+    "invalid_source_images": 6,
+    "cooldown": 45
   },
   "still_missing": 916,
   "articles": [
     {
-      "id": "d76ff5aaee507a0731596b9d",
-      "source": "https://en.wikipedia.org/wiki/HP_Elite_x3",
+      "id": "25aef16251a25dfe4e56654d",
+      "source": "https://en.wikipedia.org/wiki/Jaguar_XK140",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794629237.4466176
+      "retry_after": 1794641294.4505064
+    },
+    {
+      "id": "d72d76f4c3646d29f9dfab34",
+      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_Mini",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794641294.657468
+    },
+    {
+      "id": "a85db04de80a47159808eb72",
+      "source": "https://en.wikipedia.org/wiki/HTC_Incredible_S",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794641294.8642373
+    },
+    {
+      "id": "02364f4d79f5caac07cae019",
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794641294.8850944
+    },
+    {
+      "id": "672ec970b2343fab3950e9b0",
+      "source": "https://en.wikipedia.org/wiki/Land_Rover_series",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794641295.1488683
+    },
+    {
+      "id": "8ede6684d4cf14febb863aad",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794641295.6323998
+    },
+    {
+      "id": "554edbfdaee926ed82007433",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794641295.8831232
+    },
+    {
+      "id": "71ad44ca5375549c9a0fafea",
+      "result": "cooldown"
+    },
+    {
+      "id": "6e0b7f005efe9f07310a5382",
+      "result": "cooldown"
+    },
+    {
+      "id": "95c9f12cac7c67468ea940bb",
+      "result": "cooldown"
+    },
+    {
+      "id": "d4519cf5c59f707b293a301d",
+      "result": "cooldown"
+    },
+    {
+      "id": "143e60189659fea092ac3a1e",
+      "result": "cooldown"
+    },
+    {
+      "id": "6bb2ac3830abf79750ec9c1e",
+      "result": "cooldown"
     },
     {
       "id": "0a95ccf111c45db4cfb5c9e3",
@@ -63,15 +130,7 @@
       "result": "cooldown"
     },
     {
-      "id": "8f4b17c49d1b2a0c5cb45a53",
-      "result": "cooldown"
-    },
-    {
       "id": "2d100db342cdd6c9c517a807",
-      "result": "cooldown"
-    },
-    {
-      "id": "a941ae3553703f8fd24d4d17",
       "result": "cooldown"
     },
     {
@@ -79,27 +138,19 @@
       "result": "cooldown"
     },
     {
+      "id": "8f4b17c49d1b2a0c5cb45a53",
+      "result": "cooldown"
+    },
+    {
+      "id": "a941ae3553703f8fd24d4d17",
+      "result": "cooldown"
+    },
+    {
       "id": "fab6501205ba27e38dac785c",
       "result": "cooldown"
     },
     {
-      "id": "8444aa187e09b377f661fcbf",
-      "result": "cooldown"
-    },
-    {
       "id": "635e4aa01fc60223a6fea284",
-      "result": "cooldown"
-    },
-    {
-      "id": "4afa4536b18e5a41b30a3497",
-      "result": "cooldown"
-    },
-    {
-      "id": "007acb84538e69bcc14f4f9f",
-      "result": "cooldown"
-    },
-    {
-      "id": "9d1f6341eb5fa6644d63ff08",
       "result": "cooldown"
     },
     {
@@ -115,7 +166,11 @@
       "result": "cooldown"
     },
     {
-      "id": "ff28f504e8e3f011fe2acd9b",
+      "id": "4afa4536b18e5a41b30a3497",
+      "result": "cooldown"
+    },
+    {
+      "id": "9d1f6341eb5fa6644d63ff08",
       "result": "cooldown"
     },
     {
@@ -123,7 +178,15 @@
       "result": "cooldown"
     },
     {
-      "id": "fbff6440d68d52399ca212b1",
+      "id": "007acb84538e69bcc14f4f9f",
+      "result": "cooldown"
+    },
+    {
+      "id": "8444aa187e09b377f661fcbf",
+      "result": "cooldown"
+    },
+    {
+      "id": "ff28f504e8e3f011fe2acd9b",
       "result": "cooldown"
     },
     {
@@ -143,6 +206,18 @@
       "result": "cooldown"
     },
     {
+      "id": "fbff6440d68d52399ca212b1",
+      "result": "cooldown"
+    },
+    {
+      "id": "32280cce1125bb9a47dd1d42",
+      "result": "cooldown"
+    },
+    {
+      "id": "ce0ef8db912e7a799d88cb97",
+      "result": "cooldown"
+    },
+    {
       "id": "8af54bb949a0c055391d640a",
       "result": "cooldown"
     },
@@ -155,14 +230,6 @@
       "result": "cooldown"
     },
     {
-      "id": "32280cce1125bb9a47dd1d42",
-      "result": "cooldown"
-    },
-    {
-      "id": "ce0ef8db912e7a799d88cb97",
-      "result": "cooldown"
-    },
-    {
       "id": "27399602ccef42af310a2803",
       "result": "cooldown"
     },
@@ -171,73 +238,25 @@
       "result": "cooldown"
     },
     {
-      "id": "02364f4d79f5caac07cae019",
-      "result": "cooldown"
-    },
-    {
-      "id": "8ede6684d4cf14febb863aad",
-      "result": "cooldown"
-    },
-    {
-      "id": "554edbfdaee926ed82007433",
-      "result": "cooldown"
-    },
-    {
       "id": "ab5161457cb0ef816db211ff",
-      "result": "cooldown"
-    },
-    {
-      "id": "e21f0c9303189bff05b728a0",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794641296.0529695
     },
     {
       "id": "7adf40b3ba628bb367e38a7b",
-      "result": "cooldown"
-    },
-    {
-      "id": "71ad44ca5375549c9a0fafea",
-      "result": "cooldown"
-    },
-    {
-      "id": "6e0b7f005efe9f07310a5382",
-      "result": "cooldown"
-    },
-    {
-      "id": "95c9f12cac7c67468ea940bb",
-      "result": "cooldown"
-    },
-    {
-      "id": "d4519cf5c59f707b293a301d",
-      "result": "cooldown"
-    },
-    {
-      "id": "143e60189659fea092ac3a1e",
-      "result": "cooldown"
-    },
-    {
-      "id": "6bb2ac3830abf79750ec9c1e",
-      "result": "cooldown"
-    },
-    {
-      "id": "6cd15ecbc579b5915f8482e3",
-      "source": "https://en.wikipedia.org/wiki/TVR_Sagaris",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_E5",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794629237.4670665
+      "result": "invalid_source_images",
+      "retry_after": 1794641296.10116
     },
     {
-      "id": "1332f4f20db3eb1d3be41808",
-      "source": "https://en.wikipedia.org/wiki/Austin_Metro",
+      "id": "e21f0c9303189bff05b728a0",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
       "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794629237.5963912
-    },
-    {
-      "id": "918ef77a5c43603dedfcb788",
-      "source": "https://en.wikipedia.org/wiki/OnePlus_5",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794629237.861171
+      "result": "invalid_source_images",
+      "retry_after": 1794641296.655112
     }
   ],
   "missing": [
@@ -246,7 +265,7 @@
       "category": "private-vacancy",
       "title": "Brigade Group Seeks Product Development Designer in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/designer-product-development-at-brigade-group-4484709074",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "519265604034",
@@ -624,7 +643,7 @@
       "category": "private-vacancy",
       "title": "GSquare Group Announces Openings for Over 250 Positions in Mumbai",
       "source": "https://in.linkedin.com/jobs/view/gsquare-jobs-at-gsquare-4474259087",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "dfc519dd5290",
@@ -890,7 +909,7 @@
       "category": "private-vacancy",
       "title": "Global Private Job Listings: Overview of Open Roles and How to Apply via Professional Platforms",
       "source": "https://www.linkedin.com/jobs/hiring-solutions-llc-jobs-worldwide",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "24d3058a2c30",
@@ -988,7 +1007,7 @@
       "category": "private-vacancy",
       "title": "HealthismPlus Technologies Announces Sales and Marketing Specialist Opening in Mumbai",
       "source": "https://in.linkedin.com/jobs/view/sales-and-marketing-specialist-at-healthismplus-technologies-private-limited-4483438083",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "aedcec188434",
@@ -1128,7 +1147,7 @@
       "category": "private-vacancy",
       "title": "Hospitality and Operations Job Openings Listed in Uttarakhand",
       "source": "https://in.linkedin.com/jobs/view/hospitality-jobs-in-ramnagar-uttarakhand-%E2%80%93-halwai-dcdp-indian-cdp-at-hospitality-jobs-4475358582",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "6ee7df9a57d1",
@@ -1219,7 +1238,7 @@
       "category": "private-vacancy",
       "title": "Service Designer and Related Professional Openings Listed in the Mumbai Metropolitan Region",
       "source": "https://www.linkedin.com/jobs/service-designer-jobs-rahul-nagar",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "c534a92f550b",
@@ -1233,7 +1252,7 @@
       "category": "private-vacancy",
       "title": "Sangi & Co. Hiring Interior Designer in Kannur, Kerala",
       "source": "https://in.linkedin.com/jobs/view/interior-designer-at-sangi-co-4484924596",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "ddfa4e186cef",
@@ -1247,7 +1266,7 @@
       "category": "private-vacancy",
       "title": "Media and Communications Job Listings Overview for Cheyenne and Fort Collins Regions",
       "source": "https://in.linkedin.com/jobs/media-and-communications-jobs-cheyenne-wy",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "3ce4eb1cdf88",
@@ -2262,7 +2281,7 @@
       "category": "private-vacancy",
       "title": "Xtovia Announces Graphic Designer Opening in Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/graphic-designer-at-xtovia-4482577957",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "64e8705df01e",
@@ -2297,7 +2316,7 @@
       "category": "private-vacancy",
       "title": "ecH-aaR Manpower Solutions Lists Vacancy for NRI Relationship Manager in Andhra Pradesh",
       "source": "https://in.linkedin.com/jobs/view/nri-relationship-manager-at-ech-aar-manpower-solutions-4483844750",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0493b37f6575",
@@ -2759,7 +2778,7 @@
       "category": "private-vacancy",
       "title": "Dr. Aditi's Homoeo Health Announces Vacancy for Clinic Manager in Chandigarh",
       "source": "https://in.linkedin.com/jobs/view/clinic-manager-at-dr-aditi%E2%80%99s-homoeo-health-4483865895",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "4ebc87c0d418",
@@ -3004,7 +3023,7 @@
       "category": "private-vacancy",
       "title": "EH Jobs Lists Vacancy for Female Pre-Primary Teacher in Jodhpur",
       "source": "https://in.linkedin.com/jobs/view/urgently-required-pre-primaryteacher-female-for-shastri-nagar-jodhpur-jodhpur8-job-id-24442-at-eh-jobs-4477561804",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "294ce0c9dbfe",
@@ -3389,7 +3408,7 @@
       "category": "private-vacancy",
       "title": "Exploring Professional Engineering and Management Job Openings Listed Across India",
       "source": "https://in.linkedin.com/jobs/grw-high-precision-lp-grw-usa-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "1fa24dedc7c4",
@@ -4299,7 +4318,7 @@
       "category": "private-vacancy",
       "title": "Gulmohar Pack-tech India Pvt. Ltd. Seeks Senior Packaging Designer in Chakan",
       "source": "https://in.linkedin.com/jobs/view/senior-designer-packing-at-gulmohar-pack-tech-india-pvt-ltd-4482263891",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "003990743275",
@@ -4852,7 +4871,7 @@
       "category": "ai-news",
       "title": "RemoExperts Lists Online Generalist Vacancy for AI Training and Data Labeling",
       "source": "https://www.linkedin.com/jobs/view/online-generalist-jobs-in-india-at-rex-zone-4399897196?refId=ut9Weby9iKeA3nIguBOAOw%3D%3D&trackingId=TSSiUWs2MQDUFKOvY%2FSnTw%3D%3D",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "e43332812610",
@@ -4880,7 +4899,7 @@
       "category": "private-vacancy",
       "title": "Gaming Laboratories International Lists Tester I Role in Noida",
       "source": "https://in.linkedin.com/jobs/view/tester-i-noida-at-gaming-laboratories-international-llc-4484937498",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "423e596c4719",
@@ -5209,7 +5228,7 @@
       "category": "private-vacancy",
       "title": "Funk Foods Hiring Assistant Manager in Bengaluru",
       "source": "https://in.linkedin.com/jobs/view/assistant-manager-at-funk-foods-4480050636",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "ca112d8cca112d8cca112d8cca112d8c",
@@ -5461,7 +5480,7 @@
       "category": "private-vacancy",
       "title": "Europa Locks Announces Vacancy for Group Leader Safety Position in Khed, Maharashtra",
       "source": "https://in.linkedin.com/jobs/view/group-leader-safety-at-europa-locks-4483880508",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "0cb8fb74d76a",
@@ -6490,7 +6509,7 @@
       "category": "private-vacancy",
       "title": "Guptha Infraventures and Constructions Private Limited Lists Safety Officer Opening in Hyderabad",
       "source": "https://in.linkedin.com/jobs/view/safety-officer-at-guptha-infraventures-and-constructions-private-limited-4483886480",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "080b28de54ff",
@@ -6609,7 +6628,7 @@
       "category": "private-vacancy",
       "title": "Hekaté Industries Announces Opening for Product Designer Role in Mumbai",
       "source": "https://in.linkedin.com/jobs/view/product-designer-at-hekat%C3%A9-industries-private-limited-4483431100",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "80b7aa568a06",
@@ -6655,34 +6674,94 @@
     }
   ],
   "missing_reasons": {
-    "invalid_source_images": 210,
-    "access_denied": 262,
+    "access_denied": 280,
+    "invalid_source_images": 196,
     "source_error": 105,
-    "no_source_image": 282,
+    "no_source_image": 278,
     "source_unavailable": 56,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "d76ff5aaee507a0731596b9d": {
+    "25aef16251a25dfe4e56654d": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/HP_Elite_x3",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/HP_Elite_X3.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Jaguar_XK140",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Jaguar_XK140_%281955%29_-_9576441709.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "6cd15ecbc579b5915f8482e3": {
+    "d72d76f4c3646d29f9dfab34": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/TVR_Sagaris",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/TVR_Sagaris_%282005%29_-_15227507288.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Sony_Ericsson_Xperia_Mini",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Sony_Ericsson_Xperia_mini_pro_20120421.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "1332f4f20db3eb1d3be41808": {
+    "a85db04de80a47159808eb72": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Austin_Metro",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/36/Austin_Metro_Mk2_5-door_1275cc_registered_August_1989_photographed_Knebworth_August_2018.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/HTC_Incredible_S",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c3/HTC_Incredible_S_%28red%29_-_front.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     },
-    "918ef77a5c43603dedfcb788": {
+    "02364f4d79f5caac07cae019": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Kawasaki_Versys-X_250/300",
+      "candidate_count": 7,
+      "candidates": [
+        "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/1280px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Kawasaki_Versys-X_300.jpg/500px-Kawasaki_Versys-X_300.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "672ec970b2343fab3950e9b0": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/OnePlus_5",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/46/Oneplus_5_on_display_at_London_launch_event_-_5.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Land_Rover_series",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/Land_Rover_Series_I_1948_%28HUE_166%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "8ede6684d4cf14febb863aad": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2A",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "554edbfdaee926ed82007433": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_2S",
+      "candidate_count": 9,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/60px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/40px-Flag_of_the_People%27s_Republic_of_China.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+      ]
+    },
+    "ab5161457cb0ef816db211ff": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/MV_Agusta_RVS_1",
+      "candidate_count": 3,
+      "candidates": [
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1",
+        "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+        "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg"
+      ]
+    },
+    "7adf40b3ba628bb367e38a7b": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_E5",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "e21f0c9303189bff05b728a0": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_C",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
     }
   },
   "mode": "directory"
