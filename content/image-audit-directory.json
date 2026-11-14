@@ -1,46 +1,47 @@
 {
-  "total_posts": 9273,
-  "selected": 55,
+  "total_posts": 9297,
+  "selected": 57,
   "results": {
-    "invalid_source_images": 3,
-    "cooldown": 50,
-    "source_photo_saved": 2
+    "invalid_source_images": 5,
+    "source_photo_saved": 3,
+    "cooldown": 49
   },
-  "still_missing": 922,
+  "still_missing": 923,
   "articles": [
     {
-      "id": "dfbe8b59daf394d2ce006aa9",
-      "source": "https://en.wikipedia.org/wiki/T-Mobile_myTouch_4G",
+      "id": "372abe9e0417100bff663126",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Wave_575",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794672314.93884
-    },
-    {
-      "id": "d20f3d5fba6f6f8d775cbaf3",
-      "source": "https://en.wikipedia.org/wiki/Moto_E4",
-      "policy": "93e2ad7deccc",
-      "result": "invalid_source_images",
-      "retry_after": 1794672315.0721323
-    },
-    {
-      "id": "6548e415fc086ccec65bbb7c",
-      "result": "cooldown"
+      "retry_after": 1794683844.0433445
     },
     {
       "id": "32280cce1125bb9a47dd1d42",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_MIX",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794683844.5049248
     },
     {
       "id": "ce0ef8db912e7a799d88cb97",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Lenovo_K6_Power",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794683844.9877465
+    },
+    {
+      "id": "3bc758b767a6cd5748febb86",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_MIX_2",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794683845.221474
     },
     {
       "id": "74e0c52178b2f0827ab81b54",
-      "result": "cooldown"
-    },
-    {
-      "id": "27399602ccef42af310a2803",
-      "result": "cooldown"
+      "source": "https://en.wikipedia.org/wiki/Huawei_Nova",
+      "policy": "93e2ad7deccc",
+      "result": "invalid_source_images",
+      "retry_after": 1794683845.2301133
     },
     {
       "id": "0a95ccf111c45db4cfb5c9e3",
@@ -224,24 +225,40 @@
     },
     {
       "id": "6bb2ac3830abf79750ec9c1e",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_On7",
+      "result": "cooldown"
+    },
+    {
+      "id": "d20f3d5fba6f6f8d775cbaf3",
+      "result": "cooldown"
+    },
+    {
+      "id": "dfbe8b59daf394d2ce006aa9",
+      "result": "cooldown"
+    },
+    {
+      "id": "6548e415fc086ccec65bbb7c",
+      "result": "cooldown"
+    },
+    {
+      "id": "659644d37c85d6b50292b12e",
+      "source": "https://en.wikipedia.org/wiki/Buick_Electra",
+      "policy": "93e2ad7deccc",
+      "result": "source_photo_saved",
+      "retry_after": 1794683845.2396586
+    },
+    {
+      "id": "27399602ccef42af310a2803",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_XA_Ultra",
       "policy": "93e2ad7deccc",
       "result": "invalid_source_images",
-      "retry_after": 1794672315.3464565
+      "retry_after": 1794683845.4160235
     },
     {
-      "id": "6e330c87e1f5f78bab857648",
-      "source": "https://en.wikipedia.org/wiki/Buick_Invicta",
+      "id": "16f68282f4c370cac9a18b90",
+      "source": "https://en.wikipedia.org/wiki/Buick_Limited",
       "policy": "93e2ad7deccc",
       "result": "source_photo_saved",
-      "retry_after": 1794672315.3810823
-    },
-    {
-      "id": "ce8ac2afcfc90545c618ceeb",
-      "source": "https://en.wikipedia.org/wiki/Buick_Estate",
-      "policy": "93e2ad7deccc",
-      "result": "source_photo_saved",
-      "retry_after": 1794672315.6622334
+      "retry_after": 1794683846.0400956
     }
   ],
   "missing": [
@@ -1468,7 +1485,7 @@
       "category": "ai-news",
       "title": "Stamford Health Launches Pilot Integrating ECG-Based AI for Structural Heart Screening",
       "source": "https://www.prnewswire.com/news-releases/egnite-pathway-labs-and-stamford-health-launch-first-of-its-kind-pilot-using-ecg-based-ai-to-help-clinicians-identify-and-manage-structural-heart-patients-302923889.html",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "3f87a4657830",
@@ -1860,7 +1877,7 @@
       "category": "private-vacancy",
       "title": "Professional Overview of Open Positions in Merchant Partnerships and Query Themes Across India",
       "source": "https://in.linkedin.com/jobs/Partner+merchant+query+themes%3A+Novaluxia+Reviews.fkv-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "93cede8c55b4",
@@ -2098,7 +2115,7 @@
       "category": "visas-immigration",
       "title": "Peerless Immigration Services Announces Openings for Business Development Associates in New Delhi",
       "source": "https://in.linkedin.com/jobs/view/business-development-associate-at-peerless-immigration-services-4483846739?position=23&pageNum=0&refId=pdi7GkDzOUAwjOAwZuhD7g%3D%3D&trackingId=99eGWHPhi0lFt1HRUu2RDA%3D%3D",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "a9739a8c7cdf",
@@ -2399,7 +2416,7 @@
       "category": "ai-news",
       "title": "Cognizant Launches OpenAI Frontier Capability Group with Over 25,000 Professionals",
       "source": "https://www.prnewswire.com/news-releases/cognizant-commits-more-than-25-000-professionals-to-openai-delivery-as-enterprises-move-frontier-ai-into-production-302924550.html",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "8b2ede84e6e9",
@@ -2875,7 +2892,7 @@
       "category": "defence",
       "title": "Defense Seeks Release of Career Air Force Officer Held in Pretrial Confinement",
       "source": "https://www.prnewswire.com/news-releases/defense-moves-to-free-career-air-force-officer-from-pretrial-jail-judge-to-hear-arguments-november-17-302924913.html",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "8c2aaa616f6c",
@@ -3092,7 +3109,7 @@
       "category": "private-vacancy",
       "title": "Fanzart Seeks Business Development Specialist for On-Site Role in Ranchi",
       "source": "https://in.linkedin.com/jobs/view/business-development-specialist-at-fanzart-designer-fans-4484908686",
-      "reason": "access_denied"
+      "reason": "invalid_source_images"
     },
     {
       "id": "cba42010d5d6",
@@ -3183,7 +3200,7 @@
       "category": "private-vacancy",
       "title": "Overview of Gaming and Customer Support Openings Reported on Professional Networks in India",
       "source": "https://in.linkedin.com/jobs/%E6%96%B0%E7%9B%9B%E8%B5%8C%E5%9C%BA%E6%B8%B8%E6%88%8F%E5%AE%A2%E6%9C%8D15508830630.cnv-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "62eb6a55ce6f",
@@ -3323,7 +3340,7 @@
       "category": "tourism",
       "title": "Greece and Serbia Deepen Ties Through Tourism and Business Networking Ahead of EXPO 2027",
       "source": "https://www.prnewswire.com/news-releases/athens-networking-event-strengthens-greek---serbian-business-and-tourism-ties-ahead-of-expo-2027-302924705.html",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "55a3bc2a17f1",
@@ -3337,7 +3354,7 @@
       "category": "government-schemes",
       "title": "The Debate on Reform Within the Muslim Community: Perspectives and Challenges",
       "source": "https://readerblogs.navbharattimes.indiatimes.com/BHALI-LAGE-YA-BURI/javed-akhtar-ki-samaaj-sudhar-ki-chunauti/",
-      "reason": "invalid_source_images"
+      "reason": "source_unavailable"
     },
     {
       "id": "5b2ebaff7706",
@@ -3386,7 +3403,7 @@
       "category": "private-vacancy",
       "title": "Agilent Technologies Announces Opening for Services Sales Product Specialist in Bengaluru East",
       "source": "https://in.linkedin.com/jobs/view/services-sales-product-specialist-%E2%80%93-south-east-india-at-agilent-technologies-4480141691",
-      "reason": "invalid_source_images"
+      "reason": "access_denied"
     },
     {
       "id": "515a39821a80",
@@ -3478,6 +3495,13 @@
       "title": "The Brabham BT46B: The F1 Fan Car That Won Its Only Race",
       "source": "https://www.motor1.com/features/813666/formula-1-brabham-fan-car-bt46b/",
       "reason": "access_denied"
+    },
+    {
+      "id": "372abe9e0417100bff663126",
+      "category": "gadgets",
+      "title": "Samsung Wave 575: Smartphone Specifications, Facts and Verification Guide",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Wave_575",
+      "reason": "invalid_source_images"
     },
     {
       "id": "8fb539b04f5d",
@@ -3624,7 +3648,7 @@
       "category": "ai-news",
       "title": "Google reportedly planning to hire over 2,000 AI professionals in India, LinkedIn listings show",
       "source": "https://in.linkedin.com/jobs/google-artificial-intelligence-jobs-india?f_AL=true",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "9439e2a43e14",
@@ -3701,7 +3725,7 @@
       "category": "private-vacancy",
       "title": "Private Sector Job Openings Reported Across Multiple Roles and Locations in India",
       "source": "https://in.linkedin.com/jobs/novaluxia+is+legit%3A+check+the+items.lca-jobs?f_AL=true",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "7fcd04ef9a5e",
@@ -4765,7 +4789,7 @@
       "category": "private-vacancy",
       "title": "Current Private Sector Job Openings and Roles Listed Across India",
       "source": "https://in.linkedin.com/jobs/Note+novaluxia.com+Reviews+platform+updates.xcv-jobs",
-      "reason": "access_denied"
+      "reason": "no_source_image"
     },
     {
       "id": "2cf3ab82ab15",
@@ -5388,7 +5412,7 @@
       "category": "tourism",
       "title": "Exploring Career Opportunities in International Holiday Sales and Destination Expertise",
       "source": "https://in.linkedin.com/jobs/view/sales-executive-%E2%80%93-destination-expert-international-holidays-at-catch-a-trip-4483426182",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "dfbe8b59daf394d2ce006aa9",
@@ -5976,7 +6000,7 @@
       "category": "private-vacancy",
       "title": "Overview of Current Job Openings and Professional Roles Across India",
       "source": "https://in.linkedin.com/jobs/nexbirlik%2Bistifad%C9%99%C3%A7i%2Bt%C9%99cr%C3%BCb%C9%99si-%2Bm%C3%BCxt%C9%99lif%2Bm%C9%99nb%C9%99l%C9%99rd%C9%99%2Bfikirl%C9%99ri%2Boxuyun.uew-jobs",
-      "reason": "no_source_image"
+      "reason": "access_denied"
     },
     {
       "id": "61fdf518e469",
@@ -6701,28 +6725,68 @@
     }
   ],
   "missing_reasons": {
-    "no_source_image": 246,
+    "no_source_image": 247,
     "access_denied": 302,
     "source_error": 105,
-    "invalid_source_images": 211,
-    "source_unavailable": 57,
+    "invalid_source_images": 210,
+    "source_unavailable": 58,
     "restricted_page": 1
   },
   "existing_representatives_preserved": 0,
   "diagnostics": {
-    "dfbe8b59daf394d2ce006aa9": {
+    "372abe9e0417100bff663126": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/T-Mobile_myTouch_4G",
+      "source": "https://en.wikipedia.org/wiki/Samsung_Wave_575",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "32280cce1125bb9a47dd1d42": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_MIX",
       "candidate_count": 9,
       "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/120px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/120px-Question_book-new.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/40px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/20px-Symbol_portal_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
       ]
     },
-    "d20f3d5fba6f6f8d775cbaf3": {
+    "ce0ef8db912e7a799d88cb97": {
       "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Moto_E4",
+      "source": "https://en.wikipedia.org/wiki/Lenovo_K6_Power",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/20px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "3bc758b767a6cd5748febb86": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Xiaomi_Mi_MIX_2",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/51/Mi_mix_2_front_back.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "74e0c52178b2f0827ab81b54": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Huawei_Nova",
+      "candidate_count": 5,
+      "candidates": [
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/40px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://thumb.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/20px-Symbol_category_class.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
+      ]
+    },
+    "659644d37c85d6b50292b12e": {
+      "reason": "source_photo_saved",
+      "source": "https://en.wikipedia.org/wiki/Buick_Electra",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c4/1967_Buick_Electra_225_Custom_4-door_hardtop%2C_front_left%2C_06-14-2024.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+    },
+    "27399602ccef42af310a2803": {
+      "reason": "invalid_source_images",
+      "source": "https://en.wikipedia.org/wiki/Sony_Xperia_XA_Ultra",
       "candidate_count": 5,
       "candidates": [
         "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
@@ -6730,25 +6794,10 @@
         "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
       ]
     },
-    "6bb2ac3830abf79750ec9c1e": {
-      "reason": "invalid_source_images",
-      "source": "https://en.wikipedia.org/wiki/Samsung_Galaxy_On7",
-      "candidate_count": 5,
-      "candidates": [
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/40px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Telephone_icon_blue_gradient.svg/20px-Telephone_icon_blue_gradient.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-        "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=1x1&usesul3=1"
-      ]
-    },
-    "6e330c87e1f5f78bab857648": {
+    "16f68282f4c370cac9a18b90": {
       "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Buick_Invicta",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Buick_Invicta_Convertible_1961.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
-    },
-    "ce8ac2afcfc90545c618ceeb": {
-      "reason": "source_photo_saved",
-      "source": "https://en.wikipedia.org/wiki/Buick_Estate",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/1987_Buick_Electra_Estate_a_station_wagon_at_2019_AACA_Hershey_meet_1of3.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+      "source": "https://en.wikipedia.org/wiki/Buick_Limited",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/1973_Buick_Electra_225_Limited_%2829147502555%29.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
     }
   },
   "mode": "directory"
