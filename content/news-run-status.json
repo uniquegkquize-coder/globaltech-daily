@@ -1,101 +1,140 @@
 {
-  "finished_at": "2026-11-14T08:42:48.096866+00:00",
+  "finished_at": "2026-11-14T10:36:33.684904+00:00",
   "outcome": "time_limit_reached",
-  "duration_seconds": 6241.5,
-  "published": 146,
+  "duration_seconds": 6240.4,
+  "published": 20,
   "by_category": {
-    "india-news": 90,
-    "world-news": 54,
-    "tourism": 1,
-    "social-media": 1
+    "india-news": 15,
+    "defence": 1,
+    "world-news": 4
   },
-  "ai_calls": 242,
-  "ai_limit": 1000,
+  "ai_calls": 26,
+  "ai_limit": 1500,
   "target": 200,
   "discovered_by_category": {
     "defence": 1
   },
   "retry_after_seconds": null,
-  "shortfall": 54,
+  "shortfall": 180,
   "target_met": false,
   "attempts": [
     {
       "pass": 1,
       "exit_code": 0,
-      "published": 10,
-      "ai_calls": 29,
+      "published": 20,
+      "ai_calls": 26,
       "ai_limit": 100,
-      "outcome": "time_limit_reached"
+      "outcome": "target_reached"
     },
     {
       "pass": 2,
-      "exit_code": 0,
-      "published": 9,
-      "ai_calls": 25,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
       "ai_limit": 100,
-      "outcome": "time_limit_reached"
+      "outcome": "queue_exhausted"
     },
     {
       "pass": 3,
-      "exit_code": 0,
-      "published": 11,
-      "ai_calls": 27,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
       "ai_limit": 100,
-      "outcome": "time_limit_reached"
+      "outcome": "queue_exhausted"
     },
     {
       "pass": 4,
-      "exit_code": 0,
-      "published": 18,
-      "ai_calls": 29,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
       "ai_limit": 100,
-      "outcome": "time_limit_reached"
+      "outcome": "queue_exhausted"
     },
     {
       "pass": 5,
-      "exit_code": 0,
-      "published": 20,
-      "ai_calls": 21,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
       "ai_limit": 100,
-      "outcome": "target_reached"
+      "outcome": "queue_exhausted"
     },
     {
       "pass": 6,
-      "exit_code": 0,
-      "published": 17,
-      "ai_calls": 29,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
       "ai_limit": 100,
-      "outcome": "time_limit_reached"
+      "outcome": "queue_exhausted"
     },
     {
       "pass": 7,
-      "exit_code": 0,
-      "published": 20,
-      "ai_calls": 24,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
       "ai_limit": 100,
-      "outcome": "target_reached"
+      "outcome": "queue_exhausted"
     },
     {
       "pass": 8,
-      "exit_code": 0,
-      "published": 16,
-      "ai_calls": 25,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
       "ai_limit": 100,
-      "outcome": "time_limit_reached"
+      "outcome": "queue_exhausted"
     },
     {
       "pass": 9,
-      "exit_code": 0,
-      "published": 20,
-      "ai_calls": 27,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
       "ai_limit": 100,
-      "outcome": "target_reached"
+      "outcome": "queue_exhausted"
     },
     {
       "pass": 10,
-      "exit_code": 0,
-      "published": 5,
-      "ai_calls": 6,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "queue_exhausted"
+    },
+    {
+      "pass": 11,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "queue_exhausted"
+    },
+    {
+      "pass": 12,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "queue_exhausted"
+    },
+    {
+      "pass": 13,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "queue_exhausted"
+    },
+    {
+      "pass": 14,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
+      "ai_limit": 100,
+      "outcome": "queue_exhausted"
+    },
+    {
+      "pass": 15,
+      "exit_code": 2,
+      "published": 0,
+      "ai_calls": 0,
       "ai_limit": 100,
       "outcome": "time_limit_reached"
     }
